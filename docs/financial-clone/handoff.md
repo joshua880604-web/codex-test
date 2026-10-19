@@ -13,3 +13,5 @@ Latest SEO/GEO-readiness work: see seo-geo.md. Metadata/robots/sitemap/308 direc
 SEO screenshot upload was rejected by automatic review. The safe source-only update omits new screenshot artifacts and publishes textual validation reports; local screenshots remain in docs/financial-clone/evidence/. Existing repository PNGs predate this SEO revision. No optional screenshot upload approval is needed to run or review the source changes.
 
 User explicitly confirmed the SEO source/documentation upload after automatic review. Synchronize to the existing public financial-calculators branch, with new screenshot artifacts excluded. No hosted website deployment is included.
+
+Latest UI/performance update: see ui-performance.md. Initial JS in four measured routes dropped from 840,707 to 491,897 decoded bytes (41.5%). Category computation loads on demand. 289 tests, typecheck/build, 71-route/154-mode browser regression, 20 UI checks and 20 SEO checks passed. No calculation formulas changed; no screenshots or hosted deployment included.

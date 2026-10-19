@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { calculators, categories, routeFor } from "@/lib/calculators";
+import { calculators, categories, routeFor } from "@/lib/catalog";
 export default function Directory({
   propertyOnly = false,
 }: {
@@ -10,7 +10,7 @@ export default function Directory({
   const filtered = calculators.filter(
     (c) =>
       (!propertyOnly || c.category === "Mortgage and Real Estate") &&
-      c.title.toLowerCase().includes(query.toLowerCase()),
+      c.title.toLowerCase().includes(query.trim().toLowerCase()),
   );
   return (
     <>
@@ -28,7 +28,8 @@ export default function Directory({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <span>{filtered.length} tools</span>
+        <span role="status">{filtered.length} tools</span>
+        {query && <button type="button" className="clear" onClick={() => setQuery("")}>Clear search</button>}
       </div>
       <div className="directory-grid">
         {categories.map((category) => {
@@ -51,7 +52,7 @@ export default function Directory({
         })}
       </div>
       {!filtered.length && (
-        <p role="status">No calculators match your search.</p>
+        <p>No calculators match your search.</p>
       )}
     </>
   );

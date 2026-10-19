@@ -104,7 +104,7 @@ try {
     page.getByRole("button", { name: "Download CSV" }).click(),
   ]);
   await download.saveAs(new URL("mortgage-download.csv", out).pathname);
-  await page.getByRole("button", { name: "Clear", exact: true }).click();
+  await page.getByRole("button", { name: "Reset", exact: true }).click();
   if (
     (await page.getByLabel("Home price", { exact: true }).inputValue()) !==
     "400000"

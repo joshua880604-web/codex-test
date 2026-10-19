@@ -1,5 +1,5 @@
 {
-  "tested_at": "2026-10-19T08:49:05.570Z",
+  "tested_at": "2026-10-19T09:04:44.553Z",
   "base": "http://127.0.0.1:3000",
   "browser": "System Chromium via Playwright",
   "reference_visual_parity": "unverified: original-site browser unavailable",

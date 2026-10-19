@@ -776,3 +776,29 @@ footer p {
     display: none;
   }
 }
+
+/* Keep forms readable and touch targets comfortable without extra UI dependencies. */
+.result { scroll-margin-top: 18px; }
+.table-help { font-size: 12px; color: #555; }
+.metric strong, td { font-variant-numeric: tabular-nums; }
+.result-actions button { min-height: 36px; }
+.table-scroll th { z-index: 1; }
+@media (max-width: 850px) {
+  .page-wrap { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { margin-top: 24px; padding-top: 0; }
+  .sidebar .side-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .side-note { display: none; }
+}
+@media (max-width: 650px) {
+  .field-row { grid-template-columns: 1fr; gap: 5px; margin: 14px 0; }
+  .field-row > label { font-size: 14px; }
+  .field-control input, .field-control input[type="date"], .field-control select { height: 44px; width: min(100%, 240px); font-size: 16px; }
+  .mode-tabs button { min-height: 44px; }
+  .clear, .calculate { min-height: 44px; }
+  .metric { flex-wrap: wrap; gap: 4px 12px; }
+  .metric strong { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+  .directory-grid li a { display: block; padding: 8px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

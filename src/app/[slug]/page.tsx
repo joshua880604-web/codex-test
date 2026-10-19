@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { calculators, calculatorBySlug, routeFor } from "@/lib/calculators";
 import CalculatorClient from "@/components/CalculatorClient";
+import { defaults, runCalculation } from "@/lib/calculators";
 import Directory from "@/components/Directory";
 import RealEstateDirectory from "@/components/RealEstateDirectory";
 import { Sidebar } from "@/components/Shell";
@@ -69,6 +70,10 @@ export default async function Page({
     ].includes(slug)
   )
     notFound();
+  let initialResult = null;
+  if (c && !c.directory) {
+    try { initialResult = runCalculation(c.id, c.modes[0].id, defaults(c.modes[0])); } catch { /* Valid empty defaults may need user input. */ }
+  }
   const title =
     c?.title ??
     (slug === "about.html"
@@ -137,7 +142,7 @@ export default async function Page({
           <RealEstateDirectory />
         ) : c ? (
           <>
-            <CalculatorClient id={c.id} />
+            <CalculatorClient calc={JSON.parse(JSON.stringify(c))} initialResult={initialResult} />
             <CalculatorGuide calculator={c} />
           </>
         ) : (

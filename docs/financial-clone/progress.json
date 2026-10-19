@@ -15,13 +15,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031502+00:00"
   },
   {
     "id": "mortgage",
@@ -39,13 +40,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031518+00:00"
   },
   {
     "id": "amortization",
@@ -63,13 +65,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031521+00:00"
   },
   {
     "id": "mortgage-payoff",
@@ -87,13 +90,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031523+00:00"
   },
   {
     "id": "mortgage-payoff",
@@ -111,13 +115,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031525+00:00"
   },
   {
     "id": "mortgage-payoff",
@@ -135,13 +140,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031526+00:00"
   },
   {
     "id": "mortgage-payoff",
@@ -159,13 +165,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031528+00:00"
   },
   {
     "id": "mortgage-payoff",
@@ -183,13 +190,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031529+00:00"
   },
   {
     "id": "mortgage-payoff",
@@ -207,13 +215,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031531+00:00"
   },
   {
     "id": "mortgage-payoff",
@@ -231,13 +240,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031534+00:00"
   },
   {
     "id": "mortgage-payoff",
@@ -255,13 +265,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031536+00:00"
   },
   {
     "id": "house-affordability",
@@ -279,13 +290,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031537+00:00"
   },
   {
     "id": "house-affordability",
@@ -303,13 +315,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031539+00:00"
   },
   {
     "id": "rent",
@@ -327,13 +340,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031540+00:00"
   },
   {
     "id": "debt-to-income-ratio",
@@ -351,13 +365,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031541+00:00"
   },
   {
     "id": "real-estate",
@@ -375,13 +390,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031542+00:00"
   },
   {
     "id": "refinance",
@@ -399,13 +415,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031544+00:00"
   },
   {
     "id": "refinance",
@@ -423,13 +440,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031545+00:00"
   },
   {
     "id": "rental-property",
@@ -447,13 +465,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031546+00:00"
   },
   {
     "id": "apr",
@@ -471,13 +490,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031548+00:00"
   },
   {
     "id": "apr",
@@ -495,13 +515,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031549+00:00"
   },
   {
     "id": "fha-loan",
@@ -519,13 +540,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031550+00:00"
   },
   {
     "id": "fha-loan",
@@ -543,13 +565,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031551+00:00"
   },
   {
     "id": "va-mortgage",
@@ -567,13 +590,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031553+00:00"
   },
   {
     "id": "va-mortgage",
@@ -591,13 +615,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031554+00:00"
   },
   {
     "id": "home-equity-loan",
@@ -615,13 +640,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031555+00:00"
   },
   {
     "id": "heloc",
@@ -639,13 +665,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031556+00:00"
   },
   {
     "id": "heloc",
@@ -663,13 +690,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031558+00:00"
   },
   {
     "id": "down-payment",
@@ -687,13 +715,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031559+00:00"
   },
   {
     "id": "down-payment",
@@ -711,13 +740,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031562+00:00"
   },
   {
     "id": "down-payment",
@@ -735,13 +765,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031563+00:00"
   },
   {
     "id": "rent-vs-buy",
@@ -759,13 +790,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031564+00:00"
   },
   {
     "id": "auto-loan",
@@ -783,13 +815,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031566+00:00"
   },
   {
     "id": "auto-loan",
@@ -807,13 +840,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031567+00:00"
   },
   {
     "id": "cash-back-or-low-interest",
@@ -831,13 +865,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031568+00:00"
   },
   {
     "id": "auto-lease",
@@ -855,13 +890,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031569+00:00"
   },
   {
     "id": "auto-lease",
@@ -879,13 +915,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031570+00:00"
   },
   {
     "id": "interest",
@@ -903,13 +940,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031572+00:00"
   },
   {
     "id": "investment",
@@ -927,13 +965,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031573+00:00"
   },
   {
     "id": "investment",
@@ -951,13 +990,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031575+00:00"
   },
   {
     "id": "investment",
@@ -975,13 +1015,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031576+00:00"
   },
   {
     "id": "investment",
@@ -999,13 +1040,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031577+00:00"
   },
   {
     "id": "investment",
@@ -1023,13 +1065,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031578+00:00"
   },
   {
     "id": "finance",
@@ -1047,13 +1090,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031580+00:00"
   },
   {
     "id": "finance",
@@ -1071,13 +1115,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031581+00:00"
   },
   {
     "id": "finance",
@@ -1095,13 +1140,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031583+00:00"
   },
   {
     "id": "finance",
@@ -1119,13 +1165,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031584+00:00"
   },
   {
     "id": "finance",
@@ -1143,13 +1190,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031585+00:00"
   },
   {
     "id": "compound-interest",
@@ -1167,13 +1215,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031588+00:00"
   },
   {
     "id": "interest-rate",
@@ -1191,13 +1240,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031589+00:00"
   },
   {
     "id": "savings",
@@ -1215,13 +1265,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031590+00:00"
   },
   {
     "id": "simple-interest",
@@ -1239,13 +1290,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031591+00:00"
   },
   {
     "id": "simple-interest",
@@ -1263,13 +1315,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031593+00:00"
   },
   {
     "id": "simple-interest",
@@ -1287,13 +1340,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031594+00:00"
   },
   {
     "id": "simple-interest",
@@ -1311,13 +1365,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031595+00:00"
   },
   {
     "id": "cd",
@@ -1335,13 +1390,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031596+00:00"
   },
   {
     "id": "bond",
@@ -1359,13 +1415,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031598+00:00"
   },
   {
     "id": "bond",
@@ -1383,13 +1440,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031599+00:00"
   },
   {
     "id": "bond",
@@ -1407,13 +1465,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031600+00:00"
   },
   {
     "id": "bond",
@@ -1431,13 +1490,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031601+00:00"
   },
   {
     "id": "bond",
@@ -1455,13 +1515,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031602+00:00"
   },
   {
     "id": "bond",
@@ -1479,13 +1540,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031603+00:00"
   },
   {
     "id": "mutual-fund",
@@ -1503,13 +1565,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031605+00:00"
   },
   {
     "id": "average-return",
@@ -1527,13 +1590,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031606+00:00"
   },
   {
     "id": "average-return",
@@ -1551,13 +1615,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031607+00:00"
   },
   {
     "id": "average-return",
@@ -1575,13 +1640,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031608+00:00"
   },
   {
     "id": "irr",
@@ -1599,13 +1665,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031609+00:00"
   },
   {
     "id": "irr",
@@ -1623,13 +1690,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031611+00:00"
   },
   {
     "id": "roi",
@@ -1647,13 +1715,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031613+00:00"
   },
   {
     "id": "roi",
@@ -1671,13 +1740,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031614+00:00"
   },
   {
     "id": "payback-period",
@@ -1695,13 +1765,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031615+00:00"
   },
   {
     "id": "payback-period",
@@ -1719,13 +1790,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031617+00:00"
   },
   {
     "id": "present-value",
@@ -1743,13 +1815,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031618+00:00"
   },
   {
     "id": "present-value",
@@ -1767,13 +1840,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031619+00:00"
   },
   {
     "id": "future-value",
@@ -1791,13 +1865,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031620+00:00"
   },
   {
     "id": "retirement",
@@ -1815,13 +1890,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031621+00:00"
   },
   {
     "id": "retirement",
@@ -1839,13 +1915,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031623+00:00"
   },
   {
     "id": "retirement",
@@ -1863,13 +1940,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031624+00:00"
   },
   {
     "id": "retirement",
@@ -1887,13 +1965,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031625+00:00"
   },
   {
     "id": "401k",
@@ -1911,13 +1990,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031626+00:00"
   },
   {
     "id": "401k",
@@ -1935,13 +2015,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031627+00:00"
   },
   {
     "id": "401k",
@@ -1959,13 +2040,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031629+00:00"
   },
   {
     "id": "pension",
@@ -1983,13 +2065,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031630+00:00"
   },
   {
     "id": "pension",
@@ -2007,13 +2090,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031631+00:00"
   },
   {
     "id": "pension",
@@ -2031,13 +2115,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031632+00:00"
   },
   {
     "id": "social-security",
@@ -2055,13 +2140,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031633+00:00"
   },
   {
     "id": "social-security",
@@ -2079,13 +2165,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031635+00:00"
   },
   {
     "id": "annuity",
@@ -2103,13 +2190,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031640+00:00"
   },
   {
     "id": "annuity-payout",
@@ -2127,13 +2215,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031641+00:00"
   },
   {
     "id": "annuity-payout",
@@ -2151,13 +2240,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031642+00:00"
   },
   {
     "id": "roth-ira",
@@ -2175,13 +2265,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031643+00:00"
   },
   {
     "id": "ira",
@@ -2199,13 +2290,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031645+00:00"
   },
   {
     "id": "rmd",
@@ -2223,13 +2315,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031646+00:00"
   },
   {
     "id": "income-tax",
@@ -2247,13 +2340,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031647+00:00"
   },
   {
     "id": "salary",
@@ -2271,13 +2365,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031648+00:00"
   },
   {
     "id": "marriage-tax",
@@ -2295,13 +2390,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031650+00:00"
   },
   {
     "id": "estate-tax",
@@ -2319,13 +2415,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031651+00:00"
   },
   {
     "id": "take-home-paycheck",
@@ -2343,13 +2440,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031652+00:00"
   },
   {
     "id": "loan",
@@ -2367,13 +2465,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031654+00:00"
   },
   {
     "id": "loan",
@@ -2391,13 +2490,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031655+00:00"
   },
   {
     "id": "loan",
@@ -2415,13 +2515,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031656+00:00"
   },
   {
     "id": "payment",
@@ -2439,13 +2540,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031657+00:00"
   },
   {
     "id": "payment",
@@ -2463,13 +2565,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031658+00:00"
   },
   {
     "id": "currency",
@@ -2487,13 +2590,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031660+00:00"
   },
   {
     "id": "currency",
@@ -2511,13 +2615,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031661+00:00"
   },
   {
     "id": "currency",
@@ -2535,13 +2640,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031662+00:00"
   },
   {
     "id": "inflation",
@@ -2559,13 +2665,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031663+00:00"
   },
   {
     "id": "inflation",
@@ -2583,13 +2690,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031666+00:00"
   },
   {
     "id": "inflation",
@@ -2607,13 +2715,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031667+00:00"
   },
   {
     "id": "inflation",
@@ -2631,13 +2740,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031668+00:00"
   },
   {
     "id": "sales-tax",
@@ -2655,13 +2765,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031669+00:00"
   },
   {
     "id": "sales-tax",
@@ -2679,13 +2790,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031670+00:00"
   },
   {
     "id": "sales-tax",
@@ -2703,13 +2815,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031672+00:00"
   },
   {
     "id": "credit-card",
@@ -2727,13 +2840,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031673+00:00"
   },
   {
     "id": "credit-card",
@@ -2751,13 +2865,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031674+00:00"
   },
   {
     "id": "credit-card",
@@ -2775,13 +2890,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031675+00:00"
   },
   {
     "id": "credit-cards-payoff",
@@ -2799,13 +2915,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031676+00:00"
   },
   {
     "id": "debt-payoff",
@@ -2823,13 +2940,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031678+00:00"
   },
   {
     "id": "debt-consolidation",
@@ -2847,13 +2965,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031679+00:00"
   },
   {
     "id": "repayment",
@@ -2871,13 +2990,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031680+00:00"
   },
   {
     "id": "repayment",
@@ -2895,13 +3015,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031681+00:00"
   },
   {
     "id": "student-loan",
@@ -2919,13 +3040,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031683+00:00"
   },
   {
     "id": "student-loan",
@@ -2943,13 +3065,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031684+00:00"
   },
   {
     "id": "student-loan",
@@ -2967,13 +3090,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031685+00:00"
   },
   {
     "id": "student-loan",
@@ -2991,13 +3115,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031686+00:00"
   },
   {
     "id": "student-loan",
@@ -3015,13 +3140,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031687+00:00"
   },
   {
     "id": "student-loan",
@@ -3039,13 +3165,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031690+00:00"
   },
   {
     "id": "student-loan",
@@ -3063,13 +3190,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031691+00:00"
   },
   {
     "id": "student-loan",
@@ -3087,13 +3215,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031692+00:00"
   },
   {
     "id": "college-cost",
@@ -3111,13 +3240,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031693+00:00"
   },
   {
     "id": "vat",
@@ -3135,13 +3265,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031695+00:00"
   },
   {
     "id": "depreciation",
@@ -3159,13 +3290,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031696+00:00"
   },
   {
     "id": "depreciation",
@@ -3183,13 +3315,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031697+00:00"
   },
   {
     "id": "depreciation",
@@ -3207,13 +3340,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031698+00:00"
   },
   {
     "id": "margin",
@@ -3231,13 +3365,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031699+00:00"
   },
   {
     "id": "margin",
@@ -3255,13 +3390,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031701+00:00"
   },
   {
     "id": "margin",
@@ -3279,13 +3415,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031702+00:00"
   },
   {
     "id": "margin",
@@ -3303,13 +3440,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031703+00:00"
   },
   {
     "id": "margin",
@@ -3327,13 +3465,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031704+00:00"
   },
   {
     "id": "margin",
@@ -3351,13 +3490,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031705+00:00"
   },
   {
     "id": "discount",
@@ -3375,13 +3515,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031706+00:00"
   },
   {
     "id": "discount",
@@ -3399,13 +3540,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031708+00:00"
   },
   {
     "id": "discount",
@@ -3423,13 +3565,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031709+00:00"
   },
   {
     "id": "discount",
@@ -3447,13 +3590,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031710+00:00"
   },
   {
     "id": "business-loan",
@@ -3471,13 +3615,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031711+00:00"
   },
   {
     "id": "personal-loan",
@@ -3495,13 +3640,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031713+00:00"
   },
   {
     "id": "boat-loan",
@@ -3519,13 +3665,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031715+00:00"
   },
   {
     "id": "boat-loan",
@@ -3543,13 +3690,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031717+00:00"
   },
   {
     "id": "lease",
@@ -3567,13 +3715,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031718+00:00"
   },
   {
     "id": "lease",
@@ -3591,13 +3740,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031719+00:00"
   },
   {
     "id": "budget",
@@ -3615,13 +3765,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031720+00:00"
   },
   {
     "id": "commission",
@@ -3639,13 +3790,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031721+00:00"
   },
   {
     "id": "commission",
@@ -3663,13 +3815,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031723+00:00"
   },
   {
     "id": "commission",
@@ -3687,13 +3840,14 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031724+00:00"
   },
   {
     "id": "commission",
@@ -3711,12 +3865,13 @@
       "numeric": "evidence/tests.tap",
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
-      "seo_readiness": "seo-geo.md"
+      "seo_readiness": "seo-geo.md",
+      "ui_performance": "ui-performance.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-19T08:50:26.920Z"
+    "updated_at": "2026-10-19T09:05:29.031725+00:00"
   }
 ]

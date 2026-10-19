@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-19T09:04:05.335Z",
+  "checks": [
+    "Directory search trims whitespace and clears back to all 71 entries",
+    "401k matching help, year-end table labels, 44px mobile inputs",
+    "Arrow-key mode navigation",
+    "Reset restores starting values",
+    {
+      "route": "financial-calculator.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "401k-calculator.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "mortgage-calculator.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "vat-calculator.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "financial-calculator.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "401k-calculator.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "mortgage-calculator.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "vat-calculator.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "financial-calculator.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "401k-calculator.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "mortgage-calculator.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "vat-calculator.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "financial-calculator.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "401k-calculator.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "mortgage-calculator.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "vat-calculator.html",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

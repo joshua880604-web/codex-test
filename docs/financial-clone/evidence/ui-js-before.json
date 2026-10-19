@@ -1,0 +1,145 @@
+{
+  "method": "Fresh Chromium context per route, production server, decoded JS response bytes; not field Core Web Vitals",
+  "pages": [
+    {
+      "route": "financial-calculator.html",
+      "script_count": 7,
+      "decoded_js_bytes": 840707,
+      "resources": [
+        {
+          "path": "/_next/static/chunks/3cfn99dbrcvvp.js",
+          "decoded_bytes": 16898
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decoded_bytes": 10030
+        },
+        {
+          "path": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decoded_bytes": 13822
+        },
+        {
+          "path": "/_next/static/chunks/0whzw-1ogm_bf.js",
+          "decoded_bytes": 9120
+        },
+        {
+          "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+          "decoded_bytes": 229820
+        },
+        {
+          "path": "/_next/static/chunks/0r-yur70-ku2o.js",
+          "decoded_bytes": 185420
+        },
+        {
+          "path": "/_next/static/chunks/0vicqg50o3egh.js",
+          "decoded_bytes": 375597
+        }
+      ]
+    },
+    {
+      "route": "mortgage-calculator.html",
+      "script_count": 7,
+      "decoded_js_bytes": 840707,
+      "resources": [
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decoded_bytes": 10030
+        },
+        {
+          "path": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decoded_bytes": 13822
+        },
+        {
+          "path": "/_next/static/chunks/3cfn99dbrcvvp.js",
+          "decoded_bytes": 16898
+        },
+        {
+          "path": "/_next/static/chunks/0whzw-1ogm_bf.js",
+          "decoded_bytes": 9120
+        },
+        {
+          "path": "/_next/static/chunks/0r-yur70-ku2o.js",
+          "decoded_bytes": 185420
+        },
+        {
+          "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+          "decoded_bytes": 229820
+        },
+        {
+          "path": "/_next/static/chunks/0vicqg50o3egh.js",
+          "decoded_bytes": 375597
+        }
+      ]
+    },
+    {
+      "route": "401k-calculator.html",
+      "script_count": 7,
+      "decoded_js_bytes": 840707,
+      "resources": [
+        {
+          "path": "/_next/static/chunks/3cfn99dbrcvvp.js",
+          "decoded_bytes": 16898
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decoded_bytes": 10030
+        },
+        {
+          "path": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decoded_bytes": 13822
+        },
+        {
+          "path": "/_next/static/chunks/0whzw-1ogm_bf.js",
+          "decoded_bytes": 9120
+        },
+        {
+          "path": "/_next/static/chunks/0r-yur70-ku2o.js",
+          "decoded_bytes": 185420
+        },
+        {
+          "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+          "decoded_bytes": 229820
+        },
+        {
+          "path": "/_next/static/chunks/0vicqg50o3egh.js",
+          "decoded_bytes": 375597
+        }
+      ]
+    },
+    {
+      "route": "vat-calculator.html",
+      "script_count": 7,
+      "decoded_js_bytes": 840707,
+      "resources": [
+        {
+          "path": "/_next/static/chunks/3cfn99dbrcvvp.js",
+          "decoded_bytes": 16898
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decoded_bytes": 10030
+        },
+        {
+          "path": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decoded_bytes": 13822
+        },
+        {
+          "path": "/_next/static/chunks/0r-yur70-ku2o.js",
+          "decoded_bytes": 185420
+        },
+        {
+          "path": "/_next/static/chunks/0whzw-1ogm_bf.js",
+          "decoded_bytes": 9120
+        },
+        {
+          "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+          "decoded_bytes": 229820
+        },
+        {
+          "path": "/_next/static/chunks/0vicqg50o3egh.js",
+          "decoded_bytes": 375597
+        }
+      ]
+    }
+  ]
+}

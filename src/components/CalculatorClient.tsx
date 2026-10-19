@@ -1,12 +1,9 @@
 "use client";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import {
-  calculators,
-  defaults,
-  routeFor,
-  runCalculation,
-} from "@/lib/calculators";
-import type { Field, Result, Values } from "@/lib/types";
+import { defaults } from "@/lib/types";
+import { routeFor } from "@/lib/catalog";
+import { runClientCalculation } from "@/lib/calculate-client";
+import type { Calculator, Field, Result, Values } from "@/lib/types";
 const amount = (n: number, digits = 2) =>
   new Intl.NumberFormat("en-US", {
     minimumFractionDigits: digits,
@@ -20,18 +17,13 @@ const colors = [
   "#b26969",
   "#64a7a0",
 ];
-export default function CalculatorClient({ id }: { id: string }) {
-  const calc = calculators.find((c) => c.id === id)!;
+export default function CalculatorClient({ calc, initialResult }: { calc: Calculator; initialResult: Result | null }) {
+  const id = calc.id;
+  const runCalculation = (_id: string, mode: string, values: Values) => runClientCalculation(calc.id, calc.category, mode, values);
   const [modeId, setModeId] = useState(calc.modes[0].id);
   const mode = calc.modes.find((m) => m.id === modeId)!;
   const [values, setValues] = useState<Values>(() => defaults(mode)),
-    [result, setResult] = useState<Result | null>(() => {
-      try {
-        return runCalculation(id, mode.id, defaults(mode));
-      } catch {
-        return null;
-      }
-    }),
+    [result, setResult] = useState<Result | null>(initialResult),
     [error, setError] = useState(""),
     [busy, setBusy] = useState(false),
     [feed, setFeed] = useState(""),
@@ -45,6 +37,8 @@ export default function CalculatorClient({ id }: { id: string }) {
   const resultRef = useRef<HTMLDivElement>(null),
     request = useRef(0);
   useEffect(() => {
+    if (!window.location.search) return;
+    const token = ++request.current;
     const q = new URLSearchParams(window.location.search),
       found = calc.modes.find((m) => m.id === q.get("mode"));
     const initial = found ?? calc.modes[0],
@@ -58,11 +52,10 @@ export default function CalculatorClient({ id }: { id: string }) {
     }
     setModeId(initial.id);
     setValues(v);
-    try {
-      setResult(runCalculation(id, initial.id, v));
-    } catch {
-      setResult(null);
-    }
+    runCalculation(id, initial.id, v).then(next => {
+      if (token === request.current) setResult(next);
+    }).catch(() => { if (token === request.current) setResult(null); });
+    return () => { request.current++; };
   }, [calc, id]);
   const update = (key: string, value: string) => {
     request.current++;
@@ -114,7 +107,7 @@ export default function CalculatorClient({ id }: { id: string }) {
           `${data.stale ? "Market feed unavailable; using the saved reference snapshot. " : ""}Reference date(s): ${data.date}. Source: ${data.source}. ${v.from} → ${v.to}.`,
         );
       }
-      const next = runCalculation(id, mode.id, v);
+      const next = await runCalculation(id, mode.id, v);
       if (token !== request.current) return;
       setResult(next);
       setShowAll(false);
@@ -122,8 +115,8 @@ export default function CalculatorClient({ id }: { id: string }) {
       setTimeout(
         () =>
           resultRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+            block: "start",
           }),
         0,
       );
@@ -188,6 +181,12 @@ export default function CalculatorClient({ id }: { id: string }) {
   function input(field: Field) {
     if (field.key === "verified_rate") return null;
     const inputId = id + "-" + mode.id + "-" + field.key;
+    const hint = field.hint ?? (id === "401k" && mode.id === "projection" ? ({
+      match: "The percentage your employer adds for each eligible dollar you contribute. 50% means $0.50 per $1.",
+      match_limit: "The portion of salary eligible for matching. At 6%, contributions above 6% of salary receive no additional match.",
+      balance: "Your existing account total. Included once before future contributions and growth.",
+    } as Record<string, string>)[field.key] : undefined);
+    const describedBy = [field.unit ? inputId + "-unit" : "", hint ? inputId + "-hint" : ""].filter(Boolean).join(" ") || undefined;
     return (
       <div
         className={
@@ -200,6 +199,7 @@ export default function CalculatorClient({ id }: { id: string }) {
           {field.type === "select" ? (
             <select
               id={inputId}
+              aria-describedby={describedBy}
               value={values[field.key] ?? ""}
               onChange={(e) => update(field.key, e.target.value)}
             >
@@ -241,6 +241,7 @@ export default function CalculatorClient({ id }: { id: string }) {
           ) : field.type === "textarea" ? (
             <textarea
               id={inputId}
+              aria-describedby={describedBy}
               value={values[field.key] ?? ""}
               rows={4}
               onChange={(e) => update(field.key, e.target.value)}
@@ -248,8 +249,10 @@ export default function CalculatorClient({ id }: { id: string }) {
           ) : (
             <input
               id={inputId}
+              aria-describedby={describedBy}
               type={field.type === "date" ? "date" : "number"}
-              step="any"
+              inputMode={field.type === "date" ? undefined : "decimal"}
+              step={field.step ?? "any"}
               min={field.min}
               max={field.max}
               required={!field.optional}
@@ -257,8 +260,8 @@ export default function CalculatorClient({ id }: { id: string }) {
               onChange={(e) => update(field.key, e.target.value)}
             />
           )}{" "}
-          {field.unit && <span className="unit">{field.unit}</span>}
-          {field.hint && <small>{field.hint}</small>}
+          {field.unit && <span id={inputId + "-unit"} className="unit">{field.unit}</span>}
+          {hint && <small id={inputId + "-hint"}>{hint}</small>}
         </div>
       </div>
     );
@@ -275,6 +278,15 @@ export default function CalculatorClient({ id }: { id: string }) {
           {calc.modes.map((m) => (
             <button
               role="tab"
+              tabIndex={modeId === m.id ? 0 : -1}
+              onKeyDown={(e) => {
+                if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) return;
+                e.preventDefault();
+                const current = calc.modes.findIndex(x => x.id === modeId);
+                const index = e.key === "Home" ? 0 : e.key === "End" ? calc.modes.length - 1 : (current + (e.key === "ArrowRight" ? 1 : -1) + calc.modes.length) % calc.modes.length;
+                switchMode(calc.modes[index].id);
+                document.getElementById("tab-" + calc.modes[index].id)?.focus();
+              }}
               aria-selected={modeId === m.id}
               aria-controls="calculator-panel"
               id={"tab-" + m.id}
@@ -293,7 +305,12 @@ export default function CalculatorClient({ id }: { id: string }) {
         aria-labelledby={calc.modes.length > 1 ? "tab-" + modeId : undefined}
       >
         <p className="mode-description">{mode.description}</p>
-        <form onSubmit={calculate} className="calculator-form">
+        <form onSubmit={calculate} className="calculator-form" onInvalidCapture={(e) => {
+          const field = e.target as HTMLInputElement;
+          const details = field.closest("details");
+          if (details) details.open = true;
+          setResult(null);
+        }}>
           {main.map(input)}
           {advanced.length > 0 && (
             <details className="advanced" key={mode.id}>
@@ -307,7 +324,7 @@ export default function CalculatorClient({ id }: { id: string }) {
               <span aria-hidden="true">▶</span>
             </button>
             <button type="button" className="clear" onClick={reset}>
-              Clear
+              {id === "vat" ? "Clear" : "Reset"}
             </button>
           </div>
         </form>
@@ -324,7 +341,7 @@ export default function CalculatorClient({ id }: { id: string }) {
       )}
       {feed && <p className="feed-source">{feed}</p>}
       {result && (
-        <div ref={resultRef} className="result" aria-live="polite">
+        <div ref={resultRef} className="result" aria-live="polite" tabIndex={-1}>
           <h2>Result</h2>
           <div className="result-main">
             <div className="metrics">
@@ -411,6 +428,8 @@ export default function CalculatorClient({ id }: { id: string }) {
           {result.rows && result.columns && (
             <>
               <h3>Calculation details</h3>
+              {id === "401k" && mode.id === "projection" && <p className="result-note">Each row represents one projection year. Age is your age at year end; salary and contributions apply to that year. Balance is the account total after annual growth and year-end contributions. Amounts are in USD.</p>}
+              <p className="table-help">Scroll within the table to see more. Download CSV for the complete schedule.</p>
               {result.annualRows && (
                 <div className="result-actions" aria-label="Schedule period">
                   <button
@@ -443,7 +462,7 @@ export default function CalculatorClient({ id }: { id: string }) {
                   <thead>
                     <tr>
                       {tableColumns!.map((c, i) => (
-                        <th key={i}>{c}</th>
+                        <th scope="col" key={i}>{id === "401k" && mode.id === "projection" ? ({Age: "Year-end age", Employee: "Employee contribution", Employer: "Employer contribution", Balance: "Year-end balance"} as Record<string,string>)[c] ?? c : c}</th>
                       ))}
                     </tr>
                   </thead>
@@ -485,7 +504,7 @@ export default function CalculatorClient({ id }: { id: string }) {
           applicable options, and click Calculate.{" "}
           {id === "vat"
             ? "Use Clear to empty all four fields."
-            : "Use Clear to restore the starting values."}
+            : "Use Reset to restore the starting values."}
         </p>
         <h3>Calculation formula</h3>
         <p className="formula">{mode.formula}</p>

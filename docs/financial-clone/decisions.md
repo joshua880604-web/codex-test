@@ -40,3 +40,7 @@ Replaced four separate VAT modes with one four-field optional-input form and a p
 ## 2026-10-19: SEO and AI-search readiness
 
 Use explicit SITE_URL and SITE_INDEXABLE configuration; no guessed domain, training-bot bypass or fictional expert identity. Default previews emit noindex/follow, with an empty unadvertised sitemap. Public canonical origin and indexing require an intentional production build; Vercel preview remains noindex. Consolidate root directory via 308. All calculator models/formulas are server-visible, ten guides contain twelve tested examples and official/contextual sources, and related links are topic-specific. Schema describes actual WebApplication/WebPage/BreadcrumbList content without fake reviews or a guaranteed rich-result claim. See seo-geo.md. Financial model limitations are made visible, not concealed by SEO copy.
+
+## 2026-10-19: usability and category loading
+
+Retain financial math and compact layout. Improve mobile controls, accessible matching descriptions, year-end table terminology and Reset naming. Serialize form definitions/default results from the server, and dynamically load only the requested calculation category. Directory search uses the metadata catalog, not the calculation registry. See ui-performance.md for measured bytes and validation limits.
