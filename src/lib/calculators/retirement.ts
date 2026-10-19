@@ -218,9 +218,9 @@ const k401 = tool(
         num("inflation", "Inflation", 2.5, "%", -99),
       ],
       description:
-        "Project savings one year at a time. Employee contributions are the sum of each projected year’s capped contribution, using that year’s salary and age.",
+        "Project savings one year at a time. Employee contributions + current balance includes the starting 401(k) balance plus the sum of each projected year’s capped employee contribution.",
       formula:
-        "For each year: employee = min(annual salary × contribution%, age-based annual limit); employer = min(employee, annual salary × match limit%) × match%; ending balance = opening balance × (1 + annual return) + employee + employer. Employee contributions = sum of annual employee amounts.",
+        "For each year: employee = min(annual salary × contribution%, age-based annual limit); employer = min(employee, annual salary × match limit%) × match%; ending balance = opening balance × (1 + annual return) + employee + employer. Employee contributions + current balance = starting 401(k) balance + sum of annual employee amounts.",
       calculate: (v) => {
         const { working } = remaining(v);
         if (working > 100)
@@ -243,8 +243,8 @@ const k401 = tool(
           metrics: [
             money("Projected 401(k) balance", b),
             money(
-              "Employee contributions",
-              sum(rows.map((row) => Number(row[2]))),
+              "Employee contributions + current balance",
+              n(v, "balance") + sum(rows.map((row) => Number(row[2]))),
             ),
             money(
               "Employer contributions",
@@ -258,7 +258,7 @@ const k401 = tool(
           columns: ["Age", "Salary", "Employee", "Employer", "Balance"],
           rows,
           notes: [
-            "Annual iteration: the entered salary applies to the first projection year; salary increases once after each year. Each year’s employee contribution is salary × contribution percentage, capped by the limit for your age at the start of that projection year. Employee contributions is the sum of these annual amounts; it excludes the current balance, investment returns and employer matching.",
+            "Annual iteration: the entered salary applies to the first projection year; salary increases once after each year. Each year’s employee contribution is salary × contribution percentage, capped by the limit for your age at the start of that projection year. Employee contributions + current balance adds the entered starting 401(k) balance once to the sum of these annual employee amounts. It excludes future investment returns and future employer matching; the starting balance may already contain past employer contributions and returns. The Employee column shows only that year’s new employee contribution.",
             "The opening balance earns the entered annual return first, then employee and employer contributions are added at year end. All projected years use 2026 limits with age-based catch-up; future limit increases and total employer/employee compensation caps are not projected. Calculations retain full precision; displayed annual amounts are rounded.",
           ],
         };

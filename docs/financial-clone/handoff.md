@@ -11,3 +11,5 @@ Run: npm run dev (Node.js24+). Production: npm run build then npm run start. See
 Latest changes: monthly/per-payment versus loan-year schedule toggle and matching CSV; verified eight-state dealer tax-base rules and cash-back tax/fee comparisons; actual-days depreciation service/fiscal-year inputs and corrected declining balance; bond month-end coupon anchoring and accrued-day output. Additional browser evidence: evidence/browser-schedule-qa.json. Full source form and screenshot parity remain unverified.
 
 401(k) annual-iteration clarification: summary contributions are summed from annual rows; full English timing/cap notes added. Latest full test run: 234 passing checks plus TypeScript and production build. Prior browser evidence predates this update; original-site parity remains unverified.
+
+Latest user revision: “Employee contributions + current balance” now includes starting 401(k) balance once, plus annually iterated employee payments. Projection totals are unchanged. Annual Employee rows still show only new employee contributions. Latest validation: 235 tests, TypeScript and production build passed; prior browser evidence predates this revision.

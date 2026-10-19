@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T06:29:05.817356+00:00",
+  "generated_at": "2026-10-19T06:49:19.214758+00:00",
   "directory_entries": 71,
   "calculators": 70,
   "directory_only_entries": 1,
@@ -7,7 +7,7 @@
   "local_browser_routes": 71,
   "local_browser_modes": 157,
   "numeric_tests": {
-    "total": 234,
+    "total": 235,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -25,6 +25,6 @@
     "actual-days depreciation fiscal proration",
     "bond end-of-month coupon anchoring"
   ],
-  "latest_change": "401(k) explicit annual iteration and annual-row contribution totals",
+  "latest_change": "401(k) contribution summary includes starting balance once, with explicit label and notes",
   "latest_change_browser": "not rerun; prior browser evidence predates this change"
 }
