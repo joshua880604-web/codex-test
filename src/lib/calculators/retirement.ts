@@ -218,19 +218,17 @@ const k401 = tool(
         num("inflation", "Inflation", 2.5, "%", -99),
       ],
       description:
-        "Project employee saving and employer matching, applying the published 2026 employee limits.",
+        "Project savings one year at a time. Employee contributions are the sum of each projected year’s capped contribution, using that year’s salary and age.",
       formula:
-        "Employee = min(salary × contribution%, annual limit); employer = salary × min(contribution%, match limit%) × match%.",
+        "For each year: employee = min(annual salary × contribution%, age-based annual limit); employer = min(employee, annual salary × match limit%) × match%; ending balance = opening balance × (1 + annual return) + employee + employer. Employee contributions = sum of annual employee amounts.",
       calculate: (v) => {
         const { working } = remaining(v);
         if (working > 100)
           throw new Error("Projection must not exceed 100 years.");
         let b = n(v, "balance"),
-          salary = n(v, "salary"),
-          employee = 0,
-          employer = 0;
+          salary = n(v, "salary");
         const rows: (string | number)[][] = [];
-        for (let y = 0; y < Math.ceil(working); y++) {
+        for (let y = 0; y < working; y++) {
           const e = Math.min(
               salary * pct(v, "contribution"),
               limit401(n(v, "age") + y),
@@ -238,16 +236,20 @@ const k401 = tool(
             match =
               Math.min(e, salary * pct(v, "match_limit")) * pct(v, "match");
           b = b * (1 + pct(v, "return")) + e + match;
-          employee += e;
-          employer += match;
           rows.push([n(v, "age") + y + 1, salary, e, match, b]);
           salary *= 1 + pct(v, "salary_growth");
         }
         return {
           metrics: [
             money("Projected 401(k) balance", b),
-            money("Employee contributions", employee),
-            money("Employer contributions", employer),
+            money(
+              "Employee contributions",
+              sum(rows.map((row) => Number(row[2]))),
+            ),
+            money(
+              "Employer contributions",
+              sum(rows.map((row) => Number(row[3]))),
+            ),
             money(
               "Inflation-adjusted balance",
               b / (1 + pct(v, "inflation")) ** working,
@@ -256,7 +258,8 @@ const k401 = tool(
           columns: ["Age", "Salary", "Employee", "Employer", "Balance"],
           rows,
           notes: [
-            "Uses 2026 employee contribution caps in all projected years, with age-based catch-up. Future legislation and total employer/employee compensation caps are not projected. Contributions occur at year end.",
+            "Annual iteration: the entered salary applies to the first projection year; salary increases once after each year. Each year’s employee contribution is salary × contribution percentage, capped by the limit for your age at the start of that projection year. Employee contributions is the sum of these annual amounts; it excludes the current balance, investment returns and employer matching.",
+            "The opening balance earns the entered annual return first, then employee and employer contributions are added at year end. All projected years use 2026 limits with age-based catch-up; future limit increases and total employer/employee compensation caps are not projected. Calculations retain full precision; displayed annual amounts are rounded.",
           ],
         };
       },

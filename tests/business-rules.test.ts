@@ -411,3 +411,49 @@ test("regression: first-month total includes effective extra principal", () => {
   });
   close(value(r, "Initial monthly total"), Number(r.rows![0][7]));
 });
+
+test("401k annual iteration sums changing salaries and adds contributions at year end", () => {
+  const r = run("401k", "projection", {
+    age: 48,
+    retire: 52,
+    life: 90,
+    salary: 100000,
+    balance: 0,
+    contribution: 10,
+    match: 100,
+    match_limit: 6,
+    salary_growth: 10,
+    return: 10,
+  });
+  assert.equal(r.rows!.length, 4);
+  for (const [i, expected] of [10000, 11000, 12100, 13310].entries())
+    close(Number(r.rows![i][2]), expected);
+  close(value(r, "Employee contributions"), 46410);
+  close(value(r, "Employer contributions"), 27846);
+  close(value(r, "Projected 401(k) balance"), 85184);
+  close(
+    value(r, "Employee contributions"),
+    r.rows!.reduce((s, row) => s + Number(row[2]), 0),
+  );
+});
+test("401k annual caps follow starting age and no contributions after retirement", () => {
+  const inputs = {
+    age: 49,
+    retire: 51,
+    life: 90,
+    salary: 1000000,
+    balance: 100000,
+    contribution: 100,
+    match: 0,
+    salary_growth: 0,
+    return: 0,
+  };
+  const r = run("401k", "projection", inputs);
+  close(Number(r.rows![0][2]), 24500);
+  close(Number(r.rows![1][2]), 32500);
+  close(value(r, "Employee contributions"), 57000);
+  const retired = run("401k", "projection", { ...inputs, retire: 49 });
+  assert.equal(retired.rows!.length, 0);
+  close(value(retired, "Employee contributions"), 0);
+  close(value(retired, "Projected 401(k) balance"), 100000);
+});

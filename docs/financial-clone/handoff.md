@@ -9,3 +9,5 @@ Full one-to-one completion is not claimed. Read remaining-work.md before accepti
 Run: npm run dev (Node.js24+). Production: npm run build then npm run start. See README.md for remote-localhost limitations. Browser QA server is stopped after validation.
 
 Latest changes: monthly/per-payment versus loan-year schedule toggle and matching CSV; verified eight-state dealer tax-base rules and cash-back tax/fee comparisons; actual-days depreciation service/fiscal-year inputs and corrected declining balance; bond month-end coupon anchoring and accrued-day output. Additional browser evidence: evidence/browser-schedule-qa.json. Full source form and screenshot parity remain unverified.
+
+401(k) annual-iteration clarification: summary contributions are summed from annual rows; full English timing/cap notes added. Latest full test run: 234 passing checks plus TypeScript and production build. Prior browser evidence predates this update; original-site parity remains unverified.
