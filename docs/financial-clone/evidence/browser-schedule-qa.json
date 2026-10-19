@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "at": "2026-10-19T02:53:50.602Z",
+  "checks": [
+    "Yearly mortgage table and CSV contain 30 loan years",
+    "Monthly view restored",
+    "Michigan 2026 trade cap renders $1,680 tax"
+  ]
+}

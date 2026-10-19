@@ -1,0 +1,245 @@
+{
+  "limits": "Article examples verify arithmetic only; do not prove browser interaction/default output parity. No inputs reverse-engineered from result figures.",
+  "cases": [
+    {
+      "tool": "discount",
+      "mode": "percent",
+      "inputs": {
+        "before": 45,
+        "discount_percent": 10
+      },
+      "expected": {
+        "after": 40.5,
+        "saved": 4.5
+      },
+      "lines": "17–26",
+      "source_url": "https://www.calculator.net/discount-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "discount",
+      "mode": "fixed",
+      "inputs": {
+        "before": 95,
+        "discount_amount": 20
+      },
+      "expected": {
+        "after": 75,
+        "saved": 20
+      },
+      "lines": "28–32",
+      "source_url": "https://www.calculator.net/discount-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "vat",
+      "mode": "net+rate",
+      "inputs": {
+        "net": 5,
+        "rate_percent": 10
+      },
+      "expected": {
+        "tax": 0.5,
+        "gross": 5.5
+      },
+      "lines": "26–27",
+      "source_url": "https://www.calculator.net/vat-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "vat",
+      "mode": "net+rate",
+      "inputs": {
+        "net": 10,
+        "rate_percent": 10
+      },
+      "expected": {
+        "tax": 1,
+        "gross": 11
+      },
+      "lines": "28",
+      "source_url": "https://www.calculator.net/vat-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "vat",
+      "mode": "net+rate",
+      "inputs": {
+        "net": 20,
+        "rate_percent": 10
+      },
+      "expected": {
+        "tax": 2,
+        "gross": 22
+      },
+      "lines": "29",
+      "source_url": "https://www.calculator.net/vat-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "commission",
+      "mode": "simple",
+      "inputs": {
+        "sales": 100,
+        "rate_percent": 3
+      },
+      "expected": {
+        "commission": 3
+      },
+      "lines": "29",
+      "source_url": "https://www.calculator.net/commission-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "commission",
+      "mode": "simple",
+      "inputs": {
+        "sales": 500000,
+        "rate_percent": 3
+      },
+      "expected": {
+        "commission": 15000
+      },
+      "lines": "36–38",
+      "source_url": "https://www.calculator.net/commission-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "commission",
+      "mode": "base",
+      "inputs": {
+        "sales": 25000,
+        "rate_percent": 1.5,
+        "base": 500
+      },
+      "expected": {
+        "compensation": 875
+      },
+      "lines": "44–46",
+      "source_url": "https://www.calculator.net/commission-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "commission",
+      "mode": "base",
+      "inputs": {
+        "sales": 50000,
+        "rate_percent": 1.5,
+        "base": 500
+      },
+      "expected": {
+        "compensation": 1250
+      },
+      "lines": "48–50",
+      "source_url": "https://www.calculator.net/commission-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "commission",
+      "mode": "base",
+      "inputs": {
+        "sales": 91000,
+        "rate_percent": 1.5,
+        "base": 500
+      },
+      "expected": {
+        "compensation": 1865
+      },
+      "lines": "51–53",
+      "note": "Sales explicitly given as25000+33000*2.",
+      "source_url": "https://www.calculator.net/commission-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "commission",
+      "mode": "tiered",
+      "inputs": {
+        "sales": 27000,
+        "tiers": [
+          {
+            "from": 0,
+            "to": 20000,
+            "rate_percent": 3
+          },
+          {
+            "from": 20000,
+            "to": 25000,
+            "rate_percent": 5
+          },
+          {
+            "from": 25000,
+            "to": 30000,
+            "rate_percent": 10
+          }
+        ]
+      },
+      "expected": {
+        "commission": 1050
+      },
+      "lines": "64–73",
+      "note": "Explicit incremental tiers, not whole-sales rate.",
+      "source_url": "https://www.calculator.net/commission-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "margin",
+      "mode": "profit",
+      "inputs": {
+        "revenue": 100,
+        "margin_percent": 30
+      },
+      "expected": {
+        "profit": 30
+      },
+      "lines": "75",
+      "source_url": "https://www.calculator.net/margin-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    },
+    {
+      "tool": "salary",
+      "mode": "hourly",
+      "inputs": {
+        "amount": 30,
+        "frequency": "hourly",
+        "weekly_hours": 40,
+        "weekly_days": 5,
+        "holidays": 10,
+        "vacation": 15
+      },
+      "expected": {
+        "annual_unadjusted": 62400,
+        "annual_adjusted": 56400
+      },
+      "lines": "46–53",
+      "note": "Source explicitly8hours/day,5days/week,260days/year.",
+      "source_url": "https://www.calculator.net/salary-calculator.html",
+      "source_type": "explicit article worked example",
+      "fetched_at": "2026-10-19",
+      "tolerance": 0.01
+    }
+  ]
+}

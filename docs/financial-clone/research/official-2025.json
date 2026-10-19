@@ -1,0 +1,222 @@
+{
+  "verified_at": "2026-10-19",
+  "year": 2025,
+  "ordinary_brackets_source": "https://www.irs.gov/irb/2024-45_IRB",
+  "bracket_encoding": "[lower bound,marginal rate] on taxable ordinary income",
+  "brackets": {
+    "single": [
+      [
+        0,
+        0.1
+      ],
+      [
+        11925,
+        0.12
+      ],
+      [
+        48475,
+        0.22
+      ],
+      [
+        103350,
+        0.24
+      ],
+      [
+        197300,
+        0.32
+      ],
+      [
+        250525,
+        0.35
+      ],
+      [
+        626350,
+        0.37
+      ]
+    ],
+    "married_joint": [
+      [
+        0,
+        0.1
+      ],
+      [
+        23850,
+        0.12
+      ],
+      [
+        96950,
+        0.22
+      ],
+      [
+        206700,
+        0.24
+      ],
+      [
+        394600,
+        0.32
+      ],
+      [
+        501050,
+        0.35
+      ],
+      [
+        751600,
+        0.37
+      ]
+    ],
+    "head_household": [
+      [
+        0,
+        0.1
+      ],
+      [
+        17000,
+        0.12
+      ],
+      [
+        64850,
+        0.22
+      ],
+      [
+        103350,
+        0.24
+      ],
+      [
+        197300,
+        0.32
+      ],
+      [
+        250500,
+        0.35
+      ],
+      [
+        626350,
+        0.37
+      ]
+    ],
+    "married_separate": [
+      [
+        0,
+        0.1
+      ],
+      [
+        11925,
+        0.12
+      ],
+      [
+        48475,
+        0.22
+      ],
+      [
+        103350,
+        0.24
+      ],
+      [
+        197300,
+        0.32
+      ],
+      [
+        250525,
+        0.35
+      ],
+      [
+        375800,
+        0.37
+      ]
+    ]
+  },
+  "standard_deduction": {
+    "source_url": "https://www.irs.gov/irb/2025-45_IRB",
+    "section": "3.01 explicitly supersedes Rev Proc2024-40 standard deduction",
+    "single": 15750,
+    "married_joint": 31500,
+    "head_household": 23625,
+    "married_separate": 15750
+  },
+  "additional_standard_aged_or_blind": {
+    "source_url": "https://www.irs.gov/irb/2024-45_IRB",
+    "married": 1600,
+    "unmarried_not_surviving_spouse": 2000
+  },
+  "salt": {
+    "2025": {
+      "source_url": "https://www.irs.gov/instructions/i1040sca",
+      "cap": 40000,
+      "cap_married_separate": 20000,
+      "phaseout_MAGI": 500000,
+      "phaseout_MAGI_married_separate": 250000,
+      "floor": 10000,
+      "floor_married_separate": 5000,
+      "formula": "non-MFS cap=max(10000,40000-.30*max(0,MAGI-500000)); MFS cap=.5*max(10000,40000-.30*max(0,MAGI-250000)); deductible=min(taxes paid,cap)",
+      "note": "MFS worksheet halves final cap after30% reduction; do not simply apply30% directly to20000 cap."
+    },
+    "2026": {
+      "source_url": "https://www.irs.gov/pub/irs-prior/p505--2026.pdf",
+      "cap": 40400,
+      "cap_married_separate": 20200,
+      "phaseout_MAGI": 505000,
+      "phaseout_MAGI_married_separate": 252500,
+      "floor": 10000,
+      "floor_married_separate": 5000,
+      "reduction_rate": "unknown in2026-specific opened text; statutory continuation not independently extracted"
+    }
+  },
+  "social_security_taxable": {
+    "source_url": "https://www.irs.gov/publications/p915",
+    "publication_year": 2025,
+    "regular_case": "Let S=net benefits, P=worksheet provisional income (half S+other income+tax-exempt interest+required addbacks-minus specified adjustments). B=32000 joint,25000 single/HOH/surviving/apart-MFS. W=12000 joint,9000 others. taxable=min(.85*S,min(.5*S,.5*min(max(P-B,0),W))+.85*max(P-B-W,0)).",
+    "MFS_lived_together": "taxable=min(.85*S,.85*max(P,0)); no25000 base.",
+    "limits": "Lump-sum election, repayments, IRA deduction interactions and nonresident rules require separate handling. Provisional income is not necessarily displayed AGI."
+  },
+  "education": {
+    "source_urls": [
+      "https://www.irs.gov/credits-deductions/individuals/education-credits-questions-and-answers",
+      "https://www.irs.gov/publications/p970",
+      "https://www.irs.gov/irb/2026-38_irb"
+    ],
+    "years": [
+      2025,
+      2026
+    ],
+    "AOTC": "Per eligible student100% first2000+25% next2000,max2500;40% potentially refundable subject eligibility.",
+    "LLC": "20% first10000 eligible expenses across return,max2000,nonrefundable.",
+    "MAGI_phaseout_single": [
+      80000,
+      90000
+    ],
+    "MAGI_phaseout_joint": [
+      160000,
+      180000
+    ],
+    "same_student": "Cannot claim both for same student/year; different students may use different credits.",
+    "reference_site_selection": "unknown: tax calculator has4 education expense fields but no exposed eligibility/credit-type selector."
+  },
+  "dependent_care": {
+    "2025": {
+      "source_url": "https://www.irs.gov/instructions/i2441",
+      "expenses_one": 3000,
+      "expenses_two_plus": 6000,
+      "rate_formula": "max(.20,.35-.01*ceil(max(AGI-15000,0)/2000))",
+      "note": "Credit limited by eligible expenses, earned income and tax liability; exclusions/eligibility restrictions apply."
+    },
+    "2026": {
+      "source_url": "https://www.irs.gov/credits-deductions/individuals/child-and-dependent-care-credit-information",
+      "expenses_one": 3000,
+      "expenses_two_plus": 6000,
+      "min_rate": 0.2,
+      "max_rate": 0.5,
+      "rate_phaseouts": "26USC21(a)(2):50% reduced not below35% by1pp per2000 or fraction AGI over15000; then further reduced not below20% by1pp per2000 (joint4000) or fraction AGI over75000 (joint150000).",
+      "max_credit_one": 1500,
+      "max_credit_two_plus": 3000,
+      "rate_source_url": "https://uscode.house.gov/us/usc/119-118/t26/s21/",
+      "rate_formula": "max(.20,max(.35,.50-.01*ceil(max(AGI-15000,0)/2000))-.01*ceil(max(AGI-(joint?150000:75000),0)/(joint?4000:2000)))",
+      "earned_income_limit": "Expense base limited to own earned income, or lesser spouse earned income when married; student/incapacitated spouse deemed250/month one person,500/month two+; qualified benefits exclusion reduces3000/6000 cap."
+    }
+  },
+  "reference_eitc": {
+    "source_url": "https://www.calculator.net/tax-calculator.html",
+    "article_mentions": true,
+    "automatically_calculated": "unknown",
+    "evidence": "Article describes EITC but says only certain credits included and others manually entered. No result submission inspected. Age/dependent count fields alone cannot prove EITC behavior."
+  }
+}

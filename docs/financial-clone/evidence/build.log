@@ -1,0 +1,34 @@
+
+> financial-calculators@1.0.0 build
+> next build
+
+▲ Next.js 16.4.2 (Turbopack)
+✓ Running next.config.ts took 100ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 495ms
+  Running TypeScript ...
+  Finished TypeScript in 588ms ...
+  Collecting page data using 2 workers ...
+  Generating static pages using 2 workers (0/78) ...
+  Generating static pages using 2 workers (19/78) 
+  Generating static pages using 2 workers (38/78) 
+  Generating static pages using 2 workers (58/78) 
+✓ Generating static pages using 2 workers (78/78) in 2.1s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├   /[slug]
+│ ├ ● /mortgage-calculator.html
+│ ├ ● /amortization-calculator.html
+│ ├ ● /mortgage-payoff-calculator.html
+│ └ ● [+71 more paths]
+└ ƒ /api/rates
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

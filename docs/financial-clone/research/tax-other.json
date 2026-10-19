@@ -1,0 +1,615 @@
+{
+  "fetched_at": "2026-10-19",
+  "method": "Public web text extraction, all 27 links clicked from live financial directory. No interactive submission or screenshots.",
+  "limits": [
+    "Select option values, defaults, validation behavior and conditional result labels incompletely exposed in text.",
+    "No calculator is reference-parity verified; formulas below are implementation hypotheses where described as such.",
+    "Each source has 200-word extraction budget; research condensed accordingly."
+  ],
+  "official_sources": [
+    {
+      "url": "https://www.irs.gov/irb/2025-45_IRB",
+      "year": 2026,
+      "note": "Search confirmed 2026 tax rate schedules; full thresholds not yet extracted."
+    },
+    {
+      "url": "https://www.irs.gov/pub/irs-prior/p505--2026.pdf",
+      "year": 2026,
+      "note": "Search confirms single first threshold12400 and next50400; full tables unverified."
+    },
+    {
+      "url": "https://www.irs.gov/publications/p17",
+      "year": 2025,
+      "note": "Official 2025 federal income tax publication; use for 2025 rules."
+    },
+    {
+      "url": "https://www.bls.gov/cpi/",
+      "year": "monthly",
+      "note": "Original inflation page links BLS CPI; dataset not downloaded."
+    }
+  ],
+  "calculators": [
+    {
+      "id": "income-tax",
+      "title": "Income Tax Calculator",
+      "category": "Tax and Salary",
+      "source_url": "https://www.calculator.net/tax-calculator.html",
+      "modes": [
+        "2025 federal return",
+        "2026 federal estimate"
+      ],
+      "fields": [
+        "filing status",
+        "young/other dependents",
+        "each spouse age,wages,federal/state/local withholding,business income,estimated tax,Medicare wages",
+        "Social Security,interest,ordinary/qualified dividends,passive income,short/long gains,other income,state/local rate",
+        "tips,overtime,car interest,IRA,property tax,mortgage interest,charity,student interest,dependent care,4 education expenses,other deductions"
+      ],
+      "outputs": [
+        "refund or amount owed"
+      ],
+      "assumptions": "US federal 2025/2026; automatically chooses larger standard/itemized deduction. Article contains conflicting legacy standard-deduction text; verify IRS before coding.",
+      "source_year": "2025,2026",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "salary",
+      "title": "Salary Calculator",
+      "category": "Tax and Salary",
+      "source_url": "https://www.calculator.net/salary-calculator.html",
+      "modes": [
+        "frequency conversion"
+      ],
+      "fields": [
+        "salary amount/frequency",
+        "weekly hours",
+        "weekly days",
+        "annual holidays",
+        "annual vacation days"
+      ],
+      "outputs": [
+        "hourly,daily,weekly,biweekly,semimonthly,monthly,quarterly,annual; unadjusted and adjusted"
+      ],
+      "assumptions": "52 weeks annually; hourly/daily input unadjusted, other inputs already adjusted. Annual workdays=weekly days*52; adjusted factor=(workdays-holidays-vacation)/workdays.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "marriage-tax",
+      "title": "Marriage Tax Calculator",
+      "category": "Tax and Salary",
+      "source_url": "https://www.calculator.net/marriage-calculator.html",
+      "modes": [
+        "before versus after marriage"
+      ],
+      "fields": [
+        "each spouse earned/business income,interest/dividends,passive income,short/long gains,qualified dividends,retirement savings",
+        "prior filing status,dependents,standard deduction toggle,total deductions,state/city rate,self-employed"
+      ],
+      "outputs": [
+        "unknown"
+      ],
+      "assumptions": "2026 US federal; compare joint filing against two unmarried filings, not simply married-filing-separately.",
+      "source_year": "2026",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "estate-tax",
+      "title": "Estate Tax Calculator",
+      "category": "Tax and Salary",
+      "source_url": "https://www.calculator.net/estate-tax-calculator.html",
+      "modes": [
+        "federal estate tax"
+      ],
+      "fields": [
+        "real estate,investments,cash,vehicles/property,retirement,life insurance,other assets",
+        "debt,funeral/admin/claims,charity,state estate tax,lifetime gifts"
+      ],
+      "outputs": [
+        "federal estate tax estimate"
+      ],
+      "assumptions": "Federal only. Page lists 2026 lifetime exemption $15m and top rate 40%; detailed computation unknown.",
+      "source_year": "2026",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "take-home-paycheck",
+      "title": "Take-Home-Paycheck Calculator",
+      "category": "Tax and Salary",
+      "source_url": "https://www.calculator.net/take-home-pay-calculator.html",
+      "modes": [
+        "2026 paycheck/W-4"
+      ],
+      "fields": [
+        "annual salary,pay frequency,filing status,children under17,other dependents,other income",
+        "pretax withheld deductions,nonwithheld deductions,itemized deductions",
+        "additional 2 incomes,state/city rates,each spouse65+,tips,overtime,vehicle interest,cash charity,self-employed"
+      ],
+      "outputs": [
+        "net paycheck estimate",
+        "W-4 steps3/4 assistance"
+      ],
+      "assumptions": "2026 US tax/W-4 incorporating OBBBA. Exact payroll and multi-job allocation needs validation.",
+      "source_year": "2026",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "loan",
+      "title": "Loan Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/loan-calculator.html",
+      "modes": [
+        "amortized",
+        "deferred single payment",
+        "bond present value"
+      ],
+      "fields": [
+        "amount or face value",
+        "term years/months",
+        "annual interest",
+        "compounding",
+        "payment frequency for amortized"
+      ],
+      "outputs": [
+        "periodic payment,total payments,total interest,schedule",
+        "maturity value and interest",
+        "initial proceeds and interest"
+      ],
+      "assumptions": "Convert compound frequency to payment frequency; FV=P(1+r/m)^(mt), PV inverse.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "payment",
+      "title": "Payment Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/payment-calculator.html",
+      "modes": [
+        "fixed term",
+        "fixed payments"
+      ],
+      "fields": [
+        "principal",
+        "years or monthly payment",
+        "interest"
+      ],
+      "outputs": [
+        "monthly payment or payoff term",
+        "total interest,total paid,monthly amortization"
+      ],
+      "assumptions": "Fixed interest monthly annuity; final payment truncated.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "currency",
+      "title": "Currency Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/currency-calculator.html",
+      "modes": [
+        "live rates",
+        "custom rate"
+      ],
+      "fields": [
+        "amount,from,to,popular-only toggle",
+        "A/B rate,amount"
+      ],
+      "outputs": [
+        "converted amount",
+        "market rate table"
+      ],
+      "assumptions": "Custom rate means B units per one A; multiply amount*rate. Live provider and timestamp unknown.",
+      "source_year": "dynamic",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "inflation",
+      "title": "Inflation Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/inflation-calculator.html",
+      "modes": [
+        "historical CPI",
+        "forward flat",
+        "backward flat"
+      ],
+      "fields": [
+        "amount,start/end month/year",
+        "amount,rate,years"
+      ],
+      "outputs": [
+        "equivalent amount"
+      ],
+      "assumptions": "Historical CPI-U BLS 1913–2026; value*endCPI/startCPI; forward compounds, backward discounts. Monthly dataset must be sourced.",
+      "source_year": "1913–2026",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "sales-tax",
+      "title": "Sales Tax Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/sales-tax-calculator.html",
+      "modes": [
+        "solve any missing value"
+      ],
+      "fields": [
+        "before price,tax rate,after price"
+      ],
+      "outputs": [
+        "missing value"
+      ],
+      "assumptions": "after=before*(1+rate); two inputs required.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "credit-card",
+      "title": "Credit Card Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/credit-card-calculator.html",
+      "modes": [
+        "fixed monthly amount",
+        "fixed timeframe"
+      ],
+      "fields": [
+        "balance,APR",
+        "monthly amount or years/months",
+        "payment shortcuts interest+1%,2%,3%,4%,5%"
+      ],
+      "outputs": [
+        "payoff time or payment"
+      ],
+      "assumptions": "Shortcut behavior and minimum floors unknown; amortize and detect nonamortization.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "credit-cards-payoff",
+      "title": "Credit Cards Payoff Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/credit-card-payoff-calculator.html",
+      "modes": [
+        "debt avalanche"
+      ],
+      "fields": [
+        "monthly budget",
+        "up to20 cards name,balance,minimum,APR;6 initially visible"
+      ],
+      "outputs": [
+        "payoff schedule"
+      ],
+      "assumptions": "Pay minima then direct remainder to highest APR. Exact rollover timing unknown.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "debt-payoff",
+      "title": "Debt Payoff Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/debt-payoff-calculator.html",
+      "modes": [
+        "avalanche fixed total",
+        "avalanche decreasing total"
+      ],
+      "fields": [
+        "up to20 debts name,balance,payment,APR",
+        "monthly extra,yearly extra,onetime extra and month",
+        "fixed total yes/no"
+      ],
+      "outputs": [
+        "time to repay",
+        "optimal payoff sequence"
+      ],
+      "assumptions": "Yes redistributes retired debt payments; No reduces total payment when debt repaid. Exact annual extra month unknown.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "debt-consolidation",
+      "title": "Debt Consolidation Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/debt-consolidation-calculator.html",
+      "modes": [
+        "existing versus consolidated loan"
+      ],
+      "fields": [
+        "up to20 debts name,balance,payment,APR",
+        "new amount,rate,term years/months,fee/points and unit"
+      ],
+      "outputs": [
+        "APR,monthly payments,payoff duration,total interest comparisons"
+      ],
+      "assumptions": "Solve fee-adjusted new APR from net proceeds; combined existing APR algorithm unknown.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "repayment",
+      "title": "Repayment Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/repayment-calculator.html",
+      "modes": [
+        "fixed time",
+        "fixed installment"
+      ],
+      "fields": [
+        "balance,APR,compound,payment frequency",
+        "years/months or installment"
+      ],
+      "outputs": [
+        "installment or duration,total payments,interest,schedule"
+      ],
+      "assumptions": "Fixed rate; compounding and pay frequency distinct.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "student-loan",
+      "title": "Student Loan Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/student-loan-calculator.html",
+      "modes": [
+        "simple solve 1of4",
+        "payoff altogether",
+        "extra repayment",
+        "normal repayment",
+        "projection"
+      ],
+      "fields": [
+        "balance,term,rate,payment (any3)",
+        "monthly/yearly/onetime extra",
+        "years to graduation,annual borrowing,current balance,term,grace months,rate,pay-interest-in-school toggle"
+      ],
+      "outputs": [
+        "payment,interest,total",
+        "comparison savings/time",
+        "borrowed,graduation/grace balance,monthly repayment,total interest"
+      ],
+      "assumptions": "Projection equal monthly repayment after graduation/grace, no fees. Borrowing timing/capitalization unknown.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "college-cost",
+      "title": "College Cost Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/college-cost-calculator.html",
+      "modes": [
+        "college savings planning"
+      ],
+      "fields": [
+        "current annual cost or preset,increase rate,duration,savings coverage%,current balance,return,tax rate,years until college"
+      ],
+      "outputs": [
+        "unknown"
+      ],
+      "assumptions": "2025–26 presets private65470/public-in30990/public-out50920/2year21320. 529 tax0; future costs grow annually; contribution timing unknown.",
+      "source_year": "2025–2026",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "vat",
+      "title": "VAT Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/vat-calculator.html",
+      "modes": [
+        "solve from any2"
+      ],
+      "fields": [
+        "VAT rate,net,gross,tax"
+      ],
+      "outputs": [
+        "remaining values"
+      ],
+      "assumptions": "gross=net+tax; tax=net*rate.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "depreciation",
+      "title": "Depreciation Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/depreciation-calculator.html",
+      "modes": [
+        "straight-line",
+        "declining balance",
+        "sum-of-years-digits",
+        "partial-year variants"
+      ],
+      "fields": [
+        "cost,salvage,life,factor,round dollars,partial year,convention,service date,accounting-year start"
+      ],
+      "outputs": [
+        "unknown"
+      ],
+      "assumptions": "SL=(cost-salvage)/life; declining=book*factor/life; SYD weighted remaining life. Partial convention options and terminal switch unknown.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "margin",
+      "title": "Margin Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/margin-calculator.html",
+      "modes": [
+        "profit margin",
+        "stock margin",
+        "currency margin"
+      ],
+      "fields": [
+        "cost,revenue,margin,profit(any2)",
+        "stock price,shares,requirement%",
+        "FX rate,margin ratio,units"
+      ],
+      "outputs": [
+        "profit,margin,markup",
+        "required stock funds",
+        "required FX funds"
+      ],
+      "assumptions": "profit=revenue-cost; margin=profit/revenue; markup=profit/cost; stock=price*shares*requirement; FX=rate*units/leverage.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "discount",
+      "title": "Discount Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/discount-calculator.html",
+      "modes": [
+        "percent off",
+        "fixed amount off"
+      ],
+      "fields": [
+        "before,discount,after,saved(any2)"
+      ],
+      "outputs": [
+        "remaining values"
+      ],
+      "assumptions": "after=before-saved; percent saved=before*discount.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "business-loan",
+      "title": "Business Loan Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/business-loan-calculator.html",
+      "modes": [
+        "fee-adjusted loan"
+      ],
+      "fields": [
+        "amount,rate,compound,term years/months,pay frequency,origination,documentation,other fees"
+      ],
+      "outputs": [
+        "payment,total payments,interest,interest+fee,APR,schedule"
+      ],
+      "assumptions": "Payment annuity; solve net-proceeds cashflow rate for APR. Fee unit specifics unknown.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "personal-loan",
+      "title": "Personal Loan Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/personal-loan-calculator.html",
+      "modes": [
+        "basic",
+        "fee and insurance"
+      ],
+      "fields": [
+        "amount,rate,years/months,start month/year",
+        "origination amount/unit,deduct-from-loan or upfront,monthly insurance"
+      ],
+      "outputs": [
+        "monthly payment,total payments,interest,payoff date,dated schedule"
+      ],
+      "assumptions": "Origination handling and insurance add-on need parity testing.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "boat-loan",
+      "title": "Boat Loan Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/boat-loan-calculator.html",
+      "modes": [
+        "total price",
+        "monthly payment inverse"
+      ],
+      "fields": [
+        "price or payment,term/unit,rate,down payment/unit,trade value,tax,fees,finance-fees toggle"
+      ],
+      "outputs": [
+        "payment,loan amount,tax,upfront,total paid,interest,total cost,schedule"
+      ],
+      "assumptions": "Trade-in tax treatment and inverse down-payment percentage require validation.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "lease",
+      "title": "Lease Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/lease-calculator.html",
+      "modes": [
+        "fixed rate",
+        "fixed payment"
+      ],
+      "fields": [
+        "asset,residual,years/months,rate or monthly payment"
+      ],
+      "outputs": [
+        "monthly payment or effective rate,total payments,total interest"
+      ],
+      "assumptions": "Balloon annuity payment=(asset-residual/(1+i)^n)*i/(1-(1+i)^(-n)); exact first-payment timing unknown.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "budget",
+      "title": "Budget Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/budget-calculator.html",
+      "modes": [
+        "personal budget"
+      ],
+      "fields": [
+        "4 income streams each frequency,total income tax%",
+        "housing7,transport6,debt3,living5,health2,children4,savings4,misc6 each amount/frequency"
+      ],
+      "outputs": [
+        "annualized income and expense ratios",
+        "budget category breakdown"
+      ],
+      "assumptions": "Income before tax; 401k/IRA and college savings marked pretax. Exact tax allocation/frequency options unknown.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    },
+    {
+      "id": "commission",
+      "title": "Commission Calculator",
+      "category": "Other",
+      "source_url": "https://www.calculator.net/commission-calculator.html",
+      "modes": [
+        "simple solve1of3",
+        "tiered/base"
+      ],
+      "fields": [
+        "sales,rate,commission(any2)",
+        "base toggle/amount/unit,vary-with-price toggle,flat commission/unit,up to8 tier bounds/rates/unit"
+      ],
+      "outputs": [
+        "commission"
+      ],
+      "assumptions": "simple=sales*rate. Tier incremental vs whole-price exact behavior needs validation.",
+      "source_year": "not applicable",
+      "fetched_at": "2026-10-19",
+      "limits": "Observed via text only; exact options/defaults and interactive parity unknown."
+    }
+  ]
+}

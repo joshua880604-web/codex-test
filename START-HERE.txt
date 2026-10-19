@@ -1,0 +1,21 @@
+Financial Calculators - Local Preview
+
+1. Install Node.js 24 or newer from https://nodejs.org/
+2. Extract this ZIP.
+3. Open a terminal in the extracted financial-calculators folder.
+4. Run: npm ci
+5. Run: npm run dev
+6. Open: http://localhost:3000/financial-calculator.html
+7. Stop: Ctrl+C
+
+Production build: npm run build, then npm run start
+Checks: npm test and npm run typecheck
+
+Includes application source, dependency lockfile, custom Codex skill,
+tests, research and verification records. Dependencies and generated
+build output are intentionally excluded; npm ci installs dependencies.
+Currency live data requires network access; explicit saved or manual
+rate options are available.
+
+This is a local runnable implementation. Full original-site visual and
+form parity remains unverified. See docs/financial-clone/remaining-work.md.

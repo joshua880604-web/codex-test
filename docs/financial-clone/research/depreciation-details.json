@@ -1,0 +1,161 @@
+{
+  "fetched_at": "2026-10-19",
+  "reference_url": "https://www.calculator.net/depreciation-calculator.html",
+  "method": "Full public82-line text page read. HTML select option values inaccessible through text extractor; direct curl connection failed.",
+  "reference_confirmed": {
+    "intro_methods": [
+      "Straight-line",
+      "Declining balance",
+      "Sum of the years' digits"
+    ],
+    "double_declining": "Declining balance with factor2.",
+    "units_of_production": {
+      "article_section": true,
+      "form_option": "unknown",
+      "formula": "(cost-salvage)*actual production/estimated lifetime production"
+    },
+    "declining_switch_to_straight_line": "unknown; no switch control or rule mentioned in visible text",
+    "partial_year_controls": [
+      "Partial year depreciation? Yes/No",
+      "Convention [select]",
+      "Start of asset service [input]",
+      "Start of accounting year [select][select]"
+    ],
+    "convention_names": "unknown; select options not exposed",
+    "service_date_format": "unknown",
+    "accounting_year_controls": "Two selectors observed; inferred month/day but exact labels/options unknown",
+    "rounding_control": "Round to dollars? Yes/No",
+    "numerical_worked_examples": "none in reference article",
+    "rules": {
+      "straight": "(cost-salvage)/useful life",
+      "declining": "book value*factor/life, capped when book reaches salvage; no explicit terminal writeoff or switch statement",
+      "syd": "(cost-salvage)*(life-year+1)/(life*(life+1)/2)",
+      "partial": "Article says depreciation starts when asset enters service, accommodates arbitrary accounting-year start. No exact day/month conventions named."
+    }
+  },
+  "independent_sources": [
+    {
+      "url": "https://support.microsoft.com/en-us/excel/functions/ddb-function",
+      "rules": "DDB caps each period at remaining depreciable basis. VDB explicitly required to switch to straight-line."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/excel/functions/vdb-function",
+      "rules": "Supports partial intervals. no_switch true prevents switch; false/omitted switches when straight-line exceeds declining."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/excel/functions/sln-function",
+      "rules": "Straight-line per-period amount."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/excel/functions/syd-function",
+      "rules": "Sum-of-years digits per-period amount."
+    }
+  ],
+  "independent_cases": [
+    {
+      "method": "straight",
+      "inputs": {
+        "cost": 30000,
+        "salvage": 7500,
+        "life": 10
+      },
+      "expected": {
+        "annual": 2250
+      },
+      "source_url": "https://support.microsoft.com/en-us/excel/functions/sln-function"
+    },
+    {
+      "method": "syd",
+      "inputs": {
+        "cost": 30000,
+        "salvage": 7500,
+        "life": 10,
+        "period": 1
+      },
+      "expected": {
+        "depreciation": 4090.91
+      },
+      "source_url": "https://support.microsoft.com/en-us/excel/functions/syd-function",
+      "tolerance": 0.01
+    },
+    {
+      "method": "syd",
+      "inputs": {
+        "cost": 30000,
+        "salvage": 7500,
+        "life": 10,
+        "period": 10
+      },
+      "expected": {
+        "depreciation": 409.09
+      },
+      "source_url": "https://support.microsoft.com/en-us/excel/functions/syd-function",
+      "tolerance": 0.01
+    },
+    {
+      "method": "ddb",
+      "inputs": {
+        "cost": 2400,
+        "salvage": 300,
+        "life": 10,
+        "factor": 2,
+        "period": 1
+      },
+      "expected": {
+        "depreciation": 480
+      },
+      "source_url": "https://support.microsoft.com/en-us/excel/functions/ddb-function"
+    },
+    {
+      "method": "ddb",
+      "inputs": {
+        "cost": 2400,
+        "salvage": 300,
+        "life": 10,
+        "factor": 1.5,
+        "period": 2
+      },
+      "expected": {
+        "depreciation": 306
+      },
+      "source_url": "https://support.microsoft.com/en-us/excel/functions/ddb-function"
+    },
+    {
+      "method": "ddb",
+      "inputs": {
+        "cost": 2400,
+        "salvage": 300,
+        "life": 10,
+        "factor": 2,
+        "period": 10
+      },
+      "expected": {
+        "depreciation": 22.12
+      },
+      "source_url": "https://support.microsoft.com/en-us/excel/functions/ddb-function",
+      "tolerance": 0.01
+    },
+    {
+      "method": "vdb",
+      "inputs": {
+        "cost": 2400,
+        "salvage": 300,
+        "life": 10,
+        "start_period": 0,
+        "end_period": 0.875,
+        "factor": 1.5
+      },
+      "expected": {
+        "depreciation": 315
+      },
+      "source_url": "https://support.microsoft.com/en-us/excel/functions/vdb-function",
+      "note": "VDB interval benchmark only; does not establish original site's conventions."
+    }
+  ],
+  "limits": [
+    "No original-site numerical parity cases available in article.",
+    "Do not add a Units-of-production selector or a declining-to-SL switch as claimed reference features without DOM confirmation.",
+    "Microsoft DDB/VDB distinct algorithms; do not substitute tax MACRS conventions for book depreciation.",
+    "First-year month-count approximation does not establish equivalence with arbitrary source service dates/accounting year."
+  ]
+}

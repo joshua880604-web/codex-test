@@ -1,0 +1,200 @@
+{
+  "verified_at": "2026-10-19",
+  "currency": "USD",
+  "capital_gains": {
+    "2025": {
+      "source_url": "https://www.irs.gov/irb/2024-45_IRB",
+      "single": [
+        48350,
+        533400
+      ],
+      "married_joint": [
+        96700,
+        600050
+      ],
+      "head_household": [
+        64750,
+        566700
+      ],
+      "married_separate": [
+        48350,
+        300000
+      ]
+    },
+    "2026": {
+      "source_url": "https://www.irs.gov/irb/2025-45_IRB",
+      "single": [
+        49450,
+        545500
+      ],
+      "married_joint": [
+        98900,
+        613700
+      ],
+      "head_household": [
+        66200,
+        579600
+      ],
+      "married_separate": [
+        49450,
+        306850
+      ]
+    },
+    "encoding": "[maximum taxable income for 0%, maximum taxable income for 15%]; above second threshold generally20%, excluding special-category gains. Qualified dividends/long-term gains stack above ordinary taxable income."
+  },
+  "child_credit": {
+    "years": [
+      2025,
+      2026
+    ],
+    "source_urls": [
+      "https://www.irs.gov/pub/irs-pdf/f1040s8.pdf",
+      "https://www.irs.gov/irb/2025-45_IRB"
+    ],
+    "per_qualifying_child_under17": 2200,
+    "other_dependent": 500,
+    "refundable_child_cap": 1700,
+    "phaseout_MAGI": {
+      "married_joint": 400000,
+      "all_others": 200000
+    },
+    "phaseout_formula": "50*ceil(max(0,MAGI-threshold)/1000), deducted from combined child/other-dependent credit.",
+    "refundable_formula": "unknown here; earned-income and other eligibility restrictions must be separately applied",
+    "eligibility": "Qualifying child age/relationship/residence/SSN and tax-ID requirements; not every entered dependent qualifies.",
+    "note": "2026 maximum/refundable amount explicitly verified in Rev Proc2025-32; 2025 Schedule8812 establishes phaseout computation."
+  },
+  "obbba_deductions": {
+    "years": [
+      2025,
+      2026,
+      2027,
+      2028
+    ],
+    "source_urls": [
+      "https://www.irs.gov/pub/irs-pdf/f1040s1a.pdf",
+      "https://www.irs.gov/newsroom/working-families-tax-cuts-individuals-and-workers"
+    ],
+    "MAGI_definition": "AGI plus excluded Puerto Rico income, Form2555 lines45/50 and Form4563 line15 (Schedule1-A). Deductions below reduce taxable income rather than simply subtracting qualifying income from wages/payroll tax.",
+    "married_requires_joint": true,
+    "tips": {
+      "cap": 25000,
+      "threshold_single": 150000,
+      "threshold_joint": 300000,
+      "reduction_per_step": 100,
+      "step": 1000,
+      "rounding": "floor",
+      "formula": "max(0,min(qualifiedTips,25000)-100*floor(max(0,MAGI-threshold)/1000))",
+      "eligibility": "Qualified reported voluntary tips in listed occupations; self-employment limited to net profit; SSTB restrictions."
+    },
+    "overtime": {
+      "cap_single": 12500,
+      "cap_joint": 25000,
+      "threshold_single": 150000,
+      "threshold_joint": 300000,
+      "reduction_per_step": 100,
+      "step": 1000,
+      "rounding": "floor",
+      "formula": "max(0,min(qualifiedOvertime,cap)-100*floor(max(0,MAGI-threshold)/1000))",
+      "eligibility": "Only qualifying premium above regular pay, e.g. half portion of time-and-half; SSN/reporting requirements."
+    },
+    "car_interest": {
+      "cap": 10000,
+      "threshold_single": 100000,
+      "threshold_joint": 200000,
+      "reduction_per_step": 200,
+      "step": 1000,
+      "rounding": "ceil",
+      "formula": "max(0,min(qualifiedInterest,10000)-200*ceil(max(0,MAGI-threshold)/1000))",
+      "eligibility": "Personal-use qualifying new vehicle loan after2024, lien-secured, US final assembly, under14000lb; leases excluded; no duplicate business deduction."
+    },
+    "senior": {
+      "minimum_age": 65,
+      "cap_per_person": 6000,
+      "threshold_single": 75000,
+      "threshold_joint": 150000,
+      "reduction_rate_per_person": 0.06,
+      "formula": "eligiblePersons*max(0,6000-.06*max(0,MAGI-threshold))",
+      "note": "Each eligible spouse gets same phased amount, separate from age/blind extra standard deduction."
+    },
+    "calculation_form_year": 2025,
+    "year2026_form_status": "2026 arithmetic uses currently verified 2025 statutory schedule and IRS effective2025–28 summary; final2026 form not opened."
+  },
+  "amt": {
+    "2025": {
+      "source_urls": [
+        "https://www.irs.gov/irb/2024-45_IRB",
+        "https://www.irs.gov/instructions/i6251"
+      ],
+      "exemptions": {
+        "single": 88100,
+        "head_household": 88100,
+        "married_joint": 137000,
+        "married_separate": 68500
+      },
+      "phaseout_start": {
+        "single": 626350,
+        "head_household": 626350,
+        "married_joint": 1252700,
+        "married_separate": 626350
+      },
+      "phaseout_end": {
+        "single": 978750,
+        "head_household": 978750,
+        "married_joint": 1800700,
+        "married_separate": 900350
+      },
+      "exemption_reduction_rate": 0.25,
+      "lower_rate": 0.26,
+      "upper_rate": 0.28,
+      "upper_rate_threshold": 239100,
+      "upper_rate_threshold_married_separate": 119550
+    },
+    "2026": {
+      "source_url": "https://www.irs.gov/irb/2025-45_IRB",
+      "exemptions": {
+        "single": 90100,
+        "head_household": 90100,
+        "married_joint": 140200,
+        "married_separate": 70100
+      },
+      "phaseout_start": {
+        "single": 500000,
+        "head_household": 500000,
+        "married_joint": 1000000,
+        "married_separate": 500000
+      },
+      "phaseout_end": {
+        "single": 680200,
+        "head_household": 680200,
+        "married_joint": 1280400,
+        "married_separate": 640200
+      },
+      "exemption_reduction_rate": 0.5,
+      "reduction_rate_evidence": "Derived exactly from official exemption/(phaseout_end-phaseout_start).",
+      "lower_rate": 0.26,
+      "upper_rate": 0.28,
+      "upper_rate_threshold": 244500,
+      "upper_rate_threshold_married_separate": 122250
+    },
+    "note": "AMTI requires tax preference adjustments; cannot compute AMT by merely applying26/28% to ordinary taxable income. Special capital-gain rates still apply. Full Form6251 adjustment logic not enumerated here."
+  },
+  "additional_verified_2026": {
+    "source_url": "https://www.irs.gov/irb/2025-45_IRB",
+    "student_loan_interest": {
+      "cap": 2500,
+      "phaseout_single": [
+        85000,
+        100000
+      ],
+      "phaseout_joint": [
+        175000,
+        205000
+      ]
+    }
+  },
+  "limits": [
+    "No reference-site numerical parity tests performed.",
+    "SALT, education/dependent-care credits, Social Security taxable benefits and EITC require further full specification.",
+    "Do not treat this file as complete federal tax-return compliance."
+  ]
+}

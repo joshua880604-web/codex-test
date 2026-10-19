@@ -1,0 +1,35 @@
+{
+ "fetched_at":"2026-10-19",
+ "method":"Read complete text-rendered public pages: Rent lines0–72 and Bond lines0–111. No HTML select inspection or result submission. No hidden input values inferred from displayed outputs.",
+ "rent":{
+  "url":"https://www.calculator.net/rent-calculator.html",
+  "verified_inputs":["pre-tax income plus frequency selector","monthly debt repayment (car/student loan, credit cards etc.)"],
+  "verified_scope":"The introductory text says estimated affordable monthly rent depends on income AND debt level.",
+  "ratio_discussion":{"line":29,"summary":"Affordability is explicitly described as relative. Examples of views people hold are25% or33% front-end debt-to-income. Neither number is identified as the calculator algorithm."},
+  "recommendation_ratio":"unknown; no explicit algorithm in page text",
+  "debt_effect_formula":"unknown; debt is an input but page does not state its coefficient or whether debt subtracts from gross income or housing+debt cap",
+  "safe_maximum_rent_bands":"unknown; no safe/maximum band formula or output is visible in the fetched unsubmitted page",
+  "numeric_examples":[],
+  "do_not_claim":["Do not label25%,30%,33%,36% or40% of income as source-verified calculator policy.","Do not cite30% in roommate or HUD paragraphs as the affordability calculation; those paragraphs discuss other contexts.","Do not infer income/debt defaults or thresholds from absent calculator results."],
+  "next_verification":"Inspect actual HTML to obtain input names/options, then submit controlled zero-debt and positive-debt cases at identical income; record output bands. This research does not establish a replacement formula."
+ },
+ "bond":{
+  "url":"https://www.calculator.net/bond-calculator.html",
+  "coupon_date_mode":{"rule":"Input four of price, face, yield, maturity years and annual coupon to solve remaining variable.","scope":"Fixed-rate coupon bonds on coupon date."},
+  "dated_mode":{"fields":["face value","yield","annual coupon plus unit selector","coupon frequency selector","maturity date","settlement date","day-count convention"],"outputs":["dirty price","clean price","accrued interest","interest accrued days"],"scope":"Fixed-rate coupon bonds between coupon dates."},
+  "frequency_options":{"verified_from_prose":["annual","semi-annual","quarterly","monthly"],"html_select_enumeration":"unknown; prose says these are common frequencies, not an exhaustive select listing"},
+  "coupon_unit_selector_options":"unknown; selector exists but text renderer does not expose values",
+  "day_count_radio_options":["30/360","Actual/360","Actual/365","Actual/Actual"],
+  "day_count_definitions":{"30/360":"30days/month,360days/year; described as bond basis, often US corporate/agency/municipal.","Actual/360":"Actual elapsed days with360 denominator.","Actual/365":"Actual elapsed days with fixed365 denominator; prose notes leap366 usually not accounted for.","Actual/Actual":"Actual accrual days and actual year length; identified primarily with government/Treasury bonds."},
+  "stub_coupon_rules":"not specified in page text",
+  "month_end_rules":"not specified in page text",
+  "february_30_360_adjustment":"not specified; do not infer USNASD versus30E versusISDA from generic bond-basis name alone",
+  "actual_actual_variant":"not specified; ICMA/ISDA/AFB distinction not documented",
+  "holiday_weekend_roll":"not specified",
+  "coupon_schedule_anchor":"not specified beyond supplied maturity date",
+  "verified_identity":"dirty price = clean price + accrued interest",
+  "numeric_examples":[{"evidence_type":"explicit prose example lines69–74","inputs":{"face":1000,"annual_coupon_percent":5,"coupon_frequency_per_year":2,"maturity_years":10,"annual_yield_percent":6},"intermediate":{"coupon_per_period":25,"periods":20,"yield_per_period":0.03},"expected":{"price":925.61,"money_tolerance":0.005},"formula":"sum_t=1..20 25/(1.03)^t +1000/(1.03)^20","local_mapping":{"calculator":"bond","mode":"price","inputs":{"face":"1000","coupon":"5","frequency":"Semiannually","years":"10","yield":"6"}},"mapping_warning":"Local coupon field may expect dollar amount or percentage depending coupon_unit; inspect field definitions before constructing fixture."}],
+  "source_inconsistency":"Lines51–52 call yield current yield (coupon/price), while the explicit numeric example lines69–74 uses required discount yield6%/2 and discounted redemption. Treat discount-yield formula as supported by worked example; do not replace with current yield merely to follow inconsistent prose.",
+  "excluded_default_outputs":"97.3270,97.3743,97.3326,.0417 and3days are displayed but their hidden default inputs are unavailable, so they are not complete numeric fixtures."
+ }
+}

@@ -1,0 +1,22 @@
+# Implementation decisions
+
+- Local-only development: no Sites registration, deployment, public hosting, account, or paid service created.
+- Next.js 16.4.2 / React, TypeScript; Node.js 24+. package-lock.json pins installed dependencies.
+- Reference routes were resolved from the actual directory, including tax-calculator.html and debt-ratio-calculator.html.
+- 71 directory entries consist of 70 calculators and the Real Estate directory. Do not invent a formula for the directory.
+- Pure numeric functions are separated from UI. Shared components render inputs and outputs; business logic remains specific to each tool.
+- Original-site access: text web retrieval available; original DOM computed styles, form default values, option lists, screenshots, and form submission are NOT verified. A query-based attempt to submit a source loan example was inaccessible. No network-policy bypass attempted.
+- Browser QA uses portable local Playwright and system Chromium. Its findings apply to the local implementation, not reference-site visual parity.
+- Regular loan math retains floating-point precision internally; display uses two decimals. Explicit conservation and terminal-payment fixtures guard accumulated error. This does not establish parity with a lender's cent-rounded daily-interest ledger.
+- Data: IRS 2025/2026, SSA 2026, IRS RMD Table II/III, BLS CPI-U through September 2026. No 2026 annual CPI fabricated; October 2025 remains missing.
+- Frankfurter v2 daily-reference route; archived USD cross-rate snapshot covers 165 actual currencies and retains each component's date. Feed failure is clearly identified as saved-reference fallback. Coinbase public spot endpoint handles BTC when reachable; no stored BTC value is fabricated.
+- Full one-to-one acceptance remains open until reference interactions and visual checks can run. Local route/mode availability is tracked separately from verified completion.
+
+## 2026-10-19: schedule aggregation and documented business-rule corrections
+
+- Added yearly views only for known repayment schemas; sum payments/interest/principal/costs, preserve ending balances and last dates. CSV exports the active view. Year labels are loan years, not calendar years.
+- Auto dealer-purchase tax-base rules cover California, Texas, Florida, New York, Illinois, Massachusetts, Michigan and Washington. Rates are never inferred. Other jurisdictions and boat purchases remain manual. Eligibility restrictions and local surtaxes are stated in results. The original source prose lists Michigan as disallowing trade credits, whereas official Michigan rules allow a capped credit; use the official 2026 $12,000 cap and record the disagreement rather than reproducing an obsolete rule. See research/auto-state-rules.json.
+- Cash-back comparisons include entered fees, tax, trade equity and upfront cash. Zero default tax/fees preserve an explicit no-tax comparison.
+- DDB no longer forces remaining book value to salvage at the end of useful life. This matches independent Microsoft DDB examples; no implicit straight-line switch. Rounding is capped to remaining basis. Fractional useful-life years are rejected rather than silently rounded.
+- Actual-days depreciation is independently defined: inclusive service date through first fiscal year end, divided by that fiscal-year length; remaining service-year fractions carry forward. Original convention labels are unverified. No MACRS claim. See research/depreciation-details.json.
+- Bond coupon dates are computed from an anchored maturity day, maintaining month ends. Accrued days are exposed. Exact original 30/360 and Actual/Actual variants remain unverified. See research/rent-bond-details.json.

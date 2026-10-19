@@ -1,0 +1,3636 @@
+[
+  {
+    "id": "mortgage",
+    "mode": "monthly",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mortgage",
+    "mode": "biweekly",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "amortization",
+    "mode": "schedule",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/amortization.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mortgage-payoff",
+    "mode": "remaining-extra",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mortgage-payoff",
+    "mode": "remaining-normal",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mortgage-payoff",
+    "mode": "remaining-biweekly",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mortgage-payoff",
+    "mode": "remaining-all",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mortgage-payoff",
+    "mode": "known-extra",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mortgage-payoff",
+    "mode": "known-normal",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mortgage-payoff",
+    "mode": "known-biweekly",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mortgage-payoff",
+    "mode": "known-all",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mortgage-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "house-affordability",
+    "mode": "income",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/house-affordability.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "house-affordability",
+    "mode": "budget",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/house-affordability.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "rent",
+    "mode": "affordability",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/rent.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "debt-to-income-ratio",
+    "mode": "ratio",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/debt-to-income-ratio.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "real-estate",
+    "mode": "directory",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "not_applicable",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "not_applicable",
+    "evidence": {
+      "text_spec": "specs/real-estate.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "refinance",
+    "mode": "balance",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/refinance.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "refinance",
+    "mode": "original",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/refinance.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "rental-property",
+    "mode": "projection",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/rental-property.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "apr",
+    "mode": "loan",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/apr.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "apr",
+    "mode": "mortgage",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/apr.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "fha-loan",
+    "mode": "monthly",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/fha-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "fha-loan",
+    "mode": "biweekly",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/fha-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "va-mortgage",
+    "mode": "monthly",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/va-mortgage.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "va-mortgage",
+    "mode": "biweekly",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/va-mortgage.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "home-equity-loan",
+    "mode": "loan",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/home-equity-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "heloc",
+    "mode": "draw-repay",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/heloc.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "heloc",
+    "mode": "maximum-credit",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/heloc.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "down-payment",
+    "mode": "price",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/down-payment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "down-payment",
+    "mode": "cash",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/down-payment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "down-payment",
+    "mode": "percent",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/down-payment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "rent-vs-buy",
+    "mode": "comparison",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/rent-vs-buy.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "auto-loan",
+    "mode": "payment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/auto-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "auto-loan",
+    "mode": "price",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/auto-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "cash-back-or-low-interest",
+    "mode": "compare",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/cash-back-or-low-interest.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "auto-lease",
+    "mode": "payment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/auto-lease.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "auto-lease",
+    "mode": "price",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/auto-lease.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "interest",
+    "mode": "accumulation",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/interest.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "investment",
+    "mode": "end",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/investment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "investment",
+    "mode": "contribution",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/investment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "investment",
+    "mode": "return",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/investment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "investment",
+    "mode": "starting",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/investment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "investment",
+    "mode": "length",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/investment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "finance",
+    "mode": "fv",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/finance.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "finance",
+    "mode": "pmt",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/finance.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "finance",
+    "mode": "i-y",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/finance.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "finance",
+    "mode": "n",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/finance.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "finance",
+    "mode": "pv",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/finance.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "compound-interest",
+    "mode": "conversion",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/compound-interest.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "interest-rate",
+    "mode": "rate",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/interest-rate.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "savings",
+    "mode": "accumulation",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/savings.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "simple-interest",
+    "mode": "balance",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/simple-interest.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "simple-interest",
+    "mode": "principal",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/simple-interest.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "simple-interest",
+    "mode": "years",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/simple-interest.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "simple-interest",
+    "mode": "rate",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/simple-interest.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "cd",
+    "mode": "accumulation",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/cd.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "bond",
+    "mode": "price",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/bond.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "bond",
+    "mode": "face",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/bond.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "bond",
+    "mode": "yield",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/bond.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "bond",
+    "mode": "years",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/bond.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "bond",
+    "mode": "coupon",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/bond.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "bond",
+    "mode": "dated",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/bond.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "mutual-fund",
+    "mode": "projection",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/mutual-fund.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "average-return",
+    "mode": "returns",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/average-return.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "average-return",
+    "mode": "cashflows",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/average-return.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "average-return",
+    "mode": "variable-periods",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/average-return.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "irr",
+    "mode": "fixed",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/irr.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "irr",
+    "mode": "irregular",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/irr.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "roi",
+    "mode": "length",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/roi.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "roi",
+    "mode": "dates",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/roi.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "payback-period",
+    "mode": "fixed",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/payback-period.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "payback-period",
+    "mode": "irregular",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/payback-period.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "present-value",
+    "mode": "lump",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/present-value.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "present-value",
+    "mode": "annuity",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/present-value.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "future-value",
+    "mode": "growth",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/future-value.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "retirement",
+    "mode": "required",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/retirement.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "retirement",
+    "mode": "saving",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/retirement.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "retirement",
+    "mode": "withdrawal",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/retirement.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "retirement",
+    "mode": "longevity",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/retirement.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "401k",
+    "mode": "projection",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/401k.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "401k",
+    "mode": "early",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/401k.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "401k",
+    "mode": "match",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/401k.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "pension",
+    "mode": "lump",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/pension.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "pension",
+    "mode": "survivor",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/pension.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "pension",
+    "mode": "longer",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/pension.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "social-security",
+    "mode": "ideal",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/social-security.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "social-security",
+    "mode": "compare",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/social-security.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "annuity",
+    "mode": "growth",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/annuity.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "annuity-payout",
+    "mode": "length",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/annuity-payout.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "annuity-payout",
+    "mode": "payment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/annuity-payout.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "roth-ira",
+    "mode": "comparison",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/roth-ira.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "ira",
+    "mode": "comparison",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/ira.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "rmd",
+    "mode": "annual",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/rmd.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "income-tax",
+    "mode": "federal",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/income-tax.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "salary",
+    "mode": "conversion",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/salary.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "marriage-tax",
+    "mode": "comparison",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/marriage-tax.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "estate-tax",
+    "mode": "federal",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/estate-tax.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "take-home-paycheck",
+    "mode": "paycheck",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/take-home-paycheck.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "loan",
+    "mode": "amortized",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "loan",
+    "mode": "deferred",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "loan",
+    "mode": "bond",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "payment",
+    "mode": "term",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/payment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "payment",
+    "mode": "payment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/payment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "currency",
+    "mode": "live",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/currency.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "currency",
+    "mode": "manual",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/currency.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "currency",
+    "mode": "snapshot",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/currency.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "inflation",
+    "mode": "historical",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/inflation.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "inflation",
+    "mode": "forward",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/inflation.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "inflation",
+    "mode": "backward",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/inflation.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "inflation",
+    "mode": "custom",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/inflation.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "sales-tax",
+    "mode": "after",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/sales-tax.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "sales-tax",
+    "mode": "before",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/sales-tax.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "sales-tax",
+    "mode": "rate",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/sales-tax.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "credit-card",
+    "mode": "payment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/credit-card.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "credit-card",
+    "mode": "term",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/credit-card.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "credit-card",
+    "mode": "minimum",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/credit-card.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "credit-cards-payoff",
+    "mode": "avalanche",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/credit-cards-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "debt-payoff",
+    "mode": "avalanche",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/debt-payoff.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "debt-consolidation",
+    "mode": "comparison",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/debt-consolidation.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "repayment",
+    "mode": "term",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/repayment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "repayment",
+    "mode": "payment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/repayment.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "student-loan",
+    "mode": "normal",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/student-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "student-loan",
+    "mode": "solve-payment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/student-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "student-loan",
+    "mode": "solve-principal",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/student-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "student-loan",
+    "mode": "solve-rate",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/student-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "student-loan",
+    "mode": "solve-term",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/student-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "student-loan",
+    "mode": "extra",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/student-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "student-loan",
+    "mode": "all",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/student-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "student-loan",
+    "mode": "projection",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/student-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "college-cost",
+    "mode": "planning",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/college-cost.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "vat",
+    "mode": "gross",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/vat.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "vat",
+    "mode": "net",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/vat.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "vat",
+    "mode": "rate",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/vat.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "vat",
+    "mode": "tax",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/vat.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "depreciation",
+    "mode": "straight",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/depreciation.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "depreciation",
+    "mode": "declining",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/depreciation.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "depreciation",
+    "mode": "syd",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/depreciation.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "margin",
+    "mode": "revenue",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/margin.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "margin",
+    "mode": "cost",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/margin.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "margin",
+    "mode": "margin",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/margin.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "margin",
+    "mode": "profit",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/margin.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "margin",
+    "mode": "stock",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/margin.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "margin",
+    "mode": "currency",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/margin.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "discount",
+    "mode": "percent",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/discount.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "discount",
+    "mode": "amount",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/discount.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "discount",
+    "mode": "original",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/discount.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "discount",
+    "mode": "rate",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/discount.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "business-loan",
+    "mode": "repayment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/business-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "personal-loan",
+    "mode": "repayment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/personal-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "boat-loan",
+    "mode": "payment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/boat-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "boat-loan",
+    "mode": "price",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/boat-loan.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "lease",
+    "mode": "rate",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/lease.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "lease",
+    "mode": "payment",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/lease.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "budget",
+    "mode": "budget",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/budget.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "commission",
+    "mode": "commission",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/commission.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "commission",
+    "mode": "sales",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/commission.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "commission",
+    "mode": "rate",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/commission.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  },
+  {
+    "id": "commission",
+    "mode": "tiered",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "unverified",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "evidence": {
+      "text_spec": "specs/commission.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-qa.json",
+      "limitations": "remaining-work.md"
+    },
+    "blockers": [
+      "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
+    ],
+    "fully_complete": false,
+    "updated_at": "2026-10-19T02:53:27.627Z"
+  }
+]

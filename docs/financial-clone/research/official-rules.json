@@ -1,0 +1,268 @@
+{
+  "verified_at": "2026-10-19",
+  "currency": "USD",
+  "federal_income_tax": {
+    "year": 2026,
+    "source_url": "https://www.irs.gov/irb/2025-45_IRB",
+    "standard_deductions": {
+      "single": 16100,
+      "married_joint": 32200,
+      "head_household": 24150,
+      "married_separate": 16100
+    },
+    "additional_standard_deduction_aged_or_blind": {
+      "married_or_surviving_spouse": 1650,
+      "unmarried_not_surviving_spouse": 2050
+    },
+    "bracket_encoding": "Each row [lower_bound, marginal_rate]; applies to taxable ordinary income, not gross income.",
+    "brackets": {
+      "single": [
+        [
+          0,
+          0.1
+        ],
+        [
+          12400,
+          0.12
+        ],
+        [
+          50400,
+          0.22
+        ],
+        [
+          105700,
+          0.24
+        ],
+        [
+          201775,
+          0.32
+        ],
+        [
+          256225,
+          0.35
+        ],
+        [
+          640600,
+          0.37
+        ]
+      ],
+      "married_joint": [
+        [
+          0,
+          0.1
+        ],
+        [
+          24800,
+          0.12
+        ],
+        [
+          100800,
+          0.22
+        ],
+        [
+          211400,
+          0.24
+        ],
+        [
+          403550,
+          0.32
+        ],
+        [
+          512450,
+          0.35
+        ],
+        [
+          768700,
+          0.37
+        ]
+      ],
+      "head_household": [
+        [
+          0,
+          0.1
+        ],
+        [
+          17700,
+          0.12
+        ],
+        [
+          67450,
+          0.22
+        ],
+        [
+          105700,
+          0.24
+        ],
+        [
+          201750,
+          0.32
+        ],
+        [
+          256200,
+          0.35
+        ],
+        [
+          640600,
+          0.37
+        ]
+      ],
+      "married_separate": [
+        [
+          0,
+          0.1
+        ],
+        [
+          12400,
+          0.12
+        ],
+        [
+          50400,
+          0.22
+        ],
+        [
+          105700,
+          0.24
+        ],
+        [
+          201775,
+          0.32
+        ],
+        [
+          256225,
+          0.35
+        ],
+        [
+          384350,
+          0.37
+        ]
+      ]
+    }
+  },
+  "social_security": {
+    "year": 2026,
+    "source_url": "https://www.ssa.gov/oact/cola/cbb.html",
+    "wage_base": 184500,
+    "tax_rate": 0.062,
+    "employer_rate": 0.062,
+    "rate_source_url": "https://www.irs.gov/taxtopics/tc751"
+  },
+  "additional_medicare": {
+    "year": 2026,
+    "source_url": "https://www.irs.gov/taxtopics/tc560",
+    "rate": 0.009,
+    "thresholds": {
+      "married_joint": 250000,
+      "married_separate": 125000,
+      "all_others": 200000
+    },
+    "note": "Employer withholding begins above 200000 wages regardless of filing status; actual tax liability uses filing-status thresholds.",
+    "employer_withholding_threshold": 200000,
+    "employer_match": 0,
+    "withholding_source_url": "https://www.irs.gov/taxtopics/tc751"
+  },
+  "estate": {
+    "year": 2026,
+    "source_url": "https://www.irs.gov/irb/2025-45_IRB",
+    "basic_exclusion": 15000000,
+    "generation_skipping_transfer_exemption": 15000000
+  },
+  "retirement_contributions": {
+    "year": 2026,
+    "source_url": "https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500",
+    "employee_401k_limit": 24500,
+    "catch_up_50plus": 8000,
+    "catch_up_60_to_63": 11250,
+    "ira_limit": 7500,
+    "ira_catch_up_50plus": 1100,
+    "traditional_ira_deduction_phaseouts": {
+      "single_workplace_covered": [
+        81000,
+        91000
+      ],
+      "joint_contributor_workplace_covered": [
+        129000,
+        149000
+      ],
+      "joint_contributor_not_covered_spouse_covered": [
+        242000,
+        252000
+      ],
+      "married_separate_workplace_covered": [
+        0,
+        10000
+      ]
+    }
+  },
+  "rmd_uniform_lifetime": {
+    "publication_year": 2025,
+    "source_url": "https://www.irs.gov/publications/p590b",
+    "table": "Appendix B Table III",
+    "applies": "Owner unmarried, spouse not sole beneficiary, or sole-beneficiary spouse no more than 10 years younger.",
+    "calculation": "Previous year-end balance divided by applicable denominator; special cases and starting-age legislation need separate research.",
+    "divisors": {
+      "72": 27.4,
+      "73": 26.5,
+      "74": 25.5,
+      "75": 24.6,
+      "76": 23.7,
+      "77": 22.9,
+      "78": 22,
+      "79": 21.1,
+      "80": 20.2,
+      "81": 19.4,
+      "82": 18.5,
+      "83": 17.7,
+      "84": 16.8,
+      "85": 16,
+      "86": 15.2,
+      "87": 14.4,
+      "88": 13.7,
+      "89": 12.9,
+      "90": 12.2,
+      "91": 11.5,
+      "92": 10.8,
+      "93": 10.1,
+      "94": 9.5,
+      "95": 8.9,
+      "96": 8.4,
+      "97": 7.8,
+      "98": 7.3,
+      "99": 6.8,
+      "100": 6.4,
+      "101": 6,
+      "102": 5.6,
+      "103": 5.2,
+      "104": 4.9,
+      "105": 4.6,
+      "106": 4.3,
+      "107": 4.1,
+      "108": 3.9,
+      "109": 3.7,
+      "110": 3.5,
+      "111": 3.4,
+      "112": 3.3,
+      "113": 3.1,
+      "114": 3,
+      "115": 2.9,
+      "116": 2.8,
+      "117": 2.7,
+      "118": 2.5,
+      "119": 2.3,
+      "120": 2
+    },
+    "age_120_and_over": 2,
+    "year2026_specific_update": "unknown; values verified in latest accessible Publication 590-B (2025)."
+  },
+  "limits": [
+    "Not a complete tax engine specification.",
+    "Tax credits, OBBBA phaseouts, AMT and capital-gains thresholds not verified in this file.",
+    "BLS monthly CPI dataset not acquired; no historical CPI numbers included."
+  ],
+  "medicare": {
+    "year": 2026,
+    "source_url": "https://www.irs.gov/taxtopics/tc751",
+    "employee_rate": 0.0145,
+    "employer_rate": 0.0145,
+    "wage_cap": null
+  }
+}

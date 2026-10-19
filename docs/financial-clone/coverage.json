@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-10-19T02:53:27.627Z",
+  "directory_entries": 71,
+  "calculators": 70,
+  "directory_only_entries": 1,
+  "implemented_modes": 157,
+  "local_browser_routes": 71,
+  "local_browser_modes": 157,
+  "numeric_tests": {
+    "total": 232,
+    "failed": 0
+  },
+  "full_one_to_one_verified_tools": 0,
+  "reference_form_submission": "unverified",
+  "reference_visual_parity": "unverified",
+  "responsive_scope": "All routes and modes tested on desktop; 5 representative routes checked at 768px and 390px. Not all routes individually checked on mobile.",
+  "local_only": true,
+  "published": false,
+  "qa_server_running": false,
+  "latest_regressions": [
+    "yearly payment-flow conservation and CSV",
+    "Michigan capped trade credit and eight-state dealer purchase rules",
+    "cash-back tax and upfront-cost comparison",
+    "Microsoft DDB examples and no forced terminal write-down",
+    "actual-days depreciation fiscal proration",
+    "bond end-of-month coupon anchoring"
+  ]
+}

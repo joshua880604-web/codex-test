@@ -1,0 +1,21 @@
+import fs from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+import {calculators,routeFor} from '../src/lib/calculators/index.ts';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const doc=path.join(root,'docs/financial-clone');
+const read=async p=>JSON.parse(await fs.readFile(path.join(doc,p),'utf8'));
+const browser=await read('evidence/browser-qa.json');
+if(!browser.passed)throw new Error('Browser evidence is not passing.');
+const tap=await fs.readFile(path.join(doc,'evidence/tests.tap'),'utf8');
+const total=Number(tap.match(/^# tests (\d+)/m)?.[1]),failed=Number(tap.match(/^# fail (\d+)/m)?.[1]);if(!total||failed)throw new Error('Numeric tests are missing or failing.');
+const research=[];for(const name of ['property-auto.json','invest-retire.json','tax-other.json']){const r=await read('research/'+name);research.push(...(r.tools??r.calculators));}
+const inventory=calculators.map(c=>{const source=research.find(x=>x.id===c.id);return {id:c.id,title:c.title,category:c.category,source_url:c.source,local_route:routeFor(c.id),directory:!!c.directory,source_status:'text-reviewed; exact controls/defaults not verified',source_mode_groups:source?.modes??[],implemented_modes:c.modes.map(m=>({id:m.id,title:m.title,fields:m.fields.map(f=>({key:f.key,label:f.label,type:f.type??'number',unit:f.unit??null})),formula:m.formula}))};});
+await fs.writeFile(path.join(doc,'inventory.json'),JSON.stringify(inventory,null,2));
+const now=new Date().toISOString();
+const progress=calculators.flatMap(c=>(c.directory?[null]:c.modes).map(m=>{const check=browser.checks.find(x=>x.id===c.id);const tested=!m||check?.modes.some(x=>x.mode===m.title||x.mode==='default');return {id:c.id,mode:m?.id??'directory',spec:'in_progress',implementation:'in_progress',math:m?'in_progress':'not_applicable',reference_parity:'unverified',browser:tested?'passed':'unverified',visual:'unverified',local_implementation:'passed',local_numeric_smoke:m?'passed':'not_applicable',evidence:{text_spec:`specs/${c.id}.md`,numeric:'evidence/tests.tap',browser:'evidence/browser-qa.json',limitations:'remaining-work.md'},blockers:['Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment.'],fully_complete:false,updated_at:now};}));
+await fs.writeFile(path.join(doc,'progress.json'),JSON.stringify(progress,null,2));
+const coverage={generated_at:now,directory_entries:calculators.length,calculators:calculators.filter(c=>!c.directory).length,directory_only_entries:calculators.filter(c=>c.directory).length,implemented_modes:calculators.reduce((s,c)=>s+c.modes.length,0),local_browser_routes:browser.checks.length,local_browser_modes:browser.checks.reduce((s,c)=>s+c.modes.length,0),numeric_tests:{total,failed},full_one_to_one_verified_tools:0,reference_form_submission:'unverified',reference_visual_parity:'unverified',responsive_scope:'All routes and modes tested on desktop; 5 representative routes checked at 768px and 390px. Not all routes individually checked on mobile.',local_only:true,published:false};
+await fs.writeFile(path.join(doc,'coverage.json'),JSON.stringify(coverage,null,2));
+await fs.writeFile(path.join(doc,'handoff.md'),`# Handoff\n\nUpdated: ${now}\n\nLocal application built at /workspace/financial-calculators. ${coverage.directory_entries} source entries, ${coverage.calculators} functional calculator pages and one real-estate directory; ${coverage.implemented_modes} local calculation modes. ${total} numeric/smoke/reference/regression checks passed. Browser report contains ${coverage.local_browser_routes} routes and ${coverage.local_browser_modes} modes. No deployment or external service registration.\n\nFull one-to-one completion is not claimed. Read remaining-work.md before accepting the site or continuing. Source interaction/visual validation is blocked by the available source-reading capability. Local smoke success is not a source-parity guarantee. Preserve user edits and working modes; do not regenerate the project.\n\nRun: npm run dev (Node.js24+). Production: npm run build then npm run start. See README.md for remote-localhost limitations. Browser QA server is stopped after validation.\n`);
+console.log(JSON.stringify(coverage));

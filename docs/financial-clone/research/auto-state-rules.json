@@ -1,0 +1,360 @@
+{
+  "asof": "2026-10-19",
+  "scope": "Bounded research for ordinary vehicle purchases. Not complete tax advice or a fifty-state tax engine; unknowns must remain explicit.",
+  "source_form_state_options": {
+    "auto-loan": "unknown: text tool displays [Select] but not actual option list",
+    "cash-back-or-low-interest": "unknown: text tool displays [Select] but not actual option list",
+    "boat-loan": "No state selector in observed form; tax percent entered directly. Do not invent source state options."
+  },
+  "reference_site_rules": {
+    "auto_source": "https://www.calculator.net/auto-loan-calculator.html",
+    "trade_deduction_denied_states_claimed": [
+      "CA",
+      "DC",
+      "HI",
+      "KY",
+      "MD",
+      "MI",
+      "MT",
+      "VA"
+    ],
+    "warning": "Reference prose is outdated/overbroad at least for MI: official 2026 law allows capped credit. MT has no general sales tax. Preserve difference as source discrepancy, not legal rule.",
+    "rebate_source": "https://www.calculator.net/cash-back-or-low-interest-calculator.html",
+    "rebate_exclusion_states_claimed": [
+      "AK",
+      "AZ",
+      "DE",
+      "IA",
+      "KS",
+      "KY",
+      "LA",
+      "MA",
+      "MN",
+      "MO",
+      "MT",
+      "NE",
+      "NH",
+      "OK",
+      "OR",
+      "PA",
+      "RI",
+      "TX",
+      "UT",
+      "VT",
+      "WY"
+    ],
+    "rebate_warning": "Claimed list is reference prose only. Unverified states not promoted to official rules. AK local taxes, OR vehicle taxes and DE document fee need separate analysis."
+  },
+  "official_rules": [
+    {
+      "state": "CA",
+      "vehicle_trade_in": {
+        "deductible": false
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": false
+      },
+      "conditions": [
+        "Ordinary taxable dealer vehicle sale. Manufacturer-to-consumer rebate remains consideration even when assigned to dealer.",
+        "Dealer price discount and factory-to-dealer incentive reducing actual selling price differ from consumer rebate.",
+        "Documentation charges may be taxable; DMV license fees normally are not. Do not classify every fee identically."
+      ],
+      "official_sources": [
+        "https://cdtfa.ca.gov/industry/motor-vehicle-dealers/industry-topics.htm"
+      ],
+      "evidence_type": "official full page, Special Pricing and Incentives",
+      "effective": "Current guidance fetched 2026-10-19; original rule enactment not established",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "TX",
+      "vehicle_trade_in": {
+        "deductible": true
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": true
+      },
+      "conditions": [
+        "Licensed-dealer retail motor vehicle transaction; deduct trade-in allowance.",
+        "Identifiable manufacturer/dealer rebates passed directly to customer count as cash discount. Do not extend automatically to later third-party mail-in rebate.",
+        "Separate motor-vehicle tax regime; state motor-vehicle rate 6.25% observed, not a general local-rate calculator."
+      ],
+      "official_sources": [
+        "https://comptroller.texas.gov/taxes/publications/96-254/mv-sales.php",
+        "https://comptroller.texas.gov/taxes/publications/96-254/total-consideration.php",
+        "https://comptroller.texas.gov/taxes/motor-vehicle/sales-use.php"
+      ],
+      "evidence_type": "official page/search extract",
+      "effective": "Current guidance fetched 2026-10-19; original rule enactment not established",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "FL",
+      "vehicle_trade_in": {
+        "deductible": true
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": false
+      },
+      "conditions": [
+        "Used article accepted for resale in same transaction. Special private-sale restriction for aircraft/boat/mobile-home/vehicle exchanges.",
+        "Manufacturer rebates taxable; dealer discounts reducing price are distinct.",
+        "Local discretionary surtax can have different tax base limits; this file does not establish full tax formula."
+      ],
+      "official_sources": [
+        "https://www.flsenate.gov/Laws/Statutes/2026/212.09",
+        "https://floridarevenue.com/taxes/tips/documents/TIP_03A01-20.pdf"
+      ],
+      "evidence_type": "official statute and revenue publication search extracts",
+      "effective": "Trade statute 2026 version; rebate publication TIP 03A01-20 is older guidance, no later revocation checked",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "NY",
+      "vehicle_trade_in": {
+        "deductible": true
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": false
+      },
+      "conditions": [
+        "Seller intends to resell trade-in and allowance applies directly to this purchase. Cash-back portion cannot become later purchase credit.",
+        "Manufacturer rebate taxable whether assigned at sale or later paid directly.",
+        "Separate dealer price discounts can reduce taxable receipt."
+      ],
+      "official_sources": [
+        "https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/taxable_receipt.htm"
+      ],
+      "evidence_type": "official full page TB-ST-860",
+      "effective": "Current guidance fetched 2026-10-19; original rule enactment not established",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "IL",
+      "vehicle_trade_in": {
+        "deductible": true,
+        "cap_2026_usd": null,
+        "historical_cap_2020_2021_usd": 10000
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": false
+      },
+      "conditions": [
+        "Like-kind and character trade-in; former $10,000 first-division motor vehicle limit ended January 1, 2022.",
+        "Retail incentive reimbursed by manufacturer is included in selling price. Dealer-funded reduction is different.",
+        "Sale-for-lease and current lease receipt tax rules require separate treatment."
+      ],
+      "official_sources": [
+        "https://www.ilga.gov/ftp/JCAR/AdminCode/086/086001300D04250R.html",
+        "https://tax.illinois.gov/questionsandanswers/answer.169.html",
+        "https://tax.illinois.gov/content/dam/soi/en/web/tax/research/publications/bulletins/documents/2022/fy-2022-03-n1021.pdf"
+      ],
+      "evidence_type": "official code and revenue search extracts",
+      "effective": "Trade cap removal effective 2022-01-01; guidance fetched 2026-10-19",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "MA",
+      "vehicle_trade_in": {
+        "deductible": true
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": true
+      },
+      "conditions": [
+        "Motor vehicle/trailer dealer sale; dealer appropriately registered; purchaser previously paid tax on traded vehicle or was exempt.",
+        "Manufacturer rebate must reduce price at time of sale; later rebate case not confirmed.",
+        "Do not generalize motor-vehicle credit to off-road vehicles or boats; regulation has exclusions."
+      ],
+      "official_sources": [
+        "https://www.mass.gov/directive/directive-02-4-calculation-of-trade-in-allowance-on-purchase-of-a-motor-vehicle",
+        "https://www.mass.gov/guides/motor-vehicle-and-trailer-sales-and-use-tax",
+        "https://www.mass.gov/regulations/830-CMR-64h251-motor-vehicles"
+      ],
+      "evidence_type": "official search extracts; full guide open returned internal error",
+      "effective": "Current guidance fetched 2026-10-19; original rule enactment not established",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "MI",
+      "vehicle_trade_in": {
+        "deductible": true,
+        "cap_2026_usd": 12000,
+        "cap_2025_usd": 11000,
+        "cap_2027_usd": 13000,
+        "cap_2028_usd": 14000,
+        "uncapped_from": "2029-01-01"
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": false
+      },
+      "conditions": [
+        "One eligible motor vehicle traded to eligible dealer for new/used motor vehicle; statutory exclusions differ for RV and titled watercraft.",
+        "Use agreed trade value, capped as applicable; do not subtract trade loan balance before determining tax credit.",
+        "No trade-in exclusion on leases/rentals.",
+        "Manufacturer rebate taxable even credited at sale; dealer discounts deductible."
+      ],
+      "official_sources": [
+        "https://www.michigan.gov/taxes/rep-legal/rab/2022-revenue-administrative-bulletins/revenue-administrative-bulletin-2022-17",
+        "https://www.michigan.gov/-/media/Project/Websites/sos/01preston/Dealer_Manual_Chapter_8.pdf?rev=d75624f925d04b2299577473d95dd293"
+      ],
+      "evidence_type": "official full bulletin and dealer manual PDF",
+      "effective": "2026 cap applies 2026-01-01 through 2026-12-31; manual revised April 2026",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "WA",
+      "vehicle_trade_in": {
+        "deductible": true
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": false
+      },
+      "conditions": [
+        "Like-kind property; motor vehicle for motor vehicle. Extended warranty/service contract cannot use vehicle trade-in allowance.",
+        "Manufacturer/distributor rebate included in selling price; distinct dealer discount not reimbursed can reduce price.",
+        "This does not compute WA local rate or supplemental motor-vehicle taxes."
+      ],
+      "official_sources": [
+        "https://dor.wa.gov/book/export/html/1257",
+        "https://dor.wa.gov/education/industry-guides/auto-dealers/discountsrebates",
+        "https://app.leg.wa.gov/wac/default.aspx?cite=458-20-247"
+      ],
+      "evidence_type": "official search extracts; trade page open internal error",
+      "effective": "Current guidance fetched 2026-10-19; original rule enactment not established",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "AK",
+      "vehicle_trade_in": {
+        "deductible": "unknown local ordinance"
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": "unknown local ordinance"
+      },
+      "conditions": [
+        "No STATE sales tax; cities and boroughs can levy local sales taxes and define taxable base. Never assume zero combined tax."
+      ],
+      "official_sources": [
+        "https://www.commerce.alaska.gov/web/dcra/OfficeoftheStateAssessor/AlaskaSalesTaxInformation.aspx"
+      ],
+      "evidence_type": "official page/search extract",
+      "effective": "Current guidance fetched 2026-10-19; original rule enactment not established",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "NH",
+      "vehicle_trade_in": {
+        "deductible": "not applicable to general state sales tax"
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": "not applicable to general state sales tax"
+      },
+      "conditions": [
+        "No general state sales tax on purchased goods; registration and other fees not established here. Out-of-state destination use tax remains outside scope."
+      ],
+      "official_sources": [
+        "https://www.revenue.nh.gov/faq/does-new-hampshire-have-sales-tax"
+      ],
+      "evidence_type": "official page/search extract",
+      "effective": "Current guidance fetched 2026-10-19; original rule enactment not established",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "MT",
+      "vehicle_trade_in": {
+        "deductible": "not applicable to general state sales tax"
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": "not applicable to general state sales tax"
+      },
+      "conditions": [
+        "No general-use state sales tax; vehicle fees and destination-state taxes not verified here."
+      ],
+      "official_sources": [
+        "https://revenue.mt.gov/taxes/general-sales-tax"
+      ],
+      "evidence_type": "official page/search extract",
+      "effective": "Current guidance fetched 2026-10-19; original rule enactment not established",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "OR",
+      "vehicle_trade_in": {
+        "deductible": "unknown for special vehicle taxes"
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": "unknown for special vehicle taxes"
+      },
+      "conditions": [
+        "No general sales/use tax; special privilege/use taxes on taxable vehicles can be 0.5%.",
+        "Eligibility, sale location and tax liability differ between privilege and use tax. Do not label all Oregon vehicle transactions tax-free."
+      ],
+      "official_sources": [
+        "https://www.oregon.gov/dor/programs/businesses/Pages/Sales-tax.aspx",
+        "https://www.oregon.gov/dor/programs/businesses/Pages/Vehicle-Privilege-and-Use-Taxes.aspx",
+        "https://www.oregon.gov/dor/pages/revenue-stream.aspx"
+      ],
+      "evidence_type": "official page/search extract",
+      "effective": "Current guidance fetched 2026-10-19; original rule enactment not established",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    },
+    {
+      "state": "DE",
+      "vehicle_trade_in": {
+        "deductible": "document fee credit subject to eligibility"
+      },
+      "manufacturer_consumer_rebate": {
+        "deductible": "unknown for document fee"
+      },
+      "conditions": [
+        "No general sales tax claim alone is insufficient: DMV document fee exists and current ordinary motor-vehicle rate is 5.25%.",
+        "DMV provides trade-in deduction/credit; Delaware-title and replacement transaction conditions matter.",
+        "Transfer base can be price or NADA average trade value whichever higher; do not implement as universal price*rate."
+      ],
+      "official_sources": [
+        "https://dealers.dmv.de.gov/Dealer/News/OpenFile?NewsID=171",
+        "https://citizen.dmv.de.gov/VehicleServices/titles/index.shtml?dc=ve_title_credit",
+        "https://dmv.de.gov/Common/DMVFees/index.shtml?csnc=fjkQe"
+      ],
+      "evidence_type": "official DMV search extracts",
+      "effective": "Document fee increase effective 2025-10-01",
+      "accessed_at": "2026-10-19",
+      "default_rate": "unknown; do not infer a statewide combined rate"
+    }
+  ],
+  "boat_specific": {
+    "source_url": "https://www.calculator.net/boat-loan-calculator.html",
+    "observed": "Entered tax rate and trade-in field; no rebate or state selector observed. Prose acknowledges trade exemptions and caps vary.",
+    "verified_exceptions": [
+      {
+        "state": "MI",
+        "trade_rule": "Titled watercraft exchanged for titled watercraft through watercraft dealer: agreed value exclusion uncapped; motor-vehicle exchange does not qualify.",
+        "official_url": "https://www.michigan.gov/taxes/rep-legal/rab/2022-revenue-administrative-bulletins/revenue-administrative-bulletin-2022-17"
+      },
+      {
+        "state": "WA",
+        "trade_rule": "Like-kind boat credit allowed when original owner accepts property as reduction of sale price.",
+        "official_url": "https://dor.wa.gov/book/export/html/982"
+      },
+      {
+        "state": "FL",
+        "trade_rule": "Trade allowance permitted; casual individual exchange must be single transaction with boat/motor vehicle/mobile home/aircraft. Other tax-cap details not yet fully verified.",
+        "official_url": "https://floridarevenue.com/Forms_library/current/brochure/gt800005.pdf"
+      }
+    ]
+  },
+  "complete_official_50_state_coverage": false
+}

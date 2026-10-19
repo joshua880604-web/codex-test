@@ -1,0 +1,262 @@
+{
+  "fetched_at": "2026-10-19",
+  "method": "Source web text only. Complete body examples may seed formula tests. Unknown-input output observations are evidence logs, NOT reference-parity tests. No source form execution or browser interaction performed.",
+  "cases": [
+    {
+      "id": "heloc-credit-limit-prose",
+      "calculator": "heloc",
+      "mode": "maximum credit line",
+      "inputs": {
+        "homeValue": {
+          "value": 500000,
+          "unit": "USD"
+        },
+        "mortgageBalance": {
+          "value": 210000,
+          "unit": "USD"
+        },
+        "ltv": {
+          "value": 80,
+          "unit": "percent"
+        }
+      },
+      "expected": {
+        "maximumCredit": {
+          "value": 190000,
+          "unit": "USD",
+          "tolerance": 0.01
+        }
+      },
+      "source_url": "https://www.calculator.net/heloc-calculator.html",
+      "evidence_type": "body example",
+      "source_location": "line 328, borrowing limit example",
+      "complete_inputs": true,
+      "notes": "Tests the equity subcalculator, not the payment form."
+    },
+    {
+      "id": "dti-prose-48",
+      "calculator": "debt-to-income-ratio",
+      "mode": "aggregate debt ratio",
+      "inputs": {
+        "grossIncome": {
+          "value": 1000,
+          "unit": "USD/month"
+        },
+        "debtPayments": {
+          "value": 480,
+          "unit": "USD/month"
+        }
+      },
+      "expected": {
+        "debtToIncome": {
+          "value": 48,
+          "unit": "percent",
+          "tolerance": 1e-06
+        }
+      },
+      "source_url": "https://www.calculator.net/debt-ratio-calculator.html",
+      "evidence_type": "body example",
+      "source_location": "line 25",
+      "complete_inputs": true,
+      "notes": "Text supplies aggregate amounts; does not assign them to any particular income/debt field."
+    },
+    {
+      "id": "dti-prose-zero",
+      "calculator": "debt-to-income-ratio",
+      "mode": "aggregate debt ratio",
+      "inputs": {
+        "grossIncome": {
+          "value": 1000,
+          "unit": "USD/month"
+        },
+        "debtPayments": {
+          "value": 0,
+          "unit": "USD/month"
+        }
+      },
+      "expected": {
+        "debtToIncome": {
+          "value": 0,
+          "unit": "percent",
+          "tolerance": 1e-06
+        }
+      },
+      "source_url": "https://www.calculator.net/debt-ratio-calculator.html",
+      "evidence_type": "body example",
+      "source_location": "line 25, no-debt continuation",
+      "complete_inputs": true
+    },
+    {
+      "id": "mortgage-rate-conversion",
+      "calculator": "mortgage",
+      "mode": "rate conversion subrule",
+      "inputs": {
+        "nominalApr": {
+          "value": 6,
+          "unit": "percent/year"
+        },
+        "periodsPerYear": {
+          "value": 12,
+          "unit": "month/year"
+        }
+      },
+      "expected": {
+        "monthlyRate": {
+          "value": 0.5,
+          "unit": "percent/month",
+          "tolerance": 1e-06
+        }
+      },
+      "source_url": "https://www.calculator.net/mortgage-calculator.html",
+      "evidence_type": "body example",
+      "source_location": "line 492",
+      "complete_inputs": true,
+      "notes": "Only verifies nominal-to-monthly rate conversion; not full mortgage payment parity."
+    },
+    {
+      "id": "heloc-default-draw",
+      "calculator": "heloc",
+      "mode": "draw and repayment",
+      "inputs": {
+        "principal": {
+          "value": 50000,
+          "unit": "USD",
+          "evidence": "schedule first balance"
+        },
+        "annualRate": {
+          "value": null,
+          "unit": "percent/year"
+        },
+        "drawYears": {
+          "value": null,
+          "unit": "years"
+        },
+        "repaymentYears": {
+          "value": null,
+          "unit": "years"
+        },
+        "closingExpenses": {
+          "value": null,
+          "unit": "USD"
+        },
+        "annualFee": {
+          "value": null,
+          "unit": "USD/year"
+        }
+      },
+      "expected": {
+        "drawPayment": {
+          "value": 333.33,
+          "unit": "USD/month"
+        },
+        "repaymentPayment": {
+          "value": 477.83,
+          "unit": "USD/month"
+        },
+        "totalPayments": {
+          "value": 106008.69,
+          "unit": "USD"
+        },
+        "interest": {
+          "value": 56008.69,
+          "unit": "USD"
+        }
+      },
+      "source_url": "https://www.calculator.net/heloc-calculator.html",
+      "evidence_type": "default output table / unknown inputs",
+      "source_location": "lines 19\u201322 and schedule",
+      "complete_inputs": false,
+      "notes": "8% was mathematically inferred previously, not directly observed in input. This record MUST NOT be counted as a passing reference test with 8% or guessed term values."
+    },
+    {
+      "id": "amortization-default-observation",
+      "calculator": "amortization",
+      "mode": "default output",
+      "inputs": {
+        "principal": {
+          "value": null,
+          "unit": "USD"
+        },
+        "annualRate": {
+          "value": null,
+          "unit": "percent/year"
+        },
+        "term": {
+          "value": null,
+          "unit": "months"
+        }
+      },
+      "expected": {
+        "payment": {
+          "value": 1687.71,
+          "unit": "USD/month"
+        },
+        "payments": {
+          "value": 303788.46,
+          "unit": "USD"
+        },
+        "interest": {
+          "value": 103788.46,
+          "unit": "USD"
+        }
+      },
+      "source_url": "https://www.calculator.net/amortization-calculator.html",
+      "evidence_type": "default output table / unknown inputs",
+      "complete_inputs": false,
+      "notes": "Text scraper hides form value attributes. Do not reverse-engineer them from outputs."
+    },
+    {
+      "id": "auto-default-observation",
+      "calculator": "auto-loan",
+      "mode": "default output",
+      "inputs": {
+        "price": {
+          "value": null,
+          "unit": "USD"
+        },
+        "annualRate": {
+          "value": null,
+          "unit": "percent/year"
+        },
+        "state": {
+          "value": null,
+          "unit": "state"
+        },
+        "term": {
+          "value": null,
+          "unit": "months"
+        },
+        "otherFormInputs": "unknown"
+      },
+      "expected": {
+        "payment": {
+          "value": 754.85,
+          "unit": "USD/month"
+        },
+        "principal": {
+          "value": 40000,
+          "unit": "USD"
+        },
+        "tax": {
+          "value": 1500,
+          "unit": "USD"
+        },
+        "upfront": {
+          "value": 14300,
+          "unit": "USD"
+        },
+        "interest": {
+          "value": 5290.96,
+          "unit": "USD"
+        },
+        "totalCost": {
+          "value": 59590.96,
+          "unit": "USD"
+        }
+      },
+      "source_url": "https://www.calculator.net/auto-loan-calculator.html",
+      "evidence_type": "default output table / unknown inputs",
+      "complete_inputs": false
+    }
+  ]
+}

@@ -1,0 +1,628 @@
+{
+  "method": "Web text open/click of source directory and all 19 linked pages; no JS interaction or computed styles. Specifications summarize observations, not verified implementations.",
+  "directory_source": "https://www.calculator.net/financial-calculator.html",
+  "source_reference": "turn508504view0; detail turn454250view0..18",
+  "count": 19,
+  "tools": [
+    {
+      "id": "mortgage",
+      "title": "Mortgage Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/mortgage-calculator.html",
+      "modes": [
+        "standard",
+        "optional taxes and expenses",
+        "extra payments",
+        "biweekly comparison"
+      ],
+      "fields": [
+        "house price",
+        "down payment amount or percent",
+        "years",
+        "annual interest",
+        "start month/year",
+        "tax",
+        "insurance",
+        "PMI",
+        "HOA",
+        "other expense",
+        "annual expense increases",
+        "monthly extra and start date",
+        "annual extra and start date",
+        "dated one-time extra payments"
+      ],
+      "outputs": [
+        "monthly mortgage",
+        "monthly and lifetime expenses",
+        "principal",
+        "interest",
+        "payoff date",
+        "dated amortization"
+      ],
+      "assumptions": "Fixed monthly annuity with separate expenses; annual growth and dated extra principal need periodic simulation. PMI cancellation and exact fee base unknown.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "amortization",
+      "title": "Amortization Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/amortization-calculator.html",
+      "modes": [
+        "standard",
+        "extra payments"
+      ],
+      "fields": [
+        "principal",
+        "years and months",
+        "annual rate",
+        "start date",
+        "recurring monthly extras with date",
+        "yearly extras with date",
+        "multiple dated one-time extras"
+      ],
+      "outputs": [
+        "monthly payment",
+        "total payments",
+        "total interest",
+        "monthly schedule"
+      ],
+      "assumptions": "Monthly amortization, early payoff caps final payment. Internal versus display rounding unknown.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "mortgage-payoff",
+      "title": "Mortgage Payoff Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/mortgage-payoff-calculator.html",
+      "modes": [
+        "known remaining term / pay all",
+        "known remaining term / extras",
+        "known remaining term / biweekly",
+        "known remaining term / normal",
+        "unknown remaining term / extras",
+        "unknown remaining term / biweekly",
+        "unknown remaining term / normal"
+      ],
+      "fields": [
+        "original principal and original years if known",
+        "remaining years/months if known",
+        "otherwise current balance and monthly payment",
+        "annual rate",
+        "extra monthly/yearly/lump amount"
+      ],
+      "outputs": [
+        "remaining balance",
+        "original vs accelerated payments and interest",
+        "payoff duration",
+        "interest/time saved",
+        "amortization link"
+      ],
+      "assumptions": "Known term infers current balance; unknown term solves remaining payment count. Need catch negative amortization. Exact biweekly interest convention unknown.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "house-affordability",
+      "title": "House Affordability Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/house-affordability-calculator.html",
+      "modes": [
+        "income and debt",
+        "fixed housing budget"
+      ],
+      "fields": [
+        "gross annual household income",
+        "years",
+        "rate",
+        "monthly nonhousing debt",
+        "down payment amount or percent",
+        "annual property tax/HOA/insurance amount or percent",
+        "DTI selection",
+        "fixed monthly budget in second form",
+        "optional maintenance in budget form"
+      ],
+      "outputs": [
+        "unknown: no default result in captured text"
+      ],
+      "assumptions": "Income model applies selected front-end and back-end housing caps, then solves price including percent expenses. Page discusses conventional 28/36, FHA 31/43, VA 41/41; exact selectable presets unknown.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "rent",
+      "title": "Rent Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/rent-calculator.html",
+      "modes": [
+        "income/debt affordability"
+      ],
+      "fields": [
+        "pretax income with frequency",
+        "monthly debt payments"
+      ],
+      "outputs": [
+        "affordable rent (exact bands/formula unknown)"
+      ],
+      "assumptions": "Normalize gross income to month. Threshold algorithm unobserved; do not assume 30% exact parity.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "title": "Debt-to-Income Ratio Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/debt-ratio-calculator.html",
+      "modes": [
+        "income and liability totals"
+      ],
+      "fields": [
+        "salary",
+        "pension/social security",
+        "investment earnings",
+        "other income",
+        "rent",
+        "mortgage",
+        "real estate tax",
+        "HOA",
+        "homeowner insurance",
+        "card debt",
+        "student loan",
+        "auto loan",
+        "other liability",
+        "individual frequency for each"
+      ],
+      "outputs": [
+        "DTI",
+        "exact result breakdown unknown"
+      ],
+      "assumptions": "Convert each selected period to common monthly basis; debt/income *100. Front-end housing and back-end all debts discussed.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "real-estate",
+      "title": "Real Estate Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/real-estate-calculator.html",
+      "modes": [
+        "directory only"
+      ],
+      "fields": [
+        "none"
+      ],
+      "outputs": [
+        "links to 14 financial tools and 7 nonfinancial tools"
+      ],
+      "assumptions": "This is a directory, NOT a separate financial formula; preserve observed directory behavior. Nonfinancial links do not expand authorized financial scope.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "No calculator form exists in captured full page; browser styles unverified."
+    },
+    {
+      "id": "refinance",
+      "title": "Refinance Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/refinance-calculator.html",
+      "modes": [
+        "current loan information selector (exact option names unknown)"
+      ],
+      "fields": [
+        "current balance",
+        "current monthly payment",
+        "original principal",
+        "original years",
+        "remaining years/months",
+        "current rate",
+        "new term",
+        "new rate",
+        "points",
+        "fees",
+        "cash out"
+      ],
+      "outputs": [
+        "side-by-side existing and new loan",
+        "exact output fields unknown"
+      ],
+      "assumptions": "Infer missing current balance/payment/term from selected information mode. Compare future cashflows and upfront fees; break-even conventions unobserved.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "rental-property",
+      "title": "Rental Property Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/rental-property-calculator.html",
+      "modes": [
+        "cash purchase or financed",
+        "repairs or no repairs",
+        "known sale value or appreciation"
+      ],
+      "fields": [
+        "purchase price",
+        "use loan",
+        "down payment",
+        "rate",
+        "term",
+        "closing costs",
+        "repair toggle and cost",
+        "repaired value",
+        "annual tax/insurance/HOA/maintenance/other and annual increases",
+        "monthly rent and increase",
+        "other income and increase",
+        "vacancy",
+        "management percent",
+        "sale known toggle",
+        "annual appreciation or sale price",
+        "hold years",
+        "sale expense"
+      ],
+      "outputs": [
+        "returns",
+        "capitalization",
+        "cash flow (exact result labels unobserved)"
+      ],
+      "assumptions": "Simulate yearly income/expenses, mortgage debt and sale proceeds; initial investment includes repairs and closing. Exact IRR timing, management base and taxable treatment unknown.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "apr",
+      "title": "APR Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/apr-calculator.html",
+      "modes": [
+        "general loan APR",
+        "mortgage APR"
+      ],
+      "fields": [
+        "general: principal",
+        "years/months",
+        "rate",
+        "compound period",
+        "payback period",
+        "financed fees",
+        "upfront fees",
+        "mortgage: house value",
+        "down payment",
+        "years",
+        "rate",
+        "fees",
+        "points",
+        "annual PMI"
+      ],
+      "outputs": [
+        "APR",
+        "financed amount",
+        "upfront fees",
+        "periodic payment",
+        "total payments",
+        "interest",
+        "all payments and fees",
+        "amortization link"
+      ],
+      "assumptions": "APR solves discounted net proceeds against actual repayment cashflows, including fees and PMI. Convert compound frequency separately from pay frequency. Exact APR annualization and PMI duration unknown.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "fha-loan",
+      "title": "FHA Loan Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/fha-loan-calculator.html",
+      "modes": [
+        "standard FHA",
+        "optional costs",
+        "extra repayments",
+        "biweekly comparison"
+      ],
+      "fields": [
+        "house price",
+        "down payment amount or percent",
+        "years",
+        "rate",
+        "upfront MIP",
+        "annual MIP",
+        "MIP duration selection",
+        "optional annual property tax/insurance/HOA/other",
+        "start date",
+        "annual increases",
+        "monthly/yearly/lump extras with dates"
+      ],
+      "outputs": [
+        "monthly mortgage",
+        "MIP and expense breakdown",
+        "loan including upfront MIP",
+        "down payment",
+        "upfront MIP",
+        "total interest",
+        "payoff date",
+        "schedule"
+      ],
+      "assumptions": "Observed default example implies upfront MIP basis may be home price: house 500000, down 17500, upfront 8750, financed 491250. Must inspect rate input and compare before implementing statutory formula. Annual MIP duration selectable; exact options unknown.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "va-mortgage",
+      "title": "VA Mortgage Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/va-mortgage-calculator.html",
+      "modes": [
+        "funding fee financed",
+        "funding fee upfront",
+        "eligibility/repeat-use/disability",
+        "optional costs/extras/biweekly"
+      ],
+      "fields": [
+        "house price",
+        "down payment amount/percent",
+        "years",
+        "rate",
+        "active/veteran or reserve/guard or surviving spouse",
+        "previous VA use",
+        "service disability 10%+",
+        "funding fee treatment",
+        "taxes/insurance/HOA/other",
+        "start date",
+        "annual increases",
+        "dated monthly/yearly/lump extra"
+      ],
+      "outputs": [
+        "payment",
+        "funding fee rate and amount",
+        "principal",
+        "down payment",
+        "total payments",
+        "interest",
+        "schedule"
+      ],
+      "assumptions": "Fee eligibility and down-payment thresholds matter; captured default zero down first-use funding fee 2.15%. Full statutory rate table/year not yet verified.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "home-equity-loan",
+      "title": "Home Equity Loan Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/home-equity-loan-calculator.html",
+      "modes": [
+        "no closing expenses",
+        "expenses deducted",
+        "expenses upfront"
+      ],
+      "fields": [
+        "principal",
+        "annual rate",
+        "years",
+        "include closing expenses",
+        "fee amount or percent",
+        "fee treatment"
+      ],
+      "outputs": [
+        "monthly payment",
+        "total payments",
+        "interest",
+        "amortization",
+        "APR when expenses (not yet observed)"
+      ],
+      "assumptions": "Standard monthly amortization. Fees reduce net proceeds or add upfront cost; APR should solve cashflows; exact treatment still needs toggled reference outputs.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "heloc",
+      "title": "HELOC Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/heloc-calculator.html",
+      "modes": [
+        "interest-only draw then amortization",
+        "optional closing expenses and annual charge",
+        "maximum credit line from home equity"
+      ],
+      "fields": [
+        "principal",
+        "annual rate",
+        "draw years",
+        "repayment years",
+        "closing fee amount/percent",
+        "upfront or deducted",
+        "annual charge",
+        "equity subcalculator: current home value",
+        "equity subcalculator: outstanding mortgage",
+        "equity subcalculator: lender LTV selection"
+      ],
+      "outputs": [
+        "draw monthly payment",
+        "repayment monthly payment",
+        "total payments",
+        "total interest",
+        "schedule",
+        "maximum credit line"
+      ],
+      "assumptions": "Observed draw schedule pays interest only without reducing principal; repayment amortizes full balance. Example 50000 at 8% -> draw 333.33. APR and expense timing require interactive confirmation. Secondary form below amortization: maximum credit = home value * lender LTV - outstanding mortgage. Explicit prose example 500000 * 80% - 210000 = 190000.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "down-payment",
+      "title": "Down Payment Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/down-payment-calculator.html",
+      "modes": [
+        "solve home price from cash",
+        "solve required cash from home price",
+        "solve downpayment percentage from home price and cash"
+      ],
+      "fields": [
+        "cash and/or home price",
+        "downpayment percent when applicable",
+        "include closing cost toggle with amount/percent",
+        "annual rate",
+        "years"
+      ],
+      "outputs": [
+        "house price or cash needed or downpayment percentage",
+        "downpayment dollars",
+        "closing expenses",
+        "principal",
+        "monthly payment",
+        "low-downpayment PMI notice"
+      ],
+      "assumptions": "Cash = downpayment + closing. For percentage closing costs on house value, price = cash/(downpayment fraction+closing fraction); fixed closing case subtract before dividing.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "rent-vs-buy",
+      "title": "Rent vs. Buy Calculator",
+      "category": "Mortgage and Real Estate",
+      "source_url": "https://www.calculator.net/rent-vs-buy-calculator.html",
+      "modes": [
+        "buy/rent cost comparison"
+      ],
+      "fields": [
+        "house price",
+        "downpayment",
+        "mortgage annual rate",
+        "years",
+        "purchase closing costs",
+        "property tax and increase",
+        "insurance",
+        "HOA",
+        "maintenance",
+        "home appreciation",
+        "expense increase",
+        "sale closing costs",
+        "rent",
+        "rent increase",
+        "renter insurance",
+        "deposit",
+        "upfront rental costs",
+        "investment return",
+        "federal marginal tax",
+        "state marginal tax",
+        "filing status"
+      ],
+      "outputs": [
+        "crossover years",
+        "average annual and monthly buy/rent expense by stay length through 30 years"
+      ],
+      "assumptions": "Requires yearly cashflows, sale proceeds and opportunity return; tax deduction assumptions and source year unknown. Do not implement as simple mortgage-minus-rent.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "auto-loan",
+      "title": "Auto Loan Calculator",
+      "category": "Auto",
+      "source_url": "https://www.calculator.net/auto-loan-calculator.html",
+      "modes": [
+        "solve monthly payment",
+        "solve affordable total price"
+      ],
+      "fields": [
+        "price or monthly budget",
+        "months",
+        "annual rate",
+        "cash incentive",
+        "downpayment",
+        "trade-in",
+        "debt on trade-in",
+        "state",
+        "sales tax rate",
+        "registration/title/other fees",
+        "include tax and fees in loan"
+      ],
+      "outputs": [
+        "principal",
+        "tax",
+        "upfront cash",
+        "monthly pay or price",
+        "total installments",
+        "interest",
+        "full expense",
+        "amortization"
+      ],
+      "assumptions": "State rules affect trade-in and incentive taxable base; negative trade equity adds loan debt. Need verified state rule list, not universal trade-in subtraction.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "title": "Cash Back or Low Interest Calculator",
+      "category": "Auto",
+      "source_url": "https://www.calculator.net/cash-back-or-low-interest-calculator.html",
+      "modes": [
+        "compare both offers"
+      ],
+      "fields": [
+        "rebate",
+        "high APR",
+        "low APR",
+        "price",
+        "months",
+        "downpayment",
+        "trade-in",
+        "state",
+        "tax rate",
+        "fees",
+        "finance fees toggle"
+      ],
+      "outputs": [
+        "recommended offer",
+        "interest savings",
+        "each principal/tax/upfront/payment/interest/total expense"
+      ],
+      "assumptions": "Compare total expense (not only interest); rebate taxes differ by state. State exemption list in reference prose needs dated verification.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    },
+    {
+      "id": "auto-lease",
+      "title": "Auto Lease Calculator",
+      "category": "Auto",
+      "source_url": "https://www.calculator.net/auto-lease-calculator.html",
+      "modes": [
+        "solve monthly payment",
+        "solve total price"
+      ],
+      "fields": [
+        "price or monthly payment",
+        "months",
+        "rate type selector (APR/money factor inferred from prose, exact options unknown)",
+        "rate",
+        "downpayment",
+        "trade-in",
+        "tax",
+        "residual dollars"
+      ],
+      "outputs": [
+        "payment or price",
+        "exact other labels unknown"
+      ],
+      "assumptions": "Standard lease payment = depreciation/term + (adjusted capital cost + residual)*moneyFactor; percentage APR/2400 gives money factor. Need tax and downpayment conventions confirmed.",
+      "source_year": "unknown (page fetched in 2026)",
+      "fetched_at": "2026-10-19",
+      "limits": "Exact defaults, select options, input bounds and error states unknown; no interactive or visual validation."
+    }
+  ]
+}
