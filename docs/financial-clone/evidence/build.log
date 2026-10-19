@@ -3,18 +3,18 @@
 > next build
 
 ▲ Next.js 16.4.2 (Turbopack)
-✓ Running next.config.ts took 52ms
+✓ Running next.config.ts took 40ms
 
   Creating an optimized production build ...
-✓ Compiled successfully in 1259ms
+✓ Compiled successfully in 290ms
   Running TypeScript ...
-  Finished TypeScript in 983ms ...
+  Finished TypeScript in 686ms ...
   Collecting page data using 2 workers ...
-  Generating static pages using 2 workers (0/78) ...
-  Generating static pages using 2 workers (19/78) 
-  Generating static pages using 2 workers (38/78) 
-  Generating static pages using 2 workers (58/78) 
-✓ Generating static pages using 2 workers (78/78) in 1705ms
+  Generating static pages using 2 workers (0/81) ...
+  Generating static pages using 2 workers (20/81) 
+  Generating static pages using 2 workers (40/81) 
+  Generating static pages using 2 workers (60/81) 
+✓ Generating static pages using 2 workers (81/81) in 1696ms
   Finalizing page optimization ...
 
 Route (app)
@@ -24,8 +24,10 @@ Route (app)
 │ ├ ● /mortgage-calculator.html
 │ ├ ● /amortization-calculator.html
 │ ├ ● /mortgage-payoff-calculator.html
-│ └ ● [+71 more paths]
-└ ƒ /api/rates
+│ └ ● [+72 more paths]
+├ ƒ /api/rates
+├ ○ /robots.txt
+└ ○ /sitemap.xml
 
 
 ○  (Static)   prerendered as static content

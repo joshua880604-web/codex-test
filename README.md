@@ -66,3 +66,9 @@ npm run build
 计算准确性审计：见 [详细报告](docs/financial-clone/calculation-audit.md)。本轮修正退休首期通胀时点、年度缴款口径、投资期限边界、特殊 IRR 漏根、RMD 年份/负余额、自雇税小额门槛及 MFS 合资格车贷扣除。247 项测试通过；原站完整同输入/同模式一致性仍未验证，401(k) 退休后分配等缺项已列明。
 
 VAT 已改为四字段任填两个的统一表单，覆盖六种输入组合，Clear 清空全部字段，并处理零税率、无唯一解和不一致输入。273 项自动测试通过；具体原站默认值、异常提示和视觉对照仍未完全验证。
+
+## SEO / AI 搜索准备
+
+已增加 canonical、Open Graph、robots、sitemap、结构化数据和公开计算方法页；10 个主要工具有英文算例、问答及来源。参见 [配置与验证说明](docs/financial-clone/seo-geo.md)。
+
+**预览默认 noindex。** 正式上线时在构建环境同时设置 `SITE_URL=https://实际正式域名` 和 `SITE_INDEXABLE=true`，然后重新构建。未确认域名时不会生成虚构的 canonical/sitemap 地址；Vercel Preview 环境保持不收录。内容和技术检查通过不代表已获得排名或 AI 引用。

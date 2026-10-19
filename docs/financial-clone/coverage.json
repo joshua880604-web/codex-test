@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T08:24:42.139Z",
+  "generated_at": "2026-10-19T08:50:26.920Z",
   "directory_entries": 71,
   "calculators": 70,
   "directory_only_entries": 1,
@@ -7,7 +7,7 @@
   "local_browser_routes": 71,
   "local_browser_modes": 154,
   "numeric_tests": {
-    "total": 273,
+    "total": 289,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,8 +17,17 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "VAT unified any-two workflow covers six known-value combinations",
-  "vat_known_value_pairs": 6,
-  "vat_specific_browser_checks": 17,
+  "latest_change": "SEO metadata, configurable indexing, canonical URLs and ten source-backed guides",
+  "seo_generated_pages_checked": 75,
+  "seo_detailed_guides": 10,
+  "seo_worked_examples": 12,
+  "seo_browser_checks": 20,
+  "seo_public_origin_configured": false,
+  "live_indexing_or_ai_citations": "not measured",
+  "seo_evidence": [
+    "evidence/seo-production-build.json",
+    "evidence/seo-preview-build.json",
+    "evidence/browser-seo-qa.json"
+  ],
   "calculation_audit": "calculation-audit.md"
 }

@@ -36,3 +36,7 @@ Audited all 71 directory URLs for text accessibility, cross-checked original pro
 ## 2026-10-19: VAT matches the documented any-two workflow
 
 Replaced four separate VAT modes with one four-field optional-input form and a pure solver for all six known-value pairs. Zero is a real supplied value. Exact-two input checks, inconsistent price/tax detection and indeterminate zero-case errors are explicit. Clear empties all fields. Query hydration clears defaults before reading supplied VAT fields, preserving new/legacy shared links. Main financial mode count decreases by three (157 to 154) because four limited forms became one broader form; no known-value pair was removed. Original defaults/error handling/screenshot parity remain unverified. See specs/vat.md.
+
+## 2026-10-19: SEO and AI-search readiness
+
+Use explicit SITE_URL and SITE_INDEXABLE configuration; no guessed domain, training-bot bypass or fictional expert identity. Default previews emit noindex/follow, with an empty unadvertised sitemap. Public canonical origin and indexing require an intentional production build; Vercel preview remains noindex. Consolidate root directory via 308. All calculator models/formulas are server-visible, ten guides contain twelve tested examples and official/contextual sources, and related links are topic-specific. Schema describes actual WebApplication/WebPage/BreadcrumbList content without fake reviews or a guaranteed rich-result claim. See seo-geo.md. Financial model limitations are made visible, not concealed by SEO copy.

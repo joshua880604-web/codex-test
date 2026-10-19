@@ -45,3 +45,7 @@ See calculation-audit.md for eight reproduced and corrected issue groups, indepe
 ## VAT any-two workflow update
 
 VAT now implements all six input pairs in one four-field form, replacing the old four-tab subset. Local mathematical degeneracy/error handling is covered; original exact defaults, invalid-input responses and visual comparison remain unverified. No full source-parity acceptance is claimed solely from these local tests.
+
+## SEO / AI-search readiness
+
+Technical groundwork and ten detailed calculator guides are implemented; see seo-geo.md. Remaining sixty tools need deeper individual examples/source-specific explanations over time. Actual production domain, hosting checks, Search Console/Bing ownership, field Core Web Vitals, indexing and AI-citation monitoring remain pending. Preview builds deliberately remain noindex until production configuration is set. No live ranking or citation improvement is claimed.

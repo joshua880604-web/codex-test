@@ -2,1647 +2,1743 @@ TAP version 13
 # Subtest: Audit: retirement annual plan is distinct from annual total of monthly deposits
 ok 1 - Audit: retirement annual plan is distinct from annual total of monthly deposits
   ---
-  duration_ms: 8.670075
+  duration_ms: 4.244188
   type: 'test'
   ...
 # Subtest: Audit: first-year retirement income is not inflated before first withdrawal
 ok 2 - Audit: first-year retirement income is not inflated before first withdrawal
   ---
-  duration_ms: 0.799862
+  duration_ms: 0.829465
   type: 'test'
   ...
 # Subtest: Audit: first monthly retirement withdrawal has no premature inflation increase
 ok 3 - Audit: first monthly retirement withdrawal has no premature inflation increase
   ---
-  duration_ms: 0.617812
+  duration_ms: 0.564248
   type: 'test'
   ...
 # Subtest: Audit: zero-duration growth and already-met investment target require no waiting
 ok 4 - Audit: zero-duration growth and already-met investment target require no waiting
   ---
-  duration_ms: 0.672709
+  duration_ms: 0.919983
   type: 'test'
   ...
 # Subtest: Audit: exact-month investment target avoids an extra month and ignores stale month input
 ok 5 - Audit: exact-month investment target avoids an extra month and ignores stale month input
   ---
-  duration_ms: 0.788459
+  duration_ms: 0.551594
   type: 'test'
   ...
 # Subtest: Audit: IRR finds a repeated root and two close roots with no grid endpoint sign change
 ok 6 - Audit: IRR finds a repeated root and two close roots with no grid endpoint sign change
   ---
-  duration_ms: 8.438636
+  duration_ms: 7.460469
   type: 'test'
   ...
 # Subtest: Audit: RMD refuses pre-2022 tables and cannot project negative distributions
 ok 7 - Audit: RMD refuses pre-2022 tables and cannot project negative distributions
   ---
-  duration_ms: 0.965147
+  duration_ms: 0.874762
   type: 'test'
   ...
 # Subtest: Audit: observed original annuity schedule independently reproduces year-one and year-ten balances
 ok 8 - Audit: observed original annuity schedule independently reproduces year-one and year-ten balances
   ---
-  duration_ms: 0.609407
+  duration_ms: 0.583663
   type: 'test'
   ...
 # Subtest: Audit: 120 independent loan/compound cases conserve balances and reproduce direct iteration
 ok 9 - Audit: 120 independent loan/compound cases conserve balances and reproduce direct iteration
   ---
-  duration_ms: 8.973382
+  duration_ms: 7.734835
   type: 'test'
   ...
 # Subtest: Audit: ordinary self-employment earnings below $400 owe no SE tax
 ok 10 - Audit: ordinary self-employment earnings below $400 owe no SE tax
   ---
-  duration_ms: 2.747913
+  duration_ms: 1.908193
   type: 'test'
   ...
 # Subtest: Audit: MFS qualified vehicle interest is allowed by Schedule 1-A Part IV
 ok 11 - Audit: MFS qualified vehicle interest is allowed by Schedule 1-A Part IV
   ---
-  duration_ms: 0.530394
+  duration_ms: 0.428456
   type: 'test'
   ...
 # Subtest: Audit: published SALT worksheet halves the final MFS limit; tips phaseout rounds down
 ok 12 - Audit: published SALT worksheet halves the final MFS limit; tips phaseout rounds down
   ---
-  duration_ms: 0.60959
+  duration_ms: 0.82963
   type: 'test'
   ...
 # Subtest: 2026 ordinary tax and payroll independent fixture
 ok 13 - 2026 ordinary tax and payroll independent fixture
   ---
-  duration_ms: 0.424323
+  duration_ms: 0.220329
   type: 'test'
   ...
 # Subtest: 2025 joint bracket uses 96,950 boundary
 ok 14 - 2025 joint bracket uses 96,950 boundary
   ---
-  duration_ms: 0.353329
+  duration_ms: 0.183831
   type: 'test'
   ...
 # Subtest: capital losses are capped and cross-netted before preferential taxation
 ok 15 - capital losses are capped and cross-netted before preferential taxation
   ---
-  duration_ms: 0.494347
+  duration_ms: 0.452277
   type: 'test'
   ...
 # Subtest: 2026 senior deduction phaseout independently
 ok 16 - 2026 senior deduction phaseout independently
   ---
-  duration_ms: 0.24545
+  duration_ms: 0.294165
   type: 'test'
   ...
 # Subtest: OBBBA phaseout floor/ceil boundary
 ok 17 - OBBBA phaseout floor/ceil boundary
   ---
-  duration_ms: 0.278933
+  duration_ms: 0.184715
   type: 'test'
   ...
 # Subtest: 2026 dependent-care phaseouts and earned-income ceiling
 ok 18 - 2026 dependent-care phaseouts and earned-income ceiling
   ---
-  duration_ms: 0.151419
+  duration_ms: 0.156804
   type: 'test'
   ...
 # Subtest: education credits respect phaseout, annual LLC maximum, and selected refundable eligibility
 ok 19 - education credits respect phaseout, annual LLC maximum, and selected refundable eligibility
   ---
-  duration_ms: 0.176178
+  duration_ms: 0.192595
   type: 'test'
   ...
 # Subtest: zero interest and full early payoff cap final payment
 ok 20 - zero interest and full early payoff cap final payment
   ---
-  duration_ms: 1.349937
+  duration_ms: 1.057896
   type: 'test'
   ...
 # Subtest: vehicle inverse price produces the same forward payment
 ok 21 - vehicle inverse price produces the same forward payment
   ---
-  duration_ms: 0.960632
+  duration_ms: 1.14351
   type: 'test'
   ...
 # Subtest: lease payment/rate roundtrip
 ok 22 - lease payment/rate roundtrip
   ---
-  duration_ms: 0.485125
+  duration_ms: 0.591341
   type: 'test'
   ...
 # Subtest: partial year sum-of-years splits service years consistently
 ok 23 - partial year sum-of-years splits service years consistently
   ---
-  duration_ms: 0.430756
+  duration_ms: 0.44018
   type: 'test'
   ...
 # Subtest: zero saving, impossible IRR and invalid percentage handling
 ok 24 - zero saving, impossible IRR and invalid percentage handling
   ---
-  duration_ms: 1.014694
+  duration_ms: 1.262433
   type: 'test'
   ...
 # Subtest: reference feed: current data, dated fallback, and no fabricated rate
 ok 25 - reference feed: current data, dated fallback, and no fabricated rate
   ---
-  duration_ms: 32.647774
+  duration_ms: 29.80974
   type: 'test'
   ...
 # Subtest: mortgage cost units and independent growth
 ok 26 - mortgage cost units and independent growth
   ---
-  duration_ms: 3.853229
+  duration_ms: 3.351683
   type: 'test'
   ...
 # Subtest: HELOC zero-fee APR preserves nominal loan rate
 ok 27 - HELOC zero-fee APR preserves nominal loan rate
   ---
-  duration_ms: 60.920645
+  duration_ms: 47.606162
   type: 'test'
   ...
 # Subtest: annual and monthly savings increases are independent
 ok 28 - annual and monthly savings increases are independent
   ---
-  duration_ms: 0.347147
+  duration_ms: 0.67047
   type: 'test'
   ...
 # Subtest: simple interest supports explicit monthly units
 ok 29 - simple interest supports explicit monthly units
   ---
-  duration_ms: 0.338899
+  duration_ms: 0.685666
   type: 'test'
   ...
 # Subtest: dollar and percentage coupons price the same bond
 ok 30 - dollar and percentage coupons price the same bond
   ---
-  duration_ms: 0.432311
+  duration_ms: 0.352492
   type: 'test'
   ...
 # Subtest: regression: annual and weekly salary inputs are already holiday-adjusted
 ok 31 - regression: annual and weekly salary inputs are already holiday-adjusted
   ---
-  duration_ms: 0.738469
+  duration_ms: 0.647029
   type: 'test'
   ...
 # Subtest: regression: 2025 joint student-interest phaseout ends at 200,000
 ok 32 - regression: 2025 joint student-interest phaseout ends at 200,000
   ---
-  duration_ms: 0.191285
+  duration_ms: 0.138541
   type: 'test'
   ...
 # Subtest: regression: 401k deferral does not reduce Additional Medicare wages
 ok 33 - regression: 401k deferral does not reduce Additional Medicare wages
   ---
-  duration_ms: 0.405308
+  duration_ms: 0.567747
   type: 'test'
   ...
 # Subtest: regression: senior deduction is added back for AMT
 ok 34 - regression: senior deduction is added back for AMT
   ---
-  duration_ms: 0.098583
+  duration_ms: 0.108845
   type: 'test'
   ...
 # Subtest: regression: IRA maximum contributions use an equivalent after-tax Roth basis
 ok 35 - regression: IRA maximum contributions use an equivalent after-tax Roth basis
   ---
-  duration_ms: 0.298008
+  duration_ms: 0.332791
   type: 'test'
   ...
 # Subtest: regression: IRA pre-tax initial balance is converted for alternatives
 ok 36 - regression: IRA pre-tax initial balance is converted for alternatives
   ---
-  duration_ms: 0.26894
+  duration_ms: 0.147857
   type: 'test'
   ...
 # Subtest: regression: employer match is based on actual capped employee contribution
 ok 37 - regression: employer match is based on actual capped employee contribution
   ---
-  duration_ms: 0.299698
+  duration_ms: 0.332843
   type: 'test'
   ...
 # Subtest: regression: RMD projection grows starting balance before year-end withdrawal
 ok 38 - regression: RMD projection grows starting balance before year-end withdrawal
   ---
-  duration_ms: 0.137989
+  duration_ms: 0.131206
   type: 'test'
   ...
 # Subtest: regression: LTV-based PMI does not expire under unrelated duration control
 ok 39 - regression: LTV-based PMI does not expire under unrelated duration control
   ---
-  duration_ms: 2.711942
+  duration_ms: 3.913075
   type: 'test'
   ...
 # Subtest: regression: first-month total includes effective extra principal
 ok 40 - regression: first-month total includes effective extra principal
   ---
-  duration_ms: 2.725417
+  duration_ms: 1.845934
   type: 'test'
   ...
 # Subtest: 401k annual iteration sums changing salaries and adds contributions at year end
 ok 41 - 401k annual iteration sums changing salaries and adds contributions at year end
   ---
-  duration_ms: 0.620462
+  duration_ms: 0.242598
   type: 'test'
   ...
 # Subtest: 401k annual caps follow starting age and no contributions after retirement
 ok 42 - 401k annual caps follow starting age and no contributions after retirement
   ---
-  duration_ms: 0.267673
+  duration_ms: 0.437528
   type: 'test'
   ...
 # Subtest: 401k contribution summary includes starting balance once without future returns or employer match
 ok 43 - 401k contribution summary includes starting balance once without future returns or employer match
   ---
-  duration_ms: 0.244553
+  duration_ms: 0.420833
   type: 'test'
   ...
 # Subtest: independent monthly-payment and zero-interest fixtures
 ok 44 - independent monthly-payment and zero-interest fixtures
   ---
-  duration_ms: 0.232045
+  duration_ms: 0.11055
   type: 'test'
   ...
 # Subtest: compound and ordinary annuity fixtures
 ok 45 - compound and ordinary annuity fixtures
   ---
-  duration_ms: 0.21493
+  duration_ms: 0.074958
   type: 'test'
   ...
 # Subtest: amortization conserves principal and caps final payment
 ok 46 - amortization conserves principal and caps final payment
   ---
-  duration_ms: 0.440624
+  duration_ms: 0.28926
   type: 'test'
   ...
 # Subtest: rate conversion preserves annual effective yield
 ok 47 - rate conversion preserves annual effective yield
   ---
-  duration_ms: 0.105376
+  duration_ms: 0.075666
   type: 'test'
   ...
 # Subtest: IRR normal, multiple roots, no root
 ok 48 - IRR normal, multiple roots, no root
   ---
-  duration_ms: 3.922766
+  duration_ms: 2.544111
   type: 'test'
   ...
 # Subtest: negative amortization rejected and zero-rate duration
 ok 49 - negative amortization rejected and zero-rate duration
   ---
-  duration_ms: 0.274185
+  duration_ms: 0.219325
   type: 'test'
   ...
 # Subtest: official 2026 bracket boundaries
 ok 50 - official 2026 bracket boundaries
   ---
-  duration_ms: 0.131507
+  duration_ms: 0.076134
   type: 'test'
   ...
 # Subtest: debt avalanche zero-rate independent fixture
 ok 51 - debt avalanche zero-rate independent fixture
   ---
-  duration_ms: 0.642114
+  duration_ms: 0.597253
   type: 'test'
   ...
 # Subtest: scope has 71 unique real routes, including real estate directory
 ok 52 - scope has 71 unique real routes, including real estate directory
   ---
-  duration_ms: 0.563742
+  duration_ms: 0.327303
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage/monthly
 ok 53 - default numeric smoke: mortgage/monthly
   ---
-  duration_ms: 1.895091
+  duration_ms: 2.413592
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage/biweekly
 ok 54 - default numeric smoke: mortgage/biweekly
   ---
-  duration_ms: 3.833544
+  duration_ms: 2.780201
   type: 'test'
   ...
 # Subtest: default numeric smoke: amortization/schedule
 ok 55 - default numeric smoke: amortization/schedule
   ---
-  duration_ms: 0.888894
+  duration_ms: 0.573187
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage-payoff/remaining-extra
 ok 56 - default numeric smoke: mortgage-payoff/remaining-extra
   ---
-  duration_ms: 1.341568
+  duration_ms: 0.596123
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage-payoff/remaining-normal
 ok 57 - default numeric smoke: mortgage-payoff/remaining-normal
   ---
-  duration_ms: 1.052977
+  duration_ms: 1.154465
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage-payoff/remaining-biweekly
 ok 58 - default numeric smoke: mortgage-payoff/remaining-biweekly
   ---
-  duration_ms: 0.864442
+  duration_ms: 0.664428
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage-payoff/remaining-all
 ok 59 - default numeric smoke: mortgage-payoff/remaining-all
   ---
-  duration_ms: 0.203418
+  duration_ms: 0.114073
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage-payoff/known-extra
 ok 60 - default numeric smoke: mortgage-payoff/known-extra
   ---
-  duration_ms: 0.334543
+  duration_ms: 0.459454
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage-payoff/known-normal
 ok 61 - default numeric smoke: mortgage-payoff/known-normal
   ---
-  duration_ms: 0.307911
+  duration_ms: 0.136259
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage-payoff/known-biweekly
 ok 62 - default numeric smoke: mortgage-payoff/known-biweekly
   ---
-  duration_ms: 0.397309
+  duration_ms: 0.122084
   type: 'test'
   ...
 # Subtest: default numeric smoke: mortgage-payoff/known-all
 ok 63 - default numeric smoke: mortgage-payoff/known-all
   ---
-  duration_ms: 0.152433
+  duration_ms: 0.059002
   type: 'test'
   ...
 # Subtest: default numeric smoke: house-affordability/income
 ok 64 - default numeric smoke: house-affordability/income
   ---
-  duration_ms: 0.173645
+  duration_ms: 0.25304
   type: 'test'
   ...
 # Subtest: default numeric smoke: house-affordability/budget
 ok 65 - default numeric smoke: house-affordability/budget
   ---
-  duration_ms: 0.066723
+  duration_ms: 0.098787
   type: 'test'
   ...
 # Subtest: default numeric smoke: rent/affordability
 ok 66 - default numeric smoke: rent/affordability
   ---
-  duration_ms: 0.103667
+  duration_ms: 0.212428
   type: 'test'
   ...
 # Subtest: default numeric smoke: debt-to-income-ratio/ratio
 ok 67 - default numeric smoke: debt-to-income-ratio/ratio
   ---
-  duration_ms: 0.528445
+  duration_ms: 0.371941
   type: 'test'
   ...
 # Subtest: default numeric smoke: refinance/balance
 ok 68 - default numeric smoke: refinance/balance
   ---
-  duration_ms: 0.595103
+  duration_ms: 0.51583
   type: 'test'
   ...
 # Subtest: default numeric smoke: refinance/original
 ok 69 - default numeric smoke: refinance/original
   ---
-  duration_ms: 0.395696
+  duration_ms: 0.285626
   type: 'test'
   ...
 # Subtest: default numeric smoke: rental-property/projection
 ok 70 - default numeric smoke: rental-property/projection
   ---
-  duration_ms: 4.185469
+  duration_ms: 2.755405
   type: 'test'
   ...
 # Subtest: default numeric smoke: apr/loan
 ok 71 - default numeric smoke: apr/loan
   ---
-  duration_ms: 32.223473
+  duration_ms: 21.428248
   type: 'test'
   ...
 # Subtest: default numeric smoke: apr/mortgage
 ok 72 - default numeric smoke: apr/mortgage
   ---
-  duration_ms: 22.33643
+  duration_ms: 21.119856
   type: 'test'
   ...
 # Subtest: default numeric smoke: fha-loan/monthly
 ok 73 - default numeric smoke: fha-loan/monthly
   ---
-  duration_ms: 3.091822
+  duration_ms: 1.895995
   type: 'test'
   ...
 # Subtest: default numeric smoke: fha-loan/biweekly
 ok 74 - default numeric smoke: fha-loan/biweekly
   ---
-  duration_ms: 3.402126
+  duration_ms: 1.864136
   type: 'test'
   ...
 # Subtest: default numeric smoke: va-mortgage/monthly
 ok 75 - default numeric smoke: va-mortgage/monthly
   ---
-  duration_ms: 2.126831
+  duration_ms: 1.79149
   type: 'test'
   ...
 # Subtest: default numeric smoke: va-mortgage/biweekly
 ok 76 - default numeric smoke: va-mortgage/biweekly
   ---
-  duration_ms: 2.255346
+  duration_ms: 2.297295
   type: 'test'
   ...
 # Subtest: default numeric smoke: home-equity-loan/loan
 ok 77 - default numeric smoke: home-equity-loan/loan
   ---
-  duration_ms: 0.864103
+  duration_ms: 0.441203
   type: 'test'
   ...
 # Subtest: default numeric smoke: heloc/draw-repay
 ok 78 - default numeric smoke: heloc/draw-repay
   ---
-  duration_ms: 53.261257
+  duration_ms: 52.64259
   type: 'test'
   ...
 # Subtest: default numeric smoke: heloc/maximum-credit
 ok 79 - default numeric smoke: heloc/maximum-credit
   ---
-  duration_ms: 0.349775
+  duration_ms: 0.275782
   type: 'test'
   ...
 # Subtest: default numeric smoke: down-payment/price
 ok 80 - default numeric smoke: down-payment/price
   ---
-  duration_ms: 0.235774
+  duration_ms: 0.429514
   type: 'test'
   ...
 # Subtest: default numeric smoke: down-payment/cash
 ok 81 - default numeric smoke: down-payment/cash
   ---
-  duration_ms: 0.074857
+  duration_ms: 0.167526
   type: 'test'
   ...
 # Subtest: default numeric smoke: down-payment/percent
 ok 82 - default numeric smoke: down-payment/percent
   ---
-  duration_ms: 0.150016
+  duration_ms: 0.072257
   type: 'test'
   ...
 # Subtest: default numeric smoke: rent-vs-buy/comparison
 ok 83 - default numeric smoke: rent-vs-buy/comparison
   ---
-  duration_ms: 0.801716
+  duration_ms: 0.656991
   type: 'test'
   ...
 # Subtest: default numeric smoke: auto-loan/payment
 ok 84 - default numeric smoke: auto-loan/payment
   ---
-  duration_ms: 0.236845
+  duration_ms: 0.284247
   type: 'test'
   ...
 # Subtest: default numeric smoke: auto-loan/price
 ok 85 - default numeric smoke: auto-loan/price
   ---
-  duration_ms: 0.225294
+  duration_ms: 0.162561
   type: 'test'
   ...
 # Subtest: default numeric smoke: cash-back-or-low-interest/compare
 ok 86 - default numeric smoke: cash-back-or-low-interest/compare
   ---
-  duration_ms: 0.504761
+  duration_ms: 0.186465
   type: 'test'
   ...
 # Subtest: default numeric smoke: auto-lease/payment
 ok 87 - default numeric smoke: auto-lease/payment
   ---
-  duration_ms: 0.489414
+  duration_ms: 0.193796
   type: 'test'
   ...
 # Subtest: default numeric smoke: auto-lease/price
 ok 88 - default numeric smoke: auto-lease/price
   ---
-  duration_ms: 0.088111
+  duration_ms: 0.07275
   type: 'test'
   ...
 # Subtest: default numeric smoke: interest/accumulation
 ok 89 - default numeric smoke: interest/accumulation
   ---
-  duration_ms: 0.104203
+  duration_ms: 0.101899
   type: 'test'
   ...
 # Subtest: default numeric smoke: investment/end
 ok 90 - default numeric smoke: investment/end
   ---
-  duration_ms: 0.077938
+  duration_ms: 0.08166
   type: 'test'
   ...
 # Subtest: default numeric smoke: investment/contribution
 ok 91 - default numeric smoke: investment/contribution
   ---
-  duration_ms: 0.268285
+  duration_ms: 0.246071
   type: 'test'
   ...
 # Subtest: default numeric smoke: investment/return
 ok 92 - default numeric smoke: investment/return
   ---
-  duration_ms: 3.400112
+  duration_ms: 1.703734
   type: 'test'
   ...
 # Subtest: default numeric smoke: investment/starting
 ok 93 - default numeric smoke: investment/starting
   ---
-  duration_ms: 0.431113
+  duration_ms: 0.25362
   type: 'test'
   ...
 # Subtest: default numeric smoke: investment/length
 ok 94 - default numeric smoke: investment/length
   ---
-  duration_ms: 8.786038
+  duration_ms: 5.568607
   type: 'test'
   ...
 # Subtest: default numeric smoke: finance/fv
 ok 95 - default numeric smoke: finance/fv
   ---
-  duration_ms: 0.686897
+  duration_ms: 0.289733
   type: 'test'
   ...
 # Subtest: default numeric smoke: finance/pmt
 ok 96 - default numeric smoke: finance/pmt
   ---
-  duration_ms: 0.137946
+  duration_ms: 0.073933
   type: 'test'
   ...
 # Subtest: default numeric smoke: finance/i-y
 ok 97 - default numeric smoke: finance/i-y
   ---
-  duration_ms: 0.25401
+  duration_ms: 0.393283
   type: 'test'
   ...
 # Subtest: default numeric smoke: finance/n
 ok 98 - default numeric smoke: finance/n
   ---
-  duration_ms: 0.182767
+  duration_ms: 0.230906
   type: 'test'
   ...
 # Subtest: default numeric smoke: finance/pv
 ok 99 - default numeric smoke: finance/pv
   ---
-  duration_ms: 0.167077
+  duration_ms: 0.067406
   type: 'test'
   ...
 # Subtest: default numeric smoke: compound-interest/conversion
 ok 100 - default numeric smoke: compound-interest/conversion
   ---
-  duration_ms: 0.147004
+  duration_ms: 0.116444
   type: 'test'
   ...
 # Subtest: default numeric smoke: interest-rate/rate
 ok 101 - default numeric smoke: interest-rate/rate
   ---
-  duration_ms: 0.105926
+  duration_ms: 0.097618
   type: 'test'
   ...
 # Subtest: default numeric smoke: savings/accumulation
 ok 102 - default numeric smoke: savings/accumulation
   ---
-  duration_ms: 0.125555
+  duration_ms: 0.313824
   type: 'test'
   ...
 # Subtest: default numeric smoke: simple-interest/balance
 ok 103 - default numeric smoke: simple-interest/balance
   ---
-  duration_ms: 0.053573
+  duration_ms: 0.082659
   type: 'test'
   ...
 # Subtest: default numeric smoke: simple-interest/principal
 ok 104 - default numeric smoke: simple-interest/principal
   ---
-  duration_ms: 0.048675
+  duration_ms: 0.054774
   type: 'test'
   ...
 # Subtest: default numeric smoke: simple-interest/years
 ok 105 - default numeric smoke: simple-interest/years
   ---
-  duration_ms: 0.0434
+  duration_ms: 0.043165
   type: 'test'
   ...
 # Subtest: default numeric smoke: simple-interest/rate
 ok 106 - default numeric smoke: simple-interest/rate
   ---
-  duration_ms: 0.043935
+  duration_ms: 0.040779
   type: 'test'
   ...
 # Subtest: default numeric smoke: cd/accumulation
 ok 107 - default numeric smoke: cd/accumulation
   ---
-  duration_ms: 0.271176
+  duration_ms: 0.120586
   type: 'test'
   ...
 # Subtest: default numeric smoke: bond/price
 ok 108 - default numeric smoke: bond/price
   ---
-  duration_ms: 0.069491
+  duration_ms: 0.062296
   type: 'test'
   ...
 # Subtest: default numeric smoke: bond/face
 ok 109 - default numeric smoke: bond/face
   ---
-  duration_ms: 0.053572
+  duration_ms: 0.048725
   type: 'test'
   ...
 # Subtest: default numeric smoke: bond/yield
 ok 110 - default numeric smoke: bond/yield
   ---
-  duration_ms: 0.160037
+  duration_ms: 0.124796
   type: 'test'
   ...
 # Subtest: default numeric smoke: bond/years
 ok 111 - default numeric smoke: bond/years
   ---
-  duration_ms: 0.171947
+  duration_ms: 0.272091
   type: 'test'
   ...
 # Subtest: default numeric smoke: bond/coupon
 ok 112 - default numeric smoke: bond/coupon
   ---
-  duration_ms: 0.107719
+  duration_ms: 0.118468
   type: 'test'
   ...
 # Subtest: default numeric smoke: bond/dated
 ok 113 - default numeric smoke: bond/dated
   ---
-  duration_ms: 0.881504
+  duration_ms: 0.534012
   type: 'test'
   ...
 # Subtest: default numeric smoke: mutual-fund/projection
 ok 114 - default numeric smoke: mutual-fund/projection
   ---
-  duration_ms: 0.292993
+  duration_ms: 0.258467
   type: 'test'
   ...
 # Subtest: default numeric smoke: average-return/returns
 ok 115 - default numeric smoke: average-return/returns
   ---
-  duration_ms: 0.194988
+  duration_ms: 0.168232
   type: 'test'
   ...
 # Subtest: default numeric smoke: average-return/cashflows
 ok 116 - default numeric smoke: average-return/cashflows
   ---
-  duration_ms: 12.977665
+  duration_ms: 11.429786
   type: 'test'
   ...
 # Subtest: default numeric smoke: average-return/variable-periods
 ok 117 - default numeric smoke: average-return/variable-periods
   ---
-  duration_ms: 0.28327
+  duration_ms: 0.32191
   type: 'test'
   ...
 # Subtest: default numeric smoke: irr/fixed
 ok 118 - default numeric smoke: irr/fixed
   ---
-  duration_ms: 4.139737
+  duration_ms: 2.260036
   type: 'test'
   ...
 # Subtest: default numeric smoke: irr/irregular
 ok 119 - default numeric smoke: irr/irregular
   ---
-  duration_ms: 7.509404
+  duration_ms: 1.207354
   type: 'test'
   ...
 # Subtest: default numeric smoke: roi/length
 ok 120 - default numeric smoke: roi/length
   ---
-  duration_ms: 0.186923
+  duration_ms: 0.273412
   type: 'test'
   ...
 # Subtest: default numeric smoke: roi/dates
 ok 121 - default numeric smoke: roi/dates
   ---
-  duration_ms: 0.096031
+  duration_ms: 0.147252
   type: 'test'
   ...
 # Subtest: default numeric smoke: payback-period/fixed
 ok 122 - default numeric smoke: payback-period/fixed
   ---
-  duration_ms: 2.307561
+  duration_ms: 0.271314
   type: 'test'
   ...
 # Subtest: default numeric smoke: payback-period/irregular
 ok 123 - default numeric smoke: payback-period/irregular
   ---
-  duration_ms: 0.121093
+  duration_ms: 0.082981
   type: 'test'
   ...
 # Subtest: default numeric smoke: present-value/lump
 ok 124 - default numeric smoke: present-value/lump
   ---
-  duration_ms: 0.112091
+  duration_ms: 0.177626
   type: 'test'
   ...
 # Subtest: default numeric smoke: present-value/annuity
 ok 125 - default numeric smoke: present-value/annuity
   ---
-  duration_ms: 0.057766
+  duration_ms: 0.124004
   type: 'test'
   ...
 # Subtest: default numeric smoke: future-value/growth
 ok 126 - default numeric smoke: future-value/growth
   ---
-  duration_ms: 0.093119
+  duration_ms: 0.115235
   type: 'test'
   ...
 # Subtest: default numeric smoke: retirement/required
 ok 127 - default numeric smoke: retirement/required
   ---
-  duration_ms: 0.090558
+  duration_ms: 0.082027
   type: 'test'
   ...
 # Subtest: default numeric smoke: retirement/saving
 ok 128 - default numeric smoke: retirement/saving
   ---
-  duration_ms: 0.198194
+  duration_ms: 0.097515
   type: 'test'
   ...
 # Subtest: default numeric smoke: retirement/withdrawal
 ok 129 - default numeric smoke: retirement/withdrawal
   ---
-  duration_ms: 0.11534
+  duration_ms: 0.084415
   type: 'test'
   ...
 # Subtest: default numeric smoke: retirement/longevity
 ok 130 - default numeric smoke: retirement/longevity
   ---
-  duration_ms: 0.24878
+  duration_ms: 0.115391
   type: 'test'
   ...
 # Subtest: default numeric smoke: 401k/projection
 ok 131 - default numeric smoke: 401k/projection
   ---
-  duration_ms: 0.268097
+  duration_ms: 0.086277
   type: 'test'
   ...
 # Subtest: default numeric smoke: 401k/early
 ok 132 - default numeric smoke: 401k/early
   ---
-  duration_ms: 0.126056
+  duration_ms: 0.100061
   type: 'test'
   ...
 # Subtest: default numeric smoke: 401k/match
 ok 133 - default numeric smoke: 401k/match
   ---
-  duration_ms: 0.166507
+  duration_ms: 0.13054
   type: 'test'
   ...
 # Subtest: default numeric smoke: pension/lump
 ok 134 - default numeric smoke: pension/lump
   ---
-  duration_ms: 0.397142
+  duration_ms: 0.23442
   type: 'test'
   ...
 # Subtest: default numeric smoke: pension/survivor
 ok 135 - default numeric smoke: pension/survivor
   ---
-  duration_ms: 0.302796
+  duration_ms: 0.41293
   type: 'test'
   ...
 # Subtest: default numeric smoke: pension/longer
 ok 136 - default numeric smoke: pension/longer
   ---
-  duration_ms: 0.759759
+  duration_ms: 0.302711
   type: 'test'
   ...
 # Subtest: default numeric smoke: social-security/ideal
 ok 137 - default numeric smoke: social-security/ideal
   ---
-  duration_ms: 1.09672
+  duration_ms: 0.865014
   type: 'test'
   ...
 # Subtest: default numeric smoke: social-security/compare
 ok 138 - default numeric smoke: social-security/compare
   ---
-  duration_ms: 0.195523
+  duration_ms: 0.24679
   type: 'test'
   ...
 # Subtest: default numeric smoke: annuity/growth
 ok 139 - default numeric smoke: annuity/growth
   ---
-  duration_ms: 0.075096
+  duration_ms: 0.064904
   type: 'test'
   ...
 # Subtest: default numeric smoke: annuity-payout/length
 ok 140 - default numeric smoke: annuity-payout/length
   ---
-  duration_ms: 0.130502
+  duration_ms: 0.119256
   type: 'test'
   ...
 # Subtest: default numeric smoke: annuity-payout/payment
 ok 141 - default numeric smoke: annuity-payout/payment
   ---
-  duration_ms: 0.155369
+  duration_ms: 0.100984
   type: 'test'
   ...
 # Subtest: default numeric smoke: roth-ira/comparison
 ok 142 - default numeric smoke: roth-ira/comparison
   ---
-  duration_ms: 0.42046
+  duration_ms: 0.917964
   type: 'test'
   ...
 # Subtest: default numeric smoke: ira/comparison
 ok 143 - default numeric smoke: ira/comparison
   ---
-  duration_ms: 0.151795
+  duration_ms: 0.115587
   type: 'test'
   ...
 # Subtest: default numeric smoke: rmd/annual
 ok 144 - default numeric smoke: rmd/annual
   ---
-  duration_ms: 0.156584
+  duration_ms: 0.408759
   type: 'test'
   ...
 # Subtest: default numeric smoke: income-tax/federal
 ok 145 - default numeric smoke: income-tax/federal
   ---
-  duration_ms: 0.334013
+  duration_ms: 0.270498
   type: 'test'
   ...
 # Subtest: default numeric smoke: salary/conversion
 ok 146 - default numeric smoke: salary/conversion
   ---
-  duration_ms: 0.119547
+  duration_ms: 0.072294
   type: 'test'
   ...
 # Subtest: default numeric smoke: marriage-tax/comparison
 ok 147 - default numeric smoke: marriage-tax/comparison
   ---
-  duration_ms: 0.826213
+  duration_ms: 0.651065
   type: 'test'
   ...
 # Subtest: default numeric smoke: estate-tax/federal
 ok 148 - default numeric smoke: estate-tax/federal
   ---
-  duration_ms: 0.304576
+  duration_ms: 0.52343
   type: 'test'
   ...
 # Subtest: default numeric smoke: take-home-paycheck/paycheck
 ok 149 - default numeric smoke: take-home-paycheck/paycheck
   ---
-  duration_ms: 0.262603
+  duration_ms: 0.409969
   type: 'test'
   ...
 # Subtest: default numeric smoke: loan/amortized
 ok 150 - default numeric smoke: loan/amortized
   ---
-  duration_ms: 1.221522
+  duration_ms: 0.209379
   type: 'test'
   ...
 # Subtest: default numeric smoke: loan/deferred
 ok 151 - default numeric smoke: loan/deferred
   ---
-  duration_ms: 0.18077
+  duration_ms: 0.103509
   type: 'test'
   ...
 # Subtest: default numeric smoke: loan/bond
 ok 152 - default numeric smoke: loan/bond
   ---
-  duration_ms: 0.120531
+  duration_ms: 0.088417
   type: 'test'
   ...
 # Subtest: default numeric smoke: payment/term
 ok 153 - default numeric smoke: payment/term
   ---
-  duration_ms: 0.158897
+  duration_ms: 0.173483
   type: 'test'
   ...
 # Subtest: default numeric smoke: payment/payment
 ok 154 - default numeric smoke: payment/payment
   ---
-  duration_ms: 0.193469
+  duration_ms: 0.1011
   type: 'test'
   ...
 # Subtest: default numeric smoke: currency/live
 ok 155 - default numeric smoke: currency/live
   ---
-  duration_ms: 0.364734
+  duration_ms: 0.418753
   type: 'test'
   ...
 # Subtest: default numeric smoke: currency/manual
 ok 156 - default numeric smoke: currency/manual
   ---
-  duration_ms: 0.120494
+  duration_ms: 0.110558
   type: 'test'
   ...
 # Subtest: default numeric smoke: currency/snapshot
 ok 157 - default numeric smoke: currency/snapshot
   ---
-  duration_ms: 0.321823
+  duration_ms: 0.199845
   type: 'test'
   ...
 # Subtest: default numeric smoke: inflation/historical
 ok 158 - default numeric smoke: inflation/historical
   ---
-  duration_ms: 0.717511
+  duration_ms: 0.500091
   type: 'test'
   ...
 # Subtest: default numeric smoke: inflation/forward
 ok 159 - default numeric smoke: inflation/forward
   ---
-  duration_ms: 0.153574
+  duration_ms: 0.10105
   type: 'test'
   ...
 # Subtest: default numeric smoke: inflation/backward
 ok 160 - default numeric smoke: inflation/backward
   ---
-  duration_ms: 0.097856
+  duration_ms: 0.04385
   type: 'test'
   ...
 # Subtest: default numeric smoke: inflation/custom
 ok 161 - default numeric smoke: inflation/custom
   ---
-  duration_ms: 0.32181
+  duration_ms: 0.048012
   type: 'test'
   ...
 # Subtest: default numeric smoke: sales-tax/after
 ok 162 - default numeric smoke: sales-tax/after
   ---
-  duration_ms: 0.247061
+  duration_ms: 0.098688
   type: 'test'
   ...
 # Subtest: default numeric smoke: sales-tax/before
 ok 163 - default numeric smoke: sales-tax/before
   ---
-  duration_ms: 0.056456
+  duration_ms: 0.049105
   type: 'test'
   ...
 # Subtest: default numeric smoke: sales-tax/rate
 ok 164 - default numeric smoke: sales-tax/rate
   ---
-  duration_ms: 0.04099
+  duration_ms: 0.085699
   type: 'test'
   ...
 # Subtest: default numeric smoke: credit-card/payment
 ok 165 - default numeric smoke: credit-card/payment
   ---
-  duration_ms: 0.462566
+  duration_ms: 0.234937
   type: 'test'
   ...
 # Subtest: default numeric smoke: credit-card/term
 ok 166 - default numeric smoke: credit-card/term
   ---
-  duration_ms: 0.087866
+  duration_ms: 0.27108
   type: 'test'
   ...
 # Subtest: default numeric smoke: credit-card/minimum
 ok 167 - default numeric smoke: credit-card/minimum
   ---
-  duration_ms: 0.908076
+  duration_ms: 0.887805
   type: 'test'
   ...
 # Subtest: default numeric smoke: credit-cards-payoff/avalanche
 ok 168 - default numeric smoke: credit-cards-payoff/avalanche
   ---
-  duration_ms: 0.69732
+  duration_ms: 0.602802
   type: 'test'
   ...
 # Subtest: default numeric smoke: debt-payoff/avalanche
 ok 169 - default numeric smoke: debt-payoff/avalanche
   ---
-  duration_ms: 0.269665
+  duration_ms: 0.243036
   type: 'test'
   ...
 # Subtest: default numeric smoke: debt-consolidation/comparison
 ok 170 - default numeric smoke: debt-consolidation/comparison
   ---
-  duration_ms: 0.724939
+  duration_ms: 0.509222
   type: 'test'
   ...
 # Subtest: default numeric smoke: repayment/term
 ok 171 - default numeric smoke: repayment/term
   ---
-  duration_ms: 0.194856
+  duration_ms: 0.227389
   type: 'test'
   ...
 # Subtest: default numeric smoke: repayment/payment
 ok 172 - default numeric smoke: repayment/payment
   ---
-  duration_ms: 0.118274
+  duration_ms: 0.113509
   type: 'test'
   ...
 # Subtest: default numeric smoke: student-loan/normal
 ok 173 - default numeric smoke: student-loan/normal
   ---
-  duration_ms: 0.202508
+  duration_ms: 0.140892
   type: 'test'
   ...
 # Subtest: default numeric smoke: student-loan/solve-payment
 ok 174 - default numeric smoke: student-loan/solve-payment
   ---
-  duration_ms: 0.15984
+  duration_ms: 0.109016
   type: 'test'
   ...
 # Subtest: default numeric smoke: student-loan/solve-principal
 ok 175 - default numeric smoke: student-loan/solve-principal
   ---
-  duration_ms: 0.072209
+  duration_ms: 0.051804
   type: 'test'
   ...
 # Subtest: default numeric smoke: student-loan/solve-rate
 ok 176 - default numeric smoke: student-loan/solve-rate
   ---
-  duration_ms: 0.058369
+  duration_ms: 0.057263
   type: 'test'
   ...
 # Subtest: default numeric smoke: student-loan/solve-term
 ok 177 - default numeric smoke: student-loan/solve-term
   ---
-  duration_ms: 0.040961
+  duration_ms: 0.044757
   type: 'test'
   ...
 # Subtest: default numeric smoke: student-loan/extra
 ok 178 - default numeric smoke: student-loan/extra
   ---
-  duration_ms: 0.20874
+  duration_ms: 0.26594
   type: 'test'
   ...
 # Subtest: default numeric smoke: student-loan/all
 ok 179 - default numeric smoke: student-loan/all
   ---
-  duration_ms: 0.382054
+  duration_ms: 0.6571
   type: 'test'
   ...
 # Subtest: default numeric smoke: student-loan/projection
 ok 180 - default numeric smoke: student-loan/projection
   ---
-  duration_ms: 0.570054
+  duration_ms: 0.302487
   type: 'test'
   ...
 # Subtest: default numeric smoke: college-cost/planning
 ok 181 - default numeric smoke: college-cost/planning
   ---
-  duration_ms: 0.260765
+  duration_ms: 0.225617
   type: 'test'
   ...
 # Subtest: default numeric smoke: vat/any-two
 ok 182 - default numeric smoke: vat/any-two
   ---
-  duration_ms: 0.659763
+  duration_ms: 0.235656
   type: 'test'
   ...
 # Subtest: default numeric smoke: depreciation/straight
 ok 183 - default numeric smoke: depreciation/straight
   ---
-  duration_ms: 0.136213
+  duration_ms: 0.098909
   type: 'test'
   ...
 # Subtest: default numeric smoke: depreciation/declining
 ok 184 - default numeric smoke: depreciation/declining
   ---
-  duration_ms: 0.122078
+  duration_ms: 0.120962
   type: 'test'
   ...
 # Subtest: default numeric smoke: depreciation/syd
 ok 185 - default numeric smoke: depreciation/syd
   ---
-  duration_ms: 0.079213
+  duration_ms: 0.210059
   type: 'test'
   ...
 # Subtest: default numeric smoke: margin/revenue
 ok 186 - default numeric smoke: margin/revenue
   ---
-  duration_ms: 0.132695
+  duration_ms: 0.138692
   type: 'test'
   ...
 # Subtest: default numeric smoke: margin/cost
 ok 187 - default numeric smoke: margin/cost
   ---
-  duration_ms: 0.25775
+  duration_ms: 0.138122
   type: 'test'
   ...
 # Subtest: default numeric smoke: margin/margin
 ok 188 - default numeric smoke: margin/margin
   ---
-  duration_ms: 0.548306
+  duration_ms: 0.301828
   type: 'test'
   ...
 # Subtest: default numeric smoke: margin/profit
 ok 189 - default numeric smoke: margin/profit
   ---
-  duration_ms: 0.066746
+  duration_ms: 0.059983
   type: 'test'
   ...
 # Subtest: default numeric smoke: margin/stock
 ok 190 - default numeric smoke: margin/stock
   ---
-  duration_ms: 0.092912
+  duration_ms: 0.142858
   type: 'test'
   ...
 # Subtest: default numeric smoke: margin/currency
 ok 191 - default numeric smoke: margin/currency
   ---
-  duration_ms: 0.08019
+  duration_ms: 0.09099
   type: 'test'
   ...
 # Subtest: default numeric smoke: discount/percent
 ok 192 - default numeric smoke: discount/percent
   ---
-  duration_ms: 0.096131
+  duration_ms: 0.097651
   type: 'test'
   ...
 # Subtest: default numeric smoke: discount/amount
 ok 193 - default numeric smoke: discount/amount
   ---
-  duration_ms: 0.187381
+  duration_ms: 0.043939
   type: 'test'
   ...
 # Subtest: default numeric smoke: discount/original
 ok 194 - default numeric smoke: discount/original
   ---
-  duration_ms: 0.264382
+  duration_ms: 0.039827
   type: 'test'
   ...
 # Subtest: default numeric smoke: discount/rate
 ok 195 - default numeric smoke: discount/rate
   ---
-  duration_ms: 0.11252
+  duration_ms: 0.038537
   type: 'test'
   ...
 # Subtest: default numeric smoke: business-loan/repayment
 ok 196 - default numeric smoke: business-loan/repayment
   ---
-  duration_ms: 0.252346
+  duration_ms: 1.247406
   type: 'test'
   ...
 # Subtest: default numeric smoke: personal-loan/repayment
 ok 197 - default numeric smoke: personal-loan/repayment
   ---
-  duration_ms: 0.608818
+  duration_ms: 0.306283
   type: 'test'
   ...
 # Subtest: default numeric smoke: boat-loan/payment
 ok 198 - default numeric smoke: boat-loan/payment
   ---
-  duration_ms: 0.250417
+  duration_ms: 0.270241
   type: 'test'
   ...
 # Subtest: default numeric smoke: boat-loan/price
 ok 199 - default numeric smoke: boat-loan/price
   ---
-  duration_ms: 0.139432
+  duration_ms: 0.148822
   type: 'test'
   ...
 # Subtest: default numeric smoke: lease/rate
 ok 200 - default numeric smoke: lease/rate
   ---
-  duration_ms: 0.055089
+  duration_ms: 0.05586
   type: 'test'
   ...
 # Subtest: default numeric smoke: lease/payment
 ok 201 - default numeric smoke: lease/payment
   ---
-  duration_ms: 0.068289
+  duration_ms: 0.068379
   type: 'test'
   ...
 # Subtest: default numeric smoke: budget/budget
 ok 202 - default numeric smoke: budget/budget
   ---
-  duration_ms: 0.487678
+  duration_ms: 0.518505
   type: 'test'
   ...
 # Subtest: default numeric smoke: commission/commission
 ok 203 - default numeric smoke: commission/commission
   ---
-  duration_ms: 0.100632
+  duration_ms: 0.203974
   type: 'test'
   ...
 # Subtest: default numeric smoke: commission/sales
 ok 204 - default numeric smoke: commission/sales
   ---
-  duration_ms: 0.053813
+  duration_ms: 0.063646
   type: 'test'
   ...
 # Subtest: default numeric smoke: commission/rate
 ok 205 - default numeric smoke: commission/rate
   ---
-  duration_ms: 0.041877
+  duration_ms: 0.046748
   type: 'test'
   ...
 # Subtest: default numeric smoke: commission/tiered
 ok 206 - default numeric smoke: commission/tiered
   ---
-  duration_ms: 0.66936
+  duration_ms: 0.344598
   type: 'test'
   ...
 # Subtest: empty input and numeric overflow never return a result
 ok 207 - empty input and numeric overflow never return a result
   ---
-  duration_ms: 0.310499
+  duration_ms: 0.478659
   type: 'test'
   ...
 # Subtest: source prose: irr-machine
 ok 208 - source prose: irr-machine
   ---
-  duration_ms: 1.000801
+  duration_ms: 1.13767
   type: 'test'
   ...
 # Subtest: source prose: irr-project-a
 ok 209 - source prose: irr-project-a
   ---
-  duration_ms: 1.251842
+  duration_ms: 1.292188
   type: 'test'
   ...
 # Subtest: source prose: irr-project-b
 ok 210 - source prose: irr-project-b
   ---
-  duration_ms: 1.376242
+  duration_ms: 1.295463
   type: 'test'
   ...
 # Subtest: source prose: compound-semiannual-to-annual
 ok 211 - source prose: compound-semiannual-to-annual
   ---
-  duration_ms: 0.117921
+  duration_ms: 0.083774
   type: 'test'
   ...
 # Subtest: source prose: compound-monthly-to-annual
 ok 212 - source prose: compound-monthly-to-annual
   ---
-  duration_ms: 0.072605
+  duration_ms: 0.061448
   type: 'test'
   ...
 # Subtest: source prose: future-value-ten-dollars
 ok 213 - source prose: future-value-ten-dollars
   ---
-  duration_ms: 0.076699
+  duration_ms: 0.074007
   type: 'test'
   ...
 # Subtest: source prose: simple-interest-five-years
 ok 214 - source prose: simple-interest-five-years
   ---
-  duration_ms: 0.280969
+  duration_ms: 0.055759
   type: 'test'
   ...
 # Subtest: source prose: simple-interest-monthly-rate
 ok 215 - source prose: simple-interest-monthly-rate
   ---
-  duration_ms: 0.059683
+  duration_ms: 0.045713
   type: 'test'
   ...
 # Subtest: source prose: interest-annual-two-years
 ok 216 - source prose: interest-annual-two-years
   ---
-  duration_ms: 0.138733
+  duration_ms: 0.131169
   type: 'test'
   ...
 # Subtest: source prose: interest-daily-two-years
 ok 217 - source prose: interest-daily-two-years
   ---
-  duration_ms: 0.087779
+  duration_ms: 0.082554
   type: 'test'
   ...
 # Subtest: source prose: interest-continuous-two-years
 ok 218 - source prose: interest-continuous-two-years
   ---
-  duration_ms: 0.067059
+  duration_ms: 0.177501
   type: 'test'
   ...
 # Subtest: source prose: discount percent and fixed
 ok 219 - source prose: discount percent and fixed
   ---
-  duration_ms: 0.123247
+  duration_ms: 0.14121
   type: 'test'
   ...
 # Subtest: source prose: VAT 5
 ok 220 - source prose: VAT 5
   ---
-  duration_ms: 0.105398
+  duration_ms: 0.242846
   type: 'test'
   ...
 # Subtest: source prose: VAT 10
 ok 221 - source prose: VAT 10
   ---
-  duration_ms: 0.329946
+  duration_ms: 0.219661
   type: 'test'
   ...
 # Subtest: source prose: VAT 20
 ok 222 - source prose: VAT 20
   ---
-  duration_ms: 0.07394
+  duration_ms: 0.079827
   type: 'test'
   ...
 # Subtest: source prose: simple commission 100
 ok 223 - source prose: simple commission 100
   ---
-  duration_ms: 0.236209
+  duration_ms: 0.137348
   type: 'test'
   ...
 # Subtest: source prose: simple commission 500000
 ok 224 - source prose: simple commission 500000
   ---
-  duration_ms: 0.056015
+  duration_ms: 0.059325
   type: 'test'
   ...
 # Subtest: source prose: base commission 25000
 ok 225 - source prose: base commission 25000
   ---
-  duration_ms: 0.118359
+  duration_ms: 0.250712
   type: 'test'
   ...
 # Subtest: source prose: base commission 50000
 ok 226 - source prose: base commission 50000
   ---
-  duration_ms: 0.063102
+  duration_ms: 0.084993
   type: 'test'
   ...
 # Subtest: source prose: base commission 91000
 ok 227 - source prose: base commission 91000
   ---
-  duration_ms: 0.051725
+  duration_ms: 0.05274
   type: 'test'
   ...
 # Subtest: source prose: progressive commissions
 ok 228 - source prose: progressive commissions
   ---
-  duration_ms: 0.197874
+  duration_ms: 0.241157
   type: 'test'
   ...
 # Subtest: source prose: profit margin
 ok 229 - source prose: profit margin
   ---
-  duration_ms: 0.142296
+  duration_ms: 0.15933
   type: 'test'
   ...
 # Subtest: source prose: hourly salary
 ok 230 - source prose: hourly salary
   ---
-  duration_ms: 0.211838
+  duration_ms: 0.113188
   type: 'test'
   ...
 # Subtest: source prose: maximum HELOC
 ok 231 - source prose: maximum HELOC
   ---
-  duration_ms: 1.836876
+  duration_ms: 0.081401
   type: 'test'
   ...
 # Subtest: source prose: DTI 48% and zero
 ok 232 - source prose: DTI 48% and zero
   ---
-  duration_ms: 0.342319
+  duration_ms: 0.287417
   type: 'test'
   ...
 # Subtest: IRS joint life table known example and complete symmetric table
 ok 233 - IRS joint life table known example and complete symmetric table
   ---
-  duration_ms: 1.240921
+  duration_ms: 1.245383
   type: 'test'
   ...
 # Subtest: BLS historical data handles official missing periods
 ok 234 - BLS historical data handles official missing periods
   ---
-  duration_ms: 0.683171
+  duration_ms: 0.768838
   type: 'test'
   ...
 # Subtest: Yearly grouping conserves flows and uses last balance, including partial years
 ok 235 - Yearly grouping conserves flows and uses last balance, including partial years
   ---
-  duration_ms: 1.203828
+  duration_ms: 1.362235
   type: 'test'
   ...
 # Subtest: Annual loan tables follow selected weekly repayment frequency
 ok 236 - Annual loan tables follow selected weekly repayment frequency
   ---
-  duration_ms: 0.236152
+  duration_ms: 0.329874
   type: 'test'
   ...
 # Subtest: Mortgage annual tables retain dates and sum taxes separately
 ok 237 - Mortgage annual tables retain dates and sum taxes separately
   ---
-  duration_ms: 2.121549
+  duration_ms: 2.398144
   type: 'test'
   ...
 # Subtest: DDB matches Microsoft 150% declining-balance example without terminal write-down
 ok 238 - DDB matches Microsoft 150% declining-balance example without terminal write-down
   ---
-  duration_ms: 0.166831
+  duration_ms: 0.221328
   type: 'test'
   ...
 # Subtest: DDB matches Microsoft double-declining final-period example
 ok 239 - DDB matches Microsoft double-declining final-period example
   ---
-  duration_ms: 0.31511
+  duration_ms: 0.299398
   type: 'test'
   ...
 # Subtest: Verified auto tax treatments distinguish rebates and Michigan capped trade credit
 ok 240 - Verified auto tax treatments distinguish rebates and Michigan capped trade credit
   ---
-  duration_ms: 0.129568
+  duration_ms: 0.135079
   type: 'test'
   ...
 # Subtest: Actual-days fiscal proration includes leap days and rejects out-of-year service
 ok 241 - Actual-days fiscal proration includes leap days and rejects out-of-year service
   ---
-  duration_ms: 0.364685
+  duration_ms: 0.591099
   type: 'test'
   ...
 # Subtest: Bond month-end coupons stay anchored to February end instead of rolling into March
 ok 242 - Bond month-end coupons stay anchored to February end instead of rolling into March
   ---
-  duration_ms: 0.216397
+  duration_ms: 0.370767
   type: 'test'
   ...
 # Subtest: Biweekly payoff and weekly business-loan summaries use their actual period counts
 ok 243 - Biweekly payoff and weekly business-loan summaries use their actual period counts
   ---
-  duration_ms: 1.285071
+  duration_ms: 1.06581
   type: 'test'
   ...
 # Subtest: Cash-back comparison includes different rebate tax bases and upfront costs
 ok 244 - Cash-back comparison includes different rebate tax bases and upfront costs
   ---
-  duration_ms: 0.391887
+  duration_ms: 0.370897
+  type: 'test'
+  ...
+# Subtest: SEO defaults never invent a public origin or enable preview indexing
+ok 245 - SEO defaults never invent a public origin or enable preview indexing
+  ---
+  duration_ms: 1.691303
+  type: 'test'
+  ...
+# Subtest: Production sitemap lists canonical pages only and no pretend lastmod dates
+ok 246 - Production sitemap lists canonical pages only and no pretend lastmod dates
+  ---
+  duration_ms: 0.561726
+  type: 'test'
+  ...
+# Subtest: Calculator canonicals consolidate shared query variants and schema matches the real app
+ok 247 - Calculator canonicals consolidate shared query variants and schema matches the real app
+  ---
+  duration_ms: 0.947501
+  type: 'test'
+  ...
+# Subtest: Published worked example: vat / Add 20% VAT to a net price of 100
+ok 248 - Published worked example: vat / Add 20% VAT to a net price of 100
+  ---
+  duration_ms: 0.4657
+  type: 'test'
+  ...
+# Subtest: Published worked example: vat / Remove 20% VAT from a gross price of 120
+ok 249 - Published worked example: vat / Remove 20% VAT from a gross price of 120
+  ---
+  duration_ms: 0.139636
+  type: 'test'
+  ...
+# Subtest: Published worked example: vat / Find the rate from a gross price and tax amount
+ok 250 - Published worked example: vat / Find the rate from a gross price and tax amount
+  ---
+  duration_ms: 0.097127
+  type: 'test'
+  ...
+# Subtest: Published worked example: loan / A 100,000 loan at 6% over 30 years
+ok 251 - Published worked example: loan / A 100,000 loan at 6% over 30 years
+  ---
+  duration_ms: 0.391245
+  type: 'test'
+  ...
+# Subtest: Published worked example: mortgage / Separate loan payment from ownership costs
+ok 252 - Published worked example: mortgage / Separate loan payment from ownership costs
+  ---
+  duration_ms: 1.568133
+  type: 'test'
+  ...
+# Subtest: Published worked example: interest / Grow 1,000 at 5% with no additions
+ok 253 - Published worked example: interest / Grow 1,000 at 5% with no additions
+  ---
+  duration_ms: 0.151919
+  type: 'test'
+  ...
+# Subtest: Published worked example: compound-interest / Convert 5% nominal monthly compounding to an annual rate
+ok 254 - Published worked example: compound-interest / Convert 5% nominal monthly compounding to an annual rate
+  ---
+  duration_ms: 0.067197
+  type: 'test'
+  ...
+# Subtest: Published worked example: retirement / Save from age 35 to 67 toward 600,000
+ok 255 - Published worked example: retirement / Save from age 35 to 67 toward 600,000
+  ---
+  duration_ms: 0.112902
+  type: 'test'
+  ...
+# Subtest: Published worked example: 401k / Understand the first year of a 401(k) projection
+ok 256 - Published worked example: 401k / Understand the first year of a 401(k) projection
+  ---
+  duration_ms: 0.294016
+  type: 'test'
+  ...
+# Subtest: Published worked example: income-tax / A basic 2026 single wage-earner estimate
+ok 257 - Published worked example: income-tax / A basic 2026 single wage-earner estimate
+  ---
+  duration_ms: 0.212886
+  type: 'test'
+  ...
+# Subtest: Published worked example: rmd / Uniform Lifetime Table example at age 75
+ok 258 - Published worked example: rmd / Uniform Lifetime Table example at age 75
+  ---
+  duration_ms: 0.09936
+  type: 'test'
+  ...
+# Subtest: Published worked example: irr / A 40,000 investment with three annual inflows
+ok 259 - Published worked example: irr / A 40,000 investment with three annual inflows
+  ---
+  duration_ms: 2.594424
+  type: 'test'
+  ...
+# Subtest: Contextual related tools are real, distinct and not self-links
+ok 260 - Contextual related tools are real, distinct and not self-links
+  ---
+  duration_ms: 0.466082
   type: 'test'
   ...
 # Subtest: VAT any two: rate + net
-ok 245 - VAT any two: rate + net
+ok 261 - VAT any two: rate + net
   ---
-  duration_ms: 0.368535
+  duration_ms: 0.224297
   type: 'test'
   ...
 # Subtest: VAT any two: rate + gross
-ok 246 - VAT any two: rate + gross
+ok 262 - VAT any two: rate + gross
   ---
-  duration_ms: 0.474569
+  duration_ms: 0.1099
   type: 'test'
   ...
 # Subtest: VAT any two: rate + tax
-ok 247 - VAT any two: rate + tax
+ok 263 - VAT any two: rate + tax
   ---
-  duration_ms: 0.170265
+  duration_ms: 0.144204
   type: 'test'
   ...
 # Subtest: VAT any two: net + gross
-ok 248 - VAT any two: net + gross
+ok 264 - VAT any two: net + gross
   ---
-  duration_ms: 0.160908
+  duration_ms: 0.118033
   type: 'test'
   ...
 # Subtest: VAT any two: net + tax
-ok 249 - VAT any two: net + tax
+ok 265 - VAT any two: net + tax
   ---
-  duration_ms: 0.135438
+  duration_ms: 0.126288
   type: 'test'
   ...
 # Subtest: VAT any two: gross + tax
-ok 250 - VAT any two: gross + tax
+ok 266 - VAT any two: gross + tax
   ---
-  duration_ms: 0.121442
+  duration_ms: 0.080964
   type: 'test'
   ...
 # Subtest: VAT requires exactly two known values: {}
-ok 251 - VAT requires exactly two known values: {}
+ok 267 - VAT requires exactly two known values: {}
   ---
-  duration_ms: 0.17897
+  duration_ms: 0.111827
   type: 'test'
   ...
 # Subtest: VAT requires exactly two known values: {"net":"100"}
-ok 252 - VAT requires exactly two known values: {"net":"100"}
+ok 268 - VAT requires exactly two known values: {"net":"100"}
   ---
-  duration_ms: 0.409949
+  duration_ms: 0.055694
   type: 'test'
   ...
 # Subtest: VAT requires exactly two known values: {"net":"100","gross":"120","rate":"20"}
-ok 253 - VAT requires exactly two known values: {"net":"100","gross":"120","rate":"20"}
+ok 269 - VAT requires exactly two known values: {"net":"100","gross":"120","rate":"20"}
   ---
-  duration_ms: 0.176337
+  duration_ms: 0.053111
   type: 'test'
   ...
 # Subtest: VAT requires exactly two known values: {"net":"100","gross":"120","rate":"20","tax":"20"}
-ok 254 - VAT requires exactly two known values: {"net":"100","gross":"120","rate":"20","tax":"20"}
+ok 270 - VAT requires exactly two known values: {"net":"100","gross":"120","rate":"20","tax":"20"}
   ---
-  duration_ms: 0.066084
+  duration_ms: 0.055928
   type: 'test'
   ...
 # Subtest: VAT rejects inconsistent amounts: {"net":"100","gross":"80"}
-ok 255 - VAT rejects inconsistent amounts: {"net":"100","gross":"80"}
+ok 271 - VAT rejects inconsistent amounts: {"net":"100","gross":"80"}
   ---
-  duration_ms: 0.28451
+  duration_ms: 0.1512
   type: 'test'
   ...
 # Subtest: VAT rejects inconsistent amounts: {"gross":"10","tax":"20"}
-ok 256 - VAT rejects inconsistent amounts: {"gross":"10","tax":"20"}
+ok 272 - VAT rejects inconsistent amounts: {"gross":"10","tax":"20"}
   ---
-  duration_ms: 0.339227
+  duration_ms: 0.06165
   type: 'test'
   ...
 # Subtest: VAT rejects inconsistent amounts: {"net":"0","tax":"5"}
-ok 257 - VAT rejects inconsistent amounts: {"net":"0","tax":"5"}
+ok 273 - VAT rejects inconsistent amounts: {"net":"0","tax":"5"}
   ---
-  duration_ms: 0.120414
+  duration_ms: 0.053584
   type: 'test'
   ...
 # Subtest: VAT rejects inconsistent amounts: {"rate":"0","tax":"5"}
-ok 258 - VAT rejects inconsistent amounts: {"rate":"0","tax":"5"}
+ok 274 - VAT rejects inconsistent amounts: {"rate":"0","tax":"5"}
   ---
-  duration_ms: 0.135877
+  duration_ms: 0.050215
   type: 'test'
   ...
 # Subtest: VAT rejects inconsistent amounts: {"net":"0","gross":"5"}
-ok 259 - VAT rejects inconsistent amounts: {"net":"0","gross":"5"}
+ok 275 - VAT rejects inconsistent amounts: {"net":"0","gross":"5"}
   ---
-  duration_ms: 0.237896
+  duration_ms: 0.091939
   type: 'test'
   ...
 # Subtest: VAT identifies indeterminate zero pairs: {"net":"0","gross":"0"}
-ok 260 - VAT identifies indeterminate zero pairs: {"net":"0","gross":"0"}
+ok 276 - VAT identifies indeterminate zero pairs: {"net":"0","gross":"0"}
   ---
-  duration_ms: 0.27668
+  duration_ms: 0.117262
   type: 'test'
   ...
 # Subtest: VAT identifies indeterminate zero pairs: {"net":"0","tax":"0"}
-ok 261 - VAT identifies indeterminate zero pairs: {"net":"0","tax":"0"}
+ok 277 - VAT identifies indeterminate zero pairs: {"net":"0","tax":"0"}
   ---
-  duration_ms: 0.082709
+  duration_ms: 0.106017
   type: 'test'
   ...
 # Subtest: VAT identifies indeterminate zero pairs: {"gross":"0","tax":"0"}
-ok 262 - VAT identifies indeterminate zero pairs: {"gross":"0","tax":"0"}
+ok 278 - VAT identifies indeterminate zero pairs: {"gross":"0","tax":"0"}
   ---
-  duration_ms: 0.05946
+  duration_ms: 0.089222
   type: 'test'
   ...
 # Subtest: VAT identifies indeterminate zero pairs: {"rate":"0","tax":"0"}
-ok 263 - VAT identifies indeterminate zero pairs: {"rate":"0","tax":"0"}
+ok 279 - VAT identifies indeterminate zero pairs: {"rate":"0","tax":"0"}
   ---
-  duration_ms: 0.054063
+  duration_ms: 0.058688
   type: 'test'
   ...
 # Subtest: VAT accepts unique zero-tax pair: {"rate":"0","net":"100"}
-ok 264 - VAT accepts unique zero-tax pair: {"rate":"0","net":"100"}
+ok 280 - VAT accepts unique zero-tax pair: {"rate":"0","net":"100"}
   ---
-  duration_ms: 0.094485
+  duration_ms: 0.135111
   type: 'test'
   ...
 # Subtest: VAT accepts unique zero-tax pair: {"rate":"0","gross":"100"}
-ok 265 - VAT accepts unique zero-tax pair: {"rate":"0","gross":"100"}
+ok 281 - VAT accepts unique zero-tax pair: {"rate":"0","gross":"100"}
   ---
-  duration_ms: 0.048321
+  duration_ms: 0.055126
   type: 'test'
   ...
 # Subtest: VAT accepts unique zero-tax pair: {"net":"100","gross":"100"}
-ok 266 - VAT accepts unique zero-tax pair: {"net":"100","gross":"100"}
+ok 282 - VAT accepts unique zero-tax pair: {"net":"100","gross":"100"}
   ---
-  duration_ms: 0.241141
+  duration_ms: 0.043906
   type: 'test'
   ...
 # Subtest: VAT accepts unique zero-tax pair: {"net":"100","tax":"0"}
-ok 267 - VAT accepts unique zero-tax pair: {"net":"100","tax":"0"}
+ok 283 - VAT accepts unique zero-tax pair: {"net":"100","tax":"0"}
   ---
-  duration_ms: 0.058274
+  duration_ms: 0.145922
   type: 'test'
   ...
 # Subtest: VAT accepts unique zero-tax pair: {"gross":"100","tax":"0"}
-ok 268 - VAT accepts unique zero-tax pair: {"gross":"100","tax":"0"}
+ok 284 - VAT accepts unique zero-tax pair: {"gross":"100","tax":"0"}
   ---
-  duration_ms: 0.121762
+  duration_ms: 0.05426
   type: 'test'
   ...
 # Subtest: VAT keeps a known positive rate when prices are zero: {"rate":"20","net":"0"}
-ok 269 - VAT keeps a known positive rate when prices are zero: {"rate":"20","net":"0"}
+ok 285 - VAT keeps a known positive rate when prices are zero: {"rate":"20","net":"0"}
   ---
-  duration_ms: 0.131046
+  duration_ms: 0.124257
   type: 'test'
   ...
 # Subtest: VAT keeps a known positive rate when prices are zero: {"rate":"20","gross":"0"}
-ok 270 - VAT keeps a known positive rate when prices are zero: {"rate":"20","gross":"0"}
+ok 286 - VAT keeps a known positive rate when prices are zero: {"rate":"20","gross":"0"}
   ---
-  duration_ms: 0.048466
+  duration_ms: 0.048376
   type: 'test'
   ...
 # Subtest: VAT keeps a known positive rate when prices are zero: {"rate":"20","tax":"0"}
-ok 271 - VAT keeps a known positive rate when prices are zero: {"rate":"20","tax":"0"}
+ok 287 - VAT keeps a known positive rate when prices are zero: {"rate":"20","tax":"0"}
   ---
-  duration_ms: 0.039968
+  duration_ms: 0.039491
   type: 'test'
   ...
 # Subtest: VAT rejects negative and nonnumeric input
-ok 272 - VAT rejects negative and nonnumeric input
+ok 288 - VAT rejects negative and nonnumeric input
   ---
-  duration_ms: 0.171216
+  duration_ms: 0.13432
   type: 'test'
   ...
 # Subtest: VAT default form has four optional fields with exactly two filled
-ok 273 - VAT default form has four optional fields with exactly two filled
+ok 289 - VAT default form has four optional fields with exactly two filled
   ---
-  duration_ms: 0.104296
+  duration_ms: 0.106226
   type: 'test'
   ...
-1..273
-# tests 273
+1..289
+# tests 289
 # suites 0
-# pass 273
+# pass 289
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 742.873753
+# duration_ms 632.016642

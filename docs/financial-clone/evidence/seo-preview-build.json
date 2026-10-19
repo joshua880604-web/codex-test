@@ -1,0 +1,384 @@
+{
+  "passed": true,
+  "configuration": "default-noindex-preview",
+  "test_origin": null,
+  "pages": 75,
+  "checks": [
+    {
+      "route": "/mortgage-calculator.html",
+      "canonical": [],
+      "h1": "Mortgage Calculator"
+    },
+    {
+      "route": "/amortization-calculator.html",
+      "canonical": [],
+      "h1": "Amortization Calculator"
+    },
+    {
+      "route": "/mortgage-payoff-calculator.html",
+      "canonical": [],
+      "h1": "Mortgage Payoff Calculator"
+    },
+    {
+      "route": "/house-affordability-calculator.html",
+      "canonical": [],
+      "h1": "House Affordability Calculator"
+    },
+    {
+      "route": "/rent-calculator.html",
+      "canonical": [],
+      "h1": "Rent Calculator"
+    },
+    {
+      "route": "/debt-ratio-calculator.html",
+      "canonical": [],
+      "h1": "Debt-to-Income Ratio Calculator"
+    },
+    {
+      "route": "/real-estate-calculator.html",
+      "canonical": [],
+      "h1": "Real Estate Calculator"
+    },
+    {
+      "route": "/refinance-calculator.html",
+      "canonical": [],
+      "h1": "Refinance Calculator"
+    },
+    {
+      "route": "/rental-property-calculator.html",
+      "canonical": [],
+      "h1": "Rental Property Calculator"
+    },
+    {
+      "route": "/apr-calculator.html",
+      "canonical": [],
+      "h1": "APR Calculator"
+    },
+    {
+      "route": "/fha-loan-calculator.html",
+      "canonical": [],
+      "h1": "FHA Loan Calculator"
+    },
+    {
+      "route": "/va-mortgage-calculator.html",
+      "canonical": [],
+      "h1": "VA Mortgage Calculator"
+    },
+    {
+      "route": "/home-equity-loan-calculator.html",
+      "canonical": [],
+      "h1": "Home Equity Loan Calculator"
+    },
+    {
+      "route": "/heloc-calculator.html",
+      "canonical": [],
+      "h1": "HELOC Calculator"
+    },
+    {
+      "route": "/down-payment-calculator.html",
+      "canonical": [],
+      "h1": "Down Payment Calculator"
+    },
+    {
+      "route": "/rent-vs-buy-calculator.html",
+      "canonical": [],
+      "h1": "Rent vs. Buy Calculator"
+    },
+    {
+      "route": "/auto-loan-calculator.html",
+      "canonical": [],
+      "h1": "Auto Loan Calculator"
+    },
+    {
+      "route": "/cash-back-or-low-interest-calculator.html",
+      "canonical": [],
+      "h1": "Cash Back or Low Interest Calculator"
+    },
+    {
+      "route": "/auto-lease-calculator.html",
+      "canonical": [],
+      "h1": "Auto Lease Calculator"
+    },
+    {
+      "route": "/interest-calculator.html",
+      "canonical": [],
+      "h1": "Interest Calculator"
+    },
+    {
+      "route": "/investment-calculator.html",
+      "canonical": [],
+      "h1": "Investment Calculator"
+    },
+    {
+      "route": "/finance-calculator.html",
+      "canonical": [],
+      "h1": "Finance Calculator"
+    },
+    {
+      "route": "/compound-interest-calculator.html",
+      "canonical": [],
+      "h1": "Compound Interest Calculator"
+    },
+    {
+      "route": "/interest-rate-calculator.html",
+      "canonical": [],
+      "h1": "Interest Rate Calculator"
+    },
+    {
+      "route": "/savings-calculator.html",
+      "canonical": [],
+      "h1": "Savings Calculator"
+    },
+    {
+      "route": "/simple-interest-calculator.html",
+      "canonical": [],
+      "h1": "Simple Interest Calculator"
+    },
+    {
+      "route": "/cd-calculator.html",
+      "canonical": [],
+      "h1": "CD Calculator"
+    },
+    {
+      "route": "/bond-calculator.html",
+      "canonical": [],
+      "h1": "Bond Calculator"
+    },
+    {
+      "route": "/mutual-fund-calculator.html",
+      "canonical": [],
+      "h1": "Mutual Fund Calculator"
+    },
+    {
+      "route": "/average-return-calculator.html",
+      "canonical": [],
+      "h1": "Average Return Calculator"
+    },
+    {
+      "route": "/irr-calculator.html",
+      "canonical": [],
+      "h1": "IRR Calculator"
+    },
+    {
+      "route": "/roi-calculator.html",
+      "canonical": [],
+      "h1": "ROI Calculator"
+    },
+    {
+      "route": "/payback-period-calculator.html",
+      "canonical": [],
+      "h1": "Payback Period Calculator"
+    },
+    {
+      "route": "/present-value-calculator.html",
+      "canonical": [],
+      "h1": "Present Value Calculator"
+    },
+    {
+      "route": "/future-value-calculator.html",
+      "canonical": [],
+      "h1": "Future Value Calculator"
+    },
+    {
+      "route": "/retirement-calculator.html",
+      "canonical": [],
+      "h1": "Retirement Calculator"
+    },
+    {
+      "route": "/401k-calculator.html",
+      "canonical": [],
+      "h1": "401K Calculator"
+    },
+    {
+      "route": "/pension-calculator.html",
+      "canonical": [],
+      "h1": "Pension Calculator"
+    },
+    {
+      "route": "/social-security-calculator.html",
+      "canonical": [],
+      "h1": "Social Security Calculator"
+    },
+    {
+      "route": "/annuity-calculator.html",
+      "canonical": [],
+      "h1": "Annuity Calculator"
+    },
+    {
+      "route": "/annuity-payout-calculator.html",
+      "canonical": [],
+      "h1": "Annuity Payout Calculator"
+    },
+    {
+      "route": "/roth-ira-calculator.html",
+      "canonical": [],
+      "h1": "Roth IRA Calculator"
+    },
+    {
+      "route": "/ira-calculator.html",
+      "canonical": [],
+      "h1": "IRA Calculator"
+    },
+    {
+      "route": "/rmd-calculator.html",
+      "canonical": [],
+      "h1": "RMD Calculator"
+    },
+    {
+      "route": "/tax-calculator.html",
+      "canonical": [],
+      "h1": "Income Tax Calculator"
+    },
+    {
+      "route": "/salary-calculator.html",
+      "canonical": [],
+      "h1": "Salary Calculator"
+    },
+    {
+      "route": "/marriage-calculator.html",
+      "canonical": [],
+      "h1": "Marriage Tax Calculator"
+    },
+    {
+      "route": "/estate-tax-calculator.html",
+      "canonical": [],
+      "h1": "Estate Tax Calculator"
+    },
+    {
+      "route": "/take-home-pay-calculator.html",
+      "canonical": [],
+      "h1": "Take-Home-Paycheck Calculator"
+    },
+    {
+      "route": "/loan-calculator.html",
+      "canonical": [],
+      "h1": "Loan Calculator"
+    },
+    {
+      "route": "/payment-calculator.html",
+      "canonical": [],
+      "h1": "Payment Calculator"
+    },
+    {
+      "route": "/currency-calculator.html",
+      "canonical": [],
+      "h1": "Currency Calculator"
+    },
+    {
+      "route": "/inflation-calculator.html",
+      "canonical": [],
+      "h1": "Inflation Calculator"
+    },
+    {
+      "route": "/sales-tax-calculator.html",
+      "canonical": [],
+      "h1": "Sales Tax Calculator"
+    },
+    {
+      "route": "/credit-card-calculator.html",
+      "canonical": [],
+      "h1": "Credit Card Calculator"
+    },
+    {
+      "route": "/credit-card-payoff-calculator.html",
+      "canonical": [],
+      "h1": "Credit Cards Payoff Calculator"
+    },
+    {
+      "route": "/debt-payoff-calculator.html",
+      "canonical": [],
+      "h1": "Debt Payoff Calculator"
+    },
+    {
+      "route": "/debt-consolidation-calculator.html",
+      "canonical": [],
+      "h1": "Debt Consolidation Calculator"
+    },
+    {
+      "route": "/repayment-calculator.html",
+      "canonical": [],
+      "h1": "Repayment Calculator"
+    },
+    {
+      "route": "/student-loan-calculator.html",
+      "canonical": [],
+      "h1": "Student Loan Calculator"
+    },
+    {
+      "route": "/college-cost-calculator.html",
+      "canonical": [],
+      "h1": "College Cost Calculator"
+    },
+    {
+      "route": "/vat-calculator.html",
+      "canonical": [],
+      "h1": "VAT Calculator"
+    },
+    {
+      "route": "/depreciation-calculator.html",
+      "canonical": [],
+      "h1": "Depreciation Calculator"
+    },
+    {
+      "route": "/margin-calculator.html",
+      "canonical": [],
+      "h1": "Margin Calculator"
+    },
+    {
+      "route": "/discount-calculator.html",
+      "canonical": [],
+      "h1": "Discount Calculator"
+    },
+    {
+      "route": "/business-loan-calculator.html",
+      "canonical": [],
+      "h1": "Business Loan Calculator"
+    },
+    {
+      "route": "/personal-loan-calculator.html",
+      "canonical": [],
+      "h1": "Personal Loan Calculator"
+    },
+    {
+      "route": "/boat-loan-calculator.html",
+      "canonical": [],
+      "h1": "Boat Loan Calculator"
+    },
+    {
+      "route": "/lease-calculator.html",
+      "canonical": [],
+      "h1": "Lease Calculator"
+    },
+    {
+      "route": "/budget-calculator.html",
+      "canonical": [],
+      "h1": "Budget Calculator"
+    },
+    {
+      "route": "/commission-calculator.html",
+      "canonical": [],
+      "h1": "Commission Calculator"
+    },
+    {
+      "route": "/financial-calculator.html",
+      "canonical": [],
+      "h1": "Financial Calculators"
+    },
+    {
+      "route": "/about.html",
+      "canonical": [],
+      "h1": "About Financial Calculators"
+    },
+    {
+      "route": "/privacy.html",
+      "canonical": [],
+      "h1": "Privacy"
+    },
+    {
+      "route": "/methodology.html",
+      "canonical": [],
+      "h1": "Calculation methodology and sources"
+    }
+  ],
+  "no_live_indexing_or_ranking_claim": true
+}

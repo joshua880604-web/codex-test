@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-19T08:47:57.463Z",
+  "checks": [
+    "Root 308 redirects to canonical financial directory",
+    {
+      "id": "vat",
+      "example": "Add 20% VAT to a net price of 100",
+      "result": "passed"
+    },
+    {
+      "id": "vat",
+      "example": "Remove 20% VAT from a gross price of 120",
+      "result": "passed"
+    },
+    {
+      "id": "vat",
+      "example": "Find the rate from a gross price and tax amount",
+      "result": "passed"
+    },
+    {
+      "id": "loan",
+      "example": "A 100,000 loan at 6% over 30 years",
+      "result": "passed"
+    },
+    {
+      "id": "mortgage",
+      "example": "Separate loan payment from ownership costs",
+      "result": "passed"
+    },
+    {
+      "id": "interest",
+      "example": "Grow 1,000 at 5% with no additions",
+      "result": "passed"
+    },
+    {
+      "id": "compound-interest",
+      "example": "Convert 5% nominal monthly compounding to an annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "retirement",
+      "example": "Save from age 35 to 67 toward 600,000",
+      "result": "passed"
+    },
+    {
+      "id": "401k",
+      "example": "Understand the first year of a 401(k) projection",
+      "result": "passed"
+    },
+    {
+      "id": "income-tax",
+      "example": "A basic 2026 single wage-earner estimate",
+      "result": "passed"
+    },
+    {
+      "id": "rmd",
+      "example": "Uniform Lifetime Table example at age 75",
+      "result": "passed"
+    },
+    {
+      "id": "irr",
+      "example": "A 40,000 investment with three annual inflows",
+      "result": "passed"
+    },
+    "Methodology page and review status available",
+    {
+      "route": "/vat-calculator.html",
+      "width": 768,
+      "result": "no overflow"
+    },
+    {
+      "route": "/vat-calculator.html",
+      "width": 390,
+      "result": "no overflow"
+    },
+    {
+      "route": "/mortgage-calculator.html",
+      "width": 768,
+      "result": "no overflow"
+    },
+    {
+      "route": "/mortgage-calculator.html",
+      "width": 390,
+      "result": "no overflow"
+    },
+    {
+      "route": "/methodology.html",
+      "width": 768,
+      "result": "no overflow"
+    },
+    {
+      "route": "/methodology.html",
+      "width": 390,
+      "result": "no overflow"
+    }
+  ],
+  "errors": [],
+  "live_indexing_or_ai_citations": "not measured"
+}

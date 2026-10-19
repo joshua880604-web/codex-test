@@ -5,6 +5,11 @@ import CalculatorClient from "@/components/CalculatorClient";
 import Directory from "@/components/Directory";
 import RealEstateDirectory from "@/components/RealEstateDirectory";
 import { Sidebar } from "@/components/Shell";
+import CalculatorGuide from "@/components/CalculatorGuide";
+import Methodology from "@/components/Methodology";
+import { calculatorMetadata, calculatorSchema, pageMetadata } from "@/lib/seo";
+import { directoryPath, serializeSchema } from "@/lib/site";
+import { relatedCalculatorIds } from "@/lib/guides";
 export const dynamicParams = false;
 export function generateStaticParams() {
   return [
@@ -12,6 +17,7 @@ export function generateStaticParams() {
     { slug: "financial-calculator.html" },
     { slug: "about.html" },
     { slug: "privacy.html" },
+    { slug: "methodology.html" },
   ];
 }
 export async function generateMetadata({
@@ -21,16 +27,30 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const c = calculatorBySlug(slug);
-  return {
-    title:
-      c?.title ??
-      (slug === "about.html"
-        ? "About"
-        : slug === "privacy.html"
-          ? "Privacy"
-          : "Financial Calculators"),
-    description: c?.intro,
-  };
+  if (c) return calculatorMetadata(c);
+  if (slug === "about.html")
+    return pageMetadata(
+      "/about.html",
+      "About",
+      "Learn about these independent financial calculators, their calculation methods and review status.",
+    );
+  if (slug === "privacy.html")
+    return pageMetadata(
+      "/privacy.html",
+      "Privacy",
+      "How calculator inputs, share links and public exchange-rate requests are handled.",
+    );
+  if (slug === "methodology.html")
+    return pageMetadata(
+      "/methodology.html",
+      "Calculation Methodology & Sources",
+      "Review calculation methods, official data versions, rounding, testing evidence and model limitations.",
+    );
+  return pageMetadata(
+    directoryPath,
+    "Financial Calculators for Loans, Savings & Retirement",
+    "Browse mortgage, loan, investment, retirement, tax and everyday finance calculators with formulas and explicit assumptions.",
+  );
 }
 export default async function Page({
   params,
@@ -41,7 +61,12 @@ export default async function Page({
   const c = calculatorBySlug(slug);
   if (
     !c &&
-    !["financial-calculator.html", "about.html", "privacy.html"].includes(slug)
+    ![
+      "financial-calculator.html",
+      "about.html",
+      "privacy.html",
+      "methodology.html",
+    ].includes(slug)
   )
     notFound();
   const title =
@@ -50,7 +75,9 @@ export default async function Page({
       ? "About Financial Calculators"
       : slug === "privacy.html"
         ? "Privacy"
-        : "Financial Calculators");
+        : slug === "methodology.html"
+          ? "Calculation methodology and sources"
+          : "Financial Calculators");
   return (
     <div className="page-wrap">
       <main id="main">
@@ -60,11 +87,32 @@ export default async function Page({
           {c && <> / {c.title.toLowerCase()}</>}
         </div>
         <h1>{title}</h1>
-        {slug === "about.html" ? (
+        {c && !c.directory && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: serializeSchema(calculatorSchema(c)),
+            }}
+          />
+        )}
+        {slug === "methodology.html" ? (
+          <Methodology />
+        ) : slug === "about.html" ? (
           <>
             <p>
               Independent English-language financial planning tools with
               formulas, schedules, and explicit assumptions.
+            </p>
+            <p>
+              Read our{" "}
+              <a href="/methodology.html">
+                calculation methodology, data versions and review status
+              </a>
+              , or inspect the{" "}
+              <a href="https://github.com/joshua880604-web/codex-test/tree/financial-calculators">
+                public project and tests
+              </a>
+              .
             </p>
             <p>
               This project is independent of Calculator.net. Calculations run in
@@ -88,7 +136,10 @@ export default async function Page({
         ) : c?.directory ? (
           <RealEstateDirectory />
         ) : c ? (
-          <CalculatorClient id={c.id} />
+          <>
+            <CalculatorClient id={c.id} />
+            <CalculatorGuide calculator={c} />
+          </>
         ) : (
           <Directory />
         )}
@@ -96,7 +147,17 @@ export default async function Page({
           <section className="related">
             <h2>Related calculators</h2>
             {calculators
-              .filter((x) => x.category === c.category && x.id !== c.id)
+              .filter((x) =>
+                relatedCalculatorIds[c.id]
+                  ? relatedCalculatorIds[c.id].includes(x.id)
+                  : x.category === c.category && x.id !== c.id,
+              )
+              .sort((a, b) =>
+                relatedCalculatorIds[c.id]
+                  ? relatedCalculatorIds[c.id].indexOf(a.id) -
+                    relatedCalculatorIds[c.id].indexOf(b.id)
+                  : 0,
+              )
               .slice(0, 8)
               .map((x) => (
                 <a href={routeFor(x.id)} key={x.id}>

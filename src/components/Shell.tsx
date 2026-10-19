@@ -86,6 +86,8 @@ export function Footer() {
         <a href="/about.html">About</a>
         <span> · </span>
         <a href="/privacy.html">Privacy</a>
+        <span> · </span>
+        <a href="/methodology.html">Methodology &amp; sources</a>
       </div>
       <p>
         © {new Date().getFullYear()} Financial Calculators. Independent planning
