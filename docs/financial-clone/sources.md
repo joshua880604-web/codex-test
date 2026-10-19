@@ -32,3 +32,5 @@ See `research/auto-state-rules.json` for state revenue agency statutes/guides an
 ### Calculation audit sources — 2026-10-19
 
 71 original page-text accesses are logged in audit-source-access.json. Original retirement/401(k)/annuity/IRR pages and IRS Schedule 1-A, Schedule A, Schedule SE and 2021 Publication 590-B were consulted for current findings; see calculation-audit.md for URLs and evidence types. Parameterized source requests for retirement and loan were inaccessible. Original default fields and live submissions remain unverified.
+
+VAT workflow source: https://www.calculator.net/vat-calculator.html explicitly requests any two of rate/net/gross/tax. Pair formulas follow gross=net+tax and tax=net*rate. Native source submissions and error strings remain unavailable; see specs/vat.md for the independent validation policy.

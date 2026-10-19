@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-19T07:05:31.827Z",
+  "generated_at": "2026-10-19T08:24:42.139Z",
   "directory_entries": 71,
   "calculators": 70,
   "directory_only_entries": 1,
-  "implemented_modes": 157,
+  "implemented_modes": 154,
   "local_browser_routes": 71,
-  "local_browser_modes": 157,
+  "local_browser_modes": 154,
   "numeric_tests": {
-    "total": 247,
+    "total": 273,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,9 +17,8 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "calculation audit: eight issue groups corrected",
-  "calculation_audit": "calculation-audit.md",
-  "original_page_text_available": 71,
-  "source_prose_cases": 25,
-  "audit_specific_browser_cases": 5
+  "latest_change": "VAT unified any-two workflow covers six known-value combinations",
+  "vat_known_value_pairs": 6,
+  "vat_specific_browser_checks": 17,
+  "calculation_audit": "calculation-audit.md"
 }

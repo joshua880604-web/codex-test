@@ -67,3 +67,7 @@
 - https://www.irs.gov/instructions/i1040sse （普通净自雇收入门槛）
 - https://www.irs.gov/instructions/i1040sca （MFS 最后减半的 SALT 工作表顺序）
 - https://www.irs.gov/pub/irs-prior/p590b--2021.pdf （明确新寿命表自 2022 生效；2021 版附录本身已含新表，不可因文件名是 2021 就误用到 2021 分配）
+
+## 后续 VAT 更新
+
+旧 VAT 四模式现已合并为四字段任填两个的统一表单，覆盖全部六种已知量组合。数学边界及浏览器操作已另行验证；最新完整测试数为 273。本文上方 247 项为审计批次历史记录，原站完整同输入/同模式对照的限制仍然存在。详见 specs/vat.md 和 evidence/browser-vat-qa.json。

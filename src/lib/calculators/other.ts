@@ -1,3 +1,4 @@
+import { solveVAT } from "../vat";
 import { firstFiscalFraction } from "../depreciation";
 import currencySnapshot from "../currency-snapshot.json";
 import cpi from "../cpi-data.json";
@@ -921,56 +922,34 @@ const college = tool(
 );
 const vat = tool(
   "vat",
-  ["gross", "net", "rate", "tax"].map((id): Mode => ({
-    id,
-    title: "Solve " + id,
-    fields:
-      id === "rate"
-        ? [
-            num("net", "Net amount", 100, "$"),
-            num("gross", "Gross amount", 120, "$"),
-          ]
-        : id === "tax"
-          ? [
-              num("tax", "VAT amount", 20, "$"),
-              num("rate", "VAT rate", 20, "%"),
-            ]
-          : [
-              num(
-                id === "gross" ? "net" : "gross",
-                id === "gross" ? "Net amount" : "Gross amount",
-                id === "gross" ? 100 : 120,
-                "$",
-              ),
-              num("rate", "VAT rate", 20, "%"),
-            ],
-    description: "Convert between net amount, VAT, gross amount, and tax rate.",
-    formula: "Gross = net × (1 + VAT rate); tax = net × VAT rate.",
-    calculate: (v) => {
-      let net: number, rate: number;
-      if (id === "rate") {
-        net = n(v, "net");
-        rate = (n(v, "gross") / positive(net, "Net amount") - 1) * 100;
-      } else {
-        rate = n(v, "rate");
-        net =
-          id === "gross"
-            ? n(v, "net")
-            : id === "tax"
-              ? n(v, "tax") / positive(rate / 100, "VAT rate")
-              : n(v, "gross") / (1 + rate / 100);
-      }
-      return {
-        metrics: [
-          money("Net amount", net),
-          money("VAT amount", (net * rate) / 100),
-          money("Gross amount", net * (1 + rate / 100)),
-          metric("VAT rate", rate, "percent"),
-        ],
-      };
+  [
+    {
+      id: "any-two",
+      title: "VAT Calculator",
+      fields: [
+        { ...num("rate", "VAT rate", 20, "%"), optional: true },
+        { ...num("net", "Net price", 100, "$"), optional: true },
+        { ...num("gross", "Gross price", 0, "$"), value: "", optional: true },
+        { ...num("tax", "Tax amount", 0, "$"), value: "", optional: true },
+      ],
+      description:
+        "Enter any two values and leave the other two fields blank to calculate the remaining values.",
+      formula:
+        "Gross price = net price + tax amount; tax amount = net price × VAT rate / 100.",
+      calculate: (v) => {
+        const result = solveVAT(v);
+        return {
+          metrics: [
+            money("Net amount", result.net),
+            money("VAT amount", result.tax),
+            money("Gross amount", result.gross),
+            metric("VAT rate", result.rate, "percent"),
+          ],
+        };
+      },
     },
-  })),
-  "Calculate VAT-inclusive and VAT-exclusive prices or infer the tax rate.",
+  ],
+  "Calculate VAT rate, net price, gross price, or tax amount using any two known values.",
 );
 const depreciation = tool(
   "depreciation",

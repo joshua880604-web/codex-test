@@ -41,3 +41,7 @@ Known loan and mortgage schedule schemas support per-payment/monthly and yearly 
 ## Calculation audit — 2026-10-19
 
 See calculation-audit.md for eight reproduced and corrected issue groups, independent/source cases, and full limitations. In particular, original 401(k) retirement distributions and the maximum-match contribution-percentage window remain missing; source Retirement annual-contribution/percentage controls are not completely mapped. Current RMD distribution years are explicitly restricted to 2022 onward, and insufficient-funds assumptions raise an error instead of generating negative distributions. No global source-parity pass is claimed.
+
+## VAT any-two workflow update
+
+VAT now implements all six input pairs in one four-field form, replacing the old four-tab subset. Local mathematical degeneracy/error handling is covered; original exact defaults, invalid-input responses and visual comparison remain unverified. No full source-parity acceptance is claimed solely from these local tests.

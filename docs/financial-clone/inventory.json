@@ -8705,80 +8705,35 @@
     ],
     "implemented_modes": [
       {
-        "id": "gross",
-        "title": "Solve gross",
+        "id": "any-two",
+        "title": "VAT Calculator",
         "fields": [
-          {
-            "key": "net",
-            "label": "Net amount",
-            "type": "number",
-            "unit": "$"
-          },
           {
             "key": "rate",
             "label": "VAT rate",
             "type": "number",
             "unit": "%"
-          }
-        ],
-        "formula": "Gross = net × (1 + VAT rate); tax = net × VAT rate."
-      },
-      {
-        "id": "net",
-        "title": "Solve net",
-        "fields": [
-          {
-            "key": "gross",
-            "label": "Gross amount",
-            "type": "number",
-            "unit": "$"
           },
-          {
-            "key": "rate",
-            "label": "VAT rate",
-            "type": "number",
-            "unit": "%"
-          }
-        ],
-        "formula": "Gross = net × (1 + VAT rate); tax = net × VAT rate."
-      },
-      {
-        "id": "rate",
-        "title": "Solve rate",
-        "fields": [
           {
             "key": "net",
-            "label": "Net amount",
+            "label": "Net price",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "gross",
-            "label": "Gross amount",
+            "label": "Gross price",
             "type": "number",
             "unit": "$"
-          }
-        ],
-        "formula": "Gross = net × (1 + VAT rate); tax = net × VAT rate."
-      },
-      {
-        "id": "tax",
-        "title": "Solve tax",
-        "fields": [
+          },
           {
             "key": "tax",
-            "label": "VAT amount",
+            "label": "Tax amount",
             "type": "number",
             "unit": "$"
-          },
-          {
-            "key": "rate",
-            "label": "VAT rate",
-            "type": "number",
-            "unit": "%"
           }
         ],
-        "formula": "Gross = net × (1 + VAT rate); tax = net × VAT rate."
+        "formula": "Gross price = net price + tax amount; tax amount = net price × VAT rate / 100."
       }
     ]
   },

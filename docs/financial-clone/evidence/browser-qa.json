@@ -1,5 +1,5 @@
 {
-  "tested_at": "2026-10-19T07:03:45.486Z",
+  "tested_at": "2026-10-19T08:23:49.753Z",
   "base": "http://127.0.0.1:3000",
   "browser": "System Chromium via Playwright",
   "reference_visual_parity": "unverified: original-site browser unavailable",
@@ -952,19 +952,7 @@
       "status": 200,
       "modes": [
         {
-          "mode": "Solve gross",
-          "result": "rendered"
-        },
-        {
-          "mode": "Solve net",
-          "result": "rendered"
-        },
-        {
-          "mode": "Solve rate",
-          "result": "rendered"
-        },
-        {
-          "mode": "Solve tax",
+          "mode": "default",
           "result": "rendered"
         }
       ]

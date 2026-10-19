@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-19T08:22:26.391Z",
+  "checks": [
+    {
+      "inputs": {
+        "rate": "20",
+        "net": "100"
+      },
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "rate": "20",
+        "gross": "120"
+      },
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "rate": "20",
+        "tax": "20"
+      },
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "net": "100",
+        "gross": "120"
+      },
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "net": "100",
+        "tax": "20"
+      },
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "gross": "120",
+        "tax": "20"
+      },
+      "result": "passed"
+    },
+    {
+      "inputs": {},
+      "error": "exactly two",
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "net": "100"
+      },
+      "error": "exactly two",
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "net": "100",
+        "gross": "120",
+        "tax": "20"
+      },
+      "error": "exactly two",
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "net": "100",
+        "gross": "80"
+      },
+      "error": "at least",
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "gross": "10",
+        "tax": "20"
+      },
+      "error": "cannot exceed",
+      "result": "passed"
+    },
+    {
+      "inputs": {
+        "rate": "0",
+        "tax": "0"
+      },
+      "error": "unique answer",
+      "result": "passed"
+    },
+    "Zero-rate calculation",
+    "Shared query retains exactly two known values without default injection",
+    "Legacy VAT shared links retain input values",
+    {
+      "width": 768,
+      "result": "no overflow"
+    },
+    {
+      "width": 390,
+      "result": "no overflow"
+    }
+  ],
+  "errors": [],
+  "source_form_submission": "unverified"
+}

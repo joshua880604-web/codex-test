@@ -52,7 +52,7 @@ test("source prose: discount percent and fixed", () => {
 for (const net of [5, 10, 20])
   test("source prose: VAT " + net, () =>
     close(
-      value(run("vat", "gross", { net, rate: 10 }), "VAT amount"),
+      value(run("vat", "any-two", { net, rate: 10 }), "VAT amount"),
       net * 0.1,
     ),
   );

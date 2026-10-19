@@ -49,6 +49,9 @@ export default function CalculatorClient({ id }: { id: string }) {
       found = calc.modes.find((m) => m.id === q.get("mode"));
     const initial = found ?? calc.modes[0],
       v = defaults(initial);
+    if (id === "vat" && initial.fields.some((f) => q.has(f.key))) {
+      for (const f of initial.fields) v[f.key] = "";
+    }
     for (const f of initial.fields) {
       const x = q.get(f.key);
       if (x !== null) v[f.key] = x;
@@ -134,10 +137,18 @@ export default function CalculatorClient({ id }: { id: string }) {
   function reset() {
     request.current++;
     setBusy(false);
-    setValues(defaults(mode));
+    setValues(
+      id === "vat"
+        ? Object.fromEntries(mode.fields.map((f) => [f.key, ""]))
+        : defaults(mode),
+    );
     setResult(null);
     setError("");
-    setNotice("Inputs reset to defaults.");
+    setNotice(
+      id === "vat"
+        ? "Inputs cleared. Enter any two values."
+        : "Inputs reset to defaults.",
+    );
     setFeed("");
     setShowAll(false);
     setYearly(false);
@@ -471,8 +482,10 @@ export default function CalculatorClient({ id }: { id: string }) {
         <h2>How to use this calculator</h2>
         <p>
           {mode.description} Enter amounts in the units shown, select the
-          applicable options, and click Calculate. Use Clear to restore the
-          starting values.
+          applicable options, and click Calculate.{" "}
+          {id === "vat"
+            ? "Use Clear to empty all four fields."
+            : "Use Clear to restore the starting values."}
         </p>
         <h3>Calculation formula</h3>
         <p className="formula">{mode.formula}</p>
