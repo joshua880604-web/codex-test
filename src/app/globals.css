@@ -802,3 +802,24 @@ footer p {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* Pair matching marriage-tax inputs so neither partner is hidden in advanced options. */
+.marriage-help { font-size: 13px; color: #444; line-height: 1.5; }
+.marriage-basic { border: 0; border-top: 1px solid #ccc; padding: 12px 0 0; margin: 16px 0; min-width: 0; }
+.marriage-basic legend { font-size: 16px; font-weight: bold; color: #003b66; padding-right: 10px; }
+.marriage-columns, .marriage-pair { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, 1fr)); gap: 12px; }
+.marriage-columns { padding: 8px 0; color: #003b66; font-size: 13px; border-bottom: 1px solid #bbb; }
+.marriage-pair { align-items: start; border-bottom: 1px solid #d4d4d4; padding: 10px 0; }
+.marriage-row-title { font-size: 13px; align-self: center; overflow-wrap: anywhere; }
+.marriage-pair .field-row { display: block; min-width: 0; margin: 0; }
+.marriage-pair .field-row > label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.marriage-pair .field-control input, .marriage-pair .field-control select { width: 100%; font-size: 14px; }
+.marriage-section summary { font-weight: bold; min-height: 36px; }
+@media (max-width: 650px) {
+  .marriage-columns { display: none; }
+  .marriage-pair { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 14px; padding: 12px 0; }
+  .marriage-row-title { grid-column: 1 / -1; font-size: 14px; font-weight: bold; }
+  .marriage-pair .field-row > label { position: static; display: block; width: auto; height: auto; margin: 0 0 5px; overflow: visible; clip-path: none; white-space: normal; font-size: 12px; }
+  .marriage-pair .field-control input, .marriage-pair .field-control select { width: 100%; font-size: 16px; }
+}
+

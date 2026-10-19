@@ -44,3 +44,7 @@ Use explicit SITE_URL and SITE_INDEXABLE configuration; no guessed domain, train
 ## 2026-10-19: usability and category loading
 
 Retain financial math and compact layout. Improve mobile controls, accessible matching descriptions, year-end table terminology and Reset naming. Serialize form definitions/default results from the server, and dynamically load only the requested calculation category. Directory search uses the metadata catalog, not the calculation registry. See ui-performance.md for measured bytes and validation limits.
+
+## 2026-10-19: Marriage Tax paired layout
+
+Replace positional first-eight-field display with semantic paired sections. Keep both partners’ essential inputs visible, retain all 71 fields, group optional inputs and promote the signed tax difference as clearly labeled savings/additional tax. No tax model or defaults changed. See marriage-layout.md.

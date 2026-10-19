@@ -15,3 +15,5 @@ SEO screenshot upload was rejected by automatic review. The safe source-only upd
 User explicitly confirmed the SEO source/documentation upload after automatic review. Synchronize to the existing public financial-calculators branch, with new screenshot artifacts excluded. No hosted website deployment is included.
 
 Latest UI/performance update: see ui-performance.md. Initial JS in four measured routes dropped from 840,707 to 491,897 decoded bytes (41.5%). Category computation loads on demand. 289 tests, typecheck/build, 71-route/154-mode browser regression, 20 UI checks and 20 SEO checks passed. No calculation formulas changed; no screenshots or hosted deployment included.
+
+Marriage Tax usability update: paired desktop/mobile inputs and semantic advanced sections retain all 71 fields. Leading result now explains annual savings/additional tax; math and shared field keys are unchanged. 291 tests and dedicated four-width browser checks passed. See marriage-layout.md.

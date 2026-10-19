@@ -2391,7 +2391,9 @@
       "browser": "evidence/browser-qa.json",
       "limitations": "remaining-work.md",
       "seo_readiness": "seo-geo.md",
-      "ui_performance": "ui-performance.md"
+      "ui_performance": "ui-performance.md",
+      "layout": "marriage-layout.md",
+      "layout_browser": "evidence/browser-marriage-qa.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."

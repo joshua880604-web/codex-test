@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import MarriageFields from "./MarriageFields";
 import { defaults } from "@/lib/types";
 import { routeFor } from "@/lib/catalog";
 import { runClientCalculation } from "@/lib/calculate-client";
@@ -178,7 +179,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     a.click();
     URL.revokeObjectURL(url);
   }
-  function input(field: Field) {
+  function input(field: Field, person?: string) {
     if (field.key === "verified_rate") return null;
     const inputId = id + "-" + mode.id + "-" + field.key;
     const hint = field.hint ?? (id === "401k" && mode.id === "projection" ? ({
@@ -194,11 +195,12 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         }
         key={field.key}
       >
-        <label htmlFor={inputId}>{field.label}</label>
+        <label htmlFor={inputId}>{person ?? field.label}</label>
         <div className="field-control">
           {field.type === "select" ? (
             <select
               id={inputId}
+              aria-label={person ? field.label : undefined}
               aria-describedby={describedBy}
               value={values[field.key] ?? ""}
               onChange={(e) => update(field.key, e.target.value)}
@@ -241,6 +243,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           ) : field.type === "textarea" ? (
             <textarea
               id={inputId}
+              aria-label={person ? field.label : undefined}
               aria-describedby={describedBy}
               value={values[field.key] ?? ""}
               rows={4}
@@ -249,6 +252,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           ) : (
             <input
               id={inputId}
+              aria-label={person ? field.label : undefined}
               aria-describedby={describedBy}
               type={field.type === "date" ? "date" : "number"}
               inputMode={field.type === "date" ? undefined : "decimal"}
@@ -311,11 +315,11 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           if (details) details.open = true;
           setResult(null);
         }}>
-          {main.map(input)}
-          {advanced.length > 0 && (
+          {id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
+          {id !== "marriage-tax" && advanced.length > 0 && (
             <details className="advanced" key={mode.id}>
               <summary>More options ({advanced.length})</summary>
-              {advanced.map(input)}
+              {advanced.map(f => input(f))}
             </details>
           )}
           <div className="form-actions">
@@ -345,18 +349,18 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           <h2>Result</h2>
           <div className="result-main">
             <div className="metrics">
-              {result.metrics.map((m, i) => (
+              {(id === "marriage-tax" ? [...result.metrics.slice(-1), ...result.metrics.slice(0, -1)] : result.metrics).map((m, i) => (
                 <div
                   className={i === 0 ? "metric primary" : "metric"}
                   key={m.label}
                 >
-                  <span>{m.label}</span>
+                  <span>{id === "marriage-tax" && i === 0 ? (m.value < -0.005 ? "Estimated annual tax savings after marriage" : m.value > 0.005 ? "Estimated annual additional tax after marriage" : "Estimated annual tax difference after marriage") : m.label}</span>
                   <strong>
                     {m.format === "money"
                       ? new Intl.NumberFormat("en-US", {
                           style: "currency",
                           currency: "USD",
-                        }).format(m.value)
+                        }).format(id === "marriage-tax" && i === 0 ? Math.abs(m.value) : m.value)
                       : amount(
                           m.value,
                           m.digits ??
@@ -420,6 +424,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
             <button onClick={() => window.print()}>Print</button>
             {result.rows && <button onClick={download}>Download CSV</button>}
           </div>
+          {id === "marriage-tax" && <p className="result-note">Compared with your combined unmarried federal income tax. Savings means the married-joint estimate is lower; additional tax means it is higher. This does not compare married filing separately or include state/local tax.</p>}
           {result.notes?.map((note, i) => (
             <p className="result-note" key={i}>
               {note}

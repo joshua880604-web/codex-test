@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-19T09:54:23.619Z",
+  "checks": [
+    "All 71 fields retained; both salaries and statuses visible side by side; optional groups collapsed",
+    {
+      "scenario": [
+        80000,
+        0
+      ],
+      "delta": -3530,
+      "direction": "correct"
+    },
+    {
+      "scenario": [
+        80000,
+        80000
+      ],
+      "delta": 0,
+      "direction": "correct"
+    },
+    {
+      "scenario": [
+        500000,
+        500000
+      ],
+      "delta": 5332,
+      "direction": "correct"
+    },
+    "Shared advanced inputs remain populated and their groups open automatically",
+    "Reset restores both basic and advanced values",
+    {
+      "width": 320,
+      "all_fields_accessible": true,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "all_fields_accessible": true,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "all_fields_accessible": true,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "all_fields_accessible": true,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}
