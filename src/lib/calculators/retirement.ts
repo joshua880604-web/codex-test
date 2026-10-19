@@ -56,7 +56,7 @@ const retirement = tool(
       description:
         "Estimate the retirement balance needed to fund an inflation-adjusted income gap.",
       formula:
-        "Target = PV of the income gap at the real return; required monthly saving funds target less future current savings.",
+        "Target = sum of first-year income gap × (1 + inflation)^(year − 1) / (1 + return)^year; required monthly saving funds target less future current savings.",
       calculate: (v) => {
         const { working, retired } = remaining(v),
           r = pct(v, "return"),
@@ -66,7 +66,7 @@ const retirement = tool(
             (1 + pct(v, "salary_growth")) ** working *
             pct(v, "replacement"),
           gap = Math.max(0, annual - n(v, "other") * 12),
-          target = annuityPV(gap, real, retired),
+          target = annuityPV(gap, real, retired) / (1 + pct(v, "inflation")),
           existing = future(n(v, "balance"), 0, monthly(r), working * 12),
           factor = future(0, 1, monthly(r), working * 12),
           needed = working ? Math.max(0, (target - existing) / factor) : 0,
@@ -85,7 +85,7 @@ const retirement = tool(
             money("First-year retirement income need", annual),
           ],
           notes: [
-            "Other income is treated as inflation-indexed throughout retirement. Returns and inflation remain constant.",
+            "The entered income gap is the first retirement-year withdrawal, paid at that year’s end; inflation increases subsequent yearly withdrawals. Other income is treated as inflation-indexed throughout retirement. Returns and inflation remain constant.",
           ],
         };
       },
@@ -117,8 +117,19 @@ const retirement = tool(
         return {
           metrics: [
             money("Required monthly saving", required),
-            money("Required annual saving", required * 12),
+            money("Annual total of monthly savings", required * 12),
+            money(
+              "Required year-end annual saving",
+              Math.max(
+                0,
+                (n(v, "target") - existing) /
+                  future(0, 1, pct(v, "return"), N / 12),
+              ),
+            ),
             money("Current savings future value", existing),
+          ],
+          notes: [
+            "Monthly savings are paid at each month end. Annual total of monthly savings is twelve monthly deposits; Required year-end annual saving is an alternative single deposit at each year end. These are separate plans, not amounts to contribute together. Annual return is an effective annual rate.",
           ],
         };
       },
@@ -136,13 +147,15 @@ const retirement = tool(
       description:
         "Estimate the initial sustainable monthly withdrawal with subsequent inflation increases.",
       formula:
-        "Starting retirement balance / real-rate annuity present-value factor.",
+        "Initial monthly withdrawal = retirement balance × (1 + monthly inflation) / real-rate monthly annuity present-value factor.",
       calculate: (v) => {
         const { working, retired } = remaining(v),
           r = pct(v, "return"),
           b = future(n(v, "balance"), n(v, "saving"), monthly(r), working * 12),
           real = (1 + r) / (1 + pct(v, "inflation")) - 1,
-          w = payment(b, monthly(real), retired * 12);
+          w =
+            payment(b, monthly(real), retired * 12) *
+            (1 + monthly(pct(v, "inflation")));
         return {
           metrics: [
             money("Balance at retirement", b),
@@ -151,6 +164,9 @@ const retirement = tool(
               "Monthly withdrawal in today’s dollars",
               w / (1 + pct(v, "inflation")) ** working,
             ),
+          ],
+          notes: [
+            "First withdrawal is at the end of the first retirement month. Subsequent monthly withdrawals grow at the monthly rate equivalent to entered annual inflation. Annual investment return is effective.",
           ],
         };
       },
@@ -810,7 +826,7 @@ const rmd = tool(
       title: "Required Minimum Distribution",
       fields: [
         num("birth", "Birth year", 1951, "", 1900),
-        num("year", "Distribution year", 2026, "", 2020),
+        num("year", "Distribution year", 2026, "", 2022),
         num("balance", "Previous December 31 balance", 500000, "$"),
         select(
           "spouse",
@@ -863,7 +879,12 @@ const rmd = tool(
           if (!factor) throw new Error("No verified IRS factor for this age.");
           const distribution = b / factor;
           rows.push([n(v, "year") + i, a, b, factor, distribution]);
-          b = b * (1 + pct(v, "return")) - distribution;
+          const afterGrowth = b * (1 + pct(v, "return"));
+          if (distribution > afterGrowth + 1e-8)
+            throw new Error(
+              "The assumed return leaves insufficient funds for the year-end RMD. Adjust the return or projection length; a negative account balance is not projected.",
+            );
+          b = Math.max(0, afterGrowth - distribution);
         }
         return {
           metrics: [
@@ -882,7 +903,7 @@ const rmd = tool(
           notes: [
             joint
               ? "Uses IRS Publication 590-B Table II joint-life factors, with both spouses aging each year. Published table covers ages 20–120 and over; younger-spouse entries under age 20 are unsupported."
-              : "Uses IRS Publication 590-B Table III (2025 accessible edition). Owner accounts only; employer-plan deferral and inherited-account exceptions are not modeled.",
+              : "Uses IRS Publication 590-B Table III (2025 accessible edition), effective for distribution years 2022 onward. Earlier years require historical tables and relief rules and are unsupported. Owner accounts only; employer-plan deferral and inherited-account exceptions are not modeled.",
           ],
         };
       },

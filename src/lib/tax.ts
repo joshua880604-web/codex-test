@@ -81,6 +81,7 @@ export function selfEmployment(
 ): number {
   const income = Math.max(0, net) * 0.9235,
     base = year === 2026 ? 184500 : 176100;
+  if (income < 400) return 0;
   return Math.min(income, Math.max(0, base - wages)) * 0.124 + income * 0.029;
 }
 export function federalTax(x: TaxInputs) {
@@ -179,14 +180,11 @@ export function federalTax(x: TaxInputs) {
     overtime = allowed
       ? Math.max(0, Math.min(x.overtime, married ? 25000 : 12500) - 100 * steps)
       : 0,
-    car = allowed
-      ? Math.max(
-          0,
-          Math.min(x.carInterest, 10000) -
-            200 *
-              Math.ceil(Math.max(0, agi - (married ? 200000 : 100000)) / 1000),
-        )
-      : 0,
+    car = Math.max(
+      0,
+      Math.min(x.carInterest, 10000) -
+        200 * Math.ceil(Math.max(0, agi - (married ? 200000 : 100000)) / 1000),
+    ),
     senior = allowed
       ? x.age65 *
         Math.max(0, 6000 - 0.06 * Math.max(0, agi - (married ? 150000 : 75000)))
@@ -317,7 +315,12 @@ export function federalTax(x: TaxInputs) {
       Math.max(
         0,
         wages +
-          (Math.max(0, x.business) + Math.max(0, x.spouseBusiness)) * 0.9235 -
+          (Math.max(0, x.business) * 0.9235 >= 400
+            ? Math.max(0, x.business) * 0.9235
+            : 0) +
+          (Math.max(0, x.spouseBusiness) * 0.9235 >= 400
+            ? Math.max(0, x.spouseBusiness) * 0.9235
+            : 0) -
           additionalThreshold,
       ) * 0.009,
     niit =

@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-19T07:05:33.229Z",
+  "checks": [
+    {
+      "route": "retirement-calculator",
+      "mode": "saving",
+      "expected": {
+        "Required monthly saving": "$362.74",
+        "Annual total of monthly savings": "$4,352.89",
+        "Required year-end annual saving": "$4,471.33"
+      }
+    },
+    {
+      "route": "retirement-calculator",
+      "mode": "required",
+      "expected": {
+        "Required savings at retirement": "$12,000.00"
+      }
+    },
+    {
+      "route": "investment-calculator",
+      "mode": "length",
+      "expected": {
+        "Invest Length": "0",
+        "Ending balance": "$1,000.00"
+      }
+    },
+    {
+      "route": "irr-calculator",
+      "mode": "irregular",
+      "expected": {
+        "IRR 1": "10.0000%"
+      }
+    },
+    {
+      "route": "tax-calculator",
+      "mode": "federal",
+      "expected": {
+        "Estimated federal income tax": "$7,949.00"
+      }
+    }
+  ],
+  "errors": []
+}

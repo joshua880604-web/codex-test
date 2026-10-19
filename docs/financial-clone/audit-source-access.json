@@ -1,0 +1,503 @@
+{
+  "checked_at": "2026-10-19T07:01:14.947Z",
+  "scope": "Text accessibility only; does not establish exact input values or calculator result parity.",
+  "pages": [
+    {
+      "id": "mortgage",
+      "url": "https://www.calculator.net/mortgage-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "amortization",
+      "url": "https://www.calculator.net/amortization-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "mortgage-payoff",
+      "url": "https://www.calculator.net/mortgage-payoff-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "house-affordability",
+      "url": "https://www.calculator.net/house-affordability-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "rent",
+      "url": "https://www.calculator.net/rent-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "url": "https://www.calculator.net/debt-ratio-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "real-estate",
+      "url": "https://www.calculator.net/real-estate-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "refinance",
+      "url": "https://www.calculator.net/refinance-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "rental-property",
+      "url": "https://www.calculator.net/rental-property-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "apr",
+      "url": "https://www.calculator.net/apr-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "fha-loan",
+      "url": "https://www.calculator.net/fha-loan-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "va-mortgage",
+      "url": "https://www.calculator.net/va-mortgage-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "home-equity-loan",
+      "url": "https://www.calculator.net/home-equity-loan-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "heloc",
+      "url": "https://www.calculator.net/heloc-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "down-payment",
+      "url": "https://www.calculator.net/down-payment-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "rent-vs-buy",
+      "url": "https://www.calculator.net/rent-vs-buy-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "auto-loan",
+      "url": "https://www.calculator.net/auto-loan-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "url": "https://www.calculator.net/cash-back-or-low-interest-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "auto-lease",
+      "url": "https://www.calculator.net/auto-lease-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "interest",
+      "url": "https://www.calculator.net/interest-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "investment",
+      "url": "https://www.calculator.net/investment-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "finance",
+      "url": "https://www.calculator.net/finance-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "compound-interest",
+      "url": "https://www.calculator.net/compound-interest-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "interest-rate",
+      "url": "https://www.calculator.net/interest-rate-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "savings",
+      "url": "https://www.calculator.net/savings-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "simple-interest",
+      "url": "https://www.calculator.net/simple-interest-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "cd",
+      "url": "https://www.calculator.net/cd-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "bond",
+      "url": "https://www.calculator.net/bond-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "mutual-fund",
+      "url": "https://www.calculator.net/mutual-fund-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "average-return",
+      "url": "https://www.calculator.net/average-return-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "irr",
+      "url": "https://www.calculator.net/irr-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "roi",
+      "url": "https://www.calculator.net/roi-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "payback-period",
+      "url": "https://www.calculator.net/payback-period-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "present-value",
+      "url": "https://www.calculator.net/present-value-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "future-value",
+      "url": "https://www.calculator.net/future-value-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "retirement",
+      "url": "https://www.calculator.net/retirement-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "401k",
+      "url": "https://www.calculator.net/401k-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "pension",
+      "url": "https://www.calculator.net/pension-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "social-security",
+      "url": "https://www.calculator.net/social-security-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "annuity",
+      "url": "https://www.calculator.net/annuity-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "annuity-payout",
+      "url": "https://www.calculator.net/annuity-payout-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "roth-ira",
+      "url": "https://www.calculator.net/roth-ira-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "ira",
+      "url": "https://www.calculator.net/ira-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "rmd",
+      "url": "https://www.calculator.net/rmd-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "income-tax",
+      "url": "https://www.calculator.net/tax-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "salary",
+      "url": "https://www.calculator.net/salary-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "marriage-tax",
+      "url": "https://www.calculator.net/marriage-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "estate-tax",
+      "url": "https://www.calculator.net/estate-tax-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "take-home-paycheck",
+      "url": "https://www.calculator.net/take-home-pay-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "loan",
+      "url": "https://www.calculator.net/loan-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "payment",
+      "url": "https://www.calculator.net/payment-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "currency",
+      "url": "https://www.calculator.net/currency-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "inflation",
+      "url": "https://www.calculator.net/inflation-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "sales-tax",
+      "url": "https://www.calculator.net/sales-tax-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "credit-card",
+      "url": "https://www.calculator.net/credit-card-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "credit-cards-payoff",
+      "url": "https://www.calculator.net/credit-card-payoff-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "debt-payoff",
+      "url": "https://www.calculator.net/debt-payoff-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "debt-consolidation",
+      "url": "https://www.calculator.net/debt-consolidation-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "repayment",
+      "url": "https://www.calculator.net/repayment-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "student-loan",
+      "url": "https://www.calculator.net/student-loan-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "college-cost",
+      "url": "https://www.calculator.net/college-cost-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "vat",
+      "url": "https://www.calculator.net/vat-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "depreciation",
+      "url": "https://www.calculator.net/depreciation-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "margin",
+      "url": "https://www.calculator.net/margin-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "discount",
+      "url": "https://www.calculator.net/discount-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "business-loan",
+      "url": "https://www.calculator.net/business-loan-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": true,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "personal-loan",
+      "url": "https://www.calculator.net/personal-loan-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "boat-loan",
+      "url": "https://www.calculator.net/boat-loan-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "lease",
+      "url": "https://www.calculator.net/lease-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "budget",
+      "url": "https://www.calculator.net/budget-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    },
+    {
+      "id": "commission",
+      "url": "https://www.calculator.net/commission-calculator.html",
+      "page_text_available": true,
+      "has_visible_results": false,
+      "exact_form_submission_verified": false
+    }
+  ]
+}

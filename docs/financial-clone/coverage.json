@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T06:49:19.214758+00:00",
+  "generated_at": "2026-10-19T07:05:31.827Z",
   "directory_entries": 71,
   "calculators": 70,
   "directory_only_entries": 1,
@@ -7,7 +7,7 @@
   "local_browser_routes": 71,
   "local_browser_modes": 157,
   "numeric_tests": {
-    "total": 235,
+    "total": 247,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,14 +17,9 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_regressions": [
-    "yearly payment-flow conservation and CSV",
-    "Michigan capped trade credit and eight-state dealer purchase rules",
-    "cash-back tax and upfront-cost comparison",
-    "Microsoft DDB examples and no forced terminal write-down",
-    "actual-days depreciation fiscal proration",
-    "bond end-of-month coupon anchoring"
-  ],
-  "latest_change": "401(k) contribution summary includes starting balance once, with explicit label and notes",
-  "latest_change_browser": "not rerun; prior browser evidence predates this change"
+  "latest_change": "calculation audit: eight issue groups corrected",
+  "calculation_audit": "calculation-audit.md",
+  "original_page_text_available": 71,
+  "source_prose_cases": 25,
+  "audit_specific_browser_cases": 5
 }

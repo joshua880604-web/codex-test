@@ -34,9 +34,11 @@ function growth(
 ): Result {
   const get = (k: string) => overrides[k] ?? n(v, k);
   const initial = get("principal"),
-    years = get("years") + (v.months ? n(v, "months") / 12 : 0),
+    years =
+      get("years") + (overrides.months ?? (v.months ? n(v, "months") : 0)) / 12,
     months = Math.round(years * 12);
-  periods(months);
+  if (years < 0) throw new Error("Investment length cannot be negative.");
+  if (months > 0) periods(months);
   const rate = get("rate"),
     tax = pct(v, "tax"),
     inflation = pct(v, "inflation"),
@@ -200,7 +202,7 @@ const investmentModes = [
   const fields = [
     ...growthFields(),
     num("end", "Target end amount", 50000, "$"),
-  ].filter((f) => f.key !== key);
+  ].filter((f) => f.key !== key && !(key === "years" && f.key === "months"));
   return {
     id: ["end", "contribution", "return", "starting", "length"][index],
     title: label,
@@ -228,17 +230,25 @@ const investmentModes = [
           100,
         );
       else {
-        value = 0;
-        for (let m = 1; m <= 2400; m++) {
-          if (growth(v, { years: m / 12 }).metrics[0].value >= target) {
+        value = -1;
+        for (let m = 0; m <= 2400; m++) {
+          const balance = growth(v, { years: m / 12, months: 0 }).metrics[0]
+            .value;
+          const tolerance =
+            32 *
+            Number.EPSILON *
+            Math.max(1, Math.abs(target), Math.abs(balance));
+          if (balance >= target - tolerance) {
             value = m / 12;
             break;
           }
         }
-        if (value === 0)
-          throw new Error("Target not reached within 200 years.");
+        if (value < 0) throw new Error("Target not reached within 200 years.");
       }
-      const result = growth(v, { [key]: value });
+      const result = growth(v, {
+        [key]: value,
+        ...(key === "years" ? { months: 0 } : {}),
+      });
       result.metrics.unshift(
         metric(
           label,

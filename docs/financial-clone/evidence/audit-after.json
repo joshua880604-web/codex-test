@@ -1,0 +1,275 @@
+{
+  "retirementSaving": {
+    "metrics": [
+      {
+        "label": "Required monthly saving",
+        "value": 362.74060044616044,
+        "format": "money"
+      },
+      {
+        "label": "Annual total of monthly savings",
+        "value": 4352.887205353925,
+        "format": "money"
+      },
+      {
+        "label": "Required year-end annual saving",
+        "value": 4471.332292207177,
+        "format": "money"
+      },
+      {
+        "label": "Current savings future value",
+        "value": 193601.60045655977,
+        "format": "money"
+      }
+    ],
+    "notes": [
+      "Monthly savings are paid at each month end. Annual total of monthly savings is twelve monthly deposits; Required year-end annual saving is an alternative single deposit at each year end. These are separate plans, not amounts to contribute together. Annual return is an effective annual rate."
+    ]
+  },
+  "retirementRequired": {
+    "metrics": [
+      {
+        "label": "Required savings at retirement",
+        "value": 11999.999999999998,
+        "format": "money"
+      },
+      {
+        "label": "Required monthly saving",
+        "value": 0,
+        "format": "money"
+      },
+      {
+        "label": "Projected retirement savings",
+        "value": 100000,
+        "format": "money"
+      },
+      {
+        "label": "Projected surplus / shortfall",
+        "value": 88000,
+        "format": "money"
+      },
+      {
+        "label": "First-year retirement income need",
+        "value": 12000,
+        "format": "money"
+      }
+    ],
+    "notes": [
+      "The entered income gap is the first retirement-year withdrawal, paid at that year’s end; inflation increases subsequent yearly withdrawals. Other income is treated as inflation-indexed throughout retirement. Returns and inflation remain constant."
+    ]
+  },
+  "retirementWithdrawal": {
+    "metrics": [
+      {
+        "label": "Balance at retirement",
+        "value": 12000,
+        "format": "money"
+      },
+      {
+        "label": "Initial monthly withdrawal",
+        "value": 946.1854641401006,
+        "format": "money"
+      },
+      {
+        "label": "Monthly withdrawal in today’s dollars",
+        "value": 946.1854641401006,
+        "format": "money"
+      }
+    ],
+    "notes": [
+      "First withdrawal is at the end of the first retirement month. Subsequent monthly withdrawals grow at the monthly rate equivalent to entered annual inflation. Annual investment return is effective."
+    ]
+  },
+  "investmentZero": {
+    "metrics": [
+      {
+        "label": "Ending balance",
+        "value": 1000,
+        "format": "money"
+      },
+      {
+        "label": "Total contributions",
+        "value": 1000,
+        "format": "money"
+      },
+      {
+        "label": "Net investment earnings",
+        "value": 0,
+        "format": "money"
+      },
+      {
+        "label": "Tax on interest",
+        "value": 0,
+        "format": "money"
+      },
+      {
+        "label": "Inflation-adjusted balance",
+        "value": 1000,
+        "format": "money"
+      }
+    ],
+    "columns": [
+      "Year",
+      "Contributions",
+      "Net earnings",
+      "Balance"
+    ],
+    "rows": [],
+    "chart": [
+      {
+        "label": "Contributions",
+        "value": 1000
+      },
+      {
+        "label": "Net earnings",
+        "value": 0
+      }
+    ],
+    "notes": [
+      "Interest is accrued monthly using the selected compounding equivalent. Tax is charged on positive interest at each year end; tax losses are not carried forward."
+    ]
+  },
+  "investmentAlreadyMet": {
+    "metrics": [
+      {
+        "label": "Invest Length",
+        "value": 0,
+        "format": "number"
+      },
+      {
+        "label": "Ending balance",
+        "value": 1000,
+        "format": "money"
+      },
+      {
+        "label": "Total contributions",
+        "value": 1000,
+        "format": "money"
+      },
+      {
+        "label": "Net investment earnings",
+        "value": 0,
+        "format": "money"
+      },
+      {
+        "label": "Tax on interest",
+        "value": 0,
+        "format": "money"
+      },
+      {
+        "label": "Inflation-adjusted balance",
+        "value": 1000,
+        "format": "money"
+      }
+    ],
+    "columns": [
+      "Year",
+      "Contributions",
+      "Net earnings",
+      "Balance"
+    ],
+    "rows": [],
+    "chart": [
+      {
+        "label": "Contributions",
+        "value": 1000
+      },
+      {
+        "label": "Net earnings",
+        "value": 0
+      }
+    ],
+    "notes": [
+      "Interest is accrued monthly using the selected compounding equivalent. Tax is charged on positive interest at each year end; tax losses are not carried forward."
+    ]
+  },
+  "investmentMonths": {
+    "metrics": [
+      {
+        "label": "Invest Length",
+        "value": 1,
+        "format": "number"
+      },
+      {
+        "label": "Ending balance",
+        "value": 1126.8250301319695,
+        "format": "money"
+      },
+      {
+        "label": "Total contributions",
+        "value": 1000,
+        "format": "money"
+      },
+      {
+        "label": "Net investment earnings",
+        "value": 126.82503013196947,
+        "format": "money"
+      },
+      {
+        "label": "Tax on interest",
+        "value": 0,
+        "format": "money"
+      },
+      {
+        "label": "Inflation-adjusted balance",
+        "value": 1126.8250301319695,
+        "format": "money"
+      }
+    ],
+    "columns": [
+      "Year",
+      "Contributions",
+      "Net earnings",
+      "Balance"
+    ],
+    "rows": [
+      [
+        1,
+        1000,
+        126.82503013196947,
+        1126.8250301319695
+      ]
+    ],
+    "chart": [
+      {
+        "label": "Contributions",
+        "value": 1000
+      },
+      {
+        "label": "Net earnings",
+        "value": 126.82503013196947
+      }
+    ],
+    "notes": [
+      "Interest is accrued monthly using the selected compounding equivalent. Tax is charged on positive interest at each year end; tax losses are not carried forward."
+    ]
+  },
+  "rmd2020": {
+    "error": "Error: Distribution year must be at least 2022."
+  },
+  "rmdLoss": {
+    "error": "Error: The assumed return leaves insufficient funds for the year-end RMD. Adjust the return or projection length; a negative account balance is not projected."
+  },
+  "annuityObserved": {
+    "metrics": [
+      {
+        "label": "Annuity future value",
+        "value": 175533.38032009453,
+        "format": "money"
+      },
+      {
+        "label": "Total contributions",
+        "value": 120000,
+        "format": "money"
+      },
+      {
+        "label": "Growth",
+        "value": 55533.380320094526,
+        "format": "money"
+      }
+    ]
+  },
+  "irrTangent": [
+    0.10000000000004358
+  ]
+}

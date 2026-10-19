@@ -32,8 +32,12 @@ All source interaction/default-value parity and source/local screenshot comparis
 4. Compare screenshots at matching 1440×900, 768px, and 390×844 viewports and matching inputs.
 5. Re-run only affected numeric/UI checks and production build after fixes; update completion gates with evidence.
 
-No publication or external service setup has been performed.
+Source was uploaded to the authorized GitHub repository. Hosted website publication has not completed.
 
 ## Latest implementation batch — 2026-10-19
 
 Known loan and mortgage schedule schemas support per-payment/monthly and yearly views; yearly rows sum cash flows and retain closing balances and last-payment dates. CSV follows the selected view. Loan years are measured from the first payment, not calendar years. Biweekly and configurable business-loan frequencies use their own period counts. This does not establish source interaction or visual parity.
+
+## Calculation audit — 2026-10-19
+
+See calculation-audit.md for eight reproduced and corrected issue groups, independent/source cases, and full limitations. In particular, original 401(k) retirement distributions and the maximum-match contribution-percentage window remain missing; source Retirement annual-contribution/percentage controls are not completely mapped. Current RMD distribution years are explicitly restricted to 2022 onward, and insufficient-funds assumptions raise an error instead of generating negative distributions. No global source-parity pass is claimed.

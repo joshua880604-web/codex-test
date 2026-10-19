@@ -1,0 +1,371 @@
+{
+  "retirementSaving": {
+    "metrics": [
+      {
+        "label": "Required monthly saving",
+        "value": 362.74060044616044,
+        "format": "money"
+      },
+      {
+        "label": "Required annual saving",
+        "value": 4352.887205353925,
+        "format": "money"
+      },
+      {
+        "label": "Current savings future value",
+        "value": 193601.60045655977,
+        "format": "money"
+      }
+    ]
+  },
+  "retirementRequired": {
+    "metrics": [
+      {
+        "label": "Required savings at retirement",
+        "value": 13200,
+        "format": "money"
+      },
+      {
+        "label": "Required monthly saving",
+        "value": 0,
+        "format": "money"
+      },
+      {
+        "label": "Projected retirement savings",
+        "value": 100000,
+        "format": "money"
+      },
+      {
+        "label": "Projected surplus / shortfall",
+        "value": 86800,
+        "format": "money"
+      },
+      {
+        "label": "First-year retirement income need",
+        "value": 12000,
+        "format": "money"
+      }
+    ],
+    "notes": [
+      "Other income is treated as inflation-indexed throughout retirement. Returns and inflation remain constant."
+    ]
+  },
+  "retirementWithdrawal": {
+    "metrics": [
+      {
+        "label": "Balance at retirement",
+        "value": 12000,
+        "format": "money"
+      },
+      {
+        "label": "Initial monthly withdrawal",
+        "value": 936.8172912278224,
+        "format": "money"
+      },
+      {
+        "label": "Monthly withdrawal in today’s dollars",
+        "value": 936.8172912278224,
+        "format": "money"
+      }
+    ]
+  },
+  "investmentZero": {
+    "error": "Error: Number of periods must be greater than zero."
+  },
+  "investmentAlreadyMet": {
+    "metrics": [
+      {
+        "label": "Invest Length",
+        "value": 0.08333333333333333,
+        "format": "number"
+      },
+      {
+        "label": "Ending balance",
+        "value": 1004.1666666666666,
+        "format": "money"
+      },
+      {
+        "label": "Total contributions",
+        "value": 1000,
+        "format": "money"
+      },
+      {
+        "label": "Net investment earnings",
+        "value": 4.166666666666629,
+        "format": "money"
+      },
+      {
+        "label": "Tax on interest",
+        "value": 0,
+        "format": "money"
+      },
+      {
+        "label": "Inflation-adjusted balance",
+        "value": 1004.1666666666666,
+        "format": "money"
+      }
+    ],
+    "columns": [
+      "Year",
+      "Contributions",
+      "Net earnings",
+      "Balance"
+    ],
+    "rows": [
+      [
+        0.08333333333333333,
+        1000,
+        4.166666666666629,
+        1004.1666666666666
+      ]
+    ],
+    "chart": [
+      {
+        "label": "Contributions",
+        "value": 1000
+      },
+      {
+        "label": "Net earnings",
+        "value": 4.166666666666629
+      }
+    ],
+    "notes": [
+      "Interest is accrued monthly using the selected compounding equivalent. Tax is charged on positive interest at each year end; tax losses are not carried forward."
+    ]
+  },
+  "investmentMonths": {
+    "metrics": [
+      {
+        "label": "Invest Length",
+        "value": 0.5833333333333334,
+        "format": "number"
+      },
+      {
+        "label": "Ending balance",
+        "value": 1138.0932804332892,
+        "format": "money"
+      },
+      {
+        "label": "Total contributions",
+        "value": 1000,
+        "format": "money"
+      },
+      {
+        "label": "Net investment earnings",
+        "value": 138.09328043328924,
+        "format": "money"
+      },
+      {
+        "label": "Tax on interest",
+        "value": 0,
+        "format": "money"
+      },
+      {
+        "label": "Inflation-adjusted balance",
+        "value": 1138.0932804332892,
+        "format": "money"
+      }
+    ],
+    "columns": [
+      "Year",
+      "Contributions",
+      "Net earnings",
+      "Balance"
+    ],
+    "rows": [
+      [
+        1,
+        1000,
+        126.82503013196947,
+        1126.8250301319695
+      ],
+      [
+        1.0833333333333333,
+        1000,
+        138.09328043328924,
+        1138.0932804332892
+      ]
+    ],
+    "chart": [
+      {
+        "label": "Contributions",
+        "value": 1000
+      },
+      {
+        "label": "Net earnings",
+        "value": 138.09328043328924
+      }
+    ],
+    "notes": [
+      "Interest is accrued monthly using the selected compounding equivalent. Tax is charged on positive interest at each year end; tax losses are not carried forward."
+    ]
+  },
+  "rmd2020": {
+    "metrics": [
+      {
+        "label": "Age in distribution year",
+        "value": 75,
+        "format": "number"
+      },
+      {
+        "label": "Distribution period",
+        "value": 24.6,
+        "format": "number"
+      },
+      {
+        "label": "Annual RMD",
+        "value": 20325.20325203252,
+        "format": "money"
+      }
+    ],
+    "columns": [
+      "Year",
+      "Age",
+      "Prior year-end balance",
+      "Distribution period",
+      "RMD"
+    ],
+    "rows": [
+      [
+        2020,
+        75,
+        500000,
+        24.6,
+        20325.20325203252
+      ],
+      [
+        2021,
+        76,
+        504674.7967479675,
+        23.7,
+        21294.29522143323
+      ],
+      [
+        2022,
+        77,
+        508614.24136393267,
+        22.9,
+        22210.228880521077
+      ],
+      [
+        2023,
+        78,
+        511834.72455160826,
+        22,
+        23265.21475234583
+      ],
+      [
+        2024,
+        79,
+        514161.24602684285,
+        21.1,
+        24367.831565253215
+      ],
+      [
+        2025,
+        80,
+        515501.4767629318,
+        20.2,
+        25519.875087273853
+      ],
+      [
+        2026,
+        81,
+        515756.6755138046,
+        19.4,
+        26585.395645041477
+      ],
+      [
+        2027,
+        82,
+        514959.11364445335,
+        18.5,
+        27835.627764565044
+      ],
+      [
+        2028,
+        83,
+        512871.441562111,
+        17.7,
+        28975.787658876332
+      ],
+      [
+        2029,
+        84,
+        509539.2259813402,
+        16.8,
+        30329.71583222263
+      ]
+    ],
+    "notes": [
+      "Uses IRS Publication 590-B Table III (2025 accessible edition). Owner accounts only; employer-plan deferral and inherited-account exceptions are not modeled."
+    ]
+  },
+  "rmdLoss": {
+    "metrics": [
+      {
+        "label": "Age in distribution year",
+        "value": 120,
+        "format": "number"
+      },
+      {
+        "label": "Distribution period",
+        "value": 2,
+        "format": "number"
+      },
+      {
+        "label": "Annual RMD",
+        "value": 5000,
+        "format": "money"
+      }
+    ],
+    "columns": [
+      "Year",
+      "Age",
+      "Prior year-end balance",
+      "Distribution period",
+      "RMD"
+    ],
+    "rows": [
+      [
+        2026,
+        120,
+        10000,
+        2,
+        5000
+      ],
+      [
+        2027,
+        121,
+        -4900,
+        2,
+        -2450
+      ]
+    ],
+    "notes": [
+      "Uses IRS Publication 590-B Table III (2025 accessible edition). Owner accounts only; employer-plan deferral and inherited-account exceptions are not modeled."
+    ]
+  },
+  "annuityObserved": {
+    "metrics": [
+      {
+        "label": "Annuity future value",
+        "value": 175533.38032009453,
+        "format": "money"
+      },
+      {
+        "label": "Total contributions",
+        "value": 120000,
+        "format": "money"
+      },
+      {
+        "label": "Growth",
+        "value": 55533.380320094526,
+        "format": "money"
+      }
+    ]
+  },
+  "irrTangent": {
+    "error": "Error: No IRR found in the supported rate range."
+  }
+}

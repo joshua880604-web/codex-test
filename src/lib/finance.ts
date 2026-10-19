@@ -181,24 +181,48 @@ export function irr(flows: number[], times?: number[]): number[] {
     throw new Error("Cash flow dates do not match.");
   const npv = (y: number) =>
     flows.reduce((s, x, i) => s + x * Math.exp(-t[i] * y), 0);
+  const derivative = (y: number) =>
+    flows.reduce((s, x, i) => s - t[i] * x * Math.exp(-t[i] * y), 0);
   const roots: number[] = [];
+  const addRoot = (y: number) => {
+    const r = Math.expm1(y);
+    if (!roots.some((x) => Math.abs(x - r) < 1e-6)) roots.push(r);
+  };
+  const bracket = (lo: number, hi: number) => {
+    const a = npv(lo),
+      b = npv(hi);
+    if (!Number.isFinite(a) || !Number.isFinite(b)) return;
+    if (a === 0) addRoot(lo);
+    if (b === 0) addRoot(hi);
+    if (Math.sign(a) !== Math.sign(b) && a !== 0 && b !== 0)
+      addRoot(bisect(npv, lo, hi));
+  };
   let prev = -12,
-    fp = npv(prev);
+    dp = derivative(prev);
   for (let i = 1; i <= 1600; i++) {
     const cur = -12 + (i * 24) / 1600,
-      fc = npv(cur);
+      dc = derivative(cur);
     if (
-      Number.isFinite(fp) &&
-      Number.isFinite(fc) &&
-      (fp === 0 || fp * fc < 0)
+      Number.isFinite(dp) &&
+      Number.isFinite(dc) &&
+      Math.sign(dp) !== Math.sign(dc)
     ) {
-      const y = fp === 0 ? prev : bisect(npv, prev, cur),
-        r = Math.expm1(y);
-      if (!roots.some((x) => Math.abs(x - r) < 1e-6)) roots.push(r);
-    }
+      const stationary =
+        dp === 0 ? prev : dc === 0 ? cur : bisect(derivative, prev, cur);
+      const scale = flows.reduce(
+        (s, x, j) => s + Math.abs(x * Math.exp(-t[j] * stationary)),
+        0,
+      );
+      if (Math.abs(npv(stationary)) <= 1e-12 * scale) addRoot(stationary);
+      else {
+        bracket(prev, stationary);
+        bracket(stationary, cur);
+      }
+    } else bracket(prev, cur);
     prev = cur;
-    fp = fc;
+    dp = dc;
   }
+  roots.sort((a, b) => a - b);
   if (!roots.length)
     throw new Error("No IRR found in the supported rate range.");
   return roots;

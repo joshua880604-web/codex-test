@@ -28,3 +28,7 @@ Accessed 2026-10-19. The source directory and all linked financial pages were re
 ### Supplemental official rule research — 2026-10-19
 
 See `research/auto-state-rules.json` for state revenue agency statutes/guides and eligibility restrictions; `research/depreciation-details.json` for original observed partial-year controls and independent Microsoft SLN/SYD/DDB/VDB examples; `research/rent-bond-details.json` for bond pricing example and unresolved rent ratios/day-count variants. Text observations do not verify dropdown contents or live form submissions.
+
+### Calculation audit sources — 2026-10-19
+
+71 original page-text accesses are logged in audit-source-access.json. Original retirement/401(k)/annuity/IRR pages and IRS Schedule 1-A, Schedule A, Schedule SE and 2021 Publication 590-B were consulted for current findings; see calculation-audit.md for URLs and evidence types. Parameterized source requests for retirement and loan were inaccessible. Original default fields and live submissions remain unverified.
