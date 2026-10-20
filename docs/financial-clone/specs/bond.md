@@ -43,3 +43,57 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/bond-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Solve Price (price)
+
+Local inputs: face, coupon, coupon_unit, yield, years, frequency.
+
+Local formula: Price = coupon × annuity factor + face/(1+y/f)^(years×f).
+
+Local default outputs: price.
+
+### Solve Face (face)
+
+Local inputs: price, coupon, coupon_unit, yield, years, frequency.
+
+Local formula: Price = coupon × annuity factor + face/(1+y/f)^(years×f).
+
+Local default outputs: face.
+
+### Solve Yield (yield)
+
+Local inputs: price, face, coupon, coupon_unit, years, frequency.
+
+Local formula: Price = coupon × annuity factor + face/(1+y/f)^(years×f).
+
+Local default outputs: yield.
+
+### Solve Maturity (years)
+
+Local inputs: price, face, coupon, coupon_unit, yield, frequency.
+
+Local formula: Price = coupon × annuity factor + face/(1+y/f)^(years×f).
+
+Local default outputs: Years to maturity.
+
+### Solve Coupon (coupon)
+
+Local inputs: price, face, coupon_unit, yield, years, frequency.
+
+Local formula: Price = coupon × annuity factor + face/(1+y/f)^(years×f).
+
+Local default outputs: coupon.
+
+### Settlement-Date Pricing (dated)
+
+Local inputs: face, coupon, coupon_unit, yield, frequency, settlement, maturity, daycount.
+
+Local formula: Dirty price discounts all remaining payments; clean price = dirty price − accrued coupon.
+
+Local default outputs: Clean price; Dirty price; Accrued interest; Interest accrued days.

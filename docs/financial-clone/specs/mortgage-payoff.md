@@ -37,3 +37,73 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/mortgage-payoff-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Current balance · Extra payments (remaining-extra)
+
+Local inputs: principal, payment, rate, extra_monthly, extra_yearly, extra_once, extra_once_month.
+
+Local formula: Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments.
+
+Local default outputs: Current principal balance; Interest with strategy; Interest saved; Years to payoff.
+
+### Current balance · Normal repayment (remaining-normal)
+
+Local inputs: principal, payment, rate, extra_monthly, extra_yearly, extra_once, extra_once_month.
+
+Local formula: Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments.
+
+Local default outputs: Current principal balance; Interest with strategy; Interest saved; Years to payoff.
+
+### Current balance · Biweekly (remaining-biweekly)
+
+Local inputs: principal, payment, rate, extra_monthly, extra_yearly, extra_once, extra_once_month.
+
+Local formula: Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments.
+
+Local default outputs: Current principal balance; Interest with strategy; Interest saved; Years to payoff.
+
+### Current balance · Pay off now (remaining-all)
+
+Local inputs: principal, payment, rate, extra_monthly, extra_yearly, extra_once, extra_once_month.
+
+Local formula: Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments.
+
+Local default outputs: Payoff balance; Future interest avoided.
+
+### Original loan · Extra payments (known-extra)
+
+Local inputs: principal, years, months, rate, elapsed, extra_monthly, extra_yearly, extra_once, extra_once_month.
+
+Local formula: Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments.
+
+Local default outputs: Current principal balance; Interest with strategy; Interest saved; Years to payoff.
+
+### Original loan · Normal repayment (known-normal)
+
+Local inputs: principal, years, months, rate, elapsed, extra_monthly, extra_yearly, extra_once, extra_once_month.
+
+Local formula: Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments.
+
+Local default outputs: Current principal balance; Interest with strategy; Interest saved; Years to payoff.
+
+### Original loan · Biweekly (known-biweekly)
+
+Local inputs: principal, years, months, rate, elapsed, extra_monthly, extra_yearly, extra_once, extra_once_month.
+
+Local formula: Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments.
+
+Local default outputs: Current principal balance; Interest with strategy; Interest saved; Years to payoff.
+
+### Original loan · Pay off now (known-all)
+
+Local inputs: principal, years, months, rate, elapsed, extra_monthly, extra_yearly, extra_once, extra_once_month.
+
+Local formula: Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments.
+
+Local default outputs: Payoff balance; Future interest avoided.

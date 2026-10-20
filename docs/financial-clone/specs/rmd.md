@@ -35,3 +35,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/rmd-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Required Minimum Distribution (annual)
+
+Local inputs: birth, year, balance, spouse, spouse_birth, return, projection.
+
+Local formula: RMD = previous year-end balance / applicable IRS distribution period.
+
+Local default outputs: Age in distribution year; Distribution period; Annual RMD.

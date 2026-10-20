@@ -33,3 +33,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/annuity-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Annuity Accumulation (growth)
+
+Local inputs: principal, annual, monthly, timing, rate, years.
+
+Local formula: Monthly and annual annuity accumulation factors use their respective periodic rates.
+
+Local default outputs: Annuity future value; Starting principal; Total additions; Total contributions; Growth.

@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-20T06:47:45.203Z",
+  "tested_at": "2026-10-20T07:47:48.710Z",
   "checks": [
     "Root 308 redirects to canonical financial directory",
     {
@@ -21,6 +21,11 @@
     {
       "id": "house-affordability",
       "example": "Translate a monthly housing budget into a home price",
+      "result": "passed"
+    },
+    {
+      "id": "house-affordability",
+      "example": "Use a dollar down payment and fixed housing costs",
       "result": "passed"
     },
     {
@@ -244,6 +249,11 @@
       "result": "passed"
     },
     {
+      "id": "take-home-paycheck",
+      "example": "A simple paycheck from one job",
+      "result": "passed"
+    },
+    {
       "id": "payment",
       "example": "Find a monthly payment at zero interest",
       "result": "passed"
@@ -376,6 +386,11 @@
     {
       "id": "commission",
       "example": "Calculate a five-percent sales commission",
+      "result": "passed"
+    },
+    {
+      "id": "commission",
+      "example": "Find a missing commission rate",
       "result": "passed"
     },
     {
@@ -516,6 +531,11 @@
     {
       "id": "irr",
       "example": "A cash-flow pattern with two IRRs",
+      "result": "passed"
+    },
+    {
+      "id": "irr",
+      "example": "Annualize a six-month investment without interim flows",
       "result": "passed"
     },
     "Methodology page and review status available",

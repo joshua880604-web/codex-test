@@ -191,7 +191,10 @@
         0,
         10000
       ]
-    }
+    },
+    "combined_annual_additions_limit": 72000,
+    "employer_compensation_limit": 360000,
+    "combined_limit_source": "https://www.irs.gov/pub/irs-pdf/p560.pdf"
   },
   "rmd_uniform_lifetime": {
     "publication_year": 2025,

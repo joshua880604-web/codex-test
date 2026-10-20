@@ -1,0 +1,150 @@
+{
+  "checked_at": "2026-10-20T08:37:09.936Z",
+  "same_input_source_submissions_verified": 0,
+  "full_tools_verified": 0,
+  "source_access": {
+    "plain_pages": "available",
+    "custom_query_pages": "tool internal error / URL inaccessible",
+    "form_values": "hidden as [Input] / [Select]"
+  },
+  "checks": [
+    {
+      "id": "loan-visible-result",
+      "url": "https://www.calculator.net/loan-calculator.html",
+      "status": "reconstructed_inputs_only",
+      "inputs": {
+        "principal": 100000,
+        "years": 10,
+        "rate": 6,
+        "compound": "Monthly",
+        "pay": "Monthly"
+      },
+      "observed_source": [
+        1110.21,
+        133224.6,
+        33224.6
+      ],
+      "local": [
+        1110.2050194164945,
+        133224.60232997907,
+        33224.602329979374
+      ],
+      "limitation": "Source form values hidden. Local inputs selected to reconstruct visible output; not same-input submission evidence.",
+      "display_differences": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "heloc-visible-schedule",
+      "url": "https://www.calculator.net/heloc-calculator.html",
+      "status": "reconstructed_inputs_only",
+      "inputs": {
+        "principal": 50000,
+        "rate": 8,
+        "draw": 5,
+        "years": 15,
+        "closing": 0,
+        "charge": 0
+      },
+      "observed_source": [
+        333.33,
+        477.83,
+        106008.69,
+        56008.69
+      ],
+      "local": [
+        333.33333333333337,
+        477.82604216517575,
+        106008.68758973217,
+        56008.6875897316
+      ],
+      "limitation": "Principal and draw length visible in schedule; rate and repayment duration reconstructed; source fee settings hidden.",
+      "display_differences": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "401k-published-match-example",
+      "url": "https://www.calculator.net/401k-calculator.html",
+      "status": "published_rule_example",
+      "inputs": {
+        "salary": 60000,
+        "contribution": 6,
+        "match": 50,
+        "match_limit": 6
+      },
+      "observed_source": [
+        1800
+      ],
+      "local": [
+        1800
+      ],
+      "limitation": "Article states 50% matching up to 6% salary yields 3% salary. Salary $60,000 chosen locally; not a submitted original form.",
+      "display_differences": [
+        0
+      ]
+    },
+    {
+      "id": "vat-published-example-5",
+      "url": "https://www.calculator.net/vat-calculator.html",
+      "status": "published_numeric_example",
+      "inputs": {
+        "net": 5,
+        "rate": 10
+      },
+      "observed_source": [
+        0.5
+      ],
+      "local": [
+        0.5
+      ],
+      "limitation": "Published article example, not submitted original form.",
+      "display_differences": [
+        0
+      ]
+    },
+    {
+      "id": "vat-published-example-10",
+      "url": "https://www.calculator.net/vat-calculator.html",
+      "status": "published_numeric_example",
+      "inputs": {
+        "net": 10,
+        "rate": 10
+      },
+      "observed_source": [
+        1
+      ],
+      "local": [
+        1
+      ],
+      "limitation": "Published article example, not submitted original form.",
+      "display_differences": [
+        0
+      ]
+    },
+    {
+      "id": "vat-published-example-20",
+      "url": "https://www.calculator.net/vat-calculator.html",
+      "status": "published_numeric_example",
+      "inputs": {
+        "net": 20,
+        "rate": 10
+      },
+      "observed_source": [
+        2
+      ],
+      "local": [
+        2
+      ],
+      "limitation": "Published article example, not submitted original form.",
+      "display_differences": [
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-20T07:53:58.192Z",
+  "checks": [
+    {
+      "id": "commission",
+      "mode": "any-two",
+      "label": "Commission rate",
+      "result": "passed"
+    },
+    "Commission clear and underdetermined input error",
+    {
+      "id": "heloc",
+      "mode": "draw-repay",
+      "label": "Net initial proceeds after closing costs",
+      "result": "passed"
+    },
+    {
+      "id": "house-affordability",
+      "mode": "budget",
+      "label": "Estimated home price",
+      "result": "passed"
+    },
+    {
+      "id": "retirement",
+      "mode": "required",
+      "label": "Projected retirement savings",
+      "result": "passed"
+    },
+    {
+      "id": "401k",
+      "mode": "projection",
+      "label": "Employee contributions",
+      "result": "passed"
+    },
+    "Starting balance is not reported as employee deposits",
+    {
+      "id": "interest",
+      "mode": "accumulation",
+      "label": "Ending balance",
+      "result": "passed"
+    },
+    "Growth monthly/yearly switch",
+    {
+      "id": "cd",
+      "mode": "accumulation",
+      "label": "Maturity balance",
+      "result": "passed"
+    },
+    "Yearly CD CSV follows selected view",
+    {
+      "id": "annuity",
+      "mode": "growth",
+      "label": "Annuity future value",
+      "result": "passed"
+    },
+    {
+      "id": "annuity-payout",
+      "mode": "payment",
+      "label": "Number of payments",
+      "result": "passed"
+    },
+    {
+      "id": "irr",
+      "mode": "fixed",
+      "label": "Annual IRR 1",
+      "result": "passed"
+    },
+    {
+      "id": "income-tax",
+      "mode": "federal",
+      "label": "Estimated federal income tax",
+      "result": "passed"
+    },
+    {
+      "id": "take-home-paycheck",
+      "mode": "source-paycheck",
+      "label": "Annual take-home pay",
+      "result": "passed"
+    },
+    {
+      "id": "heloc",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "id": "house-affordability",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "id": "commission",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "id": "take-home-paycheck",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "id": "heloc",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "id": "house-affordability",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "id": "commission",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "id": "take-home-paycheck",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "id": "heloc",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "id": "house-affordability",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "id": "commission",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "id": "take-home-paycheck",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "id": "heloc",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "house-affordability",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "commission",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "take-home-paycheck",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

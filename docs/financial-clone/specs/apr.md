@@ -44,3 +44,25 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/apr-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### General Loan APR (loan)
+
+Local inputs: principal, years, months, rate, compound, pay, financed, upfront.
+
+Local formula: Net proceeds = Σ paymentₜ/(1+APR/f)^t.
+
+Local default outputs: Nominal APR; Effective annual APR; Periodic loan payment; Net proceeds; Total payments and upfront fees.
+
+### Mortgage APR (mortgage)
+
+Local inputs: principal, years, months, rate, compound, pay, financed, upfront, pmi, pmi_years, points.
+
+Local formula: Net proceeds = Σ paymentₜ/(1+APR/f)^t.
+
+Local default outputs: Nominal APR; Effective annual APR; Periodic loan payment; Net proceeds; Total payments and upfront fees.

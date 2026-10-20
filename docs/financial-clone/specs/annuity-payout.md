@@ -33,3 +33,25 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/annuity-payout-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Fix Length (length)
+
+Local inputs: principal, rate, frequency, years.
+
+Local formula: Payout = principal / annuity present-value factor.
+
+Local default outputs: Payment each period; Total payments; Total investment earnings.
+
+### Fix Payment (payment)
+
+Local inputs: principal, rate, frequency, payment.
+
+Local formula: Payout = principal / annuity present-value factor.
+
+Local default outputs: Payout duration in years; Number of payments; Total payouts; Total investment earnings.

@@ -44,3 +44,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/rent-vs-buy-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Rent vs. Buy (comparison)
+
+Local inputs: price, down, rate, years, buy_closing, selling, tax, insurance, hoa, maintenance, cost_growth, tax_growth, appreciation, rent, rent_growth, renter_insurance, deposit, rental_costs, return, tax_rate, standard.
+
+Local formula: Compare buyer equity after sale with the renter portfolio, adding monthly cash-flow differences.
+
+Local default outputs: First year buying leads; Buyer equity after 30 years; Renter terminal wealth after 30 years.

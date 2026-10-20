@@ -46,7 +46,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
       found = calc.modes.find((m) => m.id === q.get("mode"));
     const initial = found ?? calc.modes[0],
       v = defaults(initial);
-    if (id === "vat" && initial.fields.some((f) => q.has(f.key))) {
+    if ((id === "vat" || (id === "commission" && initial.id === "any-two")) && initial.fields.some((f) => q.has(f.key))) {
       for (const f of initial.fields) v[f.key] = "";
     }
     for (const f of initial.fields) {
@@ -134,14 +134,14 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     request.current++;
     setBusy(false);
     setValues(
-      id === "vat"
+      (id === "vat" || (id === "commission" && mode.id === "any-two"))
         ? Object.fromEntries(mode.fields.map((f) => [f.key, ""]))
         : defaults(mode),
     );
     setResult(null);
     setError("");
     setNotice(
-      id === "vat"
+      (id === "vat" || (id === "commission" && mode.id === "any-two"))
         ? "Inputs cleared. Enter any two values."
         : "Inputs reset to defaults.",
     );
@@ -333,7 +333,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
               <span aria-hidden="true">▶</span>
             </button>
             <button type="button" className="clear" onClick={reset}>
-              {id === "vat" ? "Clear" : "Reset"}
+              {id === "vat" || (id === "commission" && mode.id === "any-two") ? "Clear" : "Reset"}
             </button>
           </div>
         </form>
@@ -523,8 +523,8 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         <p>
           {mode.description} Enter amounts in the units shown, select the
           applicable options, and click Calculate.{" "}
-          {id === "vat"
-            ? "Use Clear to empty all four fields."
+          {id === "vat" || (id === "commission" && mode.id === "any-two")
+            ? "Use Clear to empty the fields."
             : "Use Reset to restore the starting values."}
         </p>
         <h3>Calculation formula</h3>

@@ -187,6 +187,12 @@
             "unit": ""
           },
           {
+            "key": "extra_yearly_start",
+            "label": "First yearly extra payment in month",
+            "type": "number",
+            "unit": ""
+          },
+          {
             "key": "dated",
             "label": "Additional one-time payments",
             "type": "textarea",
@@ -368,6 +374,12 @@
             "unit": ""
           },
           {
+            "key": "extra_yearly_start",
+            "label": "First yearly extra payment in month",
+            "type": "number",
+            "unit": ""
+          },
+          {
             "key": "dated",
             "label": "Additional one-time payments",
             "type": "textarea",
@@ -452,6 +464,12 @@
           {
             "key": "extra_start",
             "label": "Monthly extra starts in month",
+            "type": "number",
+            "unit": ""
+          },
+          {
+            "key": "extra_yearly_start",
+            "label": "First yearly extra payment in month",
             "type": "number",
             "unit": ""
           },
@@ -971,7 +989,13 @@
             "key": "down",
             "label": "Down payment",
             "type": "number",
-            "unit": "%"
+            "unit": null
+          },
+          {
+            "key": "down_unit",
+            "label": "Down payment unit",
+            "type": "select",
+            "unit": null
           },
           {
             "key": "rate",
@@ -989,19 +1013,49 @@
             "key": "tax_rate",
             "label": "Annual property tax",
             "type": "number",
-            "unit": "% of home value"
+            "unit": null
+          },
+          {
+            "key": "tax_unit",
+            "label": "Property tax unit",
+            "type": "select",
+            "unit": null
           },
           {
             "key": "insurance",
             "label": "Annual insurance",
             "type": "number",
-            "unit": "$"
+            "unit": null
+          },
+          {
+            "key": "insurance_unit",
+            "label": "Insurance unit",
+            "type": "select",
+            "unit": null
           },
           {
             "key": "hoa",
-            "label": "Monthly HOA and other expenses",
+            "label": "HOA and other expenses",
             "type": "number",
-            "unit": "$"
+            "unit": null
+          },
+          {
+            "key": "hoa_unit",
+            "label": "HOA unit",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "maintenance",
+            "label": "Annual maintenance",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "maintenance_unit",
+            "label": "Maintenance unit",
+            "type": "select",
+            "unit": null
           }
         ],
         "formula": "Budget = mortgage payment + annual property tax/12 + monthly insurance and HOA."
@@ -1020,7 +1074,13 @@
             "key": "down",
             "label": "Down payment",
             "type": "number",
-            "unit": "%"
+            "unit": null
+          },
+          {
+            "key": "down_unit",
+            "label": "Down payment unit",
+            "type": "select",
+            "unit": null
           },
           {
             "key": "rate",
@@ -1038,19 +1098,49 @@
             "key": "tax_rate",
             "label": "Annual property tax",
             "type": "number",
-            "unit": "% of home value"
+            "unit": null
+          },
+          {
+            "key": "tax_unit",
+            "label": "Property tax unit",
+            "type": "select",
+            "unit": null
           },
           {
             "key": "insurance",
             "label": "Annual insurance",
             "type": "number",
-            "unit": "$"
+            "unit": null
+          },
+          {
+            "key": "insurance_unit",
+            "label": "Insurance unit",
+            "type": "select",
+            "unit": null
           },
           {
             "key": "hoa",
-            "label": "Monthly HOA and other expenses",
+            "label": "HOA and other expenses",
             "type": "number",
-            "unit": "$"
+            "unit": null
+          },
+          {
+            "key": "hoa_unit",
+            "label": "HOA unit",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "maintenance",
+            "label": "Annual maintenance",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "maintenance_unit",
+            "label": "Maintenance unit",
+            "type": "select",
+            "unit": null
           }
         ],
         "formula": "Budget = mortgage payment + annual property tax/12 + monthly insurance and HOA."
@@ -1974,6 +2064,12 @@
             "unit": ""
           },
           {
+            "key": "extra_yearly_start",
+            "label": "First yearly extra payment in month",
+            "type": "number",
+            "unit": ""
+          },
+          {
             "key": "dated",
             "label": "Additional one-time payments",
             "type": "textarea",
@@ -2169,6 +2265,12 @@
           {
             "key": "extra_start",
             "label": "Monthly extra starts in month",
+            "type": "number",
+            "unit": ""
+          },
+          {
+            "key": "extra_yearly_start",
+            "label": "First yearly extra payment in month",
             "type": "number",
             "unit": ""
           },
@@ -2389,6 +2491,12 @@
             "unit": ""
           },
           {
+            "key": "extra_yearly_start",
+            "label": "First yearly extra payment in month",
+            "type": "number",
+            "unit": ""
+          },
+          {
             "key": "dated",
             "label": "Additional one-time payments",
             "type": "textarea",
@@ -2588,6 +2696,12 @@
             "unit": ""
           },
           {
+            "key": "extra_yearly_start",
+            "label": "First yearly extra payment in month",
+            "type": "number",
+            "unit": ""
+          },
+          {
             "key": "dated",
             "label": "Additional one-time payments",
             "type": "textarea",
@@ -2719,9 +2833,21 @@
           },
           {
             "key": "closing",
-            "label": "Upfront closing costs",
+            "label": "Closing costs",
             "type": "number",
-            "unit": "$"
+            "unit": null
+          },
+          {
+            "key": "closing_unit",
+            "label": "Closing cost unit",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "closing_treatment",
+            "label": "Closing costs paid",
+            "type": "select",
+            "unit": null
           },
           {
             "key": "charge",
@@ -4200,6 +4326,31 @@
     ],
     "implemented_modes": [
       {
+        "id": "conversion",
+        "title": "Equivalent Interest Rate",
+        "fields": [
+          {
+            "key": "rate",
+            "label": "Input interest rate",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "from",
+            "label": "Input compounding",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "to",
+            "label": "Output compounding",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Effective yield = (1 + r/m)^m − 1; equivalent nominal rate = n × ((1 + yield)^(1/n) − 1)."
+      },
+      {
         "id": "growth",
         "title": "Compound Growth",
         "fields": [
@@ -4265,31 +4416,6 @@
           }
         ],
         "formula": "Balance grows at the equivalent periodic rate, with contributions added at the selected timing."
-      },
-      {
-        "id": "conversion",
-        "title": "Equivalent Interest Rate",
-        "fields": [
-          {
-            "key": "rate",
-            "label": "Input interest rate",
-            "type": "number",
-            "unit": "%"
-          },
-          {
-            "key": "from",
-            "label": "Input compounding",
-            "type": "select",
-            "unit": null
-          },
-          {
-            "key": "to",
-            "label": "Output compounding",
-            "type": "select",
-            "unit": null
-          }
-        ],
-        "formula": "Effective yield = (1 + r/m)^m − 1; equivalent nominal rate = n × ((1 + yield)^(1/n) − 1)."
       }
     ]
   },
@@ -5235,6 +5361,18 @@
             "unit": "years"
           },
           {
+            "key": "months",
+            "label": "Additional holding months",
+            "type": "number",
+            "unit": "months"
+          },
+          {
+            "key": "cash_action",
+            "label": "Recurring cash flow",
+            "type": "select",
+            "unit": null
+          },
+          {
             "key": "inflow",
             "label": "Net cash flow each period",
             "type": "number",
@@ -5615,9 +5753,15 @@
           },
           {
             "key": "replacement",
-            "label": "Retirement income replacement",
+            "label": "Income needed after retirement",
             "type": "number",
-            "unit": "%"
+            "unit": null
+          },
+          {
+            "key": "replacement_unit",
+            "label": "Retirement income entered as",
+            "type": "select",
+            "unit": null
           },
           {
             "key": "return",
@@ -5645,9 +5789,15 @@
           },
           {
             "key": "saving",
-            "label": "Monthly saving",
+            "label": "Future retirement savings",
             "type": "number",
-            "unit": "$"
+            "unit": null
+          },
+          {
+            "key": "saving_unit",
+            "label": "Future savings entered as",
+            "type": "select",
+            "unit": null
           }
         ],
         "formula": "Target = sum of first-year income gap × (1 + inflation)^(year − 1) / (1 + return)^year; required monthly saving funds target less future current savings."
@@ -5767,7 +5917,7 @@
             "unit": "%"
           }
         ],
-        "formula": "N = −ln(1 − PV×i/PMT)/ln(1+i)."
+        "formula": "N = −ln(1 − PV×i/PMT)/ln(1+i); actual month-end withdrawals use ceil(N), with the last withdrawal capped at the available balance."
       }
     ]
   },
@@ -5856,7 +6006,7 @@
             "unit": "%"
           }
         ],
-        "formula": "For each year: employee = min(annual salary × contribution%, age-based annual limit); employer = min(employee, annual salary × match limit%) × match%; ending balance = opening balance × (1 + annual return) + employee + employer. Employee contributions + current balance = starting 401(k) balance + sum of annual employee amounts."
+        "formula": "For each year: employee = min(annual salary × contribution%, age-based annual limit); employer = min(employee, annual salary × match limit%) × match%; ending balance = opening balance × (1 + annual return) + employee + employer. Starting balance plus employee contributions = starting 401(k) balance + sum of annual employee amounts."
       },
       {
         "id": "early",
@@ -6808,6 +6958,102 @@
             "label": "Federal income tax withheld / estimated payments",
             "type": "number",
             "unit": "$"
+          },
+          {
+            "key": "dividend_definition",
+            "label": "Dividends field means",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "passive",
+            "label": "Rental, royalty and other passive income",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "ira_deduction",
+            "label": "Eligible deductible IRA contributions not entered above",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "mortgage_interest",
+            "label": "Eligible mortgage interest not entered above",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "eligible_itemized_charity",
+            "label": "Eligible itemized charitable deduction not entered above",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "property_tax",
+            "label": "Real estate taxes not included in SALT above",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "state_withheld",
+            "label": "Your state income tax withheld not included in SALT above",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "local_withheld",
+            "label": "Your local income tax withheld not included in SALT above",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "spouse_state_withheld",
+            "label": "Spouse state income tax withheld not included above",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "spouse_local_withheld",
+            "label": "Spouse local income tax withheld not included above",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "spouse_withheld",
+            "label": "Additional spouse federal tax withheld",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "estimated_paid",
+            "label": "Additional federal estimated tax payments",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "spouse_estimated_paid",
+            "label": "Additional spouse federal estimated payments",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "medicare_wages",
+            "label": "Your Medicare wages (W-2 box 5)",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "spouse_medicare_wages",
+            "label": "Spouse Medicare wages (W-2 box 5)",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "cash_gifts",
+            "label": "Eligible non-itemizer cash gifts (2026)",
+            "type": "number",
+            "unit": "$"
           }
         ],
         "formula": "Progressive ordinary tax + preferential capital-gains tax + applicable additional taxes − credits."
@@ -7442,6 +7688,139 @@
     ],
     "implemented_modes": [
       {
+        "id": "source-paycheck",
+        "title": "Paycheck Estimate",
+        "fields": [
+          {
+            "key": "salary",
+            "label": "Your job income",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "pay_frequency",
+            "label": "Pay frequency",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "file_status",
+            "label": "Filing status",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "children",
+            "label": "Qualifying children under 17",
+            "type": "number",
+            "unit": "people"
+          },
+          {
+            "key": "dependents",
+            "label": "Other qualifying dependents",
+            "type": "number",
+            "unit": "people"
+          },
+          {
+            "key": "other_income",
+            "label": "Other income (not from jobs)",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "pretax",
+            "label": "Pre-tax payroll deductions withheld",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "deductions",
+            "label": "Eligible deductions not withheld",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "itemized",
+            "label": "Eligible itemized deductions",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "multiple_jobs",
+            "label": "Other jobs or spouse has job income?",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "job2",
+            "label": "Other job income 2",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "job3",
+            "label": "Other job income 3",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "state_rate",
+            "label": "Effective state income tax rate",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "local_rate",
+            "label": "Effective city income tax rate",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "senior",
+            "label": "Are you age 65 or older?",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "spouse_senior",
+            "label": "Is your spouse age 65 or older?",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "tips",
+            "label": "Qualified reported tips",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "overtime",
+            "label": "Qualified overtime premium",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "car",
+            "label": "Qualified new-vehicle loan interest",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "cash_gifts",
+            "label": "Eligible non-itemizer cash gifts",
+            "type": "number",
+            "unit": "$ / year"
+          },
+          {
+            "key": "self_employed",
+            "label": "Is this job self-employment?",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "This-job net = this-job gross − withheld deductions − allocated annual federal tax − this-job payroll taxes − entered state/city tax. Other job wages affect brackets but are not included in this paycheck."
+      },
+      {
         "id": "paycheck",
         "title": "Take-Home Paycheck",
         "fields": [
@@ -7817,6 +8196,12 @@
             "label": "Years to maturity",
             "type": "number",
             "unit": "years"
+          },
+          {
+            "key": "months",
+            "label": "Additional months",
+            "type": "number",
+            "unit": "months"
           },
           {
             "key": "rate",
@@ -10354,6 +10739,31 @@
     ],
     "implemented_modes": [
       {
+        "id": "any-two",
+        "title": "Commission Calculator",
+        "fields": [
+          {
+            "key": "sales",
+            "label": "Sales amount",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "rate",
+            "label": "Commission rate",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "commission",
+            "label": "Commission earned",
+            "type": "number",
+            "unit": "$"
+          }
+        ],
+        "formula": "Commission = sales × rate / 100."
+      },
+      {
         "id": "commission",
         "title": "Solve commission",
         "fields": [
@@ -10422,9 +10832,15 @@
           },
           {
             "key": "base",
-            "label": "Base pay",
+            "label": "Base pay for the sales period",
             "type": "number",
             "unit": "$"
+          },
+          {
+            "key": "tier_unit",
+            "label": "Tier rates entered as",
+            "type": "select",
+            "unit": null
           },
           {
             "key": "method",

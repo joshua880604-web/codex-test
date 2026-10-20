@@ -1,5 +1,5 @@
 {
-  "tested_at": "2026-10-20T06:50:05.686Z",
+  "tested_at": "2026-10-20T07:47:28.239Z",
   "base": "http://127.0.0.1:3000",
   "browser": "System Chromium via Playwright",
   "reference_visual_parity": "unverified: original-site browser unavailable",
@@ -351,11 +351,11 @@
       "status": 200,
       "modes": [
         {
-          "mode": "Compound Growth",
+          "mode": "Equivalent Interest Rate",
           "result": "rendered"
         },
         {
-          "mode": "Equivalent Interest Rate",
+          "mode": "Compound Growth",
           "result": "rendered"
         }
       ]
@@ -741,7 +741,11 @@
       "status": 200,
       "modes": [
         {
-          "mode": "default",
+          "mode": "Paycheck Estimate",
+          "result": "rendered"
+        },
+        {
+          "mode": "Take-Home Paycheck",
           "result": "rendered"
         }
       ]
@@ -1114,6 +1118,10 @@
       "route": "/commission-calculator.html",
       "status": 200,
       "modes": [
+        {
+          "mode": "Commission Calculator",
+          "result": "rendered"
+        },
         {
           "mode": "Solve commission",
           "result": "rendered"

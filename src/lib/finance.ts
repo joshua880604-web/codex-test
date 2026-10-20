@@ -140,6 +140,19 @@ export function amortize(
   nonnegative(p, "Principal");
   periods(n);
   nonnegative(r, "Interest rate");
+  for (const key of ["monthly", "yearly", "once"] as const)
+    if (extra[key] !== undefined) nonnegative(extra[key]!, "Extra payment");
+  for (const key of ["onceMonth", "monthlyStart", "yearlyStart"] as const) {
+    const period = extra[key];
+    if (period !== undefined && (!Number.isInteger(period) || period < 1 || period > 12000))
+      throw new Error("Extra payment period must be a whole number from 1 to 12,000.");
+  }
+  for (const [period, amount] of Object.entries(extra.dated ?? {})) {
+    if (!Number.isInteger(Number(period)) || Number(period) < 1 || Number(period) > 12000)
+      throw new Error("Extra payment period must be a whole number from 1 to 12,000.");
+    nonnegative(amount, "Extra payment");
+  }
+  if (fixed !== undefined) positive(fixed, "Payment");
   const a = fixed ?? payment(p, r, n);
   if (p > 0 && a <= p * r && !(extra.monthly || extra.yearly || extra.once))
     throw new Error("Payment does not cover interest.");

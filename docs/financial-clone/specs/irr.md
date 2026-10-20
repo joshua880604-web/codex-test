@@ -34,3 +34,25 @@
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
 
 Local review update: see ../irr-review.md. Modes remain fixed and irregular (unequal annual amounts). Headline rates are effective annual, table uses period and time-in-years, and non-whole payment counts are rejected. Numerical limits and multiple/no-unique-root handling are explicit. This local update does not certify original form/visual parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/irr-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Fixed Cash Flow (fixed)
+
+Local inputs: initial, years, months, cash_action, inflow, cash_frequency, ending, timing.
+
+Local formula: NPV = Σ CFₜ/(1+r)^t = 0.
+
+Local default outputs: Annual IRR 1.
+
+### Unequal Annual Cash Flows (irregular)
+
+Local inputs: initial, flows.
+
+Local formula: NPV = Σ CFₜ/(1+r)^t = 0.
+
+Local default outputs: Annual IRR 1.

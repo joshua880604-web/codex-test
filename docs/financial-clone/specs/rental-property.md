@@ -43,3 +43,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/rental-property-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Rental Property Return (projection)
+
+Local inputs: price, financed, down, rate, years, closing, repairs, repaired_value, rent, other_income, vacancy, management, tax, insurance, hoa, maintenance, other, rent_growth, other_income_growth, tax_growth, insurance_growth, hoa_growth, maintenance_growth, other_growth, appreciation, hold, sale_known, sale_price, selling.
+
+Local formula: NOI = effective income − operating expenses; equity cash flow = NOI − debt service.
+
+Local default outputs: Initial cash investment; First-year cash flow; Capitalization rate; First-year cash-on-cash; Net sale proceeds; Total investment profit; Annual IRR 1.

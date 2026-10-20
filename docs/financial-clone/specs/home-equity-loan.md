@@ -34,3 +34,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/home-equity-loan-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Home Equity Loan (loan)
+
+Local inputs: principal, years, months, rate, closing, treatment.
+
+Local formula: Amortize the financed balance; solve APR from net proceeds and loan payments.
+
+Local default outputs: Payment per period; Total interest; Total payments; Number of payments; Net proceeds; Nominal APR.

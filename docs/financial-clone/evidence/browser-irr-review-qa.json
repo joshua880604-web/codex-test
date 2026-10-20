@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-20T05:17:14.813Z",
+  "tested_at": "2026-10-20T07:47:59.163Z",
   "checks": [
     {
       "query": "mode=irregular&initial=100&flows=110",
@@ -18,7 +18,7 @@
       "query": "mode=fixed&initial=100&years=1&cash_frequency=Monthly&inflow=0&ending=121&timing=End+of+period",
       "result": "passed"
     },
-    "Fractional period count is rejected without stale results",
+    "Fractional holding period retains its exact terminal date",
     "Invalid sign pattern has a clear error",
     {
       "width": 320,

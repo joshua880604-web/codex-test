@@ -30,3 +30,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/cd-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### CD Return (accumulation)
+
+Local inputs: principal, rate, compound, years, months, tax.
+
+Local formula: FV = P × (1 + r/m)^(m×t). Taxes are applied to total interest.
+
+Local default outputs: Maturity balance; Interest earned; Tax on interest; After-tax balance.

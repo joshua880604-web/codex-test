@@ -110,3 +110,28 @@ test("empty input and numeric overflow never return a result", () => {
   );
   assert.throws(() => runCalculation(c.id, m.id, { ...v, principal: "1e20" }));
 });
+
+test('Extra repayment dates reject fractional periods instead of silently dropping payments',()=>{
+ for(const period of [0,1.5,-1,12001,Infinity,NaN]){
+  for(const key of ['onceMonth','monthlyStart','yearlyStart'])
+   assert.throws(()=>amortize(1000,0,10,{[key]:period,once:100}),/whole number/);
+  assert.throws(()=>amortize(1000,0,10,{dated:{[period]:100}}),/whole number/);
+ }
+ for(const amount of [-1,Infinity,NaN]){
+  for(const key of ['monthly','yearly','once'])assert.throws(()=>amortize(1000,0,10,{[key]:amount}));
+  assert.throws(()=>amortize(1000,0,10,{dated:{1:amount}}));
+ }
+ assert.throws(()=>amortize(1000,0,10,{},-1),/greater than zero/);
+});
+
+test('Scheduled extra repayments conserve principal, cap oversize extras and honor start dates',()=>{
+ const rows=amortize(1000,0,10,{monthly:100,monthlyStart:3,once:100,onceMonth:2,yearly:1000,yearlyStart:5});
+ assert.deepEqual(rows.map(row=>row.payment),[100,200,200,200,300]);
+ close(sum(rows.map(row=>row.principal)),1000);close(sum(rows.map(row=>row.interest)),0);assert.equal(rows.at(-1)!.balance,0);
+ const dated=amortize(1000,0,10,{dated:{2:10000}});assert.deepEqual(dated.map(row=>row.payment),[100,900]);
+});
+
+test('Student loan extra repayment rejects fractional one-time month through the public calculator',()=>{
+ const mode=calculators.find(c=>c.id==='student-loan')!.modes.find(m=>m.id==='extra')!;
+ assert.throws(()=>runCalculation('student-loan','extra',{...defaults(mode),extra_once:'1000',extra_once_month:'1.5'}),/whole number/);
+});

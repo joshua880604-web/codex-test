@@ -35,3 +35,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/cash-back-or-low-interest-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Cash Back vs. Low Interest (compare)
+
+Local inputs: price, down, months, cashback, standard, low, tax_state, purchase_year, trade, owed, tax, fees, trade_credit, rebate_tax, finance_fees.
+
+Local formula: Compare total loan payments on the rebate-reduced balance and the promotional-rate balance.
+
+Local default outputs: Monthly payment with cash back; Monthly payment with low rate; Total payments with cash back; Total payments with low rate; Sales tax with cash back; Sales tax with low rate; Cash-back upfront cash; Low-rate upfront cash; Cash-back cost advantage.

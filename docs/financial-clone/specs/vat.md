@@ -36,3 +36,17 @@ The validation policy follows the equations and ordinary nonnegative VAT amounts
 ## Verification
 
 `tests/vat.test.ts` covers all six pairs, zero-tax cases, indeterminate pairs, invalid combinations and input count. `tests/reference.test.ts` retains source prose VAT examples. `scripts/browser-vat-qa.mjs` covers all six pairs, keyboard submission, Clear, stale-result removal, shared/legacy URLs and responsive widths.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/vat-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### VAT Calculator (any-two)
+
+Local inputs: rate, net, gross, tax.
+
+Local formula: Gross price = net price + tax amount; tax amount = net price × VAT rate / 100.
+
+Local default outputs: Net amount; VAT amount; Gross amount; VAT rate.

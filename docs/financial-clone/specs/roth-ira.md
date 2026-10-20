@@ -37,3 +37,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/roth-ira-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Roth IRA vs. Taxable Savings (comparison)
+
+Local inputs: age, retire, balance, contribution, max, return, tax.
+
+Local formula: Roth earnings compound tax-free; taxable earnings are reduced by annual tax.
+
+Local default outputs: Roth IRA balance; Roth after-tax value; Comparable taxable investment balance; Total contributions.

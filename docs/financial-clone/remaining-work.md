@@ -57,3 +57,7 @@ Search-intent shortcuts, metadata and explanations now cover the researched long
 ## Additional everyday tools
 
 Four user-requested daily tools are outside the original financial clone scope. Their local specification and limitations are documented in everyday-tools.md; they do not imply reference-site parity. Business-day calendars, more currencies/units and daily-tool keyword research remain optional further scope.
+
+## Current acceptance policy — 2026-10-20
+
+The latest user explicitly permits expert independent implementations where source replication is unavailable. Corresponding runnable financial functions exist for all 70 calculator entries; see reference-function-map.json for the full ledger and strict-functionality-policy.md for new controls and assumptions. The old lists above preserve historical gaps and source-parity concerns; they are not a claim that newly added controls are still absent. This local delivery does not assert original numeric/visual identity. Original exact-input comparison remains an evidence gap; live external data remains environment-dependent.

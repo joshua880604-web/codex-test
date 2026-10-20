@@ -84,25 +84,31 @@ const fields = () => [
     "$",
   ),
 ];
+const optionalNumber = (v: Values, key: string) => v[key] === undefined || v[key].trim() === "" ? 0 : n(v,key);
 function inputs(v: Values): TaxInputs {
+  const ordinaryIncludesQualified = v.dividend_definition === "Total ordinary includes qualified";
+  if (ordinaryIncludesQualified && n(v,"qualified") > n(v,"dividends")) throw new Error("Qualified dividends cannot exceed total ordinary dividends.");
   return {
     year: Number(v.year) as 2025 | 2026,
     filing: filing(v.filing),
     wages: n(v, "wages"),
     spouseWages: n(v, "spouse_wages"),
+    medicareWages: v.medicare_wages?.trim() ? n(v,"medicare_wages") : undefined,
+    spouseMedicareWages: v.spouse_medicare_wages?.trim() ? n(v,"spouse_medicare_wages") : undefined,
+    nonitemizerCashGifts: optionalNumber(v,"cash_gifts"),
     business: n(v, "business"),
     spouseBusiness: n(v, "spouse_business"),
     interest: n(v, "interest"),
-    dividends: n(v, "dividends"),
+    dividends: n(v, "dividends") - (ordinaryIncludesQualified ? n(v,"qualified") : 0),
     qualified: n(v, "qualified"),
     shortGains: n(v, "short"),
     longGains: n(v, "long"),
     socialSecurity: n(v, "social"),
-    other: n(v, "other"),
-    adjustments: n(v, "adjustments"),
+    other: n(v, "other") + optionalNumber(v,"passive"),
+    adjustments: n(v, "adjustments") + optionalNumber(v,"ira_deduction"),
     studentInterest: n(v, "student"),
-    itemized: n(v, "itemized"),
-    salt: n(v, "salt"),
+    itemized: n(v, "itemized") + optionalNumber(v,"mortgage_interest") + optionalNumber(v,"eligible_itemized_charity"),
+    salt: n(v, "salt") + optionalNumber(v,"property_tax") + optionalNumber(v,"state_withheld") + optionalNumber(v,"local_withheld") + optionalNumber(v,"spouse_state_withheld") + optionalNumber(v,"spouse_local_withheld"),
     age65: n(v, "age65"),
     tips: n(v, "tips"),
     overtime: n(v, "overtime"),
@@ -130,7 +136,7 @@ function validateTax(x: TaxInputs) {
     throw new Error("Supported tax years are 2025 and 2026.");
   if (
     x.filing !== "married_joint" &&
-    (x.spouseWages || x.spouseBusiness || x.age65 > 1)
+    (x.spouseWages || x.spouseBusiness || (x.spouseMedicareWages ?? 0) || x.age65 > 1)
   )
     throw new Error(
       "Spouse income and two age-65 deductions require married filing jointly.",
@@ -146,8 +152,9 @@ function validateTax(x: TaxInputs) {
 function taxResult(v: Values): Result {
   const x = inputs(v);
   validateTax(x);
+  if(x.filing!=="married_joint" && ["spouse_withheld","spouse_estimated_paid","spouse_state_withheld","spouse_local_withheld"].some(key=>optionalNumber(v,key)>0))throw new Error("Spouse withholding and estimated payments require married filing jointly.");
   const t = federalTax(x),
-    balance = n(v, "withheld") - t.federal;
+    balance = n(v, "withheld") + optionalNumber(v,"spouse_withheld") + optionalNumber(v,"estimated_paid") + optionalNumber(v,"spouse_estimated_paid") - t.federal;
   return {
     metrics: [
       money("Estimated federal income tax", t.federal),
@@ -169,6 +176,7 @@ function taxResult(v: Values): Result {
       ["Taxable Social Security", t.taxableSS],
       ["Adjusted gross income", t.agi],
       ["Deduction used", t.deduction],
+      ["Non-itemizer cash gift deduction", t.nonitemizerCashDeduction],
       ["Additional qualified deductions", t.extra],
       ["Eligible QBI deduction", t.qbi],
       ["Taxable income", t.taxable],
@@ -198,7 +206,25 @@ const income = tool(
     {
       id: "federal",
       title: "Federal Income Tax",
-      fields: fields(),
+      fields: [
+        ...fields(),
+        select("dividend_definition", "Dividends field means", ["Nonqualified only", "Total ordinary includes qualified"]),
+        num("passive", "Rental, royalty and other passive income", 0, "$", -1e12),
+        num("ira_deduction", "Eligible deductible IRA contributions not entered above", 0, "$"),
+        num("mortgage_interest", "Eligible mortgage interest not entered above", 0, "$"),
+        num("eligible_itemized_charity", "Eligible itemized charitable deduction not entered above", 0, "$"),
+        num("property_tax", "Real estate taxes not included in SALT above", 0, "$"),
+        num("state_withheld", "Your state income tax withheld not included in SALT above", 0, "$"),
+        num("local_withheld", "Your local income tax withheld not included in SALT above", 0, "$"),
+        num("spouse_state_withheld", "Spouse state income tax withheld not included above", 0, "$"),
+        num("spouse_local_withheld", "Spouse local income tax withheld not included above", 0, "$"),
+        num("spouse_withheld", "Additional spouse federal tax withheld", 0, "$"),
+        num("estimated_paid", "Additional federal estimated tax payments", 0, "$"),
+        num("spouse_estimated_paid", "Additional spouse federal estimated payments", 0, "$"),
+        {...num("medicare_wages", "Your Medicare wages (W-2 box 5)", 0, "$"),value:"",optional:true,hint:"Leave blank to use your wages; enter 0 only if no Medicare wages."},
+        {...num("spouse_medicare_wages", "Spouse Medicare wages (W-2 box 5)", 0, "$"),value:"",optional:true},
+        {...num("cash_gifts", "Eligible non-itemizer cash gifts (2026)", 0, "$"),hint:"Qualified cash gifts only. Maximum deduction $1,000 ($2,000 married jointly), only when the standard deduction gives the larger total deduction. Do not duplicate an itemized gift."},
+      ],
       description:
         "Estimate a 2025 or 2026 federal tax liability with ordinary income, capital gains, deductions, and credits.",
       formula:
@@ -252,6 +278,7 @@ const salary = tool(
             Semimonthly: 24,
             Monthly: 12,
             Quarterly: 4,
+            Semiannually: 2,
             Annually: 1,
           },
           inputAnnual = n(v, "salary") * annualFactors[v.frequency],
@@ -492,7 +519,7 @@ const takehome = tool(
         select(
           "frequency",
           "Pay frequency",
-          ["Weekly", "Biweekly", "Semimonthly", "Monthly", "Annually"],
+          ["Daily", "Weekly", "Biweekly", "Semimonthly", "Monthly", "Quarterly", "Semiannually", "Annually"],
           "Biweekly",
         ),
         num("pretax", "Annual pre-tax payroll deductions", 5000, "$"),
@@ -514,10 +541,13 @@ const takehome = tool(
         const t = federalTax({ ...base, wages: base.wages - pretax }),
           payroll = federalTax(base),
           f: Record<string, number> = {
+            Daily: 260,
             Weekly: 52,
             Biweekly: 26,
             Semimonthly: 24,
             Monthly: 12,
+            Quarterly: 4,
+            Semiannually: 2,
             Annually: 1,
           },
           periods = f[v.frequency],
@@ -578,4 +608,55 @@ const takehome = tool(
   ],
   "Estimate take-home pay using federal, payroll, and explicit state/local tax assumptions.",
 );
+const sourcePaycheck: Mode = {
+  id: "source-paycheck",
+  title: "Paycheck Estimate",
+  fields: [
+    num("salary", "Your job income", 80000, "$ / year"),
+    select("pay_frequency", "Pay frequency", ["Daily", "Weekly", "Biweekly", "Semimonthly", "Monthly", "Quarterly", "Semiannually", "Annually"], "Biweekly"),
+    select("file_status", "Filing status", statuses),
+    num("children", "Qualifying children under 17", 0, "people"),
+    num("dependents", "Other qualifying dependents", 0, "people"),
+    num("other_income", "Other income (not from jobs)", 0, "$ / year"),
+    num("pretax", "Pre-tax payroll deductions withheld", 5000, "$ / year"),
+    num("deductions", "Eligible deductions not withheld", 0, "$ / year"),
+    num("itemized", "Eligible itemized deductions", 0, "$ / year"),
+    select("multiple_jobs", "Other jobs or spouse has job income?", ["No", "Yes"]),
+    num("job2", "Other job income 2", 0, "$ / year"),
+    num("job3", "Other job income 3", 0, "$ / year"),
+    num("state_rate", "Effective state income tax rate", 5, "%"),
+    num("local_rate", "Effective city income tax rate", 0, "%"),
+    select("senior", "Are you age 65 or older?", ["No", "Yes"]),
+    select("spouse_senior", "Is your spouse age 65 or older?", ["No", "Yes"]),
+    num("tips", "Qualified reported tips", 0, "$ / year"),
+    num("overtime", "Qualified overtime premium", 0, "$ / year"),
+    num("car", "Qualified new-vehicle loan interest", 0, "$ / year"),
+    num("cash_gifts", "Eligible non-itemizer cash gifts", 0, "$ / year"),
+    select("self_employed", "Is this job self-employment?", ["No", "Yes"]),
+  ],
+  description: "Estimate take-home pay for this job using annual income, selected deductions, other jobs and 2026 federal rules.",
+  formula: "This-job net = this-job gross − withheld deductions − allocated annual federal tax − this-job payroll taxes − entered state/city tax. Other job wages affect brackets but are not included in this paycheck.",
+  calculate: v => {
+    const gross=n(v,"salary"), pretax=n(v,"pretax"), joint=filing(v.file_status)==="married_joint";
+    if(pretax>gross)throw new Error("Pre-tax deductions cannot exceed this job’s income.");
+    if(v.spouse_senior==="Yes"&&!joint)throw new Error("Spouse age-65 selection requires married filing jointly.");
+    if(v.multiple_jobs==="No"&&(n(v,"job2")||n(v,"job3")))throw new Error("Select Yes for other jobs or clear their income amounts.");
+    const otherJobs=v.multiple_jobs==="Yes"?n(v,"job2")+n(v,"job3"):0, self=v.self_employed==="Yes";
+    const baseValues=Object.fromEntries(fields().map(f=>[f.key,String(f.value)]));
+    const x=inputs({...baseValues,year:"2026",filing:v.file_status,wages:String(self?otherJobs:Math.max(0,gross-pretax)+otherJobs),spouse_wages:"0",business:String(self?gross:0),children:v.children,dependents:v.dependents,other:v.other_income,adjustments:String(n(v,"deductions")+(self?pretax:0)),itemized:v.itemized,age65:String(Number(v.senior==="Yes")+Number(v.spouse_senior==="Yes")),tips:v.tips,overtime:v.overtime,car:v.car,cash_gifts:v.cash_gifts});
+    x.medicareWages=self?otherJobs:gross+otherJobs;
+    const tax=federalTax(x), baseline=otherJobs>0?federalTax({...x,wages:otherJobs,medicareWages:otherJobs,business:0,adjustments:n(v,"deductions"),tips:0,overtime:0,carInterest:0}):null;
+    const allocated=baseline?Math.max(0,tax.federal-baseline.federal):tax.federal;
+    const periods:Record<string,number>={Daily:260,Weekly:52,Biweekly:26,Semimonthly:24,Monthly:12,Quarterly:4,Semiannually:2,Annually:1};
+    const ss=self?0:Math.min(gross,184500)*.062, medicare=self?0:gross*.0145;
+    const state=(gross-pretax)*pctTax(v,"state_rate"), local=(gross-pretax)*pctTax(v,"local_rate");
+    const net=gross-pretax-allocated-ss-medicare-state-local, count=periods[v.pay_frequency];
+    return {metrics:[money("Take-home pay per period",net/count),money("Annual take-home pay",net),money("Gross pay per period",gross/count),money("Annual federal tax allocated to this job",allocated)],
+      columns:["Deduction","Annual","Per paycheck"],rows:[["Allocated federal income and additional taxes",allocated,allocated/count],["Employee Social Security",ss,ss/count],["Employee Medicare",medicare,medicare/count],["Pre-tax payroll deductions",pretax,pretax/count],["State income tax",state,state/count],["City income tax",local,local/count]],
+      notes:["Independent annual-tax allocation model. For multiple jobs, this job is assigned the incremental household federal tax above the entered other-job baseline; other-job wages are excluded from this paycheck. This is not an IRS Publication 15-T payroll withholding worksheet or an exact replica of the original site's unknown allocation policy.","Other-job amounts are treated as one taxpayer’s wages for this simplified allocation, not separate spouses’ payroll accounts. Pre-tax deductions reduce federal taxable income but not employee FICA wages. State/city rates are explicit effective assumptions; non-job income affects federal tax but is not paid in this paycheck. Daily pay assumes 260 working days.","For self-employment, pre-tax retirement deductions reduce income-taxable income but not the net profit used for self-employment tax. The federal estimate includes self-employment tax; employee Social Security and Medicare rows are zero to avoid counting those taxes twice. Eligible non-itemizer cash gifts use the 2026 $1,000/$2,000 cap when the standard deduction is selected; enter already eligible amounts and check organization eligibility."]};
+  },
+};
+function pctTax(v: Values,key:string){return n(v,key)/100;}
+takehome.modes.unshift(sourcePaycheck);
+
 export const taxCalculators = [income, salary, marriage, estate, takehome];

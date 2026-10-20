@@ -369,7 +369,7 @@ test("regression: employer match is based on actual capped employee contribution
     salary_growth: 0,
     return: 0,
   });
-  close(value(r, "Employee contributions + current balance"), 24500);
+  close(value(r, "Starting balance plus employee contributions"), 24500);
   close(value(r, "Employer contributions"), 24500);
 });
 test("regression: RMD projection grows starting balance before year-end withdrawal", () => {
@@ -428,11 +428,11 @@ test("401k annual iteration sums changing salaries and adds contributions at yea
   assert.equal(r.rows!.length, 4);
   for (const [i, expected] of [10000, 11000, 12100, 13310].entries())
     close(Number(r.rows![i][2]), expected);
-  close(value(r, "Employee contributions + current balance"), 46410);
+  close(value(r, "Starting balance plus employee contributions"), 46410);
   close(value(r, "Employer contributions"), 27846);
   close(value(r, "Projected 401(k) balance"), 85184);
   close(
-    value(r, "Employee contributions + current balance"),
+    value(r, "Starting balance plus employee contributions"),
     r.rows!.reduce((s, row) => s + Number(row[2]), 0),
   );
 });
@@ -451,10 +451,10 @@ test("401k annual caps follow starting age and no contributions after retirement
   const r = run("401k", "projection", inputs);
   close(Number(r.rows![0][2]), 24500);
   close(Number(r.rows![1][2]), 32500);
-  close(value(r, "Employee contributions + current balance"), 157000);
+  close(value(r, "Starting balance plus employee contributions"), 157000);
   const retired = run("401k", "projection", { ...inputs, retire: 49 });
   assert.equal(retired.rows!.length, 0);
-  close(value(retired, "Employee contributions + current balance"), 100000);
+  close(value(retired, "Starting balance plus employee contributions"), 100000);
   close(value(retired, "Projected 401(k) balance"), 100000);
 });
 
@@ -471,7 +471,7 @@ test("401k contribution summary includes starting balance once without future re
     salary_growth: 3,
     return: 6,
   });
-  close(value(r, "Employee contributions + current balance"), 116240);
+  close(value(r, "Starting balance plus employee contributions"), 116240);
   close(value(r, "Employer contributions"), 2436);
   close(value(r, "Projected 401(k) balance"), 131588);
   close(Number(r.rows![0][2]), 8000);
@@ -485,6 +485,6 @@ test("401k contribution summary includes starting balance once without future re
     match: 0,
     return: 6,
   });
-  close(value(zero, "Employee contributions + current balance"), 100000);
+  close(value(zero, "Starting balance plus employee contributions"), 100000);
   close(value(zero, "Projected 401(k) balance"), 106000);
 });

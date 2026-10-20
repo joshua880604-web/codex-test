@@ -95,6 +95,7 @@ const loan = tool(
       fields: [
         num("face", "Face value due at maturity", 100000, "$"),
         num("years", "Years to maturity", 10, "years"),
+        {...num("months", "Additional months", 0, "months"), max: 11, step: 1},
         num("rate", "Annual yield", 5, "%", -99),
         compoundField(),
       ],
@@ -102,9 +103,10 @@ const loan = tool(
         "Discount a zero-coupon bond’s maturity value to present value.",
       formula: "Present value = face value/(1+r/m)^(m×years).",
       calculate: (v) => {
+        if (!Number.isInteger(n(v,"months"))) throw new Error("Additional months must be a whole number.");
         const p =
           n(v, "face") /
-          (1 + periodic(n(v, "rate"), freq(v.compound), 1)) ** n(v, "years");
+          (1 + periodic(n(v, "rate"), freq(v.compound), 1)) ** (n(v, "years") + n(v,"months") / 12);
         return {
           metrics: [
             money("Bond present value", p),
@@ -1542,7 +1544,8 @@ const commission = tool(
       title: "Tiered Commission and Base Pay",
       fields: [
         num("sales", "Sales amount", 25000, "$"),
-        num("base", "Base pay", 1000, "$"),
+        num("base", "Base pay for the sales period", 1000, "$"),
+        select("tier_unit", "Tier rates entered as", ["Percent of sales", "Amount per item"]),
         select("method", "Tier method", [
           "Progressive bands",
           "Single rate on all sales",
@@ -1551,7 +1554,7 @@ const commission = tool(
           "tiers",
           "Commission tiers",
           "10000, 3\n20000, 5\n1000000000, 7",
-          "Up to 8 rows: upper sales bound, percent rate. Bounds must increase.",
+          "Up to 8 rows: upper sales/quantity bound, rate. With Amount per item, enter item quantity in Sales amount. Bounds must increase; base pay must cover the same period.",
         ),
       ],
       description:
@@ -1572,6 +1575,13 @@ const commission = tool(
           )
         )
           throw new Error("Enter up to 8 valid upper-bound, rate rows.");
+        if (n(v,"sales") > tiers.at(-1)![0])throw new Error("Final tier must cover the sales amount.");
+        if(v.method === "Single rate on all sales"){
+          const [bound,rate]=tiers.find(([bound])=>n(v,"sales")<=bound)!;
+          if(tiers.some(([bound],i)=>i>0&&bound<=tiers[i-1][0]))throw new Error("Tier upper bounds must increase.");
+          const commission=n(v,"sales")*rate/(v.tier_unit==="Amount per item"?1:100);
+          return {metrics:[money("Commission",commission),money("Base pay",n(v,"base")),money("Total earnings",commission+n(v,"base"))],columns:["Band start","Band end","Rate","Sales or items","Band commission"],rows:[[0,bound,rate,n(v,"sales"),commission]],notes:["A single selected tier rate applies to the full sales amount or item count. Base pay uses the same period as sales."]};
+        }
         let prev = 0,
           total = 0;
         const rows: (number | string)[][] = [];
@@ -1579,16 +1589,9 @@ const commission = tool(
           if (bound <= prev)
             throw new Error("Tier upper bounds must increase.");
           const sales = Math.max(0, Math.min(n(v, "sales"), bound) - prev),
-            commission = (sales * rate) / 100;
+            commission = (sales * rate) / (v.tier_unit==="Amount per item"?1:100);
           rows.push([prev, bound, rate, sales, commission]);
           total += commission;
-          if (
-            v.method === "Single rate on all sales" &&
-            n(v, "sales") <= bound
-          ) {
-            total = (n(v, "sales") * rate) / 100;
-            break;
-          }
           prev = bound;
         }
         if (n(v, "sales") > tiers.at(-1)![0])
@@ -1602,7 +1605,7 @@ const commission = tool(
           columns: [
             "Band start",
             "Band end",
-            "Rate (%)",
+            "Rate (% or amount/item)",
             "Sales in band",
             "Band commission",
           ],
@@ -1613,6 +1616,23 @@ const commission = tool(
   ],
   "Calculate simple, graduated, or whole-sale-rate commission and base compensation.",
 );
+commission.modes.unshift({
+  id:"any-two",title:"Commission Calculator",
+  fields:[{...num("sales","Sales amount",10000,"$"),optional:true},{...num("rate","Commission rate",5,"%"),optional:true},{...num("commission","Commission earned",0,"$"),value:"",optional:true}],
+  description:"Enter any two of sales, commission rate and commission earned to find the remaining value.",
+  formula:"Commission = sales × rate / 100.",
+  calculate:v=>{
+    const keys=["sales","rate","commission"], filled=keys.filter(key=>v[key]?.trim()!==""&&v[key]!==undefined);
+    if(filled.length!==2)throw new Error("Enter exactly two values and leave the unknown field blank.");
+    let sales=v.sales?.trim()?n(v,"sales"):0, rate=v.rate?.trim()?n(v,"rate"):0, earned=v.commission?.trim()?n(v,"commission"):0;
+    if(!filled.includes("commission"))earned=sales*rate/100;
+    else if(!filled.includes("sales")){if(rate===0)throw new Error("A zero rate does not determine a unique sales amount.");sales=earned*100/rate;}
+    else {if(sales===0)throw new Error("Zero sales do not determine a unique commission rate.");rate=earned/sales*100;}
+    const metrics={sales:money("Sales amount",sales),rate:metric("Commission rate",rate,"percent"),commission:money("Commission",earned)};
+    const unknown=keys.find(key=>!filled.includes(key))!;
+    return {metrics:[unknown,...keys.filter(key=>key!==unknown)].map(key=>metrics[key as keyof typeof metrics])};
+  },
+});
 export const otherCalculators = [
   loan,
   paymentTool,

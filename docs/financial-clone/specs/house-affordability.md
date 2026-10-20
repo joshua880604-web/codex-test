@@ -32,3 +32,25 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/house-affordability-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Based on Income (income)
+
+Local inputs: income, debt, front, back, down, down_unit, rate, years, tax_rate, tax_unit, insurance, insurance_unit, hoa, hoa_unit, maintenance, maintenance_unit.
+
+Local formula: Budget = mortgage payment + annual property tax/12 + monthly insurance and HOA.
+
+Local default outputs: Estimated home price; Down payment; Loan amount; Monthly housing budget.
+
+### Based on Monthly Budget (budget)
+
+Local inputs: budget, down, down_unit, rate, years, tax_rate, tax_unit, insurance, insurance_unit, hoa, hoa_unit, maintenance, maintenance_unit.
+
+Local formula: Budget = mortgage payment + annual property tax/12 + monthly insurance and HOA.
+
+Local default outputs: Estimated home price; Down payment; Loan amount; Monthly housing budget.

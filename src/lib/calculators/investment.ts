@@ -60,8 +60,10 @@ function growth(
   let b = initial,
     paid = initial,
     taxes = 0,
-    accrued = 0;
+    accrued = 0,
+    initialBalance = initial, initialAccrued = 0;
   const rows: (string | number)[][] = [];
+  const monthlyRows: (string | number)[][] = [];
   for (let m = 1; m <= months; m++) {
     const c = monthly * (1 + monthlyIncrease) ** Math.floor((m - 1) / 12),
       a = annual * (1 + annualIncrease) ** Math.floor((m - 1) / 12);
@@ -73,6 +75,8 @@ function growth(
         paid += a;
       }
     }
+    const initialInterest = initialBalance*r;
+    initialBalance += initialInterest; initialAccrued += Math.max(0, initialInterest);
     const interest = b * r;
     b += interest;
     accrued += Math.max(0, interest);
@@ -88,20 +92,29 @@ function growth(
       const t = accrued * tax;
       b -= t;
       taxes += t;
+      initialBalance -= initialAccrued * tax; initialAccrued = 0;
       accrued = 0;
       rows.push([m / 12, paid, b - paid, b]);
     }
+    monthlyRows.push([m, paid, b - paid, b]);
   }
   return {
     metrics: [
       money("Ending balance", b),
       money("Total contributions", paid),
+      money("Starting amount", initial),
+      money("Additional contributions", paid-initial),
       money("Net investment earnings", b - paid),
+      money("Net earnings from starting amount", initialBalance - initial),
+      money("Net earnings from additional deposits", b - paid - (initialBalance - initial)),
       money("Tax on interest", taxes),
       money("Inflation-adjusted balance", b / (1 + inflation) ** years),
     ],
-    columns: ["Year", "Contributions", "Net earnings", "Balance"],
-    rows,
+    columns: ["Month", "Contributions", "Net earnings", "Balance"],
+    rows: monthlyRows,
+    schedulePeriod: "Monthly",
+    annualColumns: ["Year", "Contributions", "Net earnings", "Balance"],
+    annualRows: rows,
     chart: [
       { label: "Contributions", value: paid },
       { label: "Net earnings", value: Math.max(0, b - paid) },
@@ -160,7 +173,6 @@ const savings = tool(
 const compound = tool(
   "compound-interest",
   [
-    growthMode("growth", "Compound Growth"),
     {
       id: "conversion",
       title: "Equivalent Interest Rate",
@@ -189,6 +201,7 @@ const compound = tool(
         };
       },
     },
+    growthMode("growth", "Compound Growth"),
   ],
   "Calculate compound growth with monthly deposits or convert equivalent compounding rates.",
 );
@@ -474,7 +487,19 @@ const cd = tool(
           ),
           interest = fv - p,
           tax = Math.max(0, interest) * pct(v, "tax");
+        const term=n(v,"years")*12+n(v,"months");
+        if(term>12000)throw new Error("CD term exceeds supported schedule limits.");
+        const rows:(number|string)[][]=[], yearly:(number|string)[][]=[];
+        let previous=p;
+        for(let i=1;i<=Math.ceil(term);i++){
+          const month=Math.min(i,term), balance=future(p,0,periodic(n(v,"rate"),freq(v.compound),12),month);
+          rows.push([month,balance-previous,balance-p,balance]);previous=balance;
+          if(i%12===0 || i===Math.ceil(term))yearly.push([month/12,balance-p,balance]);
+        }
         return {
+          columns:["Month","Period interest","Cumulative interest","Balance before tax"], rows,
+          schedulePeriod:"Monthly", annualColumns:["Year","Cumulative interest","Balance before tax"], annualRows:yearly,
+          notes:["Schedule balances are before tax. The marginal tax estimate is applied to positive total interest at maturity; it does not model annual tax cash flows, early withdrawal penalties or changing rates."],
           metrics: [
             money("Maturity balance", fv),
             money("Interest earned", interest),
@@ -745,12 +770,19 @@ const irrTool = tool(
       num("initial", "Initial investment (outflow at time zero)", 10000, "$"),
       ...(id === "fixed"
         ? [
-            num("years", "Holding length", 5, "years", 0.01),
+            num("years", "Holding length", 5, "years", 0),
+            {...num("months", "Additional holding months", 0, "months"), max: 11, step: 1},
+            select("cash_action", "Recurring cash flow", ["Net cash flow", "No recurring cash flow", "Additional investment"]),
             num("inflow", "Net cash flow each period", 3000, "$", -1e12),
             select("cash_frequency", "Cash flow frequency", [
               "Annually",
+              "Semiannually",
               "Quarterly",
               "Monthly",
+              "Semimonthly",
+              "Biweekly",
+              "Weekly",
+              "Daily",
             ]),
             num("ending", "Ending value", 1000, "$"),
             select("timing", "Cash flow timing", [
@@ -771,39 +803,39 @@ const irrTool = tool(
       id === "fixed" ? "Estimate an effective annual IRR from equally spaced fixed cash flows; choose frequency and beginning/end timing." : "Estimate an annual IRR from unequal amounts at successive year ends. Amounts may vary, but dates remain one year apart.",
     formula: "NPV = Σ CFₜ/(1+r)^t = 0.",
     calculate: (v) => {
-      let flows: number[];
+      let flows: number[], eventTimes: number[];
       if (id === "fixed") {
-        const rawPeriods=n(v,"years")*freq(v.cash_frequency);
-        if(Math.abs(rawPeriods-Math.round(rawPeriods))>1e-7)throw new Error("Holding length must give a whole number of cash-flow periods at the selected frequency.");
-        const years = Math.round(rawPeriods);
-        periods(years);
-        flows = [
-          -n(v, "initial"),
-          ...Array.from({ length: years }, () => n(v, "inflow")),
-        ];
-        if (due(v)) {
-          flows[0] += n(v, "inflow");
-          flows[years] -= n(v, "inflow");
+        if (!Number.isInteger(n(v,"months"))) throw new Error("Additional holding months must be a whole number.");
+        const horizon=positive(n(v,"years")+n(v,"months")/12,"Holding length"), frequency=freq(v.cash_frequency), rawPeriods=horizon*frequency;
+        if(horizon>12000 || (v.cash_action!=="No recurring cash flow" && rawPeriods>12000))throw new Error("Holding period exceeds supported cash-flow limits.");
+        const cash=v.cash_action==="No recurring cash flow"?0:v.cash_action==="Additional investment"?-Math.abs(n(v,"inflow")):n(v,"inflow");
+        flows=[-n(v,"initial")];eventTimes=[0];
+        if(v.cash_action!=="No recurring cash flow") {
+          const count=due(v)?Math.ceil(rawPeriods-1e-10):Math.floor(rawPeriods+1e-10);
+          for(let index=0;index<count;index++){
+            const time=(due(v)?index:index+1)/frequency;
+            if(time===0)flows[0]+=cash;else{flows.push(cash);eventTimes.push(time);}
+          }
         }
-        flows[years] += n(v, "ending");
-      } else flows = [-n(v, "initial"), ...parseNumbers(v.flows)];
-      const roots = irr(flows);
+        if(Math.abs(eventTimes.at(-1)!-horizon)<1e-10)flows[flows.length-1]+=n(v,"ending");
+        else {flows.push(n(v,"ending"));eventTimes.push(horizon);}
+      } else {flows=[-n(v,"initial"),...parseNumbers(v.flows)];eventTimes=flows.map((_,i)=>i);}
+      const roots = irr(flows,eventTimes);
       return {
         metrics: roots.map((r, i) =>
           metric(
             `Annual IRR ${i + 1}`,
-            (id === "fixed" ? Math.expm1(freq(v.cash_frequency)*Math.log1p(r)) : r) *
-              100,
+            r * 100,
             "percent",
           ),
         ),
         columns: ["Period", "Time (years)", "Net cash flow"],
-        rows: flows.map((x, i) => [i, i/(id === "fixed" ? freq(v.cash_frequency) : 1), x]),
+        rows: flows.map((x, i) => [i, eventTimes[i], x]),
         notes: [
           "All headline rates are effective annual IRRs. Initial investment is a positive amount entered here and is converted into a negative time-zero outflow. Subsequent negative flows represent additional investment; zeros preserve empty periods.",
-          "The numerical search is bounded to approximately −99.9994% through 16,275,379% per cash-flow period. Multiple or repeated roots can exist; detected roots are not a guarantee that every root was found. Nearly repeated roots are numerically sensitive. IRR is not ROI and does not measure risk.",
+          "The numerical search is bounded to approximately −99.9994% through 16,275,379% per year. Multiple or repeated roots can exist; detected roots are not a guarantee that every root was found. Nearly repeated roots are numerically sensitive. IRR is not ROI and does not measure risk.",
           ...(roots.length>1 ? ["Multiple IRRs were detected. There is no single unambiguous IRR for these cash flows; examine NPV and the complete cash-flow pattern."] : []),
-          ...(id === "irregular" ? ["Unequal amounts are assumed to occur at year ends. For actual irregular dates, use the dated cash-flow mode in Average Return Calculator."] : [`Cash-flow frequency: ${v.cash_frequency}. Final value is received at the end of the holding period even when recurring flows occur at the beginning.`]),
+          ...(id === "irregular" ? ["Unequal amounts are assumed to occur at year ends. For actual irregular dates, use the dated cash-flow mode in Average Return Calculator."] : [`Cash-flow frequency: ${v.cash_frequency}. Final value is received at the exact end of the holding period. For a partial final period, only recurring payment dates within the holding period are included; no prorated recurring payment is invented. Additional investment treats the entered periodic amount as an outflow. The no-recurring-flow selection ignores the periodic amount.`]),
         ],
       };
     },

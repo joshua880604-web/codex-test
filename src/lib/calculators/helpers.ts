@@ -88,5 +88,10 @@ export const extraFields = () => [
   num("extra_monthly", "Extra monthly payment", 0, "$"),
   num("extra_yearly", "Extra yearly payment", 0, "$"),
   num("extra_once", "One-time extra payment", 0, "$"),
-  num("extra_once_month", "One-time payment month", 1, "month", 1),
+  {
+    ...num("extra_once_month", "One-time payment month", 1, "month", 1),
+    step: 1,
+    max: 12000,
+    hint: "Enter a whole payment month: 1 is the first scheduled payment. An extra payment after payoff has no effect.",
+  },
 ];

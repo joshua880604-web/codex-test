@@ -69,7 +69,7 @@ VAT 已改为四字段任填两个的统一表单，覆盖六种输入组合，C
 
 ## SEO / AI 搜索准备
 
-已增加 canonical、Open Graph、robots、sitemap、结构化数据和公开计算方法页；全部 75 个实际计算器（70 个金融工具及 5 个日常工具）有英文指南、问答及来源，全站共 103 个可复算算例。参见 [配置与验证说明](docs/financial-clone/seo-geo.md)。
+已增加 canonical、Open Graph、robots、sitemap、结构化数据和公开计算方法页；全部 75 个实际计算器（70 个金融工具及 5 个日常工具）有英文指南、问答及来源，全站共 107 个可复算算例。参见 [配置与验证说明](docs/financial-clone/seo-geo.md)。
 
 **预览默认 noindex。** 正式上线时在构建环境同时设置 `SITE_URL=https://实际正式域名` 和 `SITE_INDEXABLE=true`，然后重新构建。未确认域名时不会生成虚构的 canonical/sitemap 地址；Vercel Preview 环境保持不收录。内容和技术检查通过不代表已获得排名或 AI 引用。
 
@@ -78,3 +78,5 @@ VAT 已改为四字段任填两个的统一表单，覆盖六种输入组合，C
 科学计算器：`/scientific-calculator.html`，支持科学函数、按键面板及角度／弧度切换。当前本地开发完成，尚未同步公开仓库。详见 [实现说明](docs/financial-clone/scientific-calculator.md)。
 
 退休计算更新：401(k) 增加退休提款表和 CSV、配比比例范围、提前提款资格；Retirement 支持独立年度缴款。详见 [说明](docs/financial-clone/retirement-parity-improvements.md)。本批次已获用户授权同步 GitHub。
+
+最新金融功能对应：原站 71 个目录条目（70 个计算器）全部建立功能对应表；本地金融功能 160 模式，全站 173 模式。原站不可核验的细节按明确假设使用独立专家模型，不能将其视为原站结果已全部一致。详见 [本轮说明](docs/financial-clone/strict-functionality-policy.md) 和 [逐项对应表](docs/financial-clone/reference-function-map.json)。本轮尚未同步 GitHub。

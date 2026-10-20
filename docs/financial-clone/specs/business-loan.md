@@ -23,3 +23,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/business-loan-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Business Loan (repayment)
+
+Local inputs: principal, years, months, rate, compound, pay, origination, documentation, other_fee, treatment, insurance.
+
+Local formula: APR solves net proceeds against all periodic loan payments and insurance charges.
+
+Local default outputs: Payment including insurance; Payment per period; Total interest; Total payments; Number of payments; Loan fees; Net proceeds after fees; Nominal APR including insurance.

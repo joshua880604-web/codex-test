@@ -32,3 +32,25 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/auto-lease-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Lease Payment (payment)
+
+Local inputs: price, residual, down, trade, fees, months, rate, rate_unit, tax.
+
+Local formula: Base payment = (capitalized cost − residual)/months + (capitalized cost + residual) × money factor; money factor = APR/2400.
+
+Local default outputs: Vehicle price; Monthly lease payment; Monthly depreciation charge; Monthly rent charge; Monthly tax; Total lease cash outlay; Money factor.
+
+### Vehicle Price from Payment (price)
+
+Local inputs: payment, residual, down, trade, fees, months, rate, rate_unit, tax.
+
+Local formula: Base payment = (capitalized cost − residual)/months + (capitalized cost + residual) × money factor; money factor = APR/2400.
+
+Local default outputs: Vehicle price; Monthly lease payment; Monthly depreciation charge; Monthly rent charge; Monthly tax; Total lease cash outlay; Money factor.

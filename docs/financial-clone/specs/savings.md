@@ -38,3 +38,33 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/savings-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Savings Calculator (accumulation)
+
+Local inputs: principal, years, months, rate, compound, annual, monthly, timing, tax, inflation, annual_increase, monthly_increase.
+
+Local formula: Balance grows at the equivalent periodic rate, with contributions added at the selected timing.
+
+Local default outputs: Ending balance; Total contributions; Starting amount; Additional contributions; Net investment earnings; Net earnings from starting amount; Net earnings from additional deposits; Tax on interest; Inflation-adjusted balance.
+
+### Savings Goal: Monthly Deposit (goal-contribution)
+
+Local inputs: end, principal, years, months, rate, compound, annual, timing, tax, inflation.
+
+Local formula: Solve the periodic contribution and compound growth cash-flow equation.
+
+Local default outputs: Required monthly deposit; Ending balance; Total contributions; Starting amount; Additional contributions; Net investment earnings; Net earnings from starting amount; Net earnings from additional deposits; Tax on interest; Inflation-adjusted balance.
+
+### Savings Goal: Time Needed (goal-time)
+
+Local inputs: end, principal, rate, compound, annual, monthly, timing, tax, inflation.
+
+Local formula: Solve the periodic contribution and compound growth cash-flow equation.
+
+Local default outputs: Years to savings goal; Months to savings goal; Ending balance; Total contributions; Starting amount; Additional contributions; Net investment earnings; Net earnings from starting amount; Net earnings from additional deposits; Tax on interest; Inflation-adjusted balance.

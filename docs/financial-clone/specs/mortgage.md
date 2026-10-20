@@ -44,3 +44,25 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/mortgage-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Monthly Mortgage (monthly)
+
+Local inputs: price, down, down_unit, years, months, rate, start, tax, tax_unit, insurance, insurance_unit, pmi, pmi_unit, pmi_years, pmi_policy, hoa, hoa_unit, other, other_unit, tax_growth, insurance_growth, hoa_growth, other_growth, extra_monthly, extra_yearly, extra_once, extra_once_month, extra_start, extra_yearly_start, dated.
+
+Local formula: Payment = P × i / (1 − (1+i)^−N), with a period-by-period balance schedule.
+
+Local default outputs: Monthly principal & interest; Initial monthly total; Down payment; Financed loan amount; Upfront fee; Total interest; Total payments; Number of payments; Total taxes and other costs; Total out of pocket.
+
+### Biweekly Comparison (biweekly)
+
+Local inputs: price, down, down_unit, years, months, rate, start, tax, tax_unit, insurance, insurance_unit, pmi, pmi_unit, pmi_years, pmi_policy, hoa, hoa_unit, other, other_unit, tax_growth, insurance_growth, hoa_growth, other_growth, extra_monthly, extra_yearly, extra_once, extra_once_month, extra_start, extra_yearly_start, dated.
+
+Local formula: Payment = P × i / (1 − (1+i)^−N), with a period-by-period balance schedule.
+
+Local default outputs: Biweekly payment; Total interest; Payments; Years to payoff.

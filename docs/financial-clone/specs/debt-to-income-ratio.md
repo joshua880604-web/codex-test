@@ -37,3 +37,17 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/debt-ratio-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Debt-to-Income Ratio (ratio)
+
+Local inputs: v0, f0, v1, f1, v2, f2, v3, f3, v4, f4, v5, f5, v6, f6, v7, f7, v8, f8, v9, f9, v10, f10, v11, f11, v12, f12.
+
+Local formula: DTI = monthly debt payments / gross monthly income × 100%.
+
+Local default outputs: Total debt-to-income ratio; Housing-to-income ratio; Gross monthly income; Monthly debt payments.

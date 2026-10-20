@@ -46,6 +46,10 @@ function extra(v: Values): Extra {
     onceMonth: n(v, "extra_once_month"),
   };
   if (v.extra_start) e.monthlyStart = n(v, "extra_start");
+  if (v.extra_yearly_start) {
+    e.yearlyStart = n(v, "extra_yearly_start");
+    if (!Number.isInteger(e.yearlyStart)) throw new Error("Yearly extra payment start must be a whole payment month.");
+  }
   if (v.dated) {
     const d: Record<number, number> = {};
     for (const row of v.dated.split("\n").filter((s) => s.trim())) {
@@ -68,6 +72,7 @@ function extra(v: Values): Extra {
 const datedExtraFields = () => [
   ...extraFields(),
   num("extra_start", "Monthly extra starts in month", 1, "", 1),
+  {...num("extra_yearly_start", "First yearly extra payment in month", 12, "", 1), step: 1, hint: "Payment month counted from the first scheduled payment; repeats every 12 months."},
   area(
     "dated",
     "Additional one-time payments",
@@ -257,7 +262,7 @@ const mortgageMode = (
       for (let month = 1; month <= Math.ceil(term(v)); month++) {
         const value =
           (month >= (extras.monthlyStart ?? 1) ? (extras.monthly ?? 0) : 0) +
-          (month % 12 === 0 ? (extras.yearly ?? 0) : 0) +
+          (month >= (extras.yearlyStart ?? 12) && (month - (extras.yearlyStart ?? 12)) % 12 === 0 ? (extras.yearly ?? 0) : 0) +
           (month === (extras.onceMonth ?? 1) ? (extras.once ?? 0) : 0) +
           (extras.dated?.[month] ?? 0);
         if (value) dated[Math.ceil((month * 26) / 12)] = value;
@@ -439,12 +444,18 @@ const affordability = tool(
             num("back", "Total debt-to-income limit", 36, "%"),
           ]
         : [num("budget", "Monthly housing budget", 2500, "$")]),
-      num("down", "Down payment", 20, "%"),
+      num("down", "Down payment", 20),
+      select("down_unit", "Down payment unit", ["Percent", "Dollars"]),
       num("rate", "Mortgage interest", 6, "%"),
       num("years", "Loan term", 30, "years", 0.01),
-      num("tax_rate", "Annual property tax", 1.2, "% of home value"),
-      num("insurance", "Annual insurance", 1500, "$"),
-      num("hoa", "Monthly HOA and other expenses", 0, "$"),
+      num("tax_rate", "Annual property tax", 1.2),
+      select("tax_unit", "Property tax unit", ["Percent of home value", "Dollars per year"]),
+      num("insurance", "Annual insurance", 1500),
+      select("insurance_unit", "Insurance unit", ["Dollars per year", "Percent of home value"]),
+      num("hoa", "HOA and other expenses", 0),
+      select("hoa_unit", "HOA unit", ["Dollars per month", "Percent of home value per year"]),
+      num("maintenance", "Annual maintenance", 0),
+      select("maintenance_unit", "Maintenance unit", ["Dollars per year", "Percent of home value"]),
     ],
     description:
       "Solve a home price from a housing payment budget including taxes and insurance.",
@@ -458,11 +469,16 @@ const affordability = tool(
                 (n(v, "income") / 12) * pct(v, "back") - n(v, "debt"),
               )
             : n(v, "budget"),
-        fixed = n(v, "insurance") / 12 + n(v, "hoa"),
-        factor =
-          payment(1 - pct(v, "down"), pct(v, "rate") / 12, n(v, "years") * 12) +
-          pct(v, "tax_rate") / 12,
-        price = (budget - fixed) / positive(factor, "Payment factor");
+        mortgageFactor = payment(1,pct(v,"rate")/12,n(v,"years")*12),
+        downIsPercent=v.down_unit==="Percent",
+        downFraction=downIsPercent?pct(v,"down"):0,
+        fixedDown=downIsPercent?0:n(v,"down"),
+        variable=(v.tax_unit==="Percent of home value"?pct(v,"tax_rate")/12:0)+(v.insurance_unit==="Percent of home value"?pct(v,"insurance")/12:0)+(v.hoa_unit==="Percent of home value per year"?pct(v,"hoa")/12:0)+(v.maintenance_unit==="Percent of home value"?pct(v,"maintenance")/12:0),
+        fixed=(v.tax_unit==="Dollars per year"?n(v,"tax_rate")/12:0)+(v.insurance_unit==="Dollars per year"?n(v,"insurance")/12:0)+(v.hoa_unit==="Dollars per month"?n(v,"hoa"):0)+(v.maintenance_unit==="Dollars per year"?n(v,"maintenance")/12:0),
+        factor=mortgageFactor*(1-downFraction)+variable,
+        price=(budget-fixed+mortgageFactor*fixedDown)/positive(factor,"Payment factor"),
+        down=downIsPercent?price*downFraction:fixedDown;
+      if(downFraction>1 || down>price)throw new Error("Down payment cannot exceed the estimated home price.");
       if (price <= 0)
         throw new Error(
           "Housing budget is insufficient after debt and expenses.",
@@ -470,12 +486,12 @@ const affordability = tool(
       return {
         metrics: [
           money("Estimated home price", price),
-          money("Down payment", price * pct(v, "down")),
-          money("Loan amount", price * (1 - pct(v, "down"))),
+          money("Down payment", down),
+          money("Loan amount", price - down),
           money("Monthly housing budget", budget),
         ],
         notes: [
-          "Affordability is based on the explicit ratios entered, not a lender approval. Mortgage insurance and maintenance are excluded unless included in the other-expense budget.",
+          "Affordability is based on the explicit ratios entered, not a lender approval. Insurance, property tax, HOA and maintenance use the selected dollar or percentage units. Percentage amounts are annual percentages of the solved home value. Mortgage insurance remains excluded; include it in the other-expense budget if applicable.",
         ],
       };
     },
@@ -822,7 +838,9 @@ const heloc = tool(
         num("rate", "Annual interest rate", 8, "%"),
         num("draw", "Draw period", 10, "years", 0),
         num("years", "Repayment period", 20, "years", 0.01),
-        num("closing", "Upfront closing costs", 0, "$"),
+        num("closing", "Closing costs", 0),
+        select("closing_unit", "Closing cost unit", ["Dollars", "Percent"]),
+        select("closing_treatment", "Closing costs paid", ["Upfront", "Deducted from loan"]),
         {...num("charge", "Annual fee", 0, "$"), hint: "Yearly account-maintenance fee during the draw period only. Enter 0 for a no-annual-fee HELOC. The model divides it by 12 for average monthly costs; actual lender billing may be annual."},
       ],
       description:
@@ -831,6 +849,7 @@ const heloc = tool(
         "Average draw payment = balance × monthly interest + annual fee/12 during draw only; repayment amortizes the balance without the annual fee.",
       calculate: (v) => {
         const p = n(v, "principal"),
+          closing = v.closing_unit === "Percent" ? p * pct(v, "closing") : n(v, "closing"),
           r = pct(v, "rate") / 12,
           draw = Math.round(n(v, "draw") * 12),
           N = n(v, "years") * 12,
@@ -853,17 +872,21 @@ const heloc = tool(
               x.balance,
             ]),
           ];
+        if (closing > p || (p > 0 && closing === p)) throw new Error("Closing costs must be below the loan amount to leave positive net proceeds.");
         return {
           metrics: [
             money("Monthly draw payment", draw > 0 ? p * r + charge : 0),
             money("Monthly repayment", payment(p, r, N)),
+            money("Cash disbursed at closing", v.closing_treatment === "Deducted from loan" ? p - closing : p),
+            money("Closing costs paid upfront", v.closing_treatment === "Upfront" ? closing : 0),
+            money("Net initial proceeds after closing costs", p - closing),
             money(
               "Total interest",
               draw * p * r + sum(repay.map((x) => x.interest)),
             ),
             money(
               "Fees and annual charges",
-              n(v, "closing") + draw * charge,
+              closing + draw * charge,
             ),
             money("Annual fees during draw", draw * charge),
             ...(p > 0
@@ -871,7 +894,7 @@ const heloc = tool(
                   metric(
                     "Nominal APR including fees",
                     irr([
-                      -positive(p - n(v, "closing"), "Net proceeds"),
+                      -positive(p - closing, "Net proceeds"),
                       ...rows.map((x) => Number(x[1])),
                     ])[0] * 1200,
                     "percent",
@@ -888,7 +911,7 @@ const heloc = tool(
           ],
           rows,
           notes: [
-            "Assumes the full outstanding balance exists at the start, stays constant through draw, and the rate stays fixed. The annual fee is a recurring account-maintenance charge during the draw period only; it stops in the repayment period. Enter 0 if your lender has no annual fee. For average monthly draw payments and this estimated APR, the annual fee is spread across 12 draw-period months; partial draw years are prorated. Actual annual billing dates can change cash-flow APR. Closing costs reduce net initial proceeds.",
+            "Assumes the full outstanding balance exists at the start, stays constant through draw, and the rate stays fixed. The annual fee is a recurring account-maintenance charge during the draw period only; it stops in the repayment period. Enter 0 if your lender has no annual fee. For average monthly draw payments and this estimated APR, the annual fee is spread across 12 draw-period months; partial draw years are prorated. Actual annual billing dates can change cash-flow APR. Closing costs are a dollar amount or a percentage of the loan. Upfront payment uses outside cash; deduction reduces the disbursed cash. Both reduce net initial proceeds for APR without changing contractual principal. This model does not finance closing costs on top of the loan.",
           ],
         };
       },

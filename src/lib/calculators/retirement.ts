@@ -29,6 +29,8 @@ const ageFields = () => [
   num("life", "Life expectancy", 90, "years", 1),
 ];
 function remaining(v: Values): { working: number; retired: number } {
+  if (!["age", "retire", "life"].every(key => Number.isInteger(n(v, key))))
+    throw new Error("Current age, retirement age and life expectancy must be whole numbers.");
   const working = n(v, "retire") - n(v, "age"),
     retired = n(v, "life") - n(v, "retire");
   if (working < 0 || retired <= 0)
@@ -47,22 +49,25 @@ const retirement = tool(
         ...ageFields(),
         num("income", "Current annual income", 80000, "$"),
         num("salary_growth", "Annual income increase", 2, "%"),
-        num("replacement", "Retirement income replacement", 75, "%"),
+        num("replacement", "Income needed after retirement", 75),
+        select("replacement_unit", "Retirement income entered as", ["Percent of final annual income", "Dollars per year"]),
         num("return", "Annual investment return", 6, "%", -99),
         num("inflation", "Inflation", 2.5, "%", -99),
         num("other", "Other monthly retirement income", 1500, "$"),
         num("balance", "Current retirement savings", 100000, "$"),
-        num("saving", "Monthly saving", 500, "$"),
+        num("saving", "Future retirement savings", 500),
+        select("saving_unit", "Future savings entered as", ["Dollars per month", "Dollars per year", "Percent of annual income"]),
       ],
       description:
         "Estimate the retirement balance needed to fund an inflation-adjusted income gap.",
       formula:
         "Target = sum of first-year income gap × (1 + inflation)^(year − 1) / (1 + return)^year; required monthly saving funds target less future current savings.",
       calculate: (v) => {
+        if (v.replacement_unit !== "Dollars per year" && n(v,"replacement") > 100) throw new Error("Income replacement percentage must not exceed 100%.");
         const { working, retired } = remaining(v),
           r = pct(v, "return"),
           real = (1 + r) / (1 + pct(v, "inflation")) - 1,
-          annual =
+          annual = v.replacement_unit === "Dollars per year" ? n(v,"replacement") :
             n(v, "income") *
             (1 + pct(v, "salary_growth")) ** working *
             pct(v, "replacement"),
@@ -71,22 +76,29 @@ const retirement = tool(
           existing = future(n(v, "balance"), 0, monthly(r), working * 12),
           factor = future(0, 1, monthly(r), working * 12),
           needed = working ? Math.max(0, (target - existing) / factor) : 0,
-          projected = future(
-            n(v, "balance"),
-            n(v, "saving"),
-            monthly(r),
-            working * 12,
-          );
+          projected = (() => {
+            if (v.saving_unit === "Dollars per year") return future(n(v,"balance"), n(v,"saving"), r, working);
+            if (v.saving_unit !== "Percent of annual income") return future(n(v,"balance"), n(v,"saving"), monthly(r), working*12);
+            if (n(v,"saving") > 100) throw new Error("Savings percentage must not exceed 100%.");
+            let total = n(v,"balance");
+            const months = working*12;
+            if (months > 12000) throw new Error("Savings horizon exceeds supported limits.");
+            for (let month=0; month<months; month++) total = total*(1+monthly(r)) + n(v,"income")*(1+pct(v,"salary_growth"))**Math.floor(month/12)*pct(v,"saving")/12;
+            return total;
+          })();
         return {
           metrics: [
             money("Required savings at retirement", target),
-            money("Required monthly saving", needed),
+            ...(working > 0
+              ? [money("Required monthly saving", needed)]
+              : [money("Additional savings needed now", Math.max(0, target - existing))]),
             money("Projected retirement savings", projected),
             money("Projected surplus / shortfall", projected - target),
             money("First-year retirement income need", annual),
           ],
           notes: [
-            "The entered income gap is the first retirement-year withdrawal, paid at that year’s end; inflation increases subsequent yearly withdrawals. Other income is treated as inflation-indexed throughout retirement. Returns and inflation remain constant.",
+            ...(working === 0 ? ["Retirement starts now, so there is no remaining contribution period. Additional savings needed now is the immediate funding shortfall, not a monthly saving plan."] : []),
+            "The entered income gap is the first retirement-year withdrawal, paid at that year’s end; inflation increases subsequent yearly withdrawals. A dollar income target is an annual amount at retirement; a percentage applies to projected final working income. Monthly savings are paid at month end; annual savings at year end; salary-percentage deposits are paid monthly and increase with the entered annual income increase. Other income is treated as inflation-indexed throughout retirement. Returns and inflation remain constant.",
           ],
         };
       },
@@ -183,25 +195,34 @@ const retirement = tool(
       ],
       description:
         "Find how long a retirement balance supports fixed monthly withdrawals.",
-      formula: "N = −ln(1 − PV×i/PMT)/ln(1+i).",
+      formula: "N = −ln(1 − PV×i/PMT)/ln(1+i); actual month-end withdrawals use ceil(N), with the last withdrawal capped at the available balance.",
       calculate: (v) => {
         const b = n(v, "balance"),
           w = n(v, "withdrawal"),
           r = monthly(pct(v, "return"));
-        if (r > 0 && w <= b * r)
+        if (b === 0) return {
+          metrics: [metric("Years savings last", 0), metric("Monthly withdrawals", 0), money("Total withdrawn", 0)],
+          notes: ["There is no starting balance to withdraw."],
+        };
+        positive(w, "Monthly withdrawal");
+        if (r >= 0 && w <= b * r)
           return {
             metrics: [money("Initial monthly interest", b * r)],
             notes: [
               "Under these constant-return assumptions the withdrawal does not exhaust the balance.",
             ],
           };
-        const N = duration(b, w, r);
+        const N = duration(b, w, r), count = Math.max(1, Math.ceil(N - 1e-10)),
+          schedule = payoutSchedule(b, r, w, count, 12);
         return {
+          ...schedule,
           metrics: [
-            metric("Years savings last", N / 12),
-            metric("Monthly withdrawals", N),
-            money("Total withdrawn", w * N),
+            metric("Years savings last", count / 12),
+            metric("Monthly withdrawals", count),
+            money("Total withdrawn", schedule.total),
+            money("Final monthly withdrawal", Number(schedule.rows.at(-1)![4])),
           ],
+          notes: ["Withdrawals occur at month end after investment returns. Duration ends on the actual final payment date; the final withdrawal is limited to the remaining balance. Annual return is effective and constant; taxes and fees are excluded."],
         };
       },
     },
@@ -228,7 +249,7 @@ const k401 = tool(
         ...ageFields(),
         num("salary", "Annual salary", 80000, "$"),
         num("balance", "Current 401(k) balance", 100000, "$"),
-        num("contribution", "Employee contribution", 10, "% of salary"),
+        {...num("contribution", "Employee contribution", 10, "% of salary"),max:100},
         num("match", "Employer match", 50, "%"),
         num("match_limit", "Employer match limit", 6, "% of salary"),
         num("salary_growth", "Annual salary increase", 2, "%"),
@@ -236,9 +257,9 @@ const k401 = tool(
         num("inflation", "Inflation", 2.5, "%", -99),
       ],
       description:
-        "Project savings one year at a time. Employee contributions + current balance includes the starting 401(k) balance plus the sum of each projected year’s capped employee contribution.",
+        "Project savings one year at a time. Starting balance plus employee contributions includes the starting 401(k) balance plus the sum of each projected year’s capped employee contribution.",
       formula:
-        "For each year: employee = min(annual salary × contribution%, age-based annual limit); employer = min(employee, annual salary × match limit%) × match%; ending balance = opening balance × (1 + annual return) + employee + employer. Employee contributions + current balance = starting 401(k) balance + sum of annual employee amounts.",
+        "For each year: employee = min(annual salary × contribution%, age-based annual limit); employer = min(employee, annual salary × match limit%) × match%; ending balance = opening balance × (1 + annual return) + employee + employer. Starting balance plus employee contributions = starting 401(k) balance + sum of annual employee amounts.",
       calculate: (v) => {
         const { working, retired } = remaining(v);
         if (!Number.isInteger(working) || !Number.isInteger(retired)) throw new Error("Projection ages must be whole numbers.");
@@ -250,10 +271,11 @@ const k401 = tool(
         for (let y = 0; y < working; y++) {
           const e = Math.min(
               salary * pct(v, "contribution"),
-              limit401(n(v, "age") + y),
+              limit401(n(v, "age") + y), salary,
             ),
-            match =
-              Math.min(e, salary * pct(v, "match_limit")) * pct(v, "match");
+            eligibleComp=Math.min(salary,rules.retirement_contributions.employer_compensation_limit),
+            employerRoom=Math.max(0,Math.min(salary,rules.retirement_contributions.combined_annual_additions_limit)-Math.min(e,rules.retirement_contributions.employee_401k_limit)),
+            match = Math.min(employerRoom, Math.min(e, eligibleComp * pct(v, "match_limit")) * pct(v, "match"));
           b = b * (1 + pct(v, "return")) + e + match;
           rows.push([n(v, "age") + y + 1, salary, e, match, b]);
           salary *= 1 + pct(v, "salary_growth");
@@ -262,8 +284,10 @@ const k401 = tool(
         return {
           metrics: [
             money("Projected 401(k) balance", b),
+            money("Employee contributions", sum(rows.map((row) => Number(row[2])))),
+            money("Starting 401(k) balance", n(v,"balance")),
             money(
-              "Employee contributions + current balance",
+              "Starting balance plus employee contributions",
               n(v, "balance") + sum(rows.map((row) => Number(row[2]))),
             ),
             money(
@@ -283,8 +307,8 @@ const k401 = tool(
           rows,
           notes: [
             "Retirement income uses the entered life expectancy. Annual return is effective; monthly withdrawals increase at the monthly-equivalent inflation rate. Constant returns, full vesting and no taxes or fees are assumed. This is a sustainable-withdrawal illustration, not an RMD calculation or a guarantee.",
-            "Annual iteration: the entered salary applies to the first projection year; salary increases once after each year. Each year’s employee contribution is salary × contribution percentage, capped by the limit for your age at the start of that projection year. Employee contributions + current balance adds the entered starting 401(k) balance once to the sum of these annual employee amounts. It excludes future investment returns and future employer matching; the starting balance may already contain past employer contributions and returns. The Employee column shows only that year’s new employee contribution.",
-            "The opening balance earns the entered annual return first, then employee and employer contributions are added at year end. All projected years use 2026 limits with age-based catch-up; future limit increases and total employer/employee compensation caps are not projected. Calculations retain full precision; displayed annual amounts are rounded.",
+            "Annual iteration: the entered salary applies to the first projection year; salary increases once after each year. Each year’s employee contribution is salary × contribution percentage, capped by the limit for your age at the start of that projection year. Starting balance plus employee contributions adds the entered starting 401(k) balance once to the sum of these annual employee amounts. It excludes future investment returns and future employer matching; the starting balance may already contain past employer contributions and returns. The Employee column shows only that year’s new employee contribution.",
+            "The opening balance earns the entered annual return first, then employee and employer contributions are added at year end. All projected years use 2026 limits with age-based catch-up; future limit increases are not projected. Employer matching uses up to $360,000 of compensation; annual additions excluding catch-up are capped at the lesser of compensation or $72,000. Catch-up deferrals above the regular employee limit are excluded from that additions cap. Other employers’ plans and nondiscrimination tests are not modeled. Calculations retain full precision; displayed annual amounts are rounded.",
           ],
         };
       },
@@ -354,16 +378,17 @@ const k401 = tool(
       calculate: (v) => {
         const salary = positive(n(v, "salary"), "Annual salary"),
           limit = limit401(n(v, "age")),
+          eligibleComp=Math.min(salary,rules.retirement_contributions.employer_compensation_limit),
           band1 = pct(v, "limit1"), band2 = pct(v, "limit2");
         if (!Number.isInteger(n(v, "age"))) throw new Error("Age must be a whole number.");
         if (band1 + band2 > 1) throw new Error("Combined contribution bands must not exceed 100% of salary.");
-        const minimum = pct(v, "match2") > 0 && band2 > 0 ? band1 + band2 : pct(v, "match1") > 0 ? band1 : 0,
+        const minimum = (pct(v, "match2") > 0 && band2 > 0 ? band1 + band2 : pct(v, "match1") > 0 ? band1 : 0) * eligibleComp / salary,
           maximum = Math.min(1, limit / salary),
           possible = minimum <= maximum + 1e-12,
           required = Math.min(salary * minimum, limit),
-          first = Math.min(required, salary * band1),
-          second = Math.min(Math.max(0, required - first), salary * band2),
-          match = first * pct(v, "match1") + second * pct(v, "match2");
+          first = Math.min(required, eligibleComp * band1),
+          second = Math.min(Math.max(0, required - first), eligibleComp * band2),
+          match = Math.min(first * pct(v, "match1") + second * pct(v, "match2"), Math.max(0,Math.min(salary,rules.retirement_contributions.combined_annual_additions_limit)-Math.min(required,rules.retirement_contributions.employee_401k_limit)));
         return {
           metrics: [
             ...(possible ? [metric("Minimum contribution rate for full match", minimum * 100, "percent")] : [metric("Rate required for full match (unattainable)", minimum * 100, "percent")]),
@@ -376,7 +401,7 @@ const k401 = tool(
           ],
           notes: [
             possible ? `A steady contribution rate from ${(minimum * 100).toFixed(4)}% through ${(maximum * 100).toFixed(4)}% can earn the full modeled match without exhausting the employee limit early. Use the unrounded result when setting payroll elections.` : "No full-match contribution-rate window exists: the employee limit is below the contribution needed for both matching bands. Amounts shown use the employee limit and receive only the associated partial match.",
-            "Assumes equal pay across the year, a constant contribution percentage, per-pay-period matching, no annual true-up, no prior year-to-date contributions and full-year employment. The maximum is a conservative rate that avoids reaching the limit before year end; it does not optimize the final payroll’s partial contribution. Actual plan rules, compensation and combined employer/employee caps may further restrict contributions.",
+            "Assumes equal pay across the year, a constant contribution percentage, per-pay-period matching, no annual true-up, no prior year-to-date contributions and full-year employment. The maximum is a conservative rate that avoids reaching the limit before year end; it does not optimize the final payroll’s partial contribution. Employer matching uses the 2026 $360,000 eligible-compensation cap and the $72,000 annual-additions cap excluding employee catch-up. A large match can be reduced by this additions cap. Actual plan rules, other employers and prior contributions may further restrict contributions.",
             "Second tier is the additional band after tier one, not a cumulative upper threshold. The employee limit uses your entered age and fixed 2026 rules; no employer match is available if both tier match rates are zero.",
           ],
         };
@@ -661,17 +686,29 @@ const annuity = tool(
       formula:
         "Monthly and annual annuity accumulation factors use their respective periodic rates.",
       calculate: (v) => {
-        const r = pct(v, "rate"),
-          years = n(v, "years"),
-          p = n(v, "principal"),
-          fv =
-            future(p, n(v, "monthly"), monthly(r), years * 12, timing(v)) +
-            future(0, n(v, "annual"), r, years, timing(v)),
-          contributions =
-            p + n(v, "monthly") * years * 12 + n(v, "annual") * years;
+        const r=pct(v,"rate"), years=n(v,"years"), p=n(v,"principal"), rawMonths=years*12;
+        if(Math.abs(rawMonths-Math.round(rawMonths))>1e-7)throw new Error("Accumulation length must contain a whole number of months.");
+        if(rawMonths>12000)throw new Error("Accumulation schedule exceeds supported limits.");
+        const months=Math.round(rawMonths), rows:(number|string)[][]=[], yearly:(number|string)[][]=[];
+        let fv=p, contributions=p, yearAdd=0, yearReturn=0;
+        for(let month=1;month<=months;month++){
+          const addition=n(v,"monthly")+((timing(v)?month%12===1:month%12===0)?n(v,"annual"):0);
+          if(timing(v))fv+=addition;
+          const interest=fv*monthly(r);fv+=interest;
+          if(!timing(v))fv+=addition;
+          contributions+=addition;
+          const displayedAddition=addition+(month===1?p:0);yearAdd+=displayedAddition;yearReturn+=interest;
+          rows.push([month,displayedAddition,interest,fv]);
+          if(month%12===0||month===months){yearly.push([Math.ceil(month/12),yearAdd,yearReturn,fv]);yearAdd=0;yearReturn=0;}
+        }
         return {
+          columns:["Month","Addition including initial principal","Investment return","Ending balance"], rows,
+          annualColumns:["Year","Addition including initial principal","Investment return","Ending balance"],annualRows:yearly,schedulePeriod:"Monthly",
+          notes:["The first row’s addition includes starting principal. Annual additions occur at the beginning or end of each saving year; monthly additions use the same selected timing. The final partial year receives an annual deposit only if its scheduled deposit date is reached."],
           metrics: [
             money("Annuity future value", fv),
+            money("Starting principal", p),
+            money("Total additions", contributions-p),
             money("Total contributions", contributions),
             money("Growth", fv - contributions),
           ],
@@ -681,6 +718,20 @@ const annuity = tool(
   ],
   "Estimate annuity accumulation before withdrawals begin.",
 );
+function payoutSchedule(principal: number, rate: number, amount: number, count: number, frequency: number, fractionalLast = 1) {
+  if(count>12000)throw new Error("Payout schedule exceeds supported limits.");
+  const rows:(number|string)[][]=[], yearly:(number|string)[][]=[];
+  let balance=principal, total=0, yearPaid=0, yearInterest=0;
+  for(let i=1;i<=count;i++){
+    const fraction=i===count?fractionalLast:1, opening=balance,
+      interest=opening*Math.expm1(Math.log1p(rate)*fraction), available=opening+interest,
+      paid=i===count?available:Math.min(amount,available);
+    balance=Math.max(0,available-paid);total+=paid;yearPaid+=paid;yearInterest+=interest;
+    rows.push([i,(i-1+fraction)/frequency,opening,interest,paid,balance]);
+    if(i%frequency===0||i===count){yearly.push([Math.ceil(i/frequency),yearInterest,yearPaid,balance]);yearPaid=0;yearInterest=0;}
+  }
+  return {rows,annualRows:yearly,total,columns:["Period","Time (years)","Opening balance","Investment return","Payout","Ending balance"],annualColumns:["Year","Investment return","Payout","Ending balance"],schedulePeriod:"Per payout"};
+}
 const annuityPayout = tool(
   "annuity-payout",
   ["length", "payment"].map((id): Mode => ({
@@ -708,16 +759,20 @@ const annuityPayout = tool(
         p = n(v, "principal");
       if (id === "length") {
         const N = n(v, "years") * f,
-          a = payment(p, r, N);
+          a = payment(p, r, N),
+          count=Math.max(1,Math.ceil(N-1e-10)), schedule=payoutSchedule(p,r,a,count,f,N-(count-1));
         return {
+          ...schedule,
+          notes:["Payouts occur at period end. The final payout drains the remaining balance; a partial final period earns only its fractional-period return and can have a different payout. No tax or insurance fees are modeled."],
           metrics: [
             money("Payment each period", a),
-            money("Total payments", a * N),
-            money("Total investment earnings", a * N - p),
+            money("Total payments", schedule.total),
+            money("Total investment earnings", schedule.total - p),
           ],
         };
       }
       const a = n(v, "payment");
+      if(p===0)return {metrics:[metric("Payout duration in years",0),metric("Number of payments",0),money("Total payouts",0)]};
       if (r > 0 && a <= p * r)
         return {
           metrics: [money("Interest per period", p * r)],
@@ -725,12 +780,15 @@ const annuityPayout = tool(
             "Balance is not exhausted under the constant return assumption.",
           ],
         };
-      const N = duration(p, a, r);
+      const N = duration(p, a, r), count=Math.max(1,Math.ceil(N-1e-10)), schedule=payoutSchedule(p,r,a,count,f);
       return {
+        ...schedule,
+        notes:["Payments occur at the end of full payout periods; the final payout is the remaining balance and may be smaller. Duration is rounded up to the actual last payment date, not treated as a fractional regular payment."],
         metrics: [
-          metric("Payout duration in years", N / f),
-          metric("Number of payments", N),
-          money("Total payouts", N * a),
+          metric("Payout duration in years", count / f),
+          metric("Number of payments", count),
+          money("Total payouts", schedule.total),
+          money("Total investment earnings", schedule.total-p),
         ],
       };
     },

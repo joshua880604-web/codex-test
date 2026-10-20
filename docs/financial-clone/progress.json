@@ -18,13 +18,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mortgage",
@@ -45,13 +49,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "amortization",
@@ -72,13 +80,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mortgage-payoff",
@@ -99,13 +111,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mortgage-payoff",
@@ -126,13 +142,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mortgage-payoff",
@@ -153,13 +173,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mortgage-payoff",
@@ -180,13 +204,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mortgage-payoff",
@@ -207,13 +235,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mortgage-payoff",
@@ -234,13 +266,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mortgage-payoff",
@@ -261,13 +297,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mortgage-payoff",
@@ -288,13 +328,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.841Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "house-affordability",
@@ -315,13 +359,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "house-affordability",
@@ -342,13 +390,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "rent",
@@ -369,13 +421,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "debt-to-income-ratio",
@@ -396,13 +452,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "real-estate",
@@ -448,13 +508,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "refinance",
@@ -475,13 +539,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "rental-property",
@@ -502,13 +570,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "apr",
@@ -529,13 +601,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "apr",
@@ -556,13 +632,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "fha-loan",
@@ -583,13 +663,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "fha-loan",
@@ -610,13 +694,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "va-mortgage",
@@ -637,13 +725,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "va-mortgage",
@@ -664,13 +756,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "home-equity-loan",
@@ -691,13 +787,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "heloc",
@@ -720,13 +820,17 @@
       "guide_expansion": "content-expansion.md",
       "keyword_implementation": "keyword-implementation.md",
       "annual_fee": "heloc-annual-fee.md",
-      "annual_fee_browser": "evidence/browser-heloc-fee-qa.json"
+      "annual_fee_browser": "evidence/browser-heloc-fee-qa.json",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "heloc",
@@ -747,13 +851,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "down-payment",
@@ -774,13 +882,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "down-payment",
@@ -801,13 +913,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "down-payment",
@@ -828,13 +944,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "rent-vs-buy",
@@ -855,13 +975,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "auto-loan",
@@ -882,13 +1006,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "auto-loan",
@@ -909,13 +1037,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "cash-back-or-low-interest",
@@ -936,13 +1068,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "auto-lease",
@@ -963,13 +1099,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "auto-lease",
@@ -990,13 +1130,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "interest",
@@ -1017,13 +1161,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "investment",
@@ -1044,13 +1192,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "investment",
@@ -1071,13 +1223,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "investment",
@@ -1098,13 +1254,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "investment",
@@ -1125,13 +1285,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "investment",
@@ -1152,13 +1316,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "finance",
@@ -1179,13 +1347,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "finance",
@@ -1206,13 +1378,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "finance",
@@ -1233,13 +1409,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "finance",
@@ -1260,13 +1440,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "finance",
@@ -1287,13 +1471,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "compound-interest",
@@ -1314,13 +1502,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "interest-rate",
@@ -1341,13 +1533,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "savings",
@@ -1368,13 +1564,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "simple-interest",
@@ -1395,13 +1595,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "simple-interest",
@@ -1422,13 +1626,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "simple-interest",
@@ -1449,13 +1657,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "simple-interest",
@@ -1476,13 +1688,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "cd",
@@ -1503,13 +1719,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "bond",
@@ -1530,13 +1750,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "bond",
@@ -1557,13 +1781,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "bond",
@@ -1584,13 +1812,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "bond",
@@ -1611,13 +1843,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "bond",
@@ -1638,13 +1874,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "bond",
@@ -1665,13 +1905,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "mutual-fund",
@@ -1692,13 +1936,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "average-return",
@@ -1719,13 +1967,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "average-return",
@@ -1746,13 +1998,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "average-return",
@@ -1773,13 +2029,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "irr",
@@ -1801,13 +2061,17 @@
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
       "keyword_implementation": "keyword-implementation.md",
-      "irr_review": "irr-review.md"
+      "irr_review": "irr-review.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "irr",
@@ -1829,13 +2093,17 @@
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
       "keyword_implementation": "keyword-implementation.md",
-      "irr_review": "irr-review.md"
+      "irr_review": "irr-review.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "roi",
@@ -1856,13 +2124,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "roi",
@@ -1883,13 +2155,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "payback-period",
@@ -1910,13 +2186,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "payback-period",
@@ -1937,13 +2217,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "present-value",
@@ -1964,13 +2248,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "present-value",
@@ -1991,13 +2279,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "future-value",
@@ -2018,13 +2310,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "retirement",
@@ -2045,13 +2341,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "retirement",
@@ -2072,13 +2372,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "retirement",
@@ -2101,15 +2405,18 @@
       "guide_expansion": "content-expansion.md",
       "keyword_implementation": "keyword-implementation.md",
       "parity_batch": "retirement-parity-improvements.md",
-      "local_regression": "evidence/retirement-parity-tests.tap",
-      "targeted_browser": "evidence/browser-retirement-parity-qa.json"
+      "local_regression": "evidence/strict-functionality-tests.tap",
+      "targeted_browser": "evidence/browser-retirement-parity-qa.json",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20",
-    "local_math": "passed"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "local_math": "passed",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "retirement",
@@ -2130,13 +2437,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "401k",
@@ -2159,15 +2470,18 @@
       "guide_expansion": "content-expansion.md",
       "keyword_implementation": "keyword-implementation.md",
       "parity_batch": "retirement-parity-improvements.md",
-      "local_regression": "evidence/retirement-parity-tests.tap",
-      "targeted_browser": "evidence/browser-retirement-parity-qa.json"
+      "local_regression": "evidence/strict-functionality-tests.tap",
+      "targeted_browser": "evidence/browser-retirement-parity-qa.json",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20",
-    "local_math": "passed"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "local_math": "passed",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "401k",
@@ -2190,15 +2504,18 @@
       "guide_expansion": "content-expansion.md",
       "keyword_implementation": "keyword-implementation.md",
       "parity_batch": "retirement-parity-improvements.md",
-      "local_regression": "evidence/retirement-parity-tests.tap",
-      "targeted_browser": "evidence/browser-retirement-parity-qa.json"
+      "local_regression": "evidence/strict-functionality-tests.tap",
+      "targeted_browser": "evidence/browser-retirement-parity-qa.json",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20",
-    "local_math": "passed"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "local_math": "passed",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "401k",
@@ -2221,15 +2538,18 @@
       "guide_expansion": "content-expansion.md",
       "keyword_implementation": "keyword-implementation.md",
       "parity_batch": "retirement-parity-improvements.md",
-      "local_regression": "evidence/retirement-parity-tests.tap",
-      "targeted_browser": "evidence/browser-retirement-parity-qa.json"
+      "local_regression": "evidence/strict-functionality-tests.tap",
+      "targeted_browser": "evidence/browser-retirement-parity-qa.json",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20",
-    "local_math": "passed"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "local_math": "passed",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "pension",
@@ -2250,13 +2570,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "pension",
@@ -2277,13 +2601,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "pension",
@@ -2304,13 +2632,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "social-security",
@@ -2331,13 +2663,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "social-security",
@@ -2358,13 +2694,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "annuity",
@@ -2385,13 +2725,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "annuity-payout",
@@ -2412,13 +2756,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "annuity-payout",
@@ -2439,13 +2787,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "roth-ira",
@@ -2466,13 +2818,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "ira",
@@ -2493,13 +2849,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "rmd",
@@ -2520,13 +2880,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "income-tax",
@@ -2547,13 +2911,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "salary",
@@ -2574,13 +2942,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "marriage-tax",
@@ -2603,13 +2975,17 @@
       "layout": "marriage-layout.md",
       "layout_browser": "evidence/browser-marriage-qa.json",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "estate-tax",
@@ -2630,13 +3006,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "take-home-paycheck",
@@ -2657,13 +3037,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "loan",
@@ -2684,13 +3068,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "loan",
@@ -2711,13 +3099,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "loan",
@@ -2738,13 +3130,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "payment",
@@ -2765,13 +3161,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "payment",
@@ -2792,13 +3192,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "currency",
@@ -2810,7 +3214,7 @@
     "browser": "passed",
     "visual": "unverified",
     "local_implementation": "passed",
-    "local_numeric_smoke": "passed",
+    "local_numeric_smoke": "unverified",
     "evidence": {
       "text_spec": "specs/currency.md",
       "numeric": "evidence/tests.tap",
@@ -2819,13 +3223,18 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model",
+    "external_data": "Live exchange rate required; deterministic mocked success/failure tests are separate from actual live provider access."
   },
   {
     "id": "currency",
@@ -2846,13 +3255,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "currency",
@@ -2873,13 +3286,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "inflation",
@@ -2900,13 +3317,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "inflation",
@@ -2927,13 +3348,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "inflation",
@@ -2954,13 +3379,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "inflation",
@@ -2981,13 +3410,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "sales-tax",
@@ -3008,13 +3441,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "sales-tax",
@@ -3035,13 +3472,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "sales-tax",
@@ -3062,13 +3503,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "credit-card",
@@ -3089,13 +3534,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "credit-card",
@@ -3116,13 +3565,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "credit-card",
@@ -3143,13 +3596,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "credit-cards-payoff",
@@ -3170,13 +3627,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "debt-payoff",
@@ -3197,13 +3658,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "debt-consolidation",
@@ -3224,13 +3689,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "repayment",
@@ -3251,13 +3720,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "repayment",
@@ -3278,13 +3751,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "student-loan",
@@ -3305,13 +3782,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "student-loan",
@@ -3332,13 +3813,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "student-loan",
@@ -3359,13 +3844,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "student-loan",
@@ -3386,13 +3875,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "student-loan",
@@ -3413,13 +3906,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "student-loan",
@@ -3440,13 +3937,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "student-loan",
@@ -3467,13 +3968,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "student-loan",
@@ -3494,13 +3999,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "college-cost",
@@ -3521,13 +4030,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "vat",
@@ -3548,13 +4061,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "depreciation",
@@ -3575,13 +4092,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "depreciation",
@@ -3602,13 +4123,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "depreciation",
@@ -3629,13 +4154,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "margin",
@@ -3656,13 +4185,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "margin",
@@ -3683,13 +4216,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "margin",
@@ -3710,13 +4247,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "margin",
@@ -3737,13 +4278,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "margin",
@@ -3764,13 +4309,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "margin",
@@ -3791,13 +4340,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "discount",
@@ -3818,13 +4371,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "discount",
@@ -3845,13 +4402,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "discount",
@@ -3872,13 +4433,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "discount",
@@ -3899,13 +4464,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "business-loan",
@@ -3926,13 +4495,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "personal-loan",
@@ -3953,13 +4526,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "boat-loan",
@@ -3980,13 +4557,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "boat-loan",
@@ -4007,13 +4588,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "lease",
@@ -4034,13 +4619,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "lease",
@@ -4061,13 +4650,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "budget",
@@ -4088,13 +4681,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "commission",
@@ -4115,13 +4712,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "commission",
@@ -4142,13 +4743,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "commission",
@@ -4169,13 +4774,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "commission",
@@ -4196,13 +4805,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "compound-interest",
@@ -4223,13 +4836,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "savings",
@@ -4250,13 +4867,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "savings",
@@ -4277,13 +4898,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "repayment",
@@ -4304,13 +4929,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20T07:46:03.664Z",
+    "functional_delivery": "implemented_with_documented_independent_model"
   },
   {
     "id": "percentage",
@@ -4589,5 +5218,47 @@
       "browser": "evidence/browser-scientific-qa.json",
       "spec": "scientific-calculator.md"
     }
+  },
+  {
+    "id": "take-home-paycheck",
+    "mode": "source-paycheck",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "visual": "unverified",
+    "fully_complete": false,
+    "evidence": {
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap",
+      "browser": "evidence/browser-qa.json"
+    },
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "browser": "passed",
+    "reference_parity": "unverified",
+    "functional_delivery": "implemented_with_documented_independent_model",
+    "updated_at": "2026-10-20T07:46:03.664Z"
+  },
+  {
+    "id": "commission",
+    "mode": "any-two",
+    "spec": "in_progress",
+    "implementation": "in_progress",
+    "math": "in_progress",
+    "visual": "unverified",
+    "fully_complete": false,
+    "evidence": {
+      "strict_policy": "strict-functionality-policy.md",
+      "reference_map": "reference-function-map.json",
+      "local_regression": "evidence/strict-functionality-tests.tap",
+      "browser": "evidence/browser-qa.json"
+    },
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "browser": "passed",
+    "reference_parity": "unverified",
+    "functional_delivery": "implemented_with_documented_independent_model",
+    "updated_at": "2026-10-20T07:46:03.664Z"
   }
 ]

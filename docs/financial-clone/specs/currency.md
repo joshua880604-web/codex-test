@@ -26,3 +26,33 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Current functional correspondence — 2026-10-20
+
+Source: https://www.calculator.net/currency-calculator.html
+
+Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
+
+### Market Rate (live)
+
+Local inputs: amount, from, to, popular, verified_rate.
+
+Local formula: Converted amount = amount × quoted units of target currency per one source currency.
+
+Local default outputs: requires live exchange-rate data; manual and dated snapshot modes remain available.
+
+### Custom Exchange Rate (manual)
+
+Local inputs: amount, from, to, rate.
+
+Local formula: Converted = source amount × exchange rate.
+
+Local default outputs: Converted amount; Inverse rate.
+
+### Saved Reference Rates (snapshot)
+
+Local inputs: amount, from, to, popular.
+
+Local formula: Cross rate = USD-to-target reference / USD-to-source reference.
+
+Local default outputs: Converted amount; Reference exchange rate.

@@ -8,6 +8,9 @@ export type TaxInputs = {
   filing: Filing;
   wages: number;
   spouseWages: number;
+  medicareWages?: number;
+  spouseMedicareWages?: number;
+  nonitemizerCashGifts?: number;
   business: number;
   spouseBusiness: number;
   interest: number;
@@ -172,7 +175,9 @@ export function federalTax(x: TaxInputs) {
       ) / separate,
     salt = Math.min(x.salt, saltCap),
     itemized = x.itemized + salt,
-    deduction = Math.max(standard, itemized);
+    cashGiftDeduction = x.year === 2026 ? Math.min(Math.max(0, x.nonitemizerCashGifts ?? 0), married ? 2000 : 1000) : 0,
+    usingStandard = standard + cashGiftDeduction >= itemized,
+    deduction = usingStandard ? standard + cashGiftDeduction : itemized;
   const allowed = x.filing !== "married_separate",
     threshold = married ? 300000 : 150000,
     steps = Math.floor(Math.max(0, agi - threshold) / 1000),
@@ -208,7 +213,7 @@ export function federalTax(x: TaxInputs) {
     amti = Math.max(
       0,
       taxable +
-        (deduction === standard ? standard : salt) +
+        (usingStandard ? standard : salt) +
         senior +
         x.amtAdjustments,
     ),
@@ -305,7 +310,8 @@ export function federalTax(x: TaxInputs) {
   const ssBase = x.year === 2026 ? 184500 : 176100,
     payrollSS =
       (Math.min(x.wages, ssBase) + Math.min(x.spouseWages, ssBase)) * 0.062,
-    medicare = wages * 0.0145,
+    medicareWages = (x.medicareWages ?? x.wages) + (x.spouseMedicareWages ?? x.spouseWages),
+    medicare = medicareWages * 0.0145,
     additionalThreshold = married
       ? 250000
       : x.filing === "married_separate"
@@ -314,7 +320,7 @@ export function federalTax(x: TaxInputs) {
     additional =
       Math.max(
         0,
-        wages +
+        medicareWages +
           (Math.max(0, x.business) * 0.9235 >= 400
             ? Math.max(0, x.business) * 0.9235
             : 0) +
@@ -342,6 +348,7 @@ export function federalTax(x: TaxInputs) {
     standard,
     itemized,
     deduction,
+    nonitemizerCashDeduction: usingStandard ? cashGiftDeduction : 0,
     salt,
     extra,
     qbi,
