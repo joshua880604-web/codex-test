@@ -27,6 +27,7 @@ export type Result = {
   annualRows?: (number | string)[][];
   annualColumns?: string[];
   schedulePeriod?: string;
+  additionalTables?: { title: string; columns: string[]; rows: (number | string)[][]; note?: string }[];
   notes?: string[];
   chart?: { label: string; value: number }[];
 };

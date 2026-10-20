@@ -5724,6 +5724,12 @@
             "unit": "$"
           },
           {
+            "key": "annual",
+            "label": "Annual contribution",
+            "type": "number",
+            "unit": "$"
+          },
+          {
             "key": "return",
             "label": "Annual return",
             "type": "number",
@@ -5736,7 +5742,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Initial monthly withdrawal = retirement balance × (1 + monthly inflation) / real-rate monthly annuity present-value factor."
+        "formula": "Retirement balance includes current savings, month-end deposits and additional year-end deposits. Initial monthly withdrawal = retirement balance × (1 + monthly inflation) / real-rate monthly annuity present-value factor."
       },
       {
         "id": "longevity",
@@ -5881,8 +5887,26 @@
             "unit": "%"
           },
           {
+            "key": "employed",
+            "label": "Still employed by the employer sponsoring this account?",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "separated55",
+            "label": "Left this employer in or after the year you turned 55?",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "disabled",
+            "label": "Qualifying total and permanent disability?",
+            "type": "select",
+            "unit": null
+          },
+          {
             "key": "exception",
-            "label": "Early withdrawal penalty exception applies?",
+            "label": "Other early withdrawal penalty exception applies?",
             "type": "select",
             "unit": null
           }
@@ -10752,6 +10776,37 @@
           }
         ],
         "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
+      }
+    ]
+  },
+  {
+    "id": "scientific",
+    "title": "Scientific Calculator",
+    "category": "Everyday Tools",
+    "source_url": "https://www.calculator.net/scientific-calculator.html",
+    "local_route": "/scientific-calculator.html",
+    "directory": false,
+    "source_status": "User-requested additional everyday tool; complete source parity unverified",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "evaluate",
+        "title": "Scientific Expression",
+        "fields": [
+          {
+            "key": "expression",
+            "label": "Expression",
+            "type": "textarea",
+            "unit": null
+          },
+          {
+            "key": "angle",
+            "label": "Angle mode",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Powers are right-associative and precede a leading minus: 2^3^2 = 512; −2^2 = −4. Factorial and percent apply to the preceding value."
       }
     ]
   }

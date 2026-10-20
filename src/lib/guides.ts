@@ -276,11 +276,21 @@ export const guides: Record<string, Guide> = {
     sources: [investor],
   },
   retirement: {
+    checkedOn: "2026-10-20",
     summary:
       "A retirement savings plan depends on the target balance, current savings, time to retirement and assumed return. Monthly deposits and a single year-end deposit are different funding schedules.",
     scope:
       "The saving-plan example uses an effective annual return and end-of-month deposits. Future returns are uncertain; the selected model’s inflation and withdrawal timing are stated separately.",
     examples: [
+      {
+        title: "Keep annual deposits separate from monthly savings",
+        mode: "withdrawal",
+        values: {age: 65, retire: 67, life: 77, balance: 0, saving: 0, annual: 1000, return: 6, inflation: 0},
+        inputs: "Age 65; retire at 67; no current balance or monthly deposits; add $1,000 at each year end; effective annual return 6%.",
+        steps: ["First year-end deposit grows for one year: 1000 × 1.06 = 1060.", "Second year-end deposit adds 1000 at retirement: 1060 + 1000 = 2060."],
+        answer: "The balance at retirement is $2,060. Annual deposits are additional to monthly deposits, not an alternative way to enter the same money.",
+        expected: {label: "Balance at retirement", value: 2060},
+      },
       {
         title: "Save from age 35 to 67 toward 600,000",
         mode: "saving",
@@ -307,6 +317,7 @@ export const guides: Record<string, Guide> = {
       },
     ],
     questions: [
+      {question: "How do annual and monthly contributions differ?", answer: "In Monthly Withdrawal, monthly deposits are made at each month end and the separate annual amount is deposited at each year end before retirement. Enter only genuinely additional annual deposits to avoid double counting."},
       {
         question: "Should I pay both the monthly and annual plan?",
         answer:
@@ -321,11 +332,30 @@ export const guides: Record<string, Guide> = {
     sources: [investor],
   },
   "401k": {
+    checkedOn: "2026-10-20",
     summary:
-      "The 401(k) projection iterates one year at a time: apply annual return to the opening balance, add employee and employer contributions at year end, then increase salary for the next year.",
+      "The 401(k) projection iterates one saving year at a time: apply annual return to the opening balance, add employee and employer contributions at year end, then increase salary. A separate schedule illustrates inflation-indexed withdrawals during retirement.",
     scope:
-      "Future years use fixed 2026 employee limits with age-based catch-up. The model does not apply the complete combined employer/employee cap, project future legislative changes or model distributions after retirement. Life expectancy does not affect this accumulation projection.",
+      "Future years use fixed 2026 employee limits with age-based catch-up. The model does not apply the complete combined employer/employee cap or project future legislative changes. A separate before-tax retirement schedule uses month-end withdrawals that increase monthly with inflation and target depletion at life expectancy; it does not enforce RMD rules.",
     examples: [
+      {
+        title: "Withdraw a retirement balance over one year",
+        mode: "projection",
+        values: {age: 67, retire: 67, life: 68, balance: 12000, return: 0, inflation: 0},
+        inputs: "Already retired at age 67; life expectancy 68; balance $12,000; return and inflation both 0%.",
+        steps: ["The remaining retirement horizon is 12 months.", "No interest or inflation: 12000 ÷ 12 = 1000 at each month end."],
+        answer: "Initial monthly retirement withdrawal is $1,000 before tax; the illustrated ending balance is zero after one year.",
+        expected: {label: "Initial monthly retirement withdrawal", value: 1000},
+      },
+      {
+        title: "Find a steady contribution window for a two-tier match",
+        mode: "match",
+        values: {age: 35, salary: 80000, match1: 100, limit1: 3, match2: 50, limit2: 2},
+        inputs: "Age 35; salary $80,000; match 100% on the first 3%, then 50% on the next 2%; fixed 2026 employee limit $24,500.",
+        steps: ["Minimum for the full match is 3% + 2% = 5% of salary.", "Maximum steady rate without reaching the annual employee limit early is 24500 ÷ 80000 × 100 = 30.625%.", "The annual employer match is 80000 × 3% + 80000 × 2% × 50% = 3200."],
+        answer: "Under equal-pay, full-year and no-true-up assumptions, a steady election between 5% and 30.625% earns the modeled full match.",
+        expected: {label: "Minimum contribution rate for full match", value: 5},
+      },
       {
         title: "Understand the first year of a 401(k) projection",
         mode: "projection",
@@ -355,6 +385,8 @@ export const guides: Record<string, Guide> = {
       },
     ],
     questions: [
+      {question: "Why does life expectancy change the retirement withdrawal?", answer: "It sets the number of retirement months. A longer retirement usually requires a smaller initial withdrawal from the same balance. The retirement-date balance is unchanged; the separate withdrawal schedule changes."},
+      {question: "What if the annual limit prevents the full employer match?", answer: "The calculator reports that no full-match contribution-rate window exists and shows the partial match at the employee limit. The window assumes equal pay, per-pay-period matching and no annual true-up. Your plan can apply additional limits."},
       {
         question: "What is Employee contributions + current balance?",
         answer:

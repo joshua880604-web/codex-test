@@ -58,7 +58,7 @@ export function calculateMode(calc: Calculator, modeId: string, v: Values): Resu
         "These inputs do not produce a finite result. Check rates and duration.",
       );
   if (
-    result.rows?.some((row) =>
+    [...(result.rows ?? []), ...(result.additionalTables ?? []).flatMap(table => table.rows)].some((row) =>
       row.some((x) => typeof x === "number" && !Number.isFinite(x)),
     )
   )

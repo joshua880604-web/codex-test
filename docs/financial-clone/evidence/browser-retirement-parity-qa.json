@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-20T06:47:03.788Z",
+  "checks": [
+    "Retirement income and separate schedule",
+    "Retirement CSV contains full retirement schedule",
+    "Life expectancy updates income",
+    "Full matching window",
+    "Unattainable match warning",
+    "Disability exception removes penalty, retains tax",
+    "Annual contribution query hydration and calculation",
+    "Native validation rejects a negative annual deposit and stale results are removed",
+    {
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

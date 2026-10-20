@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-20T05:47:15.021Z",
+  "tested_at": "2026-10-20T06:47:45.203Z",
   "checks": [
     "Root 308 redirects to canonical financial directory",
     {
@@ -470,7 +470,22 @@
     },
     {
       "id": "retirement",
+      "example": "Keep annual deposits separate from monthly savings",
+      "result": "passed"
+    },
+    {
+      "id": "retirement",
       "example": "Save from age 35 to 67 toward 600,000",
+      "result": "passed"
+    },
+    {
+      "id": "401k",
+      "example": "Withdraw a retirement balance over one year",
+      "result": "passed"
+    },
+    {
+      "id": "401k",
+      "example": "Find a steady contribution window for a two-tier match",
       "result": "passed"
     },
     {

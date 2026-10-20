@@ -7,7 +7,7 @@
   "local_browser_routes": 76,
   "local_browser_modes": 171,
   "numeric_tests": {
-    "total": 431,
+    "total": 443,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,11 +17,11 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Homepage full-width directory, quick access, category jumps and responsive layout",
+  "latest_change": "Retirement income schedules, match rate window, early distribution eligibility and annual retirement deposits",
   "seo_generated_pages_checked": 80,
   "seo_detailed_guides": 75,
-  "seo_worked_examples": 100,
-  "seo_browser_checks": 108,
+  "seo_worked_examples": 103,
+  "seo_browser_checks": 111,
   "seo_public_origin_configured": false,
   "live_indexing_or_ai_citations": "not measured",
   "seo_evidence": [
@@ -31,7 +31,7 @@
   ],
   "calculation_audit": "calculation-audit.md",
   "guide_pages": 75,
-  "worked_examples": 100,
+  "worked_examples": 103,
   "keyword_map": "keyword-map.json",
   "keyword_browser_checks": 29,
   "original_financial_entries": 71,
@@ -40,5 +40,6 @@
   "everyday_browser_checks": 19,
   "irr_browser_checks": 9,
   "scientific_browser_checks": 12,
-  "homepage_browser_checks": 11
+  "homepage_browser_checks": 11,
+  "retirement_parity_browser_checks": 12
 }

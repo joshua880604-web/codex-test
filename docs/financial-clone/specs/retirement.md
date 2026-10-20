@@ -65,3 +65,7 @@
 ```
 
 Implementation, original control values, source submissions, and original visual parity are tracked separately in progress.json. Local availability is not full parity.
+
+## Retirement feature update — 2026-10-20
+
+See ../retirement-parity-improvements.md for the current model: 401(k) now includes a separate inflation-indexed retirement schedule and CSV; matching includes a conservative contribution window and infeasibility checks; early withdrawal has explicit qualification fields; Retirement monthly-withdrawal includes separate year-end annual deposits. Original mode/query IDs and annual accumulation are preserved. New numerical results have independent tests; exact original-site form/output parity remains unverified.

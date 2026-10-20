@@ -76,3 +76,7 @@ Added a safe expression parser, keypad, degree/radian modes and three worked exa
 ## Homepage layout — 2026-10-20
 
 Homepage alone now uses full width with search, eight quick links, category jumps and responsive category sections. No dependency or formula changes. Production build, 11 dedicated browser checks, 20 UI regression checks and 80-page SEO build checks pass. See homepage-layout.md. Scientific/IRR upload was completed in 60ecb290; the user has explicitly authorized this homepage update for synchronization.
+
+## Retirement parity batch — 2026-10-20
+
+443 tests and production build pass. Added separate 401(k) retirement schedule/CSV, safe matching-rate window and infeasibility warning, early-withdrawal qualification fields, and separate annual deposits in Retirement monthly withdrawals. Three examples bring the total to 103. Source form numerical parity remains unverified; no hosted deployment; the user explicitly authorized GitHub synchronization after validation. See retirement-parity-improvements.md.

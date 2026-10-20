@@ -1,3 +1,4 @@
+import { retirementIncome } from "../retirement-projection";
 import jointTable from "../joint-rmd-table.json";
 import { tool, timingField } from "./helpers";
 import {
@@ -141,17 +142,18 @@ const retirement = tool(
         ...ageFields(),
         num("balance", "Current savings", 100000, "$"),
         num("saving", "Monthly contribution", 500, "$"),
+        {...num("annual", "Annual contribution", 0, "$"), hint: "Additional deposit at each year end before retirement; separate from monthly deposits."},
         num("return", "Annual return", 6, "%", -99),
         num("inflation", "Inflation", 2.5, "%", -99),
       ],
       description:
         "Estimate the initial sustainable monthly withdrawal with subsequent inflation increases.",
       formula:
-        "Initial monthly withdrawal = retirement balance × (1 + monthly inflation) / real-rate monthly annuity present-value factor.",
+        "Retirement balance includes current savings, month-end deposits and additional year-end deposits. Initial monthly withdrawal = retirement balance × (1 + monthly inflation) / real-rate monthly annuity present-value factor.",
       calculate: (v) => {
         const { working, retired } = remaining(v),
           r = pct(v, "return"),
-          b = future(n(v, "balance"), n(v, "saving"), monthly(r), working * 12),
+          b = future(n(v, "balance"), n(v, "saving"), monthly(r), working * 12) + future(0, n(v, "annual"), r, working),
           real = (1 + r) / (1 + pct(v, "inflation")) - 1,
           w =
             payment(b, monthly(real), retired * 12) *
@@ -166,7 +168,7 @@ const retirement = tool(
             ),
           ],
           notes: [
-            "First withdrawal is at the end of the first retirement month. Subsequent monthly withdrawals grow at the monthly rate equivalent to entered annual inflation. Annual investment return is effective.",
+            "First withdrawal is at the end of the first retirement month. Subsequent monthly withdrawals grow at the monthly rate equivalent to entered annual inflation. Monthly contributions occur at month end; additional annual contributions occur at year end, both before retirement. Annual investment return is effective.",
           ],
         };
       },
@@ -238,7 +240,8 @@ const k401 = tool(
       formula:
         "For each year: employee = min(annual salary × contribution%, age-based annual limit); employer = min(employee, annual salary × match limit%) × match%; ending balance = opening balance × (1 + annual return) + employee + employer. Employee contributions + current balance = starting 401(k) balance + sum of annual employee amounts.",
       calculate: (v) => {
-        const { working } = remaining(v);
+        const { working, retired } = remaining(v);
+        if (!Number.isInteger(working) || !Number.isInteger(retired)) throw new Error("Projection ages must be whole numbers.");
         if (working > 100)
           throw new Error("Projection must not exceed 100 years.");
         let b = n(v, "balance"),
@@ -255,6 +258,7 @@ const k401 = tool(
           rows.push([n(v, "age") + y + 1, salary, e, match, b]);
           salary *= 1 + pct(v, "salary_growth");
         }
+        const income = retirementIncome(b, pct(v, "return"), pct(v, "inflation"), retired, n(v, "retire"));
         return {
           metrics: [
             money("Projected 401(k) balance", b),
@@ -270,10 +274,15 @@ const k401 = tool(
               "Inflation-adjusted balance",
               b / (1 + pct(v, "inflation")) ** working,
             ),
+            money("Initial monthly retirement withdrawal", income.initial),
+            money("Initial withdrawal in today’s dollars", income.initial / (1 + pct(v, "inflation")) ** working),
+            money("Total retirement withdrawals", income.total),
           ],
+          additionalTables: [{ title: "Retirement withdrawals", columns: ["Year-end age", "Opening balance", "Investment return", "Annual withdrawals", "Ending balance"], rows: income.rows, note: "USD, before tax. Withdrawals start at the end of the first retirement month, increase monthly with inflation, and target depletion at life expectancy. No new contributions, RMD rules or withdrawal penalties are modeled here." }],
           columns: ["Age", "Salary", "Employee", "Employer", "Balance"],
           rows,
           notes: [
+            "Retirement income uses the entered life expectancy. Annual return is effective; monthly withdrawals increase at the monthly-equivalent inflation rate. Constant returns, full vesting and no taxes or fees are assumed. This is a sustainable-withdrawal illustration, not an RMD calculation or a guarantee.",
             "Annual iteration: the entered salary applies to the first projection year; salary increases once after each year. Each year’s employee contribution is salary × contribution percentage, capped by the limit for your age at the start of that projection year. Employee contributions + current balance adds the entered starting 401(k) balance once to the sum of these annual employee amounts. It excludes future investment returns and future employer matching; the starting balance may already contain past employer contributions and returns. The Employee column shows only that year’s new employee contribution.",
             "The opening balance earns the entered annual return first, then employee and employer contributions are added at year end. All projected years use 2026 limits with age-based catch-up; future limit increases and total employer/employee compensation caps are not projected. Calculations retain full precision; displayed annual amounts are rounded.",
           ],
@@ -288,7 +297,10 @@ const k401 = tool(
         num("federal", "Federal marginal tax", 22, "%"),
         num("state", "State marginal tax", 5, "%"),
         num("local", "Local marginal tax", 0, "%"),
-        select("exception", "Early withdrawal penalty exception applies?", [
+        select("employed", "Still employed by the employer sponsoring this account?", ["Yes", "No"]),
+        select("separated55", "Left this employer in or after the year you turned 55?", ["No", "Yes"]),
+        select("disabled", "Qualifying total and permanent disability?", ["No", "Yes"]),
+        select("exception", "Other early withdrawal penalty exception applies?", [
           "No",
           "Yes",
         ]),
@@ -301,7 +313,7 @@ const k401 = tool(
         const amount = n(v, "withdrawal"),
           tax =
             amount * (pct(v, "federal") + pct(v, "state") + pct(v, "local")),
-          penalty = v.exception === "Yes" ? 0 : amount * 0.1;
+          penalty = v.exception === "Yes" || v.disabled === "Yes" || (v.employed === "No" && v.separated55 === "Yes") ? 0 : amount * 0.1;
         return {
           metrics: [
             money("Net amount received", amount - tax - penalty),
@@ -309,7 +321,7 @@ const k401 = tool(
             money("Additional early withdrawal tax", penalty),
           ],
           notes: [
-            "Exception eligibility is selected explicitly. The marginal-rate model does not recalculate a complete annual tax return.",
+            "Intended for distributions before age 59½. The 10% additional tax is waived for a selected qualifying disability, another selected exception, or separation from this employer in or after the year you turn 55 when no longer employed by that sponsoring employer. The age-55 rule does not generally apply to IRAs; plan eligibility must be checked. Income tax still applies. This marginal-rate illustration does not recalculate a complete tax return.",
           ],
         };
       },
@@ -336,27 +348,36 @@ const k401 = tool(
         ),
       ],
       description:
-        "Calculate employee saving and employer matching across two contribution bands.",
+        "Find a steady contribution-rate window for two matching bands without reaching the employee limit early.",
       formula:
         "Employer match = first band × first match rate + additional band × second match rate.",
       calculate: (v) => {
-        const salary = n(v, "salary"),
-          required = Math.min(
-            salary * (pct(v, "limit1") + pct(v, "limit2")),
-            limit401(n(v, "age")),
-          ),
-          first = Math.min(required, salary * pct(v, "limit1")),
-          second = Math.max(0, required - first),
+        const salary = positive(n(v, "salary"), "Annual salary"),
+          limit = limit401(n(v, "age")),
+          band1 = pct(v, "limit1"), band2 = pct(v, "limit2");
+        if (!Number.isInteger(n(v, "age"))) throw new Error("Age must be a whole number.");
+        if (band1 + band2 > 1) throw new Error("Combined contribution bands must not exceed 100% of salary.");
+        const minimum = pct(v, "match2") > 0 && band2 > 0 ? band1 + band2 : pct(v, "match1") > 0 ? band1 : 0,
+          maximum = Math.min(1, limit / salary),
+          possible = minimum <= maximum + 1e-12,
+          required = Math.min(salary * minimum, limit),
+          first = Math.min(required, salary * band1),
+          second = Math.min(Math.max(0, required - first), salary * band2),
           match = first * pct(v, "match1") + second * pct(v, "match2");
         return {
           metrics: [
-            money("Annual contribution to maximize match", required),
+            ...(possible ? [metric("Minimum contribution rate for full match", minimum * 100, "percent")] : [metric("Rate required for full match (unattainable)", minimum * 100, "percent")]),
+            metric("Maximum steady contribution rate", maximum * 100, "percent"),
+            money("Age-based annual employee limit (2026)", limit),
+            money(possible ? "Annual contribution to maximize match" : "Annual contribution at employee limit", required),
             money("Contribution per month", required / 12),
             money("Employer annual match", match),
             money("Total annual additions", required + match),
           ],
           notes: [
-            "Second tier is the additional band after tier one, not a cumulative upper threshold.",
+            possible ? `A steady contribution rate from ${(minimum * 100).toFixed(4)}% through ${(maximum * 100).toFixed(4)}% can earn the full modeled match without exhausting the employee limit early. Use the unrounded result when setting payroll elections.` : "No full-match contribution-rate window exists: the employee limit is below the contribution needed for both matching bands. Amounts shown use the employee limit and receive only the associated partial match.",
+            "Assumes equal pay across the year, a constant contribution percentage, per-pay-period matching, no annual true-up, no prior year-to-date contributions and full-year employment. The maximum is a conservative rate that avoids reaching the limit before year end; it does not optimize the final payroll’s partial contribution. Actual plan rules, compensation and combined employer/employee caps may further restrict contributions.",
+            "Second tier is the additional band after tier one, not a cumulative upper threshold. The employee limit uses your entered age and fixed 2026 rules; no employer match is available if both tier match rates are zero.",
           ],
         };
       },

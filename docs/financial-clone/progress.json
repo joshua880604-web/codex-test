@@ -2099,13 +2099,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "parity_batch": "retirement-parity-improvements.md",
+      "local_regression": "evidence/retirement-parity-tests.tap",
+      "targeted_browser": "evidence/browser-retirement-parity-qa.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20",
+    "local_math": "passed"
   },
   {
     "id": "retirement",
@@ -2153,13 +2157,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "parity_batch": "retirement-parity-improvements.md",
+      "local_regression": "evidence/retirement-parity-tests.tap",
+      "targeted_browser": "evidence/browser-retirement-parity-qa.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20",
+    "local_math": "passed"
   },
   {
     "id": "401k",
@@ -2180,13 +2188,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "parity_batch": "retirement-parity-improvements.md",
+      "local_regression": "evidence/retirement-parity-tests.tap",
+      "targeted_browser": "evidence/browser-retirement-parity-qa.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20",
+    "local_math": "passed"
   },
   {
     "id": "401k",
@@ -2207,13 +2219,17 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "parity_batch": "retirement-parity-improvements.md",
+      "local_regression": "evidence/retirement-parity-tests.tap",
+      "targeted_browser": "evidence/browser-retirement-parity-qa.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
     ],
     "fully_complete": false,
-    "updated_at": "2026-10-20T02:03:53.842Z"
+    "updated_at": "2026-10-20",
+    "local_math": "passed"
   },
   {
     "id": "pension",

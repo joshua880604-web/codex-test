@@ -1,0 +1,141 @@
+{
+  "checked_at": "2026-10-20T06:36:48.107Z",
+  "checks": [
+    {
+      "id": "irr-machine",
+      "source": "https://www.calculator.net/irr-calculator.html",
+      "evidence": "Explicit article inputs and result; not submitted live",
+      "inputs": {
+        "initial": 40000,
+        "flows": "10000, 20000, 30000"
+      },
+      "source_rate": 19.438,
+      "local": [
+        {
+          "label": "Annual IRR 1",
+          "value": 19.43770996271969,
+          "format": "percent"
+        }
+      ]
+    },
+    {
+      "id": "vat-coffee",
+      "source": "https://www.calculator.net/vat-calculator.html",
+      "evidence": "Explicit article inputs and result; not submitted live",
+      "inputs": {
+        "net": 5,
+        "rate": 10
+      },
+      "source_tax": 0.5,
+      "source_gross": 5.5,
+      "local": [
+        {
+          "label": "Net amount",
+          "value": 5,
+          "format": "money"
+        },
+        {
+          "label": "VAT amount",
+          "value": 0.5,
+          "format": "money"
+        },
+        {
+          "label": "Gross amount",
+          "value": 5.5,
+          "format": "money"
+        },
+        {
+          "label": "VAT rate",
+          "value": 10,
+          "format": "percent"
+        }
+      ]
+    },
+    {
+      "id": "annuity-source-schedule",
+      "source": "https://www.calculator.net/annuity-calculator.html",
+      "evidence": "Source displayed schedule, inputs inferred from explicit starting principal/additions and annual schedule; not live submitted",
+      "inputs": {
+        "principal": "20000",
+        "annual": "10000",
+        "monthly": "0",
+        "timing": "Beginning of period",
+        "rate": "6",
+        "years": "10"
+      },
+      "source_end": 175533.38,
+      "source_interest": 55533.38,
+      "local": [
+        {
+          "label": "Annuity future value",
+          "value": 175533.38032009453,
+          "format": "money"
+        },
+        {
+          "label": "Total contributions",
+          "value": 120000,
+          "format": "money"
+        },
+        {
+          "label": "Growth",
+          "value": 55533.380320094526,
+          "format": "money"
+        }
+      ]
+    }
+  ],
+  "life_expectancy_sensitivity": [
+    {
+      "life": 80,
+      "metrics": [
+        {
+          "label": "Projected 401(k) balance",
+          "value": 1833238.6515324262,
+          "format": "money"
+        },
+        {
+          "label": "Employee contributions + current balance",
+          "value": 453816.2368404517,
+          "format": "money"
+        },
+        {
+          "label": "Employer contributions",
+          "value": 106144.87105213551,
+          "format": "money"
+        },
+        {
+          "label": "Inflation-adjusted balance",
+          "value": 831869.7130842232,
+          "format": "money"
+        }
+      ]
+    },
+    {
+      "life": 100,
+      "metrics": [
+        {
+          "label": "Projected 401(k) balance",
+          "value": 1833238.6515324262,
+          "format": "money"
+        },
+        {
+          "label": "Employee contributions + current balance",
+          "value": 453816.2368404517,
+          "format": "money"
+        },
+        {
+          "label": "Employer contributions",
+          "value": 106144.87105213551,
+          "format": "money"
+        },
+        {
+          "label": "Inflation-adjusted balance",
+          "value": 831869.7130842232,
+          "format": "money"
+        }
+      ]
+    }
+  ],
+  "missing_retirement_annual_deposit": true,
+  "original_comparator_form_submissions_verified": false
+}

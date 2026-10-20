@@ -160,8 +160,9 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
       setNotice(url);
     }
   }
-  function download() {
-    if (!tableRows || !tableColumns) return;
+  function download(extra?: { rows: (number | string)[][]; columns: string[] }) {
+    const rows = extra?.rows ?? tableRows, columns = extra?.columns ?? tableColumns;
+    if (!rows || !columns) return;
     const escape = (x: string | number) =>
       '"' +
       (typeof x === "string" && /^[=+@-]/.test(x)
@@ -169,7 +170,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         : String(x)
       ).replaceAll('"', '""') +
       '"';
-    const csv = [tableColumns, ...tableRows]
+    const csv = [columns, ...rows]
       .map((row) => row.map(escape).join(","))
       .join("\r\n");
     const a = document.createElement("a"),
@@ -177,7 +178,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" }),
       );
     a.href = url;
-    a.download = id + "-schedule.csv";
+    a.download = id + (extra ? "-retirement" : "") + "-schedule.csv";
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -427,7 +428,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           <div className="result-actions">
             <button onClick={share}>Share calculation</button>
             <button onClick={() => window.print()}>Print</button>
-            {result.rows && <button onClick={download}>Download CSV</button>}
+            {result.rows && <button onClick={() => download()}>Download CSV</button>}
           </div>
           {id === "marriage-tax" && <p className="result-note">Compared with your combined unmarried federal income tax. Savings means the married-joint estimate is lower; additional tax means it is higher. This does not compare married filing separately or include state/local tax.</p>}
           {result.notes?.map((note, i) => (
@@ -505,6 +506,16 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
               )}
             </>
           )}
+          {result.additionalTables?.map(table => <section key={table.title}>
+            <h3>{table.title}</h3>
+            {table.note && <p className="result-note">{table.note}</p>}
+            <div className="result-actions"><button onClick={() => download(table)}>Download retirement CSV</button></div>
+            <div className="table-scroll" role="region" aria-label={table.title + " table"} tabIndex={0}>
+              <table><thead><tr>{table.columns.map(column => <th scope="col" key={column}>{column}</th>)}</tr></thead>
+                <tbody>{table.rows.map((row, i) => <tr key={i}>{row.map((value, j) => <td key={j}>{typeof value === "number" ? amount(value, Number.isInteger(value) ? 0 : 2) : value}</td>)}</tr>)}</tbody>
+              </table>
+            </div>
+          </section>)}
         </div>
       )}
       <section className="explanation">
