@@ -823,12 +823,12 @@ const heloc = tool(
         num("draw", "Draw period", 10, "years", 0),
         num("years", "Repayment period", 20, "years", 0.01),
         num("closing", "Upfront closing costs", 0, "$"),
-        num("charge", "Annual charge", 0, "$"),
+        {...num("charge", "Annual fee", 0, "$"), hint: "Yearly account-maintenance fee during the draw period only. Enter 0 for a no-annual-fee HELOC. The model divides it by 12 for average monthly costs; actual lender billing may be annual."},
       ],
       description:
         "Model an interest-only draw period followed by fully amortizing repayment.",
       formula:
-        "Draw payment = balance × monthly interest; repayment amortizes the balance over the repayment term.",
+        "Average draw payment = balance × monthly interest + annual fee/12 during draw only; repayment amortizes the balance without the annual fee.",
       calculate: (v) => {
         const p = n(v, "principal"),
           r = pct(v, "rate") / 12,
@@ -847,7 +847,7 @@ const heloc = tool(
             ...drawRows,
             ...repay.map((x) => [
               x.period + draw,
-              x.payment + charge,
+              x.payment,
               x.interest,
               x.principal,
               x.balance,
@@ -855,16 +855,17 @@ const heloc = tool(
           ];
         return {
           metrics: [
-            money("Monthly draw payment", p * r + charge),
-            money("Monthly repayment", payment(p, r, N) + charge),
+            money("Monthly draw payment", draw > 0 ? p * r + charge : 0),
+            money("Monthly repayment", payment(p, r, N)),
             money(
               "Total interest",
               draw * p * r + sum(repay.map((x) => x.interest)),
             ),
             money(
               "Fees and annual charges",
-              n(v, "closing") + rows.length * charge,
+              n(v, "closing") + draw * charge,
             ),
+            money("Annual fees during draw", draw * charge),
             ...(p > 0
               ? [
                   metric(
@@ -880,14 +881,14 @@ const heloc = tool(
           ],
           columns: [
             "Month",
-            "Payment with charge",
+            "Payment incl. allocated fee",
             "Interest",
             "Principal",
             "Balance",
           ],
           rows,
           notes: [
-            "Assumes the full outstanding balance exists at the start, stays constant through draw, and the rate stays fixed. The annual charge is spread across 12 monthly payments; closing costs reduce net initial proceeds for APR.",
+            "Assumes the full outstanding balance exists at the start, stays constant through draw, and the rate stays fixed. The annual fee is a recurring account-maintenance charge during the draw period only; it stops in the repayment period. Enter 0 if your lender has no annual fee. For average monthly draw payments and this estimated APR, the annual fee is spread across 12 draw-period months; partial draw years are prorated. Actual annual billing dates can change cash-flow APR. Closing costs reduce net initial proceeds.",
           ],
         };
       },

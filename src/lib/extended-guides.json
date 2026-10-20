@@ -707,7 +707,7 @@
   },
   "heloc": {
     "summary": "Estimate a HELOC's interest-only draw payment and later amortizing payment, or calculate potential credit from home value, existing mortgage and an LTV cap.",
-    "scope": "The draw model assumes the entered balance and rate rather than a full sequence of future draws. Actual lines may have variable rates and lender-specific minimum payments.",
+    "scope": "The draw model assumes the entered balance and rate rather than a full sequence of future draws. Actual lines may have variable rates and lender-specific minimum payments. Annual account-maintenance fees are modeled only during the draw period, not repayment. Fees are divided by 12 for average monthly payments and estimated APR; partial years are prorated. Actual annual billing timing and lender terms may differ.",
     "examples": [
       {
         "title": "Estimate available HELOC credit from an LTV cap",
@@ -727,6 +727,30 @@
           "value": 190000,
           "tolerance": 0.005
         }
+      },
+      {
+        "title": "Annual fees stop when HELOC repayment starts",
+        "mode": "draw-repay",
+        "values": {
+          "principal": 12000,
+          "rate": 0,
+          "draw": 1,
+          "years": 2,
+          "closing": 50,
+          "charge": 120
+        },
+        "inputs": "Balance 12,000 USD; illustrative zero rate; one-year draw, two-year repayment; annual fee 120; upfront closing costs 50.",
+        "steps": [
+          "Annual fee allocated to draw months: 120 / 12 = 10 per month.",
+          "Repayment: 12,000 / 24 = 500 per month, with no annual-fee allocation.",
+          "Total fees: 50 upfront + 120 for the one-year draw period = 170."
+        ],
+        "answer": "Monthly draw cost is 10 USD; monthly repayment is 500 USD; total modeled fees are 170 USD.",
+        "expected": {
+          "label": "Fees and annual charges",
+          "value": 170,
+          "tolerance": 0.005
+        }
       }
     ],
     "questions": [
@@ -737,6 +761,10 @@
       {
         "question": "How much home equity can I borrow against?",
         "answer": "The maximum-credit mode subtracts existing mortgage debt from the entered LTV share of home value. This is an estimate, not an approved line."
+      },
+      {
+        "question": "When is the HELOC annual fee charged?",
+        "answer": "The annual fee is a recurring yearly charge for keeping the line open. This calculator applies it during the draw period only and stops it during repayment. Enter 0 for a no-annual-fee account. It is averaged over draw-period months for payment and APR estimates; actual lender billing may occur once yearly."
       }
     ],
     "sources": [

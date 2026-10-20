@@ -69,7 +69,7 @@ VAT 已改为四字段任填两个的统一表单，覆盖六种输入组合，C
 
 ## SEO / AI 搜索准备
 
-已增加 canonical、Open Graph、robots、sitemap、结构化数据和公开计算方法页；全部 74 个实际计算器（70 个金融工具及 4 个日常工具）有英文指南、问答及来源，全站共 94 个可复算算例。参见 [配置与验证说明](docs/financial-clone/seo-geo.md)。
+已增加 canonical、Open Graph、robots、sitemap、结构化数据和公开计算方法页；全部 74 个实际计算器（70 个金融工具及 4 个日常工具）有英文指南、问答及来源，全站共 95 个可复算算例。参见 [配置与验证说明](docs/financial-clone/seo-geo.md)。
 
 **预览默认 noindex。** 正式上线时在构建环境同时设置 `SITE_URL=https://实际正式域名` 和 `SITE_INDEXABLE=true`，然后重新构建。未确认域名时不会生成虚构的 canonical/sitemap 地址；Vercel Preview 环境保持不收录。内容和技术检查通过不代表已获得排名或 AI 引用。
 

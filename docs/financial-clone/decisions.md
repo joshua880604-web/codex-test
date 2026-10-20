@@ -60,3 +60,7 @@ Use the user-provided global/US English, rolling-12-month Keyword Planner screen
 ## 2026-10-20: globally applicable everyday tools
 
 Add percentage, tip/bill splitting, calendar dates and unit conversion as a separate Everyday Tools category. Preserve the financial baseline of 71 entries. Support explicit display currencies, exact minor-unit share allocation, timezone-independent dates and dimension-safe metric/US/Imperial conversion. No tipping custom, currency rate or business-day calendar is inferred. See everyday-tools.md.
+
+## 2026-10-20: HELOC annual fee
+
+Model annual account-maintenance fees during draw only. Correct repayment, fee totals and APR cash flows; preserve the charge query key and explicitly disclose monthly averaging/pro-rating rather than claiming exact annual billing. See heloc-annual-fee.md.

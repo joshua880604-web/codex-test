@@ -2725,12 +2725,12 @@
           },
           {
             "key": "charge",
-            "label": "Annual charge",
+            "label": "Annual fee",
             "type": "number",
             "unit": "$"
           }
         ],
-        "formula": "Draw payment = balance × monthly interest; repayment amortizes the balance over the repayment term."
+        "formula": "Average draw payment = balance × monthly interest + annual fee/12 during draw only; repayment amortizes the balance without the annual fee."
       },
       {
         "id": "maximum-credit",

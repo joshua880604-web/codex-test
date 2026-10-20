@@ -718,7 +718,9 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "annual_fee": "heloc-annual-fee.md",
+      "annual_fee_browser": "evidence/browser-heloc-fee-qa.json"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
