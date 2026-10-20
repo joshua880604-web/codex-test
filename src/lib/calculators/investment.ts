@@ -160,6 +160,7 @@ const savings = tool(
 const compound = tool(
   "compound-interest",
   [
+    growthMode("growth", "Compound Growth"),
     {
       id: "conversion",
       title: "Equivalent Interest Rate",
@@ -189,7 +190,7 @@ const compound = tool(
       },
     },
   ],
-  "Convert between annual, monthly, daily, and continuous compounding rates.",
+  "Calculate compound growth with monthly deposits or convert equivalent compounding rates.",
 );
 const investmentModes = [
   "End Amount",
@@ -265,6 +266,33 @@ const investment = tool(
   investmentModes,
   "Solve for an investment’s end amount, contributions, return, starting balance, or duration.",
 );
+// Goal modes share the existing contribution/timing model; preserve accumulation links.
+for (const [source, id, title] of [
+  ["contribution", "goal-contribution", "Savings Goal: Monthly Deposit"],
+  ["length", "goal-time", "Savings Goal: Time Needed"],
+] as const) {
+  const original = investmentModes.find(m => m.id === source)!;
+  savings.modes.push({
+    ...original, id, title,
+    fields: [...original.fields].sort((a,b) => (a.key === "end" ? -1 : b.key === "end" ? 1 : 0)),
+    description: source === "contribution" ? "Calculate the monthly deposit needed to reach a savings goal, including current savings, interest and contribution timing." : "Find the first whole month your savings reach the target under the entered contribution and return assumptions (up to 200 years).",
+    calculate: (v) => {
+      if (source === "contribution") {
+        const baseline=growth(v,{monthly:0});
+        if (baseline.metrics[0].value >= n(v,"end")) {
+          baseline.metrics.unshift(money("Required monthly deposit",0));
+          baseline.notes!.push("The target is already covered by projected existing savings and annual deposits; no monthly deposit is required.");
+          return baseline;
+        }
+      }
+      if(source === "contribution" && n(v,"years")*12+n(v,"months")===0) throw new Error("A future savings target needs at least one month to add deposits.");
+      const result=original.calculate(v);
+      result.metrics[0].label=source === "contribution" ? "Required monthly deposit" : "Years to savings goal";
+      if(source === "length") result.metrics.splice(1,0,metric("Months to savings goal",Math.round(result.metrics[0].value*12)));
+      return result;
+    },
+  });
+}
 const tvmFields = () => [
   num("N", "Number of periods (N)", 120, "periods", 0.001),
   num("rate", "Annual interest (I/Y)", 6, "%", -99),

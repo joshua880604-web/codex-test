@@ -1,0 +1,113 @@
+{
+  "source": "User-supplied Google Keyword Planner screenshots; estimates not independently audited",
+  "regions": [
+    "Global",
+    "United States"
+  ],
+  "language": "English",
+  "period": "Previous 12 months; exact start/end dates not supplied",
+  "metric": "Average monthly searches; close variants/rounding may affect estimates",
+  "not_established": [
+    "organic SEO difficulty",
+    "expected visits",
+    "rankings",
+    "AI citations"
+  ],
+  "ambiguous_compound_rows": {
+    "global_unassigned_volumes": [
+      480,
+      90
+    ],
+    "us_unassigned_volumes": [
+      320,
+      40
+    ],
+    "reason": "Keyword strings truncated in screenshots; do not assign these numbers to individual phrases."
+  },
+  "targets": [
+    {
+      "keyword": "mortgage calculator with extra payments",
+      "page_id": "mortgage-payoff",
+      "mode": "remaining-extra",
+      "global_monthly": 33100,
+      "us_monthly": 33100
+    },
+    {
+      "keyword": "mortgage calculator with taxes and insurance",
+      "page_id": "mortgage",
+      "mode": "monthly",
+      "global_monthly": 5400,
+      "us_monthly": 5400
+    },
+    {
+      "keyword": "amortization calculator with extra payments",
+      "page_id": "amortization",
+      "mode": "schedule",
+      "global_monthly": 3600,
+      "us_monthly": 3600
+    },
+    {
+      "keyword": "loan payoff calculator with extra payments",
+      "page_id": "repayment",
+      "mode": "extra-payments",
+      "global_monthly": 2400,
+      "us_monthly": 1900
+    },
+    {
+      "keyword": "retirement savings calculator",
+      "page_id": "retirement",
+      "mode": "saving",
+      "global_monthly": 27100,
+      "us_monthly": 27100
+    },
+    {
+      "keyword": "retirement withdrawal calculator",
+      "page_id": "retirement",
+      "mode": "withdrawal",
+      "global_monthly": 9900,
+      "us_monthly": 9900
+    },
+    {
+      "keyword": "savings goal calculator",
+      "page_id": "savings",
+      "mode": "goal-contribution",
+      "global_monthly": 5400,
+      "us_monthly": 3600
+    },
+    {
+      "keyword": "401k growth calculator",
+      "page_id": "401k",
+      "mode": "projection",
+      "global_monthly": 6600,
+      "us_monthly": 5400
+    },
+    {
+      "keyword": "401k contribution calculator",
+      "page_id": "401k",
+      "mode": "projection",
+      "global_monthly": 4400,
+      "us_monthly": 4400
+    },
+    {
+      "keyword": "401k employer match calculator",
+      "page_id": "401k",
+      "mode": "match",
+      "global_monthly": 590,
+      "us_monthly": 590
+    },
+    {
+      "keyword": "compound interest calculator with monthly contributions",
+      "page_id": "compound-interest",
+      "mode": "growth",
+      "global_monthly": null,
+      "us_monthly": null
+    },
+    {
+      "keyword": "compound interest calculator with monthly deposits",
+      "page_id": "compound-interest",
+      "mode": "growth",
+      "global_monthly": null,
+      "us_monthly": null
+    }
+  ]
+}

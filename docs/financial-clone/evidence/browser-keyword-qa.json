@@ -1,0 +1,156 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-20T02:05:42.730Z",
+  "checks": [
+    {
+      "id": "mortgage-payoff",
+      "keyword": "Mortgage calculator with extra payments",
+      "mode": "remaining-extra",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "mortgage",
+      "keyword": "Mortgage calculator with taxes and insurance",
+      "mode": "monthly",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "amortization",
+      "keyword": "Amortization calculator with extra payments",
+      "mode": "schedule",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "retirement",
+      "keyword": "Retirement savings calculator",
+      "mode": "saving",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "retirement",
+      "keyword": "Retirement withdrawal calculator",
+      "mode": "withdrawal",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "savings",
+      "keyword": "Savings goal calculator",
+      "mode": "goal-contribution",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "savings",
+      "keyword": "Savings calculator with monthly deposits",
+      "mode": "accumulation",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "401k",
+      "keyword": "401k growth calculator",
+      "mode": "projection",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "401k",
+      "keyword": "401k contribution calculator",
+      "mode": "projection",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "401k",
+      "keyword": "401k employer match calculator",
+      "mode": "match",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "repayment",
+      "keyword": "Loan payoff calculator with extra payments",
+      "mode": "extra-payments",
+      "result": "correct mode selected"
+    },
+    {
+      "id": "compound-interest",
+      "keyword": "Compound interest calculator with monthly contributions",
+      "mode": "growth",
+      "result": "correct mode selected"
+    },
+    "Shortcut switches savings mode",
+    {
+      "query": "retirement withdrawal",
+      "result": "directory intent search matches"
+    },
+    {
+      "query": "savings goal",
+      "result": "directory intent search matches"
+    },
+    {
+      "query": "extra payments",
+      "result": "directory intent search matches"
+    },
+    {
+      "query": "compound interest calculator with monthly deposits",
+      "result": "directory intent search matches"
+    },
+    {
+      "id": "savings",
+      "width": 320,
+      "result": "no overflow"
+    },
+    {
+      "id": "repayment",
+      "width": 320,
+      "result": "no overflow"
+    },
+    {
+      "id": "compound-interest",
+      "width": 320,
+      "result": "no overflow"
+    },
+    {
+      "id": "401k",
+      "width": 320,
+      "result": "no overflow"
+    },
+    {
+      "id": "savings",
+      "width": 390,
+      "result": "no overflow"
+    },
+    {
+      "id": "repayment",
+      "width": 390,
+      "result": "no overflow"
+    },
+    {
+      "id": "compound-interest",
+      "width": 390,
+      "result": "no overflow"
+    },
+    {
+      "id": "401k",
+      "width": 390,
+      "result": "no overflow"
+    },
+    {
+      "id": "savings",
+      "width": 768,
+      "result": "no overflow"
+    },
+    {
+      "id": "repayment",
+      "width": 768,
+      "result": "no overflow"
+    },
+    {
+      "id": "compound-interest",
+      "width": 768,
+      "result": "no overflow"
+    },
+    {
+      "id": "401k",
+      "width": 768,
+      "result": "no overflow"
+    }
+  ],
+  "errors": []
+}

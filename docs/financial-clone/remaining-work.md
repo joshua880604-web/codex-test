@@ -49,3 +49,7 @@ VAT now implements all six input pairs in one four-field form, replacing the old
 ## SEO / AI-search readiness
 
 Technical groundwork and individual guides for all 70 functional calculators are implemented; see seo-geo.md and content-expansion.md. All-mode content depth, more advanced scenarios, source-specific explanations and data-backed keyword prioritization still need ongoing work. Actual production domain, hosting checks, Search Console/Bing ownership, field Core Web Vitals, indexing and AI-citation monitoring remain pending. Preview builds deliberately remain noindex until production configuration is set. No live ranking or citation improvement is claimed.
+
+## 2026-10-20 keyword implementation
+
+Search-intent shortcuts, metadata and explanations now cover the researched long-tail groups on existing pages. Compound growth, savings-goal contribution/time solvers and monthly loan extra-payment comparison close the identified capability gaps. This does not certify original parity or resolve the remaining tax/retirement gaps above. Keyword volumes are planning estimates supplied in screenshots, not ranking difficulty, expected traffic or live performance. See keyword-implementation.md.

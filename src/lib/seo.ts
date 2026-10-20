@@ -1,3 +1,4 @@
+import {keywordTitles,searchTasks} from "./keyword-targets";
 import type { Metadata } from "next";
 import catalog from "./catalog-data.json";
 import {
@@ -45,8 +46,8 @@ export function pageMetadata(
 export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
   return pageMetadata(
     catalog.find((c) => c.id === calc.id)!.local_route,
-    titles[calc.id] ?? calc.title,
-    calc.intro,
+    keywordTitles[calc.id] ?? titles[calc.id] ?? calc.title,
+    searchTasks[calc.id]?.[0].description ?? calc.intro,
     config,
   );
 }

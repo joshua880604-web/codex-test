@@ -4200,6 +4200,73 @@
     ],
     "implemented_modes": [
       {
+        "id": "growth",
+        "title": "Compound Growth",
+        "fields": [
+          {
+            "key": "principal",
+            "label": "Starting amount",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "years",
+            "label": "Investment length",
+            "type": "number",
+            "unit": "years"
+          },
+          {
+            "key": "months",
+            "label": "Additional months",
+            "type": "number",
+            "unit": "months"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest / return rate",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "compound",
+            "label": "Compounding",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "annual",
+            "label": "Annual contribution",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "monthly",
+            "label": "Monthly contribution",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "timing",
+            "label": "Contribution timing",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "tax",
+            "label": "Tax on interest",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "inflation",
+            "label": "Inflation rate",
+            "type": "number",
+            "unit": "%"
+          }
+        ],
+        "formula": "Balance grows at the equivalent periodic rate, with contributions added at the selected timing."
+      },
+      {
         "id": "conversion",
         "title": "Equivalent Interest Rate",
         "fields": [
@@ -4361,6 +4428,134 @@
           }
         ],
         "formula": "Balance grows at the equivalent periodic rate, with contributions added at the selected timing."
+      },
+      {
+        "id": "goal-contribution",
+        "title": "Savings Goal: Monthly Deposit",
+        "fields": [
+          {
+            "key": "end",
+            "label": "Target end amount",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "principal",
+            "label": "Starting amount",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "years",
+            "label": "Investment length",
+            "type": "number",
+            "unit": "years"
+          },
+          {
+            "key": "months",
+            "label": "Additional months",
+            "type": "number",
+            "unit": "months"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest / return rate",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "compound",
+            "label": "Compounding",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "annual",
+            "label": "Annual contribution",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "timing",
+            "label": "Contribution timing",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "tax",
+            "label": "Tax on interest",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "inflation",
+            "label": "Inflation rate",
+            "type": "number",
+            "unit": "%"
+          }
+        ],
+        "formula": "Solve the periodic contribution and compound growth cash-flow equation."
+      },
+      {
+        "id": "goal-time",
+        "title": "Savings Goal: Time Needed",
+        "fields": [
+          {
+            "key": "end",
+            "label": "Target end amount",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "principal",
+            "label": "Starting amount",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest / return rate",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "compound",
+            "label": "Compounding",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "annual",
+            "label": "Annual contribution",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "monthly",
+            "label": "Monthly contribution",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "timing",
+            "label": "Contribution timing",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "tax",
+            "label": "Tax on interest",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "inflation",
+            "label": "Inflation rate",
+            "type": "number",
+            "unit": "%"
+          }
+        ],
+        "formula": "Solve the periodic contribution and compound growth cash-flow equation."
       }
     ]
   },
@@ -8263,6 +8458,55 @@
       "fixed installment"
     ],
     "implemented_modes": [
+      {
+        "id": "extra-payments",
+        "title": "Loan Payoff with Extra Payments",
+        "fields": [
+          {
+            "key": "principal",
+            "label": "Current loan balance",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "payment",
+            "label": "Regular monthly payment",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "extra_monthly",
+            "label": "Extra monthly payment",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "extra_yearly",
+            "label": "Extra yearly payment",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "extra_once",
+            "label": "One-time extra payment",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "extra_once_month",
+            "label": "One-time payment month",
+            "type": "number",
+            "unit": "month"
+          }
+        ],
+        "formula": "Accrue monthly interest; apply the regular payment plus scheduled extra principal. Compare interest and payment count with the regular-payment baseline."
+      },
       {
         "id": "term",
         "title": "Fixed Term",

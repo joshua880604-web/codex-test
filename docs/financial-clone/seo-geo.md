@@ -8,8 +8,8 @@
 - `/sitemap.xml` lists 75 unique canonical pages when indexing is enabled: the 71 source directory entries, the financial directory, About, Privacy and Methodology. It excludes `/`, API URLs and parameter variants. No synthetic daily `lastmod` values are emitted.
 - The preview configuration emits `noindex, follow`; it does not block page crawling in robots.txt, so compliant crawlers can see the noindex instruction. Vercel preview environments stay noindex even when production settings are inherited.
 - Real WebApplication data on 70 calculation pages; with a configured origin, WebPage and BreadcrumbList data use the same canonical page. No fake reviews, ratings, expert identities or promised rich results.
-- Server-rendered model descriptions/formulas are available for all 154 modes, including modes hidden behind interactive tabs.
-- All 70 functional calculators now have individual English guides, at least two contextual questions, explicit scope and source/provenance links. There are 83 reproducible examples across the site (12 original, 71 added). Nine added positive-rate installment examples and two nonzero tax/paycheck examples supplement the transparent simple/boundary illustrations. Expected values use separately specified arithmetic or closed-form equations, not saved calculator outputs. Example links populate the complete stated settings.
+- Server-rendered model descriptions/formulas are available for all 158 modes, including modes hidden behind interactive tabs.
+- All 70 functional calculators now have individual English guides, at least two contextual questions, explicit scope and source/provenance links. There are 87 reproducible examples across the site (12 original, 71 added in the content expansion, 4 added with keyword features). Nine added positive-rate installment examples and two nonzero tax/paycheck examples supplement the transparent simple/boundary illustrations. Expected values use separately specified arithmetic or closed-form equations, not saved calculator outputs. Example links populate the complete stated settings.
 - Ten priority pages have manually selected related tools; other pages retain category-based related links. Expanding manual contextual linking remains useful.
 - `/methodology.html` explains calculation validation, official data versions, rounding, review status and model limitations. About/footer link to it. Notes carry a real content-check date, without inventing a human professional review.
 
@@ -40,7 +40,7 @@ The 60 additional guides provide an initial individual explanation, limitations,
 
 A final domain and public deployment are still needed to verify HTTP/CDN behavior, indexing eligibility and Core Web Vitals in real use. Search Console/Bing verification, sitemap submission and ongoing coverage/performance reports require the actual hosting/domain account. Search ranking, AI citations and traffic have not been measured or guaranteed.
 
-Financial accuracy work remains open as documented in calculation-audit.md and remaining-work.md. SEO descriptions intentionally describe implemented functions: for example, the Compound Interest page currently converts rates, and the 401(k) accumulation model does not claim complete distribution or contribution-limit modeling.
+Financial accuracy work remains open as documented in calculation-audit.md and remaining-work.md. SEO descriptions intentionally describe implemented functions: for example, the Compound Interest page now includes growth with deposits as well as rate conversion, and the 401(k) accumulation model does not claim complete distribution or contribution-limit modeling.
 
 No special AI file or FAQ rich-result promise is required for these changes. Visible questions help users understand the tool; structured data describes actual content. See Google's guidance:
 

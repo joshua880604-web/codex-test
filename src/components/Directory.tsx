@@ -1,4 +1,5 @@
 "use client";
+import {searchTasks} from "@/lib/keyword-targets";
 import { useState } from "react";
 import { calculators, categories, routeFor } from "@/lib/catalog";
 export default function Directory({
@@ -10,7 +11,7 @@ export default function Directory({
   const filtered = calculators.filter(
     (c) =>
       (!propertyOnly || c.category === "Mortgage and Real Estate") &&
-      c.title.toLowerCase().includes(query.trim().toLowerCase()),
+      (c.title + " " + (searchTasks[c.id] ?? []).map(t=>t.keyword + " " + t.description).join(" ")).toLowerCase().includes(query.trim().toLowerCase()),
   );
   return (
     <>

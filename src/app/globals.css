@@ -823,3 +823,10 @@ footer p {
   .marriage-pair .field-control input, .marriage-pair .field-control select { width: 100%; font-size: 16px; }
 }
 
+
+.task-shortcuts { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.task-shortcuts button { color: #174b72; background: #f5f7f9; border: 1px solid #afbdc8; padding: 8px 10px; font-size: 13px; text-align: left; }
+.search-tasks { border-top: 1px solid #ccc; margin-top: 26px; }
+.search-tasks p { font-size: 14px; }
+.search-tasks a { display: inline-block; margin-bottom: 12px; font-size: 14px; }
+@media(max-width:650px){.task-shortcuts button { min-height: 44px; }}

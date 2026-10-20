@@ -160,6 +160,22 @@ function repaymentTool(id: string, advanced = false) {
 }
 const paymentTool = repaymentTool("payment"),
   repayment = repaymentTool("repayment", true);
+repayment.modes.unshift({
+  id: "extra-payments", title: "Loan Payoff with Extra Payments",
+  fields: [num("principal","Current loan balance",20000,"$"),num("rate","Annual interest rate",6,"%"),num("payment","Regular monthly payment",400,"$"),...extraFields()],
+  description:"Compare monthly loan payoff with and without extra monthly, yearly or one-time principal payments.",
+  formula:"Accrue monthly interest; apply the regular payment plus scheduled extra principal. Compare interest and payment count with the regular-payment baseline.",
+  calculate:(v)=>{
+    const p=n(v,"principal"),r=pct(v,"rate")/12,a=n(v,"payment");
+    if(p>0 && a<=p*r) throw new Error("Regular payment must cover monthly interest to compare the baseline payoff.");
+    if(!Number.isInteger(n(v,"extra_once_month")))throw new Error("One-time payment month must be a whole number.");
+    const N=p===0?1:duration(p,a,r),baseline=loanResult(p,r,N,{},a);
+    const result=loanResult(p,r,N,{monthly:n(v,"extra_monthly"),yearly:n(v,"extra_yearly"),once:n(v,"extra_once"),onceMonth:n(v,"extra_once_month")},a);
+    result.metrics.unshift(money("Interest saved",baseline.metrics[1].value-result.metrics[1].value),metric("Months saved",baseline.metrics[3].value-result.metrics[3].value));
+    result.notes=["Fixed-rate monthly repayment only. Extra yearly payments occur every 12 months; one-time extra is paid in the entered month. No prepayment penalties or new borrowing are included. The final payment is capped at the balance plus interest."];
+    return result;
+  },
+});
 const popularCurrencies = [
   "USD",
   "EUR",

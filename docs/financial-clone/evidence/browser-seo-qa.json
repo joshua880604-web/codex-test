@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-20T01:13:13.385Z",
+  "tested_at": "2026-10-20T02:06:24.642Z",
   "checks": [
     "Root 308 redirects to canonical financial directory",
     {
@@ -121,6 +121,16 @@
     {
       "id": "savings",
       "example": "Build savings with monthly deposits and no interest",
+      "result": "passed"
+    },
+    {
+      "id": "savings",
+      "example": "Save 12,000 in a year with monthly deposits",
+      "result": "passed"
+    },
+    {
+      "id": "savings",
+      "example": "Reach a savings goal after twelve deposits",
       "result": "passed"
     },
     {
@@ -284,6 +294,11 @@
       "result": "passed"
     },
     {
+      "id": "repayment",
+      "example": "Extra loan payments save one month and 5.15 of interest",
+      "result": "passed"
+    },
+    {
       "id": "student-loan",
       "example": "A one-year student loan repayment illustration",
       "result": "passed"
@@ -391,6 +406,11 @@
     {
       "id": "compound-interest",
       "example": "Convert 5% nominal monthly compounding to an annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "compound-interest",
+      "example": "Compound growth with monthly contributions",
       "result": "passed"
     },
     {

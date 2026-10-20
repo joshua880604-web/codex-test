@@ -49,7 +49,7 @@
         "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
         "steps": [
           "Monthly rate = 12% / 12 = 1%.",
-          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Payment = 12000 \u00d7 0.01 / (1 \u2212 1.01^(\u221212)).",
           "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
         ],
         "answer": "Payment per period: 1066.19 USD.",
@@ -68,6 +68,10 @@
       {
         "question": "Why does the last loan payment differ?",
         "answer": "The final installment is limited to the remaining principal and interest, so it can be smaller than a regular payment."
+      },
+      {
+        "question": "How do I use an amortization calculator with extra payments?",
+        "answer": "Enter the original loan terms and optional monthly, yearly or one-time extra principal. Review the remaining balance and interest in the resulting schedule; the final payment is capped."
       }
     ],
     "sources": [
@@ -118,6 +122,10 @@
       {
         "question": "Are biweekly payments the same as paying twice a month?",
         "answer": "No. There are 26 biweekly periods versus 24 semimonthly periods in a year. Confirm the strategy and your servicer's crediting policy."
+      },
+      {
+        "question": "What does a mortgage calculator with extra payments compare?",
+        "answer": "Compare the original repayment path with extra principal under the chosen strategy. Interest savings and earlier payoff depend on when extra money reaches principal, not just the total extra paid."
       }
     ],
     "sources": [
@@ -150,7 +158,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "With no interest, down payment or ownership costs in this illustrative case, 1,000 × 12 × 10 = 120,000."
+          "With no interest, down payment or ownership costs in this illustrative case, 1,000 \u00d7 12 \u00d7 10 = 120,000."
         ],
         "answer": "Estimated home price: 120,000 USD.",
         "expected": {
@@ -198,7 +206,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Monthly gross income is 60,000 / 12 = 5,000. The housing cap is 1,500; the combined-debt cap leaves 5,000 × 36% − 500 = 1,300. Use the lower cap."
+          "Monthly gross income is 60,000 / 12 = 5,000. The housing cap is 1,500; the combined-debt cap leaves 5,000 \u00d7 36% \u2212 500 = 1,300. Use the lower cap."
         ],
         "answer": "Monthly rent budget: 1,300 USD.",
         "expected": {
@@ -267,7 +275,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "The example has 6,000 monthly gross income and 1,500 monthly housing debt, with other entries zero. 1,500 / 6,000 × 100 = 25%."
+          "The example has 6,000 monthly gross income and 1,500 monthly housing debt, with other entries zero. 1,500 / 6,000 \u00d7 100 = 25%."
         ],
         "answer": "Total debt-to-income ratio: 25%.",
         "expected": {
@@ -517,7 +525,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "For an illustrative zero-rate loan with user-entered premiums set to zero, the base loan is 100,000 × 80% = 80,000. Divide by 120 months for 666.67. This is not a current FHA offer or premium quote."
+          "For an illustrative zero-rate loan with user-entered premiums set to zero, the base loan is 100,000 \u00d7 80% = 80,000. Divide by 120 months for 666.67. This is not a current FHA offer or premium quote."
         ],
         "answer": "Monthly principal & interest: 666.67 USD.",
         "expected": {
@@ -664,7 +672,7 @@
         "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
         "steps": [
           "Monthly rate = 12% / 12 = 1%.",
-          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Payment = 12000 \u00d7 0.01 / (1 \u2212 1.01^(\u221212)).",
           "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
         ],
         "answer": "Payment per period: 1066.19 USD.",
@@ -711,7 +719,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "500,000 × 80% = 400,000 maximum secured debt. Subtract the 210,000 mortgage balance to leave 190,000 potential line capacity."
+          "500,000 \u00d7 80% = 400,000 maximum secured debt. Subtract the 210,000 mortgage balance to leave 190,000 potential line capacity."
         ],
         "answer": "Estimated maximum HELOC: 190,000 USD.",
         "expected": {
@@ -760,7 +768,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Down payment is 400,000 × 20% = 80,000; closing costs are 400,000 × 3% = 12,000. Total cash is 92,000."
+          "Down payment is 400,000 \u00d7 20% = 80,000; closing costs are 400,000 \u00d7 3% = 12,000. Total cash is 92,000."
         ],
         "answer": "Cash needed: 92,000 USD.",
         "expected": {
@@ -881,7 +889,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "With no trade, rebate, tax or fees, financed principal is 20,000 − 5,000 = 15,000. At zero interest over 60 months, payment is 250."
+          "With no trade, rebate, tax or fees, financed principal is 20,000 \u2212 5,000 = 15,000. At zero interest over 60 months, payment is 250."
         ],
         "answer": "Payment per period: 250 USD.",
         "expected": {
@@ -912,7 +920,7 @@
         "inputs": "Principal 15,000 USD; 60 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
         "steps": [
           "Monthly rate = 12% / 12 = 1%.",
-          "Payment = 15000 × 0.01 / (1 − 1.01^(−60)).",
+          "Payment = 15000 \u00d7 0.01 / (1 \u2212 1.01^(\u221260)).",
           "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
         ],
         "answer": "Payment per period: 333.67 USD.",
@@ -1023,7 +1031,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Capitalized cost less residual is 20,000 − 8,000 = 12,000. Over 24 months, depreciation costs 500 monthly. Rate and tax are zero in this example."
+          "Capitalized cost less residual is 20,000 \u2212 8,000 = 12,000. Over 24 months, depreciation costs 500 monthly. Rate and tax are zero in this example."
         ],
         "answer": "Monthly lease payment: 500 USD.",
         "expected": {
@@ -1076,7 +1084,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Year one: 1,000 × 1.10 = 1,100. Year two: 1,100 × 1.10 = 1,210. There are no deposits, taxes or inflation adjustments."
+          "Year one: 1,000 \u00d7 1.10 = 1,100. Year two: 1,100 \u00d7 1.10 = 1,210. There are no deposits, taxes or inflation adjustments."
         ],
         "answer": "Ending balance: 1,210 USD.",
         "expected": {
@@ -1206,7 +1214,7 @@
     "checkedOn": "2026-10-20"
   },
   "savings": {
-    "summary": "Project a savings balance with monthly or annual deposits and optional increases in those deposits. Separate the money contributed from the growth produced by the assumed return.",
+    "summary": "Use the savings goal calculator to find the monthly deposit needed for a target or the first whole month reaching it. Use the savings calculator with monthly deposits to project a balance instead. Choose the mode that matches the unknown in your plan.",
     "scope": "The projection uses a constant return and simplified tax/inflation treatment. It does not forecast bank rates or market outcomes.",
     "examples": [
       {
@@ -1236,6 +1244,57 @@
           "value": 2200,
           "tolerance": 0.005
         }
+      },
+      {
+        "title": "Save 12,000 in a year with monthly deposits",
+        "mode": "goal-contribution",
+        "values": {
+          "end": 12000,
+          "principal": 0,
+          "years": 1,
+          "months": 0,
+          "rate": 0,
+          "annual": 0,
+          "compound": "Monthly",
+          "timing": "End of period",
+          "tax": 0,
+          "inflation": 0
+        },
+        "inputs": "Target 12,000 USD, no current savings, one year, zero interest and no annual deposit.",
+        "steps": [
+          "Twelve monthly deposits must total 12,000.",
+          "Required monthly deposit = 12,000 / 12 = 1,000."
+        ],
+        "answer": "Required monthly deposit: 1,000 USD.",
+        "expected": {
+          "label": "Required monthly deposit",
+          "value": 1000
+        }
+      },
+      {
+        "title": "Reach a savings goal after twelve deposits",
+        "mode": "goal-time",
+        "values": {
+          "end": 12000,
+          "principal": 0,
+          "monthly": 1000,
+          "annual": 0,
+          "rate": 0,
+          "compound": "Monthly",
+          "timing": "End of period",
+          "tax": 0,
+          "inflation": 0
+        },
+        "inputs": "Target 12,000 USD; starting amount zero; 1,000 deposited monthly at zero interest.",
+        "steps": [
+          "Each month adds 1,000.",
+          "12,000 / 1,000 = 12 months."
+        ],
+        "answer": "Months to savings goal: 12.",
+        "expected": {
+          "label": "Months to savings goal",
+          "value": 12
+        }
       }
     ],
     "questions": [
@@ -1246,6 +1305,14 @@
       {
         "question": "Does deposit timing matter for savings growth?",
         "answer": "At a positive return, beginning-of-period deposits generally have more time to earn. At zero return timing does not change the contribution total."
+      },
+      {
+        "question": "How much should I save each month to reach my savings goal?",
+        "answer": "Open Savings Goal: Monthly Deposit, enter the target, current savings and deadline, and choose the interest and deposit timing assumptions. The result is zero if the projected balance without monthly deposits already covers the goal."
+      },
+      {
+        "question": "How long will it take to reach my savings goal?",
+        "answer": "Open Savings Goal: Time Needed and enter your recurring deposits. The solver checks whole months up to 200 years; it reports an error if the target is not reached within that modeled limit."
       }
     ],
     "sources": [
@@ -1276,7 +1343,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Interest = 10,000 × 5% × 4 = 2,000. Add the original 10,000 to obtain 12,000; interest itself does not earn interest."
+          "Interest = 10,000 \u00d7 5% \u00d7 4 = 2,000. Add the original 10,000 to obtain 12,000; interest itself does not earn interest."
         ],
         "answer": "Balance: 12,000 USD.",
         "expected": {
@@ -1325,7 +1392,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "1,000 × 1.10² = 1,210 before any penalties. The example tax rate is zero; the entered rate is an assumption, not a bank quote."
+          "1,000 \u00d7 1.10\u00b2 = 1,210 before any penalties. The example tax rate is zero; the entered rate is an assumption, not a bank quote."
         ],
         "answer": "Maturity balance: 1,210 USD.",
         "expected": {
@@ -1471,7 +1538,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "The arithmetic average is (50% − 50%)/2 = 0%. But 100 grows to 150 then falls to 75; the compound result is a loss, despite the zero arithmetic average."
+          "The arithmetic average is (50% \u2212 50%)/2 = 0%. But 100 grows to 150 then falls to 75; the compound result is a loss, despite the zero arithmetic average."
         ],
         "answer": "Arithmetic average: 0%.",
         "expected": {
@@ -1517,7 +1584,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Net gain is 1,200 − 1,000 = 200. ROI is 200 / 1,000 × 100 = 20%; at a one-year holding period the annualized rate is also 20%."
+          "Net gain is 1,200 \u2212 1,000 = 200. ROI is 200 / 1,000 \u00d7 100 = 20%; at a one-year holding period the annualized rate is also 20%."
         ],
         "answer": "Return on investment: 20%.",
         "expected": {
@@ -1566,7 +1633,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Four annual inflows of 2,500 total 10,000, matching the initial investment. At a zero discount rate the NPV is 10,000 − 10,000 = 0 and recovery takes four years."
+          "Four annual inflows of 2,500 total 10,000, matching the initial investment. At a zero discount rate the NPV is 10,000 \u2212 10,000 = 0 and recovery takes four years."
         ],
         "answer": "Net present value: 0 USD.",
         "expected": {
@@ -1660,7 +1727,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "1,000 × (1 + 10%)² = 1,210. Rate and period must use the same time unit."
+          "1,000 \u00d7 (1 + 10%)\u00b2 = 1,210. Rate and period must use the same time unit."
         ],
         "answer": "Future value: 1,210 USD.",
         "expected": {
@@ -1956,7 +2023,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Opening 1,000 plus one contribution of 1,000 gives 2,000 with no growth. Under a simplified 20% retirement tax assumption, 2,000 × 80% = 1,600."
+          "Opening 1,000 plus one contribution of 1,000 gives 2,000 with no growth. Under a simplified 20% retirement tax assumption, 2,000 \u00d7 80% = 1,600."
         ],
         "answer": "Traditional IRA after-tax value: 1,600 USD.",
         "expected": {
@@ -2005,7 +2072,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "30 × 40 hours × 52 weeks = 62,400 gross annual pay. The example subtracts no unpaid holiday or vacation days."
+          "30 \u00d7 40 hours \u00d7 52 weeks = 62,400 gross annual pay. The example subtracts no unpaid holiday or vacation days."
         ],
         "answer": "Unadjusted annual salary: 62,400 USD.",
         "expected": {
@@ -2018,7 +2085,7 @@
     "questions": [
       {
         "question": "How much is 30 an hour annually at 40 hours a week?",
-        "answer": "At 52 weeks with no unpaid days, 30 × 40 × 52 = 62,400 gross annual pay."
+        "answer": "At 52 weeks with no unpaid days, 30 \u00d7 40 \u00d7 52 = 62,400 gross annual pay."
       },
       {
         "question": "Should I subtract paid vacation days?",
@@ -2119,7 +2186,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Both people have zero income and no other entries in this example. Each unmarried return and the married-joint return has zero tax, so 0 − 0 − 0 = 0 difference."
+          "Both people have zero income and no other entries in this example. Each unmarried return and the married-joint return has zero tax, so 0 \u2212 0 \u2212 0 = 0 difference."
         ],
         "answer": "Marriage penalty / negative bonus: 0 USD.",
         "expected": {
@@ -2204,12 +2271,12 @@
           "p2_amt": "0",
           "p2_qbi": "No"
         },
-        "inputs": "Illustrative 2026 federal assumptions, using the project’s documented parameter tables. Eligibility and actual tax filing require separate checks.",
+        "inputs": "Illustrative 2026 federal assumptions, using the project\u2019s documented parameter tables. Eligibility and actual tax filing require separate checks.",
         "steps": [
           "Assume both people qualify as Single before marriage, with no dependents, other income, adjustments or credits.",
-          "Single taxable income = 80,000 − 16,100 = 63,900; tax = 12,400 × 10% + 38,000 × 12% + 13,500 × 22% = 8,770.",
-          "Joint taxable income = 80,000 − 32,200 = 47,800; tax = 24,800 × 10% + 23,000 × 12% = 5,240.",
-          "Difference = 5,240 − 8,770 − 0 = −3,530, displayed as estimated annual savings of 3,530 USD."
+          "Single taxable income = 80,000 \u2212 16,100 = 63,900; tax = 12,400 \u00d7 10% + 38,000 \u00d7 12% + 13,500 \u00d7 22% = 8,770.",
+          "Joint taxable income = 80,000 \u2212 32,200 = 47,800; tax = 24,800 \u00d7 10% + 23,000 \u00d7 12% = 5,240.",
+          "Difference = 5,240 \u2212 8,770 \u2212 0 = \u22123,530, displayed as estimated annual savings of 3,530 USD."
         ],
         "answer": "Estimated annual federal tax savings: 3,530 USD.",
         "expected": {
@@ -2271,7 +2338,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "With all other assets and deductions zero, 1,000,000 gross assets − 100,000 debts − 10,000 administration expenses = 890,000 taxable estate before exclusion/credit calculations."
+          "With all other assets and deductions zero, 1,000,000 gross assets \u2212 100,000 debts \u2212 10,000 administration expenses = 890,000 taxable estate before exclusion/credit calculations."
         ],
         "answer": "Taxable estate: 890,000 USD.",
         "expected": {
@@ -2414,12 +2481,12 @@
           "local_rate": "0",
           "extra_withheld": "0"
         },
-        "inputs": "Illustrative 2026 federal assumptions, using the project’s documented parameter tables. Eligibility and actual tax filing require separate checks.",
+        "inputs": "Illustrative 2026 federal assumptions, using the project\u2019s documented parameter tables. Eligibility and actual tax filing require separate checks.",
         "steps": [
           "Assume a Single filer in 2026, no other income, deductions, dependents, credits, state/local tax or additional withholding.",
           "Federal taxable income is 63,900 and federal income tax is 8,770 under the documented 2026 brackets.",
-          "At this wage level, modeled Social Security is 80,000 × 6.2% = 4,960 and Medicare is 80,000 × 1.45% = 1,160.",
-          "Annual net = 80,000 − 8,770 − 4,960 − 1,160 = 65,110. Dividing by 26 gives approximately 2,504.23 per biweekly period; actual withholding can differ."
+          "At this wage level, modeled Social Security is 80,000 \u00d7 6.2% = 4,960 and Medicare is 80,000 \u00d7 1.45% = 1,160.",
+          "Annual net = 80,000 \u2212 8,770 \u2212 4,960 \u2212 1,160 = 65,110. Dividing by 26 gives approximately 2,504.23 per biweekly period; actual withholding can differ."
         ],
         "answer": "Annual take-home pay: 65,110 USD.",
         "expected": {
@@ -2491,7 +2558,7 @@
         "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
         "steps": [
           "Monthly rate = 12% / 12 = 1%.",
-          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Payment = 12000 \u00d7 0.01 / (1 \u2212 1.01^(\u221212)).",
           "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
         ],
         "answer": "Payment per period: 1066.19 USD.",
@@ -2539,7 +2606,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "At a manually entered 0.90 EUR per USD, multiply 100 USD × 0.90 = 90 EUR. This rate is illustrative, not a live quote."
+          "At a manually entered 0.90 EUR per USD, multiply 100 USD \u00d7 0.90 = 90 EUR. This rate is illustrative, not a live quote."
         ],
         "answer": "Converted amount: 90 EUR.",
         "expected": {
@@ -2630,7 +2697,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Tax is 100 × 7% = 7; total price is 100 + 7 = 107. The rate is user-entered, not a jurisdiction lookup."
+          "Tax is 100 \u00d7 7% = 7; total price is 100 + 7 = 107. The rate is user-entered, not a jurisdiction lookup."
         ],
         "answer": "After-tax price: 107 USD.",
         "expected": {
@@ -2851,8 +2918,8 @@
     "checkedOn": "2026-10-20"
   },
   "repayment": {
-    "summary": "Estimate fixed installments or repayment duration with separate payment and compounding frequencies. The effective payment-period rate must account for both frequencies.",
-    "scope": "This is a fixed-rate cash-flow model; irregular billing, penalties and unentered charges may change a lender's schedule.",
+    "summary": "Use the loan payoff calculator with extra payments to compare a regular monthly repayment with additional principal. Fixed Term and Fixed Payment remain available for separate payment/compounding frequencies.",
+    "scope": "This is a fixed-rate cash-flow model; irregular billing, penalties and unentered charges may change a lender's schedule. The extra-payment comparison uses monthly accrual and requires the regular payment alone to cover interest, so a valid baseline can be compared. Annual extras occur every twelve months.",
     "examples": [
       {
         "title": "Repay 12,000 with twelve monthly installments",
@@ -2890,7 +2957,7 @@
         "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
         "steps": [
           "Monthly rate = 12% / 12 = 1%.",
-          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Payment = 12000 \u00d7 0.01 / (1 \u2212 1.01^(\u221212)).",
           "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
         ],
         "answer": "Payment per period: 1066.19 USD.",
@@ -2898,6 +2965,31 @@
           "label": "Payment per period",
           "value": 1066.1854641400994,
           "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Extra loan payments save one month and 5.15 of interest",
+        "mode": "extra-payments",
+        "values": {
+          "principal": 1000,
+          "rate": 12,
+          "payment": 500,
+          "extra_monthly": 500,
+          "extra_yearly": 0,
+          "extra_once": 0,
+          "extra_once_month": 1
+        },
+        "inputs": "Balance 1,000 USD; annual rate 12%; regular monthly payment 500; extra monthly payment 500.",
+        "steps": [
+          "At 1% monthly, the regular-payment baseline accrues 10, 5.10 and 0.151 of interest across three payments: 15.251 total.",
+          "With the extra payment, the first month pays 1,000 and leaves 10 principal. The second month pays the final 10.10.",
+          "Interest becomes 10.10, saving 15.251 \u2212 10.10 = 5.151 and one month."
+        ],
+        "answer": "Interest saved: approximately 5.15 USD; months saved: 1.",
+        "expected": {
+          "label": "Interest saved",
+          "value": 5.151,
+          "tolerance": 1e-06
         }
       }
     ],
@@ -2959,7 +3051,7 @@
         "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
         "steps": [
           "Monthly rate = 12% / 12 = 1%.",
-          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Payment = 12000 \u00d7 0.01 / (1 \u2212 1.01^(\u221212)).",
           "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
         ],
         "answer": "Payment per period: 1066.19 USD.",
@@ -3063,7 +3155,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Depreciable basis is 50,000 − 5,000 = 45,000. Over five full years, annual straight-line depreciation is 45,000 / 5 = 9,000."
+          "Depreciable basis is 50,000 \u2212 5,000 = 45,000. Over five full years, annual straight-line depreciation is 45,000 / 5 = 9,000."
         ],
         "answer": "Depreciable basis: 45,000 USD.",
         "expected": {
@@ -3108,7 +3200,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Profit is 150 − 100 = 50. Margin divides by revenue: 50 / 150 = 33.33%. Markup divides by cost: 50 / 100 = 50%."
+          "Profit is 150 \u2212 100 = 50. Margin divides by revenue: 50 / 150 = 33.33%. Markup divides by cost: 50 / 100 = 50%."
         ],
         "answer": "Gross margin: 33.33%.",
         "expected": {
@@ -3153,7 +3245,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Savings are 100 × 20% = 20. Subtract from the original 100 to get a sale price of 80."
+          "Savings are 100 \u00d7 20% = 20. Subtract from the original 100 to get a sale price of 80."
         ],
         "answer": "Sale price: 80 USD.",
         "expected": {
@@ -3170,7 +3262,7 @@
       },
       {
         "question": "Are two 20% discounts equivalent to 40% off?",
-        "answer": "No. Sequential 20% reductions leave 0.8 × 0.8 = 64% of the original, equivalent to 36% off."
+        "answer": "No. Sequential 20% reductions leave 0.8 \u00d7 0.8 = 64% of the original, equivalent to 36% off."
       }
     ],
     "sources": [
@@ -3235,7 +3327,7 @@
         "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
         "steps": [
           "Monthly rate = 12% / 12 = 1%.",
-          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Payment = 12000 \u00d7 0.01 / (1 \u2212 1.01^(\u221212)).",
           "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
         ],
         "answer": "Payment per period: 1066.19 USD.",
@@ -3314,7 +3406,7 @@
         "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
         "steps": [
           "Monthly rate = 12% / 12 = 1%.",
-          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Payment = 12000 \u00d7 0.01 / (1 \u2212 1.01^(\u221212)).",
           "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
         ],
         "answer": "Payment per period: 1066.19 USD.",
@@ -3366,7 +3458,7 @@
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
-          "Financed balance is 20,000 − 5,000 = 15,000 when taxes and fees are zero. Spread across 60 months at zero interest, payment is 250."
+          "Financed balance is 20,000 \u2212 5,000 = 15,000 when taxes and fees are zero. Spread across 60 months at zero interest, payment is 250."
         ],
         "answer": "Payment per period: 250 USD.",
         "expected": {
@@ -3391,7 +3483,7 @@
         "inputs": "Principal 15,000 USD; 60 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
         "steps": [
           "Monthly rate = 12% / 12 = 1%.",
-          "Payment = 15000 × 0.01 / (1 − 1.01^(−60)).",
+          "Payment = 15000 \u00d7 0.01 / (1 \u2212 1.01^(\u221260)).",
           "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
         ],
         "answer": "Payment per period: 333.67 USD.",

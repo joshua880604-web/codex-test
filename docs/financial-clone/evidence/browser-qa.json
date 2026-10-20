@@ -1,5 +1,5 @@
 {
-  "tested_at": "2026-10-19T09:04:44.553Z",
+  "tested_at": "2026-10-20T02:03:04.419Z",
   "base": "http://127.0.0.1:3000",
   "browser": "System Chromium via Playwright",
   "reference_visual_parity": "unverified: original-site browser unavailable",
@@ -351,7 +351,11 @@
       "status": 200,
       "modes": [
         {
-          "mode": "default",
+          "mode": "Compound Growth",
+          "result": "rendered"
+        },
+        {
+          "mode": "Equivalent Interest Rate",
           "result": "rendered"
         }
       ]
@@ -373,7 +377,15 @@
       "status": 200,
       "modes": [
         {
-          "mode": "default",
+          "mode": "Savings Calculator",
+          "result": "rendered"
+        },
+        {
+          "mode": "Savings Goal: Monthly Deposit",
+          "result": "rendered"
+        },
+        {
+          "mode": "Savings Goal: Time Needed",
           "result": "rendered"
         }
       ]
@@ -886,6 +898,10 @@
       "route": "/repayment-calculator.html",
       "status": 200,
       "modes": [
+        {
+          "mode": "Loan Payoff with Extra Payments",
+          "result": "rendered"
+        },
         {
           "mode": "Fixed Term",
           "result": "rendered"

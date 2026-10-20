@@ -52,3 +52,7 @@ Replace positional first-eight-field display with semantic paired sections. Keep
 ## 2026-10-20: remaining calculator guides
 
 Add specific guides, two contextual questions and reproducible arithmetic fixtures to each of the remaining 60 functional tools. Preserve all financial engines and current UI. Keep examples server-rendered; retain honest scope for fixed 30-year rent/buy, simplified Social Security and paycheck models, manual currency quotes and program eligibility. Search intent candidates are documented without invented search-volume claims. See content-expansion.md.
+
+## 2026-10-20 keyword ownership and feature alignment
+
+Use the user-provided global/US English, rolling-12-month Keyword Planner screenshots to prioritize intent. Each intent has an existing primary page; no near-duplicate landing URLs are created. Add compound growth, savings-goal modes and monthly loan extra-payment comparison before claiming these capabilities in metadata. Retain conversion and original mode IDs. Directory intent search and visible shortcut buttons make the features discoverable. See keyword-implementation.md.

@@ -30,7 +30,7 @@ const mortgageSource = {
 };
 export const notesCheckedOn = "2026-10-19";
 export const guides: Record<string, Guide> = {
-  ...extendedGuides,
+  ...(extendedGuides as unknown as Record<string, Guide>),
   vat: {
     summary:
       "VAT is calculated on the net price. Add VAT by multiplying the net price by 1 + rate/100. Remove VAT by dividing the gross price by the same factor.",
@@ -236,10 +236,11 @@ export const guides: Record<string, Guide> = {
     sources: [investor],
   },
   "compound-interest": {
+    checkedOn: "2026-10-20",
     summary:
-      "This page converts interest rates between compounding frequencies while keeping the effective annual yield unchanged. For a balance projection with deposits, use the Interest Calculator.",
+      "Use the compound interest calculator with monthly contributions to project a savings balance, total contributions and net earnings. The separate Equivalent Interest Rate mode preserves effective yield when converting quoted rates.",
     scope:
-      "The converted rate is a nominal rate for the selected frequency. It is not a guaranteed return, investment projection or fee-inclusive borrowing APR.",
+      "Growth uses a constant nominal annual rate and its selected compounding equivalent; monthly and annual contributions are distinct cash streams. Tax and inflation adjustments are simplified. The conversion mode instead changes the nominal rate to preserve effective yield. Neither mode guarantees returns.",
     examples: [
       {
         title: "Convert 5% nominal monthly compounding to an annual rate",
@@ -264,12 +265,12 @@ export const guides: Record<string, Guide> = {
       {
         question: "Where can I calculate compound growth with deposits?",
         answer:
-          "Use the Interest or Savings Calculator for a starting balance, monthly or annual contributions and an investment horizon.",
+          "Use Compound Growth on this page for starting money, monthly or annual contributions and a time horizon. Contribution timing controls whether deposits earn during their first period.",
       },
       {
         question: "Does changing the frequency create extra return here?",
         answer:
-          "No. This converter adjusts the quoted rate to preserve the effective annual yield. It does not hold the nominal rate constant while changing frequency.",
+          "In Equivalent Interest Rate mode, the quoted rate changes to preserve yield. In Compound Growth mode, changing compounding while holding the nominal rate fixed can change growth. These are different questions.",
       },
     ],
     sources: [investor],
@@ -506,6 +507,17 @@ export const guides: Record<string, Guide> = {
     ],
   },
 };
+
+const compoundMonthlyRate = 0.05/12;
+const compoundMonthFactor = (1+compoundMonthlyRate)**12;
+guides["compound-interest"].examples.push({
+  title:"Compound growth with monthly contributions", mode:"growth",
+  values:{principal:1000,years:1,months:0,rate:5,compound:"Monthly",annual:0,monthly:100,timing:"End of period",tax:0,inflation:0},
+  inputs:"Start with 1,000 USD; deposit 100 at each month end for one year; 5% nominal annual rate compounded monthly; no tax or inflation adjustment.",
+  steps:["Monthly rate is 0.05 / 12.","Ending balance = 1,000 × (1+0.05/12)^12 + 100 × ((1+0.05/12)^12 − 1)/(0.05/12)."],
+  answer:"Ending balance is approximately 2,279.05 USD; total contributions are 2,200 USD.",
+  expected:{label:"Ending balance",value:1000*compoundMonthFactor+100*(compoundMonthFactor-1)/compoundMonthlyRate,tolerance:0.005},
+});
 
 export const relatedCalculatorIds: Record<string, string[]> = {
   vat: ["sales-tax", "discount", "margin", "commission"],

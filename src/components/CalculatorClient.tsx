@@ -1,4 +1,5 @@
 "use client";
+import {searchTasks} from "@/lib/keyword-targets";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import MarriageFields from "./MarriageFields";
 import { defaults } from "@/lib/types";
@@ -277,6 +278,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   return (
     <>
       <p className="intro">{calc.intro}</p>
+      {searchTasks[id] && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{searchTasks[id].map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       {calc.modes.length > 1 && (
         <div className="mode-tabs" role="tablist" aria-label="Calculation mode">
           {calc.modes.map((m) => (

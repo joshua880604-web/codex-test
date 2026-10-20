@@ -1,3 +1,4 @@
+import SearchTasks from "@/components/SearchTasks";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { calculators, calculatorBySlug, routeFor } from "@/lib/calculators";
@@ -143,6 +144,7 @@ export default async function Page({
         ) : c ? (
           <>
             <CalculatorClient calc={JSON.parse(JSON.stringify(c))} initialResult={initialResult} />
+            <SearchTasks id={c.id} />
             <CalculatorGuide calculator={c} />
           </>
         ) : (
