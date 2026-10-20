@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Scientific calculator with bounded expression parser, keypad and degree/radian functions",
+  "latest_change": "Homepage full-width directory, quick access, category jumps and responsive layout",
   "seo_generated_pages_checked": 80,
   "seo_detailed_guides": 75,
   "seo_worked_examples": 100,
@@ -39,5 +39,6 @@
   "everyday_calculators": 5,
   "everyday_browser_checks": 19,
   "irr_browser_checks": 9,
-  "scientific_browser_checks": 12
+  "scientific_browser_checks": 12,
+  "homepage_browser_checks": 11
 }

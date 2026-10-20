@@ -85,7 +85,7 @@ export default async function Page({
           ? "Calculation methodology and sources"
           : "Financial Calculators");
   return (
-    <div className="page-wrap">
+    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : "page-wrap"}>
       <main id="main">
         <div className="breadcrumb">
           <a href="/">home</a> /{" "}
@@ -174,7 +174,7 @@ export default async function Page({
           </section>
         )}
       </main>
-      <Sidebar />
+      {slug !== "financial-calculator.html" && <Sidebar />}
     </div>
   );
 }

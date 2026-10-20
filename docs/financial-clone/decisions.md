@@ -72,3 +72,7 @@ Use signed log-scaled evaluation with exact same-time decimal netting, finite-in
 ## Scientific calculator — 2026-10-20
 
 Added a safe expression parser, keypad, degree/radian modes and three worked examples. 431 tests and production build pass; 12 dedicated browser checks pass. See scientific-calculator.md. Public upload remains pending explicit authorization, including the preceding IRR update.
+
+## Homepage layout — 2026-10-20
+
+Homepage alone now uses full width with search, eight quick links, category jumps and responsive category sections. No dependency or formula changes. Production build, 11 dedicated browser checks, 20 UI regression checks and 80-page SEO build checks pass. See homepage-layout.md. Scientific/IRR upload was completed in 60ecb290; the user has explicitly authorized this homepage update for synchronization.
