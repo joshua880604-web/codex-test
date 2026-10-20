@@ -468,10 +468,11 @@ export const guides: Record<string, Guide> = {
     ],
   },
   irr: {
+    checkedOn: "2026-10-20",
     summary:
       "The internal rate of return is a discount rate that makes the net present value of the entered cash flows zero. Cash-flow timing matters, so equal total profits can produce different IRRs.",
     scope:
-      "The irregular-flow form uses successive annual periods, not arbitrary dates. Multiple or repeated roots may exist; the numerical search is bounded and does not guarantee every root of every complex cash-flow pattern.",
+      "The unequal-flow form uses successive year ends, not arbitrary dates. Fixed-flow rates are converted to effective annual rates from the selected payment period. The numerical search is bounded, and nearly repeated roots are sensitive to rounding; detected roots do not guarantee every root was found.",
     examples: [
       {
         title: "A 40,000 investment with three annual inflows",
@@ -483,7 +484,7 @@ export const guides: Record<string, Guide> = {
           "Solve −40000 + 10000/(1+r) + 20000/(1+r)^2 + 30000/(1+r)^3 = 0.",
         ],
         answer: "The detected annual IRR is approximately 19.438%.",
-        expected: { label: "IRR 1", value: 19.438, tolerance: 0.0005 },
+        expected: { label: "Annual IRR 1", value: 19.438, tolerance: 0.0005 },
       },
     ],
     questions: [
@@ -507,6 +508,10 @@ export const guides: Record<string, Guide> = {
     ],
   },
 };
+
+guides.irr.examples.push({title:"Monthly cash-flow periods, annual IRR",mode:"fixed",values:{initial:100,years:1,inflow:0,cash_frequency:"Monthly",ending:121,timing:"End of period"},inputs:"Invest 100 USD at time zero, receive 121 at the end of one year, and use twelve monthly periods with no interim flows.",steps:["The monthly rate solves 100 × (1+r)^12 = 121.","Effective annual IRR = (1+r)^12 − 1 = 121/100 − 1 = 21%."],answer:"Annual IRR is 21%; this is not a 21% monthly return.",expected:{label:"Annual IRR 1",value:21,tolerance:0.00005}},{title:"A cash-flow pattern with two IRRs",mode:"irregular",values:{initial:100,flows:"230, -132"},inputs:"Initial outflow 100 USD, year-one inflow 230, year-two outflow 132.",steps:["NPV = −100 + 230/(1+r) − 132/(1+r)^2.","At 10%: −100 + 230/1.1 − 132/1.1² = 0.","At 20% the same NPV is also zero; neither root alone is an unambiguous investment ranking."],answer:"The calculator detects annual IRRs of 10% and 20%.",expected:{label:"Annual IRR 1",value:10,tolerance:0.00005}});
+guides.irr.questions.push({question:"Is this IRR result annual or monthly?",answer:"Headline results are effective annual rates. Monthly or quarterly fixed cash flows are first solved per period and then compounded to an annual rate, not multiplied by the number of periods."},{question:"Can I enter cash flows on irregular dates?",answer:"This page assumes equally spaced periods. For dated cash flows, use the dated cash-flow mode of Average Return Calculator. Keep zero entries for empty years in the unequal annual form."});
+guides.irr.sources.push({title:"Dated cash-flow return calculator",url:"/average-return-calculator.html?mode=cashflows"});
 
 const compoundMonthlyRate = 0.05/12;
 const compoundMonthFactor = (1+compoundMonthlyRate)**12;

@@ -25,3 +25,9 @@ Keyword implementation 2026-10-20: eight existing pages own twelve named search 
 Everyday-tools addition 2026-10-20: four tools and twelve modes added, giving 75 entries / 74 calculators / 170 modes / 94 examples. Original 71 financial entries are preserved. Currency-aware money and ISO date display are supported by the shared results component. See everyday-tools.md; local production build, TypeScript and 407 tests passed. No hosted deployment or new dependency.
 
 HELOC annual-fee correction: fee applies only in draw, not repayment; totals and APR use corrected phase-specific cash flows. Annual fee input/help, zero-fee accounts and zero-draw cases are covered. See heloc-annual-fee.md. 412 tests pass; one additional published example brings the total to 95. No hosted deployment.
+
+IRR review 2026-10-20: scale-dependent rates, same-date pseudo-roots, silent duration rounding and misleading time labels corrected. Shared solver changes are validated across mathematical/reference fixtures; IRR labels are Annual IRR and annual-flow inputs are distinguished from dated XIRR-style returns. 420 tests passed; 97 total worked examples. See irr-review.md. Browser reports record final regression status.
+
+## Scientific calculator — 2026-10-20
+
+Added a safe expression parser, keypad, degree/radian modes and three worked examples. 431 tests and production build pass; 12 dedicated browser checks pass. See scientific-calculator.md. Public upload remains pending explicit authorization, including the preceding IRR update.

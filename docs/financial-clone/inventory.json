@@ -5224,7 +5224,7 @@
         "fields": [
           {
             "key": "initial",
-            "label": "Initial investment",
+            "label": "Initial investment (outflow at time zero)",
             "type": "number",
             "unit": "$"
           },
@@ -5263,11 +5263,11 @@
       },
       {
         "id": "irregular",
-        "title": "Irregular Cash Flows",
+        "title": "Unequal Annual Cash Flows",
         "fields": [
           {
             "key": "initial",
-            "label": "Initial investment",
+            "label": "Initial investment (outflow at time zero)",
             "type": "number",
             "unit": "$"
           },

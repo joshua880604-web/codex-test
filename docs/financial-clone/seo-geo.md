@@ -9,7 +9,7 @@
 - The preview configuration emits `noindex, follow`; it does not block page crawling in robots.txt, so compliant crawlers can see the noindex instruction. Vercel preview environments stay noindex even when production settings are inherited.
 - Real WebApplication data on 74 calculation pages; with a configured origin, WebPage and BreadcrumbList data use the same canonical page. No fake reviews, ratings, expert identities or promised rich results.
 - Server-rendered model descriptions/formulas are available for all 170 modes, including modes hidden behind interactive tabs.
-- All 74 functional calculators now have individual English guides, at least two contextual questions, explicit scope and source/provenance links. There are 95 reproducible examples across the site (12 original, 71 added in the content expansion, 4 added with keyword features, 7 added for everyday tools, 1 HELOC fee example). Nine added positive-rate installment examples and two nonzero tax/paycheck examples supplement the transparent simple/boundary illustrations. Expected values use separately specified arithmetic or closed-form equations, not saved calculator outputs. Example links populate the complete stated settings.
+- All 74 functional calculators now have individual English guides, at least two contextual questions, explicit scope and source/provenance links. There are 97 reproducible examples across the site (12 original, 71 added in the content expansion, 4 added with keyword features, 7 added for everyday tools, 1 HELOC fee example, 2 IRR review examples). Nine added positive-rate installment examples and two nonzero tax/paycheck examples supplement the transparent simple/boundary illustrations. Expected values use separately specified arithmetic or closed-form equations, not saved calculator outputs. Example links populate the complete stated settings.
 - Ten priority pages have manually selected related tools; other pages retain category-based related links. Expanding manual contextual linking remains useful.
 - `/methodology.html` explains calculation validation, official data versions, rounding, review status and model limitations. About/footer link to it. Notes carry a real content-check date, without inventing a human professional review.
 
@@ -51,3 +51,7 @@ No special AI file or FAQ rich-result promise is required for these changes. Vis
 ## Screenshot distribution
 
 The SEO update's new browser screenshots are retained locally. Automatic approval review rejected uploading a large screenshot to the public repository; screenshots are optional evidence, so this update synchronizes source and textual validation reports only. Existing PNG files in the repository predate the SEO guides and should not be treated as screenshots of this revision. Re-running the browser QA script produces current images locally.
+
+## Scientific calculator addition (2026-10-20)
+
+Current local scope: 80 generated pages, 75 calculator guides, 171 modes and 100 worked examples. Scientific calculator has unique English explanatory content, four FAQs and three executable examples. Preview remains noindex; public upload and deployment have not occurred.

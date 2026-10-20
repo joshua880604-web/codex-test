@@ -740,12 +740,12 @@ const irrTool = tool(
   "irr",
   ["fixed", "irregular"].map((id): Mode => ({
     id,
-    title: id === "fixed" ? "Fixed Cash Flow" : "Irregular Cash Flows",
+    title: id === "fixed" ? "Fixed Cash Flow" : "Unequal Annual Cash Flows",
     fields: [
-      num("initial", "Initial investment", 10000, "$"),
+      num("initial", "Initial investment (outflow at time zero)", 10000, "$"),
       ...(id === "fixed"
         ? [
-            num("years", "Holding length", 5, "years", 1),
+            num("years", "Holding length", 5, "years", 0.01),
             num("inflow", "Net cash flow each period", 3000, "$", -1e12),
             select("cash_frequency", "Cash flow frequency", [
               "Annually",
@@ -763,16 +763,19 @@ const irrTool = tool(
               "flows",
               "Subsequent cash flows by year",
               "2000, 3000, 4000, 5000",
+              "One number per year, starting at year 1. Use negative values for additional investments and 0 for years with no cash flow. Do not repeat the initial investment. Write 10000, not 10,000: commas separate cash flows, not thousands. This form is not date-based XIRR.",
             ),
           ]),
     ],
     description:
-      "Compute all detected internal rates of return for the supplied periodic cash flows.",
+      id === "fixed" ? "Estimate an effective annual IRR from equally spaced fixed cash flows; choose frequency and beginning/end timing." : "Estimate an annual IRR from unequal amounts at successive year ends. Amounts may vary, but dates remain one year apart.",
     formula: "NPV = Σ CFₜ/(1+r)^t = 0.",
     calculate: (v) => {
       let flows: number[];
       if (id === "fixed") {
-        const years = Math.round(n(v, "years") * freq(v.cash_frequency));
+        const rawPeriods=n(v,"years")*freq(v.cash_frequency);
+        if(Math.abs(rawPeriods-Math.round(rawPeriods))>1e-7)throw new Error("Holding length must give a whole number of cash-flow periods at the selected frequency.");
+        const years = Math.round(rawPeriods);
         periods(years);
         flows = [
           -n(v, "initial"),
@@ -788,16 +791,19 @@ const irrTool = tool(
       return {
         metrics: roots.map((r, i) =>
           metric(
-            `IRR ${i + 1}`,
-            (id === "fixed" ? Math.pow(1 + r, freq(v.cash_frequency)) - 1 : r) *
+            `Annual IRR ${i + 1}`,
+            (id === "fixed" ? Math.expm1(freq(v.cash_frequency)*Math.log1p(r)) : r) *
               100,
             "percent",
           ),
         ),
-        columns: ["Year", "Net cash flow"],
-        rows: flows.map((x, i) => [i, x]),
+        columns: ["Period", "Time (years)", "Net cash flow"],
+        rows: flows.map((x, i) => [i, i/(id === "fixed" ? freq(v.cash_frequency) : 1), x]),
         notes: [
-          "IRR may have more than one solution. Roots are searched between approximately −99.9994% and 16,275,379%.",
+          "All headline rates are effective annual IRRs. Initial investment is a positive amount entered here and is converted into a negative time-zero outflow. Subsequent negative flows represent additional investment; zeros preserve empty periods.",
+          "The numerical search is bounded to approximately −99.9994% through 16,275,379% per cash-flow period. Multiple or repeated roots can exist; detected roots are not a guarantee that every root was found. Nearly repeated roots are numerically sensitive. IRR is not ROI and does not measure risk.",
+          ...(roots.length>1 ? ["Multiple IRRs were detected. There is no single unambiguous IRR for these cash flows; examine NPV and the complete cash-flow pattern."] : []),
+          ...(id === "irregular" ? ["Unequal amounts are assumed to occur at year ends. For actual irregular dates, use the dated cash-flow mode in Average Return Calculator."] : [`Cash-flow frequency: ${v.cash_frequency}. Final value is received at the end of the holding period even when recurring flows occur at the beginning.`]),
         ],
       };
     },

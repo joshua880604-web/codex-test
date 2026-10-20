@@ -39,8 +39,8 @@ test("Production sitemap lists canonical pages only and no pretend lastmod dates
     SITE_INDEXABLE: "true",
   });
   const entries = sitemapEntries(config);
-  assert.equal(entries.length, 79);
-  assert.equal(new Set(entries.map((e) => e.url)).size, 79);
+  assert.equal(entries.length, 80);
+  assert.equal(new Set(entries.map((e) => e.url)).size, 80);
   assert.ok(
     entries.every(
       (e) =>
@@ -125,9 +125,9 @@ test("Contextual related tools are real, distinct and not self-links", () => {
 
 test("Every functional calculator has a unique guide, reproducible examples and specific questions", () => {
   const tools=calculators.filter(c=>!c.directory);
-  assert.equal(tools.length,74);
-  assert.equal(Object.keys(guides).length,74);
-  assert.equal(new Set(Object.values(guides).map(g=>g.summary)).size,74);
+  assert.equal(tools.length,75);
+  assert.equal(Object.keys(guides).length,75);
+  assert.equal(new Set(Object.values(guides).map(g=>g.summary)).size,75);
   for(const tool of tools){
     const guide=guides[tool.id];assert.ok(guide,tool.id);
     assert.ok(guide.summary.length>80 && guide.scope.length>50,tool.id);

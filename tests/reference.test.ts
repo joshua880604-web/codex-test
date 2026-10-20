@@ -19,7 +19,7 @@ const run = (
   });
 };
 const value = (r: ReturnType<typeof run>, label: string) => {
-  const m = r.metrics.find((x) => x.label === label);
+  const m = r.metrics.find((x) => x.label === label || (label.startsWith("IRR ") && x.label === "Annual " + label));
   assert.ok(m, "Metric not found: " + label);
   return m.value;
 };

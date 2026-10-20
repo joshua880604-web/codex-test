@@ -1,6 +1,7 @@
 "use client";
 import {searchTasks} from "@/lib/keyword-targets";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import ScientificKeypad from "./ScientificKeypad";
 import MarriageFields from "./MarriageFields";
 import { defaults } from "@/lib/types";
 import { routeFor } from "@/lib/catalog";
@@ -311,7 +312,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         aria-labelledby={calc.modes.length > 1 ? "tab-" + modeId : undefined}
       >
         <p className="mode-description">{mode.description}</p>
-        <form onSubmit={calculate} className="calculator-form" onInvalidCapture={(e) => {
+        <form onKeyDown={e=>{if(id === "scientific" && (e.target as HTMLElement).tagName === "TEXTAREA" && e.key === "Enter" && !e.shiftKey){e.preventDefault();e.currentTarget.requestSubmit();}}} onSubmit={calculate} className="calculator-form" onInvalidCapture={(e) => {
           const field = e.target as HTMLInputElement;
           const details = field.closest("details");
           if (details) details.open = true;
@@ -324,6 +325,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
               {advanced.map(f => input(f))}
             </details>
           )}
+          {id === "scientific" && <ScientificKeypad values={values} update={update} />}
           <div className="form-actions">
             <button type="submit" className="calculate" disabled={busy}>
               {busy ? "Fetching rate…" : "Calculate"}{" "}
@@ -349,6 +351,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
       {result && (
         <div ref={resultRef} className="result" aria-live="polite" tabIndex={-1}>
           <h2>Result</h2>
+          {id === "irr" && result.metrics.length > 1 && <p className="notice" role="status">Multiple IRRs detected. There is no single unambiguous rate for these cash flows; the first result is not a recommended return.</p>}
           <div className="result-main">
             <div className="metrics">
               {(id === "marriage-tax" ? [...result.metrics.slice(-1), ...result.metrics.slice(0, -1)] : result.metrics).map((m, i) => (

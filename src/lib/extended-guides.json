@@ -3996,5 +3996,92 @@
       }
     ],
     "checkedOn": "2026-10-20"
+  },
+  "scientific": {
+    "summary": "Evaluate a scientific expression with a visible keypad or keyboard. Choose Degrees or Radians before calculating trigonometric functions. Parentheses make the intended grouping explicit; powers are right-associative and bind more tightly than a leading minus.",
+    "scope": "Finite real-number arithmetic using floating-point numbers, not symbolic algebra, graphing or complex arithmetic. Expressions are limited to 2,000 characters, 512 tokens and bounded nesting. Display uses up to 12 significant digits and scientific notation for extreme magnitudes.",
+    "questions": [
+      {
+        "question": "Does sin use degrees or radians?",
+        "answer": "Select the angle mode. Degrees is the default; inverse trigonometric answers use the same selected unit."
+      },
+      {
+        "question": "How does percent work in this scientific calculator?",
+        "answer": "A postfix percent always divides its preceding value by 100. Therefore 100 + 10% is 100.1; use 100 \u00d7 (1 + 10%) for a ten-percent increase."
+      },
+      {
+        "question": "Is negative two squared positive or negative?",
+        "answer": "\u22122^2 is \u22124 because power precedes the leading minus. Write (\u22122)^2 to square the negative number and obtain 4."
+      },
+      {
+        "question": "Can I use the keyboard?",
+        "answer": "Yes. Enter the expression and press Enter to calculate; Shift+Enter keeps a line break. Keypad square, factorial, reciprocal and sign keys transform the selected text, or the whole expression if nothing is selected. AC empties the expression; Reset restores the starting example."
+      }
+    ],
+    "examples": [
+      {
+        "title": "Combine a degree-mode sine and a power",
+        "mode": "evaluate",
+        "values": {
+          "expression": "sin(30) + 2^3",
+          "angle": "Degrees"
+        },
+        "inputs": "Expression sin(30) + 2^3; Degrees mode.",
+        "steps": [
+          "sin(30 degrees) = 0.5.",
+          "2^3 = 8; 0.5 + 8 = 8.5."
+        ],
+        "answer": "Result: 8.5.",
+        "expected": {
+          "label": "Result",
+          "value": 8.5,
+          "tolerance": 1e-10
+        }
+      },
+      {
+        "title": "Use parentheses to change arithmetic order",
+        "mode": "evaluate",
+        "values": {
+          "expression": "(2+3)*4",
+          "angle": "Degrees"
+        },
+        "inputs": "Expression (2+3)*4.",
+        "steps": [
+          "Evaluate the parentheses first: 2+3 = 5.",
+          "Multiply 5 by 4 = 20."
+        ],
+        "answer": "Result: 20.",
+        "expected": {
+          "label": "Result",
+          "value": 20
+        }
+      },
+      {
+        "title": "Evaluate a sine in radians",
+        "mode": "evaluate",
+        "values": {
+          "expression": "sin(pi/2)",
+          "angle": "Radians"
+        },
+        "inputs": "Expression sin(pi/2); Radians mode.",
+        "steps": [
+          "pi/2 radians is a right angle.",
+          "The sine of a right angle is 1."
+        ],
+        "answer": "Result: 1.",
+        "expected": {
+          "label": "Result",
+          "value": 1,
+          "tolerance": 1e-10
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methods, testing and limitations",
+        "url": "/methodology.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
   }
 }

@@ -1800,7 +1800,8 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "irr_review": "irr-review.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
@@ -1827,7 +1828,8 @@
       "seo_readiness": "seo-geo.md",
       "ui_performance": "ui-performance.md",
       "guide_expansion": "content-expansion.md",
-      "keyword_implementation": "keyword-implementation.md"
+      "keyword_implementation": "keyword-implementation.md",
+      "irr_review": "irr-review.md"
     },
     "blockers": [
       "Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment."
@@ -4557,5 +4559,19 @@
       "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
     ],
     "updated_at": "2026-10-20T02:37:19.833Z"
+  },
+  {
+    "id": "scientific",
+    "mode": "evaluate",
+    "implementation": "passed",
+    "math": "passed",
+    "browser": "passed",
+    "reference_parity": "unverified",
+    "local_only": true,
+    "evidence": {
+      "numeric": "../../work/scientific-tests.tap",
+      "browser": "evidence/browser-scientific-qa.json",
+      "spec": "scientific-calculator.md"
+    }
   }
 ]

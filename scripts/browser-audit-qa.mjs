@@ -45,7 +45,7 @@ const cases = [
     route: "irr-calculator",
     mode: "irregular",
     inputs: { initial: 100, flows: "220,-121" },
-    expected: { "IRR 1": "10.0000%" },
+    expected: { "Annual IRR 1": "10.0000%" },
   },
   {
     route: "tax-calculator",

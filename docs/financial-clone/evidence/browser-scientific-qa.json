@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": [
+    "2+3*4",
+    "sin(30)",
+    "sin(pi/2)",
+    "5!",
+    "2^3^2",
+    "keypad",
+    "square whole expression",
+    "1/0 rejected",
+    "sqrt(-1) rejected",
+    "width 320",
+    "width 390",
+    "width 768"
+  ],
+  "errors": []
+}

@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-20T05:17:14.813Z",
+  "checks": [
+    {
+      "query": "mode=irregular&initial=100&flows=110",
+      "result": "passed"
+    },
+    {
+      "query": "mode=irregular&initial=100&flows=90",
+      "result": "passed"
+    },
+    {
+      "query": "mode=irregular&initial=100&flows=230%2C-132",
+      "result": "passed"
+    },
+    {
+      "query": "mode=fixed&initial=100&years=1&cash_frequency=Monthly&inflow=0&ending=121&timing=End+of+period",
+      "result": "passed"
+    },
+    "Fractional period count is rejected without stale results",
+    "Invalid sign pattern has a clear error",
+    {
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

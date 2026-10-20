@@ -523,5 +523,12 @@
     "title": "Unit Converter",
     "local_route": "/unit-converter.html",
     "source_url": "https://www.calculator.net/conversion-calculator.html"
+  },
+  {
+    "id": "scientific",
+    "title": "Scientific Calculator",
+    "category": "Everyday Tools",
+    "local_route": "/scientific-calculator.html",
+    "source_url": "https://www.calculator.net/scientific-calculator.html"
   }
 ]

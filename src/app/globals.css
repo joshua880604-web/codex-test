@@ -830,3 +830,9 @@ footer p {
 .search-tasks p { font-size: 14px; }
 .search-tasks a { display: inline-block; margin-bottom: 12px; font-size: 14px; }
 @media(max-width:650px){.task-shortcuts button { min-height: 44px; }}
+
+.scientific-keypad {display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin:16px 0;}
+.scientific-keypad button {min-width:0;min-height:44px;border:1px solid #aaa;background:#fafafa;color:#174b72;font-size:15px;border-radius:2px;padding:6px 2px;}
+.scientific-keypad button:hover {background:#e3e9ee;}
+.scientific-keypad .scientific-equals {grid-column:span 4;background:#518428;color:white;font-weight:bold;}
+@media print {.scientific-keypad {display:none;}}

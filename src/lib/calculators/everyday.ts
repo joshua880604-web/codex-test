@@ -1,3 +1,4 @@
+import {scientificCalculator} from "./scientific";
 import {tool} from './helpers';
 import {num,select,date,number as n,metric,type Mode,type Metric} from '../types';
 function finiteDivision(a:number,b:number){if(b===0)throw new Error('The denominator cannot be zero.');return a/b;}
@@ -33,4 +34,4 @@ export const unitGroups:Record<string,Record<string,Unit>>={
 };
 const modes=Object.entries(unitGroups).map(([id,units]):Mode=>{const labels=Object.keys(units);return {id,title:id.charAt(0).toUpperCase()+id.slice(1),fields:[num('amount','Value',1,undefined,id==='temperature'?-1e15:0),select('from','From unit',labels),select('to','To unit',labels,labels[1])],description:'Convert '+id+' between explicitly named units.',formula:'Base value = input × source factor + source offset; output = (base value − target offset) / target factor.',calculate:v=>{const from=units[v.from],to=units[v.to];if(!from||!to)throw new Error('Choose compatible units from the selected category.');let base=n(v,'amount')*from.factor+(from.offset??0);if(id==='temperature'&&base < -1e-9)throw new Error('Temperature cannot be below absolute zero.');if(id==='temperature')base=Math.max(0,base);return {metrics:[{...metric('Converted value',(base-(to.offset??0))/to.factor),digits:8}],notes:[v.from+' → '+v.to+'. US and Imperial volume units are explicitly distinct. Display precision is limited; internal conversion retains additional digits.']};}};});
 const units=tool('unit-converter',modes,'Convert length, mass, temperature, area, volume and speed, with explicit metric, US and Imperial units.');
-export const everydayCalculators=[percentage,split,dates,units];
+export const everydayCalculators=[percentage,split,dates,units,scientificCalculator];

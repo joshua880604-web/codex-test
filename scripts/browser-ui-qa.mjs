@@ -5,7 +5,7 @@ const checks=[];const errors=[];
 try {
  const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});page.on('pageerror',e=>errors.push(e.message));
  await page.goto('http://127.0.0.1:3000/financial-calculator.html');
- const search=page.getByLabel('Find a calculator');await search.fill('  mortgage  ');if(await page.locator('.directory-grid li').count()<1)throw Error('Trimmed search failed');await page.getByRole('button',{name:'Clear search'}).click();if(await page.locator('.directory-grid li').count()!==75)throw Error('Directory reset');checks.push('Directory search trims whitespace and clears back to all 75 entries');
+ const search=page.getByLabel('Find a calculator');await search.fill('  mortgage  ');if(await page.locator('.directory-grid li').count()<1)throw Error('Trimmed search failed');await page.getByRole('button',{name:'Clear search'}).click();if(await page.locator('.directory-grid li').count()!==76)throw Error('Directory reset');checks.push('Directory search trims whitespace and clears back to all 76 entries');
  await page.goto('http://127.0.0.1:3000/401k-calculator.html');
  if(!(await page.getByLabel('Employer match',{exact:true}).getAttribute('aria-describedby')))throw Error('No accessible matching help');
  await page.getByRole('button',{name:'Calculate',exact:true}).click();await page.getByRole('columnheader',{name:'Year-end balance',exact:true}).waitFor();

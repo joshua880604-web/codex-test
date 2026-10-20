@@ -64,3 +64,11 @@ Add percentage, tip/bill splitting, calendar dates and unit conversion as a sepa
 ## 2026-10-20: HELOC annual fee
 
 Model annual account-maintenance fees during draw only. Correct repayment, fee totals and APR cash flows; preserve the charge query key and explicitly disclose monthly averaging/pro-rating rather than claiming exact annual billing. See heloc-annual-fee.md.
+
+## 2026-10-20: IRR numerical and timing review
+
+Use signed log-scaled evaluation with exact same-time decimal netting, finite-input limits and conventional-flow bracketing. Preserve the bounded multiple-root search and disclose numerical limits. Reject silently rounded payment periods; label effective annual rates and period/time schedule correctly. Preserve existing mode IDs and raw numeric reference expectations. See irr-review.md.
+
+## Scientific calculator — 2026-10-20
+
+Added a safe expression parser, keypad, degree/radian modes and three worked examples. 431 tests and production build pass; 12 dedicated browser checks pass. See scientific-calculator.md. Public upload remains pending explicit authorization, including the preceding IRR update.

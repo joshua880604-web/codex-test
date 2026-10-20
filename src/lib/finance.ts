@@ -170,63 +170,73 @@ export function amortize(
   return rows;
 }
 export function irr(flows: number[], times?: number[]): number[] {
-  if (
-    flows.length < 2 ||
-    !flows.some((x) => x < 0) ||
-    !flows.some((x) => x > 0)
-  )
-    throw new Error("IRR requires both positive and negative cash flows.");
-  const t = times ?? flows.map((_, i) => i);
-  if (t.length !== flows.length)
-    throw new Error("Cash flow dates do not match.");
-  const npv = (y: number) =>
-    flows.reduce((s, x, i) => s + x * Math.exp(-t[i] * y), 0);
-  const derivative = (y: number) =>
-    flows.reduce((s, x, i) => s - t[i] * x * Math.exp(-t[i] * y), 0);
-  const roots: number[] = [];
-  const addRoot = (y: number) => {
-    const r = Math.expm1(y);
-    if (!roots.some((x) => Math.abs(x - r) < 1e-6)) roots.push(r);
+  if(flows.length<2 || flows.length>12001 || flows.some(x=>!Number.isFinite(x)))
+    throw new Error("IRR needs 2 to 12,001 finite cash flows.");
+  const t=times ?? flows.map((_,i)=>i);
+  if(t.length!==flows.length || t.some(x=>!Number.isFinite(x)||x<0||x>12000))
+    throw new Error("Cash flow dates must match the flows and use finite elapsed times from 0 to 12,000.");
+  const grouped=new Map<number,number[]>();
+  flows.forEach((cf,i)=>{const bucket=grouped.get(t[i]);if(bucket)bucket.push(cf);else grouped.set(t[i],[cf]);});
+  // Net same-time amounts with exact decimal integers before converting to signed logs.
+  // Global floating-point division would erase valid tiny flows next to very large ones.
+  const points=[...grouped.entries()].map(([time,values])=>{
+    const parts=values.filter(x=>x!==0).map(x=>{
+      const [mantissa,exponent="0"]=Math.abs(x).toString().split("e");
+      const fraction=mantissa.split(".")[1]?.length??0;
+      return {coefficient:BigInt(mantissa.replace(".",""))*(x<0?-1n:1n),exponent:Number(exponent)-fraction};
+    });
+    if(!parts.length)return null;
+    const exponent=Math.min(...parts.map(x=>x.exponent));
+    const net=parts.reduce((sum,x)=>sum+x.coefficient*10n**BigInt(x.exponent-exponent),0n);
+    if(net===0n)return null;
+    const digits=(net<0n?-net:net).toString(),head=digits.slice(0,16);
+    return {time,sign:net<0n?-1:1,log:Math.log(Number(head))+(digits.length-head.length+exponent)*Math.LN10};
+  }).filter((p):p is {time:number;sign:number;log:number}=>p!==null).sort((a,b)=>a.time-b.time);
+  if(!points.length)throw new Error("No unique IRR: all net cash flows cancel at every rate.");
+  if(!points.some(p=>p.sign<0)||!points.some(p=>p.sign>0))
+    throw new Error("IRR requires both positive and negative net cash flows at different times.");
+  const origin=points[0].time;
+  points.forEach(p=>p.time-=origin);
+  // Log-scaled signed sums avoid overflow at negative rates and underflow for delayed flows.
+  const evaluate=(y:number,derivative=false)=>{
+    let shift=-Infinity;
+    for(const p of points){if(derivative&&p.time===0)continue;shift=Math.max(shift,p.log-p.time*y+(derivative?Math.log(p.time):0));}
+    let value=0,correction=0,magnitude=0;
+    for(const p of points){if(derivative&&p.time===0)continue;const weight=Math.exp(p.log-p.time*y+(derivative?Math.log(p.time):0)-shift),term=weight*p.sign*(derivative?-1:1),adjusted=term-correction,next=value+adjusted;correction=(next-value)-adjusted;value=next;magnitude+=weight;}
+    return {value,magnitude};
   };
-  const bracket = (lo: number, hi: number) => {
-    const a = npv(lo),
-      b = npv(hi);
-    if (!Number.isFinite(a) || !Number.isFinite(b)) return;
-    if (a === 0) addRoot(lo);
-    if (b === 0) addRoot(hi);
-    if (Math.sign(a) !== Math.sign(b) && a !== 0 && b !== 0)
-      addRoot(bisect(npv, lo, hi));
+  const npv=(y:number)=>evaluate(y).value;
+  const derivative=(y:number)=>evaluate(y,true).value;
+  const roots:number[]=[];
+  const addRoot=(y:number)=>{
+    const check=evaluate(y);
+    if(Math.abs(check.value)>1e-9*check.magnitude)return;
+    if(!roots.some(r=>Math.abs(Math.log1p(r)-y)<1e-9))roots.push(Math.expm1(y));
   };
-  let prev = -12,
-    dp = derivative(prev);
-  for (let i = 1; i <= 1600; i++) {
-    const cur = -12 + (i * 24) / 1600,
-      dc = derivative(cur);
-    if (
-      Number.isFinite(dp) &&
-      Number.isFinite(dc) &&
-      Math.sign(dp) !== Math.sign(dc)
-    ) {
-      const stationary =
-        dp === 0 ? prev : dc === 0 ? cur : bisect(derivative, prev, cur);
-      const scale = flows.reduce(
-        (s, x, j) => s + Math.abs(x * Math.exp(-t[j] * stationary)),
-        0,
-      );
-      if (Math.abs(npv(stationary)) <= 1e-12 * scale) addRoot(stationary);
-      else {
-        bracket(prev, stationary);
-        bracket(stationary, cur);
-      }
-    } else bracket(prev, cur);
-    prev = cur;
-    dp = dc;
+  const bracket=(lo:number,hi:number)=>{
+    const a=npv(lo),b=npv(hi);
+    if(a===0)addRoot(lo);if(b===0)addRoot(hi);
+    if(a!==0&&b!==0&&Math.sign(a)!==Math.sign(b))addRoot(bisect(npv,lo,hi));
+  };
+  const signChanges=points.slice(1).reduce((n,p,i)=>n+(p.sign!==points[i].sign?1:0),0);
+  if(signChanges===1)bracket(-12,12);
+  else {
+    let prev=-12,dp=derivative(prev);
+    for(let i=1;i<=1600;i++){
+      const cur=-12+i*24/1600,dc=derivative(cur);
+      if(Math.sign(dp)!==Math.sign(dc)){
+        const stationary=dp===0?prev:dc===0?cur:bisect(derivative,prev,cur),check=evaluate(stationary);
+        if(Math.abs(check.value)<=2e-14*check.magnitude)addRoot(stationary);
+        else {bracket(prev,stationary);bracket(stationary,cur);}
+      }else bracket(prev,cur);
+      prev=cur;dp=dc;
+    }
   }
-  roots.sort((a, b) => a - b);
-  if (!roots.length)
-    throw new Error("No IRR found in the supported rate range.");
+  roots.sort((a,b)=>a-b);
+  if(!roots.length)throw new Error("No IRR found in the supported rate range. A solution may not exist, or may lie outside the numerical search.");
   return roots;
 }
+
 export function parseNumbers(s: string): number[] {
   const vals = s
     .split(/[\s,;]+/)

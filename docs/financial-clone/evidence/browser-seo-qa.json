@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-20T02:37:03.070Z",
+  "tested_at": "2026-10-20T05:47:15.021Z",
   "checks": [
     "Root 308 redirects to canonical financial directory",
     {
@@ -71,6 +71,11 @@
     {
       "id": "heloc",
       "example": "Estimate available HELOC credit from an LTV cap",
+      "result": "passed"
+    },
+    {
+      "id": "heloc",
+      "example": "Annual fees stop when HELOC repayment starts",
       "result": "passed"
     },
     {
@@ -409,6 +414,21 @@
       "result": "passed"
     },
     {
+      "id": "scientific",
+      "example": "Combine a degree-mode sine and a power",
+      "result": "passed"
+    },
+    {
+      "id": "scientific",
+      "example": "Use parentheses to change arithmetic order",
+      "result": "passed"
+    },
+    {
+      "id": "scientific",
+      "example": "Evaluate a sine in radians",
+      "result": "passed"
+    },
+    {
       "id": "vat",
       "example": "Add 20% VAT to a net price of 100",
       "result": "passed"
@@ -471,6 +491,16 @@
     {
       "id": "irr",
       "example": "A 40,000 investment with three annual inflows",
+      "result": "passed"
+    },
+    {
+      "id": "irr",
+      "example": "Monthly cash-flow periods, annual IRR",
+      "result": "passed"
+    },
+    {
+      "id": "irr",
+      "example": "A cash-flow pattern with two IRRs",
       "result": "passed"
     },
     "Methodology page and review status available",
