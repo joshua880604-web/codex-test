@@ -1,0 +1,149 @@
+{
+  "method": "Fresh Chromium context per route, production server, decoded JS response bytes; not field Core Web Vitals",
+  "pages": [
+    {
+      "route": "financial-calculator.html",
+      "script_count": 6,
+      "decoded_js_bytes": 496220,
+      "after_calculation_decoded_js_bytes": 496220,
+      "resources": [
+        {
+          "path": "/_next/static/chunks/3cfn99dbrcvvp.js",
+          "decoded_bytes": 16898
+        },
+        {
+          "path": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decoded_bytes": 13822
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decoded_bytes": 10030
+        },
+        {
+          "path": "/_next/static/chunks/0r0jve2nkl561.js",
+          "decoded_bytes": 40230
+        },
+        {
+          "path": "/_next/static/chunks/0r-yur70-ku2o.js",
+          "decoded_bytes": 185420
+        },
+        {
+          "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+          "decoded_bytes": 229820
+        }
+      ]
+    },
+    {
+      "route": "mortgage-calculator.html",
+      "script_count": 6,
+      "decoded_js_bytes": 496220,
+      "after_calculation_decoded_js_bytes": 530486,
+      "resources": [
+        {
+          "path": "/_next/static/chunks/3cfn99dbrcvvp.js",
+          "decoded_bytes": 16898
+        },
+        {
+          "path": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decoded_bytes": 13822
+        },
+        {
+          "path": "/_next/static/chunks/0r0jve2nkl561.js",
+          "decoded_bytes": 40230
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decoded_bytes": 10030
+        },
+        {
+          "path": "/_next/static/chunks/0r-yur70-ku2o.js",
+          "decoded_bytes": 185420
+        },
+        {
+          "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+          "decoded_bytes": 229820
+        },
+        {
+          "path": "/_next/static/chunks/1nm9ndgtkkv_o.js",
+          "decoded_bytes": 34266
+        }
+      ]
+    },
+    {
+      "route": "401k-calculator.html",
+      "script_count": 6,
+      "decoded_js_bytes": 496220,
+      "after_calculation_decoded_js_bytes": 626009,
+      "resources": [
+        {
+          "path": "/_next/static/chunks/3cfn99dbrcvvp.js",
+          "decoded_bytes": 16898
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decoded_bytes": 10030
+        },
+        {
+          "path": "/_next/static/chunks/0r0jve2nkl561.js",
+          "decoded_bytes": 40230
+        },
+        {
+          "path": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decoded_bytes": 13822
+        },
+        {
+          "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+          "decoded_bytes": 229820
+        },
+        {
+          "path": "/_next/static/chunks/0r-yur70-ku2o.js",
+          "decoded_bytes": 185420
+        },
+        {
+          "path": "/_next/static/chunks/1k1bhp49rb_2g.js",
+          "decoded_bytes": 3433
+        },
+        {
+          "path": "/_next/static/chunks/3grdto_f9x5zk.js",
+          "decoded_bytes": 126356
+        }
+      ]
+    },
+    {
+      "route": "vat-calculator.html",
+      "script_count": 6,
+      "decoded_js_bytes": 496220,
+      "after_calculation_decoded_js_bytes": 642447,
+      "resources": [
+        {
+          "path": "/_next/static/chunks/3cfn99dbrcvvp.js",
+          "decoded_bytes": 16898
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decoded_bytes": 10030
+        },
+        {
+          "path": "/_next/static/chunks/0r0jve2nkl561.js",
+          "decoded_bytes": 40230
+        },
+        {
+          "path": "/_next/static/chunks/0r-yur70-ku2o.js",
+          "decoded_bytes": 185420
+        },
+        {
+          "path": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decoded_bytes": 13822
+        },
+        {
+          "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+          "decoded_bytes": 229820
+        },
+        {
+          "path": "/_next/static/chunks/3bp5lldex5r05.js",
+          "decoded_bytes": 146227
+        }
+      ]
+    }
+  ]
+}

@@ -122,3 +122,23 @@ test("Contextual related tools are real, distinct and not self-links", () => {
     }
   }
 });
+
+test("Every functional calculator has a unique guide, reproducible examples and specific questions", () => {
+  const tools=calculators.filter(c=>!c.directory);
+  assert.equal(tools.length,70);
+  assert.equal(Object.keys(guides).length,70);
+  assert.equal(new Set(Object.values(guides).map(g=>g.summary)).size,70);
+  for(const tool of tools){
+    const guide=guides[tool.id];assert.ok(guide,tool.id);
+    assert.ok(guide.summary.length>80 && guide.scope.length>50,tool.id);
+    assert.ok(guide.questions.length>=2 && guide.examples.length>=1,tool.id);
+    assert.equal(new Set(guide.questions.map(q=>q.question)).size,guide.questions.length);
+    for(const e of guide.examples){
+      const mode=tool.modes.find(m=>m.id===e.mode)!;
+      for(const [key,value] of Object.entries(e.values)){
+        const field=mode.fields.find(f=>f.key===key);assert.ok(field,tool.id+key);
+        if(field.options)assert.ok(field.options.includes(String(value)),tool.id+key);
+      }
+    }
+  }
+});

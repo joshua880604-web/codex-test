@@ -1,0 +1,3646 @@
+{
+  "amortization": {
+    "summary": "A loan amortization schedule separates each installment into interest and principal. Read the opening balance, interest charge and remaining balance together to understand why principal repayment usually accelerates over time.",
+    "scope": "Fixed-rate installments and entered extra payments are modeled; lender day-count rules and servicing practices can differ.",
+    "examples": [
+      {
+        "title": "Zero-interest amortization over 12 months",
+        "mode": "schedule",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "0",
+          "start": "2026-10-01",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1",
+          "extra_start": "1",
+          "dated": ""
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Divide the 12,000 principal into 12 equal payments; 12,000 / 12 = 1,000."
+        ],
+        "answer": "Payment per period: 1,000 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Monthly repayment with a 12% nominal annual rate",
+        "mode": "schedule",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "12",
+          "start": "2026-10-01",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1",
+          "extra_start": "1",
+          "dated": ""
+        },
+        "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
+        "steps": [
+          "Monthly rate = 12% / 12 = 1%.",
+          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
+        ],
+        "answer": "Payment per period: 1066.19 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1066.1854641400994,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How do extra payments affect an amortization schedule?",
+        "answer": "An extra principal payment lowers the balance used for subsequent interest. Check the payment date and extra-payment frequency rather than subtracting the amount from total interest directly."
+      },
+      {
+        "question": "Why does the last loan payment differ?",
+        "answer": "The final installment is limited to the remaining principal and interest, so it can be smaller than a regular payment."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/amortization-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "mortgage-payoff": {
+    "summary": "Estimate mortgage payoff with extra monthly, annual or one-time payments. Choose the mode that matches whether you know today's balance or the original loan and elapsed payments.",
+    "scope": "Results assume the entered rate and payment strategy continue. Prepayment penalties and lender treatment of partial payments are not determined.",
+    "examples": [
+      {
+        "title": "Pay off a zero-interest balance faster",
+        "mode": "remaining-extra",
+        "values": {
+          "principal": "12000",
+          "payment": "1000",
+          "rate": "0",
+          "extra_monthly": "1000",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "The regular 1,000 plus 1,000 extra reduces principal by 2,000 per month; 12,000 / 2,000 = 6 months, with zero interest."
+        ],
+        "answer": "Interest with strategy: 0 USD.",
+        "expected": {
+          "label": "Interest with strategy",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Should I enter my original mortgage or remaining balance?",
+        "answer": "Use a remaining-balance mode for today's outstanding principal. Use an original-loan mode when estimating the balance from the original terms and payments already made."
+      },
+      {
+        "question": "Are biweekly payments the same as paying twice a month?",
+        "answer": "No. There are 26 biweekly periods versus 24 semimonthly periods in a year. Confirm the strategy and your servicer's crediting policy."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/mortgage-payoff-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "house-affordability": {
+    "summary": "Estimate a home price from either household income or a monthly housing budget. Interest, property tax, insurance, HOA charges and down payment all affect the price that fits the budget.",
+    "scope": "Debt ratios are user-selected planning assumptions, not lender approval. Credit, reserves, mortgage insurance and local underwriting can impose other constraints.",
+    "examples": [
+      {
+        "title": "Translate a monthly housing budget into a home price",
+        "mode": "budget",
+        "values": {
+          "budget": "1000",
+          "down": "0",
+          "rate": "0",
+          "years": "10",
+          "tax_rate": "0",
+          "insurance": "0",
+          "hoa": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "With no interest, down payment or ownership costs in this illustrative case, 1,000 × 12 × 10 = 120,000."
+        ],
+        "answer": "Estimated home price: 120,000 USD.",
+        "expected": {
+          "label": "Estimated home price",
+          "value": 120000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How much house can I afford with existing debt?",
+        "answer": "In income mode, other monthly debt reduces the amount available under the back-end ratio. A housing-only income percentage can otherwise overstate your budget."
+      },
+      {
+        "question": "Why does a higher property tax rate reduce affordability?",
+        "answer": "Tax uses part of the same monthly housing budget, leaving less money for mortgage principal and interest."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/house-affordability-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "rent": {
+    "summary": "Calculate a monthly rent budget from gross income and existing debt. The tool uses the lower of a housing-ratio limit and the amount left under a combined-debt limit.",
+    "scope": "This is a budgeting rule, not a landlord's qualification decision. Utilities, deposits and irregular expenses need separate planning.",
+    "examples": [
+      {
+        "title": "How much rent fits a 60,000 annual income?",
+        "mode": "affordability",
+        "values": {
+          "income": "60000",
+          "frequency": "Annually",
+          "debts": "500",
+          "housing_ratio": "30",
+          "debt_ratio": "36"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Monthly gross income is 60,000 / 12 = 5,000. The housing cap is 1,500; the combined-debt cap leaves 5,000 × 36% − 500 = 1,300. Use the lower cap."
+        ],
+        "answer": "Monthly rent budget: 1,300 USD.",
+        "expected": {
+          "label": "Monthly rent budget",
+          "value": 1300,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How much rent can I afford on 60,000 a year?",
+        "answer": "The worked example shows how a 30% housing cap and 36% total-debt cap interact with 500 of existing monthly debt. Different assumptions produce a different budget."
+      },
+      {
+        "question": "Should rent affordability use gross or take-home income?",
+        "answer": "This calculator's ratios use gross income. Check your take-home budget separately so taxes and everyday costs are not overlooked."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/rent-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "debt-to-income-ratio": {
+    "summary": "Calculate debt-to-income ratio by converting income and debt entries to monthly amounts. Housing debt and total debt are reported separately so their contributions remain visible.",
+    "scope": "Use consistent gross-income figures and debt payment amounts. The calculation does not set lender-specific qualification thresholds.",
+    "examples": [
+      {
+        "title": "Calculate debt-to-income with monthly payments",
+        "mode": "ratio",
+        "values": {
+          "v0": "6000",
+          "f0": "Monthly",
+          "v1": "0",
+          "f1": "Monthly",
+          "v2": "0",
+          "f2": "Monthly",
+          "v3": "0",
+          "f3": "Monthly",
+          "v4": "1500",
+          "f4": "Monthly",
+          "v5": "0",
+          "f5": "Monthly",
+          "v6": "0",
+          "f6": "Monthly",
+          "v7": "0",
+          "f7": "Monthly",
+          "v8": "0",
+          "f8": "Monthly",
+          "v9": "0",
+          "f9": "Monthly",
+          "v10": "0",
+          "f10": "Monthly",
+          "v11": "0",
+          "f11": "Monthly",
+          "v12": "0",
+          "f12": "Monthly"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "The example has 6,000 monthly gross income and 1,500 monthly housing debt, with other entries zero. 1,500 / 6,000 × 100 = 25%."
+        ],
+        "answer": "Total debt-to-income ratio: 25%.",
+        "expected": {
+          "label": "Total debt-to-income ratio",
+          "value": 25,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Do I enter loan balances or monthly payments for DTI?",
+        "answer": "Enter required debt payments at the selected frequency, not the full outstanding loan balances."
+      },
+      {
+        "question": "Can I mix annual income with monthly debt payments?",
+        "answer": "Yes, when you select the correct frequency for each entry. An incorrect frequency can change the ratio substantially."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/debt-ratio-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "refinance": {
+    "summary": "Compare a current mortgage with a replacement loan, including cash-out, points, fees and whether costs are financed. A lower new payment can come from either a better rate or a longer term.",
+    "scope": "Simple payment-based break-even figures do not capture every holding-period or opportunity-cost effect. Review total interest and costs as well as payment savings.",
+    "examples": [
+      {
+        "title": "A lower refinance payment without interest savings",
+        "mode": "balance",
+        "values": {
+          "principal": "12000",
+          "payment": "1000",
+          "rate": "0",
+          "new_rate": "0",
+          "new_years": "2",
+          "cashout": "0",
+          "points": "0",
+          "fees": "0",
+          "finance": "No"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "The new zero-interest loan spreads 12,000 across 24 payments: 500 per month. The old payment is 1,000; the reduction comes from extending the term, not saving interest."
+        ],
+        "answer": "New monthly payment: 500 USD.",
+        "expected": {
+          "label": "New monthly payment",
+          "value": 500,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Does a lower refinance payment always save money?",
+        "answer": "No. Extending repayment can lower monthly payments while increasing the time you pay interest. Fees can also outweigh a small rate reduction."
+      },
+      {
+        "question": "How do financed refinance costs affect the loan?",
+        "answer": "Financed costs increase the new principal and can themselves accrue interest; upfront costs reduce available cash instead."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/refinance-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "rental-property": {
+    "summary": "Project rental-property cash flow from rent, vacancy, operating expenses and debt service. Initial cash investment, annual cash flow and eventual sale proceeds describe different parts of the investment.",
+    "scope": "Rents, appreciation and expense growth are assumptions. This planning model is not a full after-tax property return or an appraisal.",
+    "examples": [
+      {
+        "title": "Cash needed for an all-cash rental purchase",
+        "mode": "projection",
+        "values": {
+          "price": "100000",
+          "financed": "No",
+          "down": "25",
+          "rate": "6",
+          "years": "30",
+          "closing": "2000",
+          "repairs": "3000",
+          "repaired_value": "0",
+          "rent": "2500",
+          "other_income": "0",
+          "vacancy": "5",
+          "management": "8",
+          "tax": "3600",
+          "insurance": "1500",
+          "hoa": "0",
+          "maintenance": "3000",
+          "other": "0",
+          "rent_growth": "2",
+          "other_income_growth": "2",
+          "tax_growth": "2",
+          "insurance_growth": "2",
+          "hoa_growth": "2",
+          "maintenance_growth": "2",
+          "other_growth": "2",
+          "appreciation": "3",
+          "hold": "10",
+          "sale_known": "No",
+          "sale_price": "400000",
+          "selling": "6"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Purchase price 100,000 + closing costs 2,000 + initial repairs 3,000 = 105,000. Future rents, expenses and sale proceeds are separate from this upfront amount."
+        ],
+        "answer": "Initial cash investment: 105,000 USD.",
+        "expected": {
+          "label": "Initial cash investment",
+          "value": 105000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "What is the difference between NOI and rental cash flow?",
+        "answer": "Net operating income subtracts operating expenses from effective income before financing. Cash flow also subtracts debt service."
+      },
+      {
+        "question": "Does a positive rental cash flow guarantee a good return?",
+        "answer": "No. Upfront capital, repairs, sale costs, vacancies and the reliability of forecasts still matter."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/rental-property-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "apr": {
+    "summary": "Compare a loan's stated interest rate with its cash-flow APR after fees. The APR calculation relates actual proceeds received to scheduled payments rather than treating every fee as an interest-rate percentage.",
+    "scope": "The modeled APR is a mathematical estimate. Legal disclosure APR depends on which charges must be included and the applicable rules.",
+    "examples": [
+      {
+        "title": "APR on a loan with no interest or fees",
+        "mode": "loan",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "0",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "financed": "0",
+          "upfront": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Net proceeds are 12,000 and twelve payments are 1,000 each. Total repayment equals proceeds, so the cash-flow APR is 0%."
+        ],
+        "answer": "Nominal APR: 0%.",
+        "expected": {
+          "label": "Nominal APR",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why can APR be higher than the interest rate?",
+        "answer": "Fees can reduce net proceeds or increase financed debt without reducing scheduled payments. That raises the implied cost of borrowing."
+      },
+      {
+        "question": "Are APR and effective annual rate identical?",
+        "answer": "Not generally. Nominal APR and effective annual APR use different annualization conventions; read the result labels before comparing offers."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/apr-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "fha-loan": {
+    "summary": "Estimate FHA mortgage principal and interest alongside entered upfront and annual mortgage insurance. Keep loan repayment separate from taxes, insurance and other housing costs.",
+    "scope": "User-entered premiums and durations must be checked against the applicable program and loan facts. The tool does not verify FHA eligibility or quote a lender.",
+    "examples": [
+      {
+        "title": "Separate FHA principal and interest from insurance",
+        "mode": "monthly",
+        "values": {
+          "price": "100000",
+          "down": "20",
+          "down_unit": "Percent",
+          "years": "10",
+          "months": "0",
+          "rate": "0",
+          "start": "2026-10-01",
+          "tax": "0",
+          "tax_unit": "Dollars",
+          "insurance": "0",
+          "insurance_unit": "Dollars",
+          "pmi": "0",
+          "pmi_unit": "Dollars",
+          "pmi_years": "11",
+          "pmi_policy": "Fixed duration",
+          "hoa": "0",
+          "hoa_unit": "Dollars",
+          "other": "0",
+          "other_unit": "Dollars",
+          "tax_growth": "0",
+          "insurance_growth": "0",
+          "hoa_growth": "0",
+          "other_growth": "0",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1",
+          "extra_start": "1",
+          "dated": "",
+          "upfront": "0",
+          "annual_mip": "0",
+          "mip_years": "30"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "For an illustrative zero-rate loan with user-entered premiums set to zero, the base loan is 100,000 × 80% = 80,000. Divide by 120 months for 666.67. This is not a current FHA offer or premium quote."
+        ],
+        "answer": "Monthly principal & interest: 666.67 USD.",
+        "expected": {
+          "label": "Monthly principal & interest",
+          "value": 666.6666666667,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Does the FHA monthly payment include mortgage insurance?",
+        "answer": "The principal-and-interest figure does not. Review the total housing payment and insurance assumptions for the broader estimate."
+      },
+      {
+        "question": "Can upfront FHA insurance increase the loan balance?",
+        "answer": "In this model an upfront premium affects financing. Check how your actual lender collects or finances the premium before comparing figures."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/fha-loan-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "va-mortgage": {
+    "summary": "Estimate VA mortgage payments using the selected funding-fee treatment and exemption assumption. Compare principal and interest with the full initial housing cost.",
+    "scope": "The tool does not establish VA entitlement, exemption eligibility, lender approval or a guaranteed rate. Enter the correct loan facts.",
+    "examples": [
+      {
+        "title": "VA payment with an assumed funding-fee exemption",
+        "mode": "monthly",
+        "values": {
+          "price": "120000",
+          "down": "0",
+          "down_unit": "Percent",
+          "years": "10",
+          "months": "0",
+          "rate": "0",
+          "start": "2026-10-01",
+          "tax": "0",
+          "tax_unit": "Dollars",
+          "insurance": "0",
+          "insurance_unit": "Dollars",
+          "pmi": "0",
+          "pmi_unit": "Dollars",
+          "pmi_years": "11",
+          "pmi_policy": "Fixed duration",
+          "hoa": "0",
+          "hoa_unit": "Dollars",
+          "other": "0",
+          "other_unit": "Dollars",
+          "tax_growth": "0",
+          "insurance_growth": "0",
+          "hoa_growth": "0",
+          "other_growth": "0",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1",
+          "extra_start": "1",
+          "dated": "",
+          "repeat": "No",
+          "exempt": "Yes",
+          "fee_treatment": "Finance fee"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "With assumed exemption, no down payment and a zero illustrative rate, 120,000 / 120 = 1,000 monthly principal and interest. Actual exemption eligibility is not determined here."
+        ],
+        "answer": "Monthly principal & interest: 1,000 USD.",
+        "expected": {
+          "label": "Monthly principal & interest",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Is a VA funding-fee exemption automatic?",
+        "answer": "No. Selecting an exemption here is an input assumption; actual eligibility must be established separately."
+      },
+      {
+        "question": "Is the mortgage payment the same as my total housing expense?",
+        "answer": "No. Property taxes, homeowners insurance, HOA charges and other entered costs can increase the monthly total."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/va-mortgage-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "home-equity-loan": {
+    "summary": "Estimate installments on a fixed home equity loan and review how closing-cost treatment changes financing and net proceeds. This is a lump-sum repayment model rather than a revolving credit line.",
+    "scope": "The entered rate is fixed for the illustration. Property eligibility, lien priority and lender-specific charges are outside the calculation.",
+    "examples": [
+      {
+        "title": "Repay a home equity loan over one year",
+        "mode": "loan",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "0",
+          "closing": "0",
+          "treatment": "Paid upfront"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "A 12,000 zero-rate balance with no closing costs divided by 12 months gives 1,000 per month."
+        ],
+        "answer": "Payment per period: 1,000 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Monthly repayment with a 12% nominal annual rate",
+        "mode": "loan",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "12",
+          "closing": "0",
+          "treatment": "Paid upfront"
+        },
+        "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
+        "steps": [
+          "Monthly rate = 12% / 12 = 1%.",
+          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
+        ],
+        "answer": "Payment per period: 1066.19 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1066.1854641400994,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How is a home equity loan different from a HELOC?",
+        "answer": "A home equity loan is modeled as one amortizing balance. A HELOC can have a draw phase and a separate repayment phase."
+      },
+      {
+        "question": "Does paying closing costs upfront lower the installment?",
+        "answer": "It can, compared with financing those costs, because less principal must be repaid. Upfront costs still count toward borrowing cost."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/home-equity-loan-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "heloc": {
+    "summary": "Estimate a HELOC's interest-only draw payment and later amortizing payment, or calculate potential credit from home value, existing mortgage and an LTV cap.",
+    "scope": "The draw model assumes the entered balance and rate rather than a full sequence of future draws. Actual lines may have variable rates and lender-specific minimum payments.",
+    "examples": [
+      {
+        "title": "Estimate available HELOC credit from an LTV cap",
+        "mode": "maximum-credit",
+        "values": {
+          "value": "500000",
+          "mortgage": "210000",
+          "ltv": "80"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "500,000 × 80% = 400,000 maximum secured debt. Subtract the 210,000 mortgage balance to leave 190,000 potential line capacity."
+        ],
+        "answer": "Estimated maximum HELOC: 190,000 USD.",
+        "expected": {
+          "label": "Estimated maximum HELOC",
+          "value": 190000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why can my HELOC payment rise after the draw period?",
+        "answer": "Interest-only payments do not reduce principal. Repayment must cover both interest and principal over the remaining term."
+      },
+      {
+        "question": "How much home equity can I borrow against?",
+        "answer": "The maximum-credit mode subtracts existing mortgage debt from the entered LTV share of home value. This is an estimate, not an approved line."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/heloc-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "down-payment": {
+    "summary": "Calculate cash needed for a home purchase, a home price supported by cash, or the implied down-payment percentage. Include closing costs rather than spending the whole cash balance on the down payment.",
+    "scope": "Closing costs can be entered as dollars or a percentage. Emergency reserves, moving expenses and lender cash-reserve requirements are not inferred.",
+    "examples": [
+      {
+        "title": "Down payment plus closing costs on a 400,000 home",
+        "mode": "cash",
+        "values": {
+          "price": "400000",
+          "down": "20",
+          "closing": "3",
+          "closing_unit": "Percent",
+          "rate": "6",
+          "years": "30"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Down payment is 400,000 × 20% = 80,000; closing costs are 400,000 × 3% = 12,000. Total cash is 92,000."
+        ],
+        "answer": "Cash needed: 92,000 USD.",
+        "expected": {
+          "label": "Cash needed",
+          "value": 92000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Are closing costs part of the down payment?",
+        "answer": "No. Both require cash, but only the down payment directly reduces the base purchase loan."
+      },
+      {
+        "question": "How much cash is needed for 20% down plus 3% closing costs?",
+        "answer": "Under those percentage assumptions the cash requirement is 23% of the purchase price, before any other reserves or expenses."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/down-payment-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "rent-vs-buy": {
+    "summary": "Compare home equity after selling with a renter's modeled terminal wealth. Monthly cash-flow differences, opportunity cost, appreciation and transaction costs all influence the comparison.",
+    "scope": "The current comparison reports a fixed 30-year horizon. Entered appreciation, returns and costs are assumptions; tax treatment is simplified and personal flexibility is not priced.",
+    "examples": [
+      {
+        "title": "Equity after the fixed 30-year rent-versus-buy comparison",
+        "mode": "comparison",
+        "values": {
+          "price": "120000",
+          "down": "100",
+          "rate": "6",
+          "years": "30",
+          "buy_closing": "0",
+          "selling": "0",
+          "tax": "0",
+          "insurance": "0",
+          "hoa": "0",
+          "maintenance": "0",
+          "cost_growth": "2",
+          "tax_growth": "2",
+          "appreciation": "0",
+          "rent": "1000",
+          "rent_growth": "0",
+          "renter_insurance": "0",
+          "deposit": "0",
+          "rental_costs": "0",
+          "return": "0",
+          "tax_rate": "0",
+          "standard": "16100"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "An all-cash 120,000 home with no appreciation or selling costs still leaves 120,000 equity after the fixed 30-year comparison horizon. This isolates owner equity, not overall profit or a general recommendation to buy."
+        ],
+        "answer": "Buyer equity after 30 years: 120,000 USD.",
+        "expected": {
+          "label": "Buyer equity after 30 years",
+          "value": 120000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why is comparing rent with the mortgage installment incomplete?",
+        "answer": "Ownership can add taxes, insurance, maintenance and transaction costs. Renting can leave money available for investment."
+      },
+      {
+        "question": "Can I choose any rent-versus-buy comparison horizon?",
+        "answer": "The current result horizon is 30 years. Do not interpret the mortgage term input as a general switch for the comparison horizon."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/rent-vs-buy-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "auto-loan": {
+    "summary": "Estimate a car payment or an affordable vehicle price after a down payment, trade-in, remaining trade debt, taxes and fees. The financed balance can differ substantially from the sticker price.",
+    "scope": "Manual tax inputs and available rule presets are estimates. Registration charges, contract-specific rebates and actual lender terms need verification.",
+    "examples": [
+      {
+        "title": "Monthly car payment after a down payment",
+        "mode": "payment",
+        "values": {
+          "tax_state": "Manual",
+          "purchase_year": "2026",
+          "price": "20000",
+          "months": "60",
+          "rate": "0",
+          "rebate": "0",
+          "down": "5000",
+          "trade": "0",
+          "owed": "0",
+          "tax": "0",
+          "fees": "0",
+          "trade_credit": "Yes",
+          "rebate_tax": "No",
+          "finance_fees": "Yes"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "With no trade, rebate, tax or fees, financed principal is 20,000 − 5,000 = 15,000. At zero interest over 60 months, payment is 250."
+        ],
+        "answer": "Payment per period: 250 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 250,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Monthly repayment with a 12% nominal annual rate",
+        "mode": "payment",
+        "values": {
+          "tax_state": "Manual",
+          "purchase_year": "2026",
+          "price": "20000",
+          "months": "60",
+          "rate": "12",
+          "rebate": "0",
+          "down": "5000",
+          "trade": "0",
+          "owed": "0",
+          "tax": "0",
+          "fees": "0",
+          "trade_credit": "Yes",
+          "rebate_tax": "No",
+          "finance_fees": "Yes"
+        },
+        "inputs": "Principal 15,000 USD; 60 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
+        "steps": [
+          "Monthly rate = 12% / 12 = 1%.",
+          "Payment = 15000 × 0.01 / (1 − 1.01^(−60)).",
+          "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
+        ],
+        "answer": "Payment per period: 333.67 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 333.6667152735264,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How does negative trade-in equity affect my car loan?",
+        "answer": "When the debt owed exceeds trade value, the shortfall can increase the new financed balance rather than acting like a down payment."
+      },
+      {
+        "question": "Does a trade-in always reduce sales tax?",
+        "answer": "No. Tax treatment depends on jurisdiction and transaction details. Use the applicable tax treatment instead of assuming a universal credit."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/auto-loan-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "cash-back-or-low-interest": {
+    "summary": "Compare a rebate with standard financing against a promotional interest rate without that rebate. Look at total loan payments as well as the difference in monthly installments.",
+    "scope": "The comparison assumes the entered offers are mutually exclusive and held for the full modeled loan. Early payoff and offer restrictions can change the decision.",
+    "examples": [
+      {
+        "title": "Compare a rebate when both financing rates are zero",
+        "mode": "compare",
+        "values": {
+          "price": "20000",
+          "down": "0",
+          "months": "60",
+          "cashback": "2000",
+          "standard": "0",
+          "low": "0",
+          "tax_state": "Manual",
+          "purchase_year": "2026",
+          "trade": "0",
+          "owed": "0",
+          "tax": "0",
+          "fees": "0",
+          "trade_credit": "Yes",
+          "rebate_tax": "No",
+          "finance_fees": "Yes"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "The rebate reduces principal to 18,000. Dividing by 60 gives 300 per month versus 20,000 / 60 = 333.33 without the rebate; tax and other fees are zero."
+        ],
+        "answer": "Monthly payment with cash back: 300 USD.",
+        "expected": {
+          "label": "Monthly payment with cash back",
+          "value": 300,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Is the biggest cash rebate always the better deal?",
+        "answer": "No. A sufficiently lower promotional rate can offset the rebate over the loan term."
+      },
+      {
+        "question": "Should both offers use the same term and down payment?",
+        "answer": "Use matching assumptions for a fair comparison unless the offers genuinely require different terms. Review taxes and financed fees too."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/cash-back-or-low-interest-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "auto-lease": {
+    "summary": "Estimate an auto lease payment from capitalized cost, residual value, term and finance charge. An APR input and a money-factor input are different ways to describe the model's financing assumption.",
+    "scope": "This is a simplified lease estimate. Mileage charges, wear, acquisition/disposition terms and jurisdiction-specific lease taxation can differ.",
+    "examples": [
+      {
+        "title": "A lease payment with no finance charge",
+        "mode": "payment",
+        "values": {
+          "price": "20000",
+          "residual": "8000",
+          "down": "0",
+          "trade": "0",
+          "fees": "0",
+          "months": "24",
+          "rate": "0",
+          "rate_unit": "APR (%)",
+          "tax": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Capitalized cost less residual is 20,000 − 8,000 = 12,000. Over 24 months, depreciation costs 500 monthly. Rate and tax are zero in this example."
+        ],
+        "answer": "Monthly lease payment: 500 USD.",
+        "expected": {
+          "label": "Monthly lease payment",
+          "value": 500,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How does residual value affect an auto lease payment?",
+        "answer": "A larger residual reduces the modeled depreciation portion, although financing charges and other contract terms still matter."
+      },
+      {
+        "question": "Is an APR percentage the same as a money factor?",
+        "answer": "No. The tool uses the conversion described in its formula. Select the correct rate unit before entering a quote."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/auto-lease-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "investment": {
+    "summary": "Project an investment balance or solve for the contribution, return, starting amount or time needed for a target. Contributions and compounding frequency should reflect the plan you are actually comparing.",
+    "scope": "A constant assumed return does not model volatility or guarantee investment performance. Tax and inflation adjustments are simplified.",
+    "examples": [
+      {
+        "title": "Investment growth with annual compounding",
+        "mode": "end",
+        "values": {
+          "principal": "1000",
+          "years": "2",
+          "months": "0",
+          "rate": "10",
+          "compound": "Annually",
+          "annual": "0",
+          "monthly": "0",
+          "timing": "End of period",
+          "tax": "0",
+          "inflation": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Year one: 1,000 × 1.10 = 1,100. Year two: 1,100 × 1.10 = 1,210. There are no deposits, taxes or inflation adjustments."
+        ],
+        "answer": "Ending balance: 1,210 USD.",
+        "expected": {
+          "label": "Ending balance",
+          "value": 1210,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Can I calculate investment growth with monthly contributions?",
+        "answer": "Yes. Enter the recurring monthly amount and choose beginning- or end-of-period timing; annual contributions are a separate input."
+      },
+      {
+        "question": "Does solving for a required return show an achievable investment?",
+        "answer": "No. It finds a mathematical rate under the entered cash-flow assumptions, not a product recommendation or a probability of success."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/investment-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "finance": {
+    "summary": "Use time-value-of-money modes to solve for future value, present value, payment, interest or period count. Cash-flow signs distinguish money paid out from money received.",
+    "scope": "Rates, payment frequency, compounding and timing must be consistent. Numerical solutions may fail for incompatible cash flows.",
+    "examples": [
+      {
+        "title": "Understand cash-flow signs in a TVM calculation",
+        "mode": "fv",
+        "values": {
+          "N": "2",
+          "rate": "0",
+          "PV": "-1000",
+          "PMT": "-100",
+          "pay": "12",
+          "compound": "12",
+          "timing": "End of period"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Two outflows of 100 plus an initial outflow of 1,000 total 1,200 at a zero rate. The balancing future inflow is positive 1,200."
+        ],
+        "answer": "FV: 1,200 USD.",
+        "expected": {
+          "label": "FV",
+          "value": 1200,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why are PV and PMT sometimes negative?",
+        "answer": "A negative sign represents an outflow from the chosen perspective. An initial investment and later proceeds normally have opposite signs."
+      },
+      {
+        "question": "Is N the number of years?",
+        "answer": "N is the number of payment periods in this tool. Use payments per year to relate periods to calendar years."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/finance-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "interest-rate": {
+    "summary": "Estimate a loan interest rate from principal, term and monthly payment. The solver finds a rate consistent with a fixed-installment repayment model.",
+    "scope": "This is an implied interest rate, not a fee-inclusive APR. A payment inconsistent with the model may have no supported solution.",
+    "examples": [
+      {
+        "title": "Find the rate when payments equal principal",
+        "mode": "rate",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "payment": "1000"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Twelve monthly payments of 1,000 total 12,000, exactly the loan principal. With no fees in this model, the implied annual interest rate is zero."
+        ],
+        "answer": "Annual interest rate: 0%.",
+        "expected": {
+          "label": "Annual interest rate",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Can I find a loan's interest rate from its monthly payment?",
+        "answer": "Yes, when principal and term are also known and the fixed-payment assumptions fit the loan."
+      },
+      {
+        "question": "Why might the rate solver reject my payment?",
+        "answer": "For a nonnegative-rate repayment loan, installments must be sufficient to repay principal within the selected term. Check units and duration."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/interest-rate-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "savings": {
+    "summary": "Project a savings balance with monthly or annual deposits and optional increases in those deposits. Separate the money contributed from the growth produced by the assumed return.",
+    "scope": "The projection uses a constant return and simplified tax/inflation treatment. It does not forecast bank rates or market outcomes.",
+    "examples": [
+      {
+        "title": "Build savings with monthly deposits and no interest",
+        "mode": "accumulation",
+        "values": {
+          "principal": "1000",
+          "years": "1",
+          "months": "0",
+          "rate": "0",
+          "compound": "Monthly",
+          "annual": "0",
+          "monthly": "100",
+          "timing": "End of period",
+          "tax": "0",
+          "inflation": "0",
+          "annual_increase": "0",
+          "monthly_increase": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Twelve deposits of 100 add 1,200 to the opening 1,000, giving 2,200. Contribution timing does not change a zero-rate result."
+        ],
+        "answer": "Ending balance: 2,200 USD.",
+        "expected": {
+          "label": "Ending balance",
+          "value": 2200,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Can I increase savings contributions each year?",
+        "answer": "The tool has separate increase assumptions for recurring contribution streams. Check which stream you are changing rather than adding the increase twice."
+      },
+      {
+        "question": "Does deposit timing matter for savings growth?",
+        "answer": "At a positive return, beginning-of-period deposits generally have more time to earn. At zero return timing does not change the contribution total."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/savings-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "simple-interest": {
+    "summary": "Calculate simple interest without interest-on-interest. Match the rate's time unit with the duration before solving for balance, principal, time or rate.",
+    "scope": "This model does not describe compound-interest accounts or every loan's daily accrual convention.",
+    "examples": [
+      {
+        "title": "Simple interest on 10,000 for four years",
+        "mode": "balance",
+        "values": {
+          "principal": "10000",
+          "rate": "5",
+          "rate_unit": "Annual",
+          "years": "4",
+          "term_unit": "Years"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Interest = 10,000 × 5% × 4 = 2,000. Add the original 10,000 to obtain 12,000; interest itself does not earn interest."
+        ],
+        "answer": "Balance: 12,000 USD.",
+        "expected": {
+          "label": "Balance",
+          "value": 12000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How is simple interest different from compound interest?",
+        "answer": "Simple interest is based on the original principal. Compound interest also earns on previously accumulated interest."
+      },
+      {
+        "question": "Can I enter a monthly rate with a term in years?",
+        "answer": "Choose the correct rate and term units so the tool can normalize them. A monthly percentage should not be entered as an annual percentage."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/simple-interest-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "cd": {
+    "summary": "Estimate CD maturity value with a selected nominal rate, compounding frequency and term. Tax is modeled separately from the pre-tax maturity balance.",
+    "scope": "The model does not quote available CDs or include early-withdrawal penalties, callable features or every tax payment schedule.",
+    "examples": [
+      {
+        "title": "A two-year CD with annual compounding",
+        "mode": "accumulation",
+        "values": {
+          "principal": "1000",
+          "rate": "10",
+          "compound": "Annually",
+          "years": "2",
+          "months": "0",
+          "tax": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "1,000 × 1.10² = 1,210 before any penalties. The example tax rate is zero; the entered rate is an assumption, not a bank quote."
+        ],
+        "answer": "Maturity balance: 1,210 USD.",
+        "expected": {
+          "label": "Maturity balance",
+          "value": 1210,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Should I enter a CD's nominal rate or APY?",
+        "answer": "The rate is used with the chosen compounding frequency. Do not enter an effective APY as a nominal rate and compound it again."
+      },
+      {
+        "question": "Is the maturity balance after tax?",
+        "answer": "Read the separate result labels. The entered tax assumption affects the tax-adjusted result rather than redefining the quoted pre-tax interest."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/cd-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "bond": {
+    "summary": "Value bond coupons and principal at a selected yield, or solve for an unknown bond variable. The dated mode distinguishes accrued coupon interest from clean price.",
+    "scope": "The model assumes the specified payments occur. Credit risk, embedded options, settlement conventions and market liquidity are not fully modeled.",
+    "examples": [
+      {
+        "title": "Price a one-year zero-coupon bond",
+        "mode": "price",
+        "values": {
+          "face": "1000",
+          "coupon": "0",
+          "coupon_unit": "Percent",
+          "yield": "10",
+          "years": "1",
+          "frequency": "Annually"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "With no coupons, discount the single 1,000 maturity payment by one year at 10%: 1,000 / 1.10 = 909.09."
+        ],
+        "answer": "price: 909.09 USD.",
+        "expected": {
+          "label": "price",
+          "value": 909.0909090909,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why does a bond price fall when yield rises?",
+        "answer": "Higher discount rates reduce the present value of unchanged future coupons and principal."
+      },
+      {
+        "question": "What is the difference between clean and dirty bond price?",
+        "answer": "Dirty price includes accrued coupon interest. Clean price removes that accrued amount under the selected convention."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/bond-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "mutual-fund": {
+    "summary": "Project a fund balance while distinguishing front-end loads, recurring expense assumptions and back-end charges. Compare the modeled net redemption value with the charge-free illustration.",
+    "scope": "Returns are hypothetical. Actual expense charging, distributions, tax and share-class exit schedules can differ.",
+    "examples": [
+      {
+        "title": "How a front-end load reduces invested money",
+        "mode": "projection",
+        "values": {
+          "principal": "1000",
+          "years": "1",
+          "months": "0",
+          "rate": "0",
+          "annual": "0",
+          "monthly": "0",
+          "front": "5",
+          "back": "0",
+          "expense": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "A 5% front-end charge on 1,000 is 50, leaving 950 invested. With no return, deposits, recurring expenses or exit load, redemption value remains 950."
+        ],
+        "answer": "Net redemption value: 950 USD.",
+        "expected": {
+          "label": "Net redemption value",
+          "value": 950,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How does a front-end load affect contributions?",
+        "answer": "It reduces the portion of each contribution invested under this model, so the deducted portion does not participate in later growth."
+      },
+      {
+        "question": "Are fund expense ratios the same as an exit fee?",
+        "answer": "No. Recurring expenses affect ongoing growth; a back-end charge affects modeled redemption. Avoid treating them as interchangeable."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/mutual-fund-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "average-return": {
+    "summary": "Compare arithmetic and geometric returns, or use dated cash-flow and variable-period modes when investment amounts or period lengths differ.",
+    "scope": "A single average is not a risk measure. Dated numerical return estimates can be ambiguous for cash flows with repeated sign changes.",
+    "examples": [
+      {
+        "title": "Why average return can hide a loss",
+        "mode": "returns",
+        "values": {
+          "returns": "50, -50",
+          "periods": "1"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "The arithmetic average is (50% − 50%)/2 = 0%. But 100 grows to 150 then falls to 75; the compound result is a loss, despite the zero arithmetic average."
+        ],
+        "answer": "Arithmetic average: 0%.",
+        "expected": {
+          "label": "Arithmetic average",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why can a zero average return still lose money?",
+        "answer": "Equal positive and negative percentage returns apply to different balances. The compound growth factor, not their arithmetic sum, determines ending wealth."
+      },
+      {
+        "question": "When should I use a dated cash-flow return?",
+        "answer": "Use it when deposits and withdrawals occur on particular dates. A simple average of percentage returns does not account for those cash-flow timings."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/average-return-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "roi": {
+    "summary": "Calculate total ROI and an annualized return from the amount invested, amount returned and holding period. The total return and annualized rate answer different questions.",
+    "scope": "The simple model treats the entered investment and return as endpoints. Use a cash-flow method for multiple dated deposits and withdrawals.",
+    "examples": [
+      {
+        "title": "Calculate ROI from a 1,000 investment",
+        "mode": "length",
+        "values": {
+          "cost": "1000",
+          "returned": "1200",
+          "years": "1"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Net gain is 1,200 − 1,000 = 200. ROI is 200 / 1,000 × 100 = 20%; at a one-year holding period the annualized rate is also 20%."
+        ],
+        "answer": "Return on investment: 20%.",
+        "expected": {
+          "label": "Return on investment",
+          "value": 20,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Is a 50% ROI the same as 50% per year?",
+        "answer": "Only for a one-year period under the stated convention. A multi-year total return must be annualized to compare horizons."
+      },
+      {
+        "question": "Should fees be included in ROI?",
+        "answer": "Include them consistently in the money invested or net proceeds. Excluding material costs can overstate the gain."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/roi-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "payback-period": {
+    "summary": "Estimate when cumulative cash inflows recover an initial investment. Discounted payback and net present value also reflect the selected time value of money.",
+    "scope": "Interpolation assumes part-period recovery within the modeled flow pattern. Payback alone ignores value after the recovery date.",
+    "examples": [
+      {
+        "title": "Recover an investment with four equal inflows",
+        "mode": "fixed",
+        "values": {
+          "initial": "10000",
+          "discount": "0",
+          "annual": "2500",
+          "change": "0",
+          "change_unit": "Percent",
+          "years": "4"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Four annual inflows of 2,500 total 10,000, matching the initial investment. At a zero discount rate the NPV is 10,000 − 10,000 = 0 and recovery takes four years."
+        ],
+        "answer": "Net present value: 0 USD.",
+        "expected": {
+          "label": "Net present value",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How is discounted payback different from simple payback?",
+        "answer": "Discounted payback reduces future inflows to present value first. At a positive discount rate it may take longer to recover the investment."
+      },
+      {
+        "question": "Does the shortest payback always identify the best project?",
+        "answer": "No. Consider later cash flows, total NPV and uncertainty rather than relying only on recovery speed."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/payback-period-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "present-value": {
+    "summary": "Discount future money to an equivalent amount today. The lump-sum mode handles a future balance, while the annuity mode can also include recurring payments.",
+    "scope": "The discount rate must match the period length. The calculation does not determine an appropriate investment discount rate for you.",
+    "examples": [
+      {
+        "title": "Present value of 1,100 received next period",
+        "mode": "lump",
+        "values": {
+          "future": "1100",
+          "periods": "1",
+          "rate": "10"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Discount one period at 10%: 1,100 / 1.10 = 1,000."
+        ],
+        "answer": "Present value: 1,000 USD.",
+        "expected": {
+          "label": "Present value",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why is present value lower than future value?",
+        "answer": "With a positive discount rate, money received later is divided by a growth factor to express its value today."
+      },
+      {
+        "question": "Can I value an annuity plus a final lump sum?",
+        "answer": "Yes. Use the annuity mode and enter the recurring payment separately from the terminal future value."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/present-value-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "future-value": {
+    "summary": "Project a current balance and recurring payments to a future period. Beginning- and end-of-period contribution timing use different accumulation factors.",
+    "scope": "This is a constant-rate cash-flow illustration. Periods are not automatically years unless the entered rate and payments are annual.",
+    "examples": [
+      {
+        "title": "Future value over two periods",
+        "mode": "growth",
+        "values": {
+          "principal": "1000",
+          "periods": "2",
+          "rate": "10",
+          "payment": "0",
+          "timing": "End of period"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "1,000 × (1 + 10%)² = 1,210. Rate and period must use the same time unit."
+        ],
+        "answer": "Future value: 1,210 USD.",
+        "expected": {
+          "label": "Future value",
+          "value": 1210,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How do I calculate future value with regular deposits?",
+        "answer": "Enter the starting balance, payment per period, matching periodic rate and number of periods; then select payment timing."
+      },
+      {
+        "question": "Why does beginning-of-period timing give a different result?",
+        "answer": "Each deposit is invested one period earlier and can earn an additional period's growth."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/future-value-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "pension": {
+    "summary": "Compare a pension stream with a lump sum, survivor option or alternative retirement start. The discount rate and assumed lifespan determine how future payments are valued.",
+    "scope": "Life expectancy is an assumption, not a mortality-weighted guarantee. Taxes, plan credit risk and individual plan provisions are not fully modeled.",
+    "examples": [
+      {
+        "title": "Value one year of pension payments at a zero discount rate",
+        "mode": "lump",
+        "values": {
+          "age": "65",
+          "life": "66",
+          "lump": "12000",
+          "monthly": "1000",
+          "return": "0",
+          "cola": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Twelve monthly benefits of 1,000 sum to 12,000. At zero return with no COLA, discounting leaves that same value."
+        ],
+        "answer": "Present value of pension: 12,000 USD.",
+        "expected": {
+          "label": "Present value of pension",
+          "value": 12000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How should I compare a pension with a lump sum?",
+        "answer": "Compare cash-flow timing and present value under explicit return and longevity assumptions, then consider risk and flexibility separately."
+      },
+      {
+        "question": "Does a survivor pension always have a higher value?",
+        "answer": "Not necessarily. It trades a lower initial payment against possible benefits after the member's assumed death; partner lifespan and survivor percentage matter."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/pension-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "social-security": {
+    "summary": "Compare claiming-age benefit streams or explore application ages under entered benefit and lifespan assumptions. Present value and monthly benefit can favor different ages.",
+    "scope": "This is a simplified individual planning model, not an SSA entitlement calculation. Spousal, survivor, work-history and earnings-test rules are not fully modeled.",
+    "examples": [
+      {
+        "title": "Compare benefit streams over a short illustrative lifespan",
+        "mode": "compare",
+        "values": {
+          "age1": "62",
+          "monthly1": "1000",
+          "age2": "63",
+          "monthly2": "1100",
+          "life": "64",
+          "return": "0",
+          "cola": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Claiming at 62 pays 24 months of 1,000 before assumed age 64, totaling 24,000 without discounting. Delaying to 63 leaves 12 months of 1,100, totaling 13,200. Actual lifetime and eligibility are uncertain."
+        ],
+        "answer": "First option present value: 24,000 USD.",
+        "expected": {
+          "label": "First option present value",
+          "value": 24000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Does the highest monthly Social Security payment mean the best claiming age?",
+        "answer": "No. Delaying also means forgoing earlier payments. Lifespan, discount rate and COLA assumptions influence the comparison."
+      },
+      {
+        "question": "Should I enter an official benefit estimate?",
+        "answer": "Use an applicable estimate when possible and verify its assumptions. This tool cannot infer your actual earnings record or entitlement."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/social-security-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "annuity": {
+    "summary": "Estimate an annuity accumulation balance from starting money and recurring annual or monthly contributions. Distinguish contributions from growth before comparing scenarios.",
+    "scope": "This is an accumulation model, not a quote for a guaranteed insurance product. Contract fees, surrender provisions and taxes are not fully represented.",
+    "examples": [
+      {
+        "title": "Accumulate an annuity with monthly contributions",
+        "mode": "growth",
+        "values": {
+          "principal": "1000",
+          "annual": "0",
+          "monthly": "100",
+          "timing": "End of period",
+          "rate": "0",
+          "years": "1"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Opening 1,000 plus twelve deposits of 100 gives 2,200 when the assumed return is zero. This is an accumulation illustration, not an insurance quote."
+        ],
+        "answer": "Annuity future value: 2,200 USD.",
+        "expected": {
+          "label": "Annuity future value",
+          "value": 2200,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Can I enter both annual and monthly annuity contributions?",
+        "answer": "Yes, but they are separate cash streams. Entering the same saving in both fields would double-count it."
+      },
+      {
+        "question": "Does the assumed annuity return represent a guarantee?",
+        "answer": "No. A typed return is a modeling assumption; an actual guarantee depends on the specific contract and issuer."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/annuity-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "annuity-payout": {
+    "summary": "Estimate a regular withdrawal from a balance over a term, or solve for duration given a payment. Payment frequency determines how the annual rate is translated into periods.",
+    "scope": "The model assumes a deterministic return and does not price an insurer's lifetime guarantee or mortality pooling.",
+    "examples": [
+      {
+        "title": "Monthly withdrawals from a zero-return annuity balance",
+        "mode": "length",
+        "values": {
+          "principal": "12000",
+          "rate": "0",
+          "frequency": "Monthly",
+          "years": "1"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "A 12,000 balance divided over 12 monthly withdrawals gives 1,000 per month, exhausting the balance after one year."
+        ],
+        "answer": "Payment each period: 1,000 USD.",
+        "expected": {
+          "label": "Payment each period",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Will an annuity payout last for life?",
+        "answer": "A fixed-term balance-depletion calculation is not a life-contingent insurance promise. Actual lifetime products require different assumptions."
+      },
+      {
+        "question": "Why does a higher withdrawal shorten duration?",
+        "answer": "More principal is used each period after growth. If withdrawals exceed sustainable growth, the balance eventually runs out."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/annuity-payout-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "roth-ira": {
+    "summary": "Compare a Roth IRA accumulation illustration with a taxable alternative using the same savings assumptions. Read contributions, account growth and tax-adjusted amounts separately.",
+    "scope": "Contribution eligibility, income limits and qualified-distribution rules require separate checks. Tax-free results assume the modeled qualifying treatment; future caps are simplified.",
+    "examples": [
+      {
+        "title": "Separate IRA contributions from investment growth",
+        "mode": "comparison",
+        "values": {
+          "age": "35",
+          "retire": "36",
+          "balance": "1000",
+          "contribution": "1000",
+          "max": "No",
+          "return": "0",
+          "tax": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "With a zero assumed return over one projection year, opening savings of 1,000 plus a year-end contribution of 1,000 gives 2,000. Contribution eligibility must be checked separately."
+        ],
+        "answer": "Roth IRA balance: 2,000 USD.",
+        "expected": {
+          "label": "Roth IRA balance",
+          "value": 2000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Does the Roth IRA projection check my income eligibility?",
+        "answer": "No. The contribution input does not prove that you are eligible to make that contribution."
+      },
+      {
+        "question": "Is a Roth IRA balance always available tax-free?",
+        "answer": "Distribution treatment depends on applicable rules and circumstances. This projection does not determine whether a particular withdrawal is qualified."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/roth-ira-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "ira": {
+    "summary": "Compare traditional and Roth IRA accumulation under current and retirement tax assumptions. The traditional pre-tax balance should not be compared directly with an after-tax balance.",
+    "scope": "This simplified comparison does not establish deduction eligibility, conversion strategy or future tax rates. Contribution caps and individual restrictions need verification.",
+    "examples": [
+      {
+        "title": "Apply an assumed retirement tax rate to an IRA balance",
+        "mode": "comparison",
+        "values": {
+          "age": "35",
+          "retire": "36",
+          "balance": "1000",
+          "contribution": "1000",
+          "max": "No",
+          "return": "0",
+          "tax": "0",
+          "retire_tax": "20"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Opening 1,000 plus one contribution of 1,000 gives 2,000 with no growth. Under a simplified 20% retirement tax assumption, 2,000 × 80% = 1,600."
+        ],
+        "answer": "Traditional IRA after-tax value: 1,600 USD.",
+        "expected": {
+          "label": "Traditional IRA after-tax value",
+          "value": 1600,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why is the traditional IRA after-tax balance smaller?",
+        "answer": "The model applies the selected retirement tax assumption to the traditional account. The pre-tax balance is a different quantity."
+      },
+      {
+        "question": "Does a larger IRA balance mean greater spendable retirement money?",
+        "answer": "Not necessarily. Tax treatment and the amount available for withdrawal can differ across account types."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/ira-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "salary": {
+    "summary": "Convert hourly, daily, weekly and annual gross pay using hours worked and payment frequency. The adjusted result also reflects entered days treated as unpaid.",
+    "scope": "This is a gross-pay conversion, not a tax calculation. The adjustment treats entered holiday/vacation days as unpaid rather than inferring employer benefits.",
+    "examples": [
+      {
+        "title": "Convert 30 per hour to annual salary",
+        "mode": "conversion",
+        "values": {
+          "salary": "30",
+          "frequency": "Hourly",
+          "hours": "40",
+          "days": "5",
+          "holidays": "0",
+          "vacation": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "30 × 40 hours × 52 weeks = 62,400 gross annual pay. The example subtracts no unpaid holiday or vacation days."
+        ],
+        "answer": "Unadjusted annual salary: 62,400 USD.",
+        "expected": {
+          "label": "Unadjusted annual salary",
+          "value": 62400,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How much is 30 an hour annually at 40 hours a week?",
+        "answer": "At 52 weeks with no unpaid days, 30 × 40 × 52 = 62,400 gross annual pay."
+      },
+      {
+        "question": "Should I subtract paid vacation days?",
+        "answer": "Do not enter paid time off as unpaid days in this adjustment if the pay continues. Use the settings that match your actual compensation."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/salary-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "marriage-tax": {
+    "summary": "Compare two unmarried federal returns with a combined married-joint estimate. The difference can be an annual tax saving, additional tax or no change depending on income and eligible deductions/credits.",
+    "scope": "The tool does not optimize married filing separately or include state/local income tax. Filing-status eligibility and deduction/credit qualifications must be checked.",
+    "examples": [
+      {
+        "title": "Understand the tax-difference sign with zero income",
+        "mode": "comparison",
+        "values": {
+          "year": "2026",
+          "filing1": "Single",
+          "filing2": "Single",
+          "wages": "0",
+          "business": "0",
+          "interest": "0",
+          "exempt_interest": "0",
+          "dividends": "0",
+          "qualified": "0",
+          "short": "0",
+          "long": "0",
+          "social": "0",
+          "other": "0",
+          "adjustments": "0",
+          "student": "0",
+          "itemized": "0",
+          "salt": "0",
+          "age65": "0",
+          "tips": "0",
+          "overtime": "0",
+          "car": "0",
+          "children": "0",
+          "dependents": "0",
+          "education0": "0",
+          "education_type0": "None",
+          "education1": "0",
+          "education_type1": "None",
+          "education2": "0",
+          "education_type2": "None",
+          "education3": "0",
+          "education_type3": "None",
+          "aotc_refundable": "No",
+          "care": "0",
+          "care_people": "0",
+          "credits": "0",
+          "amt": "0",
+          "qbi": "No",
+          "p2_wages": "0",
+          "p2_business": "0",
+          "p2_interest": "0",
+          "p2_exempt_interest": "0",
+          "p2_dividends": "0",
+          "p2_qualified": "0",
+          "p2_short": "0",
+          "p2_long": "0",
+          "p2_social": "0",
+          "p2_other": "0",
+          "p2_adjustments": "0",
+          "p2_student": "0",
+          "p2_itemized": "0",
+          "p2_salt": "0",
+          "p2_age65": "0",
+          "p2_tips": "0",
+          "p2_overtime": "0",
+          "p2_car": "0",
+          "p2_children": "0",
+          "p2_dependents": "0",
+          "p2_education0": "0",
+          "p2_education_type0": "None",
+          "p2_education1": "0",
+          "p2_education_type1": "None",
+          "p2_education2": "0",
+          "p2_education_type2": "None",
+          "p2_education3": "0",
+          "p2_education_type3": "None",
+          "p2_aotc_refundable": "No",
+          "p2_care": "0",
+          "p2_care_people": "0",
+          "p2_credits": "0",
+          "p2_amt": "0",
+          "p2_qbi": "No"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Both people have zero income and no other entries in this example. Each unmarried return and the married-joint return has zero tax, so 0 − 0 − 0 = 0 difference."
+        ],
+        "answer": "Marriage penalty / negative bonus: 0 USD.",
+        "expected": {
+          "label": "Marriage penalty / negative bonus",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Marriage tax savings with one 80,000 wage income in 2026",
+        "mode": "comparison",
+        "values": {
+          "year": "2026",
+          "filing1": "Single",
+          "filing2": "Single",
+          "wages": "80000",
+          "business": "0",
+          "interest": "0",
+          "exempt_interest": "0",
+          "dividends": "0",
+          "qualified": "0",
+          "short": "0",
+          "long": "0",
+          "social": "0",
+          "other": "0",
+          "adjustments": "0",
+          "student": "0",
+          "itemized": "0",
+          "salt": "0",
+          "age65": "0",
+          "tips": "0",
+          "overtime": "0",
+          "car": "0",
+          "children": "0",
+          "dependents": "0",
+          "education0": "0",
+          "education_type0": "None",
+          "education1": "0",
+          "education_type1": "None",
+          "education2": "0",
+          "education_type2": "None",
+          "education3": "0",
+          "education_type3": "None",
+          "aotc_refundable": "No",
+          "care": "0",
+          "care_people": "0",
+          "credits": "0",
+          "amt": "0",
+          "qbi": "No",
+          "p2_wages": "0",
+          "p2_business": "0",
+          "p2_interest": "0",
+          "p2_exempt_interest": "0",
+          "p2_dividends": "0",
+          "p2_qualified": "0",
+          "p2_short": "0",
+          "p2_long": "0",
+          "p2_social": "0",
+          "p2_other": "0",
+          "p2_adjustments": "0",
+          "p2_student": "0",
+          "p2_itemized": "0",
+          "p2_salt": "0",
+          "p2_age65": "0",
+          "p2_tips": "0",
+          "p2_overtime": "0",
+          "p2_car": "0",
+          "p2_children": "0",
+          "p2_dependents": "0",
+          "p2_education0": "0",
+          "p2_education_type0": "None",
+          "p2_education1": "0",
+          "p2_education_type1": "None",
+          "p2_education2": "0",
+          "p2_education_type2": "None",
+          "p2_education3": "0",
+          "p2_education_type3": "None",
+          "p2_aotc_refundable": "No",
+          "p2_care": "0",
+          "p2_care_people": "0",
+          "p2_credits": "0",
+          "p2_amt": "0",
+          "p2_qbi": "No"
+        },
+        "inputs": "Illustrative 2026 federal assumptions, using the project’s documented parameter tables. Eligibility and actual tax filing require separate checks.",
+        "steps": [
+          "Assume both people qualify as Single before marriage, with no dependents, other income, adjustments or credits.",
+          "Single taxable income = 80,000 − 16,100 = 63,900; tax = 12,400 × 10% + 38,000 × 12% + 13,500 × 22% = 8,770.",
+          "Joint taxable income = 80,000 − 32,200 = 47,800; tax = 24,800 × 10% + 23,000 × 12% = 5,240.",
+          "Difference = 5,240 − 8,770 − 0 = −3,530, displayed as estimated annual savings of 3,530 USD."
+        ],
+        "answer": "Estimated annual federal tax savings: 3,530 USD.",
+        "expected": {
+          "label": "Marriage penalty / negative bonus",
+          "value": -3530,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Is the comparison married filing jointly versus separately?",
+        "answer": "No. It compares two unmarried returns before marriage with a married-joint return. Married filing separately is a different scenario."
+      },
+      {
+        "question": "Do I enter a dependent under both partners?",
+        "answer": "Count the dependent once under the person eligible to claim them before marriage. Duplicating a dependent can distort the unmarried baseline."
+      }
+    ],
+    "sources": [
+      {
+        "title": "IRS: documented 2026 federal inflation adjustments",
+        "url": "https://www.irs.gov/irb/2025-45_IRB"
+      },
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/marriage-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "estate-tax": {
+    "summary": "Estimate a federal estate calculation from included assets, allowable deductions, prior taxable gifts and the entered portability assumption. Gross estate and taxable estate are different stages of the calculation.",
+    "scope": "This uses the project's documented federal rule version. State estate/inheritance taxes, asset valuation and eligibility for deductions or portability require separate review.",
+    "examples": [
+      {
+        "title": "Calculate an estate before applying the exclusion",
+        "mode": "federal",
+        "values": {
+          "asset0": "1000000",
+          "asset1": "0",
+          "asset2": "0",
+          "asset3": "0",
+          "asset4": "0",
+          "asset5": "0",
+          "asset6": "0",
+          "debts": "100000",
+          "administration": "10000",
+          "charity": "0",
+          "marital": "0",
+          "state": "0",
+          "gifts": "0",
+          "gift_tax": "0",
+          "portability": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "With all other assets and deductions zero, 1,000,000 gross assets − 100,000 debts − 10,000 administration expenses = 890,000 taxable estate before exclusion/credit calculations."
+        ],
+        "answer": "Taxable estate: 890,000 USD.",
+        "expected": {
+          "label": "Taxable estate",
+          "value": 890000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Is every estate asset automatically taxable at the top rate?",
+        "answer": "No. Deductions, the applicable exclusion/credit and prior transfers affect federal liability. Gross asset value alone is not the final tax base."
+      },
+      {
+        "question": "Why include prior taxable gifts in an estate estimate?",
+        "answer": "Federal estate and gift calculations are linked. Prior transfers can affect the available exclusion and unified calculation."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/estate-tax-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "take-home-paycheck": {
+    "summary": "Estimate pay per period after modeled federal and payroll taxes, flat state/local assumptions and entered deductions. Annual take-home pay is allocated to the selected pay frequency.",
+    "scope": "This is not a complete payroll withholding engine or a final tax return. State/local rates are manual flat assumptions and benefit tax treatment is simplified.",
+    "examples": [
+      {
+        "title": "Read the zero-wage paycheck baseline",
+        "mode": "paycheck",
+        "values": {
+          "filing": "Single",
+          "wages": "0",
+          "spouse_wages": "0",
+          "business": "0",
+          "spouse_business": "0",
+          "interest": "0",
+          "exempt_interest": "0",
+          "dividends": "0",
+          "qualified": "0",
+          "short": "0",
+          "long": "0",
+          "social": "0",
+          "other": "0",
+          "adjustments": "0",
+          "student": "0",
+          "itemized": "0",
+          "salt": "0",
+          "age65": "0",
+          "tips": "0",
+          "overtime": "0",
+          "car": "0",
+          "children": "0",
+          "dependents": "0",
+          "education0": "0",
+          "education_type0": "None",
+          "education1": "0",
+          "education_type1": "None",
+          "education2": "0",
+          "education_type2": "None",
+          "education3": "0",
+          "education_type3": "None",
+          "aotc_refundable": "No",
+          "care": "0",
+          "care_people": "0",
+          "credits": "0",
+          "amt": "0",
+          "qbi": "No",
+          "frequency": "Biweekly",
+          "pretax": "0",
+          "aftertax": "0",
+          "state_rate": "0",
+          "local_rate": "0",
+          "extra_withheld": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "With wages, other income, deductions and credits all zero, there is no wage income or payroll tax to allocate, so annual take-home pay is zero. This boundary example is not a withholding recommendation."
+        ],
+        "answer": "Annual take-home pay: 0 USD.",
+        "expected": {
+          "label": "Annual take-home pay",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Federal-only paycheck illustration on an 80,000 salary",
+        "mode": "paycheck",
+        "values": {
+          "filing": "Single",
+          "wages": "80000",
+          "spouse_wages": "0",
+          "business": "0",
+          "spouse_business": "0",
+          "interest": "0",
+          "exempt_interest": "0",
+          "dividends": "0",
+          "qualified": "0",
+          "short": "0",
+          "long": "0",
+          "social": "0",
+          "other": "0",
+          "adjustments": "0",
+          "student": "0",
+          "itemized": "0",
+          "salt": "0",
+          "age65": "0",
+          "tips": "0",
+          "overtime": "0",
+          "car": "0",
+          "children": "0",
+          "dependents": "0",
+          "education0": "0",
+          "education_type0": "None",
+          "education1": "0",
+          "education_type1": "None",
+          "education2": "0",
+          "education_type2": "None",
+          "education3": "0",
+          "education_type3": "None",
+          "aotc_refundable": "No",
+          "care": "0",
+          "care_people": "0",
+          "credits": "0",
+          "amt": "0",
+          "qbi": "No",
+          "frequency": "Biweekly",
+          "pretax": "0",
+          "aftertax": "0",
+          "state_rate": "0",
+          "local_rate": "0",
+          "extra_withheld": "0"
+        },
+        "inputs": "Illustrative 2026 federal assumptions, using the project’s documented parameter tables. Eligibility and actual tax filing require separate checks.",
+        "steps": [
+          "Assume a Single filer in 2026, no other income, deductions, dependents, credits, state/local tax or additional withholding.",
+          "Federal taxable income is 63,900 and federal income tax is 8,770 under the documented 2026 brackets.",
+          "At this wage level, modeled Social Security is 80,000 × 6.2% = 4,960 and Medicare is 80,000 × 1.45% = 1,160.",
+          "Annual net = 80,000 − 8,770 − 4,960 − 1,160 = 65,110. Dividing by 26 gives approximately 2,504.23 per biweekly period; actual withholding can differ."
+        ],
+        "answer": "Annual take-home pay: 65,110 USD.",
+        "expected": {
+          "label": "Annual take-home pay",
+          "value": 65110,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why can my actual paycheck differ from this estimate?",
+        "answer": "Payroll withholding elections, benefit treatment, state rules and employer schedules can differ from the model's annualized estimate."
+      },
+      {
+        "question": "Is biweekly the same as twice a month?",
+        "answer": "No. Biweekly normally uses 26 periods per year, while semimonthly uses 24. Select the frequency used by your employer."
+      }
+    ],
+    "sources": [
+      {
+        "title": "IRS: documented 2026 federal inflation adjustments",
+        "url": "https://www.irs.gov/irb/2025-45_IRB"
+      },
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/take-home-pay-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "payment": {
+    "summary": "Find a monthly installment for a loan term, or estimate how long repayment takes with a selected payment. Compare interest and payment count rather than looking at the installment alone.",
+    "scope": "The model assumes fixed-rate monthly repayment and no unentered fees. Balloon payments and variable rates need different treatment.",
+    "examples": [
+      {
+        "title": "Find a monthly payment at zero interest",
+        "mode": "term",
+        "values": {
+          "principal": "12000",
+          "rate": "0",
+          "years": "1",
+          "months": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Divide a 12,000 principal over 12 monthly payments: 1,000 each."
+        ],
+        "answer": "Payment per period: 1,000 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Monthly repayment with a 12% nominal annual rate",
+        "mode": "term",
+        "values": {
+          "principal": "12000",
+          "rate": "12",
+          "years": "1",
+          "months": "0"
+        },
+        "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
+        "steps": [
+          "Monthly rate = 12% / 12 = 1%.",
+          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
+        ],
+        "answer": "Payment per period: 1066.19 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1066.1854641400994,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Can I calculate the loan term from a monthly payment?",
+        "answer": "Yes, use the payment-supplied mode with principal and rate. Payments must be sufficient to reduce the balance."
+      },
+      {
+        "question": "Does a longer loan term lower total cost?",
+        "answer": "It can reduce installments while increasing total interest. Compare both amounts."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/payment-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "currency": {
+    "summary": "Convert an amount using a requested reference feed, a labeled snapshot or a manually supplied exchange rate. The rate direction is target currency per unit of source currency.",
+    "scope": "Reference data is not an executable bank quote. Fees, spreads and market timing can change the amount actually received; feed availability is not guaranteed.",
+    "examples": [
+      {
+        "title": "Convert USD to EUR using a custom exchange rate",
+        "mode": "manual",
+        "values": {
+          "amount": "100",
+          "from": "USD",
+          "to": "EUR",
+          "rate": "0.9"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "At a manually entered 0.90 EUR per USD, multiply 100 USD × 0.90 = 90 EUR. This rate is illustrative, not a live quote."
+        ],
+        "answer": "Converted amount: 90 EUR.",
+        "expected": {
+          "label": "Converted amount",
+          "value": 90,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How do I enter a custom exchange rate?",
+        "answer": "Select source and target currencies, then enter target units per one source unit. At 0.90 EUR per USD, 100 USD converts to 90 EUR."
+      },
+      {
+        "question": "Does this show the amount my bank will pay?",
+        "answer": "Not necessarily. Banks and payment providers may apply spreads and fees that are not included in the reference rate."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/currency-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "inflation": {
+    "summary": "Adjust money using historical CPI ratios, custom index values or an assumed forward/backward inflation rate. The relevant comparison is purchasing power, not an investment return.",
+    "scope": "Historical data coverage is limited to the included dataset. CPI is an aggregate price measure and may differ from your personal spending pattern.",
+    "examples": [
+      {
+        "title": "Adjust purchasing power using two CPI index values",
+        "mode": "custom",
+        "values": {
+          "amount": "1000",
+          "start_cpi": "100",
+          "end_cpi": "150"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "The index ratio is 150 / 100 = 1.5. An initial 1,000 requires 1,500 at the later price level."
+        ],
+        "answer": "Equivalent purchasing-power amount: 1,500 USD.",
+        "expected": {
+          "label": "Equivalent purchasing-power amount",
+          "value": 1500,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How do I convert old money into today's purchasing power?",
+        "answer": "Use the ratio of the end index to the start index, or select the appropriate available historical periods."
+      },
+      {
+        "question": "Is average CPI inflation my personal inflation rate?",
+        "answer": "No. Your spending categories and location can produce a different change in living costs."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/inflation-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "sales-tax": {
+    "summary": "Add sales tax, remove it from an inclusive total or solve for an implied tax rate. The relationship uses a single entered taxable price and rate.",
+    "scope": "The tool does not determine item exemptions, tax jurisdictions or every invoice rounding rule. Enter the applicable rate and taxable base.",
+    "examples": [
+      {
+        "title": "Add 7 percent sales tax to a price",
+        "mode": "after",
+        "values": {
+          "before": "100",
+          "rate": "7"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Tax is 100 × 7% = 7; total price is 100 + 7 = 107. The rate is user-entered, not a jurisdiction lookup."
+        ],
+        "answer": "After-tax price: 107 USD.",
+        "expected": {
+          "label": "After-tax price",
+          "value": 107,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How do I remove sales tax from a total?",
+        "answer": "Divide the tax-inclusive amount by 1 plus the rate as a decimal; do not subtract that percentage of the inclusive amount."
+      },
+      {
+        "question": "Can I use the calculator to look up my local tax rate?",
+        "answer": "No. The rate is an input or a solved relationship between entered prices, not an address-based tax lookup."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/sales-tax-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "credit-card": {
+    "summary": "Estimate payoff with fixed payments, a chosen term or a minimum-payment rule. Review the payoff time and interest impact of changing the payment amount.",
+    "scope": "The model uses APR divided into monthly interest and assumes no new purchases or unentered fees. Actual statement daily balances and promotional terms can differ.",
+    "examples": [
+      {
+        "title": "Pay down a zero-APR credit card with fixed payments",
+        "mode": "payment",
+        "values": {
+          "principal": "1200",
+          "rate": "0",
+          "payment": "100"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "At zero APR with no fees or new purchases, twelve payments of 100 repay 1,200; interest totals zero."
+        ],
+        "answer": "Total interest: 0 USD.",
+        "expected": {
+          "label": "Total interest",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why does paying only a percentage minimum take so long?",
+        "answer": "As the balance falls, the percentage payment can fall too, slowing principal reduction until a floor payment applies."
+      },
+      {
+        "question": "What if my payment does not cover interest?",
+        "answer": "The balance cannot be repaid under that fixed-payment assumption. Increase payment or review the entered APR."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/credit-card-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "credit-cards-payoff": {
+    "summary": "Plan payments across multiple cards with one combined budget. The avalanche approach pays required minimums first and directs extra money toward higher-rate debt.",
+    "scope": "Rates and payment assumptions are held as entered. New purchases, fees and promotional-rate changes are not inferred.",
+    "examples": [
+      {
+        "title": "Repay two cards using a combined monthly budget",
+        "mode": "avalanche",
+        "values": {
+          "debts": "Card A, 600, 50, 0\nCard B, 600, 50, 0",
+          "budget": "200"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Two 600 balances total 1,200. With zero APRs and a 200 budget, the debt can be cleared in six months; no interest accrues."
+        ],
+        "answer": "Total interest: 0 USD.",
+        "expected": {
+          "label": "Total interest",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Is the card payoff budget extra or total money?",
+        "answer": "It is the combined monthly budget, including minimum payments. Do not add minimums again unless increasing the total budget."
+      },
+      {
+        "question": "Why prioritize the card with the highest APR?",
+        "answer": "Under the model's fixed assumptions, applying extra principal there reduces the highest-rate interest exposure first."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/credit-card-payoff-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "debt-payoff": {
+    "summary": "Project multiple debts using minimum payments plus recurring or lump-sum extra payments. The rollover option controls whether freed payments remain available for other debts.",
+    "scope": "The strategy is an entered cash-flow plan, not a negotiated debt settlement. Fees, variable rates and new borrowing are outside unentered assumptions.",
+    "examples": [
+      {
+        "title": "Use extra payments on multiple zero-rate debts",
+        "mode": "avalanche",
+        "values": {
+          "debts": "Loan A, 600, 50, 0\nLoan B, 600, 50, 0",
+          "rollover": "Yes",
+          "extra": "100",
+          "yearly": "0",
+          "once": "0",
+          "once_month": "1"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Minimums total 100 and the extra payment is 100. With rollover and no interest, a total 200 monthly repays 1,200 in six months."
+        ],
+        "answer": "Total interest: 0 USD.",
+        "expected": {
+          "label": "Total interest",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "What does payment rollover mean?",
+        "answer": "When a debt is repaid, its freed payment can be redirected to remaining debts rather than reducing the overall repayment budget."
+      },
+      {
+        "question": "Can I add an annual bonus to debt payoff?",
+        "answer": "Use the annual or one-time extra-payment settings and verify their timing. Do not also count the same amount as recurring monthly extra."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/debt-payoff-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "debt-consolidation": {
+    "summary": "Compare current debt repayment with a new amortizing consolidation loan. Origination fees and whether they are financed affect the cost comparison.",
+    "scope": "The tool assumes the original debts are replaced and no new balances are added. Qualification, secured-collateral risk and prepayment penalties require separate review.",
+    "examples": [
+      {
+        "title": "A fee-free consolidation with zero interest",
+        "mode": "comparison",
+        "values": {
+          "debts": "Loan A, 600, 50, 0\nLoan B, 600, 50, 0",
+          "new_rate": "0",
+          "years": "1",
+          "fees": "0",
+          "finance": "Yes"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Combined principal is 600 + 600 = 1,200. With zero origination fees and interest, twelve payments of 100 repay the consolidation loan."
+        ],
+        "answer": "Payment per period: 100 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 100,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Does a lower consolidation rate always save money?",
+        "answer": "No. Fees or a longer repayment term can offset the lower rate. Review modeled interest and fee savings."
+      },
+      {
+        "question": "Are financed consolidation fees free?",
+        "answer": "No. They increase the amount borrowed and can accrue interest alongside the consolidated balances."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/debt-consolidation-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "repayment": {
+    "summary": "Estimate fixed installments or repayment duration with separate payment and compounding frequencies. The effective payment-period rate must account for both frequencies.",
+    "scope": "This is a fixed-rate cash-flow model; irregular billing, penalties and unentered charges may change a lender's schedule.",
+    "examples": [
+      {
+        "title": "Repay 12,000 with twelve monthly installments",
+        "mode": "term",
+        "values": {
+          "principal": "12000",
+          "rate": "0",
+          "years": "1",
+          "months": "0",
+          "compound": "Monthly",
+          "pay": "Monthly"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "At zero interest and monthly payments, 12,000 / 12 = 1,000 per installment."
+        ],
+        "answer": "Payment per period: 1,000 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Monthly repayment with a 12% nominal annual rate",
+        "mode": "term",
+        "values": {
+          "principal": "12000",
+          "rate": "12",
+          "years": "1",
+          "months": "0",
+          "compound": "Monthly",
+          "pay": "Monthly"
+        },
+        "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
+        "steps": [
+          "Monthly rate = 12% / 12 = 1%.",
+          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
+        ],
+        "answer": "Payment per period: 1066.19 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1066.1854641400994,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Can payment and compounding frequencies differ?",
+        "answer": "Yes. Select each separately so the model converts the rate consistently rather than assuming they are the same."
+      },
+      {
+        "question": "Why can a small repayment fail to pay off a loan?",
+        "answer": "If it does not cover the period's interest, the balance cannot decline under the stated assumptions."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/repayment-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "student-loan": {
+    "summary": "Estimate fixed student-loan repayment, extra payments or an in-school borrowing projection. Distinguish the balance entering repayment from the amount originally borrowed.",
+    "scope": "This tool does not implement all income-driven repayment, forgiveness or subsidized-loan rules. In-school interest capitalization is a simplified scenario.",
+    "examples": [
+      {
+        "title": "A one-year student loan repayment illustration",
+        "mode": "normal",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "At zero interest, twelve installments of 1,000 repay a 12,000 balance. This fixed-payment illustration does not model income-driven plans or forgiveness."
+        ],
+        "answer": "Payment per period: 1,000 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Monthly repayment with a 12% nominal annual rate",
+        "mode": "normal",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "12"
+        },
+        "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
+        "steps": [
+          "Monthly rate = 12% / 12 = 1%.",
+          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
+        ],
+        "answer": "Payment per period: 1066.19 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1066.1854641400994,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Can this calculate income-driven student loan payments?",
+        "answer": "The current modes model fixed-payment cash flows, not a complete income-driven repayment program."
+      },
+      {
+        "question": "How do extra student loan payments help?",
+        "answer": "When applied to principal, they reduce the balance on which later interest accrues. Actual servicer allocation and repayment rules need checking."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/student-loan-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "college-cost": {
+    "summary": "Project future college costs and estimate savings needed before enrollment. Tuition increases and investment returns are separate assumptions with different effects.",
+    "scope": "Coverage is a user-selected share of modeled costs. Aid, scholarships, education-account tax rules and uncertain investment returns are not automatically determined.",
+    "examples": [
+      {
+        "title": "Plan for four years of constant college costs",
+        "mode": "planning",
+        "values": {
+          "cost": "10000",
+          "increase": "0",
+          "duration": "4",
+          "coverage": "100",
+          "balance": "0",
+          "return": "0",
+          "tax": "0",
+          "years": "10"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Four annual costs of 10,000 total 40,000 when tuition growth is zero. With no existing savings or investment return, reaching that total over ten years requires 40,000 / 120 = 333.33 monthly."
+        ],
+        "answer": "Total projected college costs: 40,000 USD.",
+        "expected": {
+          "label": "Total projected college costs",
+          "value": 40000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Does the college cost input cover all years?",
+        "answer": "It is the annual cost used with the duration setting. Entering a four-year total as an annual amount would overstate the target."
+      },
+      {
+        "question": "Why does tuition growth raise the savings target?",
+        "answer": "Each later tuition payment can cost more than today's price. Investment growth may help savings but is a separate uncertain assumption."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/college-cost-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "depreciation": {
+    "summary": "Compare straight-line, declining-balance and sum-of-years-digits depreciation. Cost, salvage value, useful life and first-year conventions determine how book value changes.",
+    "scope": "These are mathematical schedules, not automatic MACRS or tax-return instructions. Accounting policy and tax depreciation can require different rules.",
+    "examples": [
+      {
+        "title": "Straight-line depreciation with a salvage value",
+        "mode": "straight",
+        "values": {
+          "cost": "50000",
+          "salvage": "5000",
+          "life": "5",
+          "partial": "Yes",
+          "convention": "Custom months",
+          "first_months": "12",
+          "service_date": "2026-01-01",
+          "fiscal_end": "2026-12-31",
+          "round": "No"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Depreciable basis is 50,000 − 5,000 = 45,000. Over five full years, annual straight-line depreciation is 45,000 / 5 = 9,000."
+        ],
+        "answer": "Depreciable basis: 45,000 USD.",
+        "expected": {
+          "label": "Depreciable basis",
+          "value": 45000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Is salvage value depreciated?",
+        "answer": "The modeled depreciable amount excludes salvage, and the schedule should not reduce book value below the selected salvage floor."
+      },
+      {
+        "question": "Can accounting depreciation be used directly for tax?",
+        "answer": "Not always. Tax law can require different methods, asset lives, conventions or allowances."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/depreciation-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "margin": {
+    "summary": "Calculate profit margin and markup, or use separate stock/FX margin modes for collateral requirements. These meanings of margin should not be mixed.",
+    "scope": "Gross margin excludes unentered overhead and tax. Trading margin outputs are simplified collateral illustrations, not broker requirements or risk limits.",
+    "examples": [
+      {
+        "title": "Profit margin versus markup on the same sale",
+        "mode": "margin",
+        "values": {
+          "cost": "100",
+          "revenue": "150"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Profit is 150 − 100 = 50. Margin divides by revenue: 50 / 150 = 33.33%. Markup divides by cost: 50 / 100 = 50%."
+        ],
+        "answer": "Gross margin: 33.33%.",
+        "expected": {
+          "label": "Gross margin",
+          "value": 33.3333333333333,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "What is the difference between margin and markup?",
+        "answer": "Margin divides profit by selling revenue; markup divides the same profit by cost. The percentages usually differ."
+      },
+      {
+        "question": "Is trading margin the same as business profit margin?",
+        "answer": "No. Trading margin refers to collateral or equity requirements; business margin expresses profit relative to revenue."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/margin-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "discount": {
+    "summary": "Calculate a sale price, savings, original price or discount rate. A discount percentage is applied to the original price rather than to the reduced price.",
+    "scope": "The simple calculation excludes sales tax, shipping and restrictions on stacking promotions unless handled separately.",
+    "examples": [
+      {
+        "title": "Take 20 percent off a price of 100",
+        "mode": "percent",
+        "values": {
+          "before": "100",
+          "rate": "20"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Savings are 100 × 20% = 20. Subtract from the original 100 to get a sale price of 80."
+        ],
+        "answer": "Sale price: 80 USD.",
+        "expected": {
+          "label": "Sale price",
+          "value": 80,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How do I find the original price from a discounted price?",
+        "answer": "Divide the sale price by one minus the discount rate as a decimal, provided the rate is below 100%."
+      },
+      {
+        "question": "Are two 20% discounts equivalent to 40% off?",
+        "answer": "No. Sequential 20% reductions leave 0.8 × 0.8 = 64% of the original, equivalent to 36% off."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/discount-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "business-loan": {
+    "summary": "Estimate business-loan payments and fee-inclusive borrowing cost. Origination charges, documentation fees, insurance and fee treatment can affect proceeds and APR differently.",
+    "scope": "The model is an installment loan, not a full merchant-cash-advance or variable draw facility. Verify contract-specific charges and repayment timing.",
+    "examples": [
+      {
+        "title": "Separate business borrowing fees from principal repayment",
+        "mode": "repayment",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "0",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "origination": "0",
+          "documentation": "0",
+          "other_fee": "0",
+          "treatment": "Deducted from proceeds",
+          "insurance": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "With all fees and insurance zero, twelve monthly payments of 1,000 repay 12,000 at zero interest. Adding origination fees would change effective borrowing cost."
+        ],
+        "answer": "Payment per period: 1,000 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Monthly repayment with a 12% nominal annual rate",
+        "mode": "repayment",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "12",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "origination": "0",
+          "documentation": "0",
+          "other_fee": "0",
+          "treatment": "Deducted from proceeds",
+          "insurance": "0"
+        },
+        "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
+        "steps": [
+          "Monthly rate = 12% / 12 = 1%.",
+          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
+        ],
+        "answer": "Payment per period: 1066.19 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1066.1854641400994,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why can business loan proceeds be lower than principal?",
+        "answer": "Fees deducted at origination reduce the cash received while repayment can still be based on the stated loan balance."
+      },
+      {
+        "question": "Should I compare business loans by payment alone?",
+        "answer": "No. Compare proceeds, fees, term and modeled APR; a low installment can result from a longer repayment period."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/business-loan-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "personal-loan": {
+    "summary": "Compare personal-loan installments with net proceeds after origination and other charges. A fixed stated rate does not capture every cost of borrowing.",
+    "scope": "This is a fixed-installment illustration. Credit approval, variable-rate terms and unentered penalties are outside the model.",
+    "examples": [
+      {
+        "title": "A personal loan with no fees or interest",
+        "mode": "repayment",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "0",
+          "origination": "0",
+          "documentation": "0",
+          "other_fee": "0",
+          "treatment": "Deducted from proceeds",
+          "insurance": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "12,000 divided into twelve monthly installments gives 1,000. The example assumes no origination, documentation, insurance or other fees."
+        ],
+        "answer": "Payment per period: 1,000 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Monthly repayment with a 12% nominal annual rate",
+        "mode": "repayment",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "12",
+          "origination": "0",
+          "documentation": "0",
+          "other_fee": "0",
+          "treatment": "Deducted from proceeds",
+          "insurance": "0"
+        },
+        "inputs": "Principal 12,000 USD; 12 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
+        "steps": [
+          "Monthly rate = 12% / 12 = 1%.",
+          "Payment = 12000 × 0.01 / (1 − 1.01^(−12)).",
+          "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
+        ],
+        "answer": "Payment per period: 1066.19 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1066.1854641400994,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How does an origination fee affect a personal loan?",
+        "answer": "It can reduce proceeds or increase financed principal depending on treatment, raising the effective borrowing cost."
+      },
+      {
+        "question": "Is a 0% loan necessarily cost-free?",
+        "answer": "Only if there are no fees or other required charges. A zero stated rate alone does not prove a zero APR."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/personal-loan-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "boat-loan": {
+    "summary": "Estimate boat-loan payments or a supported purchase price after down payment, trade-in, tax and fees. Keep acquisition financing separate from ongoing ownership costs.",
+    "scope": "Dockage, maintenance, fuel, insurance and depreciation are not inferred from the loan installment. Financing terms are user assumptions.",
+    "examples": [
+      {
+        "title": "Calculate a boat payment after a cash down payment",
+        "mode": "payment",
+        "values": {
+          "price": "20000",
+          "down": "5000",
+          "trade": "0",
+          "tax": "0",
+          "fees": "0",
+          "finance": "Yes",
+          "rate": "0",
+          "years": "5"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Financed balance is 20,000 − 5,000 = 15,000 when taxes and fees are zero. Spread across 60 months at zero interest, payment is 250."
+        ],
+        "answer": "Payment per period: 250 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 250,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Monthly repayment with a 12% nominal annual rate",
+        "mode": "payment",
+        "values": {
+          "price": "20000",
+          "down": "5000",
+          "trade": "0",
+          "tax": "0",
+          "fees": "0",
+          "finance": "Yes",
+          "rate": "12",
+          "years": "5"
+        },
+        "inputs": "Principal 15,000 USD; 60 monthly payments; 12% nominal annual rate with monthly compounding. Fees and taxes are zero in this scenario.",
+        "steps": [
+          "Monthly rate = 12% / 12 = 1%.",
+          "Payment = 15000 × 0.01 / (1 − 1.01^(−60)).",
+          "Check both the installment and the schedule; the final installment may be limited to the remaining balance."
+        ],
+        "answer": "Payment per period: 333.67 USD.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 333.6667152735264,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Does the boat payment include all ownership costs?",
+        "answer": "No. The installment repays financing. Add operating, storage, insurance and maintenance expenses to your budget separately."
+      },
+      {
+        "question": "How do financed boat taxes and fees affect payment?",
+        "answer": "They increase the financed balance compared with paying those costs upfront, so the installment generally rises."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/boat-loan-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "lease": {
+    "summary": "Estimate a lease installment with a residual value or solve for an implied financing rate. The model balances the present value of installments and the residual against asset value.",
+    "scope": "This is a simplified financial lease relationship, not a complete contract valuation. Upfront charges, tax and end-of-term options must be checked separately.",
+    "examples": [
+      {
+        "title": "Lease payments with no residual or interest",
+        "mode": "rate",
+        "values": {
+          "price": "12000",
+          "residual": "0",
+          "years": "1",
+          "months": "0",
+          "rate": "0"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "With a zero residual and a zero financing rate, 12,000 / 12 = 1,000 per monthly payment. Positive residual values change this relationship."
+        ],
+        "answer": "Monthly payment: 1,000 USD.",
+        "expected": {
+          "label": "Monthly payment",
+          "value": 1000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How does residual value affect a lease calculation?",
+        "answer": "A portion of asset value is left as a terminal amount, so installments do not necessarily repay the full initial price."
+      },
+      {
+        "question": "Is this identical to the auto lease calculator?",
+        "answer": "No. The financial present-value lease model and the auto lease money-factor convention use different modeling approaches."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/lease-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "budget": {
+    "summary": "Normalize income, spending and savings allocations to a monthly household budget. Surplus is what remains after the flat tax assumption and all entered allocations.",
+    "scope": "The income tax percentage is a manual flat estimate, not a progressive tax calculation. Irregular expenses and missing entries can overstate surplus.",
+    "examples": [
+      {
+        "title": "Monthly budget after tax and housing",
+        "mode": "budget",
+        "values": {
+          "tax": "20",
+          "Income_0": "6000",
+          "Incomef0": "Monthly",
+          "Income_1": "0",
+          "Incomef1": "Monthly",
+          "Income_2": "0",
+          "Incomef2": "Monthly",
+          "Income_3": "0",
+          "Incomef3": "Monthly",
+          "Housing_0": "1500",
+          "Housingf0": "Monthly",
+          "Housing_1": "0",
+          "Housingf1": "Monthly",
+          "Housing_2": "0",
+          "Housingf2": "Monthly",
+          "Housing_3": "0",
+          "Housingf3": "Monthly",
+          "Housing_4": "0",
+          "Housingf4": "Monthly",
+          "Housing_5": "0",
+          "Housingf5": "Monthly",
+          "Housing_6": "0",
+          "Housingf6": "Monthly",
+          "Transportation_0": "0",
+          "Transportationf0": "Monthly",
+          "Transportation_1": "0",
+          "Transportationf1": "Monthly",
+          "Transportation_2": "0",
+          "Transportationf2": "Monthly",
+          "Transportation_3": "0",
+          "Transportationf3": "Monthly",
+          "Transportation_4": "0",
+          "Transportationf4": "Monthly",
+          "Transportation_5": "0",
+          "Transportationf5": "Monthly",
+          "Debt_0": "0",
+          "Debtf0": "Monthly",
+          "Debt_1": "0",
+          "Debtf1": "Monthly",
+          "Debt_2": "0",
+          "Debtf2": "Monthly",
+          "Living_0": "0",
+          "Livingf0": "Monthly",
+          "Living_1": "0",
+          "Livingf1": "Monthly",
+          "Living_2": "0",
+          "Livingf2": "Monthly",
+          "Living_3": "0",
+          "Livingf3": "Monthly",
+          "Living_4": "0",
+          "Livingf4": "Monthly",
+          "Health_0": "0",
+          "Healthf0": "Monthly",
+          "Health_1": "0",
+          "Healthf1": "Monthly",
+          "Children_0": "0",
+          "Childrenf0": "Monthly",
+          "Children_1": "0",
+          "Childrenf1": "Monthly",
+          "Children_2": "0",
+          "Childrenf2": "Monthly",
+          "Children_3": "0",
+          "Childrenf3": "Monthly",
+          "Savings_0": "0",
+          "Savingsf0": "Monthly",
+          "Savings_1": "0",
+          "Savingsf1": "Monthly",
+          "Savings_2": "0",
+          "Savingsf2": "Monthly",
+          "Savings_3": "0",
+          "Savingsf3": "Monthly",
+          "Miscellaneous_0": "0",
+          "Miscellaneousf0": "Monthly",
+          "Miscellaneous_1": "0",
+          "Miscellaneousf1": "Monthly",
+          "Miscellaneous_2": "0",
+          "Miscellaneousf2": "Monthly",
+          "Miscellaneous_3": "0",
+          "Miscellaneousf3": "Monthly",
+          "Miscellaneous_4": "0",
+          "Miscellaneousf4": "Monthly",
+          "Miscellaneous_5": "0",
+          "Miscellaneousf5": "Monthly"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "Gross monthly income 6,000 less an assumed flat 20% tax leaves 4,800. Subtract 1,500 housing and zero other allocations to leave 3,300."
+        ],
+        "answer": "Monthly surplus / deficit: 3,300 USD.",
+        "expected": {
+          "label": "Monthly surplus / deficit",
+          "value": 3300,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Are savings treated as part of my monthly budget?",
+        "answer": "Yes. Savings allocations reduce the unallocated surplus even though they are not the same as consumption spending."
+      },
+      {
+        "question": "How should I enter annual insurance or other yearly bills?",
+        "answer": "Select the annual frequency so the amount is spread across months. Entering an annual total as monthly would overstate spending."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/budget-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "commission": {
+    "summary": "Calculate flat-rate commission, solve for sales or rate, or model tiered compensation. Progressive bands and a single rate on all sales are different arrangements.",
+    "scope": "The model does not infer returns, clawbacks, tax withholding or employment-contract rules. Enter eligible sales and the correct tier method.",
+    "examples": [
+      {
+        "title": "Calculate a five-percent sales commission",
+        "mode": "commission",
+        "values": {
+          "sales": "10000",
+          "rate": "5"
+        },
+        "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
+        "steps": [
+          "10,000 of eligible sales multiplied by 5% gives 500 commission before tax, refunds or adjustments."
+        ],
+        "answer": "Commission: 500 USD.",
+        "expected": {
+          "label": "Commission",
+          "value": 500,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How does progressive sales commission work?",
+        "answer": "Each band rate applies only to sales within that band, with any entered base added separately."
+      },
+      {
+        "question": "Is commission the same as take-home pay?",
+        "answer": "No. The gross commission result does not deduct payroll taxes, benefit deductions or other adjustments."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation methodology, rule versions and testing limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/commission-calculator.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  }
+}

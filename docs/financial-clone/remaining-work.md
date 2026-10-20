@@ -48,4 +48,4 @@ VAT now implements all six input pairs in one four-field form, replacing the old
 
 ## SEO / AI-search readiness
 
-Technical groundwork and ten detailed calculator guides are implemented; see seo-geo.md. Remaining sixty tools need deeper individual examples/source-specific explanations over time. Actual production domain, hosting checks, Search Console/Bing ownership, field Core Web Vitals, indexing and AI-citation monitoring remain pending. Preview builds deliberately remain noindex until production configuration is set. No live ranking or citation improvement is claimed.
+Technical groundwork and individual guides for all 70 functional calculators are implemented; see seo-geo.md and content-expansion.md. All-mode content depth, more advanced scenarios, source-specific explanations and data-backed keyword prioritization still need ongoing work. Actual production domain, hosting checks, Search Console/Bing ownership, field Core Web Vitals, indexing and AI-citation monitoring remain pending. Preview builds deliberately remain noindex until production configuration is set. No live ranking or citation improvement is claimed.

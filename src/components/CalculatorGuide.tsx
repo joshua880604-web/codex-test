@@ -7,6 +7,7 @@ export default function CalculatorGuide({
   calculator: Calculator;
 }) {
   const guide = guides[calculator.id];
+  const checkedOn = guide?.checkedOn ?? notesCheckedOn;
   return (
     <section className="calculator-guide" aria-label="Calculation guide">
       {guide && (
@@ -58,7 +59,7 @@ export default function CalculatorGuide({
           </ul>
           <p className="content-date">
             Calculation notes checked{" "}
-            <time dateTime={notesCheckedOn}>October 19, 2026</time>. Examples
+            <time dateTime={checkedOn}>{new Date(checkedOn + "T12:00:00Z").toLocaleDateString("en-US", {year:"numeric",month:"long",day:"numeric",timeZone:"UTC"})}</time>. Examples
             are mathematical checks under the stated assumptions.
           </p>
         </>

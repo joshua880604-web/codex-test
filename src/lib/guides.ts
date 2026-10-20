@@ -1,3 +1,4 @@
+import extendedGuides from "./extended-guides.json";
 export type WorkedExample = {
   title: string;
   mode: string;
@@ -8,6 +9,7 @@ export type WorkedExample = {
   expected: { label: string; value: number; tolerance?: number };
 };
 export type Guide = {
+  checkedOn?: string;
   summary: string;
   scope: string;
   examples: WorkedExample[];
@@ -28,6 +30,7 @@ const mortgageSource = {
 };
 export const notesCheckedOn = "2026-10-19";
 export const guides: Record<string, Guide> = {
+  ...extendedGuides,
   vat: {
     summary:
       "VAT is calculated on the net price. Add VAT by multiplying the net price by 1 + rate/100. Remove VAT by dividing the gross price by the same factor.",

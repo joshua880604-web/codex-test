@@ -36,3 +36,7 @@ See `research/auto-state-rules.json` for state revenue agency statutes/guides an
 VAT workflow source: https://www.calculator.net/vat-calculator.html explicitly requests any two of rate/net/gross/tax. Pair formulas follow gross=net+tax and tax=net*rate. Native source submissions and error strings remain unavailable; see specs/vat.md for the independent validation policy.
 
 SEO editorial sources are linked visibly in the ten guides in src/lib/guides.ts: GOV.UK VAT, CFPB amortization/mortgage explanations, SEC Investor.gov compound-interest definitions, IRS retirement limits, Publication 590-B and 2026 revenue procedures. Example arithmetic is independently tested. Google Search Central AI-feature/content/canonical guidance informs technical choices, without claiming special GEO markup or guaranteed inclusion. See seo-geo.md.
+
+## 2026-10-20 content expansion
+
+The 60 additional guides link to project methodology and each existing reference calculator URL as feature provenance, not as certification of mathematical/interaction parity. Added tax examples use already documented 2026 tables from official-rules.json and link their recorded IRS bulletin. No new tax year or policy was inferred. Independently specified elementary arithmetic/closed-form installment cases are checked in tests/seo.test.ts. Content topics are candidate intents; no keyword-volume dataset, live rankings or AI-citation dataset was obtained.

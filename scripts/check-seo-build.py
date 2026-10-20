@@ -32,6 +32,8 @@ for route in paths:
  entry=next((x for x in catalog if x['local_route']==route),None)
  if entry and entry['id']!='real-estate':
   assert len(p.schemas)==1,route
+  for heading in ['Understanding this calculation','Worked examples','Common questions','Scope and assumptions','Sources']:
+   assert heading in ''.join(p.text),(route,heading)
   graph=p.schemas[0]['@graph'];assert graph[0]['name']==entry['title']
   if origin:assert any(x['@type']=='BreadcrumbList' for x in graph)
  if route=='/vat-calculator.html':

@@ -1,8 +1,363 @@
 {
   "passed": true,
-  "tested_at": "2026-10-19T09:04:54.791Z",
+  "tested_at": "2026-10-20T01:13:13.385Z",
   "checks": [
     "Root 308 redirects to canonical financial directory",
+    {
+      "id": "amortization",
+      "example": "Zero-interest amortization over 12 months",
+      "result": "passed"
+    },
+    {
+      "id": "amortization",
+      "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "mortgage-payoff",
+      "example": "Pay off a zero-interest balance faster",
+      "result": "passed"
+    },
+    {
+      "id": "house-affordability",
+      "example": "Translate a monthly housing budget into a home price",
+      "result": "passed"
+    },
+    {
+      "id": "rent",
+      "example": "How much rent fits a 60,000 annual income?",
+      "result": "passed"
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "example": "Calculate debt-to-income with monthly payments",
+      "result": "passed"
+    },
+    {
+      "id": "refinance",
+      "example": "A lower refinance payment without interest savings",
+      "result": "passed"
+    },
+    {
+      "id": "rental-property",
+      "example": "Cash needed for an all-cash rental purchase",
+      "result": "passed"
+    },
+    {
+      "id": "apr",
+      "example": "APR on a loan with no interest or fees",
+      "result": "passed"
+    },
+    {
+      "id": "fha-loan",
+      "example": "Separate FHA principal and interest from insurance",
+      "result": "passed"
+    },
+    {
+      "id": "va-mortgage",
+      "example": "VA payment with an assumed funding-fee exemption",
+      "result": "passed"
+    },
+    {
+      "id": "home-equity-loan",
+      "example": "Repay a home equity loan over one year",
+      "result": "passed"
+    },
+    {
+      "id": "home-equity-loan",
+      "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "heloc",
+      "example": "Estimate available HELOC credit from an LTV cap",
+      "result": "passed"
+    },
+    {
+      "id": "down-payment",
+      "example": "Down payment plus closing costs on a 400,000 home",
+      "result": "passed"
+    },
+    {
+      "id": "rent-vs-buy",
+      "example": "Equity after the fixed 30-year rent-versus-buy comparison",
+      "result": "passed"
+    },
+    {
+      "id": "auto-loan",
+      "example": "Monthly car payment after a down payment",
+      "result": "passed"
+    },
+    {
+      "id": "auto-loan",
+      "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "example": "Compare a rebate when both financing rates are zero",
+      "result": "passed"
+    },
+    {
+      "id": "auto-lease",
+      "example": "A lease payment with no finance charge",
+      "result": "passed"
+    },
+    {
+      "id": "investment",
+      "example": "Investment growth with annual compounding",
+      "result": "passed"
+    },
+    {
+      "id": "finance",
+      "example": "Understand cash-flow signs in a TVM calculation",
+      "result": "passed"
+    },
+    {
+      "id": "interest-rate",
+      "example": "Find the rate when payments equal principal",
+      "result": "passed"
+    },
+    {
+      "id": "savings",
+      "example": "Build savings with monthly deposits and no interest",
+      "result": "passed"
+    },
+    {
+      "id": "simple-interest",
+      "example": "Simple interest on 10,000 for four years",
+      "result": "passed"
+    },
+    {
+      "id": "cd",
+      "example": "A two-year CD with annual compounding",
+      "result": "passed"
+    },
+    {
+      "id": "bond",
+      "example": "Price a one-year zero-coupon bond",
+      "result": "passed"
+    },
+    {
+      "id": "mutual-fund",
+      "example": "How a front-end load reduces invested money",
+      "result": "passed"
+    },
+    {
+      "id": "average-return",
+      "example": "Why average return can hide a loss",
+      "result": "passed"
+    },
+    {
+      "id": "roi",
+      "example": "Calculate ROI from a 1,000 investment",
+      "result": "passed"
+    },
+    {
+      "id": "payback-period",
+      "example": "Recover an investment with four equal inflows",
+      "result": "passed"
+    },
+    {
+      "id": "present-value",
+      "example": "Present value of 1,100 received next period",
+      "result": "passed"
+    },
+    {
+      "id": "future-value",
+      "example": "Future value over two periods",
+      "result": "passed"
+    },
+    {
+      "id": "pension",
+      "example": "Value one year of pension payments at a zero discount rate",
+      "result": "passed"
+    },
+    {
+      "id": "social-security",
+      "example": "Compare benefit streams over a short illustrative lifespan",
+      "result": "passed"
+    },
+    {
+      "id": "annuity",
+      "example": "Accumulate an annuity with monthly contributions",
+      "result": "passed"
+    },
+    {
+      "id": "annuity-payout",
+      "example": "Monthly withdrawals from a zero-return annuity balance",
+      "result": "passed"
+    },
+    {
+      "id": "roth-ira",
+      "example": "Separate IRA contributions from investment growth",
+      "result": "passed"
+    },
+    {
+      "id": "ira",
+      "example": "Apply an assumed retirement tax rate to an IRA balance",
+      "result": "passed"
+    },
+    {
+      "id": "salary",
+      "example": "Convert 30 per hour to annual salary",
+      "result": "passed"
+    },
+    {
+      "id": "marriage-tax",
+      "example": "Understand the tax-difference sign with zero income",
+      "result": "passed"
+    },
+    {
+      "id": "marriage-tax",
+      "example": "Marriage tax savings with one 80,000 wage income in 2026",
+      "result": "passed"
+    },
+    {
+      "id": "estate-tax",
+      "example": "Calculate an estate before applying the exclusion",
+      "result": "passed"
+    },
+    {
+      "id": "take-home-paycheck",
+      "example": "Read the zero-wage paycheck baseline",
+      "result": "passed"
+    },
+    {
+      "id": "take-home-paycheck",
+      "example": "Federal-only paycheck illustration on an 80,000 salary",
+      "result": "passed"
+    },
+    {
+      "id": "payment",
+      "example": "Find a monthly payment at zero interest",
+      "result": "passed"
+    },
+    {
+      "id": "payment",
+      "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "currency",
+      "example": "Convert USD to EUR using a custom exchange rate",
+      "result": "passed"
+    },
+    {
+      "id": "inflation",
+      "example": "Adjust purchasing power using two CPI index values",
+      "result": "passed"
+    },
+    {
+      "id": "sales-tax",
+      "example": "Add 7 percent sales tax to a price",
+      "result": "passed"
+    },
+    {
+      "id": "credit-card",
+      "example": "Pay down a zero-APR credit card with fixed payments",
+      "result": "passed"
+    },
+    {
+      "id": "credit-cards-payoff",
+      "example": "Repay two cards using a combined monthly budget",
+      "result": "passed"
+    },
+    {
+      "id": "debt-payoff",
+      "example": "Use extra payments on multiple zero-rate debts",
+      "result": "passed"
+    },
+    {
+      "id": "debt-consolidation",
+      "example": "A fee-free consolidation with zero interest",
+      "result": "passed"
+    },
+    {
+      "id": "repayment",
+      "example": "Repay 12,000 with twelve monthly installments",
+      "result": "passed"
+    },
+    {
+      "id": "repayment",
+      "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "student-loan",
+      "example": "A one-year student loan repayment illustration",
+      "result": "passed"
+    },
+    {
+      "id": "student-loan",
+      "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "college-cost",
+      "example": "Plan for four years of constant college costs",
+      "result": "passed"
+    },
+    {
+      "id": "depreciation",
+      "example": "Straight-line depreciation with a salvage value",
+      "result": "passed"
+    },
+    {
+      "id": "margin",
+      "example": "Profit margin versus markup on the same sale",
+      "result": "passed"
+    },
+    {
+      "id": "discount",
+      "example": "Take 20 percent off a price of 100",
+      "result": "passed"
+    },
+    {
+      "id": "business-loan",
+      "example": "Separate business borrowing fees from principal repayment",
+      "result": "passed"
+    },
+    {
+      "id": "business-loan",
+      "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "personal-loan",
+      "example": "A personal loan with no fees or interest",
+      "result": "passed"
+    },
+    {
+      "id": "personal-loan",
+      "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "boat-loan",
+      "example": "Calculate a boat payment after a cash down payment",
+      "result": "passed"
+    },
+    {
+      "id": "boat-loan",
+      "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "lease",
+      "example": "Lease payments with no residual or interest",
+      "result": "passed"
+    },
+    {
+      "id": "budget",
+      "example": "Monthly budget after tax and housing",
+      "result": "passed"
+    },
+    {
+      "id": "commission",
+      "example": "Calculate a five-percent sales commission",
+      "result": "passed"
+    },
     {
       "id": "vat",
       "example": "Add 20% VAT to a net price of 100",

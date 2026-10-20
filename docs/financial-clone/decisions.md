@@ -48,3 +48,7 @@ Retain financial math and compact layout. Improve mobile controls, accessible ma
 ## 2026-10-19: Marriage Tax paired layout
 
 Replace positional first-eight-field display with semantic paired sections. Keep both partners’ essential inputs visible, retain all 71 fields, group optional inputs and promote the signed tax difference as clearly labeled savings/additional tax. No tax model or defaults changed. See marriage-layout.md.
+
+## 2026-10-20: remaining calculator guides
+
+Add specific guides, two contextual questions and reproducible arithmetic fixtures to each of the remaining 60 functional tools. Preserve all financial engines and current UI. Keep examples server-rendered; retain honest scope for fixed 30-year rent/buy, simplified Social Security and paycheck models, manual currency quotes and program eligibility. Search intent candidates are documented without invented search-volume claims. See content-expansion.md.

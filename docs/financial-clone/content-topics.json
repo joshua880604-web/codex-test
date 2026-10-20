@@ -1,0 +1,725 @@
+{
+  "note": "Content topics describe actual implemented intent; no keyword-volume or traffic claims.",
+  "pages": [
+    {
+      "id": "amortization",
+      "route": "/amortization-calculator.html",
+      "reference_url": "https://www.calculator.net/amortization-calculator.html",
+      "topics": [
+        "Zero-interest amortization over 12 months",
+        "How do extra payments affect an amortization schedule?",
+        "Why does the last loan payment differ?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "mortgage-payoff",
+      "route": "/mortgage-payoff-calculator.html",
+      "reference_url": "https://www.calculator.net/mortgage-payoff-calculator.html",
+      "topics": [
+        "Pay off a zero-interest balance faster",
+        "Should I enter my original mortgage or remaining balance?",
+        "Are biweekly payments the same as paying twice a month?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "house-affordability",
+      "route": "/house-affordability-calculator.html",
+      "reference_url": "https://www.calculator.net/house-affordability-calculator.html",
+      "topics": [
+        "Translate a monthly housing budget into a home price",
+        "How much house can I afford with existing debt?",
+        "Why does a higher property tax rate reduce affordability?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "rent",
+      "route": "/rent-calculator.html",
+      "reference_url": "https://www.calculator.net/rent-calculator.html",
+      "topics": [
+        "How much rent fits a 60,000 annual income?",
+        "How much rent can I afford on 60,000 a year?",
+        "Should rent affordability use gross or take-home income?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "route": "/debt-ratio-calculator.html",
+      "reference_url": "https://www.calculator.net/debt-ratio-calculator.html",
+      "topics": [
+        "Calculate debt-to-income with monthly payments",
+        "Do I enter loan balances or monthly payments for DTI?",
+        "Can I mix annual income with monthly debt payments?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "refinance",
+      "route": "/refinance-calculator.html",
+      "reference_url": "https://www.calculator.net/refinance-calculator.html",
+      "topics": [
+        "A lower refinance payment without interest savings",
+        "Does a lower refinance payment always save money?",
+        "How do financed refinance costs affect the loan?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "rental-property",
+      "route": "/rental-property-calculator.html",
+      "reference_url": "https://www.calculator.net/rental-property-calculator.html",
+      "topics": [
+        "Cash needed for an all-cash rental purchase",
+        "What is the difference between NOI and rental cash flow?",
+        "Does a positive rental cash flow guarantee a good return?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "apr",
+      "route": "/apr-calculator.html",
+      "reference_url": "https://www.calculator.net/apr-calculator.html",
+      "topics": [
+        "APR on a loan with no interest or fees",
+        "Why can APR be higher than the interest rate?",
+        "Are APR and effective annual rate identical?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "fha-loan",
+      "route": "/fha-loan-calculator.html",
+      "reference_url": "https://www.calculator.net/fha-loan-calculator.html",
+      "topics": [
+        "Separate FHA principal and interest from insurance",
+        "Does the FHA monthly payment include mortgage insurance?",
+        "Can upfront FHA insurance increase the loan balance?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "va-mortgage",
+      "route": "/va-mortgage-calculator.html",
+      "reference_url": "https://www.calculator.net/va-mortgage-calculator.html",
+      "topics": [
+        "VA payment with an assumed funding-fee exemption",
+        "Is a VA funding-fee exemption automatic?",
+        "Is the mortgage payment the same as my total housing expense?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "home-equity-loan",
+      "route": "/home-equity-loan-calculator.html",
+      "reference_url": "https://www.calculator.net/home-equity-loan-calculator.html",
+      "topics": [
+        "Repay a home equity loan over one year",
+        "How is a home equity loan different from a HELOC?",
+        "Does paying closing costs upfront lower the installment?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "heloc",
+      "route": "/heloc-calculator.html",
+      "reference_url": "https://www.calculator.net/heloc-calculator.html",
+      "topics": [
+        "Estimate available HELOC credit from an LTV cap",
+        "Why can my HELOC payment rise after the draw period?",
+        "How much home equity can I borrow against?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "down-payment",
+      "route": "/down-payment-calculator.html",
+      "reference_url": "https://www.calculator.net/down-payment-calculator.html",
+      "topics": [
+        "Down payment plus closing costs on a 400,000 home",
+        "Are closing costs part of the down payment?",
+        "How much cash is needed for 20% down plus 3% closing costs?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "rent-vs-buy",
+      "route": "/rent-vs-buy-calculator.html",
+      "reference_url": "https://www.calculator.net/rent-vs-buy-calculator.html",
+      "topics": [
+        "Equity after the fixed 30-year rent-versus-buy comparison",
+        "Why is comparing rent with the mortgage installment incomplete?",
+        "Can I choose any rent-versus-buy comparison horizon?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "auto-loan",
+      "route": "/auto-loan-calculator.html",
+      "reference_url": "https://www.calculator.net/auto-loan-calculator.html",
+      "topics": [
+        "Monthly car payment after a down payment",
+        "How does negative trade-in equity affect my car loan?",
+        "Does a trade-in always reduce sales tax?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "route": "/cash-back-or-low-interest-calculator.html",
+      "reference_url": "https://www.calculator.net/cash-back-or-low-interest-calculator.html",
+      "topics": [
+        "Compare a rebate when both financing rates are zero",
+        "Is the biggest cash rebate always the better deal?",
+        "Should both offers use the same term and down payment?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "auto-lease",
+      "route": "/auto-lease-calculator.html",
+      "reference_url": "https://www.calculator.net/auto-lease-calculator.html",
+      "topics": [
+        "A lease payment with no finance charge",
+        "How does residual value affect an auto lease payment?",
+        "Is an APR percentage the same as a money factor?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "investment",
+      "route": "/investment-calculator.html",
+      "reference_url": "https://www.calculator.net/investment-calculator.html",
+      "topics": [
+        "Investment growth with annual compounding",
+        "Can I calculate investment growth with monthly contributions?",
+        "Does solving for a required return show an achievable investment?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "finance",
+      "route": "/finance-calculator.html",
+      "reference_url": "https://www.calculator.net/finance-calculator.html",
+      "topics": [
+        "Understand cash-flow signs in a TVM calculation",
+        "Why are PV and PMT sometimes negative?",
+        "Is N the number of years?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "interest-rate",
+      "route": "/interest-rate-calculator.html",
+      "reference_url": "https://www.calculator.net/interest-rate-calculator.html",
+      "topics": [
+        "Find the rate when payments equal principal",
+        "Can I find a loan's interest rate from its monthly payment?",
+        "Why might the rate solver reject my payment?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "savings",
+      "route": "/savings-calculator.html",
+      "reference_url": "https://www.calculator.net/savings-calculator.html",
+      "topics": [
+        "Build savings with monthly deposits and no interest",
+        "Can I increase savings contributions each year?",
+        "Does deposit timing matter for savings growth?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "simple-interest",
+      "route": "/simple-interest-calculator.html",
+      "reference_url": "https://www.calculator.net/simple-interest-calculator.html",
+      "topics": [
+        "Simple interest on 10,000 for four years",
+        "How is simple interest different from compound interest?",
+        "Can I enter a monthly rate with a term in years?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "cd",
+      "route": "/cd-calculator.html",
+      "reference_url": "https://www.calculator.net/cd-calculator.html",
+      "topics": [
+        "A two-year CD with annual compounding",
+        "Should I enter a CD's nominal rate or APY?",
+        "Is the maturity balance after tax?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "bond",
+      "route": "/bond-calculator.html",
+      "reference_url": "https://www.calculator.net/bond-calculator.html",
+      "topics": [
+        "Price a one-year zero-coupon bond",
+        "Why does a bond price fall when yield rises?",
+        "What is the difference between clean and dirty bond price?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "mutual-fund",
+      "route": "/mutual-fund-calculator.html",
+      "reference_url": "https://www.calculator.net/mutual-fund-calculator.html",
+      "topics": [
+        "How a front-end load reduces invested money",
+        "How does a front-end load affect contributions?",
+        "Are fund expense ratios the same as an exit fee?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "average-return",
+      "route": "/average-return-calculator.html",
+      "reference_url": "https://www.calculator.net/average-return-calculator.html",
+      "topics": [
+        "Why average return can hide a loss",
+        "Why can a zero average return still lose money?",
+        "When should I use a dated cash-flow return?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "roi",
+      "route": "/roi-calculator.html",
+      "reference_url": "https://www.calculator.net/roi-calculator.html",
+      "topics": [
+        "Calculate ROI from a 1,000 investment",
+        "Is a 50% ROI the same as 50% per year?",
+        "Should fees be included in ROI?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "payback-period",
+      "route": "/payback-period-calculator.html",
+      "reference_url": "https://www.calculator.net/payback-period-calculator.html",
+      "topics": [
+        "Recover an investment with four equal inflows",
+        "How is discounted payback different from simple payback?",
+        "Does the shortest payback always identify the best project?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "present-value",
+      "route": "/present-value-calculator.html",
+      "reference_url": "https://www.calculator.net/present-value-calculator.html",
+      "topics": [
+        "Present value of 1,100 received next period",
+        "Why is present value lower than future value?",
+        "Can I value an annuity plus a final lump sum?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "future-value",
+      "route": "/future-value-calculator.html",
+      "reference_url": "https://www.calculator.net/future-value-calculator.html",
+      "topics": [
+        "Future value over two periods",
+        "How do I calculate future value with regular deposits?",
+        "Why does beginning-of-period timing give a different result?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "pension",
+      "route": "/pension-calculator.html",
+      "reference_url": "https://www.calculator.net/pension-calculator.html",
+      "topics": [
+        "Value one year of pension payments at a zero discount rate",
+        "How should I compare a pension with a lump sum?",
+        "Does a survivor pension always have a higher value?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "social-security",
+      "route": "/social-security-calculator.html",
+      "reference_url": "https://www.calculator.net/social-security-calculator.html",
+      "topics": [
+        "Compare benefit streams over a short illustrative lifespan",
+        "Does the highest monthly Social Security payment mean the best claiming age?",
+        "Should I enter an official benefit estimate?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "annuity",
+      "route": "/annuity-calculator.html",
+      "reference_url": "https://www.calculator.net/annuity-calculator.html",
+      "topics": [
+        "Accumulate an annuity with monthly contributions",
+        "Can I enter both annual and monthly annuity contributions?",
+        "Does the assumed annuity return represent a guarantee?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "annuity-payout",
+      "route": "/annuity-payout-calculator.html",
+      "reference_url": "https://www.calculator.net/annuity-payout-calculator.html",
+      "topics": [
+        "Monthly withdrawals from a zero-return annuity balance",
+        "Will an annuity payout last for life?",
+        "Why does a higher withdrawal shorten duration?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "roth-ira",
+      "route": "/roth-ira-calculator.html",
+      "reference_url": "https://www.calculator.net/roth-ira-calculator.html",
+      "topics": [
+        "Separate IRA contributions from investment growth",
+        "Does the Roth IRA projection check my income eligibility?",
+        "Is a Roth IRA balance always available tax-free?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "ira",
+      "route": "/ira-calculator.html",
+      "reference_url": "https://www.calculator.net/ira-calculator.html",
+      "topics": [
+        "Apply an assumed retirement tax rate to an IRA balance",
+        "Why is the traditional IRA after-tax balance smaller?",
+        "Does a larger IRA balance mean greater spendable retirement money?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "salary",
+      "route": "/salary-calculator.html",
+      "reference_url": "https://www.calculator.net/salary-calculator.html",
+      "topics": [
+        "Convert 30 per hour to annual salary",
+        "How much is 30 an hour annually at 40 hours a week?",
+        "Should I subtract paid vacation days?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "marriage-tax",
+      "route": "/marriage-calculator.html",
+      "reference_url": "https://www.calculator.net/marriage-calculator.html",
+      "topics": [
+        "Understand the tax-difference sign with zero income",
+        "Is the comparison married filing jointly versus separately?",
+        "Do I enter a dependent under both partners?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "estate-tax",
+      "route": "/estate-tax-calculator.html",
+      "reference_url": "https://www.calculator.net/estate-tax-calculator.html",
+      "topics": [
+        "Calculate an estate before applying the exclusion",
+        "Is every estate asset automatically taxable at the top rate?",
+        "Why include prior taxable gifts in an estate estimate?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "take-home-paycheck",
+      "route": "/take-home-pay-calculator.html",
+      "reference_url": "https://www.calculator.net/take-home-pay-calculator.html",
+      "topics": [
+        "Read the zero-wage paycheck baseline",
+        "Why can my actual paycheck differ from this estimate?",
+        "Is biweekly the same as twice a month?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "payment",
+      "route": "/payment-calculator.html",
+      "reference_url": "https://www.calculator.net/payment-calculator.html",
+      "topics": [
+        "Find a monthly payment at zero interest",
+        "Can I calculate the loan term from a monthly payment?",
+        "Does a longer loan term lower total cost?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "currency",
+      "route": "/currency-calculator.html",
+      "reference_url": "https://www.calculator.net/currency-calculator.html",
+      "topics": [
+        "Convert USD to EUR using a custom exchange rate",
+        "How do I enter a custom exchange rate?",
+        "Does this show the amount my bank will pay?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "inflation",
+      "route": "/inflation-calculator.html",
+      "reference_url": "https://www.calculator.net/inflation-calculator.html",
+      "topics": [
+        "Adjust purchasing power using two CPI index values",
+        "How do I convert old money into today's purchasing power?",
+        "Is average CPI inflation my personal inflation rate?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "sales-tax",
+      "route": "/sales-tax-calculator.html",
+      "reference_url": "https://www.calculator.net/sales-tax-calculator.html",
+      "topics": [
+        "Add 7 percent sales tax to a price",
+        "How do I remove sales tax from a total?",
+        "Can I use the calculator to look up my local tax rate?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "credit-card",
+      "route": "/credit-card-calculator.html",
+      "reference_url": "https://www.calculator.net/credit-card-calculator.html",
+      "topics": [
+        "Pay down a zero-APR credit card with fixed payments",
+        "Why does paying only a percentage minimum take so long?",
+        "What if my payment does not cover interest?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "credit-cards-payoff",
+      "route": "/credit-card-payoff-calculator.html",
+      "reference_url": "https://www.calculator.net/credit-card-payoff-calculator.html",
+      "topics": [
+        "Repay two cards using a combined monthly budget",
+        "Is the card payoff budget extra or total money?",
+        "Why prioritize the card with the highest APR?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "debt-payoff",
+      "route": "/debt-payoff-calculator.html",
+      "reference_url": "https://www.calculator.net/debt-payoff-calculator.html",
+      "topics": [
+        "Use extra payments on multiple zero-rate debts",
+        "What does payment rollover mean?",
+        "Can I add an annual bonus to debt payoff?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "debt-consolidation",
+      "route": "/debt-consolidation-calculator.html",
+      "reference_url": "https://www.calculator.net/debt-consolidation-calculator.html",
+      "topics": [
+        "A fee-free consolidation with zero interest",
+        "Does a lower consolidation rate always save money?",
+        "Are financed consolidation fees free?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "repayment",
+      "route": "/repayment-calculator.html",
+      "reference_url": "https://www.calculator.net/repayment-calculator.html",
+      "topics": [
+        "Repay 12,000 with twelve monthly installments",
+        "Can payment and compounding frequencies differ?",
+        "Why can a small repayment fail to pay off a loan?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "student-loan",
+      "route": "/student-loan-calculator.html",
+      "reference_url": "https://www.calculator.net/student-loan-calculator.html",
+      "topics": [
+        "A one-year student loan repayment illustration",
+        "Can this calculate income-driven student loan payments?",
+        "How do extra student loan payments help?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "college-cost",
+      "route": "/college-cost-calculator.html",
+      "reference_url": "https://www.calculator.net/college-cost-calculator.html",
+      "topics": [
+        "Plan for four years of constant college costs",
+        "Does the college cost input cover all years?",
+        "Why does tuition growth raise the savings target?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "depreciation",
+      "route": "/depreciation-calculator.html",
+      "reference_url": "https://www.calculator.net/depreciation-calculator.html",
+      "topics": [
+        "Straight-line depreciation with a salvage value",
+        "Is salvage value depreciated?",
+        "Can accounting depreciation be used directly for tax?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "margin",
+      "route": "/margin-calculator.html",
+      "reference_url": "https://www.calculator.net/margin-calculator.html",
+      "topics": [
+        "Profit margin versus markup on the same sale",
+        "What is the difference between margin and markup?",
+        "Is trading margin the same as business profit margin?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "discount",
+      "route": "/discount-calculator.html",
+      "reference_url": "https://www.calculator.net/discount-calculator.html",
+      "topics": [
+        "Take 20 percent off a price of 100",
+        "How do I find the original price from a discounted price?",
+        "Are two 20% discounts equivalent to 40% off?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "business-loan",
+      "route": "/business-loan-calculator.html",
+      "reference_url": "https://www.calculator.net/business-loan-calculator.html",
+      "topics": [
+        "Separate business borrowing fees from principal repayment",
+        "Why can business loan proceeds be lower than principal?",
+        "Should I compare business loans by payment alone?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "personal-loan",
+      "route": "/personal-loan-calculator.html",
+      "reference_url": "https://www.calculator.net/personal-loan-calculator.html",
+      "topics": [
+        "A personal loan with no fees or interest",
+        "How does an origination fee affect a personal loan?",
+        "Is a 0% loan necessarily cost-free?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "boat-loan",
+      "route": "/boat-loan-calculator.html",
+      "reference_url": "https://www.calculator.net/boat-loan-calculator.html",
+      "topics": [
+        "Calculate a boat payment after a cash down payment",
+        "Does the boat payment include all ownership costs?",
+        "How do financed boat taxes and fees affect payment?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "lease",
+      "route": "/lease-calculator.html",
+      "reference_url": "https://www.calculator.net/lease-calculator.html",
+      "topics": [
+        "Lease payments with no residual or interest",
+        "How does residual value affect a lease calculation?",
+        "Is this identical to the auto lease calculator?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "budget",
+      "route": "/budget-calculator.html",
+      "reference_url": "https://www.calculator.net/budget-calculator.html",
+      "topics": [
+        "Monthly budget after tax and housing",
+        "Are savings treated as part of my monthly budget?",
+        "How should I enter annual insurance or other yearly bills?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    },
+    {
+      "id": "commission",
+      "route": "/commission-calculator.html",
+      "reference_url": "https://www.calculator.net/commission-calculator.html",
+      "topics": [
+        "Calculate a five-percent sales commission",
+        "How does progressive sales commission work?",
+        "Is commission the same as take-home pay?"
+      ],
+      "search_volume": "not researched",
+      "ranking_or_traffic": "not measured"
+    }
+  ]
+}

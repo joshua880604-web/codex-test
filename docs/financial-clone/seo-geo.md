@@ -1,4 +1,4 @@
-# SEO and AI-search readiness — 2026-10-19
+# SEO and AI-search readiness — updated 2026-10-20
 
 ## Implemented
 
@@ -9,8 +9,8 @@
 - The preview configuration emits `noindex, follow`; it does not block page crawling in robots.txt, so compliant crawlers can see the noindex instruction. Vercel preview environments stay noindex even when production settings are inherited.
 - Real WebApplication data on 70 calculation pages; with a configured origin, WebPage and BreadcrumbList data use the same canonical page. No fake reviews, ratings, expert identities or promised rich results.
 - Server-rendered model descriptions/formulas are available for all 154 modes, including modes hidden behind interactive tabs.
-- Ten substantial English guides: VAT, Loan, Mortgage, Interest, Compound Interest rate conversion, Retirement, 401(k), Income Tax, RMD and IRR. Twelve reproducible worked examples, plain-language questions, explicit model limitations and relevant source links are included in initial HTML. Example links run the same tested calculator inputs.
-- Related links for these guides are selected by actual topic rather than simply taking the first eight category entries.
+- All 70 functional calculators now have individual English guides, at least two contextual questions, explicit scope and source/provenance links. There are 83 reproducible examples across the site (12 original, 71 added). Nine added positive-rate installment examples and two nonzero tax/paycheck examples supplement the transparent simple/boundary illustrations. Expected values use separately specified arithmetic or closed-form equations, not saved calculator outputs. Example links populate the complete stated settings.
+- Ten priority pages have manually selected related tools; other pages retain category-based related links. Expanding manual contextual linking remains useful.
 - `/methodology.html` explains calculation validation, official data versions, rounding, review status and model limitations. About/footer link to it. Notes carry a real content-check date, without inventing a human professional review.
 
 ## Enable the final production domain
@@ -36,7 +36,7 @@ Default local previews need no environment variables. With no final origin and n
 
 ## Remaining work and measurement
 
-The other 60 calculator pages have unique existing tool content, all-mode model reference and methodology links, but do not yet have the same depth of tailored examples/questions as the ten priority guides. No filler article or duplicated keyword blocks were added to count them as complete.
+The 60 additional guides provide an initial individual explanation, limitations, questions and at least one verified example each. This is not exhaustive coverage of every mode, market or user scenario. Add richer worked scenarios as justified by actual user/search evidence. content-topics.json records candidate intents for those 60 pages; search volume and traffic are explicitly unresearched/unmeasured. Content coverage does not establish that these are high-volume keywords.
 
 A final domain and public deployment are still needed to verify HTTP/CDN behavior, indexing eligibility and Core Web Vitals in real use. Search Console/Bing verification, sitemap submission and ongoing coverage/performance reports require the actual hosting/domain account. Search ranking, AI citations and traffic have not been measured or guaranteed.
 
