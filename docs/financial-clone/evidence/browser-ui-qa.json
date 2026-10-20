@@ -1,8 +1,8 @@
 {
   "passed": true,
-  "tested_at": "2026-10-19T09:04:05.335Z",
+  "tested_at": "2026-10-20T02:35:56.507Z",
   "checks": [
-    "Directory search trims whitespace and clears back to all 71 entries",
+    "Directory search trims whitespace and clears back to all 75 entries",
     "401k matching help, year-end table labels, 44px mobile inputs",
     "Arrow-key mode navigation",
     "Reset restores starting values",

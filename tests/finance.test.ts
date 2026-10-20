@@ -77,10 +77,11 @@ test("debt avalanche zero-rate independent fixture", () => {
   close(result.metrics[1].value, 0);
   close(result.metrics[2].value, 1500);
 });
-test("scope has 71 unique real routes, including real estate directory", () => {
-  assert.equal(calculators.length, 71);
-  assert.equal(new Set(calculators.map((c) => c.id)).size, 71);
-  assert.equal(new Set(calculators.map((c) => routeFor(c.id))).size, 71);
+test("scope preserves 71 financial entries and adds four unique everyday routes", () => {
+  assert.equal(calculators.filter(c=>c.category!=="Everyday Tools").length,71);
+  assert.equal(calculators.length, 75);
+  assert.equal(new Set(calculators.map((c) => c.id)).size, 75);
+  assert.equal(new Set(calculators.map((c) => routeFor(c.id))).size, 75);
   assert.equal(calculators.filter((c) => c.directory).length, 1);
   assert.equal(routeFor("income-tax"), "/tax-calculator.html");
   assert.equal(routeFor("debt-to-income-ratio"), "/debt-ratio-calculator.html");

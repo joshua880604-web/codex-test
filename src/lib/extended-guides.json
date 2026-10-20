@@ -3734,5 +3734,239 @@
       }
     ],
     "checkedOn": "2026-10-20"
+  },
+  "percentage": {
+    "summary": "Work out percentages without mixing a percent of a number with a percentage change. Use the matching mode for a proportion, a change from a baseline or a part-to-whole relationship.",
+    "scope": "A zero denominator has no defined percentage. Changes from negative baselines use the absolute baseline as denominator; percentage points are a different measure.",
+    "questions": [
+      {
+        "question": "Is a change from 10% to 15% a five percent increase?",
+        "answer": "It is a five-percentage-point change and a 50% relative increase. Keep the difference between rates separate from a relative percentage change."
+      },
+      {
+        "question": "Can percentage change start at zero?",
+        "answer": "No finite relative percentage is defined from a zero baseline. Use the absolute change instead."
+      }
+    ],
+    "examples": [
+      {
+        "title": "Find 15 percent of 200",
+        "mode": "of",
+        "values": {
+          "percent": 15,
+          "amount": 200
+        },
+        "inputs": "Use the explicitly stated inputs; the example link fills them in.",
+        "steps": [
+          "200 \u00d7 15 / 100 = 30."
+        ],
+        "answer": "15% of 200 is 30.",
+        "expected": {
+          "label": "Result",
+          "value": 30,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Increase from 80 to 100",
+        "mode": "change",
+        "values": {
+          "before": 80,
+          "after": 100
+        },
+        "inputs": "Use the explicitly stated inputs; the example link fills them in.",
+        "steps": [
+          "The increase is 20.",
+          "20 / 80 \u00d7 100 = 25%."
+        ],
+        "answer": "The relative increase is 25%.",
+        "expected": {
+          "label": "Percentage change",
+          "value": 25,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation definitions, testing and limitations",
+        "url": "/methodology.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "tip-bill-split": {
+    "summary": "Calculate an optional tip, add any tax not already included and divide the bill fairly. The per-person schedule distributes the remaining minor units rather than asking everyone to pay the same rounded amount.",
+    "scope": "Currency selection controls symbols and minor-unit rounding, not exchange rates. A tip is optional and local customs vary. The tip base is the bill field, excluding additional tax. Up to 1,000 people are supported.",
+    "questions": [
+      {
+        "question": "Does the bill split add tax twice?",
+        "answer": "Only if you enter an already tax-inclusive bill and also add the same tax in the additional-tax field. Leave additional tax at zero when it is included."
+      },
+      {
+        "question": "Why can two people pay slightly different amounts?",
+        "answer": "A rounded total is not always divisible evenly into minor currency units. The first people in the schedule receive one extra minor unit until the remainder is allocated."
+      }
+    ],
+    "examples": [
+      {
+        "title": "Split a 115 dollar total among three people",
+        "mode": "split",
+        "values": {
+          "bill": 100,
+          "tax": 0,
+          "tip": 15,
+          "people": 3,
+          "currency": "USD"
+        },
+        "inputs": "Use the explicitly stated inputs; the example link fills them in.",
+        "steps": [
+          "Tip = 100 \u00d7 15% = 15; total = 115.",
+          "11,500 cents / 3 gives 3,833 cents each with one cent left.",
+          "The allocated shares are 38.34, 38.33 and 38.33."
+        ],
+        "answer": "The total is USD 115.00 and all three shares sum exactly to it.",
+        "expected": {
+          "label": "Total bill",
+          "value": 115,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation definitions, testing and limitations",
+        "url": "/methodology.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "date": {
+    "summary": "Count days between two calendar dates or find the date a signed number of days away. Endpoint inclusion and chronological direction are explicit, so deadline calculations do not depend on the computer\u2019s local time zone.",
+    "scope": "Gregorian calendar dates in years 0001\u20139999 only. This is not an elapsed-hours, business-day or holiday calculator. Inclusive counting adds one day to the magnitude and gives one for equal dates.",
+    "questions": [
+      {
+        "question": "Are both endpoint dates included?",
+        "answer": "Only when you select inclusive counting. Otherwise the result is the signed difference between the dates, giving zero for equal dates."
+      },
+      {
+        "question": "Does the calculation account for leap years?",
+        "answer": "Yes. Calendar arithmetic includes February 29 when valid; invalid dates and results outside the supported year range are rejected."
+      }
+    ],
+    "examples": [
+      {
+        "title": "Count across a leap day",
+        "mode": "difference",
+        "values": {
+          "start": "2024-02-28",
+          "end": "2024-03-01",
+          "inclusive": "No"
+        },
+        "inputs": "Use the explicitly stated inputs; the example link fills them in.",
+        "steps": [
+          "February 28 to February 29 is one day.",
+          "February 29 to March 1 is a second day."
+        ],
+        "answer": "There are two calendar days between the dates.",
+        "expected": {
+          "label": "Calendar days",
+          "value": 2,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Add one day at the end of February in a leap year",
+        "mode": "add",
+        "values": {
+          "start": "2024-02-28",
+          "days": 1
+        },
+        "inputs": "Use the explicitly stated inputs; the example link fills them in.",
+        "steps": [
+          "One calendar day after February 28, 2024 is February 29, 2024."
+        ],
+        "answer": "The resulting date is 2024-02-29.",
+        "expected": {
+          "label": "Days added",
+          "value": 1,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation definitions, testing and limitations",
+        "url": "/methodology.html"
+      }
+    ],
+    "checkedOn": "2026-10-20"
+  },
+  "unit-converter": {
+    "summary": "Convert a value within one of six categories: length, mass, temperature, area, volume or speed. Unit names identify metric, US and Imperial quantities explicitly so similarly named units are not treated as interchangeable.",
+    "scope": "Conversions use stated unit definitions and retain floating-point precision internally, with limited display precision. Units from different dimensions cannot be mixed. Temperatures below absolute zero are rejected.",
+    "questions": [
+      {
+        "question": "Are US gallons and Imperial gallons equal?",
+        "answer": "No. One US liquid gallon is 3.785411784 litres; one Imperial gallon is 4.54609 litres. Select the correct named unit."
+      },
+      {
+        "question": "Why is temperature conversion different from length conversion?",
+        "answer": "Temperature scales may have different zeros as well as different unit sizes. The converter applies both the scale factor and offset."
+      }
+    ],
+    "examples": [
+      {
+        "title": "Convert one metre to centimetres",
+        "mode": "length",
+        "values": {
+          "amount": 1,
+          "from": "Metres",
+          "to": "Centimetres"
+        },
+        "inputs": "Use the explicitly stated inputs; the example link fills them in.",
+        "steps": [
+          "One centimetre is 0.01 metre.",
+          "1 / 0.01 = 100 centimetres."
+        ],
+        "answer": "One metre equals 100 centimetres.",
+        "expected": {
+          "label": "Converted value",
+          "value": 100,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Convert water\u2019s freezing point between temperature scales",
+        "mode": "temperature",
+        "values": {
+          "amount": 32,
+          "from": "Fahrenheit",
+          "to": "Celsius"
+        },
+        "inputs": "Use the explicitly stated inputs; the example link fills them in.",
+        "steps": [
+          "Celsius = (Fahrenheit \u2212 32) \u00d7 5 / 9.",
+          "(32 \u2212 32) \u00d7 5 / 9 = 0."
+        ],
+        "answer": "32 degrees Fahrenheit equals 0 degrees Celsius.",
+        "expected": {
+          "label": "Converted value",
+          "value": 0,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Calculation definitions, testing and limitations",
+        "url": "/methodology.html"
+      },
+      {
+        "title": "NIST: SI units and metric information",
+        "url": "https://www.nist.gov/pml/owm/metric-si/si-units"
+      }
+    ],
+    "checkedOn": "2026-10-20"
   }
 }

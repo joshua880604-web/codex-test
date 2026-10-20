@@ -43,7 +43,7 @@ for route in paths:
 sitemap=(root/'.next/server/app/sitemap.xml.body').read_text()
 robots=(root/'.next/server/app/robots.txt.body').read_text()
 assert 'Disallow: /api/' in robots
-if origin:assert sitemap.count('<loc>')==75 and origin+'/sitemap.xml' in robots
+if origin:assert sitemap.count('<loc>')==79 and origin+'/sitemap.xml' in robots
 else:assert '<loc>' not in sitemap and 'Sitemap:' not in robots
 report={'passed':True,'configuration':'indexable-test-origin' if origin else 'default-noindex-preview','test_origin':origin,'pages':len(checks),'checks':checks,'no_live_indexing_or_ranking_claim':True}
 out=root/'docs/financial-clone/evidence'/('seo-production-build.json' if origin else 'seo-preview-build.json')

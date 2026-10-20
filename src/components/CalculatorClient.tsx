@@ -358,10 +358,10 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
                 >
                   <span>{id === "marriage-tax" && i === 0 ? (m.value < -0.005 ? "Estimated annual tax savings after marriage" : m.value > 0.005 ? "Estimated annual additional tax after marriage" : "Estimated annual tax difference after marriage") : m.label}</span>
                   <strong>
-                    {m.format === "money"
+                    {m.displayValue ?? (m.format === "money"
                       ? new Intl.NumberFormat("en-US", {
                           style: "currency",
-                          currency: "USD",
+                          currency: m.currency ?? "USD",
                         }).format(id === "marriage-tax" && i === 0 ? Math.abs(m.value) : m.value)
                       : amount(
                           m.value,
@@ -371,7 +371,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
                               : Number.isInteger(m.value)
                                 ? 0
                                 : 4),
-                        )}
+                        ))}
                     {m.format === "percent" ? "%" : ""}
                   </strong>
                 </div>
@@ -517,10 +517,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         <p className="formula">{mode.formula}</p>
         <h3>Assumptions and accuracy</h3>
         <p>
-          Review timing, rates, fees, and result notes when comparing scenarios.
-          Future returns and rates are assumptions rather than guaranteed
-          outcomes. Monetary figures are displayed to two decimal places;
-          intermediate calculations retain additional precision.
+          {calc.category === "Everyday Tools" ? "Check the selected mode, units, date endpoints and result notes. Currency selection controls display and rounding, not exchange rates. Calendar calculations do not include holidays or local time-of-day." : "Review timing, rates, fees and result notes when comparing scenarios. Future returns and rates are assumptions rather than guaranteed outcomes. Monetary display follows the currency’s precision; intermediate calculations retain additional digits."}
         </p>
         {[
           "income-tax",

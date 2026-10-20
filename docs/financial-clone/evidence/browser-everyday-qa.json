@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-20T02:35:48.013Z",
+  "checks": [
+    "Four everyday tools discoverable in directory",
+    {
+      "route": "/percentage-calculator.html",
+      "all_modes": "passed"
+    },
+    {
+      "route": "/tip-bill-split-calculator.html",
+      "all_modes": "passed"
+    },
+    {
+      "route": "/date-calculator.html",
+      "all_modes": "passed"
+    },
+    {
+      "route": "/unit-converter.html",
+      "all_modes": "passed"
+    },
+    "JPY displays yen and integer currency shares",
+    "Added date is prominent and shared inputs hydrate",
+    {
+      "route": "/percentage-calculator.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/tip-bill-split-calculator.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/date-calculator.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/unit-converter.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/percentage-calculator.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/tip-bill-split-calculator.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/date-calculator.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/unit-converter.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/percentage-calculator.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/tip-bill-split-calculator.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/date-calculator.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/unit-converter.html",
+      "width": 768,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

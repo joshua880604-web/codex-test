@@ -13,6 +13,8 @@ export type Field = {
   optional?: boolean;
 };
 export type Metric = {
+  currency?: string;
+  displayValue?: string;
   label: string;
   value: number;
   format?: "money" | "number" | "percent";

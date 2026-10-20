@@ -1,5 +1,5 @@
 {
-  "tested_at": "2026-10-20T02:03:04.419Z",
+  "tested_at": "2026-10-20T02:36:39.555Z",
   "base": "http://127.0.0.1:3000",
   "browser": "System Chromium via Playwright",
   "reference_visual_parity": "unverified: original-site browser unavailable",
@@ -1128,6 +1128,82 @@
         },
         {
           "mode": "Tiered Commission and Base Pay",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "percentage",
+      "route": "/percentage-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Percent of a Number",
+          "result": "rendered"
+        },
+        {
+          "mode": "Percentage Change",
+          "result": "rendered"
+        },
+        {
+          "mode": "What Percent?",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "tip-bill-split",
+      "route": "/tip-bill-split-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "date",
+      "route": "/date-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Days Between Dates",
+          "result": "rendered"
+        },
+        {
+          "mode": "Add or Subtract Days",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "unit-converter",
+      "route": "/unit-converter.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Length",
+          "result": "rendered"
+        },
+        {
+          "mode": "Mass",
+          "result": "rendered"
+        },
+        {
+          "mode": "Temperature",
+          "result": "rendered"
+        },
+        {
+          "mode": "Area",
+          "result": "rendered"
+        },
+        {
+          "mode": "Volume",
+          "result": "rendered"
+        },
+        {
+          "mode": "Speed",
           "result": "rendered"
         }
       ]

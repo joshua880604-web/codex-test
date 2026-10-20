@@ -56,3 +56,7 @@ Add specific guides, two contextual questions and reproducible arithmetic fixtur
 ## 2026-10-20 keyword ownership and feature alignment
 
 Use the user-provided global/US English, rolling-12-month Keyword Planner screenshots to prioritize intent. Each intent has an existing primary page; no near-duplicate landing URLs are created. Add compound growth, savings-goal modes and monthly loan extra-payment comparison before claiming these capabilities in metadata. Retain conversion and original mode IDs. Directory intent search and visible shortcut buttons make the features discoverable. See keyword-implementation.md.
+
+## 2026-10-20: globally applicable everyday tools
+
+Add percentage, tip/bill splitting, calendar dates and unit conversion as a separate Everyday Tools category. Preserve the financial baseline of 71 entries. Support explicit display currencies, exact minor-unit share allocation, timezone-independent dates and dimension-safe metric/US/Imperial conversion. No tipping custom, currency rate or business-day calendar is inferred. See everyday-tools.md.

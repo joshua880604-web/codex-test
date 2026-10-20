@@ -18,7 +18,7 @@ export default function Directory({
       <p>
         {propertyOnly
           ? "Calculators for mortgages, property investment, and home ownership."
-          : "The following is a complete list of our financial calculators."}
+          : "Browse financial calculators and practical everyday tools."}
       </p>
       <div className="directory-search">
         <label htmlFor="directory-search">Find a calculator</label>

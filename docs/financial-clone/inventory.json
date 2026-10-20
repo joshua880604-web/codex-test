@@ -10418,5 +10418,341 @@
         "formula": "Progressive commission applies each rate only to sales inside that band."
       }
     ]
+  },
+  {
+    "id": "percentage",
+    "title": "Percentage Calculator",
+    "category": "Everyday Tools",
+    "source_url": "https://www.calculator.net/percent-calculator.html",
+    "local_route": "/percentage-calculator.html",
+    "directory": false,
+    "source_status": "User-requested additional tool; not part of original 71-entry financial inventory. Reference URL is provenance, not parity verification.",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "of",
+        "title": "Percent of a Number",
+        "fields": [
+          {
+            "key": "percent",
+            "label": "Percentage",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "amount",
+            "label": "Number",
+            "type": "number",
+            "unit": null
+          }
+        ],
+        "formula": "Result = number × percentage / 100."
+      },
+      {
+        "id": "change",
+        "title": "Percentage Change",
+        "fields": [
+          {
+            "key": "before",
+            "label": "Original value",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "after",
+            "label": "New value",
+            "type": "number",
+            "unit": null
+          }
+        ],
+        "formula": "Change = (new − original) / |original| × 100%."
+      },
+      {
+        "id": "ratio",
+        "title": "What Percent?",
+        "fields": [
+          {
+            "key": "part",
+            "label": "Part",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "whole",
+            "label": "Whole",
+            "type": "number",
+            "unit": null
+          }
+        ],
+        "formula": "Percentage = part / whole × 100%."
+      }
+    ]
+  },
+  {
+    "id": "tip-bill-split",
+    "title": "Tip and Bill Split Calculator",
+    "category": "Everyday Tools",
+    "source_url": "https://www.calculator.net/tip-calculator.html",
+    "local_route": "/tip-bill-split-calculator.html",
+    "directory": false,
+    "source_status": "User-requested additional tool; not part of original 71-entry financial inventory. Reference URL is provenance, not parity verification.",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "split",
+        "title": "Tip and Split",
+        "fields": [
+          {
+            "key": "bill",
+            "label": "Bill before added tax and tip",
+            "type": "number",
+            "unit": "currency units"
+          },
+          {
+            "key": "tax",
+            "label": "Additional tax not already in the bill",
+            "type": "number",
+            "unit": "currency units"
+          },
+          {
+            "key": "tip",
+            "label": "Tip percentage on the bill",
+            "type": "number",
+            "unit": "%"
+          },
+          {
+            "key": "people",
+            "label": "Number of people",
+            "type": "number",
+            "unit": "people"
+          },
+          {
+            "key": "currency",
+            "label": "Display currency",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Total = bill + additional tax + tip on bill. Divide the rounded total into currency minor units and allocate any remainder one unit at a time."
+      }
+    ]
+  },
+  {
+    "id": "date",
+    "title": "Date Calculator",
+    "category": "Everyday Tools",
+    "source_url": "https://www.calculator.net/date-calculator.html",
+    "local_route": "/date-calculator.html",
+    "directory": false,
+    "source_status": "User-requested additional tool; not part of original 71-entry financial inventory. Reference URL is provenance, not parity verification.",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "difference",
+        "title": "Days Between Dates",
+        "fields": [
+          {
+            "key": "start",
+            "label": "Start date",
+            "type": "date",
+            "unit": null
+          },
+          {
+            "key": "end",
+            "label": "End date",
+            "type": "date",
+            "unit": null
+          },
+          {
+            "key": "inclusive",
+            "label": "Include both endpoint dates?",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Exclusive difference = end calendar day − start calendar day. Including both endpoints adds one day to the magnitude."
+      },
+      {
+        "id": "add",
+        "title": "Add or Subtract Days",
+        "fields": [
+          {
+            "key": "start",
+            "label": "Starting date",
+            "type": "date",
+            "unit": null
+          },
+          {
+            "key": "days",
+            "label": "Days to add (negative to subtract)",
+            "type": "number",
+            "unit": "days"
+          }
+        ],
+        "formula": "Resulting calendar day = starting calendar day + signed number of days."
+      }
+    ]
+  },
+  {
+    "id": "unit-converter",
+    "title": "Unit Converter",
+    "category": "Everyday Tools",
+    "source_url": "https://www.calculator.net/conversion-calculator.html",
+    "local_route": "/unit-converter.html",
+    "directory": false,
+    "source_status": "User-requested additional tool; not part of original 71-entry financial inventory. Reference URL is provenance, not parity verification.",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "length",
+        "title": "Length",
+        "fields": [
+          {
+            "key": "amount",
+            "label": "Value",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "from",
+            "label": "From unit",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "to",
+            "label": "To unit",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
+      },
+      {
+        "id": "mass",
+        "title": "Mass",
+        "fields": [
+          {
+            "key": "amount",
+            "label": "Value",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "from",
+            "label": "From unit",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "to",
+            "label": "To unit",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
+      },
+      {
+        "id": "temperature",
+        "title": "Temperature",
+        "fields": [
+          {
+            "key": "amount",
+            "label": "Value",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "from",
+            "label": "From unit",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "to",
+            "label": "To unit",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
+      },
+      {
+        "id": "area",
+        "title": "Area",
+        "fields": [
+          {
+            "key": "amount",
+            "label": "Value",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "from",
+            "label": "From unit",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "to",
+            "label": "To unit",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
+      },
+      {
+        "id": "volume",
+        "title": "Volume",
+        "fields": [
+          {
+            "key": "amount",
+            "label": "Value",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "from",
+            "label": "From unit",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "to",
+            "label": "To unit",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
+      },
+      {
+        "id": "speed",
+        "title": "Speed",
+        "fields": [
+          {
+            "key": "amount",
+            "label": "Value",
+            "type": "number",
+            "unit": null
+          },
+          {
+            "key": "from",
+            "label": "From unit",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "to",
+            "label": "To unit",
+            "type": "select",
+            "unit": null
+          }
+        ],
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
+      }
+    ]
   }
 ]

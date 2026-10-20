@@ -68,7 +68,7 @@ export function calculatorSchema(calc: Calculator, config = siteConfig()) {
     "@type": "WebApplication",
     name: calc.title,
     description: calc.intro,
-    applicationCategory: "FinanceApplication",
+    applicationCategory: calc.category === "Everyday Tools" ? "UtilitiesApplication" : "FinanceApplication",
     operatingSystem: "Any",
     browserRequirements: "Requires JavaScript",
     isAccessibleForFree: true,

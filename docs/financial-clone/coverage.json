@@ -1,13 +1,13 @@
 {
   "generated_at": "2026-10-20T02:03:53.844Z",
-  "directory_entries": 71,
-  "calculators": 70,
+  "directory_entries": 75,
+  "calculators": 74,
   "directory_only_entries": 1,
-  "implemented_modes": 158,
-  "local_browser_routes": 71,
-  "local_browser_modes": 158,
+  "implemented_modes": 170,
+  "local_browser_routes": 75,
+  "local_browser_modes": 170,
   "numeric_tests": {
-    "total": 376,
+    "total": 407,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,11 +17,11 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Search-intent metadata, entry points and four capability modes; 87 examples",
-  "seo_generated_pages_checked": 75,
-  "seo_detailed_guides": 70,
-  "seo_worked_examples": 87,
-  "seo_browser_checks": 95,
+  "latest_change": "Four globally applicable everyday tools; currency-aware bill allocation and calendar/unit calculations",
+  "seo_generated_pages_checked": 79,
+  "seo_detailed_guides": 74,
+  "seo_worked_examples": 94,
+  "seo_browser_checks": 102,
   "seo_public_origin_configured": false,
   "live_indexing_or_ai_citations": "not measured",
   "seo_evidence": [
@@ -30,8 +30,12 @@
     "evidence/browser-seo-qa.json"
   ],
   "calculation_audit": "calculation-audit.md",
-  "guide_pages": 70,
-  "worked_examples": 87,
+  "guide_pages": 74,
+  "worked_examples": 94,
   "keyword_map": "keyword-map.json",
-  "keyword_browser_checks": 29
+  "keyword_browser_checks": 29,
+  "original_financial_entries": 71,
+  "financial_calculators": 70,
+  "everyday_calculators": 4,
+  "everyday_browser_checks": 19
 }

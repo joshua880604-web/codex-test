@@ -5,11 +5,11 @@
 - Unique calculator metadata, Open Graph/Twitter text cards and configurable absolute canonicals. Share-query URLs canonicalize to the base calculator path when a final origin is configured.
 - A permanent HTTP 308 redirect from `/` to `/financial-calculator.html` removes duplicate directory entry points.
 - `/robots.txt` allows page crawling and excludes the reference-rate API. It advertises a sitemap only when indexing is explicitly enabled. A missing origin is never replaced with an invented production domain.
-- `/sitemap.xml` lists 75 unique canonical pages when indexing is enabled: the 71 source directory entries, the financial directory, About, Privacy and Methodology. It excludes `/`, API URLs and parameter variants. No synthetic daily `lastmod` values are emitted.
+- `/sitemap.xml` lists 79 unique canonical pages when indexing is enabled: the 71 original financial entries, four added everyday tools, the financial directory, About, Privacy and Methodology. It excludes `/`, API URLs and parameter variants. No synthetic daily `lastmod` values are emitted.
 - The preview configuration emits `noindex, follow`; it does not block page crawling in robots.txt, so compliant crawlers can see the noindex instruction. Vercel preview environments stay noindex even when production settings are inherited.
-- Real WebApplication data on 70 calculation pages; with a configured origin, WebPage and BreadcrumbList data use the same canonical page. No fake reviews, ratings, expert identities or promised rich results.
-- Server-rendered model descriptions/formulas are available for all 158 modes, including modes hidden behind interactive tabs.
-- All 70 functional calculators now have individual English guides, at least two contextual questions, explicit scope and source/provenance links. There are 87 reproducible examples across the site (12 original, 71 added in the content expansion, 4 added with keyword features). Nine added positive-rate installment examples and two nonzero tax/paycheck examples supplement the transparent simple/boundary illustrations. Expected values use separately specified arithmetic or closed-form equations, not saved calculator outputs. Example links populate the complete stated settings.
+- Real WebApplication data on 74 calculation pages; with a configured origin, WebPage and BreadcrumbList data use the same canonical page. No fake reviews, ratings, expert identities or promised rich results.
+- Server-rendered model descriptions/formulas are available for all 170 modes, including modes hidden behind interactive tabs.
+- All 74 functional calculators now have individual English guides, at least two contextual questions, explicit scope and source/provenance links. There are 94 reproducible examples across the site (12 original, 71 added in the content expansion, 4 added with keyword features, 7 added for everyday tools). Nine added positive-rate installment examples and two nonzero tax/paycheck examples supplement the transparent simple/boundary illustrations. Expected values use separately specified arithmetic or closed-form equations, not saved calculator outputs. Example links populate the complete stated settings.
 - Ten priority pages have manually selected related tools; other pages retain category-based related links. Expanding manual contextual linking remains useful.
 - `/methodology.html` explains calculation validation, official data versions, rounding, review status and model limitations. About/footer link to it. Notes carry a real content-check date, without inventing a human professional review.
 
@@ -30,7 +30,7 @@ Default local previews need no environment variables. With no final origin and n
 
 - All published examples are independently specified fixtures checked against the actual calculation functions (`tests/seo.test.ts`).
 - SEO configuration tests cover preview/production flags, URL validation, all 75 sitemap entries, canonical paths, schema escaping and contextual-link integrity.
-- `python3 scripts/check-seo-build.py` validates the 75 generated HTML pages in default preview mode; passing a test origin validates production canonicals, schema and sitemap output. The `.example` origin used in evidence is a reserved QA fixture, never a chosen live origin.
+- `python3 scripts/check-seo-build.py` validates the 79 generated HTML pages in default preview mode; passing a test origin validates production canonicals, schema and sitemap output. The `.example` origin used in evidence is a reserved QA fixture, never a chosen live origin.
 - `node --import tsx scripts/browser-seo-qa.mjs` follows the visible worked-example links, verifies their results, checks the root redirect, methodology, noindex behavior and responsive layout.
 - Full local calculator/browser regression checks remain separate from source parity and search performance measurements.
 

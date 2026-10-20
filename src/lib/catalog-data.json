@@ -495,5 +495,33 @@
     "title": "Commission Calculator",
     "source_url": "https://www.calculator.net/commission-calculator.html",
     "local_route": "/commission-calculator.html"
+  },
+  {
+    "id": "percentage",
+    "category": "Everyday Tools",
+    "title": "Percentage Calculator",
+    "local_route": "/percentage-calculator.html",
+    "source_url": "https://www.calculator.net/percent-calculator.html"
+  },
+  {
+    "id": "tip-bill-split",
+    "category": "Everyday Tools",
+    "title": "Tip and Bill Split Calculator",
+    "local_route": "/tip-bill-split-calculator.html",
+    "source_url": "https://www.calculator.net/tip-calculator.html"
+  },
+  {
+    "id": "date",
+    "category": "Everyday Tools",
+    "title": "Date Calculator",
+    "local_route": "/date-calculator.html",
+    "source_url": "https://www.calculator.net/date-calculator.html"
+  },
+  {
+    "id": "unit-converter",
+    "category": "Everyday Tools",
+    "title": "Unit Converter",
+    "local_route": "/unit-converter.html",
+    "source_url": "https://www.calculator.net/conversion-calculator.html"
   }
 ]

@@ -6,6 +6,7 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
   Investment: () => import('./calculators/investment').then(m => m.investmentCalculators),
   Retirement: () => import('./calculators/retirement').then(m => m.retirementCalculators),
   'Tax and Salary': () => import('./calculators/tax-salary').then(m => m.taxCalculators),
+  'Everyday Tools': () => import('./calculators/everyday').then(m => m.everydayCalculators),
   Other: () => import('./calculators/other').then(m => m.otherCalculators),
 };
 export async function runClientCalculation(id: string, category: string, mode: string, values: Values) {

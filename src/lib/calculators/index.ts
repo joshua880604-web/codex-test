@@ -4,6 +4,7 @@ import { propertyCalculators } from "./property";
 import { investmentCalculators } from "./investment";
 import { retirementCalculators } from "./retirement";
 import { taxCalculators } from "./tax-salary";
+import { everydayCalculators } from "./everyday";
 import { otherCalculators } from "./other";
 import { defaults, type Calculator, type Values, type Result } from "../types";
 export const calculators: Calculator[] = [
@@ -12,6 +13,7 @@ export const calculators: Calculator[] = [
   ...retirementCalculators,
   ...taxCalculators,
   ...otherCalculators,
+  ...everydayCalculators,
 ].sort(
   (a, b) =>
     data.findIndex((x) => x.id === a.id) - data.findIndex((x) => x.id === b.id),

@@ -20,6 +20,7 @@ export function Header() {
           <a className="selected" href="/financial-calculator.html">
             Financial Calculators
           </a>
+          <a href="/financial-calculator.html#everyday-tools">Everyday Tools</a>
           <a href="/real-estate-calculator.html">Real Estate</a>
           <a href="/financial-calculator.html#investment">Investment</a>
           <a href="/financial-calculator.html#retirement">Retirement</a>
@@ -67,6 +68,8 @@ export function Sidebar() {
       <a className="more-tools" href="/financial-calculator.html">
         More Financial Calculators »
       </a>
+      <div className="side-heading">Everyday Tools</div>
+      <div className="side-links">{calculators.filter(c=>c.category === "Everyday Tools").map(c=><a key={c.id} href={routeFor(c.id)}>{c.title}</a>)}</div>
       <div className="side-note">
         <h3>Plan with clear assumptions</h3>
         <p>

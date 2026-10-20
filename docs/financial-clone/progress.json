@@ -4291,5 +4291,269 @@
     ],
     "fully_complete": false,
     "updated_at": "2026-10-20T02:03:53.842Z"
+  },
+  {
+    "id": "percentage",
+    "mode": "of",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.832Z"
+  },
+  {
+    "id": "percentage",
+    "mode": "change",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.832Z"
+  },
+  {
+    "id": "percentage",
+    "mode": "ratio",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.832Z"
+  },
+  {
+    "id": "tip-bill-split",
+    "mode": "split",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.832Z"
+  },
+  {
+    "id": "date",
+    "mode": "difference",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.832Z"
+  },
+  {
+    "id": "date",
+    "mode": "add",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.832Z"
+  },
+  {
+    "id": "unit-converter",
+    "mode": "length",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.832Z"
+  },
+  {
+    "id": "unit-converter",
+    "mode": "mass",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.832Z"
+  },
+  {
+    "id": "unit-converter",
+    "mode": "temperature",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.833Z"
+  },
+  {
+    "id": "unit-converter",
+    "mode": "area",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.833Z"
+  },
+  {
+    "id": "unit-converter",
+    "mode": "volume",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.833Z"
+  },
+  {
+    "id": "unit-converter",
+    "mode": "speed",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not_applicable",
+    "visual": "unverified",
+    "browser": "passed",
+    "local_implementation": "passed",
+    "local_numeric_smoke": "passed",
+    "fully_complete": false,
+    "evidence": {
+      "spec": "everyday-tools.md",
+      "numeric": "evidence/tests.tap",
+      "browser": "evidence/browser-everyday-qa.json"
+    },
+    "blockers": [
+      "User-requested additional tool, outside original 71-entry clone scope. Original-site parity is not claimed."
+    ],
+    "updated_at": "2026-10-20T02:37:19.833Z"
   }
 ]

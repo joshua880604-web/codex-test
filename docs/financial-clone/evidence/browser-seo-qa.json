@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-20T02:06:24.642Z",
+  "tested_at": "2026-10-20T02:37:03.070Z",
   "checks": [
     "Root 308 redirects to canonical financial directory",
     {
@@ -371,6 +371,41 @@
     {
       "id": "commission",
       "example": "Calculate a five-percent sales commission",
+      "result": "passed"
+    },
+    {
+      "id": "percentage",
+      "example": "Find 15 percent of 200",
+      "result": "passed"
+    },
+    {
+      "id": "percentage",
+      "example": "Increase from 80 to 100",
+      "result": "passed"
+    },
+    {
+      "id": "tip-bill-split",
+      "example": "Split a 115 dollar total among three people",
+      "result": "passed"
+    },
+    {
+      "id": "date",
+      "example": "Count across a leap day",
+      "result": "passed"
+    },
+    {
+      "id": "date",
+      "example": "Add one day at the end of February in a leap year",
+      "result": "passed"
+    },
+    {
+      "id": "unit-converter",
+      "example": "Convert one metre to centimetres",
+      "result": "passed"
+    },
+    {
+      "id": "unit-converter",
+      "example": "Convert water’s freezing point between temperature scales",
       "result": "passed"
     },
     {
