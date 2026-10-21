@@ -652,3 +652,9 @@ guides.margin.examples.push({title:'Convert a markup on cost into selling price 
 for(const id of ['debt-payoff','margin','savings'])guides[id].checkedOn='2026-10-21';
 
 for (const {calculator,...example} of insightExamples) guides[calculator].examples.push({...example,values:Object.fromEntries(Object.entries(example.values).filter(([,value])=>value!==undefined))});
+
+Object.assign(relatedCalculatorIds,{"markup": ["margin", "break-even", "commission", "sales-tax"], "cagr": ["average-return", "irr", "investment", "real-return"], "emergency-fund": ["savings", "budget", "interest", "retirement"], "break-even": ["markup", "margin", "business-loan"], "investment-fee": ["mutual-fund", "investment", "cagr", "real-return"], "real-return": ["inflation", "cagr", "investment-fee", "savings"]});
+
+relatedCalculatorIds.inflation = [...new Set([...(relatedCalculatorIds.inflation??[]),"real-return"])];
+relatedCalculatorIds.margin = [...new Set([...(relatedCalculatorIds.margin??[]),"markup","break-even"])];
+relatedCalculatorIds["mutual-fund"] = [...new Set([...(relatedCalculatorIds["mutual-fund"]??[]),"investment-fee"])];

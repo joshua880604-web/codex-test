@@ -95,3 +95,5 @@ VAT 已改为四字段任填两个的统一表单，覆盖六种输入组合，C
 
 
 分享与 PNG（2026-10-21）：默认分享工具页，勾选后才分享可复算输入；摘要和图片明确提示含结果金额。Canvas 本地生成 PNG，无 API/新依赖。兼容旧参数链接，496 项测试、静态构建和全站 174 模式回归通过。见 docs/financial-clone/sharing-and-image-export.md。保持 noindex，未部署网站。
+
+新增六个固定公式工具（2026-10-21）：Markup、CAGR、Emergency Fund、Break-Even、Investment Fee、Real Return，共19个模式。全站82个目录入口、81个工具、193个模式；新增13个可复算算例。纯静态、无外部API、无政策/行情更新需求，保持正式域名前noindex。模型和核验边界见 [新增工具说明](docs/financial-clone/evergreen-additions-2026-10-21.md)。

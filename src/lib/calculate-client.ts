@@ -10,7 +10,7 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
   Other: () => import('./calculators/other').then(m => m.otherCalculators),
 };
 export async function runClientCalculation(id: string, category: string, mode: string, values: Values) {
-  const calculators = await loaders[category]();
+  const calculators = ['markup','cagr','emergency-fund','break-even','investment-fee','real-return'].includes(id) ? (await import('./calculators/evergreen')).evergreenCalculators : await loaders[category]();
   const calc = calculators.find(c => c.id === id);
   if (!calc) throw new Error('Unknown calculator.');
   return calculateMode(calc, mode, values);

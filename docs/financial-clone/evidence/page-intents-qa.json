@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-10-21T05:52:32.469Z",
+  "checked_at": "2026-10-21T08:09:27.222Z",
   "passed": true,
-  "tools": 75,
-  "search_tasks": 149,
-  "editorial_candidates": 67,
+  "tools": 81,
+  "search_tasks": 195,
+  "editorial_candidates": 73,
   "keyword_volume_claims": "See keyword-map.json and research/us-keywords-2026-10-21.json for user-provided evidence; remaining editorial phrases have no verified volume",
   "indexing_or_ai_citations": "not measured",
   "checks": [
@@ -426,7 +426,8 @@
         "average-return",
         "irr",
         "roi",
-        "finance"
+        "finance",
+        "investment-fee"
       ]
     },
     {
@@ -788,7 +789,8 @@
       "related": [
         "currency",
         "interest",
-        "future-value"
+        "future-value",
+        "real-return"
       ]
     },
     {
@@ -942,17 +944,18 @@
     {
       "id": "margin",
       "route": "/margin-calculator.html",
-      "title": "Profit Margin & Markup Calculator",
+      "title": "Profit Margin Calculator - Cost, Revenue & Profit",
       "keywords": [
-        "Profit margin calculator",
-        "Markup calculator"
+        "Profit margin calculator"
       ],
       "related": [
         "vat",
         "sales-tax",
         "discount",
         "commission",
-        "percentage"
+        "percentage",
+        "markup",
+        "break-even"
       ]
     },
     {
@@ -1123,6 +1126,106 @@
         "date",
         "unit-converter",
         "percentage"
+      ]
+    },
+    {
+      "id": "markup",
+      "route": "/markup-calculator.html",
+      "title": "Markup Calculator - Selling Price & Margin",
+      "keywords": [
+        "Markup calculator",
+        "Reverse markup calculator",
+        "Selling price calculator",
+        "Markup and margin calculator",
+        "Cost and selling price calculator"
+      ],
+      "related": [
+        "margin",
+        "break-even",
+        "commission",
+        "sales-tax"
+      ]
+    },
+    {
+      "id": "cagr",
+      "route": "/cagr-calculator.html",
+      "title": "CAGR Calculator - Compound Annual Growth & Reverse CAGR",
+      "keywords": [
+        "CAGR calculator",
+        "Compound annual growth rate calculator",
+        "Reverse CAGR calculator",
+        "CAGR calculator with dates"
+      ],
+      "related": [
+        "average-return",
+        "irr",
+        "investment",
+        "real-return"
+      ]
+    },
+    {
+      "id": "emergency-fund",
+      "route": "/emergency-fund-calculator.html",
+      "title": "Emergency Fund Calculator - Goal & Savings Plan",
+      "keywords": [
+        "Emergency fund calculator",
+        "Emergency savings calculator",
+        "Emergency fund savings plan"
+      ],
+      "related": [
+        "savings",
+        "budget",
+        "interest",
+        "retirement"
+      ]
+    },
+    {
+      "id": "break-even",
+      "route": "/break-even-calculator.html",
+      "title": "Break-Even Calculator - Units, Sales & Target Profit",
+      "keywords": [
+        "Break even point calculator",
+        "Break even sales calculator",
+        "Target profit calculator",
+        "Break even selling price calculator"
+      ],
+      "related": [
+        "markup",
+        "margin",
+        "business-loan"
+      ]
+    },
+    {
+      "id": "investment-fee",
+      "route": "/investment-fee-calculator.html",
+      "title": "Investment Fee & Expense Ratio Calculator - Long-Term Costs",
+      "keywords": [
+        "Expense ratio calculator",
+        "Investment fee calculator",
+        "Expense ratio comparison calculator"
+      ],
+      "related": [
+        "mutual-fund",
+        "investment",
+        "cagr",
+        "real-return"
+      ]
+    },
+    {
+      "id": "real-return",
+      "route": "/real-return-calculator.html",
+      "title": "Real Return Calculator - Inflation-Adjusted Returns",
+      "keywords": [
+        "Real rate of return calculator",
+        "Inflation adjusted return calculator",
+        "Inflation adjusted future value calculator",
+        "Required nominal return calculator"
+      ],
+      "related": [
+        "inflation",
+        "cagr",
+        "investment-fee",
+        "savings"
       ]
     }
   ]

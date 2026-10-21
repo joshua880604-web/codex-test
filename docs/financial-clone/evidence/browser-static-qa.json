@@ -1,5 +1,5 @@
 {
-  "tested_at": "2026-10-21T06:56:26.418Z",
+  "tested_at": "2026-10-21T08:11:25.883Z",
   "passed": true,
   "checks": [
     {
@@ -553,6 +553,55 @@
       "route": "/scientific-calculator.html",
       "modes": [
         "default"
+      ]
+    },
+    {
+      "route": "/markup-calculator.html",
+      "modes": [
+        "Selling Price",
+        "Reverse Markup",
+        "Price from Margin",
+        "Convert Rates",
+        "Markup & Margin"
+      ]
+    },
+    {
+      "route": "/cagr-calculator.html",
+      "modes": [
+        "CAGR",
+        "Ending Value",
+        "Beginning Value",
+        "CAGR with Dates"
+      ]
+    },
+    {
+      "route": "/emergency-fund-calculator.html",
+      "modes": [
+        "Reserve Goal",
+        "Savings Plan"
+      ]
+    },
+    {
+      "route": "/break-even-calculator.html",
+      "modes": [
+        "Break-Even Point",
+        "Target Profit",
+        "Break-Even Price"
+      ]
+    },
+    {
+      "route": "/investment-fee-calculator.html",
+      "modes": [
+        "Fee Impact",
+        "Compare Fees"
+      ]
+    },
+    {
+      "route": "/real-return-calculator.html",
+      "modes": [
+        "Real Return",
+        "Purchasing Power",
+        "Required Nominal Return"
       ]
     }
   ],

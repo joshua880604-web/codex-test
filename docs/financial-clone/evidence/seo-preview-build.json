@@ -2,7 +2,7 @@
   "passed": true,
   "configuration": "default-noindex-preview",
   "test_origin": null,
-  "pages": 80,
+  "pages": 86,
   "checks": [
     {
       "route": "/mortgage-calculator.html",
@@ -383,6 +383,36 @@
       "route": "/scientific-calculator.html",
       "canonical": [],
       "h1": "Scientific Calculator"
+    },
+    {
+      "route": "/markup-calculator.html",
+      "canonical": [],
+      "h1": "Markup Calculator"
+    },
+    {
+      "route": "/cagr-calculator.html",
+      "canonical": [],
+      "h1": "CAGR Calculator"
+    },
+    {
+      "route": "/emergency-fund-calculator.html",
+      "canonical": [],
+      "h1": "Emergency Fund Calculator"
+    },
+    {
+      "route": "/break-even-calculator.html",
+      "canonical": [],
+      "h1": "Break-Even Calculator"
+    },
+    {
+      "route": "/investment-fee-calculator.html",
+      "canonical": [],
+      "h1": "Investment Fee Calculator"
+    },
+    {
+      "route": "/real-return-calculator.html",
+      "canonical": [],
+      "h1": "Real Return Calculator"
     },
     {
       "route": "/financial-calculator.html",

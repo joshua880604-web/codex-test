@@ -1,3 +1,4 @@
+import {evergreenCalculators} from "./evergreen";
 import { calculateMode } from "../calculate-mode";
 import data from "../catalog-data.json";
 import { propertyCalculators } from "./property";
@@ -8,6 +9,7 @@ import { everydayCalculators } from "./everyday";
 import { otherCalculators } from "./other";
 import { defaults, type Calculator, type Values, type Result } from "../types";
 export const calculators: Calculator[] = [
+  ...evergreenCalculators,
   ...propertyCalculators,
   ...investmentCalculators,
   ...retirementCalculators,

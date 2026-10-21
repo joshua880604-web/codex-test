@@ -1,0 +1,17 @@
+{
+ "source":"User-provided Google Keyword Planner screenshots in this conversation",
+ "location":"United States",
+ "language":"English",
+ "measure":"Average monthly searches over the user's selected previous 12 months",
+ "notes":["Location/language carried forward from the user's stated research settings, not independently read from screenshot filters.","Do not sum close variants or treat advertising competition as organic difficulty.","Dash values mean insufficient/display-unavailable data, not verified zero.","Unrelated suggestions such as margin goods excluded. Excel requests are addressed by formulas, not claimed workbook downloads."],
+ "observed_terms":{
+  "cagr calculator":14800,"compound annual growth rate calculator":590,"cagr formula":14800,"how to calculate compound annual growth rate":2900,"reverse cagr calculator":320,"cagr calculator with dates":10,"cagr calculator excel":9900,
+  "markup calculator":18100,"markup percentage calculator":1300,"markup vs margin":5400,"reverse markup calculator":140,"retail markup calculator":140,"markup to margin calculator":320,"margin to markup calculator":1300,
+  "emergency fund calculator":6600,"emergency savings calculator":390,"6 month emergency fund calculator":170,"emergency fund savings plan":70,"how many months emergency fund":170,
+  "break even point calculator":1300,"break even calculator":880,"break even sales calculator":880,"break even point formula":4400,"how to calculate break even point":2900,"contribution margin ratio calculator":210,"target profit calculator":20,
+  "expense ratio calculator":1300,"investment fee calculator":210,"financial advisor fee calculator":210,"etf expense ratio calculator":110,
+  "real interest rate calculator":260,"real return calculator":110,"real rate of return calculator":70,"inflation adjusted return calculator":50,"real rate of return formula":590,"purchasing power calculator":3600
+ },
+ "ownership_changes":{"markup calculator":"New Markup page; existing Margin tool and markup mode preserved","investment fee calculator":"New fee-impact page; existing Mutual Fund tool preserved","annualized return calculator":"Existing Average Return target retained; CAGR guide explains endpoint annualization","purchasing power calculator":"Historical purchasing power remains with Inflation; future assumed-rate value with Real Return"},
+ "ranking_or_ai_citation_effect":"Not measured"
+}

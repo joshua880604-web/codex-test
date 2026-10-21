@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "pages": 75,
+  "pages": 81,
   "enhanced_guides": 12,
   "checks": [
     {
@@ -375,6 +375,36 @@
     },
     {
       "id": "scientific",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "markup",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "cagr",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "emergency-fund",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "break-even",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "investment-fee",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "real-return",
       "rich_result_explanations": false,
       "guide_navigation": true
     }

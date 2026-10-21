@@ -9,7 +9,7 @@ export const directoryGroups=[
  {id:'tax-salary',title:'Tax & Salary',categories:['Tax and Salary'],popular:['income-tax','take-home-paycheck','salary','sales-tax']},
  {id:'everyday',title:'Everyday',categories:['Everyday Tools'],popular:['percentage','scientific','date','unit-converter']},
 ];
-const otherGroups:Record<string,string>={currency:'everyday',budget:'everyday',depreciation:'everyday',margin:'everyday',discount:'everyday',commission:'tax-salary','sales-tax':'tax-salary',vat:'tax-salary',inflation:'saving-investing','college-cost':'saving-investing'};
+const otherGroups:Record<string,string>={markup:'everyday','break-even':'everyday',currency:'everyday',budget:'everyday',depreciation:'everyday',margin:'everyday',discount:'everyday',commission:'tax-salary','sales-tax':'tax-salary',vat:'tax-salary',inflation:'saving-investing','college-cost':'saving-investing'};
 export function directoryGroup(id:string,category:string){return otherGroups[id]??directoryGroups.find(g=>g.categories.includes(category))?.id??'loans-debt';}
 const aliases:Record<string,string>={
  'auto-loan':'car payment car loan vehicle finance',
@@ -33,7 +33,7 @@ export const directoryDescriptions:Record<string,string>={
 };
 export function directoryMatch(c:typeof calculators[number],query:string){
  const terms=query.toLowerCase().trim().split(/\s+/).filter(Boolean);
- const haystack=(c.title+' '+(aliases[c.id]??'')+' '+(searchTasks[c.id]??[]).map(t=>t.keyword+' '+t.description).join(' ')).toLowerCase();
+ const haystack=(c.title+' '+(aliases[c.id]??'')+' '+(searchTasks[c.id]??[]).map(t=>t.keyword+' '+(t.aliases??[]).join(' ')+' '+t.description).join(' ')).toLowerCase();
  return terms.every(term=>haystack.includes(term));
 }
 export function directorySort(tools:typeof calculators,popular:string[]){

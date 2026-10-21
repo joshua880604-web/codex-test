@@ -534,5 +534,47 @@
     "titleSuffix": "Scientific Functions & Expressions",
     "description": "Evaluate scientific expressions with selected degree or radian angle units. Use parentheses to make operation order explicit.",
     "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "cagr",
+    "keyword": "CAGR calculator",
+    "mode": "rate",
+    "description": "Calculate compound annual growth rate from beginning and ending values over a selected period. CAGR smooths growth into one annual rate; it does not describe volatility or handle cash added between endpoints.",
+    "titleSuffix": "Compound Annual Growth Rate & Reverse CAGR"
+  },
+  {
+    "id": "markup",
+    "keyword": "Markup calculator",
+    "mode": "price",
+    "description": "Calculate a selling price from cost and markup, reverse a markup to find cost, or compare markup and margin. Markup uses cost as its denominator; margin uses selling price, so the percentages are different.",
+    "titleSuffix": "Selling Price, Reverse Markup & Margin"
+  },
+  {
+    "id": "emergency-fund",
+    "keyword": "Emergency fund calculator",
+    "mode": "goal",
+    "description": "Estimate an emergency savings target from essential monthly expenses and your chosen reserve months. Review the current savings gap and months covered, then plan how many monthly deposits would reach that goal.",
+    "titleSuffix": "Reserve Goal & Savings Plan"
+  },
+  {
+    "id": "break-even",
+    "keyword": "Break even point calculator",
+    "mode": "units",
+    "description": "Find the units and sales revenue needed to cover fixed costs using the selling price and variable cost per unit. Review contribution margin, whole-unit rounding and the additional volume required for a target profit.",
+    "titleSuffix": "Units, Sales & Target Profit"
+  },
+  {
+    "id": "investment-fee",
+    "keyword": "Expense ratio calculator",
+    "mode": "impact",
+    "description": "Estimate the long-term effect of fund expense ratios and advisor fees using a transparent annual model. Compare amounts paid as fees with the balance reduction that also reflects lost growth, without deducting fund fees twice.",
+    "titleSuffix": "Investment Fee Impact & Comparison"
+  },
+  {
+    "id": "real-return",
+    "keyword": "Real rate of return calculator",
+    "mode": "rate",
+    "description": "Convert nominal returns into real returns with the exact Fisher relationship. Estimate inflation-adjusted future value and required nominal return using your own inflation assumptions, without relying on external economic data.",
+    "titleSuffix": "Inflation-Adjusted Return & Value"
   }
 ]

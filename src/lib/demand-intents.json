@@ -21,7 +21,7 @@
     "401k": "401k Calculator - Growth, Match & Early Withdrawal",
     "credit-card": "Credit Card Payoff Calculator - Payments & Interest",
     "debt-payoff": "Debt Payoff Calculator - Avalanche & Snowball",
-    "margin": "Profit Margin & Markup Calculator",
+    "margin": "Profit Margin Calculator - Cost, Revenue & Profit",
     "student-loan": "Student Loan Calculator - Payments, Payoff & Interest",
     "income-tax": "Federal Income Tax Calculator - 2025 & 2026 Estimate",
     "vat": "VAT Calculator - Add VAT, Remove VAT & Find the Rate",
@@ -257,11 +257,6 @@
       "mode": "yield"
     },
     {
-      "id": "mutual-fund",
-      "keyword": "Investment fee calculator",
-      "mode": "projection"
-    },
-    {
       "id": "average-return",
       "keyword": "Average return calculator",
       "mode": "returns"
@@ -383,12 +378,6 @@
       "id": "income-tax",
       "keyword": "Federal income tax calculator",
       "mode": "federal"
-    },
-    {
-      "id": "margin",
-      "keyword": "Markup calculator",
-      "mode": "markup",
-      "description": "Enter cost and markup to calculate selling price, profit and gross margin. Markup divides profit by cost; gross margin divides profit by revenue."
     },
     {
       "id": "income-tax",

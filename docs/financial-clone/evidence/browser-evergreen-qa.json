@@ -1,0 +1,138 @@
+{
+  "tested_at": "2026-10-21T08:10:09.072Z",
+  "checks": [
+    {
+      "id": "markup",
+      "mode": "Selling Price",
+      "passed": true
+    },
+    {
+      "id": "markup",
+      "mode": "Reverse Markup",
+      "passed": true
+    },
+    {
+      "id": "markup",
+      "mode": "Price from Margin",
+      "passed": true
+    },
+    {
+      "id": "markup",
+      "mode": "Convert Rates",
+      "passed": true
+    },
+    {
+      "id": "markup",
+      "mode": "Markup & Margin",
+      "passed": true
+    },
+    {
+      "id": "markup",
+      "sharing": "roundtrip",
+      "png": true,
+      "desktopMobile": true
+    },
+    {
+      "id": "cagr",
+      "mode": "CAGR",
+      "passed": true
+    },
+    {
+      "id": "cagr",
+      "mode": "Ending Value",
+      "passed": true
+    },
+    {
+      "id": "cagr",
+      "mode": "Beginning Value",
+      "passed": true
+    },
+    {
+      "id": "cagr",
+      "mode": "CAGR with Dates",
+      "passed": true
+    },
+    {
+      "id": "cagr",
+      "sharing": "roundtrip",
+      "png": true,
+      "desktopMobile": true
+    },
+    {
+      "id": "emergency-fund",
+      "mode": "Reserve Goal",
+      "passed": true
+    },
+    {
+      "id": "emergency-fund",
+      "mode": "Savings Plan",
+      "passed": true
+    },
+    {
+      "id": "emergency-fund",
+      "sharing": "roundtrip",
+      "png": true,
+      "desktopMobile": true
+    },
+    {
+      "id": "break-even",
+      "mode": "Break-Even Point",
+      "passed": true
+    },
+    {
+      "id": "break-even",
+      "mode": "Target Profit",
+      "passed": true
+    },
+    {
+      "id": "break-even",
+      "mode": "Break-Even Price",
+      "passed": true
+    },
+    {
+      "id": "break-even",
+      "sharing": "roundtrip",
+      "png": true,
+      "desktopMobile": true
+    },
+    {
+      "id": "investment-fee",
+      "mode": "Fee Impact",
+      "passed": true
+    },
+    {
+      "id": "investment-fee",
+      "mode": "Compare Fees",
+      "passed": true
+    },
+    {
+      "id": "investment-fee",
+      "sharing": "roundtrip",
+      "png": true,
+      "desktopMobile": true
+    },
+    {
+      "id": "real-return",
+      "mode": "Real Return",
+      "passed": true
+    },
+    {
+      "id": "real-return",
+      "mode": "Purchasing Power",
+      "passed": true
+    },
+    {
+      "id": "real-return",
+      "mode": "Required Nominal Return",
+      "passed": true
+    },
+    {
+      "id": "real-return",
+      "sharing": "roundtrip",
+      "png": true,
+      "desktopMobile": true
+    }
+  ],
+  "errors": [],
+  "external": []
+}

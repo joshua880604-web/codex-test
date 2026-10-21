@@ -530,5 +530,47 @@
     "category": "Everyday Tools",
     "local_route": "/scientific-calculator.html",
     "source_url": "https://www.calculator.net/scientific-calculator.html"
+  },
+  {
+    "id": "markup",
+    "title": "Markup Calculator",
+    "category": "Other",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/markup-calculator.html"
+  },
+  {
+    "id": "cagr",
+    "title": "CAGR Calculator",
+    "category": "Investment",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/cagr-calculator.html"
+  },
+  {
+    "id": "emergency-fund",
+    "title": "Emergency Fund Calculator",
+    "category": "Investment",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/emergency-fund-calculator.html"
+  },
+  {
+    "id": "break-even",
+    "title": "Break-Even Calculator",
+    "category": "Other",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/break-even-calculator.html"
+  },
+  {
+    "id": "investment-fee",
+    "title": "Investment Fee Calculator",
+    "category": "Investment",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/investment-fee-calculator.html"
+  },
+  {
+    "id": "real-return",
+    "title": "Real Return Calculator",
+    "category": "Investment",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/real-return-calculator.html"
   }
 ]

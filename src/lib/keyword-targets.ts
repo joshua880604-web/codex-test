@@ -61,3 +61,7 @@ for(const [id,keyword] of Object.entries(primaryQueries)){
  }
  searchTasks[id]=[task,...tasks.filter(t=>t!==task)];
 }
+
+// User-researched evergreen tools own distinct intents; legacy functions remain available.
+import evergreenTargets from "./evergreen-targets.json";
+for(const [id,entry] of Object.entries(evergreenTargets)){searchTasks[id]=entry.tasks;keywordTitles[id]=entry.title;}

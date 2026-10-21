@@ -11250,5 +11250,686 @@
         "formula": "Powers are right-associative and precede a leading minus: 2^3^2 = 512; −2^2 = −4. Factorial and percent apply to the preceding value."
       }
     ]
+  },
+  {
+    "id": "markup",
+    "title": "Markup Calculator",
+    "category": "Other",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/markup-calculator.html",
+    "directory": false,
+    "source_status": "Independent fixed-formula addition requested by user; no original-site parity claim",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "price",
+        "title": "Selling Price",
+        "fields": [
+          {
+            "key": "cost",
+            "label": "Cost per unit",
+            "value": 100,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "markup",
+            "label": "Markup on cost",
+            "value": 50,
+            "unit": "%",
+            "min": -99.999
+          }
+        ]
+      },
+      {
+        "id": "reverse",
+        "title": "Reverse Markup",
+        "fields": [
+          {
+            "key": "price",
+            "label": "Selling price",
+            "value": 150,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "markup",
+            "label": "Markup on cost",
+            "value": 50,
+            "unit": "%",
+            "min": -99.999
+          }
+        ]
+      },
+      {
+        "id": "margin",
+        "title": "Price from Margin",
+        "fields": [
+          {
+            "key": "cost",
+            "label": "Cost per unit",
+            "value": 100,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "margin",
+            "label": "Target profit margin",
+            "value": 30,
+            "unit": "%",
+            "min": -1000000,
+            "max": 99.999
+          }
+        ]
+      },
+      {
+        "id": "convert",
+        "title": "Convert Rates",
+        "fields": [
+          {
+            "key": "rate",
+            "label": "Percentage to convert",
+            "value": 50,
+            "unit": "%",
+            "min": -1000000
+          },
+          {
+            "key": "direction",
+            "label": "Conversion direction",
+            "value": "Markup to margin",
+            "type": "select",
+            "options": [
+              "Markup to margin",
+              "Margin to markup"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "compare",
+        "title": "Markup & Margin",
+        "fields": [
+          {
+            "key": "cost",
+            "label": "Cost per unit",
+            "value": 100,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "price",
+            "label": "Selling price",
+            "value": 150,
+            "unit": "$",
+            "min": 0.000001
+          }
+        ]
+      }
+    ],
+    "reference_parity": "not-applicable-independent-addition"
+  },
+  {
+    "id": "cagr",
+    "title": "CAGR Calculator",
+    "category": "Investment",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/cagr-calculator.html",
+    "directory": false,
+    "source_status": "Independent fixed-formula addition requested by user; no original-site parity claim",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "rate",
+        "title": "CAGR",
+        "fields": [
+          {
+            "key": "begin",
+            "label": "Beginning value",
+            "value": 10000,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "end",
+            "label": "Ending value",
+            "value": 20000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "years",
+            "label": "Number of years",
+            "value": 10,
+            "unit": "years",
+            "min": 0.000001,
+            "max": 1000
+          }
+        ]
+      },
+      {
+        "id": "ending",
+        "title": "Ending Value",
+        "fields": [
+          {
+            "key": "begin",
+            "label": "Beginning value",
+            "value": 10000,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "rate",
+            "label": "Annual rate",
+            "value": 8,
+            "unit": "%",
+            "min": -99.999
+          },
+          {
+            "key": "years",
+            "label": "Number of years",
+            "value": 10,
+            "unit": "years",
+            "min": 0.000001,
+            "max": 1000
+          }
+        ]
+      },
+      {
+        "id": "beginning",
+        "title": "Beginning Value",
+        "fields": [
+          {
+            "key": "end",
+            "label": "Ending value",
+            "value": 20000,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "rate",
+            "label": "Annual rate",
+            "value": 8,
+            "unit": "%",
+            "min": -99.999
+          },
+          {
+            "key": "years",
+            "label": "Number of years",
+            "value": 10,
+            "unit": "years",
+            "min": 0.000001,
+            "max": 1000
+          }
+        ]
+      },
+      {
+        "id": "dates",
+        "title": "CAGR with Dates",
+        "fields": [
+          {
+            "key": "begin",
+            "label": "Beginning value",
+            "value": 10000,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "end",
+            "label": "Ending value",
+            "value": 20000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "start",
+            "label": "Start date",
+            "value": "2020-01-01",
+            "type": "date"
+          },
+          {
+            "key": "end_date",
+            "label": "End date",
+            "value": "2025-01-01",
+            "type": "date"
+          }
+        ]
+      }
+    ],
+    "reference_parity": "not-applicable-independent-addition"
+  },
+  {
+    "id": "emergency-fund",
+    "title": "Emergency Fund Calculator",
+    "category": "Investment",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/emergency-fund-calculator.html",
+    "directory": false,
+    "source_status": "Independent fixed-formula addition requested by user; no original-site parity claim",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "goal",
+        "title": "Reserve Goal",
+        "fields": [
+          {
+            "key": "expenses",
+            "label": "Essential monthly expenses",
+            "value": 3000,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "months",
+            "label": "Target reserve months",
+            "value": 6,
+            "unit": "months",
+            "min": 0.000001,
+            "max": 120
+          },
+          {
+            "key": "savings",
+            "label": "Current emergency savings",
+            "value": 5000,
+            "unit": "$",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": "plan",
+        "title": "Savings Plan",
+        "fields": [
+          {
+            "key": "expenses",
+            "label": "Essential monthly expenses",
+            "value": 3000,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "months",
+            "label": "Target reserve months",
+            "value": 6,
+            "unit": "months",
+            "min": 0.000001,
+            "max": 120
+          },
+          {
+            "key": "savings",
+            "label": "Current emergency savings",
+            "value": 5000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "deposit",
+            "label": "Monthly savings deposit",
+            "value": 500,
+            "unit": "$",
+            "min": 0
+          }
+        ]
+      }
+    ],
+    "reference_parity": "not-applicable-independent-addition"
+  },
+  {
+    "id": "break-even",
+    "title": "Break-Even Calculator",
+    "category": "Other",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/break-even-calculator.html",
+    "directory": false,
+    "source_status": "Independent fixed-formula addition requested by user; no original-site parity claim",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "units",
+        "title": "Break-Even Point",
+        "fields": [
+          {
+            "key": "fixed",
+            "label": "Fixed costs per period",
+            "value": 10000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "price",
+            "label": "Selling price per unit",
+            "value": 50,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "variable",
+            "label": "Variable cost per unit",
+            "value": 30,
+            "unit": "$",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": "profit",
+        "title": "Target Profit",
+        "fields": [
+          {
+            "key": "fixed",
+            "label": "Fixed costs per period",
+            "value": 10000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "price",
+            "label": "Selling price per unit",
+            "value": 50,
+            "unit": "$",
+            "min": 0.000001
+          },
+          {
+            "key": "variable",
+            "label": "Variable cost per unit",
+            "value": 30,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "profit",
+            "label": "Target profit per period",
+            "value": 5000,
+            "unit": "$",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": "price",
+        "title": "Break-Even Price",
+        "fields": [
+          {
+            "key": "fixed",
+            "label": "Fixed costs per period",
+            "value": 10000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "variable",
+            "label": "Variable cost per unit",
+            "value": 30,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "units",
+            "label": "Expected units sold",
+            "value": 500,
+            "unit": "units",
+            "min": 0.000001
+          },
+          {
+            "key": "profit",
+            "label": "Target profit per period",
+            "value": 0,
+            "unit": "$",
+            "min": 0
+          }
+        ]
+      }
+    ],
+    "reference_parity": "not-applicable-independent-addition"
+  },
+  {
+    "id": "investment-fee",
+    "title": "Investment Fee Calculator",
+    "category": "Investment",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/investment-fee-calculator.html",
+    "directory": false,
+    "source_status": "Independent fixed-formula addition requested by user; no original-site parity claim",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "impact",
+        "title": "Fee Impact",
+        "fields": [
+          {
+            "key": "balance",
+            "label": "Starting investment",
+            "value": 10000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "deposit",
+            "label": "Annual contribution",
+            "value": 1000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "years",
+            "label": "Investment years",
+            "value": 20,
+            "unit": "years",
+            "min": 1,
+            "max": 100,
+            "step": 1
+          },
+          {
+            "key": "rate",
+            "label": "Annual rate",
+            "value": 8,
+            "unit": "%",
+            "min": -99.999
+          },
+          {
+            "key": "basis",
+            "label": "Return input basis",
+            "value": "Before fund fees",
+            "type": "select",
+            "options": [
+              "Before fund fees",
+              "After fund fees"
+            ],
+            "hint": "Published fund returns often already include the expense ratio. Choose After fund fees to avoid a second deduction."
+          },
+          {
+            "key": "fund",
+            "label": "Fund expense ratio",
+            "value": 0.2,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+          },
+          {
+            "key": "advisor",
+            "label": "Annual advisor fee",
+            "value": 0,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "compare",
+        "title": "Compare Fees",
+        "fields": [
+          {
+            "key": "balance",
+            "label": "Starting investment",
+            "value": 10000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "deposit",
+            "label": "Annual contribution",
+            "value": 1000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "years",
+            "label": "Investment years",
+            "value": 20,
+            "unit": "years",
+            "min": 1,
+            "max": 100,
+            "step": 1
+          },
+          {
+            "key": "rate",
+            "label": "Annual rate",
+            "value": 8,
+            "unit": "%",
+            "min": -99.999
+          },
+          {
+            "key": "basis",
+            "label": "Return input basis",
+            "value": "Before fund fees",
+            "type": "select",
+            "options": [
+              "Before fund fees",
+              "After fund fees"
+            ],
+            "hint": "Published fund returns often already include the expense ratio. Choose After fund fees to avoid a second deduction."
+          },
+          {
+            "key": "fund",
+            "label": "Fund expense ratio",
+            "value": 0.2,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+          },
+          {
+            "key": "advisor",
+            "label": "Annual advisor fee",
+            "value": 0,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+          },
+          {
+            "key": "fund_b",
+            "label": "Option B fund expense ratio",
+            "value": 0.05,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+          },
+          {
+            "key": "advisor_b",
+            "label": "Option B advisor fee",
+            "value": 0,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+          }
+        ]
+      }
+    ],
+    "reference_parity": "not-applicable-independent-addition"
+  },
+  {
+    "id": "real-return",
+    "title": "Real Return Calculator",
+    "category": "Investment",
+    "source_url": "https://github.com/joshua880604-web/codex-test",
+    "local_route": "/real-return-calculator.html",
+    "directory": false,
+    "source_status": "Independent fixed-formula addition requested by user; no original-site parity claim",
+    "source_mode_groups": [],
+    "implemented_modes": [
+      {
+        "id": "rate",
+        "title": "Real Return",
+        "fields": [
+          {
+            "key": "nominal",
+            "label": "Nominal annual return",
+            "value": 8,
+            "unit": "%",
+            "min": -99.999
+          },
+          {
+            "key": "inflation",
+            "label": "Annual inflation rate",
+            "value": 3,
+            "unit": "%",
+            "min": -99.999
+          }
+        ]
+      },
+      {
+        "id": "value",
+        "title": "Purchasing Power",
+        "fields": [
+          {
+            "key": "principal",
+            "label": "Starting amount",
+            "value": 10000,
+            "unit": "$",
+            "min": 0
+          },
+          {
+            "key": "nominal",
+            "label": "Nominal annual return",
+            "value": 8,
+            "unit": "%",
+            "min": -99.999
+          },
+          {
+            "key": "inflation",
+            "label": "Annual inflation rate",
+            "value": 3,
+            "unit": "%",
+            "min": -99.999
+          },
+          {
+            "key": "years",
+            "label": "Number of years",
+            "value": 10,
+            "unit": "years",
+            "min": 0.000001,
+            "max": 1000
+          },
+          {
+            "key": "tax",
+            "label": "Assumed tax on positive annual gains",
+            "value": 0,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "nominal",
+        "title": "Required Nominal Return",
+        "fields": [
+          {
+            "key": "real",
+            "label": "Target real annual return",
+            "value": 5,
+            "unit": "%",
+            "min": -99.999
+          },
+          {
+            "key": "inflation",
+            "label": "Annual inflation rate",
+            "value": 3,
+            "unit": "%",
+            "min": -99.999
+          }
+        ]
+      }
+    ],
+    "reference_parity": "not-applicable-independent-addition"
   }
 ]

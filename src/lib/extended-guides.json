@@ -4083,5 +4083,435 @@
       }
     ],
     "checkedOn": "2026-10-20"
+  },
+  "cagr": {
+    "checkedOn": "2026-10-21",
+    "summary": "Calculate compound annual growth rate from beginning and ending values over a selected period. CAGR smooths growth into one annual rate; it does not describe volatility or handle cash added between endpoints.",
+    "scope": "Positive beginning value, nonnegative ending value and a positive duration are required. A zero ending value implies a complete loss and a −100% CAGR. Date mode uses actual days divided by 365.2425. Intermediate cash flows require IRR, not endpoint CAGR.",
+    "examples": [
+      {
+        "title": "Double over ten years",
+        "mode": "rate",
+        "values": {
+          "begin": 10000,
+          "end": 20000,
+          "years": 10
+        },
+        "inputs": "begin: 10000; end: 20000; years: 10",
+        "steps": [
+          "Divide 20,000 by 10,000 to get 2.",
+          "Take the tenth root and subtract one: 2^(1/10) − 1."
+        ],
+        "answer": "Compound annual growth rate: 7.177346",
+        "expected": {
+          "label": "Compound annual growth rate",
+          "value": 7.177346253629313,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Reverse CAGR ending value",
+        "mode": "ending",
+        "values": {
+          "begin": 1000,
+          "rate": 10,
+          "years": 2
+        },
+        "inputs": "begin: 1000; rate: 10; years: 2",
+        "steps": [
+          "Multiply 1,000 by 1.10 twice.",
+          "Ending value = 1,000 × 1.10² = 1,210."
+        ],
+        "answer": "Ending value: 1,210",
+        "expected": {
+          "label": "Ending value",
+          "value": 1210,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How do I calculate CAGR in Excel?",
+        "answer": "For beginning value in A2, ending value in B2 and years in C2, use =(B2/A2)^(1/C2)-1 and format as a percentage. This is a formula example, not an Excel workbook download."
+      },
+      {
+        "question": "Is CAGR the same as average annual growth rate?",
+        "answer": "No. An arithmetic average adds annual returns and divides by their count. CAGR is the geometric annualized endpoint growth rate. Deposits and withdrawals can make endpoint CAGR misleading; use IRR or XIRR for dated cash flows."
+      },
+      {
+        "question": "Can I use CAGR for revenue or sales?",
+        "answer": "Yes, for positive beginning revenue and nonnegative ending revenue over the same reporting basis. Revenue CAGR measures growth, not profitability."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Independent model implementation and documented equations",
+        "url": "https://github.com/joshua880604-web/codex-test/blob/static-preview-20261021/src/lib/calculators/evergreen.ts"
+      }
+    ]
+  },
+  "markup": {
+    "checkedOn": "2026-10-21",
+    "summary": "Calculate a selling price from cost and markup, reverse a markup to find cost, or compare markup and margin. Markup uses cost as its denominator; margin uses selling price, so the percentages are different.",
+    "scope": "Use a consistent per-unit cost basis. Cost and selling price must be positive, markup must exceed −100%, and a target margin must be below 100%. This gross-profit model excludes sales tax and overhead unless you include them in cost; it does not calculate net business profit.",
+    "examples": [
+      {
+        "title": "Cost 100 with 50% markup",
+        "mode": "price",
+        "values": {
+          "cost": 100,
+          "markup": 50
+        },
+        "inputs": "cost: 100; markup: 50",
+        "steps": [
+          "Markup amount = 100 × 50% = 50.",
+          "Price = 100 + 50 = 150; margin = 50 / 150 = 33.33%."
+        ],
+        "answer": "Selling price: 150",
+        "expected": {
+          "label": "Selling price",
+          "value": 150,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Price from a 25% margin",
+        "mode": "margin",
+        "values": {
+          "cost": 75,
+          "margin": 25
+        },
+        "inputs": "cost: 75; margin: 25",
+        "steps": [
+          "Divide cost by 1 − margin.",
+          "75 / 0.75 = 100, with gross profit of 25."
+        ],
+        "answer": "Selling price: 100",
+        "expected": {
+          "label": "Selling price",
+          "value": 100,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Convert a 25% margin to markup",
+        "mode": "convert",
+        "values": {
+          "rate": 25,
+          "direction": "Margin to markup"
+        },
+        "inputs": "Margin: 25%; direction: Margin to markup.",
+        "steps": [
+          "Divide 0.25 by 1 − 0.25.",
+          "0.25 / 0.75 = 0.333333, or 33.3333% markup."
+        ],
+        "answer": "The equivalent markup is 33.3333%.",
+        "expected": {
+          "label": "Equivalent markup",
+          "value": 33.333333333333336,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "What is markup vs margin?",
+        "answer": "Markup = (price − cost) / cost; margin = (price − cost) / price. A 50% markup equals a 33.33% margin. Convert markup to margin with markup/(1+markup), or margin to markup with margin/(1−margin), using decimal rates."
+      },
+      {
+        "question": "How does reverse markup work?",
+        "answer": "Divide selling price by 1 + markup. At a price of 150 and 50% markup, cost is 150/1.5 = 100. Do not subtract 50% of the selling price."
+      },
+      {
+        "question": "Can I use this for retail or wholesale pricing?",
+        "answer": "Yes. The arithmetic is the same; enter a cost basis covering the costs you intend to recover. The tool does not recommend a markup or infer market demand."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Independent model implementation and documented equations",
+        "url": "https://github.com/joshua880604-web/codex-test/blob/static-preview-20261021/src/lib/calculators/evergreen.ts"
+      }
+    ]
+  },
+  "emergency-fund": {
+    "checkedOn": "2026-10-21",
+    "summary": "Estimate an emergency savings target from essential monthly expenses and your chosen reserve months. Review the current savings gap and months covered, then plan how many monthly deposits would reach that goal.",
+    "scope": "The reserve duration is a user-selected planning assumption, not a personalized financial recommendation. Count accessible savings reserved for emergencies. Expenses stay constant and savings-plan mode assumes no interest, tax or inflation; deposits occur at month end.",
+    "examples": [
+      {
+        "title": "Six months of essential expenses",
+        "mode": "goal",
+        "values": {
+          "expenses": 3000,
+          "months": 6,
+          "savings": 5000
+        },
+        "inputs": "expenses: 3000; months: 6; savings: 5000",
+        "steps": [
+          "Target = 3,000 × 6 = 18,000.",
+          "Subtract 5,000 saved to find a 13,000 gap."
+        ],
+        "answer": "Emergency fund target: 18,000",
+        "expected": {
+          "label": "Emergency fund target",
+          "value": 18000,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Build a reserve over 26 months",
+        "mode": "plan",
+        "values": {
+          "expenses": 3000,
+          "months": 6,
+          "savings": 5000,
+          "deposit": 500
+        },
+        "inputs": "expenses: 3000; months: 6; savings: 5000; deposit: 500",
+        "steps": [
+          "Gap = 18,000 − 5,000 = 13,000.",
+          "Divide by 500 per month: 26 whole month-end deposits."
+        ],
+        "answer": "Months to reach target: 26",
+        "expected": {
+          "label": "Months to reach target",
+          "value": 26,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How much should I have in an emergency fund?",
+        "answer": "Multiply essential monthly spending by your chosen reserve months. Three, six and twelve months are scenarios you can compare, not a universal rule. Job stability, dependents, insurance and access to other support can change your needs."
+      },
+      {
+        "question": "How many months does my emergency fund cover?",
+        "answer": "Divide accessible emergency savings by essential monthly expenses. Savings of 5,000 with monthly expenses of 3,000 cover about 1.67 months, assuming spending remains unchanged."
+      },
+      {
+        "question": "What if I am self-employed or my income varies?",
+        "answer": "Enter essential expenses and choose a reserve duration appropriate to the uncertainty you want to model. The calculator does not prescribe a self-employed reserve or assume future earnings."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Independent model implementation and documented equations",
+        "url": "https://github.com/joshua880604-web/codex-test/blob/static-preview-20261021/src/lib/calculators/evergreen.ts"
+      }
+    ]
+  },
+  "break-even": {
+    "checkedOn": "2026-10-21",
+    "summary": "Find the units and sales revenue needed to cover fixed costs using the selling price and variable cost per unit. Review contribution margin, whole-unit rounding and the additional volume required for a target profit.",
+    "scope": "This is a single-product model with constant prices and unit variable costs. Fixed costs and target profit must refer to the same period. Positive contribution margin is required for units mode. Capacity, changing cost tiers, financing, tax and product mixes are not inferred.",
+    "examples": [
+      {
+        "title": "Cover fixed costs with 500 units",
+        "mode": "units",
+        "values": {
+          "fixed": 10000,
+          "price": 50,
+          "variable": 30
+        },
+        "inputs": "fixed: 10000; price: 50; variable: 30",
+        "steps": [
+          "Contribution margin per unit = 50 − 30 = 20.",
+          "Break-even units = 10,000 / 20 = 500; revenue = 25,000."
+        ],
+        "answer": "Break-even units (whole units): 500",
+        "expected": {
+          "label": "Break-even units (whole units)",
+          "value": 500,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Earn 5,000 operating profit",
+        "mode": "profit",
+        "values": {
+          "fixed": 10000,
+          "price": 50,
+          "variable": 30,
+          "profit": 5000
+        },
+        "inputs": "fixed: 10000; price: 50; variable: 30; profit: 5000",
+        "steps": [
+          "Required contribution = 10,000 + 5,000 = 15,000.",
+          "Units = 15,000 / 20 = 750."
+        ],
+        "answer": "Units for target profit: 750",
+        "expected": {
+          "label": "Units for target profit",
+          "value": 750,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "What is the break even point formula?",
+        "answer": "Units = fixed costs / (selling price − variable cost per unit). Revenue = fixed costs / contribution margin ratio. Whole-unit sales round up; exact theoretical revenue may be lower than rounded-unit revenue."
+      },
+      {
+        "question": "What is contribution margin ratio?",
+        "answer": "It is (selling price − unit variable cost) / selling price. At price 50 and variable cost 30, the contribution is 20 per unit and the ratio is 40%. It is not net profit margin because fixed costs remain to be covered."
+      },
+      {
+        "question": "Can I calculate multiple products?",
+        "answer": "This tool models one product or a deliberately entered blended unit. It does not infer a sales mix. A true multi-product analysis requires a stable product mix and weighted contribution margins."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Independent model implementation and documented equations",
+        "url": "https://github.com/joshua880604-web/codex-test/blob/static-preview-20261021/src/lib/calculators/evergreen.ts"
+      }
+    ]
+  },
+  "investment-fee": {
+    "checkedOn": "2026-10-21",
+    "summary": "Estimate the long-term effect of fund expense ratios and advisor fees using a transparent annual model. Compare amounts paid as fees with the balance reduction that also reflects lost growth, without deducting fund fees twice.",
+    "scope": "Annual returns and percentage fees stay constant. Fund fees, when applicable, are deducted after growth, then advisor fees, then the year-end contribution. Fund returns already net of expenses must use After fund fees. No tax, fee tiers, loads, transaction costs or daily accrual are modeled.",
+    "examples": [
+      {
+        "title": "One year of a 1% advisor fee",
+        "mode": "impact",
+        "values": {
+          "balance": 10000,
+          "deposit": 0,
+          "years": 1,
+          "rate": 10,
+          "basis": "Before fund fees",
+          "fund": 0,
+          "advisor": 1
+        },
+        "inputs": "balance: 10000; deposit: 0; years: 1; rate: 10; basis: Before fund fees; fund: 0; advisor: 1",
+        "steps": [
+          "Growth produces 10,000 × 1.10 = 11,000.",
+          "Advisor fee = 11,000 × 1% = 110; ending balance = 10,890."
+        ],
+        "answer": "Ending balance after modeled fees: 10,890",
+        "expected": {
+          "label": "Ending balance after modeled fees",
+          "value": 10890,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Fund fees already in the quoted return",
+        "mode": "impact",
+        "values": {
+          "balance": 10000,
+          "deposit": 0,
+          "years": 1,
+          "rate": 10,
+          "basis": "After fund fees",
+          "fund": 1,
+          "advisor": 0
+        },
+        "inputs": "balance: 10000; deposit: 0; years: 1; rate: 10; basis: After fund fees; fund: 1; advisor: 0",
+        "steps": [
+          "The entered 10% return is already net of the fund expense ratio.",
+          "Do not subtract the fund fee again: 10,000 × 1.10 = 11,000."
+        ],
+        "answer": "Ending balance after modeled fees: 11,000",
+        "expected": {
+          "label": "Ending balance after modeled fees",
+          "value": 11000,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Are expense ratios already included in fund returns?",
+        "answer": "Published mutual fund and ETF returns often already reflect fund operating expenses. Check the return definition and choose After fund fees when appropriate. The tool then applies only the separately entered advisor fee."
+      },
+      {
+        "question": "How much do investment fees cost over time?",
+        "answer": "Modeled fees paid sum the explicit annual deductions. Balance reduction also includes lost future growth, so it is a different measure. Fees embedded in an already-net return cannot be separately recovered from that return alone."
+      },
+      {
+        "question": "Can I use this as a financial advisor fee calculator?",
+        "answer": "Yes, for a constant annual percentage of post-growth assets. It does not model flat retainers, tiered fees, quarterly billing or tax deductions. Option A and B use the same return assumption, not predictions of different funds."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Independent model implementation and documented equations",
+        "url": "https://github.com/joshua880604-web/codex-test/blob/static-preview-20261021/src/lib/calculators/evergreen.ts"
+      }
+    ]
+  },
+  "real-return": {
+    "checkedOn": "2026-10-21",
+    "summary": "Convert nominal returns into real returns with the exact Fisher relationship. Estimate inflation-adjusted future value and required nominal return using your own inflation assumptions, without relying on external economic data.",
+    "scope": "Annual return and inflation inputs refer to the same period and exceed −100%. Value mode holds both rates constant without deposits. Optional tax is a simplified annual charge on positive nominal gains, not a jurisdiction-specific capital-gains model. Historical purchasing-power comparisons belong in Inflation Calculator.",
+    "examples": [
+      {
+        "title": "8% nominal return and 3% inflation",
+        "mode": "rate",
+        "values": {
+          "nominal": 8,
+          "inflation": 3
+        },
+        "inputs": "nominal: 8; inflation: 3",
+        "steps": [
+          "Divide 1.08 by 1.03.",
+          "Subtract 1 to get 0.0485436893, or 4.8544%."
+        ],
+        "answer": "Real annual return: 4.854369",
+        "expected": {
+          "label": "Real annual return",
+          "value": 4.854368932038835,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Ten-year purchasing power at matching rates",
+        "mode": "value",
+        "values": {
+          "principal": 10000,
+          "nominal": 3,
+          "inflation": 3,
+          "years": 10,
+          "tax": 0
+        },
+        "inputs": "principal: 10000; nominal: 3; inflation: 3; years: 10; tax: 0",
+        "steps": [
+          "Nominal growth and inflation both compound at 3%.",
+          "The ratio 1.03/1.03 is 1, preserving the initial 10,000 purchasing power."
+        ],
+        "answer": "Future value in today’s purchasing power: 10,000",
+        "expected": {
+          "label": "Future value in today’s purchasing power",
+          "value": 10000,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Why not simply subtract inflation from return?",
+        "answer": "Nominal return minus inflation is an approximation. The exact real return is (1 + nominal return)/(1 + inflation) − 1. At 8% return and 3% inflation it is about 4.8544%, not 5%."
+      },
+      {
+        "question": "What is nominal vs real rate of return?",
+        "answer": "Nominal return measures change in currency amounts. Real return adjusts for inflation and measures purchasing-power change. Positive nominal growth can still produce a negative real return."
+      },
+      {
+        "question": "Can I calculate after-tax real return?",
+        "answer": "In Purchasing Power mode, enter an assumed tax rate on positive annual gains. The model applies that tax each year before inflation adjustment and gives no loss credit. It does not model deferred tax or actual tax law."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Independent model implementation and documented equations",
+        "url": "https://github.com/joshua880604-web/codex-test/blob/static-preview-20261021/src/lib/calculators/evergreen.ts"
+      }
+    ]
   }
 }

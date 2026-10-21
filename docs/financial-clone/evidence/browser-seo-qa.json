@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-21T02:36:52.145Z",
+  "tested_at": "2026-10-21T08:10:38.927Z",
   "checks": [
     "Root 301 redirects to canonical financial directory",
     {
@@ -471,6 +471,71 @@
     {
       "id": "scientific",
       "example": "Evaluate a sine in radians",
+      "result": "passed"
+    },
+    {
+      "id": "cagr",
+      "example": "Double over ten years",
+      "result": "passed"
+    },
+    {
+      "id": "cagr",
+      "example": "Reverse CAGR ending value",
+      "result": "passed"
+    },
+    {
+      "id": "markup",
+      "example": "Cost 100 with 50% markup",
+      "result": "passed"
+    },
+    {
+      "id": "markup",
+      "example": "Price from a 25% margin",
+      "result": "passed"
+    },
+    {
+      "id": "markup",
+      "example": "Convert a 25% margin to markup",
+      "result": "passed"
+    },
+    {
+      "id": "emergency-fund",
+      "example": "Six months of essential expenses",
+      "result": "passed"
+    },
+    {
+      "id": "emergency-fund",
+      "example": "Build a reserve over 26 months",
+      "result": "passed"
+    },
+    {
+      "id": "break-even",
+      "example": "Cover fixed costs with 500 units",
+      "result": "passed"
+    },
+    {
+      "id": "break-even",
+      "example": "Earn 5,000 operating profit",
+      "result": "passed"
+    },
+    {
+      "id": "investment-fee",
+      "example": "One year of a 1% advisor fee",
+      "result": "passed"
+    },
+    {
+      "id": "investment-fee",
+      "example": "Fund fees already in the quoted return",
+      "result": "passed"
+    },
+    {
+      "id": "real-return",
+      "example": "8% nominal return and 3% inflation",
+      "result": "passed"
+    },
+    {
+      "id": "real-return",
+      "example": "Ten-year purchasing power at matching rates",
       "result": "passed"
     },
     {

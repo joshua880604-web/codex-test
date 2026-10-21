@@ -5,6 +5,13 @@ import {formatMetric} from './sharing';
 export function resultContext(id:string,mode:string,values:Values,result:Result):string|null {
  const metric=(label:string)=>result.metrics.find(m=>m.label===label);
  const text=(label:string)=>{const m=metric(label);return m?formatMetric(m):null;};
+ if(id==='markup'&&text('Profit margin'))return `Markup is ${text('Markup on cost')} of cost; profit margin is ${text('Profit margin')} of selling price. They describe the same gross profit using different denominators.`;
+ if(id==='cagr'&&text('Compound annual growth rate'))return `The endpoint values imply ${text('Compound annual growth rate')} annual compound growth. This smooths the full period into one rate and excludes any intermediate deposits or withdrawals.`;
+ if(id==='emergency-fund'&&mode==='goal'&&text('Remaining savings gap'))return `Your selected reserve target is ${text('Emergency fund target')}. The remaining gap is ${text('Remaining savings gap')}; the reserve duration is your planning choice.`;
+ if(id==='emergency-fund'&&mode==='plan'&&text('Months to reach target'))return `At the entered deposit amount, the target takes ${text('Months to reach target')} whole monthly deposits. The final deposit is capped at the remaining gap; interest is not assumed.`;
+ if(id==='break-even'&&text('Contribution margin per unit'))return `Each unit contributes ${text('Contribution margin per unit')} toward fixed costs and then profit. The required unit count rounds upward to cover the selected cost and profit target.`;
+ if(id==='investment-fee')return values.basis==='After fund fees'?'Your entered return is already net of fund fees, so the expense ratio is not deducted again. Any separate advisor fee still applies.':'Modeled fees paid are direct deductions. The balance reduction also includes lost growth, so these amounts should not be added together.';
+ if(id==='real-return'&&mode==='rate'&&text('Real annual return'))return `The exact inflation-adjusted annual return is ${text('Real annual return')}. A negative real return means purchasing power falls, even if the nominal return is positive.`;
  if(id==='mortgage'&&mode==='monthly'&&text('Initial monthly total')&&text('Monthly principal & interest'))
   return `Your initial modeled monthly outlay is ${text('Initial monthly total')}, including the entered ownership costs and extra principal. The principal-and-interest payment alone is ${text('Monthly principal & interest')}; ownership costs may change later.`;
  if(id==='loan'&&mode==='amortized'&&text('Payment per period')&&text('Total interest')&&values.pay)

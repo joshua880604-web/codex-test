@@ -84,3 +84,7 @@ Homepage alone now uses full width with search, eight quick links, category jump
 ## Reference-first functionality with expert fallback — 2026-10-20
 
 User superseded the custom 401(k) summary preference with source-first functionality, and explicitly authorized independent expert models when original behavior cannot be observed. Added a 71-entry reference-function-map.json, refreshed all corresponding specs, restored Compound Interest converter as default, and exposed documented controls/outputs across property, investment, retirement, tax, paycheck and commission. 469 tests and production build pass; 76 routes / 173 modes and all 107 examples pass browser checks. Exact original-source result parity remains unverified. No upload or hosted deployment in this batch. See strict-functionality-policy.md.
+
+## 2026-10-21 — Six independent evergreen tools
+
+User authorized six fixed-formula calculators based on their US Keyword Planner research. Preserve existing overlapping modes, transfer broad Markup and Investment Fee search targets to the new pages, and link rather than duplicate historical inflation or annualized-return content. Implement fee timing and net-return handling explicitly, not as a claim of daily expense-ratio precision. Keep noindex, static export and no API. See evergreen-additions-2026-10-21.md.

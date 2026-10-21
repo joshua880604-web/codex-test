@@ -1,0 +1,198 @@
+{
+  "cagr": {
+    "title": "CAGR Calculator - Compound Annual Growth & Reverse CAGR",
+    "tasks": [
+      {
+        "keyword": "CAGR calculator",
+        "mode": "rate",
+        "description": "Calculate compound annual growth rate from beginning and ending values over a selected period. CAGR smooths growth into one annual rate; it does not describe volatility or handle cash added between endpoints."
+      },
+      {
+        "keyword": "Compound annual growth rate calculator",
+        "mode": "rate",
+        "aliases": [
+          "Investment CAGR calculator",
+          "Revenue CAGR calculator",
+          "Sales CAGR calculator"
+        ],
+        "description": "Calculate compound annual growth rate from beginning and ending values over a selected period. CAGR smooths growth into one annual rate; it does not describe volatility or handle cash added between endpoints."
+      },
+      {
+        "keyword": "Reverse CAGR calculator",
+        "mode": "ending",
+        "aliases": [],
+        "description": "Calculate compound annual growth rate from beginning and ending values over a selected period. CAGR smooths growth into one annual rate; it does not describe volatility or handle cash added between endpoints."
+      },
+      {
+        "keyword": "CAGR calculator with dates",
+        "mode": "dates",
+        "aliases": [],
+        "description": "Calculate compound annual growth rate from beginning and ending values over a selected period. CAGR smooths growth into one annual rate; it does not describe volatility or handle cash added between endpoints."
+      }
+    ]
+  },
+  "markup": {
+    "title": "Markup Calculator - Selling Price & Margin",
+    "tasks": [
+      {
+        "keyword": "Markup calculator",
+        "mode": "price",
+        "description": "Calculate a selling price from cost and markup, reverse a markup to find cost, or compare markup and margin. Markup uses cost as its denominator; margin uses selling price, so the percentages are different."
+      },
+      {
+        "keyword": "Reverse markup calculator",
+        "mode": "reverse",
+        "aliases": [],
+        "description": "Calculate a selling price from cost and markup, reverse a markup to find cost, or compare markup and margin. Markup uses cost as its denominator; margin uses selling price, so the percentages are different."
+      },
+      {
+        "keyword": "Selling price calculator",
+        "mode": "margin",
+        "aliases": [
+          "Cost plus pricing calculator"
+        ],
+        "description": "Calculate a selling price from cost and markup, reverse a markup to find cost, or compare markup and margin. Markup uses cost as its denominator; margin uses selling price, so the percentages are different."
+      },
+      {
+        "keyword": "Markup and margin calculator",
+        "mode": "convert",
+        "aliases": [
+          "Markup to margin calculator",
+          "Margin to markup calculator",
+          "Retail markup calculator",
+          "Wholesale markup calculator"
+        ],
+        "description": "Convert a markup percentage directly to margin or a margin percentage to markup. Use Cost and Price when both dollar amounts are known."
+      },
+      {
+        "keyword": "Cost and selling price calculator",
+        "mode": "compare",
+        "description": "Enter cost and selling price to compare gross profit, markup and margin."
+      }
+    ]
+  },
+  "emergency-fund": {
+    "title": "Emergency Fund Calculator - Goal & Savings Plan",
+    "tasks": [
+      {
+        "keyword": "Emergency fund calculator",
+        "mode": "goal",
+        "description": "Estimate an emergency savings target from essential monthly expenses and your chosen reserve months. Review the current savings gap and months covered, then plan how many monthly deposits would reach that goal."
+      },
+      {
+        "keyword": "Emergency savings calculator",
+        "mode": "goal",
+        "aliases": [
+          "6 month emergency fund calculator",
+          "3 month emergency fund calculator",
+          "12 month emergency fund calculator"
+        ],
+        "description": "Estimate an emergency savings target from essential monthly expenses and your chosen reserve months. Review the current savings gap and months covered, then plan how many monthly deposits would reach that goal."
+      },
+      {
+        "keyword": "Emergency fund savings plan",
+        "mode": "plan",
+        "aliases": [
+          "How long to build an emergency fund"
+        ],
+        "description": "Estimate an emergency savings target from essential monthly expenses and your chosen reserve months. Review the current savings gap and months covered, then plan how many monthly deposits would reach that goal."
+      }
+    ]
+  },
+  "break-even": {
+    "title": "Break-Even Calculator - Units, Sales & Target Profit",
+    "tasks": [
+      {
+        "keyword": "Break even point calculator",
+        "mode": "units",
+        "description": "Find the units and sales revenue needed to cover fixed costs using the selling price and variable cost per unit. Review contribution margin, whole-unit rounding and the additional volume required for a target profit."
+      },
+      {
+        "keyword": "Break even sales calculator",
+        "mode": "units",
+        "aliases": [
+          "Break even calculator",
+          "Break even analysis calculator",
+          "Contribution margin calculator",
+          "Contribution margin ratio calculator"
+        ],
+        "description": "Find the units and sales revenue needed to cover fixed costs using the selling price and variable cost per unit. Review contribution margin, whole-unit rounding and the additional volume required for a target profit."
+      },
+      {
+        "keyword": "Target profit calculator",
+        "mode": "profit",
+        "aliases": [],
+        "description": "Find the units and sales revenue needed to cover fixed costs using the selling price and variable cost per unit. Review contribution margin, whole-unit rounding and the additional volume required for a target profit."
+      },
+      {
+        "keyword": "Break even selling price calculator",
+        "mode": "price",
+        "aliases": [],
+        "description": "Find the units and sales revenue needed to cover fixed costs using the selling price and variable cost per unit. Review contribution margin, whole-unit rounding and the additional volume required for a target profit."
+      }
+    ]
+  },
+  "investment-fee": {
+    "title": "Investment Fee & Expense Ratio Calculator - Long-Term Costs",
+    "tasks": [
+      {
+        "keyword": "Expense ratio calculator",
+        "mode": "impact",
+        "description": "Estimate the long-term effect of fund expense ratios and advisor fees using a transparent annual model. Compare amounts paid as fees with the balance reduction that also reflects lost growth, without deducting fund fees twice."
+      },
+      {
+        "keyword": "Investment fee calculator",
+        "mode": "impact",
+        "aliases": [
+          "ETF expense ratio calculator",
+          "Financial advisor fee calculator",
+          "Investment management fee calculator"
+        ],
+        "description": "Estimate the long-term effect of fund expense ratios and advisor fees using a transparent annual model. Compare amounts paid as fees with the balance reduction that also reflects lost growth, without deducting fund fees twice."
+      },
+      {
+        "keyword": "Expense ratio comparison calculator",
+        "mode": "compare",
+        "aliases": [
+          "Fund fee comparison calculator"
+        ],
+        "description": "Estimate the long-term effect of fund expense ratios and advisor fees using a transparent annual model. Compare amounts paid as fees with the balance reduction that also reflects lost growth, without deducting fund fees twice."
+      }
+    ]
+  },
+  "real-return": {
+    "title": "Real Return Calculator - Inflation-Adjusted Returns",
+    "tasks": [
+      {
+        "keyword": "Real rate of return calculator",
+        "mode": "rate",
+        "description": "Convert nominal returns into real returns with the exact Fisher relationship. Estimate inflation-adjusted future value and required nominal return using your own inflation assumptions, without relying on external economic data."
+      },
+      {
+        "keyword": "Inflation adjusted return calculator",
+        "mode": "rate",
+        "aliases": [
+          "Real interest rate calculator",
+          "Real return calculator",
+          "Fisher equation calculator"
+        ],
+        "description": "Convert nominal returns into real returns with the exact Fisher relationship. Estimate inflation-adjusted future value and required nominal return using your own inflation assumptions, without relying on external economic data."
+      },
+      {
+        "keyword": "Inflation adjusted future value calculator",
+        "mode": "value",
+        "aliases": [
+          "After tax real return calculator",
+          "Inflation adjusted savings calculator"
+        ],
+        "description": "Convert nominal returns into real returns with the exact Fisher relationship. Estimate inflation-adjusted future value and required nominal return using your own inflation assumptions, without relying on external economic data."
+      },
+      {
+        "keyword": "Required nominal return calculator",
+        "mode": "nominal",
+        "aliases": [],
+        "description": "Convert nominal returns into real returns with the exact Fisher relationship. Estimate inflation-adjusted future value and required nominal return using your own inflation assumptions, without relying on external economic data."
+      }
+    ]
+  }
+}

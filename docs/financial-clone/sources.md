@@ -40,3 +40,7 @@ SEO editorial sources are linked visibly in the ten guides in src/lib/guides.ts:
 ## 2026-10-20 content expansion
 
 The 60 additional guides link to project methodology and each existing reference calculator URL as feature provenance, not as certification of mathematical/interaction parity. Added tax examples use already documented 2026 tables from official-rules.json and link their recorded IRS bulletin. No new tax year or policy was inferred. Independently specified elementary arithmetic/closed-form installment cases are checked in tests/seo.test.ts. Content topics are candidate intents; no keyword-volume dataset, live rankings or AI-citation dataset was obtained.
+
+## 2026-10-21 — Independent evergreen additions
+
+The six new tools use independently stated algebra/recurrences and local fixtures, not claimed source-site submissions. User screenshots supply keyword research (research/evergreen-keywords-2026-10-21.json); no organic-ranking difficulty is inferred from ad competition. Models and limits: evergreen-additions-2026-10-21.md and specs/{markup,cagr,emergency-fund,break-even,investment-fee,real-return}.md. Public source and test code are linked as implementation evidence rather than fabricated external review.
