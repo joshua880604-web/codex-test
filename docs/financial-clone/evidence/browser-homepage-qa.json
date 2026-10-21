@@ -1,41 +1,57 @@
 {
   "passed": true,
-  "tested_at": "2026-10-20T06:26:13.148Z",
+  "tested_at": "2026-10-21T07:05:19.188Z",
   "checks": [
-    "Full directory, eight shortcuts, seven category links and full-width layout",
+    "Full directory, eight shortcuts, six category links and full-width layout",
     "Every category jump resolves",
+    "Legacy category anchors remain valid",
+    "Common aliases find their calculators",
+    "All 76 directory entries appear once",
     "Trimmed search and focused results",
     "Empty search recovery, reset and keyboard focus",
     {
       "width": 320,
       "overflow": false,
-      "links": 76
+      "links": 76,
+      "groupColumns": 1,
+      "toolColumns": 1
     },
     {
       "width": 390,
       "overflow": false,
-      "links": 76
+      "links": 76,
+      "groupColumns": 1,
+      "toolColumns": 1
     },
     {
       "width": 550,
       "overflow": false,
-      "links": 76
+      "links": 76,
+      "groupColumns": 1,
+      "toolColumns": 1
     },
     {
       "width": 768,
       "overflow": false,
-      "links": 76
+      "links": 76,
+      "groupColumns": 2,
+      "toolColumns": 1
     },
     {
       "width": 1024,
       "overflow": false,
-      "links": 76
+      "links": 76,
+      "groupColumns": 2,
+      "toolColumns": 1
     },
     {
       "width": 1440,
       "overflow": false,
-      "links": 76
+      "links": 76,
+      "groupColumns": 2,
+      "toolColumns": 2
     },
+    "All tool links available without JavaScript",
     "Calculator detail retains sidebar and original layout"
   ],
   "errors": []

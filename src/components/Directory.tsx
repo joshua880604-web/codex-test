@@ -1,7 +1,7 @@
 "use client";
-import { searchTasks } from "@/lib/keyword-targets";
+import {directoryGroups,directoryGroup,directoryMatch,directorySort,directoryDescriptions} from "@/lib/directory";
 import { useState } from "react";
-import { calculators, categories, routeFor } from "@/lib/catalog";
+import { calculators, routeFor } from "@/lib/catalog";
 
 const featured = [
   ["mortgage", "Estimate your monthly payment"],
@@ -13,15 +13,14 @@ const featured = [
   ["percentage", "Find percentages and changes"],
   ["scientific", "Calculate with scientific functions"],
 ];
-const categoryId = (category: string) => category.toLowerCase().replaceAll(" ", "-");
 export default function Directory({ propertyOnly = false }: { propertyOnly?: boolean }) {
   const [query, setQuery] = useState("");
   const search = query.trim().toLowerCase();
   const filtered = calculators.filter(c =>
     (!propertyOnly || c.category === "Mortgage and Real Estate") &&
-    (c.title + " " + (searchTasks[c.id] ?? []).map(t => t.keyword + " " + t.description).join(" ")).toLowerCase().includes(search),
+    directoryMatch(c,search),
   );
-  const groups = categories.map(category => ({ category, tools: filtered.filter(c => c.category === category) })).filter(g => g.tools.length);
+  const groups = directoryGroups.map(g => ({...g,tools:directorySort(filtered.filter(c => directoryGroup(c.id,c.category)===g.id),g.popular)})).filter(g=>g.tools.length);
   return (
     <div className="calculator-directory">
       <p className="directory-intro">{propertyOnly
@@ -30,7 +29,7 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
       <div className="directory-search" role="search" aria-label="Calculator search">
         <label htmlFor="directory-search">Find a calculator</label>
         <div className="directory-search-control">
-          <input id="directory-search" type="search" placeholder="Try mortgage, retirement, or percentage" value={query} onChange={e => setQuery(e.target.value)} aria-controls="calculator-list" />
+          <input id="directory-search" type="search" placeholder="Try car payment, mortgage, or retirement" value={query} onChange={e => setQuery(e.target.value)} aria-controls="calculator-list" />
           {query && <button type="button" className="clear" onClick={() => { setQuery(""); document.getElementById("directory-search")?.focus(); }}>Clear search</button>}
         </div>
         <span role="status" aria-live="polite">{filtered.length} {filtered.length === 1 ? "tool" : "tools"}{search ? " found" : " available"}</span>
@@ -44,13 +43,14 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
       </section>}
       {groups.length > 1 && <nav className="directory-categories" aria-label="Calculator categories">
         <span>Browse by category</span>
-        <div>{groups.map(({ category, tools }) => <a href={"#" + categoryId(category)} key={category}>{category}<span>{tools.length}</span></a>)}</div>
+        <div>{groups.map(({ id, title, tools }) => <a href={"#" + id} key={id}>{title}<span>{tools.length}</span></a>)}</div>
       </nav>}
       <div className="directory-list-heading"><h2>{search ? "Search results" : "All calculators"}</h2>{search && <p>Matching “{query.trim()}”</p>}</div>
       <div className="directory-grid" id="calculator-list">
-        {groups.map(({ category, tools }) => <section key={category} id={categoryId(category)} aria-labelledby={categoryId(category) + "-heading"}>
-          <h3 id={categoryId(category) + "-heading"}>{category}<span>{tools.length}</span></h3>
-          <ul>{tools.map(c => <li key={c.id}><a href={routeFor(c.id)}>{c.title}</a></li>)}</ul>
+        {groups.map(({ id, title, tools }) => <section key={id} id={id} aria-labelledby={id + "-heading"} tabIndex={-1}>
+          {({"mortgage-housing":["mortgage-and-real-estate"],"loans-debt":["auto","other"],"saving-investing":["investment"],"tax-salary":["tax-and-salary"],"everyday":["everyday-tools"]} as Record<string,string[]>)[id]?.map(anchor=><span key={anchor} id={anchor} aria-hidden="true"/>)}
+          <h3 id={id + "-heading"}>{title}<span>{tools.length}</span></h3>
+          <ul>{tools.map(c => <li key={c.id}><a href={routeFor(c.id)}>{c.title}{directoryDescriptions[c.id]&&<small>{directoryDescriptions[c.id]}</small>}</a></li>)}</ul>
         </section>)}
       </div>
       {!filtered.length && <div className="directory-empty"><h3>No calculators found</h3><p>Try a shorter term, such as “loan”, “tax”, or “interest”.</p><button className="clear" type="button" onClick={() => { setQuery(""); document.getElementById("directory-search")?.focus(); }}>Show all calculators</button></div>}

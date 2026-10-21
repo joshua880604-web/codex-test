@@ -89,7 +89,7 @@ export default async function Page({
       <main id="main">
         <div className="breadcrumb">
           <a href="/">home</a> /{" "}
-          <a href={c?.category === "Everyday Tools" ? "/financial-calculator.html#everyday-tools" : "/financial-calculator.html"}>{c?.category === "Everyday Tools" ? "everyday tools" : "financial"}</a>
+          <a href={c?.category === "Everyday Tools" ? "/financial-calculator.html#everyday" : "/financial-calculator.html"}>{c?.category === "Everyday Tools" ? "everyday tools" : "financial"}</a>
           {c && <> / {c.title.toLowerCase()}</>}
         </div>
         <h1>{title}</h1>

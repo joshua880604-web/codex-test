@@ -79,3 +79,10 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - Added accessible hints for nominal/effective annual rates, independent payment/compounding frequencies, additive deposits, retirement income/savings units, and tax withholding. Existing hints take precedence.
 - Independent fixtures cover annual loan payments, negative compound returns, monthly retirement funding, retirement gap signs and 2025 wages-only federal tax; see result-context-2026-10-21.md. Source-site equivalence remains unverified.
 - Final validation: 502 tests passed, static production build prepared 80 routes, contextual browser checks 12/12 passed at 1440/390px with no errors. Full static browser regression: 76 entries / 174 modes, JavaScript errors 0, external requests 0, API requests 0. Retirement mobile screenshot inspected.
+
+### 2026-10-21 — Purpose-based All calculators directory
+- Reorganized all 76 directory entries into six purpose groups: Mortgage & Housing, Loans & Debt, Saving & Investing, Retirement, Tax & Salary, Everyday. Frequently used tools first, remaining titles alphabetized. Catalog routes and calculator categories remain intact.
+- Replaced CSS newspaper columns with a row-ordered two-group grid. Desktop groups have two tool columns, tablet one, phone one group per row. Existing Quick access retained, no second popular section added.
+- Search matches multiple words and common aliases (car payment, 401(k), required minimum distribution); confusing neighboring tools get short descriptions. All links are pre-rendered and accessible without JavaScript.
+- Updated header/breadcrumb anchors and kept legacy category targets. Category navigation, search reset and no-results recovery remain available.
+- Validation: 502 tests and 80-route static build passed. Browser homepage checks cover unique complete entries, aliases, anchor targets, no-JS links, keyboard focus and six viewport widths (320–1440px); desktop/mobile screenshots visually inspected. Static SEO checks passed for 80 pages; default noindex remains.

@@ -964,3 +964,14 @@ footer p {
 .result .table-scroll td:first-child {position:sticky;left:0;z-index:1;background:#fff;box-shadow:1px 0 #dfe6ec;}
 .result .table-scroll tbody tr:nth-child(even) td:first-child {background:#f5f5f5;}
 .result-context {margin:14px 0;padding:12px 14px;background:#f0f5f8;border-radius:6px;color:#304f64;font-size:14px;line-height:1.7;overflow-wrap:anywhere;}
+/* Purpose-based directory; row order matches keyboard and reading order. */
+.calculator-directory .directory-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));columns:auto;gap:20px;align-items:start;}
+.calculator-directory .directory-grid section {margin:0;min-width:0;border-radius:8px;padding:18px;}
+.calculator-directory .directory-grid ul {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;list-style:none;padding:0;margin:0;}
+.calculator-directory .directory-grid li a {min-height:44px;padding:10px 4px;border-radius:4px;line-height:1.5;}
+.calculator-directory .directory-grid li a small {display:block;font-size:12px;font-weight:normal;color:#586975;line-height:1.5;margin-top:3px;}
+.directory-categories a {border-radius:5px;}
+.directory-categories a:focus-visible,.calculator-directory .directory-grid a:focus-visible {outline:2px solid #23776d;outline-offset:2px;}
+@media(max-width:1050px){.calculator-directory .directory-grid ul {grid-template-columns:minmax(0,1fr);}}
+@media(max-width:600px){.calculator-directory .directory-grid {grid-template-columns:minmax(0,1fr);gap:16px;}.calculator-directory .directory-grid section {padding:14px;}}
+@media print {.calculator-directory .directory-grid section {break-inside:avoid;}}

@@ -20,9 +20,9 @@ export function Header() {
           <a className="selected" href="/financial-calculator.html">
             Financial Calculators
           </a>
-          <a href="/financial-calculator.html#everyday-tools">Everyday Tools</a>
+          <a href="/financial-calculator.html#everyday">Everyday Tools</a>
           <a href="/real-estate-calculator.html">Real Estate</a>
-          <a href="/financial-calculator.html#investment">Investment</a>
+          <a href="/financial-calculator.html#saving-investing">Investment</a>
           <a href="/financial-calculator.html#retirement">Retirement</a>
         </div>
       </nav>
