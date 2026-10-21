@@ -1,5 +1,6 @@
 "use client";
 import {directoryGroups,directoryGroup,directoryMatch,directorySort,directoryDescriptions} from "@/lib/directory";
+import QuickCalculator from "./QuickCalculator";
 import { useState } from "react";
 import { calculators, routeFor } from "@/lib/catalog";
 
@@ -26,6 +27,7 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
       <p className="directory-intro">{propertyOnly
         ? "Calculators for mortgages, property investment, and home ownership."
         : "Find the right tool for your loans, savings, retirement, taxes, and everyday calculations."}</p>
+      <div className={propertyOnly ? undefined : "directory-tools"}>
       <div className="directory-search" role="search" aria-label="Calculator search">
         <label htmlFor="directory-search">Find a calculator</label>
         <div className="directory-search-control">
@@ -34,6 +36,7 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
         </div>
         <span role="status" aria-live="polite">{filtered.length} {filtered.length === 1 ? "tool" : "tools"}{search ? " found" : " available"}</span>
       </div>
+      {!propertyOnly && <QuickCalculator/>}
       {!search && !propertyOnly && <section className="featured-tools" aria-labelledby="featured-heading">
         <h2 id="featured-heading">Quick access</h2>
         <div className="featured-grid">{featured.map(([id, description]) => {
@@ -41,6 +44,7 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
           return <a key={id} href={routeFor(id)}><strong>{calculator.title}</strong><span>{description}</span></a>;
         })}</div>
       </section>}
+      </div>
       {groups.length > 1 && <nav className="directory-categories" aria-label="Calculator categories">
         <span>Browse by category</span>
         <div>{groups.map(({ id, title, tools }) => <a href={"#" + id} key={id}>{title}<span>{tools.length}</span></a>)}</div>

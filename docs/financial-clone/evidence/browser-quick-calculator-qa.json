@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "expr": "(125 + 75) / 4",
+      "output": "50"
+    },
+    {
+      "expr": "100 + 10%",
+      "output": "100.1"
+    },
+    {
+      "expr": "1/0",
+      "output": "Cannot divide by zero."
+    },
+    {
+      "expr": "2+",
+      "output": "Expression is incomplete."
+    },
+    "Continue arithmetic from the prior unrounded answer",
+    "Edits clear stale answers and Escape resets",
+    "Keypad replaces the selected text",
+    {
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "tested_at": "2026-10-21T09:03:42.079Z"
+}

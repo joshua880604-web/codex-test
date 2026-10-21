@@ -101,3 +101,9 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - Validation: 552 tests; 86-route production static build; 81 guide checks and 195 unique keyword expressions. 25 new-tool browser checks, 19 modes, six PNGs and 1440/390px layouts passed; full 129 worked examples passed browser checks. CAGR mobile result and fee card visually inspected. Original-site full equivalence remains unverified; domain/indexing unchanged.
 - See evergreen-additions-2026-10-21.md, specs for all six tools and evidence/browser-evergreen-qa.json. No hosted deployment.
 - Final full-site browser regression: 82 entries / 193 modes passed, JavaScript errors 0, external requests 0, API requests 0. Final homepage checks 15/15 passed.
+
+### 2026-10-21 — Optional homepage quick calculator
+- Desktop directory: compact four-column arithmetic keypad beside search and quick-access links. Mobile at 700px and below starts collapsed, using native details/summary. Full scientific calculator remains linked.
+- Supports typed expressions, selection-aware keypad insertion, parentheses, postfix percentages, backspace, AC, Enter, Escape and continuation from the unrounded prior answer. Percent semantics explicitly match the scientific engine (100 + 10% = 100.1).
+- Existing scientific parser loads only on evaluation, with no eval(), extra dependency or API. Stale asynchronous answers are canceled after edits; error messages do not leave an old answer displayed. No persistence, reminders or auto-focus.
+- Validation: 552 tests and 86-route static build passed; 11 quick-calculator browser checks and 15 homepage regression checks passed. Checked 320/390/768/1440px, all 82 directory entries, mobile disclosure, keyboard/selection/continuation/error behavior. Desktop screenshot visually inspected.

@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Six user-researched fixed-formula tools; 19 new modes, 13 examples, accessible inputs and branded local result cards",
+  "latest_change": "Optional homepage arithmetic calculator; desktop side panel, mobile collapsed, scientific engine loaded on evaluation",
   "seo_generated_pages_checked": 86,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
@@ -62,5 +62,6 @@
   "result_card_browser_checks": 7,
   "independent_evergreen_tools": 6,
   "evergreen_modes": 19,
-  "evergreen_browser_checks": 25
+  "evergreen_browser_checks": 25,
+  "quick_calculator_browser_checks": 11
 }
