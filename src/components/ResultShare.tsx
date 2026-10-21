@@ -1,7 +1,7 @@
 "use client";
 import {useEffect,useRef,useState} from 'react';
 import type {Mode,Result,Values} from '@/lib/types';
-import {calculationLink,formatMetric,summaryMetrics,summaryText,modeCaption} from '@/lib/sharing';
+import {calculationLink,summaryMetrics,summaryText,modeCaption} from '@/lib/sharing';
 export default function ResultShare({id,title,path,mode,values,result}:{id:string;title:string;path:string;mode:Mode;values:Values;result:Result}){
  const [include,setInclude]=useState(false),[status,setStatus]=useState(''),[manual,setManual]=useState(''),[exporting,setExporting]=useState(false),[local,setLocal]=useState(false);
  const textRef=useRef<HTMLTextAreaElement>(null),metrics=summaryMetrics(id,result),caption=modeCaption(mode,values);
@@ -20,14 +20,16 @@ export default function ResultShare({id,title,path,mode,values,result}:{id:strin
   }catch(e){setStatus((e as Error).message);}finally{setExporting(false);}
  }
  return <section className="share-panel" aria-label="Share result">
-  <h3>Discuss this result with someone</h3>
-  <p>Send the tool, or include these inputs so someone else can review and adjust the calculation.</p>
-  <label className="share-choice"><input type="checkbox" checked={include} onChange={e=>{setInclude(e.target.checked);setStatus('');setManual('');}}/> Include current inputs in the link</label>
-  <p className="share-help">{include?'Anyone with the link can read the inputs. They are stored in the address fragment, not encrypted. The receiving browser recalculates them; model updates may change results.':'Links share only this tool by default. No input values are included.'}</p>
-  <div className="summary-preview" aria-label="Result summary"><strong>{title} · {caption}</strong><ul>{metrics.map(m=><li key={m.label}><span>{m.label}</span><strong>{formatMetric(m)}</strong></li>)}</ul></div>
-  <p className="share-help">Copied summaries and PNGs contain result amounts. PNGs show the tool address without listing inputs. Review the amounts before sharing.</p>
-  <div className="result-actions"><button onClick={copyLink}>Copy link</button><button onClick={share}>Share link</button><button onClick={copySummary}>Copy result summary</button><button onClick={exportImage} disabled={exporting}>{exporting?'Creating PNG…':'Download result PNG'}</button></div>
-  {local&&<p className="share-help">Local preview: localhost links only work on this computer. Use a hosted site address before sending links to other people.</p>}
+  <h3>Save or share this result</h3>
+  <div className="result-actions"><button onClick={copySummary}>Copy result summary</button><button onClick={exportImage} disabled={exporting}>{exporting?'Creating PNG…':'Download result PNG'}</button></div>
+  <p className="share-help">Summaries and images include result amounts. Review before sharing.</p>
+  <details className="share-options" onToggle={e=>{if(!e.currentTarget.open){setInclude(false);setManual('');setStatus('');}}}>
+   <summary>Share a link or include inputs</summary>
+   <label className="share-choice"><input type="checkbox" checked={include} onChange={e=>{setInclude(e.target.checked);setStatus('');setManual('');}}/> Include current inputs in the link</label>
+   <p className="share-help">{include?'Anyone with the link can read the inputs. They are stored in the address fragment, not encrypted. The receiving browser recalculates them; model updates may change results.':'Links share only this tool by default. No input values are included.'}</p>
+   <div className="result-actions"><button onClick={copyLink}>Copy link</button><button onClick={share}>Share link</button></div>
+   {local&&<p className="share-help">Local preview: localhost links only work on this computer. Use a hosted site address before sending links to other people.</p>}
+  </details>
   {status&&<p role="status">{status}</p>}
   {manual&&<label>Copy this content<textarea ref={textRef} readOnly value={manual} rows={5}/></label>}
  </section>;

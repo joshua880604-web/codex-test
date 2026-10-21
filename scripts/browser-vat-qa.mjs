@@ -80,6 +80,7 @@ try {
   await fill({ gross: "240", tax: "40" });
   await page.getByRole("button", { name: "Calculate", exact: true }).click();
   await expectMetric("Net amount", "$200.00");
+  await page.locator(".share-options > summary").click();
   await page.getByLabel("Include current inputs in the link", {exact:true}).check();
   await page.getByRole("button", { name: "Copy link", exact: true }).click();
   const shared = await page.evaluate(() => navigator.clipboard.readText());

@@ -1,8 +1,9 @@
 {
   "passed": true,
-  "tested_at": "2026-10-21T06:18:10.946Z",
+  "tested_at": "2026-10-21T06:48:39.170Z",
   "checks": [
     "Default link excludes all inputs",
+    "Closing link options resets input-sharing opt-in",
     "Shared fragment preserves two known values and recomputes",
     "Copied summary matches results; input links require fresh opt-in",
     {

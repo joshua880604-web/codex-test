@@ -391,7 +391,6 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
             <button onClick={() => window.print()}>Print</button>
             {result.rows && <button onClick={() => download()}>Download CSV</button>}
           </div>
-          <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/>
           {id === "marriage-tax" && <p className="result-note">Compared with your combined unmarried federal income tax. Savings means the married-joint estimate is lower; additional tax means it is higher. This does not compare married filing separately or include state/local tax.</p>}
           {result.notes?.map((note, i) => (
             <p className="result-note" key={i}>
@@ -402,7 +401,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
             <>
               <h3>Calculation details</h3>
               {id === "401k" && mode.id === "projection" && <p className="result-note">Each row represents one projection year. Age is your age at year end; salary and contributions apply to that year. Balance is the account total after annual growth and year-end contributions. Amounts are in USD.</p>}
-              <p className="table-help">Scroll within the table to see more. Download CSV for the complete schedule.</p>
+              <p className="table-help">Scroll horizontally or vertically to see more. Download CSV for the complete schedule.</p>
               {result.annualRows && (
                 <div className="result-actions" aria-label="Schedule period">
                   <button
@@ -478,6 +477,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
               </table>
             </div>
           </section>)}
+          <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/>
         </div>
       )}
       <section className="explanation">

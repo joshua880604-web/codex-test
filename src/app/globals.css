@@ -951,3 +951,15 @@ footer p {
  .result .table-scroll {max-height:none;overflow:visible;}
 }
 .result-actions button[aria-pressed="true"] {background:#e4efee;border-color:#8ab5ae;color:#145b53;}
+/* Compact sharing stays after the calculation; optional links are user-opened. */
+.share-panel {background:transparent;border:0;border-top:1px solid #dce5eb;border-radius:0;padding:18px 0 0;margin:24px 0 0;}
+.share-panel h3 {margin:0 0 10px;font-size:16px;}
+.share-panel .result-actions {margin:10px 0;}
+.share-panel .share-help {font-size:12px;margin:8px 0;}
+.share-options {margin-top:14px;}
+.share-options > summary {cursor:pointer;color:#244f6c;font-size:13px;padding:10px 0;min-height:40px;}
+.share-options > summary:focus-visible {outline:2px solid #7bb6d5;outline-offset:3px;}
+.share-choice {font-size:13px;font-weight:normal;}
+.result .table-scroll th:first-child {left:0;z-index:3;}
+.result .table-scroll td:first-child {position:sticky;left:0;z-index:1;background:#fff;box-shadow:1px 0 #dfe6ec;}
+.result .table-scroll tbody tr:nth-child(even) td:first-child {background:#f5f5f5;}

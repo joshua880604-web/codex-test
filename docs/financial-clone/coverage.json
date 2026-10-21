@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Explicit input-sharing choice, private-by-default tool links, recalculable fragments, formatted summaries and local PNG export",
+  "latest_change": "Compact Result flow; remove duplicate summary; optional link disclosure resets input-sharing choice; sticky schedule first column",
   "seo_generated_pages_checked": 80,
   "seo_detailed_guides": 75,
   "seo_worked_examples": 116,
@@ -56,6 +56,6 @@
   "guide_navigation_pages": 75,
   "sharing_protocol": "address fragment v1; legacy query links supported",
   "image_export": "browser Canvas PNG; no external API",
-  "sharing_browser_checks": 15,
+  "sharing_browser_checks": 16,
   "vat_browser_checks": 17
 }

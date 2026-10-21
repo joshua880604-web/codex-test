@@ -67,3 +67,9 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - Restyled shared Result UI with a prominent primary metric, tabular numeric typography, restrained navy/teal palette, consistent action buttons, readable notes and schedule tables; mobile and print rules included.
 - PNG exports now use a locally rendered report header, primary result panel, paired supporting metric cards, model notes, generation date and clean tool address. Canvas height and text wrapping remain content-driven. Calculation formulas, rounding and selected-summary metric limits are unchanged.
 - Validation: 496 unit tests passed; static export prepared 80 routes; sharing browser checks 15/15 passed with no JavaScript errors or external requests. Result-design browser checks 10/10 across Mortgage, Retirement, Marriage Tax, Scientific and VAT at 1440 and 390 pixels; PNGs generated for all five, VAT PNG and mobile Mortgage result visually inspected.
+
+### 2026-10-21 — Compact Result flow
+- Removed the repeated on-page summary preview. Result notes and all calculation tables precede sharing.
+- Keep Copy result summary and Download result PNG visible; place tool/recalculable-link controls in native keyboard-accessible details. Input privacy guidance appears with the optional controls; closing the disclosure resets the input-sharing checkbox.
+- Sticky first column and header aid schedule reading; added horizontal/vertical scroll guidance. No math, API, dependency or indexing changes.
+- Validation: 496 tests, 80-route static build, 16 sharing checks, 17 VAT checks, 10 result-layout checks passed. Mortgage mobile screenshot inspected; no page overflow or clipped metric values in five representative tools.
