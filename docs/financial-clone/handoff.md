@@ -73,3 +73,9 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - Keep Copy result summary and Download result PNG visible; place tool/recalculable-link controls in native keyboard-accessible details. Input privacy guidance appears with the optional controls; closing the disclosure resets the input-sharing checkbox.
 - Sticky first column and header aid schedule reading; added horizontal/vertical scroll guidance. No math, API, dependency or indexing changes.
 - Validation: 496 tests, 80-route static build, 16 sharing checks, 17 VAT checks, 10 result-layout checks passed. Mortgage mobile screenshot inspected; no page overflow or clipped metric values in five representative tools.
+
+### 2026-10-21 — Explain common financial results and input conventions
+- Added compact, input-specific Result explanations for Mortgage monthly, Loan amortized, compound/interest/savings growth, Retirement required/saving, and Federal Income Tax. Uses named metrics and selected payment frequency/year, with no formula changes or generic fallback for unsupported modes.
+- Added accessible hints for nominal/effective annual rates, independent payment/compounding frequencies, additive deposits, retirement income/savings units, and tax withholding. Existing hints take precedence.
+- Independent fixtures cover annual loan payments, negative compound returns, monthly retirement funding, retirement gap signs and 2025 wages-only federal tax; see result-context-2026-10-21.md. Source-site equivalence remains unverified.
+- Final validation: 502 tests passed, static production build prepared 80 routes, contextual browser checks 12/12 passed at 1440/390px with no errors. Full static browser regression: 76 entries / 174 modes, JavaScript errors 0, external requests 0, API requests 0. Retirement mobile screenshot inspected.

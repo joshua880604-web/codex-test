@@ -1,0 +1,78 @@
+{
+  "tested_at": "2026-10-21T06:56:21.097Z",
+  "checks": [
+    {
+      "route": "mortgage",
+      "query": "mode=monthly",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "route": "loan",
+      "query": "mode=amortized&pay=Annually",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "route": "compound-interest",
+      "query": "mode=growth&principal=1000&monthly=0&annual=0&years=2&rate=-10&compound=Annually",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "route": "retirement",
+      "query": "mode=saving&target=600000&balance=30000&age=35&retire=67&return=6",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "route": "retirement",
+      "query": "mode=required",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "route": "tax",
+      "query": "mode=federal&year=2025&wages=50000&withheld=0",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "route": "mortgage",
+      "query": "mode=monthly",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "route": "loan",
+      "query": "mode=amortized&pay=Annually",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "route": "compound-interest",
+      "query": "mode=growth&principal=1000&monthly=0&annual=0&years=2&rate=-10&compound=Annually",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "route": "retirement",
+      "query": "mode=saving&target=600000&balance=30000&age=35&retire=67&return=6",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "route": "retirement",
+      "query": "mode=required",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "route": "tax",
+      "query": "mode=federal&year=2025&wages=50000&withheld=0",
+      "width": 390,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

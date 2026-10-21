@@ -3,6 +3,7 @@ import {searchTasks} from "@/lib/keyword-targets";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import ScientificKeypad from "./ScientificKeypad";
 import ResultShare from "./ResultShare";
+import {inputHint,resultContext} from "@/lib/result-context";
 import { sharedInputs } from "@/lib/sharing";
 import MarriageFields from "./MarriageFields";
 import { defaults } from "@/lib/types";
@@ -37,6 +38,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     yearly && result?.annualRows ? result.annualRows : result?.rows;
   const tableColumns =
     yearly && result?.annualColumns ? result.annualColumns : result?.columns;
+  const context = result ? resultContext(id,mode.id,values,result) : null;
   const resultRef = useRef<HTMLDivElement>(null),
     request = useRef(0);
   useEffect(() => {
@@ -148,7 +150,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   function input(field: Field, person?: string) {
     if (field.key === "verified_rate") return null;
     const inputId = id + "-" + mode.id + "-" + field.key;
-    const hint = field.hint ?? (id === "401k" && mode.id === "projection" ? ({
+    const hint = field.hint ?? inputHint(id,mode.id,field.key) ?? (id === "401k" && mode.id === "projection" ? ({
       match: "The percentage your employer adds for each eligible dollar you contribute. 50% means $0.50 per $1.",
       match_limit: "The portion of salary eligible for matching. At 6%, contributions above 6% of salary receive no additional match.",
       balance: "Your existing account total. Included once before future contributions and growth.",
@@ -387,6 +389,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
               </div>
             )}
           </div>
+          {context && <p className="result-context">{context}</p>}
           <div className="result-actions">
             <button onClick={() => window.print()}>Print</button>
             {result.rows && <button onClick={() => download()}>Download CSV</button>}

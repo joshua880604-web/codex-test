@@ -7,7 +7,7 @@
   "local_browser_routes": 76,
   "local_browser_modes": 174,
   "numeric_tests": {
-    "total": 496,
+    "total": 502,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Compact Result flow; remove duplicate summary; optional link disclosure resets input-sharing choice; sticky schedule first column",
+  "latest_change": "Context-specific result interpretation and accessible field hints for common financial modes; independent loan, compound, retirement and tax fixtures",
   "seo_generated_pages_checked": 80,
   "seo_detailed_guides": 75,
   "seo_worked_examples": 116,
@@ -57,5 +57,6 @@
   "sharing_protocol": "address fragment v1; legacy query links supported",
   "image_export": "browser Canvas PNG; no external API",
   "sharing_browser_checks": 16,
-  "vat_browser_checks": 17
+  "vat_browser_checks": 17,
+  "result_context_browser_checks": 12
 }
