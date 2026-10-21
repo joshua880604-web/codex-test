@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-21T05:52:39.317Z",
+  "checks": [
+    "Default link excludes all inputs",
+    "Shared fragment preserves two known values and recomputes",
+    "Copied summary matches results; input links require fresh opt-in",
+    {
+      "png": "vat-result.png",
+      "width": 1200,
+      "height": 867,
+      "bytes": 88880
+    },
+    "Native share cancellation handled",
+    "Clipboard-denied fallback exposes selectable content",
+    "Editing inputs removes stale summary and export controls",
+    "Guide anchors preserve edited query inputs",
+    "Unknown shared mode does not display unrelated default results",
+    {
+      "route": "marriage-tax",
+      "summary": "matches displayed primary result"
+    },
+    {
+      "route": "date",
+      "summary": "matches displayed primary result"
+    },
+    {
+      "route": "tip-bill-split",
+      "summary": "matches displayed primary result"
+    },
+    "Tax year preserved in summary caption",
+    {
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "external_requests": [],
+  "api_requests": []
+}

@@ -2,6 +2,8 @@
 import {searchTasks} from "@/lib/keyword-targets";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import ScientificKeypad from "./ScientificKeypad";
+import ResultShare from "./ResultShare";
+import { sharedInputs } from "@/lib/sharing";
 import MarriageFields from "./MarriageFields";
 import { defaults } from "@/lib/types";
 import { routeFor } from "@/lib/catalog";
@@ -38,26 +40,28 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   const resultRef = useRef<HTMLDivElement>(null),
     request = useRef(0);
   useEffect(() => {
-    if (!window.location.search) return;
-    const token = ++request.current;
-    const q = new URLSearchParams(window.location.search),
-      found = calc.modes.find((m) => m.id === (id === "currency" && q.get("mode") === "live" ? "snapshot" : q.get("mode")));
-    const initial = found ?? calc.modes[0],
-      v = defaults(initial);
-    if ((id === "vat" || (id === "commission" && initial.id === "any-two")) && initial.fields.some((f) => q.has(f.key))) {
-      for (const f of initial.fields) v[f.key] = "";
+    let lastSource:string|null=null;
+    function hydrate() {
+      const source=window.location.hash.startsWith('#calc=')?window.location.hash:window.location.search;
+      if(source===lastSource)return;
+      lastSource=source;
+      try {
+        const shared=sharedInputs(calc,window.location.search,window.location.hash);
+        if(!shared)return;
+        const token=++request.current;
+        const {mode:initial,values:v}=shared;
+        setModeId(initial.id);setValues(v);setResult(null);setError("");setNotice("");setShowAll(false);setYearly(false);
+        runCalculation(id,initial.id,v).then(next=>{
+          if(token===request.current)setResult(next);
+        }).catch(error=>{
+          if(token===request.current){setResult(null);setError("Shared inputs could not be calculated: "+(error instanceof Error?error.message:"Check the entered values."));}
+        });
+      }catch(error){request.current++;setResult(null);setError(error instanceof Error?error.message:"Invalid calculation link.");}
     }
-    for (const f of initial.fields) {
-      const x = q.get(f.key);
-      if (x !== null) v[f.key] = x;
-    }
-    setModeId(initial.id);
-    setValues(v);
-    runCalculation(id, initial.id, v).then(next => {
-      if (token === request.current) setResult(next);
-    }).catch(() => { if (token === request.current) setResult(null); });
-    return () => { request.current++; };
-  }, [calc, id]);
+    hydrate();
+    window.addEventListener("hashchange",hydrate);window.addEventListener("popstate",hydrate);
+    return ()=>{request.current++;window.removeEventListener("hashchange",hydrate);window.removeEventListener("popstate",hydrate);};
+  }, [calc,id]);
   const update = (key: string, value: string) => {
     request.current++;
     setValues((v) => ({ ...v, [key]: value }));
@@ -118,17 +122,6 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     );
     setShowAll(false);
     setYearly(false);
-  }
-  async function share() {
-    const q = new URLSearchParams({ mode: mode.id, ...values });
-    q.delete("verified_rate");
-    const url = window.location.origin + routeFor(id) + "?" + q.toString();
-    try {
-      await navigator.clipboard.writeText(url);
-      setNotice("Calculation link copied.");
-    } catch {
-      setNotice(url);
-    }
   }
   function download(extra?: { rows: (number | string)[][]; columns: string[] }) {
     const rows = extra?.rows ?? tableRows, columns = extra?.columns ?? tableColumns;
@@ -395,10 +388,10 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
             )}
           </div>
           <div className="result-actions">
-            <button onClick={share}>Share calculation</button>
             <button onClick={() => window.print()}>Print</button>
             {result.rows && <button onClick={() => download()}>Download CSV</button>}
           </div>
+          <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/>
           {id === "marriage-tax" && <p className="result-note">Compared with your combined unmarried federal income tax. Savings means the married-joint estimate is lower; additional tax means it is higher. This does not compare married filing separately or include state/local tax.</p>}
           {result.notes?.map((note, i) => (
             <p className="result-note" key={i}>

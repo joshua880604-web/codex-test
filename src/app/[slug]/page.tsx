@@ -122,7 +122,7 @@ export default async function Page({
             </p>
             <p>
               This project is independent of Calculator.net. Calculations run in
-              your browser; reference rates are fetched only when requested.
+              your browser. Currency conversion uses a manual rate or a bundled dated snapshot; no external API is contacted.
             </p>
           </>
         ) : slug === "privacy.html" ? (
@@ -133,8 +133,12 @@ export default async function Page({
               persistent calculation storage.
             </p>
             <p>
-              Share links include the input values in the URL. Only share values
-              you intend recipients to see. Currency conversion uses a manually entered
+              Tool links exclude inputs by default. If you choose to include inputs,
+              they appear in the link’s address fragment and can be read by anyone
+              who receives it. They are not encrypted and may remain in browser
+              history. Existing query-based links may also expose values to server
+              logs. Copied summaries and PNG images contain result amounts. Only
+              share information you intend recipients to see. Currency conversion uses a manually entered
               rate or a dated snapshot bundled with the site. No external API
               requests are made.
             </p>
