@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-21T05:52:39.317Z",
+  "tested_at": "2026-10-21T06:18:10.946Z",
   "checks": [
     "Default link excludes all inputs",
     "Shared fragment preserves two known values and recomputes",
@@ -8,8 +8,8 @@
     {
       "png": "vat-result.png",
       "width": 1200,
-      "height": 867,
-      "bytes": 88880
+      "height": 858,
+      "bytes": 86821
     },
     "Native share cancellation handled",
     "Clipboard-denied fallback exposes selectable content",

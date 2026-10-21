@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-21T06:18:28.826Z",
+  "checks": [
+    {
+      "route": "mortgage",
+      "width": 1440,
+      "overflow": false,
+      "clipped": false
+    },
+    {
+      "route": "mortgage",
+      "width": 390,
+      "overflow": false,
+      "clipped": false
+    },
+    {
+      "route": "retirement",
+      "width": 1440,
+      "overflow": false,
+      "clipped": false
+    },
+    {
+      "route": "retirement",
+      "width": 390,
+      "overflow": false,
+      "clipped": false
+    },
+    {
+      "route": "marriage",
+      "width": 1440,
+      "overflow": false,
+      "clipped": false
+    },
+    {
+      "route": "marriage",
+      "width": 390,
+      "overflow": false,
+      "clipped": false
+    },
+    {
+      "route": "scientific",
+      "width": 1440,
+      "overflow": false,
+      "clipped": false
+    },
+    {
+      "route": "scientific",
+      "width": 390,
+      "overflow": false,
+      "clipped": false
+    },
+    {
+      "route": "vat",
+      "width": 1440,
+      "overflow": false,
+      "clipped": false
+    },
+    {
+      "route": "vat",
+      "width": 390,
+      "overflow": false,
+      "clipped": false
+    }
+  ]
+}

@@ -1,30 +1,58 @@
 import type {Metric} from './types';
 import {formatMetric} from './sharing';
-// Canvas only: no DOM capture, external fonts, images or API requests.
+
+// Local canvas report. No external images, fonts, APIs or DOM screenshot dependencies.
 export async function resultImage(title:string,mode:string,metrics:Metric[],notes:string[],toolURL:string){
  const canvas=document.createElement('canvas');canvas.width=1200;
  const ctx=canvas.getContext('2d');if(!ctx)throw new Error('Image export is unavailable in this browser. Copy the summary instead.');
- const blocks:{text:string;font:string;color:string;gap:number}[]=[];
- const add=(text:string,font:string,color='#18374d',gap=12)=>blocks.push({text,font,color,gap});
- add(title,'bold 42px sans-serif');add(mode,'28px sans-serif','#555',24);
- for(const metric of metrics){add(metric.label,'25px sans-serif','#555',6);add(formatMetric(metric),'bold 38px sans-serif','#426e25',24);}
- if(notes.length)for(const note of notes.slice(0,2))add(note.length>700?note.slice(0,697)+'…':note,'23px sans-serif','#444',14);
- add('Selected results. Read the full inputs and assumptions in the calculator.','23px sans-serif','#555');
- add('Generated '+new Date().toLocaleDateString('en-US')+' · Financial Calculators','22px sans-serif','#555');
- add(toolURL,'24px sans-serif','#075587',0);
- const lines:{text:string;font:string;color:string;y:number}[]=[];let y=64;
- for(const block of blocks){
-  ctx.font=block.font;const size=Number(block.font.match(/\d+/)?.[0]??24),lineHeight=Math.ceil(size*1.45);let line='';
-  const flush=()=>{if(line){lines.push({text:line,font:block.font,color:block.color,y});y+=lineHeight;line='';}};
-  for(const word of block.text.split(/\s+/)){
-    const candidate=line?line+' '+word:word;
-    if(ctx.measureText(candidate).width<=1072){line=candidate;continue;}
-    flush();
-    for(const char of word){if(ctx.measureText(line+char).width>1072)flush();line+=char;}
-  }
-  if(line){lines.push({text:line,font:block.font,color:block.color,y});y+=lineHeight;}y+=block.gap;
+ type Text={text:string;x:number;y:number;font:string;color:string};
+ type Box={x:number;y:number;w:number;h:number;fill:string;stroke:string};
+ const texts:Text[]=[],boxes:Box[]=[];
+ const ink='#18374d',muted='#536878',teal='#145b53';
+ function write(text:string,x:number,y:number,width:number,size:number,color=ink,bold=false){
+  const font=`${bold?'600 ':''}${size}px Arial, sans-serif`;
+  ctx!.font=font;const lineHeight=Math.ceil(size*1.4);let line='';
+  const flush=()=>{if(line){texts.push({text:line,x,y,font,color});y+=lineHeight;line='';}};
+  for(const word of text.split(/\s+/)){
+   if(ctx!.measureText(line?line+' '+word:word).width<=width){line=line?line+' '+word:word;continue;}
+   flush();for(const char of word){if(ctx!.measureText(line+char).width>width)flush();line+=char;}
+  }flush();return y;
  }
- canvas.height=Math.ceil(y+48);ctx.fillStyle='#fff';ctx.fillRect(0,0,1200,canvas.height);ctx.fillStyle='#4f8128';ctx.fillRect(0,0,1200,12);ctx.textBaseline='top';
- for(const line of lines){ctx.font=line.font;ctx.fillStyle=line.color;ctx.fillText(line.text,64,line.y);}
+ let y=54;
+ y=write('FINANCIAL CALCULATORS  /  RESULT SUMMARY',64,y,1072,18,muted,true)+20;
+ y=write(title,64,y,1072,42,ink,true)+8;
+ if(mode.trim().toLowerCase()!==title.trim().toLowerCase())y=write(mode,64,y,1072,23,muted)+12;
+ y+=14;
+ if(metrics[0]){
+  const top=y;y=write(metrics[0].label,90,y+24,1020,23,teal,true)+10;
+  y=write(formatMetric(metrics[0]),90,y,1020,52,teal,true)+26;
+  boxes.push({x:64,y:top,w:1072,h:y-top,fill:'#edf6f5',stroke:'#cfe3df'});
+ }
+ y+=18;
+ for(let i=1;i<metrics.length;i+=2){
+  const top=y;let bottom=y;
+  for(let j=i;j<Math.min(i+2,metrics.length);j++){
+   const x=64+(j-i)*548;
+   let end=write(metrics[j].label,x+22,top+22,480,21,muted)+10;
+   end=write(formatMetric(metrics[j]),x+22,end,480,32,ink,true)+22;
+   bottom=Math.max(bottom,end);
+  }
+  for(let j=i;j<Math.min(i+2,metrics.length);j++)boxes.push({x:64+(j-i)*548,y:top,w:524,h:bottom-top,fill:'#fff',stroke:'#dce5eb'});
+  y=bottom+18;
+ }
+ y+=8;
+ if(notes.length){
+  y=write('MODEL NOTES',64,y,1072,18,muted,true)+10;
+  for(const note of notes.slice(0,2))y=write(note.length>700?note.slice(0,697)+'…':note,64,y,1072,21,muted)+12;
+ }
+ y+=16;const divider=y;y+=24;
+ y=write('Selected results • Review the full inputs and assumptions in the calculator.',64,y,1072,20,muted)+10;
+ y=write('Generated '+new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}),64,y,1072,19,muted)+10;
+ y=write(toolURL,64,y,1072,20,'#285d80');
+ canvas.height=Math.ceil(y+48);ctx.fillStyle='#f6f8fb';ctx.fillRect(0,0,1200,canvas.height);
+ ctx.fillStyle='#23776d';ctx.fillRect(0,0,1200,8);
+ for(const box of boxes){ctx.beginPath();ctx.roundRect(box.x,box.y,box.w,box.h,12);ctx.fillStyle=box.fill;ctx.fill();ctx.strokeStyle=box.stroke;ctx.lineWidth=1;ctx.stroke();}
+ ctx.strokeStyle='#d6e0e8';ctx.beginPath();ctx.moveTo(64,divider);ctx.lineTo(1136,divider);ctx.stroke();
+ ctx.textBaseline='top';for(const t of texts){ctx.font=t.font;ctx.fillStyle=t.color;ctx.fillText(t.text,t.x,t.y);}
  return new Promise<Blob>((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Unable to create an image. Copy the summary instead.')),'image/png'));
 }

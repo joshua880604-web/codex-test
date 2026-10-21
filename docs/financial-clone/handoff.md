@@ -62,3 +62,8 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 
 
 分享与 PNG（2026-10-21）：默认分享工具页，勾选后才分享可复算输入；摘要和图片明确提示含结果金额。Canvas 本地生成 PNG，无 API/新依赖。兼容旧参数链接，496 项测试、静态构建和全站 174 模式回归通过。见 docs/financial-clone/sharing-and-image-export.md。保持 noindex，未部署网站。
+
+### 2026-10-21 — Professional result report design
+- Restyled shared Result UI with a prominent primary metric, tabular numeric typography, restrained navy/teal palette, consistent action buttons, readable notes and schedule tables; mobile and print rules included.
+- PNG exports now use a locally rendered report header, primary result panel, paired supporting metric cards, model notes, generation date and clean tool address. Canvas height and text wrapping remain content-driven. Calculation formulas, rounding and selected-summary metric limits are unchanged.
+- Validation: 496 unit tests passed; static export prepared 80 routes; sharing browser checks 15/15 passed with no JavaScript errors or external requests. Result-design browser checks 10/10 across Mortgage, Retirement, Marriage Tax, Scientific and VAT at 1440 and 390 pixels; PNGs generated for all five, VAT PNG and mobile Mortgage result visually inspected.
