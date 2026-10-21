@@ -2,7 +2,7 @@
   "passed": true,
   "configuration": "default-noindex-preview",
   "test_origin": null,
-  "pages": 75,
+  "pages": 80,
   "checks": [
     {
       "route": "/mortgage-calculator.html",
@@ -358,6 +358,31 @@
       "route": "/commission-calculator.html",
       "canonical": [],
       "h1": "Commission Calculator"
+    },
+    {
+      "route": "/percentage-calculator.html",
+      "canonical": [],
+      "h1": "Percentage Calculator"
+    },
+    {
+      "route": "/tip-bill-split-calculator.html",
+      "canonical": [],
+      "h1": "Tip and Bill Split Calculator"
+    },
+    {
+      "route": "/date-calculator.html",
+      "canonical": [],
+      "h1": "Date Calculator"
+    },
+    {
+      "route": "/unit-converter.html",
+      "canonical": [],
+      "h1": "Unit Converter"
+    },
+    {
+      "route": "/scientific-calculator.html",
+      "canonical": [],
+      "h1": "Scientific Calculator"
     },
     {
       "route": "/financial-calculator.html",

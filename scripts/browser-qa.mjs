@@ -60,19 +60,6 @@ try {
       for (let i = 0; i < labels.length; i++) {
         if (labels[i] !== null) await page.getByRole("tab").nth(i).click();
         await page.getByRole("button", { name: /^Calculate/ }).click();
-        if (item.id === "currency" && i === 0) {
-          await Promise.race([
-            page.locator(".error[role=alert]").waitFor({ timeout: 12000 }),
-            page.locator(".result").waitFor({ timeout: 12000 }),
-          ]);
-          record.modes.push({
-            mode: labels[i] ?? "default",
-            result: (await page.locator(".result").count())
-              ? "result"
-              : "feed-unavailable",
-          });
-          continue;
-        }
         await page.locator(".result h2").waitFor({ timeout: 5000 });
         if (await page.locator(".error[role=alert]").count())
           throw new Error(

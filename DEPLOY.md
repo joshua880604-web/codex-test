@@ -1,19 +1,32 @@
-# Deploy a preview
+# Static deployment (Cloudflare Pages or any static host)
 
-[Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fjoshua880604-web%2Fcodex-test%2Ftree%2Ffinancial-calculators)
+All calculations run in the browser. No external API calls or server functions are required. Currency conversion offers manual rates and bundled dated historical snapshots; there is no live-rate mode.
 
-The link imports the financial-calculators branch. Vercel may ask to create a repository for its copy; select your GitHub account and keep note of the resulting repository for future updates. This is an external deployment action requiring your browser login. No deployment has yet been created by this document.
+## Build and preview
 
-- Framework: Next.js
-- Root directory: repository root (.)
-- Node.js: 24.x
-- Install: npm ci
-- Build: npm run build
-- Output directory: framework default; do not set a static export directory
-- Required environment variables: none
+Requires Node.js 24+ only for development/build:
 
-After deployment open /financial-calculator.html. The currency API uses public providers; a saved dated fallback is explicit. BTC conversion returns an error if its provider is unavailable.
+```sh
+npm ci
+npm run build
+npm run preview
+```
 
-For automatic updates from the original codex-test repository instead of a new copy, import that repository in Vercel and select financial-calculators as the deployment/production branch. The main branch currently contains only the original README and will not build this app.
+Open http://localhost:3000. `npm run start` also serves the generated `out/` folder. `npm run dev` remains available for editing. Do not open HTML using file://; JavaScript modules require an HTTP server.
 
-The site is a review version. Full source visual/form parity is not verified; see docs/financial-clone/remaining-work.md. Vercel access protection depends on your account/project settings. No custom domain is required.
+## Cloudflare Pages
+
+- Repository: joshua880604-web/codex-test
+- Production branch: financial-calculators (after this static update is synchronized)
+- Root directory: repository root
+- Build command: npm run build
+- Output directory: out
+- Build environment: NODE_VERSION=24
+- No Worker, Functions, database, API token or runtime environment variables needed.
+- Upload only the contents of out/ for direct upload. Do not upload source, node_modules or .next.
+
+For search indexing, set SITE_URL=https://your-real-domain and SITE_INDEXABLE=true before building. Without those settings this review build remains noindex. These are build-time values; changing them requires a rebuild.
+
+`public/_redirects` sends / to /financial-calculator.html. The build finalizer preserves the existing .html URLs by normalizing Next.js export filenames. This application uses normal HTML links with full document navigation; adding Next Link/prefetch later requires revalidating the export routing/RSC assets. On hosts other than Pages configure the same homepage redirect if desired; index.html remains usable.
+
+Saved exchange-rate dates are displayed; update the bundled data and rebuild to refresh them. Manual rates support BTC without providing market data. Official tax/CPI tables are also bundled and change only with a new build. Source attribution links are ordinary links, not automatic API requests.

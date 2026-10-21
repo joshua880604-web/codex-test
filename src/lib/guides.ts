@@ -606,3 +606,46 @@ guides["take-home-paycheck"].examples.push({title:"A simple paycheck from one jo
 guides.commission.examples.push({title:"Find a missing commission rate",mode:"any-two",values:{sales:1000,commission:75,rate:""},inputs:"Sales amount $1,000 and commission $75; leave the rate blank.",steps:["Rate = commission / sales × 100.","75 / 1000 × 100 = 7.5%."],answer:"The commission rate is 7.5%.",expected:{label:"Commission rate",value:7.5}});
 guides.irr.examples.push({title:"Annualize a six-month investment without interim flows",mode:"fixed",values:{initial:100,years:0,months:6,ending:121,cash_action:"No recurring cash flow"},inputs:"Invest $100 and receive $121 after six months, with no recurring cash flow.",steps:["Holding period is 6/12 = 0.5 years.","Annual IRR solves 100 = 121/(1+r)^0.5, so r = 1.21² − 1 = 46.41%."],answer:"Effective annual IRR is 46.41%; the actual six-month gain is 21%.",expected:{label:"Annual IRR 1",value:46.41}});
 guides["house-affordability"].examples.push({title:"Use a dollar down payment and fixed housing costs",mode:"budget",values:{budget:2000,down:20000,down_unit:"Dollars",years:10,rate:0,tax_rate:2400,tax_unit:"Dollars per year",insurance:1200,insurance_unit:"Dollars per year",hoa:100,hoa_unit:"Dollars per month",maintenance:600,maintenance_unit:"Dollars per year"},inputs:"Monthly budget $2,000; $20,000 down; ten-year zero-interest loan; annual tax $2,400, insurance $1,200 and maintenance $600; monthly HOA $100.",steps:["Fixed monthly costs = 200 + 100 + 50 + 100 = 450.","Mortgage budget = 2000 − 450 = 1550; loan amount = 1550 × 120 = 186000.","Home price = 186000 + 20000 = 206000."],answer:"The modeled home price is $206,000; this is a budget calculation, not a lender approval.",expected:{label:"Estimated home price",value:206000}});
+
+// Task-oriented links complement the existing, individually curated recommendations.
+const relatedClusters = [
+  ["house-affordability","down-payment","rent","debt-to-income-ratio","mortgage","fha-loan","va-mortgage"],
+  ["refinance","mortgage-payoff","amortization","apr","home-equity-loan","heloc"],
+  ["rental-property","rent-vs-buy","roi","payback-period"],
+  ["auto-loan","cash-back-or-low-interest","auto-lease","boat-loan","lease"],
+  ["interest","investment","savings","compound-interest","cd","simple-interest"],
+  ["bond","mutual-fund","average-return","irr","roi","finance","present-value","future-value"],
+  ["retirement","401k","pension","social-security","annuity","annuity-payout","ira","roth-ira","rmd"],
+  ["income-tax","take-home-paycheck","salary","marriage-tax","estate-tax","budget"],
+  ["loan","payment","repayment","interest-rate","business-loan","personal-loan","student-loan","college-cost"],
+  ["credit-card","credit-cards-payoff","debt-payoff","debt-consolidation","budget"],
+  ["vat","sales-tax","discount","margin","commission","percentage"],
+  ["currency","inflation","interest","future-value"],
+  ["depreciation","business-loan","margin","budget"],
+  ["tip-bill-split","percentage","sales-tax","discount"],
+  ["date","unit-converter","scientific","percentage"],
+];
+for (const cluster of relatedClusters) for (const id of cluster) {
+  if (!relatedCalculatorIds[id]) relatedCalculatorIds[id] = cluster.filter(other=>other!==id).slice(0,5);
+}
+
+// Specific answers reflect the current local model; no external review is implied.
+const clarifiedQuestions: Record<string, {question:string;answer:string}> = {
+  retirement: {question:"What if I am already at my retirement age?",answer:"In Required Savings, set current age equal to retirement age. There is no remaining saving period, so the result shows Additional savings needed now rather than a zero monthly saving requirement. A shortfall is the target retirement balance minus existing savings, with a minimum of zero."},
+  '401k': {question:"Does the employee contribution total include my current 401(k) balance?",answer:"Employee contributions means new employee deposits over the projection. Starting 401(k) balance is separate, and Starting balance plus employee contributions combines them once. Employer matching and investment earnings are separate components. Future projections hold the stated 2026 limits fixed."},
+  'mortgage-payoff': {question:"Do extra mortgage payments reduce property taxes and insurance?",answer:"The payoff comparison models loan principal and interest. Extra principal can reduce future interest and shorten payoff time, but property taxes and homeowners insurance do not disappear when the mortgage is repaid. Lender prepayment penalties and accrued daily payoff interest are excluded."},
+  repayment: {question:"When is a one-time extra loan payment applied?",answer:"Enter a whole payment month. Month 1 is the first scheduled payment in the projection. Extra payments are capped at the remaining principal and that period's interest; payments scheduled after payoff have no effect. The model does not include prepayment penalties."},
+  currency: {question:"Does this currency converter work without a live exchange-rate API?",answer:"Yes. Custom Exchange Rate uses the rate you enter; Saved Reference Rates uses historical data bundled with the site and displays its dates. Neither mode requests external data. Snapshots do not update automatically and do not represent an executable bank quote; BTC conversion requires a manual rate."},
+  'take-home-paycheck': {question:"Will this estimate exactly match my employer's tax withholding?",answer:"Not necessarily. This tool allocates estimated annual federal income tax to the entered job and pay frequency. It does not implement the complete IRS Publication 15-T payroll withholding procedure. W-4 elections, year-to-date payroll, benefit treatment and employer rounding can change an actual paycheck."},
+};
+for (const [id,question] of Object.entries(clarifiedQuestions)) {
+  guides[id].questions.push(question);
+  guides[id].checkedOn = "2026-10-21";
+}
+
+guides['debt-payoff'].questions.push({question:'What is the difference between debt snowball and debt avalanche?',answer:'Both pay the entered minimum on every debt first. Snowball applies extra money to the smallest remaining balance, while avalanche applies it to the highest APR. This implementation ranks balances after monthly interest and minimum payments. Choose the separate mode to calculate either plan; snowball is not guaranteed to minimize interest.'});
+guides.margin.questions.push({question:'Is a 25% markup the same as a 25% profit margin?',answer:'No. At a cost of $100, a 25% markup gives a $125 selling price and $25 profit. Gross margin is $25 divided by $125, or 20%. Use Markup from Cost to price from a markup percentage; use the profit modes to solve from revenue and cost.'});
+guides.savings.questions.push({question:'Can I use this as a high yield savings calculator?',answer:'Yes, with an interest rate and compounding frequency you enter. The calculator does not fetch current account rates, compare banks or recommend a product. APY is an effective annual yield; a quoted nominal rate with a compounding frequency is a different input convention.'});
+guides['debt-payoff'].examples.push({title:'Pay the smallest balance first with a debt snowball',mode:'snowball',values:{debts:'Small, 100, 10, 0\nLarge, 1000, 100, 12',extra:100,yearly:0,once:0,once_month:1,rollover:'Yes'},inputs:'Two debts: $100 at 0% APR with a $10 minimum, and $1,000 at 12% APR with a $100 minimum. Add $100 per month and roll freed payments forward.',steps:['The first month adds $10 interest to the larger debt.','Pay minimums of $10 and $100, then clear the remaining $90 of the small debt.','The final $10 of extra money goes to the larger debt; balances are $0 and $900 after month one.','Subsequent balances are $699, $495.99, $290.9499 and $83.859399; the last payment is $84.69799299.'],answer:'First-month payment is $210 and the combined ending balance is $900.',expected:{label:'Total paid',value:1134.69799299,tolerance:.01}});
+guides.margin.examples.push({title:'Convert a markup on cost into selling price and margin',mode:'markup',values:{cost:100,markup:25},inputs:'Cost $100 and markup 25%.',steps:['Profit = 100 × 25% = 25.','Selling price = 100 + 25 = 125.','Gross margin = 25 ÷ 125 = 20%.'],answer:'Selling price is $125; markup is 25%, while gross margin is 20%.',expected:{label:'Selling price',value:125}});
+for(const id of ['debt-payoff','margin','savings'])guides[id].checkedOn='2026-10-21';

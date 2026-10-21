@@ -1,14 +1,3 @@
 import type { NextConfig } from "next";
-const config: NextConfig = {
-  poweredByHeader: false,
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/financial-calculator.html",
-        permanent: true,
-      },
-    ];
-  },
-};
+const config: NextConfig = { output: "export", poweredByHeader: false };
 export default config;

@@ -41,3 +41,11 @@ Local inputs: debts, rollover, extra, yearly, once, once_month.
 Local formula: Accrue each loan’s interest separately and apply minimums followed by avalanche extra payments.
 
 Local default outputs: Months until debt-free; Total interest; Total paid.
+
+### Debt Snowball (snowball)
+
+Local inputs: debts, rollover, extra, yearly, once, once_month.
+
+Local formula: Accrue monthly interest, pay minimums, then rank remaining balances from smallest to largest. Ties use the higher APR first.
+
+Local default outputs: Months until debt-free; Total interest; Total paid.

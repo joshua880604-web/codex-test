@@ -6,8 +6,8 @@ const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless
 const page=await browser.newPage({viewport:{width:1440,height:900}});const errors=[];page.on('pageerror',e=>errors.push(e.message));const checks=[];
 const base='http://127.0.0.1:3000';
 try{
- const redirect=await page.request.get(base+'/',{maxRedirects:0});if(redirect.status()!==308||redirect.headers().location!=='/financial-calculator.html')throw new Error('Directory redirect failed');checks.push('Root 308 redirects to canonical financial directory');
- const robots=await page.request.get(base+'/robots.txt');if(!robots.ok()||!(await robots.text()).includes('Disallow: /api/'))throw new Error('robots failed');
+ const redirect=await page.request.get(base+'/',{maxRedirects:0});if(redirect.status()!==301||redirect.headers().location!=='/financial-calculator.html')throw new Error('Directory redirect failed');checks.push('Root 301 redirects to canonical financial directory');
+ const robots=await page.request.get(base+'/robots.txt');if(!robots.ok()||!(await robots.text()).includes('User-Agent: *'))throw new Error('robots failed');
  for(const [id,guide] of Object.entries(guides)){
   const route=catalog.find(c=>c.id===id).local_route;
   for(const example of guide.examples){
@@ -16,7 +16,7 @@ try{
    await section.getByRole('link',{name:'Try these inputs',exact:true}).click();
    for(const [key,value] of Object.entries(example.values)){
     const field=page.locator(`form [id$="-${key}"]`);await field.waitFor({state:'attached'});
-    await page.waitForFunction(({id,value})=>document.getElementById(id)?.value===value,{id:await field.getAttribute('id'),value:String(value)});
+    await page.waitForFunction(({selector,value})=>document.querySelector(selector)?.value===value,{selector:`form [id$="-${key}"]`,value:String(value)}).catch(async error=>{throw new Error(`${id}/${example.title}/${key}: expected ${value}, got ${await field.inputValue()}; ${error.message}`);});
    }
    await page.getByRole('button',{name:'Calculate',exact:true}).click();
    const metric=id==='marriage-tax'&&example.expected.label==='Marriage penalty / negative bonus'?page.locator('.metric.primary'):page.locator('.metric').filter({has:page.getByText(example.expected.label,{exact:true})});await metric.waitFor();

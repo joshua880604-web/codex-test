@@ -1,0 +1,564 @@
+{
+  "tested_at": "2026-10-21T01:45:13.023Z",
+  "passed": true,
+  "checks": [
+    {
+      "route": "/mortgage-calculator.html",
+      "modes": [
+        "Monthly Mortgage",
+        "Biweekly Comparison"
+      ]
+    },
+    {
+      "route": "/amortization-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/mortgage-payoff-calculator.html",
+      "modes": [
+        "Current balance · Extra payments",
+        "Current balance · Normal repayment",
+        "Current balance · Biweekly",
+        "Current balance · Pay off now",
+        "Original loan · Extra payments",
+        "Original loan · Normal repayment",
+        "Original loan · Biweekly",
+        "Original loan · Pay off now"
+      ]
+    },
+    {
+      "route": "/house-affordability-calculator.html",
+      "modes": [
+        "Based on Income",
+        "Based on Monthly Budget"
+      ]
+    },
+    {
+      "route": "/rent-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/debt-ratio-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/real-estate-calculator.html",
+      "modes": []
+    },
+    {
+      "route": "/refinance-calculator.html",
+      "modes": [
+        "Current Balance and Payment",
+        "Original Loan Information"
+      ]
+    },
+    {
+      "route": "/rental-property-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/apr-calculator.html",
+      "modes": [
+        "General Loan APR",
+        "Mortgage APR"
+      ]
+    },
+    {
+      "route": "/fha-loan-calculator.html",
+      "modes": [
+        "FHA Mortgage",
+        "Biweekly Comparison"
+      ]
+    },
+    {
+      "route": "/va-mortgage-calculator.html",
+      "modes": [
+        "VA Mortgage",
+        "Biweekly Comparison"
+      ]
+    },
+    {
+      "route": "/home-equity-loan-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/heloc-calculator.html",
+      "modes": [
+        "Draw and Repayment Periods",
+        "Maximum Credit"
+      ]
+    },
+    {
+      "route": "/down-payment-calculator.html",
+      "modes": [
+        "Home Price from Cash",
+        "Cash Needed",
+        "Down Payment Percentage"
+      ]
+    },
+    {
+      "route": "/rent-vs-buy-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/auto-loan-calculator.html",
+      "modes": [
+        "Monthly Payment",
+        "Affordable Vehicle Price"
+      ]
+    },
+    {
+      "route": "/cash-back-or-low-interest-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/auto-lease-calculator.html",
+      "modes": [
+        "Lease Payment",
+        "Vehicle Price from Payment"
+      ]
+    },
+    {
+      "route": "/interest-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/investment-calculator.html",
+      "modes": [
+        "End Amount",
+        "Contribute Amount",
+        "Return Rate",
+        "Starting Amount",
+        "Invest Length"
+      ]
+    },
+    {
+      "route": "/finance-calculator.html",
+      "modes": [
+        "Solve FV",
+        "Solve PMT",
+        "Solve I/Y",
+        "Solve N",
+        "Solve PV"
+      ]
+    },
+    {
+      "route": "/compound-interest-calculator.html",
+      "modes": [
+        "Equivalent Interest Rate",
+        "Compound Growth"
+      ]
+    },
+    {
+      "route": "/interest-rate-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/savings-calculator.html",
+      "modes": [
+        "Savings Calculator",
+        "Savings Goal: Monthly Deposit",
+        "Savings Goal: Time Needed"
+      ]
+    },
+    {
+      "route": "/simple-interest-calculator.html",
+      "modes": [
+        "Balance",
+        "Principal",
+        "Term",
+        "Rate"
+      ]
+    },
+    {
+      "route": "/cd-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/bond-calculator.html",
+      "modes": [
+        "Solve Price",
+        "Solve Face",
+        "Solve Yield",
+        "Solve Maturity",
+        "Solve Coupon",
+        "Settlement-Date Pricing"
+      ]
+    },
+    {
+      "route": "/mutual-fund-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/average-return-calculator.html",
+      "modes": [
+        "Average and Cumulative Return",
+        "Dated Cash Flows",
+        "Variable Period Returns"
+      ]
+    },
+    {
+      "route": "/irr-calculator.html",
+      "modes": [
+        "Fixed Cash Flow",
+        "Unequal Annual Cash Flows"
+      ]
+    },
+    {
+      "route": "/roi-calculator.html",
+      "modes": [
+        "Use Investment Length",
+        "Use Dates"
+      ]
+    },
+    {
+      "route": "/payback-period-calculator.html",
+      "modes": [
+        "Fixed Cash Flow",
+        "Irregular Cash Flows"
+      ]
+    },
+    {
+      "route": "/present-value-calculator.html",
+      "modes": [
+        "Future Lump Sum",
+        "Periodic Payments"
+      ]
+    },
+    {
+      "route": "/future-value-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/retirement-calculator.html",
+      "modes": [
+        "Required Savings",
+        "Saving Plan",
+        "Monthly Withdrawal",
+        "Savings Longevity"
+      ]
+    },
+    {
+      "route": "/401k-calculator.html",
+      "modes": [
+        "401(k) Projection",
+        "Early Withdrawal Cost",
+        "Maximize Employer Match"
+      ]
+    },
+    {
+      "route": "/pension-calculator.html",
+      "modes": [
+        "Lump Sum vs. Monthly Pension",
+        "Single Life vs. Joint Survivor",
+        "Work Longer"
+      ]
+    },
+    {
+      "route": "/social-security-calculator.html",
+      "modes": [
+        "Ideal Application Age",
+        "Compare Application Ages"
+      ]
+    },
+    {
+      "route": "/annuity-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/annuity-payout-calculator.html",
+      "modes": [
+        "Fix Length",
+        "Fix Payment"
+      ]
+    },
+    {
+      "route": "/roth-ira-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/ira-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/rmd-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/tax-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/salary-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/marriage-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/estate-tax-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/take-home-pay-calculator.html",
+      "modes": [
+        "Paycheck Estimate",
+        "Take-Home Paycheck"
+      ]
+    },
+    {
+      "route": "/loan-calculator.html",
+      "modes": [
+        "Amortized Loan",
+        "Deferred Payment Loan",
+        "Bond Present Value"
+      ]
+    },
+    {
+      "route": "/payment-calculator.html",
+      "modes": [
+        "Fixed Term",
+        "Fixed Payment"
+      ]
+    },
+    {
+      "route": "/currency-calculator.html",
+      "modes": [
+        "Custom Exchange Rate",
+        "Saved Reference Rates"
+      ]
+    },
+    {
+      "route": "/inflation-calculator.html",
+      "modes": [
+        "Historical CPI",
+        "Future Value",
+        "Past Value",
+        "Custom CPI Indexes"
+      ]
+    },
+    {
+      "route": "/sales-tax-calculator.html",
+      "modes": [
+        "After-Tax Price",
+        "Before-Tax Price",
+        "Sales Tax Rate"
+      ]
+    },
+    {
+      "route": "/credit-card-calculator.html",
+      "modes": [
+        "Fixed Monthly Amount",
+        "Fixed Timeframe",
+        "Percentage Minimum Payment"
+      ]
+    },
+    {
+      "route": "/credit-card-payoff-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/debt-payoff-calculator.html",
+      "modes": [
+        "Debt Payoff Plan",
+        "Debt Snowball"
+      ]
+    },
+    {
+      "route": "/debt-consolidation-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/repayment-calculator.html",
+      "modes": [
+        "Loan Payoff with Extra Payments",
+        "Fixed Term",
+        "Fixed Payment"
+      ]
+    },
+    {
+      "route": "/student-loan-calculator.html",
+      "modes": [
+        "Normal Repayment",
+        "Solve payment",
+        "Solve principal",
+        "Solve rate",
+        "Solve term",
+        "Extra Repayment",
+        "Pay Off Altogether",
+        "In-School Loan Projection"
+      ]
+    },
+    {
+      "route": "/college-cost-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/vat-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/depreciation-calculator.html",
+      "modes": [
+        "Straight Line",
+        "Declining Balance",
+        "Sum of Years’ Digits"
+      ]
+    },
+    {
+      "route": "/margin-calculator.html",
+      "modes": [
+        "Profit · Solve revenue",
+        "Profit · Solve cost",
+        "Profit · Solve margin",
+        "Profit · Solve profit",
+        "Stock Margin",
+        "Currency Margin",
+        "Markup from Cost"
+      ]
+    },
+    {
+      "route": "/discount-calculator.html",
+      "modes": [
+        "Percent Off",
+        "Amount Off",
+        "Original Price",
+        "Discount Rate"
+      ]
+    },
+    {
+      "route": "/business-loan-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/personal-loan-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/boat-loan-calculator.html",
+      "modes": [
+        "Monthly Payment",
+        "Boat Price"
+      ]
+    },
+    {
+      "route": "/lease-calculator.html",
+      "modes": [
+        "Fixed Interest Rate",
+        "Fixed Monthly Payment"
+      ]
+    },
+    {
+      "route": "/budget-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/commission-calculator.html",
+      "modes": [
+        "Commission Calculator",
+        "Solve commission",
+        "Solve sales",
+        "Solve rate",
+        "Tiered Commission and Base Pay"
+      ]
+    },
+    {
+      "route": "/percentage-calculator.html",
+      "modes": [
+        "Percent of a Number",
+        "Percentage Change",
+        "What Percent?"
+      ]
+    },
+    {
+      "route": "/tip-bill-split-calculator.html",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "route": "/date-calculator.html",
+      "modes": [
+        "Days Between Dates",
+        "Add or Subtract Days"
+      ]
+    },
+    {
+      "route": "/unit-converter.html",
+      "modes": [
+        "Length",
+        "Mass",
+        "Temperature",
+        "Area",
+        "Volume",
+        "Speed"
+      ]
+    },
+    {
+      "route": "/scientific-calculator.html",
+      "modes": [
+        "default"
+      ]
+    }
+  ],
+  "external": [],
+  "api": [],
+  "errors": [],
+  "failed": [],
+  "legacy_live_link": "mapped to dated snapshot"
+}

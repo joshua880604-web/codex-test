@@ -28,8 +28,6 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   const [values, setValues] = useState<Values>(() => defaults(mode)),
     [result, setResult] = useState<Result | null>(initialResult),
     [error, setError] = useState(""),
-    [busy, setBusy] = useState(false),
-    [feed, setFeed] = useState(""),
     [showAll, setShowAll] = useState(false),
     [notice, setNotice] = useState("");
   const [yearly, setYearly] = useState(false);
@@ -43,7 +41,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     if (!window.location.search) return;
     const token = ++request.current;
     const q = new URLSearchParams(window.location.search),
-      found = calc.modes.find((m) => m.id === q.get("mode"));
+      found = calc.modes.find((m) => m.id === (id === "currency" && q.get("mode") === "live" ? "snapshot" : q.get("mode")));
     const initial = found ?? calc.modes[0],
       v = defaults(initial);
     if ((id === "vat" || (id === "commission" && initial.id === "any-two")) && initial.fields.some((f) => q.has(f.key))) {
@@ -62,22 +60,18 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   }, [calc, id]);
   const update = (key: string, value: string) => {
     request.current++;
-    setBusy(false);
     setValues((v) => ({ ...v, [key]: value }));
     setResult(null);
     setError("");
-    setFeed("");
     setNotice("Inputs changed. Select Calculate to update the result.");
   };
   function switchMode(next: string) {
     request.current++;
-    setBusy(false);
     const m = calc.modes.find((x) => x.id === next)!;
     setModeId(next);
     setValues(defaults(m));
     setResult(null);
     setError("");
-    setFeed("");
     setNotice("");
     setShowAll(false);
     setYearly(false);
@@ -90,26 +84,6 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     let v = { ...values };
     const token = ++request.current;
     try {
-      if (id === "currency" && mode.id === "live" && v.from !== v.to) {
-        setBusy(true);
-        const response = await fetch(
-          "/api/rates?from=" +
-            encodeURIComponent(v.from) +
-            "&to=" +
-            encodeURIComponent(v.to),
-        );
-        const data = await response.json();
-        if (token !== request.current) return;
-        if (!response.ok)
-          throw new Error(
-            data.error ??
-              "Exchange rate feed unavailable. Use Custom Exchange Rate.",
-          );
-        v = { ...v, verified_rate: String(data.rate) };
-        setFeed(
-          `${data.stale ? "Market feed unavailable; using the saved reference snapshot. " : ""}Reference date(s): ${data.date}. Source: ${data.source}. ${v.from} → ${v.to}.`,
-        );
-      }
       const next = await runCalculation(id, mode.id, v);
       if (token !== request.current) return;
       setResult(next);
@@ -126,13 +100,10 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     } catch (e) {
       if (token === request.current)
         setError(e instanceof Error ? e.message : "Unable to calculate.");
-    } finally {
-      if (token === request.current) setBusy(false);
     }
   }
   function reset() {
     request.current++;
-    setBusy(false);
     setValues(
       (id === "vat" || (id === "commission" && mode.id === "any-two"))
         ? Object.fromEntries(mode.fields.map((f) => [f.key, ""]))
@@ -145,7 +116,6 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         ? "Inputs cleared. Enter any two values."
         : "Inputs reset to defaults.",
     );
-    setFeed("");
     setShowAll(false);
     setYearly(false);
   }
@@ -328,8 +298,8 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           )}
           {id === "scientific" && <ScientificKeypad values={values} update={update} />}
           <div className="form-actions">
-            <button type="submit" className="calculate" disabled={busy}>
-              {busy ? "Fetching rate…" : "Calculate"}{" "}
+            <button type="submit" className="calculate">
+              Calculate{" "}
               <span aria-hidden="true">▶</span>
             </button>
             <button type="button" className="clear" onClick={reset}>
@@ -348,7 +318,6 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           {notice}
         </p>
       )}
-      {feed && <p className="feed-source">{feed}</p>}
       {result && (
         <div ref={resultRef} className="result" aria-live="polite" tabIndex={-1}>
           <h2>Result</h2>

@@ -23,7 +23,7 @@ catalog=json.loads((root/'src/lib/catalog-data.json').read_text())
 paths=[x['local_route'] for x in catalog]+['/financial-calculator.html','/about.html','/privacy.html','/methodology.html']
 checks=[]
 for route in paths:
- p=Page();p.feed((root/'.next/server/app'/(route[1:]+'.html')).read_text())
+ p=Page();p.feed((root/'out'/route[1:]).read_text())
  assert len(p.h1s)==1,(route,p.h1s)
  assert p.metas.get('description'),route
  assert ('noindex' not in p.metas.get('robots','')) if origin else ('noindex' in p.metas.get('robots',''))
@@ -40,9 +40,9 @@ for route in paths:
   assert 'Remove 20% VAT from a gross price of 120' in ''.join(p.text)
   assert 'GOV.UK: VAT rates' in ''.join(p.text)
  checks.append({'route':route,'canonical':p.canon,'h1':p.h1s[0]})
-sitemap=(root/'.next/server/app/sitemap.xml.body').read_text()
-robots=(root/'.next/server/app/robots.txt.body').read_text()
-assert 'Disallow: /api/' in robots
+sitemap=(root/'out/sitemap.xml').read_text()
+robots=(root/'out/robots.txt').read_text()
+assert 'User-Agent: *' in robots and 'Allow: /' in robots
 if origin:assert sitemap.count('<loc>')==80 and origin+'/sitemap.xml' in robots
 else:assert '<loc>' not in sitemap and 'Sitemap:' not in robots
 report={'passed':True,'configuration':'indexable-test-origin' if origin else 'default-noindex-preview','test_origin':origin,'pages':len(checks),'checks':checks,'no_live_indexing_or_ranking_claim':True}

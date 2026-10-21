@@ -71,6 +71,7 @@ export function calculatorSchema(calc: Calculator, config = siteConfig()) {
     applicationCategory: calc.category === "Everyday Tools" ? "UtilitiesApplication" : "FinanceApplication",
     operatingSystem: "Any",
     browserRequirements: "Requires JavaScript",
+    featureList: searchTasks[calc.id]?.map(task=>task.keyword) ?? calc.modes.map(mode=>mode.title),
     isAccessibleForFree: true,
     inLanguage: "en",
     ...(url ? { "@id": url + "#calculator", url } : {}),
@@ -85,6 +86,11 @@ export function calculatorSchema(calc: Calculator, config = siteConfig()) {
       description: calc.intro,
       inLanguage: "en",
       mainEntity: { "@id": url + "#calculator" },
+      isPartOf: { "@type": "WebPage", url: absoluteURL(directoryPath, config) },
+      hasPart: calc.directory ? undefined : [
+        { "@type": "WebPageElement", "@id": url + "#worked-examples", name: "Worked examples" },
+        { "@type": "WebPageElement", "@id": url + "#scope-assumptions", name: "Scope and assumptions" },
+      ],
     });
     graph.push({
       "@type": "BreadcrumbList",

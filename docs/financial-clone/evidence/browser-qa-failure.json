@@ -1,6 +1,533 @@
 {
-  "tested_at": "2026-10-19T02:20:45.105Z",
-  "checks": [],
+  "tested_at": "2026-10-20T05:15:31.320Z",
+  "checks": [
+    {
+      "id": "mortgage",
+      "route": "/mortgage-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Monthly Mortgage",
+          "result": "rendered"
+        },
+        {
+          "mode": "Biweekly Comparison",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "amortization",
+      "route": "/amortization-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "mortgage-payoff",
+      "route": "/mortgage-payoff-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Current balance · Extra payments",
+          "result": "rendered"
+        },
+        {
+          "mode": "Current balance · Normal repayment",
+          "result": "rendered"
+        },
+        {
+          "mode": "Current balance · Biweekly",
+          "result": "rendered"
+        },
+        {
+          "mode": "Current balance · Pay off now",
+          "result": "rendered"
+        },
+        {
+          "mode": "Original loan · Extra payments",
+          "result": "rendered"
+        },
+        {
+          "mode": "Original loan · Normal repayment",
+          "result": "rendered"
+        },
+        {
+          "mode": "Original loan · Biweekly",
+          "result": "rendered"
+        },
+        {
+          "mode": "Original loan · Pay off now",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "house-affordability",
+      "route": "/house-affordability-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Based on Income",
+          "result": "rendered"
+        },
+        {
+          "mode": "Based on Monthly Budget",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "rent",
+      "route": "/rent-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "route": "/debt-ratio-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "route": "/real-estate-calculator.html",
+      "status": 200,
+      "modes": []
+    },
+    {
+      "id": "refinance",
+      "route": "/refinance-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Current Balance and Payment",
+          "result": "rendered"
+        },
+        {
+          "mode": "Original Loan Information",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "rental-property",
+      "route": "/rental-property-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "apr",
+      "route": "/apr-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "General Loan APR",
+          "result": "rendered"
+        },
+        {
+          "mode": "Mortgage APR",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "fha-loan",
+      "route": "/fha-loan-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "FHA Mortgage",
+          "result": "rendered"
+        },
+        {
+          "mode": "Biweekly Comparison",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "va-mortgage",
+      "route": "/va-mortgage-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "VA Mortgage",
+          "result": "rendered"
+        },
+        {
+          "mode": "Biweekly Comparison",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "home-equity-loan",
+      "route": "/home-equity-loan-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "heloc",
+      "route": "/heloc-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Draw and Repayment Periods",
+          "result": "rendered"
+        },
+        {
+          "mode": "Maximum Credit",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "down-payment",
+      "route": "/down-payment-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Home Price from Cash",
+          "result": "rendered"
+        },
+        {
+          "mode": "Cash Needed",
+          "result": "rendered"
+        },
+        {
+          "mode": "Down Payment Percentage",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "rent-vs-buy",
+      "route": "/rent-vs-buy-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "auto-loan",
+      "route": "/auto-loan-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Monthly Payment",
+          "result": "rendered"
+        },
+        {
+          "mode": "Affordable Vehicle Price",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "route": "/cash-back-or-low-interest-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "auto-lease",
+      "route": "/auto-lease-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Lease Payment",
+          "result": "rendered"
+        },
+        {
+          "mode": "Vehicle Price from Payment",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "interest",
+      "route": "/interest-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "investment",
+      "route": "/investment-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "End Amount",
+          "result": "rendered"
+        },
+        {
+          "mode": "Contribute Amount",
+          "result": "rendered"
+        },
+        {
+          "mode": "Return Rate",
+          "result": "rendered"
+        },
+        {
+          "mode": "Starting Amount",
+          "result": "rendered"
+        },
+        {
+          "mode": "Invest Length",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "route": "/finance-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Solve FV",
+          "result": "rendered"
+        },
+        {
+          "mode": "Solve PMT",
+          "result": "rendered"
+        },
+        {
+          "mode": "Solve I/Y",
+          "result": "rendered"
+        },
+        {
+          "mode": "Solve N",
+          "result": "rendered"
+        },
+        {
+          "mode": "Solve PV",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "compound-interest",
+      "route": "/compound-interest-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Compound Growth",
+          "result": "rendered"
+        },
+        {
+          "mode": "Equivalent Interest Rate",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "interest-rate",
+      "route": "/interest-rate-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "savings",
+      "route": "/savings-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Savings Calculator",
+          "result": "rendered"
+        },
+        {
+          "mode": "Savings Goal: Monthly Deposit",
+          "result": "rendered"
+        },
+        {
+          "mode": "Savings Goal: Time Needed",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "simple-interest",
+      "route": "/simple-interest-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Balance",
+          "result": "rendered"
+        },
+        {
+          "mode": "Principal",
+          "result": "rendered"
+        },
+        {
+          "mode": "Term",
+          "result": "rendered"
+        },
+        {
+          "mode": "Rate",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "cd",
+      "route": "/cd-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "bond",
+      "route": "/bond-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Solve Price",
+          "result": "rendered"
+        },
+        {
+          "mode": "Solve Face",
+          "result": "rendered"
+        },
+        {
+          "mode": "Solve Yield",
+          "result": "rendered"
+        },
+        {
+          "mode": "Solve Maturity",
+          "result": "rendered"
+        },
+        {
+          "mode": "Solve Coupon",
+          "result": "rendered"
+        },
+        {
+          "mode": "Settlement-Date Pricing",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "mutual-fund",
+      "route": "/mutual-fund-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "default",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "average-return",
+      "route": "/average-return-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Average and Cumulative Return",
+          "result": "rendered"
+        },
+        {
+          "mode": "Dated Cash Flows",
+          "result": "rendered"
+        },
+        {
+          "mode": "Variable Period Returns",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "irr",
+      "route": "/irr-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Fixed Cash Flow",
+          "result": "rendered"
+        },
+        {
+          "mode": "Unequal Annual Cash Flows",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "roi",
+      "route": "/roi-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Use Investment Length",
+          "result": "rendered"
+        },
+        {
+          "mode": "Use Dates",
+          "result": "rendered"
+        }
+      ]
+    },
+    {
+      "id": "payback-period",
+      "route": "/payback-period-calculator.html",
+      "status": 200,
+      "modes": [
+        {
+          "mode": "Fixed Cash Flow",
+          "result": "rendered"
+        },
+        {
+          "mode": "Irregular Cash Flows",
+          "result": "rendered"
+        }
+      ]
+    }
+  ],
   "errors": [],
-  "error": "Error: mortgage: "
+  "error": "Error: Route failed /present-value-calculator.html"
 }

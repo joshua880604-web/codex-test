@@ -210,44 +210,6 @@ const currency = tool(
   "currency",
   [
     {
-      id: "live",
-      title: "Market Rate",
-      fields: [
-        num("amount", "Amount", 1000),
-        select("from", "From currency", currencies, "USD"),
-        select("to", "To currency", currencies, "EUR"),
-        select("popular", "Show most popular currencies only?", ["Yes", "No"]),
-        {
-          key: "verified_rate",
-          label: "Fetched rate",
-          value: "",
-          optional: true,
-        },
-      ],
-      description:
-        "Fetch a dated reference rate, then convert the amount. Use manual mode when a feed is unavailable.",
-      formula:
-        "Converted amount = amount × quoted units of target currency per one source currency.",
-      calculate: (v) => {
-        if (v.from === v.to)
-          return {
-            metrics: [metric("Converted amount", n(v, "amount"))],
-            notes: [v.from + " → " + v.to + "; exchange rate 1."],
-          };
-        const rate = n(v, "verified_rate");
-        positive(rate, "Exchange rate");
-        return {
-          metrics: [
-            metric("Converted amount", n(v, "amount") * rate),
-            metric("Exchange rate", rate),
-          ],
-          notes: [
-            `${v.from} → ${v.to}. Rate date and source are shown above the result.`,
-          ],
-        };
-      },
-    },
-    {
       id: "manual",
       title: "Custom Exchange Rate",
       fields: [
@@ -319,7 +281,7 @@ const currency = tool(
       },
     },
   ],
-  "Convert currencies using a dated reference feed, stored reference rates, or a custom rate.",
+  "Convert currencies offline using your own exchange rate or bundled dated reference rates. No external API is contacted.",
 );
 const cpiPeriods = [
   "Annual average",
@@ -577,6 +539,7 @@ export function debtSchedule(
   yearlyExtra = 0,
   once = 0,
   onceMonth = 1,
+  strategy: "avalanche" | "snowball" = "avalanche",
 ): Result {
   const original = sum(debts.map((x) => x.balance)),
     baseline = sum(debts.map((x) => x.minimum));
@@ -613,7 +576,7 @@ export function debtSchedule(
       available -= a;
       paid += a;
     }
-    for (const x of [...open].sort((a, b) => b.rate - a.rate)) {
+    for (const x of [...open].sort((a, b) => strategy === "snowball" ? a.balance - b.balance || b.rate - a.rate : b.rate - a.rate)) {
       const a = Math.min(x.balance, Math.max(0, available));
       x.balance -= a;
       available -= a;
@@ -705,6 +668,17 @@ const debtPayoff = tool(
   ],
   "Build a multi-debt payoff schedule with recurring and one-time extra payments.",
 );
+debtPayoff.modes.push({
+  ...debtPayoff.modes[0], id: "snowball", title: "Debt Snowball",
+  description: "Pay minimums on all debts, then direct extra money to the smallest remaining balance. Optionally roll freed payments forward.",
+  formula: "Accrue monthly interest, pay minimums, then rank remaining balances from smallest to largest. Ties use the higher APR first.",
+  calculate: v => {
+    const debts = parseDebts(v.debts);
+    const result = debtSchedule(debts, sum(debts.map(d=>d.minimum)), v.rollover === "Yes", n(v,"extra"),n(v,"yearly"),n(v,"once"),n(v,"once_month"), "snowball");
+    result.notes = ["Snowball prioritizes the smallest balance after this month’s interest and minimum payments. Avalanche prioritizes the highest APR. Rates and minimums remain fixed; no new borrowing or fees are included. Snowball does not guarantee the lowest interest cost."];
+    return result;
+  },
+});
 const consolidation = tool(
   "debt-consolidation",
   [
@@ -1170,6 +1144,16 @@ const margin = tool(
   ],
   "Calculate profit margins, markups, stock margin, and foreign-exchange margin.",
 );
+margin.modes.push({
+  id: "markup", title: "Markup from Cost",
+  fields: [num("cost","Cost",100,"$",0.01), num("markup","Markup on cost",25,"%")],
+  description: "Calculate a selling price by adding a percentage of cost. Markup is profit divided by cost; gross margin is profit divided by selling price.",
+  formula: "Selling price = cost × (1 + markup/100); margin = markup/(100 + markup) × 100%.",
+  calculate: v => {
+    const cost=positive(n(v,"cost"),"Cost"), revenue=cost*(1+pct(v,"markup"));
+    return {metrics:[money("Selling price",revenue),money("Profit",revenue-cost),metric("Markup",n(v,"markup"),"percent"),metric("Gross margin",(revenue-cost)/revenue*100,"percent")],notes:["Markup uses cost as its denominator; gross margin uses revenue. Taxes, discounts and other expenses are excluded."]};
+  },
+});
 const discount = tool(
   "discount",
   ["percent", "amount", "original", "rate"].map((id): Mode => ({

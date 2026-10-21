@@ -14,7 +14,7 @@ export default function CalculatorGuide({
         <>
           <h2>Understanding this calculation</h2>
           <p>{guide.summary}</p>
-          <h2>Worked examples</h2>
+          <h2 id="worked-examples">Worked examples</h2>
           {guide.examples.map((example) => {
             const query = new URLSearchParams({
               mode: example.mode,
@@ -47,7 +47,7 @@ export default function CalculatorGuide({
               <p>{item.answer}</p>
             </section>
           ))}
-          <h2>Scope and assumptions</h2>
+          <h2 id="scope-assumptions">Scope and assumptions</h2>
           <p>{guide.scope}</p>
           <h2>Sources</h2>
           <ul>

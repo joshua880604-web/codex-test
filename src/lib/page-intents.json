@@ -1,0 +1,538 @@
+[
+  {
+    "id": "house-affordability",
+    "mode": "income",
+    "keyword": "How much house can I afford calculator",
+    "titleSuffix": "Income & Housing Budget",
+    "description": "Estimate a home-price budget from income, existing debts, down payment and entered ownership costs. Housing ratios are planning assumptions, not lender approval.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "rent",
+    "mode": "affordability",
+    "keyword": "How much rent can I afford calculator",
+    "titleSuffix": "Affordable Monthly Rent",
+    "description": "Estimate a monthly rent budget using gross income, existing debt and selected housing and total-debt ratios.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "debt-to-income-ratio",
+    "mode": "ratio",
+    "keyword": "Debt to income ratio calculator for a mortgage",
+    "titleSuffix": "Monthly Debt & Income",
+    "description": "Compare monthly debt payments with gross monthly income. A calculated ratio does not establish mortgage eligibility.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "refinance",
+    "mode": "balance",
+    "keyword": "Mortgage refinance break even calculator",
+    "titleSuffix": "Payments & Break-Even",
+    "description": "Compare your current mortgage with a new loan, including cash out and closing costs. Simple break-even uses costs divided by the monthly payment reduction.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "rental-property",
+    "mode": "projection",
+    "keyword": "Rental property cash flow calculator",
+    "titleSuffix": "Cash Flow & Rental Returns",
+    "description": "Estimate rental income, operating costs, mortgage payments and sale proceeds over your holding period. Income tax and depreciation tax benefits are excluded.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "apr",
+    "mode": "loan",
+    "keyword": "Loan APR calculator with fees",
+    "titleSuffix": "Loan Fees & Annual Cost",
+    "description": "Calculate an annualized borrowing cost from loan payments and selected fees. APR and the quoted interest rate measure different costs.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "fha-loan",
+    "mode": "monthly",
+    "keyword": "FHA loan calculator with mortgage insurance",
+    "titleSuffix": "Payment & Mortgage Insurance",
+    "description": "Estimate principal, interest, upfront and annual mortgage insurance with entered housing costs. Insurance duration and rates are explicit assumptions.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "va-mortgage",
+    "mode": "monthly",
+    "keyword": "VA mortgage calculator with funding fee",
+    "titleSuffix": "Payment & Funding Fee",
+    "description": "Estimate a VA mortgage payment with the selected funding-fee treatment, exemption and ownership costs. Confirm your eligibility separately.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "home-equity-loan",
+    "mode": "loan",
+    "keyword": "Home equity loan monthly payment calculator",
+    "titleSuffix": "Monthly Payment & Interest",
+    "description": "Estimate payments and total interest on a fixed-rate home equity loan. This is an installment loan rather than a revolving credit line.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "heloc",
+    "mode": "draw-repay",
+    "keyword": "HELOC interest only payment calculator",
+    "titleSuffix": "Draw & Repayment Payments",
+    "description": "Compare interest-only draw payments with amortizing repayment payments. The entered annual account fee applies during the draw period only.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "down-payment",
+    "mode": "cash",
+    "keyword": "House down payment and closing costs calculator",
+    "titleSuffix": "Cash Needed to Buy a Home",
+    "description": "Calculate the cash needed for a home down payment and entered closing costs. Alternative modes solve home price or down payment percentage.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "rent-vs-buy",
+    "mode": "comparison",
+    "keyword": "Rent vs buy calculator with investment returns",
+    "titleSuffix": "Housing Costs & Net Wealth",
+    "description": "Compare renting with buying over a holding period, including ownership costs, home equity and investing cash-flow differences. Tax benefits use a simplified model.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "auto-loan",
+    "mode": "payment",
+    "keyword": "Auto loan calculator with trade in and sales tax",
+    "titleSuffix": "Trade-In, Tax & Payment",
+    "description": "Estimate car payments from vehicle price, down payment, trade-in, outstanding trade debt, rebates and fees. State tax treatments are limited to the listed rules.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "cash-back-or-low-interest",
+    "mode": "compare",
+    "keyword": "Cash back vs low interest car loan calculator",
+    "titleSuffix": "Compare Dealer Offers",
+    "description": "Compare a dealer cash rebate with a lower-rate loan using the same vehicle purchase. Review total payments as well as monthly affordability.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "auto-lease",
+    "mode": "payment",
+    "keyword": "Car lease calculator with residual value",
+    "titleSuffix": "Lease Payment & Residual",
+    "description": "Estimate a car lease payment from depreciation, financing charges, residual value and selected taxes. A residual estimate does not guarantee resale value.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "interest",
+    "mode": "accumulation",
+    "keyword": "Interest calculator with regular contributions",
+    "titleSuffix": "Deposits & Interest Earned",
+    "description": "Project interest from starting savings and recurring contributions, with selected compounding, deposit timing, tax and inflation assumptions.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "investment",
+    "mode": "contribution",
+    "keyword": "Investment calculator for monthly contributions",
+    "titleSuffix": "Contributions & Target Balance",
+    "description": "Find the recurring contribution needed for an investment target. Other modes solve ending balance, starting amount, return or time under constant-return assumptions.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "finance",
+    "mode": "pv",
+    "keyword": "Time value of money calculator with payments",
+    "titleSuffix": "PV, FV, Payment & Rate",
+    "description": "Solve present value, future value, payment, rate or number of periods using signed cash flows. Keep inflows and outflows on opposite signs.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "interest-rate",
+    "mode": "rate",
+    "keyword": "Loan interest rate calculator from monthly payment",
+    "titleSuffix": "Rate from Loan Payments",
+    "description": "Estimate the interest rate implied by a loan balance, payment and duration. Fees can make APR differ from this payment-implied rate.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "simple-interest",
+    "mode": "balance",
+    "keyword": "Simple interest calculator for principal rate and time",
+    "titleSuffix": "Principal, Rate & Time",
+    "description": "Calculate noncompounding interest, or solve for principal, rate or term. Confirm the entered time unit before comparing an annual quote.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "cd",
+    "mode": "accumulation",
+    "keyword": "CD interest calculator with monthly compounding",
+    "titleSuffix": "Maturity Value & Interest",
+    "description": "Estimate certificate-of-deposit maturity value at the selected compounding frequency. Tax is estimated on positive interest at maturity; early-withdrawal penalties are excluded.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "bond",
+    "mode": "dated",
+    "keyword": "Bond price calculator with accrued interest",
+    "titleSuffix": "Price, Yield & Accrued Interest",
+    "description": "Price a regular-coupon bond using settlement and maturity dates and the selected day-count convention. Irregular stub coupons and ex-coupon rules are outside this model.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "mutual-fund",
+    "mode": "projection",
+    "keyword": "Mutual fund calculator with fees",
+    "titleSuffix": "Growth & Fund Fees",
+    "description": "Project a fund balance after entered contributions, expenses and sales charges. The modeled back-end charge is applied to the final balance.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "average-return",
+    "mode": "cashflows",
+    "keyword": "Annualized return calculator with dated cash flows",
+    "titleSuffix": "Average & Annualized Returns",
+    "description": "Use actual cash-flow dates for a money-weighted annualized return. Arithmetic average returns and compound returns answer different questions.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "irr",
+    "mode": "irregular",
+    "keyword": "IRR calculator with unequal cash flows",
+    "titleSuffix": "Annualized Cash-Flow Returns",
+    "description": "Find annual internal rates of return from unequal year-end cash flows. Multiple or no valid rates may exist; use Average Return for calendar-dated cash flows.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "roi",
+    "mode": "dates",
+    "keyword": "ROI calculator with investment dates",
+    "titleSuffix": "Total & Annualized ROI",
+    "description": "Calculate total and annualized investment return using investment costs, proceeds and holding dates. Intermediate cash flows require an IRR-style calculation.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "payback-period",
+    "mode": "irregular",
+    "keyword": "Payback period calculator with uneven cash flows",
+    "titleSuffix": "Cash-Flow Recovery Time",
+    "description": "Estimate when cumulative cash flows recover the initial investment. Payback time alone does not measure the full investment return.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "present-value",
+    "mode": "annuity",
+    "keyword": "Present value of annuity calculator",
+    "titleSuffix": "Lump Sum & Annuity PV",
+    "description": "Discount a future lump sum or periodic payments to today's value using the entered rate and timing. Match the payment interval to the discount-rate period.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "future-value",
+    "mode": "growth",
+    "keyword": "Future value calculator with periodic payments",
+    "titleSuffix": "Growth & Recurring Payments",
+    "description": "Estimate future value from a starting amount, recurring payments and compounding assumptions. Beginning-of-period and end-of-period payments produce different balances.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "pension",
+    "mode": "lump",
+    "keyword": "Lump sum vs monthly pension calculator",
+    "titleSuffix": "Lump Sum & Pension Income",
+    "description": "Compare the discounted value of a lump sum and pension payments over an entered lifespan. This deterministic comparison excludes actuarial mortality probabilities.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "social-security",
+    "mode": "compare",
+    "keyword": "Social Security claiming age calculator",
+    "titleSuffix": "Compare Claiming Ages",
+    "description": "Compare estimated benefits at different claiming ages under modeled early and delayed retirement adjustments. Spousal coordination and earnings-test withholding are excluded.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "annuity",
+    "mode": "growth",
+    "keyword": "Annuity calculator with monthly contributions",
+    "titleSuffix": "Accumulation & Contributions",
+    "description": "Project annuity accumulation with starting principal and scheduled monthly or annual contributions. This model does not include insurer charges or income-tax rules.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "annuity-payout",
+    "mode": "payment",
+    "keyword": "How long will my annuity payments last calculator",
+    "titleSuffix": "Payout Amount & Duration",
+    "description": "Estimate how long a fixed annuity payment can last, or solve a payment for a chosen term. The final payment is capped at the remaining balance.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "roth-ira",
+    "mode": "comparison",
+    "keyword": "Roth IRA growth calculator with contributions",
+    "titleSuffix": "Contributions & Tax-Free Growth",
+    "description": "Compare modeled Roth IRA growth with taxable savings using fixed-year contribution limits. Contribution eligibility and qualified tax-free withdrawals are assumed.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "ira",
+    "mode": "comparison",
+    "keyword": "Traditional IRA vs Roth IRA calculator",
+    "titleSuffix": "Compare After-Tax Retirement Savings",
+    "description": "Compare traditional IRA, Roth IRA and taxable savings on the documented after-tax basis. Income-based eligibility and deductibility are not automatically determined.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "rmd",
+    "mode": "annual",
+    "keyword": "Required minimum distribution calculator by age",
+    "titleSuffix": "Age-Based Retirement Distributions",
+    "description": "Estimate an owner-account RMD from the prior year-end balance and applicable IRS life-expectancy table. Inherited-account and still-working exceptions are not covered.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "income-tax",
+    "mode": "federal",
+    "keyword": "2026 federal income tax calculator with deductions",
+    "titleSuffix": "2025 & 2026 Federal Estimate",
+    "description": "Estimate federal income tax using filing status, income, deductions and selected credits. This is not a complete state return or a filing service.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "salary",
+    "mode": "conversion",
+    "keyword": "Hourly to annual salary calculator with vacation",
+    "titleSuffix": "Hourly, Monthly & Annual Pay",
+    "description": "Convert pay frequencies with entered hours, workdays and time off. Hourly and daily inputs are treated differently from salary inputs already adjusted for holidays.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "marriage-tax",
+    "mode": "comparison",
+    "keyword": "Marriage tax penalty or bonus calculator",
+    "titleSuffix": "Federal Marriage Penalty or Bonus",
+    "description": "Compare estimated unmarried federal taxes with married filing jointly using each partner's income and deductions. State taxes and married-filing-separately comparisons are excluded.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "estate-tax",
+    "mode": "federal",
+    "keyword": "Federal estate tax calculator with lifetime gifts",
+    "titleSuffix": "Federal Estate & Gift Exclusion",
+    "description": "Estimate federal estate tax after entered gifts, deductions and available exclusion. State estate taxes and automatic qualification decisions are excluded.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "take-home-paycheck",
+    "mode": "source-paycheck",
+    "keyword": "Take home pay calculator after taxes and 401k",
+    "titleSuffix": "Estimated Pay After Tax",
+    "description": "Estimate pay after entered deductions and allocated annual federal tax. This is an annual-tax allocation model, not an IRS Publication 15-T payroll withholding calculation.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "loan",
+    "mode": "amortized",
+    "keyword": "Loan calculator with different compounding frequencies",
+    "titleSuffix": "Payment, Interest & Loan Value",
+    "description": "Calculate fixed loan payments with separate compounding and payment frequencies. Deferred-payment and zero-coupon present-value modes are also available.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "payment",
+    "mode": "payment",
+    "keyword": "Loan repayment time calculator from monthly payment",
+    "titleSuffix": "Payment Amount & Payoff Time",
+    "description": "Find payoff time from a fixed payment, or calculate a payment for a chosen term. The last actual payment is limited to the outstanding balance plus interest.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "currency",
+    "mode": "manual",
+    "keyword": "Currency converter with custom exchange rate",
+    "titleSuffix": "Manual & Historical Exchange Rates",
+    "description": "Convert money using your own exchange rate or bundled dated reference rates. No external API is contacted and historical snapshots are not live market prices.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "inflation",
+    "mode": "historical",
+    "keyword": "Inflation calculator using historical CPI",
+    "titleSuffix": "CPI Purchasing Power & Inflation",
+    "description": "Compare purchasing power using bundled BLS CPI-U data. Future inflation is an entered assumption; missing historical observations are not invented.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "sales-tax",
+    "mode": "before",
+    "keyword": "Reverse sales tax calculator from total price",
+    "titleSuffix": "Add or Remove Sales Tax",
+    "description": "Find the pre-tax price from an after-tax total and entered tax rate, or solve the total or rate. Local tax rates must be supplied by the user.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "credit-card",
+    "mode": "minimum",
+    "keyword": "Credit card minimum payment payoff calculator",
+    "titleSuffix": "Payoff Time & Interest",
+    "description": "Compare credit-card payoff under fixed amounts, a fixed timeframe or percentage minimums. The model assumes no new purchases, fees or changing APR.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "credit-cards-payoff",
+    "mode": "avalanche",
+    "keyword": "Multiple credit card payoff calculator",
+    "titleSuffix": "Multiple Cards & Payoff Plan",
+    "description": "Build a repayment plan across multiple cards with entered balances, APRs and minimums. Review the payment allocation and interest under the available strategy.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "debt-payoff",
+    "mode": "avalanche",
+    "keyword": "Debt avalanche calculator with extra payments",
+    "titleSuffix": "Debt Repayment Strategies",
+    "description": "Model highest-interest-first debt repayment with extra monthly, annual or one-time payments. Choose whether freed payments roll forward; no new borrowing is assumed.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "debt-consolidation",
+    "mode": "comparison",
+    "keyword": "Debt consolidation calculator with loan fees",
+    "titleSuffix": "Compare Loans & Consolidation Costs",
+    "description": "Compare existing debts with a proposed consolidation loan, including entered fees. A smaller monthly payment can still mean more total interest.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "student-loan",
+    "mode": "extra",
+    "keyword": "Student loan extra payment calculator",
+    "titleSuffix": "Repayment & Extra Principal",
+    "description": "Estimate the effect of extra monthly, annual or one-time student-loan payments. This is a fixed-rate repayment model, not an income-driven repayment or forgiveness estimate.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "college-cost",
+    "mode": "planning",
+    "keyword": "College savings calculator with tuition inflation",
+    "titleSuffix": "Tuition Costs & Savings Goal",
+    "description": "Estimate future college costs and a savings plan using entered tuition growth, time to enrollment and investment assumptions. Costs and returns are projections.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "vat",
+    "mode": "any-two",
+    "keyword": "Reverse VAT calculator from gross price",
+    "titleSuffix": "Add VAT, Remove VAT & Find the Rate",
+    "description": "Enter gross price and VAT rate to recover net price and tax, or enter any other supported pair. The rate is supplied by the user rather than looked up by country.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "depreciation",
+    "mode": "straight",
+    "keyword": "Straight line depreciation calculator with salvage value",
+    "titleSuffix": "Straight Line & Declining Balance",
+    "description": "Calculate asset depreciation using cost, salvage value, useful life and selected method. These book-depreciation models do not implement the complete MACRS tax system.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "margin",
+    "mode": "margin",
+    "keyword": "Profit margin calculator from revenue and cost",
+    "titleSuffix": "Profit Margin & Trading Margin",
+    "description": "Calculate gross profit margin from revenue and cost. Separate stock and currency margin modes model collateral; markup and margin use different denominators.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "discount",
+    "mode": "original",
+    "keyword": "Original price calculator before discount",
+    "titleSuffix": "Percent Off & Original Price",
+    "description": "Recover an original price from a sale price and discount, or solve a percentage or dollar reduction. Confirm the selected mode matches the known amounts.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "business-loan",
+    "mode": "repayment",
+    "keyword": "Business loan calculator with origination fees",
+    "titleSuffix": "Payments, Fees & Borrowing Cost",
+    "description": "Estimate business-loan payments and borrowing cost with entered fees, term and repayment frequency. The model does not determine lender approval or eligibility.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "personal-loan",
+    "mode": "repayment",
+    "keyword": "Personal loan calculator with origination fee",
+    "titleSuffix": "Monthly Payment & Fees",
+    "description": "Estimate personal-loan payments and fee-adjusted borrowing cost. Upfront fees and financed costs can affect cash received differently.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "boat-loan",
+    "mode": "payment",
+    "keyword": "Boat loan calculator with down payment",
+    "titleSuffix": "Boat Payment & Purchase Budget",
+    "description": "Estimate boat financing from purchase price, down payment, entered taxes and fees. Tax rates are manual; automobile state tax rules are not applied automatically.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "lease",
+    "mode": "rate",
+    "keyword": "Lease payment calculator with residual value",
+    "titleSuffix": "Payment, Rate & Residual Value",
+    "description": "Estimate payments from asset value, residual value, interest and lease duration, or solve an implied rate. Match each entered cash flow to its payment period.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "budget",
+    "mode": "budget",
+    "keyword": "Monthly budget calculator with different pay frequencies",
+    "titleSuffix": "Monthly Income & Spending",
+    "description": "Normalize entered income and expenses to a monthly budget. Use realistic recurring costs and check whether each item is weekly, monthly or annual.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "commission",
+    "mode": "tiered",
+    "keyword": "Tiered sales commission calculator with base salary",
+    "titleSuffix": "Rate, Sales & Tiered Commission",
+    "description": "Calculate commissions using progressive bands, a whole-sales rate or per-item amounts. Base pay must cover the same period as the entered sales.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "percentage",
+    "mode": "change",
+    "keyword": "Percentage increase and decrease calculator",
+    "titleSuffix": "Percent Change & Proportions",
+    "description": "Calculate percentage change from an original value, a percentage of a number, or one value as a share of another. Zero starting values need separate treatment.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "tip-bill-split",
+    "mode": "split",
+    "keyword": "Tip calculator split bill including tax",
+    "titleSuffix": "Tips & Bill Splitting",
+    "description": "Calculate a tip and split a bill across people with entered tax and currency. Cent remainders are allocated so individual shares sum to the full bill.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "date",
+    "mode": "difference",
+    "keyword": "Days between two dates calculator",
+    "titleSuffix": "Date Difference & Add Days",
+    "description": "Count calendar days between dates or add and subtract days. Calendar arithmetic handles leap years and does not depend on daylight-saving hour changes.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "unit-converter",
+    "mode": "temperature",
+    "keyword": "Celsius to Fahrenheit calculator",
+    "titleSuffix": "Length, Weight & Temperature",
+    "description": "Convert supported temperature, length, mass, area, volume and speed units. US and Imperial volume units are distinguished explicitly.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  },
+  {
+    "id": "scientific",
+    "mode": "evaluate",
+    "keyword": "Scientific calculator with degrees and radians",
+    "titleSuffix": "Scientific Functions & Expressions",
+    "description": "Evaluate scientific expressions with selected degree or radian angle units. Use parentheses to make operation order explicit.",
+    "researchStatus": "editorial candidate; search volume not verified"
+  }
+]

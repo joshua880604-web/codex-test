@@ -1,0 +1,417 @@
+{
+  "titles": {
+    "auto-loan": "Auto Loan Calculator - Car Payments, Trade-In & Taxes",
+    "salary": "Salary Calculator - Hourly, Monthly & Annual Pay",
+    "sales-tax": "Sales Tax Calculator - Add Tax or Find Pre-Tax Price",
+    "rent": "Rent Affordability Calculator - Monthly Rent Budget",
+    "mortgage-payoff": "Mortgage Payoff Calculator - Extra Payments & Interest Savings",
+    "home-equity-loan": "Home Equity Loan Calculator - Payment & Interest",
+    "amortization": "Amortization Calculator - Mortgage & Loan Schedules",
+    "house-affordability": "House Affordability Calculator - How Much Can I Afford?",
+    "refinance": "Refinance Calculator - Payments, Cash Out & Break-Even",
+    "heloc": "HELOC Calculator - Interest-Only & Repayment Payments",
+    "savings": "Savings Calculator - Interest, Monthly Deposits & Goals",
+    "compound-interest": "Compound Interest Calculator - Daily & Monthly Growth",
+    "investment": "Investment Calculator - Growth & Monthly Contributions",
+    "roi": "ROI Calculator - Return on Investment & Annualized Gain",
+    "bond": "Bond Calculator - Price & Yield to Maturity",
+    "present-value": "Present Value Calculator - Lump Sum & Annuity",
+    "annuity-payout": "Annuity Payout Calculator - Income & Payment Duration",
+    "retirement": "Retirement Calculator - Savings, Income & Withdrawals",
+    "401k": "401k Calculator - Growth, Match & Early Withdrawal",
+    "credit-card": "Credit Card Payoff Calculator - Payments & Interest",
+    "debt-payoff": "Debt Payoff Calculator - Avalanche & Snowball",
+    "margin": "Profit Margin & Markup Calculator",
+    "student-loan": "Student Loan Calculator - Payments, Payoff & Interest",
+    "income-tax": "Federal Income Tax Calculator - 2025 & 2026 Estimate",
+    "vat": "VAT Calculator - Add VAT, Remove VAT & Find the Rate",
+    "mutual-fund": "Mutual Fund Calculator - Growth, Expenses & Fees",
+    "average-return": "Average Return Calculator - Annualized Cash-Flow Returns",
+    "credit-cards-payoff": "Credit Cards Payoff Calculator - Multiple Card Plan",
+    "debt-consolidation": "Debt Consolidation Calculator - Payment & Total Cost",
+    "auto-lease": "Auto Lease Calculator - Car Lease Payment & Residual",
+    "down-payment": "Down Payment Calculator - Home Purchase Cash Needed",
+    "rent-vs-buy": "Rent vs Buy Calculator - Housing Costs & Net Wealth",
+    "apr": "APR Calculator - Loan Fees & Annual Borrowing Cost",
+    "repayment": "Loan Repayment Calculator - Extra Payments & Payoff",
+    "pension": "Pension Calculator - Lump Sum vs Monthly Income",
+    "take-home-paycheck": "Paycheck Calculator - Estimated Take-Home Pay"
+  },
+  "intents": [
+    {
+      "id": "mortgage-payoff",
+      "keyword": "Mortgage payoff calculator",
+      "mode": "remaining-extra"
+    },
+    {
+      "id": "amortization",
+      "keyword": "Mortgage amortization calculator",
+      "mode": "schedule"
+    },
+    {
+      "id": "mortgage-payoff",
+      "keyword": "Extra mortgage payment calculator",
+      "mode": "remaining-extra"
+    },
+    {
+      "id": "mortgage-payoff",
+      "keyword": "Early mortgage payoff calculator",
+      "mode": "remaining-extra"
+    },
+    {
+      "id": "mortgage",
+      "keyword": "Mortgage calculator with pmi",
+      "mode": "monthly"
+    },
+    {
+      "id": "mortgage",
+      "keyword": "Biweekly mortgage calculator",
+      "mode": "biweekly",
+      "description": "Compare monthly mortgage payments with half a monthly payment every two weeks under the stated interest assumptions. This is not the same as two payments per month."
+    },
+    {
+      "id": "mortgage",
+      "keyword": "Mortgage calculator with down payment",
+      "mode": "monthly"
+    },
+    {
+      "id": "mortgage",
+      "keyword": "Mortgage principal and interest calculator",
+      "mode": "monthly"
+    },
+    {
+      "id": "mortgage-payoff",
+      "keyword": "Mortgage interest savings calculator",
+      "mode": "remaining-extra"
+    },
+    {
+      "id": "mortgage-payoff",
+      "keyword": "Lump sum mortgage payment calculator",
+      "mode": "remaining-extra"
+    },
+    {
+      "id": "rent",
+      "keyword": "Rent affordability calculator",
+      "mode": "affordability"
+    },
+    {
+      "id": "home-equity-loan",
+      "keyword": "Home equity loan calculator",
+      "mode": "loan"
+    },
+    {
+      "id": "house-affordability",
+      "keyword": "Home affordability calculator",
+      "mode": "income"
+    },
+    {
+      "id": "house-affordability",
+      "keyword": "House affordability calculator",
+      "mode": "income"
+    },
+    {
+      "id": "refinance",
+      "keyword": "Refinance calculator",
+      "mode": "balance"
+    },
+    {
+      "id": "heloc",
+      "keyword": "Heloc calculator",
+      "mode": "draw-repay"
+    },
+    {
+      "id": "rent-vs-buy",
+      "keyword": "Rent vs buy calculator",
+      "mode": "comparison"
+    },
+    {
+      "id": "refinance",
+      "keyword": "Cash out refinance calculator",
+      "mode": "balance"
+    },
+    {
+      "id": "down-payment",
+      "keyword": "Down payment calculator",
+      "mode": "cash"
+    },
+    {
+      "id": "auto-loan",
+      "keyword": "Car payment calculator",
+      "mode": "payment"
+    },
+    {
+      "id": "auto-loan",
+      "keyword": "Car loan calculator",
+      "mode": "payment"
+    },
+    {
+      "id": "amortization",
+      "keyword": "Loan amortization calculator",
+      "mode": "schedule"
+    },
+    {
+      "id": "auto-lease",
+      "keyword": "Car lease calculator",
+      "mode": "payment"
+    },
+    {
+      "id": "repayment",
+      "keyword": "Loan calculator with extra payments",
+      "mode": "extra-payments"
+    },
+    {
+      "id": "apr",
+      "keyword": "Loan apr calculator",
+      "mode": "loan"
+    },
+    {
+      "id": "auto-loan",
+      "keyword": "Auto loan calculator with trade in",
+      "mode": "payment"
+    },
+    {
+      "id": "auto-loan",
+      "keyword": "Auto loan calculator with taxes and fees",
+      "mode": "payment"
+    },
+    {
+      "id": "savings",
+      "keyword": "Savings interest calculator",
+      "mode": "accumulation"
+    },
+    {
+      "id": "compound-interest",
+      "keyword": "Compound interest calculator daily",
+      "mode": "growth",
+      "values": {
+        "compound": "Daily"
+      }
+    },
+    {
+      "id": "savings",
+      "keyword": "High yield savings calculator",
+      "mode": "accumulation",
+      "description": "Project savings at your entered interest rate, with contributions and compounding. This tool does not fetch account offers or current bank APYs; convert an APY to the selected rate convention before comparing."
+    },
+    {
+      "id": "savings",
+      "keyword": "Savings account interest calculator",
+      "mode": "accumulation"
+    },
+    {
+      "id": "compound-interest",
+      "keyword": "Compound interest calculator monthly",
+      "mode": "growth",
+      "values": {
+        "compound": "Monthly"
+      }
+    },
+    {
+      "id": "savings",
+      "keyword": "Monthly savings calculator",
+      "mode": "accumulation"
+    },
+    {
+      "id": "compound-interest",
+      "keyword": "Compound interest calculator with inflation",
+      "mode": "growth"
+    },
+    {
+      "id": "savings",
+      "keyword": "How long to save calculator",
+      "mode": "goal-time"
+    },
+    {
+      "id": "savings",
+      "keyword": "Savings goal calculator monthly contribution",
+      "mode": "goal-contribution"
+    },
+    {
+      "id": "investment",
+      "keyword": "Investment growth calculator",
+      "mode": "end"
+    },
+    {
+      "id": "roi",
+      "keyword": "Return on investment calculator",
+      "mode": "length"
+    },
+    {
+      "id": "average-return",
+      "keyword": "Annualized return calculator",
+      "mode": "cashflows"
+    },
+    {
+      "id": "bond",
+      "keyword": "Bond price calculator",
+      "mode": "price"
+    },
+    {
+      "id": "present-value",
+      "keyword": "Present value of annuity calculator",
+      "mode": "annuity"
+    },
+    {
+      "id": "bond",
+      "keyword": "Yield to maturity calculator",
+      "mode": "yield"
+    },
+    {
+      "id": "mutual-fund",
+      "keyword": "Investment fee calculator",
+      "mode": "projection"
+    },
+    {
+      "id": "average-return",
+      "keyword": "Average return calculator",
+      "mode": "returns"
+    },
+    {
+      "id": "annuity-payout",
+      "keyword": "Annuity payout calculator",
+      "mode": "length"
+    },
+    {
+      "id": "retirement",
+      "keyword": "Retirement income calculator",
+      "mode": "withdrawal"
+    },
+    {
+      "id": "retirement",
+      "keyword": "How long will my retirement savings last",
+      "mode": "longevity",
+      "description": "Estimate how long savings last with constant effective annual return and month-end withdrawals. The final withdrawal is capped at the remaining balance."
+    },
+    {
+      "id": "401k",
+      "keyword": "401k match calculator",
+      "mode": "match"
+    },
+    {
+      "id": "401k",
+      "keyword": "401k early withdrawal calculator",
+      "mode": "early",
+      "description": "Estimate the net amount after entered income-tax rates and any modeled 10% early-distribution tax. Selected qualifying exceptions waive the additional tax, not ordinary income tax."
+    },
+    {
+      "id": "retirement",
+      "keyword": "Retirement calculator with social security",
+      "mode": "required"
+    },
+    {
+      "id": "retirement",
+      "keyword": "How much do i need to retire calculator",
+      "mode": "required"
+    },
+    {
+      "id": "retirement",
+      "keyword": "Retirement calculator with inflation",
+      "mode": "withdrawal"
+    },
+    {
+      "id": "pension",
+      "keyword": "Lump sum vs pension calculator",
+      "mode": "lump"
+    },
+    {
+      "id": "credit-card",
+      "keyword": "Credit card interest calculator",
+      "mode": "payment"
+    },
+    {
+      "id": "debt-payoff",
+      "keyword": "Debt payoff calculator",
+      "mode": "avalanche"
+    },
+    {
+      "id": "credit-card",
+      "keyword": "Credit card payment calculator",
+      "mode": "term"
+    },
+    {
+      "id": "debt-payoff",
+      "keyword": "Debt snowball calculator",
+      "mode": "snowball",
+      "description": "Pay minimums on every debt, then direct extra money to the smallest remaining balance. Compare with the highest-interest-first avalanche plan; neither strategy changes the entered APRs."
+    },
+    {
+      "id": "student-loan",
+      "keyword": "Student loan payoff calculator",
+      "mode": "extra"
+    },
+    {
+      "id": "debt-consolidation",
+      "keyword": "Debt consolidation calculator",
+      "mode": "comparison"
+    },
+    {
+      "id": "student-loan",
+      "keyword": "Student loan interest calculator",
+      "mode": "normal"
+    },
+    {
+      "id": "student-loan",
+      "keyword": "Student loan calculator extra payments",
+      "mode": "extra"
+    },
+    {
+      "id": "credit-cards-payoff",
+      "keyword": "Multiple credit card payoff calculator",
+      "mode": "avalanche"
+    },
+    {
+      "id": "salary",
+      "keyword": "Salary calculator",
+      "mode": "conversion"
+    },
+    {
+      "id": "sales-tax",
+      "keyword": "Sales tax calculator",
+      "mode": "after"
+    },
+    {
+      "id": "salary",
+      "keyword": "Salary to hourly calculator",
+      "mode": "conversion"
+    },
+    {
+      "id": "margin",
+      "keyword": "Profit margin calculator",
+      "mode": "margin"
+    },
+    {
+      "id": "income-tax",
+      "keyword": "Federal income tax calculator",
+      "mode": "federal"
+    },
+    {
+      "id": "margin",
+      "keyword": "Markup calculator",
+      "mode": "markup",
+      "description": "Enter cost and markup to calculate selling price, profit and gross margin. Markup divides profit by cost; gross margin divides profit by revenue."
+    },
+    {
+      "id": "income-tax",
+      "keyword": "2026 tax calculator",
+      "mode": "federal",
+      "values": {
+        "year": "2026"
+      }
+    },
+    {
+      "id": "vat",
+      "keyword": "Vat calculator",
+      "mode": "any-two"
+    },
+    {
+      "id": "take-home-paycheck",
+      "keyword": "Gross to net pay calculator",
+      "mode": "source-paycheck"
+    },
+    {
+      "id": "salary",
+      "keyword": "Annual salary to monthly calculator",
+      "mode": "conversion"
+    }
+  ]
+}

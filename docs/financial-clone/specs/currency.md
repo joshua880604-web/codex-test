@@ -33,14 +33,6 @@ Source: https://www.calculator.net/currency-calculator.html
 
 Current policy: independently implemented corresponding functions; source defaults, select options and exact numerical parity remain unverified where not observable. Expert fallback is explicitly authorized. See ../strict-functionality-policy.md and ../reference-function-map.json.
 
-### Market Rate (live)
-
-Local inputs: amount, from, to, popular, verified_rate.
-
-Local formula: Converted amount = amount × quoted units of target currency per one source currency.
-
-Local default outputs: requires live exchange-rate data; manual and dated snapshot modes remain available.
-
 ### Custom Exchange Rate (manual)
 
 Local inputs: amount, from, to, rate.

@@ -40,7 +40,7 @@ export async function generateMetadata({
     return pageMetadata(
       "/privacy.html",
       "Privacy",
-      "How calculator inputs, share links and public exchange-rate requests are handled.",
+      "How local calculator inputs, share links and offline exchange rates are handled.",
     );
   if (slug === "methodology.html")
     return pageMetadata(
@@ -134,9 +134,9 @@ export default async function Page({
             </p>
             <p>
               Share links include the input values in the URL. Only share values
-              you intend recipients to see. The market currency conversion mode
-              requests a public reference rate; calculator amounts are not sent
-              to the rate provider.
+              you intend recipients to see. Currency conversion uses a manually entered
+              rate or a dated snapshot bundled with the site. No external API
+              requests are made.
             </p>
           </>
         ) : c?.directory ? (

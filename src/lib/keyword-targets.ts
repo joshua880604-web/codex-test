@@ -1,11 +1,14 @@
-export type SearchTask={keyword:string;mode:string;description:string};
+import demandIntents from "./demand-intents.json";
+import pageIntents from "./page-intents.json";
+import catalog from "./catalog-data.json";
+export type SearchTask={keyword:string;mode:string;description:string;aliases?:string[];values?:Record<string,string>};
 export const searchTasks: Record<string, SearchTask[]> = {
  'mortgage-payoff':[{keyword:'Mortgage calculator with extra payments',mode:'remaining-extra',description:'Use your current balance and regular payment to compare extra monthly, annual or one-time payments. Review interest saved and time to payoff.'}],
  mortgage:[{keyword:'Mortgage calculator with taxes and insurance',mode:'monthly',description:'Estimate principal and interest alongside property tax, homeowners insurance and other entered ownership costs. These costs can change independently of the loan payment.'}],
  amortization:[{keyword:'Amortization calculator with extra payments',mode:'schedule',description:'Build a period-by-period schedule showing interest, principal and the remaining balance after extra payments.'}],
  retirement:[{keyword:'Retirement savings calculator',mode:'saving',description:'Find how much you need to save each month to reach a retirement target. The assumed return is not a guarantee.'},{keyword:'Retirement withdrawal calculator',mode:'withdrawal',description:'Estimate monthly withdrawals over a selected retirement horizon. Use Savings Longevity to explore how long an entered withdrawal can last.'}],
  savings:[{keyword:'Savings goal calculator',mode:'goal-contribution',description:'Enter a target amount, current savings and deadline to calculate the monthly deposit needed. Switch to Time Needed to solve for the first whole month reaching your target.'},{keyword:'Savings calculator with monthly deposits',mode:'accumulation',description:'Project a balance from recurring deposits, the chosen compounding frequency and contribution timing.'}],
- '401k':[{keyword:'401k growth calculator',mode:'projection',description:'Project annual account growth with salary increases, employee contributions and employer matching under the documented annual limits.'},{keyword:'401k contribution calculator',mode:'projection',description:'Review each year’s employee contribution separately from employer additions and account growth. The summary explicitly includes your existing balance.'},{keyword:'401k employer match calculator',mode:'match',description:'Explore matching tiers using the Maximize Employer Match form. Eligibility and plan-specific rules must be checked separately.'}],
+ '401k':[{keyword:'401k growth calculator',mode:'projection',description:'Project annual account growth with salary increases, employee contributions and employer matching under the documented annual limits.'},{keyword:'401k contribution calculator',mode:'projection',description:'Review each year’s employee contribution separately from employer additions and account growth. Starting balance is shown separately from new employee contributions.'},{keyword:'401k employer match calculator',mode:'match',description:'Explore matching tiers using the Maximize Employer Match form. Eligibility and plan-specific rules must be checked separately.'}],
  repayment:[{keyword:'Loan payoff calculator with extra payments',mode:'extra-payments',description:'Compare a fixed monthly loan payment with additional principal payments. Review months saved, interest saved and the full repayment schedule.'}],
  'compound-interest':[{keyword:'Compound interest calculator with monthly contributions',mode:'growth',description:'Project the ending balance, total deposits and net earnings. This compound interest calculator with monthly deposits also supports annual contributions and beginning- or end-of-period timing.'}],
 };
@@ -19,3 +22,42 @@ export const keywordTitles: Record<string,string>={
  repayment:'Loan Payoff Calculator with Extra Payments',
  'compound-interest':'Compound Interest Calculator with Monthly Contributions',
 };
+
+// Existing user-researched targets keep ownership; other pages use editorial candidates.
+for (const intent of pageIntents) {
+  if (!searchTasks[intent.id]) searchTasks[intent.id] = [{keyword:intent.keyword,mode:intent.mode,description:intent.description}];
+  if (!keywordTitles[intent.id]) keywordTitles[intent.id] = catalog.find(c=>c.id===intent.id)!.title + " - " + intent.titleSuffix;
+}
+
+// Merge researched synonyms into the same useful calculation, rather than duplicate pages/cards.
+for (const entry of demandIntents.intents) {
+  const values:Record<string,string>|undefined = entry.values ? Object.fromEntries(Object.entries(entry.values).filter(([,value])=>typeof value === "string")) : undefined;
+  const description = "description" in entry ? entry.description : undefined;
+  const tasks = searchTasks[entry.id];
+  const existing = tasks.find(t=>t.keyword.toLowerCase()===entry.keyword.toLowerCase() && !values)
+    ?? tasks.find(t=>t.mode===entry.mode && JSON.stringify(t.values)===JSON.stringify(values));
+  if (existing) {
+    if (existing.keyword.toLowerCase()!==entry.keyword.toLowerCase()) {
+      existing.aliases = [...new Set([...(existing.aliases??[]),entry.keyword])];
+    }
+    if (description) existing.description = description;
+  } else tasks.push({keyword:entry.keyword,mode:entry.mode,description:description??tasks[0].description,...(values?{values}:{})});
+}
+Object.assign(keywordTitles, demandIntents.titles);
+
+// Keep the largest supported, broad query at the first use-case entry for each researched page.
+const primaryQueries:Record<string,string>={
+ 'auto-loan':'Car payment calculator',salary:'Salary calculator','sales-tax':'Sales tax calculator',rent:'Rent affordability calculator',
+ 'mortgage-payoff':'Mortgage payoff calculator','home-equity-loan':'Home equity loan calculator',amortization:'Mortgage amortization calculator',
+ 'house-affordability':'Home affordability calculator',refinance:'Refinance calculator',heloc:'Heloc calculator',savings:'Savings interest calculator',
+ investment:'Investment growth calculator',roi:'Return on investment calculator',bond:'Bond price calculator',retirement:'Retirement income calculator',
+ 'debt-payoff':'Debt payoff calculator','student-loan':'Student loan payoff calculator',margin:'Profit margin calculator','income-tax':'Federal income tax calculator',
+};
+for(const [id,keyword] of Object.entries(primaryQueries)){
+ const tasks=searchTasks[id], task=tasks.find(t=>t.keyword.toLowerCase()===keyword.toLowerCase()||t.aliases?.some(a=>a.toLowerCase()===keyword.toLowerCase()));
+ if(!task)continue;
+ if(task.keyword.toLowerCase()!==keyword.toLowerCase()){
+  task.aliases=[task.keyword,...(task.aliases??[]).filter(a=>a.toLowerCase()!==keyword.toLowerCase())];task.keyword=keyword;
+ }
+ searchTasks[id]=[task,...tasks.filter(t=>t!==task)];
+}

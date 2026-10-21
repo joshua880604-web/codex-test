@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-21T01:44:42.472Z",
+  "checks": [
+    {
+      "route": "compound-interest",
+      "param": "compound",
+      "value": "Daily"
+    },
+    {
+      "route": "compound-interest",
+      "param": "compound",
+      "value": "Monthly"
+    },
+    {
+      "route": "tax",
+      "param": "year",
+      "value": "2026"
+    },
+    {
+      "route": "debt-payoff",
+      "mode": "snowball",
+      "result": "rendered"
+    },
+    {
+      "route": "margin",
+      "mode": "markup",
+      "result": "rendered"
+    },
+    {
+      "route": "mortgage-payoff",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "auto-loan",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "debt-payoff",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "margin",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "mortgage-payoff",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "auto-loan",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "debt-payoff",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "margin",
+      "width": 768,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

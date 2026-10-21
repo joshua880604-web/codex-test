@@ -1,0 +1,1129 @@
+{
+  "checked_at": "2026-10-21T01:45:29.265Z",
+  "passed": true,
+  "tools": 75,
+  "search_tasks": 149,
+  "editorial_candidates": 67,
+  "keyword_volume_claims": "See keyword-map.json and research/us-keywords-2026-10-21.json for user-provided evidence; remaining editorial phrases have no verified volume",
+  "indexing_or_ai_citations": "not measured",
+  "checks": [
+    {
+      "id": "mortgage",
+      "route": "/mortgage-calculator.html",
+      "title": "Mortgage Calculator with Taxes and Insurance",
+      "keywords": [
+        "Mortgage calculator with taxes and insurance",
+        "Biweekly mortgage calculator"
+      ],
+      "related": [
+        "amortization",
+        "mortgage-payoff",
+        "house-affordability",
+        "refinance",
+        "apr",
+        "rent-vs-buy"
+      ]
+    },
+    {
+      "id": "amortization",
+      "route": "/amortization-calculator.html",
+      "title": "Amortization Calculator - Mortgage & Loan Schedules",
+      "keywords": [
+        "Mortgage amortization calculator"
+      ],
+      "related": [
+        "refinance",
+        "mortgage-payoff",
+        "apr",
+        "home-equity-loan",
+        "heloc"
+      ]
+    },
+    {
+      "id": "mortgage-payoff",
+      "route": "/mortgage-payoff-calculator.html",
+      "title": "Mortgage Payoff Calculator - Extra Payments & Interest Savings",
+      "keywords": [
+        "Mortgage payoff calculator"
+      ],
+      "related": [
+        "refinance",
+        "amortization",
+        "apr",
+        "home-equity-loan",
+        "heloc"
+      ]
+    },
+    {
+      "id": "house-affordability",
+      "route": "/house-affordability-calculator.html",
+      "title": "House Affordability Calculator - How Much Can I Afford?",
+      "keywords": [
+        "Home affordability calculator"
+      ],
+      "related": [
+        "down-payment",
+        "rent",
+        "debt-to-income-ratio",
+        "mortgage",
+        "fha-loan"
+      ]
+    },
+    {
+      "id": "rent",
+      "route": "/rent-calculator.html",
+      "title": "Rent Affordability Calculator - Monthly Rent Budget",
+      "keywords": [
+        "Rent affordability calculator"
+      ],
+      "related": [
+        "house-affordability",
+        "down-payment",
+        "debt-to-income-ratio",
+        "mortgage",
+        "fha-loan"
+      ]
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "route": "/debt-ratio-calculator.html",
+      "title": "Debt-to-Income Ratio Calculator - Monthly Debt & Income",
+      "keywords": [
+        "Debt to income ratio calculator for a mortgage"
+      ],
+      "related": [
+        "house-affordability",
+        "down-payment",
+        "rent",
+        "mortgage",
+        "fha-loan"
+      ]
+    },
+    {
+      "id": "refinance",
+      "route": "/refinance-calculator.html",
+      "title": "Refinance Calculator - Payments, Cash Out & Break-Even",
+      "keywords": [
+        "Refinance calculator"
+      ],
+      "related": [
+        "mortgage-payoff",
+        "amortization",
+        "apr",
+        "home-equity-loan",
+        "heloc"
+      ]
+    },
+    {
+      "id": "rental-property",
+      "route": "/rental-property-calculator.html",
+      "title": "Rental Property Calculator - Cash Flow & Rental Returns",
+      "keywords": [
+        "Rental property cash flow calculator"
+      ],
+      "related": [
+        "rent-vs-buy",
+        "roi",
+        "payback-period"
+      ]
+    },
+    {
+      "id": "apr",
+      "route": "/apr-calculator.html",
+      "title": "APR Calculator - Loan Fees & Annual Borrowing Cost",
+      "keywords": [
+        "Loan APR calculator with fees"
+      ],
+      "related": [
+        "refinance",
+        "mortgage-payoff",
+        "amortization",
+        "home-equity-loan",
+        "heloc"
+      ]
+    },
+    {
+      "id": "fha-loan",
+      "route": "/fha-loan-calculator.html",
+      "title": "FHA Loan Calculator - Payment & Mortgage Insurance",
+      "keywords": [
+        "FHA loan calculator with mortgage insurance"
+      ],
+      "related": [
+        "house-affordability",
+        "down-payment",
+        "rent",
+        "debt-to-income-ratio",
+        "mortgage"
+      ]
+    },
+    {
+      "id": "va-mortgage",
+      "route": "/va-mortgage-calculator.html",
+      "title": "VA Mortgage Calculator - Payment & Funding Fee",
+      "keywords": [
+        "VA mortgage calculator with funding fee"
+      ],
+      "related": [
+        "house-affordability",
+        "down-payment",
+        "rent",
+        "debt-to-income-ratio",
+        "mortgage"
+      ]
+    },
+    {
+      "id": "home-equity-loan",
+      "route": "/home-equity-loan-calculator.html",
+      "title": "Home Equity Loan Calculator - Payment & Interest",
+      "keywords": [
+        "Home equity loan calculator"
+      ],
+      "related": [
+        "refinance",
+        "mortgage-payoff",
+        "amortization",
+        "apr",
+        "heloc"
+      ]
+    },
+    {
+      "id": "heloc",
+      "route": "/heloc-calculator.html",
+      "title": "HELOC Calculator - Interest-Only & Repayment Payments",
+      "keywords": [
+        "Heloc calculator"
+      ],
+      "related": [
+        "refinance",
+        "mortgage-payoff",
+        "amortization",
+        "apr",
+        "home-equity-loan"
+      ]
+    },
+    {
+      "id": "down-payment",
+      "route": "/down-payment-calculator.html",
+      "title": "Down Payment Calculator - Home Purchase Cash Needed",
+      "keywords": [
+        "House down payment and closing costs calculator"
+      ],
+      "related": [
+        "house-affordability",
+        "rent",
+        "debt-to-income-ratio",
+        "mortgage",
+        "fha-loan"
+      ]
+    },
+    {
+      "id": "rent-vs-buy",
+      "route": "/rent-vs-buy-calculator.html",
+      "title": "Rent vs Buy Calculator - Housing Costs & Net Wealth",
+      "keywords": [
+        "Rent vs buy calculator with investment returns"
+      ],
+      "related": [
+        "rental-property",
+        "roi",
+        "payback-period"
+      ]
+    },
+    {
+      "id": "auto-loan",
+      "route": "/auto-loan-calculator.html",
+      "title": "Auto Loan Calculator - Car Payments, Trade-In & Taxes",
+      "keywords": [
+        "Car payment calculator"
+      ],
+      "related": [
+        "cash-back-or-low-interest",
+        "auto-lease",
+        "boat-loan",
+        "lease"
+      ]
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "route": "/cash-back-or-low-interest-calculator.html",
+      "title": "Cash Back or Low Interest Calculator - Compare Dealer Offers",
+      "keywords": [
+        "Cash back vs low interest car loan calculator"
+      ],
+      "related": [
+        "auto-loan",
+        "auto-lease",
+        "boat-loan",
+        "lease"
+      ]
+    },
+    {
+      "id": "auto-lease",
+      "route": "/auto-lease-calculator.html",
+      "title": "Auto Lease Calculator - Car Lease Payment & Residual",
+      "keywords": [
+        "Car lease calculator with residual value"
+      ],
+      "related": [
+        "auto-loan",
+        "cash-back-or-low-interest",
+        "boat-loan",
+        "lease"
+      ]
+    },
+    {
+      "id": "interest",
+      "route": "/interest-calculator.html",
+      "title": "Interest Calculator - Deposits & Interest Earned",
+      "keywords": [
+        "Interest calculator with regular contributions"
+      ],
+      "related": [
+        "compound-interest",
+        "savings",
+        "investment",
+        "future-value",
+        "present-value"
+      ]
+    },
+    {
+      "id": "investment",
+      "route": "/investment-calculator.html",
+      "title": "Investment Calculator - Growth & Monthly Contributions",
+      "keywords": [
+        "Investment growth calculator",
+        "Investment calculator for monthly contributions"
+      ],
+      "related": [
+        "interest",
+        "savings",
+        "compound-interest",
+        "cd",
+        "simple-interest"
+      ]
+    },
+    {
+      "id": "finance",
+      "route": "/finance-calculator.html",
+      "title": "Finance Calculator - PV, FV, Payment & Rate",
+      "keywords": [
+        "Time value of money calculator with payments"
+      ],
+      "related": [
+        "bond",
+        "mutual-fund",
+        "average-return",
+        "irr",
+        "roi"
+      ]
+    },
+    {
+      "id": "compound-interest",
+      "route": "/compound-interest-calculator.html",
+      "title": "Compound Interest Calculator - Daily & Monthly Growth",
+      "keywords": [
+        "Compound interest calculator with monthly contributions",
+        "Compound interest calculator daily",
+        "Compound interest calculator monthly"
+      ],
+      "related": [
+        "interest",
+        "savings",
+        "investment",
+        "future-value",
+        "simple-interest"
+      ]
+    },
+    {
+      "id": "interest-rate",
+      "route": "/interest-rate-calculator.html",
+      "title": "Interest Rate Calculator - Rate from Loan Payments",
+      "keywords": [
+        "Loan interest rate calculator from monthly payment"
+      ],
+      "related": [
+        "loan",
+        "payment",
+        "repayment",
+        "business-loan",
+        "personal-loan"
+      ]
+    },
+    {
+      "id": "savings",
+      "route": "/savings-calculator.html",
+      "title": "Savings Calculator - Interest, Monthly Deposits & Goals",
+      "keywords": [
+        "Savings interest calculator",
+        "Savings goal calculator",
+        "How long to save calculator"
+      ],
+      "related": [
+        "interest",
+        "investment",
+        "compound-interest",
+        "cd",
+        "simple-interest"
+      ]
+    },
+    {
+      "id": "simple-interest",
+      "route": "/simple-interest-calculator.html",
+      "title": "Simple Interest Calculator - Principal, Rate & Time",
+      "keywords": [
+        "Simple interest calculator for principal rate and time"
+      ],
+      "related": [
+        "interest",
+        "investment",
+        "savings",
+        "compound-interest",
+        "cd"
+      ]
+    },
+    {
+      "id": "cd",
+      "route": "/cd-calculator.html",
+      "title": "CD Calculator - Maturity Value & Interest",
+      "keywords": [
+        "CD interest calculator with monthly compounding"
+      ],
+      "related": [
+        "interest",
+        "investment",
+        "savings",
+        "compound-interest",
+        "simple-interest"
+      ]
+    },
+    {
+      "id": "bond",
+      "route": "/bond-calculator.html",
+      "title": "Bond Calculator - Price & Yield to Maturity",
+      "keywords": [
+        "Bond price calculator",
+        "Bond price calculator with accrued interest",
+        "Yield to maturity calculator"
+      ],
+      "related": [
+        "mutual-fund",
+        "average-return",
+        "irr",
+        "roi",
+        "finance"
+      ]
+    },
+    {
+      "id": "mutual-fund",
+      "route": "/mutual-fund-calculator.html",
+      "title": "Mutual Fund Calculator - Growth, Expenses & Fees",
+      "keywords": [
+        "Mutual fund calculator with fees"
+      ],
+      "related": [
+        "bond",
+        "average-return",
+        "irr",
+        "roi",
+        "finance"
+      ]
+    },
+    {
+      "id": "average-return",
+      "route": "/average-return-calculator.html",
+      "title": "Average Return Calculator - Annualized Cash-Flow Returns",
+      "keywords": [
+        "Annualized return calculator with dated cash flows",
+        "Average return calculator"
+      ],
+      "related": [
+        "bond",
+        "mutual-fund",
+        "irr",
+        "roi",
+        "finance"
+      ]
+    },
+    {
+      "id": "irr",
+      "route": "/irr-calculator.html",
+      "title": "IRR Calculator - Annualized Cash-Flow Returns",
+      "keywords": [
+        "IRR calculator with unequal cash flows"
+      ],
+      "related": [
+        "roi",
+        "payback-period",
+        "average-return",
+        "investment"
+      ]
+    },
+    {
+      "id": "roi",
+      "route": "/roi-calculator.html",
+      "title": "ROI Calculator - Return on Investment & Annualized Gain",
+      "keywords": [
+        "Return on investment calculator",
+        "ROI calculator with investment dates"
+      ],
+      "related": [
+        "rental-property",
+        "rent-vs-buy",
+        "payback-period"
+      ]
+    },
+    {
+      "id": "payback-period",
+      "route": "/payback-period-calculator.html",
+      "title": "Payback Period Calculator - Cash-Flow Recovery Time",
+      "keywords": [
+        "Payback period calculator with uneven cash flows"
+      ],
+      "related": [
+        "rental-property",
+        "rent-vs-buy",
+        "roi"
+      ]
+    },
+    {
+      "id": "present-value",
+      "route": "/present-value-calculator.html",
+      "title": "Present Value Calculator - Lump Sum & Annuity",
+      "keywords": [
+        "Present value of annuity calculator"
+      ],
+      "related": [
+        "bond",
+        "mutual-fund",
+        "average-return",
+        "irr",
+        "roi"
+      ]
+    },
+    {
+      "id": "future-value",
+      "route": "/future-value-calculator.html",
+      "title": "Future Value Calculator - Growth & Recurring Payments",
+      "keywords": [
+        "Future value calculator with periodic payments"
+      ],
+      "related": [
+        "bond",
+        "mutual-fund",
+        "average-return",
+        "irr",
+        "roi"
+      ]
+    },
+    {
+      "id": "retirement",
+      "route": "/retirement-calculator.html",
+      "title": "Retirement Calculator - Savings, Income & Withdrawals",
+      "keywords": [
+        "Retirement income calculator",
+        "Retirement savings calculator",
+        "How long will my retirement savings last",
+        "Retirement calculator with social security"
+      ],
+      "related": [
+        "401k",
+        "ira",
+        "roth-ira",
+        "annuity-payout",
+        "social-security",
+        "rmd"
+      ]
+    },
+    {
+      "id": "401k",
+      "route": "/401k-calculator.html",
+      "title": "401k Calculator - Growth, Match & Early Withdrawal",
+      "keywords": [
+        "401k growth calculator",
+        "401k contribution calculator",
+        "401k employer match calculator",
+        "401k early withdrawal calculator"
+      ],
+      "related": [
+        "retirement",
+        "ira",
+        "roth-ira",
+        "income-tax",
+        "rmd"
+      ]
+    },
+    {
+      "id": "pension",
+      "route": "/pension-calculator.html",
+      "title": "Pension Calculator - Lump Sum vs Monthly Income",
+      "keywords": [
+        "Lump sum vs monthly pension calculator"
+      ],
+      "related": [
+        "retirement",
+        "401k",
+        "social-security",
+        "annuity",
+        "annuity-payout"
+      ]
+    },
+    {
+      "id": "social-security",
+      "route": "/social-security-calculator.html",
+      "title": "Social Security Calculator - Compare Claiming Ages",
+      "keywords": [
+        "Social Security claiming age calculator"
+      ],
+      "related": [
+        "retirement",
+        "401k",
+        "pension",
+        "annuity",
+        "annuity-payout"
+      ]
+    },
+    {
+      "id": "annuity",
+      "route": "/annuity-calculator.html",
+      "title": "Annuity Calculator - Accumulation & Contributions",
+      "keywords": [
+        "Annuity calculator with monthly contributions"
+      ],
+      "related": [
+        "retirement",
+        "401k",
+        "pension",
+        "social-security",
+        "annuity-payout"
+      ]
+    },
+    {
+      "id": "annuity-payout",
+      "route": "/annuity-payout-calculator.html",
+      "title": "Annuity Payout Calculator - Income & Payment Duration",
+      "keywords": [
+        "How long will my annuity payments last calculator",
+        "Annuity payout calculator"
+      ],
+      "related": [
+        "retirement",
+        "401k",
+        "pension",
+        "social-security",
+        "annuity"
+      ]
+    },
+    {
+      "id": "roth-ira",
+      "route": "/roth-ira-calculator.html",
+      "title": "Roth IRA Calculator - Contributions & Tax-Free Growth",
+      "keywords": [
+        "Roth IRA growth calculator with contributions"
+      ],
+      "related": [
+        "retirement",
+        "401k",
+        "pension",
+        "social-security",
+        "annuity"
+      ]
+    },
+    {
+      "id": "ira",
+      "route": "/ira-calculator.html",
+      "title": "IRA Calculator - Compare After-Tax Retirement Savings",
+      "keywords": [
+        "Traditional IRA vs Roth IRA calculator"
+      ],
+      "related": [
+        "retirement",
+        "401k",
+        "pension",
+        "social-security",
+        "annuity"
+      ]
+    },
+    {
+      "id": "rmd",
+      "route": "/rmd-calculator.html",
+      "title": "RMD Calculator - Age-Based Retirement Distributions",
+      "keywords": [
+        "Required minimum distribution calculator by age"
+      ],
+      "related": [
+        "ira",
+        "roth-ira",
+        "401k",
+        "retirement",
+        "annuity-payout"
+      ]
+    },
+    {
+      "id": "income-tax",
+      "route": "/tax-calculator.html",
+      "title": "Federal Income Tax Calculator - 2025 & 2026 Estimate",
+      "keywords": [
+        "Federal income tax calculator",
+        "2026 tax calculator"
+      ],
+      "related": [
+        "take-home-paycheck",
+        "salary",
+        "marriage-tax",
+        "estate-tax",
+        "401k"
+      ]
+    },
+    {
+      "id": "salary",
+      "route": "/salary-calculator.html",
+      "title": "Salary Calculator - Hourly, Monthly & Annual Pay",
+      "keywords": [
+        "Salary calculator"
+      ],
+      "related": [
+        "income-tax",
+        "take-home-paycheck",
+        "marriage-tax",
+        "estate-tax",
+        "budget"
+      ]
+    },
+    {
+      "id": "marriage-tax",
+      "route": "/marriage-calculator.html",
+      "title": "Marriage Tax Calculator - Federal Marriage Penalty or Bonus",
+      "keywords": [
+        "Marriage tax penalty or bonus calculator"
+      ],
+      "related": [
+        "income-tax",
+        "take-home-paycheck",
+        "salary",
+        "estate-tax",
+        "budget"
+      ]
+    },
+    {
+      "id": "estate-tax",
+      "route": "/estate-tax-calculator.html",
+      "title": "Estate Tax Calculator - Federal Estate & Gift Exclusion",
+      "keywords": [
+        "Federal estate tax calculator with lifetime gifts"
+      ],
+      "related": [
+        "income-tax",
+        "take-home-paycheck",
+        "salary",
+        "marriage-tax",
+        "budget"
+      ]
+    },
+    {
+      "id": "take-home-paycheck",
+      "route": "/take-home-pay-calculator.html",
+      "title": "Paycheck Calculator - Estimated Take-Home Pay",
+      "keywords": [
+        "Take home pay calculator after taxes and 401k"
+      ],
+      "related": [
+        "income-tax",
+        "salary",
+        "marriage-tax",
+        "estate-tax",
+        "budget"
+      ]
+    },
+    {
+      "id": "loan",
+      "route": "/loan-calculator.html",
+      "title": "Loan Calculator - Payment, Interest & Loan Value",
+      "keywords": [
+        "Loan calculator with different compounding frequencies"
+      ],
+      "related": [
+        "payment",
+        "repayment",
+        "interest-rate",
+        "apr",
+        "debt-consolidation"
+      ]
+    },
+    {
+      "id": "payment",
+      "route": "/payment-calculator.html",
+      "title": "Payment Calculator - Payment Amount & Payoff Time",
+      "keywords": [
+        "Loan repayment time calculator from monthly payment"
+      ],
+      "related": [
+        "loan",
+        "repayment",
+        "interest-rate",
+        "business-loan",
+        "personal-loan"
+      ]
+    },
+    {
+      "id": "currency",
+      "route": "/currency-calculator.html",
+      "title": "Currency Calculator - Manual & Historical Exchange Rates",
+      "keywords": [
+        "Currency converter with custom exchange rate"
+      ],
+      "related": [
+        "inflation",
+        "interest",
+        "future-value"
+      ]
+    },
+    {
+      "id": "inflation",
+      "route": "/inflation-calculator.html",
+      "title": "Inflation Calculator - CPI Purchasing Power & Inflation",
+      "keywords": [
+        "Inflation calculator using historical CPI"
+      ],
+      "related": [
+        "currency",
+        "interest",
+        "future-value"
+      ]
+    },
+    {
+      "id": "sales-tax",
+      "route": "/sales-tax-calculator.html",
+      "title": "Sales Tax Calculator - Add Tax or Find Pre-Tax Price",
+      "keywords": [
+        "Sales tax calculator",
+        "Reverse sales tax calculator from total price"
+      ],
+      "related": [
+        "vat",
+        "discount",
+        "margin",
+        "commission",
+        "percentage"
+      ]
+    },
+    {
+      "id": "credit-card",
+      "route": "/credit-card-calculator.html",
+      "title": "Credit Card Payoff Calculator - Payments & Interest",
+      "keywords": [
+        "Credit card minimum payment payoff calculator",
+        "Credit card interest calculator",
+        "Credit card payment calculator"
+      ],
+      "related": [
+        "credit-cards-payoff",
+        "debt-payoff",
+        "debt-consolidation",
+        "budget"
+      ]
+    },
+    {
+      "id": "credit-cards-payoff",
+      "route": "/credit-card-payoff-calculator.html",
+      "title": "Credit Cards Payoff Calculator - Multiple Card Plan",
+      "keywords": [
+        "Multiple credit card payoff calculator"
+      ],
+      "related": [
+        "credit-card",
+        "debt-payoff",
+        "debt-consolidation",
+        "budget"
+      ]
+    },
+    {
+      "id": "debt-payoff",
+      "route": "/debt-payoff-calculator.html",
+      "title": "Debt Payoff Calculator - Avalanche & Snowball",
+      "keywords": [
+        "Debt payoff calculator",
+        "Debt snowball calculator"
+      ],
+      "related": [
+        "credit-card",
+        "credit-cards-payoff",
+        "debt-consolidation",
+        "budget"
+      ]
+    },
+    {
+      "id": "debt-consolidation",
+      "route": "/debt-consolidation-calculator.html",
+      "title": "Debt Consolidation Calculator - Payment & Total Cost",
+      "keywords": [
+        "Debt consolidation calculator with loan fees"
+      ],
+      "related": [
+        "credit-card",
+        "credit-cards-payoff",
+        "debt-payoff",
+        "budget"
+      ]
+    },
+    {
+      "id": "repayment",
+      "route": "/repayment-calculator.html",
+      "title": "Loan Repayment Calculator - Extra Payments & Payoff",
+      "keywords": [
+        "Loan payoff calculator with extra payments"
+      ],
+      "related": [
+        "loan",
+        "payment",
+        "interest-rate",
+        "business-loan",
+        "personal-loan"
+      ]
+    },
+    {
+      "id": "student-loan",
+      "route": "/student-loan-calculator.html",
+      "title": "Student Loan Calculator - Payments, Payoff & Interest",
+      "keywords": [
+        "Student loan payoff calculator",
+        "Student loan interest calculator"
+      ],
+      "related": [
+        "loan",
+        "payment",
+        "repayment",
+        "interest-rate",
+        "business-loan"
+      ]
+    },
+    {
+      "id": "college-cost",
+      "route": "/college-cost-calculator.html",
+      "title": "College Cost Calculator - Tuition Costs & Savings Goal",
+      "keywords": [
+        "College savings calculator with tuition inflation"
+      ],
+      "related": [
+        "loan",
+        "payment",
+        "repayment",
+        "interest-rate",
+        "business-loan"
+      ]
+    },
+    {
+      "id": "vat",
+      "route": "/vat-calculator.html",
+      "title": "VAT Calculator - Add VAT, Remove VAT & Find the Rate",
+      "keywords": [
+        "Reverse VAT calculator from gross price"
+      ],
+      "related": [
+        "sales-tax",
+        "discount",
+        "margin",
+        "commission"
+      ]
+    },
+    {
+      "id": "depreciation",
+      "route": "/depreciation-calculator.html",
+      "title": "Depreciation Calculator - Straight Line & Declining Balance",
+      "keywords": [
+        "Straight line depreciation calculator with salvage value"
+      ],
+      "related": [
+        "business-loan",
+        "margin",
+        "budget"
+      ]
+    },
+    {
+      "id": "margin",
+      "route": "/margin-calculator.html",
+      "title": "Profit Margin & Markup Calculator",
+      "keywords": [
+        "Profit margin calculator",
+        "Markup calculator"
+      ],
+      "related": [
+        "vat",
+        "sales-tax",
+        "discount",
+        "commission",
+        "percentage"
+      ]
+    },
+    {
+      "id": "discount",
+      "route": "/discount-calculator.html",
+      "title": "Discount Calculator - Percent Off & Original Price",
+      "keywords": [
+        "Original price calculator before discount"
+      ],
+      "related": [
+        "vat",
+        "sales-tax",
+        "margin",
+        "commission",
+        "percentage"
+      ]
+    },
+    {
+      "id": "business-loan",
+      "route": "/business-loan-calculator.html",
+      "title": "Business Loan Calculator - Payments, Fees & Borrowing Cost",
+      "keywords": [
+        "Business loan calculator with origination fees"
+      ],
+      "related": [
+        "loan",
+        "payment",
+        "repayment",
+        "interest-rate",
+        "personal-loan"
+      ]
+    },
+    {
+      "id": "personal-loan",
+      "route": "/personal-loan-calculator.html",
+      "title": "Personal Loan Calculator - Monthly Payment & Fees",
+      "keywords": [
+        "Personal loan calculator with origination fee"
+      ],
+      "related": [
+        "loan",
+        "payment",
+        "repayment",
+        "interest-rate",
+        "business-loan"
+      ]
+    },
+    {
+      "id": "boat-loan",
+      "route": "/boat-loan-calculator.html",
+      "title": "Boat Loan Calculator - Boat Payment & Purchase Budget",
+      "keywords": [
+        "Boat loan calculator with down payment"
+      ],
+      "related": [
+        "auto-loan",
+        "cash-back-or-low-interest",
+        "auto-lease",
+        "lease"
+      ]
+    },
+    {
+      "id": "lease",
+      "route": "/lease-calculator.html",
+      "title": "Lease Calculator - Payment, Rate & Residual Value",
+      "keywords": [
+        "Lease payment calculator with residual value"
+      ],
+      "related": [
+        "auto-loan",
+        "cash-back-or-low-interest",
+        "auto-lease",
+        "boat-loan"
+      ]
+    },
+    {
+      "id": "budget",
+      "route": "/budget-calculator.html",
+      "title": "Budget Calculator - Monthly Income & Spending",
+      "keywords": [
+        "Monthly budget calculator with different pay frequencies"
+      ],
+      "related": [
+        "income-tax",
+        "take-home-paycheck",
+        "salary",
+        "marriage-tax",
+        "estate-tax"
+      ]
+    },
+    {
+      "id": "commission",
+      "route": "/commission-calculator.html",
+      "title": "Commission Calculator - Rate, Sales & Tiered Commission",
+      "keywords": [
+        "Tiered sales commission calculator with base salary"
+      ],
+      "related": [
+        "vat",
+        "sales-tax",
+        "discount",
+        "margin",
+        "percentage"
+      ]
+    },
+    {
+      "id": "percentage",
+      "route": "/percentage-calculator.html",
+      "title": "Percentage Calculator - Percent Change & Proportions",
+      "keywords": [
+        "Percentage increase and decrease calculator"
+      ],
+      "related": [
+        "vat",
+        "sales-tax",
+        "discount",
+        "margin",
+        "commission"
+      ]
+    },
+    {
+      "id": "tip-bill-split",
+      "route": "/tip-bill-split-calculator.html",
+      "title": "Tip and Bill Split Calculator - Tips & Bill Splitting",
+      "keywords": [
+        "Tip calculator split bill including tax"
+      ],
+      "related": [
+        "percentage",
+        "sales-tax",
+        "discount"
+      ]
+    },
+    {
+      "id": "date",
+      "route": "/date-calculator.html",
+      "title": "Date Calculator - Date Difference & Add Days",
+      "keywords": [
+        "Days between two dates calculator"
+      ],
+      "related": [
+        "unit-converter",
+        "scientific",
+        "percentage"
+      ]
+    },
+    {
+      "id": "unit-converter",
+      "route": "/unit-converter.html",
+      "title": "Unit Converter - Length, Weight & Temperature",
+      "keywords": [
+        "Celsius to Fahrenheit calculator"
+      ],
+      "related": [
+        "date",
+        "scientific",
+        "percentage"
+      ]
+    },
+    {
+      "id": "scientific",
+      "route": "/scientific-calculator.html",
+      "title": "Scientific Calculator - Scientific Functions & Expressions",
+      "keywords": [
+        "Scientific calculator with degrees and radians"
+      ],
+      "related": [
+        "date",
+        "unit-converter",
+        "percentage"
+      ]
+    }
+  ]
+}

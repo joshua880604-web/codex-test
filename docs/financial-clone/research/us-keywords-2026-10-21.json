@@ -1,0 +1,647 @@
+{
+  "source": "User-supplied Google Keyword Planner screenshots in this conversation, 2026-10-21",
+  "region": "United States",
+  "language": "English",
+  "period": "Previous 12 months; exact start/end dates not supplied",
+  "limits": [
+    "Not independently audited",
+    "Close variants may share volume; do not sum synonyms",
+    "Ads competition is not organic SEO difficulty",
+    "Null volume means no estimate shown, not zero searches",
+    "Cash back vs low interest row not visible; omitted"
+  ],
+  "keywords": [
+    {
+      "keyword": "mortgage payoff calculator",
+      "us_average_monthly_searches": 60500,
+      "page_id": "mortgage-payoff",
+      "mode": "remaining-extra",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "mortgage amortization calculator",
+      "us_average_monthly_searches": 49500,
+      "page_id": "amortization",
+      "mode": "schedule",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "extra mortgage payment calculator",
+      "us_average_monthly_searches": 33100,
+      "page_id": "mortgage-payoff",
+      "mode": "remaining-extra",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "early mortgage payoff calculator",
+      "us_average_monthly_searches": 27100,
+      "page_id": "mortgage-payoff",
+      "mode": "remaining-extra",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "mortgage calculator with pmi",
+      "us_average_monthly_searches": 2400,
+      "page_id": "mortgage",
+      "mode": "monthly",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "biweekly mortgage calculator",
+      "us_average_monthly_searches": 1900,
+      "page_id": "mortgage",
+      "mode": "biweekly",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "mortgage calculator with down payment",
+      "us_average_monthly_searches": 1900,
+      "page_id": "mortgage",
+      "mode": "monthly",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "mortgage principal and interest calculator",
+      "us_average_monthly_searches": 1900,
+      "page_id": "mortgage",
+      "mode": "monthly",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "mortgage interest savings calculator",
+      "us_average_monthly_searches": 210,
+      "page_id": "mortgage-payoff",
+      "mode": "remaining-extra",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "lump sum mortgage payment calculator",
+      "us_average_monthly_searches": 140,
+      "page_id": "mortgage-payoff",
+      "mode": "remaining-extra",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "rent affordability calculator",
+      "us_average_monthly_searches": 90500,
+      "page_id": "rent",
+      "mode": "affordability",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "home equity loan calculator",
+      "us_average_monthly_searches": 60500,
+      "page_id": "home-equity-loan",
+      "mode": "loan",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "home affordability calculator",
+      "us_average_monthly_searches": 49500,
+      "page_id": "house-affordability",
+      "mode": "income",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "house affordability calculator",
+      "us_average_monthly_searches": 49500,
+      "page_id": "house-affordability",
+      "mode": "income",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "refinance calculator",
+      "us_average_monthly_searches": 40500,
+      "page_id": "refinance",
+      "mode": "balance",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "heloc calculator",
+      "us_average_monthly_searches": 40500,
+      "page_id": "heloc",
+      "mode": "draw-repay",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "closing cost calculator",
+      "us_average_monthly_searches": 33100,
+      "page_id": "down-payment",
+      "mode": null,
+      "status": "feature_gap_do_not_target",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "rent vs buy calculator",
+      "us_average_monthly_searches": 14800,
+      "page_id": "rent-vs-buy",
+      "mode": "comparison",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "cash out refinance calculator",
+      "us_average_monthly_searches": 12100,
+      "page_id": "refinance",
+      "mode": "balance",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "down payment calculator",
+      "us_average_monthly_searches": 8100,
+      "page_id": "down-payment",
+      "mode": "cash",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "car payment calculator",
+      "us_average_monthly_searches": 550000,
+      "page_id": "auto-loan",
+      "mode": "payment",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "car loan calculator",
+      "us_average_monthly_searches": 550000,
+      "page_id": "auto-loan",
+      "mode": "payment",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "loan amortization calculator",
+      "us_average_monthly_searches": 40500,
+      "page_id": "amortization",
+      "mode": "schedule",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "car lease calculator",
+      "us_average_monthly_searches": 18100,
+      "page_id": "auto-lease",
+      "mode": "payment",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "loan calculator with extra payments",
+      "us_average_monthly_searches": 6600,
+      "page_id": "repayment",
+      "mode": "extra-payments",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "loan apr calculator",
+      "us_average_monthly_searches": 2400,
+      "page_id": "apr",
+      "mode": "loan",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "auto loan calculator with trade in",
+      "us_average_monthly_searches": 1000,
+      "page_id": "auto-loan",
+      "mode": "payment",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "lease vs buy car calculator",
+      "us_average_monthly_searches": 1000,
+      "page_id": "auto-lease",
+      "mode": null,
+      "status": "feature_gap_do_not_target",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "auto loan calculator with taxes and fees",
+      "us_average_monthly_searches": 720,
+      "page_id": "auto-loan",
+      "mode": "payment",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "savings interest calculator",
+      "us_average_monthly_searches": 18100,
+      "page_id": "savings",
+      "mode": "accumulation",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "compound interest calculator daily",
+      "us_average_monthly_searches": 12100,
+      "page_id": "compound-interest",
+      "mode": "growth",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "high yield savings calculator",
+      "us_average_monthly_searches": 6600,
+      "page_id": "savings",
+      "mode": "accumulation",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "savings account interest calculator",
+      "us_average_monthly_searches": 6600,
+      "page_id": "savings",
+      "mode": "accumulation",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "compound interest calculator monthly",
+      "us_average_monthly_searches": 2900,
+      "page_id": "compound-interest",
+      "mode": "growth",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "compound interest calculator with withdrawals",
+      "us_average_monthly_searches": 1900,
+      "page_id": "retirement",
+      "mode": null,
+      "status": "feature_gap_do_not_target",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "monthly savings calculator",
+      "us_average_monthly_searches": 720,
+      "page_id": "savings",
+      "mode": "accumulation",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "compound interest calculator with inflation",
+      "us_average_monthly_searches": 480,
+      "page_id": "compound-interest",
+      "mode": "growth",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "how long to save calculator",
+      "us_average_monthly_searches": 70,
+      "page_id": "savings",
+      "mode": "goal-time",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "savings goal calculator monthly contribution",
+      "us_average_monthly_searches": null,
+      "page_id": "savings",
+      "mode": "goal-contribution",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "investment growth calculator",
+      "us_average_monthly_searches": 22200,
+      "page_id": "investment",
+      "mode": "end",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "return on investment calculator",
+      "us_average_monthly_searches": 18100,
+      "page_id": "roi",
+      "mode": "length",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "annualized return calculator",
+      "us_average_monthly_searches": 1900,
+      "page_id": "average-return",
+      "mode": "cashflows",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "bond price calculator",
+      "us_average_monthly_searches": 1900,
+      "page_id": "bond",
+      "mode": "price",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "present value of annuity calculator",
+      "us_average_monthly_searches": 1900,
+      "page_id": "present-value",
+      "mode": "annuity",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "yield to maturity calculator",
+      "us_average_monthly_searches": 880,
+      "page_id": "bond",
+      "mode": "yield",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "investment fee calculator",
+      "us_average_monthly_searches": 210,
+      "page_id": "mutual-fund",
+      "mode": "projection",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "discounted payback period calculator",
+      "us_average_monthly_searches": 140,
+      "page_id": "payback-period",
+      "mode": null,
+      "status": "feature_gap_do_not_target",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "average return calculator",
+      "us_average_monthly_searches": 110,
+      "page_id": "average-return",
+      "mode": "returns",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "mutual fund expense ratio calculator",
+      "us_average_monthly_searches": 110,
+      "page_id": "mutual-fund",
+      "mode": null,
+      "status": "feature_gap_do_not_target",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "annuity payout calculator",
+      "us_average_monthly_searches": 9900,
+      "page_id": "annuity-payout",
+      "mode": "length",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "retirement income calculator",
+      "us_average_monthly_searches": 8100,
+      "page_id": "retirement",
+      "mode": "withdrawal",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "social security break even calculator",
+      "us_average_monthly_searches": 8100,
+      "page_id": "social-security",
+      "mode": null,
+      "status": "feature_gap_do_not_target",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "how long will my retirement savings last",
+      "us_average_monthly_searches": 6600,
+      "page_id": "retirement",
+      "mode": "longevity",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "401k match calculator",
+      "us_average_monthly_searches": 6600,
+      "page_id": "401k",
+      "mode": "match",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "401k early withdrawal calculator",
+      "us_average_monthly_searches": 4400,
+      "page_id": "401k",
+      "mode": "early",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "retirement calculator with social security",
+      "us_average_monthly_searches": 3600,
+      "page_id": "retirement",
+      "mode": "required",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "how much do i need to retire calculator",
+      "us_average_monthly_searches": 1900,
+      "page_id": "retirement",
+      "mode": "required",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "retirement calculator with inflation",
+      "us_average_monthly_searches": 390,
+      "page_id": "retirement",
+      "mode": "withdrawal",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "lump sum vs pension calculator",
+      "us_average_monthly_searches": 140,
+      "page_id": "pension",
+      "mode": "lump",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "credit card interest calculator",
+      "us_average_monthly_searches": 22200,
+      "page_id": "credit-card",
+      "mode": "payment",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "debt payoff calculator",
+      "us_average_monthly_searches": 18100,
+      "page_id": "debt-payoff",
+      "mode": "avalanche",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "credit card payment calculator",
+      "us_average_monthly_searches": 9900,
+      "page_id": "credit-card",
+      "mode": "term",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "debt snowball calculator",
+      "us_average_monthly_searches": 6600,
+      "page_id": "debt-payoff",
+      "mode": "snowball",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "student loan payoff calculator",
+      "us_average_monthly_searches": 5400,
+      "page_id": "student-loan",
+      "mode": "extra",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "debt consolidation calculator",
+      "us_average_monthly_searches": 2900,
+      "page_id": "debt-consolidation",
+      "mode": "comparison",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "student loan interest calculator",
+      "us_average_monthly_searches": 2900,
+      "page_id": "student-loan",
+      "mode": "normal",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "student loan calculator extra payments",
+      "us_average_monthly_searches": 590,
+      "page_id": "student-loan",
+      "mode": "extra",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "multiple credit card payoff calculator",
+      "us_average_monthly_searches": 260,
+      "page_id": "credit-cards-payoff",
+      "mode": "avalanche",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "credit card payoff calculator extra payments",
+      "us_average_monthly_searches": 110,
+      "page_id": "credit-card",
+      "mode": null,
+      "status": "feature_gap_do_not_target",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "salary calculator",
+      "us_average_monthly_searches": 301000,
+      "page_id": "salary",
+      "mode": "conversion",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "sales tax calculator",
+      "us_average_monthly_searches": 110000,
+      "page_id": "sales-tax",
+      "mode": "after",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "salary to hourly calculator",
+      "us_average_monthly_searches": 49500,
+      "page_id": "salary",
+      "mode": "conversion",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "profit margin calculator",
+      "us_average_monthly_searches": 22200,
+      "page_id": "margin",
+      "mode": "margin",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "federal income tax calculator",
+      "us_average_monthly_searches": 18100,
+      "page_id": "income-tax",
+      "mode": "federal",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "markup calculator",
+      "us_average_monthly_searches": 18100,
+      "page_id": "margin",
+      "mode": "markup",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "2026 tax calculator",
+      "us_average_monthly_searches": 6600,
+      "page_id": "income-tax",
+      "mode": "federal",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "vat calculator",
+      "us_average_monthly_searches": 1900,
+      "page_id": "vat",
+      "mode": "any-two",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "gross to net pay calculator",
+      "us_average_monthly_searches": 1300,
+      "page_id": "take-home-paycheck",
+      "mode": "source-paycheck",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    },
+    {
+      "keyword": "annual salary to monthly calculator",
+      "us_average_monthly_searches": 170,
+      "page_id": "salary",
+      "mode": "conversion",
+      "status": "supported",
+      "input_text": "Some screenshot labels are truncated; full wording matched to the previously supplied query list."
+    }
+  ]
+}

@@ -43,3 +43,16 @@ Homepage alone now uses full width with search, eight quick links, category jump
 ## Reference-first functionality with expert fallback — 2026-10-20
 
 User superseded the custom 401(k) summary preference with source-first functionality, and explicitly authorized independent expert models when original behavior cannot be observed. Added a 71-entry reference-function-map.json, refreshed all corresponding specs, restored Compound Interest converter as default, and exposed documented controls/outputs across property, investment, retirement, tax, paycheck and commission. 469 tests and production build pass; 76 routes / 173 modes and all 107 examples pass browser checks. Exact original-source result parity remains unverified. No upload or hosted deployment in this batch. See strict-functionality-policy.md.
+
+
+## Pure static export — 2026-10-21
+
+Current version overrides earlier live-feed/server assumptions. See static-export.md and DEPLOY.md: output out/, no API route or external API requests, 172 modes, 476 tests passed, static build passed. npm start/preview serve files only. Old mode=live currency URLs use labeled historical snapshots. This new static batch is local only until separately synchronized.
+
+
+## Search-intent expansion — 2026-10-21
+
+75 functional pages / 79 visible search tasks; 67 new editorial candidates have no verified search-volume claims. All pages have related links, distinct titles and valid mode links. Six local-model FAQs clarify assumptions. See seo-expansion-2026-10-21.md. 476 tests, static build, 80-page metadata audit and 75-page/79-intent audit passed. No hosted publication or indexing enabled.
+
+
+关键词数据落地（2026-10-21）：依据用户美国 Keyword Planner 数据调整 36 个页面标题，75 个工具有 99 个用途入口、149 个主词/辅助表达；新增独立债务雪球与成本加价率模式、2 个算例（全站 109 个）。483 项测试、静态构建、80 页 SEO 检查通过。仍纯静态、noindex，本轮未上传/部署。见 docs/financial-clone/keyword-demand-implementation.md（handoff 中相对路径按目录解析）。

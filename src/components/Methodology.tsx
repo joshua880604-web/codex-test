@@ -43,8 +43,8 @@ export default function Methodology() {
           are not interpolated. Future inflation is an entered assumption.
         </li>
         <li>
-          Currency results identify their provider and date. A saved reference
-          snapshot is labeled as a fallback; it is not a live market quote.
+          Currency conversion uses your manually entered rate or a bundled dated
+          historical snapshot. No external API is contacted; saved rates are not live market quotes.
         </li>
       </ul>
       <h2>Timing and rounding</h2>

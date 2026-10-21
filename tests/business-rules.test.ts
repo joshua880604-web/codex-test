@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { calculators, defaults, runCalculation } from "../src/lib/calculators";
 import { federalTax, type TaxInputs } from "../src/lib/tax";
-import { referenceRate, savedRate } from "../src/lib/rates";
+import { savedRate } from "../src/lib/rates";
 const close = (a: number, b: number, tol = 0.01) =>
   assert.ok(Math.abs(a - b) <= tol, `${a} != ${b}`);
 const taxInput: TaxInputs = {
@@ -178,47 +178,11 @@ test("zero saving, impossible IRR and invalid percentage handling", () => {
   assert.throws(() => run("mortgage", "monthly", { down: 110 }));
   assert.throws(() => run("income-tax", "federal", { children: 1.5 }));
 });
-test("reference feed: current data, dated fallback, and no fabricated rate", async () => {
-  const current = await referenceRate(
-    "USD",
-    "EUR",
-    async () =>
-      new Response(JSON.stringify({ date: "2026-10-19", rate: 0.9 }), {
-        status: 200,
-      }),
-  );
-  assert.equal(current.stale, false);
-  close(current.rate, 0.9);
-  const fallback = await referenceRate("USD", "EUR", async () => {
-    throw new Error("offline");
-  });
-  assert.equal(fallback.stale, true);
-  assert.match(fallback.source, /not live/);
-  close(fallback.rate, savedRate("USD", "EUR")!.rate);
-  await assert.rejects(referenceRate("ZZZ", "EUR"));
-  await assert.rejects(
-    referenceRate("BTC", "EUR", async () => {
-      throw new Error("offline");
-    }),
-  );
-  const btc = await referenceRate(
-    "BTC",
-    "USD",
-    async () =>
-      new Response(
-        JSON.stringify({ data: { amount: "100000", currency: "USD" } }),
-      ),
-  );
-  close(btc.rate, 100000);
-  const inverse = await referenceRate(
-    "USD",
-    "BTC",
-    async () =>
-      new Response(
-        JSON.stringify({ data: { amount: "100000", currency: "USD" } }),
-      ),
-  );
-  close(inverse.rate, 0.00001, 0.000000001);
+test("offline saved rates preserve dated reference direction without network access", () => {
+  const forward = savedRate("USD", "EUR")!, reverse = savedRate("EUR", "USD")!;
+  assert.equal(forward.stale, true);assert.match(forward.source, /not live/);
+  assert.ok(forward.date);close(forward.rate * reverse.rate, 1);
+  assert.equal(savedRate("ZZZ", "EUR"), null);assert.equal(savedRate("BTC", "EUR"), null);
 });
 test("mortgage cost units and independent growth", () => {
   const r = run("mortgage", "monthly", {

@@ -1,8 +1,8 @@
 {
   "passed": true,
-  "tested_at": "2026-10-20T07:47:48.710Z",
+  "tested_at": "2026-10-21T01:44:24.344Z",
   "checks": [
-    "Root 308 redirects to canonical financial directory",
+    "Root 301 redirects to canonical financial directory",
     {
       "id": "amortization",
       "example": "Zero-interest amortization over 12 months",
@@ -294,6 +294,11 @@
       "result": "passed"
     },
     {
+      "id": "debt-payoff",
+      "example": "Pay the smallest balance first with a debt snowball",
+      "result": "passed"
+    },
+    {
       "id": "debt-consolidation",
       "example": "A fee-free consolidation with zero interest",
       "result": "passed"
@@ -336,6 +341,11 @@
     {
       "id": "margin",
       "example": "Profit margin versus markup on the same sale",
+      "result": "passed"
+    },
+    {
+      "id": "margin",
+      "example": "Convert a markup on cost into selling price and margin",
       "result": "passed"
     },
     {

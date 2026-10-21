@@ -83,3 +83,11 @@ Local inputs: units, rate, leverage.
 Local formula: Required margin = units × FX rate / leverage.
 
 Local default outputs: Notional value in quote currency; Required margin in quote currency.
+
+### Markup from Cost (markup)
+
+Local inputs: cost, markup.
+
+Local formula: Selling price = cost × (1 + markup/100); margin = markup/(100 + markup) × 100%.
+
+Local default outputs: Selling price; Profit; Markup; Gross margin.

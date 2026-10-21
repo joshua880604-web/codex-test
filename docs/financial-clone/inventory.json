@@ -8305,43 +8305,6 @@
     ],
     "implemented_modes": [
       {
-        "id": "live",
-        "title": "Market Rate",
-        "fields": [
-          {
-            "key": "amount",
-            "label": "Amount",
-            "type": "number",
-            "unit": null
-          },
-          {
-            "key": "from",
-            "label": "From currency",
-            "type": "select",
-            "unit": null
-          },
-          {
-            "key": "to",
-            "label": "To currency",
-            "type": "select",
-            "unit": null
-          },
-          {
-            "key": "popular",
-            "label": "Show most popular currencies only?",
-            "type": "select",
-            "unit": null
-          },
-          {
-            "key": "verified_rate",
-            "label": "Fetched rate",
-            "type": "number",
-            "unit": null
-          }
-        ],
-        "formula": "Converted amount = amount × quoted units of target currency per one source currency."
-      },
-      {
         "id": "manual",
         "title": "Custom Exchange Rate",
         "fields": [
@@ -8800,6 +8763,49 @@
           }
         ],
         "formula": "Accrue each loan’s interest separately and apply minimums followed by avalanche extra payments."
+      },
+      {
+        "id": "snowball",
+        "title": "Debt Snowball",
+        "fields": [
+          {
+            "key": "debts",
+            "label": "Debts",
+            "type": "textarea",
+            "unit": null
+          },
+          {
+            "key": "rollover",
+            "label": "Keep total monthly payment fixed?",
+            "type": "select",
+            "unit": null
+          },
+          {
+            "key": "extra",
+            "label": "Additional monthly payment",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "yearly",
+            "label": "Extra yearly payment",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "once",
+            "label": "One-time extra payment",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "once_month",
+            "label": "One-time payment month",
+            "type": "number",
+            "unit": ""
+          }
+        ],
+        "formula": "Accrue monthly interest, pay minimums, then rank remaining balances from smallest to largest. Ties use the higher APR first."
       }
     ]
   },
@@ -9735,6 +9741,25 @@
           }
         ],
         "formula": "Required margin = units × FX rate / leverage."
+      },
+      {
+        "id": "markup",
+        "title": "Markup from Cost",
+        "fields": [
+          {
+            "key": "cost",
+            "label": "Cost",
+            "type": "number",
+            "unit": "$"
+          },
+          {
+            "key": "markup",
+            "label": "Markup on cost",
+            "type": "number",
+            "unit": "%"
+          }
+        ],
+        "formula": "Selling price = cost × (1 + markup/100); margin = markup/(100 + markup) × 100%."
       }
     ]
   },

@@ -6,6 +6,10 @@
 
 **此版本可以本地运行，但尚未完成 Calculator.net 全部交互、字段和视觉的一对一验收。** 不要把本地默认值测试通过解释为原站功能完全一致。精确状态见 `docs/financial-clone/progress.json`、`coverage.json` 和 `remaining-work.md`。
 
+## 当前纯静态版本
+
+全站计算在浏览器执行，无服务端接口、无外部 API 请求。汇率仅保留手动与带日期快照，BTC 仅手动输入。构建输出为 `out/`，可直接部署 Cloudflare Pages；步骤见 [DEPLOY.md](DEPLOY.md)。
+
 ## 本地运行
 
 要求 Node.js 24+。当前环境已经安装依赖，并完成生产构建。开发：
@@ -46,7 +50,7 @@ npm run build
 - `src/lib/calculators/`：按房产汽车、投资、退休、税薪、其他工具分别实现的具体业务模型。
 - `src/lib/tax.ts`：2025/2026 联邦税估算、资本利得、社保计税、OBBBA 扣除与选定抵免。
 - `src/components/`：英文目录、独立表单、结果摘要、图表、表格、分享和导出。
-- `src/app/api/rates/`：公开参考汇率/比特币报价接口；不发送计算金额、不需要用户账户。
+- `scripts/serve-static.mjs`：仅用于本地预览 `out/` 的静态文件服务器。
 - `docs/financial-clone/research/`：逐工具研究、官方参数、参考案例和数据来源。
 - `.agents/skills/financial-calculator-clone/SKILL.md`：已安装的项目专用 skill。
 
@@ -55,8 +59,8 @@ npm run build
 - IRS 2025/2026 税阶、标准扣除、选定扣除/抵免；SSA 2026 工资基数和退休年龄规则。
 - IRS RMD Table III、完整 Table II 20–120+ 岁矩阵；不对出版物未提供的年龄插值。
 - BLS CPI-U：1913 至 2026 年 9 月实际取得的数据。2026 年均尚不存在，2025 年 10 月官方缺失值不插补。
-- Frankfurter v2：165 个实际返回的法币和带日期的参考快照。联网失败时清楚标识已存快照及各组成日期，不能将其称作实时市场报价。
-- BTC 使用 Coinbase 公共 spot endpoint；若不可达则明确报错，允许手动输入，绝不填造 BTC 价格。
+- 汇率：随构建打包的 Frankfurter 历史快照，明确显示各组成日期，不自动更新。
+- BTC：仅手动汇率，不获取外部报价。
 - 金额内部保留浮点精度，最终显示两位小数；还款测试检查本金守恒与末期截断。并未声称等同于所有银行的逐日/逐分舍入政策。
 
 税务、养老、费用和比较模型的适用范围写在各结果注释与 `remaining-work.md`。没有把不明确的规则藏在任意常量里，也没有宣称未运行的检查已经通过。
@@ -80,3 +84,8 @@ VAT 已改为四字段任填两个的统一表单，覆盖六种输入组合，C
 退休计算更新：401(k) 增加退休提款表和 CSV、配比比例范围、提前提款资格；Retirement 支持独立年度缴款。详见 [说明](docs/financial-clone/retirement-parity-improvements.md)。本批次已获用户授权同步 GitHub。
 
 最新金融功能对应：原站 71 个目录条目（70 个计算器）全部建立功能对应表；本地金融功能 160 模式，全站 173 模式。原站不可核验的细节按明确假设使用独立专家模型，不能将其视为原站结果已全部一致。详见 [本轮说明](docs/financial-clone/strict-functionality-policy.md) 和 [逐项对应表](docs/financial-clone/reference-function-map.json)。本轮尚未同步 GitHub。
+
+全站 SEO 用途入口扩展：75 个计算器覆盖 79 个搜索任务，包含 67 个尚未核验搜索量的候选词；说明见 [本轮记录](docs/financial-clone/seo-expansion-2026-10-21.md)。默认仍 noindex，未声称自然排名或 AI 引用效果。
+
+
+关键词数据落地（2026-10-21）：依据用户美国 Keyword Planner 数据调整 36 个页面标题，75 个工具有 99 个用途入口、149 个主词/辅助表达；新增独立债务雪球与成本加价率模式、2 个算例（全站 109 个）。483 项测试、静态构建、80 页 SEO 检查通过。仍纯静态、noindex，本轮未上传/部署。见 docs/financial-clone/keyword-demand-implementation.md（handoff 中相对路径按目录解析）。

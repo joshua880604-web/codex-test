@@ -9,7 +9,10 @@ test('Each search-intent entry links to a real mode and a distinct primary page'
   const calc=calculators.find(c=>c.id===id)!;assert.ok(calc&&keywordTitles[id]);
   for(const t of tasks)assert.ok(calc.modes.some(m=>m.id===t.mode),id+t.mode);
  }
- assert.equal(new Set(Object.values(searchTasks).flat().map(t=>t.keyword)).size,12);
+ const entries=Object.values(searchTasks).flat();
+ assert.equal(new Set(entries.map(t=>t.keyword.toLowerCase())).size,entries.length);
+ assert.equal(Object.keys(searchTasks).length,calculators.filter(c=>!c.directory).length);
+ for(const c of calculators.filter(c=>!c.directory))assert.ok(searchTasks[c.id]?.length,c.id);
 });
 test('Compound growth matches independent ordinary and due annuity identities',()=>{
  const r=.06/12,N=24,f=(1+r)**N;
