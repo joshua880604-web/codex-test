@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "id": "mortgage",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "mortgage-payoff",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "rent",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "house-affordability",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "auto-loan",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "savings",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "retirement",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "heloc",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "401k",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "debt-payoff",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "rmd",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    },
+    {
+      "id": "take-home-paycheck",
+      "navigation": "passed",
+      "widths": [
+        390,
+        768
+      ]
+    }
+  ],
+  "errors": [],
+  "tested_at": "2026-10-21T02:36:22.033Z"
+}

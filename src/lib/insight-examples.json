@@ -1,0 +1,184 @@
+[
+  {
+    "calculator": "rent",
+    "title": "Budget rent with no monthly debt",
+    "mode": "affordability",
+    "values": {
+      "income": 10000,
+      "frequency": "Monthly",
+      "debts": 0,
+      "housing_ratio": 30,
+      "debt_ratio": 36
+    },
+    "inputs": "Gross monthly income $10,000, no monthly debt, 30% housing limit and 36% total-debt limit.",
+    "steps": [
+      "Housing allowance = 10000 \u00d7 30% = 3000.",
+      "Debt allowance = 10000 \u00d7 36% \u2212 0 = 3600.",
+      "Take the smaller allowance: $3,000."
+    ],
+    "answer": "The modeled monthly rent budget is $3,000.",
+    "expected": {
+      "label": "Monthly rent budget",
+      "value": 3000
+    }
+  },
+  {
+    "calculator": "rent",
+    "title": "Compare the same rent budget with debt payments",
+    "mode": "affordability",
+    "values": {
+      "income": 10000,
+      "frequency": "Monthly",
+      "debts": 1800,
+      "housing_ratio": 30,
+      "debt_ratio": 36
+    },
+    "inputs": "Same gross monthly income $10,000 and ratios, with $1,800 of monthly debt payments.",
+    "steps": [
+      "Housing allowance stays $3,000.",
+      "Debt allowance = 10000 \u00d7 36% \u2212 1800 = 1800.",
+      "The lower constraint is now the total-debt allowance."
+    ],
+    "answer": "The modeled rent budget falls to $1,800; actual take-home expenses still need checking.",
+    "expected": {
+      "label": "Monthly rent budget",
+      "value": 1800
+    }
+  },
+  {
+    "calculator": "mortgage",
+    "title": "Add annual taxes and insurance to principal and interest",
+    "mode": "monthly",
+    "values": {
+      "price": 125000,
+      "down": 20,
+      "down_unit": "Percent",
+      "years": 30,
+      "months": 0,
+      "rate": 6,
+      "tax": 1200,
+      "tax_unit": "Dollars",
+      "insurance": 600,
+      "insurance_unit": "Dollars",
+      "pmi": 0,
+      "hoa": 0,
+      "other": 0,
+      "extra_monthly": 0,
+      "extra_yearly": 0,
+      "extra_once": 0
+    },
+    "inputs": "Home price $125,000; 20% down; 30-year loan at 6%; annual property tax $1,200 and insurance $600; other costs and extras zero.",
+    "steps": [
+      "Loan amount = 125000 \u2212 25000 = 100000.",
+      "Principal and interest = $599.5505251527524 per month.",
+      "Monthly tax and insurance = (1200 + 600) \u00f7 12 = 150."
+    ],
+    "answer": "The initial monthly total is $749.55; the loan payment alone remains $599.55.",
+    "expected": {
+      "label": "Initial monthly total",
+      "value": 749.5505251527524
+    }
+  },
+  {
+    "calculator": "retirement",
+    "title": "Find an immediate shortfall when retirement starts now",
+    "mode": "required",
+    "values": {
+      "age": 67,
+      "retire": 67,
+      "life": 69,
+      "replacement": 12000,
+      "replacement_unit": "Dollars per year",
+      "other": 0,
+      "balance": 5000,
+      "saving": 0,
+      "return": 0,
+      "inflation": 0
+    },
+    "inputs": "Retire now at age 67; lifespan 69; annual retirement need $12,000; savings $5,000; other income, return and inflation zero.",
+    "steps": [
+      "Two year-end withdrawals of $12,000 require $24,000.",
+      "There is no remaining saving period.",
+      "Immediate shortfall = 24000 \u2212 5000 = 19000."
+    ],
+    "answer": "Additional savings needed now is $19,000, rather than a monthly saving plan.",
+    "expected": {
+      "label": "Additional savings needed now",
+      "value": 19000
+    }
+  },
+  {
+    "calculator": "retirement",
+    "title": "Count the smaller final retirement withdrawal",
+    "mode": "longevity",
+    "values": {
+      "balance": 1000,
+      "withdrawal": 300,
+      "return": 0
+    },
+    "inputs": "Savings $1,000, withdrawal $300 per month and zero return.",
+    "steps": [
+      "The first three withdrawals total $900.",
+      "The fourth withdrawal is capped at the remaining $100.",
+      "Actual withdrawals are 300, 300, 300 and 100."
+    ],
+    "answer": "There are four withdrawals totaling $1,000; the final withdrawal is $100.",
+    "expected": {
+      "label": "Final monthly withdrawal",
+      "value": 100
+    }
+  },
+  {
+    "calculator": "heloc",
+    "title": "Separate annual account fees from HELOC interest",
+    "mode": "draw-repay",
+    "values": {
+      "principal": 12000,
+      "rate": 0,
+      "draw": 1,
+      "years": 1,
+      "closing": 0,
+      "closing_unit": "Dollars",
+      "closing_treatment": "Upfront",
+      "charge": 120
+    },
+    "inputs": "Balance $12,000, zero interest, one-year draw, one-year repayment, annual draw fee $120 and no closing costs.",
+    "steps": [
+      "Allocated draw fee = 120 \u00f7 12 = $10 per month.",
+      "Repayment principal = 12000 \u00f7 12 = $1,000 per month.",
+      "Total annual draw fees = $120; total interest is zero."
+    ],
+    "answer": "The fee is a borrowing cost, but is not labeled as interest.",
+    "expected": {
+      "label": "Annual fees during draw",
+      "value": 120
+    }
+  },
+  {
+    "calculator": "auto-loan",
+    "title": "Compare a car down payment at zero interest",
+    "mode": "payment",
+    "values": {
+      "price": 12000,
+      "down": 2000,
+      "trade": 0,
+      "owed": 0,
+      "rebate": 0,
+      "rate": 0,
+      "months": 10,
+      "tax": 0,
+      "fees": 0
+    },
+    "inputs": "Vehicle price $12,000, down payment $2,000, ten monthly payments and zero interest; tax, trade-in, rebate and fees zero.",
+    "steps": [
+      "Amount financed = 12000 \u2212 2000 = 10000.",
+      "Each payment = 10000 \u00f7 10 = 1000.",
+      "Ten payments total $10,000; the separate $2,000 down payment makes $12,000 before other ownership costs."
+    ],
+    "answer": "The monthly payment is $1,000 and loan interest is zero.",
+    "expected": {
+      "label": "Payment per period",
+      "value": 1000
+    }
+  }
+]

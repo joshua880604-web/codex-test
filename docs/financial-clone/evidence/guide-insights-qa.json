@@ -1,0 +1,383 @@
+{
+  "passed": true,
+  "pages": 75,
+  "enhanced_guides": 12,
+  "checks": [
+    {
+      "id": "mortgage",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "amortization",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "house-affordability",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "rent",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "refinance",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "rental-property",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "apr",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "fha-loan",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "va-mortgage",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "home-equity-loan",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "heloc",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "down-payment",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "rent-vs-buy",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "auto-loan",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "auto-lease",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "interest",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "investment",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "finance",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "compound-interest",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "interest-rate",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "savings",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "simple-interest",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "cd",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "bond",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "mutual-fund",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "average-return",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "irr",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "roi",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "payback-period",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "present-value",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "future-value",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "retirement",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "401k",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "pension",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "social-security",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "annuity",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "annuity-payout",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "roth-ira",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "ira",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "rmd",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "income-tax",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "salary",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "marriage-tax",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "estate-tax",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "take-home-paycheck",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "loan",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "payment",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "currency",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "inflation",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "sales-tax",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "credit-card",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "credit-cards-payoff",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "debt-payoff",
+      "rich_result_explanations": true,
+      "guide_navigation": true
+    },
+    {
+      "id": "debt-consolidation",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "repayment",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "student-loan",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "college-cost",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "vat",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "depreciation",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "margin",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "discount",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "business-loan",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "personal-loan",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "boat-loan",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "lease",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "budget",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "commission",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "percentage",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "tip-bill-split",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "date",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "unit-converter",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    },
+    {
+      "id": "scientific",
+      "rich_result_explanations": false,
+      "guide_navigation": true
+    }
+  ],
+  "ranking_or_ai_citation_effect": "not measured"
+}

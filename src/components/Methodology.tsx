@@ -59,11 +59,11 @@ export default function Methodology() {
       <p>
         Official source links appear with relevant calculation guides and result
         notes. The{" "}
-        <a href="https://github.com/joshua880604-web/codex-test/tree/financial-calculators">
+        <a href="https://github.com/joshua880604-web/codex-test/tree/static-preview-20261021">
           public source repository
         </a>{" "}
         contains calculation code, tests and research. Read the{" "}
-        <a href="https://github.com/joshua880604-web/codex-test/blob/financial-calculators/docs/financial-clone/calculation-audit.md">
+        <a href="https://github.com/joshua880604-web/codex-test/blob/static-preview-20261021/docs/financial-clone/calculation-audit.md">
           calculation audit
         </a>{" "}
         for identified fixes and remaining gaps.

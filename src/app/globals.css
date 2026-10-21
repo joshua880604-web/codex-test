@@ -883,3 +883,11 @@ footer p {
   .featured-grid strong { font-size: 14px; }
 }
 @media print { .calculator-directory .directory-search, .featured-tools, .directory-categories { display: none; } }
+
+.guide-nav { display:flex; flex-wrap:wrap; gap:8px 16px; padding:12px 0; border-bottom:1px solid #ddd; margin:12px 0; font-size:14px; }
+.guide-nav a { padding:6px 0; }
+.result-definitions { margin:12px 0; }
+.result-definitions > div { margin:0 0 14px; }
+.result-definitions dt { font-weight:bold; margin-bottom:4px; }
+.result-definitions dd { margin:0; line-height:1.6; }
+.calculator-guide [id] { scroll-margin-top:16px; }

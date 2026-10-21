@@ -1,3 +1,4 @@
+import guideInsights from "./guide-insights.json";
 import {keywordTitles,searchTasks} from "./keyword-targets";
 import type { Metadata } from "next";
 import catalog from "./catalog-data.json";
@@ -88,6 +89,10 @@ export function calculatorSchema(calc: Calculator, config = siteConfig()) {
       mainEntity: { "@id": url + "#calculator" },
       isPartOf: { "@type": "WebPage", url: absoluteURL(directoryPath, config) },
       hasPart: calc.directory ? undefined : [
+        ...(calc.id in guideInsights ? [
+          { "@type": "WebPageElement", "@id": url + "#reading-results", name: "Reading your result" },
+          { "@type": "WebPageElement", "@id": url + "#compare-scenarios", name: "Compare two scenarios" },
+        ] : []),
         { "@type": "WebPageElement", "@id": url + "#worked-examples", name: "Worked examples" },
         { "@type": "WebPageElement", "@id": url + "#scope-assumptions", name: "Scope and assumptions" },
       ],

@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-21T01:44:24.344Z",
+  "tested_at": "2026-10-21T02:36:52.145Z",
   "checks": [
     "Root 301 redirects to canonical financial directory",
     {
@@ -31,6 +31,16 @@
     {
       "id": "rent",
       "example": "How much rent fits a 60,000 annual income?",
+      "result": "passed"
+    },
+    {
+      "id": "rent",
+      "example": "Budget rent with no monthly debt",
+      "result": "passed"
+    },
+    {
+      "id": "rent",
+      "example": "Compare the same rent budget with debt payments",
       "result": "passed"
     },
     {
@@ -84,6 +94,11 @@
       "result": "passed"
     },
     {
+      "id": "heloc",
+      "example": "Separate annual account fees from HELOC interest",
+      "result": "passed"
+    },
+    {
       "id": "down-payment",
       "example": "Down payment plus closing costs on a 400,000 home",
       "result": "passed"
@@ -101,6 +116,11 @@
     {
       "id": "auto-loan",
       "example": "Monthly repayment with a 12% nominal annual rate",
+      "result": "passed"
+    },
+    {
+      "id": "auto-loan",
+      "example": "Compare a car down payment at zero interest",
       "result": "passed"
     },
     {
@@ -479,6 +499,11 @@
       "result": "passed"
     },
     {
+      "id": "mortgage",
+      "example": "Add annual taxes and insurance to principal and interest",
+      "result": "passed"
+    },
+    {
       "id": "interest",
       "example": "Grow 1,000 at 5% with no additions",
       "result": "passed"
@@ -501,6 +526,16 @@
     {
       "id": "retirement",
       "example": "Save from age 35 to 67 toward 600,000",
+      "result": "passed"
+    },
+    {
+      "id": "retirement",
+      "example": "Find an immediate shortfall when retirement starts now",
+      "result": "passed"
+    },
+    {
+      "id": "retirement",
+      "example": "Count the smaller final retirement withdrawal",
       "result": "passed"
     },
     {

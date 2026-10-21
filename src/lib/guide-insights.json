@@ -1,0 +1,322 @@
+{
+  "mortgage": {
+    "answer": "A mortgage payment estimate separates loan principal and interest from taxes, insurance and other ownership costs. Use the initial total for starting cash flow and the schedule for later changes.",
+    "results": [
+      {
+        "label": "Monthly principal & interest",
+        "meaning": "The scheduled loan payment before taxes, insurance and entered ownership costs."
+      },
+      {
+        "label": "Initial monthly total",
+        "meaning": "The first modeled payment including initial ownership costs and applicable extra principal; later costs may grow."
+      },
+      {
+        "label": "Total interest",
+        "meaning": "Interest paid over the modeled loan, excluding property taxes and insurance."
+      }
+    ],
+    "compare": [
+      "Hold home price and loan term fixed; change only the down payment to compare financing needs.",
+      "Then compare interest rates while leaving taxes, insurance and fees unchanged."
+    ],
+    "checks": [
+      "Enter annual taxes and insurance with the matching dollar or percentage unit.",
+      "Do not compare a principal-and-interest payment with another quote that includes escrow.",
+      "Paying off a mortgage does not remove property taxes, insurance or maintenance."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "mortgage-payoff": {
+    "answer": "Extra mortgage principal can shorten repayment and reduce future loan interest. Compare strategies using the same current balance, regular payment and interest rate.",
+    "results": [
+      {
+        "label": "Current principal balance",
+        "meaning": "The balance at the start of this projection, not the original home price."
+      },
+      {
+        "label": "Interest saved",
+        "meaning": "Baseline future interest minus strategy future interest under the same modeled loan assumptions."
+      },
+      {
+        "label": "Years to payoff",
+        "meaning": "Actual modeled payment count divided by the payment frequency; the last payment is capped at what remains."
+      }
+    ],
+    "compare": [
+      "Run the normal monthly strategy first, then enter one extra monthly amount.",
+      "Test a lump sum separately before combining it with recurring extras; keep the start dates consistent."
+    ],
+    "checks": [
+      "Use a lender statement for your current balance and regular principal-and-interest payment.",
+      "A half payment every two weeks produces 26 payments per year; twice a month produces 24.",
+      "Lender payoff fees, penalties and daily interest since the last payment are outside this model."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "rent": {
+    "answer": "This rent affordability calculator uses the lower of your selected rent-to-income limit and the room left under your total-debt limit. The result is a planning ceiling based on gross income.",
+    "results": [
+      {
+        "label": "Gross monthly income",
+        "meaning": "Income normalized to a month using the selected pay frequency; this is not after-tax take-home pay."
+      },
+      {
+        "label": "Monthly rent budget",
+        "meaning": "The smaller ratio-based allowance after accounting for entered monthly debt, floored at zero."
+      }
+    ],
+    "compare": [
+      "Keep income fixed and compare the budget before and after a change in debt payments.",
+      "Try a lower rent-to-income ratio, then check the remaining cash against actual take-home pay and living expenses."
+    ],
+    "checks": [
+      "Choose the frequency of the entered income instead of converting it twice.",
+      "Utilities, food, deposits, moving costs and other expenses are not automatically deducted.",
+      "The selected ratios are assumptions and do not establish landlord approval."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "house-affordability": {
+    "answer": "An affordability estimate converts an entered housing budget into a home price after down payment, loan interest and ownership costs. It is not a mortgage approval or an appraisal.",
+    "results": [
+      {
+        "label": "Monthly housing budget",
+        "meaning": "The spending ceiling under the entered housing and total-debt ratios, or the budget you supply."
+      },
+      {
+        "label": "Estimated home price",
+        "meaning": "The price that fits the modeled loan payment and selected ownership costs."
+      },
+      {
+        "label": "Down payment",
+        "meaning": "Cash applied to the purchase price; closing costs may require additional cash."
+      }
+    ],
+    "compare": [
+      "Compare two interest rates while keeping income, debts, down payment and ownership costs unchanged.",
+      "Then test the effect of taxes and insurance separately, rather than changing every input at once."
+    ],
+    "checks": [
+      "Verify whether down payment and annual ownership costs are dollars or percentages.",
+      "An insurance cost must be entered if needed; mortgage insurance is not automatically underwritten.",
+      "Qualification also depends on lender rules and information outside this budget model."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "auto-loan": {
+    "answer": "A car payment estimate depends on the amount financed, interest rate, loan length, trade-in, rebates and entered taxes and fees. Compare total cost as well as monthly payment.",
+    "results": [
+      {
+        "label": "Sales tax",
+        "meaning": "Tax calculated from the entered rate and selected purchase-tax treatment; special local rules may be missing."
+      },
+      {
+        "label": "Payment per period",
+        "meaning": "The modeled installment on the financed balance; a longer term can lower it without lowering total interest."
+      },
+      {
+        "label": "Total payments",
+        "meaning": "Loan installments over the schedule; it is not a complete ownership-cost total including fuel, maintenance and insurance."
+      }
+    ],
+    "compare": [
+      "Use the same vehicle price, trade-in, down payment and taxes for both financing offers.",
+      "Change the rate or term independently, then compare total interest and required upfront cash."
+    ],
+    "checks": [
+      "Outstanding trade-in debt is separate from the trade-in value.",
+      "Check whether taxes and fees are financed or paid upfront.",
+      "A payment quote that includes optional warranties is not directly comparable unless those costs are entered."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "savings": {
+    "answer": "Savings growth depends on starting money, deposit timing, the rate convention and compounding. The inflation-adjusted result expresses purchasing power rather than an additional account balance.",
+    "results": [
+      {
+        "label": "Ending balance",
+        "meaning": "The modeled nominal balance after contributions, growth and modeled interest tax."
+      },
+      {
+        "label": "Total contributions",
+        "meaning": "Starting money plus later deposits; it does not mean interest earned."
+      },
+      {
+        "label": "Inflation-adjusted balance",
+        "meaning": "Ending balance divided by accumulated assumed inflation over the saving period."
+      }
+    ],
+    "compare": [
+      "Compare two deposit amounts with the same return, compounding and timing.",
+      "Then change the return assumption separately; check how inflation changes purchasing power without changing the nominal account balance."
+    ],
+    "checks": [
+      "An APY is an effective annual yield; do not treat it as a nominal monthly-compounded quote.",
+      "Beginning-of-period deposits earn interest sooner than end-of-period deposits.",
+      "No bank offers or current high-yield account rates are fetched."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "retirement": {
+    "answer": "Retirement planning separates the target fund, future saving and retirement withdrawals. Select the mode that answers your question and read its return, inflation and payment-timing assumptions.",
+    "results": [
+      {
+        "label": "Required savings at retirement",
+        "meaning": "The target balance for the modeled inflation-adjusted retirement income gap."
+      },
+      {
+        "label": "Projected surplus / shortfall",
+        "meaning": "Projected retirement savings minus the target; a negative amount is a modeled funding shortfall."
+      },
+      {
+        "label": "Initial monthly withdrawal",
+        "meaning": "The first retirement-month payment in Monthly Withdrawal; subsequent payments grow with the entered inflation assumption."
+      }
+    ],
+    "compare": [
+      "Compare lifespans with the same balance and return to see how a longer withdrawal period changes income.",
+      "Test a lower return separately, leaving contributions and inflation unchanged, before changing the saving plan."
+    ],
+    "checks": [
+      "Do not add a monthly contribution and an annual contribution if they describe the same deposits.",
+      "In Required Savings, other retirement income is entered as a monthly retirement amount and modeled as inflation-indexed.",
+      "Savings Longevity uses fixed withdrawals; Monthly Withdrawal models inflation increases. These are different scenarios."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "heloc": {
+    "answer": "This HELOC model assumes the full balance is outstanding at the start, interest-only payments during draw and amortizing payments afterward. The rate is held fixed throughout the projection.",
+    "results": [
+      {
+        "label": "Monthly draw payment",
+        "meaning": "Interest plus the annual account fee allocated over draw months for an average monthly cost."
+      },
+      {
+        "label": "Monthly repayment",
+        "meaning": "The amortizing payment after draw; the modeled draw-period annual fee stops at this transition."
+      },
+      {
+        "label": "Net initial proceeds after closing costs",
+        "meaning": "Loan balance minus entered closing costs; financing fees on top of principal is not modeled."
+      }
+    ],
+    "compare": [
+      "Hold balance and terms fixed; compare a no-fee case with the entered closing cost and annual account fee.",
+      "Then change the interest rate separately to see the payment effect; this does not forecast future variable-rate resets."
+    ],
+    "checks": [
+      "The draw period does not simulate gradual new advances or changing balances.",
+      "An allocated monthly account fee is not a prediction of the lender’s actual annual billing date.",
+      "Fees can change estimated APR even when the contract interest rate stays the same."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "401k": {
+    "answer": "The 401(k) projection grows the opening balance once per year, then adds employee and employer contributions at year end. A separate retirement schedule illustrates before-tax withdrawals.",
+    "results": [
+      {
+        "label": "Employee contributions",
+        "meaning": "New employee deposits during the projection; the starting balance is shown separately."
+      },
+      {
+        "label": "Projected 401(k) balance",
+        "meaning": "Starting savings plus modeled contributions and investment growth at retirement."
+      },
+      {
+        "label": "Initial monthly retirement withdrawal",
+        "meaning": "The illustrated first withdrawal using life expectancy and inflation; it does not enforce RMD rules."
+      }
+    ],
+    "compare": [
+      "Change the employee contribution rate while keeping salary, retirement age and return unchanged.",
+      "Use Maximize Employer Match to examine matching tiers before comparing higher contribution rates."
+    ],
+    "checks": [
+      "Future years hold the stated 2026 limits fixed rather than predicting future limit increases.",
+      "Match limits describe eligible salary bands and are not the same as the employer match percentage.",
+      "The retirement income illustration assumes full vesting and excludes taxes and fees."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "debt-payoff": {
+    "answer": "Debt payoff plans pay each minimum first, then allocate extra money by your selected strategy. Avalanche prioritizes high APR; snowball prioritizes small remaining balances.",
+    "results": [
+      {
+        "label": "Months until debt-free",
+        "meaning": "The number of modeled monthly payments needed to clear all listed debts."
+      },
+      {
+        "label": "Total interest",
+        "meaning": "Interest accrued across all debts under the selected strategy and budget."
+      },
+      {
+        "label": "Total paid",
+        "meaning": "Starting balances plus modeled interest; new borrowing and additional fees are excluded."
+      }
+    ],
+    "compare": [
+      "Compare Avalanche and Debt Snowball with exactly the same debts, extra payments and rollover choice.",
+      "Then increase the extra monthly amount without changing the strategy to isolate the effect of payment size."
+    ],
+    "checks": [
+      "APR values in the debt list are annual percentages; balances and minimum payments are dollar amounts.",
+      "Keeping the total payment fixed rolls freed payments into other debts; turning rollover off changes the budget.",
+      "Snowball does not guarantee the lowest interest bill."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "rmd": {
+    "answer": "This owner-account RMD estimate divides the prior year-end balance by the applicable life-expectancy divisor. Verify the account type, distribution year and selected table before using the amount.",
+    "results": [
+      {
+        "label": "Age in distribution year",
+        "meaning": "Age reached during the selected distribution year, calculated from the entered birth year."
+      },
+      {
+        "label": "Distribution period",
+        "meaning": "The divisor from the modeled IRS table, not the number of years the account is guaranteed to last."
+      },
+      {
+        "label": "Annual RMD",
+        "meaning": "The calculated annual distribution requirement under the selected table and entered account balance."
+      }
+    ],
+    "compare": [
+      "Use the same account balance to compare the applicable divisors for adjacent distribution years.",
+      "Keep the distribution year fixed when checking whether the spouse-related table selection changes the divisor."
+    ],
+    "checks": [
+      "Use the required prior December 31 balance rather than substituting today’s balance.",
+      "Inherited accounts and some still-working exceptions are outside this owner-account model.",
+      "A displayed annual RMD does not determine its income-tax treatment or payment deadline."
+    ],
+    "checkedOn": "2026-10-21"
+  },
+  "take-home-paycheck": {
+    "answer": "Take-home pay here is estimated from gross pay, entered deductions and an allocation of annual federal tax. It is not a full payroll-withholding calculation and may differ from an employer paycheck.",
+    "results": [
+      {
+        "label": "Gross pay per period",
+        "meaning": "Pay from this job converted to the selected pay frequency before modeled deductions."
+      },
+      {
+        "label": "Annual federal tax allocated to this job",
+        "meaning": "Household federal tax with this job minus the other-job baseline under the annual allocation model."
+      },
+      {
+        "label": "Take-home pay per period",
+        "meaning": "This job’s modeled pay after deductions and allocated taxes; other-job income is not added to this paycheck."
+      }
+    ],
+    "compare": [
+      "Compare two contribution amounts with the same job income, filing status and pay frequency.",
+      "Compare annual totals before comparing pay periods; weekly, biweekly and semimonthly schedules have different counts."
+    ],
+    "checks": [
+      "Do not enter the same income as both this job’s pay and other-job income.",
+      "State and local rates are entered estimates, not complete jurisdiction-specific returns.",
+      "W-4 elections, year-to-date payroll and IRS Publication 15-T withholding are not fully modeled."
+    ],
+    "checkedOn": "2026-10-21"
+  }
+}

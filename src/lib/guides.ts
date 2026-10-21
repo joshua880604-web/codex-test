@@ -1,3 +1,4 @@
+import insightExamples from "./insight-examples.json";
 import extendedGuides from "./extended-guides.json";
 export type WorkedExample = {
   title: string;
@@ -649,3 +650,5 @@ guides.savings.questions.push({question:'Can I use this as a high yield savings 
 guides['debt-payoff'].examples.push({title:'Pay the smallest balance first with a debt snowball',mode:'snowball',values:{debts:'Small, 100, 10, 0\nLarge, 1000, 100, 12',extra:100,yearly:0,once:0,once_month:1,rollover:'Yes'},inputs:'Two debts: $100 at 0% APR with a $10 minimum, and $1,000 at 12% APR with a $100 minimum. Add $100 per month and roll freed payments forward.',steps:['The first month adds $10 interest to the larger debt.','Pay minimums of $10 and $100, then clear the remaining $90 of the small debt.','The final $10 of extra money goes to the larger debt; balances are $0 and $900 after month one.','Subsequent balances are $699, $495.99, $290.9499 and $83.859399; the last payment is $84.69799299.'],answer:'First-month payment is $210 and the combined ending balance is $900.',expected:{label:'Total paid',value:1134.69799299,tolerance:.01}});
 guides.margin.examples.push({title:'Convert a markup on cost into selling price and margin',mode:'markup',values:{cost:100,markup:25},inputs:'Cost $100 and markup 25%.',steps:['Profit = 100 × 25% = 25.','Selling price = 100 + 25 = 125.','Gross margin = 25 ÷ 125 = 20%.'],answer:'Selling price is $125; markup is 25%, while gross margin is 20%.',expected:{label:'Selling price',value:125}});
 for(const id of ['debt-payoff','margin','savings'])guides[id].checkedOn='2026-10-21';
+
+for (const {calculator,...example} of insightExamples) guides[calculator].examples.push({...example,values:Object.fromEntries(Object.entries(example.values).filter(([,value])=>value!==undefined))});

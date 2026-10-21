@@ -7,7 +7,7 @@
   "local_browser_routes": 76,
   "local_browser_modes": 174,
   "numeric_tests": {
-    "total": 483,
+    "total": 491,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,11 +17,11 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "User US keyword data: 36 titles, grouped aliases, presets, debt snowball and markup modes",
+  "latest_change": "Static result definitions, fair scenario comparisons and seven independently checked boundary examples",
   "seo_generated_pages_checked": 80,
   "seo_detailed_guides": 75,
-  "seo_worked_examples": 109,
-  "seo_browser_checks": 117,
+  "seo_worked_examples": 116,
+  "seo_browser_checks": 124,
   "seo_public_origin_configured": false,
   "live_indexing_or_ai_citations": "not measured",
   "seo_evidence": [
@@ -31,7 +31,7 @@
   ],
   "calculation_audit": "calculation-audit.md",
   "guide_pages": 75,
-  "worked_examples": 109,
+  "worked_examples": 116,
   "keyword_map": "keyword-map.json",
   "keyword_browser_checks": 29,
   "original_financial_entries": 71,
@@ -51,5 +51,7 @@
   "search_intent_pages": 75,
   "search_tasks": 99,
   "unverified_editorial_keyword_candidates": 67,
-  "keyword_expressions": 149
+  "keyword_expressions": 149,
+  "result_explanation_pages": 12,
+  "guide_navigation_pages": 75
 }

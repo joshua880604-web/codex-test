@@ -1,3 +1,4 @@
+import guideInsights from "@/lib/guide-insights.json";
 import type { Calculator } from "@/lib/types";
 import { routeFor } from "@/lib/calculators";
 import { guides, notesCheckedOn } from "@/lib/guides";
@@ -7,13 +8,28 @@ export default function CalculatorGuide({
   calculator: Calculator;
 }) {
   const guide = guides[calculator.id];
+  const insight = guideInsights[calculator.id as keyof typeof guideInsights];
   const checkedOn = guide?.checkedOn ?? notesCheckedOn;
   return (
     <section className="calculator-guide" aria-label="Calculation guide">
       {guide && (
         <>
+          <nav className="guide-nav" aria-label="Calculation guide sections">
+            {insight && <a href="#reading-results">Reading results</a>}
+            {insight && <a href="#compare-scenarios">Compare scenarios</a>}
+            <a href="#worked-examples">Examples</a><a href="#common-questions">Questions</a>
+            <a href="#scope-assumptions">Assumptions</a><a href="#sources">Sources</a>
+          </nav>
           <h2>Understanding this calculation</h2>
-          <p>{guide.summary}</p>
+          <p>{insight?.answer ?? guide.summary}</p>
+          {insight && <>
+            <h2 id="reading-results">Reading your result</h2>
+            <dl className="result-definitions">{insight.results.map(item=><div key={item.label}><dt>{item.label}</dt><dd>{item.meaning}</dd></div>)}</dl>
+            <h2 id="compare-scenarios">Compare two scenarios</h2>
+            <ol>{insight.compare.map(step=><li key={step}>{step}</li>)}</ol>
+            <h3>Check before comparing</h3><ul>{insight.checks.map(check=><li key={check}>{check}</li>)}</ul>
+            <p className="content-date">Result explanations checked <time dateTime={insight.checkedOn}>{insight.checkedOn}</time> against this calculator’s local model. Model scope and sources appear below.</p>
+          </>}
           <h2 id="worked-examples">Worked examples</h2>
           {guide.examples.map((example) => {
             const query = new URLSearchParams({
@@ -40,7 +56,7 @@ export default function CalculatorGuide({
               </section>
             );
           })}
-          <h2>Common questions</h2>
+          <h2 id="common-questions">Common questions</h2>
           {guide.questions.map((item) => (
             <section key={item.question}>
               <h3>{item.question}</h3>
@@ -49,7 +65,7 @@ export default function CalculatorGuide({
           ))}
           <h2 id="scope-assumptions">Scope and assumptions</h2>
           <p>{guide.scope}</p>
-          <h2>Sources</h2>
+          <h2 id="sources">Sources</h2>
           <ul>
             {guide.sources.map((source) => (
               <li key={source.url}>

@@ -56,3 +56,6 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 
 
 关键词数据落地（2026-10-21）：依据用户美国 Keyword Planner 数据调整 36 个页面标题，75 个工具有 99 个用途入口、149 个主词/辅助表达；新增独立债务雪球与成本加价率模式、2 个算例（全站 109 个）。483 项测试、静态构建、80 页 SEO 检查通过。仍纯静态、noindex，本轮未上传/部署。见 docs/financial-clone/keyword-demand-implementation.md（handoff 中相对路径按目录解析）。
+
+
+结果解释优化（2026-10-21）：12 个重点工具提供结果释义与同口径比较步骤，75 个指南增加导航。7 个新增算例使全站达到 116 个，491 项测试与静态构建通过。域名与正式收录继续留到最后，仍无外部 API。详见 docs/financial-clone/result-guides-2026-10-21.md。
