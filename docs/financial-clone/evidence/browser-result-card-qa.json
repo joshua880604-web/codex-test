@@ -1,0 +1,62 @@
+{
+  "tested_at": "2026-10-21T07:21:25.547Z",
+  "checks": [
+    {
+      "name": "mortgage",
+      "width": 1200,
+      "height": 1323,
+      "copy": true,
+      "textWithinCard": true,
+      "cleanToolAddress": true
+    },
+    {
+      "name": "retirement",
+      "width": 1200,
+      "height": 1323,
+      "copy": true,
+      "textWithinCard": true,
+      "cleanToolAddress": true
+    },
+    {
+      "name": "loss",
+      "width": 1200,
+      "height": 1326,
+      "copy": true,
+      "textWithinCard": true,
+      "cleanToolAddress": true
+    },
+    {
+      "name": "tax",
+      "width": 1200,
+      "height": 1338,
+      "copy": true,
+      "textWithinCard": true,
+      "cleanToolAddress": true
+    },
+    {
+      "name": "vat",
+      "width": 1200,
+      "height": 1140,
+      "copy": true,
+      "textWithinCard": true,
+      "cleanToolAddress": true
+    },
+    {
+      "name": "percentage",
+      "width": 1200,
+      "height": 729,
+      "copy": true,
+      "textWithinCard": true,
+      "cleanToolAddress": true
+    },
+    {
+      "name": "scientific",
+      "width": 1200,
+      "height": 1101,
+      "copy": true,
+      "textWithinCard": true,
+      "cleanToolAddress": true
+    }
+  ],
+  "errors": []
+}

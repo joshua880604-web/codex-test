@@ -86,3 +86,10 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - Search matches multiple words and common aliases (car payment, 401(k), required minimum distribution); confusing neighboring tools get short descriptions. All links are pre-rendered and accessible without JavaScript.
 - Updated header/breadcrumb anchors and kept legacy category targets. Category navigation, search reset and no-results recovery remain available.
 - Validation: 502 tests and 80-route static build passed. Browser homepage checks cover unique complete entries, aliases, anchor targets, no-JS links, keyboard focus and six viewport widths (320–1440px); desktop/mobile screenshots visually inspected. Static SEO checks passed for 80 pages; default noindex remains.
+
+### 2026-10-21 — Branded PNG result cards
+- Upgraded local PNG layout to a rounded report card with navy header, title/mode, prominent primary metric, supporting metrics, contextual interpretation where supported, selected model notes and a clear footer.
+- Footer contains Financial Calculators, actual tool host/address and generated date. Local hosts are explicitly marked LOCAL PREVIEW. Address helper strips query and fragment inputs; no fabricated final domain or logo.
+- Short copy is selected by tool: restrained encouragement for financial planning and tax, light humor for everyday tools, neutral copy for negative return/earnings or retirement deficit metrics. No guaranteed-return or progress claims. Unknown modes receive no invented financial interpretation.
+- All image/copy modules remain click-loaded and generated locally; no API, image service, external font or new dependency. Calculation math and displayed precision unchanged.
+- Validation: 505 tests passed; 80-route static production build passed; 16 sharing checks passed with no JavaScript errors/external requests. Seven exported PNG scenarios passed content/address/1200px-width/text-boundary checks. Mortgage and loss cards visually inspected.

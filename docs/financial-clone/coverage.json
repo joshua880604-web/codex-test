@@ -7,7 +7,7 @@
   "local_browser_routes": 76,
   "local_browser_modes": 174,
   "numeric_tests": {
-    "total": 502,
+    "total": 505,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Purpose-grouped responsive All calculators directory, common search aliases, preserved static links and legacy anchors",
+  "latest_change": "Branded local PNG report cards with contextual interpretation, appropriate short copy, actual host and clean tool address",
   "seo_generated_pages_checked": 80,
   "seo_detailed_guides": 75,
   "seo_worked_examples": 116,
@@ -58,5 +58,6 @@
   "image_export": "browser Canvas PNG; no external API",
   "sharing_browser_checks": 16,
   "vat_browser_checks": 17,
-  "result_context_browser_checks": 12
+  "result_context_browser_checks": 12,
+  "result_card_browser_checks": 7
 }
