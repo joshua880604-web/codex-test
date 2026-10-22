@@ -114,3 +114,9 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - Selection-aware unary functions and previous-answer chaining use the unrounded value. Keep postfix percentage semantics explicit. Keyboard Enter/Escape, clear and backspace remain.
 - No domain/indexing configuration changes. Production SITE_URL/SITE_INDEXABLE remain Cloudflare environment settings supplied by the user; source synchronization to the connected production branch follows the authorized website change and may trigger automatic Pages deployment.
 - Validation: 552 tests and 86-route static production build passed. Homepage calculator browser checks 19/19 and directory regression checks 15/15 passed, including 320/390/768/1440px, expression/answer preservation, degree/radian trigonometry, unary selected-text operations, percentages, errors and all 82 directory entries. Mobile Basic and Scientific screenshots inspected.
+
+### 2026-10-22 — Compact mobile header navigation
+- Replaced the horizontally clipped navigation strip at <=700px with a compact brand header and native Menu disclosure. Eight links expose all calculator groups, full directory and search; desktop navigation remains unchanged.
+- Menu closes after selecting a link, outside pointer interaction, Escape (returning focus), or expanding to desktop. Native disclosure/navigation links work without JavaScript. 44px trigger and >=48px menu targets; no scroll lock, modal or new dependency.
+- Validation: 552 tests and 86-route static production build passed. Seven mobile-navigation checks cover 320/390/700/768/1440px, keyboard/outside close, cross-page search, native no-JS operation; 15 homepage regressions and 86-page SEO checks passed. 320px open menu screenshot visually inspected.
+- No calculation, domain, environment or indexing changes. Connected production branch synchronization can trigger existing Cloudflare Pages automatic deployment.

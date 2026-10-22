@@ -1,3 +1,4 @@
+import MobileNavigation from "./MobileNavigation";
 import { calculators, routeFor } from "@/lib/calculators";
 export function Header() {
   return (
@@ -10,6 +11,7 @@ export function Header() {
             </span>{" "}
             Financial<span>Calculators</span>
           </a>
+          <MobileNavigation/>
           <span className="header-description">
             Free financial planning tools
           </span>

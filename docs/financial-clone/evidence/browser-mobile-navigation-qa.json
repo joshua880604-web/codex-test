@@ -1,0 +1,33 @@
+{
+  "tested_at": "2026-10-22T09:35:00.954Z",
+  "checks": [
+    {
+      "width": 320,
+      "overflow": false,
+      "menu": "touch/keyboard/close/navigation passed"
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "menu": "touch/keyboard/close/navigation passed"
+    },
+    {
+      "width": 700,
+      "overflow": false,
+      "menu": "touch/keyboard/close/navigation passed"
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "menu": "desktop navigation retained"
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "menu": "desktop navigation retained"
+    },
+    "Search shortcut works from a calculator page",
+    "Native menu works without JavaScript"
+  ],
+  "errors": []
+}
