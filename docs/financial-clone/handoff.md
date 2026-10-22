@@ -131,3 +131,8 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - Central siteName is calculatorfree.io. Updated header wordmark, footer copyright, title suffix/default, About title/independence text, Open Graph site name, copied result summaries and local PNG report branding.
 - Kept Financial Calculators as a descriptive navigation/category/home heading, not the brand. Tool routes, mathematical models and domain/indexing environment controls unchanged. Actual tool address remains input-free; local preview labels retained, and identical production hostname/brand is not duplicated in image footer.
 - Validation: 552 tests, 86-route static build and 86-page SEO checks passed. Seven image-export cases, seven first-screen/brand checks and 16 sharing checks passed; actual branded VAT card inspected.
+
+### 2026-10-22 — Search above mobile calculator
+- User requested swapping the two mobile positions: search is now above the compact calculator, with quick-access tools below. Desktop placement is unchanged.
+- This supersedes the previous calculator-first priority. Seven viewport checks verify visual order, no horizontal overflow and functioning arithmetic; the evidence records whether the entire card fits each viewport rather than promising a fit on every short window.
+- Static production build passed. No math, branding, environment or indexing changes.
