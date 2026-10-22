@@ -13,11 +13,11 @@
   "full_one_to_one_verified_tools": 0,
   "reference_form_submission": "unverified",
   "reference_visual_parity": "unverified",
-  "responsive_scope": "All routes and modes tested on desktop; 5 representative routes checked at 768px and 390px. Not all routes individually checked on mobile. Scientific calculator separately checked at 320px, 390px and 768px.",
+  "responsive_scope": "All 82 entries/193 modes tested at 390px with page-overflow checks; 30 representative layout cases at 320/390/700px. Browser Chromium; not a claim of exhaustive device/browser compatibility.",
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Search results directly below form, relevant name/alias ranking and explicit Enter/Search navigation; calculator state restored on clear",
+  "latest_change": "Mobile numeric field columns, full-width long selects/textareas, touch-friendly controls and actions, readable guides and contained schedules",
   "seo_generated_pages_checked": 86,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
@@ -67,5 +67,8 @@
   "mobile_navigation_browser_checks": 7,
   "homepage_first_screen_browser_checks": 7,
   "site_brand": "calculatorfree.io",
-  "directory_search_browser_checks": 9
+  "directory_search_browser_checks": 9,
+  "mobile_layout_browser_checks": 30,
+  "mobile_browser_modes": 193,
+  "mobile_browser_routes": 82
 }

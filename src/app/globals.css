@@ -1071,3 +1071,40 @@ footer p {
 .calculator-directory .directory-search-control input {flex:1 1 180px;}
 .directory-search-control .clear {font-size:12px;}
 @media(max-width:700px){.directory-tools .directory-quick {order:1;}.directory-tools.is-searching {display:block;}.calculator-directory .directory-search-control input {flex:1 1 150px;}.directory-search-control .clear {flex-basis:100%;min-height:32px;}.directory-search-submit {padding:8px 12px;}}
+/* Mobile tools: less repetition, usable inputs and a calmer reading rhythm. */
+@media(max-width:700px){
+ .page-wrap:not(.directory-page) {padding-left:12px;padding-right:12px;margin-top:12px;}
+ .page-wrap:not(.directory-page) h1 {font-size:25px;line-height:1.22;overflow-wrap:anywhere;margin-bottom:12px;}
+ .breadcrumb {line-height:1.5;overflow-wrap:anywhere;}
+ .intro {font-size:14px;line-height:1.55;margin:10px 0 14px;}
+ .task-shortcuts {display:none;}
+ .mode-tabs {gap:5px;margin-top:12px;}
+ .mode-tabs button {min-height:44px;font-size:13px;line-height:1.35;padding:8px 10px;border-radius:5px 5px 0 0;}
+ .mode-description {font-size:13px;line-height:1.55;margin:10px 0;}
+ .calculator-form {padding:12px;border-color:#d2dce4;background:#f4f6f8;border-radius:8px;}
+ .calculator-form > .field-row,.calculator-form > .advanced > .field-row {grid-template-columns:minmax(0,1fr);gap:6px;margin:12px 0;}
+ .calculator-form .field-control {gap:6px;}
+ .calculator-form .field-control input,.calculator-form .field-control select {font-size:16px;height:44px;max-width:100%;border-radius:5px;}
+ .calculator-form .field-control input {width:auto;flex:1 1 110px;min-width:0;}
+ .calculator-form .field-control select {width:100%;}
+ .calculator-form .field-control textarea {font-size:16px;border-radius:5px;line-height:1.5;}
+ .calculator-form .field-control .unit {max-width:100%;line-height:1.4;overflow-wrap:anywhere;}
+ .calculator-form .field-control small {line-height:1.5;}
+ .advanced > summary {min-height:44px;padding:10px 0;margin-bottom:4px;line-height:1.5;}
+ .form-actions {padding-top:12px;border-top:1px solid #d9e2e8;margin-top:16px;gap:10px;}
+ .form-actions .calculate {flex:2;min-height:46px;border-radius:5px;}
+ .form-actions .clear {flex:1;min-height:46px;border-radius:5px;}
+ .table-scroll {max-width:100%;max-height:min(480px,60svh);}
+ .table-scroll:focus-visible {outline:2px solid #23776d;outline-offset:3px;}
+ .calculator-guide {font-size:14px;line-height:1.7;overflow-wrap:anywhere;}
+ .guide-nav {gap:6px 12px;}
+ .guide-nav a {padding:8px 0;}
+ .sidebar .side-links {grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 10px;}
+ .side-links a {display:flex;align-items:center;min-height:44px;line-height:1.4;overflow-wrap:anywhere;}
+ footer > div {display:flex;flex-wrap:wrap;justify-content:center;gap:2px 12px;}
+ footer > div > span {display:none;}
+ footer > div > a {display:inline-flex;align-items:center;min-height:44px;}
+}
+@media(min-width:375px) and (max-width:700px){
+ .calculator-form > .field-row:not(.field-wide):not(:has(select)),.calculator-form > .advanced > .field-row:not(.field-wide):not(:has(select)) {grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:12px;}
+}

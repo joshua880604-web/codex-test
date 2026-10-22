@@ -1,0 +1,216 @@
+{
+  "tested_at": "2026-10-22T11:50:13.410Z",
+  "checks": [
+    {
+      "route": "financial",
+      "width": 320,
+      "overflow": false,
+      "controls": 0,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "mortgage",
+      "width": 320,
+      "overflow": false,
+      "controls": 30,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "retirement",
+      "width": 320,
+      "overflow": false,
+      "controls": 13,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "401k",
+      "width": 320,
+      "overflow": false,
+      "controls": 11,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "marriage",
+      "width": 320,
+      "overflow": false,
+      "controls": 71,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "tax",
+      "width": 320,
+      "overflow": false,
+      "controls": 55,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "investment-fee",
+      "width": 320,
+      "overflow": false,
+      "controls": 7,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "cagr",
+      "width": 320,
+      "overflow": false,
+      "controls": 3,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "scientific",
+      "width": 320,
+      "overflow": false,
+      "controls": 2,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "vat",
+      "width": 320,
+      "overflow": false,
+      "controls": 4,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "financial",
+      "width": 390,
+      "overflow": false,
+      "controls": 0,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "mortgage",
+      "width": 390,
+      "overflow": false,
+      "controls": 30,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "retirement",
+      "width": 390,
+      "overflow": false,
+      "controls": 13,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "401k",
+      "width": 390,
+      "overflow": false,
+      "controls": 11,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "marriage",
+      "width": 390,
+      "overflow": false,
+      "controls": 71,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "tax",
+      "width": 390,
+      "overflow": false,
+      "controls": 55,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "investment-fee",
+      "width": 390,
+      "overflow": false,
+      "controls": 7,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "cagr",
+      "width": 390,
+      "overflow": false,
+      "controls": 3,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "scientific",
+      "width": 390,
+      "overflow": false,
+      "controls": 2,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "vat",
+      "width": 390,
+      "overflow": false,
+      "controls": 4,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "financial",
+      "width": 700,
+      "overflow": false,
+      "controls": 0,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "mortgage",
+      "width": 700,
+      "overflow": false,
+      "controls": 30,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "retirement",
+      "width": 700,
+      "overflow": false,
+      "controls": 13,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "401k",
+      "width": 700,
+      "overflow": false,
+      "controls": 11,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "marriage",
+      "width": 700,
+      "overflow": false,
+      "controls": 71,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "tax",
+      "width": 700,
+      "overflow": false,
+      "controls": 55,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "investment-fee",
+      "width": 700,
+      "overflow": false,
+      "controls": 7,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "cagr",
+      "width": 700,
+      "overflow": false,
+      "controls": 3,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "scientific",
+      "width": 700,
+      "overflow": false,
+      "controls": 2,
+      "inputFontAtLeast16": true
+    },
+    {
+      "route": "vat",
+      "width": 700,
+      "overflow": false,
+      "controls": 4,
+      "inputFontAtLeast16": true
+    }
+  ],
+  "errors": []
+}
