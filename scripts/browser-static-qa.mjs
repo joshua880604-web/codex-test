@@ -16,6 +16,8 @@ try{
    const modes=item.implemented_modes;
    for(let i=0;i<modes.length;i++){
     await selectCalculatorMode(page,modes[i].id);
+    // Default-model checks start independently; draft continuity has focused coverage.
+    if(['student-loan','margin','commission','savings'].includes(item.id)&&modes[i].id!=='any-two')await page.getByRole('button',{name:'Reset',exact:true}).click();
     await page.getByRole('button',{name:/^Calculate/}).click();
     await page.locator('.result h2').waitFor({timeout:10000});
     if(await page.locator('.error[role=alert]').count())throw Error(await page.locator('.error[role=alert]').innerText());

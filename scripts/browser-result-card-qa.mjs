@@ -33,6 +33,8 @@ try{
   const modes=item.implemented_modes;
   for(let i=0;i<modes.length;i++){
    await selectCalculatorMode(page,modes[i].id);
+    // Default-model checks start independently; draft continuity has focused coverage.
+    if(['student-loan','margin','commission','savings'].includes(item.id)&&modes[i].id!=='any-two')await page.getByRole('button',{name:'Reset',exact:true}).click();
    await page.getByRole('button',{name:/^Calculate/}).click();await page.locator('.result h2').waitFor();
    await page.evaluate(()=>window.cardText=[]);
    const pending=page.waitForEvent('download',{timeout:10000});await page.getByRole('button',{name:'Download result PNG',exact:true}).click();

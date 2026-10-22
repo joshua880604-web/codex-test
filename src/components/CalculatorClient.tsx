@@ -6,6 +6,8 @@ import ResultShare from "./ResultShare";
 import {inputHint,resultContext} from "@/lib/result-context";
 import { sharedInputs } from "@/lib/sharing";
 import MarriageFields from "./MarriageFields";
+import TaskModePicker from "./TaskModePicker";
+import { modeDraftScope, switchModeInputs, taskModeGroups } from "@/lib/mode-navigation";
 import { defaults } from "@/lib/types";
 import { routeFor } from "@/lib/catalog";
 import { runClientCalculation } from "@/lib/calculate-client";
@@ -41,9 +43,10 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   const context = result ? resultContext(id,mode.id,values,result) : null;
   const resultRef = useRef<HTMLDivElement>(null),
     request = useRef(0);
-  const payoffDrafts = useRef<Record<string, Values>>({});
-  const compactModes = calc.modes.length >= 4;
+  const modeDrafts = useRef<Record<string, Values>>({});
+  const compactModes = calc.modes.length >= 4 || id === "savings";
   const payoff = id === "mortgage-payoff";
+  const taskModes = Boolean(taskModeGroups[id]) || id === "savings";
   useEffect(() => {
     let lastSource:string|null=null;
     function hydrate() {
@@ -55,7 +58,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         if(!shared)return;
         const token=++request.current;
         const {mode:initial,values:v}=shared;
-        payoffDrafts.current = {};
+        modeDrafts.current = {};
         setModeId(initial.id);setValues(v);setResult(null);setError("");setNotice("");setShowAll(false);setYearly(false);
         runCalculation(id,initial.id,v).then(next=>{
           if(token===request.current)setResult(next);
@@ -79,16 +82,10 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     if (next === modeId) return;
     request.current++;
     const m = calc.modes.find((x) => x.id === next)!;
-    let nextValues = defaults(m);
-    if (payoff) {
-      const basis = modeId.split("-")[0], nextBasis = next.split("-")[0];
-      // Each basis has its own draft: original principal and current balance differ.
-      payoffDrafts.current[basis] = { ...payoffDrafts.current[basis], ...values };
-      const draft = payoffDrafts.current[nextBasis];
-      if (draft) nextValues = Object.fromEntries(m.fields.map(f => [f.key, draft[f.key] ?? String(f.value)]));
-    }
+    const nextInputs = switchModeInputs(id, mode, m, values, modeDrafts.current);
+    modeDrafts.current = nextInputs.drafts;
     setModeId(next);
-    setValues(nextValues);
+    setValues(nextInputs.values);
     setResult(null);
     setError("");
     setNotice("");
@@ -123,7 +120,8 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   }
   function reset() {
     request.current++;
-    if (payoff) delete payoffDrafts.current[modeId.split("-")[0]];
+    const scope = modeDraftScope(id, modeId);
+    if (scope) delete modeDrafts.current[scope];
     setValues(
       (id === "vat" || (id === "commission" && mode.id === "any-two"))
         ? Object.fromEntries(mode.fields.map((f) => [f.key, ""]))
@@ -290,7 +288,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
       )}
       {compactModes && (
         <div className="mobile-mode-picker">
-          {payoff ? <>
+          {taskModes ? <TaskModePicker id={id} modeId={modeId} onChange={switchMode} /> : payoff ? <>
             <fieldset className="payoff-basis">
               <legend>Loan details</legend>
               <div className="payoff-basis-options">
