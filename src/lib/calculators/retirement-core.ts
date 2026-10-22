@@ -1,4 +1,5 @@
 import { retirementIncome } from "../retirement-projection";
+import { employee401kLimit as limit401 } from "../retirement-limits";
 import { tool, timingField } from "./helpers";
 import {
   num,
@@ -228,16 +229,6 @@ const retirement = tool(
   ],
   "Plan retirement saving, income, withdrawals, and savings longevity.",
 );
-function limit401(age: number): number {
-  return (
-    rules.retirement_contributions.employee_401k_limit +
-    (age >= 60 && age <= 63
-      ? rules.retirement_contributions.catch_up_60_to_63
-      : age >= 50
-        ? rules.retirement_contributions.catch_up_50plus
-        : 0)
-  );
-}
 const k401 = tool(
   "401k",
   [

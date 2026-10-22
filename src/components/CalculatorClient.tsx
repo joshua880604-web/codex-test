@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { Fragment, useEffect, useRef, useState, type FormEvent } from "react";
 import dynamic from "next/dynamic";
 import ResultShare from "./ResultShare";
 import {inputHint,resultContext} from "@/lib/result-context";
@@ -10,8 +10,10 @@ import { defaults } from "@/lib/types";
 import { routeFor } from "@/lib/catalog";
 import { runClientCalculation } from "@/lib/calculate-client";
 import type { Calculator, Field, Result, Values } from "@/lib/types";
+import type { RetirementPlan, RetirementScenario } from "@/lib/retirement-story";
 const ScientificKeypad = dynamic(() => import("./ScientificKeypad"));
 const MarriageFields = dynamic(() => import("./MarriageFields"));
+const RetirementStory = dynamic(() => import("./RetirementStory"));
 const amount = (n: number, digits = 2) =>
   new Intl.NumberFormat("en-US", {
     minimumFractionDigits: digits,
@@ -37,6 +39,9 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     [notice, setNotice] = useState("");
   const [yearly, setYearly] = useState(false);
   const [calculating, setCalculating] = useState(false);
+  const [scenarioBaseline, setScenarioBaseline] = useState<RetirementPlan | null>(null);
+  const [activeScenario, setActiveScenario] = useState<RetirementScenario | null>(null);
+  const hasRetirementStory = id === "401k" && mode.id === "projection";
   const tableRows =
     yearly && result?.annualRows ? result.annualRows : result?.rows;
   const tableColumns =
@@ -48,6 +53,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const compactModes = calc.modes.length >= 4 || id === "savings";
   const payoff = id === "mortgage-payoff";
   const taskModes = Boolean(taskModeGroups[id]) || id === "savings";
+  function clearScenarios() { setScenarioBaseline(null); setActiveScenario(null); }
   useEffect(() => {
     let lastSource:string|null=null;
     function hydrate() {
@@ -60,6 +66,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         const token=++request.current;
         setCalculating(true);
         const {mode:initial,values:v}=shared;
+        clearScenarios();
         modeDrafts.current = {};
         setModeId(initial.id);setValues(v);setResult(null);setError("");setNotice("");setShowAll(false);setYearly(false);
         runCalculation(id,initial.id,v).then(next=>{
@@ -67,7 +74,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         }).catch(error=>{
           if(token===request.current){setResult(null);setError("Shared inputs could not be calculated: "+(error instanceof Error?error.message:"Check the entered values."));}
         }).finally(()=>{if(token===request.current)setCalculating(false);});
-      }catch(error){request.current++;setCalculating(false);setResult(null);setError(error instanceof Error?error.message:"Invalid calculation link.");}
+      }catch(error){request.current++;clearScenarios();setCalculating(false);setResult(null);setError(error instanceof Error?error.message:"Invalid calculation link.");}
     }
     hydrate();
     window.addEventListener("hashchange",hydrate);window.addEventListener("popstate",hydrate);
@@ -75,6 +82,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   }, [calc,id]);
   const update = (key: string, value: string) => {
     request.current++;
+    clearScenarios();
     setCalculating(false);
     setValues((v) => ({ ...v, [key]: value }));
     setResult(null);
@@ -84,6 +92,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   function switchMode(next: string) {
     if (next === modeId) return;
     request.current++;
+    clearScenarios();
     setCalculating(false);
     const m = calc.modes.find((x) => x.id === next)!;
     const nextInputs = switchModeInputs(id, mode, m, values, modeDrafts.current);
@@ -98,6 +107,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   }
   async function calculate(e: FormEvent) {
     e.preventDefault();
+    clearScenarios();
     setError("");
     setNotice("");
     setResult(null);
@@ -125,8 +135,34 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       if (token === request.current) setCalculating(false);
     }
   }
+  async function applyScenario(scenario: RetirementScenario) {
+    if (!hasRetirementStory || !result || scenario.disabledReason || activeScenario?.id === scenario.id) return;
+    const original = scenarioBaseline ?? { values: { ...values }, result };
+    const token = ++request.current;
+    setScenarioBaseline(original); setActiveScenario(scenario);
+    setValues({ ...scenario.values }); setResult(null); setCalculating(true); setError(""); setNotice("");
+    setShowAll(false); setYearly(false);
+    try {
+      const next = await runCalculation(id, mode.id, scenario.values);
+      if (token !== request.current) return;
+      setResult(next);
+    } catch (e) {
+      if (token === request.current) setError("This scenario could not be calculated: " + (e instanceof Error ? e.message : "Check the entered values."));
+    } finally {
+      if (token === request.current) setCalculating(false);
+    }
+  }
+  function restoreScenario() {
+    if (!scenarioBaseline) return;
+    request.current++;
+    setValues({ ...scenarioBaseline.values }); setResult(scenarioBaseline.result);
+    clearScenarios(); setCalculating(false); setError(""); setNotice("Original plan restored.");
+    setShowAll(false); setYearly(false);
+    requestAnimationFrame(() => resultRef.current?.focus({preventScroll:true}));
+  }
   function reset() {
     request.current++;
+    clearScenarios();
     setCalculating(false);
     const scope = modeDraftScope(id, modeId);
     if (scope) delete modeDrafts.current[scope];
@@ -369,6 +405,10 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           {notice}
         </p>
       )}
+      {!result && scenarioBaseline && activeScenario && <section className="scenario-recovery" aria-label="Scenario calculation">
+        <p role="status">{calculating ? "Updating your scenario…" : "Your original plan is still available."}</p>
+        <button type="button" onClick={restoreScenario}>Restore original plan</button>
+      </section>}
       {result && (
         <div ref={resultRef} className="result" aria-live="polite" tabIndex={-1}>
           <h2>Result</h2>
@@ -376,9 +416,10 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           <div className="result-main">
             <div className="metrics">
               {(id === "marriage-tax" ? [...result.metrics.slice(-1), ...result.metrics.slice(0, -1)] : result.metrics).map((m, i) => (
+                <Fragment key={m.label}>
+                {hasRetirementStory && i === 1 && <h3 className="story-all-figures">Calculated figures</h3>}
                 <div
                   className={i === 0 ? "metric primary" : "metric"}
-                  key={m.label}
                 >
                   <span>{id === "marriage-tax" && i === 0 ? (m.value < -0.005 ? "Estimated annual tax savings after marriage" : m.value > 0.005 ? "Estimated annual additional tax after marriage" : "Estimated annual tax difference after marriage") : m.label}</span>
                   <strong>
@@ -399,6 +440,8 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
                     {m.format === "percent" ? "%" : ""}
                   </strong>
                 </div>
+                {hasRetirementStory && i === 0 && <RetirementStory values={values} result={result} baseline={scenarioBaseline} active={activeScenario} onScenario={applyScenario} onRestore={restoreScenario} />}
+                </Fragment>
               ))}
             </div>
             {result.chart && result.chart.some((x) => x.value > 0) && (

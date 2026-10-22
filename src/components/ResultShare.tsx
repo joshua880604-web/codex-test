@@ -15,7 +15,13 @@ export default function ResultShare({id,title,path,mode,values,result}:{id:strin
  async function share(){try{const url=link();if(navigator.share){await navigator.share({title,url});setStatus('Share dialog completed.');}else await copy(url,'Link copied.');}catch(e){setStatus((e as Error).name==='AbortError'?'Sharing canceled.':(e as Error).message);}}
  async function copySummary(){try{await copy(summaryText(title,mode,id,result,link(),values),'Result summary copied. It contains calculation amounts.');}catch(e){setStatus((e as Error).message);}}
  async function exportImage(){
-  setExporting(true);try{const [{resultImage},{resultCardCopy}]=await Promise.all([import('@/lib/result-image'),import('@/lib/result-card-copy')]);const blob=await resultImage(title,caption,metrics,[...(id==='irr'&&result.metrics.length>1?['Multiple IRRs detected; there is no single unambiguous rate.']:[]),...result.notes??[]],calculationLink(location.origin,path,mode,values),resultCardCopy(id,mode.id,values,result));
+  setExporting(true);try{const [{resultImage},{resultCardCopy}]=await Promise.all([import('@/lib/result-image'),import('@/lib/result-card-copy')]);
+   let imageMetrics=metrics,notes=[...(id==='irr'&&result.metrics.length>1?['Multiple IRRs detected; there is no single unambiguous rate.']:[]),...result.notes??[]],copy=resultCardCopy(id,mode.id,values,result);
+   if(id==='401k'&&mode.id==='projection'){
+    const {retirementStory}=await import('@/lib/retirement-story');const story=retirementStory(values,result);
+    if(story){imageMetrics=[metrics[0],...story.parts.map(part=>({label:part.label,value:part.value,format:'money' as const}))];copy={...copy,interpretation:story.cardInterpretation};notes=['Illustration only. Before tax, with constant returns, full vesting and no fees. See the tool for contribution limits and timing assumptions.'];}
+   }
+   const blob=await resultImage(title,caption,imageMetrics,notes,calculationLink(location.origin,path,mode,values),copy);
    const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=id+'-result.png';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);setStatus('PNG downloaded. It contains result amounts and the tool address, without an input list.');
   }catch(e){setStatus((e as Error).message);}finally{setExporting(false);}
  }
