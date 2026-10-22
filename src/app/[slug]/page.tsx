@@ -2,9 +2,10 @@ import SearchTasks from "@/components/SearchTasks";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { calculators, calculatorBySlug, routeFor } from "@/lib/calculators";
-import CalculatorClient from "@/components/CalculatorClient";
+import CalculatorClient from "@/components/CalculatorEntry";
 import { defaults, runCalculation } from "@/lib/calculators";
-import Directory from "@/components/Directory";
+import Directory from "@/components/DirectoryEntry";
+import { searchTasks } from "@/lib/keyword-targets";
 import RealEstateDirectory from "@/components/RealEstateDirectory";
 import { Sidebar } from "@/components/Shell";
 import CalculatorGuide from "@/components/CalculatorGuide";
@@ -147,7 +148,7 @@ export default async function Page({
           <RealEstateDirectory />
         ) : c ? (
           <>
-            <CalculatorClient calc={JSON.parse(JSON.stringify(c))} initialResult={initialResult} />
+            <CalculatorClient calc={JSON.parse(JSON.stringify(c))} initialResult={initialResult} shortcuts={(searchTasks[c.id] ?? []).map(({keyword, mode}) => ({keyword, mode}))} />
             <SearchTasks id={c.id} />
             <CalculatorGuide calculator={c} />
           </>

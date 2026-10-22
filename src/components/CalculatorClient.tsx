@@ -1,17 +1,17 @@
 "use client";
-import {searchTasks} from "@/lib/keyword-targets";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import ScientificKeypad from "./ScientificKeypad";
+import dynamic from "next/dynamic";
 import ResultShare from "./ResultShare";
 import {inputHint,resultContext} from "@/lib/result-context";
 import { sharedInputs } from "@/lib/sharing";
-import MarriageFields from "./MarriageFields";
 import TaskModePicker from "./TaskModePicker";
 import { modeDraftScope, switchModeInputs, taskModeGroups } from "@/lib/mode-navigation";
 import { defaults } from "@/lib/types";
 import { routeFor } from "@/lib/catalog";
 import { runClientCalculation } from "@/lib/calculate-client";
 import type { Calculator, Field, Result, Values } from "@/lib/types";
+const ScientificKeypad = dynamic(() => import("./ScientificKeypad"));
+const MarriageFields = dynamic(() => import("./MarriageFields"));
 const amount = (n: number, digits = 2) =>
   new Intl.NumberFormat("en-US", {
     minimumFractionDigits: digits,
@@ -25,7 +25,7 @@ const colors = [
   "#b26969",
   "#64a7a0",
 ];
-export default function CalculatorClient({ calc, initialResult }: { calc: Calculator; initialResult: Result | null }) {
+export default function CalculatorClient({ calc, initialResult, shortcuts = [] }: { calc: Calculator; initialResult: Result | null; shortcuts?: {keyword: string; mode: string}[] }) {
   const id = calc.id;
   const runCalculation = (_id: string, mode: string, values: Values) => runClientCalculation(calc.id, calc.category, mode, values);
   const [modeId, setModeId] = useState(calc.modes[0].id);
@@ -36,6 +36,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     [showAll, setShowAll] = useState(false),
     [notice, setNotice] = useState("");
   const [yearly, setYearly] = useState(false);
+  const [calculating, setCalculating] = useState(false);
   const tableRows =
     yearly && result?.annualRows ? result.annualRows : result?.rows;
   const tableColumns =
@@ -57,6 +58,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         const shared=sharedInputs(calc,window.location.search,window.location.hash);
         if(!shared)return;
         const token=++request.current;
+        setCalculating(true);
         const {mode:initial,values:v}=shared;
         modeDrafts.current = {};
         setModeId(initial.id);setValues(v);setResult(null);setError("");setNotice("");setShowAll(false);setYearly(false);
@@ -64,8 +66,8 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           if(token===request.current)setResult(next);
         }).catch(error=>{
           if(token===request.current){setResult(null);setError("Shared inputs could not be calculated: "+(error instanceof Error?error.message:"Check the entered values."));}
-        });
-      }catch(error){request.current++;setResult(null);setError(error instanceof Error?error.message:"Invalid calculation link.");}
+        }).finally(()=>{if(token===request.current)setCalculating(false);});
+      }catch(error){request.current++;setCalculating(false);setResult(null);setError(error instanceof Error?error.message:"Invalid calculation link.");}
     }
     hydrate();
     window.addEventListener("hashchange",hydrate);window.addEventListener("popstate",hydrate);
@@ -73,6 +75,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   }, [calc,id]);
   const update = (key: string, value: string) => {
     request.current++;
+    setCalculating(false);
     setValues((v) => ({ ...v, [key]: value }));
     setResult(null);
     setError("");
@@ -81,6 +84,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   function switchMode(next: string) {
     if (next === modeId) return;
     request.current++;
+    setCalculating(false);
     const m = calc.modes.find((x) => x.id === next)!;
     const nextInputs = switchModeInputs(id, mode, m, values, modeDrafts.current);
     modeDrafts.current = nextInputs.drafts;
@@ -99,6 +103,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     setResult(null);
     let v = { ...values };
     const token = ++request.current;
+    setCalculating(true);
     try {
       const next = await runCalculation(id, mode.id, v);
       if (token !== request.current) return;
@@ -116,10 +121,13 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     } catch (e) {
       if (token === request.current)
         setError(e instanceof Error ? e.message : "Unable to calculate.");
+    } finally {
+      if (token === request.current) setCalculating(false);
     }
   }
   function reset() {
     request.current++;
+    setCalculating(false);
     const scope = modeDraftScope(id, modeId);
     if (scope) delete modeDrafts.current[scope];
     setValues(
@@ -259,7 +267,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   return (
     <>
       <p className="intro">{calc.intro}</p>
-      {searchTasks[id] && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{searchTasks[id].map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
+      {shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       {calc.modes.length > 1 && (
         <div className={"mode-tabs" + (compactModes ? " compact-mode-tabs" : "")} role="tablist" aria-label="Calculation mode">
           {calc.modes.map((m) => (
@@ -325,7 +333,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         aria-labelledby={!compactModes && calc.modes.length > 1 ? "tab-" + modeId : undefined}
       >
         <p className="mode-description">{mode.description}</p>
-        <form onKeyDown={e=>{if(id === "scientific" && (e.target as HTMLElement).tagName === "TEXTAREA" && e.key === "Enter" && !e.shiftKey){e.preventDefault();e.currentTarget.requestSubmit();}}} onSubmit={calculate} className="calculator-form" onInvalidCapture={(e) => {
+        <form aria-busy={calculating} onKeyDown={e=>{if(id === "scientific" && (e.target as HTMLElement).tagName === "TEXTAREA" && e.key === "Enter" && !e.shiftKey){e.preventDefault();e.currentTarget.requestSubmit();}}} onSubmit={calculate} className="calculator-form" onInvalidCapture={(e) => {
           const field = e.target as HTMLInputElement;
           const details = field.closest("details");
           if (details) details.open = true;
@@ -340,8 +348,8 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           )}
           {id === "scientific" && <ScientificKeypad values={values} update={update} />}
           <div className="form-actions">
-            <button type="submit" className="calculate">
-              Calculate{" "}
+            <button type="submit" className="calculate" disabled={calculating}>
+              {calculating ? "Calculating…" : "Calculate"}{" "}
               <span aria-hidden="true">▶</span>
             </button>
             <button type="button" className="clear" onClick={reset}>

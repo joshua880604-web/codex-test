@@ -1,4 +1,4 @@
-import Directory from "@/components/Directory";
+import Directory from "@/components/DirectoryEntry";
 import { Sidebar } from "@/components/Shell";
 export default function Home() {
   return (
