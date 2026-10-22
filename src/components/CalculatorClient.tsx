@@ -165,6 +165,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
       >
         <label htmlFor={inputId}>{person ?? field.label}</label>
         <div className="field-control">
+          <div className={"field-entry"+(field.type === "textarea" ? " entry-textarea" : "")+(field.unit && field.unit.length > 12 ? " unit-long" : "")}>
           {field.type === "select" ? (
             <select
               id={inputId}
@@ -233,6 +234,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
             />
           )}{" "}
           {field.unit && <span id={inputId + "-unit"} className="unit">{field.unit}</span>}
+          </div>
           {hint && <small id={inputId + "-hint"}>{hint}</small>}
         </div>
       </div>

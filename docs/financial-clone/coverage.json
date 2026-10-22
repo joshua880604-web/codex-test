@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Mobile numeric field columns, full-width long selects/textareas, touch-friendly controls and actions, readable guides and contained schedules",
+  "latest_change": "Unified mobile entry frames with integrated units, aligned date/numeric/select controls, shared card corners and focus styling",
   "seo_generated_pages_checked": 86,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
