@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-22T12:06:28.570Z",
+  "tested_at": "2026-10-22T12:45:24.307Z",
   "checks": [
     "Default link excludes all inputs",
     "Closing link options resets input-sharing opt-in",
@@ -9,8 +9,8 @@
     {
       "png": "vat-result.png",
       "width": 1200,
-      "height": 1140,
-      "bytes": 129570
+      "height": 1680,
+      "bytes": 189310
     },
     "Native share cancellation handled",
     "Clipboard-denied fallback exposes selectable content",

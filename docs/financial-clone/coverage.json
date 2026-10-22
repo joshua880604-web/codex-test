@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Unified mobile entry frames with integrated units, aligned date/numeric/select controls, shared card corners and focus styling",
+  "latest_change": "Mobile-readable 5:7 portrait result PNG cards with larger result typography and prominent calculatorfree.io footer",
   "seo_generated_pages_checked": 86,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
@@ -55,7 +55,7 @@
   "result_explanation_pages": 12,
   "guide_navigation_pages": 81,
   "sharing_protocol": "address fragment v1; legacy query links supported",
-  "image_export": "browser Canvas PNG; no external API",
+  "image_export": "local browser Canvas PNG; fixed 1200x1680 (5:7); no external API",
   "sharing_browser_checks": 16,
   "vat_browser_checks": 17,
   "result_context_browser_checks": 12,
@@ -70,5 +70,12 @@
   "directory_search_browser_checks": 9,
   "mobile_layout_browser_checks": 30,
   "mobile_browser_modes": 193,
-  "mobile_browser_routes": 82
+  "mobile_browser_routes": 82,
+  "result_card_image_dimensions": {
+    "width": 1200,
+    "height": 1680,
+    "aspect_ratio": "5:7"
+  },
+  "result_card_default_mode_exports": 193,
+  "result_card_edge_browser_checks": 3
 }
