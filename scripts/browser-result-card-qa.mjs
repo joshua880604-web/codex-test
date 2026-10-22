@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import {selectCalculatorMode} from './browser-mode-controls.mjs';
 const {chromium}=await import('/opt/codex/cua_node/lib/node_modules/playwright/index.mjs');
 const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
 const page=await browser.newPage({acceptDownloads:true,viewport:{width:390,height:844}});const checks=[],errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -29,9 +30,9 @@ try{
  const inventory=JSON.parse(await fs.readFile('docs/financial-clone/inventory.json','utf8')),modeChecks=[];
  for(const item of inventory.filter(x=>x.id!=='real-estate')){
   await page.goto('http://127.0.0.1:3000'+item.local_route);await page.locator('.result h2').waitFor();
-  const tabs=await page.getByRole('tab').count();
-  for(let i=0;i<Math.max(1,tabs);i++){
-   if(tabs)await page.getByRole('tab').nth(i).click();
+  const modes=item.implemented_modes;
+  for(let i=0;i<modes.length;i++){
+   await selectCalculatorMode(page,modes[i].id);
    await page.getByRole('button',{name:/^Calculate/}).click();await page.locator('.result h2').waitFor();
    await page.evaluate(()=>window.cardText=[]);
    const pending=page.waitForEvent('download',{timeout:10000});await page.getByRole('button',{name:'Download result PNG',exact:true}).click();
@@ -42,7 +43,7 @@ try{
    const ordered=[...text].sort((a,b)=>a.y-b.y);for(let j=1;j<ordered.length;j++){
     const a=ordered[j-1],b=ordered[j];if(a.x===b.x)assert.ok(a.y+parseInt(a.font.match(/\d+px/)[0])<=b.y,item.id+' overlapping lines');
    }
-   modeChecks.push({id:item.id,mode:tabs?await page.getByRole('tab').nth(i).innerText():'default',width:1200,height:1680,textWithinCard:true});
+   modeChecks.push({id:item.id,mode:modes[i].title,width:1200,height:1680,textWithinCard:true});
   }
  }
  assert.deepEqual(errors,[]);await fs.writeFile('docs/financial-clone/evidence/browser-result-card-qa.json',JSON.stringify({tested_at:new Date().toISOString(),checks,modeChecks,errors},null,2));console.log({checks:checks.length,modeExports:modeChecks.length,errors:errors.length});

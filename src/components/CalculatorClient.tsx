@@ -41,6 +41,9 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   const context = result ? resultContext(id,mode.id,values,result) : null;
   const resultRef = useRef<HTMLDivElement>(null),
     request = useRef(0);
+  const payoffDrafts = useRef<Record<string, Values>>({});
+  const compactModes = calc.modes.length >= 4;
+  const payoff = id === "mortgage-payoff";
   useEffect(() => {
     let lastSource:string|null=null;
     function hydrate() {
@@ -52,6 +55,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
         if(!shared)return;
         const token=++request.current;
         const {mode:initial,values:v}=shared;
+        payoffDrafts.current = {};
         setModeId(initial.id);setValues(v);setResult(null);setError("");setNotice("");setShowAll(false);setYearly(false);
         runCalculation(id,initial.id,v).then(next=>{
           if(token===request.current)setResult(next);
@@ -72,10 +76,19 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
     setNotice("Inputs changed. Select Calculate to update the result.");
   };
   function switchMode(next: string) {
+    if (next === modeId) return;
     request.current++;
     const m = calc.modes.find((x) => x.id === next)!;
+    let nextValues = defaults(m);
+    if (payoff) {
+      const basis = modeId.split("-")[0], nextBasis = next.split("-")[0];
+      // Each basis has its own draft: original principal and current balance differ.
+      payoffDrafts.current[basis] = { ...payoffDrafts.current[basis], ...values };
+      const draft = payoffDrafts.current[nextBasis];
+      if (draft) nextValues = Object.fromEntries(m.fields.map(f => [f.key, draft[f.key] ?? String(f.value)]));
+    }
     setModeId(next);
-    setValues(defaults(m));
+    setValues(nextValues);
     setResult(null);
     setError("");
     setNotice("");
@@ -110,6 +123,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
   }
   function reset() {
     request.current++;
+    if (payoff) delete payoffDrafts.current[modeId.split("-")[0]];
     setValues(
       (id === "vat" || (id === "commission" && mode.id === "any-two"))
         ? Object.fromEntries(mode.fields.map((f) => [f.key, ""]))
@@ -249,7 +263,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
       <p className="intro">{calc.intro}</p>
       {searchTasks[id] && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{searchTasks[id].map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       {calc.modes.length > 1 && (
-        <div className="mode-tabs" role="tablist" aria-label="Calculation mode">
+        <div className={"mode-tabs" + (compactModes ? " compact-mode-tabs" : "")} role="tablist" aria-label="Calculation mode">
           {calc.modes.map((m) => (
             <button
               role="tab"
@@ -274,10 +288,43 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
           ))}
         </div>
       )}
+      {compactModes && (
+        <div className="mobile-mode-picker">
+          {payoff ? <>
+            <fieldset className="payoff-basis">
+              <legend>Loan details</legend>
+              <div className="payoff-basis-options">
+                {[["remaining", "Current balance"], ["known", "Original loan"]].map(([basis, label]) => (
+                  <label key={basis}>
+                    <input type="radio" name="payoff-basis" value={basis}
+                      checked={modeId.startsWith(basis + "-")}
+                      onChange={() => switchMode(basis + "-" + modeId.split("-")[1])} />
+                    <span>{label}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+            <label className="mobile-mode-label" htmlFor="payoff-strategy">Payoff strategy</label>
+            <select id="payoff-strategy" value={modeId.split("-")[1]}
+              onChange={e => switchMode(modeId.split("-")[0] + "-" + e.target.value)}>
+              <option value="extra">Extra payments</option>
+              <option value="normal">Normal repayment</option>
+              <option value="biweekly">Biweekly</option>
+              <option value="all">Pay off now</option>
+            </select>
+          </> : <>
+            <label className="mobile-mode-label" htmlFor="calculation-mode">Calculation mode</label>
+            <select id="calculation-mode" value={modeId} onChange={e => switchMode(e.target.value)}>
+              {calc.modes.map(m => <option key={m.id} value={m.id}>{m.title}</option>)}
+            </select>
+          </>}
+        </div>
+      )}
       <div
         id="calculator-panel"
         role="tabpanel"
-        aria-labelledby={calc.modes.length > 1 ? "tab-" + modeId : undefined}
+        aria-label={compactModes ? mode.title : undefined}
+        aria-labelledby={!compactModes && calc.modes.length > 1 ? "tab-" + modeId : undefined}
       >
         <p className="mode-description">{mode.description}</p>
         <form onKeyDown={e=>{if(id === "scientific" && (e.target as HTMLElement).tagName === "TEXTAREA" && e.key === "Enter" && !e.shiftKey){e.preventDefault();e.currentTarget.requestSubmit();}}} onSubmit={calculate} className="calculator-form" onInvalidCapture={(e) => {

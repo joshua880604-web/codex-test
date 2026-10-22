@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import {selectCalculatorMode} from './browser-mode-controls.mjs';
 const {chromium}=await import('playwright').catch(()=>import('/opt/codex/cua_node/lib/node_modules/playwright/index.mjs'));
 const inventory=JSON.parse(await fs.readFile('docs/financial-clone/inventory.json','utf8'));
 const base='http://127.0.0.1:3000',browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH??'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
@@ -12,15 +13,15 @@ try{
   await page.getByRole('heading',{name:item.title,exact:true,level:1}).waitFor();
   const record={route:item.local_route,modes:[]};
   if(item.id!=='real-estate'){
-   const tabs=await page.getByRole('tab').all(),n=Math.max(1,tabs.length);
-   for(let i=0;i<n;i++){
-    if(tabs.length)await page.getByRole('tab').nth(i).click();
+   const modes=item.implemented_modes;
+   for(let i=0;i<modes.length;i++){
+    await selectCalculatorMode(page,modes[i].id);
     await page.getByRole('button',{name:/^Calculate/}).click();
     await page.locator('.result h2').waitFor({timeout:10000});
     if(await page.locator('.error[role=alert]').count())throw Error(await page.locator('.error[role=alert]').innerText());
     if(/NaN|Infinity/.test(await page.locator('.result').innerText()))throw Error('Nonfinite '+item.id);
     if(process.env.QA_VIEWPORT_WIDTH&&await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Mobile overflow '+item.id+' mode '+i);
-    record.modes.push(tabs.length?await page.getByRole('tab').nth(i).innerText():'default');
+    record.modes.push(modes[i].title);
    }
   }
   checks.push(record);

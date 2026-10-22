@@ -363,10 +363,14 @@ const payoffModes = ["remaining", "known"].flatMap((info) =>
             num("payment", "Current monthly payment", 1800, "$"),
             num("rate", "Annual interest rate", 6, "%"),
           ]),
-      ...extraFields(),
+      ...(method === "extra" ? extraFields() : []),
     ],
-    description:
-      "Compare remaining normal repayment with an accelerated payoff strategy.",
+    description: {
+      extra: "See how additional payments can reduce your repayment time and interest.",
+      normal: "Estimate your remaining payments and interest with no additional payments.",
+      biweekly: "Model half your monthly payment every two weeks: 26 payments per year.",
+      all: "Estimate the principal needed to pay off your mortgage now, excluding lender fees and accrued interest.",
+    }[method]!,
     formula:
       "Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments.",
     calculate: (v) => {

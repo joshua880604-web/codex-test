@@ -1231,3 +1231,20 @@ footer p {
  .method-key-point,.method-datasets > section {padding:14px 16px;}
  .method-nav {gap:4px 14px;}
 }
+
+/* Long mode lists use native mobile controls; short lists retain their tabs. */
+.mobile-mode-picker {display:none;}
+@media(max-width:700px){
+ .compact-mode-tabs {display:none;}
+ .mobile-mode-picker {display:block;margin:12px 0 0;padding:12px;background:#f3f7fa;border:1px solid #cad7df;border-radius:8px;}
+ .mobile-mode-label,.payoff-basis legend {display:block;font-size:13px;font-weight:600;line-height:1.4;color:#29495f;margin:0 0 6px;padding:0;}
+ .mobile-mode-picker select {display:block;box-sizing:border-box;width:100%;min-width:0;min-height:44px;margin:0;padding:9px 32px 9px 10px;font:inherit;font-size:16px;line-height:1.4;color:#18374d;background:#fff;border:1px solid #a8bdcc;border-radius:6px;}
+ .payoff-basis {min-width:0;border:0;margin:0 0 10px;padding:0;}
+ .payoff-basis-options {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+ .payoff-basis-options label {position:relative;min-width:0;cursor:pointer;}
+ .payoff-basis-options input {position:absolute;width:1px;height:1px;opacity:0;}
+ .payoff-basis-options span {display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:44px;padding:8px 4px;border:1px solid #a8bdcc;border-radius:6px;background:#fff;color:#29495f;font-size:14px;line-height:1.35;text-align:center;}
+ .payoff-basis-options input:checked + span {color:#fff;background:#315f82;border-color:#315f82;font-weight:600;}
+ .payoff-basis-options input:focus-visible + span,.mobile-mode-picker select:focus-visible {outline:3px solid #d79028;outline-offset:2px;}
+}
+@media print {.mobile-mode-picker {display:none;}}
