@@ -34,8 +34,28 @@
     {
       "width": 1440,
       "overflow": false
-    }
+    },
+    "Mode switch preserves expression and answer",
+    "Scientific unary keys apply to the previous answer",
+    {
+      "scientific": "sin(30)",
+      "expected": "0.5"
+    },
+    {
+      "scientific": "sqrt(81)",
+      "expected": "9"
+    },
+    {
+      "scientific": "5!",
+      "expected": "120"
+    },
+    {
+      "scientific": "2^3^2",
+      "expected": "512"
+    },
+    "Angle setting works and survives mode changes; angle edits clear stale results",
+    "Scientific function wraps selected input"
   ],
   "errors": [],
-  "tested_at": "2026-10-21T09:03:42.079Z"
+  "tested_at": "2026-10-22T09:09:42.192Z"
 }

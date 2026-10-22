@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Optional homepage arithmetic calculator; desktop side panel, mobile collapsed, scientific engine loaded on evaluation",
+  "latest_change": "Homepage Basic default on all screens; lazy Scientific keypad with preserved expression/result and degree/radian support",
   "seo_generated_pages_checked": 86,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
@@ -63,5 +63,5 @@
   "independent_evergreen_tools": 6,
   "evergreen_modes": 19,
   "evergreen_browser_checks": 25,
-  "quick_calculator_browser_checks": 11
+  "quick_calculator_browser_checks": 19
 }

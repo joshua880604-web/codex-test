@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "tested_at": "2026-10-21T09:03:42.737Z",
+  "tested_at": "2026-10-22T09:09:41.358Z",
   "checks": [
     "Full directory, eight shortcuts, six category links and full-width layout",
     "Every category jump resolves",
