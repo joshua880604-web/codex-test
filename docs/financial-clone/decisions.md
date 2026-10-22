@@ -92,3 +92,7 @@ User authorized six fixed-formula calculators based on their US Keyword Planner 
 ## 2026-10-22 — Small glossary section
 
 User approved eight concise, source-checked glossary pages, a /glossary/ index and contextual calculator links. Dedicated definitions answer informational intent; existing guides retain operational calculation detail. Preserve calculator URLs and indexability environment gates. Finalize only glossary exports to directory indexes for the requested URL shape. No mass content pipeline or unrelated eCPM article; no rankings/citation guarantees. Evidence and scope: glossary-2026-10-22.md.
+
+## 2026-10-22 — Methodology transparency
+
+User requested an Omni-informed methodology improvement. Preserve the established page/canonical and distinguish actual validation from unsupported authority claims. Generate example default values from real field configurations; explain that future returns/inflation are editable illustrative presets with no recorded empirical calibration. Keep official rules, historical observations and stored FX dates separate. Publish actual review scope, reproducible examples, rounding and explicit issue-reporting path. No invented professional reviewers or AdSense approval claims; no runtime AI/API service. See methodology-review-2026-10-22.md.

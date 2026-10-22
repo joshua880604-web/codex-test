@@ -45,8 +45,8 @@ export async function generateMetadata({
   if (slug === "methodology.html")
     return pageMetadata(
       "/methodology.html",
-      "Calculation Methodology & Sources",
-      "Review calculation methods, official data versions, rounding, testing evidence and model limitations.",
+      "Calculator Methodology: Validation, Defaults & Data Sources",
+      "How we check calculations, where default inflation and return assumptions come from, which data versions we use, and what the models cover.",
     );
   return pageMetadata(
     directoryPath,
@@ -85,7 +85,7 @@ export default async function Page({
           ? "Calculation methodology and sources"
           : "Financial Calculators");
   return (
-    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : "page-wrap"}>
+    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : "page-wrap"}>
       <main id="main">
         <div className="breadcrumb">
           <a href="/">home</a> /{" "}
@@ -178,7 +178,7 @@ export default async function Page({
           </section>
         )}
       </main>
-      {slug !== "financial-calculator.html" && <Sidebar />}
+      {!["financial-calculator.html","methodology.html"].includes(slug) && <Sidebar />}
     </div>
   );
 }

@@ -63,3 +63,15 @@ Sources read with web tools for definitions and scope; examples independently co
 - https://www.consumerfinance.gov/ask-cfpb/on-a-mortgage-whats-the-difference-between-my-principal-and-interest-payment-and-my-total-monthly-payment-en-1941/
 - https://www.business.qld.gov.au/running-business/marketing-sales/marketing/calculators/mark-up
 - https://www.business.qld.gov.au/running-business/finance/improve-performance/ratios
+
+## 2026-10-22 — Methodology presentation and policy references
+
+Read current source modules/data metadata and selected documentation. Omni's editorial policy informs presentation of sources/checks/dates, not a claim of matching its personnel or peer-review process. No current-market forecast was inferred for existing defaults.
+
+- https://www.omnicalculator.com/editorial-policies
+- https://support.google.com/adsense/answer/7299563?hl=en
+- https://developers.cloudflare.com/pages/configuration/serving-pages/
+- https://www.bls.gov/cpi/questions-and-answers.htm
+- https://www.irs.gov/irb/2025-45_IRB
+
+Existing financial source records and data dates remain unchanged. See methodology-review-2026-10-22.md for the actual scope of validation and the repository feedback check.

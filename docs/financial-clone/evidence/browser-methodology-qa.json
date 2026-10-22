@@ -1,0 +1,105 @@
+{
+  "tested_at": "2026-10-22T14:39:35.959Z",
+  "passed": true,
+  "checks": [
+    {
+      "width": 320,
+      "noOverflow": true,
+      "allSectionsLinked": true,
+      "defaultsReadable": true
+    },
+    {
+      "width": 390,
+      "noOverflow": true,
+      "allSectionsLinked": true,
+      "defaultsReadable": true
+    },
+    {
+      "width": 768,
+      "noOverflow": true,
+      "allSectionsLinked": true,
+      "defaultsReadable": true
+    },
+    {
+      "width": 1440,
+      "noOverflow": true,
+      "allSectionsLinked": true,
+      "defaultsReadable": true
+    },
+    {
+      "calculator": "retirement",
+      "mode": "required",
+      "field": "inflation",
+      "publishedDefaultMatchesForm": true
+    },
+    {
+      "calculator": "retirement",
+      "mode": "required",
+      "field": "return",
+      "publishedDefaultMatchesForm": true
+    },
+    {
+      "calculator": "investment",
+      "mode": "end",
+      "field": "rate",
+      "publishedDefaultMatchesForm": true
+    },
+    {
+      "calculator": "investment-fee",
+      "mode": "impact",
+      "field": "rate",
+      "publishedDefaultMatchesForm": true
+    },
+    {
+      "calculator": "401k",
+      "mode": "projection",
+      "field": "return",
+      "publishedDefaultMatchesForm": true
+    },
+    {
+      "calculator": "401k",
+      "mode": "projection",
+      "field": "inflation",
+      "publishedDefaultMatchesForm": true
+    },
+    {
+      "calculator": "real-return",
+      "mode": "rate",
+      "field": "inflation",
+      "publishedDefaultMatchesForm": true
+    },
+    {
+      "calculator": "emergency-fund",
+      "mode": "goal",
+      "field": "months",
+      "publishedDefaultMatchesForm": true
+    },
+    {
+      "calculator": "loan",
+      "mode": "amortized",
+      "field": "rate",
+      "publishedDefaultMatchesForm": true
+    },
+    {
+      "example": "Zero-interest loan",
+      "publishedResultReproduced": true
+    },
+    {
+      "example": "Annual compounding",
+      "publishedResultReproduced": true
+    },
+    {
+      "inflation": "2.5",
+      "realReturn": "3.4146%"
+    },
+    {
+      "inflation": "3.5",
+      "realReturn": "2.4155%"
+    },
+    "Investment and retirement forms link directly to default-assumption explanations",
+    "Clean methodology alias and all internal links resolve; report is an explicit external link",
+    "Definitions, data sources and expandable defaults work without JavaScript"
+  ],
+  "errors": [],
+  "external_requests": 0
+}

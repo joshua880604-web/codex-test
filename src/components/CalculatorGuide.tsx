@@ -98,6 +98,7 @@ export default function CalculatorGuide({
           calculation methodology and review status
         </a>{" "}
         for data versions, rounding and validation limitations.
+        {" "}<a href="/methodology.html#default-assumptions">How default assumptions are chosen</a>.
       </p>
     </section>
   );

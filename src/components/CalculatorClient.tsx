@@ -303,6 +303,7 @@ export default function CalculatorClient({ calc, initialResult }: { calc: Calcul
               {id === "vat" || (id === "commission" && mode.id === "any-two") ? "Clear" : "Reset"}
             </button>
           </div>
+          {["Investment","Retirement"].includes(calc.category)&&mode.fields.some(field=>["return","rate","inflation","nominal"].includes(field.key))&&<p className="assumption-help">Planning rates are editable assumptions. <a href="/methodology.html#default-assumptions">About default values and their sources</a>.</p>}
         </form>
       </div>
       {error && (

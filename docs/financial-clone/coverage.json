@@ -7,7 +7,7 @@
   "local_browser_routes": 82,
   "local_browser_modes": 193,
   "numeric_tests": {
-    "total": 567,
+    "total": 570,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Eight source-checked glossary terms, nine static directory documents, calculator example presets and bidirectional links on 17 tools",
+  "latest_change": "Expanded methodology with real configured defaults, source/data versions, reproducible checks, rounding/review scope and explicit issue reporting",
   "seo_generated_pages_checked": 95,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
@@ -82,5 +82,8 @@
   "glossary_pages": 9,
   "glossary_calculator_backlinks": 17,
   "glossary_reproducible_examples": 7,
-  "glossary_browser_checks": 37
+  "glossary_browser_checks": 37,
+  "methodology_browser_checks": 20,
+  "methodology_default_examples": 9,
+  "methodology_reproducible_checks": 2
 }
