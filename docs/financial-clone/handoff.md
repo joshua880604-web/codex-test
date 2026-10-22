@@ -120,3 +120,9 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - Menu closes after selecting a link, outside pointer interaction, Escape (returning focus), or expanding to desktop. Native disclosure/navigation links work without JavaScript. 44px trigger and >=48px menu targets; no scroll lock, modal or new dependency.
 - Validation: 552 tests and 86-route static production build passed. Seven mobile-navigation checks cover 320/390/700/768/1440px, keyboard/outside close, cross-page search, native no-JS operation; 15 homepage regressions and 86-page SEO checks passed. 320px open menu screenshot visually inspected.
 - No calculation, domain, environment or indexing changes. Connected production branch synchronization can trigger existing Cloudflare Pages automatic deployment.
+
+### 2026-10-22 — Mobile Basic fits the first screen
+- Mobile directory now puts the compact Basic card before search; desktop ordering remains. Card heading and mode controls share a row, spacings/input/output are tightened, help is optional native disclosure, and the full scientific page link remains visible.
+- Keep 44px arithmetic targets on normal mobile heights. At <=520px viewport height, use 36px-tall wide keys and a shorter footer to fit short browser windows. Hide redundant home breadcrumb and visually reduce the page title only on short screens; semantics remain available. Scientific expansion remains scrollable.
+- Seven viewport checks (320x480, 320x568, 360x640, 375x667, 390x664, 390x844, 412x915) assert the entire Basic card is inside the first viewport and execute 2+3=5 with scrollY=0 and no input autofocus/system keyboard activation.
+- Validation: 552 tests, 86-route static build, 19 calculator interaction checks, 15 homepage checks and 86-page SEO checks passed. Small-phone screenshot inspected. No calculation, domain or production indexing setting changes.

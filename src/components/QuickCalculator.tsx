@@ -34,8 +34,8 @@ export default function QuickCalculator(){
    {scientificMode&&<><div className="quick-angle"><label htmlFor="quick-angle-unit">Angle unit</label><select id="quick-angle-unit" value={angle} onChange={e=>{change(expression);setAngle(e.target.value as 'Degrees'|'Radians');}}><option>Degrees</option><option>Radians</option></select></div><Suspense fallback={<p role="status">Loading scientific keys…</p>}><ScientificKeys press={press}/></Suspense></>}
    <div className="quick-keys" role="group" aria-label="Basic calculator keypad">{keys.map(key=><button type="button" key={key} aria-label={key==='AC'?'Clear quick calculation':key==='⌫'?'Delete last character':key} onMouseDown={e=>e.preventDefault()} onClick={()=>press(key)}>{key}</button>)}</div>
    <button type="button" className="quick-equals" disabled={busy} onClick={evaluate}>Calculate =</button>
-   <p id="quick-help">Enter to calculate · Esc to clear. % divides by 100: 100 + 10% = 100.1.</p>
-   <a href="/scientific-calculator.html">Open scientific calculator →</a>
+   <div className="quick-footer"><details className="quick-help-details"><summary>Help</summary><p id="quick-help">Enter to calculate · Esc to clear. % divides by 100: 100 + 10% = 100.1.</p></details>
+   <a href="/scientific-calculator.html">Open scientific calculator →</a></div>
   </div>
  </section>;
 }

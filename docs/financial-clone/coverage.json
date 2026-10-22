@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Compact mobile brand header and accessible Menu with full category/search links; no horizontal nav strip",
+  "latest_change": "Compact mobile Basic calculator before search, fits seven tested viewport sizes without scrolling",
   "seo_generated_pages_checked": 86,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
@@ -64,5 +64,6 @@
   "evergreen_modes": 19,
   "evergreen_browser_checks": 25,
   "quick_calculator_browser_checks": 19,
-  "mobile_navigation_browser_checks": 7
+  "mobile_navigation_browser_checks": 7,
+  "homepage_first_screen_browser_checks": 7
 }

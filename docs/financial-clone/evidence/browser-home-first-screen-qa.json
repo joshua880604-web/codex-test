@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "height": 480,
+      "cardBottom": 458,
+      "calculationWithoutScroll": true,
+      "noKeyboardAutofocus": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "cardBottom": 502,
+      "calculationWithoutScroll": true,
+      "noKeyboardAutofocus": true
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "cardBottom": 502,
+      "calculationWithoutScroll": true,
+      "noKeyboardAutofocus": true
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "cardBottom": 546,
+      "calculationWithoutScroll": true,
+      "noKeyboardAutofocus": true
+    },
+    {
+      "width": 390,
+      "height": 664,
+      "cardBottom": 546,
+      "calculationWithoutScroll": true,
+      "noKeyboardAutofocus": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "cardBottom": 546,
+      "calculationWithoutScroll": true,
+      "noKeyboardAutofocus": true
+    },
+    {
+      "width": 412,
+      "height": 915,
+      "cardBottom": 546,
+      "calculationWithoutScroll": true,
+      "noKeyboardAutofocus": true
+    }
+  ],
+  "tested_at": "2026-10-22T09:44:47.896Z"
+}
