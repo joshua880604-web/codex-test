@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "resultsUnderSearch": true,
+      "ambiguousStays": true,
+      "clearRestoresCalculatorState": true
+    },
+    {
+      "width": 390,
+      "resultsUnderSearch": true,
+      "ambiguousStays": true,
+      "clearRestoresCalculatorState": true
+    },
+    {
+      "width": 768,
+      "resultsUnderSearch": true,
+      "ambiguousStays": true,
+      "clearRestoresCalculatorState": true
+    },
+    {
+      "width": 1440,
+      "resultsUnderSearch": true,
+      "ambiguousStays": true,
+      "clearRestoresCalculatorState": true
+    },
+    {
+      "query": "car payment",
+      "route": "auto-loan",
+      "submit": "Enter"
+    },
+    {
+      "query": "mortgage",
+      "route": "mortgage",
+      "submit": "button"
+    },
+    {
+      "query": "CAGR Calculator",
+      "route": "cagr",
+      "submit": "Enter"
+    },
+    {
+      "query": "required minimum distribution",
+      "route": "rmd",
+      "submit": "button"
+    },
+    "No-result recovery"
+  ],
+  "errors": [],
+  "tested_at": "2026-10-22T10:10:16.694Z"
+}

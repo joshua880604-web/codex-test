@@ -136,3 +136,10 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - User requested swapping the two mobile positions: search is now above the compact calculator, with quick-access tools below. Desktop placement is unchanged.
 - This supersedes the previous calculator-first priority. Seven viewport checks verify visual order, no horizontal overflow and functioning arithmetic; the evidence records whether the entire card fits each viewport rather than promising a fit on every short window.
 - Static production build passed. No math, branding, environment or indexing changes.
+
+### 2026-10-22 — Results under search and explicit search submission
+- Results follow the search form immediately while searching; inline calculator is hidden without unmounting (expression/result preserved), quick-access section and category jump bar are suppressed. Clearing restores the normal layout and calculator state.
+- Added Search submit button and Enter behavior. A unique canonical tool name, unique exact known alias, or sole matched tool navigates to its controlled local route. Ambiguous/empty searches never auto-pick the first result; no matches offer recovery. Typing alone never navigates.
+- Rank title matches above keyword/alias matches and incidental description mentions; relevant groups lead (e.g. tax tools for tax). Preserve full pre-rendered links when query is empty and no API/service or dependency is introduced.
+- Validation: 557 tests and 86-route static build passed. Nine focused browser checks cover four viewport widths, result placement, ranking, explicit Enter/button navigation, ambiguity, zero-result recovery and clear restoring calculation state. Fifteen homepage checks and seven default mobile-layout checks passed; search mobile and default desktop screenshots inspected.
+- Production domain/indexing settings unchanged. Source synchronization to the Cloudflare-connected branch uses the existing automatic deployment workflow.

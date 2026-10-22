@@ -7,7 +7,7 @@
   "local_browser_routes": 82,
   "local_browser_modes": 193,
   "numeric_tests": {
-    "total": 552,
+    "total": 557,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Mobile search above compact calculator per user request; desktop layout preserved",
+  "latest_change": "Search results directly below form, relevant name/alias ranking and explicit Enter/Search navigation; calculator state restored on clear",
   "seo_generated_pages_checked": 86,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
@@ -66,5 +66,6 @@
   "quick_calculator_browser_checks": 19,
   "mobile_navigation_browser_checks": 7,
   "homepage_first_screen_browser_checks": 7,
-  "site_brand": "calculatorfree.io"
+  "site_brand": "calculatorfree.io",
+  "directory_search_browser_checks": 9
 }
