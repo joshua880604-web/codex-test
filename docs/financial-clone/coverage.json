@@ -7,7 +7,7 @@
   "local_browser_routes": 82,
   "local_browser_modes": 193,
   "numeric_tests": {
-    "total": 557,
+    "total": 567,
     "failed": 0
   },
   "full_one_to_one_verified_tools": 0,
@@ -17,8 +17,8 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Mobile-readable 5:7 portrait result PNG cards with larger result typography and prominent calculatorfree.io footer",
-  "seo_generated_pages_checked": 86,
+  "latest_change": "Eight source-checked glossary terms, nine static directory documents, calculator example presets and bidirectional links on 17 tools",
+  "seo_generated_pages_checked": 95,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
   "seo_browser_checks": 137,
@@ -77,5 +77,10 @@
     "aspect_ratio": "5:7"
   },
   "result_card_default_mode_exports": 193,
-  "result_card_edge_browser_checks": 3
+  "result_card_edge_browser_checks": 3,
+  "glossary_terms": 8,
+  "glossary_pages": 9,
+  "glossary_calculator_backlinks": 17,
+  "glossary_reproducible_examples": 7,
+  "glossary_browser_checks": 37
 }

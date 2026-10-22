@@ -1,0 +1,591 @@
+[
+  {
+    "slug": "compound-interest",
+    "name": "Compound interest",
+    "title": "What Is Compound Interest? Definition and Example",
+    "description": "Compound interest earns interest on earlier interest. See a three-year example, the formula, and how compounding differs from simple interest.",
+    "category": "Saving & investing",
+    "aliases": [
+      "Compounding"
+    ],
+    "definition": "Compound interest is interest calculated on both the original principal and interest already added to the balance.",
+    "explanation": "When earnings stay invested, they become part of the amount earning the next period’s return. At a fixed positive rate, the interest earned each period grows even when you add no new money. The compounding frequency tells you how often interest is added; monthly and annual nominal rates need equivalent-rate conversion before comparison.",
+    "formula": "Future value = principal × (1 + annual nominal rate / periods per year)^(periods per year × years)",
+    "formulaNote": "Use rates as decimals: 4% is 0.04. This formula assumes a constant rate, no extra deposits or withdrawals, and no taxes or fees.",
+    "example": {
+      "title": "$1,500 growing at 4% for three years",
+      "intro": "Start with $1,500 and compound once each year at a hypothetical 4% annual rate.",
+      "steps": [
+        "Year 1: $1,500 × 1.04 = $1,560; interest is $60.",
+        "Year 2: $1,560 × 1.04 = $1,622.40; interest is $62.40.",
+        "Year 3: $1,622.40 × 1.04 = $1,687.296, displayed as $1,687.30."
+      ],
+      "answer": "Total interest is $187.30, versus $180 with simple interest on the original $1,500.",
+      "assumptions": "Annual compounding; no contributions, withdrawals, taxes or fees. Carry full precision until the displayed result.",
+      "calculator": {
+        "id": "compound-interest",
+        "mode": "growth",
+        "values": {
+          "principal": 1500,
+          "years": 3,
+          "months": 0,
+          "rate": 4,
+          "compound": "Annually",
+          "annual": 0,
+          "monthly": 0,
+          "timing": "End of period",
+          "tax": 0,
+          "inflation": 0
+        },
+        "expected": [
+          {
+            "label": "Ending balance",
+            "value": 1687.296
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "Compounding is a mechanism, not a promised return",
+      "text": "A savings rate may change and investment returns can be negative. A smooth fixed-rate projection does not represent market volatility. Simple interest, by comparison, is calculated on the original principal without earning interest on prior interest."
+    },
+    "tools": [
+      {
+        "id": "compound-interest",
+        "text": "Project a balance in Compound Growth, or compare equivalent compounding rates."
+      },
+      {
+        "id": "interest",
+        "text": "Explore how regular contributions change the projected balance."
+      }
+    ],
+    "related": [
+      "cagr",
+      "dollar-cost-averaging",
+      "real-rate-of-return"
+    ],
+    "sources": [
+      {
+        "title": "SEC Investor.gov: Compound Interest",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/compound-interest"
+      },
+      {
+        "title": "OpenStax: Applications of Time Value of Money",
+        "url": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance"
+      }
+    ],
+    "checkedOn": "2026-10-22"
+  },
+  {
+    "slug": "cagr",
+    "name": "CAGR",
+    "title": "What Is CAGR? Compound Annual Growth Rate Explained",
+    "description": "CAGR expresses growth between two values as one annual compounded rate. Learn the formula, see an example, and understand its cash-flow limitations.",
+    "category": "Saving & investing",
+    "aliases": [
+      "Compound annual growth rate",
+      "Annualized growth rate"
+    ],
+    "definition": "CAGR, or compound annual growth rate, is the constant yearly growth rate that would turn a beginning value into an ending value over a specified number of years.",
+    "explanation": "It summarizes the endpoints as an annual compounded rate. CAGR can describe an investment balance, revenue or sales, but its interpretation depends on what the values represent. For investment performance, the simple endpoint formula assumes no intervening external deposits or withdrawals. Reinvested income must already be included in the ending value to measure total return.",
+    "formula": "CAGR = (ending value / beginning value)^(1 / years) − 1",
+    "formulaNote": "Multiply the decimal result by 100 for a percentage. Use a positive beginning value, a nonnegative ending value and a positive elapsed period.",
+    "example": {
+      "title": "$8,000 becoming $10,648 in three years",
+      "intro": "Suppose an investment grows from $8,000 to $10,648 with no external cash flows.",
+      "steps": [
+        "Total growth: $10,648 / $8,000 − 1 = 33.1%.",
+        "Annualize by compounding: (10,648 / 8,000)^(1/3) − 1 = 10%.",
+        "Check: $8,000 × 1.10 × 1.10 × 1.10 = $10,648."
+      ],
+      "answer": "CAGR is 10% per year. Dividing 33.1% by three gives about 11.03%, which does not reproduce the ending value when compounded.",
+      "assumptions": "Three full years; no external deposits or withdrawals. Values and any reinvested income are measured consistently.",
+      "calculator": {
+        "id": "cagr",
+        "mode": "rate",
+        "values": {
+          "begin": 8000,
+          "end": 10648,
+          "years": 3
+        },
+        "expected": [
+          {
+            "label": "Compound annual growth rate",
+            "value": 10
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "CAGR hides the path between the endpoints",
+      "text": "A 10% CAGR does not mean the investment gained 10% every year. Very different gains and losses can produce the same endpoints. New contributions can also increase an account balance without representing investment growth; use a cash-flow-aware method such as IRR when appropriate."
+    },
+    "tools": [
+      {
+        "id": "cagr",
+        "text": "Find CAGR, solve for a beginning or ending value, or use dates."
+      },
+      {
+        "id": "average-return",
+        "text": "Compare arithmetic and geometric return measures for a sequence of returns."
+      }
+    ],
+    "related": [
+      "compound-interest",
+      "real-rate-of-return"
+    ],
+    "sources": [
+      {
+        "title": "FINRA: How Are Your Investments Doing? Returns, Explained",
+        "url": "https://syndication.finra.org/content/how-are-your-investments-doing-returns-explained"
+      }
+    ],
+    "checkedOn": "2026-10-22"
+  },
+  {
+    "slug": "real-rate-of-return",
+    "name": "Real rate of return",
+    "title": "What Is Real Rate of Return? Inflation-Adjusted Example",
+    "description": "Real return measures the change in purchasing power after inflation. See the exact formula and why subtracting inflation is only an approximation.",
+    "category": "Saving & investing",
+    "aliases": [
+      "Inflation-adjusted return",
+      "Real return"
+    ],
+    "definition": "Real rate of return measures how much an investment’s purchasing power changes after adjusting its nominal return for inflation over the same period.",
+    "explanation": "Nominal return describes the change in money value. Real return asks how much more or less that money can buy. A positive nominal return can still mean a loss of purchasing power when prices rise faster. An expected real return uses assumed inflation; a realized real return uses inflation measured over the investment period.",
+    "formula": "Real return = (1 + nominal return) / (1 + inflation rate) − 1",
+    "formulaNote": "Use decimal rates covering the same period. Subtracting inflation from nominal return is a convenient approximation, not the exact calculation.",
+    "example": {
+      "title": "An 8% return with 3% inflation",
+      "intro": "An investment of $1,000 earns a hypothetical 8% over one year, while the price level rises 3%.",
+      "steps": [
+        "Nominal ending value: $1,000 × 1.08 = $1,080.",
+        "In starting-year purchasing power: $1,080 / 1.03 ≈ $1,048.54.",
+        "Real return: 1.08 / 1.03 − 1 ≈ 4.8544%."
+      ],
+      "answer": "Purchasing power rises about 4.85%, rather than the 5% given by simple subtraction.",
+      "assumptions": "One year; the return and inflation rate cover the same dates. This example excludes taxes and fees.",
+      "calculator": {
+        "id": "real-return",
+        "mode": "rate",
+        "values": {
+          "nominal": 8,
+          "inflation": 3
+        },
+        "expected": [
+          {
+            "label": "Real annual return",
+            "value": 4.85436893203884
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "After inflation does not automatically mean after tax",
+      "text": "State whether the nominal return includes fees and taxes before comparing real returns. A broad price index also measures an average basket, so your own spending costs may change differently. Future inflation and returns are assumptions, not known outcomes."
+    },
+    "tools": [
+      {
+        "id": "real-return",
+        "text": "Convert nominal and real rates or project purchasing power under entered assumptions."
+      },
+      {
+        "id": "inflation",
+        "text": "Explore price-level changes and review the tool’s historical-data coverage."
+      }
+    ],
+    "related": [
+      "cagr",
+      "compound-interest",
+      "expense-ratio"
+    ],
+    "sources": [
+      {
+        "title": "St. Louis Fed: Adjusting for Inflation",
+        "url": "https://www.stlouisfed.org/publications/page-one-economics/2023/01/03/adjusting-for-inflation"
+      },
+      {
+        "title": "OpenStax: Nominal versus Real Interest Rates and the Fisher Relationship",
+        "url": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance"
+      }
+    ],
+    "checkedOn": "2026-10-22"
+  },
+  {
+    "slug": "expense-ratio",
+    "name": "Expense ratio",
+    "title": "What Is an Expense Ratio? Fund Fees Explained",
+    "description": "An expense ratio expresses a fund’s annual operating costs as a percentage of average net assets. See a cost example and avoid counting fees twice.",
+    "category": "Saving & investing",
+    "aliases": [
+      "Fund expense ratio"
+    ],
+    "definition": "An expense ratio is a fund’s annual operating expenses expressed as a percentage of its average net assets.",
+    "explanation": "Mutual funds and ETFs pay operating expenses from fund assets, which reduces the return available to investors. The ratio is annual, even when expenses accrue throughout the year. It is not a fee charged on each purchase, and it does not include every possible cost of investing, such as all trading costs or a separately billed adviser fee. Check the prospectus for the applicable figure and any fee-waiver terms.",
+    "formula": "Approximate annual cost = average invested balance × expense ratio",
+    "formulaNote": "Use a decimal ratio: 0.25% is 0.0025. The dollar estimate assumes a constant average balance; actual accrual follows the fund’s practices.",
+    "example": {
+      "title": "A 0.25% expense ratio on $20,000",
+      "intro": "Keep the balance at $20,000 for one year to isolate the fee arithmetic.",
+      "steps": [
+        "Convert the rate: 0.25 / 100 = 0.0025.",
+        "Estimated annual operating cost: $20,000 × 0.0025 = $50.",
+        "With no return or new deposits, the simplified annual model ends at $19,950."
+      ],
+      "answer": "The illustration costs $50 for the year. A 0.25% annual expense ratio is not a 25% charge.",
+      "assumptions": "Zero gross return and no contributions or adviser fees. The calculator uses a simplified annual deduction, not the fund’s daily expense accrual.",
+      "calculator": {
+        "id": "investment-fee",
+        "mode": "impact",
+        "values": {
+          "balance": 20000,
+          "deposit": 0,
+          "years": 1,
+          "rate": 0,
+          "basis": "Before fund fees",
+          "fund": 0.25,
+          "advisor": 0
+        },
+        "expected": [
+          {
+            "label": "Modeled fees paid",
+            "value": 50
+          },
+          {
+            "label": "Ending balance after modeled fees",
+            "value": 19950
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "Check whether your return already includes the fee",
+      "text": "A fund’s published performance commonly already reflects operating expenses. Deducting the expense ratio again would count the same cost twice. The fee calculator’s After fund fees setting skips that second deduction; separately modeled adviser fees can still apply. Lower fees alone do not establish which investment is suitable."
+    },
+    "tools": [
+      {
+        "id": "investment-fee",
+        "text": "Estimate fee costs and compare two fee structures under explicit return assumptions."
+      },
+      {
+        "id": "mutual-fund",
+        "text": "Explore a fund projection and its separate fee assumptions."
+      }
+    ],
+    "related": [
+      "compound-interest",
+      "real-rate-of-return",
+      "401k"
+    ],
+    "sources": [
+      {
+        "title": "SEC Investor.gov: Expense Ratio",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/expense-ratio"
+      },
+      {
+        "title": "SEC Investor.gov: How Fees and Expenses Affect Your Investment Portfolio",
+        "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated"
+      }
+    ],
+    "checkedOn": "2026-10-22"
+  },
+  {
+    "slug": "dollar-cost-averaging",
+    "name": "Dollar-cost averaging",
+    "title": "What Is Dollar-Cost Averaging? Example and Limitations",
+    "description": "Dollar-cost averaging invests a fixed amount on a regular schedule. See how share purchases change with price and why the strategy can still lose money.",
+    "category": "Saving & investing",
+    "aliases": [
+      "DCA",
+      "Regular fixed-amount investing"
+    ],
+    "definition": "Dollar-cost averaging means investing the same amount of money at regular intervals regardless of the current market price.",
+    "explanation": "A fixed contribution buys more shares when prices are lower and fewer when they are higher. This makes the investment schedule consistent without requiring a price forecast. Investing new income as it arrives and gradually investing cash already available have different opportunity costs: money waiting in cash misses both gains and losses in the investment.",
+    "formula": "Average purchase cost per share = total money invested / total shares purchased",
+    "formulaNote": "For each purchase, shares = contribution / share price. The average cost is weighted by the number of shares bought, not a simple average of the purchase prices.",
+    "example": {
+      "title": "$120 invested on each of three dates",
+      "intro": "Assume fractional shares are available and buy the same investment each time.",
+      "steps": [
+        "First purchase at $12 per share: $120 / $12 = 10 shares.",
+        "Second purchase at $10 per share: $120 / $10 = 12 shares.",
+        "Third purchase at $8 per share: $120 / $8 = 15 shares."
+      ],
+      "answer": "You invest $360 and own 37 shares, at an average cost of about $9.73 each. At the final $8 price, those shares are worth $296: a $64 loss.",
+      "assumptions": "Three purchases; fractional shares allowed; no fees or dividends. Prices are hypothetical and are not a forecast."
+    },
+    "pitfall": {
+      "title": "Buying more shares at lower prices does not guarantee a profit",
+      "text": "Losses remain possible, as the example shows. Phasing in a lump sum can also trail investing it immediately when prices rise. Our Investment Calculator estimates regular-contribution growth at an assumed constant return; it does not replay share prices or calculate the share-weighted cost shown above."
+    },
+    "tools": [
+      {
+        "id": "investment",
+        "text": "Estimate balances from regular contributions using a hypothetical constant return. This is a contribution projection, not a share-price DCA backtest."
+      },
+      {
+        "id": "401k",
+        "text": "Explore recurring payroll contributions and an assumed employer match in a retirement projection."
+      }
+    ],
+    "related": [
+      "compound-interest",
+      "401k",
+      "expense-ratio"
+    ],
+    "sources": [
+      {
+        "title": "SEC Investor.gov: Dollar Cost Averaging",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging"
+      },
+      {
+        "title": "FINRA: The Benefits and Limitations of Dollar-Cost Averaging",
+        "url": "https://syndication.finra.org/content/benefits-and-limitations-dollar-cost-averaging"
+      }
+    ],
+    "checkedOn": "2026-10-22"
+  },
+  {
+    "slug": "401k",
+    "name": "401(k)",
+    "title": "What Is a 401(k)? Contributions and Employer Match",
+    "description": "A 401(k) is a U.S. employer-sponsored retirement plan. Learn the basics of contributions, traditional versus Roth treatment, matching and vesting.",
+    "category": "Retirement",
+    "aliases": [
+      "401k",
+      "401(k) retirement plan"
+    ],
+    "definition": "A 401(k) is a U.S. employer-sponsored retirement plan that lets eligible employees contribute part of their pay to a tax-advantaged retirement account.",
+    "explanation": "Traditional pre-tax employee contributions generally defer federal income tax until withdrawal. A plan may also offer designated Roth contributions, made with after-tax pay; qualified Roth withdrawals are generally tax-free. Employers may add matching contributions under the plan’s formula. Your own elective deferrals are fully vested, while some employer contributions become yours over a vesting schedule.",
+    "formula": "Illustrative employer match = salary × min(employee contribution rate, matched salary percentage) × match rate",
+    "formulaNote": "This describes a simple single-tier match before legal and plan limits. Actual plans may use different tiers, eligibility, payroll timing and vesting rules.",
+    "example": {
+      "title": "A 50% match on the first 6% of salary",
+      "intro": "Suppose the plan matches half of your contributions up to 6% of an eligible $50,000 annual salary, and you contribute 6%.",
+      "steps": [
+        "Your annual contribution: $50,000 × 6% = $3,000.",
+        "Employer contribution: $50,000 × 6% × 50% = $1,500.",
+        "Together, the deposits total $4,500 before any investment return."
+      ],
+      "answer": "The 50% match adds $1,500. It does not mean the employer contributes 50% of your salary.",
+      "assumptions": "A one-year arithmetic illustration using projection ages 30–31, a zero opening balance and zero return. It assumes eligibility, full vesting and no applicable cap reduction; the projection is before tax and fees.",
+      "calculator": {
+        "id": "401k",
+        "mode": "projection",
+        "values": {
+          "age": 30,
+          "retire": 31,
+          "life": 90,
+          "salary": 50000,
+          "balance": 0,
+          "contribution": 6,
+          "match": 50,
+          "match_limit": 6,
+          "salary_growth": 0,
+          "return": 0,
+          "inflation": 0
+        },
+        "expected": [
+          {
+            "label": "Employee contributions",
+            "value": 3000
+          },
+          {
+            "label": "Employer contributions",
+            "value": 1500
+          },
+          {
+            "label": "Projected 401(k) balance",
+            "value": 4500
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "The account’s tax treatment is not its investment return",
+      "text": "Investment performance depends on the assets selected. Contribution limits change by year, and early withdrawals may face taxes and additional charges. Check the current IRS guidance and your plan document. Our projection states its modeled limit year and assumes full vesting; it does not determine your personal eligibility or traditional-versus-Roth tax outcome."
+    },
+    "tools": [
+      {
+        "id": "401k",
+        "text": "Project employee contributions, employer matching and a hypothetical retirement balance."
+      },
+      {
+        "id": "retirement",
+        "text": "Explore retirement savings and withdrawal assumptions beyond one account type."
+      }
+    ],
+    "related": [
+      "compound-interest",
+      "dollar-cost-averaging",
+      "expense-ratio"
+    ],
+    "sources": [
+      {
+        "title": "IRS: 401(k) Plan Overview for Participants",
+        "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/401k-resource-guide-plan-participants-401k-plan-overview"
+      },
+      {
+        "title": "IRS: Designated Roth Accounts",
+        "url": "https://www.irs.gov/retirement-plans/retirement-plans-faqs-on-designated-roth-accounts"
+      },
+      {
+        "title": "IRS: 401(k) and Profit-Sharing Plan Contribution Limits",
+        "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits"
+      }
+    ],
+    "checkedOn": "2026-10-22"
+  },
+  {
+    "slug": "amortization",
+    "name": "Amortization",
+    "title": "What Is Loan Amortization? Principal and Interest Explained",
+    "description": "Loan amortization pays down principal through scheduled payments. See how a payment splits into interest and principal, and what an amortization table shows.",
+    "category": "Loans & debt",
+    "aliases": [
+      "Loan amortization"
+    ],
+    "definition": "Loan amortization is the repayment of a loan’s principal through scheduled payments over time, with interest calculated under the loan’s terms.",
+    "explanation": "For a fully amortizing fixed-rate loan with equal payments, each payment first covers the period’s interest and the remainder reduces principal. As the outstanding balance falls, the interest portion generally falls and the principal portion rises. An amortization schedule shows that split and the remaining balance after each payment. Here the term refers to loans, rather than the accounting treatment of intangible assets.",
+    "formula": "Period interest = opening balance × period rate; principal repaid = payment − interest",
+    "formulaNote": "A fully amortizing payment is chosen to clear the balance over the term. At a zero rate, the payment is simply principal divided by the number of payments.",
+    "example": {
+      "title": "The first payment on a $12,000, two-year loan",
+      "intro": "Borrow $12,000 at a 6% nominal annual rate with 24 equal monthly payments.",
+      "steps": [
+        "Monthly rate: 6% / 12 = 0.5%.",
+        "The level monthly payment is approximately $531.85.",
+        "First month’s interest: $12,000 × 0.5% = $60; about $471.85 goes to principal."
+      ],
+      "answer": "The balance after the first payment is about $11,528.15. Later payments have a smaller interest portion as the balance declines.",
+      "assumptions": "Monthly end-of-period payments; no fees, insurance, extra payments or rate changes. The calculator carries full precision, so lender schedules using payment-by-payment cent rounding can differ slightly.",
+      "calculator": {
+        "id": "amortization",
+        "mode": "schedule",
+        "values": {
+          "principal": 12000,
+          "years": 2,
+          "months": 0,
+          "rate": 6,
+          "start": "2026-01-01",
+          "extra_monthly": 0,
+          "extra_yearly": 0,
+          "extra_once": 0
+        },
+        "expected": [
+          {
+            "label": "Payment per period",
+            "value": 531.8473230331
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "A fixed payment does not mean a fixed principal repayment",
+      "text": "The principal-and-interest split changes over the schedule. Mortgage taxes and insurance are separate from that split. A payment below the interest due may increase the balance, called negative amortization; an interest-only loan does not reduce principal during its interest-only period."
+    },
+    "tools": [
+      {
+        "id": "amortization",
+        "text": "Inspect the principal, interest and remaining balance for each payment."
+      },
+      {
+        "id": "mortgage",
+        "text": "Separate mortgage principal and interest from other ownership costs."
+      },
+      {
+        "id": "loan",
+        "text": "Compare loan terms and payment-frequency assumptions."
+      }
+    ],
+    "related": [
+      "compound-interest"
+    ],
+    "sources": [
+      {
+        "title": "CFPB: What Is Amortization and How Could It Affect My Auto Loan?",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-amortization-and-how-could-it-affect-my-auto-loan-en-771/"
+      },
+      {
+        "title": "CFPB: Principal and Interest versus Total Monthly Payment",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/on-a-mortgage-whats-the-difference-between-my-principal-and-interest-payment-and-my-total-monthly-payment-en-1941/"
+      }
+    ],
+    "checkedOn": "2026-10-22"
+  },
+  {
+    "slug": "markup-vs-margin",
+    "name": "Markup vs. margin",
+    "title": "Markup vs. Margin: Difference, Formulas and Example",
+    "description": "Markup divides gross profit by cost; margin divides it by selling price. Compare both with a clear example and convert between the two percentages.",
+    "category": "Business & pricing",
+    "aliases": [
+      "Margin vs. markup",
+      "Markup and margin"
+    ],
+    "definition": "Markup expresses gross profit as a percentage of cost, while gross profit margin expresses the same profit as a percentage of selling price.",
+    "explanation": "Both start with selling price minus cost, but their denominators answer different questions. Markup describes the amount added to cost to set a price. Margin describes how much of each sales dollar remains after that cost. For a product calculation, specify what the cost includes and keep sales tax treatment consistent. Gross profit is not net profit after all business expenses.",
+    "formula": "Markup = (price − cost) / cost; margin = (price − cost) / price",
+    "formulaNote": "Multiply decimal ratios by 100 for percentages. With positive cost and price: margin = markup / (1 + markup), and markup = margin / (1 − margin).",
+    "example": {
+      "title": "A product costing $80 and selling for $100",
+      "intro": "Use a cost of $80 and a selling price of $100, both excluding sales tax.",
+      "steps": [
+        "Gross profit per item: $100 − $80 = $20.",
+        "Markup on cost: $20 / $80 = 25%.",
+        "Gross profit margin on price: $20 / $100 = 20%."
+      ],
+      "answer": "The same $20 profit is a 25% markup and a 20% margin. A 25% margin would instead require a price of $80 / 0.75 ≈ $106.67.",
+      "assumptions": "Positive unit cost and selling price; no sales tax. This compares product-level gross profit before other operating expenses.",
+      "calculator": {
+        "id": "markup",
+        "mode": "compare",
+        "values": {
+          "cost": 80,
+          "price": 100
+        },
+        "expected": [
+          {
+            "label": "Markup on cost",
+            "value": 25
+          },
+          {
+            "label": "Profit margin",
+            "value": 20
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "Do not enter a target margin as a markup",
+      "text": "Adding 20% to cost produces a 16.67% margin, not 20%. At positive cost, a 100% gross margin is unattainable at a finite price. A product’s positive gross margin also does not show whether sales cover rent, staff and other operating costs."
+    },
+    "tools": [
+      {
+        "id": "markup",
+        "text": "Convert markup and margin or solve for cost and selling price."
+      },
+      {
+        "id": "margin",
+        "text": "Calculate gross margin from product cost and revenue."
+      },
+      {
+        "id": "break-even",
+        "text": "Explore how fixed and variable costs affect the sales needed to break even."
+      }
+    ],
+    "related": [],
+    "sources": [
+      {
+        "title": "Business Queensland: Mark-up Pricing",
+        "url": "https://www.business.qld.gov.au/running-business/marketing-sales/marketing/calculators/mark-up"
+      },
+      {
+        "title": "Business Queensland: Financial Ratios and Gross Profit Margin",
+        "url": "https://www.business.qld.gov.au/running-business/finance/improve-performance/ratios"
+      }
+    ],
+    "checkedOn": "2026-10-22"
+  }
+]

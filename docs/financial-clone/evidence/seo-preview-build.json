@@ -2,7 +2,7 @@
   "passed": true,
   "configuration": "default-noindex-preview",
   "test_origin": null,
-  "pages": 86,
+  "pages": 95,
   "checks": [
     {
       "route": "/mortgage-calculator.html",
@@ -422,7 +422,7 @@
     {
       "route": "/about.html",
       "canonical": [],
-      "h1": "About Financial Calculators"
+      "h1": "About calculatorfree.io"
     },
     {
       "route": "/privacy.html",
@@ -433,6 +433,51 @@
       "route": "/methodology.html",
       "canonical": [],
       "h1": "Calculation methodology and sources"
+    },
+    {
+      "route": "/glossary/",
+      "canonical": [],
+      "h1": "Financial glossary"
+    },
+    {
+      "route": "/glossary/compound-interest/",
+      "canonical": [],
+      "h1": "What Is Compound Interest? Definition and Example"
+    },
+    {
+      "route": "/glossary/cagr/",
+      "canonical": [],
+      "h1": "What Is CAGR? Compound Annual Growth Rate Explained"
+    },
+    {
+      "route": "/glossary/real-rate-of-return/",
+      "canonical": [],
+      "h1": "What Is Real Rate of Return? Inflation-Adjusted Example"
+    },
+    {
+      "route": "/glossary/expense-ratio/",
+      "canonical": [],
+      "h1": "What Is an Expense Ratio? Fund Fees Explained"
+    },
+    {
+      "route": "/glossary/dollar-cost-averaging/",
+      "canonical": [],
+      "h1": "What Is Dollar-Cost Averaging? Example and Limitations"
+    },
+    {
+      "route": "/glossary/401k/",
+      "canonical": [],
+      "h1": "What Is a 401(k)? Contributions and Employer Match"
+    },
+    {
+      "route": "/glossary/amortization/",
+      "canonical": [],
+      "h1": "What Is Loan Amortization? Principal and Interest Explained"
+    },
+    {
+      "route": "/glossary/markup-vs-margin/",
+      "canonical": [],
+      "h1": "Markup vs. Margin: Difference, Formulas and Example"
     }
   ],
   "no_live_indexing_or_ranking_claim": true

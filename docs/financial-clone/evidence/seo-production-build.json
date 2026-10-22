@@ -1,533 +1,673 @@
 {
   "passed": true,
   "configuration": "indexable-test-origin",
-  "test_origin": "https://seo-validation.example",
-  "pages": 75,
+  "test_origin": "https://calculatorfree.io",
+  "pages": 95,
   "checks": [
     {
       "route": "/mortgage-calculator.html",
       "canonical": [
-        "https://seo-validation.example/mortgage-calculator.html"
+        "https://calculatorfree.io/mortgage-calculator.html"
       ],
       "h1": "Mortgage Calculator"
     },
     {
       "route": "/amortization-calculator.html",
       "canonical": [
-        "https://seo-validation.example/amortization-calculator.html"
+        "https://calculatorfree.io/amortization-calculator.html"
       ],
       "h1": "Amortization Calculator"
     },
     {
       "route": "/mortgage-payoff-calculator.html",
       "canonical": [
-        "https://seo-validation.example/mortgage-payoff-calculator.html"
+        "https://calculatorfree.io/mortgage-payoff-calculator.html"
       ],
       "h1": "Mortgage Payoff Calculator"
     },
     {
       "route": "/house-affordability-calculator.html",
       "canonical": [
-        "https://seo-validation.example/house-affordability-calculator.html"
+        "https://calculatorfree.io/house-affordability-calculator.html"
       ],
       "h1": "House Affordability Calculator"
     },
     {
       "route": "/rent-calculator.html",
       "canonical": [
-        "https://seo-validation.example/rent-calculator.html"
+        "https://calculatorfree.io/rent-calculator.html"
       ],
       "h1": "Rent Calculator"
     },
     {
       "route": "/debt-ratio-calculator.html",
       "canonical": [
-        "https://seo-validation.example/debt-ratio-calculator.html"
+        "https://calculatorfree.io/debt-ratio-calculator.html"
       ],
       "h1": "Debt-to-Income Ratio Calculator"
     },
     {
       "route": "/real-estate-calculator.html",
       "canonical": [
-        "https://seo-validation.example/real-estate-calculator.html"
+        "https://calculatorfree.io/real-estate-calculator.html"
       ],
       "h1": "Real Estate Calculator"
     },
     {
       "route": "/refinance-calculator.html",
       "canonical": [
-        "https://seo-validation.example/refinance-calculator.html"
+        "https://calculatorfree.io/refinance-calculator.html"
       ],
       "h1": "Refinance Calculator"
     },
     {
       "route": "/rental-property-calculator.html",
       "canonical": [
-        "https://seo-validation.example/rental-property-calculator.html"
+        "https://calculatorfree.io/rental-property-calculator.html"
       ],
       "h1": "Rental Property Calculator"
     },
     {
       "route": "/apr-calculator.html",
       "canonical": [
-        "https://seo-validation.example/apr-calculator.html"
+        "https://calculatorfree.io/apr-calculator.html"
       ],
       "h1": "APR Calculator"
     },
     {
       "route": "/fha-loan-calculator.html",
       "canonical": [
-        "https://seo-validation.example/fha-loan-calculator.html"
+        "https://calculatorfree.io/fha-loan-calculator.html"
       ],
       "h1": "FHA Loan Calculator"
     },
     {
       "route": "/va-mortgage-calculator.html",
       "canonical": [
-        "https://seo-validation.example/va-mortgage-calculator.html"
+        "https://calculatorfree.io/va-mortgage-calculator.html"
       ],
       "h1": "VA Mortgage Calculator"
     },
     {
       "route": "/home-equity-loan-calculator.html",
       "canonical": [
-        "https://seo-validation.example/home-equity-loan-calculator.html"
+        "https://calculatorfree.io/home-equity-loan-calculator.html"
       ],
       "h1": "Home Equity Loan Calculator"
     },
     {
       "route": "/heloc-calculator.html",
       "canonical": [
-        "https://seo-validation.example/heloc-calculator.html"
+        "https://calculatorfree.io/heloc-calculator.html"
       ],
       "h1": "HELOC Calculator"
     },
     {
       "route": "/down-payment-calculator.html",
       "canonical": [
-        "https://seo-validation.example/down-payment-calculator.html"
+        "https://calculatorfree.io/down-payment-calculator.html"
       ],
       "h1": "Down Payment Calculator"
     },
     {
       "route": "/rent-vs-buy-calculator.html",
       "canonical": [
-        "https://seo-validation.example/rent-vs-buy-calculator.html"
+        "https://calculatorfree.io/rent-vs-buy-calculator.html"
       ],
       "h1": "Rent vs. Buy Calculator"
     },
     {
       "route": "/auto-loan-calculator.html",
       "canonical": [
-        "https://seo-validation.example/auto-loan-calculator.html"
+        "https://calculatorfree.io/auto-loan-calculator.html"
       ],
       "h1": "Auto Loan Calculator"
     },
     {
       "route": "/cash-back-or-low-interest-calculator.html",
       "canonical": [
-        "https://seo-validation.example/cash-back-or-low-interest-calculator.html"
+        "https://calculatorfree.io/cash-back-or-low-interest-calculator.html"
       ],
       "h1": "Cash Back or Low Interest Calculator"
     },
     {
       "route": "/auto-lease-calculator.html",
       "canonical": [
-        "https://seo-validation.example/auto-lease-calculator.html"
+        "https://calculatorfree.io/auto-lease-calculator.html"
       ],
       "h1": "Auto Lease Calculator"
     },
     {
       "route": "/interest-calculator.html",
       "canonical": [
-        "https://seo-validation.example/interest-calculator.html"
+        "https://calculatorfree.io/interest-calculator.html"
       ],
       "h1": "Interest Calculator"
     },
     {
       "route": "/investment-calculator.html",
       "canonical": [
-        "https://seo-validation.example/investment-calculator.html"
+        "https://calculatorfree.io/investment-calculator.html"
       ],
       "h1": "Investment Calculator"
     },
     {
       "route": "/finance-calculator.html",
       "canonical": [
-        "https://seo-validation.example/finance-calculator.html"
+        "https://calculatorfree.io/finance-calculator.html"
       ],
       "h1": "Finance Calculator"
     },
     {
       "route": "/compound-interest-calculator.html",
       "canonical": [
-        "https://seo-validation.example/compound-interest-calculator.html"
+        "https://calculatorfree.io/compound-interest-calculator.html"
       ],
       "h1": "Compound Interest Calculator"
     },
     {
       "route": "/interest-rate-calculator.html",
       "canonical": [
-        "https://seo-validation.example/interest-rate-calculator.html"
+        "https://calculatorfree.io/interest-rate-calculator.html"
       ],
       "h1": "Interest Rate Calculator"
     },
     {
       "route": "/savings-calculator.html",
       "canonical": [
-        "https://seo-validation.example/savings-calculator.html"
+        "https://calculatorfree.io/savings-calculator.html"
       ],
       "h1": "Savings Calculator"
     },
     {
       "route": "/simple-interest-calculator.html",
       "canonical": [
-        "https://seo-validation.example/simple-interest-calculator.html"
+        "https://calculatorfree.io/simple-interest-calculator.html"
       ],
       "h1": "Simple Interest Calculator"
     },
     {
       "route": "/cd-calculator.html",
       "canonical": [
-        "https://seo-validation.example/cd-calculator.html"
+        "https://calculatorfree.io/cd-calculator.html"
       ],
       "h1": "CD Calculator"
     },
     {
       "route": "/bond-calculator.html",
       "canonical": [
-        "https://seo-validation.example/bond-calculator.html"
+        "https://calculatorfree.io/bond-calculator.html"
       ],
       "h1": "Bond Calculator"
     },
     {
       "route": "/mutual-fund-calculator.html",
       "canonical": [
-        "https://seo-validation.example/mutual-fund-calculator.html"
+        "https://calculatorfree.io/mutual-fund-calculator.html"
       ],
       "h1": "Mutual Fund Calculator"
     },
     {
       "route": "/average-return-calculator.html",
       "canonical": [
-        "https://seo-validation.example/average-return-calculator.html"
+        "https://calculatorfree.io/average-return-calculator.html"
       ],
       "h1": "Average Return Calculator"
     },
     {
       "route": "/irr-calculator.html",
       "canonical": [
-        "https://seo-validation.example/irr-calculator.html"
+        "https://calculatorfree.io/irr-calculator.html"
       ],
       "h1": "IRR Calculator"
     },
     {
       "route": "/roi-calculator.html",
       "canonical": [
-        "https://seo-validation.example/roi-calculator.html"
+        "https://calculatorfree.io/roi-calculator.html"
       ],
       "h1": "ROI Calculator"
     },
     {
       "route": "/payback-period-calculator.html",
       "canonical": [
-        "https://seo-validation.example/payback-period-calculator.html"
+        "https://calculatorfree.io/payback-period-calculator.html"
       ],
       "h1": "Payback Period Calculator"
     },
     {
       "route": "/present-value-calculator.html",
       "canonical": [
-        "https://seo-validation.example/present-value-calculator.html"
+        "https://calculatorfree.io/present-value-calculator.html"
       ],
       "h1": "Present Value Calculator"
     },
     {
       "route": "/future-value-calculator.html",
       "canonical": [
-        "https://seo-validation.example/future-value-calculator.html"
+        "https://calculatorfree.io/future-value-calculator.html"
       ],
       "h1": "Future Value Calculator"
     },
     {
       "route": "/retirement-calculator.html",
       "canonical": [
-        "https://seo-validation.example/retirement-calculator.html"
+        "https://calculatorfree.io/retirement-calculator.html"
       ],
       "h1": "Retirement Calculator"
     },
     {
       "route": "/401k-calculator.html",
       "canonical": [
-        "https://seo-validation.example/401k-calculator.html"
+        "https://calculatorfree.io/401k-calculator.html"
       ],
       "h1": "401K Calculator"
     },
     {
       "route": "/pension-calculator.html",
       "canonical": [
-        "https://seo-validation.example/pension-calculator.html"
+        "https://calculatorfree.io/pension-calculator.html"
       ],
       "h1": "Pension Calculator"
     },
     {
       "route": "/social-security-calculator.html",
       "canonical": [
-        "https://seo-validation.example/social-security-calculator.html"
+        "https://calculatorfree.io/social-security-calculator.html"
       ],
       "h1": "Social Security Calculator"
     },
     {
       "route": "/annuity-calculator.html",
       "canonical": [
-        "https://seo-validation.example/annuity-calculator.html"
+        "https://calculatorfree.io/annuity-calculator.html"
       ],
       "h1": "Annuity Calculator"
     },
     {
       "route": "/annuity-payout-calculator.html",
       "canonical": [
-        "https://seo-validation.example/annuity-payout-calculator.html"
+        "https://calculatorfree.io/annuity-payout-calculator.html"
       ],
       "h1": "Annuity Payout Calculator"
     },
     {
       "route": "/roth-ira-calculator.html",
       "canonical": [
-        "https://seo-validation.example/roth-ira-calculator.html"
+        "https://calculatorfree.io/roth-ira-calculator.html"
       ],
       "h1": "Roth IRA Calculator"
     },
     {
       "route": "/ira-calculator.html",
       "canonical": [
-        "https://seo-validation.example/ira-calculator.html"
+        "https://calculatorfree.io/ira-calculator.html"
       ],
       "h1": "IRA Calculator"
     },
     {
       "route": "/rmd-calculator.html",
       "canonical": [
-        "https://seo-validation.example/rmd-calculator.html"
+        "https://calculatorfree.io/rmd-calculator.html"
       ],
       "h1": "RMD Calculator"
     },
     {
       "route": "/tax-calculator.html",
       "canonical": [
-        "https://seo-validation.example/tax-calculator.html"
+        "https://calculatorfree.io/tax-calculator.html"
       ],
       "h1": "Income Tax Calculator"
     },
     {
       "route": "/salary-calculator.html",
       "canonical": [
-        "https://seo-validation.example/salary-calculator.html"
+        "https://calculatorfree.io/salary-calculator.html"
       ],
       "h1": "Salary Calculator"
     },
     {
       "route": "/marriage-calculator.html",
       "canonical": [
-        "https://seo-validation.example/marriage-calculator.html"
+        "https://calculatorfree.io/marriage-calculator.html"
       ],
       "h1": "Marriage Tax Calculator"
     },
     {
       "route": "/estate-tax-calculator.html",
       "canonical": [
-        "https://seo-validation.example/estate-tax-calculator.html"
+        "https://calculatorfree.io/estate-tax-calculator.html"
       ],
       "h1": "Estate Tax Calculator"
     },
     {
       "route": "/take-home-pay-calculator.html",
       "canonical": [
-        "https://seo-validation.example/take-home-pay-calculator.html"
+        "https://calculatorfree.io/take-home-pay-calculator.html"
       ],
       "h1": "Take-Home-Paycheck Calculator"
     },
     {
       "route": "/loan-calculator.html",
       "canonical": [
-        "https://seo-validation.example/loan-calculator.html"
+        "https://calculatorfree.io/loan-calculator.html"
       ],
       "h1": "Loan Calculator"
     },
     {
       "route": "/payment-calculator.html",
       "canonical": [
-        "https://seo-validation.example/payment-calculator.html"
+        "https://calculatorfree.io/payment-calculator.html"
       ],
       "h1": "Payment Calculator"
     },
     {
       "route": "/currency-calculator.html",
       "canonical": [
-        "https://seo-validation.example/currency-calculator.html"
+        "https://calculatorfree.io/currency-calculator.html"
       ],
       "h1": "Currency Calculator"
     },
     {
       "route": "/inflation-calculator.html",
       "canonical": [
-        "https://seo-validation.example/inflation-calculator.html"
+        "https://calculatorfree.io/inflation-calculator.html"
       ],
       "h1": "Inflation Calculator"
     },
     {
       "route": "/sales-tax-calculator.html",
       "canonical": [
-        "https://seo-validation.example/sales-tax-calculator.html"
+        "https://calculatorfree.io/sales-tax-calculator.html"
       ],
       "h1": "Sales Tax Calculator"
     },
     {
       "route": "/credit-card-calculator.html",
       "canonical": [
-        "https://seo-validation.example/credit-card-calculator.html"
+        "https://calculatorfree.io/credit-card-calculator.html"
       ],
       "h1": "Credit Card Calculator"
     },
     {
       "route": "/credit-card-payoff-calculator.html",
       "canonical": [
-        "https://seo-validation.example/credit-card-payoff-calculator.html"
+        "https://calculatorfree.io/credit-card-payoff-calculator.html"
       ],
       "h1": "Credit Cards Payoff Calculator"
     },
     {
       "route": "/debt-payoff-calculator.html",
       "canonical": [
-        "https://seo-validation.example/debt-payoff-calculator.html"
+        "https://calculatorfree.io/debt-payoff-calculator.html"
       ],
       "h1": "Debt Payoff Calculator"
     },
     {
       "route": "/debt-consolidation-calculator.html",
       "canonical": [
-        "https://seo-validation.example/debt-consolidation-calculator.html"
+        "https://calculatorfree.io/debt-consolidation-calculator.html"
       ],
       "h1": "Debt Consolidation Calculator"
     },
     {
       "route": "/repayment-calculator.html",
       "canonical": [
-        "https://seo-validation.example/repayment-calculator.html"
+        "https://calculatorfree.io/repayment-calculator.html"
       ],
       "h1": "Repayment Calculator"
     },
     {
       "route": "/student-loan-calculator.html",
       "canonical": [
-        "https://seo-validation.example/student-loan-calculator.html"
+        "https://calculatorfree.io/student-loan-calculator.html"
       ],
       "h1": "Student Loan Calculator"
     },
     {
       "route": "/college-cost-calculator.html",
       "canonical": [
-        "https://seo-validation.example/college-cost-calculator.html"
+        "https://calculatorfree.io/college-cost-calculator.html"
       ],
       "h1": "College Cost Calculator"
     },
     {
       "route": "/vat-calculator.html",
       "canonical": [
-        "https://seo-validation.example/vat-calculator.html"
+        "https://calculatorfree.io/vat-calculator.html"
       ],
       "h1": "VAT Calculator"
     },
     {
       "route": "/depreciation-calculator.html",
       "canonical": [
-        "https://seo-validation.example/depreciation-calculator.html"
+        "https://calculatorfree.io/depreciation-calculator.html"
       ],
       "h1": "Depreciation Calculator"
     },
     {
       "route": "/margin-calculator.html",
       "canonical": [
-        "https://seo-validation.example/margin-calculator.html"
+        "https://calculatorfree.io/margin-calculator.html"
       ],
       "h1": "Margin Calculator"
     },
     {
       "route": "/discount-calculator.html",
       "canonical": [
-        "https://seo-validation.example/discount-calculator.html"
+        "https://calculatorfree.io/discount-calculator.html"
       ],
       "h1": "Discount Calculator"
     },
     {
       "route": "/business-loan-calculator.html",
       "canonical": [
-        "https://seo-validation.example/business-loan-calculator.html"
+        "https://calculatorfree.io/business-loan-calculator.html"
       ],
       "h1": "Business Loan Calculator"
     },
     {
       "route": "/personal-loan-calculator.html",
       "canonical": [
-        "https://seo-validation.example/personal-loan-calculator.html"
+        "https://calculatorfree.io/personal-loan-calculator.html"
       ],
       "h1": "Personal Loan Calculator"
     },
     {
       "route": "/boat-loan-calculator.html",
       "canonical": [
-        "https://seo-validation.example/boat-loan-calculator.html"
+        "https://calculatorfree.io/boat-loan-calculator.html"
       ],
       "h1": "Boat Loan Calculator"
     },
     {
       "route": "/lease-calculator.html",
       "canonical": [
-        "https://seo-validation.example/lease-calculator.html"
+        "https://calculatorfree.io/lease-calculator.html"
       ],
       "h1": "Lease Calculator"
     },
     {
       "route": "/budget-calculator.html",
       "canonical": [
-        "https://seo-validation.example/budget-calculator.html"
+        "https://calculatorfree.io/budget-calculator.html"
       ],
       "h1": "Budget Calculator"
     },
     {
       "route": "/commission-calculator.html",
       "canonical": [
-        "https://seo-validation.example/commission-calculator.html"
+        "https://calculatorfree.io/commission-calculator.html"
       ],
       "h1": "Commission Calculator"
     },
     {
+      "route": "/percentage-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/percentage-calculator.html"
+      ],
+      "h1": "Percentage Calculator"
+    },
+    {
+      "route": "/tip-bill-split-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/tip-bill-split-calculator.html"
+      ],
+      "h1": "Tip and Bill Split Calculator"
+    },
+    {
+      "route": "/date-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/date-calculator.html"
+      ],
+      "h1": "Date Calculator"
+    },
+    {
+      "route": "/unit-converter.html",
+      "canonical": [
+        "https://calculatorfree.io/unit-converter.html"
+      ],
+      "h1": "Unit Converter"
+    },
+    {
+      "route": "/scientific-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/scientific-calculator.html"
+      ],
+      "h1": "Scientific Calculator"
+    },
+    {
+      "route": "/markup-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/markup-calculator.html"
+      ],
+      "h1": "Markup Calculator"
+    },
+    {
+      "route": "/cagr-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/cagr-calculator.html"
+      ],
+      "h1": "CAGR Calculator"
+    },
+    {
+      "route": "/emergency-fund-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/emergency-fund-calculator.html"
+      ],
+      "h1": "Emergency Fund Calculator"
+    },
+    {
+      "route": "/break-even-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/break-even-calculator.html"
+      ],
+      "h1": "Break-Even Calculator"
+    },
+    {
+      "route": "/investment-fee-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/investment-fee-calculator.html"
+      ],
+      "h1": "Investment Fee Calculator"
+    },
+    {
+      "route": "/real-return-calculator.html",
+      "canonical": [
+        "https://calculatorfree.io/real-return-calculator.html"
+      ],
+      "h1": "Real Return Calculator"
+    },
+    {
       "route": "/financial-calculator.html",
       "canonical": [
-        "https://seo-validation.example/financial-calculator.html"
+        "https://calculatorfree.io/financial-calculator.html"
       ],
       "h1": "Financial Calculators"
     },
     {
       "route": "/about.html",
       "canonical": [
-        "https://seo-validation.example/about.html"
+        "https://calculatorfree.io/about.html"
       ],
-      "h1": "About Financial Calculators"
+      "h1": "About calculatorfree.io"
     },
     {
       "route": "/privacy.html",
       "canonical": [
-        "https://seo-validation.example/privacy.html"
+        "https://calculatorfree.io/privacy.html"
       ],
       "h1": "Privacy"
     },
     {
       "route": "/methodology.html",
       "canonical": [
-        "https://seo-validation.example/methodology.html"
+        "https://calculatorfree.io/methodology.html"
       ],
       "h1": "Calculation methodology and sources"
+    },
+    {
+      "route": "/glossary/",
+      "canonical": [
+        "https://calculatorfree.io/glossary/"
+      ],
+      "h1": "Financial glossary"
+    },
+    {
+      "route": "/glossary/compound-interest/",
+      "canonical": [
+        "https://calculatorfree.io/glossary/compound-interest/"
+      ],
+      "h1": "What Is Compound Interest? Definition and Example"
+    },
+    {
+      "route": "/glossary/cagr/",
+      "canonical": [
+        "https://calculatorfree.io/glossary/cagr/"
+      ],
+      "h1": "What Is CAGR? Compound Annual Growth Rate Explained"
+    },
+    {
+      "route": "/glossary/real-rate-of-return/",
+      "canonical": [
+        "https://calculatorfree.io/glossary/real-rate-of-return/"
+      ],
+      "h1": "What Is Real Rate of Return? Inflation-Adjusted Example"
+    },
+    {
+      "route": "/glossary/expense-ratio/",
+      "canonical": [
+        "https://calculatorfree.io/glossary/expense-ratio/"
+      ],
+      "h1": "What Is an Expense Ratio? Fund Fees Explained"
+    },
+    {
+      "route": "/glossary/dollar-cost-averaging/",
+      "canonical": [
+        "https://calculatorfree.io/glossary/dollar-cost-averaging/"
+      ],
+      "h1": "What Is Dollar-Cost Averaging? Example and Limitations"
+    },
+    {
+      "route": "/glossary/401k/",
+      "canonical": [
+        "https://calculatorfree.io/glossary/401k/"
+      ],
+      "h1": "What Is a 401(k)? Contributions and Employer Match"
+    },
+    {
+      "route": "/glossary/amortization/",
+      "canonical": [
+        "https://calculatorfree.io/glossary/amortization/"
+      ],
+      "h1": "What Is Loan Amortization? Principal and Interest Explained"
+    },
+    {
+      "route": "/glossary/markup-vs-margin/",
+      "canonical": [
+        "https://calculatorfree.io/glossary/markup-vs-margin/"
+      ],
+      "h1": "Markup vs. Margin: Difference, Formulas and Example"
     }
   ],
   "no_live_indexing_or_ranking_claim": true

@@ -9,8 +9,12 @@ createServer(async(req,res)=>{
  try{
   const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
   if(pathname==='/'){res.writeHead(301,{Location:'/financial-calculator.html'});res.end();return;}
-  const file=resolve(root,'.'+pathname);
+  let file=resolve(root,'.'+pathname);
   if(!file.startsWith(root+sep)){res.writeHead(403);res.end();return;}
+  if((await stat(file)).isDirectory()){
+   if(!pathname.endsWith('/')){const url=new URL(req.url,'http://localhost');res.writeHead(301,{Location:pathname+'/'+url.search});res.end();return;}
+   file=resolve(file,'index.html');
+  }
   const data=await readFile(file);
   res.writeHead(200,{'Content-Type':types[extname(file)]??'application/octet-stream'});res.end(req.method==='HEAD'?undefined:data);
  }catch{

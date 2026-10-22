@@ -44,3 +44,22 @@ The 60 additional guides link to project methodology and each existing reference
 ## 2026-10-21 — Independent evergreen additions
 
 The six new tools use independently stated algebra/recurrences and local fixtures, not claimed source-site submissions. User screenshots supply keyword research (research/evergreen-keywords-2026-10-21.json); no organic-ranking difficulty is inferred from ad competition. Models and limits: evergreen-additions-2026-10-21.md and specs/{markup,cagr,emergency-fund,break-even,investment-fee,real-return}.md. Public source and test code are linked as implementation evidence rather than fabricated external review.
+
+## 2026-10-22 — Glossary sources
+
+Sources read with web tools for definitions and scope; examples independently computed. No claim of professional review. See glossary-2026-10-22.md.
+- https://www.investor.gov/introduction-investing/investing-basics/glossary/compound-interest
+- https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance
+- https://syndication.finra.org/content/how-are-your-investments-doing-returns-explained
+- https://www.stlouisfed.org/publications/page-one-economics/2023/01/03/adjusting-for-inflation
+- https://www.investor.gov/introduction-investing/investing-basics/glossary/expense-ratio
+- https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated
+- https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging
+- https://syndication.finra.org/content/benefits-and-limitations-dollar-cost-averaging
+- https://www.irs.gov/retirement-plans/plan-participant-employee/401k-resource-guide-plan-participants-401k-plan-overview
+- https://www.irs.gov/retirement-plans/retirement-plans-faqs-on-designated-roth-accounts
+- https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits
+- https://www.consumerfinance.gov/ask-cfpb/what-is-amortization-and-how-could-it-affect-my-auto-loan-en-771/
+- https://www.consumerfinance.gov/ask-cfpb/on-a-mortgage-whats-the-difference-between-my-principal-and-interest-payment-and-my-total-monthly-payment-en-1941/
+- https://www.business.qld.gov.au/running-business/marketing-sales/marketing/calculators/mark-up
+- https://www.business.qld.gov.au/running-business/finance/improve-performance/ratios

@@ -1,0 +1,238 @@
+{
+  "tested_at": "2026-10-22T13:16:29.368Z",
+  "passed": true,
+  "configuration": "local noindex preview",
+  "checks": [
+    {
+      "path": "/glossary/",
+      "width": 320,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/compound-interest/",
+      "width": 320,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/cagr/",
+      "width": 320,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/real-rate-of-return/",
+      "width": 320,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/expense-ratio/",
+      "width": 320,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/dollar-cost-averaging/",
+      "width": 320,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/401k/",
+      "width": 320,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/amortization/",
+      "width": 320,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/markup-vs-margin/",
+      "width": 320,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/",
+      "width": 390,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/compound-interest/",
+      "width": 390,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/cagr/",
+      "width": 390,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/real-rate-of-return/",
+      "width": 390,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/expense-ratio/",
+      "width": 390,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/dollar-cost-averaging/",
+      "width": 390,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/401k/",
+      "width": 390,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/amortization/",
+      "width": 390,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/markup-vs-margin/",
+      "width": 390,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/",
+      "width": 1440,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/compound-interest/",
+      "width": 1440,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/cagr/",
+      "width": 1440,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/real-rate-of-return/",
+      "width": 1440,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/expense-ratio/",
+      "width": 1440,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/dollar-cost-averaging/",
+      "width": 1440,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/401k/",
+      "width": 1440,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/amortization/",
+      "width": 1440,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "path": "/glossary/markup-vs-margin/",
+      "width": 1440,
+      "staticContent": true,
+      "noOverflow": true,
+      "metadataAndSchema": true
+    },
+    {
+      "term": "compound-interest",
+      "example": "loads inputs and reproduces published result"
+    },
+    {
+      "term": "cagr",
+      "example": "loads inputs and reproduces published result"
+    },
+    {
+      "term": "real-rate-of-return",
+      "example": "loads inputs and reproduces published result"
+    },
+    {
+      "term": "expense-ratio",
+      "example": "loads inputs and reproduces published result"
+    },
+    {
+      "term": "dollar-cost-averaging",
+      "scope": "DCA share-price example not presented as a calculator backtest"
+    },
+    {
+      "term": "401k",
+      "example": "loads inputs and reproduces published result"
+    },
+    {
+      "term": "amortization",
+      "example": "loads inputs and reproduces published result"
+    },
+    {
+      "term": "markup-vs-margin",
+      "example": "loads inputs and reproduces published result"
+    },
+    {
+      "calculatorPagesWithBacklinks": 17
+    },
+    {
+      "directoryRedirects": true,
+      "unknownTerm404": true,
+      "noJSReadingAndToolLinks": true
+    }
+  ],
+  "errors": [],
+  "external_requests": 0
+}

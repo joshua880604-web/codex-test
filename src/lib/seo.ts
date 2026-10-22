@@ -10,6 +10,7 @@ import {
   type SiteConfig,
 } from "./site";
 import type { Calculator } from "./types";
+import {glossaryPath,glossaryTerms,glossaryTermPath} from './glossary';
 const titles: Record<string, string> = {
   vat: "VAT Calculator - Add VAT, Remove VAT & Find the Rate",
   mortgage: "Mortgage Calculator - Monthly Payment & Amortization",
@@ -60,6 +61,8 @@ export function sitemapEntries(config: SiteConfig = siteConfig()) {
     "/about.html",
     "/privacy.html",
     "/methodology.html",
+    glossaryPath,
+    ...glossaryTerms.map(term=>glossaryTermPath(term.slug)),
   ].map((path) => ({ url: absoluteURL(path, config)! }));
 }
 export function calculatorSchema(calc: Calculator, config = siteConfig()) {

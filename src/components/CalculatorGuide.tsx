@@ -2,6 +2,7 @@ import guideInsights from "@/lib/guide-insights.json";
 import type { Calculator } from "@/lib/types";
 import { routeFor } from "@/lib/calculators";
 import { guides, notesCheckedOn } from "@/lib/guides";
+import GlossaryLinks from './GlossaryLinks';
 export default function CalculatorGuide({
   calculator,
 }: {
@@ -22,6 +23,7 @@ export default function CalculatorGuide({
           </nav>
           <h2>Understanding this calculation</h2>
           <p>{insight?.answer ?? guide.summary}</p>
+          <GlossaryLinks id={calculator.id}/>
           {insight && <>
             <h2 id="reading-results">Reading your result</h2>
             <dl className="result-definitions">{insight.results.map(item=><div key={item.label}><dt>{item.label}</dt><dd>{item.meaning}</dd></div>)}</dl>

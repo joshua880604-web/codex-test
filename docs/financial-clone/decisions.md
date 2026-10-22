@@ -88,3 +88,7 @@ User superseded the custom 401(k) summary preference with source-first functiona
 ## 2026-10-21 — Six independent evergreen tools
 
 User authorized six fixed-formula calculators based on their US Keyword Planner research. Preserve existing overlapping modes, transfer broad Markup and Investment Fee search targets to the new pages, and link rather than duplicate historical inflation or annualized-return content. Implement fee timing and net-return handling explicitly, not as a claim of daily expense-ratio precision. Keep noindex, static export and no API. See evergreen-additions-2026-10-21.md.
+
+## 2026-10-22 — Small glossary section
+
+User approved eight concise, source-checked glossary pages, a /glossary/ index and contextual calculator links. Dedicated definitions answer informational intent; existing guides retain operational calculation detail. Preserve calculator URLs and indexability environment gates. Finalize only glossary exports to directory indexes for the requested URL shape. No mass content pipeline or unrelated eCPM article; no rankings/citation guarantees. Evidence and scope: glossary-2026-10-22.md.

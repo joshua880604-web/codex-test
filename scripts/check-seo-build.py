@@ -20,10 +20,13 @@ class Page(HTMLParser):
   if self.in_schema:self.schema_text+=data
   self.text.append(data)
 catalog=json.loads((root/'src/lib/catalog-data.json').read_text())
-paths=[x['local_route'] for x in catalog]+['/financial-calculator.html','/about.html','/privacy.html','/methodology.html']
+terms=json.loads((root/'src/lib/glossary-data.json').read_text())
+paths=[x['local_route'] for x in catalog]+['/financial-calculator.html','/about.html','/privacy.html','/methodology.html','/glossary/']+['/glossary/'+term['slug']+'/' for term in terms]
 checks=[]
 for route in paths:
- p=Page();p.feed((root/'out'/route[1:]).read_text())
+ file=root/'out'/route[1:]
+ if route.endswith('/'):file=file/'index.html'
+ p=Page();p.feed(file.read_text())
  assert len(p.h1s)==1,(route,p.h1s)
  assert p.metas.get('description'),route
  assert ('noindex' not in p.metas.get('robots','')) if origin else ('noindex' in p.metas.get('robots',''))
@@ -39,6 +42,15 @@ for route in paths:
  if route=='/vat-calculator.html':
   assert 'Remove 20% VAT from a gross price of 120' in ''.join(p.text)
   assert 'GOV.UK: VAT rates' in ''.join(p.text)
+ if route.startswith('/glossary/'):
+  assert len(p.schemas)==1,route
+  kind='DefinedTermSet' if route=='/glossary/' else 'DefinedTerm'
+  assert p.schemas[0]['@graph'][0]['@type']==kind,route
+  if origin:assert any(x['@type']=='BreadcrumbList' for x in p.schemas[0]['@graph'])
+  term=next((x for x in terms if route=='/glossary/'+x['slug']+'/'),None)
+  if term:
+   assert term['definition'] in ''.join(p.text),route
+   assert term['example']['answer'] in ''.join(p.text),route
  checks.append({'route':route,'canonical':p.canon,'h1':p.h1s[0]})
 sitemap=(root/'out/sitemap.xml').read_text()
 robots=(root/'out/robots.txt').read_text()

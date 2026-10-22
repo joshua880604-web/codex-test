@@ -27,6 +27,7 @@ export function Header() {
           <a href="/real-estate-calculator.html">Real Estate</a>
           <a href="/financial-calculator.html#saving-investing">Investment</a>
           <a href="/financial-calculator.html#retirement">Retirement</a>
+          <a href="/glossary/">Glossary</a>
         </div>
       </nav>
     </>
@@ -94,6 +95,8 @@ export function Footer() {
         <a href="/privacy.html">Privacy</a>
         <span> · </span>
         <a href="/methodology.html">Methodology &amp; sources</a>
+        <span> · </span>
+        <a href="/glossary/">Glossary</a>
       </div>
       <p>
         © {new Date().getFullYear()} {siteName}. Independent planning

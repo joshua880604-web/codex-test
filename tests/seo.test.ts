@@ -39,8 +39,8 @@ test("Production sitemap lists canonical pages only and no pretend lastmod dates
     SITE_INDEXABLE: "true",
   });
   const entries = sitemapEntries(config);
-  assert.equal(entries.length, 86);
-  assert.equal(new Set(entries.map((e) => e.url)).size, 86);
+  assert.equal(entries.length, 95);
+  assert.equal(new Set(entries.map((e) => e.url)).size, 95);
   assert.ok(
     entries.every(
       (e) =>

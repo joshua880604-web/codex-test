@@ -1,0 +1,104 @@
+{
+  "checked_on": "2026-10-22",
+  "terms": [
+    {
+      "slug": "compound-interest",
+      "route": "/glossary/compound-interest/",
+      "content": "source-checked definition and original example",
+      "numeric_example": "reproducible calculator preset",
+      "browser": "passed",
+      "viewports": [
+        320,
+        390,
+        1440
+      ]
+    },
+    {
+      "slug": "cagr",
+      "route": "/glossary/cagr/",
+      "content": "source-checked definition and original example",
+      "numeric_example": "reproducible calculator preset",
+      "browser": "passed",
+      "viewports": [
+        320,
+        390,
+        1440
+      ]
+    },
+    {
+      "slug": "real-rate-of-return",
+      "route": "/glossary/real-rate-of-return/",
+      "content": "source-checked definition and original example",
+      "numeric_example": "reproducible calculator preset",
+      "browser": "passed",
+      "viewports": [
+        320,
+        390,
+        1440
+      ]
+    },
+    {
+      "slug": "expense-ratio",
+      "route": "/glossary/expense-ratio/",
+      "content": "source-checked definition and original example",
+      "numeric_example": "reproducible calculator preset",
+      "browser": "passed",
+      "viewports": [
+        320,
+        390,
+        1440
+      ]
+    },
+    {
+      "slug": "dollar-cost-averaging",
+      "route": "/glossary/dollar-cost-averaging/",
+      "content": "source-checked definition and original example",
+      "numeric_example": "independent share-count and loss arithmetic",
+      "browser": "passed",
+      "viewports": [
+        320,
+        390,
+        1440
+      ]
+    },
+    {
+      "slug": "401k",
+      "route": "/glossary/401k/",
+      "content": "source-checked definition and original example",
+      "numeric_example": "reproducible calculator preset",
+      "browser": "passed",
+      "viewports": [
+        320,
+        390,
+        1440
+      ]
+    },
+    {
+      "slug": "amortization",
+      "route": "/glossary/amortization/",
+      "content": "source-checked definition and original example",
+      "numeric_example": "reproducible calculator preset",
+      "browser": "passed",
+      "viewports": [
+        320,
+        390,
+        1440
+      ]
+    },
+    {
+      "slug": "markup-vs-margin",
+      "route": "/glossary/markup-vs-margin/",
+      "content": "source-checked definition and original example",
+      "numeric_example": "reproducible calculator preset",
+      "browser": "passed",
+      "viewports": [
+        320,
+        390,
+        1440
+      ]
+    }
+  ],
+  "evidence": "evidence/browser-glossary-qa.json",
+  "qualified_expert_review": "not claimed",
+  "rankings_and_indexing": "not measured"
+}
