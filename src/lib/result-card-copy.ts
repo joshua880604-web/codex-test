@@ -1,3 +1,4 @@
+import {siteName} from './site';
 import type {Result,Values} from './types';
 import {resultContext} from './result-context';
 
@@ -18,5 +19,5 @@ export function resultCardCopy(id:string,mode:string,values:Values,result:Result
 }
 export function resultCardAddress(toolURL:string){
  const url=new URL(toolURL);const local=['localhost','127.0.0.1','[::1]'].includes(url.hostname);
- return {url:url.origin+url.pathname,label:local?'LOCAL PREVIEW • FINANCIAL CALCULATORS':url.host+' • FINANCIAL CALCULATORS'};
+ return {url:url.origin+url.pathname,label:local?'LOCAL PREVIEW • '+siteName:url.host===siteName?siteName:url.host+' • '+siteName};
 }

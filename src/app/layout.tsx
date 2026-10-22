@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Header, Footer } from "@/components/Shell";
 import "./globals.css";
-import { siteConfig } from "@/lib/site";
+import { siteConfig,siteName } from "@/lib/site";
 const config = siteConfig();
 export const metadata: Metadata = {
   ...(config.origin ? { metadataBase: new URL(config.origin) } : {}),
   robots: { index: config.indexable, follow: true },
   title: {
-    default: "Financial Calculators",
-    template: "%s | Financial Calculators",
+    default: siteName,
+    template: `%s | ${siteName}`,
   },
   description:
     "Free financial calculators for mortgages, loans, investments, retirement, taxes, and everyday money decisions.",

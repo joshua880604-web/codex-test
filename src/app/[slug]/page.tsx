@@ -10,7 +10,7 @@ import { Sidebar } from "@/components/Shell";
 import CalculatorGuide from "@/components/CalculatorGuide";
 import Methodology from "@/components/Methodology";
 import { calculatorMetadata, calculatorSchema, pageMetadata } from "@/lib/seo";
-import { directoryPath, serializeSchema } from "@/lib/site";
+import { directoryPath, serializeSchema, siteName } from "@/lib/site";
 import { relatedCalculatorIds } from "@/lib/guides";
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -33,7 +33,7 @@ export async function generateMetadata({
   if (slug === "about.html")
     return pageMetadata(
       "/about.html",
-      "About",
+      `About ${siteName}`,
       "Learn about these independent financial calculators, their calculation methods and review status.",
     );
   if (slug === "privacy.html")
@@ -78,7 +78,7 @@ export default async function Page({
   const title =
     c?.title ??
     (slug === "about.html"
-      ? "About Financial Calculators"
+      ? `About ${siteName}`
       : slug === "privacy.html"
         ? "Privacy"
         : slug === "methodology.html"
@@ -121,7 +121,7 @@ export default async function Page({
               .
             </p>
             <p>
-              This project is independent of Calculator.net. Calculations run in
+              {siteName} is independent of Calculator.net. Calculations run in
               your browser. Currency conversion uses a manual rate or a bundled dated snapshot; no external API is contacted.
             </p>
           </>

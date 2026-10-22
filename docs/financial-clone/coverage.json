@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Compact mobile Basic calculator before search, fits seven tested viewport sizes without scrolling",
+  "latest_change": "Unified calculatorfree.io brand across wordmark, footer, titles, Open Graph, copied summaries and exported cards",
   "seo_generated_pages_checked": 86,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
@@ -65,5 +65,6 @@
   "evergreen_browser_checks": 25,
   "quick_calculator_browser_checks": 19,
   "mobile_navigation_browser_checks": 7,
-  "homepage_first_screen_browser_checks": 7
+  "homepage_first_screen_browser_checks": 7,
+  "site_brand": "calculatorfree.io"
 }

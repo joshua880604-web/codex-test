@@ -1,3 +1,4 @@
+import {siteName} from './site';
 import type {Metric} from './types';
 import {formatMetric} from './sharing';
 import {resultCardAddress} from './result-card-copy';
@@ -21,7 +22,7 @@ export async function resultImage(title:string,mode:string,metrics:Metric[],note
   }flush();return y;
  }
  let y=58;
- y=write('FINANCIAL CALCULATORS  /  RESULT SUMMARY',64,y,1072,18,'#b8d7e2',true)+20;
+ y=write(siteName+'  /  RESULT SUMMARY',64,y,1072,18,'#b8d7e2',true)+20;
  y=write(title,64,y,1072,42,'#ffffff',true)+8;
  if(mode.trim().toLowerCase()!==title.trim().toLowerCase())y=write(mode,64,y,1072,23,'#d5e6ed')+12;
  const headerBottom=y+16;y=headerBottom+24;

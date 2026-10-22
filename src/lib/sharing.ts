@@ -1,3 +1,4 @@
+import {siteName} from './site';
 import {defaults,type Calculator,type Mode,type Result,type Values,type Metric} from './types';
 export const MAX_SHARE_LENGTH=20000;
 export function calculationLink(origin:string,path:string,mode:Mode,values:Values,includeInputs=false){
@@ -44,5 +45,5 @@ export function modeCaption(mode:Mode,values:Values={}){
  return [mode.title,...details].join(' · ');
 }
 export function summaryText(title:string,mode:Mode,id:string,result:Result,link:string,values:Values={}){
- return [title,modeCaption(mode,values),...(id==='irr'&&result.metrics.length>1?['Multiple IRRs detected; there is no single unambiguous rate.']:[]),...summaryMetrics(id,result).map(m=>`${m.label}: ${formatMetric(m)}`),...(result.metrics.length>5?['Selected results; full details are available in the calculator.']:[]),...(result.notes??[]),'Calculated under the stated assumptions. Results may change if the model or data is updated.',link].join('\n');
+ return [title+" | "+siteName,modeCaption(mode,values),...(id==='irr'&&result.metrics.length>1?['Multiple IRRs detected; there is no single unambiguous rate.']:[]),...summaryMetrics(id,result).map(m=>`${m.label}: ${formatMetric(m)}`),...(result.metrics.length>5?['Selected results; full details are available in the calculator.']:[]),...(result.notes??[]),'Calculated under the stated assumptions. Results may change if the model or data is updated.',link].join('\n');
 }

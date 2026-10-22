@@ -20,7 +20,7 @@ try{
   if(name==='tax')await page.waitForFunction(()=>document.querySelector('.result-context')?.textContent?.includes('tax year 2025'));
   if(name==='retirement')await page.waitForFunction(()=>document.querySelector('.result-context')?.textContent?.includes('$362.74'));
   const pending=page.waitForEvent('download');await page.getByRole('button',{name:'Download result PNG',exact:true}).click();const download=await pending;const file='/workspace/work/result-cards/'+name+'.png';await download.saveAs(file);
-  const drawn=await page.evaluate(()=>window.cardText),text=drawn.map(x=>x.text).join(' ');assert.ok(text.includes(expected));assert.ok(text.includes('LOCAL PREVIEW'));assert.ok(text.includes('FINANCIAL CALCULATORS'));assert.ok(!text.includes('#calc=')&&!text.includes('?mode='));
+  const drawn=await page.evaluate(()=>window.cardText),text=drawn.map(x=>x.text).join(' ');assert.ok(text.includes(expected));assert.ok(text.includes('LOCAL PREVIEW'));assert.ok(text.includes('calculatorfree.io'));assert.ok(!text.includes('#calc=')&&!text.includes('?mode='));
   assert.ok(drawn.every(t=>t.x>=64&&t.x+t.width<=1137&&t.y+parseInt(t.font.match(/\d+px/)[0])<=t.height-24));
   const png=await fs.readFile(file);assert.equal(png.readUInt32BE(16),1200);checks.push({name,width:1200,height:png.readUInt32BE(20),copy:true,textWithinCard:true,cleanToolAddress:true});
  }

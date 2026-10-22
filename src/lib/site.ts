@@ -1,4 +1,4 @@
-export const siteName = "Financial Calculators";
+export const siteName = "calculatorfree.io";
 export const directoryPath = "/financial-calculator.html";
 export type SiteConfig = { origin?: string; indexable: boolean };
 export function siteConfig(

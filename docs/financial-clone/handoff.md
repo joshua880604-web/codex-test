@@ -126,3 +126,8 @@ Current version overrides earlier live-feed/server assumptions. See static-expor
 - Keep 44px arithmetic targets on normal mobile heights. At <=520px viewport height, use 36px-tall wide keys and a shorter footer to fit short browser windows. Hide redundant home breadcrumb and visually reduce the page title only on short screens; semantics remain available. Scientific expansion remains scrollable.
 - Seven viewport checks (320x480, 320x568, 360x640, 375x667, 390x664, 390x844, 412x915) assert the entire Basic card is inside the first viewport and execute 2+3=5 with scrollY=0 and no input autofocus/system keyboard activation.
 - Validation: 552 tests, 86-route static build, 19 calculator interaction checks, 15 homepage checks and 86-page SEO checks passed. Small-phone screenshot inspected. No calculation, domain or production indexing setting changes.
+
+### 2026-10-22 — Website brand is calculatorfree.io
+- Central siteName is calculatorfree.io. Updated header wordmark, footer copyright, title suffix/default, About title/independence text, Open Graph site name, copied result summaries and local PNG report branding.
+- Kept Financial Calculators as a descriptive navigation/category/home heading, not the brand. Tool routes, mathematical models and domain/indexing environment controls unchanged. Actual tool address remains input-free; local preview labels retained, and identical production hostname/brand is not duplicated in image footer.
+- Validation: 552 tests, 86-route static build and 86-page SEO checks passed. Seven image-export cases, seven first-screen/brand checks and 16 sharing checks passed; actual branded VAT card inspected.

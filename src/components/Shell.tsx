@@ -1,3 +1,4 @@
+import {siteName} from "@/lib/site";
 import MobileNavigation from "./MobileNavigation";
 import { calculators, routeFor } from "@/lib/calculators";
 export function Header() {
@@ -9,7 +10,7 @@ export function Header() {
             <span className="calculator-mark" aria-hidden="true">
               ▦
             </span>{" "}
-            Financial<span>Calculators</span>
+            {siteName}
           </a>
           <MobileNavigation/>
           <span className="header-description">
@@ -95,7 +96,7 @@ export function Footer() {
         <a href="/methodology.html">Methodology &amp; sources</a>
       </div>
       <p>
-        © {new Date().getFullYear()} Financial Calculators. Independent planning
+        © {new Date().getFullYear()} {siteName}. Independent planning
         tools.
       </p>
     </footer>
