@@ -1,11 +1,13 @@
 import fs from 'node:fs/promises';
 import {calculators,defaults,runCalculation,routeFor} from '../src/lib/calculators/index.ts';
 const doc='docs/financial-clone';const research=[];
+const provenance=JSON.parse(await fs.readFile(`${doc}/research/internal-reference-provenance.json`,'utf8'));
+const researchSources=new Map(provenance.catalog.map(item=>[item.id,item.source_url]));
 for(const name of ['property-auto','invest-retire','tax-other']){const data=JSON.parse(await fs.readFile(`${doc}/research/${name}.json`,'utf8'));research.push(...(data.tools??data.calculators));}
 const extensions={'compound-interest':['growth'],savings:['goal-contribution','goal-time'],heloc:['maximum-credit'],'take-home-paycheck':['paycheck'],repayment:['extra-payments']};
 const entries=calculators.filter(c=>c.category!=='Everyday Tools').map(c=>{
  const original=research.find(r=>r.id===c.id);if(!original)throw new Error('Missing original entry '+c.id);
- return {id:c.id,title:c.title,source_url:c.source,local_route:routeFor(c.id),category:c.category,directory:!!c.directory,
+ return {id:c.id,title:c.title,source_url:researchSources.get(c.id),local_route:routeFor(c.id),category:c.category,directory:!!c.directory,
   source_research_date:original.fetched_at??'2026-10-19',source_observed_function_groups:original.modes,source_observed_inputs:original.fields,source_observed_outputs:original.outputs,
   implementation_policy:c.directory?'directory':'Reference-informed independent calculations; expert fallback explicitly authorized where source behavior is not observable',reference_form_result_parity:'unverified',source_default_values_and_select_options:'unverified',
   modes:c.modes.map(m=>{let result;try{result=runCalculation(c.id,m.id,defaults(m));}catch(error){if(!(c.id==='currency'&&m.id==='live'))throw error;}

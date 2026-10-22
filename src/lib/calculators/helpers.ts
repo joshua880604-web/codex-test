@@ -9,7 +9,6 @@ export function tool(id: string, modes: Mode[], intro: string): Calculator {
     id,
     title: entry.title,
     category: entry.category,
-    source: entry.source_url,
     intro,
     modes,
   };

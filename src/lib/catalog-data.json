@@ -3,533 +3,457 @@
     "id": "mortgage",
     "category": "Mortgage and Real Estate",
     "title": "Mortgage Calculator",
-    "source_url": "https://www.calculator.net/mortgage-calculator.html",
     "local_route": "/mortgage-calculator.html"
   },
   {
     "id": "amortization",
     "category": "Mortgage and Real Estate",
     "title": "Amortization Calculator",
-    "source_url": "https://www.calculator.net/amortization-calculator.html",
     "local_route": "/amortization-calculator.html"
   },
   {
     "id": "mortgage-payoff",
     "category": "Mortgage and Real Estate",
     "title": "Mortgage Payoff Calculator",
-    "source_url": "https://www.calculator.net/mortgage-payoff-calculator.html",
     "local_route": "/mortgage-payoff-calculator.html"
   },
   {
     "id": "house-affordability",
     "category": "Mortgage and Real Estate",
     "title": "House Affordability Calculator",
-    "source_url": "https://www.calculator.net/house-affordability-calculator.html",
     "local_route": "/house-affordability-calculator.html"
   },
   {
     "id": "rent",
     "category": "Mortgage and Real Estate",
     "title": "Rent Calculator",
-    "source_url": "https://www.calculator.net/rent-calculator.html",
     "local_route": "/rent-calculator.html"
   },
   {
     "id": "debt-to-income-ratio",
     "category": "Mortgage and Real Estate",
     "title": "Debt-to-Income Ratio Calculator",
-    "source_url": "https://www.calculator.net/debt-ratio-calculator.html",
     "local_route": "/debt-ratio-calculator.html"
   },
   {
     "id": "real-estate",
     "category": "Mortgage and Real Estate",
     "title": "Real Estate Calculator",
-    "source_url": "https://www.calculator.net/real-estate-calculator.html",
     "local_route": "/real-estate-calculator.html"
   },
   {
     "id": "refinance",
     "category": "Mortgage and Real Estate",
     "title": "Refinance Calculator",
-    "source_url": "https://www.calculator.net/refinance-calculator.html",
     "local_route": "/refinance-calculator.html"
   },
   {
     "id": "rental-property",
     "category": "Mortgage and Real Estate",
     "title": "Rental Property Calculator",
-    "source_url": "https://www.calculator.net/rental-property-calculator.html",
     "local_route": "/rental-property-calculator.html"
   },
   {
     "id": "apr",
     "category": "Mortgage and Real Estate",
     "title": "APR Calculator",
-    "source_url": "https://www.calculator.net/apr-calculator.html",
     "local_route": "/apr-calculator.html"
   },
   {
     "id": "fha-loan",
     "category": "Mortgage and Real Estate",
     "title": "FHA Loan Calculator",
-    "source_url": "https://www.calculator.net/fha-loan-calculator.html",
     "local_route": "/fha-loan-calculator.html"
   },
   {
     "id": "va-mortgage",
     "category": "Mortgage and Real Estate",
     "title": "VA Mortgage Calculator",
-    "source_url": "https://www.calculator.net/va-mortgage-calculator.html",
     "local_route": "/va-mortgage-calculator.html"
   },
   {
     "id": "home-equity-loan",
     "category": "Mortgage and Real Estate",
     "title": "Home Equity Loan Calculator",
-    "source_url": "https://www.calculator.net/home-equity-loan-calculator.html",
     "local_route": "/home-equity-loan-calculator.html"
   },
   {
     "id": "heloc",
     "category": "Mortgage and Real Estate",
     "title": "HELOC Calculator",
-    "source_url": "https://www.calculator.net/heloc-calculator.html",
     "local_route": "/heloc-calculator.html"
   },
   {
     "id": "down-payment",
     "category": "Mortgage and Real Estate",
     "title": "Down Payment Calculator",
-    "source_url": "https://www.calculator.net/down-payment-calculator.html",
     "local_route": "/down-payment-calculator.html"
   },
   {
     "id": "rent-vs-buy",
     "category": "Mortgage and Real Estate",
     "title": "Rent vs. Buy Calculator",
-    "source_url": "https://www.calculator.net/rent-vs-buy-calculator.html",
     "local_route": "/rent-vs-buy-calculator.html"
   },
   {
     "id": "auto-loan",
     "category": "Auto",
     "title": "Auto Loan Calculator",
-    "source_url": "https://www.calculator.net/auto-loan-calculator.html",
     "local_route": "/auto-loan-calculator.html"
   },
   {
     "id": "cash-back-or-low-interest",
     "category": "Auto",
     "title": "Cash Back or Low Interest Calculator",
-    "source_url": "https://www.calculator.net/cash-back-or-low-interest-calculator.html",
     "local_route": "/cash-back-or-low-interest-calculator.html"
   },
   {
     "id": "auto-lease",
     "category": "Auto",
     "title": "Auto Lease Calculator",
-    "source_url": "https://www.calculator.net/auto-lease-calculator.html",
     "local_route": "/auto-lease-calculator.html"
   },
   {
     "id": "interest",
     "category": "Investment",
     "title": "Interest Calculator",
-    "source_url": "https://www.calculator.net/interest-calculator.html",
     "local_route": "/interest-calculator.html"
   },
   {
     "id": "investment",
     "category": "Investment",
     "title": "Investment Calculator",
-    "source_url": "https://www.calculator.net/investment-calculator.html",
     "local_route": "/investment-calculator.html"
   },
   {
     "id": "finance",
     "category": "Investment",
     "title": "Finance Calculator",
-    "source_url": "https://www.calculator.net/finance-calculator.html",
     "local_route": "/finance-calculator.html"
   },
   {
     "id": "compound-interest",
     "category": "Investment",
     "title": "Compound Interest Calculator",
-    "source_url": "https://www.calculator.net/compound-interest-calculator.html",
     "local_route": "/compound-interest-calculator.html"
   },
   {
     "id": "interest-rate",
     "category": "Investment",
     "title": "Interest Rate Calculator",
-    "source_url": "https://www.calculator.net/interest-rate-calculator.html",
     "local_route": "/interest-rate-calculator.html"
   },
   {
     "id": "savings",
     "category": "Investment",
     "title": "Savings Calculator",
-    "source_url": "https://www.calculator.net/savings-calculator.html",
     "local_route": "/savings-calculator.html"
   },
   {
     "id": "simple-interest",
     "category": "Investment",
     "title": "Simple Interest Calculator",
-    "source_url": "https://www.calculator.net/simple-interest-calculator.html",
     "local_route": "/simple-interest-calculator.html"
   },
   {
     "id": "cd",
     "category": "Investment",
     "title": "CD Calculator",
-    "source_url": "https://www.calculator.net/cd-calculator.html",
     "local_route": "/cd-calculator.html"
   },
   {
     "id": "bond",
     "category": "Investment",
     "title": "Bond Calculator",
-    "source_url": "https://www.calculator.net/bond-calculator.html",
     "local_route": "/bond-calculator.html"
   },
   {
     "id": "mutual-fund",
     "category": "Investment",
     "title": "Mutual Fund Calculator",
-    "source_url": "https://www.calculator.net/mutual-fund-calculator.html",
     "local_route": "/mutual-fund-calculator.html"
   },
   {
     "id": "average-return",
     "category": "Investment",
     "title": "Average Return Calculator",
-    "source_url": "https://www.calculator.net/average-return-calculator.html",
     "local_route": "/average-return-calculator.html"
   },
   {
     "id": "irr",
     "category": "Investment",
     "title": "IRR Calculator",
-    "source_url": "https://www.calculator.net/irr-calculator.html",
     "local_route": "/irr-calculator.html"
   },
   {
     "id": "roi",
     "category": "Investment",
     "title": "ROI Calculator",
-    "source_url": "https://www.calculator.net/roi-calculator.html",
     "local_route": "/roi-calculator.html"
   },
   {
     "id": "payback-period",
     "category": "Investment",
     "title": "Payback Period Calculator",
-    "source_url": "https://www.calculator.net/payback-period-calculator.html",
     "local_route": "/payback-period-calculator.html"
   },
   {
     "id": "present-value",
     "category": "Investment",
     "title": "Present Value Calculator",
-    "source_url": "https://www.calculator.net/present-value-calculator.html",
     "local_route": "/present-value-calculator.html"
   },
   {
     "id": "future-value",
     "category": "Investment",
     "title": "Future Value Calculator",
-    "source_url": "https://www.calculator.net/future-value-calculator.html",
     "local_route": "/future-value-calculator.html"
   },
   {
     "id": "retirement",
     "category": "Retirement",
     "title": "Retirement Calculator",
-    "source_url": "https://www.calculator.net/retirement-calculator.html",
     "local_route": "/retirement-calculator.html"
   },
   {
     "id": "401k",
     "category": "Retirement",
     "title": "401K Calculator",
-    "source_url": "https://www.calculator.net/401k-calculator.html",
     "local_route": "/401k-calculator.html"
   },
   {
     "id": "pension",
     "category": "Retirement",
     "title": "Pension Calculator",
-    "source_url": "https://www.calculator.net/pension-calculator.html",
     "local_route": "/pension-calculator.html"
   },
   {
     "id": "social-security",
     "category": "Retirement",
     "title": "Social Security Calculator",
-    "source_url": "https://www.calculator.net/social-security-calculator.html",
     "local_route": "/social-security-calculator.html"
   },
   {
     "id": "annuity",
     "category": "Retirement",
     "title": "Annuity Calculator",
-    "source_url": "https://www.calculator.net/annuity-calculator.html",
     "local_route": "/annuity-calculator.html"
   },
   {
     "id": "annuity-payout",
     "category": "Retirement",
     "title": "Annuity Payout Calculator",
-    "source_url": "https://www.calculator.net/annuity-payout-calculator.html",
     "local_route": "/annuity-payout-calculator.html"
   },
   {
     "id": "roth-ira",
     "category": "Retirement",
     "title": "Roth IRA Calculator",
-    "source_url": "https://www.calculator.net/roth-ira-calculator.html",
     "local_route": "/roth-ira-calculator.html"
   },
   {
     "id": "ira",
     "category": "Retirement",
     "title": "IRA Calculator",
-    "source_url": "https://www.calculator.net/ira-calculator.html",
     "local_route": "/ira-calculator.html"
   },
   {
     "id": "rmd",
     "category": "Retirement",
     "title": "RMD Calculator",
-    "source_url": "https://www.calculator.net/rmd-calculator.html",
     "local_route": "/rmd-calculator.html"
   },
   {
     "id": "income-tax",
     "category": "Tax and Salary",
     "title": "Income Tax Calculator",
-    "source_url": "https://www.calculator.net/tax-calculator.html",
     "local_route": "/tax-calculator.html"
   },
   {
     "id": "salary",
     "category": "Tax and Salary",
     "title": "Salary Calculator",
-    "source_url": "https://www.calculator.net/salary-calculator.html",
     "local_route": "/salary-calculator.html"
   },
   {
     "id": "marriage-tax",
     "category": "Tax and Salary",
     "title": "Marriage Tax Calculator",
-    "source_url": "https://www.calculator.net/marriage-calculator.html",
     "local_route": "/marriage-calculator.html"
   },
   {
     "id": "estate-tax",
     "category": "Tax and Salary",
     "title": "Estate Tax Calculator",
-    "source_url": "https://www.calculator.net/estate-tax-calculator.html",
     "local_route": "/estate-tax-calculator.html"
   },
   {
     "id": "take-home-paycheck",
     "category": "Tax and Salary",
     "title": "Take-Home-Paycheck Calculator",
-    "source_url": "https://www.calculator.net/take-home-pay-calculator.html",
     "local_route": "/take-home-pay-calculator.html"
   },
   {
     "id": "loan",
     "category": "Other",
     "title": "Loan Calculator",
-    "source_url": "https://www.calculator.net/loan-calculator.html",
     "local_route": "/loan-calculator.html"
   },
   {
     "id": "payment",
     "category": "Other",
     "title": "Payment Calculator",
-    "source_url": "https://www.calculator.net/payment-calculator.html",
     "local_route": "/payment-calculator.html"
   },
   {
     "id": "currency",
     "category": "Other",
     "title": "Currency Calculator",
-    "source_url": "https://www.calculator.net/currency-calculator.html",
     "local_route": "/currency-calculator.html"
   },
   {
     "id": "inflation",
     "category": "Other",
     "title": "Inflation Calculator",
-    "source_url": "https://www.calculator.net/inflation-calculator.html",
     "local_route": "/inflation-calculator.html"
   },
   {
     "id": "sales-tax",
     "category": "Other",
     "title": "Sales Tax Calculator",
-    "source_url": "https://www.calculator.net/sales-tax-calculator.html",
     "local_route": "/sales-tax-calculator.html"
   },
   {
     "id": "credit-card",
     "category": "Other",
     "title": "Credit Card Calculator",
-    "source_url": "https://www.calculator.net/credit-card-calculator.html",
     "local_route": "/credit-card-calculator.html"
   },
   {
     "id": "credit-cards-payoff",
     "category": "Other",
     "title": "Credit Cards Payoff Calculator",
-    "source_url": "https://www.calculator.net/credit-card-payoff-calculator.html",
     "local_route": "/credit-card-payoff-calculator.html"
   },
   {
     "id": "debt-payoff",
     "category": "Other",
     "title": "Debt Payoff Calculator",
-    "source_url": "https://www.calculator.net/debt-payoff-calculator.html",
     "local_route": "/debt-payoff-calculator.html"
   },
   {
     "id": "debt-consolidation",
     "category": "Other",
     "title": "Debt Consolidation Calculator",
-    "source_url": "https://www.calculator.net/debt-consolidation-calculator.html",
     "local_route": "/debt-consolidation-calculator.html"
   },
   {
     "id": "repayment",
     "category": "Other",
     "title": "Repayment Calculator",
-    "source_url": "https://www.calculator.net/repayment-calculator.html",
     "local_route": "/repayment-calculator.html"
   },
   {
     "id": "student-loan",
     "category": "Other",
     "title": "Student Loan Calculator",
-    "source_url": "https://www.calculator.net/student-loan-calculator.html",
     "local_route": "/student-loan-calculator.html"
   },
   {
     "id": "college-cost",
     "category": "Other",
     "title": "College Cost Calculator",
-    "source_url": "https://www.calculator.net/college-cost-calculator.html",
     "local_route": "/college-cost-calculator.html"
   },
   {
     "id": "vat",
     "category": "Other",
     "title": "VAT Calculator",
-    "source_url": "https://www.calculator.net/vat-calculator.html",
     "local_route": "/vat-calculator.html"
   },
   {
     "id": "depreciation",
     "category": "Other",
     "title": "Depreciation Calculator",
-    "source_url": "https://www.calculator.net/depreciation-calculator.html",
     "local_route": "/depreciation-calculator.html"
   },
   {
     "id": "margin",
     "category": "Other",
     "title": "Margin Calculator",
-    "source_url": "https://www.calculator.net/margin-calculator.html",
     "local_route": "/margin-calculator.html"
   },
   {
     "id": "discount",
     "category": "Other",
     "title": "Discount Calculator",
-    "source_url": "https://www.calculator.net/discount-calculator.html",
     "local_route": "/discount-calculator.html"
   },
   {
     "id": "business-loan",
     "category": "Other",
     "title": "Business Loan Calculator",
-    "source_url": "https://www.calculator.net/business-loan-calculator.html",
     "local_route": "/business-loan-calculator.html"
   },
   {
     "id": "personal-loan",
     "category": "Other",
     "title": "Personal Loan Calculator",
-    "source_url": "https://www.calculator.net/personal-loan-calculator.html",
     "local_route": "/personal-loan-calculator.html"
   },
   {
     "id": "boat-loan",
     "category": "Other",
     "title": "Boat Loan Calculator",
-    "source_url": "https://www.calculator.net/boat-loan-calculator.html",
     "local_route": "/boat-loan-calculator.html"
   },
   {
     "id": "lease",
     "category": "Other",
     "title": "Lease Calculator",
-    "source_url": "https://www.calculator.net/lease-calculator.html",
     "local_route": "/lease-calculator.html"
   },
   {
     "id": "budget",
     "category": "Other",
     "title": "Budget Calculator",
-    "source_url": "https://www.calculator.net/budget-calculator.html",
     "local_route": "/budget-calculator.html"
   },
   {
     "id": "commission",
     "category": "Other",
     "title": "Commission Calculator",
-    "source_url": "https://www.calculator.net/commission-calculator.html",
     "local_route": "/commission-calculator.html"
   },
   {
     "id": "percentage",
     "category": "Everyday Tools",
     "title": "Percentage Calculator",
-    "local_route": "/percentage-calculator.html",
-    "source_url": "https://www.calculator.net/percent-calculator.html"
+    "local_route": "/percentage-calculator.html"
   },
   {
     "id": "tip-bill-split",
     "category": "Everyday Tools",
     "title": "Tip and Bill Split Calculator",
-    "local_route": "/tip-bill-split-calculator.html",
-    "source_url": "https://www.calculator.net/tip-calculator.html"
+    "local_route": "/tip-bill-split-calculator.html"
   },
   {
     "id": "date",
     "category": "Everyday Tools",
     "title": "Date Calculator",
-    "local_route": "/date-calculator.html",
-    "source_url": "https://www.calculator.net/date-calculator.html"
+    "local_route": "/date-calculator.html"
   },
   {
     "id": "unit-converter",
     "category": "Everyday Tools",
     "title": "Unit Converter",
-    "local_route": "/unit-converter.html",
-    "source_url": "https://www.calculator.net/conversion-calculator.html"
+    "local_route": "/unit-converter.html"
   },
   {
     "id": "scientific",
     "title": "Scientific Calculator",
     "category": "Everyday Tools",
-    "local_route": "/scientific-calculator.html",
-    "source_url": "https://www.calculator.net/scientific-calculator.html"
+    "local_route": "/scientific-calculator.html"
   },
   {
     "id": "markup",

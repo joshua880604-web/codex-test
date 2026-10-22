@@ -1,0 +1,486 @@
+{
+  "tested_at": "2026-10-22T14:49:12.615Z",
+  "passed": true,
+  "pages": 95,
+  "checks": [
+    {
+      "path": "/mortgage-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/amortization-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/mortgage-payoff-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/house-affordability-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/rent-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/debt-ratio-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/real-estate-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/refinance-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/rental-property-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/apr-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/fha-loan-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/va-mortgage-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/home-equity-loan-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/heloc-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/down-payment-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/rent-vs-buy-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/auto-loan-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/cash-back-or-low-interest-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/auto-lease-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/interest-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/investment-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/finance-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/compound-interest-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/interest-rate-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/savings-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/simple-interest-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/cd-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/bond-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/mutual-fund-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/average-return-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/irr-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/roi-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/payback-period-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/present-value-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/future-value-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/retirement-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/401k-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/pension-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/social-security-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/annuity-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/annuity-payout-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/roth-ira-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/ira-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/rmd-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/tax-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/salary-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/marriage-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/estate-tax-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/take-home-pay-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/loan-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/payment-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/currency-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/inflation-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/sales-tax-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/credit-card-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/credit-card-payoff-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/debt-payoff-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/debt-consolidation-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/repayment-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/student-loan-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/college-cost-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/vat-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/depreciation-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/margin-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/discount-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/business-loan-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/personal-loan-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/boat-loan-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/lease-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/budget-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/commission-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/percentage-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/tip-bill-split-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/date-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/unit-converter.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/scientific-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/markup-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/cagr-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/emergency-fund-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/break-even-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/investment-fee-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/real-return-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/financial-calculator.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/about.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/privacy.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/methodology.html",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/glossary/",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/glossary/compound-interest/",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/glossary/cagr/",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/glossary/real-rate-of-return/",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/glossary/expense-ratio/",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/glossary/dollar-cost-averaging/",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/glossary/401k/",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/glossary/amortization/",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    },
+    {
+      "path": "/glossary/markup-vs-margin/",
+      "noReferenceDomain": true,
+      "noMobileOverflow": true
+    }
+  ],
+  "calculationSmokeRoutes": 3,
+  "officialTaxAndInflationSourcesPresent": true,
+  "errors": [],
+  "blockedRequests": []
+}

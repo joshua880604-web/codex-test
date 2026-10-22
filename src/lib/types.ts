@@ -43,7 +43,6 @@ export type Calculator = {
   id: string;
   title: string;
   category: string;
-  source: string;
   intro: string;
   modes: Mode[];
   related?: string[];

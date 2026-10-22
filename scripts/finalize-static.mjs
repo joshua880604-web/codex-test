@@ -21,3 +21,4 @@ await mkdir(glossary,{recursive:true});
  }
 await rename('out/glossary.html',join(glossary,'index.html'));
 console.log('Prepared glossary directory documents.');
+await import('./check-public-brand.mjs');

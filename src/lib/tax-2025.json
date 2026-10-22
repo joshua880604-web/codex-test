@@ -212,11 +212,5 @@
       "rate_formula": "max(.20,max(.35,.50-.01*ceil(max(AGI-15000,0)/2000))-.01*ceil(max(AGI-(joint?150000:75000),0)/(joint?4000:2000)))",
       "earned_income_limit": "Expense base limited to own earned income, or lesser spouse earned income when married; student/incapacitated spouse deemed250/month one person,500/month two+; qualified benefits exclusion reduces3000/6000 cap."
     }
-  },
-  "reference_eitc": {
-    "source_url": "https://www.calculator.net/tax-calculator.html",
-    "article_mentions": true,
-    "automatically_calculated": "unknown",
-    "evidence": "Article describes EITC but says only certain credits included and others manually entered. No result submission inspected. Age/dependent count fields alone cannot prove EITC behavior."
   }
 }

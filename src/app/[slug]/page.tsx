@@ -121,7 +121,7 @@ export default async function Page({
               .
             </p>
             <p>
-              {siteName} is independent of Calculator.net. Calculations run in
+              {siteName} provides independent planning tools. Calculations run in
               your browser. Currency conversion uses a manual rate or a bundled dated snapshot; no external API is contacted.
             </p>
           </>

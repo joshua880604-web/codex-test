@@ -1,0 +1,706 @@
+{
+  "recorded_on": "2026-10-22",
+  "scope": "Internal research provenance only; must not be imported by application source or copied into public output.",
+  "catalog": [
+    {
+      "id": "mortgage",
+      "source_url": "https://www.calculator.net/mortgage-calculator.html"
+    },
+    {
+      "id": "amortization",
+      "source_url": "https://www.calculator.net/amortization-calculator.html"
+    },
+    {
+      "id": "mortgage-payoff",
+      "source_url": "https://www.calculator.net/mortgage-payoff-calculator.html"
+    },
+    {
+      "id": "house-affordability",
+      "source_url": "https://www.calculator.net/house-affordability-calculator.html"
+    },
+    {
+      "id": "rent",
+      "source_url": "https://www.calculator.net/rent-calculator.html"
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "source_url": "https://www.calculator.net/debt-ratio-calculator.html"
+    },
+    {
+      "id": "real-estate",
+      "source_url": "https://www.calculator.net/real-estate-calculator.html"
+    },
+    {
+      "id": "refinance",
+      "source_url": "https://www.calculator.net/refinance-calculator.html"
+    },
+    {
+      "id": "rental-property",
+      "source_url": "https://www.calculator.net/rental-property-calculator.html"
+    },
+    {
+      "id": "apr",
+      "source_url": "https://www.calculator.net/apr-calculator.html"
+    },
+    {
+      "id": "fha-loan",
+      "source_url": "https://www.calculator.net/fha-loan-calculator.html"
+    },
+    {
+      "id": "va-mortgage",
+      "source_url": "https://www.calculator.net/va-mortgage-calculator.html"
+    },
+    {
+      "id": "home-equity-loan",
+      "source_url": "https://www.calculator.net/home-equity-loan-calculator.html"
+    },
+    {
+      "id": "heloc",
+      "source_url": "https://www.calculator.net/heloc-calculator.html"
+    },
+    {
+      "id": "down-payment",
+      "source_url": "https://www.calculator.net/down-payment-calculator.html"
+    },
+    {
+      "id": "rent-vs-buy",
+      "source_url": "https://www.calculator.net/rent-vs-buy-calculator.html"
+    },
+    {
+      "id": "auto-loan",
+      "source_url": "https://www.calculator.net/auto-loan-calculator.html"
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "source_url": "https://www.calculator.net/cash-back-or-low-interest-calculator.html"
+    },
+    {
+      "id": "auto-lease",
+      "source_url": "https://www.calculator.net/auto-lease-calculator.html"
+    },
+    {
+      "id": "interest",
+      "source_url": "https://www.calculator.net/interest-calculator.html"
+    },
+    {
+      "id": "investment",
+      "source_url": "https://www.calculator.net/investment-calculator.html"
+    },
+    {
+      "id": "finance",
+      "source_url": "https://www.calculator.net/finance-calculator.html"
+    },
+    {
+      "id": "compound-interest",
+      "source_url": "https://www.calculator.net/compound-interest-calculator.html"
+    },
+    {
+      "id": "interest-rate",
+      "source_url": "https://www.calculator.net/interest-rate-calculator.html"
+    },
+    {
+      "id": "savings",
+      "source_url": "https://www.calculator.net/savings-calculator.html"
+    },
+    {
+      "id": "simple-interest",
+      "source_url": "https://www.calculator.net/simple-interest-calculator.html"
+    },
+    {
+      "id": "cd",
+      "source_url": "https://www.calculator.net/cd-calculator.html"
+    },
+    {
+      "id": "bond",
+      "source_url": "https://www.calculator.net/bond-calculator.html"
+    },
+    {
+      "id": "mutual-fund",
+      "source_url": "https://www.calculator.net/mutual-fund-calculator.html"
+    },
+    {
+      "id": "average-return",
+      "source_url": "https://www.calculator.net/average-return-calculator.html"
+    },
+    {
+      "id": "irr",
+      "source_url": "https://www.calculator.net/irr-calculator.html"
+    },
+    {
+      "id": "roi",
+      "source_url": "https://www.calculator.net/roi-calculator.html"
+    },
+    {
+      "id": "payback-period",
+      "source_url": "https://www.calculator.net/payback-period-calculator.html"
+    },
+    {
+      "id": "present-value",
+      "source_url": "https://www.calculator.net/present-value-calculator.html"
+    },
+    {
+      "id": "future-value",
+      "source_url": "https://www.calculator.net/future-value-calculator.html"
+    },
+    {
+      "id": "retirement",
+      "source_url": "https://www.calculator.net/retirement-calculator.html"
+    },
+    {
+      "id": "401k",
+      "source_url": "https://www.calculator.net/401k-calculator.html"
+    },
+    {
+      "id": "pension",
+      "source_url": "https://www.calculator.net/pension-calculator.html"
+    },
+    {
+      "id": "social-security",
+      "source_url": "https://www.calculator.net/social-security-calculator.html"
+    },
+    {
+      "id": "annuity",
+      "source_url": "https://www.calculator.net/annuity-calculator.html"
+    },
+    {
+      "id": "annuity-payout",
+      "source_url": "https://www.calculator.net/annuity-payout-calculator.html"
+    },
+    {
+      "id": "roth-ira",
+      "source_url": "https://www.calculator.net/roth-ira-calculator.html"
+    },
+    {
+      "id": "ira",
+      "source_url": "https://www.calculator.net/ira-calculator.html"
+    },
+    {
+      "id": "rmd",
+      "source_url": "https://www.calculator.net/rmd-calculator.html"
+    },
+    {
+      "id": "income-tax",
+      "source_url": "https://www.calculator.net/tax-calculator.html"
+    },
+    {
+      "id": "salary",
+      "source_url": "https://www.calculator.net/salary-calculator.html"
+    },
+    {
+      "id": "marriage-tax",
+      "source_url": "https://www.calculator.net/marriage-calculator.html"
+    },
+    {
+      "id": "estate-tax",
+      "source_url": "https://www.calculator.net/estate-tax-calculator.html"
+    },
+    {
+      "id": "take-home-paycheck",
+      "source_url": "https://www.calculator.net/take-home-pay-calculator.html"
+    },
+    {
+      "id": "loan",
+      "source_url": "https://www.calculator.net/loan-calculator.html"
+    },
+    {
+      "id": "payment",
+      "source_url": "https://www.calculator.net/payment-calculator.html"
+    },
+    {
+      "id": "currency",
+      "source_url": "https://www.calculator.net/currency-calculator.html"
+    },
+    {
+      "id": "inflation",
+      "source_url": "https://www.calculator.net/inflation-calculator.html"
+    },
+    {
+      "id": "sales-tax",
+      "source_url": "https://www.calculator.net/sales-tax-calculator.html"
+    },
+    {
+      "id": "credit-card",
+      "source_url": "https://www.calculator.net/credit-card-calculator.html"
+    },
+    {
+      "id": "credit-cards-payoff",
+      "source_url": "https://www.calculator.net/credit-card-payoff-calculator.html"
+    },
+    {
+      "id": "debt-payoff",
+      "source_url": "https://www.calculator.net/debt-payoff-calculator.html"
+    },
+    {
+      "id": "debt-consolidation",
+      "source_url": "https://www.calculator.net/debt-consolidation-calculator.html"
+    },
+    {
+      "id": "repayment",
+      "source_url": "https://www.calculator.net/repayment-calculator.html"
+    },
+    {
+      "id": "student-loan",
+      "source_url": "https://www.calculator.net/student-loan-calculator.html"
+    },
+    {
+      "id": "college-cost",
+      "source_url": "https://www.calculator.net/college-cost-calculator.html"
+    },
+    {
+      "id": "vat",
+      "source_url": "https://www.calculator.net/vat-calculator.html"
+    },
+    {
+      "id": "depreciation",
+      "source_url": "https://www.calculator.net/depreciation-calculator.html"
+    },
+    {
+      "id": "margin",
+      "source_url": "https://www.calculator.net/margin-calculator.html"
+    },
+    {
+      "id": "discount",
+      "source_url": "https://www.calculator.net/discount-calculator.html"
+    },
+    {
+      "id": "business-loan",
+      "source_url": "https://www.calculator.net/business-loan-calculator.html"
+    },
+    {
+      "id": "personal-loan",
+      "source_url": "https://www.calculator.net/personal-loan-calculator.html"
+    },
+    {
+      "id": "boat-loan",
+      "source_url": "https://www.calculator.net/boat-loan-calculator.html"
+    },
+    {
+      "id": "lease",
+      "source_url": "https://www.calculator.net/lease-calculator.html"
+    },
+    {
+      "id": "budget",
+      "source_url": "https://www.calculator.net/budget-calculator.html"
+    },
+    {
+      "id": "commission",
+      "source_url": "https://www.calculator.net/commission-calculator.html"
+    },
+    {
+      "id": "percentage",
+      "source_url": "https://www.calculator.net/percent-calculator.html"
+    },
+    {
+      "id": "tip-bill-split",
+      "source_url": "https://www.calculator.net/tip-calculator.html"
+    },
+    {
+      "id": "date",
+      "source_url": "https://www.calculator.net/date-calculator.html"
+    },
+    {
+      "id": "unit-converter",
+      "source_url": "https://www.calculator.net/conversion-calculator.html"
+    },
+    {
+      "id": "scientific",
+      "source_url": "https://www.calculator.net/scientific-calculator.html"
+    },
+    {
+      "id": "markup",
+      "source_url": "https://github.com/joshua880604-web/codex-test"
+    },
+    {
+      "id": "cagr",
+      "source_url": "https://github.com/joshua880604-web/codex-test"
+    },
+    {
+      "id": "emergency-fund",
+      "source_url": "https://github.com/joshua880604-web/codex-test"
+    },
+    {
+      "id": "break-even",
+      "source_url": "https://github.com/joshua880604-web/codex-test"
+    },
+    {
+      "id": "investment-fee",
+      "source_url": "https://github.com/joshua880604-web/codex-test"
+    },
+    {
+      "id": "real-return",
+      "source_url": "https://github.com/joshua880604-web/codex-test"
+    }
+  ],
+  "guide_references": {
+    "amortization": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/amortization-calculator.html"
+      }
+    ],
+    "mortgage-payoff": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/mortgage-payoff-calculator.html"
+      }
+    ],
+    "house-affordability": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/house-affordability-calculator.html"
+      }
+    ],
+    "rent": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/rent-calculator.html"
+      }
+    ],
+    "debt-to-income-ratio": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/debt-ratio-calculator.html"
+      }
+    ],
+    "refinance": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/refinance-calculator.html"
+      }
+    ],
+    "rental-property": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/rental-property-calculator.html"
+      }
+    ],
+    "apr": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/apr-calculator.html"
+      }
+    ],
+    "fha-loan": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/fha-loan-calculator.html"
+      }
+    ],
+    "va-mortgage": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/va-mortgage-calculator.html"
+      }
+    ],
+    "home-equity-loan": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/home-equity-loan-calculator.html"
+      }
+    ],
+    "heloc": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/heloc-calculator.html"
+      }
+    ],
+    "down-payment": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/down-payment-calculator.html"
+      }
+    ],
+    "rent-vs-buy": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/rent-vs-buy-calculator.html"
+      }
+    ],
+    "auto-loan": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/auto-loan-calculator.html"
+      }
+    ],
+    "cash-back-or-low-interest": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/cash-back-or-low-interest-calculator.html"
+      }
+    ],
+    "auto-lease": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/auto-lease-calculator.html"
+      }
+    ],
+    "investment": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/investment-calculator.html"
+      }
+    ],
+    "finance": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/finance-calculator.html"
+      }
+    ],
+    "interest-rate": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/interest-rate-calculator.html"
+      }
+    ],
+    "savings": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/savings-calculator.html"
+      }
+    ],
+    "simple-interest": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/simple-interest-calculator.html"
+      }
+    ],
+    "cd": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/cd-calculator.html"
+      }
+    ],
+    "bond": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/bond-calculator.html"
+      }
+    ],
+    "mutual-fund": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/mutual-fund-calculator.html"
+      }
+    ],
+    "average-return": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/average-return-calculator.html"
+      }
+    ],
+    "roi": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/roi-calculator.html"
+      }
+    ],
+    "payback-period": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/payback-period-calculator.html"
+      }
+    ],
+    "present-value": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/present-value-calculator.html"
+      }
+    ],
+    "future-value": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/future-value-calculator.html"
+      }
+    ],
+    "pension": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/pension-calculator.html"
+      }
+    ],
+    "social-security": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/social-security-calculator.html"
+      }
+    ],
+    "annuity": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/annuity-calculator.html"
+      }
+    ],
+    "annuity-payout": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/annuity-payout-calculator.html"
+      }
+    ],
+    "roth-ira": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/roth-ira-calculator.html"
+      }
+    ],
+    "ira": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/ira-calculator.html"
+      }
+    ],
+    "salary": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/salary-calculator.html"
+      }
+    ],
+    "marriage-tax": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/marriage-calculator.html"
+      }
+    ],
+    "estate-tax": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/estate-tax-calculator.html"
+      }
+    ],
+    "take-home-paycheck": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/take-home-pay-calculator.html"
+      }
+    ],
+    "payment": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/payment-calculator.html"
+      }
+    ],
+    "currency": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/currency-calculator.html"
+      }
+    ],
+    "inflation": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/inflation-calculator.html"
+      }
+    ],
+    "sales-tax": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/sales-tax-calculator.html"
+      }
+    ],
+    "credit-card": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/credit-card-calculator.html"
+      }
+    ],
+    "credit-cards-payoff": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/credit-card-payoff-calculator.html"
+      }
+    ],
+    "debt-payoff": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/debt-payoff-calculator.html"
+      }
+    ],
+    "debt-consolidation": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/debt-consolidation-calculator.html"
+      }
+    ],
+    "repayment": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/repayment-calculator.html"
+      }
+    ],
+    "student-loan": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/student-loan-calculator.html"
+      }
+    ],
+    "college-cost": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/college-cost-calculator.html"
+      }
+    ],
+    "depreciation": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/depreciation-calculator.html"
+      }
+    ],
+    "margin": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/margin-calculator.html"
+      }
+    ],
+    "discount": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/discount-calculator.html"
+      }
+    ],
+    "business-loan": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/business-loan-calculator.html"
+      }
+    ],
+    "personal-loan": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/personal-loan-calculator.html"
+      }
+    ],
+    "boat-loan": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/boat-loan-calculator.html"
+      }
+    ],
+    "lease": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/lease-calculator.html"
+      }
+    ],
+    "budget": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/budget-calculator.html"
+      }
+    ],
+    "commission": [
+      {
+        "title": "Reference calculator for feature comparison (not a model-parity certification)",
+        "url": "https://www.calculator.net/commission-calculator.html"
+      }
+    ]
+  },
+  "tax_reference_eitc": {
+    "source_url": "https://www.calculator.net/tax-calculator.html",
+    "article_mentions": true,
+    "automatically_calculated": "unknown",
+    "evidence": "Article describes EITC but says only certain credits included and others manually entered. No result submission inspected. Age/dependent count fields alone cannot prove EITC behavior."
+  },
+  "irr_source": {
+    "title": "IRR definition and worked example",
+    "url": "https://www.calculator.net/irr-calculator.html"
+  }
+}

@@ -5,12 +5,14 @@ import {calculators,routeFor} from '../src/lib/calculators/index.ts';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const doc=path.join(root,'docs/financial-clone');
 const read=async p=>JSON.parse(await fs.readFile(path.join(doc,p),'utf8'));
+const provenance=await read('research/internal-reference-provenance.json');
+const researchSources=new Map(provenance.catalog.map(item=>[item.id,item.source_url]));
 const browser=await read('evidence/browser-qa.json');
 if(!browser.passed)throw new Error('Browser evidence is not passing.');
 const tap=await fs.readFile(path.join(doc,'evidence/tests.tap'),'utf8');
 const total=Number(tap.match(/^# tests (\d+)/m)?.[1]),failed=Number(tap.match(/^# fail (\d+)/m)?.[1]);if(!total||failed)throw new Error('Numeric tests are missing or failing.');
 const research=[];for(const name of ['property-auto.json','invest-retire.json','tax-other.json']){const r=await read('research/'+name);research.push(...(r.tools??r.calculators));}
-const inventory=calculators.map(c=>{const source=research.find(x=>x.id===c.id);return {id:c.id,title:c.title,category:c.category,source_url:c.source,local_route:routeFor(c.id),directory:!!c.directory,source_status:'text-reviewed; exact controls/defaults not verified',source_mode_groups:source?.modes??[],implemented_modes:c.modes.map(m=>({id:m.id,title:m.title,fields:m.fields.map(f=>({key:f.key,label:f.label,type:f.type??'number',unit:f.unit??null})),formula:m.formula}))};});
+const inventory=calculators.map(c=>{const source=research.find(x=>x.id===c.id);return {id:c.id,title:c.title,category:c.category,source_url:researchSources.get(c.id),local_route:routeFor(c.id),directory:!!c.directory,source_status:'text-reviewed; exact controls/defaults not verified',source_mode_groups:source?.modes??[],implemented_modes:c.modes.map(m=>({id:m.id,title:m.title,fields:m.fields.map(f=>({key:f.key,label:f.label,type:f.type??'number',unit:f.unit??null})),formula:m.formula}))};});
 await fs.writeFile(path.join(doc,'inventory.json'),JSON.stringify(inventory,null,2));
 const now=new Date().toISOString();
 const progress=calculators.flatMap(c=>(c.directory?[null]:c.modes).map(m=>{const check=browser.checks.find(x=>x.id===c.id);const tested=!m||check?.modes.some(x=>x.mode===m.title||x.mode==='default');return {id:c.id,mode:m?.id??'directory',spec:'in_progress',implementation:'in_progress',math:m?'in_progress':'not_applicable',reference_parity:'unverified',browser:tested?'passed':'unverified',visual:'unverified',local_implementation:'passed',local_numeric_smoke:m?'passed':'not_applicable',evidence:{text_spec:`specs/${c.id}.md`,numeric:'evidence/tests.tap',browser:'evidence/browser-qa.json',limitations:'remaining-work.md'},blockers:['Original DOM values/select choices/form submissions and source viewport screenshots are unavailable in the current research environment.'],fully_complete:false,updated_at:now};}));

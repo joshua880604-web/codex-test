@@ -535,8 +535,8 @@ export const guides: Record<string, Guide> = {
     sources: [
       {
         title:
-          "Calculator.net: IRR definition and the worked machine-investment example",
-        url: "https://www.calculator.net/irr-calculator.html",
+          "Calculation methodology and cash-flow model scope",
+        url: "/methodology.html#model-scope",
       },
     ],
   },

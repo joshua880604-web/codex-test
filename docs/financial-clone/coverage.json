@@ -17,7 +17,7 @@
   "local_only": true,
   "published": false,
   "qa_server_running": false,
-  "latest_change": "Expanded methodology with real configured defaults, source/data versions, reproducible checks, rounding/review scope and explicit issue reporting",
+  "latest_change": "Removed the excluded reference domain from all public pages, links, catalog/model metadata and client payloads; build now enforces a public-export domain check",
   "seo_generated_pages_checked": 95,
   "seo_detailed_guides": 81,
   "seo_worked_examples": 129,
@@ -85,5 +85,8 @@
   "glossary_browser_checks": 37,
   "methodology_browser_checks": 20,
   "methodology_default_examples": 9,
-  "methodology_reproducible_checks": 2
+  "methodology_reproducible_checks": 2,
+  "public_export_domain_check": "required by build finalizer; scans HTML, JS, JSON, RSC text, XML, CSS, source maps and SVG",
+  "public_export_text_assets_checked": 257,
+  "public_domain_browser_pages_checked": 95
 }

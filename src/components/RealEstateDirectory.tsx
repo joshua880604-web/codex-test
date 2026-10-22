@@ -1,7 +1,9 @@
 import { calculators, routeFor } from "@/lib/calculators";
 const financial = [
   "mortgage",
+  "amortization",
   "house-affordability",
+  "debt-to-income-ratio",
   "mortgage-payoff",
   "refinance",
   "fha-loan",
@@ -13,15 +15,6 @@ const financial = [
   "rental-property",
   "rent",
   "rent-vs-buy",
-];
-const other = [
-  ["Area", "area"],
-  ["Concrete", "concrete"],
-  ["BTU", "btu"],
-  ["Stair", "stair"],
-  ["Tile", "tile"],
-  ["Square Footage", "square-footage"],
-  ["Roofing", "roofing"],
 ];
 export default function RealEstateDirectory() {
   return (
@@ -38,24 +31,6 @@ export default function RealEstateDirectory() {
             </li>
           );
         })}
-      </ul>
-      <h2>Other</h2>
-      <p>
-        These construction and measurement tools are outside the financial
-        section and open on the reference website.
-      </p>
-      <ul>
-        {other.map(([title, slug]) => (
-          <li key={slug}>
-            <a
-              href={"https://www.calculator.net/" + slug + "-calculator.html"}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {title} Calculator ↗
-            </a>
-          </li>
-        ))}
       </ul>
     </>
   );

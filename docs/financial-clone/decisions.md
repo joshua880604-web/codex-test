@@ -96,3 +96,7 @@ User approved eight concise, source-checked glossary pages, a /glossary/ index a
 ## 2026-10-22 — Methodology transparency
 
 User requested an Omni-informed methodology improvement. Preserve the established page/canonical and distinguish actual validation from unsupported authority claims. Generate example default values from real field configurations; explain that future returns/inflation are editable illustrative presets with no recorded empirical calibration. Keep official rules, historical observations and stored FX dates separate. Publish actual review scope, reproducible examples, rounding and explicit issue-reporting path. No invented professional reviewers or AdSense approval claims; no runtime AI/API service. See methodology-review-2026-10-22.md.
+
+## 2026-10-22 — Public domain exclusion
+
+User explicitly requested removal of the reference domain from the website. Remove visible mentions, outbound exits and unused serialized runtime provenance; keep research provenance only in documentation that is not copied to the public export. Preserve genuine official source links. Enforce the requirement on the complete static export at build time, including JavaScript and RSC payloads. Internal provenance is not a source for public-model fields.
