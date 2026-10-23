@@ -43,6 +43,8 @@ try{
    const example=term.example.calculator;
    for(const [key,value] of Object.entries(example.values))await page.waitForFunction(({key,value})=>document.querySelector(`form [id$="-${key}"]`)?.value===value,{key,value:String(value)});
    await page.getByRole('button',{name:'Calculate',exact:true}).click();await page.locator('.result h2').waitFor();
+   const breakdown=page.locator('.workspace-breakdown');
+   if(await breakdown.count()&&!await breakdown.evaluate(el=>el.open))await breakdown.locator(':scope > summary').click();
    for(const expected of example.expected){
     const metric=page.locator('.result .metric').filter({has:page.getByText(expected.label,{exact:true})});
     const actual=Number((await metric.locator('strong').innerText()).replace(/[^0-9.+-]/g,''));

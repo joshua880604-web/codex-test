@@ -4,7 +4,7 @@ import type {Mode,Result,Values} from '@/lib/types';
 import {calculationLink,summaryMetrics,summaryText,modeCaption} from '@/lib/sharing';
 export default function ResultShare({id,title,path,mode,values,result}:{id:string;title:string;path:string;mode:Mode;values:Values;result:Result}){
  const [include,setInclude]=useState(false),[status,setStatus]=useState(''),[manual,setManual]=useState(''),[exporting,setExporting]=useState(false),[local,setLocal]=useState(false);
- const textRef=useRef<HTMLTextAreaElement>(null),metrics=summaryMetrics(id,result),caption=modeCaption(mode,values);
+ const textRef=useRef<HTMLTextAreaElement>(null),metrics=summaryMetrics(id,result,mode.id),caption=modeCaption(mode,values);
  useEffect(()=>{setLocal(['localhost','127.0.0.1','[::1]'].includes(location.hostname));},[]);
  useEffect(()=>{if(manual){textRef.current?.focus();textRef.current?.select();}},[manual]);
  const link=()=>calculationLink(location.origin,path,mode,values,include);

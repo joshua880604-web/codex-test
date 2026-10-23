@@ -9,6 +9,7 @@ import { modeDraftScope, switchModeInputs, taskModeGroups } from "@/lib/mode-nav
 import { defaults } from "@/lib/types";
 import { routeFor } from "@/lib/catalog";
 import { runClientCalculation } from "@/lib/calculate-client";
+import { workspaceLayout, workspaceMetrics } from "@/lib/workspace-layout";
 import type { Calculator, Field, Result, Values } from "@/lib/types";
 import type { RetirementPlan, RetirementScenario } from "@/lib/retirement-story";
 const ScientificKeypad = dynamic(() => import("./ScientificKeypad"));
@@ -46,7 +47,9 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const [scenarioBaseline, setScenarioBaseline] = useState<RetirementPlan | null>(null);
   const [activeScenario, setActiveScenario] = useState<RetirementScenario | null>(null);
   const hasRetirementStory = id === "401k" && mode.id === "projection";
-  const hasWorkspace = ["compound-interest", "investment", "loan"].includes(id);
+  const workspace = workspaceLayout(id, mode.id);
+  const hasWorkspace = Boolean(workspace);
+  const summary = result && hasWorkspace ? workspaceMetrics(id, mode.id, result) : null;
   const tableRows =
     yearly && result?.annualRows ? result.annualRows : result?.rows;
   const tableColumns =
@@ -314,7 +317,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   }
   const simple = mode.fields.length <= 14,
     visible = mode.fields.filter((f) => f.key !== "verified_rate"),
-    optionalPlanning = hasWorkspace && (id === "investment" || mode.id === "growth") ? new Set(["annual", "timing", "tax", "inflation"]) : null,
+    optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
     main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),
     advanced = optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
   return (
@@ -379,7 +382,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           </>}
         </div>
       )}
-      <div className={hasWorkspace ? "calculator-workspace" : undefined}>
+      <div className={hasWorkspace ? "calculator-workspace" + (workspace === "stacked" ? " workspace-stacked" : "") : undefined}>
       <div
         id="calculator-panel"
         role="tabpanel"
@@ -435,7 +438,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           {id === "irr" && result.metrics.length > 1 && <p className="notice" role="status">Multiple IRRs detected. There is no single unambiguous rate for these cash flows; the first result is not a recommended return.</p>}
           <div className="result-main">
             <div className="metrics">
-              {(id === "marriage-tax" ? [...result.metrics.slice(-1), ...result.metrics.slice(0, -1)] : hasWorkspace ? result.metrics.slice(0, 1) : result.metrics).map((m, i) => (
+              {(id === "marriage-tax" ? [...result.metrics.slice(-1), ...result.metrics.slice(0, -1)] : summary ? [summary.primary] : result.metrics).map((m, i) => (
                 <Fragment key={m.label}>
                 {hasRetirementStory && i === 1 && <h3 className="story-all-figures">Calculated figures</h3>}
                 <div
@@ -464,7 +467,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
                 </Fragment>
               ))}
             </div>
-            {!hasWorkspace && result.chart && result.chart.some((x) => x.value > 0) && (
+            {(!hasWorkspace || id === "mutual-fund") && result.chart && result.chart.some((x) => x.value > 0) && (
               <div className="chart">
                 <div
                   role="img"
@@ -510,15 +513,17 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           </div>
           {hasWorkspace && <ResultTrend id={id} mode={mode.id} values={values} result={result} />}
           {context && <p className="result-context">{context}</p>}
-          {hasWorkspace && result.metrics.length > 1 && <details className="workspace-breakdown" key={mode.id + "-breakdown"}>
-            <summary>Result breakdown ({result.metrics.length - 1})</summary>
-            {result.metrics.slice(1).map(m => <div className="metric" key={m.label}><span>{m.label}</span><strong>{formatMetric(m)}</strong></div>)}
+          {summary && summary.highlights.length > 0 && <dl className="workspace-key-figures" aria-label="Key calculated figures">{summary.highlights.map(m => <div className="metric" key={m.label}><dt><span>{m.label}</span></dt><dd><strong>{formatMetric(m)}</strong></dd></div>)}</dl>}
+          {summary && summary.details.length > 0 && <details className="workspace-breakdown" key={mode.id + "-breakdown"}>
+            <summary>Result breakdown ({summary.details.length})</summary>
+            {summary.details.map(m => <div className="metric" key={m.label}><span>{m.label}</span><strong>{formatMetric(m)}</strong></div>)}
           </details>}
           <div className="result-actions">
             <button onClick={() => window.print()}>Print</button>
             {result.rows && <button onClick={() => download()}>Download CSV</button>}
           </div>
           <CalculationDetails compact={hasWorkspace} hasRows={Boolean(result.rows)} key={mode.id + "-details"}>
+          {hasWorkspace && !result.notes?.length && !result.rows?.length && <p className="result-note">{mode.formula}</p>}
           {id === "marriage-tax" && <p className="result-note">Compared with your combined unmarried federal income tax. Savings means the married-joint estimate is lower; additional tax means it is higher. This does not compare married filing separately or include state/local tax.</p>}
           {result.notes?.map((note, i) => (
             <p className="result-note" key={i}>

@@ -65,7 +65,7 @@ test("sampling bounds SVG work while retaining endpoints and balance/deposit ext
 });
 test("invalid or mismatched schedules fail closed without hiding original result data", () => {
   const { result, values } = run("loan", "amortized");
-  assert.equal(resultTrend("loan", "amortized", {}, result), null);
+  assert.equal(resultTrend("loan", "amortized", {}, result)!.points[0].balance, 100000);
   for (const rows of [[[1, 1, 1, 1, NaN]], [[0, 1, 1, 1, 100]], [[1, 1, 1, 1, 100], [1, 1, 1, 1, 99]]]) assert.equal(resultTrend("loan", "amortized", values, { ...result, rows }), null);
   assert.equal(resultTrend("loan", "amortized", values, { ...result, columns: ["Wrong header"] }), null);
 });

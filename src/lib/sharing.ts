@@ -1,4 +1,5 @@
 import {siteName} from './site';
+import {hasCalculatorWorkspace,workspaceMetrics} from './workspace-layout';
 import {defaults,type Calculator,type Mode,type Result,type Values,type Metric} from './types';
 export const MAX_SHARE_LENGTH=20000;
 export function calculationLink(origin:string,path:string,mode:Mode,values:Values,includeInputs=false){
@@ -28,8 +29,9 @@ export function sharedInputs(calc:Calculator,search:string,hash:string){
  for(const f of fields)if(params.has(f.key))values[f.key]=params.get(f.key)!;
  return {mode,values};
 }
-export function summaryMetrics(id:string,result:Result):Metric[]{
- const metrics=id==='marriage-tax'?[...result.metrics.slice(-1),...result.metrics.slice(0,-1)]:result.metrics;
+export function summaryMetrics(id:string,result:Result,mode=''):Metric[]{
+ const workspace=mode&&hasCalculatorWorkspace(id)?workspaceMetrics(id,mode,result):null;
+ const metrics=id==='marriage-tax'?[...result.metrics.slice(-1),...result.metrics.slice(0,-1)]:workspace?[workspace.primary,...workspace.highlights,...workspace.details]:result.metrics;
  return metrics.slice(0,5).map((metric,index)=>id==='marriage-tax'&&index===0?{...metric,label:metric.value<-.005?'Estimated annual tax savings after marriage':metric.value>.005?'Estimated annual additional tax after marriage':'Estimated annual tax difference after marriage',value:Math.abs(metric.value)}:metric);
 }
 export function formatMetric(metric:Metric){
@@ -45,5 +47,5 @@ export function modeCaption(mode:Mode,values:Values={}){
  return [mode.title,...details].join(' · ');
 }
 export function summaryText(title:string,mode:Mode,id:string,result:Result,link:string,values:Values={}){
- return [title+" | "+siteName,modeCaption(mode,values),...(id==='irr'&&result.metrics.length>1?['Multiple IRRs detected; there is no single unambiguous rate.']:[]),...summaryMetrics(id,result).map(m=>`${m.label}: ${formatMetric(m)}`),...(result.metrics.length>5?['Selected results; full details are available in the calculator.']:[]),...(result.notes??[]),'Calculated under the stated assumptions. Results may change if the model or data is updated.',link].join('\n');
+ return [title+" | "+siteName,modeCaption(mode,values),...(id==='irr'&&result.metrics.length>1?['Multiple IRRs detected; there is no single unambiguous rate.']:[]),...summaryMetrics(id,result,mode.id).map(m=>`${m.label}: ${formatMetric(m)}`),...(result.metrics.length>5?['Selected results; full details are available in the calculator.']:[]),...(result.notes??[]),'Calculated under the stated assumptions. Results may change if the model or data is updated.',link].join('\n');
 }

@@ -1400,3 +1400,27 @@ footer p {
  .workspace-sharing {display:none;}
  .result-trend {break-inside:avoid;max-width:520px;}
 }
+
+/* Workspace rollout: preserve readable long forms and comparison figures. */
+.calculator-workspace.workspace-stacked {grid-template-columns:minmax(0,1fr);}
+.workspace-stacked .calculator-form {max-width:none;}
+.workspace-stacked .field-row {grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr);}
+.workspace-stacked .workspace-output .result {max-width:none;}
+.calculator-workspace .field-row.field-wide {grid-template-columns:minmax(0,1fr);}
+.calculator-workspace .entry-textarea {display:block;}
+.calculator-workspace .field-entry textarea {width:100%;min-width:0;max-width:100%;border:0;background:transparent;padding:10px;font-size:16px;}
+.calculator-workspace .field-entry input[type=date] {width:100%;font-size:14px;}
+.workspace-key-figures {margin:14px 0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px;}
+.workspace-key-figures > div {display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;padding:10px 12px;background:#f5f8fa;border:1px solid #e0e8ed;border-radius:6px;min-width:0;}
+.workspace-key-figures dt {font-size:13px;color:#526371;line-height:1.5;}
+.workspace-key-figures dd {margin:0;font-size:17px;font-weight:600;color:#18374d;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;max-width:100%;}
+@media (max-width:800px) {.workspace-stacked .field-row {grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);}}
+@media (max-width:360px) {.workspace-stacked .field-row {grid-template-columns:minmax(0,1fr);}}
+@media print {.workspace-key-figures > div {break-inside:avoid;}}
+.workspace-output .result-main .chart {margin-top:16px;display:flex;gap:14px;align-items:center;max-width:100%;}
+.workspace-output .result-main .chart .donut {flex-shrink:0;}
+.workspace-output .result-main .chart ul {min-width:0;padding-left:0;}
+.calculator-workspace .field-entry input[type=date] {font-size:16px;}
+.workspace-key-figures strong {white-space:normal;overflow-wrap:anywhere;}
+.calculator-workspace .unit-long {flex-wrap:wrap;}
+.calculator-workspace .unit-long .unit {width:100%;white-space:normal;padding:0 10px 8px;}

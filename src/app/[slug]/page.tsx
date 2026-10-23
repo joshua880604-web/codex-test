@@ -13,6 +13,7 @@ import Methodology from "@/components/Methodology";
 import { calculatorMetadata, calculatorSchema, pageMetadata } from "@/lib/seo";
 import { directoryPath, serializeSchema, siteName } from "@/lib/site";
 import { relatedCalculatorIds } from "@/lib/guides";
+import { hasCalculatorWorkspace } from "@/lib/workspace-layout";
 export const dynamicParams = false;
 export function generateStaticParams() {
   return [
@@ -86,7 +87,7 @@ export default async function Page({
           ? "Calculation methodology and sources"
           : "Financial Calculators");
   return (
-    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : ["compound-interest", "investment", "loan"].includes(c?.id ?? "") ? "page-wrap workspace-page" : "page-wrap"}>
+    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : hasCalculatorWorkspace(c?.id ?? "") ? "page-wrap workspace-page" : "page-wrap"}>
       <main id="main">
         <div className="breadcrumb">
           <a href="/">home</a> /{" "}
