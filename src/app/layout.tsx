@@ -19,6 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <script
           async
+          fetchPriority="low"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5145325695425659"
           crossOrigin="anonymous"
         />
