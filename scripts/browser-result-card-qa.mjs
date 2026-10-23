@@ -20,6 +20,7 @@ try{
   if(name==='loss')await page.waitForFunction(()=>document.querySelector('form [id$="-rate"]')?.value==='-10'&&document.querySelector('.result-context')?.textContent?.includes('-$190.00'));
   if(name==='tax')await page.waitForFunction(()=>document.querySelector('.result-context')?.textContent?.includes('tax year 2025'));
   if(name==='retirement')await page.waitForFunction(()=>document.querySelector('.result-context')?.textContent?.includes('$362.74'));
+  if(await page.locator('.workspace-sharing').count())await page.locator('.workspace-sharing > summary').click();
   const pending=page.waitForEvent('download',{timeout:10000});await page.getByRole('button',{name:'Download result PNG',exact:true}).click();const download=await pending;const file='/workspace/work/result-cards/'+name+'.png';await download.saveAs(file);
   const drawn=await page.evaluate(()=>window.cardText),text=drawn.map(x=>x.text).join(' ');assert.ok(text.includes(expected));assert.ok(text.includes('LOCAL PREVIEW'));assert.ok(text.includes('calculatorfree.io'));assert.ok(!text.includes('#calc=')&&!text.includes('?mode='));
   assert.ok(drawn.every(t=>t.x>=64&&t.x+t.width<=1137&&t.y+parseInt(t.font.match(/\d+px/)[0])<=t.height-24));
@@ -37,6 +38,7 @@ try{
     if(['student-loan','margin','commission','savings'].includes(item.id)&&modes[i].id!=='any-two')await page.getByRole('button',{name:'Reset',exact:true}).click();
    await page.getByRole('button',{name:/^Calculate/}).click();await page.locator('.result h2').waitFor();
    await page.evaluate(()=>window.cardText=[]);
+   if(await page.locator('.workspace-sharing').count())await page.locator('.workspace-sharing > summary').click();
    const pending=page.waitForEvent('download',{timeout:10000});await page.getByRole('button',{name:'Download result PNG',exact:true}).click();
    const download=await pending;const bytes=await fs.readFile(await download.path());
    assert.equal(bytes.readUInt32BE(16),1200,item.id);assert.equal(bytes.readUInt32BE(20),1680,item.id);

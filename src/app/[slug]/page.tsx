@@ -86,7 +86,7 @@ export default async function Page({
           ? "Calculation methodology and sources"
           : "Financial Calculators");
   return (
-    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : "page-wrap"}>
+    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : ["compound-interest", "investment", "loan"].includes(c?.id ?? "") ? "page-wrap workspace-page" : "page-wrap"}>
       <main id="main">
         <div className="breadcrumb">
           <a href="/">home</a> /{" "}

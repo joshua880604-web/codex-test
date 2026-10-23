@@ -1,9 +1,9 @@
 "use client";
-import { Fragment, useEffect, useRef, useState, type FormEvent } from "react";
+import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import dynamic from "next/dynamic";
 import ResultShare from "./ResultShare";
 import {inputHint,resultContext} from "@/lib/result-context";
-import { sharedInputs } from "@/lib/sharing";
+import { formatMetric, sharedInputs } from "@/lib/sharing";
 import TaskModePicker from "./TaskModePicker";
 import { modeDraftScope, switchModeInputs, taskModeGroups } from "@/lib/mode-navigation";
 import { defaults } from "@/lib/types";
@@ -14,6 +14,10 @@ import type { RetirementPlan, RetirementScenario } from "@/lib/retirement-story"
 const ScientificKeypad = dynamic(() => import("./ScientificKeypad"));
 const MarriageFields = dynamic(() => import("./MarriageFields"));
 const RetirementStory = dynamic(() => import("./RetirementStory"));
+const ResultTrend = dynamic(() => import("./ResultTrend"));
+function CalculationDetails({ compact, hasRows, children }: { compact: boolean; hasRows: boolean; children: ReactNode }) {
+  return compact ? <details className="workspace-details"><summary>{hasRows ? "Calculation details & assumptions" : "Calculation notes"}</summary>{children}</details> : <>{children}</>;
+}
 const amount = (n: number, digits = 2) =>
   new Intl.NumberFormat("en-US", {
     minimumFractionDigits: digits,
@@ -42,6 +46,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const [scenarioBaseline, setScenarioBaseline] = useState<RetirementPlan | null>(null);
   const [activeScenario, setActiveScenario] = useState<RetirementScenario | null>(null);
   const hasRetirementStory = id === "401k" && mode.id === "projection";
+  const hasWorkspace = ["compound-interest", "investment", "loan"].includes(id);
   const tableRows =
     yearly && result?.annualRows ? result.annualRows : result?.rows;
   const tableColumns =
@@ -54,6 +59,17 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const payoff = id === "mortgage-payoff";
   const taskModes = Boolean(taskModeGroups[id]) || id === "savings";
   function clearScenarios() { setScenarioBaseline(null); setActiveScenario(null); }
+  useEffect(() => {
+    if (!hasWorkspace) return;
+    let opened: HTMLDetailsElement[] = [];
+    const before = () => {
+      opened = Array.from(resultRef.current?.querySelectorAll<HTMLDetailsElement>(".workspace-breakdown:not([open]),.workspace-details:not([open])") ?? []);
+      opened.forEach(details => { details.open = true; });
+    };
+    const after = () => { opened.forEach(details => { details.open = false; }); opened = []; };
+    window.addEventListener("beforeprint", before); window.addEventListener("afterprint", after);
+    return () => { window.removeEventListener("beforeprint", before); window.removeEventListener("afterprint", after); };
+  }, [hasWorkspace]);
   useEffect(() => {
     let lastSource:string|null=null;
     function hydrate() {
@@ -298,8 +314,9 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   }
   const simple = mode.fields.length <= 14,
     visible = mode.fields.filter((f) => f.key !== "verified_rate"),
-    main = simple ? visible : visible.slice(0, 8),
-    advanced = simple ? [] : visible.slice(8);
+    optionalPlanning = hasWorkspace && (id === "investment" || mode.id === "growth") ? new Set(["annual", "timing", "tax", "inflation"]) : null,
+    main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),
+    advanced = optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
   return (
     <>
       <p className="intro">{calc.intro}</p>
@@ -362,6 +379,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           </>}
         </div>
       )}
+      <div className={hasWorkspace ? "calculator-workspace" : undefined}>
       <div
         id="calculator-panel"
         role="tabpanel"
@@ -395,6 +413,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           {["Investment","Retirement"].includes(calc.category)&&mode.fields.some(field=>["return","rate","inflation","nominal"].includes(field.key))&&<p className="assumption-help">Planning rates are editable assumptions. <a href="/methodology.html#default-assumptions">About default values and their sources</a>.</p>}
         </form>
       </div>
+      <div className={hasWorkspace ? "workspace-output" : undefined}>
       {error && (
         <div className="error" role="alert">
           {error}
@@ -409,13 +428,14 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         <p role="status">{calculating ? "Updating your scenario…" : "Your original plan is still available."}</p>
         <button type="button" onClick={restoreScenario}>Restore original plan</button>
       </section>}
+      {hasWorkspace && !result && <div className="workspace-empty"><h2>Your result</h2><p>{calculating ? "Calculating your updated result…" : "Enter your values and select Calculate to see the result here."}</p></div>}
       {result && (
         <div ref={resultRef} className="result" aria-live="polite" tabIndex={-1}>
           <h2>Result</h2>
           {id === "irr" && result.metrics.length > 1 && <p className="notice" role="status">Multiple IRRs detected. There is no single unambiguous rate for these cash flows; the first result is not a recommended return.</p>}
           <div className="result-main">
             <div className="metrics">
-              {(id === "marriage-tax" ? [...result.metrics.slice(-1), ...result.metrics.slice(0, -1)] : result.metrics).map((m, i) => (
+              {(id === "marriage-tax" ? [...result.metrics.slice(-1), ...result.metrics.slice(0, -1)] : hasWorkspace ? result.metrics.slice(0, 1) : result.metrics).map((m, i) => (
                 <Fragment key={m.label}>
                 {hasRetirementStory && i === 1 && <h3 className="story-all-figures">Calculated figures</h3>}
                 <div
@@ -444,7 +464,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
                 </Fragment>
               ))}
             </div>
-            {result.chart && result.chart.some((x) => x.value > 0) && (
+            {!hasWorkspace && result.chart && result.chart.some((x) => x.value > 0) && (
               <div className="chart">
                 <div
                   role="img"
@@ -488,11 +508,17 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               </div>
             )}
           </div>
+          {hasWorkspace && <ResultTrend id={id} mode={mode.id} values={values} result={result} />}
           {context && <p className="result-context">{context}</p>}
+          {hasWorkspace && result.metrics.length > 1 && <details className="workspace-breakdown" key={mode.id + "-breakdown"}>
+            <summary>Result breakdown ({result.metrics.length - 1})</summary>
+            {result.metrics.slice(1).map(m => <div className="metric" key={m.label}><span>{m.label}</span><strong>{formatMetric(m)}</strong></div>)}
+          </details>}
           <div className="result-actions">
             <button onClick={() => window.print()}>Print</button>
             {result.rows && <button onClick={() => download()}>Download CSV</button>}
           </div>
+          <CalculationDetails compact={hasWorkspace} hasRows={Boolean(result.rows)} key={mode.id + "-details"}>
           {id === "marriage-tax" && <p className="result-note">Compared with your combined unmarried federal income tax. Savings means the married-joint estimate is lower; additional tax means it is higher. This does not compare married filing separately or include state/local tax.</p>}
           {result.notes?.map((note, i) => (
             <p className="result-note" key={i}>
@@ -579,9 +605,12 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               </table>
             </div>
           </section>)}
-          <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/>
+          </CalculationDetails>
+          {hasWorkspace ? <details className="workspace-sharing" key={mode.id + "-sharing"}><summary>Save or share result</summary><ResultShare id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/></details> : <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/>}
         </div>
       )}
+      </div>
+      </div>
       <section className="explanation">
         <h2>How to use this calculator</h2>
         <p>

@@ -15,8 +15,8 @@ export function resultContext(id:string,mode:string,values:Values,result:Result)
  if(id==='mortgage'&&mode==='monthly'&&text('Initial monthly total')&&text('Monthly principal & interest'))
   return `Your initial modeled monthly outlay is ${text('Initial monthly total')}, including the entered ownership costs and extra principal. The principal-and-interest payment alone is ${text('Monthly principal & interest')}; ownership costs may change later.`;
  if(id==='loan'&&mode==='amortized'&&text('Payment per period')&&text('Total interest')&&values.pay)
-  return `The payment is ${text('Payment per period')} with payments made ${values.pay.toLowerCase()}, not necessarily monthly. Total modeled interest is ${text('Total interest')}; fees, taxes and insurance are not included.`;
- if(['compound-interest','interest','savings'].includes(id)&&text('Ending balance')&&text('Total contributions')&&text('Net investment earnings')){
+  return `The payment is ${text('Payment per period')} with payments made ${values.pay.toLowerCase()}. Total modeled interest is ${text('Total interest')}; fees, taxes and insurance are not included.`;
+ if(['compound-interest','investment','interest','savings'].includes(id)&&text('Ending balance')&&text('Total contributions')&&text('Net investment earnings')){
   const earnings=metric('Net investment earnings')!;
   return `The ending balance includes ${text('Total contributions')} of your own money (starting amount plus deposits). Net investment ${earnings.value<0?'loss':'earnings'} ${earnings.value<0?'is':'are'} ${text('Net investment earnings')}, after the entered tax on interest. These are modeled amounts, not guaranteed returns.`;
  }
