@@ -26,7 +26,7 @@ try{
     assert.equal(await page.locator('.glossary-definition').innerText(),term.definition);
     assert.ok((await page.locator('.glossary-example').innerText()).includes(term.example.answer));
     assert.equal(await page.locator('.glossary-sources time').getAttribute('datetime'),term.checkedOn);
-   }else assert.equal(await page.locator('.glossary-grid article').count(),8);
+   }else assert.equal(await page.locator('.glossary-grid article').count(),terms.length);
    const anchors=await page.locator('main a[href^="#"]').evaluateAll(links=>links.map(link=>link.getAttribute('href').slice(1)));
    for(const id of anchors)assert.equal(await page.locator('[id="'+id+'"]').count(),1,path+' anchor '+id);
    if(width===390&&(!term||term.slug==='dollar-cost-averaging'))await page.screenshot({path:'/workspace/work/glossary-preview/'+(term?.slug??'index')+'-390.png',fullPage:!!term});
@@ -51,22 +51,37 @@ try{
    checks.push({term:term.slug,example:'loads inputs and reproduces published result'});
   }else{
    assert.equal(await page.getByRole('link',{name:'Try these example inputs',exact:false}).count(),0);
-   assert.ok((await page.locator('main').innerText()).includes('does not replay share prices'));
-   checks.push({term:term.slug,scope:'DCA share-price example not presented as a calculator backtest'});
+   if(term.slug==='dollar-cost-averaging')assert.ok((await page.locator('main').innerText()).includes('does not replay share prices'));
+   else assert.ok(await page.locator('.glossary-assumptions').count()>0);
+   if(term.tools.length===0){assert.equal(await page.locator('.glossary-calculators').count(),0);assert.equal(await page.locator('a[href="#calculators"]').count(),0);}
+   checks.push({term:term.slug,scope:'Independent example does not imply exact calculator replay'});
   }
  }
  const toolIds=[...new Set(terms.flatMap(term=>term.tools.map(tool=>tool.id)))];
+ await page.setViewportSize({width:390,height:844});
  for(const id of toolIds){
   await page.goto(base+catalog.find(tool=>tool.id===id).local_route);
   for(const term of terms.filter(term=>term.tools.some(tool=>tool.id===id)))assert.equal(await page.locator('.guide-terms a[href="/glossary/'+term.slug+'/"]').count(),1,id+' backlink');
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),id+' mobile guide overflow');
  }
  checks.push({calculatorPagesWithBacklinks:toolIds.length});
+ // Filtering is local to the directory; abbreviations and names remain keyboard-accessible.
+ await page.setViewportSize({width:390,height:844});await page.goto(base+'/glossary/');
+ const search=page.getByRole('searchbox',{name:'Find a finance term'});
+ for(const [query,slug] of [['APY','apy'],['401k','401k'],['tax deduction','deduction-vs-credit'],['eCPM','ecpm'],['margin trading','margin-and-leverage']]){
+  await search.fill(query);await page.locator('.glossary-grid a[href="/glossary/'+slug+'/"]').first().waitFor();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+  const anchors=await page.locator('.glossary-topics a').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href').slice(1)));
+  for(const id of anchors)assert.equal(await page.locator('[id="'+id+'"]').count(),1);
+  checks.push({search:query,finds:slug,validTopicAnchors:true});
+ }
+ await search.fill('no-such-financial-term-12345');await page.locator('.glossary-no-results').waitFor();assert.equal(await page.locator('.glossary-grid article').count(),0);
+ await page.getByRole('button',{name:'Clear search',exact:true}).click();assert.equal(await page.locator('.glossary-grid article').count(),terms.length);assert.equal(await search.inputValue(),'');await search.press('Enter');assert.ok(page.url().endsWith('/glossary/'));checks.push({noResultsAndClear:true,enterKeepsDirectory:true});
  for(const path of ['/glossary','/glossary/cagr']){
   const response=await page.request.get(base+path+'?from=test',{maxRedirects:0});assert.equal(response.status(),301);assert.equal(response.headers().location,path+'/?from=test');
  }
  assert.equal((await page.request.get(base+'/glossary/not-a-term/')).status(),404);
  const plainContext=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}}),plain=await plainContext.newPage();
- await plain.goto(base+'/glossary/');await plain.getByRole('link',{name:'Dollar-cost averaging',exact:true}).click();assert.ok((await plain.locator('main').innerText()).includes('$64 loss'));
+ await plain.goto(base+'/glossary/');assert.equal(await plain.locator('.glossary-grid article').count(),terms.length);await plain.getByRole('link',{name:'Dollar-cost averaging',exact:true}).click();assert.ok((await plain.locator('main').innerText()).includes('$64 loss'));
  const cta=await plain.getByRole('link',{name:'Investment Calculator',exact:true}).getAttribute('href');assert.ok(cta);await plainContext.close();
  checks.push({directoryRedirects:true,unknownTerm404:true,noJSReadingAndToolLinks:true});
  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);

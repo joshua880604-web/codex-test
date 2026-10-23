@@ -1139,6 +1139,16 @@ footer p {
 .page-wrap.glossary-page {display:block;max-width:860px;}
 .glossary-page main {width:100%;}
 .glossary-intro {max-width:65ch;color:#536878;line-height:1.7;}
+.glossary-search {margin-top:20px;padding:16px;background:#f3f7fa;border:1px solid #cad7df;border-radius:8px;}
+.glossary-search label {display:block;font-weight:600;color:#18374d;margin-bottom:8px;}
+.glossary-search > div {display:flex;flex-wrap:wrap;gap:8px;}
+.glossary-search input {flex:1;min-width:140px;min-height:44px;box-sizing:border-box;padding:10px 12px;border:1px solid #a8bdcc;border-radius:6px;font:inherit;font-size:16px;background:#fff;color:#18374d;}
+.glossary-search button {min-height:44px;padding:8px 12px;border:1px solid #a8bdcc;border-radius:6px;background:#fff;color:#245570;font:inherit;cursor:pointer;}
+.glossary-search p {font-size:13px;line-height:1.6;color:#536878;margin:8px 0 0;}
+.glossary-search input:focus-visible,.glossary-search button:focus-visible {outline:3px solid #d79028;outline-offset:2px;}
+.glossary-no-results {padding:16px 0;color:#536878;line-height:1.7;}
+.glossary-scope {color:#536878;font-size:14px;line-height:1.7;}
+.glossary-topics span {margin-left:4px;font-variant-numeric:tabular-nums;}
 .glossary-topics {display:flex;flex-wrap:wrap;gap:8px;margin:22px 0;}
 .glossary-topics a {display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border:1px solid #cad7df;border-radius:6px;background:#f6f9fb;}
 .glossary-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}

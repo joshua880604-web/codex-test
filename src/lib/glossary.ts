@@ -9,10 +9,11 @@ export type GlossaryExampleCalculation = {
 export type GlossaryTerm = {
   slug:string;name:string;title:string;description:string;category:string;aliases:string[];
   definition:string;explanation:string;formula:string;formulaNote:string;
-  example:{title:string;intro:string;steps:string[];answer:string;assumptions:string;calculator?:GlossaryExampleCalculation};
+  example:{title:string;intro:string;steps:string[];answer:string;assumptions:string;calculator?:GlossaryExampleCalculation;calculationNote?:string};
   pitfall:{title:string;text:string};tools:{id:string;text:string}[];related:string[];
-  sources:{title:string;url:string}[];checkedOn:string;
+  sources:{title:string;url:string}[];checkedOn:string;scope?:string;
 };
+export const glossaryCategories=['Saving & investing','Retirement','Loans & debt','Housing & property','Tax & income','Business & pricing','Everyday money'];
 export const glossaryPath='/glossary/';
 export const glossaryTerms=data as GlossaryTerm[];
 export const glossaryTermPath=(slug:string)=>`${glossaryPath}${slug}/`;
