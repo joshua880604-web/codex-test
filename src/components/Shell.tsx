@@ -6,11 +6,15 @@ export function Header() {
     <>
       <header className="site-header">
         <div className="header-inner">
-          <a className="brand" href="/financial-calculator.html">
-            <span className="calculator-mark" aria-hidden="true">
-              ▦
-            </span>{" "}
-            {siteName}
+          <a className="brand" href="/financial-calculator.html" aria-label={`${siteName} home`}>
+            <svg className="calculator-mark" viewBox="0 0 32 36" width="32" height="36" aria-hidden="true" focusable="false">
+              <rect width="32" height="36" rx="8" fill="#e5f3f0" />
+              <rect x="6" y="6" width="20" height="6" rx="2" fill="#003b66" />
+              <path d="M7 19h6m-3-3v6M7 28h6" fill="none" stroke="#003b66" strokeWidth="2" strokeLinecap="round" />
+              <rect x="18" y="16" width="9" height="15" rx="3" fill="#ffda78" />
+              <path d="M20.5 22h4m-4 4h4" fill="none" stroke="#003b66" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+            <span className="brand-wordmark"><span>Calculator</span><span className="brand-free">Free</span><span className="brand-domain">.io</span></span>
           </a>
           <MobileNavigation/>
           <span className="header-description">

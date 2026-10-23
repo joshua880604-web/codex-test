@@ -70,23 +70,39 @@ summary:focus-visible {
   justify-content: space-between;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 9px;
+  min-height: 36px;
   color: white;
   font-size: 27px;
-  font-weight: bold;
-  letter-spacing: -1px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.85px;
   white-space: nowrap;
 }
 .brand:hover {
   text-decoration: none;
 }
-.brand > span:last-child {
-  font-weight: normal;
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+}
+.brand-free {
+  color: #ffda78;
+}
+.brand-domain {
+  color: #d4e5ef;
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: -0.35px;
 }
 .calculator-mark {
-  display: inline-block;
-  margin-right: 8px;
-  font-size: 32px;
-  vertical-align: -2px;
+  display: block;
+  flex: none;
+  width: 32px;
+  height: 36px;
 }
 .header-description {
   font-size: 13px;
@@ -1027,8 +1043,8 @@ footer p {
 .mobile-menu {display:none;}
 @media(max-width:700px){
  .header-inner {position:relative;padding:10px 12px;gap:8px;}
- .header-inner .brand {font-size:20px;letter-spacing:-.7px;min-width:0;}
- .header-inner .calculator-mark {font-size:24px;margin-right:5px;}
+ .header-inner .brand {font-size:clamp(18px,5.2vw,22px);letter-spacing:-.65px;min-width:0;min-height:44px;gap:7px;}
+ .header-inner .calculator-mark {width:26px;height:30px;}
  .header-description,.top-nav {display:none;}
  .mobile-menu {display:block;flex-shrink:0;}
  .mobile-menu > summary {display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 10px;border:1px solid #779bb4;border-radius:5px;cursor:pointer;color:#fff;font-size:13px;list-style:none;}
