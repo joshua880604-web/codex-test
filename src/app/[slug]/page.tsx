@@ -130,10 +130,28 @@ export default async function Page({
         ) : slug === "privacy.html" ? (
           <>
             <p>
-              Calculator inputs are processed locally in your browser. This
-              application does not add advertising, analytics, accounts, or
-              persistent calculation storage.
+              Calculator calculations run locally in your browser. You do not
+              need an account, and this application does not provide persistent
+              storage of your calculation inputs.
             </p>
+            <h2>Google advertising</h2>
+            <p>
+              We use Google AdSense to serve advertisements. Google and its
+              advertising partners may use cookies or similar technologies and
+              receive information such as your IP address, browser and device
+              details, and interactions with advertisements. Ad selection and
+              personalization depend on the applicable settings and permissions.
+            </p>
+            <p>
+              Read how{" "}
+              <a href="https://policies.google.com/technologies/ads">
+                Google uses information for advertising
+              </a>
+              . You can manage your ad preferences in{" "}
+              <a href="https://myadcenter.google.com/">Google My Ad Center</a>{" "}
+              and manage cookies through your browser settings.
+            </p>
+            <h2>Calculations and sharing</h2>
             <p>
               Tool links exclude inputs by default. If you choose to include inputs,
               they appear in the link’s address fragment and can be read by anyone
@@ -142,7 +160,7 @@ export default async function Page({
               logs. Copied summaries and PNG images contain result amounts. Only
               share information you intend recipients to see. Currency conversion uses a manually entered
               rate or a dated snapshot bundled with the site. No external API
-              requests are made.
+              requests are made for currency rates.
             </p>
           </>
         ) : c?.directory ? (
