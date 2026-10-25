@@ -1,12 +1,13 @@
 import { addYearlySchedule } from "./schedules";
 import { freq } from "./calculators/helpers";
 import type { Calculator, Values, Result } from "./types";
+import { mortgagePmiFieldVisible } from "./mortgage-pmi";
 export function calculateMode(calc: Calculator, modeId: string, v: Values): Result {
   const id = calc.id;
   const mode = calc.modes.find((m) => m.id === modeId);
   if (!mode) throw new Error("Unknown calculator mode.");
   for (const f of mode.fields) {
-    if (id === "mortgage" && f.key === "appraised_value" && v.pmi_policy !== "Cancel at 80% original LTV") continue;
+    if (id === "mortgage" && !mortgagePmiFieldVisible(modeId, v, f.key)) continue;
     if (id === "va-mortgage" && ["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key)) continue;
     if (id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) ||
         (v.mip_method !== "Manual" && ["upfront", "annual_mip", "mip_years"].includes(f.key)))) continue;

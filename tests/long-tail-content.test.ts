@@ -9,7 +9,7 @@ import type { Field } from '../src/lib/types';
 test('Contextual guide links open real calculation modes with valid declared presets', () => {
   for (const [id, content] of Object.entries(longTailContent)) {
     assert.ok(calculators.some(calc => calc.id === id && !calc.directory), id);
-    assert.equal(contentUpdatedOn[routeFor(id)], content.updatedOn);
+    assert.ok(contentUpdatedOn[routeFor(id)] >= content.updatedOn, id + ' page lastmod covers the reviewed long-tail content date');
     const anchors = new Set<string>();
     const questions = guides[id].questions.map(item => item.question);
     assert.equal(new Set(questions).size, questions.length, id + ' unique questions');

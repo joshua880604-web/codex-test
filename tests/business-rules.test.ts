@@ -349,6 +349,7 @@ test("regression: RMD projection grows starting balance before year-end withdraw
 });
 test("regression: LTV-based PMI does not expire under unrelated duration control", () => {
   const r = run("mortgage", "monthly", {
+    pmi_method: "Manual",
     price: 100000,
     down: 3,
     rate: 15,

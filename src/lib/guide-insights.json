@@ -23,9 +23,10 @@
       "Enter annual taxes and insurance with the matching dollar or percentage unit.",
       "Do not compare a principal-and-interest payment with another quote that includes escrow.",
       "Paying off a mortgage does not remove property taxes, insurance or maintenance.",
-      "For requested 80% PMI cancellation, use the appraisal at purchase if below the purchase price; a current market appraisal is not the original value."
+      "For requested 80% PMI cancellation, use the appraisal at purchase if below the purchase price; a current market appraisal is not the original value.",
+      "Automatic PMI uses an assumed credit score range (default 740–759) and a dated base-rate card. Select Manual to use an actual lender quote; PMI is already included in the initial monthly total and schedule costs."
     ],
-    "checkedOn": "2026-10-25"
+    "checkedOn": "2026-10-26"
   },
   "mortgage-payoff": {
     "answer": "Extra mortgage principal can shorten repayment and reduce future loan interest. Compare strategies using the same current balance, regular payment and interest rate.",

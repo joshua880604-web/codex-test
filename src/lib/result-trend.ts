@@ -14,6 +14,7 @@ const loanColumns = [
   ["Month", "Date", "Payment", "Interest", "Principal", "Balance"],
   ["Month", "Date", "Payment", "Interest", "Principal", "Balance", "Taxes & costs", "Total"],
   ["Month", "Date", "Payment", "Interest", "Principal", "Balance", "Taxes & costs", "Total", "FHA MIP"],
+  ["Month", "Date", "Payment", "Interest", "Principal", "Balance", "Taxes & costs", "Total", "PMI"],
   ["Month", "Payment incl. allocated fee", "Interest", "Principal", "Balance"],
 ];
 const finite = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value);

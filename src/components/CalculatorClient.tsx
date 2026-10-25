@@ -12,6 +12,7 @@ import { runClientCalculation } from "@/lib/calculate-client";
 import { workspaceLayout, workspaceMetrics } from "@/lib/workspace-layout";
 import { calculatorScope } from "@/lib/calculator-scope";
 import { fhaMipTerms } from "@/lib/fha-mip";
+import { mortgagePmiFieldVisible } from "@/lib/mortgage-pmi";
 import type { Calculator, Field, Result, Values } from "@/lib/types";
 import type { RetirementPlan, RetirementScenario } from "@/lib/retirement-story";
 const ScientificKeypad = dynamic(() => import("./ScientificKeypad"));
@@ -429,7 +430,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       !(["qbi_active", "p2_qbi_active"].includes(f.key) && ((id === "marriage-tax" ? values.qbi !== "Yes" && values.p2_qbi !== "Yes" : values.qbi !== "Yes") || values.year === "2025")) &&
       !(f.key === "spouse_qbi_active" && (values.qbi !== "Yes" || values.year === "2025" || values.filing !== "Married filing jointly")) &&
       !(id === "va-mortgage" && ["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key)) &&
-      !(id === "mortgage" && f.key === "appraised_value" && values.pmi_policy !== "Cancel at 80% original LTV") &&
+      !(id === "mortgage" && !mortgagePmiFieldVisible(mode.id, values, f.key)) &&
       !(id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) || (values.mip_method !== "Manual" && ["upfront", "annual_mip", "mip_years"].includes(f.key))))),
     optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
     main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),

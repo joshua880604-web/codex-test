@@ -6,7 +6,7 @@ import {resultTrend} from '../src/lib/result-trend';
 import {calculationLink,sharedInputs} from '../src/lib/sharing';
 import {runClientCalculation} from '../src/lib/calculate-client';
 const close=(a:number,b:number,tol=.005)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b}`);
-function inputs(id:string,mode:string,v:Record<string,string|number>={}){const c=calculators.find(c=>c.id===id)!,m=c.modes.find(m=>m.id===mode)!;return {...defaults(m),...Object.fromEntries(Object.entries(v).map(([k,v])=>[k,String(v)]))};}
+function inputs(id:string,mode:string,v:Record<string,string|number>={}){const c=calculators.find(c=>c.id===id)!,m=c.modes.find(m=>m.id===mode)!;return {...defaults(m),...(id==='mortgage'?{pmi_method:'Manual'}:{}),...Object.fromEntries(Object.entries(v).map(([k,v])=>[k,String(v)]))};}
 const run=(id:string,mode:string,v:Record<string,string|number>={})=>runCalculation(id,mode,inputs(id,mode,v));
 const metric=(r:ReturnType<typeof run>,label:string)=>{const m=r.metrics.find(m=>m.label===label);assert.ok(m,label);return m.value;};
 for(const id of ['mortgage','fha-loan','va-mortgage'])for(const mode of ['monthly','biweekly'])test(`MORT-01: ${id}/${mode} rejects fractional aggregate months`,()=>{

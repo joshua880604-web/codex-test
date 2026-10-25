@@ -1,0 +1,113 @@
+{
+  "checked_on": "2026-10-26",
+  "baseline_commit": "ae085fb6cc0a9d8309344cb11342e2f8eb93415f",
+  "tests": {
+    "baseline": 838,
+    "new_model_tests": 78,
+    "new_worked_example": 1,
+    "total": 917,
+    "passed": 917,
+    "failed": 0
+  },
+  "card": {
+    "provider": "National MI",
+    "version": "MA.MN.BP.2022-03",
+    "effective_from": "2022-03-01",
+    "reviewed_on": "2026-10-26",
+    "live_quote": false,
+    "credit_bands": 8,
+    "ltv_tiers": 4,
+    "term_groups": 2,
+    "verified_standard_coverage_cells": 64
+  },
+  "examples": {
+    "home_price": 400000,
+    "term_years": 30,
+    "assumed_credit": "740-759",
+    "down_4": {
+      "loan": 384000,
+      "annual_percent": 0.7,
+      "initial_monthly_pmi": 224
+    },
+    "down_15": {
+      "loan": 340000,
+      "annual_percent": 0.2,
+      "initial_monthly_pmi": 56.666666666666664
+    },
+    "down_20": {
+      "loan": 320000,
+      "initial_monthly_pmi": 0
+    }
+  },
+  "prior_manual_model": {
+    "numericScenarios": {
+      "total": 38,
+      "passed": 38,
+      "failed": []
+    },
+    "invalidInputControls": {
+      "total": 12,
+      "passed": 12,
+      "failed": []
+    }
+  },
+  "defaults": {
+    "modes": 193,
+    "identical_metric_sets": 192,
+    "mortgage_monthly": "Adds PMI metrics and original-value diagnostics; all previously published default metric values unchanged."
+  },
+  "browser": {
+    "cases": 39,
+    "viewports": [
+      390,
+      768,
+      1440
+    ],
+    "passed": true,
+    "includes": [
+      "keyboard calculation",
+      "auto/manual visibility and switching",
+      "legacy explicit zero link",
+      "credit and original appraisal",
+      "unsupported LTV/term",
+      "PMI monthly/yearly CSV reconciliation",
+      "chart",
+      "no-JS defaults",
+      "FHA/VA exclusion",
+      "cash purchase",
+      "1120px frame/320px rail/1px borders"
+    ]
+  },
+  "homepage_first_screen": {
+    "viewports": 14,
+    "passed": true
+  },
+  "build": "passed",
+  "typecheck": "passed",
+  "seo": {
+    "canonicals": 146,
+    "passed": true,
+    "mortgage_lastmod": "2026-10-26"
+  },
+  "brand_guard": {
+    "text_assets": 529,
+    "passed": true
+  },
+  "long_tail": {
+    "pages": 30,
+    "answers": 40,
+    "links": 65,
+    "passed": true
+  },
+  "page_intents": {
+    "tools": 81,
+    "tasks": 195,
+    "passed": true
+  },
+  "limits": [
+    "Unadjusted base-rate estimate, not insurer or lender quote.",
+    "No loan approval, state availability, special program or full underwriting decision.",
+    "Requested 80% cancellation assumed approved; no 78% automatic/midpoint model.",
+    "Local browser production build; exact existing publisher loader stubbed. No live-origin response, ad delivery or reference parity assertion."
+  ]
+}

@@ -27,6 +27,8 @@ export function sharedInputs(calc:Calculator,search:string,hash:string){
  const values=defaults(mode);
  // Older FHA links explicitly entered premiums before an automatic mode existed.
  if(calc.id==='fha-loan'&&!params.has('mip_method')&&['upfront','annual_mip','mip_years'].some(key=>params.has(key)))values.mip_method='Manual';
+ // Preserve explicit PMI quotes and cancellation settings from older Mortgage links.
+ if(calc.id==='mortgage'&&!params.has('pmi_method')&&['pmi','pmi_unit','pmi_years','pmi_policy'].some(key=>params.has(key)))values.pmi_method='Manual';
  if((calc.id==='vat'||(calc.id==='commission'&&mode.id==='any-two'))&&fields.some(f=>params.has(f.key)))for(const f of fields)values[f.key]='';
  for(const f of fields)if(params.has(f.key))values[f.key]=params.get(f.key)!;
  return {mode,values};

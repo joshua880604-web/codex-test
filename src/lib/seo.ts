@@ -60,7 +60,7 @@ export const contentUpdatedOn: Record<string, string> = {
   "/fha-loan-calculator.html": "2026-10-25",
   "/marriage-calculator.html": "2026-10-25",
   "/va-mortgage-calculator.html": "2026-10-25",
-  "/mortgage-calculator.html": "2026-10-25",
+  "/mortgage-calculator.html": "2026-10-26",
   "/methodology.html": "2026-10-25",
   "/compound-interest-calculator.html": "2026-10-25",
   "/average-return-calculator.html": "2026-10-25",

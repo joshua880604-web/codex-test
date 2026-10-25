@@ -1,5 +1,6 @@
 import { autoTaxBase, autoTaxStates } from "../auto-tax";
 import { fhaMipTerms, fhaMipSchedule } from "../fha-mip";
+import { automaticPmi, automaticPmiNote, automaticPmiPremium, estimateMortgagePmi, pmiCreditBands } from "../mortgage-pmi";
 import policy from "../policy-rules.json";
 import {
   tool,
@@ -135,8 +136,10 @@ function downValue(v: Values): number {
 function mortgageCalc(v: Values, kind = "conventional"): Result {
   const price = positive(n(v, "price"), "Home price"), down = downValue(v),
     base = price - down, N = mortgageMonths(v);
-  const pmiUsesLtv = kind === "conventional" && v.pmi_policy === "Cancel at 80% original LTV",
+  const pmiAuto = kind === "conventional" && automaticPmi(v),
+    pmiUsesLtv = kind === "conventional" && (pmiAuto || v.pmi_policy === "Cancel at 80% original LTV"),
     pmiOriginalValue = pmiUsesLtv && v.appraised_value?.trim() ? Math.min(price, positive(n(v, "appraised_value"), "Original appraised value")) : price;
+  const pmiEstimate = pmiAuto ? estimateMortgagePmi(base, pmiOriginalValue, N, v.pmi_credit) : null;
   const fhaValue = kind === "fha" && v.appraised_value?.trim() ? Math.min(n(v, "price"), n(v, "appraised_value")) : n(v, "price");
   const fhaTerms = kind === "fha"
     ? v.mip_method === "Manual"
@@ -144,8 +147,8 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
       : fhaMipTerms(base, fhaValue, N)
     : null;
   let fee = 0,
-    pmi = kind !== "conventional" ? 0 : v.pmi_unit === "Percent of loan" ? base * pct(v, "pmi") : n(v, "pmi"),
-    pmiYears = kind !== "conventional" ? 0 : n(v, "pmi_years");
+    pmi = kind !== "conventional" || pmiAuto ? 0 : v.pmi_unit === "Percent of loan" ? base * pct(v, "pmi") : n(v, "pmi"),
+    pmiYears = kind !== "conventional" || pmiUsesLtv ? 0 : n(v, "pmi_years");
   if (kind === "fha") {
     fee = Math.round(base * fhaTerms!.upfrontPercent) / 100;
   }
@@ -181,6 +184,7 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
       money("Down payment", down),
       money("Financed loan amount", 0),
       money("Upfront fee", 0),
+      ...(kind === "conventional" ? [money("Initial monthly PMI", 0), money("Total PMI", 0)] : []),
       ...(kind === "fha" ? [money("Initial monthly FHA MIP", 0), money("Total FHA MIP", 0)] : []),
       money("Total interest", 0),
       money("Total payments", 0),
@@ -194,7 +198,7 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
     pmiUsesLtv
       ? (i === 0 ? p : Number(result.rows![i - 1][4])) > pmiOriginalValue * .8
       : i < Math.round(pmiYears * 12)
-  ) ? pmi / 12 : 0;
+  ) ? pmiEstimate ? automaticPmiPremium(base, pmiEstimate.annualPercent, i) : pmi / 12 : 0;
   let runningCosts = 0;
   const start = new Date(v.start + "T00:00:00Z");
   start.setUTCDate(1);
@@ -212,6 +216,7 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
       cost,
       Number(row[1]) + cost,
       ...(fhaPremiums ? [monthlyMip] : []),
+      ...(kind === "conventional" ? [mortgageInsuranceAt(i)] : []),
     ];
   });
   const firstCost = sum(["tax", "insurance", "hoa", "other"].map(k => expense(k, 0))) / 12 + mortgageInsuranceAt(0);
@@ -224,6 +229,12 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
     money("Down payment", down),
     money("Financed loan amount", p),
     money("Upfront fee", fee),
+    ...(kind === "conventional" ? [
+      ...(pmiEstimate ? [{...metric("Estimated annual PMI rate", pmiEstimate.annualPercent, "percent"), digits: 2}] : []),
+      money("Initial monthly PMI", mortgageInsuranceAt(0)),
+      money("Total PMI", sum(rows.map((_,i) => mortgageInsuranceAt(i)))),
+      metric("Months with PMI", rows.filter((_,i) => mortgageInsuranceAt(i) > 0).length),
+    ] : []),
     ...(pmiUsesLtv ? [money("Original value for PMI", pmiOriginalValue), metric("Original loan-to-value ratio", base / pmiOriginalValue * 100, "percent")] : []),
     ...(fhaTerms ? [
       metric("Annual FHA MIP rate", fhaTerms.annualPercent, "percent"),
@@ -249,10 +260,12 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
     "Taxes & costs",
     "Total",
     ...(fhaPremiums ? ["FHA MIP"] : []),
+    ...(kind === "conventional" ? ["PMI"] : []),
   ];
   result.rows = rows;
   result.notes = [
     "Ownership-cost totals cover only the modeled loan-payment period, through payoff. Property tax, insurance, HOA and maintenance may continue after payoff; this is not a lifetime homeownership-cost total.",
+    ...(pmiEstimate ? [automaticPmiNote, `PMI estimate uses credit score ${v.pmi_credit}, ${pmiEstimate.coveragePercent}% insurance coverage and ${pmiEstimate.ltv.toFixed(2)}% original LTV. PMI is already included in Taxes & costs and Total; do not add it twice.`] : []),
     ...(pmiUsesLtv ? ["PMI original value is the lower of the purchase price and the entered appraisal at purchase, not a current market appraisal. Blank appraisal assumes it is at least the purchase price. The 80% option assumes a requested cancellation is approved; this is not a loan-approval or appraisal-eligibility decision."] : []),
     ...(fhaTerms ? [
       `${v.mip_method === "Manual" ? "Manual FHA premium terms" : "Ordinary FHA forward-loan rules (Mortgagee Letter 2023-05)"}: upfront ${fhaTerms.upfrontPercent}%, annual ${fhaTerms.annualPercent}%, for up to ${Math.min(fhaTerms.durationMonths, N) / 12} years. Historical case numbers, special programs, underwriting and county loan limits are not determined here.`,
@@ -274,7 +287,7 @@ const mortgageMode = (
   id,
   title,
   fields: kind === "fha" ? [...houseFields().slice(0, 6), ...extraFieldsForKind, ...houseFields().slice(6)] : [...houseFields(), ...extraFieldsForKind,
-    ...(kind === "conventional" ? [{...num("appraised_value", "Original appraised value at purchase", 0, "$", 1), value: "", optional: true, hint: "For 80% original-LTV PMI cancellation. Use the appraisal at purchase, not today's value. Blank assumes the appraisal is at least the purchase price; original value uses the lower amount."}] : []),
+    ...(kind === "conventional" ? [{...num("appraised_value", "Original appraised value at purchase", 0, "$", 1), value: "", optional: true, hint: "For PMI estimation and 80% original-LTV cancellation. Use the appraisal at purchase, not today's value. Blank assumes the appraisal is at least the purchase price; original value uses the lower amount."}] : []),
   ],
   description:
     "Calculate monthly payments, annual expenses, and dated extra principal payments.",
@@ -282,7 +295,7 @@ const mortgageMode = (
     "Payment = P × i / (1 − (1+i)^−N), with a period-by-period balance schedule.",
   calculate: (v) => {
     if (id === "biweekly") {
-      const monthly = mortgageCalc(v, kind),
+      const monthly = mortgageCalc(kind === "conventional" ? {...v, pmi_method: "Manual", pmi: "0", pmi_unit: "Dollars", pmi_policy: "Fixed duration", pmi_years: "0", appraised_value: ""} : v, kind),
         p = monthly.metrics.find(
           (x) => x.label === "Financed loan amount",
         )!.value,
@@ -339,6 +352,11 @@ const mortgage = tool(
   ],
   "Estimate mortgage payments, ownership costs, and the effect of extra payments.",
 );
+for (const mode of mortgage.modes) mode.fields = mode.fields.flatMap(field => field.key === "pmi" ? [
+  {...select("pmi_method", "PMI calculation", ["Automatic estimate", "Manual"]), hint: "Automatic uses original LTV, credit score range and loan term. An illustrative base-rate estimate, not a lender quote. Select Manual for an actual quote."},
+  {...select("pmi_credit", "Credit score range for PMI", pmiCreditBands, "740-759"), hint: "Default assumption: 740–759. This is not a credit check. Automatic assumes a fixed-rate primary-residence purchase and DTI at most 45%."},
+  field,
+] : [field]);
 const amortization = tool(
   "amortization",
   [

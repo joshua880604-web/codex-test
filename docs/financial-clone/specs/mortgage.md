@@ -75,3 +75,8 @@ Local default outputs: Biweekly payment; Total interest; Payments; Years to payo
 -100% down is an explicit no-loan result in both modes. Preserve initial monthly/annual property costs; omit fabricated schedules, charts and inferred lifetime totals. FHA MIP is zero. Positive-loan ownership totals cover only through modeled payoff.
 - Optional Original appraised value at purchase is visible/validated only for Mortgage's requested80% original-LTV PMI option. Original value=min(purchase price, original purchase appraisal); blank assumes appraisal>=price. This is an approved-request assumption, separate from78% automatic and midpoint termination.
 -38 independent Decimal control scenarios and12 prior invalid-input controls remain passing.193 default metric sets unchanged. Report:../mortgage-repairs-2026-10-25.md. Reference parity remains unverified.
+
+
+### Automatic PMI — 2026-10-26
+
+Monthly default: Automatic estimate with credit range740–759, original LTV and term; versioned National MI Monthly Advantage base rates, effective2022-03-01. Manual retains actual annual dollar/percentage quote and selected cancellation policy. New inputs:pmi_method,pmi_credit. Automatic uses original-value80% requested cancellation assumed approved, original-loan constant premiums and min(initial rate,0.20%) after120 payments. Exclude unsupported LTV>97% and PMI-bearing term>480 months with an actionable error. Separate initial/total PMI and month count; PMI column is included in Taxes & costs and Total and aggregated in yearly CSV. Biweekly excludes conventional PMI controls and pricing; explicit legacy quotes restore Manual. Sources/limits/tests:../automatic-pmi-2026-10-26.md.

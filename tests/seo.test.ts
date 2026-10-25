@@ -57,7 +57,8 @@ test("Production sitemap lists canonical pages and only reviewed content dates",
   );
   assert.equal(sitemapEntries(siteConfig({})).length, 0);
   assert.equal(entries.filter(e=>e.lastModified).length,Object.keys(contentUpdatedOn).length);
-  assert.ok(Object.values(contentUpdatedOn).every(date=>date==='2026-10-25'));
+  assert.equal(contentUpdatedOn['/mortgage-calculator.html'],'2026-10-26');
+  assert.ok(Object.entries(contentUpdatedOn).filter(([path])=>path!=='/mortgage-calculator.html').every(([,date])=>date==='2026-10-25'));
   assert.ok(!entries.some(e=>e.url.endsWith('/llms.txt')||e.url.endsWith('/sitemap.xml')));
 });
 test("Calculator canonicals consolidate shared query variants and schema matches the real app", () => {

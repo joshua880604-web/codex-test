@@ -1,0 +1,201 @@
+{
+  "tested_at": "2026-10-25T16:17:03.268Z",
+  "checks": [
+    {
+      "width": 390,
+      "case": "default automatic, explicit credit assumption, hidden manual premium",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "4% down, keyboard calculation, PMI rate/amount, chart, monthly/yearly CSV and preserved frame",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "15% and 20% down update PMI without changing home insurance",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "credit score changes sourced estimate",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "dollar down payment gives same LTV estimate",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "original lower purchase appraisal changes automatic PMI",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "manual quote/duration/cancellation and switching back to automatic",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "unsupported automatic LTV errors and manual recovery",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "unsupported automatic term does not silently extrapolate",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "cash purchase keeps no-loan state",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "biweekly excludes PMI controls and ignores stale values",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "legacy explicit zero quote is preserved",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "default automatic, explicit credit assumption, hidden manual premium",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "4% down, keyboard calculation, PMI rate/amount, chart, monthly/yearly CSV and preserved frame",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "15% and 20% down update PMI without changing home insurance",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "credit score changes sourced estimate",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "dollar down payment gives same LTV estimate",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "original lower purchase appraisal changes automatic PMI",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "manual quote/duration/cancellation and switching back to automatic",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "unsupported automatic LTV errors and manual recovery",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "unsupported automatic term does not silently extrapolate",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "cash purchase keeps no-loan state",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "biweekly excludes PMI controls and ignores stale values",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "legacy explicit zero quote is preserved",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "default automatic, explicit credit assumption, hidden manual premium",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "4% down, keyboard calculation, PMI rate/amount, chart, monthly/yearly CSV and preserved frame",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "15% and 20% down update PMI without changing home insurance",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "credit score changes sourced estimate",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "dollar down payment gives same LTV estimate",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "original lower purchase appraisal changes automatic PMI",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "manual quote/duration/cancellation and switching back to automatic",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "unsupported automatic LTV errors and manual recovery",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "unsupported automatic term does not silently extrapolate",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "cash purchase keeps no-loan state",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "biweekly excludes PMI controls and ignores stale values",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "legacy explicit zero quote is preserved",
+      "passed": true
+    },
+    {
+      "case": "fha-loan keeps program-specific rules",
+      "passed": true
+    },
+    {
+      "case": "va-mortgage keeps program-specific rules",
+      "passed": true
+    },
+    {
+      "case": "server-rendered automatic defaults without JavaScript",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "passed": true,
+  "scope": "Local production build; exact existing publisher loader stubbed. Direct live-origin and reference-site parity unverified."
+}
