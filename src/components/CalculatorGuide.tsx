@@ -3,6 +3,7 @@ import type { Calculator } from "@/lib/types";
 import { routeFor } from "@/lib/calculators";
 import { guides, notesCheckedOn } from "@/lib/guides";
 import GlossaryLinks from './GlossaryLinks';
+import { longTailHref } from '@/lib/long-tail-content';
 export default function CalculatorGuide({
   calculator,
 }: {
@@ -60,9 +61,10 @@ export default function CalculatorGuide({
           })}
           <h2 id="common-questions">Common questions</h2>
           {guide.questions.map((item) => (
-            <section key={item.question}>
+            <section key={item.question} id={item.anchor}>
               <h3>{item.question}</h3>
               <p>{item.answer}</p>
+              {item.links && <p>{item.links.map((link,index)=><span key={link.id+link.mode}>{index>0?' · ':''}<a href={longTailHref(link)}>{link.label}</a></span>)}</p>}
             </section>
           ))}
           <h2 id="scope-assumptions">Scope and assumptions</h2>
@@ -82,7 +84,7 @@ export default function CalculatorGuide({
           </p>
         </>
       )}
-      <details className="model-reference">
+      <details className="model-reference" id="calculation-methods">
         <summary>Calculation methods and formulas</summary>
         {calculator.modes.map((mode) => (
           <section key={mode.id}>

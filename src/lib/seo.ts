@@ -11,6 +11,7 @@ import {
 } from "./site";
 import type { Calculator } from "./types";
 import {glossaryPath,glossaryTerms,glossaryTermPath} from './glossary';
+import { longTailContent } from './long-tail-content';
 const titles: Record<string, string> = {
   vat: "VAT Calculator - Add VAT, Remove VAT & Find the Rate",
   mortgage: "Mortgage Calculator - Monthly Payment & Amortization",
@@ -55,6 +56,7 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
 }
 // Dates record reviewed content changes, never the current build time.
 export const contentUpdatedOn: Record<string, string> = {
+  ...Object.fromEntries(Object.entries(longTailContent).map(([id,content])=>[catalog.find(c=>c.id===id)!.local_route,content.updatedOn])),
   "/compound-interest-calculator.html": "2026-10-25",
   "/average-return-calculator.html": "2026-10-25",
   "/irr-calculator.html": "2026-10-25",

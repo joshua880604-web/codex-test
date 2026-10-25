@@ -1,5 +1,6 @@
 import insightExamples from "./insight-examples.json";
 import extendedGuides from "./extended-guides.json";
+import { longTailContent, type LongTailLink } from "./long-tail-content";
 export type WorkedExample = {
   title: string;
   mode: string;
@@ -14,7 +15,7 @@ export type Guide = {
   summary: string;
   scope: string;
   examples: WorkedExample[];
-  questions: { question: string; answer: string }[];
+  questions: { question: string; answer: string; anchor?: string; links?: LongTailLink[] }[];
   sources: { title: string; url: string }[];
 };
 const investor = {
@@ -659,3 +660,9 @@ Object.assign(relatedCalculatorIds,{"markup": ["margin", "break-even", "commissi
 relatedCalculatorIds.inflation = [...new Set([...(relatedCalculatorIds.inflation??[]),"real-return"])];
 relatedCalculatorIds.margin = [...new Set([...(relatedCalculatorIds.margin??[]),"markup","break-even"])];
 relatedCalculatorIds["mutual-fund"] = [...new Set([...(relatedCalculatorIds["mutual-fund"]??[]),"investment-fee"])];
+
+// Reviewed use-case answers extend existing canonical pages, not keyword pages.
+for (const [id, content] of Object.entries(longTailContent)) {
+  guides[id].questions.push(...content.items.map(({queries: _queries, ...item}) => item));
+  guides[id].checkedOn = content.updatedOn;
+}

@@ -1,0 +1,960 @@
+{
+  "mortgage": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-monthly-cost",
+        "queries": [
+          "mortgage calculator monthly payment",
+          "mortgage calculator formula"
+        ],
+        "question": "What is included in the monthly mortgage result?",
+        "answer": "Principal and interest repay the loan. The modeled monthly total can also include the property tax, insurance, HOA and other costs you enter. Compare both figures before treating a payment as your housing budget; the formula section explains the fixed-rate loan calculation.",
+        "links": [
+          {
+            "id": "mortgage",
+            "mode": "monthly",
+            "label": "Open monthly mortgage calculation"
+          }
+        ]
+      },
+      {
+        "anchor": "use-extra-payments",
+        "queries": [
+          "mortgage calculator with extra payments"
+        ],
+        "question": "Where do I enter extra mortgage principal payments?",
+        "answer": "Open More options for recurring monthly or annual extra principal, a one-time payment, or dated extra payments. Recalculate and review the payoff date, interest and complete schedule. If you already have a loan balance and regular payment, the dedicated Mortgage Payoff tool can start from those figures.",
+        "links": [
+          {
+            "id": "mortgage-payoff",
+            "mode": "remaining-extra",
+            "label": "Calculate from a current balance"
+          }
+        ]
+      }
+    ]
+  },
+  "loan": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-choose-loan",
+        "queries": [
+          "loan calculator car",
+          "loan calculator auto",
+          "loan calculator personal",
+          "loan calculator home",
+          "loan calculator mortgage"
+        ],
+        "question": "Which tool should I use for a car, personal loan or mortgage?",
+        "answer": "This page handles general loan mathematics. Auto Loan includes purchase-price and trade-in inputs; Personal Loan includes entered borrowing fees; Mortgage separates loan payments from entered ownership costs. Choose the tool whose inputs match the transaction.",
+        "links": [
+          {
+            "id": "auto-loan",
+            "mode": "payment",
+            "label": "Auto loan payments"
+          },
+          {
+            "id": "personal-loan",
+            "mode": "repayment",
+            "label": "Personal loan costs"
+          },
+          {
+            "id": "mortgage",
+            "mode": "monthly",
+            "label": "Mortgage payments"
+          }
+        ]
+      },
+      {
+        "anchor": "use-extra-and-export",
+        "queries": [
+          "loan calculator with extra payments"
+        ],
+        "question": "How can I compare extra loan payments with the original schedule?",
+        "answer": "Use Loan Repayment with the current principal, interest rate and regular payment, then add monthly, yearly or one-time extra payments. It compares payoff time and interest under fixed assumptions. After calculating a schedule, Download CSV provides data rows for a spreadsheet, rather than a workbook with formulas.",
+        "links": [
+          {
+            "id": "repayment",
+            "mode": "extra-payments",
+            "label": "Compare extra loan payments"
+          }
+        ]
+      }
+    ]
+  },
+  "compound-interest": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-contribution-timing",
+        "queries": [
+          "compound interest calculator with monthly contributions",
+          "compound interest calculator with annual contributions",
+          "compound interest calculator monthly",
+          "compound interest calculator - daily monthly yearly compounding"
+        ],
+        "question": "How do deposits and compounding frequency affect compound growth?",
+        "answer": "Monthly and annual contributions are separate cash streams. Choose when deposits occur and the compounding frequency for the nominal rate you enter. Daily compounding does not mean a daily deposit; changing the frequency while holding a nominal rate fixed can change the ending balance.",
+        "links": [
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Project growth with contributions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-increasing-deposits",
+        "queries": [
+          "compound interest calculator with increasing contributions"
+        ],
+        "question": "How do I model deposits that increase each year?",
+        "answer": "Use Savings when you need a yearly percentage increase in monthly or annual deposits. Compound Growth on this page uses constant deposit amounts. Keep the same starting balance, return and timing when comparing the two scenarios.",
+        "links": [
+          {
+            "id": "savings",
+            "mode": "accumulation",
+            "label": "Project increasing savings deposits"
+          }
+        ]
+      }
+    ]
+  },
+  "savings": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-goal-and-retirement",
+        "queries": [
+          "savings calculator goal",
+          "savings calculator for retirement"
+        ],
+        "question": "Should I project my savings or solve for a savings goal?",
+        "answer": "Savings Interest projects a balance from the deposits you enter. Monthly Deposit Needed solves for a target amount and deadline; Time Needed solves for the first whole month reaching a target. Retirement planning adds a separate withdrawal horizon and retirement-income assumptions.",
+        "links": [
+          {
+            "id": "savings",
+            "mode": "goal-contribution",
+            "label": "Find the monthly deposit for a goal"
+          },
+          {
+            "id": "savings",
+            "mode": "goal-time",
+            "label": "Find time to a savings goal"
+          },
+          {
+            "id": "retirement",
+            "mode": "required",
+            "label": "Plan retirement income needs"
+          }
+        ]
+      },
+      {
+        "anchor": "use-apy",
+        "queries": [
+          "savings calculator apy"
+        ],
+        "question": "How should I use a quoted APY in a savings projection?",
+        "answer": "APY is an effective annual yield, while a nominal interest rate also needs a compounding convention. For an effective annual rate, use the annual-compounding convention or first convert the quote with Equivalent Interest Rate. Enter only a rate you have checked; this site does not fetch current bank offers.",
+        "links": [
+          {
+            "id": "compound-interest",
+            "mode": "conversion",
+            "label": "Convert compounding rate conventions"
+          }
+        ]
+      }
+    ]
+  },
+  "mortgage-payoff": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-current-balance",
+        "queries": [
+          "mortgage payoff calculator from current balance",
+          "mortgage payoff calculator using current balance",
+          "mortgage payoff calculator based on remaining balance"
+        ],
+        "question": "Can I start with my current mortgage balance?",
+        "answer": "Yes. Select Current balance and enter the remaining principal and current monthly principal-and-interest payment. Keep escrow costs separate from the loan payment. Original loan uses the original amount, term and elapsed payments to estimate the remaining position instead.",
+        "links": [
+          {
+            "id": "mortgage-payoff",
+            "mode": "remaining-normal",
+            "label": "Start from a current mortgage balance"
+          }
+        ]
+      },
+      {
+        "anchor": "use-lump-biweekly",
+        "queries": [
+          "mortgage payoff calculator with biweekly and extra payments",
+          "mortgage payoff calculator with lump sum and extra payments",
+          "mortgage payoff calculator with extra principal payments"
+        ],
+        "question": "How do lump sums and biweekly payments change payoff?",
+        "answer": "Choose the appropriate payment strategy and enter additional principal in the fields provided. A one-time extra payment is different from repeating the same amount every month. Compare the resulting schedule and interest with the baseline, and check your lender’s actual posting and prepayment rules.",
+        "links": [
+          {
+            "id": "mortgage-payoff",
+            "mode": "remaining-extra",
+            "label": "Enter extra principal payments"
+          },
+          {
+            "id": "mortgage-payoff",
+            "mode": "remaining-biweekly",
+            "label": "Compare a biweekly strategy"
+          }
+        ]
+      }
+    ]
+  },
+  "amortization": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-extra-and-escrow",
+        "queries": [
+          "amortization calculator with extra payments",
+          "amortization calculator with extra principal payments",
+          "amortization calculator with taxes and insurance"
+        ],
+        "question": "Does an amortization schedule include extra principal and housing costs?",
+        "answer": "Extra principal reduces the loan balance and can shorten the schedule. Property tax and insurance are housing costs, rather than principal repayment. Use the Mortgage calculation when you need those entered costs alongside the payment; use each schedule’s CSV for its complete rows.",
+        "links": [
+          {
+            "id": "amortization",
+            "mode": "schedule",
+            "label": "Build an amortization schedule"
+          },
+          {
+            "id": "mortgage",
+            "mode": "monthly",
+            "label": "Include entered housing costs"
+          }
+        ]
+      }
+    ]
+  },
+  "refinance": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-cash-out-costs",
+        "queries": [
+          "refinance calculator with cash out",
+          "refinance calculator with taxes and insurance"
+        ],
+        "question": "How do cash-out and closing costs affect a refinance comparison?",
+        "answer": "Cash-out increases the amount borrowed, and financed closing costs also become part of the new principal. Enter fees and points explicitly. The payment comparison is not a complete housing-cost budget; use Mortgage for a separate projection including entered taxes and insurance.",
+        "links": [
+          {
+            "id": "refinance",
+            "mode": "balance",
+            "label": "Compare a refinance from the current balance"
+          },
+          {
+            "id": "mortgage",
+            "mode": "monthly",
+            "label": "Review a housing-cost budget"
+          }
+        ]
+      }
+    ]
+  },
+  "heloc": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-draw-repay",
+        "queries": [
+          "heloc calculator payment",
+          "heloc calculator monthly payment",
+          "heloc calculator interest only"
+        ],
+        "question": "Why are HELOC draw-period and repayment-period payments different?",
+        "answer": "The draw period models interest-only payments on the entered initial advance; the repayment phase amortizes that balance. This is a constant-rate illustration with no additional draws, not a forecast of a lender’s variable rate or a general extra-payment plan.",
+        "links": [
+          {
+            "id": "heloc",
+            "mode": "draw-repay",
+            "label": "Compare modeled HELOC payment phases"
+          }
+        ]
+      },
+      {
+        "anchor": "use-borrowing-capacity",
+        "queries": [
+          "heloc calculator how much can i borrow"
+        ],
+        "question": "How is the maximum HELOC credit estimate calculated?",
+        "answer": "Maximum Credit starts with the home value, existing mortgage balance and combined loan-to-value limit you enter. The resulting equity capacity is not a lender approval and does not incorporate a credit score, appraisal decision or lender-specific eligibility rules.",
+        "links": [
+          {
+            "id": "heloc",
+            "mode": "maximum-credit",
+            "label": "Estimate equity-based credit capacity"
+          }
+        ]
+      }
+    ]
+  },
+  "home-equity-loan": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-fixed-payment",
+        "queries": [
+          "home equity loan calculator monthly payment",
+          "home equity loan calculator payment",
+          "home equity loan calculator fixed rate"
+        ],
+        "question": "How is a home equity loan different from this site’s HELOC model?",
+        "answer": "This tool models an amortizing loan with a fixed entered rate and closing-cost treatment. HELOC instead separates a modeled interest-only draw period from repayment. The borrowing-capacity estimate is available in the HELOC tool, rather than inferred from the home equity loan payment.",
+        "links": [
+          {
+            "id": "home-equity-loan",
+            "mode": "loan",
+            "label": "Estimate a home equity loan payment"
+          },
+          {
+            "id": "heloc",
+            "mode": "maximum-credit",
+            "label": "Estimate equity-based borrowing capacity"
+          }
+        ]
+      }
+    ]
+  },
+  "cd": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-apy-rate",
+        "queries": [
+          "cd calculator apy",
+          "cd calculator interest",
+          "cd calculator rate",
+          "cd calculator simple"
+        ],
+        "question": "Should I enter APY or a nominal interest rate for a CD?",
+        "answer": "Use the compounding convention that matches your quote. A nominal rate compounded monthly differs from an effective annual APY. Equivalent Interest Rate can translate between those conventions; the CD tool then estimates maturity and the entered tax on positive interest, without fetching current offers.",
+        "links": [
+          {
+            "id": "compound-interest",
+            "mode": "conversion",
+            "label": "Convert a quoted CD rate"
+          },
+          {
+            "id": "cd",
+            "mode": "accumulation",
+            "label": "Calculate CD maturity"
+          }
+        ]
+      }
+    ]
+  },
+  "cagr": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-months",
+        "queries": [
+          "cagr calculator months",
+          "cagr calculator with years",
+          "cagr stock calculator"
+        ],
+        "question": "How can I calculate CAGR over a period stated in months?",
+        "answer": "Convert months to years for the length-based form: 18 months is 1.5 years. Use Dates when you have exact endpoints. CAGR summarizes growth between two values and does not measure stock volatility or determine a future market return.",
+        "links": [
+          {
+            "id": "cagr",
+            "mode": "rate",
+            "label": "Use a length in years",
+            "values": {
+              "years": "1.5"
+            }
+          },
+          {
+            "id": "cagr",
+            "mode": "dates",
+            "label": "Use exact investment dates"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cashflows",
+        "queries": [
+          "cagr to xirr calculator",
+          "cagr calculator with contributions"
+        ],
+        "question": "Can CAGR be converted directly into a return with contributions?",
+        "answer": "Not from CAGR alone. Money added or withdrawn between endpoints requires the amounts and timing of those cash flows. Average Return’s Dated Cash Flows mode can estimate a money-weighted annual return when you supply those transactions; it does not convert a CAGR number into XIRR.",
+        "links": [
+          {
+            "id": "average-return",
+            "mode": "cashflows",
+            "label": "Calculate a dated cash-flow return"
+          }
+        ]
+      }
+    ]
+  },
+  "investment": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-retirement-and-withdrawals",
+        "queries": [
+          "investment calculator retirement",
+          "investment calculator over time",
+          "investment calculator compound",
+          "investment calculator compound interest"
+        ],
+        "question": "Which investment assumptions should I compare over time?",
+        "answer": "Start with the same principal, deposit timing and time horizon, then vary the return assumption separately from contributions. The growth forms do not combine arbitrary deposits and withdrawals. Use Retirement for its supported retirement saving and withdrawal scenarios; expected returns remain assumptions.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Project an investment end amount"
+          },
+          {
+            "id": "retirement",
+            "mode": "withdrawal",
+            "label": "Explore the retirement withdrawal model"
+          }
+        ]
+      }
+    ]
+  },
+  "future-value": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-payments",
+        "queries": [
+          "future value calculator with monthly contributions",
+          "future value calculator with payments",
+          "future value calculator with contributions",
+          "future value calculator compound interest"
+        ],
+        "question": "How do I use monthly contributions in Future Value?",
+        "answer": "Enter the number of monthly periods and a rate per month, with the periodic contribution and its beginning- or end-of-period timing. Do not enter an annual rate as a monthly rate. Compound Interest is a convenient alternative when your inputs are an annual quote and years plus months.",
+        "links": [
+          {
+            "id": "future-value",
+            "mode": "growth",
+            "label": "Calculate periodic future value"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Use annual-rate growth inputs"
+          }
+        ]
+      },
+      {
+        "anchor": "use-inflation",
+        "queries": [
+          "future value calculator with inflation"
+        ],
+        "question": "How can I compare a future amount with today’s purchasing power?",
+        "answer": "First calculate the future balance under your return and payment assumptions. Then adjust that amount using an explicit inflation rate or compare with Real Return. This separates nominal growth from purchasing power; it does not add an inflation field or withdrawal stream to this periodic-value form.",
+        "links": [
+          {
+            "id": "real-return",
+            "mode": "value",
+            "label": "Compare inflation-adjusted growth"
+          },
+          {
+            "id": "inflation",
+            "mode": "backward",
+            "label": "Adjust an amount back to today"
+          }
+        ]
+      }
+    ]
+  },
+  "present-value": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-annuity",
+        "queries": [
+          "present value calculator for monthly payments",
+          "present value calculator annuity",
+          "present value calculator with discount rate",
+          "present value calculator for pension"
+        ],
+        "question": "How do I discount a stream of monthly payments?",
+        "answer": "Use the annuity mode with a monthly rate and number of months. Keep payment timing consistent, and include any separate future amount only once. Pension compares entered lump-sum and pension offers with life-expectancy and COLA assumptions; it does not calculate a government pension entitlement.",
+        "links": [
+          {
+            "id": "present-value",
+            "mode": "annuity",
+            "label": "Discount periodic payments"
+          },
+          {
+            "id": "pension",
+            "mode": "lump",
+            "label": "Compare an entered pension offer"
+          }
+        ]
+      }
+    ]
+  },
+  "roi": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-property-returns",
+        "queries": [
+          "roi calculator real estate",
+          "roi calculator for rental property",
+          "roi calculator investment property",
+          "real estate investment return calculator"
+        ],
+        "question": "Which return calculator fits a rental property investment?",
+        "answer": "ROI compares the cost and proceeds you enter, while Rental Property models rents, vacancy, expenses, financing and a sale assumption over a holding period. For transactions on individually chosen dates, use Dated Cash Flows. Do not treat these different return conventions as interchangeable.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Model a rental property"
+          },
+          {
+            "id": "average-return",
+            "mode": "cashflows",
+            "label": "Use individual transaction dates"
+          }
+        ]
+      }
+    ]
+  },
+  "average-return": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-mean-vs-growth",
+        "queries": [
+          "geometric average return calculator",
+          "arithmetic average return calculator",
+          "average return calculator stock",
+          "mutual fund average return calculator"
+        ],
+        "question": "When should I compare arithmetic and geometric average returns?",
+        "answer": "Arithmetic average describes the mean periodic return; geometric average reflects compounded growth across the entered periods. Enter the returns you have, including losses and zero-return periods. The tool does not retrieve stock, index or fund histories, and does not calculate a portfolio-weighted average from holdings.",
+        "links": [
+          {
+            "id": "average-return",
+            "mode": "returns",
+            "label": "Compare mean and compounded returns"
+          }
+        ]
+      }
+    ]
+  },
+  "investment-fee": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-compare",
+        "queries": [
+          "investment fee calculator comparison",
+          "investment fee calculator over time",
+          "investment advisor fee calculator",
+          "investment fee impact calculator",
+          "investment fund fee calculator"
+        ],
+        "question": "How can I compare fund and advisor fees over time?",
+        "answer": "Compare A and B using the same balance, contributions and return basis. Fund fees and advisor fees affect both amounts paid and later growth, so the ending-balance difference is not simply total fees paid. Enter the actual percentages yourself; the tool does not look up a provider’s price schedule.",
+        "links": [
+          {
+            "id": "investment-fee",
+            "mode": "compare",
+            "label": "Compare two fee scenarios"
+          },
+          {
+            "id": "investment-fee",
+            "mode": "impact",
+            "label": "Calculate one fee scenario"
+          }
+        ]
+      }
+    ]
+  },
+  "mutual-fund": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-deposits-fees",
+        "queries": [
+          "mutual fund calculator sip",
+          "mutual fund calculator lumpsum",
+          "mutual fund calculator usa"
+        ],
+        "question": "How do lump sums and recurring deposits affect this fund projection?",
+        "answer": "Use starting principal for a lump sum and the monthly or annual contribution fields for recurring deposits. Enter the return and fee assumptions rather than a fund ticker. This is a generic projection, not a fund recommendation, live NAV lookup or a country-specific SIP tax calculation.",
+        "links": [
+          {
+            "id": "mutual-fund",
+            "mode": "projection",
+            "label": "Project fund contributions and fees"
+          }
+        ]
+      }
+    ]
+  },
+  "payback-period": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-uneven-flows",
+        "queries": [
+          "payback period calculator irregular cash flows",
+          "payback period calculator no discount rate",
+          "payback period calculator formula"
+        ],
+        "question": "How do unequal cash flows and a discount rate affect payback?",
+        "answer": "Irregular Cash Flow accepts one net cash flow per year, preserving zero years and additional investments. Ordinary payback accumulates the entered flows; discounted payback first adjusts them for the discount rate. A zero discount rate removes that discounting assumption.",
+        "links": [
+          {
+            "id": "payback-period",
+            "mode": "irregular",
+            "label": "Enter unequal annual cash flows"
+          },
+          {
+            "id": "payback-period",
+            "mode": "fixed",
+            "label": "Use a repeating annual cash flow"
+          }
+        ]
+      }
+    ]
+  },
+  "bond": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-price-yield",
+        "queries": [
+          "bond price calculator",
+          "bond yield calculator",
+          "bond calculator return",
+          "bond calculator interest"
+        ],
+        "question": "How are bond price and yield related in this model?",
+        "answer": "Price discounts coupon and face-value payments using the entered yield and frequency; Yield solves the reverse relationship from a price. Dated Bond uses settlement, maturity and the selected day-count convention. Savings-bond redemption rules and market quotes are not supplied.",
+        "links": [
+          {
+            "id": "bond",
+            "mode": "price",
+            "label": "Calculate a modeled bond price"
+          },
+          {
+            "id": "bond",
+            "mode": "yield",
+            "label": "Solve for a modeled yield"
+          },
+          {
+            "id": "bond",
+            "mode": "dated",
+            "label": "Use settlement and maturity dates"
+          }
+        ]
+      }
+    ]
+  },
+  "real-return": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-inflation",
+        "queries": [
+          "real return calculator inflation rate",
+          "nominal vs real return calculator",
+          "investment real return calculator",
+          "real return calculator stock",
+          "total real return calculator"
+        ],
+        "question": "How do nominal return and inflation combine?",
+        "answer": "Real return uses (1 + nominal return) / (1 + inflation) − 1 for a matching period. The value mode also shows modeled purchasing power under the entered tax and time assumptions. Supply the nominal return yourself; stock and fund history is not retrieved.",
+        "links": [
+          {
+            "id": "real-return",
+            "mode": "rate",
+            "label": "Compare nominal and real rates"
+          },
+          {
+            "id": "real-return",
+            "mode": "value",
+            "label": "Project inflation-adjusted value"
+          }
+        ]
+      }
+    ]
+  },
+  "simple-interest": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-time-units",
+        "queries": [
+          "simple interest calculator days",
+          "simple interest calculator monthly",
+          "simple interest calculator for savings account"
+        ],
+        "question": "How do I calculate simple interest for days or months?",
+        "answer": "Choose the rate period and time unit explicitly. Simple interest applies the rate to the original principal; it does not compound interest or build an amortizing payment schedule. For two calendar dates, first obtain the elapsed days from Date Calculator and check the lender’s day-count convention.",
+        "links": [
+          {
+            "id": "simple-interest",
+            "mode": "balance",
+            "label": "Set the rate and time units"
+          },
+          {
+            "id": "date",
+            "mode": "difference",
+            "label": "Find elapsed calendar days"
+          }
+        ]
+      }
+    ]
+  },
+  "rental-property": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-export",
+        "queries": [
+          "rental property calculator excel",
+          "rental property calculator spreadsheet",
+          "rental property calculator excel free"
+        ],
+        "question": "Can I review the rental property projection in a spreadsheet?",
+        "answer": "After calculating, open Calculation details and use Download CSV for the complete modeled schedule. CSV contains data rows, not a spreadsheet template with live formulas. Keep the entered vacancy, expense growth and sale assumptions with the export when comparing properties.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Open the property projection"
+          }
+        ]
+      }
+    ]
+  },
+  "rent": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-income",
+        "queries": [
+          "rent calculator based on income",
+          "rent calculator based on salary",
+          "rent calculator by income",
+          "rent calculator salary",
+          "rent calculator based on yearly income"
+        ],
+        "question": "How do I calculate a rent budget from annual or monthly income?",
+        "answer": "Choose the income frequency and enter non-housing debt separately. The housing and total-debt ratios are planning assumptions you can change. This estimates an affordability budget, not a landlord’s asking rent, a roommate split or a location-specific rental requirement.",
+        "links": [
+          {
+            "id": "rent",
+            "mode": "affordability",
+            "label": "Estimate an income-based rent budget"
+          }
+        ]
+      }
+    ]
+  },
+  "emergency-fund": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-target",
+        "queries": [
+          "emergency fund calculator"
+        ],
+        "question": "How should I choose an emergency-fund target?",
+        "answer": "Multiply essential monthly expenses by the number of months you choose, then compare with existing emergency savings. Savings Plan estimates months of deposits needed at the entered contribution. This is an expense-based planning target, without a country-specific benefit or insurance model.",
+        "links": [
+          {
+            "id": "emergency-fund",
+            "mode": "goal",
+            "label": "Set an expense-based target"
+          },
+          {
+            "id": "emergency-fund",
+            "mode": "plan",
+            "label": "Estimate a savings plan"
+          }
+        ]
+      }
+    ]
+  },
+  "college-cost": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-future-cost",
+        "queries": [
+          "college cost calculator future",
+          "college cost calculator 529"
+        ],
+        "question": "How can I estimate future college costs and a savings gap?",
+        "answer": "Enter today’s annual cost, cost growth, attendance duration and time until enrollment, then compare the funding need with existing savings and assumed investment growth. Costs by school and 529-specific deductions, contribution limits and eligibility are not retrieved or calculated.",
+        "links": [
+          {
+            "id": "college-cost",
+            "mode": "planning",
+            "label": "Plan from an entered college cost"
+          }
+        ]
+      }
+    ]
+  },
+  "retirement": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-other-income",
+        "queries": [
+          "retirement calculator with pension and social security",
+          "retirement calculator with social security"
+        ],
+        "question": "How can I include pension or Social Security income in a retirement target?",
+        "answer": "Required Savings has an Other monthly retirement income input for an amount you already know. Use an estimate appropriate to the scenario; this does not build a pension entitlement, coordinate a couple’s Social Security benefits or import a benefit statement.",
+        "links": [
+          {
+            "id": "retirement",
+            "mode": "required",
+            "label": "Include an entered retirement-income amount"
+          },
+          {
+            "id": "social-security",
+            "mode": "compare",
+            "label": "Compare quoted benefit options"
+          }
+        ]
+      },
+      {
+        "anchor": "use-longevity",
+        "queries": [
+          "retirement calculator how long will my money last"
+        ],
+        "question": "Where can I estimate how long a retirement balance lasts?",
+        "answer": "Savings Longevity uses the starting balance, fixed monthly withdrawal and return you enter. It is a different question from solving a monthly saving target or a retirement-age balance. Compare several return and spending assumptions rather than reading the result as a guaranteed depletion date.",
+        "links": [
+          {
+            "id": "retirement",
+            "mode": "longevity",
+            "label": "Estimate savings longevity"
+          }
+        ]
+      }
+    ]
+  },
+  "auto-loan": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-tax-trade",
+        "queries": [
+          "auto loan calculator with taxes and fees",
+          "auto loan calculator with trade in",
+          "auto loan calculator texas",
+          "auto loan calculator florida",
+          "auto loan calculator ohio"
+        ],
+        "question": "How do trade-in credit, negative equity and purchase taxes enter an auto loan?",
+        "answer": "Enter the trade-in value and amount still owed separately: positive equity reduces financing, while an unpaid balance can increase it. Use the documented dealer-purchase tax treatment for a supported state or select Manual and enter assumptions. This does not quote an APR from a credit score or resolve every local tax rule.",
+        "links": [
+          {
+            "id": "auto-loan",
+            "mode": "payment",
+            "label": "Calculate a vehicle payment"
+          }
+        ]
+      },
+      {
+        "anchor": "use-extra-payments",
+        "queries": [
+          "auto loan calculator with extra payments",
+          "auto loan calculator with extra payments and lump sum"
+        ],
+        "question": "Can this purchase calculator compare extra repayments?",
+        "answer": "The purchase form determines a regular payment or affordable vehicle price; it has no independent extra-payment comparison. Once you know the actual balance, annual interest rate and regular payment, Loan Repayment can compare additional principal under its own fixed-rate assumptions.",
+        "links": [
+          {
+            "id": "repayment",
+            "mode": "extra-payments",
+            "label": "Compare entered extra loan payments"
+          }
+        ]
+      }
+    ]
+  },
+  "down-payment": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-closing-cash",
+        "queries": [
+          "down payment calculator house",
+          "down payment calculator mortgage",
+          "down payment calculator for first-time home buyer"
+        ],
+        "question": "Does the cash-needed result include closing costs?",
+        "answer": "Cash Needed combines the selected down payment with the closing costs you enter. It does not automatically itemize lender and title charges or determine first-time-buyer assistance eligibility. Home Price and Down Payment Percentage solve different unknowns from the same entered cash budget.",
+        "links": [
+          {
+            "id": "down-payment",
+            "mode": "cash",
+            "label": "Estimate cash needed to buy"
+          },
+          {
+            "id": "down-payment",
+            "mode": "price",
+            "label": "Solve for a home-price budget"
+          }
+        ]
+      }
+    ]
+  },
+  "debt-to-income-ratio": {
+    "updatedOn": "2026-10-25",
+    "items": [
+      {
+        "anchor": "use-approval",
+        "queries": [
+          "debt to income ratio calculator for mortgage",
+          "debt to income ratio calculator for car loan",
+          "debt to income ratio calculator to buy a house",
+          "debt to income ratio calculator for mortgage approval",
+          "debt to income ratio calculator for personal loan",
+          "debt to income ratio calculator for home equity loan",
+          "debt to income ratio calculator to buy a car",
+          "debt to income ratio calculator for heloc"
+        ],
+        "question": "Does a debt-to-income result establish loan approval?",
+        "answer": "No. The ratio compares the monthly debts and gross monthly income you enter. Lenders also consider credit, assets, documented income and product-specific rules. House Affordability adds entered housing costs and planning ratios to estimate a price budget.",
+        "links": [
+          {
+            "id": "debt-to-income-ratio",
+            "mode": "ratio",
+            "label": "Calculate the entered debt-to-income ratio"
+          },
+          {
+            "id": "house-affordability",
+            "mode": "income",
+            "label": "Estimate an income-based home budget"
+          }
+        ]
+      }
+    ]
+  }
+}
