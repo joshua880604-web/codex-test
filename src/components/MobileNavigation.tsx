@@ -11,7 +11,7 @@ export default function MobileNavigation(){
   return()=>{document.removeEventListener('pointerdown',close);document.removeEventListener('keydown',escape);media.removeEventListener('change',resize);};
  },[]);
  return <details className="mobile-menu" ref={menu}>
-  <summary ref={trigger} aria-controls="mobile-navigation">Menu <span aria-hidden="true">☰</span></summary>
+  <summary ref={trigger} aria-controls="mobile-navigation">Menu <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 4h12M2 8h12M2 12h12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg></summary>
   <nav id="mobile-navigation" aria-label="Mobile navigation">{links.map(([label,href])=><a key={href} href={href} onClick={()=>{if(menu.current)menu.current.open=false;}}>{label}</a>)}</nav>
  </details>;
 }

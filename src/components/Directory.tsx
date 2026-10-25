@@ -11,8 +11,6 @@ const featured = [
   ["retirement", "Plan your retirement savings"],
   ["401k", "Project contributions and growth"],
   ["savings", "Work toward a savings goal"],
-  ["percentage", "Find percentages and changes"],
-  ["scientific", "Calculate with scientific functions"],
 ];
 export default function Directory({ propertyOnly = false }: { propertyOnly?: boolean }) {
   const tools=calculators.filter(c=>!propertyOnly||c.category==="Mortgage and Real Estate");
@@ -24,14 +22,14 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
         : "Find the right tool for your loans, savings, retirement, taxes, and everyday calculations."}</p>
       <div className={propertyOnly ? undefined : "directory-tools"}>
       <CalculatorSearch id="directory-search" tools={tools}/>
-      {!propertyOnly&&<div className="directory-quick"><QuickCalculator/></div>}
       {!propertyOnly && <section className="featured-tools" aria-labelledby="featured-heading">
-        <h2 id="featured-heading">Quick access</h2>
+        <h2 id="featured-heading">Popular financial calculators</h2>
         <div className="featured-grid">{featured.map(([id, description]) => {
           const calculator = calculators.find(c => c.id === id)!;
           return <a key={id} href={routeFor(id)}><strong>{calculator.title}</strong><span>{description}</span></a>;
         })}</div>
       </section>}
+      {!propertyOnly&&<div className="directory-quick"><QuickCalculator/></div>}
       </div>
       {groups.length > 1 && <nav className="directory-categories" aria-label="Calculator categories">
         <span>Browse by category</span>

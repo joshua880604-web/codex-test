@@ -20,7 +20,8 @@ try{
   if(width>=1024){assert.equal(Math.round(rects.side.width),320);assert.ok(rects.side.x>=rects.main.x+rects.main.width+23);}else assert.ok(rects.side.y>=rects.main.y+rects.main.height);
   if(width>=1120){assert.ok(rects.result.x>rects.form.x+rects.form.width);assert.ok(Math.abs(rects.result.width-393)<2);}else assert.ok(rects.result.y>=rects.form.y+rects.form.height);
   await input.fill('401');await options.first().waitFor();assert.deepEqual(await options.allTextContents(),['401K Calculator']);assert.equal(new URL(page.url()).pathname,'/'+id+'-calculator.html');
-  const field=await input.boundingBox(),popup=await search.locator('.directory-suggestions').boundingBox();assert.ok(popup.y>=field.y+field.height&&popup.y-field.y-field.height<8);assert.ok(popup.x>=0&&popup.x+popup.width<=width+1);
+  // Read both rectangles in one frame; focusing a below-fold search can still scroll.
+  const {field,popup}=await search.evaluate(el=>({field:el.querySelector('input').getBoundingClientRect().toJSON(),popup:el.querySelector('.directory-suggestions').getBoundingClientRect().toJSON()}));assert.ok(popup.y>=field.y+field.height&&popup.y-field.y-field.height<8);assert.ok(popup.x>=0&&popup.x+popup.width<=width+1);
   await input.fill('tax');await options.nth(1).waitFor();await input.press('Enter');assert.equal(new URL(page.url()).pathname,'/'+id+'-calculator.html');
   await input.press('ArrowDown');assert.equal(await input.getAttribute('aria-activedescendant'),'sidebar-search-option-0');await input.press('Escape');assert.equal(await input.inputValue(),'tax');assert.equal(await input.getAttribute('aria-expanded'),'false');
   await input.press('ArrowDown');await input.press('Tab');assert.equal(await input.getAttribute('aria-expanded'),'false');

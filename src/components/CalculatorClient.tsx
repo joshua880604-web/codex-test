@@ -500,8 +500,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           {id === "scientific" && <ScientificKeypad values={values} update={update} />}
           <div className="form-actions">
             <button type="submit" className="calculate" disabled={calculating}>
-              {calculating ? "Calculating…" : "Calculate"}{" "}
-              <span aria-hidden="true">▶</span>
+              {calculating ? "Calculating…" : "Calculate"}
             </button>
             <button type="button" className="clear" onClick={reset}>
               {id === "vat" || (id === "commission" && mode.id === "any-two") ? "Clear" : "Reset"}
@@ -577,7 +576,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
                       );
                       let start = 0;
                       return (
-                        "conic-gradient(" +
+                        "conic-gradient(" + // taste-skill-ignore: real data segments, sized from result.chart values.
                         result
                           .chart!.map((x, i) => {
                             const end =

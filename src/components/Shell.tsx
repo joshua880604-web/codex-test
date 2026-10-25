@@ -62,9 +62,10 @@ export function Sidebar() {
   return (
     <aside className="sidebar">
       <CalculatorSearch id="sidebar-search" compact/>
-      <div className="side-heading">
+      <section className="side-group" aria-labelledby="side-financial-heading">
+      <h2 className="side-heading" id="side-financial-heading">
         <a href="/financial-calculator.html">Financial Calculators</a>
-      </div>
+      </h2>
       <div className="side-links">
         {ids.map((id) => {
           const c = calculators.find((x) => x.id === id)!;
@@ -78,8 +79,11 @@ export function Sidebar() {
       <a className="more-tools" href="/financial-calculator.html">
         More Financial Calculators »
       </a>
-      <div className="side-heading">Everyday Tools</div>
+      </section>
+      <section className="side-group side-group-secondary" aria-labelledby="side-everyday-heading">
+      <h2 className="side-heading" id="side-everyday-heading">Everyday Tools</h2>
       <div className="side-links">{calculators.filter(c=>c.category === "Everyday Tools").map(c=><a key={c.id} href={routeFor(c.id)}>{c.title}</a>)}</div>
+      </section>
       <div className="side-note">
         <h3>Plan with clear assumptions</h3>
         <p>
