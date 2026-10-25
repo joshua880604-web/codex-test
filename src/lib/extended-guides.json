@@ -451,8 +451,8 @@
     "checkedOn": "2026-10-20"
   },
   "fha-loan": {
-    "summary": "Estimate FHA mortgage principal and interest alongside entered upfront and annual mortgage insurance. Keep loan repayment separate from taxes, insurance and other housing costs.",
-    "scope": "User-entered premiums and durations must be checked against the applicable program and loan facts. The tool does not verify FHA eligibility or quote a lender.",
+    "summary": "Estimate FHA loan payments with automatic ordinary forward-loan premium rules or explicitly checked manual terms. Mortgage repayment, mortgage insurance and other housing costs are reported separately.",
+    "scope": "Automatic MIP uses Mortgagee Letter 2023-05 for ordinary FHA Title II forward loans, based on base loan amount, term and LTV using the lower purchase price or entered appraisal. Blank appraisal assumes the purchase price. Historical and special-program terms require Manual. This model does not verify credit, income, maximum eligible financing, county limits or lender approval.",
     "examples": [
       {
         "title": "Separate FHA principal and interest from insurance",
@@ -489,7 +489,8 @@
           "dated": "",
           "upfront": "0",
           "annual_mip": "0",
-          "mip_years": "30"
+          "mip_years": "30",
+          "mip_method": "Manual"
         },
         "inputs": "Illustrative inputs are specified in the steps below; the example link loads the complete settings. Unmentioned settings use the linked defaults.",
         "steps": [
@@ -510,16 +511,28 @@
       },
       {
         "question": "Can upfront FHA insurance increase the loan balance?",
-        "answer": "In this model an upfront premium affects financing. Check how your actual lender collects or finances the premium before comparing figures."
+        "answer": "Upfront MIP is computed from the base loan and financed into the balance in this model. Monthly principal and interest then repay that financed amount. Annual MIP is calculated separately from the original scheduled balance, rather than added to loan principal."
+      },
+      {
+        "question": "How are automatic FHA premium rates and duration selected?",
+        "answer": "Automatic uses base loan amount, loan term and LTV under ordinary forward-loan rules. For a base loan up to $726,200 and more than 15 years, annual MIP is 0.50% at LTV up to 95%, or 0.55% above 95%. LTV up to 90% ends MIP after 11 years or loan maturity; higher LTV retains it for the loan term. Other term and amount bands have different rates."
+      },
+      {
+        "question": "Why can the monthly FHA MIP change each year?",
+        "answer": "HUD uses the average original scheduled opening balance for each mortgage year, with premium rounding and adjustment for financed upfront MIP. Extra principal does not directly lower this insurance basis; paying off the loan stops later premiums. Use Manual only for premium terms you have independently checked."
       }
     ],
     "sources": [
       {
-        "title": "Calculation methodology, rule versions and testing limitations",
-        "url": "/methodology.html"
+        "title": "HUD: FHA Mortgagee Letter 2023-05 premium rates",
+        "url": "https://www.hud.gov/sites/dfiles/OCHCO/documents/2023-05hsgml.pdf"
+      },
+      {
+        "title": "HUD: monthly mortgage insurance premium calculation",
+        "url": "https://www.hud.gov/hud-partners/housing-premium-calculation"
       }
     ],
-    "checkedOn": "2026-10-20"
+    "checkedOn": "2026-10-25"
   },
   "va-mortgage": {
     "summary": "Estimate VA mortgage payments using the selected funding-fee treatment and exemption assumption. Compare principal and interest with the full initial housing cost.",

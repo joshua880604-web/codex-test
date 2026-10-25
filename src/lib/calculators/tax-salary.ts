@@ -17,6 +17,10 @@ const statuses = [
   "Head of household",
   "Married filing separately",
 ];
+const mfsResidenceField = () => ({
+  ...select("mfs_lived_apart", "Lived apart from your spouse for the entire tax year?", ["No", "Yes"]),
+  hint: "For married filing separately and Social Security benefits. Yes uses the $25,000/$34,000 combined-income thresholds; No uses the lived-together rule.",
+});
 export function filing(s: string): Filing {
   const i = statuses.indexOf(s);
   if (i < 0) throw new Error("Choose a filing status.");
@@ -43,6 +47,7 @@ const fields = () => [
   num("short", "Net short-term capital gains", 0, "$", -1e12),
   num("long", "Net long-term capital gains", 0, "$", -1e12),
   num("social", "Social Security benefits", 0, "$"),
+  mfsResidenceField(),
   num("other", "Other taxable income", 0, "$"),
   num("adjustments", "Eligible IRA and other above-line deductions", 0, "$"),
   num("student", "Student loan interest paid", 0, "$"),
@@ -104,6 +109,7 @@ function inputs(v: Values): TaxInputs {
     shortGains: n(v, "short"),
     longGains: n(v, "long"),
     socialSecurity: n(v, "social"),
+    mfsLivedApartAllYear: v.mfs_lived_apart === "Yes",
     other: n(v, "other") + optionalNumber(v,"passive"),
     adjustments: n(v, "adjustments") + optionalNumber(v,"ira_deduction"),
     studentInterest: n(v, "student"),
@@ -176,6 +182,7 @@ function taxResult(v: Values): Result {
       ["Taxable Social Security", t.taxableSS],
       ["Adjusted gross income", t.agi],
       ["Deduction used", t.deduction],
+      ["2026 overall itemized deduction reduction", t.itemizedReduction],
       ["Non-itemizer cash gift deduction", t.nonitemizerCashDeduction],
       ["Additional qualified deductions", t.extra],
       ["Eligible QBI deduction", t.qbi],
@@ -185,7 +192,8 @@ function taxResult(v: Values): Result {
       ["Eligible nonrefundable education credit", t.educationCredit],
       ["Eligible dependent-care credit", t.careCredit],
       ["Nonrefundable credits applied", t.credit],
-      ["Refundable child credit", t.refundable],
+      ["Refundable child credit", t.childRefund],
+      ["Refundable education credit", t.educationRefund],
       ["Self-employment tax", t.se],
       ["Additional Medicare tax", t.additional],
       ["Net investment income tax", t.niit],
@@ -195,8 +203,8 @@ function taxResult(v: Values): Result {
     notes: [
       `Tax year ${x.year}; federal rules only. State and local income tax are not calculated as a tax return.`,
       `Sources: IRS annual inflation adjustments and Schedule 1-A; published 2026 rules reviewed October 19, 2026.`,
-      `Eligibility for tips, overtime, vehicle interest, dependents, and entered deductions must be satisfied. Education credit type and refundable eligibility must be selected for each student. Dependent-care credit is limited by earned income and entered qualifying expenses. EITC, foreign-tax credits and other credits must be entered explicitly.`,
-      `AMT includes standard/SALT add-back plus your supplied adjustments. QBI is an optional simplified calculation without wage/property or specified-service-business limitations.`,
+      `Eligibility for tips, overtime, vehicle interest, dependents, and entered deductions must be satisfied. Education and dependent-care credits reduce the tax available for nonrefundable child credits. Refundable child credit uses the 15% earned-income method, after deducting half of regular self-employment tax; special three-child/territory alternatives and EITC are not computed. Enter other already eligible nonrefundable credits separately.`,
+      `For married filing separately, select whether you lived apart for the entire year before calculating Social Security benefits. Enter deductions after their individual eligibility limits, before the 2026 section 68 overall reduction. The model compares standard and itemized deductions including modeled AMT. Section 68 does not reduce QBI or apply to AMT; QBI remains a simplified calculation without wage/property or specified-service-business limitations.`,
     ],
   };
 }
@@ -324,6 +332,7 @@ const personFields = () =>
         "withheld",
         "spouse_wages",
         "spouse_business",
+        "mfs_lived_apart",
       ].includes(f.key),
   );
 const marriage = tool(

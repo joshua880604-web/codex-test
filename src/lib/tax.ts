@@ -19,6 +19,7 @@ export type TaxInputs = {
   shortGains: number;
   longGains: number;
   socialSecurity: number;
+  mfsLivedApartAllYear?: boolean;
   other: number;
   adjustments: number;
   itemized: number;
@@ -122,7 +123,7 @@ export function federalTax(x: TaxInputs) {
     base = married ? 32000 : 25000,
     upper = married ? 44000 : 34000;
   const taxableSS =
-    x.filing === "married_separate"
+    x.filing === "married_separate" && !x.mfsLivedApartAllYear
       ? Math.min(x.socialSecurity * 0.85, 0.85 * Math.max(0, provisional))
       : provisional <= base
         ? 0
@@ -175,9 +176,7 @@ export function federalTax(x: TaxInputs) {
       ) / separate,
     salt = Math.min(x.salt, saltCap),
     itemized = x.itemized + salt,
-    cashGiftDeduction = x.year === 2026 ? Math.min(Math.max(0, x.nonitemizerCashGifts ?? 0), married ? 2000 : 1000) : 0,
-    usingStandard = standard + cashGiftDeduction >= itemized,
-    deduction = usingStandard ? standard + cashGiftDeduction : itemized;
+    cashGiftDeduction = x.year === 2026 ? Math.min(Math.max(0, x.nonitemizerCashGifts ?? 0), married ? 2000 : 1000) : 0;
   const allowed = x.filing !== "married_separate",
     threshold = married ? 300000 : 150000,
     steps = Math.floor(Math.max(0, agi - threshold) / 1000),
@@ -195,45 +194,37 @@ export function federalTax(x: TaxInputs) {
         Math.max(0, 6000 - 0.06 * Math.max(0, agi - (married ? 150000 : 75000)))
       : 0,
     extra = tip + overtime + car + senior;
-  const beforeQBI = Math.max(0, agi - deduction - extra),
-    preferential = Math.min(beforeQBI, Math.max(0, long + x.qualified)),
-    qbi = x.qualifiedBusiness
-      ? Math.min(
-          Math.max(0, business - se / 2) * 0.2,
-          Math.max(0, beforeQBI - preferential) * 0.2,
-        )
-      : 0,
-    taxable = Math.max(0, beforeQBI - qbi),
-    capital = Math.min(taxable, preferential),
-    ordinary = taxable - capital,
-    regular =
-      ordinaryTax(ordinary, x.filing, x.year) +
-      gainsTax(capital, ordinary, x.filing, x.year);
-  const amtSpec = details.amt[String(x.year) as "2025" | "2026"],
-    amti = Math.max(
-      0,
-      taxable +
-        (usingStandard ? standard : salt) +
-        senior +
-        x.amtAdjustments,
-    ),
-    exemption = Math.max(
-      0,
-      amtSpec.exemptions[x.filing] -
-        Math.max(0, amti - amtSpec.phaseout_start[x.filing]) *
-          amtSpec.exemption_reduction_rate,
-    ),
-    amtBase = Math.max(0, amti - exemption),
-    amtOrdinary = Math.max(0, amtBase - capital),
-    amtBoundary =
-      x.filing === "married_separate"
-        ? amtSpec.upper_rate_threshold_married_separate
-        : amtSpec.upper_rate_threshold,
-    tmt =
-      Math.min(amtOrdinary, amtBoundary) * 0.26 +
-      Math.max(0, amtOrdinary - amtBoundary) * 0.28 +
-      gainsTax(Math.min(capital, amtBase), amtOrdinary, x.filing, x.year),
-    amt = Math.max(0, tmt - regular);
+  const amtSpec = details.amt[String(x.year) as "2025" | "2026"];
+  function deductionTax(rawDeduction: number, usingStandard: boolean) {
+    // Section 199A is calculated without the section 68 reduction (199A(e)(1)).
+    const beforeQBI = Math.max(0, agi - rawDeduction - extra),
+      preferential = Math.min(beforeQBI, Math.max(0, long + x.qualified)),
+      qbi = x.qualifiedBusiness
+        ? Math.min(Math.max(0, business - se / 2) * 0.2, Math.max(0, beforeQBI - preferential) * 0.2)
+        : 0,
+      topBracket = rules.federal_income_tax.brackets[x.filing].at(-1)![0],
+      itemizedReduction = x.year === 2026 && !usingStandard
+        ? (2 / 37) * Math.min(rawDeduction, Math.max(0, agi - extra - qbi - topBracket))
+        : 0,
+      deduction = rawDeduction - itemizedReduction,
+      taxable = Math.max(0, agi - deduction - extra - qbi),
+      capital = Math.min(taxable, Math.max(0, long + x.qualified)),
+      regular = ordinaryTax(taxable - capital, x.filing, x.year) + gainsTax(capital, taxable - capital, x.filing, x.year),
+      // Section 56(b)(1)(E): section 68 does not apply to AMT.
+      amti = Math.max(0, taxable - itemizedReduction + (usingStandard ? standard : salt) + senior + x.amtAdjustments),
+      exemption = Math.max(0, amtSpec.exemptions[x.filing] - Math.max(0, amti - amtSpec.phaseout_start[x.filing]) * amtSpec.exemption_reduction_rate),
+      amtBase = Math.max(0, amti - exemption),
+      amtCapital = Math.min(amtBase, Math.max(0, long + x.qualified)),
+      amtOrdinary = amtBase - amtCapital,
+      amtBoundary = x.filing === "married_separate" ? amtSpec.upper_rate_threshold_married_separate : amtSpec.upper_rate_threshold,
+      tmt = Math.min(amtOrdinary, amtBoundary) * 0.26 + Math.max(0, amtOrdinary - amtBoundary) * 0.28 + gainsTax(amtCapital, amtOrdinary, x.filing, x.year),
+      amt = Math.max(0, tmt - regular);
+    return {usingStandard, deduction, itemizedReduction, taxable, qbi, regular, amt};
+  }
+  const standardTax = deductionTax(standard + cashGiftDeduction, true),
+    itemizedTax = deductionTax(itemized, false),
+    selectedTax = standardTax.regular + standardTax.amt <= itemizedTax.regular + itemizedTax.amt ? standardTax : itemizedTax,
+    {usingStandard, deduction, itemizedReduction, taxable, qbi, regular, amt} = selectedTax;
   const educationPhase =
     x.filing === "married_separate"
       ? 0
@@ -296,17 +287,15 @@ export function federalTax(x: TaxInputs) {
       nominalCredit -
         50 * Math.ceil(Math.max(0, agi - (married ? 400000 : 200000)) / 1000),
     ),
-    nonrefundable = Math.min(
-      regular + amt,
-      credit + x.credits + educationCredit + careCredit,
-    ),
-    unused = Math.max(0, credit - (regular + amt)),
-    refundable =
-      Math.min(
-        x.children * 1700,
-        unused,
-        Math.max(0, wages + business - 2500) * 0.15,
-      ) + educationRefund;
+    // Schedule 8812 Credit Limit Worksheet A: designated nonrefundable
+    // education/care/entered credits reduce the tax available to CTC first.
+    otherCreditsApplied = Math.min(regular + amt, x.credits + educationCredit + careCredit),
+    childCredit = Math.min(credit, Math.max(0, regular + amt - otherCreditsApplied)),
+    nonrefundable = otherCreditsApplied + childCredit,
+    unused = Math.max(0, credit - childCredit),
+    actcEarnedIncome = Math.max(0, wages + business - se / 2),
+    childRefund = Math.min(x.children * 1700, unused, Math.max(0, actcEarnedIncome - 2500) * 0.15),
+    refundable = childRefund + educationRefund;
   const ssBase = x.year === 2026 ? 184500 : 176100,
     payrollSS =
       (Math.min(x.wages, ssBase) + Math.min(x.spouseWages, ssBase)) * 0.062,
@@ -348,6 +337,8 @@ export function federalTax(x: TaxInputs) {
     standard,
     itemized,
     deduction,
+    itemizedReduction,
+    usingStandard,
     nonitemizerCashDeduction: usingStandard ? cashGiftDeduction : 0,
     salt,
     extra,
@@ -356,6 +347,9 @@ export function federalTax(x: TaxInputs) {
     amt,
     credit: nonrefundable,
     refundable,
+    childCredit,
+    childRefund,
+    actcEarnedIncome,
     federal,
     payrollSS,
     medicare,

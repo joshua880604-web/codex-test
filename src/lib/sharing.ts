@@ -25,6 +25,8 @@ export function sharedInputs(calc:Calculator,search:string,hash:string){
  const fields=mode.fields.filter(f=>f.key!=='verified_rate');
  if(!requested&&!fields.some(f=>params.has(f.key)))return null;
  const values=defaults(mode);
+ // Older FHA links explicitly entered premiums before an automatic mode existed.
+ if(calc.id==='fha-loan'&&!params.has('mip_method')&&['upfront','annual_mip','mip_years'].some(key=>params.has(key)))values.mip_method='Manual';
  if((calc.id==='vat'||(calc.id==='commission'&&mode.id==='any-two'))&&fields.some(f=>params.has(f.key)))for(const f of fields)values[f.key]='';
  for(const f of fields)if(params.has(f.key))values[f.key]=params.get(f.key)!;
  return {mode,values};

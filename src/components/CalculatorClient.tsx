@@ -11,6 +11,7 @@ import { routeFor } from "@/lib/catalog";
 import { runClientCalculation } from "@/lib/calculate-client";
 import { workspaceLayout, workspaceMetrics } from "@/lib/workspace-layout";
 import { calculatorScope } from "@/lib/calculator-scope";
+import { fhaMipTerms } from "@/lib/fha-mip";
 import type { Calculator, Field, Result, Values } from "@/lib/types";
 import type { RetirementPlan, RetirementScenario } from "@/lib/retirement-story";
 const ScientificKeypad = dynamic(() => import("./ScientificKeypad"));
@@ -107,7 +108,18 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     request.current++;
     clearScenarios();
     setCalculating(false);
-    setValues((v) => ({ ...v, [key]: value }));
+    setValues((v) => {
+      const next = {...v, [key]: value};
+      if (id === "fha-loan" && key === "mip_method") {
+        const price = Number(v.price), down = v.down_unit === "Dollars" ? Number(v.down) : price * Number(v.down) / 100;
+        try {
+          const value = v.appraised_value?.trim() ? Math.min(price, Number(v.appraised_value)) : price;
+          const terms = fhaMipTerms(price - down, value, Number(v.years) * 12 + Number(v.months));
+          return {...next, upfront: String(terms.upfrontPercent), annual_mip: String(terms.annualPercent), mip_years: String(terms.durationMonths / 12)};
+        } catch { /* Keep the user's inputs for normal validation on Calculate. */ }
+      }
+      return next;
+    });
     setResult(null);
     setError("");
     setNotice("Inputs changed. Select Calculate to update the result.");
@@ -412,7 +424,9 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           </CalculationDetails>
   );
   const simple = mode.fields.length <= 14,
-    visible = mode.fields.filter((f) => f.key !== "verified_rate"),
+    visible = mode.fields.filter((f) => f.key !== "verified_rate" &&
+      !(f.key === "mfs_lived_apart" && values.filing !== "Married filing separately") &&
+      !(id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) || (values.mip_method !== "Manual" && ["upfront", "annual_mip", "mip_years"].includes(f.key))))),
     optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
     main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),
     advanced = optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);

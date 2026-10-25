@@ -42,10 +42,10 @@ export function addYearlySchedule(result: Result, periodsPerYear = 12): Result {
     sums = [2, 3, 4];
     lasts = [1, 5];
   } else if (
-    schema ===
-    "Month|Date|Payment|Interest|Principal|Balance|Taxes & costs|Total"
+    schema === "Month|Date|Payment|Interest|Principal|Balance|Taxes & costs|Total" ||
+    schema === "Month|Date|Payment|Interest|Principal|Balance|Taxes & costs|Total|FHA MIP"
   ) {
-    sums = [2, 3, 4, 6, 7];
+    sums = [2, 3, 4, 6, 7, ...(schema.endsWith("|FHA MIP") ? [8] : [])];
     lasts = [1, 5];
   } else return result;
   if (!result.rows?.length) return result;

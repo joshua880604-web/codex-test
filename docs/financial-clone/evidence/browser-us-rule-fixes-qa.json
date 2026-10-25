@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "width": 390,
+      "fhaAutoRatesAndDuration": true,
+      "manualOverride": true,
+      "invalidManualToAutoRecovery": true,
+      "appraisalLtv": true,
+      "legacyLink": true,
+      "csvPremiums": true,
+      "principalCurvePreserved": true
+    },
+    {
+      "width": 390,
+      "childAndEducationCredits": true,
+      "selfEmploymentActc": true,
+      "mfsResidence": true,
+      "section68": true,
+      "sharedPaycheckAndMarriageRules": true
+    },
+    {
+      "width": 1440,
+      "fhaAutoRatesAndDuration": true,
+      "manualOverride": true,
+      "invalidManualToAutoRecovery": true,
+      "appraisalLtv": true,
+      "legacyLink": true,
+      "csvPremiums": true,
+      "principalCurvePreserved": true
+    },
+    {
+      "width": 1440,
+      "childAndEducationCredits": true,
+      "selfEmploymentActc": true,
+      "mfsResidence": true,
+      "section68": true,
+      "sharedPaycheckAndMarriageRules": true
+    }
+  ],
+  "noJavaScriptDefaultPremium": true,
+  "errors": [],
+  "unexpected": [],
+  "tested_at": "2026-10-25T13:15:15.423Z",
+  "ads": "Exact existing publisher loader stubbed; no live-ad claim"
+}

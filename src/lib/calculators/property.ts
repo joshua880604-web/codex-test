@@ -1,4 +1,5 @@
 import { autoTaxBase, autoTaxStates } from "../auto-tax";
+import { fhaMipTerms, fhaMipSchedule } from "../fha-mip";
 import {
   tool,
   baseLoanFields,
@@ -128,13 +129,17 @@ function downValue(v: Values): number {
 function mortgageCalc(v: Values, kind = "conventional"): Result {
   const down = downValue(v),
     base = n(v, "price") - down;
+  const fhaValue = kind === "fha" && v.appraised_value?.trim() ? Math.min(n(v, "price"), n(v, "appraised_value")) : n(v, "price");
+  const fhaTerms = kind === "fha"
+    ? v.mip_method === "Manual"
+      ? {upfrontPercent: n(v, "upfront"), annualPercent: n(v, "annual_mip"), durationMonths: n(v, "mip_years") * 12}
+      : fhaMipTerms(base, fhaValue, term(v))
+    : null;
   let fee = 0,
-    pmi = v.pmi_unit === "Percent of loan" ? base * pct(v, "pmi") : n(v, "pmi"),
-    pmiYears = n(v, "pmi_years");
+    pmi = kind === "fha" ? 0 : v.pmi_unit === "Percent of loan" ? base * pct(v, "pmi") : n(v, "pmi"),
+    pmiYears = kind === "fha" ? 0 : n(v, "pmi_years");
   if (kind === "fha") {
-    fee = base * pct(v, "upfront");
-    pmi = base * pct(v, "annual_mip");
-    pmiYears = n(v, "mip_years");
+    fee = Math.round(base * fhaTerms!.upfrontPercent) / 100;
   }
   if (kind === "va") {
     const exempt = v.exempt === "Yes",
@@ -158,6 +163,12 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
     N = term(v),
     standard = payment(p, r, N),
     result = loanResult(p, r, N, extra(v));
+  const fhaPremiums = fhaTerms ? fhaMipSchedule(p, n(v, "rate"), standard, N, fhaTerms.upfrontPercent, fhaTerms.annualPercent, fhaTerms.durationMonths) : null;
+  const mortgageInsuranceAt = (i: number) => fhaPremiums ? (fhaPremiums[i] ?? 0) : (
+    kind === "conventional" && v.pmi_policy === "Cancel at 80% original LTV"
+      ? (i === 0 ? p : Number(result.rows![i - 1][4])) > n(v, "price") * .8
+      : i < Math.round(pmiYears * 12)
+  ) ? pmi / 12 : 0;
   const expense = (k: string, year: number) =>
     (v[k + "_unit"] === "Percent of home value"
       ? n(v, "price") * pct(v, k)
@@ -168,22 +179,8 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
   start.setUTCDate(1);
   if (!Number.isFinite(+start)) throw new Error("Choose a valid start date.");
   const rows = result.rows!.map((row, i) => {
-    const cost =
-      (sum(
-        ["tax", "insurance", "hoa", "other"].map((k) =>
-          expense(k, Math.floor(i / 12)),
-        ),
-      ) +
-        ((
-          kind === "conventional" &&
-          v.pmi_policy === "Cancel at 80% original LTV"
-            ? (i === 0 ? p : Number(result.rows![i - 1][4])) >
-              n(v, "price") * 0.8
-            : i < Math.round(pmiYears * 12)
-        )
-          ? pmi
-          : 0)) /
-      12;
+    const monthlyMip = fhaPremiums?.[i] ?? 0;
+    const cost = sum(["tax", "insurance", "hoa", "other"].map(k => expense(k, Math.floor(i / 12)))) / 12 + mortgageInsuranceAt(i);
     runningCosts += cost;
     const d = new Date(start);
     d.setUTCMonth(d.getUTCMonth() + i);
@@ -193,18 +190,10 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
       ...row.slice(1),
       cost,
       Number(row[1]) + cost,
+      ...(fhaPremiums ? [monthlyMip] : []),
     ];
   });
-  const firstCost =
-    (sum(["tax", "insurance", "hoa", "other"].map((k) => expense(k, 0))) +
-      ((
-        kind === "conventional" && v.pmi_policy === "Cancel at 80% original LTV"
-          ? p > n(v, "price") * 0.8
-          : pmiYears > 0
-      )
-        ? pmi
-        : 0)) /
-    12;
+  const firstCost = sum(["tax", "insurance", "hoa", "other"].map(k => expense(k, 0))) / 12 + mortgageInsuranceAt(0);
   result.metrics = [
     money("Monthly principal & interest", standard),
     money(
@@ -214,6 +203,13 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
     money("Down payment", down),
     money("Financed loan amount", p),
     money("Upfront fee", fee),
+    ...(fhaTerms ? [
+      metric("Annual FHA MIP rate", fhaTerms.annualPercent, "percent"),
+      metric("FHA loan-to-value ratio", base / fhaValue * 100, "percent"),
+      metric("FHA MIP duration in years", Math.min(fhaTerms.durationMonths, N) / 12),
+      money("Initial monthly FHA MIP", fhaPremiums?.[0] ?? 0),
+      money("Total FHA MIP", sum(rows.map(row => Number(row[8])))),
+    ] : []),
     ...result.metrics.filter((x) => x.label !== "Payment per period"),
     money("Total taxes and other costs", runningCosts),
     money(
@@ -230,10 +226,15 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
     "Balance",
     "Taxes & costs",
     "Total",
+    ...(fhaPremiums ? ["FHA MIP"] : []),
   ];
   result.rows = rows;
   result.notes = [
-    "Each tax and cost grows annually at its own rate. Conventional PMI follows the selected duration or original-value LTV policy. FHA MIP uses the base loan and explicit MIP duration; property appreciation is not used for cancellation.",
+    ...(fhaTerms ? [
+      `${v.mip_method === "Manual" ? "Manual FHA premium terms" : "Ordinary FHA forward-loan rules (Mortgagee Letter 2023-05)"}: upfront ${fhaTerms.upfrontPercent}%, annual ${fhaTerms.annualPercent}%, for up to ${Math.min(fhaTerms.durationMonths, N) / 12} years. Historical case numbers, special programs, underwriting and county loan limits are not determined here.`,
+      "FHA premium LTV uses the lower of purchase price and an entered appraised value. Leaving appraisal blank assumes it equals the purchase price. This payment estimate does not determine maximum eligible financing or loan approval.",
+      "Monthly FHA MIP is recalculated for each mortgage year from the average original scheduled opening balance, with HUD premium rounding and removal of financed upfront MIP. Extra principal does not directly reduce that baseline; premiums stop when the modeled loan is paid off or its MIP duration ends. The FHA MIP column is already included in Taxes & costs and Total; do not add it twice.",
+    ] : ["Each tax and cost grows annually at its own rate. Conventional PMI follows the selected duration or original-value LTV policy; property appreciation is not used for cancellation."]),
   ];
   return result;
 }
@@ -245,7 +246,7 @@ const mortgageMode = (
 ): Mode => ({
   id,
   title,
-  fields: [...houseFields(), ...extraFieldsForKind],
+  fields: kind === "fha" ? [...houseFields().slice(0, 6), ...extraFieldsForKind, ...houseFields().slice(6)] : [...houseFields(), ...extraFieldsForKind],
   description:
     "Calculate monthly payments, annual expenses, and dated extra principal payments.",
   formula:
@@ -762,9 +763,11 @@ const apr = tool(
   "Calculate fee-adjusted annual percentage rates for general loans and mortgages.",
 );
 const fhaKindFields = [
+  {...num("appraised_value", "Appraised value (if different)", 0, "$", 1), value: "", optional: true, hint: "Optional. Premium LTV uses the lower of purchase price and this appraisal; blank assumes the purchase price."},
+  {...select("mip_method", "FHA premium settings", ["Automatic", "Manual"]), hint: "Automatic uses ordinary forward-loan rules based on amount, LTV and term. Choose Manual for explicitly checked special or historical premium terms."},
   num("upfront", "Upfront MIP", 1.75, "% of base loan"),
-  num("annual_mip", "Annual MIP", 0.55, "% of base loan"),
-  num("mip_years", "MIP duration", 30, "years"),
+  num("annual_mip", "Annual MIP", 0.5, "%"),
+  num("mip_years", "MIP duration", 11, "years"),
 ];
 const fha = tool(
   "fha-loan",

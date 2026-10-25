@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "checkedAt": "2026-10-25T13:16:05.111Z",
+  "baselineCommit": "c81cd24dce39c7925143d2fae25b91ed3166efe8",
+  "fixedIssueClasses": 6,
+  "newRegressionTests": 44,
+  "fullTests": 771,
+  "records": [
+    {
+      "id": "US-01",
+      "before": 1368.5,
+      "expected": 2700,
+      "actual": 2700,
+      "passed": true
+    },
+    {
+      "id": "US-02",
+      "before": 1125,
+      "expected": 1019.028375,
+      "actual": 1019.0283749999999,
+      "passed": true
+    },
+    {
+      "id": "US-03",
+      "before": 17000,
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "US-04",
+      "before": 296157.25,
+      "expected": 298157.25,
+      "actual": 298157.25,
+      "passed": true
+    },
+    {
+      "id": "US-05",
+      "before": 146.6666666667,
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "US-06",
+      "before": 133.3333333333,
+      "expected": 110.23,
+      "actual": 110.23,
+      "passed": true
+    }
+  ]
+}

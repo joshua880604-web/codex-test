@@ -672,3 +672,6 @@ for (const [id, content] of Object.entries(longTailContent)) {
   }
   guides[id].checkedOn = content.updatedOn;
 }
+
+// Reviewed repairs to the shared U.S. tax rules.
+for (const id of ["income-tax", "take-home-paycheck", "marriage-tax"]) guides[id].checkedOn = "2026-10-25";

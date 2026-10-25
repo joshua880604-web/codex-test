@@ -3,6 +3,8 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "fha-loan":
+      return "U.S. FHA payment planning. Automatic premiums use ordinary forward-loan rules; Manual accepts checked special or historical terms. Appraisal, underwriting and local loan eligibility still require verification.";
     case "401k":
       if (mode === "early") return "U.S. 401(k) early-withdrawal estimate using your entered tax rates and selected exceptions to the modeled 10% additional tax. This is not a complete income-tax return.";
       return "U.S. 401(k) planning using fixed 2026 contribution and age-based catch-up rules. Future legal limit changes are not projected.";

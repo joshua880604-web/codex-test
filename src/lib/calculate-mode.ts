@@ -6,6 +6,8 @@ export function calculateMode(calc: Calculator, modeId: string, v: Values): Resu
   const mode = calc.modes.find((m) => m.id === modeId);
   if (!mode) throw new Error("Unknown calculator mode.");
   for (const f of mode.fields) {
+    if (id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) ||
+        (v.mip_method !== "Manual" && ["upfront", "annual_mip", "mip_years"].includes(f.key)))) continue;
     const raw = v[f.key];
     if (f.optional && (raw === undefined || raw === "")) continue;
     if (f.type === "textarea") {
