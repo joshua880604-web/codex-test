@@ -49,7 +49,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const hasRetirementStory = id === "401k" && mode.id === "projection";
   const workspace = workspaceLayout(id, mode.id);
   const hasWorkspace = Boolean(workspace);
-  const wideReports = id === "cd" || id === "mortgage";
+  const wideReports = hasWorkspace;
   const summary = result && hasWorkspace ? workspaceMetrics(id, mode.id, result) : null;
   const tableRows =
     yearly && result?.annualRows ? result.annualRows : result?.rows;
@@ -604,7 +604,6 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               </div>
             )}
           </div>
-          {hasWorkspace && !wideReports && <ResultTrend id={id} mode={mode.id} values={values} result={result} />}
           {context && <p className="result-context">{context}</p>}
           {summary && summary.highlights.length > 0 && <dl className="workspace-key-figures" aria-label="Key calculated figures">{summary.highlights.map(m => <div className="metric" key={m.label}><dt><span>{m.label}</span></dt><dd><strong>{formatMetric(m)}</strong></dd></div>)}</dl>}
           {summary && summary.details.length > 0 && <details className="workspace-breakdown" key={mode.id + "-breakdown"}>
@@ -621,12 +620,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       )}
       </div>
       {wideReports && result && <>
-        {Boolean(result.rows?.length) && <section className="workspace-report workspace-report-chart" aria-label="Balance chart">
-          {id === "cd" ? <details className="workspace-chart" key={mode.id + "-chart"}>
-            <summary>View balance chart</summary>
-            <ResultTrend id={id} mode={mode.id} values={values} result={result} wide/>
-          </details> : <ResultTrend id={id} mode={mode.id} values={values} result={result} wide/>}
-        </section>}
+        <ResultTrend key={mode.id + "-chart"} id={id} mode={mode.id} values={values} result={result} wide report/>
         <section className="workspace-report workspace-report-details" aria-label="Calculation details">
           {calculationDetails}
         </section>

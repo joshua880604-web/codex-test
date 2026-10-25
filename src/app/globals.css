@@ -8,6 +8,7 @@
   --control: #9caeba;
   --radius-panel: 8px;
   --radius-control: 6px;
+  --module-border: #c7d5df;
   --border: #d7e1e8;
   --muted: #555;
 }
@@ -1541,12 +1542,12 @@ body:has(.workspace-page:not(.compact-calculator-page)) {--shell-width:1240px;}
 .top-nav .selected {color:var(--navy);}
 .directory-tools {grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto 1fr;gap:20px 24px;}
 .featured-tools {align-self:start;}
-.featured-grid > a {border:0;border-bottom:1px solid var(--rule);padding:14px 8px;min-height:84px;}
+.featured-grid > a {border:1px solid var(--module-border);border-radius:var(--radius-control);padding:14px;min-height:84px;}
 .featured-grid > a:hover {background:var(--surface);}
 .featured-grid strong {color:var(--link);font-size:16px;}
 .featured-grid span {font-size:13px;color:var(--muted);}
 .calculator-directory .directory-grid {gap:24px;}
-.calculator-directory .directory-grid section {border:0;border-top:2px solid var(--rule);border-radius:0;padding:16px 0 0;}
+.calculator-directory .directory-grid section {border:1px solid var(--module-border);border-radius:var(--radius-panel);padding:18px;}
 .calculator-directory .directory-grid h3 {border:0;padding-bottom:4px;color:var(--ink);}
 .directory-categories a {background:#fff;border-radius:var(--radius-control);}
 .directory-categories a:last-child {background:var(--surface);}
@@ -1571,10 +1572,10 @@ body:has(.workspace-page:not(.compact-calculator-page)) {--shell-width:1240px;}
 .field-control small,.assumption-help {color:#526371;line-height:1.5;}
 .result {box-shadow:none;border-radius:var(--radius-panel);}
 .metric.primary {border-radius:var(--radius-control);border-left-color:var(--green);background:#edf6f4;}
-.workspace-key-figures > div {border:0;border-bottom:1px solid var(--rule);border-radius:0;background:transparent;padding:10px 0;}
+.workspace-key-figures > div {border:1px solid var(--module-border);border-radius:var(--radius-control);background:var(--surface);padding:10px 12px;}
 .result-context {background:var(--surface);}
 .sidebar .sidebar-search {background:var(--surface);border-color:var(--rule);border-radius:var(--radius-panel);}
-.side-group {margin:0 0 20px;}
+.side-group {margin:0 0 20px;padding:12px;border:1px solid var(--module-border);border-radius:var(--radius-panel);}
 .sidebar .side-heading {margin:0;padding:0 0 10px;border:0;border-bottom:1px solid var(--rule);background:transparent;text-align:left;font-size:16px;font-weight:600;line-height:1.4;color:var(--ink);}
 .side-heading a {color:var(--ink);}
 .side-links {border:0;padding:8px 0;background:transparent;gap:0 12px;}
@@ -1592,14 +1593,14 @@ body:has(.workspace-page:not(.compact-calculator-page)) {--shell-width:1240px;}
  .directory-tools {display:flex;gap:16px;}
  .directory-tools .directory-search,.directory-tools .featured-tools,.directory-tools .directory-quick {order:0;}
  .calculator-directory .featured-tools h2 {font-size:16px;line-height:1.4;margin-bottom:6px;}
- .featured-grid {gap:0 12px;}
- .featured-grid > a {display:flex;align-items:center;min-height:44px;padding:8px 0;}
+ .featured-grid {gap:8px;}
+ .featured-grid > a {display:flex;align-items:center;min-height:44px;padding:8px 10px;}
  .featured-grid strong {font-size:14px;line-height:1.4;}
  .featured-grid span {display:none;}
  .quick-keys button {height:44px;}
  .quick-modes button {min-height:44px;}
  .quick-footer > a,.quick-help-details > summary {font-size:12px;}
- .calculator-directory .directory-grid section {border:0;border-top:2px solid var(--rule);border-radius:0;padding:14px 0 0;}
+ .calculator-directory .directory-grid section {border:1px solid var(--module-border);border-radius:var(--radius-panel);padding:14px;}
  .sidebar-search input {font-size:16px;}
 }
 @media print {
@@ -1637,4 +1638,26 @@ body:has(.workspace-page:not(.compact-calculator-page)) {--shell-width:1240px;}
  .directory-tools .quick-answer {min-height:24px;font-size:18px;line-height:20px;}
  .directory-tools .quick-keys button {height:32px;}
  .directory-tools .quick-equals {min-height:36px;}
+}
+
+/* Calculator-wide layout: 1120 = 40 padding + 736 main + 24 gap + 320 rail.
+   Long tax/budget/scientific forms keep their vertical flow inside the main. */
+body:has(.calculator-page) {--shell-width:1120px;}
+.page-wrap.calculator-page {max-width:1120px;gap:24px;}
+.calculator-page :is(.calculator-form,.result,.workspace-report),.quick-calculator,.sidebar .sidebar-search {border:1px solid var(--module-border);border-radius:var(--radius-panel);}
+.calculator-page .calculator-guide {border:1px solid var(--module-border);border-radius:var(--radius-panel);padding:18px;}
+@media screen and (min-width:1024px) {
+ .page-wrap.calculator-page {grid-template-columns:minmax(0,1fr) 320px;}
+ .calculator-page .sidebar .side-links {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media screen and (max-width:1023px) {
+ .page-wrap.calculator-page {grid-template-columns:minmax(0,1fr);}
+ .calculator-page .sidebar {display:block;}
+}
+@media screen and (max-width:700px) {
+ .calculator-page .calculator-guide {padding:14px;}
+}
+@media print {
+ .page-wrap.calculator-page {display:block;max-width:none;}
+ .calculator-page :is(.result,.workspace-report,.calculator-guide) {border:0;padding:0;}
 }

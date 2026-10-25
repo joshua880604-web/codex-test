@@ -5,7 +5,7 @@ import type { Result, Values } from "@/lib/types";
 
 const money = (value: number) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(Math.abs(value) < .005 ? 0 : value);
 const compact = (value: number) => new Intl.NumberFormat("en-US", { notation: Math.abs(value) >= 1e12 || (value !== 0 && Math.abs(value) < .01) ? "scientific" : "compact", maximumFractionDigits: 1 }).format(value);
-export default function ResultTrend({ id, mode, values, result, wide=false }: { id: string; mode: string; values: Values; result: Result; wide?: boolean }) {
+export default function ResultTrend({ id, mode, values, result, wide=false, report=false }: { id: string; mode: string; values: Values; result: Result; wide?: boolean; report?: boolean }) {
   const uid = useId();
   const trend = resultTrend(id, mode, values, result);
   if (!trend) return null;
@@ -34,7 +34,7 @@ export default function ResultTrend({ id, mode, values, result, wide=false }: { 
     </svg>
     );
   };
-  return <figure className={"result-trend" + (wide ? " trend-wide" : "")}>
+  const figure = <figure className={"result-trend" + (wide ? " trend-wide" : "")}>
     <figcaption>{trend.title}</figcaption>
     {wide ? <>{chart(720,"wide","trend-wide-desktop")}{chart(420,"mobile","trend-wide-mobile")}</> : chart(420,"standard")}
     <ul className="trend-legend">
@@ -43,4 +43,7 @@ export default function ResultTrend({ id, mode, values, result, wide=false }: { 
     </ul>
     <p className="trend-help">{trend.sampled ? "A simplified view of the calculated schedule. " : ""}{trend.help} Open calculation details for exact values.</p>
   </figure>;
+  return report ? <section className="workspace-report workspace-report-chart" aria-label="Balance chart">
+    {id === "cd" ? <details className="workspace-chart"><summary>View balance chart</summary>{figure}</details> : figure}
+  </section> : figure;
 }

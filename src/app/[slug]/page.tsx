@@ -87,7 +87,7 @@ export default async function Page({
           ? "Calculation methodology and sources"
           : "Financial Calculators");
   return (
-    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : hasCalculatorWorkspace(c?.id ?? "") ? "page-wrap workspace-page" + (["cd", "mortgage"].includes(c?.id ?? "") ? " compact-calculator-page" : "") + (c?.id === "cd" ? " cd-page" : "") : "page-wrap"}>
+    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : hasCalculatorWorkspace(c?.id ?? "") ? "page-wrap calculator-page workspace-page compact-calculator-page" + (c?.id === "cd" ? " cd-page" : "") : c && !c.directory ? "page-wrap calculator-page" : "page-wrap"}>
       <main id="main">
         <div className="breadcrumb">
           <a href="/">home</a> /{" "}
