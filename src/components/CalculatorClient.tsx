@@ -49,12 +49,14 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const hasRetirementStory = id === "401k" && mode.id === "projection";
   const workspace = workspaceLayout(id, mode.id);
   const hasWorkspace = Boolean(workspace);
+  const wideReports = id === "cd" || id === "mortgage";
   const summary = result && hasWorkspace ? workspaceMetrics(id, mode.id, result) : null;
   const tableRows =
     yearly && result?.annualRows ? result.annualRows : result?.rows;
   const tableColumns =
     yearly && result?.annualColumns ? result.annualColumns : result?.columns;
   const context = result ? resultContext(id,mode.id,values,result) : null;
+  const workspaceRef = useRef<HTMLDivElement>(null);
   const resultRef = useRef<HTMLDivElement>(null),
     request = useRef(0);
   const modeDrafts = useRef<Record<string, Values>>({});
@@ -66,7 +68,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     if (!hasWorkspace) return;
     let opened: HTMLDetailsElement[] = [];
     const before = () => {
-      opened = Array.from(resultRef.current?.querySelectorAll<HTMLDetailsElement>(".workspace-breakdown:not([open]),.workspace-details:not([open]),.workspace-chart:not([open])") ?? []);
+      opened.push(...Array.from(workspaceRef.current?.querySelectorAll<HTMLDetailsElement>(".workspace-breakdown:not([open]),.workspace-details:not([open]),.workspace-chart:not([open])") ?? []));
       opened.forEach(details => { details.open = true; });
     };
     const after = () => { opened.forEach(details => { details.open = false; }); opened = []; };
@@ -315,6 +317,98 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       </div>
     );
   }
+  const calculationDetails = result && (
+          <CalculationDetails compact={hasWorkspace} hasRows={Boolean(result.rows)} key={mode.id + "-details"}>
+          {hasWorkspace && !result.notes?.length && !result.rows?.length && <p className="result-note">{mode.formula}</p>}
+          {id === "marriage-tax" && <p className="result-note">Compared with your combined unmarried federal income tax. Savings means the married-joint estimate is lower; additional tax means it is higher. This does not compare married filing separately or include state/local tax.</p>}
+          {result.notes?.map((note, i) => (
+            <p className="result-note" key={i}>
+              {note}
+            </p>
+          ))}
+          {result.rows && result.columns && (
+            <>
+              <h3>Calculation details</h3>
+              {id === "401k" && mode.id === "projection" && <p className="result-note">Each row represents one projection year. Age is your age at year end; salary and contributions apply to that year. Balance is the account total after annual growth and year-end contributions. Amounts are in USD.</p>}
+              <p className="table-help">Scroll horizontally or vertically to see more. Download CSV for the complete schedule.</p>
+              {result.annualRows && (
+                <div className="result-actions" aria-label="Schedule period">
+                  <button
+                    aria-pressed={!yearly}
+                    onClick={() => {
+                      setYearly(false);
+                      setShowAll(false);
+                    }}
+                  >
+                    {result.schedulePeriod ?? "Per payment"}
+                  </button>
+                  <button
+                    aria-pressed={yearly}
+                    onClick={() => {
+                      setYearly(true);
+                      setShowAll(false);
+                    }}
+                  >
+                    Yearly
+                  </button>
+                </div>
+              )}
+              {wideReports && <div className="result-actions"><button onClick={() => download()}>Download CSV</button></div>}
+              <div
+                className="table-scroll"
+                tabIndex={0}
+                role="region"
+                aria-label="Calculation detail table"
+              >
+                <table>
+                  <thead>
+                    <tr>
+                      {tableColumns!.map((c, i) => (
+                        <th scope="col" key={i}>{id === "401k" && mode.id === "projection" ? ({Age: "Year-end age", Employee: "Employee contribution", Employer: "Employer contribution", Balance: "Year-end balance"} as Record<string,string>)[c] ?? c : c}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tableRows!
+                      .slice(0, showAll ? undefined : 36)
+                      .map((row, i) => (
+                        <tr key={i}>
+                          {row.map((x, j) => (
+                            <td key={j}>
+                              {typeof x === "number"
+                                ? amount(x, Number.isInteger(x) ? 0 : 2)
+                                : x}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+              {tableRows!.length > 36 && (
+                <button
+                  className="show-rows"
+                  onClick={() => setShowAll(!showAll)}
+                >
+                  {showAll
+                    ? "Show first 36 rows"
+                    : `Show all ${tableRows!.length} rows`}
+                </button>
+              )}
+            </>
+          )}
+          {result.additionalTables?.map(table => <section key={table.title}>
+            <h3>{table.title}</h3>
+            {table.note && <p className="result-note">{table.note}</p>}
+            <div className="result-actions"><button onClick={() => download(table)}>Download retirement CSV</button></div>
+            <div className="table-scroll" role="region" aria-label={table.title + " table"} tabIndex={0}>
+              <table><thead><tr>{table.columns.map(column => <th scope="col" key={column}>{column}</th>)}</tr></thead>
+                <tbody>{table.rows.map((row, i) => <tr key={i}>{row.map((value, j) => <td key={j}>{typeof value === "number" ? amount(value, Number.isInteger(value) ? 0 : 2) : value}</td>)}</tr>)}</tbody>
+              </table>
+            </div>
+          </section>)}
+          </CalculationDetails>
+  );
   const simple = mode.fields.length <= 14,
     visible = mode.fields.filter((f) => f.key !== "verified_rate"),
     optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
@@ -382,7 +476,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           </>}
         </div>
       )}
-      <div className={hasWorkspace ? "calculator-workspace" + (workspace === "stacked" ? " workspace-stacked" : "") : undefined}>
+      <div ref={workspaceRef} className={hasWorkspace ? "calculator-workspace" + (workspace === "stacked" ? " workspace-stacked" : "") : undefined}>
       <div
         id="calculator-panel"
         role="tabpanel"
@@ -511,114 +605,33 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               </div>
             )}
           </div>
-          {hasWorkspace && id !== "cd" && <ResultTrend id={id} mode={mode.id} values={values} result={result} />}
+          {hasWorkspace && !wideReports && <ResultTrend id={id} mode={mode.id} values={values} result={result} />}
           {context && <p className="result-context">{context}</p>}
           {summary && summary.highlights.length > 0 && <dl className="workspace-key-figures" aria-label="Key calculated figures">{summary.highlights.map(m => <div className="metric" key={m.label}><dt><span>{m.label}</span></dt><dd><strong>{formatMetric(m)}</strong></dd></div>)}</dl>}
-          {id === "cd" && Boolean(result.rows?.length) && <details className="workspace-chart" key={mode.id + "-chart"}>
-            <summary>View balance chart</summary>
-            <ResultTrend id={id} mode={mode.id} values={values} result={result} />
-          </details>}
           {summary && summary.details.length > 0 && <details className="workspace-breakdown" key={mode.id + "-breakdown"}>
             <summary>Result breakdown ({summary.details.length})</summary>
             {summary.details.map(m => <div className="metric" key={m.label}><span>{m.label}</span><strong>{formatMetric(m)}</strong></div>)}
           </details>}
           <div className="result-actions">
             <button onClick={() => window.print()}>Print</button>
-            {result.rows && <button onClick={() => download()}>Download CSV</button>}
+            {result.rows && !wideReports && <button onClick={() => download()}>Download CSV</button>}
           </div>
-          <CalculationDetails compact={hasWorkspace} hasRows={Boolean(result.rows)} key={mode.id + "-details"}>
-          {hasWorkspace && !result.notes?.length && !result.rows?.length && <p className="result-note">{mode.formula}</p>}
-          {id === "marriage-tax" && <p className="result-note">Compared with your combined unmarried federal income tax. Savings means the married-joint estimate is lower; additional tax means it is higher. This does not compare married filing separately or include state/local tax.</p>}
-          {result.notes?.map((note, i) => (
-            <p className="result-note" key={i}>
-              {note}
-            </p>
-          ))}
-          {result.rows && result.columns && (
-            <>
-              <h3>Calculation details</h3>
-              {id === "401k" && mode.id === "projection" && <p className="result-note">Each row represents one projection year. Age is your age at year end; salary and contributions apply to that year. Balance is the account total after annual growth and year-end contributions. Amounts are in USD.</p>}
-              <p className="table-help">Scroll horizontally or vertically to see more. Download CSV for the complete schedule.</p>
-              {result.annualRows && (
-                <div className="result-actions" aria-label="Schedule period">
-                  <button
-                    aria-pressed={!yearly}
-                    onClick={() => {
-                      setYearly(false);
-                      setShowAll(false);
-                    }}
-                  >
-                    {result.schedulePeriod ?? "Per payment"}
-                  </button>
-                  <button
-                    aria-pressed={yearly}
-                    onClick={() => {
-                      setYearly(true);
-                      setShowAll(false);
-                    }}
-                  >
-                    Yearly
-                  </button>
-                </div>
-              )}
-              <div
-                className="table-scroll"
-                tabIndex={0}
-                role="region"
-                aria-label="Calculation detail table"
-              >
-                <table>
-                  <thead>
-                    <tr>
-                      {tableColumns!.map((c, i) => (
-                        <th scope="col" key={i}>{id === "401k" && mode.id === "projection" ? ({Age: "Year-end age", Employee: "Employee contribution", Employer: "Employer contribution", Balance: "Year-end balance"} as Record<string,string>)[c] ?? c : c}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tableRows!
-                      .slice(0, showAll ? undefined : 36)
-                      .map((row, i) => (
-                        <tr key={i}>
-                          {row.map((x, j) => (
-                            <td key={j}>
-                              {typeof x === "number"
-                                ? amount(x, Number.isInteger(x) ? 0 : 2)
-                                : x}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
-              </div>
-              {tableRows!.length > 36 && (
-                <button
-                  className="show-rows"
-                  onClick={() => setShowAll(!showAll)}
-                >
-                  {showAll
-                    ? "Show first 36 rows"
-                    : `Show all ${tableRows!.length} rows`}
-                </button>
-              )}
-            </>
-          )}
-          {result.additionalTables?.map(table => <section key={table.title}>
-            <h3>{table.title}</h3>
-            {table.note && <p className="result-note">{table.note}</p>}
-            <div className="result-actions"><button onClick={() => download(table)}>Download retirement CSV</button></div>
-            <div className="table-scroll" role="region" aria-label={table.title + " table"} tabIndex={0}>
-              <table><thead><tr>{table.columns.map(column => <th scope="col" key={column}>{column}</th>)}</tr></thead>
-                <tbody>{table.rows.map((row, i) => <tr key={i}>{row.map((value, j) => <td key={j}>{typeof value === "number" ? amount(value, Number.isInteger(value) ? 0 : 2) : value}</td>)}</tr>)}</tbody>
-              </table>
-            </div>
-          </section>)}
-          </CalculationDetails>
+          {!wideReports && calculationDetails}
           {hasWorkspace ? <details className="workspace-sharing" key={mode.id + "-sharing"}><summary>Save or share result</summary><ResultShare id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/></details> : <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/>}
         </div>
       )}
       </div>
+      {wideReports && result && <>
+        {Boolean(result.rows?.length) && <section className="workspace-report workspace-report-chart" aria-label="Balance chart">
+          {id === "cd" ? <details className="workspace-chart" key={mode.id + "-chart"}>
+            <summary>View balance chart</summary>
+            <ResultTrend id={id} mode={mode.id} values={values} result={result} wide/>
+          </details> : <ResultTrend id={id} mode={mode.id} values={values} result={result} wide/>}
+        </section>}
+        <section className="workspace-report workspace-report-details" aria-label="Calculation details">
+          {calculationDetails}
+        </section>
+      </>}
       </div>
       <section className="explanation">
         <h2>How to use this calculator</h2>
