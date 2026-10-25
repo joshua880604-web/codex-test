@@ -3,7 +3,7 @@ import {useEffect,useRef,useState,type FormEvent,type KeyboardEvent} from "react
 import {calculators} from "@/lib/catalog";
 import {directorySearch,directoryTarget} from "@/lib/directory";
 
-export default function CalculatorSearch({id,tools=calculators,compact=false}:{id:string;tools?:typeof calculators;compact?:boolean}) {
+export default function CalculatorSearch({id,tools=calculators,compact=false,minimal=false}:{id:string;tools?:typeof calculators;compact?:boolean;minimal?:boolean}) {
   const [query,setQuery]=useState("");
   const [open,setOpen]=useState(false),[active,setActive]=useState(-1),[expanded,setExpanded]=useState(false);
   const form=useRef<HTMLFormElement>(null),input=useRef<HTMLInputElement>(null);
@@ -36,11 +36,11 @@ export default function CalculatorSearch({id,tools=calculators,compact=false}:{i
       setActive(i=>e.key==='ArrowDown'?(i+1)%visible.length:(i<0?visible.length-1:(i-1+visible.length)%visible.length));
     }
   }
-  return <form ref={form} className={'directory-search'+(compact?' sidebar-search':'')} role="search" aria-label="Calculator search" onSubmit={submit} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget))setOpen(false);}}>
+  return <form ref={form} className={'directory-search'+(compact?' sidebar-search':'')+(minimal?' simple-search':'')} role="search" aria-label="Calculator search" onSubmit={submit} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget))setOpen(false);}}>
     <label htmlFor={id}>Find a calculator</label>
     <div className="directory-search-control">
       <div className="directory-search-field">
-        <input ref={input} id={id} type="search" autoComplete="off" maxLength={160} placeholder={compact?'Search calculators':'Try car payment, mortgage, or retirement'} value={query} onChange={e=>{setQuery(e.target.value);setOpen(true);setActive(-1);setExpanded(false);}} onFocus={()=>setOpen(true)} onKeyDown={keys} role="combobox" aria-autocomplete="list" aria-expanded={showing} aria-controls={listId} aria-activedescendant={showing&&active>=0?optionId(active):undefined}/>
+        <input ref={input} id={id} type="search" autoComplete="off" maxLength={160} placeholder={compact||minimal?'Search calculators':'Try car payment, mortgage, or retirement'} value={query} onChange={e=>{setQuery(e.target.value);setOpen(true);setActive(-1);setExpanded(false);}} onFocus={()=>setOpen(true)} onKeyDown={keys} role="combobox" aria-autocomplete="list" aria-expanded={showing} aria-controls={listId} aria-activedescendant={showing&&active>=0?optionId(active):undefined}/>
         {query&&<button type="button" className="directory-search-clear" aria-label="Clear search" onClick={()=>{setQuery("");setActive(-1);setExpanded(false);input.current?.focus();}}>×</button>}
       </div>
       <button type="submit" className="directory-search-submit">Search</button>

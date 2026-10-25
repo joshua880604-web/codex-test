@@ -1092,7 +1092,7 @@ footer p {
  .quick-footer {margin-top:4px;}
  .quick-footer > a,.quick-help-details > summary {font-size:11px;line-height:28px;}
 }
-@media(max-width:700px) and (max-height:650px){
+@media(max-width:700px) and (max-height:600px){
  .header-inner {padding-top:6px;padding-bottom:6px;}
  .directory-page {margin-top:6px;}
  .directory-page h1 {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
@@ -1606,4 +1606,35 @@ body:has(.workspace-page:not(.compact-calculator-page)) {--shell-width:1240px;}
  .calculate,.clear {display:none;}
  .result,.compact-calculator-page .workspace-report {border:0;border-radius:0;box-shadow:none;}
  .metric.primary {background:#fff;}
+}
+
+/* Homepage: one search row, then the complete basic calculator on phones.
+   Keep labels/live status available to assistive technology without a tall panel. */
+.directory-tools > .simple-search {padding:0;border:0;border-radius:0;background:transparent;gap:0;}
+.simple-search > label,.simple-search > [role="status"],.directory-tools .quick-calculator-body > label[for="quick-expression"] {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.calculator-directory .simple-search input {height:44px;font-size:16px;}
+.directory-tools .quick-calculator {display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;}
+.directory-tools .quick-calculator > h2 {padding:8px 10px!important;font-size:14px!important;line-height:1.2;}
+.directory-tools .quick-modes {padding:4px 10px 4px 0;gap:4px;}
+.directory-tools .quick-modes button {flex:none;min-height:44px;padding:0 8px;font-size:12px;}
+.directory-tools .quick-calculator-body {grid-column:1 / -1;padding:0 10px 8px;}
+.directory-tools .quick-calculator-body input {height:40px;padding:8px;font-size:16px;}
+.directory-tools .quick-answer {min-height:28px;padding:2px 0;font-size:20px;line-height:1.2;}
+.directory-tools .quick-keys {gap:4px;}
+.directory-tools .quick-keys button {height:44px;}
+.directory-tools .quick-equals {min-height:44px;margin-top:6px;}
+.directory-tools .quick-footer {margin-top:4px;}
+.directory-tools .quick-footer > a,.directory-tools .quick-help-details > summary {font-size:12px;line-height:24px;}
+@media screen and (max-width:700px) {
+ body:has(.directory-tools) .header-inner {padding-top:6px;padding-bottom:6px;}
+ .directory-tools {gap:10px;}
+}
+/* Short browser viewports retain every key; use compact targets only here. */
+@media screen and (max-width:700px) and (max-height:560px) {
+ .directory-tools .quick-modes button {min-height:36px;}
+ .directory-tools .quick-calculator-body {padding-bottom:6px;}
+ .directory-tools .quick-calculator-body input {height:36px;}
+ .directory-tools .quick-answer {min-height:24px;font-size:18px;line-height:20px;}
+ .directory-tools .quick-keys button {height:32px;}
+ .directory-tools .quick-equals {min-height:36px;}
 }

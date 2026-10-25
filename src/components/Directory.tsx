@@ -21,7 +21,8 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
         ? "Calculators for mortgages, property investment, and home ownership."
         : "Find the right tool for your loans, savings, retirement, taxes, and everyday calculations."}</p>
       <div className={propertyOnly ? undefined : "directory-tools"}>
-      <CalculatorSearch id="directory-search" tools={tools}/>
+      <CalculatorSearch id="directory-search" tools={tools} minimal={!propertyOnly}/>
+      {!propertyOnly&&<div className="directory-quick"><QuickCalculator/></div>}
       {!propertyOnly && <section className="featured-tools" aria-labelledby="featured-heading">
         <h2 id="featured-heading">Popular financial calculators</h2>
         <div className="featured-grid">{featured.map(([id, description]) => {
@@ -29,7 +30,6 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
           return <a key={id} href={routeFor(id)}><strong>{calculator.title}</strong><span>{description}</span></a>;
         })}</div>
       </section>}
-      {!propertyOnly&&<div className="directory-quick"><QuickCalculator/></div>}
       </div>
       {groups.length > 1 && <nav className="directory-categories" aria-label="Calculator categories">
         <span>Browse by category</span>
