@@ -41,16 +41,16 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 ## Retirement planning
 
-- [401(k) Calculator](https://calculatorfree.io/401k-calculator.html): U.S. planning under fixed 2026 contribution and age-based catch-up rules. Project contributions and employer matching, compare early withdrawal costs, or explore a contribution rate for matching bands; future legal limit changes are not projected.
+- [401(k) Calculator](https://calculatorfree.io/401k-calculator.html): U.S. planning under fixed 2026 contribution and age-based catch-up rules. Limits combine traditional and Roth deferrals; applicable high-earner catch-up must be Roth. The growth projection does not split their tax treatments or project future legal limit changes.
 - [Retirement Calculator](https://calculatorfree.io/retirement-calculator.html): Estimate required savings, periodic saving, monthly withdrawals, or savings longevity under stated assumptions.
 - [IRA Calculator](https://calculatorfree.io/ira-calculator.html): Compare U.S. Traditional IRA, Roth IRA and taxable saving under fixed 2026 contribution limits and entered tax assumptions; eligibility is not inferred.
 - [Roth IRA Calculator](https://calculatorfree.io/roth-ira-calculator.html): Compare qualified U.S. Roth IRA growth with equivalent after-tax saving in a taxable account using fixed 2026 contribution rules.
-- [RMD Calculator](https://calculatorfree.io/rmd-calculator.html): Estimate U.S. owner-account required minimum distributions for the selected distribution year using supported IRS life expectancy factors. Inherited-account rules are not modeled.
-- [Social Security Calculator](https://calculatorfree.io/social-security-calculator.html): Explore U.S. retirement-benefit assumptions or compare two claiming ages using monthly benefit estimates supplied by the user; earnings records and benefit statements are not retrieved.
+- [RMD Calculator](https://calculatorfree.io/rmd-calculator.html): Estimate U.S. required minimum distributions for traditional IRA and other eligible non-Roth owner balances using supported IRS factors. Roth IRA owners, designated Roth plan balances for 2024 onward, inherited accounts and employer-plan deferrals are excluded.
+- [Social Security Calculator](https://calculatorfree.io/social-security-calculator.html): Ideal-age planning uses FRA PIA in age-62 dollars, assumed COLA while waiting and after claiming, and a nominal discount rate. Comparison mode uses separately entered nominal claim-date benefit quotes. Earnings records and benefit statements are not retrieved.
 
 ## Tax and income
 
-- [Income Tax Calculator](https://calculatorfree.io/tax-calculator.html): Estimate selected 2025 or 2026 U.S. federal income tax and withholding balance using explicit tax-year assumptions.
+- [Income Tax Calculator](https://calculatorfree.io/tax-calculator.html): Estimate selected 2025 or 2026 U.S. federal income tax and withholding balance, including entered eligible passive NIIT income, MFS spouse itemization and year-specific AMT adjustments. The 2026 active-QBI minimum requires the stated eligibility; this is not a complete return-preparation engine.
 - [Salary Calculator](https://calculatorfree.io/salary-calculator.html): Convert pay frequencies and compare unadjusted pay with holiday- and vacation-adjusted pay.
 - [Take-Home Paycheck Calculator](https://calculatorfree.io/take-home-pay-calculator.html): Estimate pay using 2026 U.S. federal rules and explicit state/local effective-rate assumptions; this is not a complete state or city tax engine.
 

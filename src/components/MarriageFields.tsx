@@ -37,7 +37,7 @@ export default function MarriageFields({fields, values, renderField}: {fields: F
     <p className="marriage-help">Compare two unmarried federal returns with one married-joint return. All money amounts are annual USD. This estimates federal income tax, not state or local tax.</p>
     {renderField(fields.find(f=>f.key==='year')!)}
     <fieldset className="marriage-basic"><legend>Your household</legend>{rows('basic')}<p className="marriage-help">{marriageSections[0].description}</p></fieldset>
-    <p className="marriage-help">Only wages and a standard deduction? You can calculate now. Open the sections below when other income, deductions or credits apply. Defaults are zero or No.</p>
+    <p className="marriage-help">Only wages and a standard deduction? You can calculate now. Open the sections below when other income, deductions or credits apply. Leave unrelated amounts at zero and check the tax treatment of income you enter.</p>
     {marriageSections.slice(1).map(section=><details className="advanced marriage-section" key={section.id} data-section={section.id}>
       <summary>{section.title}</summary><p className="marriage-help">{section.description}</p>{rows(section.id)}
     </details>)}

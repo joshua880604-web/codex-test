@@ -9,7 +9,7 @@ import {
   type Mode,
   type Result,
 } from "../types";
-import { federalTax, type TaxInputs, type Filing } from "../tax";
+import { federalTax, selfEmployment, type TaxInputs, type Filing } from "../tax";
 import rules from "../official-rules.json";
 const statuses = [
   "Single",
@@ -20,6 +20,10 @@ const statuses = [
 const mfsResidenceField = () => ({
   ...select("mfs_lived_apart", "Lived apart from your spouse for the entire tax year?", ["No", "Yes"]),
   hint: "For married filing separately and Social Security benefits. Yes uses the $25,000/$34,000 combined-income thresholds; No uses the lived-together rule.",
+});
+const mfsItemizationField = () => ({
+  ...select("mfs_spouse_itemizes", "Does your spouse itemize deductions on a separate return?", ["No", "Yes"]),
+  hint: "For married filing separately. Yes makes your standard deduction unavailable; enter your own eligible itemized deductions.",
 });
 export function filing(s: string): Filing {
   const i = statuses.indexOf(s);
@@ -48,7 +52,10 @@ const fields = () => [
   num("long", "Net long-term capital gains", 0, "$", -1e12),
   num("social", "Social Security benefits", 0, "$"),
   mfsResidenceField(),
+  mfsItemizationField(),
   num("other", "Other taxable income", 0, "$"),
+  {...num("passive", "Net rental, royalty and other passive income", 0, "$", -1e12), hint: "Enter income after eligible expenses and loss limits, not gross rent. Do not duplicate it in Other taxable income."},
+  {...select("passive_niit", "Is this net passive income subject to NIIT?", ["Yes", "No"]), hint: "Yes includes it in the net investment income tax base. Select No only when an applicable exclusion is established, such as qualifying nonpassive real-estate activity."},
   num("adjustments", "Eligible IRA and other above-line deductions", 0, "$"),
   num("student", "Student loan interest paid", 0, "$"),
   num("itemized", "Eligible itemized deductions excluding SALT", 0, "$"),
@@ -82,6 +89,8 @@ const fields = () => [
   num("credits", "Other eligible nonrefundable credits", 0, "$"),
   num("amt", "Other AMT adjustments", 0, "$"),
   select("qbi", "Apply simplified eligible QBI deduction?", ["No", "Yes"]),
+  {...select("qbi_active", "Do you materially participate in the eligible business?", ["No", "Yes"]), hint: "2026 only: Yes tests your entered eligible net business income, after half regular self-employment tax, for the $1,000 active-QBI threshold and $400 minimum deduction. Other QBI adjustments must already be reflected in the eligible amounts."},
+  {...select("spouse_qbi_active", "Does your spouse materially participate in their eligible business?", ["No", "Yes"]), hint: "For married filing jointly and the 2026 active-QBI minimum. Applies only to entered spouse business income."},
   num(
     "withheld",
     "Federal income tax withheld / estimated payments",
@@ -110,6 +119,10 @@ function inputs(v: Values): TaxInputs {
     longGains: n(v, "long"),
     socialSecurity: n(v, "social"),
     mfsLivedApartAllYear: v.mfs_lived_apart === "Yes",
+    mfsSpouseItemizes: v.mfs_spouse_itemizes === "Yes",
+    niitPassiveIncome: v.passive_niit === "No" ? 0 : optionalNumber(v, "passive"),
+    activeBusiness: v.qbi_active === "Yes",
+    spouseActiveBusiness: v.spouse_qbi_active === "Yes",
     other: n(v, "other") + optionalNumber(v,"passive"),
     adjustments: n(v, "adjustments") + optionalNumber(v,"ira_deduction"),
     studentInterest: n(v, "student"),
@@ -189,6 +202,7 @@ function taxResult(v: Values): Result {
       ["Taxable income", t.taxable],
       ["Regular income tax", t.regular],
       ["Additional alternative minimum tax", t.amt],
+      ["MFS special AMTI increase", t.mfsAmtIncrease],
       ["Eligible nonrefundable education credit", t.educationCredit],
       ["Eligible dependent-care credit", t.careCredit],
       ["Nonrefundable credits applied", t.credit],
@@ -202,9 +216,11 @@ function taxResult(v: Values): Result {
     ],
     notes: [
       `Tax year ${x.year}; federal rules only. State and local income tax are not calculated as a tax return.`,
-      `Sources: IRS annual inflation adjustments and Schedule 1-A; published 2026 rules reviewed October 19, 2026.`,
+      `Sources: IRS annual inflation adjustments, Schedule 1-A and the selected policy conditions; reviewed October 25, 2026.`,
       `Eligibility for tips, overtime, vehicle interest, dependents, and entered deductions must be satisfied. Education and dependent-care credits reduce the tax available for nonrefundable child credits. Refundable child credit uses the 15% earned-income method, after deducting half of regular self-employment tax; special three-child/territory alternatives and EITC are not computed. Enter other already eligible nonrefundable credits separately.`,
       `For married filing separately, select whether you lived apart for the entire year before calculating Social Security benefits. Enter deductions after their individual eligibility limits, before the 2026 section 68 overall reduction. The model compares standard and itemized deductions including modeled AMT. Section 68 does not reduce QBI or apply to AMT; QBI remains a simplified calculation without wage/property or specified-service-business limitations.`,
+      "MFS standard deduction is unavailable when your spouse itemizes on a separate return. The high-AMTI MFS increase is calculated separately using the selected year's rule; enter Other AMT adjustments before that increase. This standard-deduction model assumes you cannot be claimed as someone else's dependent and are not a dual-status/nonresident filer; blind-person additions are not modeled.",
+      "Net passive income enters NIIT only when selected as subject to NIIT. Enter already eligible net income after applicable expenses and loss limits; retirement distributions and unrelated Other taxable income are not automatically investment income. For 2026, the $400 minimum QBI deduction requires at least $1,000 of eligible net active QBI and material participation. Default No does not assume that eligibility.",
     ],
   };
 }
@@ -217,7 +233,6 @@ const income = tool(
       fields: [
         ...fields(),
         select("dividend_definition", "Dividends field means", ["Nonqualified only", "Total ordinary includes qualified"]),
-        num("passive", "Rental, royalty and other passive income", 0, "$", -1e12),
         num("ira_deduction", "Eligible deductible IRA contributions not entered above", 0, "$"),
         num("mortgage_interest", "Eligible mortgage interest not entered above", 0, "$"),
         num("eligible_itemized_charity", "Eligible itemized charitable deduction not entered above", 0, "$"),
@@ -333,6 +348,8 @@ const personFields = () =>
         "spouse_wages",
         "spouse_business",
         "mfs_lived_apart",
+        "mfs_spouse_itemizes",
+        "spouse_qbi_active",
       ].includes(f.key),
   );
 const marriage = tool(
@@ -387,6 +404,7 @@ const marriage = tool(
           filing: "married_joint",
           spouseWages: b.wages,
           spouseBusiness: b.business,
+          qualifiedBusiness: a.qualifiedBusiness || b.qualifiedBusiness,
         };
         const additive: (keyof TaxInputs)[] = [
           "interest",
@@ -411,10 +429,15 @@ const marriage = tool(
           "exemptInterest",
           "careExpenses",
           "carePeople",
+          "niitPassiveIncome",
         ];
         for (const key of additive)
           (joint as unknown as Record<string, unknown>)[key] =
             Number(a[key] ?? 0) + Number(b[key] ?? 0);
+        const netQbiA = a.business - selfEmployment(a.business, a.wages, a.year) / 2,
+          netQbiB = b.business - selfEmployment(b.business, b.wages, b.year) / 2;
+        joint.qbiIncome = (a.qualifiedBusiness ? netQbiA : 0) + (b.qualifiedBusiness ? netQbiB : 0);
+        joint.activeQbiIncome = (a.qualifiedBusiness && a.activeBusiness ? netQbiA : 0) + (b.qualifiedBusiness && b.activeBusiness ? netQbiB : 0);
         joint.educationExpenses = [
           ...(a.educationExpenses ?? []),
           ...(b.educationExpenses ?? []),
@@ -624,9 +647,11 @@ const sourcePaycheck: Mode = {
     num("salary", "Your job income", 80000, "$ / year"),
     select("pay_frequency", "Pay frequency", ["Daily", "Weekly", "Biweekly", "Semimonthly", "Monthly", "Quarterly", "Semiannually", "Annually"], "Biweekly"),
     select("file_status", "Filing status", statuses),
+    mfsItemizationField(),
     num("children", "Qualifying children under 17", 0, "people"),
     num("dependents", "Other qualifying dependents", 0, "people"),
     num("other_income", "Other income (not from jobs)", 0, "$ / year"),
+    {...num("niit_other", "Portion of other income subject to NIIT", 0, "$ / year"), hint: "Eligible net investment income already included in Other income. Do not add it twice; ordinary retirement distributions are generally excluded."},
     num("pretax", "Pre-tax payroll deductions withheld", 5000, "$ / year"),
     num("deductions", "Eligible deductions not withheld", 0, "$ / year"),
     num("itemized", "Eligible itemized deductions", 0, "$ / year"),
@@ -653,6 +678,9 @@ const sourcePaycheck: Mode = {
     const otherJobs=v.multiple_jobs==="Yes"?n(v,"job2")+n(v,"job3"):0, self=v.self_employed==="Yes";
     const baseValues=Object.fromEntries(fields().map(f=>[f.key,String(f.value)]));
     const x=inputs({...baseValues,year:"2026",filing:v.file_status,wages:String(self?otherJobs:Math.max(0,gross-pretax)+otherJobs),spouse_wages:"0",business:String(self?gross:0),children:v.children,dependents:v.dependents,other:v.other_income,adjustments:String(n(v,"deductions")+(self?pretax:0)),itemized:v.itemized,age65:String(Number(v.senior==="Yes")+Number(v.spouse_senior==="Yes")),tips:v.tips,overtime:v.overtime,car:v.car,cash_gifts:v.cash_gifts});
+    if(n(v,"niit_other")>n(v,"other_income"))throw new Error("The NIIT portion cannot exceed Other income.");
+    x.niitPassiveIncome=n(v,"niit_other");
+    x.mfsSpouseItemizes=v.mfs_spouse_itemizes==="Yes";
     x.medicareWages=self?otherJobs:gross+otherJobs;
     const tax=federalTax(x), baseline=otherJobs>0?federalTax({...x,wages:otherJobs,medicareWages:otherJobs,business:0,adjustments:n(v,"deductions"),tips:0,overtime:0,carInterest:0}):null;
     const allocated=baseline?Math.max(0,tax.federal-baseline.federal):tax.federal;

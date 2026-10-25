@@ -1,5 +1,6 @@
 import { autoTaxBase, autoTaxStates } from "../auto-tax";
 import { fhaMipTerms, fhaMipSchedule } from "../fha-mip";
+import policy from "../policy-rules.json";
 import {
   tool,
   baseLoanFields,
@@ -92,10 +93,10 @@ const costs = () => [
   num("pmi", "Annual mortgage insurance", 0),
   select("pmi_unit", "Mortgage insurance unit", ["Dollars", "Percent of loan"]),
   num("pmi_years", "Mortgage insurance duration", 11, "years"),
-  select("pmi_policy", "Mortgage insurance cancellation", [
+  {...select("pmi_policy", "Mortgage insurance cancellation", [
     "Fixed duration",
     "Cancel at 80% original LTV",
-  ]),
+  ]), hint: "The 80% option assumes a requested cancellation is approved. It does not model the separate 78% original-schedule automatic termination rule or all lender eligibility conditions."},
   num("hoa", "Annual HOA fee", 0),
   select("hoa_unit", "HOA fee unit", ["Dollars", "Percent of home value"]),
   num("other", "Annual other costs", 0),
@@ -136,8 +137,8 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
       : fhaMipTerms(base, fhaValue, term(v))
     : null;
   let fee = 0,
-    pmi = kind === "fha" ? 0 : v.pmi_unit === "Percent of loan" ? base * pct(v, "pmi") : n(v, "pmi"),
-    pmiYears = kind === "fha" ? 0 : n(v, "pmi_years");
+    pmi = kind !== "conventional" ? 0 : v.pmi_unit === "Percent of loan" ? base * pct(v, "pmi") : n(v, "pmi"),
+    pmiYears = kind !== "conventional" ? 0 : n(v, "pmi_years");
   if (kind === "fha") {
     fee = Math.round(base * fhaTerms!.upfrontPercent) / 100;
   }
@@ -147,12 +148,12 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
     const rate = exempt
       ? 0
       : d >= 0.1
-        ? 0.0125
+        ? policy.va_purchase.down_10_rate
         : d >= 0.05
-          ? 0.015
+          ? policy.va_purchase.down_5_rate
           : v.repeat === "Yes"
-            ? 0.033
-            : 0.0215;
+            ? policy.va_purchase.subsequent_use_rate
+            : policy.va_purchase.first_use_rate;
     fee = base * rate;
     pmi = 0;
   }
@@ -234,7 +235,10 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
       `${v.mip_method === "Manual" ? "Manual FHA premium terms" : "Ordinary FHA forward-loan rules (Mortgagee Letter 2023-05)"}: upfront ${fhaTerms.upfrontPercent}%, annual ${fhaTerms.annualPercent}%, for up to ${Math.min(fhaTerms.durationMonths, N) / 12} years. Historical case numbers, special programs, underwriting and county loan limits are not determined here.`,
       "FHA premium LTV uses the lower of purchase price and an entered appraised value. Leaving appraisal blank assumes it equals the purchase price. This payment estimate does not determine maximum eligible financing or loan approval.",
       "Monthly FHA MIP is recalculated for each mortgage year from the average original scheduled opening balance, with HUD premium rounding and removal of financed upfront MIP. Extra principal does not directly reduce that baseline; premiums stop when the modeled loan is paid off or its MIP duration ends. The FHA MIP column is already included in Taxes & costs and Total; do not add it twice.",
-    ] : ["Each tax and cost grows annually at its own rate. Conventional PMI follows the selected duration or original-value LTV policy; property appreciation is not used for cancellation."]),
+    ] : kind === "va" ? [
+      "Uses ordinary VA purchase-loan funding fees effective April 7, 2023. Prior VA use only to purchase a manufactured home retains first-use rates. An exemption must be established separately. IRRRL, cash-out refinance, NADL and other VA loan types have different fee rules and are not modeled here.",
+      "VA purchase loans do not require monthly mortgage insurance. Only the funding fee can be financed here; other entered housing costs remain separate. Each tax and cost grows annually at its own entered rate.",
+    ] : ["Each tax and cost grows annually at its own rate. Conventional PMI follows the selected duration or original-value LTV policy; property appreciation is not used for cancellation. The 80% option assumes borrower-requested cancellation is approved. Statutory 78% original-schedule automatic termination, midpoint termination, payment status and other eligibility conditions are not automatically determined."]),
   ];
   return result;
 }
@@ -778,7 +782,7 @@ const fha = tool(
   "Calculate an FHA mortgage with financed upfront MIP and annual mortgage insurance.",
 );
 const vaKindFields = [
-  select("repeat", "Previously used a VA loan?", ["No", "Yes"]),
+  {...select("repeat", "Previous VA loan use", ["No", "Yes", "Only a manufactured home"]), hint: "Choose Only a manufactured home if that was your sole prior use; VA still applies first-use funding-fee rates to this purchase."},
   select("exempt", "Funding fee exemption applies?", ["No", "Yes"]),
   select("fee_treatment", "Funding fee treatment", [
     "Finance fee",

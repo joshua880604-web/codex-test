@@ -1,0 +1,59 @@
+{
+  "reviewed_on": "2026-10-25",
+  "mfs_amt_increase": {
+    "region": "US federal",
+    "sources": [
+      "https://www.irs.gov/instructions/i6251",
+      "https://www.irs.gov/irb/2025-45_IRB",
+      "https://uscode.house.gov/us/usc/119-118/t26/s55/"
+    ],
+    "2025": {
+      "threshold": 900350,
+      "rate": 0.25,
+      "maximum": 68500
+    },
+    "2026": {
+      "threshold": 640200,
+      "rate": 0.5,
+      "maximum": 70100
+    },
+    "basis": "Section 55(d)(2) special increase after the MFS exemption fully phases out; the 2026 substitution in 55(d)(4)(A)(ii)(IV) changes 25% to 50%."
+  },
+  "active_qbi_minimum": {
+    "region": "US federal",
+    "tax_year": 2026,
+    "minimum_net_active_qbi": 1000,
+    "minimum_deduction": 400,
+    "sources": [
+      "https://uscode.house.gov/us/usc/119-120/t26/s199A/",
+      "https://www.irs.gov/pub/irs-pdf/f1040es.pdf"
+    ],
+    "basis": "Section 199A(i): material participation in an eligible active qualified trade or business. Future indexed limits are not projected."
+  },
+  "va_purchase": {
+    "region": "US VA purchase loans",
+    "effective_from": "2023-04-07",
+    "first_use_rate": 0.0215,
+    "subsequent_use_rate": 0.033,
+    "down_5_rate": 0.015,
+    "down_10_rate": 0.0125,
+    "sources": [
+      "https://www.va.gov/housing-assistance/home-loans/funding-fee-and-closing-costs/"
+    ],
+    "basis": "Prior use only to purchase a manufactured home retains the first-use fee. Exemption is an entered eligibility assumption; refinancing and other VA loan types are excluded."
+  },
+  "social_security": {
+    "region": "US Social Security retired-worker planning",
+    "sources": [
+      "https://www.ssa.gov/policy/docs/statcomps/supplement/2025/apnc.html"
+    ],
+    "basis": "Ideal-age input is FRA PIA in age 62 dollars. Assumed annual COLA applies during the waiting period and after claiming; discount rate is nominal. Separately entered comparison quotes are claim-date amounts. Future COLA is a user assumption, not a published fixed rate."
+  },
+  "scope_sources": {
+    "mfs_standard_deduction": "https://www.irs.gov/pub/irs-pdf/f1040es.pdf",
+    "niit": "https://www.irs.gov/newsroom/questions-and-answers-on-the-net-investment-income-tax",
+    "rmd": "https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs",
+    "roth_catchup": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-catch-up-contributions",
+    "pmi": "https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/"
+  }
+}

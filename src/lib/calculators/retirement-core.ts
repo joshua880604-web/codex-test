@@ -299,6 +299,7 @@ const k401 = tool(
             "Retirement income uses the entered life expectancy. Annual return is effective; monthly withdrawals increase at the monthly-equivalent inflation rate. Constant returns, full vesting and no taxes or fees are assumed. This is a sustainable-withdrawal illustration, not an RMD calculation or a guarantee.",
             "Annual iteration: the entered salary applies to the first projection year; salary increases once after each year. Each year’s employee contribution is salary × contribution percentage, capped by the limit for your age at the start of that projection year. Starting balance plus employee contributions adds the entered starting 401(k) balance once to the sum of these annual employee amounts. It excludes future investment returns and future employer matching; the starting balance may already contain past employer contributions and returns. The Employee column shows only that year’s new employee contribution.",
             "The opening balance earns the entered annual return first, then employee and employer contributions are added at year end. All projected years use 2026 limits with age-based catch-up; future limit increases are not projected. Employer matching uses up to $360,000 of compensation; annual additions excluding catch-up are capped at the lesser of compensation or $72,000. Catch-up deferrals above the regular employee limit are excluded from that additions cap. Other employers’ plans and nondiscrimination tests are not modeled. Calculations retain full precision; displayed annual amounts are rounded.",
+            "Contribution limits combine traditional and Roth employee deferrals. Beginning in 2026, catch-up contributions generally must be Roth when prior-year FICA wages from the same plan sponsor exceeded $150,000. This before-tax growth illustration does not split traditional and Roth balances or calculate that tax effect. Catch-up eligibility uses calendar-year-end age under IRS rules; this annual age-based projection uses the entered age at each projection year's start, so align it to the applicable tax year when checking a legal contribution limit.",
           ],
         };
       },
@@ -393,6 +394,7 @@ const k401 = tool(
             possible ? `A steady contribution rate from ${(minimum * 100).toFixed(4)}% through ${(maximum * 100).toFixed(4)}% can earn the full modeled match without exhausting the employee limit early. Use the unrounded result when setting payroll elections.` : "No full-match contribution-rate window exists: the employee limit is below the contribution needed for both matching bands. Amounts shown use the employee limit and receive only the associated partial match.",
             "Assumes equal pay across the year, a constant contribution percentage, per-pay-period matching, no annual true-up, no prior year-to-date contributions and full-year employment. The maximum is a conservative rate that avoids reaching the limit before year end; it does not optimize the final payroll’s partial contribution. Employer matching uses the 2026 $360,000 eligible-compensation cap and the $72,000 annual-additions cap excluding employee catch-up. A large match can be reduced by this additions cap. Actual plan rules, other employers and prior contributions may further restrict contributions.",
             "Second tier is the additional band after tier one, not a cumulative upper threshold. The employee limit uses your entered age and fixed 2026 rules; no employer match is available if both tier match rates are zero.",
+            "The employee limit combines traditional and Roth deferrals. Under 2026 rules, catch-up generally must be Roth when prior-year FICA wages with the same plan sponsor exceeded $150,000. Enter your calendar-year-end age when using this annual limit illustration; eligibility and payroll elections still require plan review.",
           ],
         };
       },
@@ -572,14 +574,14 @@ const social = tool(
       fields: [
         num("birth", "Birth year", 1964, "", 1943),
         num("life", "Life expectancy", 90, "years", 62),
-        num("pia", "Monthly benefit at full retirement age", 2000, "$"),
-        num("return", "Annual discount rate", 3, "%", -99),
-        num("cola", "Annual COLA", 2, "%"),
+        {...num("pia", "FRA monthly benefit in age-62 dollars", 2000, "$"), hint: "PIA at a common age-62 price basis, before claiming-age adjustments. For benefit amounts already quoted at each future claiming date, use Compare Application Ages instead."},
+        num("return", "Nominal annual discount rate", 3, "%", -99),
+        {...num("cola", "Assumed annual COLA", 2, "%"), hint: "An editable future assumption, applied while waiting from age 62 and after claiming; not a guaranteed SSA rate."},
       ],
       description:
         "Compare retirement benefits for application ages from 62 through 70.",
       formula:
-        "Early claim reductions: 5/9% for first 36 months, 5/12% thereafter; delayed retirement credits: 2/3% per month through age 70.",
+        "Claim-date benefit = age-62-dollar PIA × claiming-age factor × (1 + assumed COLA)^(claim age − 62). Early reductions: 5/9% for first 36 months, 5/12% thereafter; delayed credits: 2/3% per month through age 70.",
       calculate: (v) => {
         const fra = fullRetirementAge(n(v, "birth")),
           r = pct(v, "return"),
@@ -587,7 +589,7 @@ const social = tool(
           life = n(v, "life"),
           rows = Array.from({ length: 9 }, (_, i) => {
             const age = i + 62,
-              benefit = n(v, "pia") * ssFactor(age, n(v, "birth")),
+              benefit = n(v, "pia") * ssFactor(age, n(v, "birth")) * (1 + cola) ** (age - 62),
               pv = benefitPV(benefit, life - age, r, cola, age - 62);
             return [age, benefit, pv];
           }),
@@ -605,6 +607,7 @@ const social = tool(
           ],
           rows,
           notes: [
+            "All ideal-age options use a common PIA quoted in age-62 dollars and a nominal discount rate. Assumed COLA raises benefits during the wait from age 62 as well as after claiming. The model applies COLA on annual anniversaries and pays benefits at month end; actual SSA calendar COLAs, benefit rounding and credit posting dates can differ. An SSA quote that already includes future inflation must first be converted to this basis or used in Compare Application Ages.",
             "Retirement benefit only: excludes earnings-test withholding, spousal/survivor coordination, taxation, and future benefit-law changes. Delayed credit model applies to birth years 1943 and later.",
           ],
         };
@@ -615,9 +618,9 @@ const social = tool(
       title: "Compare Application Ages",
       fields: [
         num("age1", "First application age", 62, "years", 62),
-        num("monthly1", "First monthly benefit", 1400, "$"),
+        {...num("monthly1", "First claim-date monthly benefit", 1400, "$"), hint: "Nominal amount at the first claiming date. Include any waiting-period COLA already in the quote; it will not be added again before claiming."},
         num("age2", "Second application age", 70, "years", 62),
-        num("monthly2", "Second monthly benefit", 2480, "$"),
+        {...num("monthly2", "Second claim-date monthly benefit", 2480, "$"), hint: "Nominal amount at the second claiming date. Both quotes must use a consistent nominal-dollar basis."},
         num("life", "Life expectancy", 90, "years", 62),
         num("return", "Annual discount rate", 3, "%", -99),
         num("cola", "Annual COLA", 2, "%"),
@@ -646,6 +649,7 @@ const social = tool(
             b - base,
           );
         return {
+          notes: ["Enter nominal claim-date benefit quotes on a consistent basis. Each quote is used as its own initial monthly amount; no additional waiting-period COLA is added. The entered COLA applies only after each option starts, with a nominal discount rate to the earlier claiming age. Quotes stated in today's dollars need conversion before using nominal future COLA and discount assumptions."],
           metrics: [
             money("First option present value", one),
             money("Second option present value", two),

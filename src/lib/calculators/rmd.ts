@@ -14,7 +14,7 @@ export const rmdCalculator = tool(
       fields: [
         num("birth", "Birth year", 1951, "", 1900),
         num("year", "Distribution year", 2026, "", 2022),
-        num("balance", "Previous December 31 balance", 500000, "$"),
+        {...num("balance", "Previous December 31 balance", 500000, "$"), hint: "Traditional IRA or other eligible non-Roth owner account. Excludes inherited accounts and Roth IRA owner balances; designated Roth plan accounts also have no owner lifetime RMD for 2024 onward."},
         select(
           "spouse",
           "Sole beneficiary spouse more than 10 years younger?",
@@ -88,6 +88,7 @@ export const rmdCalculator = tool(
           ],
           rows,
           notes: [
+            "For traditional IRA and other eligible non-Roth owner accounts. Roth IRA owners have no lifetime RMD; designated Roth plan accounts have no owner lifetime RMD for 2024 onward. Do not enter a Roth balance in this model. Inherited-account rules and still-working employer-plan deferrals require separate review.",
             joint
               ? "Uses IRS Publication 590-B Table II joint-life factors, with both spouses aging each year. Published table covers ages 20–120 and over; younger-spouse entries under age 20 are unsupported."
               : "Uses IRS Publication 590-B Table III (2025 accessible edition), effective for distribution years 2022 onward. Earlier years require historical tables and relief rules and are unsupported. Owner accounts only; employer-plan deferral and inherited-account exceptions are not modeled.",

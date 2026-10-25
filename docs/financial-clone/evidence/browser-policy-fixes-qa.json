@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "width": 390,
+      "niitIncomeAndExclusion": true,
+      "mfsStandardDeduction": true,
+      "amt2025And2026": true,
+      "qbiEligibilityAndYear": true,
+      "sharedPaycheck": true,
+      "pairedMarriageFields": true
+    },
+    {
+      "width": 390,
+      "vaPriorUse": true,
+      "vaBiweekly": true,
+      "vaIgnoresPmi": true,
+      "socialColaBasis": true,
+      "claimDateQuotes": true,
+      "rmdRothScope": true,
+      "catchupScope": true,
+      "layoutPreserved": true
+    },
+    {
+      "width": 1440,
+      "niitIncomeAndExclusion": true,
+      "mfsStandardDeduction": true,
+      "amt2025And2026": true,
+      "qbiEligibilityAndYear": true,
+      "sharedPaycheck": true,
+      "pairedMarriageFields": true
+    },
+    {
+      "width": 1440,
+      "vaPriorUse": true,
+      "vaBiweekly": true,
+      "vaIgnoresPmi": true,
+      "socialColaBasis": true,
+      "claimDateQuotes": true,
+      "rmdRothScope": true,
+      "catchupScope": true,
+      "layoutPreserved": true
+    }
+  ],
+  "noJavaScriptDefault": true,
+  "errors": [],
+  "unexpected": [],
+  "tested_at": "2026-10-25T15:00:06.044Z",
+  "ads": "Exact existing AdSense loader stubbed; no live-ad claim."
+}

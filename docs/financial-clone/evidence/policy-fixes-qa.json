@@ -1,0 +1,75 @@
+{
+  "reviewed_on": "2026-10-25",
+  "baseline_commit": "e62729da4ee1f80bcb7df2d88215e2883e0f1bfe",
+  "passed": true,
+  "samples": [
+    {
+      "id": "POL-01",
+      "actual": 3800,
+      "expected": 3800
+    },
+    {
+      "id": "POL-02",
+      "actual": 12312,
+      "expected": 12312
+    },
+    {
+      "id": "POL-03/2025",
+      "actual": 256707.00000000003,
+      "expected": 256707
+    },
+    {
+      "id": "POL-03/2026",
+      "actual": 222927.00000000003,
+      "expected": 222927
+    },
+    {
+      "id": "POL-04",
+      "actual": 400,
+      "expected": 400
+    },
+    {
+      "id": "POL-05",
+      "actual": 70,
+      "expected": 70
+    },
+    {
+      "id": "POL-06",
+      "actual": 8600,
+      "expected": 8600
+    }
+  ],
+  "tests": {
+    "total": 806,
+    "passed": 806,
+    "new": 35
+  },
+  "default_metrics": {
+    "total": 193,
+    "unchanged": 192,
+    "changed": [
+      {
+        "id": "social-security",
+        "mode": "ideal"
+      }
+    ]
+  },
+  "homepage": {
+    "tested_at": "2026-10-25T14:54:13.883Z",
+    "viewports": 14,
+    "all_fit": true
+  },
+  "seo": {
+    "canonicals": 146,
+    "curated_llms_links": 39,
+    "search_tasks": 195,
+    "long_tail_pages": 30,
+    "answers": 40,
+    "links": 65
+  },
+  "limitations": [
+    "Selected independent model rules; not a complete federal/state return, benefit-entitlement or loan-approval engine.",
+    "Social Security example depends on age62-dollar PIA and the entered constant future assumptions.",
+    "The existing publisher loader was stubbed in browser QA; no live-ad or performance outcome asserted."
+  ]
+}

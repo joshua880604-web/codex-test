@@ -5,14 +5,16 @@ export function calculatorScope(id: string, mode: string, values: Values): strin
   switch (id) {
     case "fha-loan":
       return "U.S. FHA payment planning. Automatic premiums use ordinary forward-loan rules; Manual accepts checked special or historical terms. Appraisal, underwriting and local loan eligibility still require verification.";
+    case "va-mortgage":
+      return "U.S. ordinary VA purchase-loan planning using the fee table effective April 7, 2023. Prior manufactured-home-only use keeps first-use rates; entitlement and exemption eligibility are entered assumptions. Other VA loan types require different fee rules.";
     case "401k":
       if (mode === "early") return "U.S. 401(k) early-withdrawal estimate using your entered tax rates and selected exceptions to the modeled 10% additional tax. This is not a complete income-tax return.";
-      return "U.S. 401(k) planning using fixed 2026 contribution and age-based catch-up rules. Future legal limit changes are not projected.";
+      return "U.S. 401(k) planning using fixed 2026 contribution and age-based catch-up rules. Limits combine traditional and Roth deferrals; applicable high-earner catch-up must be Roth. This projection does not split those tax treatments or project future legal limit changes.";
     case "ira":
     case "roth-ira":
       return "U.S. IRA planning using fixed 2026 contribution limits. Contribution eligibility and tax treatment depend on the stated assumptions.";
     case "rmd":
-      return "U.S. owner-account RMD rules for the selected distribution year and IRS life-expectancy table. Inherited-account rules are not modeled.";
+      return "U.S. RMD planning for traditional IRA and other eligible non-Roth owner accounts. Roth IRA owner balances, designated Roth plan balances for 2024 onward, inherited accounts and employer-plan deferrals are excluded.";
     case "income-tax":
       return `U.S. federal income tax for tax year ${values.year === "2025" ? "2025" : "2026"}. Select the tax year before comparing estimates.`;
     case "estate-tax":
@@ -22,6 +24,6 @@ export function calculatorScope(id: string, mode: string, values: Values): strin
     case "social-security":
       return mode === "compare"
         ? "U.S. Social Security planning. Enter your own monthly benefit estimates for both ages; changing the ages does not recalculate those quoted amounts."
-        : "U.S. Social Security retirement-benefit assumptions. Enter your benefit estimate; earnings records and benefit statements are not retrieved.";
+        : "U.S. Social Security retirement-benefit planning. Enter FRA PIA in age-62 dollars; assumed COLA applies while waiting and after claiming. Use a nominal discount rate. Earnings records and benefit statements are not retrieved.";
   }
 }
