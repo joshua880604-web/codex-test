@@ -10,6 +10,7 @@ import { defaults } from "@/lib/types";
 import { routeFor } from "@/lib/catalog";
 import { runClientCalculation } from "@/lib/calculate-client";
 import { workspaceLayout, workspaceMetrics } from "@/lib/workspace-layout";
+import { calculatorScope } from "@/lib/calculator-scope";
 import type { Calculator, Field, Result, Values } from "@/lib/types";
 import type { RetirementPlan, RetirementScenario } from "@/lib/retirement-story";
 const ScientificKeypad = dynamic(() => import("./ScientificKeypad"));
@@ -56,6 +57,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const tableColumns =
     yearly && result?.annualColumns ? result.annualColumns : result?.columns;
   const context = result ? resultContext(id,mode.id,values,result) : null;
+  const scope = calculatorScope(id, mode.id, values);
   const workspaceRef = useRef<HTMLDivElement>(null);
   const resultRef = useRef<HTMLDivElement>(null),
     request = useRef(0);
@@ -417,6 +419,8 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   return (
     <>
       <p className="intro">{calc.intro}</p>
+      {scope && <p className="result-note calculator-scope">{scope}</p>}
+      {id === "irr" && <p className="result-note dated-cash-flow-link">For cash flows on specific calendar dates, use the <a href={routeFor("average-return") + "?mode=cashflows"}>Average Return Calculator’s Dated Cash Flows mode</a>.</p>}
       {shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       {calc.modes.length > 1 && (
         <div className={"mode-tabs" + (compactModes ? " compact-mode-tabs" : "")} role="tablist" aria-label="Calculation mode">

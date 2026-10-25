@@ -5,6 +5,7 @@ import {
   sitemapEntries,
   calculatorMetadata,
   calculatorSchema,
+  contentUpdatedOn,
 } from "../src/lib/seo";
 import { guides } from "../src/lib/guides";
 import { calculators, defaults, runCalculation } from "../src/lib/calculators";
@@ -33,7 +34,7 @@ test("SEO defaults never invent a public origin or enable preview indexing", () 
   ])
     assert.throws(() => siteConfig({ SITE_URL: url }));
 });
-test("Production sitemap lists canonical pages only and no pretend lastmod dates", () => {
+test("Production sitemap lists canonical pages and only reviewed content dates", () => {
   const config = siteConfig({
     SITE_URL: "https://finance.example/",
     SITE_INDEXABLE: "true",
@@ -45,8 +46,8 @@ test("Production sitemap lists canonical pages only and no pretend lastmod dates
     entries.every(
       (e) =>
         e.url.startsWith("https://finance.example/") &&
-        !e.url.includes("?") &&
-        !("lastModified" in e),
+        !e.url.includes("?") && !e.url.includes("#") &&
+        e.lastModified === contentUpdatedOn[new URL(e.url).pathname],
     ),
   );
   assert.ok(
@@ -55,6 +56,9 @@ test("Production sitemap lists canonical pages only and no pretend lastmod dates
     ),
   );
   assert.equal(sitemapEntries(siteConfig({})).length, 0);
+  assert.equal(entries.filter(e=>e.lastModified).length,Object.keys(contentUpdatedOn).length);
+  assert.ok(Object.values(contentUpdatedOn).every(date=>date==='2026-10-25'));
+  assert.ok(!entries.some(e=>e.url.endsWith('/llms.txt')||e.url.endsWith('/sitemap.xml')));
 });
 test("Calculator canonicals consolidate shared query variants and schema matches the real app", () => {
   const calc = calculators.find((c) => c.id === "vat")!,

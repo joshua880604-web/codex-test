@@ -1,4 +1,5 @@
 import { tool, compoundField, timingField, freq, frequencies } from "./helpers";
+import { calendarDate } from "../calendar-date";
 import {
   num,
   select,
@@ -173,6 +174,7 @@ const savings = tool(
 const compound = tool(
   "compound-interest",
   [
+    growthMode("growth", "Compound Growth"),
     {
       id: "conversion",
       title: "Equivalent Interest Rate",
@@ -201,7 +203,6 @@ const compound = tool(
         };
       },
     },
-    growthMode("growth", "Compound Growth"),
   ],
   "Calculate compound growth with monthly deposits or convert equivalent compounding rates.",
 );
@@ -651,25 +652,24 @@ const average = tool(
           "cashflows",
           "Date and cash flow, one row per transaction",
           "2020-01-01, -10000\n2021-01-01, -2000\n2026-01-01, 18000",
-          "Use YYYY-MM-DD, amount. Include opening investment and final liquidation value.",
+          "Use a real YYYY-MM-DD calendar date, amount. Include opening investment and final liquidation value.",
         ),
       ],
       description:
         "Find the annual money-weighted return using exact transaction dates.",
       formula: "Σ CFᵢ/(1+r)^((dateᵢ−date₀)/365) = 0.",
       calculate: (v) => {
-        const rows = v.cashflows
-          .trim()
-          .split("\n")
-          .map((line) => {
-            const [d, a] = line.split(",").map((s) => s.trim());
-            if (
-              !d ||
-              !a ||
-              !Number.isFinite(Date.parse(d)) ||
-              !Number.isFinite(Number(a))
-            )
-              throw new Error("Each row needs a valid date and amount.");
+        const lines = v.cashflows.split(/\r?\n/).map((line, index) => ({ line, index }));
+        while (lines[0]?.line.trim() === "") lines.shift();
+        while (lines.at(-1)?.line.trim() === "") lines.pop();
+        if (!lines.length) throw new Error("Enter dated cash flows using YYYY-MM-DD, amount.");
+        const rows = lines
+          .map(({ line, index }) => {
+            const [d, a, ...extra] = line.split(",").map((s) => s.trim());
+            if (!d || !a || extra.length || !Number.isFinite(Number(a)))
+              throw new Error(`Row ${index + 1}: enter YYYY-MM-DD, amount.`);
+            try { calendarDate(d); }
+            catch { throw new Error(`Row ${index + 1}: enter a real YYYY-MM-DD calendar date.`); }
             return { date: d, amount: Number(a) };
           })
           .sort((a, b) => a.date.localeCompare(b.date));

@@ -19,7 +19,7 @@ export function sharedInputs(calc:Calculator,search:string,hash:string){
  if(raw.length>MAX_SHARE_LENGTH)throw new Error('This calculation link is too long. Enter the inputs directly.');
  const params=new URLSearchParams(raw);
  if(fragment&&params.get('share_version')!=='1')throw new Error('This calculation link uses an unsupported sharing version.');
- const requested=params.get('mode'),modeId=calc.id==='currency'&&requested==='live'?'snapshot':calc.id==='vat'&&requested&&['net','gross','tax','rate'].includes(requested)?'any-two':requested;
+ const requested=params.get('mode'),modeId=calc.id==='compound-interest'&&!requested&&(params.has('from')||params.has('to'))?'conversion':calc.id==='currency'&&requested==='live'?'snapshot':calc.id==='vat'&&requested&&['net','gross','tax','rate'].includes(requested)?'any-two':requested;
  const mode=modeId?calc.modes.find(m=>m.id===modeId):calc.modes[0];
  if(!mode)throw new Error('The calculation mode in this link is unavailable. Choose a mode and enter the inputs again.');
  const fields=mode.fields.filter(f=>f.key!=='verified_rate');

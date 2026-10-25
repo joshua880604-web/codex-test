@@ -41,9 +41,14 @@ const containsTerms=(label:string,query:string)=>{
  const words=searchName(label).split(' ');
  return query.split(' ').every(term=>words.some(word=>word.startsWith(term)));
 };
-const taskOverrides=[
+const taskOverrides: {names:string[];id:string;mode:string;values?:Record<string,string>}[]=[
  {names:['irr with dates','xirr'],id:'average-return',mode:'cashflows'},
  {names:['401k with catch up contributions','401k catch up contributions'],id:'401k',mode:'projection'},
+ {names:['debt payoff snowball','debt payoff with snowball','snowball debt payoff'],id:'debt-payoff',mode:'snowball'},
+ {names:['social security age 66 vs 70','social security 66 vs 70'],id:'social-security',mode:'compare',values:{age1:'66',age2:'70'}},
+ {names:['social security age 62 vs 67','social security 62 vs 67'],id:'social-security',mode:'compare',values:{age1:'62',age2:'67'}},
+ {names:['currency euro to usd','euro to usd','eur to usd'],id:'currency',mode:'snapshot',values:{from:'EUR',to:'USD'}},
+ {names:['2025 tax','2025 income tax','2025 federal income tax'],id:'income-tax',mode:'federal',values:{year:'2025'}},
 ];
 function taskMatch(c:Tool,query:string,exactOnly=false){
  const matches=(searchTasks[c.id]??[]).flatMap(task=>[task.keyword,...task.aliases??[]].map(label=>({task,exact:sameWords(searchName(label),query),matches:containsTerms(label,query)}))).filter(x=>x.exact||(!exactOnly&&x.matches)).sort((a,b)=>Number(b.exact)-Number(a.exact));

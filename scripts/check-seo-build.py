@@ -1,7 +1,8 @@
 """Validate generated HTML without relying on client-side rendering."""
 from pathlib import Path
 from html.parser import HTMLParser
-import json,sys
+import json,sys,re
+import xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[1]
 origin=sys.argv[1] if len(sys.argv)>1 else None
 class Page(HTMLParser):
@@ -55,8 +56,23 @@ for route in paths:
 sitemap=(root/'out/sitemap.xml').read_text()
 robots=(root/'out/robots.txt').read_text()
 assert 'User-Agent: *' in robots and 'Allow: /' in robots
-if origin:assert sitemap.count('<loc>')==len(checks) and origin+'/sitemap.xml' in robots
-else:assert '<loc>' not in sitemap and 'Sitemap:' not in robots
+namespace={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+locations=[node.text for node in ET.fromstring(sitemap).findall('s:url/s:loc',namespace)]
+if origin:
+ assert len(locations)==len(set(locations))==len(checks)
+ assert set(locations)=={origin+route for route in paths}
+ assert all('?' not in url and '#' not in url for url in locations)
+ assert origin+'/sitemap.xml' in robots
+else:assert not locations and 'Sitemap:' not in robots
+llms=(root/'out/llms.txt').read_text()
+assert llms==(root/'public/llms.txt').read_text()
+llms_links=re.findall(r'^- \[[^]]+\]\(([^)]+)\)',llms,re.M)
+assert llms.startswith('# CalculatorFree.io\n') and len(llms_links)==len(set(llms_links))
+# The curated guide uses the established public origin even for noindex previews.
+canonical_origin='https://calculatorfree.io'
+assert all(url.startswith(canonical_origin+'/') and '?' not in url and '#' not in url for url in llms_links)
+assert set(llms_links)<={canonical_origin+route for route in paths}|{canonical_origin+'/sitemap.xml'}
+assert llms.index('## Business finance')<llms.index('## Supporting general-purpose calculators')
 report={'passed':True,'configuration':'indexable-test-origin' if origin else 'default-noindex-preview','test_origin':origin,'pages':len(checks),'checks':checks,'no_live_indexing_or_ranking_claim':True}
 out=root/'docs/financial-clone/evidence'/('seo-production-build.json' if origin else 'seo-preview-build.json')
 out.write_text(json.dumps(report,indent=2)+'\n')

@@ -548,7 +548,8 @@ guides.irr.sources.push({title:"Dated cash-flow return calculator",url:"/average
 
 const compoundMonthlyRate = 0.05/12;
 const compoundMonthFactor = (1+compoundMonthlyRate)**12;
-guides["compound-interest"].examples.push({
+guides["compound-interest"].checkedOn = "2026-10-25";
+guides["compound-interest"].examples.unshift({
   title:"Compound growth with monthly contributions", mode:"growth",
   values:{principal:1000,years:1,months:0,rate:5,compound:"Monthly",annual:0,monthly:100,timing:"End of period",tax:0,inflation:0},
   inputs:"Start with 1,000 USD; deposit 100 at each month end for one year; 5% nominal annual rate compounded monthly; no tax or inflation adjustment.",

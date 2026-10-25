@@ -19,7 +19,7 @@ const titles: Record<string, string> = {
   "401k": "401(k) Calculator - Contributions & Employer Match",
   "income-tax": "Income Tax Calculator - 2025 & 2026 Federal Estimate",
   "compound-interest":
-    "Compound Interest Calculator - Equivalent Rate Converter",
+    "Compound Interest Calculator - Growth & Contributions",
   interest: "Interest Calculator - Savings Growth & Contributions",
 };
 export function pageMetadata(
@@ -53,6 +53,20 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
     config,
   );
 }
+// Dates record reviewed content changes, never the current build time.
+export const contentUpdatedOn: Record<string, string> = {
+  "/compound-interest-calculator.html": "2026-10-25",
+  "/average-return-calculator.html": "2026-10-25",
+  "/irr-calculator.html": "2026-10-25",
+  "/401k-calculator.html": "2026-10-25",
+  "/ira-calculator.html": "2026-10-25",
+  "/roth-ira-calculator.html": "2026-10-25",
+  "/rmd-calculator.html": "2026-10-25",
+  "/tax-calculator.html": "2026-10-25",
+  "/estate-tax-calculator.html": "2026-10-25",
+  "/take-home-pay-calculator.html": "2026-10-25",
+  "/social-security-calculator.html": "2026-10-25",
+};
 export function sitemapEntries(config: SiteConfig = siteConfig()) {
   if (!config.origin || !config.indexable) return [];
   return [
@@ -63,7 +77,7 @@ export function sitemapEntries(config: SiteConfig = siteConfig()) {
     "/methodology.html",
     glossaryPath,
     ...glossaryTerms.map(term=>glossaryTermPath(term.slug)),
-  ].map((path) => ({ url: absoluteURL(path, config)! }));
+  ].map((path) => ({ url: absoluteURL(path, config)!, ...(contentUpdatedOn[path] ? { lastModified: contentUpdatedOn[path] } : {}) }));
 }
 export function calculatorSchema(calc: Calculator, config = siteConfig()) {
   const path = catalog.find((c) => c.id === calc.id)!.local_route,
