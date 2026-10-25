@@ -7,6 +7,7 @@ let answers = 0, links = 0;
 for (const [id, content] of Object.entries(longTailContent)) {
   const html = fs.readFileSync('out' + routeFor(id), 'utf8');
   for (const item of content.items) {
+    if (item.replacesQuestion) assert.ok(!html.includes('<h3>' + escape(item.replacesQuestion) + '</h3>'), id + ' overlapping question merged');
     assert.equal(html.split('id="' + item.anchor + '"').length - 1, 1, id + '/' + item.anchor);
     assert.ok(html.includes('<h3>' + escape(item.question) + '</h3>'), id + ' static question');
     assert.ok(html.includes('<p>' + escape(item.answer) + '</p>'), id + ' static answer');

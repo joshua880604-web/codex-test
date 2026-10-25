@@ -186,7 +186,8 @@
             "mode": "remaining-normal",
             "label": "Start from a current mortgage balance"
           }
-        ]
+        ],
+        "replacesQuestion": "Should I enter my original mortgage or remaining balance?"
       },
       {
         "anchor": "use-lump-biweekly",
@@ -261,7 +262,8 @@
             "mode": "monthly",
             "label": "Review a housing-cost budget"
           }
-        ]
+        ],
+        "replacesQuestion": "How do financed refinance costs affect the loan?"
       }
     ]
   },
@@ -283,7 +285,8 @@
             "mode": "draw-repay",
             "label": "Compare modeled HELOC payment phases"
           }
-        ]
+        ],
+        "replacesQuestion": "Why can my HELOC payment rise after the draw period?"
       },
       {
         "anchor": "use-borrowing-capacity",
@@ -298,7 +301,8 @@
             "mode": "maximum-credit",
             "label": "Estimate equity-based credit capacity"
           }
-        ]
+        ],
+        "replacesQuestion": "How much home equity can I borrow against?"
       }
     ]
   },
@@ -325,7 +329,8 @@
             "mode": "maximum-credit",
             "label": "Estimate equity-based borrowing capacity"
           }
-        ]
+        ],
+        "replacesQuestion": "How is a home equity loan different from a HELOC?"
       }
     ]
   },
@@ -353,7 +358,8 @@
             "mode": "accumulation",
             "label": "Calculate CD maturity"
           }
-        ]
+        ],
+        "replacesQuestion": "Should I enter a CD's nominal rate or APY?"
       }
     ]
   },
@@ -455,7 +461,8 @@
             "mode": "growth",
             "label": "Use annual-rate growth inputs"
           }
-        ]
+        ],
+        "replacesQuestion": "How do I calculate future value with regular deposits?"
       },
       {
         "anchor": "use-inflation",
@@ -632,7 +639,8 @@
             "mode": "fixed",
             "label": "Use a repeating annual cash flow"
           }
-        ]
+        ],
+        "replacesQuestion": "How is discounted payback different from simple payback?"
       }
     ]
   },
@@ -694,7 +702,8 @@
             "mode": "value",
             "label": "Project inflation-adjusted value"
           }
-        ]
+        ],
+        "replacesQuestion": "Why not simply subtract inflation from return?"
       }
     ]
   },
@@ -792,7 +801,8 @@
             "mode": "plan",
             "label": "Estimate a savings plan"
           }
-        ]
+        ],
+        "replacesQuestion": "How much should I have in an emergency fund?"
       }
     ]
   },
@@ -878,7 +888,8 @@
             "mode": "payment",
             "label": "Calculate a vehicle payment"
           }
-        ]
+        ],
+        "replacesQuestion": "How does negative trade-in equity affect my car loan?"
       },
       {
         "anchor": "use-extra-payments",
@@ -921,7 +932,8 @@
             "mode": "price",
             "label": "Solve for a home-price budget"
           }
-        ]
+        ],
+        "replacesQuestion": "Are closing costs part of the down payment?"
       }
     ]
   },

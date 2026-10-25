@@ -661,8 +661,14 @@ relatedCalculatorIds.inflation = [...new Set([...(relatedCalculatorIds.inflation
 relatedCalculatorIds.margin = [...new Set([...(relatedCalculatorIds.margin??[]),"markup","break-even"])];
 relatedCalculatorIds["mutual-fund"] = [...new Set([...(relatedCalculatorIds["mutual-fund"]??[]),"investment-fee"])];
 
-// Reviewed use-case answers extend existing canonical pages, not keyword pages.
+// Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {
-  guides[id].questions.push(...content.items.map(({queries: _queries, ...item}) => item));
+  for (const {queries: _queries, replacesQuestion, ...item} of content.items) {
+    if (replacesQuestion) {
+      const index = guides[id].questions.findIndex(question => question.question === replacesQuestion);
+      if (index < 0) throw new Error(`Missing guide question to replace: ${id} / ${replacesQuestion}`);
+      guides[id].questions[index] = item;
+    } else guides[id].questions.push(item);
+  }
   guides[id].checkedOn = content.updatedOn;
 }

@@ -14,6 +14,7 @@ test('Contextual guide links open real calculation modes with valid declared pre
     const questions = guides[id].questions.map(item => item.question);
     assert.equal(new Set(questions).size, questions.length, id + ' unique questions');
     for (const item of content.items) {
+      if (item.replacesQuestion) assert.ok(!questions.includes(item.replacesQuestion), id + ' overlapping question merged');
       assert.match(item.anchor, /^use-[a-z0-9-]+$/);
       assert.ok(!anchors.has(item.anchor), id + ' unique anchor');
       anchors.add(item.anchor);
