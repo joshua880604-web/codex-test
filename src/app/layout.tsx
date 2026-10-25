@@ -17,6 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="describedby" href="/llms.txt" />
         <script
           async
           fetchPriority="low"

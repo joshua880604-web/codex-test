@@ -1,0 +1,59 @@
+# CalculatorFree.io
+
+> Free financial calculators for loans, mortgages, savings, investments, retirement, taxes, and business finance, complemented by selected general-purpose calculators.
+
+Financial calculators are the site's primary focus. The links below are a curated starting point; the calculator directory provides the complete tool selection. Pages include formulas, worked examples, assumptions, and applicable source notes.
+
+Interactive calculations run in the browser and require JavaScript. Default inputs and results are illustrations; estimates depend on the entered values, selected mode, timing, and rounding conventions. Future return and inflation presets are editable assumptions. Tax and retirement rules apply to the jurisdictions and years stated on each page. Currency conversion uses a dated bundled reference snapshot or a manually entered rate. Consult the methodology and each tool's scope before interpreting a result.
+
+## Start here
+
+- [Financial calculator directory](https://calculatorfree.io/financial-calculator.html): Browse the site's financial tools and supporting general-purpose calculators.
+- [Calculation methodology and sources](https://calculatorfree.io/methodology.html): Validation approach, illustrative defaults, data versions, timing, rounding, and model limitations.
+- [Financial glossary](https://calculatorfree.io/glossary/): Plain-English financial definitions with formulas, examples, sources, and links to relevant calculators.
+
+## Loans and mortgages
+
+- [Mortgage Calculator](https://calculatorfree.io/mortgage-calculator.html): Estimate payments and ownership costs, model extra principal payments, and compare biweekly payments.
+- [Loan Calculator](https://calculatorfree.io/loan-calculator.html): Calculate fixed-rate amortized payments, deferred single repayments, or zero-coupon bond present values.
+- [Mortgage Payoff Calculator](https://calculatorfree.io/mortgage-payoff-calculator.html): Compare repayment strategies using the current balance or original loan details, including extra payments and biweekly payments.
+
+## Savings and investments
+
+- [Compound Interest Calculator](https://calculatorfree.io/compound-interest-calculator.html): Project compound growth with contributions or convert equivalent compounding rates.
+- [Savings Calculator](https://calculatorfree.io/savings-calculator.html): Project savings growth, solve the monthly deposit needed for a goal, or estimate time to reach a target.
+- [ROI Calculator](https://calculatorfree.io/roi-calculator.html): Calculate total and annualized investment returns using an investment length or two dates.
+- [IRR Calculator](https://calculatorfree.io/irr-calculator.html): Estimate IRR from equally spaced fixed cash flows or unequal amounts at successive year ends.
+- [CD Calculator](https://calculatorfree.io/cd-calculator.html): Estimate certificate of deposit maturity value and after-tax interest under entered assumptions.
+- [CAGR Calculator](https://calculatorfree.io/cagr-calculator.html): Annualize growth between beginning and ending values, or solve for an implied beginning or ending value, without intermediate cash flows.
+
+## Retirement planning
+
+- [401(k) Calculator](https://calculatorfree.io/401k-calculator.html): Project contributions and employer matching, compare early withdrawal costs, or explore a contribution rate for matching bands.
+- [Retirement Calculator](https://calculatorfree.io/retirement-calculator.html): Estimate required savings, periodic saving, monthly withdrawals, or savings longevity under stated assumptions.
+- [Roth IRA Calculator](https://calculatorfree.io/roth-ira-calculator.html): Compare qualified Roth IRA growth with equivalent after-tax saving in a taxable account.
+- [RMD Calculator](https://calculatorfree.io/rmd-calculator.html): Estimate owner-account required minimum distributions using the supported IRS life expectancy factors and stated account scope.
+
+## Tax, income and business finance
+
+- [Income Tax Calculator](https://calculatorfree.io/tax-calculator.html): Estimate selected 2025 or 2026 U.S. federal income tax and withholding balance using explicit tax-year assumptions.
+- [Salary Calculator](https://calculatorfree.io/salary-calculator.html): Convert pay frequencies and compare unadjusted pay with holiday- and vacation-adjusted pay.
+- [Margin Calculator](https://calculatorfree.io/margin-calculator.html): Solve profit, revenue, cost, margin, or markup; separate modes estimate stock and foreign-exchange margin requirements.
+- [Markup Calculator](https://calculatorfree.io/markup-calculator.html): Calculate selling price or cost and convert between markup on cost and margin on revenue.
+
+## Financial reference
+
+- [Compound interest](https://calculatorfree.io/glossary/compound-interest/): How interest accumulates on principal and previous interest, with a worked example.
+- [Annual percentage rate (APR)](https://calculatorfree.io/glossary/apr/): Meaning, conventions, and limitations when comparing borrowing costs.
+- [Annual percentage yield (APY)](https://calculatorfree.io/glossary/apy/): Effective annual yield and its relationship to compounding assumptions.
+- [Inflation](https://calculatorfree.io/glossary/inflation/): Price-level changes, purchasing power, and the distinction between historical data and future assumptions.
+
+## Supporting general-purpose calculators
+
+- [Percentage Calculator](https://calculatorfree.io/percentage-calculator.html): Calculate a percentage of a number, percentage change, or one number as a percentage of another.
+- [Scientific Calculator](https://calculatorfree.io/scientific-calculator.html): Evaluate real-number arithmetic, powers, roots, trigonometric functions, logarithms, and factorials.
+
+## Optional
+
+- [About CalculatorFree.io](https://calculatorfree.io/about.html): The site's independent planning tools and links to its methodology.
+- [Privacy](https://calculatorfree.io/privacy.html): How calculator inputs, share links, advertising, and reference-rate data are handled.
