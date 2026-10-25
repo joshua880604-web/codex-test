@@ -1451,3 +1451,20 @@ footer p {
 .workspace-key-figures strong {white-space:normal;overflow-wrap:anywhere;}
 .calculator-workspace .unit-long {flex-wrap:wrap;}
 .calculator-workspace .unit-long .unit {width:100%;white-space:normal;padding:0 10px 8px;}
+
+/* Calculator name suggestions stay attached to the search field. */
+.calculator-directory .directory-search {grid-template-columns:minmax(0,1fr);}
+.directory-search-control {position:relative;flex-wrap:nowrap;align-items:stretch;}
+.directory-search-field {position:relative;flex:1;min-width:0;}
+.calculator-directory .directory-search-field input {display:block;padding-right:44px;}
+.directory-search-field input::-webkit-search-cancel-button {display:none;}
+.directory-search-clear {position:absolute;right:1px;top:1px;width:44px;height:calc(100% - 2px);padding:0;border:0;background:transparent;color:#465660;font-size:24px;cursor:pointer;}
+.directory-search-clear:focus-visible {outline:2px solid #23776d;outline-offset:-4px;}
+.directory-suggestions {position:absolute;top:calc(100% + 2px);left:0;right:0;z-index:20;max-height:min(360px,50dvh);overflow-y:auto;overscroll-behavior:contain;border:1px solid #aabdc9;border-radius:4px;background:white;box-shadow:0 5px 14px #15354d26;}
+.directory-suggestions ul {list-style:none;margin:0;padding:4px 0;}
+.directory-suggestions li {margin:0;padding:0;}
+.directory-suggestions a {display:block;padding:11px 14px;min-height:44px;line-height:22px;color:#155a85;text-decoration:none;}
+.directory-suggestions a:hover,.directory-suggestions a[aria-selected="true"] {background:#e8f0f5;text-decoration:underline;}
+.directory-suggestions p {margin:0;padding:14px;font-size:14px;line-height:1.5;}
+.directory-search-more {display:block;width:100%;min-height:44px;padding:10px 14px;border:0;border-top:1px solid #d3dde4;background:#f3f6f8;color:#155a85;text-align:left;font-size:14px;cursor:pointer;}
+.directory-search-more:focus-visible {outline:2px solid #23776d;outline-offset:-3px;}

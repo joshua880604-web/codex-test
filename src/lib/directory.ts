@@ -11,18 +11,15 @@ export const directoryGroups=[
 ];
 const otherGroups:Record<string,string>={markup:'everyday','break-even':'everyday',currency:'everyday',budget:'everyday',depreciation:'everyday',margin:'everyday',discount:'everyday',commission:'tax-salary','sales-tax':'tax-salary',vat:'tax-salary',inflation:'saving-investing','college-cost':'saving-investing'};
 export function directoryGroup(id:string,category:string){return otherGroups[id]??directoryGroups.find(g=>g.categories.includes(category))?.id??'loans-debt';}
-const aliases:Record<string,string>={
- 'auto-loan':'car payment car loan vehicle finance',
- 'auto-lease':'car lease vehicle lease',
- 'take-home-paycheck':'paycheck take home pay gross to net pay',
- 'income-tax':'federal tax taxes',
- '401k':'401(k) 401 k employer match',
- 'rmd':'required minimum distribution',
- 'roi':'return on investment',
- 'irr':'internal rate of return',
- 'heloc':'home equity line of credit',
- 'margin':'profit margin',
- 'date':'days between dates',
+const toolAliases:Record<string,string[]>={
+ 'auto-loan':['car payment','car loan','vehicle finance'],
+ 'auto-lease':['car lease','vehicle lease'],
+ 'take-home-paycheck':['paycheck','take home pay','gross to net pay'],
+ 'income-tax':['federal tax','federal income tax'],
+ '401k':['401(k)','401 k','employer match'],
+ rmd:['required minimum distribution'],roi:['return on investment'],irr:['internal rate of return'],
+ heloc:['home equity line of credit'],margin:['profit margin'],date:['days between dates'],
+ finance:['financial calculator','time value of money','tvm'],
 };
 export const directoryDescriptions:Record<string,string>={
  'interest-rate':'Find the rate needed to reach a target.',
@@ -31,38 +28,55 @@ export const directoryDescriptions:Record<string,string>={
  'margin':'Profit as a share of the selling price.',
  'payment':'Solve for a loan payment or amount.',
 };
-export function directoryMatch(c:typeof calculators[number],query:string){
- const terms=query.toLowerCase().trim().split(/\s+/).filter(Boolean);
- const haystack=(c.title+' '+(aliases[c.id]??'')+' '+(searchTasks[c.id]??[]).map(t=>t.keyword+' '+(t.aliases??[]).join(' ')+' '+t.description).join(' ')).toLowerCase();
- return terms.every(term=>haystack.includes(term));
-}
 export function directorySort(tools:typeof calculators,popular:string[]){
  const rank=(id:string)=>{const i=popular.indexOf(id);return i<0?popular.length:i;};
  return [...tools].sort((a,b)=>rank(a.id)-rank(b.id)||a.title.localeCompare(b.title,'en'));
 }
 
-const exactAliases:Record<string,string[]>={
- 'auto-loan':['car payment','car loan','vehicle finance'],
- 'auto-lease':['car lease','vehicle lease'],
- 'take-home-paycheck':['paycheck','take home pay','gross to net pay'],
- 'income-tax':['federal tax','federal income tax'],
- '401k':['401(k)','401 k','401k employer match'],
- rmd:['required minimum distribution'],roi:['return on investment'],irr:['internal rate of return'],
- heloc:['home equity line of credit'],margin:['profit margin'],date:['days between dates'],
+type Tool=typeof calculators[number];
+export type DirectoryResult={tool:Tool;href:string;score:number};
+const searchName=(s:string)=>s.toLowerCase().replace(/\b401[\s(-]*k\)?/g,'401k').replace(/\b(?:calculators?|free|online)\b/g,'').replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');
+const sameWords=(a:string,b:string)=>a.split(' ').sort().join(' ')===b.split(' ').sort().join(' ');
+const containsTerms=(label:string,query:string)=>{
+ const words=searchName(label).split(' ');
+ return query.split(' ').every(term=>words.some(word=>word.startsWith(term)));
 };
-const searchName=(s:string)=>s.toLowerCase().replace(/\bcalculators?\b/g,'').replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');
+const taskOverrides=[
+ {names:['irr with dates','xirr'],id:'average-return',mode:'cashflows'},
+ {names:['401k with catch up contributions','401k catch up contributions'],id:'401k',mode:'projection'},
+];
+function taskMatch(c:Tool,query:string,exactOnly=false){
+ const matches=(searchTasks[c.id]??[]).flatMap(task=>[task.keyword,...task.aliases??[]].map(label=>({task,exact:sameWords(searchName(label),query),matches:containsTerms(label,query)}))).filter(x=>x.exact||(!exactOnly&&x.matches)).sort((a,b)=>Number(b.exact)-Number(a.exact));
+ if(!matches.length)return undefined;
+ const best=matches.filter(x=>x.exact===matches[0].exact);
+ return new Set(best.map(x=>JSON.stringify([x.task.mode,x.task.values]))).size===1?best[0].task:undefined;
+}
+function taskHref(c:Tool,task?:{mode:string;values?:Record<string,string>}){
+ return task?c.local_route+'?'+new URLSearchParams({mode:task.mode,...task.values}):c.local_route;
+}
+// Names and direct tool aliases take precedence over use-case text. In particular,
+// a short name such as "401" must not also surface every tool mentioning 401(k).
+export function directorySearch(tools:typeof calculators,query:string):DirectoryResult[]{
+ const name=searchName(query);
+ if(!name)return query.trim()&&!/^(?:free|online|calculators?|\s)+$/i.test(query)?[]:tools.map(tool=>({tool,href:tool.local_route,score:9}));
+ const override=taskOverrides.find(x=>x.names.some(label=>sameWords(searchName(label),name)));
+ if(override){const tool=tools.find(c=>c.id===override.id);return tool?[{tool,href:taskHref(tool,override),score:0}]:[];}
+ const primary=tools.flatMap(tool=>{
+  const title=searchName(tool.title),aliases=toolAliases[tool.id]??[];
+  const score=title===name?0:aliases.some(a=>searchName(a)===name)?1:containsTerms(tool.title,name)?2:aliases.some(a=>containsTerms(a,name))?3:undefined;
+  return score===undefined?[]:[{tool,score,href:taskHref(tool,title===name?undefined:taskMatch(tool,name,true))}];
+ });
+ const results=primary.length?primary:tools.flatMap(tool=>{
+  const labels=(searchTasks[tool.id]??[]).flatMap(t=>[t.keyword,...t.aliases??[]]);
+  if(!labels.some(label=>containsTerms(label,name)))return [];
+  return [{tool,href:taskHref(tool,taskMatch(tool,name)),score:labels.some(label=>sameWords(searchName(label),name))?4:5}];
+ });
+ return results.sort((a,b)=>a.score-b.score||Number(a.tool.category==='Everyday Tools')-Number(b.tool.category==='Everyday Tools')||a.tool.title.localeCompare(b.tool.title,'en'));
+}
+export function directoryMatch(c:Tool,query:string){return !query.trim()||directorySearch(calculators,query).some(x=>x.tool.id===c.id);}
 export function directoryTarget(tools:typeof calculators,query:string){
- const name=searchName(query);if(!name)return undefined;
- const titles=tools.filter(c=>searchName(c.title)===name);if(titles.length===1)return titles[0];if(titles.length>1)return undefined;
- const exact=tools.filter(c=>[...(exactAliases[c.id]??[]),...(searchTasks[c.id]??[]).flatMap(t=>[t.keyword,...t.aliases??[]])].some(alias=>searchName(alias)===name));
- if(exact.length===1)return exact[0];
- return exact.length===0&&tools.length===1?tools[0]:undefined;
+ if(!searchName(query))return undefined;
+ const results=directorySearch(tools,query),exact=results.filter(x=>x.score<=1);
+ return exact.length===1?exact[0].tool:exact.length===0&&results.length===1?results[0].tool:undefined;
 }
-
-export function directoryScore(c:typeof calculators[number],query:string){
- const terms=query.toLowerCase().trim().split(/\s+/).filter(Boolean);
- if(searchName(c.title)===searchName(query))return 0;
- if(terms.every(term=>c.title.toLowerCase().includes(term)))return 1;
- const labels=[...(exactAliases[c.id]??[]),...(searchTasks[c.id]??[]).flatMap(t=>[t.keyword,...t.aliases??[]])].join(' ').toLowerCase();
- return terms.every(term=>labels.includes(term))?2:3;
-}
+export function directoryScore(c:Tool,query:string){return directorySearch(calculators,query).find(x=>x.tool.id===c.id)?.score??99;}
