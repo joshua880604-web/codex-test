@@ -95,10 +95,10 @@ const costs = () => [
     "Dollars",
     "Percent of home value",
   ]),
-  num("pmi", "Annual mortgage insurance", 0),
-  select("pmi_unit", "Mortgage insurance unit", ["Dollars", "Percent of loan"]),
-  num("pmi_years", "Mortgage insurance duration", 11, "years"),
-  {...select("pmi_policy", "Mortgage insurance cancellation", [
+  {...num("pmi", "Annual PMI", 0), hint: "Private mortgage insurance, separate from homeowners insurance. Enter an annual amount or rate."},
+  select("pmi_unit", "PMI unit", ["Dollars", "Percent of loan"]),
+  num("pmi_years", "PMI duration", 11, "years"),
+  {...select("pmi_policy", "PMI cancellation", [
     "Fixed duration",
     "Cancel at 80% original LTV",
   ]), hint: "The 80% option assumes a requested cancellation is approved. It does not model the separate 78% original-schedule automatic termination rule or all lender eligibility conditions."},
