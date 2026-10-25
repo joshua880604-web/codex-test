@@ -20,9 +20,9 @@ try{
   await page.setViewportSize({width,height:1000});await page.goto(base+'/cd-calculator.html');await page.locator('.result h2').waitFor();await amounts();
   const rects=await page.evaluate(()=>{const r=selector=>document.querySelector(selector).getBoundingClientRect().toJSON();return {main:r('main'),input:r('.calculator-form'),result:r('.result'),sidebar:r('.sidebar')};});
   assert.equal(await page.locator('.workspace-breakdown').count(),0);
-  if(width>=1024){assert.equal(Math.round(rects.sidebar.width),320);assert.ok(rects.sidebar.x>=rects.main.x+rects.main.width+27);}
+  if(width>=1024){assert.equal(Math.round(rects.sidebar.width),320);assert.ok(rects.sidebar.x>=rects.main.x+rects.main.width+23);}
   else assert.ok(rects.sidebar.y>rects.main.y+rects.main.height);
-  if(width>=1200){assert.ok(rects.result.width>=420&&rects.result.width<=458);assert.ok(rects.result.x>rects.input.x+rects.input.width);assert.ok(rects.result.height<650);}
+  if(width>=1120){assert.ok(rects.result.width>=385&&rects.result.width<=395);assert.ok(rects.result.x>rects.input.x+rects.input.width);assert.ok(rects.result.height<650);}
   else assert.ok(rects.result.y>=rects.input.y+rects.input.height);
   const chart=page.locator('.workspace-chart'),summary=chart.locator('summary');assert.equal(await chart.getAttribute('open'),null);assert.equal(await chart.locator('svg').isVisible(),false);
   await summary.focus();await summary.press('Enter');await chart.locator('svg').waitFor();assert.match(await chart.locator('svg desc').textContent(),/11,614.72/);assert.ok(!/NaN|Infinity/.test(await chart.locator('svg').innerHTML()));
@@ -42,7 +42,7 @@ try{
   ['principal=1000&rate=10&compound=Annually&years=2&months=0&tax=100',{'After-tax balance':'$1,000.00','Interest earned':'$210.00','Maturity balance':'$1,210.00','Tax on interest':'$210.00'},true],
   ['principal=1000&rate=5&years=0&months=0&tax=22',{'After-tax balance':'$1,000.00','Interest earned':'$0.00','Maturity balance':'$1,000.00','Tax on interest':'$0.00'},false],
  ]){
-  await page.goto(base+'/cd-calculator.html?mode=accumulation&'+query);await page.waitForFunction(()=>document.querySelector('.metric.primary strong')?.textContent?.trim()!== '$11,259.48');await amounts(expected);assert.equal(await page.locator('.workspace-chart').count(),Number(hasChart));await overflow();checks.push({query,amounts:true,zeroTermHasNoEmptyChart:!hasChart});
+  await page.goto(base+'/cd-calculator.html?mode=accumulation&'+query);await page.waitForFunction(value=>document.querySelector('.metric.primary strong')?.textContent?.trim()===value,expected['After-tax balance']);await amounts(expected);assert.equal(await page.locator('.workspace-chart').count(),Number(hasChart));await overflow();checks.push({query,amounts:true,zeroTermHasNoEmptyChart:!hasChart});
  }
  await page.goto(base+'/cd-calculator.html');await page.locator('.result h2').waitFor();await page.locator('#cd-accumulation-principal').fill('');assert.equal(await page.locator('.result').count(),0);await page.getByRole('button',{name:'Calculate',exact:true}).click();assert.equal(await page.locator('.result').count(),0);await page.getByRole('button',{name:'Reset',exact:true}).click();await page.getByRole('button',{name:'Calculate',exact:true}).click();await page.locator('.result h2').waitFor();await amounts();checks.push('Edits/invalid fields clear stale results; reset recalculates original values');
  await page.setViewportSize({width:1440,height:1000});

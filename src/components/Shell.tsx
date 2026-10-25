@@ -1,5 +1,6 @@
 import {siteName} from "@/lib/site";
 import MobileNavigation from "./MobileNavigation";
+import CalculatorSearch from "./CalculatorSearch";
 import { calculators, routeFor } from "@/lib/calculators";
 export function Header() {
   return (
@@ -60,6 +61,7 @@ export function Sidebar() {
   ];
   return (
     <aside className="sidebar">
+      <CalculatorSearch id="sidebar-search" compact/>
       <div className="side-heading">
         <a href="/financial-calculator.html">Financial Calculators</a>
       </div>

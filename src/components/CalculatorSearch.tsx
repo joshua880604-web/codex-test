@@ -1,0 +1,57 @@
+"use client";
+import {useEffect,useRef,useState,type FormEvent,type KeyboardEvent} from "react";
+import {calculators} from "@/lib/catalog";
+import {directorySearch,directoryTarget} from "@/lib/directory";
+
+export default function CalculatorSearch({id,tools=calculators,compact=false}:{id:string;tools?:typeof calculators;compact?:boolean}) {
+  const [query,setQuery]=useState("");
+  const [open,setOpen]=useState(false),[active,setActive]=useState(-1),[expanded,setExpanded]=useState(false);
+  const form=useRef<HTMLFormElement>(null),input=useRef<HTMLInputElement>(null);
+  const search=query.trim(),results=directorySearch(tools,search);
+  const visible=expanded?results:results.slice(0,8),showing=open&&!!search;
+  const listId=id+'-suggestions',optionId=(i:number)=>id+'-option-'+i;
+  useEffect(()=>{
+    function outside(e:PointerEvent){if(!form.current?.contains(e.target as Node))setOpen(false);}
+    document.addEventListener('pointerdown',outside);
+    return ()=>document.removeEventListener('pointerdown',outside);
+  },[]);
+  useEffect(()=>{
+    if(showing&&active>=0)document.getElementById(id+'-option-'+active)?.scrollIntoView({block:'nearest'});
+  },[active,showing,id]);
+  function submit(e:FormEvent){
+    e.preventDefault();
+    if(!search){input.current?.focus();return;}
+    const selected=showing&&active>=0?visible[active]:undefined;
+    const targetId=directoryTarget(tools,search)?.id;
+    const target=selected??results.find(r=>r.tool.id===targetId);
+    if(target){window.location.assign(target.href);return;}
+    setOpen(true);setExpanded(true);input.current?.focus();
+  }
+  function keys(e:KeyboardEvent<HTMLInputElement>){
+    if(e.nativeEvent.isComposing)return;
+    if(e.key==='Escape'){e.preventDefault();setOpen(false);setActive(-1);return;}
+    if(e.key==='Tab'){setOpen(false);setActive(-1);return;}
+    if((e.key==='ArrowDown'||e.key==='ArrowUp')&&search&&visible.length){
+      e.preventDefault();setOpen(true);
+      setActive(i=>e.key==='ArrowDown'?(i+1)%visible.length:(i<0?visible.length-1:(i-1+visible.length)%visible.length));
+    }
+  }
+  return <form ref={form} className={'directory-search'+(compact?' sidebar-search':'')} role="search" aria-label="Calculator search" onSubmit={submit} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget))setOpen(false);}}>
+    <label htmlFor={id}>Find a calculator</label>
+    <div className="directory-search-control">
+      <div className="directory-search-field">
+        <input ref={input} id={id} type="search" autoComplete="off" maxLength={160} placeholder={compact?'Search calculators':'Try car payment, mortgage, or retirement'} value={query} onChange={e=>{setQuery(e.target.value);setOpen(true);setActive(-1);setExpanded(false);}} onFocus={()=>setOpen(true)} onKeyDown={keys} role="combobox" aria-autocomplete="list" aria-expanded={showing} aria-controls={listId} aria-activedescendant={showing&&active>=0?optionId(active):undefined}/>
+        {query&&<button type="button" className="directory-search-clear" aria-label="Clear search" onClick={()=>{setQuery("");setActive(-1);setExpanded(false);input.current?.focus();}}>×</button>}
+      </div>
+      <button type="submit" className="directory-search-submit">Search</button>
+      {showing&&<div className="directory-suggestions">
+        <ul id={listId} role="listbox" aria-label="Matching calculators">
+          {visible.map(({tool,href},i)=><li key={tool.id} role="presentation"><a id={optionId(i)} href={href} role="option" aria-selected={i===active} tabIndex={-1} onMouseDown={e=>e.preventDefault()}>{tool.title}</a></li>)}
+        </ul>
+        {!results.length&&<p>No calculators found. Try “loan”, “tax”, or “interest”.</p>}
+        {!expanded&&results.length>visible.length&&<button type="button" className="directory-search-more" onClick={()=>{setExpanded(true);input.current?.focus();}}>Show all {results.length} matching calculators</button>}
+      </div>}
+    </div>
+    <span role="status" aria-live="polite">{search?`${results.length} ${results.length===1?'calculator':'calculators'} found`:compact?'':`${tools.length} tools available`}</span>
+  </form>;
+}

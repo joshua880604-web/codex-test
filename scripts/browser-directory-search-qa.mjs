@@ -26,7 +26,7 @@ try{
   assert.ok(popup.y>=field.y+field.height&&popup.y-field.y-field.height<8);assert.ok(popup.x>=0&&popup.x+popup.width<=width+1);
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   await input.fill('tax');await options.nth(1).waitFor();await input.press('Enter');assert.equal(page.url(),base+'/financial-calculator.html');
-  await input.press('ArrowDown');assert.equal(await input.getAttribute('aria-activedescendant'),'calculator-option-0');assert.equal(await options.first().getAttribute('aria-selected'),'true');
+  await input.press('ArrowDown');assert.equal(await input.getAttribute('aria-activedescendant'),'directory-search-option-0');assert.equal(await options.first().getAttribute('aria-selected'),'true');
   await input.press('ArrowUp');assert.equal(await options.last().getAttribute('aria-selected'),'true');
   await input.press('Escape');assert.equal(await input.getAttribute('aria-expanded'),'false');
   await input.press('ArrowDown');assert.equal(await input.getAttribute('aria-expanded'),'true');

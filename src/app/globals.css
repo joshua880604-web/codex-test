@@ -1469,19 +1469,28 @@ footer p {
 .directory-search-more {display:block;width:100%;min-height:44px;padding:10px 14px;border:0;border-top:1px solid #d3dde4;background:#f3f6f8;color:#155a85;text-align:left;font-size:14px;cursor:pointer;}
 .directory-search-more:focus-visible {outline:2px solid #23776d;outline-offset:-3px;}
 
-/* CD pilot: keep the results compact and leave a wider desktop sidebar. */
+/* Compact layout pilot on CD and Mortgage. */
 .cd-page .workspace-chart {border-top:1px solid #dce5eb;}
 @media screen and (min-width:1024px) {
- .page-wrap.cd-page {max-width:1240px;grid-template-columns:minmax(0,1fr) 320px;gap:28px;}
- .cd-page .sidebar .side-links {grid-template-columns:repeat(2,minmax(0,1fr));}
+ .page-wrap.compact-calculator-page {max-width:1120px;grid-template-columns:minmax(0,1fr) 320px;gap:24px;}
+ .compact-calculator-page .sidebar .side-links {grid-template-columns:repeat(2,minmax(0,1fr));}
 }
-@media screen and (min-width:1024px) and (max-width:1199px) {
- .cd-page .calculator-workspace {grid-template-columns:minmax(0,1fr);}
+@media screen and (min-width:1024px) and (max-width:1119px) {
+ .compact-calculator-page .calculator-workspace {grid-template-columns:minmax(0,1fr);}
 }
 @media screen and (max-width:1023px) {
- .page-wrap.cd-page,.cd-page .calculator-workspace {grid-template-columns:minmax(0,1fr);}
+ .page-wrap.compact-calculator-page,.compact-calculator-page .calculator-workspace {grid-template-columns:minmax(0,1fr);}
 }
 @media print {
  .cd-page .workspace-chart {content-visibility:visible;}
  .cd-page .workspace-chart > :not(summary) {display:block !important;}
 }
+/* The sidebar shares the directory's calculator-name suggestions. */
+.sidebar .sidebar-search {display:block;margin:0 0 16px;padding:12px;border:1px solid #cbd8e1;border-radius:6px;background:#f3f6f8;}
+.sidebar-search label {display:block;margin-bottom:7px;font-size:14px;}
+.sidebar-search .directory-search-control {gap:6px;}
+.sidebar-search input {display:block;width:100%;min-width:0;height:44px;padding:8px 44px 8px 9px;font-size:14px;background:#fff;}
+.sidebar-search .directory-search-submit {padding:8px 10px;font-size:13px;}
+.sidebar-search > span:not(:empty) {display:block;margin-top:7px;}
+.sidebar-search .directory-suggestions a {overflow-wrap:anywhere;}
+@media(max-width:700px){.sidebar-search input {font-size:16px;}}
