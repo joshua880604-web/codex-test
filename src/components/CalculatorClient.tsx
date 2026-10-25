@@ -66,7 +66,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     if (!hasWorkspace) return;
     let opened: HTMLDetailsElement[] = [];
     const before = () => {
-      opened = Array.from(resultRef.current?.querySelectorAll<HTMLDetailsElement>(".workspace-breakdown:not([open]),.workspace-details:not([open])") ?? []);
+      opened = Array.from(resultRef.current?.querySelectorAll<HTMLDetailsElement>(".workspace-breakdown:not([open]),.workspace-details:not([open]),.workspace-chart:not([open])") ?? []);
       opened.forEach(details => { details.open = true; });
     };
     const after = () => { opened.forEach(details => { details.open = false; }); opened = []; };
@@ -511,9 +511,13 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               </div>
             )}
           </div>
-          {hasWorkspace && <ResultTrend id={id} mode={mode.id} values={values} result={result} />}
+          {hasWorkspace && id !== "cd" && <ResultTrend id={id} mode={mode.id} values={values} result={result} />}
           {context && <p className="result-context">{context}</p>}
           {summary && summary.highlights.length > 0 && <dl className="workspace-key-figures" aria-label="Key calculated figures">{summary.highlights.map(m => <div className="metric" key={m.label}><dt><span>{m.label}</span></dt><dd><strong>{formatMetric(m)}</strong></dd></div>)}</dl>}
+          {id === "cd" && Boolean(result.rows?.length) && <details className="workspace-chart" key={mode.id + "-chart"}>
+            <summary>View balance chart</summary>
+            <ResultTrend id={id} mode={mode.id} values={values} result={result} />
+          </details>}
           {summary && summary.details.length > 0 && <details className="workspace-breakdown" key={mode.id + "-breakdown"}>
             <summary>Result breakdown ({summary.details.length})</summary>
             {summary.details.map(m => <div className="metric" key={m.label}><span>{m.label}</span><strong>{formatMetric(m)}</strong></div>)}

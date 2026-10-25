@@ -1468,3 +1468,20 @@ footer p {
 .directory-suggestions p {margin:0;padding:14px;font-size:14px;line-height:1.5;}
 .directory-search-more {display:block;width:100%;min-height:44px;padding:10px 14px;border:0;border-top:1px solid #d3dde4;background:#f3f6f8;color:#155a85;text-align:left;font-size:14px;cursor:pointer;}
 .directory-search-more:focus-visible {outline:2px solid #23776d;outline-offset:-3px;}
+
+/* CD pilot: keep the results compact and leave a wider desktop sidebar. */
+.cd-page .workspace-chart {border-top:1px solid #dce5eb;}
+@media screen and (min-width:1024px) {
+ .page-wrap.cd-page {max-width:1240px;grid-template-columns:minmax(0,1fr) 320px;gap:28px;}
+ .cd-page .sidebar .side-links {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media screen and (min-width:1024px) and (max-width:1199px) {
+ .cd-page .calculator-workspace {grid-template-columns:minmax(0,1fr);}
+}
+@media screen and (max-width:1023px) {
+ .page-wrap.cd-page,.cd-page .calculator-workspace {grid-template-columns:minmax(0,1fr);}
+}
+@media print {
+ .cd-page .workspace-chart {content-visibility:visible;}
+ .cd-page .workspace-chart > :not(summary) {display:block !important;}
+}

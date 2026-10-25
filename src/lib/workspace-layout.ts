@@ -35,7 +35,7 @@ const priorities: Record<string, string[]> = {
   "student-loan:solve-payment": ["Monthly payment", "Loan balance", "Annual interest rate", "Term in months"],
   "student-loan:solve-rate": ["Annual interest rate", "Loan balance", "Term in months", "Monthly payment"],
   "student-loan:solve-term": ["Term in months", "Loan balance", "Annual interest rate", "Monthly payment"],
-  "cd": ["After-tax balance", "Maturity balance", "Tax on interest"],
+  "cd": ["After-tax balance", "Interest earned", "Maturity balance", "Tax on interest"],
   "down-payment:price": ["Home price", "Cash needed", "Loan amount", "Monthly mortgage payment"],
   "down-payment:cash": ["Cash needed", "Down payment", "Loan amount", "Monthly mortgage payment"],
   "down-payment:percent": ["Down payment percentage", "Cash needed", "Loan amount", "Monthly mortgage payment"],

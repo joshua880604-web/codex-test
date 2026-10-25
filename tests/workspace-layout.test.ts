@@ -34,7 +34,10 @@ test("requested payment and comparison amounts remain visible before disclosures
   const refinance = run("refinance", "balance").summary;
   assert.equal(refinance.primary.label, "New monthly payment");
   assert.ok(refinance.highlights.some(m => m.label === "Current monthly payment"));
-  assert.equal(run("cd", "accumulation").summary.primary.label, "After-tax balance");
+  const cd = run("cd", "accumulation").summary;
+  assert.equal(cd.primary.label, "After-tax balance");
+  assert.deepEqual(cd.highlights.map(m => m.label), ["Interest earned", "Maturity balance", "Tax on interest"]);
+  assert.equal(cd.details.length, 0, "All four CD figures remain visible without opening a disclosure");
 });
 test("exported summaries prioritize the same result as the active workspace mode", () => {
   for (const [id, mode] of [["auto-loan", "payment"], ["auto-loan", "price"], ["cd", "accumulation"], ["mortgage", "biweekly"], ["student-loan", "projection"], ["retirement", "withdrawal"]]) {
