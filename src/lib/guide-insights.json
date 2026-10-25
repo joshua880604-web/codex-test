@@ -22,9 +22,10 @@
     "checks": [
       "Enter annual taxes and insurance with the matching dollar or percentage unit.",
       "Do not compare a principal-and-interest payment with another quote that includes escrow.",
-      "Paying off a mortgage does not remove property taxes, insurance or maintenance."
+      "Paying off a mortgage does not remove property taxes, insurance or maintenance.",
+      "For requested 80% PMI cancellation, use the appraisal at purchase if below the purchase price; a current market appraisal is not the original value."
     ],
-    "checkedOn": "2026-10-21"
+    "checkedOn": "2026-10-25"
   },
   "mortgage-payoff": {
     "answer": "Extra mortgage principal can shorten repayment and reduce future loan interest. Compare strategies using the same current balance, regular payment and interest rate.",

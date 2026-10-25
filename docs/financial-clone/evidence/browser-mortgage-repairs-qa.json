@@ -1,0 +1,175 @@
+{
+  "tested_at": "2026-10-25T15:26:31.967Z",
+  "checks": [
+    {
+      "width": 390,
+      "case": "default payments, chart, full monthly/yearly CSV and no overflow",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "fractional total rejected; partial-year recovery by keyboard",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "malformed extras identify original row; valid duplicates add",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "zero loan monthly: ongoing costs, explicit context, no fabricated schedule",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "zero loan biweekly: ongoing costs, explicit context, no fabricated schedule",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "lower original appraisal restored in links; PMI 98 months/9800; yearly reconciles; fixed policy hides/ignores appraisal",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "ordinary 26-period biweekly unchanged",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "fha-loan monthly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "fha-loan biweekly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "va-mortgage monthly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "va-mortgage biweekly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "default payments, chart, full monthly/yearly CSV and no overflow",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "fractional total rejected; partial-year recovery by keyboard",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "malformed extras identify original row; valid duplicates add",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "zero loan monthly: ongoing costs, explicit context, no fabricated schedule",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "zero loan biweekly: ongoing costs, explicit context, no fabricated schedule",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "lower original appraisal restored in links; PMI 98 months/9800; yearly reconciles; fixed policy hides/ignores appraisal",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "ordinary 26-period biweekly unchanged",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "fha-loan monthly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "fha-loan biweekly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "va-mortgage monthly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "va-mortgage biweekly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "default payments, chart, full monthly/yearly CSV and no overflow",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "fractional total rejected; partial-year recovery by keyboard",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "malformed extras identify original row; valid duplicates add",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "zero loan monthly: ongoing costs, explicit context, no fabricated schedule",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "zero loan biweekly: ongoing costs, explicit context, no fabricated schedule",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "lower original appraisal restored in links; PMI 98 months/9800; yearly reconciles; fixed policy hides/ignores appraisal",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "ordinary 26-period biweekly unchanged",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "fha-loan monthly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "fha-loan biweekly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "va-mortgage monthly shared zero-loan behavior",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "va-mortgage biweekly shared zero-loan behavior",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "passed": true,
+  "ads": "Only exact existing publisher loader stubbed; no live-ad assertion.",
+  "scope": "Local production build. Reference-site screenshot parity and direct live-origin response are unverified."
+}

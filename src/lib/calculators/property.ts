@@ -40,6 +40,12 @@ import {
 const pct = (v: Values, k: string) => n(v, k) / 100;
 const yes = (v: Values, k: string) => v[k] === "Yes";
 const term = (v: Values) => n(v, "years") * 12 + n(v, "months");
+function mortgageMonths(v: Values): number {
+  const months = term(v), wholeMonths = Math.round(months);
+  if (Math.abs(months - wholeMonths) > 1e-7 || wholeMonths < 1 || wholeMonths > 12000)
+    throw new Error("Mortgage term must total a whole number of months, from 1 to 12,000.");
+  return wholeMonths;
+}
 function extra(v: Values): Extra {
   const e: Extra = {
     monthly: n(v, "extra_monthly"),
@@ -54,17 +60,16 @@ function extra(v: Values): Extra {
   }
   if (v.dated) {
     const d: Record<number, number> = {};
-    for (const row of v.dated.split("\n").filter((s) => s.trim())) {
-      const [month, amount] = row.split(",").map(Number);
-      if (
-        !Number.isInteger(month) ||
-        month < 1 ||
-        !Number.isFinite(amount) ||
-        amount < 0
-      )
-        throw new Error(
-          "Extra payments must be month number, nonnegative amount.",
-        );
+    for (const [index, row] of v.dated.split("\n").entries()) {
+      if (!row.trim()) continue;
+      const cells = row.split(",").map(cell => cell.trim()), prefix = `Extra payment row ${index + 1}: `;
+      if (cells.length !== 2 || cells.some(cell => !cell))
+        throw new Error(prefix + "enter exactly two nonempty values: payment month, amount.");
+      const [month, amount] = cells.map(Number);
+      if (!Number.isInteger(month) || month < 1 || month > 12000)
+        throw new Error(prefix + "payment month must be a whole number from 1 to 12,000.");
+      if (!Number.isFinite(amount) || amount < 0 || amount > 1e15)
+        throw new Error(prefix + "amount must be a finite nonnegative number, up to 1,000,000,000,000,000.");
       d[month] = (d[month] ?? 0) + amount;
     }
     e.dated = d;
@@ -79,7 +84,7 @@ const datedExtraFields = () => [
     "dated",
     "Additional one-time payments",
     "",
-    "Optional: month number, amount; one payment per line.",
+    "Optional: payment month, amount; exactly two values per line. Use 1000 for one thousand, without a thousands separator. Duplicate months are added together.",
   ),
 ];
 const costs = () => [
@@ -113,7 +118,7 @@ const houseFields = () => [
   num("price", "Home price", 400000, "$"),
   num("down", "Down payment", 20),
   select("down_unit", "Down payment unit", ["Percent", "Dollars"]),
-  num("years", "Loan term", 30, "years", 0.01),
+  {...num("years", "Loan term", 30, "years", 0.01), hint: "Combined term must be whole months (e.g. 1.5 years = 18 months)."},
   num("months", "Additional months", 0, "months"),
   num("rate", "Interest rate", 6, "%"),
   date("start", "Start date", "2026-10-01"),
@@ -128,13 +133,15 @@ function downValue(v: Values): number {
   return d;
 }
 function mortgageCalc(v: Values, kind = "conventional"): Result {
-  const down = downValue(v),
-    base = n(v, "price") - down;
+  const price = positive(n(v, "price"), "Home price"), down = downValue(v),
+    base = price - down, N = mortgageMonths(v);
+  const pmiUsesLtv = kind === "conventional" && v.pmi_policy === "Cancel at 80% original LTV",
+    pmiOriginalValue = pmiUsesLtv && v.appraised_value?.trim() ? Math.min(price, positive(n(v, "appraised_value"), "Original appraised value")) : price;
   const fhaValue = kind === "fha" && v.appraised_value?.trim() ? Math.min(n(v, "price"), n(v, "appraised_value")) : n(v, "price");
   const fhaTerms = kind === "fha"
     ? v.mip_method === "Manual"
       ? {upfrontPercent: n(v, "upfront"), annualPercent: n(v, "annual_mip"), durationMonths: n(v, "mip_years") * 12}
-      : fhaMipTerms(base, fhaValue, term(v))
+      : fhaMipTerms(base, fhaValue, N)
     : null;
   let fee = 0,
     pmi = kind !== "conventional" ? 0 : v.pmi_unit === "Percent of loan" ? base * pct(v, "pmi") : n(v, "pmi"),
@@ -161,20 +168,33 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
       kind === "fha" || (kind === "va" && v.fee_treatment === "Finance fee"),
     p = base + (financed ? fee : 0),
     r = pct(v, "rate") / 12,
-    N = term(v),
     standard = payment(p, r, N),
     result = loanResult(p, r, N, extra(v));
+  const expense = (k: string, year: number) =>
+    (v[k + "_unit"] === "Percent of home value" ? price * pct(v, k) : n(v, k)) *
+    (1 + pct(v, k + "_growth")) ** year;
+  const initialAnnualOwnershipCosts = sum(["tax", "insurance", "hoa", "other"].map(k => expense(k, 0)));
+  if (p === 0) return {
+    metrics: [
+      money("Monthly principal & interest", 0),
+      money("Initial monthly total", initialAnnualOwnershipCosts / 12),
+      money("Down payment", down),
+      money("Financed loan amount", 0),
+      money("Upfront fee", 0),
+      ...(kind === "fha" ? [money("Initial monthly FHA MIP", 0), money("Total FHA MIP", 0)] : []),
+      money("Total interest", 0),
+      money("Total payments", 0),
+      metric("Number of payments", 0),
+      money("Initial annual ownership costs", initialAnnualOwnershipCosts),
+    ],
+    notes: ["No mortgage loan is needed because the down payment covers the purchase price. There is no repayment schedule, mortgage insurance or biweekly repayment saving to calculate. Initial monthly and annual ownership costs show the entered property tax, home insurance, HOA and other costs; these continue without a mortgage and can change over time. No lifetime ownership-cost total is inferred."],
+  };
   const fhaPremiums = fhaTerms ? fhaMipSchedule(p, n(v, "rate"), standard, N, fhaTerms.upfrontPercent, fhaTerms.annualPercent, fhaTerms.durationMonths) : null;
   const mortgageInsuranceAt = (i: number) => fhaPremiums ? (fhaPremiums[i] ?? 0) : (
-    kind === "conventional" && v.pmi_policy === "Cancel at 80% original LTV"
-      ? (i === 0 ? p : Number(result.rows![i - 1][4])) > n(v, "price") * .8
+    pmiUsesLtv
+      ? (i === 0 ? p : Number(result.rows![i - 1][4])) > pmiOriginalValue * .8
       : i < Math.round(pmiYears * 12)
   ) ? pmi / 12 : 0;
-  const expense = (k: string, year: number) =>
-    (v[k + "_unit"] === "Percent of home value"
-      ? n(v, "price") * pct(v, k)
-      : n(v, k)) *
-    (1 + pct(v, k + "_growth")) ** year;
   let runningCosts = 0;
   const start = new Date(v.start + "T00:00:00Z");
   start.setUTCDate(1);
@@ -204,6 +224,7 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
     money("Down payment", down),
     money("Financed loan amount", p),
     money("Upfront fee", fee),
+    ...(pmiUsesLtv ? [money("Original value for PMI", pmiOriginalValue), metric("Original loan-to-value ratio", base / pmiOriginalValue * 100, "percent")] : []),
     ...(fhaTerms ? [
       metric("Annual FHA MIP rate", fhaTerms.annualPercent, "percent"),
       metric("FHA loan-to-value ratio", base / fhaValue * 100, "percent"),
@@ -231,6 +252,8 @@ function mortgageCalc(v: Values, kind = "conventional"): Result {
   ];
   result.rows = rows;
   result.notes = [
+    "Ownership-cost totals cover only the modeled loan-payment period, through payoff. Property tax, insurance, HOA and maintenance may continue after payoff; this is not a lifetime homeownership-cost total.",
+    ...(pmiUsesLtv ? ["PMI original value is the lower of the purchase price and the entered appraisal at purchase, not a current market appraisal. Blank appraisal assumes it is at least the purchase price. The 80% option assumes a requested cancellation is approved; this is not a loan-approval or appraisal-eligibility decision."] : []),
     ...(fhaTerms ? [
       `${v.mip_method === "Manual" ? "Manual FHA premium terms" : "Ordinary FHA forward-loan rules (Mortgagee Letter 2023-05)"}: upfront ${fhaTerms.upfrontPercent}%, annual ${fhaTerms.annualPercent}%, for up to ${Math.min(fhaTerms.durationMonths, N) / 12} years. Historical case numbers, special programs, underwriting and county loan limits are not determined here.`,
       "FHA premium LTV uses the lower of purchase price and an entered appraised value. Leaving appraisal blank assumes it equals the purchase price. This payment estimate does not determine maximum eligible financing or loan approval.",
@@ -250,7 +273,9 @@ const mortgageMode = (
 ): Mode => ({
   id,
   title,
-  fields: kind === "fha" ? [...houseFields().slice(0, 6), ...extraFieldsForKind, ...houseFields().slice(6)] : [...houseFields(), ...extraFieldsForKind],
+  fields: kind === "fha" ? [...houseFields().slice(0, 6), ...extraFieldsForKind, ...houseFields().slice(6)] : [...houseFields(), ...extraFieldsForKind,
+    ...(kind === "conventional" ? [{...num("appraised_value", "Original appraised value at purchase", 0, "$", 1), value: "", optional: true, hint: "For 80% original-LTV PMI cancellation. Use the appraisal at purchase, not today's value. Blank assumes the appraisal is at least the purchase price; original value uses the lower amount."}] : []),
+  ],
   description:
     "Calculate monthly payments, annual expenses, and dated extra principal payments.",
   formula:
@@ -261,10 +286,14 @@ const mortgageMode = (
         p = monthly.metrics.find(
           (x) => x.label === "Financed loan amount",
         )!.value,
-        a = monthly.metrics[0].value;
+        a = monthly.metrics[0].value, N = mortgageMonths(v);
+      if (p === 0) return {
+        ...monthly,
+        metrics: [money("Biweekly payment", 0), ...monthly.metrics.filter(m => !["Monthly principal & interest", "Number of payments"].includes(m.label)), metric("Payments", 0), metric("Years to payoff", 0)],
+      };
       const extras = extra(v),
         dated: Record<number, number> = {};
-      for (let month = 1; month <= Math.ceil(term(v)); month++) {
+      for (let month = 1; month <= N; month++) {
         const value =
           (month >= (extras.monthlyStart ?? 1) ? (extras.monthly ?? 0) : 0) +
           (month >= (extras.yearlyStart ?? 12) && (month - (extras.yearlyStart ?? 12)) % 12 === 0 ? (extras.yearly ?? 0) : 0) +
@@ -275,7 +304,7 @@ const mortgageMode = (
       const rows = amortize(
         p,
         pct(v, "rate") / 26,
-        Math.ceil((term(v) / 12) * 26),
+        Math.ceil((N / 12) * 26),
         { dated },
         a / 2,
       );
@@ -295,7 +324,7 @@ const mortgageMode = (
           x.balance,
         ]),
         notes: [
-          "Biweekly model accrues annual nominal interest over 26 equal periods and pays half the standard monthly amount. Financed mortgage fees are included in principal. Monthly, annual, and one-time extra payments are mapped to the end of their corresponding month. Property taxes and other ownership expenses are excluded from the interest-only payoff comparison.",
+          "Biweekly model accrues annual nominal interest over 26 equal periods and pays half the standard monthly amount. Financed mortgage fees are included in principal. Monthly, annual, and one-time extra payments are mapped to the end of their corresponding month. Property taxes and other ownership expenses are excluded from this principal-and-interest repayment comparison. Actual calendar-day interest and how a lender applies partial payments can differ; verify contract terms and any prepayment charges.",
         ],
       };
     }

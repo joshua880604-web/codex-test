@@ -1,0 +1,72 @@
+{
+  "tested_at": "2026-10-25T15:26:46.241033+00:00",
+  "baseline": "363aa492e00b9fa08ed09e887d4dd8f8593838f8",
+  "regression": {
+    "baseline_tests": 806,
+    "new_tests": 32,
+    "total": 838,
+    "passed": 838,
+    "failed": 0,
+    "test_file": "tests/mortgage-repairs.test.ts"
+  },
+  "independent_decimal_controls": {
+    "numericScenarios": {
+      "total": 38,
+      "passed": 38,
+      "failed": []
+    },
+    "invalidInputControls": {
+      "total": 12,
+      "passed": 12,
+      "failed": []
+    }
+  },
+  "default_metrics": {
+    "total": 193,
+    "unchanged": 193,
+    "changed": []
+  },
+  "pmi_oracle": {
+    "purchase_price": 400000,
+    "loan": 320000,
+    "purchase_appraisal": 350000,
+    "original_value": 350000,
+    "requested_threshold": 280000,
+    "annual_pmi": 1200,
+    "monthly_pmi": 100,
+    "charged_months": 98,
+    "first_pmi_free_payment": 99,
+    "total_pmi": 9800,
+    "derivation": "P(1+i)^n-A((1+i)^n-1)/i <=280000, i=.06/12; first whole n=98. Assumed approved cancellation for following payment."
+  },
+  "build": "passed",
+  "typecheck": "passed",
+  "seo": {
+    "canonical_urls": 146,
+    "passed": true
+  },
+  "long_tail": {
+    "pages": 30,
+    "answers": 40,
+    "links": 65,
+    "passed": true
+  },
+  "page_intents": {
+    "tools": 81,
+    "search_tasks": 195,
+    "passed": true
+  },
+  "brand_guard": {
+    "text_assets": 529,
+    "passed": true
+  },
+  "homepage_first_screen": {
+    "viewports": 14,
+    "passed": true
+  },
+  "limits": [
+    "Local production build; direct live-origin response unverified.",
+    "No reference-site same-input numerical or screenshot parity claim.",
+    "No lender eligibility, 78% automatic PMI termination or actual-calendar biweekly model."
+  ]
+}

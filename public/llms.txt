@@ -15,7 +15,7 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 ## Mortgage and housing
 
-- [Mortgage Calculator](https://calculatorfree.io/mortgage-calculator.html): Estimate payments and ownership costs, model extra principal payments, and compare biweekly payments.
+- [Mortgage Calculator](https://calculatorfree.io/mortgage-calculator.html): Estimate payments and ownership costs, model extra principal payments, and compare biweekly payments. The requested 80% PMI option uses the lower of purchase price and original appraisal; cash purchases retain ownership-cost estimates without a loan schedule.
 - [Mortgage Payoff Calculator](https://calculatorfree.io/mortgage-payoff-calculator.html): Compare repayment strategies using the current balance or original loan details, including extra payments and biweekly payments.
 
 ## Loans and debt
