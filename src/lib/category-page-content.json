@@ -1,0 +1,195 @@
+[
+  {
+    "id": "mortgage-housing",
+    "heading": "Mortgage & Housing Calculators",
+    "title": "Mortgage & Housing Calculators - Payments, PMI & Refinancing",
+    "description": "Choose mortgage, PMI, FHA, VA, refinance, payoff and rent-versus-buy calculators. Compare housing costs with clear U.S. loan assumptions.",
+    "intro": "Start with the housing decision you need to make: buying, reducing interest, refinancing or renting. These tools estimate costs from your inputs; lender approval, insurance pricing and local ownership costs require separate verification.",
+    "guides": [
+      [
+        "Estimate a purchase payment",
+        "Use Mortgage for fixed-rate principal and interest plus entered ownership costs. House Affordability and Down Payment help explore a budget before comparing loan offers."
+      ],
+      [
+        "Check insurance and loan programs",
+        "Use PMI for conventional borrower-paid insurance. FHA uses a separate MIP model, while VA has its own funding-fee assumptions. These tools do not determine program eligibility."
+      ],
+      [
+        "Compare ways to reduce costs",
+        "Mortgage Payoff and Biweekly explore repayment changes; Discount Points compares actual rate and fee quotes. Refinance compares a replacement loan, including entered closing costs."
+      ]
+    ],
+    "differences": [
+      [
+        "Mortgage vs. House Affordability",
+        "Mortgage estimates a payment for entered loan terms. House Affordability works from an income and debt budget; its result is not preapproval."
+      ],
+      [
+        "PMI vs. FHA MIP",
+        "Conventional PMI cancellation and FHA MIP duration follow different conditions. Select the tool that matches the actual loan program."
+      ],
+      [
+        "Biweekly vs. Mortgage Payoff",
+        "Biweekly assumes 26 credited periods per year and includes an equal-budget monthly comparison. Mortgage Payoff offers other extra-principal schedules."
+      ]
+    ],
+    "questions": [
+      [
+        "Does a mortgage payment include every homeownership expense?",
+        "Only the costs included in the selected tool and inputs are modeled. Check property taxes, home insurance, PMI or MIP, HOA, maintenance and transaction costs separately."
+      ],
+      [
+        "Can I compare a conventional loan with FHA or VA?",
+        "Yes, using the separate tools with the same price and consistent assumptions. Review differences in insurance, funding fees and eligibility with the lender."
+      ],
+      [
+        "Will a lower payment always save money?",
+        "No. A longer term, upfront points or financed closing costs may reduce the monthly payment while increasing total cost. Compare interest, fees, remaining principal and your expected holding period."
+      ]
+    ],
+    "concepts": [
+      [
+        "amortization",
+        "Amortization"
+      ],
+      [
+        "loan-to-value-ratio",
+        "Loan-to-value ratio"
+      ],
+      [
+        "private-mortgage-insurance",
+        "Private mortgage insurance"
+      ]
+    ]
+  },
+  {
+    "id": "loans-debt",
+    "heading": "Loan & Debt Calculators",
+    "title": "Loan & Debt Calculators - Payments, APR & Debt Payoff",
+    "description": "Compare loan payments, vehicle financing, credit cards and debt payoff strategies. Understand APR, repayment timing and borrowing costs.",
+    "intro": "Choose a calculator for the balance you are financing or repaying. Start with the contract terms, compare both payment size and total cost, then check whether the modeled payment fits your budget. U.S. lender and servicing terms can differ from these estimates.",
+    "guides": [
+      [
+        "Estimate a loan or payment",
+        "Loan and Payment cover standard borrowing scenarios. Personal Loan and Student Loan include their own supported fee or repayment assumptions; check each page before comparing."
+      ],
+      [
+        "Compare vehicle financing",
+        "Auto Loan, Auto Lease and Cash Back or Low Interest answer different purchase decisions. Boat Loan and Lease provide additional financing comparisons."
+      ],
+      [
+        "Plan debt repayment",
+        "Use Credit Card for one balance, Credit Cards Payoff for multiple cards, and Debt Payoff for strategy comparisons. Debt Consolidation compares a replacement borrowing plan."
+      ]
+    ],
+    "differences": [
+      [
+        "Loan vs. APR",
+        "Loan focuses on payments and interest. APR accounts for the fees and cash-flow timing supported by its model; review official lender disclosures before choosing an offer."
+      ],
+      [
+        "Debt Payoff vs. Debt Consolidation",
+        "Debt Payoff reallocates payments among existing debts. Debt Consolidation models replacing debts with new financing, which may introduce fees or a longer term."
+      ],
+      [
+        "Monthly payment vs. total borrowing cost",
+        "A smaller payment can come from a longer repayment term. Compare fees, interest, payoff time and any collateral or guarantee obligations alongside the payment."
+      ]
+    ],
+    "questions": [
+      [
+        "Does the calculator tell me whether a lender will approve my application?",
+        "No. Approval depends on lender underwriting, credit, income, collateral and program requirements beyond the entered calculation."
+      ],
+      [
+        "Can I use the same rate for APR and interest rate?",
+        "They may differ. Interest rate determines modeled interest accrual, while disclosed APR can include certain borrowing fees. Use the input definition shown by each tool."
+      ],
+      [
+        "Which debt payoff strategy should I choose?",
+        "Compare the modeled interest and payoff dates under a payment budget you can maintain. Promotional terms, minimum-payment rules and fees may change actual results."
+      ]
+    ],
+    "concepts": [
+      [
+        "apr",
+        "Annual percentage rate"
+      ],
+      [
+        "principal-and-interest",
+        "Principal and interest"
+      ],
+      [
+        "debt-consolidation",
+        "Debt consolidation"
+      ]
+    ]
+  },
+  {
+    "id": "saving-investing",
+    "heading": "Savings & Investment Calculators",
+    "title": "Savings & Investment Calculators - Growth, Interest & Returns",
+    "description": "Explore savings goals, compound growth, CDs, investment returns and fees. Compare financial assumptions, inflation and cash-flow timing.",
+    "intro": "Choose between a savings goal, a growth projection and an investment-return comparison. Keep deposit timing, taxes, fees and inflation consistent when comparing scenarios. Assumed investment returns are hypothetical and do not guarantee a future balance.",
+    "guides": [
+      [
+        "Plan savings and cash reserves",
+        "Savings solves supported balance and contribution goals. CD estimates a time-deposit outcome, while Emergency Fund, Budget and College Cost help organize personal planning assumptions."
+      ],
+      [
+        "Project growth or compare investments",
+        "Investment and Compound Interest model contributions and growth. ROI, CAGR, IRR and Average Return measure different aspects of performance; fees and taxes may change the comparison."
+      ],
+      [
+        "Check rates, timing and purchasing power",
+        "Interest and Simple Interest use different accrual conventions. Finance, Present Value and Future Value handle cash-flow timing, while Inflation and Real Return help distinguish nominal from purchasing-power results."
+      ]
+    ],
+    "differences": [
+      [
+        "Savings vs. Compound Interest",
+        "Savings supports goal-oriented calculations. Compound Interest supports growth and rate-conversion modes; choose the mode that matches deposits and compounding."
+      ],
+      [
+        "ROI vs. CAGR vs. IRR",
+        "ROI is a gain relative to cost, CAGR smooths endpoint growth, and IRR reflects modeled cash-flow timing. They are not interchangeable performance measures."
+      ],
+      [
+        "CD yield vs. investment return",
+        "A deposit product has contractual terms that must be checked with its issuer. An investment projection uses uncertain return assumptions and can involve loss of principal."
+      ]
+    ],
+    "questions": [
+      [
+        "Are the default return and inflation rates forecasts?",
+        "No. They are editable planning assumptions. Test multiple scenarios and review the methodology and scope of the selected tool."
+      ],
+      [
+        "Should I compare nominal or inflation-adjusted balances?",
+        "Use nominal values for future dollar amounts and inflation-adjusted values for purchasing-power comparisons. Keep all inputs and cash flows on a consistent basis."
+      ],
+      [
+        "Are taxes, fees and early withdrawals always included?",
+        "No. Coverage differs by tool and selected mode. Include supported inputs and verify account terms, tax treatment and withdrawal restrictions separately."
+      ]
+    ],
+    "concepts": [
+      [
+        "compound-interest",
+        "Compound interest"
+      ],
+      [
+        "apy",
+        "Annual percentage yield"
+      ],
+      [
+        "expense-ratio",
+        "Expense ratio"
+      ],
+      [
+        "inflation",
+        "Inflation"
+      ]
+    ]
+  }
+]

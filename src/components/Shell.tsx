@@ -35,8 +35,8 @@ export function Header() {
     </>
   );
 }
-export function Sidebar({calculatorId}:{calculatorId?:string}={}) {
-  const context=sidebarTools(calculatorId);
+export function Sidebar({calculatorId,categoryId}:{calculatorId?:string;categoryId?:string}={}) {
+  const context=sidebarTools(calculatorId,categoryId);
   const ids=context.ids;
   return (
     <aside className="sidebar">

@@ -1,3 +1,5 @@
+import {categoryPages,categoryPageBySlug} from '@/lib/category-pages';
+import CategoryLanding from '@/components/CategoryLanding';
 import {calculatorCategory,categoryHref} from '@/lib/calculator-categories';
 import CalculatorDisclaimer from '@/components/CalculatorDisclaimer';
 import SearchTasks from "@/components/SearchTasks";
@@ -12,7 +14,7 @@ import RealEstateDirectory from "@/components/RealEstateDirectory";
 import { Sidebar } from "@/components/Shell";
 import CalculatorGuide from "@/components/CalculatorGuide";
 import Methodology from "@/components/Methodology";
-import { calculatorMetadata, calculatorSchema, pageMetadata } from "@/lib/seo";
+import { calculatorMetadata, calculatorSchema, categoryPageSchema, pageMetadata } from "@/lib/seo";
 import { directoryPath, serializeSchema, siteName } from "@/lib/site";
 import { relatedCalculatorIds } from "@/lib/guides";
 import { hasCalculatorWorkspace } from "@/lib/workspace-layout";
@@ -20,6 +22,7 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   return [
     ...calculators.map((c) => ({ slug: routeFor(c.id).slice(1) })),
+    ...categoryPages.filter(page=>!calculators.some(c=>routeFor(c.id)===page.path)).map(page=>({slug:page.path.slice(1)})),
     { slug: "financial-calculator.html" },
     { slug: "about.html" },
     { slug: "privacy.html" },
@@ -32,7 +35,9 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const categoryPage=categoryPageBySlug(slug);
   const c = calculatorBySlug(slug);
+  if(categoryPage)return pageMetadata(categoryPage.path,categoryPage.title,categoryPage.description);
   if (c) return calculatorMetadata(c);
   if (slug === "about.html")
     return pageMetadata(
@@ -64,9 +69,10 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const categoryPage=categoryPageBySlug(slug);
   const c = calculatorBySlug(slug);
   if (
-    !c &&
+    !c && !categoryPage &&
     ![
       "financial-calculator.html",
       "about.html",
@@ -90,14 +96,15 @@ export default async function Page({
           ? "Calculation methodology and sources"
           : "Financial Calculators");
   return (
-    <div className={slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : hasCalculatorWorkspace(c?.id ?? "") ? "page-wrap calculator-page workspace-page compact-calculator-page" + (c?.id === "cd" ? " cd-page" : "") : c && !c.directory ? "page-wrap calculator-page" : "page-wrap"}>
+    <div className={categoryPage ? "page-wrap calculator-page category-directory-page" : slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : hasCalculatorWorkspace(c?.id ?? "") ? "page-wrap calculator-page workspace-page compact-calculator-page" + (c?.id === "cd" ? " cd-page" : "") : c && !c.directory ? "page-wrap calculator-page" : "page-wrap"}>
       <main id="main">
         <div className="breadcrumb">
           <a href="/">home</a> /{" "}
-          <a href={displayCategory ? categoryHref(displayCategory.id) : "/financial-calculator.html"}>{displayCategory?.title ?? "financial"}</a>
-          {c && <> / {c.title.toLowerCase()}</>}
+          <a href={!categoryPage&&displayCategory ? categoryHref(displayCategory.id) : "/financial-calculator.html"}>{!categoryPage&&displayCategory ? displayCategory.title : "financial"}</a>
+          {categoryPage ? <> / {categoryPage.heading}</> : c && <> / {c.title.toLowerCase()}</>}
         </div>
-        <h1>{title}</h1>
+        <h1>{categoryPage?.heading ?? title}</h1>
+        {categoryPage&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(categoryPageSchema(categoryPage))}}/>}
         {c && !c.directory && (
           <script
             type="application/ld+json"
@@ -166,6 +173,8 @@ export default async function Page({
               requests are made for currency rates.
             </p>
           </>
+        ) : categoryPage && !c ? (
+          <CategoryLanding id={categoryPage.id}/>
         ) : c?.directory ? (
           <><RealEstateDirectory /><CalculatorDisclaimer id={c.id}/></>
         ) : c ? (
@@ -202,7 +211,7 @@ export default async function Page({
           </section>
         )}
       </main>
-      {!["financial-calculator.html","methodology.html"].includes(slug) && <Sidebar calculatorId={c?.id} />}
+      {!["financial-calculator.html","methodology.html"].includes(slug) && <Sidebar calculatorId={c?.id} categoryId={categoryPage?.id} />}
     </div>
   );
 }

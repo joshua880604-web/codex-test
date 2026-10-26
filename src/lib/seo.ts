@@ -1,3 +1,5 @@
+import {categoryPages,type CategoryPage} from './category-pages';
+import {calculatorCategories,calculatorCategory,categoryPaths} from './calculator-categories';
 import guideInsights from "./guide-insights.json";
 import {keywordTitles,searchTasks} from "./keyword-targets";
 import type { Metadata } from "next";
@@ -56,6 +58,7 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
 }
 // Dates record reviewed content changes, never the current build time.
 export const contentUpdatedOn: Record<string, string> = {
+  ...Object.fromEntries(categoryPages.map(page=>[page.path,"2026-10-26"])),
   "/pmi-calculator.html": "2026-10-26",
   "/biweekly-mortgage-calculator.html": "2026-10-26",
   "/discount-points-calculator.html": "2026-10-26",
@@ -81,6 +84,7 @@ export function sitemapEntries(config: SiteConfig = siteConfig()) {
   if (!config.origin || !config.indexable) return [];
   return [
     ...catalog.map((c) => c.local_route),
+    ...categoryPages.filter(page=>!catalog.some(c=>c.local_route===page.path)).map(page=>page.path),
     directoryPath,
     "/about.html",
     "/privacy.html",
@@ -92,6 +96,9 @@ export function sitemapEntries(config: SiteConfig = siteConfig()) {
 export function calculatorSchema(calc: Calculator, config = siteConfig()) {
   const path = catalog.find((c) => c.id === calc.id)!.local_route,
     url = absoluteURL(path, config);
+  const parent=calculatorCategory(calc.id);
+  const parentPath=parent ? categoryPaths[parent.id] : undefined;
+  const hasCategoryParent=Boolean(parentPath&&parentPath!==path);
   const app = {
     "@type": "WebApplication",
     name: calc.title,
@@ -133,9 +140,20 @@ export function calculatorSchema(calc: Calculator, config = siteConfig()) {
           name: "Financial calculators",
           item: absoluteURL(directoryPath, config),
         },
-        { "@type": "ListItem", position: 2, name: calc.title, item: url },
+        ...(hasCategoryParent ? [{"@type":"ListItem",position:2,name:parent!.title,item:absoluteURL(parentPath!,config)}] : []),
+        { "@type": "ListItem", position: hasCategoryParent?3:2, name: calc.title, item: url },
       ],
     });
   }
   return { "@context": "https://schema.org", "@graph": graph };
+}
+
+export function categoryPageSchema(page:CategoryPage,config=siteConfig()) {
+ const url=absoluteURL(page.path,config),group=calculatorCategories.find(group=>group.id===page.id)!;
+ const items=(group.sections?.flatMap(section=>section.tools)??group.tools).filter(id=>id!=='real-estate').map(id=>catalog.find(tool=>tool.id===id)!);
+ return {'@context':'https://schema.org','@graph':[
+  {'@type':'CollectionPage',name:page.heading,description:page.description,...(url?{'@id':url,url,mainEntity:{'@id':url+'#category-tools'}}:{})},
+  {'@type':'ItemList',...(url?{'@id':url+'#category-tools'}:{}),numberOfItems:items.length,itemListElement:items.map((tool,index)=>({'@type':'ListItem',position:index+1,name:tool.title,...(absoluteURL(tool.local_route,config)?{url:absoluteURL(tool.local_route,config)}:{})}))},
+  ...(url?[{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Financial calculators',item:absoluteURL(directoryPath,config)},{'@type':'ListItem',position:2,name:page.heading,item:url}]}]:[])
+ ]};
 }

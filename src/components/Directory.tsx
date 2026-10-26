@@ -1,5 +1,6 @@
 "use client";
 import {directoryGroups,directoryGroup,directorySort} from "@/lib/directory";
+import {categoryPaths,categoryHref} from '@/lib/calculator-categories';
 import CategoryToolList from './CategoryToolList';
 import QuickCalculator from "./QuickCalculator";
 import CalculatorSearch from "./CalculatorSearch";
@@ -44,9 +45,9 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
       <div className="directory-grid" id="calculator-list">
         {groups.map(group => { const {id,title,tools}=group; return <section key={id} id={id} aria-labelledby={id + "-heading"} tabIndex={-1}>
           {group.aliases.map(anchor=><span key={anchor} id={anchor} aria-hidden="true"/>)}
-          <h3 id={id + "-heading"}>{title}<span>{tools.length}</span></h3>
+          <h3 id={id + "-heading"}>{categoryPaths[id]?<a href={categoryHref(id)}>{title}</a>:title}<span>{tools.length}</span></h3>
           <CategoryToolList group={group} tools={tools}/>
-          {id==="mortgage-housing"&&<a className="category-overview" href="/real-estate-calculator.html">Browse mortgage &amp; housing tools »</a>}
+          {categoryPaths[id]&&<a className="category-overview" href={categoryHref(id)}>Browse {title.toLowerCase()} tools »</a>}
         </section>; })}
       </div>
 

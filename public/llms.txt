@@ -15,15 +15,21 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 ## Mortgage and housing
 
+- [Mortgage and housing calculator directory](https://calculatorfree.io/real-estate-calculator.html): Choose buying, insurance, payoff, refinance and rent-versus-buy tools by housing decision.
+
 - [Mortgage Calculator](https://calculatorfree.io/mortgage-calculator.html): Estimate payments and ownership costs, model extra principal payments, and compare biweekly payments. Monthly mode automatically estimates PMI from original LTV, an assumed credit-score range and loan term using a dated National MI base-rate card; actual quotes can be entered manually. The requested 80% cancellation model uses the lower of purchase price and original appraisal. Biweekly mode excludes PMI and ownership expenses; cash purchases retain ownership-cost estimates without a loan schedule.
 - [Mortgage Payoff Calculator](https://calculatorfree.io/mortgage-payoff-calculator.html): Compare repayment strategies using the current balance or original loan details, including extra payments and biweekly payments.
 
 ## Loans and debt
 
+- [Loan and debt calculator directory](https://calculatorfree.io/loan-calculators.html): Choose loan, vehicle financing, credit-card and debt payoff tools by scenario.
+
 - [Loan Calculator](https://calculatorfree.io/loan-calculator.html): Calculate fixed-rate amortized payments, deferred single repayments, or zero-coupon bond present values.
 - [Debt Payoff Calculator](https://calculatorfree.io/debt-payoff-calculator.html): Compare highest-interest-first avalanche and smallest-balance-first snowball strategies using entered debts and payments.
 
 ## Savings and investments
+
+- [Savings and investment calculator directory](https://calculatorfree.io/savings-investment-calculators.html): Choose savings goals, growth projections, investment returns and financial-mathematics tools.
 
 - [Compound Interest Calculator](https://calculatorfree.io/compound-interest-calculator.html): Opens in Compound Growth for starting money, monthly or annual contributions, compounding and contribution timing. Equivalent Interest Rate conversion remains a separate mode.
 - [Savings Calculator](https://calculatorfree.io/savings-calculator.html): Project savings growth, solve the monthly deposit needed for a goal, or estimate time to reach a target.

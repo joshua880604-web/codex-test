@@ -22,7 +22,7 @@ class Page(HTMLParser):
   self.text.append(data)
 catalog=json.loads((root/'src/lib/catalog-data.json').read_text())
 terms=json.loads((root/'src/lib/glossary-data.json').read_text())
-paths=[x['local_route'] for x in catalog]+['/financial-calculator.html','/about.html','/privacy.html','/methodology.html','/glossary/']+['/glossary/'+term['slug']+'/' for term in terms]
+paths=[x['local_route'] for x in catalog]+['/loan-calculators.html','/savings-investment-calculators.html','/financial-calculator.html','/about.html','/privacy.html','/methodology.html','/glossary/']+['/glossary/'+term['slug']+'/' for term in terms]
 checks=[]
 for route in paths:
  file=root/'out'/route[1:]

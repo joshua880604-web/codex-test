@@ -13,7 +13,12 @@ export const calculatorCategories: CalculatorCategory[] = [
       { title: 'Renting & property investment', tools: ['rent','rent-vs-buy','rental-property'] },
     ] },
   { id: 'loans-debt', title: 'Loans & Debt', popular: ['loan','auto-loan','credit-card','debt-payoff'], aliases: ['auto','other'],
-    tools: ['loan','payment','auto-loan','cash-back-or-low-interest','auto-lease','credit-card','credit-cards-payoff','debt-payoff','debt-consolidation','repayment','student-loan','personal-loan','boat-loan','lease'] },
+    tools: ['loan','payment','auto-loan','cash-back-or-low-interest','auto-lease','credit-card','credit-cards-payoff','debt-payoff','debt-consolidation','repayment','student-loan','personal-loan','boat-loan','lease'],
+    sections: [
+      {title:'Loans & payments',tools:['loan','payment','personal-loan','student-loan','repayment']},
+      {title:'Vehicles & leasing',tools:['auto-loan','auto-lease','cash-back-or-low-interest','boat-loan','lease']},
+      {title:'Credit cards & debt strategies',tools:['credit-card','credit-cards-payoff','debt-payoff','debt-consolidation']},
+    ] },
   { id: 'saving-investing', title: 'Savings & Investing', popular: ['compound-interest','savings','investment','cd'], aliases: ['investment'],
     tools: ['interest','investment','finance','compound-interest','interest-rate','savings','simple-interest','cd','bond','mutual-fund','average-return','irr','roi','payback-period','present-value','future-value','inflation','college-cost','cagr','emergency-fund','investment-fee','real-return','currency','budget'],
     sections: [
@@ -32,11 +37,12 @@ export const calculatorCategories: CalculatorCategory[] = [
 ];
 const categoryByTool = new Map(calculatorCategories.flatMap(group => group.tools.map(id => [id, group] as const)));
 export function calculatorCategory(id: string) { return categoryByTool.get(id); }
-export function categoryHref(id: string) { return '/financial-calculator.html#' + id; }
+export const categoryPaths: Record<string,string> = {'mortgage-housing':'/real-estate-calculator.html','loans-debt':'/loan-calculators.html','saving-investing':'/savings-investment-calculators.html'};
+export function categoryHref(id: string) { return categoryPaths[id] ?? '/financial-calculator.html#' + id; }
 export const categoryNavigation = calculatorCategories.map(({id,title}) => ({id,title,href:categoryHref(id)}));
 export const overviewTools = ['mortgage','loan','compound-interest','pmi','savings','retirement','income-tax','take-home-paycheck'];
-export function sidebarTools(id?: string) {
-  const group = id ? calculatorCategory(id) : undefined;
+export function sidebarTools(id?: string, categoryId?: string) {
+  const group = id ? calculatorCategory(id) : calculatorCategories.find(group=>group.id===categoryId);
   if (!group) return { title: 'Popular financial calculators', href: '/financial-calculator.html', ids: overviewTools };
   const section = group.sections?.find(section => section.tools.includes(id!));
   const related = group.id === 'loans-debt' ? ['apr','amortization','business-loan'] : group.id === 'business-finance' ? ['commission','roi','loan'] : [];

@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {calculators} from '../src/lib/catalog';
-import {calculatorCategories,calculatorCategory,categoryNavigation,sidebarTools} from '../src/lib/calculator-categories';
+import {calculatorCategories,calculatorCategory,categoryNavigation,sidebarTools,categoryHref} from '../src/lib/calculator-categories';
 
 test('Every existing catalog entry has exactly one primary display category',()=>{
  const ids=calculatorCategories.flatMap(group=>group.tools);
@@ -29,7 +29,7 @@ test('Renamed display labels retain all existing category fragment targets and l
  for(const id of old)assert.ok(all.includes(id),id);
  assert.equal(new Set(all).size,all.length);
  assert.equal(categoryNavigation.length,7);
- for(const link of categoryNavigation)assert.equal(link.href,'/financial-calculator.html#'+link.id);
+ for(const link of categoryNavigation)assert.equal(link.href,categoryHref(link.id));
 });
 test('Contextual sidebars link valid related tools without self links, directory loops or long mixed lists',()=>{
  for(const tool of calculators){const side=sidebarTools(tool.id);assert.equal(side.title,calculatorCategory(tool.id)!.title);assert.ok(side.ids.length>0&&side.ids.length<=8);assert.equal(new Set(side.ids).size,side.ids.length);assert.ok(!side.ids.includes(tool.id));assert.ok(!side.ids.includes('real-estate'));for(const id of side.ids)assert.ok(calculators.some(tool=>tool.id===id));}

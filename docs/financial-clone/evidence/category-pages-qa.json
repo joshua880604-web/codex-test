@@ -1,0 +1,575 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-26T12:34:32.540Z",
+  "checks": [
+    {
+      "width": 320,
+      "id": "mortgage-housing",
+      "path": "/real-estate-calculator.html",
+      "count": 18,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 320,
+      "id": "loans-debt",
+      "path": "/loan-calculators.html",
+      "count": 14,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 320,
+      "id": "saving-investing",
+      "path": "/savings-investment-calculators.html",
+      "count": 24,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 390,
+      "id": "mortgage-housing",
+      "path": "/real-estate-calculator.html",
+      "count": 18,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 390,
+      "id": "loans-debt",
+      "path": "/loan-calculators.html",
+      "count": 14,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 390,
+      "id": "saving-investing",
+      "path": "/savings-investment-calculators.html",
+      "count": 24,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 768,
+      "id": "mortgage-housing",
+      "path": "/real-estate-calculator.html",
+      "count": 18,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 768,
+      "id": "loans-debt",
+      "path": "/loan-calculators.html",
+      "count": 14,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 768,
+      "id": "saving-investing",
+      "path": "/savings-investment-calculators.html",
+      "count": 24,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 1440,
+      "id": "mortgage-housing",
+      "path": "/real-estate-calculator.html",
+      "count": 18,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 1440,
+      "id": "loans-debt",
+      "path": "/loan-calculators.html",
+      "count": 14,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "width": 1440,
+      "id": "saving-investing",
+      "path": "/savings-investment-calculators.html",
+      "count": 24,
+      "noOverflow": true,
+      "schema": true,
+      "contextSidebar": true
+    },
+    {
+      "slug": "pmi",
+      "categoryBreadcrumb": true,
+      "disclaimerPreserved": true
+    },
+    {
+      "slug": "loan",
+      "categoryBreadcrumb": true,
+      "disclaimerPreserved": true
+    },
+    {
+      "slug": "savings",
+      "categoryBreadcrumb": true,
+      "disclaimerPreserved": true
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "homepageFirstScreen": true,
+      "oldAnchors": true,
+      "mobileMenuDirectCategory": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "homepageFirstScreen": true,
+      "oldAnchors": true,
+      "mobileMenuDirectCategory": true
+    },
+    {
+      "staticWithoutJS": 3
+    }
+  ],
+  "urls": [
+    {
+      "id": "mortgage",
+      "path": "/mortgage-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "amortization",
+      "path": "/amortization-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "mortgage-payoff",
+      "path": "/mortgage-payoff-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "house-affordability",
+      "path": "/house-affordability-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "rent",
+      "path": "/rent-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "path": "/debt-ratio-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "real-estate",
+      "path": "/real-estate-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "refinance",
+      "path": "/refinance-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "rental-property",
+      "path": "/rental-property-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "apr",
+      "path": "/apr-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "fha-loan",
+      "path": "/fha-loan-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "va-mortgage",
+      "path": "/va-mortgage-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "home-equity-loan",
+      "path": "/home-equity-loan-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "heloc",
+      "path": "/heloc-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "down-payment",
+      "path": "/down-payment-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "rent-vs-buy",
+      "path": "/rent-vs-buy-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "auto-loan",
+      "path": "/auto-loan-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "path": "/cash-back-or-low-interest-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "auto-lease",
+      "path": "/auto-lease-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "interest",
+      "path": "/interest-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "investment",
+      "path": "/investment-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "finance",
+      "path": "/finance-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "compound-interest",
+      "path": "/compound-interest-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "interest-rate",
+      "path": "/interest-rate-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "savings",
+      "path": "/savings-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "simple-interest",
+      "path": "/simple-interest-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "cd",
+      "path": "/cd-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "bond",
+      "path": "/bond-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "mutual-fund",
+      "path": "/mutual-fund-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "average-return",
+      "path": "/average-return-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "irr",
+      "path": "/irr-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "roi",
+      "path": "/roi-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "payback-period",
+      "path": "/payback-period-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "present-value",
+      "path": "/present-value-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "future-value",
+      "path": "/future-value-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "retirement",
+      "path": "/retirement-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "401k",
+      "path": "/401k-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "pension",
+      "path": "/pension-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "social-security",
+      "path": "/social-security-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "annuity",
+      "path": "/annuity-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "annuity-payout",
+      "path": "/annuity-payout-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "roth-ira",
+      "path": "/roth-ira-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "ira",
+      "path": "/ira-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "rmd",
+      "path": "/rmd-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "income-tax",
+      "path": "/tax-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "salary",
+      "path": "/salary-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "marriage-tax",
+      "path": "/marriage-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "estate-tax",
+      "path": "/estate-tax-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "take-home-paycheck",
+      "path": "/take-home-pay-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "loan",
+      "path": "/loan-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "payment",
+      "path": "/payment-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "currency",
+      "path": "/currency-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "inflation",
+      "path": "/inflation-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "sales-tax",
+      "path": "/sales-tax-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "credit-card",
+      "path": "/credit-card-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "credit-cards-payoff",
+      "path": "/credit-card-payoff-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "debt-payoff",
+      "path": "/debt-payoff-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "debt-consolidation",
+      "path": "/debt-consolidation-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "repayment",
+      "path": "/repayment-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "student-loan",
+      "path": "/student-loan-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "college-cost",
+      "path": "/college-cost-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "vat",
+      "path": "/vat-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "depreciation",
+      "path": "/depreciation-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "margin",
+      "path": "/margin-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "discount",
+      "path": "/discount-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "business-loan",
+      "path": "/business-loan-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "personal-loan",
+      "path": "/personal-loan-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "boat-loan",
+      "path": "/boat-loan-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "lease",
+      "path": "/lease-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "budget",
+      "path": "/budget-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "commission",
+      "path": "/commission-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "percentage",
+      "path": "/percentage-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "tip-bill-split",
+      "path": "/tip-bill-split-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "date",
+      "path": "/date-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "unit-converter",
+      "path": "/unit-converter.html",
+      "status": 200
+    },
+    {
+      "id": "scientific",
+      "path": "/scientific-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "markup",
+      "path": "/markup-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "cagr",
+      "path": "/cagr-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "emergency-fund",
+      "path": "/emergency-fund-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "break-even",
+      "path": "/break-even-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "investment-fee",
+      "path": "/investment-fee-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "real-return",
+      "path": "/real-return-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "pmi",
+      "path": "/pmi-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "biweekly-mortgage",
+      "path": "/biweekly-mortgage-calculator.html",
+      "status": 200
+    },
+    {
+      "id": "discount-points",
+      "path": "/discount-points-calculator.html",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "scope": "Local production export, Chromium; exact existing ad loader stubbed; no native Safari or ranking claim"
+}
