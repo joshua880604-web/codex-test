@@ -1,3 +1,5 @@
+
+import SiteLink from "@/components/SiteLink";
 import {siteName} from "@/lib/site";
 import {categoryNavigation,sidebarTools} from '@/lib/calculator-categories';
 import MobileNavigation from "./MobileNavigation";
@@ -9,7 +11,7 @@ export function Header() {
     <>
       <header className="site-header">
         <div className="header-inner">
-          <a className="brand" href="/financial-calculator.html" aria-label={`${siteName} home`}>
+          <SiteLink className="brand" href="/financial-calculator.html" aria-label={`${siteName} home`}>
             <svg className="calculator-mark" viewBox="0 0 32 36" width="32" height="36" aria-hidden="true" focusable="false">
               <rect width="32" height="36" rx="8" fill="#e5f3f0" />
               <rect x="6" y="6" width="20" height="6" rx="2" fill="#003b66" />
@@ -18,7 +20,7 @@ export function Header() {
               <path d="M20.5 22h4m-4 4h4" fill="none" stroke="#003b66" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <span className="brand-wordmark"><span>Calculator</span><span className="brand-free">Free</span><span className="brand-domain">.io</span></span>
-          </a>
+          </SiteLink>
           <MobileNavigation/>
           <span className="header-description">
             <FreeBadge />
@@ -27,9 +29,9 @@ export function Header() {
       </header>
       <nav className="top-nav" aria-label="Main navigation">
         <div>
-          <a href="/financial-calculator.html">All calculators</a>
-          {categoryNavigation.map(link=><a key={link.id} href={link.href}>{link.title}</a>)}
-          <a href="/glossary/">Glossary</a>
+          <SiteLink href="/financial-calculator.html">All calculators</SiteLink>
+          {categoryNavigation.map(link=><SiteLink key={link.id} href={link.href}>{link.title}</SiteLink>)}
+          <SiteLink href="/glossary/">Glossary</SiteLink>
         </div>
       </nav>
     </>
@@ -44,25 +46,25 @@ export function Sidebar({calculatorId,categoryId}:{calculatorId?:string;category
       <SiteBenefits />
       <section className="side-group" aria-labelledby="side-financial-heading">
       <h2 className="side-heading" id="side-financial-heading">
-        <a href={context.href}>{context.title}</a>
+        <SiteLink href={context.href}>{context.title}</SiteLink>
       </h2>
       <div className="side-links">
         {ids.map((id) => {
           const c = calculators.find((x) => x.id === id)!;
           return (
-            <a key={id} href={routeFor(id)}>
+            <SiteLink key={id} href={routeFor(id)}>
               {c.title.replace(" Calculator", "")}
-            </a>
+            </SiteLink>
           );
         })}
       </div>
-      <a className="more-tools" href={context.href}>
+      <SiteLink className="more-tools" href={context.href}>
         Browse all tools »
-      </a>
+      </SiteLink>
       </section>
       <section className="side-group side-group-secondary" aria-labelledby="side-categories-heading">
       <h2 className="side-heading" id="side-categories-heading">Browse categories</h2>
-      <nav className="side-category-links" aria-label="Calculator categories">{categoryNavigation.map(link=><a key={link.id} href={link.href}>{link.title}</a>)}</nav>
+      <nav className="side-category-links" aria-label="Calculator categories">{categoryNavigation.map(link=><SiteLink key={link.id} href={link.href}>{link.title}</SiteLink>)}</nav>
       </section>
       <div className="side-note">
         <h3>Plan with clear assumptions</h3>
@@ -78,15 +80,15 @@ export function Footer() {
   return (
     <footer>
       <div>
-        <a href="/financial-calculator.html">All Financial Calculators</a>
+        <SiteLink href="/financial-calculator.html">All Financial Calculators</SiteLink>
         <span> · </span>
-        <a href="/about.html">About</a>
+        <SiteLink href="/about.html">About</SiteLink>
         <span> · </span>
-        <a href="/privacy.html">Privacy</a>
+        <SiteLink href="/privacy.html">Privacy</SiteLink>
         <span> · </span>
-        <a href="/methodology.html">Methodology &amp; sources</a>
+        <SiteLink href="/methodology.html">Methodology &amp; sources</SiteLink>
         <span> · </span>
-        <a href="/glossary/">Glossary</a>
+        <SiteLink href="/glossary/">Glossary</SiteLink>
       </div>
       <p>
         © {new Date().getFullYear()} {siteName}. Independent planning

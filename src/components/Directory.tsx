@@ -1,4 +1,6 @@
 "use client";
+import SiteLink from "@/components/SiteLink";
+
 import {directoryGroups,directoryGroup,directorySort} from "@/lib/directory";
 import {categoryPaths,categoryHref} from '@/lib/calculator-categories';
 import CategoryToolList from './CategoryToolList';
@@ -32,22 +34,22 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
         <h2 id="featured-heading">Popular financial calculators</h2>
         <div className="featured-grid">{featured.map(([id, description]) => {
           const calculator = calculators.find(c => c.id === id)!;
-          return <a key={id} href={routeFor(id)}><strong>{calculator.title}</strong><span>{description}</span></a>;
+          return <SiteLink key={id} href={routeFor(id)}><strong>{calculator.title}</strong><span>{description}</span></SiteLink>;
         })}</div>
         <SiteBenefits showMobileBadge={false} />
       </section>}
       </div>
       {groups.length > 1 && <nav className="directory-categories" aria-label="Calculator categories">
         <span>Browse by category</span>
-        <div>{groups.map(({ id, title, tools }) => <a href={"#" + id} key={id}>{title}<span>{tools.length}</span></a>)}</div>
+        <div>{groups.map(({ id, title, tools }) => <SiteLink href={"#" + id} key={id}>{title}<span>{tools.length}</span></SiteLink>)}</div>
       </nav>}
       <div className="directory-list-heading"><h2>All calculators</h2></div>
       <div className="directory-grid" id="calculator-list">
         {groups.map(group => { const {id,title,tools}=group; return <section key={id} id={id} aria-labelledby={id + "-heading"} tabIndex={-1}>
           {group.aliases.map(anchor=><span key={anchor} id={anchor} aria-hidden="true"/>)}
-          <h3 id={id + "-heading"}>{categoryPaths[id]?<a href={categoryHref(id)}>{title}</a>:title}<span>{tools.length}</span></h3>
+          <h3 id={id + "-heading"}>{categoryPaths[id]?<SiteLink href={categoryHref(id)}>{title}</SiteLink>:title}<span>{tools.length}</span></h3>
           <CategoryToolList group={group} tools={tools}/>
-          {categoryPaths[id]&&<a className="category-overview" href={categoryHref(id)}>Browse {title.toLowerCase()} tools »</a>}
+          {categoryPaths[id]&&<SiteLink className="category-overview" href={categoryHref(id)}>Browse {title.toLowerCase()} tools »</SiteLink>}
         </section>; })}
       </div>
 

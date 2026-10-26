@@ -1,9 +1,10 @@
+import {navigationHref} from './navigation';
 import {siteName} from './site';
 import {hasCalculatorWorkspace,workspaceMetrics} from './workspace-layout';
 import {defaults,type Calculator,type Mode,type Result,type Values,type Metric} from './types';
 export const MAX_SHARE_LENGTH=20000;
 export function calculationLink(origin:string,path:string,mode:Mode,values:Values,includeInputs=false){
- const url=new URL(path,origin);url.search='';url.hash='';
+ const url=new URL(navigationHref(path),origin);url.search='';url.hash='';
  if(includeInputs){
   const params=new URLSearchParams({share_version:'1',mode:mode.id});
   for(const field of mode.fields)if(field.key!=='verified_rate')params.set(field.key,values[field.key]??'');

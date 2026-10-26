@@ -1,3 +1,5 @@
+
+import SiteLink from "@/components/SiteLink";
 import Directory from "@/components/DirectoryEntry";
 import { Sidebar } from "@/components/Shell";
 export default function Home() {
@@ -5,7 +7,7 @@ export default function Home() {
     <div className="page-wrap">
       <main id="main">
         <div className="breadcrumb">
-          <a href="/">home</a> / financial
+          <SiteLink href="/">home</SiteLink> / financial
         </div>
         <h1>Financial Calculators</h1>
         <Directory />

@@ -8,9 +8,12 @@ createServer(async(req,res)=>{
  if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}
  try{
   const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
-  if(pathname==='/'){res.writeHead(301,{Location:'/financial-calculator.html'});res.end();return;}
+  if(pathname==='/'){res.writeHead(301,{Location:'/financial-calculator'});res.end();return;}
   let file=resolve(root,'.'+pathname);
-  if(pathname==='/methodology')file=resolve(root,'methodology.html');
+  if(!file.startsWith(root+sep)){res.writeHead(403);res.end();return;}
+  if (!extname(pathname) && !pathname.endsWith('/')) {
+   try { await stat(file); } catch (error) { if (error.code !== 'ENOENT') throw error; file += '.html'; }
+  }
   if(!file.startsWith(root+sep)){res.writeHead(403);res.end();return;}
   if((await stat(file)).isDirectory()){
    if(!pathname.endsWith('/')){const url=new URL(req.url,'http://localhost');res.writeHead(301,{Location:pathname+'/'+url.search});res.end();return;}

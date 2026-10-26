@@ -1,4 +1,6 @@
 "use client";
+import SiteLink from "@/components/SiteLink";
+
 import {lazy,Suspense,useEffect,useRef,useState} from 'react';
 const ScientificKeys=lazy(()=>import('./QuickScientificKeys'));
 const keys=['AC','(',')','⌫','7','8','9','÷','4','5','6','×','1','2','3','−','0','.','%','+'];
@@ -35,7 +37,7 @@ export default function QuickCalculator(){
    <div className="quick-keys" role="group" aria-label="Basic calculator keypad">{keys.map(key=><button type="button" key={key} aria-label={key==='AC'?'Clear quick calculation':key==='⌫'?'Delete last character':key} onMouseDown={e=>e.preventDefault()} onClick={()=>press(key)}>{key}</button>)}</div>
    <button type="button" className="quick-equals" disabled={busy} onClick={evaluate}>Calculate =</button>
    <div className="quick-footer"><details className="quick-help-details"><summary>Help</summary><p id="quick-help">Enter to calculate · Esc to clear. % divides by 100: 100 + 10% = 100.1.</p></details>
-   <a href="/scientific-calculator.html">Open scientific calculator →</a></div>
+   <SiteLink href="/scientific-calculator.html">Open scientific calculator →</SiteLink></div>
   </div>
  </section>;
 }

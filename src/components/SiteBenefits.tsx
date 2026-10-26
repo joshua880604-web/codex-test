@@ -1,3 +1,5 @@
+
+import SiteLink from "@/components/SiteLink";
 /** Static, locally rendered trust cues; no image, icon or animation dependency. */
 export function FreeBadge() {
   return <span className="free-badge">
@@ -23,7 +25,7 @@ export default function SiteBenefits({ showMobileBadge = true }: { showMobileBad
         <span className="benefit-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v2" /></svg>
         </span>
-        <a href="/privacy.html" title="Calculations run locally in your browser. Read our privacy policy.">Private &amp; Secure</a>
+        <SiteLink href="/privacy.html" title="Calculations run locally in your browser. Read our privacy policy.">Private &amp; Secure</SiteLink>
       </li>
       <li>
         <span className="benefit-icon" aria-hidden="true">

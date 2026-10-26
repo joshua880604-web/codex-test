@@ -1,3 +1,5 @@
+
+import SiteLink from "@/components/SiteLink";
 import {categoryPages,categoryPageBySlug} from '@/lib/category-pages';
 import CategoryLanding from '@/components/CategoryLanding';
 import {calculatorCategory,categoryHref} from '@/lib/calculator-categories';
@@ -99,8 +101,8 @@ export default async function Page({
     <div className={categoryPage ? "page-wrap calculator-page category-directory-page" : slug === "financial-calculator.html" ? "page-wrap directory-page" : slug === "methodology.html" ? "page-wrap methodology-page" : hasCalculatorWorkspace(c?.id ?? "") ? "page-wrap calculator-page workspace-page compact-calculator-page" + (c?.id === "cd" ? " cd-page" : "") : c && !c.directory ? "page-wrap calculator-page" : "page-wrap"}>
       <main id="main">
         <div className="breadcrumb">
-          <a href="/">home</a> /{" "}
-          <a href={!categoryPage&&displayCategory ? categoryHref(displayCategory.id) : "/financial-calculator.html"}>{!categoryPage&&displayCategory ? displayCategory.title : "financial"}</a>
+          <SiteLink href="/">home</SiteLink> /{" "}
+          <SiteLink href={!categoryPage&&displayCategory ? categoryHref(displayCategory.id) : "/financial-calculator.html"}>{!categoryPage&&displayCategory ? displayCategory.title : "financial"}</SiteLink>
           {categoryPage ? <> / {categoryPage.heading}</> : c && <> / {c.title.toLowerCase()}</>}
         </div>
         <h1>{categoryPage?.heading ?? title}</h1>
@@ -123,13 +125,13 @@ export default async function Page({
             </p>
             <p>
               Read our{" "}
-              <a href="/methodology.html">
+              <SiteLink href="/methodology.html">
                 calculation methodology, data versions and review status
-              </a>
+              </SiteLink>
               , or inspect the{" "}
-              <a href="https://github.com/joshua880604-web/codex-test/tree/financial-calculators">
+              <SiteLink href="https://github.com/joshua880604-web/codex-test/tree/financial-calculators">
                 public project and tests
-              </a>
+              </SiteLink>
               .
             </p>
             <p>
@@ -154,11 +156,11 @@ export default async function Page({
             </p>
             <p>
               Read how{" "}
-              <a href="https://policies.google.com/technologies/ads">
+              <SiteLink href="https://policies.google.com/technologies/ads">
                 Google uses information for advertising
-              </a>
+              </SiteLink>
               . You can manage your ad preferences in{" "}
-              <a href="https://myadcenter.google.com/">Google My Ad Center</a>{" "}
+              <SiteLink href="https://myadcenter.google.com/">Google My Ad Center</SiteLink>{" "}
               and manage cookies through your browser settings.
             </p>
             <h2>Calculations and sharing</h2>
@@ -204,9 +206,9 @@ export default async function Page({
               )
               .slice(0, 8)
               .map((x) => (
-                <a href={routeFor(x.id)} key={x.id}>
+                <SiteLink href={routeFor(x.id)} key={x.id}>
                   {x.title}
-                </a>
+                </SiteLink>
               ))}
           </section>
         )}

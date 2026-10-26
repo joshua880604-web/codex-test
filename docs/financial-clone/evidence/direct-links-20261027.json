@@ -1,0 +1,773 @@
+{
+  "pages": 152,
+  "internalAnchorsChecked": 7887,
+  "allTitlesAtMost70": true,
+  "allInternalLinksFinalAndResolve": true,
+  "titles": [
+    {
+      "path": "/mortgage-calculator",
+      "title": "Mortgage Calculator with Taxes and Insurance | calculatorfree.io",
+      "length": 64
+    },
+    {
+      "path": "/amortization-calculator",
+      "title": "Amortization Calculator - Mortgage & Loan Schedules",
+      "length": 51
+    },
+    {
+      "path": "/mortgage-payoff-calculator",
+      "title": "Mortgage Payoff Calculator - Extra Payments & Interest Savings",
+      "length": 62
+    },
+    {
+      "path": "/house-affordability-calculator",
+      "title": "House Affordability Calculator - How Much Can I Afford?",
+      "length": 55
+    },
+    {
+      "path": "/rent-calculator",
+      "title": "Rent Affordability Calculator - Monthly Rent Budget",
+      "length": 51
+    },
+    {
+      "path": "/debt-ratio-calculator",
+      "title": "Debt-to-Income Ratio Calculator - Monthly Debt & Income",
+      "length": 55
+    },
+    {
+      "path": "/real-estate-calculator",
+      "title": "Mortgage & Housing Calculators - Payments, PMI & Refinancing",
+      "length": 60
+    },
+    {
+      "path": "/refinance-calculator",
+      "title": "Refinance Calculator - Payments, Cash Out & Break-Even",
+      "length": 54
+    },
+    {
+      "path": "/rental-property-calculator",
+      "title": "Rental Property Calculator - Cash Flow & Rental Returns",
+      "length": 55
+    },
+    {
+      "path": "/apr-calculator",
+      "title": "APR Calculator - Loan Fees & Annual Borrowing Cost | calculatorfree.io",
+      "length": 70
+    },
+    {
+      "path": "/fha-loan-calculator",
+      "title": "FHA Loan Calculator - Payment & Mortgage Insurance | calculatorfree.io",
+      "length": 70
+    },
+    {
+      "path": "/va-mortgage-calculator",
+      "title": "VA Mortgage Calculator - Payment & Funding Fee | calculatorfree.io",
+      "length": 66
+    },
+    {
+      "path": "/home-equity-loan-calculator",
+      "title": "Home Equity Loan Calculator - Payment & Interest | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/heloc-calculator",
+      "title": "HELOC Calculator - Interest-Only & Repayment Payments",
+      "length": 53
+    },
+    {
+      "path": "/down-payment-calculator",
+      "title": "Down Payment Calculator - Home Purchase Cash Needed",
+      "length": 51
+    },
+    {
+      "path": "/rent-vs-buy-calculator",
+      "title": "Rent vs Buy Calculator - Housing Costs & Net Wealth",
+      "length": 51
+    },
+    {
+      "path": "/auto-loan-calculator",
+      "title": "Auto Loan Calculator - Car Payments, Trade-In & Taxes",
+      "length": 53
+    },
+    {
+      "path": "/cash-back-or-low-interest-calculator",
+      "title": "Cash Back or Low Interest Calculator - Compare Dealer Offers",
+      "length": 60
+    },
+    {
+      "path": "/auto-lease-calculator",
+      "title": "Auto Lease Calculator - Car Lease Payment & Residual",
+      "length": 52
+    },
+    {
+      "path": "/interest-calculator",
+      "title": "Interest Calculator - Deposits & Interest Earned | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/investment-calculator",
+      "title": "Investment Calculator - Growth & Monthly Contributions",
+      "length": 54
+    },
+    {
+      "path": "/finance-calculator",
+      "title": "Finance Calculator - PV, FV, Payment & Rate | calculatorfree.io",
+      "length": 63
+    },
+    {
+      "path": "/compound-interest-calculator",
+      "title": "Compound Interest Calculator - Daily & Monthly Growth",
+      "length": 53
+    },
+    {
+      "path": "/interest-rate-calculator",
+      "title": "Interest Rate Calculator - Rate from Loan Payments | calculatorfree.io",
+      "length": 70
+    },
+    {
+      "path": "/savings-calculator",
+      "title": "Savings Calculator - Interest, Monthly Deposits & Goals",
+      "length": 55
+    },
+    {
+      "path": "/simple-interest-calculator",
+      "title": "Simple Interest Calculator - Principal, Rate & Time",
+      "length": 51
+    },
+    {
+      "path": "/cd-calculator",
+      "title": "CD Calculator - Interest, APY & Maturity | calculatorfree.io",
+      "length": 60
+    },
+    {
+      "path": "/bond-calculator",
+      "title": "Bond Calculator - Price & Yield to Maturity | calculatorfree.io",
+      "length": 63
+    },
+    {
+      "path": "/mutual-fund-calculator",
+      "title": "Mutual Fund Calculator - Growth, Expenses & Fees | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/average-return-calculator",
+      "title": "Average Return Calculator - Annualized Cash-Flow Returns",
+      "length": 56
+    },
+    {
+      "path": "/irr-calculator",
+      "title": "IRR Calculator - Annualized Cash-Flow Returns | calculatorfree.io",
+      "length": 65
+    },
+    {
+      "path": "/roi-calculator",
+      "title": "ROI Calculator - Return on Investment & Annualized Gain",
+      "length": 55
+    },
+    {
+      "path": "/payback-period-calculator",
+      "title": "Payback Period Calculator - Cash-Flow Recovery Time",
+      "length": 51
+    },
+    {
+      "path": "/present-value-calculator",
+      "title": "Present Value Calculator - Lump Sum & Annuity | calculatorfree.io",
+      "length": 65
+    },
+    {
+      "path": "/future-value-calculator",
+      "title": "Future Value Calculator - Growth & Recurring Payments",
+      "length": 53
+    },
+    {
+      "path": "/retirement-calculator",
+      "title": "Retirement Calculator - Savings, Income & Withdrawals",
+      "length": 53
+    },
+    {
+      "path": "/401k-calculator",
+      "title": "401k Calculator - Growth, Match & Early Withdrawal | calculatorfree.io",
+      "length": 70
+    },
+    {
+      "path": "/pension-calculator",
+      "title": "Pension Calculator - Lump Sum vs Monthly Income | calculatorfree.io",
+      "length": 67
+    },
+    {
+      "path": "/social-security-calculator",
+      "title": "Social Security Calculator - Compare Claiming Ages | calculatorfree.io",
+      "length": 70
+    },
+    {
+      "path": "/annuity-calculator",
+      "title": "Annuity Calculator - Accumulation & Contributions | calculatorfree.io",
+      "length": 69
+    },
+    {
+      "path": "/annuity-payout-calculator",
+      "title": "Annuity Payout Calculator - Income & Payment Duration",
+      "length": 53
+    },
+    {
+      "path": "/roth-ira-calculator",
+      "title": "Roth IRA Calculator - Contributions & Tax-Free Growth",
+      "length": 53
+    },
+    {
+      "path": "/ira-calculator",
+      "title": "IRA Calculator - Compare After-Tax Retirement Savings",
+      "length": 53
+    },
+    {
+      "path": "/rmd-calculator",
+      "title": "RMD Calculator - Age-Based Retirement Distributions",
+      "length": 51
+    },
+    {
+      "path": "/tax-calculator",
+      "title": "Federal Income Tax Calculator - 2025 & 2026 Estimate",
+      "length": 52
+    },
+    {
+      "path": "/salary-calculator",
+      "title": "Salary Calculator - Hourly, Monthly & Annual Pay | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/marriage-calculator",
+      "title": "Marriage Tax Calculator - Federal Marriage Penalty or Bonus",
+      "length": 59
+    },
+    {
+      "path": "/estate-tax-calculator",
+      "title": "Estate Tax Calculator - Federal Estate & Gift Exclusion",
+      "length": 55
+    },
+    {
+      "path": "/take-home-pay-calculator",
+      "title": "Paycheck Calculator - Estimated Take-Home Pay | calculatorfree.io",
+      "length": 65
+    },
+    {
+      "path": "/loan-calculator",
+      "title": "Loan Calculator - Payment, Interest & Loan Value | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/payment-calculator",
+      "title": "Payment Calculator - Payment Amount & Payoff Time | calculatorfree.io",
+      "length": 69
+    },
+    {
+      "path": "/currency-calculator",
+      "title": "Currency Calculator - Manual & Historical Exchange Rates",
+      "length": 56
+    },
+    {
+      "path": "/inflation-calculator",
+      "title": "Inflation Calculator - CPI Purchasing Power & Inflation",
+      "length": 55
+    },
+    {
+      "path": "/sales-tax-calculator",
+      "title": "Sales Tax Calculator - Add Tax or Find Pre-Tax Price",
+      "length": 52
+    },
+    {
+      "path": "/credit-card-calculator",
+      "title": "Credit Card Payoff Calculator - Payments & Interest",
+      "length": 51
+    },
+    {
+      "path": "/credit-card-payoff-calculator",
+      "title": "Credit Cards Payoff Calculator - Multiple Card Plan",
+      "length": 51
+    },
+    {
+      "path": "/debt-payoff-calculator",
+      "title": "Debt Payoff Calculator - Avalanche & Snowball | calculatorfree.io",
+      "length": 65
+    },
+    {
+      "path": "/debt-consolidation-calculator",
+      "title": "Debt Consolidation Calculator - Payment & Total Cost",
+      "length": 52
+    },
+    {
+      "path": "/repayment-calculator",
+      "title": "Loan Repayment Calculator - Extra Payments & Payoff",
+      "length": 51
+    },
+    {
+      "path": "/student-loan-calculator",
+      "title": "Student Loan Calculator - Payments, Payoff & Interest",
+      "length": 53
+    },
+    {
+      "path": "/college-cost-calculator",
+      "title": "College Cost Calculator - Tuition Costs & Savings Goal",
+      "length": 54
+    },
+    {
+      "path": "/vat-calculator",
+      "title": "VAT Calculator - Add VAT, Remove VAT & Find the Rate",
+      "length": 52
+    },
+    {
+      "path": "/depreciation-calculator",
+      "title": "Depreciation Calculator - Straight Line & Declining Balance",
+      "length": 59
+    },
+    {
+      "path": "/margin-calculator",
+      "title": "Profit Margin Calculator - Cost, Revenue & Profit | calculatorfree.io",
+      "length": 69
+    },
+    {
+      "path": "/discount-calculator",
+      "title": "Discount Calculator - Percent Off & Original Price | calculatorfree.io",
+      "length": 70
+    },
+    {
+      "path": "/business-loan-calculator",
+      "title": "Business Loan Calculator - Payments, Fees & Borrowing Cost",
+      "length": 58
+    },
+    {
+      "path": "/personal-loan-calculator",
+      "title": "Personal Loan Calculator - Monthly Payment & Fees | calculatorfree.io",
+      "length": 69
+    },
+    {
+      "path": "/boat-loan-calculator",
+      "title": "Boat Loan Calculator - Boat Payment & Purchase Budget",
+      "length": 53
+    },
+    {
+      "path": "/lease-calculator",
+      "title": "Lease Calculator - Payment, Rate & Residual Value | calculatorfree.io",
+      "length": 69
+    },
+    {
+      "path": "/budget-calculator",
+      "title": "Budget Calculator - Monthly Income & Spending | calculatorfree.io",
+      "length": 65
+    },
+    {
+      "path": "/commission-calculator",
+      "title": "Commission Calculator - Rate, Sales & Tiered Commission",
+      "length": 55
+    },
+    {
+      "path": "/percentage-calculator",
+      "title": "Percentage Calculator - Percent Change & Proportions",
+      "length": 52
+    },
+    {
+      "path": "/tip-bill-split-calculator",
+      "title": "Tip and Bill Split Calculator - Tips & Bill Splitting",
+      "length": 53
+    },
+    {
+      "path": "/date-calculator",
+      "title": "Date Calculator - Date Difference & Add Days | calculatorfree.io",
+      "length": 64
+    },
+    {
+      "path": "/unit-converter",
+      "title": "Unit Converter - Length, Weight & Temperature | calculatorfree.io",
+      "length": 65
+    },
+    {
+      "path": "/scientific-calculator",
+      "title": "Scientific Calculator - Scientific Functions & Expressions",
+      "length": 58
+    },
+    {
+      "path": "/markup-calculator",
+      "title": "Markup Calculator - Selling Price & Margin | calculatorfree.io",
+      "length": 62
+    },
+    {
+      "path": "/cagr-calculator",
+      "title": "CAGR Calculator - Compound Annual Growth & Reverse CAGR",
+      "length": 55
+    },
+    {
+      "path": "/emergency-fund-calculator",
+      "title": "Emergency Fund Calculator - Goal & Savings Plan | calculatorfree.io",
+      "length": 67
+    },
+    {
+      "path": "/break-even-calculator",
+      "title": "Break-Even Calculator - Units, Sales & Target Profit",
+      "length": 52
+    },
+    {
+      "path": "/investment-fee-calculator",
+      "title": "Investment Fee & Expense Ratio Calculator - Long-Term Costs",
+      "length": 59
+    },
+    {
+      "path": "/real-return-calculator",
+      "title": "Real Return Calculator - Inflation-Adjusted Returns",
+      "length": 51
+    },
+    {
+      "path": "/pmi-calculator",
+      "title": "PMI Calculator - Cost, LTV & PMI Removal | calculatorfree.io",
+      "length": 60
+    },
+    {
+      "path": "/biweekly-mortgage-calculator",
+      "title": "Biweekly Mortgage Payment Calculator - Savings & Payoff",
+      "length": 55
+    },
+    {
+      "path": "/discount-points-calculator",
+      "title": "Discount Points Calculator - Mortgage Points & Break-Even",
+      "length": 57
+    },
+    {
+      "path": "/mortgage-recast-calculator",
+      "title": "Mortgage Recast Calculator - Payment & Savings | calculatorfree.io",
+      "length": 66
+    },
+    {
+      "path": "/loan-calculators",
+      "title": "Loan & Debt Calculators - Payments, APR & Debt Payoff",
+      "length": 53
+    },
+    {
+      "path": "/savings-investment-calculators",
+      "title": "Savings & Investment Calculators - Growth, Interest & Returns",
+      "length": 61
+    },
+    {
+      "path": "/financial-calculator",
+      "title": "Financial Calculators for Loans, Savings & Retirement",
+      "length": 53
+    },
+    {
+      "path": "/about",
+      "title": "About calculatorfree.io",
+      "length": 23
+    },
+    {
+      "path": "/privacy",
+      "title": "Privacy | calculatorfree.io",
+      "length": 27
+    },
+    {
+      "path": "/methodology",
+      "title": "Calculator Methodology: Validation, Defaults & Data Sources",
+      "length": 59
+    },
+    {
+      "path": "/glossary/",
+      "title": "Financial Glossary: Clear Definitions & Examples | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/glossary/compound-interest/",
+      "title": "What Is Compound Interest? Definition and Example | calculatorfree.io",
+      "length": 69
+    },
+    {
+      "path": "/glossary/cagr/",
+      "title": "What Is CAGR? Compound Annual Growth Rate Explained",
+      "length": 51
+    },
+    {
+      "path": "/glossary/real-rate-of-return/",
+      "title": "What Is Real Rate of Return? Inflation-Adjusted Example",
+      "length": 55
+    },
+    {
+      "path": "/glossary/expense-ratio/",
+      "title": "What Is an Expense Ratio? Fund Fees Explained | calculatorfree.io",
+      "length": 65
+    },
+    {
+      "path": "/glossary/dollar-cost-averaging/",
+      "title": "What Is Dollar-Cost Averaging? Example and Limitations",
+      "length": 54
+    },
+    {
+      "path": "/glossary/401k/",
+      "title": "What Is a 401(k)? Contributions and Employer Match | calculatorfree.io",
+      "length": 70
+    },
+    {
+      "path": "/glossary/amortization/",
+      "title": "What Is Loan Amortization? Principal and Interest Explained",
+      "length": 59
+    },
+    {
+      "path": "/glossary/markup-vs-margin/",
+      "title": "Markup vs. Margin: Difference, Formulas and Example",
+      "length": 51
+    },
+    {
+      "path": "/glossary/simple-interest/",
+      "title": "Simple interest: Definition, Formula and Example | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/glossary/apy/",
+      "title": "APY: Definition, Formula and Example | calculatorfree.io",
+      "length": 56
+    },
+    {
+      "path": "/glossary/inflation/",
+      "title": "Inflation: Definition, Formula and Example | calculatorfree.io",
+      "length": 62
+    },
+    {
+      "path": "/glossary/time-value-of-money/",
+      "title": "Time value of money: Definition, Formula and Example",
+      "length": 52
+    },
+    {
+      "path": "/glossary/return-on-investment/",
+      "title": "Return on investment (ROI): Definition, Formula and Example",
+      "length": 59
+    },
+    {
+      "path": "/glossary/internal-rate-of-return/",
+      "title": "Internal rate of return (IRR): Definition, Formula and Example",
+      "length": 62
+    },
+    {
+      "path": "/glossary/net-present-value/",
+      "title": "Net present value (NPV): Definition, Formula and Example",
+      "length": 56
+    },
+    {
+      "path": "/glossary/payback-period/",
+      "title": "Payback period: Definition, Formula and Example | calculatorfree.io",
+      "length": 67
+    },
+    {
+      "path": "/glossary/bond-yield/",
+      "title": "Bond yield: Definition, Formula and Example | calculatorfree.io",
+      "length": 63
+    },
+    {
+      "path": "/glossary/certificate-of-deposit/",
+      "title": "Certificate of deposit (CD): Definition, Formula and Example",
+      "length": 60
+    },
+    {
+      "path": "/glossary/mutual-funds-and-etfs/",
+      "title": "Mutual funds and ETFs: Definition, Formula and Example",
+      "length": 54
+    },
+    {
+      "path": "/glossary/arithmetic-vs-geometric-return/",
+      "title": "Arithmetic vs. geometric return: Definition, Formula and Example",
+      "length": 64
+    },
+    {
+      "path": "/glossary/annuity/",
+      "title": "Annuity: Definition, Formula and Example | calculatorfree.io",
+      "length": 60
+    },
+    {
+      "path": "/glossary/traditional-vs-roth-ira/",
+      "title": "Traditional vs. Roth IRA: Definition, Formula and Example",
+      "length": 57
+    },
+    {
+      "path": "/glossary/employer-match-and-vesting/",
+      "title": "Employer match and vesting: Definition, Formula and Example",
+      "length": 59
+    },
+    {
+      "path": "/glossary/required-minimum-distribution/",
+      "title": "Required minimum distribution (RMD): Definition, Formula and Example",
+      "length": 68
+    },
+    {
+      "path": "/glossary/social-security-benefits/",
+      "title": "Social Security retirement benefits: Definition, Formula and Example",
+      "length": 68
+    },
+    {
+      "path": "/glossary/withdrawal-rate/",
+      "title": "Withdrawal rate: Definition, Formula and Example | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/glossary/defined-benefit-pension/",
+      "title": "Defined-benefit pension: Definition, Formula and Example",
+      "length": 56
+    },
+    {
+      "path": "/glossary/apr/",
+      "title": "Annual percentage rate (APR): Definition, Formula and Example",
+      "length": 61
+    },
+    {
+      "path": "/glossary/principal-and-interest/",
+      "title": "Principal and interest: Definition, Formula and Example",
+      "length": 55
+    },
+    {
+      "path": "/glossary/fixed-vs-variable-interest/",
+      "title": "Fixed vs. variable interest: Definition, Formula and Example",
+      "length": 60
+    },
+    {
+      "path": "/glossary/debt-to-income-ratio/",
+      "title": "Debt-to-income ratio (DTI): Definition, Formula and Example",
+      "length": 59
+    },
+    {
+      "path": "/glossary/debt-consolidation/",
+      "title": "Debt consolidation: Definition, Formula and Example",
+      "length": 51
+    },
+    {
+      "path": "/glossary/debt-snowball-vs-avalanche/",
+      "title": "Debt snowball vs. avalanche: Definition, Formula and Example",
+      "length": 60
+    },
+    {
+      "path": "/glossary/capitalized-interest/",
+      "title": "Capitalized interest: Definition, Formula and Example",
+      "length": 53
+    },
+    {
+      "path": "/glossary/interest-only-and-balloon-loans/",
+      "title": "Interest-only and balloon loans: Definition, Formula and Example",
+      "length": 64
+    },
+    {
+      "path": "/glossary/loan-to-value-ratio/",
+      "title": "Loan-to-value ratio (LTV): Definition, Formula and Example",
+      "length": 58
+    },
+    {
+      "path": "/glossary/home-equity-and-heloc/",
+      "title": "Home equity and HELOC: Definition, Formula and Example",
+      "length": 54
+    },
+    {
+      "path": "/glossary/mortgage-points/",
+      "title": "Mortgage points: Definition, Formula and Example | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/glossary/mortgage-escrow/",
+      "title": "Mortgage escrow: Definition, Formula and Example | calculatorfree.io",
+      "length": 68
+    },
+    {
+      "path": "/glossary/private-mortgage-insurance/",
+      "title": "Private mortgage insurance (PMI): Definition, Formula and Example",
+      "length": 65
+    },
+    {
+      "path": "/glossary/refinance-break-even/",
+      "title": "Refinance break-even: Definition, Formula and Example",
+      "length": 53
+    },
+    {
+      "path": "/glossary/cap-rate-vs-cash-on-cash-return/",
+      "title": "Cap rate vs. cash-on-cash return: Definition, Formula and Example",
+      "length": 65
+    },
+    {
+      "path": "/glossary/down-payment/",
+      "title": "Down payment: Definition, Formula and Example | calculatorfree.io",
+      "length": 65
+    },
+    {
+      "path": "/glossary/marginal-vs-effective-tax-rate/",
+      "title": "Marginal vs. effective tax rate: Definition, Formula and Example",
+      "length": 64
+    },
+    {
+      "path": "/glossary/deduction-vs-credit/",
+      "title": "Tax deduction vs. tax credit: Definition, Formula and Example",
+      "length": 61
+    },
+    {
+      "path": "/glossary/gross-vs-net-pay/",
+      "title": "Gross pay vs. net pay: Definition, Formula and Example",
+      "length": 54
+    },
+    {
+      "path": "/glossary/sales-tax-vs-vat/",
+      "title": "Sales tax vs. VAT: Definition, Formula and Example | calculatorfree.io",
+      "length": 70
+    },
+    {
+      "path": "/glossary/estate-vs-inheritance-tax/",
+      "title": "Estate tax vs. inheritance tax: Definition, Formula and Example",
+      "length": 63
+    },
+    {
+      "path": "/glossary/break-even-point/",
+      "title": "Break-even point: Definition, Formula and Example | calculatorfree.io",
+      "length": 69
+    },
+    {
+      "path": "/glossary/contribution-margin/",
+      "title": "Contribution margin: Definition, Formula and Example",
+      "length": 52
+    },
+    {
+      "path": "/glossary/depreciation/",
+      "title": "Depreciation: Definition, Formula and Example | calculatorfree.io",
+      "length": 65
+    },
+    {
+      "path": "/glossary/commission/",
+      "title": "Commission: Definition, Formula and Example | calculatorfree.io",
+      "length": 63
+    },
+    {
+      "path": "/glossary/lease-residual-value/",
+      "title": "Lease residual value: Definition, Formula and Example",
+      "length": 53
+    },
+    {
+      "path": "/glossary/ecpm/",
+      "title": "eCPM: Definition, Formula and Example | calculatorfree.io",
+      "length": 57
+    },
+    {
+      "path": "/glossary/emergency-fund/",
+      "title": "Emergency fund: Definition, Formula and Example | calculatorfree.io",
+      "length": 67
+    },
+    {
+      "path": "/glossary/budget-and-savings-rate/",
+      "title": "Budget and savings rate: Definition, Formula and Example",
+      "length": 56
+    },
+    {
+      "path": "/glossary/exchange-rate/",
+      "title": "Exchange rate: Definition, Formula and Example | calculatorfree.io",
+      "length": 66
+    },
+    {
+      "path": "/glossary/percentage-vs-percentage-points/",
+      "title": "Percentage vs. percentage points: Definition, Formula and Example",
+      "length": 65
+    },
+    {
+      "path": "/glossary/margin-and-leverage/",
+      "title": "Trading margin and leverage: Definition, Formula and Example",
+      "length": 60
+    }
+  ],
+  "unitTests": 1023,
+  "browserChecks": 8,
+  "categoryChecks": 18,
+  "lazyChecks": 25,
+  "productionHTTP": "unverified under managed host policy"
+}

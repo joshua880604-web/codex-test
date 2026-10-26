@@ -33,7 +33,7 @@ export function pageMetadata(
 ): Metadata {
   const url = absoluteURL(path, config);
   return {
-    title,
+    title: title.length + (` | ${siteName}`).length > 70 || title.toLowerCase().includes(siteName) ? { absolute: title } : title,
     description,
     alternates: url ? { canonical: url } : undefined,
     robots: { index: config.indexable, follow: true },

@@ -1,3 +1,4 @@
+import {navigationHref} from '../src/lib/navigation';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {calculators,defaults,runCalculation,routeFor} from '../src/lib/calculators';
@@ -9,7 +10,7 @@ test('Every mode round-trips default inputs and recomputes the same results with
   const shared=sharedInputs(calc,link.search,link.hash)!;
   assert.equal(shared.mode.id,mode.id);assert.deepEqual(shared.values,values,calc.id+'/'+mode.id);
   assert.deepEqual(runCalculation(calc.id,mode.id,shared.values).metrics,runCalculation(calc.id,mode.id,values).metrics);
-  assert.equal(calculationLink('https://example.com',routeFor(calc.id),mode,values),'https://example.com'+routeFor(calc.id));
+  assert.equal(calculationLink('https://example.com',routeFor(calc.id),mode,values),'https://example.com'+navigationHref(routeFor(calc.id)));
  }
 });
 test('Share links preserve blank any-two fields, zeroes and punctuation while rejecting unsupported modes and versions',()=>{

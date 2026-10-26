@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "oldAndFinalToolURLs": 172,
+      "status": 200
+    },
+    {
+      "width": 320,
+      "searchKeyboardFinalURL": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "searchKeyboardFinalURL": true,
+      "noOverflow": true
+    },
+    {
+      "width": 768,
+      "searchKeyboardFinalURL": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1440,
+      "searchKeyboardFinalURL": true,
+      "noOverflow": true
+    },
+    {
+      "presetQueryAndFragmentPreserved": true
+    },
+    {
+      "oldQueryLinkStillCalculates": true
+    },
+    {
+      "serverLinksWithoutJavaScript": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

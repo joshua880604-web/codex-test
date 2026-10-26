@@ -1,6 +1,9 @@
 "use client";
+import SiteLink from "@/components/SiteLink";
+
 import {useEffect,useRef,useState,type FormEvent,type KeyboardEvent} from "react";
 import {calculators} from "@/lib/catalog";
+import {navigationHref} from "@/lib/navigation";
 import {directorySearch,directoryTarget} from "@/lib/directory";
 
 export default function CalculatorSearch({id,tools=calculators,compact=false,minimal=false}:{id:string;tools?:typeof calculators;compact?:boolean;minimal?:boolean}) {
@@ -24,7 +27,7 @@ export default function CalculatorSearch({id,tools=calculators,compact=false,min
     const selected=showing&&active>=0?visible[active]:undefined;
     const targetId=directoryTarget(tools,search)?.id;
     const target=selected??results.find(r=>r.tool.id===targetId);
-    if(target){window.location.assign(target.href);return;}
+    if(target){window.location.assign(navigationHref(target.href));return;}
     setOpen(true);setExpanded(true);input.current?.focus();
   }
   function keys(e:KeyboardEvent<HTMLInputElement>){
@@ -46,7 +49,7 @@ export default function CalculatorSearch({id,tools=calculators,compact=false,min
       <button type="submit" className="directory-search-submit">Search</button>
       {showing&&<div className="directory-suggestions">
         <ul id={listId} role="listbox" aria-label="Matching calculators">
-          {visible.map(({tool,href},i)=><li key={tool.id} role="presentation"><a id={optionId(i)} href={href} role="option" aria-selected={i===active} tabIndex={-1} onMouseDown={e=>e.preventDefault()}>{tool.title}</a></li>)}
+          {visible.map(({tool,href},i)=><li key={tool.id} role="presentation"><SiteLink id={optionId(i)} href={href} role="option" aria-selected={i===active} tabIndex={-1} onMouseDown={e=>e.preventDefault()}>{tool.title}</SiteLink></li>)}
         </ul>
         {!results.length&&<p>No calculators found. Try “loan”, “tax”, or “interest”.</p>}
         {!expanded&&results.length>visible.length&&<button type="button" className="directory-search-more" onClick={()=>{setExpanded(true);input.current?.focus();}}>Show all {results.length} matching calculators</button>}

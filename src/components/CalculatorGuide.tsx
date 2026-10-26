@@ -1,3 +1,5 @@
+
+import SiteLink from "@/components/SiteLink";
 import guideInsights from "@/lib/guide-insights.json";
 import type { Calculator } from "@/lib/types";
 import { routeFor } from "@/lib/calculators";
@@ -17,10 +19,10 @@ export default function CalculatorGuide({
       {guide && (
         <>
           <nav className="guide-nav" aria-label="Calculation guide sections">
-            {insight && <a href="#reading-results">Reading results</a>}
-            {insight && <a href="#compare-scenarios">Compare scenarios</a>}
-            <a href="#worked-examples">Examples</a><a href="#common-questions">Questions</a>
-            <a href="#scope-assumptions">Assumptions</a><a href="#sources">Sources</a>
+            {insight && <SiteLink href="#reading-results">Reading results</SiteLink>}
+            {insight && <SiteLink href="#compare-scenarios">Compare scenarios</SiteLink>}
+            <SiteLink href="#worked-examples">Examples</SiteLink><SiteLink href="#common-questions">Questions</SiteLink>
+            <SiteLink href="#scope-assumptions">Assumptions</SiteLink><SiteLink href="#sources">Sources</SiteLink>
           </nav>
           <h2>Understanding this calculation</h2>
           <p>{insight?.answer ?? guide.summary}</p>
@@ -53,9 +55,9 @@ export default function CalculatorGuide({
                 <p>
                   <strong>{example.answer}</strong>
                 </p>
-                <a href={routeFor(calculator.id) + "?" + query}>
+                <SiteLink href={routeFor(calculator.id) + "?" + query}>
                   Try these inputs
-                </a>
+                </SiteLink>
               </section>
             );
           })}
@@ -64,7 +66,7 @@ export default function CalculatorGuide({
             <section key={item.question} id={item.anchor}>
               <h3>{item.question}</h3>
               <p>{item.answer}</p>
-              {item.links && <p>{item.links.map((link,index)=><span key={link.id+link.mode}>{index>0?' · ':''}<a href={longTailHref(link)}>{link.label}</a></span>)}</p>}
+              {item.links && <p>{item.links.map((link,index)=><span key={link.id+link.mode}>{index>0?' · ':''}<SiteLink href={longTailHref(link)}>{link.label}</SiteLink></span>)}</p>}
             </section>
           ))}
           <h2 id="scope-assumptions">Scope and assumptions</h2>
@@ -73,7 +75,7 @@ export default function CalculatorGuide({
           <ul>
             {guide.sources.map((source) => (
               <li key={source.url}>
-                <a href={source.url}>{source.title}</a>
+                <SiteLink href={source.url}>{source.title}</SiteLink>
               </li>
             ))}
           </ul>
@@ -96,11 +98,11 @@ export default function CalculatorGuide({
       </details>
       <p>
         See our{" "}
-        <a href="/methodology.html">
+        <SiteLink href="/methodology.html">
           calculation methodology and review status
-        </a>{" "}
+        </SiteLink>{" "}
         for data versions, rounding and validation limitations.
-        {" "}<a href="/methodology.html#default-assumptions">How default assumptions are chosen</a>.
+        {" "}<SiteLink href="/methodology.html#default-assumptions">How default assumptions are chosen</SiteLink>.
       </p>
     </section>
   );

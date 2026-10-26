@@ -1,4 +1,6 @@
 "use client";
+import SiteLink from "@/components/SiteLink";
+
 import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import dynamic from "next/dynamic";
 import ResultShare from "./ResultShare";
@@ -454,7 +456,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     <>
       <p className="intro">{calc.intro}</p>
       {scope && <p className={"result-note calculator-scope" + (id === "mortgage" ? " mortgage-scope" : "")}>{scope}</p>}
-      {id === "irr" && <p className="result-note dated-cash-flow-link">For cash flows on specific calendar dates, use the <a href={routeFor("average-return") + "?mode=cashflows"}>Average Return Calculator’s Dated Cash Flows mode</a>.</p>}
+      {id === "irr" && <p className="result-note dated-cash-flow-link">For cash flows on specific calendar dates, use the <SiteLink href={routeFor("average-return") + "?mode=cashflows"}>Average Return Calculator’s Dated Cash Flows mode</SiteLink>.</p>}
       {id !== "mortgage" && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       {calc.modes.length > 1 && (
         <div className={"mode-tabs" + (compactModes ? " compact-mode-tabs" : "") + (id === "mortgage" ? " mortgage-mode-tabs" : "")} role="tablist" aria-label="Calculation mode">
@@ -544,7 +546,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               {id === "vat" || (id === "commission" && mode.id === "any-two") ? "Clear" : "Reset"}
             </button>
           </div>
-          {["Investment","Retirement"].includes(calc.category)&&mode.fields.some(field=>["return","rate","inflation","nominal"].includes(field.key))&&<p className="assumption-help">Planning rates are editable assumptions. <a href="/methodology.html#default-assumptions">About default values and their sources</a>.</p>}
+          {["Investment","Retirement"].includes(calc.category)&&mode.fields.some(field=>["return","rate","inflation","nominal"].includes(field.key))&&<p className="assumption-help">Planning rates are editable assumptions. <SiteLink href="/methodology.html#default-assumptions">About default values and their sources</SiteLink>.</p>}
         </form>
       </div>
       <div className={hasWorkspace ? "workspace-output" : undefined}>
@@ -668,7 +670,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       </div>
       {id === "mortgage" && <nav className="mortgage-related-tools" aria-label="Related mortgage calculators">
         <strong>Other mortgage tools</strong>
-        {[["pmi", "PMI"], ["biweekly-mortgage", "Biweekly payments"], ["discount-points", "Discount points"], ["mortgage-recast", "Recast"], ["fha-loan", "FHA loan"], ["va-mortgage", "VA mortgage"], ["refinance", "Refinance"], ["mortgage-payoff", "Mortgage payoff"], ["heloc", "HELOC"], ["rental-property", "Rental property"]].map(([tool, label]) => <a key={tool} href={routeFor(tool)}>{label}</a>)}
+        {[["pmi", "PMI"], ["biweekly-mortgage", "Biweekly payments"], ["discount-points", "Discount points"], ["mortgage-recast", "Recast"], ["fha-loan", "FHA loan"], ["va-mortgage", "VA mortgage"], ["refinance", "Refinance"], ["mortgage-payoff", "Mortgage payoff"], ["heloc", "HELOC"], ["rental-property", "Rental property"]].map(([tool, label]) => <SiteLink key={tool} href={routeFor(tool)}>{label}</SiteLink>)}
       </nav>}
       {id === "mortgage" && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       <section className="explanation">

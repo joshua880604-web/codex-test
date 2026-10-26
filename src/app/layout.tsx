@@ -1,3 +1,5 @@
+
+import SiteLink from "@/components/SiteLink";
 import type { Metadata } from "next";
 import { Header, Footer } from "@/components/Shell";
 import "./globals.css";
@@ -30,9 +32,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body>
-        <a className="skip-link" href="#main">
+        <SiteLink className="skip-link" href="#main">
           Skip to content
-        </a>
+        </SiteLink>
         <p id="browser-support-notice" className="browser-support-notice" hidden suppressHydrationWarning role="status">
           Update your browser to use these calculators. On iPhone or iPad, update iOS or use a newer device.
         </p>

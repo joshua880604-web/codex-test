@@ -1,3 +1,4 @@
+import {navigationHref} from '../src/lib/navigation';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {calculators,routeFor} from '../src/lib/calculators/index.ts';
@@ -20,7 +21,7 @@ for(const calc of calculators.filter(c=>!c.directory)){
   assert.ok(html.includes('?'+query+'#calculator-panel'),calc.id+' mode link');
   for(const alias of task.aliases??[]){assert.ok(html.includes(alias.replaceAll('&','&amp;')),calc.id+' visible alias');assert.ok(!keywords.has(alias.toLowerCase()),alias);keywords.add(alias.toLowerCase());}
  }
- for(const id of relatedCalculatorIds[calc.id])assert.ok(html.includes('href="'+routeFor(id)+'"'),calc.id+' contextual link '+id);
+ for(const id of relatedCalculatorIds[calc.id])assert.ok(html.includes('href="'+navigationHref(routeFor(id))+'"'),calc.id+' contextual link '+id);
  assert.ok(html.includes('id="worked-examples"')&&html.includes('id="scope-assumptions"'),calc.id+' citation anchors');
  checks.push({id:calc.id,route,title:keywordTitles[calc.id],keywords:searchTasks[calc.id].map(t=>t.keyword),related:relatedCalculatorIds[calc.id]});
 }
