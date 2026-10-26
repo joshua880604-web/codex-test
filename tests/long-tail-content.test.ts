@@ -5,6 +5,8 @@ import { guides } from '../src/lib/guides';
 import { contentUpdatedOn } from '../src/lib/seo';
 import { longTailContent, longTailHref } from '../src/lib/long-tail-content';
 import type { Field } from '../src/lib/types';
+import {sharedInputs} from '../src/lib/sharing';
+import {navigationHref} from '../src/lib/navigation';
 
 test('Contextual guide links open real calculation modes with valid declared presets', () => {
   for (const [id, content] of Object.entries(longTailContent)) {
@@ -29,9 +31,9 @@ test('Contextual guide links open real calculation modes with valid declared pre
           if (declaredField.options) assert.ok(declaredField.options.includes(value), key + ': ' + value);
         }
         const url = new URL(longTailHref(link), 'https://calculatorfree.io');
-        assert.equal(url.pathname, routeFor(link.id));
-        assert.equal(url.searchParams.get('mode'), mode.id);
-        assert.equal(url.hash, '#calculator-panel');
+        assert.equal(url.pathname, navigationHref(routeFor(link.id)));
+        assert.equal(url.search, '');
+        assert.equal(sharedInputs(calc!,'',url.hash)!.mode.id, mode.id);
         const result = runCalculation(link.id, mode.id, {...defaults(mode), ...link.values});
         assert.ok(result.metrics.length > 0);
         assert.ok(result.metrics.every(metric => Number.isFinite(metric.value)));

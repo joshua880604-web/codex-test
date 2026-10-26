@@ -1,3 +1,4 @@
+import { calculatorPresetHref } from './preset-links';
 import {calculators} from './catalog';
 import {searchTasks} from './keyword-targets';
 
@@ -61,7 +62,7 @@ function taskMatch(c:Tool,query:string,exactOnly=false){
  return new Set(best.map(x=>JSON.stringify([x.task.mode,x.task.values]))).size===1?best[0].task:undefined;
 }
 function taskHref(c:Tool,task?:{mode:string;values?:Record<string,string>}){
- return task?c.local_route+'?'+new URLSearchParams({mode:task.mode,...task.values}):c.local_route;
+ return task?calculatorPresetHref(c.local_route,task.mode,task.values):c.local_route;
 }
 // Names and direct tool aliases take precedence over use-case text. In particular,
 // a short name such as "401" must not also surface every tool mentioning 401(k).

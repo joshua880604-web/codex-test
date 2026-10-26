@@ -1,3 +1,4 @@
+import { calculatorPresetHref } from '@/lib/preset-links';
 
 import SiteLink from "@/components/SiteLink";
 import guideInsights from "@/lib/guide-insights.json";
@@ -37,12 +38,6 @@ export default function CalculatorGuide({
           </>}
           <h2 id="worked-examples">Worked examples</h2>
           {guide.examples.map((example) => {
-            const query = new URLSearchParams({
-              mode: example.mode,
-              ...Object.fromEntries(
-                Object.entries(example.values).map(([k, v]) => [k, String(v)]),
-              ),
-            });
             return (
               <section className="worked-example" key={example.title}>
                 <h3>{example.title}</h3>
@@ -55,7 +50,7 @@ export default function CalculatorGuide({
                 <p>
                   <strong>{example.answer}</strong>
                 </p>
-                <SiteLink href={routeFor(calculator.id) + "?" + query}>
+                <SiteLink href={calculatorPresetHref(routeFor(calculator.id), example.mode, example.values)}>
                   Try these inputs
                 </SiteLink>
               </section>

@@ -1,3 +1,4 @@
+import { calculatorPresetHref } from './preset-links';
 import data from './glossary-data.json';
 import catalog from './catalog-data.json';
 import {absoluteURL, directoryPath, siteConfig, type SiteConfig} from './site';
@@ -22,7 +23,7 @@ export const glossaryForCalculator=(id:string)=>glossaryTerms.filter(term=>term.
 export function glossaryExampleLink(example:GlossaryExampleCalculation){
   const path=catalog.find(tool=>tool.id===example.id)?.local_route;
   if(!path)throw new Error('Unknown glossary calculator: '+example.id);
-  return path+'?'+new URLSearchParams({mode:example.mode,...Object.fromEntries(Object.entries(example.values).map(([key,value])=>[key,String(value)]))});
+  return calculatorPresetHref(path,example.mode,example.values);
 }
 export function glossarySchema(term?:GlossaryTerm,config:SiteConfig=siteConfig()){
   const setURL=absoluteURL(glossaryPath,config),url=term?absoluteURL(glossaryTermPath(term.slug),config):setURL;

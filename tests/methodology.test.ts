@@ -2,10 +2,12 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {validationExamples,exampleLink} from '../src/lib/methodology';
 import {calculators,defaults,runCalculation} from '../src/lib/calculators';
+import {sharedInputs} from '../src/lib/sharing';
 for(const example of validationExamples)test('Published methodology check: '+example.title,()=>{
  const calc=calculators.find(calc=>calc.id===example.id)!,mode=calc.modes.find(mode=>mode.id===example.mode)!;
  const url=new URL(exampleLink(example),'https://calculatorfree.io');
- const values={...defaults(mode),...Object.fromEntries(url.searchParams)};delete values.mode;
+ assert.equal(url.search,'');
+ const values=sharedInputs(calc,'',url.hash)!.values;
  const result=runCalculation(calc.id,mode.id,values),actual=result.metrics.find(metric=>metric.label===example.label)!;
  assert.ok(actual);assert.ok(Math.abs(actual.value-example.expected)<.000001,actual.value+' != '+example.expected);
  if(example.id==='loan'){

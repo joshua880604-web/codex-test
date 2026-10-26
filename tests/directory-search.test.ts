@@ -11,6 +11,7 @@ test('Competing exact aliases or titles stay a choice, never auto-pick first',()
 test("Titles rank above incidental descriptions",()=>{const tax=calculators.find(c=>c.id==='income-tax')!,mortgage=calculators.find(c=>c.id==='mortgage')!;assert.ok(directoryScore(tax,'tax')<directoryScore(mortgage,'tax'));});
 
 const search=(q:string)=>directorySearch(calculators,q);
+const preset=(href:string)=>{const url=new URL(href,'https://example.test');assert.equal(url.search,'');return new URLSearchParams(url.hash.slice(6));};
 test('Short name searches exclude tools that only mention the name in a use case',()=>{
  for(const q of ['401','401k','401(k)','401 k'])assert.deepEqual(search(q).map(x=>x.tool.id),['401k']);
  assert.equal(search('take home pay calculator after taxes and 401k')[0]?.tool.id,'take-home-paycheck');
@@ -31,7 +32,7 @@ test('Supported use cases preserve their actual mode and registered presets',()=
   ['debt payoff calculator snowball','debt-payoff','snowball'],
   ['irr calculator with dates','average-return','cashflows'],
   ['401k catch up contributions','401k','projection'],
- ]){const result=search(q)[0];assert.equal(result.tool.id,id);assert.equal(new URL(result.href,'https://example.test').searchParams.get('mode'),mode);}
+ ]){const result=search(q)[0];assert.equal(result.tool.id,id);assert.equal(preset(result.href).get('mode'),mode);}
  assert.equal(search('compound interest')[0].href,'/compound-interest-calculator.html');
 });
 
@@ -40,12 +41,12 @@ test('Supported comparison ages and saved exchange direction stay in the target 
   ['social security calculator age 66 vs 70','social-security',{mode:'compare',age1:'66',age2:'70'}],
   ['social security calculator 62 vs 67','social-security',{mode:'compare',age1:'62',age2:'67'}],
   ['currency calculator euro to usd','currency',{mode:'snapshot',from:'EUR',to:'USD'}],
- ] as const){const result=search(query)[0];assert.equal(result.tool.id,id);const params=new URL(result.href,'https://example.test').searchParams;for(const [key,value] of Object.entries(values))assert.equal(params.get(key),value);}
+ ] as const){const result=search(query)[0];assert.equal(result.tool.id,id);const params=preset(result.href);for(const [key,value] of Object.entries(values))assert.equal(params.get(key),value);}
  for(const query of ['currency calculator live euro to usd','social security calculator canada 66 vs 70'])assert.equal(search(query).length,0);
 });
 
 test('Search links retain explicit compounding and tax-year presets',()=>{
  for(const [q,key,value] of [['compound interest calculator daily','compound','Daily'],['compound interest calculator monthly','compound','Monthly'],['2026 tax calculator','year','2026'],['2025 tax calculator','year','2025']]){
-  assert.equal(new URL(search(q)[0].href,'https://example.test').searchParams.get(key),value);
+  assert.equal(preset(search(q)[0].href).get(key),value);
  }
 });

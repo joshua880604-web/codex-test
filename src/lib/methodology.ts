@@ -1,3 +1,4 @@
+import { calculatorPresetHref } from './preset-links';
 import {calculators,routeFor} from './calculators';
 import rules from './official-rules.json';
 import tax2025 from './tax-2025.json';
@@ -26,7 +27,7 @@ export function defaultAssumptions(){
  return assumptionSpecs.map(spec=>{
   const calc=calculators.find(calc=>calc.id===spec.id)!,mode=calc.modes.find(mode=>mode.id===spec.mode)!,field=mode.fields.find(field=>field.key===spec.key)!;
   if(!field)throw new Error('Methodology assumption is missing: '+spec.id+'/'+spec.key);
-  return {...spec,label:field.label,calculator:calc.title,modeTitle:mode.title,value:field.value,unit:field.unit??'',path:routeFor(calc.id)+'?mode='+mode.id,sourcePath:sourceURL+'src/lib/calculators/'+spec.source};
+  return {...spec,label:field.label,calculator:calc.title,modeTitle:mode.title,value:field.value,unit:field.unit??'',path:calculatorPresetHref(routeFor(calc.id),mode.id),sourcePath:sourceURL+'src/lib/calculators/'+spec.source};
  });
 }
 const monthName=(year:number,period:string)=>new Date(Date.UTC(year,Number(period.slice(1))-1,1)).toLocaleDateString('en-US',{month:'long',year:'numeric',timeZone:'UTC'});
@@ -55,7 +56,7 @@ export const validationExamples=[
  {title:'Annual compounding',id:'compound-interest',mode:'growth',values:{principal:1000,years:2,months:0,rate:5,compound:'Annually',annual:0,monthly:0,timing:'End of period',tax:0,inflation:0},label:'Ending balance',expected:1102.5,explanation:'$1,000 at 5%, compounded annually for two years, with no cash flows, taxes or fees: $1,000 × 1.05 × 1.05 = $1,102.50.'},
 ];
 export function exampleLink(example:typeof validationExamples[number]){
- return routeFor(example.id)+'?'+new URLSearchParams({mode:example.mode,...Object.fromEntries(Object.entries(example.values).map(([key,value])=>[key,String(value)]))});
+ return calculatorPresetHref(routeFor(example.id),example.mode,example.values);
 }
 export function methodologySchema(config:SiteConfig=siteConfig()){
  const url=absoluteURL(methodologyPath,config);

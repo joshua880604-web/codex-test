@@ -1,6 +1,6 @@
 from pathlib import Path
 from html.parser import HTMLParser
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit,parse_qs
 import json,xml.etree.ElementTree as E
 root=Path(__file__).resolve().parents[1];out=root/'out'
 class Page(HTMLParser):
@@ -12,7 +12,7 @@ class Page(HTMLParser):
   if t=='title':self.inside=False
  def handle_data(self,t):
   if self.inside:self.title+=t
-links=0;titles=[]
+links=0;presets=0;titles=[]
 for node in E.fromstring((out/'sitemap.xml').read_text()).findall('{*}url/{*}loc'):
  path=urlsplit(node.text).path;file=out/path.lstrip('/')
  file=file/'index.html' if path.endswith('/') else file.with_suffix('.html')
@@ -21,6 +21,9 @@ for node in E.fromstring((out/'sitemap.xml').read_text()).findall('{*}url/{*}loc
   u=urlsplit(href)
   if u.netloc and u.netloc not in ['www.calculatorfree.io','calculatorfree.io']:continue
   if u.scheme not in ['','http','https'] or not u.path:continue
+  assert not u.query,(path,'Internal preset still generates a separate query URL',href)
+  if u.fragment.startswith('calc='):
+   params=parse_qs(u.fragment[5:]);assert params.get('share_version')==['1'] and params.get('mode'),(path,href);presets+=1
   assert not u.path.endswith('.html'),(path,href)
   assert u.path!='/',(path,href)
   dest=out/u.path.lstrip('/')
@@ -28,5 +31,5 @@ for node in E.fromstring((out/'sitemap.xml').read_text()).findall('{*}url/{*}loc
   elif not dest.suffix:dest=dest.with_suffix('.html')
   assert dest.is_file(),(path,href,dest)
   links+=1
-report={'pages':len(titles),'internalAnchorsChecked':links,'allTitlesAtMost70':True,'allInternalLinksFinalAndResolve':True,'titles':titles}
+report={'pages':len(titles),'internalAnchorsChecked':links,'fragmentPresetsChecked':presets,'internalQueryAnchors':0,'allTitlesAtMost70':True,'allInternalLinksFinalAndResolve':True,'titles':titles}
 (root/'docs/financial-clone/evidence/direct-links-20261027.json').write_text(json.dumps(report,indent=2)+'\n');print({k:v for k,v in report.items() if k!='titles'})

@@ -1,0 +1,267 @@
+{
+  "task": "Reduce internally generated calculator query URLs while keeping legacy URL compatibility",
+  "date": "2026-10-27",
+  "before": {
+    "queryAnchors": 478,
+    "uniqueQueryURLs": 303,
+    "fragmentPresets": 0
+  },
+  "after": {
+    "pages": 154,
+    "internalAnchorsChecked": 8014,
+    "fragmentPresetsChecked": 478,
+    "internalQueryAnchors": 0,
+    "allTitlesAtMost70": true,
+    "allInternalLinksFinalAndResolve": true
+  },
+  "mathAndRoutes": {
+    "catalogRoutesUnchanged": 88,
+    "modesFieldsAndCompleteDefaultResultsUnchanged": 202
+  },
+  "validation": {
+    "unitTests": 1041,
+    "typecheck": "passed",
+    "productionExport": "passed",
+    "seoPages": 154,
+    "searchTasksAndSynonyms": 226,
+    "longTailStaticPages": 30,
+    "longTailAnswers": 42,
+    "longTailLinks": 69,
+    "focusedBrowser": {
+      "passed": true,
+      "testedAt": "2026-10-26T23:48:55.214Z",
+      "checks": [
+        {
+          "width": 320,
+          "samePageFragment": true,
+          "inputs": true,
+          "keyboardFocus": true,
+          "noDocumentReload": true
+        },
+        {
+          "width": 320,
+          "backForwardAndOriginalDefaults": true,
+          "noReload": true
+        },
+        {
+          "width": 320,
+          "repeatedPresetRestoresEditedInputs": true
+        },
+        {
+          "width": 320,
+          "guideAnchorPreservesEdits": true,
+          "newPresetResetsDefaults": true
+        },
+        {
+          "width": 320,
+          "repeatedSameToolSearchPreset": true
+        },
+        {
+          "width": 390,
+          "samePageFragment": true,
+          "inputs": true,
+          "keyboardFocus": true,
+          "noDocumentReload": true
+        },
+        {
+          "width": 390,
+          "backForwardAndOriginalDefaults": true,
+          "noReload": true
+        },
+        {
+          "width": 390,
+          "repeatedPresetRestoresEditedInputs": true
+        },
+        {
+          "width": 390,
+          "guideAnchorPreservesEdits": true,
+          "newPresetResetsDefaults": true
+        },
+        {
+          "width": 390,
+          "repeatedSameToolSearchPreset": true
+        },
+        {
+          "width": 768,
+          "samePageFragment": true,
+          "inputs": true,
+          "keyboardFocus": true,
+          "noDocumentReload": true
+        },
+        {
+          "width": 768,
+          "backForwardAndOriginalDefaults": true,
+          "noReload": true
+        },
+        {
+          "width": 768,
+          "repeatedPresetRestoresEditedInputs": true
+        },
+        {
+          "width": 768,
+          "guideAnchorPreservesEdits": true,
+          "newPresetResetsDefaults": true
+        },
+        {
+          "width": 768,
+          "repeatedSameToolSearchPreset": true
+        },
+        {
+          "width": 1440,
+          "samePageFragment": true,
+          "inputs": true,
+          "keyboardFocus": true,
+          "noDocumentReload": true
+        },
+        {
+          "width": 1440,
+          "backForwardAndOriginalDefaults": true,
+          "noReload": true
+        },
+        {
+          "width": 1440,
+          "repeatedPresetRestoresEditedInputs": true
+        },
+        {
+          "width": 1440,
+          "guideAnchorPreservesEdits": true,
+          "newPresetResetsDefaults": true
+        },
+        {
+          "width": 1440,
+          "repeatedSameToolSearchPreset": true
+        },
+        {
+          "path": "/glossary/compound-interest/",
+          "crossPagePresetLoads": true,
+          "noQuery": true
+        },
+        {
+          "path": "/methodology",
+          "crossPagePresetLoads": true,
+          "noQuery": true
+        },
+        {
+          "datedCashFlowCrossLink": true
+        },
+        {
+          "legacyHTMLAndQuery": true,
+          "zeroRatePayment1000": true
+        },
+        {
+          "blankUnknownAndVATCalculationPreserved": true
+        },
+        {
+          "sharingPrivateByDefault": true,
+          "optInFragmentRoundTrip": true
+        },
+        {
+          "marriageAdvancedFragmentInputsVisible": true
+        },
+        {
+          "invalidFragmentRemovesStaleResult": true
+        },
+        {
+          "staticGuidesAndCanonicalWithoutJavaScript": true
+        }
+      ],
+      "errors": [],
+      "external": [],
+      "legacyQueryDocuments": 1,
+      "scope": "Local production export in Chromium; native Safari and live domain unverified"
+    },
+    "directNavigationChecks": 8,
+    "lazyLoading": {
+      "passed": true,
+      "checks": 29,
+      "measurements": [
+        {
+          "id": "tax-equivalent-yield",
+          "initialDecodedBytes": 619601,
+          "initialGzipEstimate": 183970
+        },
+        {
+          "id": "treasury-bill",
+          "initialDecodedBytes": 619601,
+          "initialGzipEstimate": 183970
+        },
+        {
+          "id": "mortgage-recast",
+          "initialDecodedBytes": 619601,
+          "initialGzipEstimate": 183970
+        },
+        {
+          "id": "pmi",
+          "initialDecodedBytes": 619601,
+          "initialGzipEstimate": 183970
+        },
+        {
+          "id": "biweekly-mortgage",
+          "initialDecodedBytes": 619601,
+          "initialGzipEstimate": 183970
+        },
+        {
+          "id": "discount-points",
+          "initialDecodedBytes": 619601,
+          "initialGzipEstimate": 183970
+        },
+        {
+          "id": "financial",
+          "initialDecodedBytes": 550913,
+          "initialGzipEstimate": 160677
+        },
+        {
+          "id": "mortgage",
+          "initialDecodedBytes": 619601,
+          "initialGzipEstimate": 183970
+        },
+        {
+          "id": "401k",
+          "initialDecodedBytes": 620706,
+          "initialGzipEstimate": 184549
+        },
+        {
+          "id": "vat",
+          "initialDecodedBytes": 609408,
+          "initialGzipEstimate": 179977
+        },
+        {
+          "id": "inflation",
+          "initialDecodedBytes": 609408,
+          "initialGzipEstimate": 179977
+        },
+        {
+          "id": "currency",
+          "initialDecodedBytes": 609408,
+          "initialGzipEstimate": 179977
+        },
+        {
+          "id": "rmd",
+          "initialDecodedBytes": 609408,
+          "initialGzipEstimate": 179977
+        },
+        {
+          "id": "cagr",
+          "initialDecodedBytes": 619601,
+          "initialGzipEstimate": 183970
+        }
+      ],
+      "errors": [],
+      "external": []
+    }
+  },
+  "auditInterpretation": {
+    "rows": 390,
+    "uniqueCalculatorPaths": 87,
+    "queryVariants": 303,
+    "allSameField": "aggregateRating or review",
+    "moreThanThreeParameters": 146,
+    "changeDoesNotSupplyFakeReviews": true,
+    "historicalURLsMayRemainInAuditorUntilSettingsAndRecrawlAreReviewed": true
+  },
+  "limitations": [
+    "Native Safari not tested",
+    "Live production-domain HTTP not fetched under current network policy",
+    "No ranking/indexing or immediate Semrush count guarantee"
+  ]
+}

@@ -1,3 +1,4 @@
+import { calculatorPresetHref } from '@/lib/preset-links';
 
 import SiteLink from "@/components/SiteLink";
 import {defaultAssumptions,methodologyDatasets,methodologyCheckedOn,validationExamples,exampleLink,projectURL,sourceURL,methodologySchema} from '@/lib/methodology';
@@ -31,7 +32,7 @@ export default function Methodology(){
    <dl className="method-defaults">{assumptions.slice(0,4).map(renderAssumption)}</dl>
    <details className="method-more-defaults"><summary>More default examples ({assumptions.length-4})</summary><dl className="method-defaults">{assumptions.slice(4).map(renderAssumption)}</dl></details>
    <p>These values are read from the same field configurations used by the calculators. An example link or a shared calculation may supply different inputs; the current form values determine the result.</p>
-   <h3>See the effect of changing an assumption</h3><p>With a 6% nominal annual return, the exact real annual return is about <strong>3.4146%</strong> at 2.5% inflation, or <strong>2.4155%</strong> at 3.5% inflation, before taxes and fees. Compare <SiteLink href="/real-return-calculator.html?mode=rate&nominal=6&inflation=2.5">the 2.5% inflation example</SiteLink> with <SiteLink href="/real-return-calculator.html?mode=rate&nominal=6&inflation=3.5">the 3.5% example</SiteLink>. These scenarios illustrate sensitivity; neither is a forecast.</p>
+   <h3>See the effect of changing an assumption</h3><p>With a 6% nominal annual return, the exact real annual return is about <strong>3.4146%</strong> at 2.5% inflation, or <strong>2.4155%</strong> at 3.5% inflation, before taxes and fees. Compare <SiteLink href={calculatorPresetHref('/real-return-calculator.html','rate',{nominal:6,inflation:2.5})}>the 2.5% inflation example</SiteLink> with <SiteLink href={calculatorPresetHref('/real-return-calculator.html','rate',{nominal:6,inflation:3.5})}>the 3.5% example</SiteLink>. These scenarios illustrate sensitivity; neither is a forecast.</p>
   </section>
   <section aria-labelledby="data-sources"><h2 id="data-sources">Published data, versions and coverage</h2><p>Official rules and stored observations have identifiable sources and dates. They are separate from editable planning assumptions. This static site does not refresh those datasets when you open a calculator.</p>
    <div className="method-datasets">{datasets.map(dataset=><section key={dataset.id}><h3>{dataset.name}</h3><p className="method-version">{dataset.version}</p><p>{dataset.scope}</p><ul>{dataset.sources.map(source=><li key={source.url}><SiteLink href={source.url}>{source.title}</SiteLink></li>)}</ul><p className="content-date">Bundled data record dated <time dateTime={dataset.checked}>{dateLabel(dataset.checked)}</time>.</p></section>)}</div>

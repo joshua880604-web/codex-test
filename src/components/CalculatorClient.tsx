@@ -1,5 +1,6 @@
 "use client";
 import SiteLink from "@/components/SiteLink";
+import { calculatorPresetHref } from "@/lib/preset-links";
 
 import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import dynamic from "next/dynamic";
@@ -87,13 +88,23 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   }, [hasWorkspace]);
   useEffect(() => {
     let lastSource:string|null=null;
-    function hydrate() {
+    function hydrate(force = false) {
       const source=window.location.hash.startsWith('#calc=')?window.location.hash:window.location.search;
-      if(source===lastSource)return;
+      if(source===lastSource && !force)return;
+      const previousSource = lastSource;
       lastSource=source;
       try {
         const shared=sharedInputs(calc,window.location.search,window.location.hash);
-        if(!shared)return;
+        if(!shared){
+          // Back to the original document restores its initial form. Ordinary
+          // guide anchors keep edits and results, including legacy query inputs.
+          if(previousSource?.startsWith('#calc=') && !window.location.hash && !window.location.search){
+            request.current++;clearScenarios();modeDrafts.current={};mortgageBasisDrafts.current={};
+            setCalculating(false);setModeId(calc.modes[0].id);setValues(defaults(calc.modes[0]));
+            setResult(initialResult);setError('');setNotice('');setShowAll(false);setYearly(false);
+          }
+          return;
+        }
         const token=++request.current;
         setCalculating(true);
         const {mode:initial,values:v}=shared;
@@ -101,6 +112,11 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         modeDrafts.current = {};
         mortgageBasisDrafts.current = {};
         setModeId(initial.id);setValues(v);setResult(null);setError("");setNotice("");setShowAll(false);setYearly(false);
+        if(source.startsWith('#calc='))requestAnimationFrame(()=>{
+          if(token!==request.current)return;
+          const panel=document.getElementById('calculator-panel');
+          panel?.focus({preventScroll:true});panel?.scrollIntoView({block:'start',behavior:'instant'});
+        });
         runCalculation(id,initial.id,v).then(next=>{
           if(token===request.current)setResult(next);
         }).catch(error=>{
@@ -108,10 +124,23 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         }).finally(()=>{if(token===request.current)setCalculating(false);});
       }catch(error){request.current++;clearScenarios();setCalculating(false);setResult(null);setError(error instanceof Error?error.message:"Invalid calculation link.");}
     }
+    const navigate = () => hydrate();
+    const reapply = () => hydrate(true);
+    function repeatPreset(event: MouseEvent) {
+      if(event.defaultPrevented || event.button!==0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)return;
+      const link=event.target instanceof Element?event.target.closest<HTMLAnchorElement>('a[href]'):null;
+      if(!link || link.hasAttribute('download') || (link.target && link.target!=='_self'))return;
+      const url=new URL(link.href);
+      // A second click on the same fragment does not emit hashchange. Reapply
+      // that explicit preset after edits without reloading the document.
+      if(url.origin===window.location.origin && url.pathname===window.location.pathname && url.search===window.location.search && url.hash.startsWith('#calc=') && url.hash===window.location.hash){
+        event.preventDefault();hydrate(true);
+      }
+    }
     hydrate();
-    window.addEventListener("hashchange",hydrate);window.addEventListener("popstate",hydrate);
-    return ()=>{request.current++;window.removeEventListener("hashchange",hydrate);window.removeEventListener("popstate",hydrate);};
-  }, [calc,id]);
+    window.addEventListener("hashchange",navigate);window.addEventListener("popstate",navigate);window.addEventListener('calculator-preset',reapply);document.addEventListener('click',repeatPreset);
+    return ()=>{request.current++;window.removeEventListener("hashchange",navigate);window.removeEventListener("popstate",navigate);window.removeEventListener('calculator-preset',reapply);document.removeEventListener('click',repeatPreset);};
+  }, [calc,id,initialResult]);
   const update = (key: string, value: string) => {
     request.current++;
     clearScenarios();
@@ -456,7 +485,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     <>
       <p className="intro">{calc.intro}</p>
       {scope && <p className={"result-note calculator-scope" + (id === "mortgage" ? " mortgage-scope" : "")}>{scope}</p>}
-      {id === "irr" && <p className="result-note dated-cash-flow-link">For cash flows on specific calendar dates, use the <SiteLink href={routeFor("average-return") + "?mode=cashflows"}>Average Return Calculator’s Dated Cash Flows mode</SiteLink>.</p>}
+      {id === "irr" && <p className="result-note dated-cash-flow-link">For cash flows on specific calendar dates, use the <SiteLink href={calculatorPresetHref(routeFor("average-return"), "cashflows")}>Average Return Calculator’s Dated Cash Flows mode</SiteLink>.</p>}
       {id !== "mortgage" && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       {calc.modes.length > 1 && (
         <div className={"mode-tabs" + (compactModes ? " compact-mode-tabs" : "") + (id === "mortgage" ? " mortgage-mode-tabs" : "")} role="tablist" aria-label="Calculation mode">
@@ -520,6 +549,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       <div
         id="calculator-panel"
         role="tabpanel"
+        tabIndex={-1}
         aria-label={compactModes ? mode.title : undefined}
         aria-labelledby={!compactModes && calc.modes.length > 1 ? "tab-" + modeId : undefined}
       >

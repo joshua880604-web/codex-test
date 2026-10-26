@@ -3,13 +3,14 @@ import type { Field, Values } from '@/lib/types';
 import { marriageSections, marriageFieldSection } from '@/lib/marriage-layout';
 export default function MarriageFields({fields, values, renderField}: {fields: Field[]; values: Values; renderField:(field: Field, person?: string)=>ReactNode}) {
   const root=useRef<HTMLDivElement>(null);
-  const autoOpened=useRef(false);
+  const autoOpened=useRef<string | null>(null);
   useEffect(() => {
-    if (autoOpened.current || !window.location.search) return;
-    const query=new URLSearchParams(window.location.search);
+    const source=window.location.hash.startsWith('#calc=')?window.location.hash.slice(6):window.location.search;
+    if (!source || autoOpened.current===source) return;
+    const query=new URLSearchParams(source);
     const supplied=fields.filter(f=>query.has(f.key));
     if (!supplied.length || !supplied.every(f=>values[f.key]===query.get(f.key))) return;
-    autoOpened.current=true;
+    autoOpened.current=source;
     for (const section of marriageSections.slice(1)) {
       const changed=fields.some(f=>marriageFieldSection(f)===section.id && values[f.key]!==undefined && values[f.key]!==String(f.value));
       if(changed) { const details=root.current?.querySelector<HTMLDetailsElement>(`[data-section="${section.id}"]`); if(details) details.open=true; }

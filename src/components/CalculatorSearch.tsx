@@ -27,7 +27,12 @@ export default function CalculatorSearch({id,tools=calculators,compact=false,min
     const selected=showing&&active>=0?visible[active]:undefined;
     const targetId=directoryTarget(tools,search)?.id;
     const target=selected??results.find(r=>r.tool.id===targetId);
-    if(target){window.location.assign(navigationHref(target.href));return;}
+    if(target){
+      const href=navigationHref(target.href),url=new URL(href,window.location.href);
+      if(url.href===window.location.href && url.hash.startsWith('#calc='))window.dispatchEvent(new Event('calculator-preset'));
+      else window.location.assign(href);
+      setOpen(false);return;
+    }
     setOpen(true);setExpanded(true);input.current?.focus();
   }
   function keys(e:KeyboardEvent<HTMLInputElement>){

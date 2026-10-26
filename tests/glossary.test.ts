@@ -2,6 +2,8 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {glossaryTerms,glossaryExampleLink,glossaryForCalculator,glossarySchema,glossaryTermPath} from '../src/lib/glossary';
 import {calculators,defaults,runCalculation,routeFor} from '../src/lib/calculators';
+import {sharedInputs} from '../src/lib/sharing';
+import {navigationHref} from '../src/lib/navigation';
 import {sitemapEntries} from '../src/lib/seo';
 
 for(const term of glossaryTerms){
@@ -19,7 +21,7 @@ for(const term of glossaryTerms){
    if(field.options)assert.ok(field.options.includes(String(value)),key+'='+value);
   }
   const url=new URL(glossaryExampleLink(example),'https://calculatorfree.io');
-  assert.equal(url.pathname,routeFor(example.id));assert.equal(url.searchParams.get('mode'),mode.id);
+  assert.equal(url.pathname,navigationHref(routeFor(example.id)));assert.equal(url.search,'');assert.equal(sharedInputs(calc,'',url.hash)!.mode.id,mode.id);
   const result=runCalculation(calc.id,mode.id,{...defaults(mode),...Object.fromEntries(Object.entries(example.values).map(([key,value])=>[key,String(value)]))});
   for(const expected of example.expected){
    const actual=result.metrics.find(metric=>metric.label===expected.label);assert.ok(actual,expected.label);

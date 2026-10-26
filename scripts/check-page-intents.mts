@@ -1,4 +1,5 @@
 import {navigationHref} from '../src/lib/navigation';
+import {calculatorPresetHref} from '../src/lib/preset-links';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {calculators,routeFor} from '../src/lib/calculators/index.ts';
@@ -17,8 +18,8 @@ for(const calc of calculators.filter(c=>!c.directory)){
   // Visible content, not JSON-LD or a meta keywords tag, owns the phrase.
   const headings=[...html.matchAll(/<h3[^>]*>(.*?)<\/h3>/gs)].map(m=>m[1].replace(/<[^>]+>/g,''));
   assert.ok(headings.includes(task.keyword.replaceAll('&','&amp;')),calc.id+' visible intent heading');
-  const query=new URLSearchParams({mode:task.mode,...task.values}).toString().replaceAll('&','&amp;');
-  assert.ok(html.includes('?'+query+'#calculator-panel'),calc.id+' mode link');
+  const href=calculatorPresetHref(route,task.mode,task.values).replaceAll('&','&amp;');
+  assert.ok(html.includes('href="'+href+'"'),calc.id+' fragment preset link');
   for(const alias of task.aliases??[]){assert.ok(html.includes(alias.replaceAll('&','&amp;')),calc.id+' visible alias');assert.ok(!keywords.has(alias.toLowerCase()),alias);keywords.add(alias.toLowerCase());}
  }
  for(const id of relatedCalculatorIds[calc.id])assert.ok(html.includes('href="'+navigationHref(routeFor(id))+'"'),calc.id+' contextual link '+id);
