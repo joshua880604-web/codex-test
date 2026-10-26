@@ -1,5 +1,7 @@
 # iPhone XR / iOS14.4.2 compatibility — 2026-10-26
 
+> Superseded later on2026-10-26: the user approved ending deep support for old iOS. The whole-export transpiler and runtime polyfills described below were removed; a lightweight upgrade notice replaces them. See [current browser support policy](browser-support-2026-10-26.md). This report and evidence remain a historical record; the old implementation is available at commit50dd166e59e3319293c0dbc39c51daa11199ffe6.
+
 The user reported that calculators did not work in the built-in Safari on an iPhone XR running **iOS14.4.2**. The release addresses confirmed startup syntax and form-submission incompatibilities across the static site. A physical device or historical WebKit engine was unavailable, so native-device confirmation remains pending.
 
 ## Confirmed causes

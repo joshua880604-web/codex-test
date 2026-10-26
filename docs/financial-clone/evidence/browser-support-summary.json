@@ -1,0 +1,69 @@
+{
+  "reviewed_on": "2026-10-26",
+  "baseline_commit": "50dd166e59e3319293c0dbc39c51daa11199ffe6",
+  "user_authorization": "Confirmed withdrawal of deep old-iOS support; retain lightweight upgrade notice and verify mainstream behavior.",
+  "policy": {
+    "safari_minimum": "16.4",
+    "chrome_edge_firefox_minimum": 111,
+    "old_ios_deep_support": false,
+    "notice": "Recognized versions below the support baseline. Hidden for supported/unknown UA; no API patching."
+  },
+  "tests": {
+    "retained_model_application_tests": 917,
+    "notice_tests": 15,
+    "passed": 932,
+    "removed_legacy_specific_tests": 19
+  },
+  "default_metrics": {
+    "passed": true,
+    "total": 193,
+    "identical": 193
+  },
+  "browser": {
+    "calculator_modes": 193,
+    "checks": 200,
+    "passed": true,
+    "javascript_errors": 0,
+    "engine": "Chromium",
+    "old_ua_test": "Notice only, with application bundles blocked; no old-iOS calculator claim."
+  },
+  "exports": {
+    "html_pages": 149,
+    "legacy_transform_bootstrap_removed": true,
+    "notice_hidden_by_default": true,
+    "original_chunks": {
+      "commonOriginalChunkFiles": 38,
+      "allMatchingOriginalBytes": true
+    }
+  },
+  "homepage_first_screen": {
+    "viewports": 14,
+    "passed": true
+  },
+  "build": "passed",
+  "typecheck": "passed",
+  "seo": {
+    "canonicals": 146,
+    "passed": true
+  },
+  "brand": {
+    "text_assets": 529,
+    "passed": true
+  },
+  "long_tail": {
+    "pages": 30,
+    "answers": 40,
+    "links": 65,
+    "passed": true
+  },
+  "discovery": {
+    "tools": 81,
+    "tasks": 195,
+    "passed": true
+  },
+  "limits": [
+    "No native Safari/WebKit or historical iOS device verification.",
+    "No old-iOS functional promise or audience-share estimate.",
+    "No direct live-origin or live advertising verification."
+  ]
+}
