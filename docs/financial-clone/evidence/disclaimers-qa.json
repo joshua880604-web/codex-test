@@ -1,0 +1,534 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-26T12:03:57.902Z",
+  "pages": [
+    {
+      "id": "mortgage",
+      "path": "/mortgage-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "amortization",
+      "path": "/amortization-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "path": "/mortgage-payoff-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "house-affordability",
+      "path": "/house-affordability-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "rent",
+      "path": "/rent-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "path": "/debt-ratio-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "real-estate",
+      "path": "/real-estate-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "refinance",
+      "path": "/refinance-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "rental-property",
+      "path": "/rental-property-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "apr",
+      "path": "/apr-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "fha-loan",
+      "path": "/fha-loan-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "va-mortgage",
+      "path": "/va-mortgage-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "home-equity-loan",
+      "path": "/home-equity-loan-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "heloc",
+      "path": "/heloc-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "down-payment",
+      "path": "/down-payment-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "rent-vs-buy",
+      "path": "/rent-vs-buy-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "auto-loan",
+      "path": "/auto-loan-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "path": "/cash-back-or-low-interest-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "auto-lease",
+      "path": "/auto-lease-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "interest",
+      "path": "/interest-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "investment",
+      "path": "/investment-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "finance",
+      "path": "/finance-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "compound-interest",
+      "path": "/compound-interest-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "interest-rate",
+      "path": "/interest-rate-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "savings",
+      "path": "/savings-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "simple-interest",
+      "path": "/simple-interest-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "cd",
+      "path": "/cd-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "bond",
+      "path": "/bond-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "mutual-fund",
+      "path": "/mutual-fund-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "average-return",
+      "path": "/average-return-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "irr",
+      "path": "/irr-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "roi",
+      "path": "/roi-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "payback-period",
+      "path": "/payback-period-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "present-value",
+      "path": "/present-value-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "future-value",
+      "path": "/future-value-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "retirement",
+      "path": "/retirement-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "401k",
+      "path": "/401k-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "pension",
+      "path": "/pension-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "social-security",
+      "path": "/social-security-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "annuity",
+      "path": "/annuity-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "annuity-payout",
+      "path": "/annuity-payout-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "roth-ira",
+      "path": "/roth-ira-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "ira",
+      "path": "/ira-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "rmd",
+      "path": "/rmd-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "income-tax",
+      "path": "/tax-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "salary",
+      "path": "/salary-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "marriage-tax",
+      "path": "/marriage-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "estate-tax",
+      "path": "/estate-tax-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "take-home-paycheck",
+      "path": "/take-home-pay-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "loan",
+      "path": "/loan-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "payment",
+      "path": "/payment-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "currency",
+      "path": "/currency-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "inflation",
+      "path": "/inflation-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "sales-tax",
+      "path": "/sales-tax-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "credit-card",
+      "path": "/credit-card-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "credit-cards-payoff",
+      "path": "/credit-card-payoff-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "debt-payoff",
+      "path": "/debt-payoff-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "debt-consolidation",
+      "path": "/debt-consolidation-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "repayment",
+      "path": "/repayment-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "student-loan",
+      "path": "/student-loan-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "college-cost",
+      "path": "/college-cost-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "vat",
+      "path": "/vat-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "depreciation",
+      "path": "/depreciation-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "margin",
+      "path": "/margin-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "discount",
+      "path": "/discount-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "business-loan",
+      "path": "/business-loan-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "personal-loan",
+      "path": "/personal-loan-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "boat-loan",
+      "path": "/boat-loan-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "lease",
+      "path": "/lease-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "budget",
+      "path": "/budget-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "commission",
+      "path": "/commission-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "percentage",
+      "path": "/percentage-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "tip-bill-split",
+      "path": "/tip-bill-split-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "date",
+      "path": "/date-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "unit-converter",
+      "path": "/unit-converter.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "scientific",
+      "path": "/scientific-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "markup",
+      "path": "/markup-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "cagr",
+      "path": "/cagr-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "emergency-fund",
+      "path": "/emergency-fund-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "break-even",
+      "path": "/break-even-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "investment-fee",
+      "path": "/investment-fee-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "real-return",
+      "path": "/real-return-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "pmi",
+      "path": "/pmi-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "biweekly-mortgage",
+      "path": "/biweekly-mortgage-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    },
+    {
+      "id": "discount-points",
+      "path": "/discount-points-calculator.html",
+      "uniqueDisclaimerInStaticHTML": true
+    }
+  ],
+  "checks": [
+    {
+      "width": 320,
+      "slug": "pmi",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 320,
+      "slug": "tax",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 320,
+      "slug": "vat",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 320,
+      "slug": "unit-converter",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "slug": "pmi",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "slug": "tax",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "slug": "vat",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "slug": "unit-converter",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 768,
+      "slug": "pmi",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 768,
+      "slug": "tax",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 768,
+      "slug": "vat",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 768,
+      "slug": "unit-converter",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1440,
+      "slug": "pmi",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1440,
+      "slug": "tax",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1440,
+      "slug": "vat",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1440,
+      "slug": "unit-converter",
+      "visible": true,
+      "noOverflow": true
+    },
+    {
+      "homeFirstScreenPreserved": true
+    }
+  ],
+  "errors": [],
+  "scope": "Local production export in Chromium; exact existing ad loader stubbed; no native Safari test or legal enforceability review claimed"
+}

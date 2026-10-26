@@ -1,0 +1,9 @@
+# Calculator-specific limitations — 2026-10-26
+
+User requested a dedicated risk disclaimer on every calculator page. All85 catalog URLs (84 functional tools and the existing real-estate directory) now show one visible English notice. Each has individually written limitations in src/lib/calculator-disclaimers.json plus a short common educational-purpose statement and the existing methodology link. There is no generic fallback: a missing entry fails the build. No new URL, financial model, dependency, runtime request or consent flow is introduced.
+
+The server-rendered block follows the calculator workspace and precedes the search-task/guide content. It leaves form/result/chart arrangements and the mobile homepage quick calculator unchanged. Directory content receives its own real-estate comparison notice. Styling follows existing Inter, white surface, thin border and rounded modules. The notice is visible without opening an accordion or enabling JavaScript.
+
+Copy distinguishes lender estimates/approval/contract terms, PMI pricing/cancellation conditions, FHA/VA eligibility, federal tax-year limitations, plan/custodian rules, uncertain investment/retirement assumptions, dated currency rates, business-cost assumptions and precision/deadline boundaries for general utilities. It does not assert a waiver of statutory rights, guarantee legal enforceability or replace the existing scope/policy/source explanations. No lawyer review is claimed.
+
+Production build,1001 existing tests and149 static SEO page checks passed. All198 full default result/mode/field hashes,85 existing routes, sitemap and redirects match the earlier baseline. Evidence: evidence/disclaimers-qa.json verifies every notice against its unique source text in static HTML, canonical destinations, responsive samples and the320x480 homepage. Native Safari testing and live production HTTP validation are not claimed.

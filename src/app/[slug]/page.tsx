@@ -1,4 +1,5 @@
 import {calculatorCategory,categoryHref} from '@/lib/calculator-categories';
+import CalculatorDisclaimer from '@/components/CalculatorDisclaimer';
 import SearchTasks from "@/components/SearchTasks";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -166,10 +167,11 @@ export default async function Page({
             </p>
           </>
         ) : c?.directory ? (
-          <RealEstateDirectory />
+          <><RealEstateDirectory /><CalculatorDisclaimer id={c.id}/></>
         ) : c ? (
           <>
             <CalculatorClient calc={JSON.parse(JSON.stringify(c))} initialResult={initialResult} shortcuts={(searchTasks[c.id] ?? []).map(({keyword, mode}) => ({keyword, mode}))} />
+            <CalculatorDisclaimer id={c.id}/>
             <SearchTasks id={c.id} />
             <CalculatorGuide calculator={c} />
           </>
