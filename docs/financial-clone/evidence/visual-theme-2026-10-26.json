@@ -1,0 +1,429 @@
+{
+  "tested_at": "2026-10-26T05:56:08.197Z",
+  "scope": "Appearance-only release following supplied Amortio screenshots and confirmed Inter font.",
+  "browser": {
+    "passed": true,
+    "checks": [
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "financial",
+        "width": 320,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "mortgage",
+        "width": 320,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "cd",
+        "width": 320,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "fha-loan",
+        "width": 320,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "401k",
+        "width": 320,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "compound-interest",
+        "width": 320,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "financial",
+        "width": 390,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "mortgage",
+        "width": 390,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "cd",
+        "width": 390,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "fha-loan",
+        "width": 390,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "401k",
+        "width": 390,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "compound-interest",
+        "width": 390,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "financial",
+        "width": 768,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "mortgage",
+        "width": 768,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "cd",
+        "width": 768,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "fha-loan",
+        "width": 768,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "401k",
+        "width": 768,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "compound-interest",
+        "width": 768,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "financial",
+        "width": 1440,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "mortgage",
+        "width": 1440,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "cd",
+        "width": 1440,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "fha-loan",
+        "width": 1440,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "401k",
+        "width": 1440,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "unchangedWidthsAndResults",
+        "id": "compound-interest",
+        "width": 1440,
+        "customInter": true,
+        "h1Weight": 900
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 320,
+        "height": 480,
+        "bottom": 474,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 320,
+        "height": 568,
+        "bottom": 560,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 360,
+        "height": 540,
+        "bottom": 474,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 360,
+        "height": 560,
+        "bottom": 474,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 360,
+        "height": 561,
+        "bottom": 560,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 360,
+        "height": 600,
+        "bottom": 560,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 360,
+        "height": 640,
+        "bottom": 596,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 375,
+        "height": 667,
+        "bottom": 596,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 390,
+        "height": 600,
+        "bottom": 560,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 390,
+        "height": 664,
+        "bottom": 596,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 390,
+        "height": 844,
+        "bottom": 596,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 412,
+        "height": 732,
+        "bottom": 596,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 412,
+        "height": 915,
+        "bottom": 596,
+        "arithmetic": true
+      },
+      {
+        "kind": "homeFirstScreen",
+        "width": 700,
+        "height": 700,
+        "bottom": 596,
+        "arithmetic": true
+      },
+      {
+        "kind": "menuAndInstantSearch",
+        "passed": true
+      },
+      {
+        "kind": "wideReports",
+        "id": "mortgage",
+        "width": 320,
+        "fullMainWidth": true,
+        "scrollableTable": true,
+        "periodSwitch": true
+      },
+      {
+        "kind": "wideReports",
+        "id": "cd",
+        "width": 320,
+        "fullMainWidth": true,
+        "scrollableTable": true,
+        "periodSwitch": true
+      },
+      {
+        "kind": "wideReports",
+        "id": "mortgage",
+        "width": 390,
+        "fullMainWidth": true,
+        "scrollableTable": true,
+        "periodSwitch": true
+      },
+      {
+        "kind": "wideReports",
+        "id": "cd",
+        "width": 390,
+        "fullMainWidth": true,
+        "scrollableTable": true,
+        "periodSwitch": true
+      },
+      {
+        "kind": "wideReports",
+        "id": "mortgage",
+        "width": 768,
+        "fullMainWidth": true,
+        "scrollableTable": true,
+        "periodSwitch": true
+      },
+      {
+        "kind": "wideReports",
+        "id": "cd",
+        "width": 768,
+        "fullMainWidth": true,
+        "scrollableTable": true,
+        "periodSwitch": true
+      },
+      {
+        "kind": "wideReports",
+        "id": "mortgage",
+        "width": 1440,
+        "fullMainWidth": true,
+        "scrollableTable": true,
+        "periodSwitch": true
+      },
+      {
+        "kind": "wideReports",
+        "id": "cd",
+        "width": 1440,
+        "fullMainWidth": true,
+        "scrollableTable": true,
+        "periodSwitch": true
+      },
+      {
+        "kind": "contentPage",
+        "path": "/about.html"
+      },
+      {
+        "kind": "contentPage",
+        "path": "/methodology.html"
+      },
+      {
+        "kind": "contentPage",
+        "path": "/glossary/"
+      }
+    ],
+    "runtime_errors": [],
+    "unexpected_requests": [],
+    "font_bytes": 48256,
+    "limits": "Chromium local exported build; exact existing AdSense loader stubbed. No physical iPhone or live ad claim."
+  },
+  "mortgage_interaction_checks": 41,
+  "unit_tests": {
+    "tests": 953,
+    "passed": 953,
+    "failed": 0
+  },
+  "build": "passed",
+  "typecheck": "passed",
+  "visual_inspector": {
+    "failures": 0,
+    "warnings": [
+      "unused-canvas",
+      "radius-mix",
+      "ragged-row",
+      "below-fold"
+    ],
+    "allowances": [
+      "gradient",
+      "button-fx",
+      "palette-purple",
+      "heavy-shadow"
+    ]
+  },
+  "contrast": [
+    {
+      "id": "mortgage",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "financial",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "cd",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 4
+        }
+      ]
+    }
+  ],
+  "gradient_manual_contrast": {
+    "primary_label": "White on #596dcc: 4.68:1; white on #764ba2: 6.37:1.",
+    "note": "Automated gradient checks are incomplete; endpoint checks supplement them, not a complete accessibility certification."
+  },
+  "font": {
+    "family": "Inter",
+    "h1_weight": 900,
+    "source": "@fontsource-variable/inter@5.3.0",
+    "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "license": "SIL Open Font License 1.1",
+    "font_display": "swap",
+    "cache": "content-hashed path; one year immutable in Cloudflare _headers",
+    "binary_identity_to_reference": "not asserted"
+  },
+  "css_source_gzip_bytes": 2479
+}

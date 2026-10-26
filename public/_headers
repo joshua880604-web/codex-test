@@ -1,3 +1,7 @@
 # Next.js content-hashed assets change URL whenever their content changes.
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Content-hashed local Inter variable font.
+/fonts/*.woff2
+  Cache-Control: public, max-age=31536000, immutable

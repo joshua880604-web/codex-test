@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header, Footer } from "@/components/Shell";
 import "./globals.css";
+import "./visual-theme.css";
 import { siteConfig,siteName } from "@/lib/site";
 import { browserSupportScript } from "@/lib/browser-support";
 const config = siteConfig();
@@ -18,6 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="preload" href="/fonts/inter-latin-variable-3100e775.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script dangerouslySetInnerHTML={{ __html: browserSupportScript }} />
         <link rel="describedby" href="/llms.txt" />
         <script
