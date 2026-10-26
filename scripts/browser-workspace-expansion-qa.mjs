@@ -82,7 +82,7 @@ try {
   await page.goto(base+routeFor(id)+'?'+query);await page.waitForLoadState('networkidle');await openChart();await page.locator('.result-trend svg:visible').waitFor();
   await page.locator('.workspace-sharing > summary').click();
   const pending=page.waitForEvent('download');await page.getByRole('button',{name:'Download result PNG',exact:true}).click();
-  const image=await pending,bytes=await fs.readFile(await image.path());assert.equal(bytes.readUInt32BE(16),1200);assert.equal(bytes.readUInt32BE(20),1680);
+  const image=await pending,bytes=await fs.readFile(await image.path());assert.equal(bytes.readUInt32BE(16),1200);assert.ok(bytes.readUInt32BE(20)>=1680);
   await image.saveAs(`${dir}/${id}-export.png`);
   await page.locator('.workspace-details > summary').click();const csvPending=page.waitForEvent('download');await page.getByRole('button',{name:'Download CSV',exact:true}).click();const csv=await fs.readFile(await (await csvPending).path(),'utf8');assert.ok(csv.split('\n').length>2);
   await page.locator('.calculator-form input[type=number]').first().fill('');assert.equal(await page.locator('.result-trend').count(),0);
@@ -90,7 +90,7 @@ try {
   await page.getByRole('button',{name:'Reset',exact:true}).click();await page.getByRole('button',{name:'Calculate',exact:true}).click();await openChart();await page.locator('.result-trend svg:visible').waitFor();
   await page.evaluate(()=>window.dispatchEvent(new Event('beforeprint')));assert.ok(await page.locator('.workspace-details').evaluate(e=>e.open));
   await page.evaluate(()=>window.dispatchEvent(new Event('afterprint')));assert.equal(await page.locator('.workspace-details').evaluate(e=>e.open),false);
-  checks.push({id,sharedInputs:true,png:'1200x1680',csv:true,editInvalidReset:true,print:true});
+  checks.push({id,sharedInputs:true,png:'1200px wide; adaptive height',csv:true,editInvalidReset:true,print:true});
  }
  const plain=await browser.newPage({javaScriptEnabled:false,viewport:{width:390,height:844}});await plain.route('**/*',r=>r.request().url().startsWith(base+'/')?r.continue():r.abort());
  for(const id of ['mortgage','savings','cd','ira','investment-fee']) {await plain.goto(base+routeFor(id));await openChart(plain);await plain.locator('.result-trend svg:visible').waitFor();await plain.locator('.workspace-details > summary').click();await plain.locator('.workspace-report .table-scroll').first().waitFor();checks.push({id,noJavaScriptChartAndTable:true});}

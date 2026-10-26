@@ -653,7 +653,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
             {result.rows && !wideReports && <button onClick={() => download()}>Download CSV</button>}
           </div>
           {!wideReports && calculationDetails}
-          {hasWorkspace ? <details className="workspace-sharing" key={mode.id + "-sharing"}><summary>Save or share result</summary><ResultShare id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/></details> : <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result}/>}
+          {hasWorkspace ? <details className="workspace-sharing" key={mode.id + "-sharing"}><summary>Save or share result</summary><ResultShare id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result} fields={visible}/></details> : <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result} fields={visible}/>}
         </div>
       )}
       </div>

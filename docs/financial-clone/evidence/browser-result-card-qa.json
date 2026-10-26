@@ -1,1436 +1,1256 @@
 {
-  "tested_at": "2026-10-22T12:47:34.245Z",
+  "passed": true,
+  "tested_at": "2026-10-26T06:43:08.227Z",
   "checks": [
     {
       "name": "mortgage",
-      "width": 1200,
-      "height": 1680,
-      "aspectRatio": "5:7",
-      "minimumFont": 30,
-      "brandFont": 64,
-      "copy": true,
-      "textWithinCard": true,
-      "cleanToolAddress": true
+      "height": 4947,
+      "inputs": false,
+      "expectedContent": true
     },
     {
-      "name": "retirement",
-      "width": 1200,
-      "height": 1680,
-      "aspectRatio": "5:7",
-      "minimumFont": 30,
-      "brandFont": 64,
-      "copy": true,
-      "textWithinCard": true,
-      "cleanToolAddress": true
+      "name": "mortgage-inputs",
+      "height": 6874,
+      "inputs": true,
+      "expectedContent": true
     },
     {
-      "name": "loss",
-      "width": 1200,
-      "height": 1680,
-      "aspectRatio": "5:7",
-      "minimumFont": 30,
-      "brandFont": 64,
-      "copy": true,
-      "textWithinCard": true,
-      "cleanToolAddress": true
+      "name": "fha",
+      "height": 6048,
+      "inputs": true,
+      "expectedContent": true
     },
     {
-      "name": "tax",
-      "width": 1200,
-      "height": 1680,
-      "aspectRatio": "5:7",
-      "minimumFont": 30,
-      "brandFont": 64,
-      "copy": true,
-      "textWithinCard": true,
-      "cleanToolAddress": true
+      "name": "cd",
+      "height": 2983,
+      "inputs": true,
+      "expectedContent": true
+    },
+    {
+      "name": "401k",
+      "height": 5246,
+      "inputs": true,
+      "expectedContent": true
+    },
+    {
+      "name": "401k-loss",
+      "height": 4266,
+      "inputs": false,
+      "expectedContent": true
+    },
+    {
+      "name": "negative-return",
+      "height": 4017,
+      "inputs": true,
+      "expectedContent": true
+    },
+    {
+      "name": "tax-2025",
+      "height": 8244,
+      "inputs": true,
+      "expectedContent": true
     },
     {
       "name": "vat",
-      "width": 1200,
-      "height": 1680,
-      "aspectRatio": "5:7",
-      "minimumFont": 30,
-      "brandFont": 64,
-      "copy": true,
-      "textWithinCard": true,
-      "cleanToolAddress": true
+      "height": 1751,
+      "inputs": false,
+      "expectedContent": true
     },
     {
-      "name": "percentage",
-      "width": 1200,
-      "height": 1680,
-      "aspectRatio": "5:7",
-      "minimumFont": 30,
-      "brandFont": 64,
-      "copy": true,
-      "textWithinCard": true,
-      "cleanToolAddress": true
+      "name": "large-loan",
+      "height": 3079,
+      "inputs": true,
+      "expectedContent": true
+    },
+    {
+      "name": "leap-date",
+      "height": 1809,
+      "inputs": true,
+      "expectedContent": true
+    },
+    {
+      "name": "yen",
+      "height": 2487,
+      "inputs": true,
+      "expectedContent": true
     },
     {
       "name": "scientific",
-      "width": 1200,
-      "height": 1680,
-      "aspectRatio": "5:7",
-      "minimumFont": 30,
-      "brandFont": 64,
-      "copy": true,
-      "textWithinCard": true,
-      "cleanToolAddress": true
+      "height": 1774,
+      "inputs": false,
+      "expectedContent": true
+    },
+    {
+      "name": "direct-loan-inputs",
+      "hiddenPurchaseDraftsExcluded": true,
+      "height": 5852
+    },
+    {
+      "editingRemovesStaleExport": true,
+      "inputOptInResets": true
     }
   ],
   "modeChecks": [
     {
       "id": "mortgage",
-      "mode": "Monthly Mortgage",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "monthly",
+      "height": 4947,
+      "allDisplayedAmounts": true
     },
     {
       "id": "mortgage",
-      "mode": "Biweekly Comparison",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "biweekly",
+      "height": 2755,
+      "allDisplayedAmounts": true
     },
     {
       "id": "amortization",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "schedule",
+      "height": 2206,
+      "allDisplayedAmounts": true
     },
     {
       "id": "mortgage-payoff",
-      "mode": "Current balance · Extra payments",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "remaining-extra",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "mortgage-payoff",
-      "mode": "Current balance · Normal repayment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "remaining-normal",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "mortgage-payoff",
-      "mode": "Current balance · Biweekly",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "remaining-biweekly",
+      "height": 2288,
+      "allDisplayedAmounts": true
     },
     {
       "id": "mortgage-payoff",
-      "mode": "Current balance · Pay off now",
-      "width": 1200,
+      "mode": "remaining-all",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "mortgage-payoff",
-      "mode": "Original loan · Extra payments",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "known-extra",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "mortgage-payoff",
-      "mode": "Original loan · Normal repayment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "known-normal",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "mortgage-payoff",
-      "mode": "Original loan · Biweekly",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "known-biweekly",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "mortgage-payoff",
-      "mode": "Original loan · Pay off now",
-      "width": 1200,
+      "mode": "known-all",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "house-affordability",
-      "mode": "Based on Income",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "income",
+      "height": 1878,
+      "allDisplayedAmounts": true
     },
     {
       "id": "house-affordability",
-      "mode": "Based on Monthly Budget",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "budget",
+      "height": 1878,
+      "allDisplayedAmounts": true
     },
     {
       "id": "rent",
-      "mode": "default",
-      "width": 1200,
+      "mode": "affordability",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "debt-to-income-ratio",
-      "mode": "default",
-      "width": 1200,
+      "mode": "ratio",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "refinance",
-      "mode": "Current Balance and Payment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "balance",
+      "height": 2668,
+      "allDisplayedAmounts": true
     },
     {
       "id": "refinance",
-      "mode": "Original Loan Information",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "original",
+      "height": 2668,
+      "allDisplayedAmounts": true
     },
     {
       "id": "rental-property",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "projection",
+      "height": 1967,
+      "allDisplayedAmounts": true
     },
     {
       "id": "apr",
-      "mode": "General Loan APR",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "loan",
+      "height": 1714,
+      "allDisplayedAmounts": true
     },
     {
       "id": "apr",
-      "mode": "Mortgage APR",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "mortgage",
+      "height": 1714,
+      "allDisplayedAmounts": true
     },
     {
       "id": "fha-loan",
-      "mode": "FHA Mortgage",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "monthly",
+      "height": 4272,
+      "allDisplayedAmounts": true
     },
     {
       "id": "fha-loan",
-      "mode": "Biweekly Comparison",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "biweekly",
+      "height": 2796,
+      "allDisplayedAmounts": true
     },
     {
       "id": "va-mortgage",
-      "mode": "VA Mortgage",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "monthly",
+      "height": 3754,
+      "allDisplayedAmounts": true
     },
     {
       "id": "va-mortgage",
-      "mode": "Biweekly Comparison",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "biweekly",
+      "height": 2837,
+      "allDisplayedAmounts": true
     },
     {
       "id": "home-equity-loan",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "loan",
+      "height": 2418,
+      "allDisplayedAmounts": true
     },
     {
       "id": "heloc",
-      "mode": "Draw and Repayment Periods",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "draw-repay",
+      "height": 3208,
+      "allDisplayedAmounts": true
     },
     {
       "id": "heloc",
-      "mode": "Maximum Credit",
-      "width": 1200,
+      "mode": "maximum-credit",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "down-payment",
-      "mode": "Home Price from Cash",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "price",
+      "height": 1717,
+      "allDisplayedAmounts": true
     },
     {
       "id": "down-payment",
-      "mode": "Cash Needed",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "cash",
+      "height": 1717,
+      "allDisplayedAmounts": true
     },
     {
       "id": "down-payment",
-      "mode": "Down Payment Percentage",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "percent",
+      "height": 1717,
+      "allDisplayedAmounts": true
     },
     {
       "id": "rent-vs-buy",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "comparison",
+      "height": 1707,
+      "allDisplayedAmounts": true
     },
     {
       "id": "auto-loan",
-      "mode": "Monthly Payment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "payment",
+      "height": 2832,
+      "allDisplayedAmounts": true
     },
     {
       "id": "auto-loan",
-      "mode": "Affordable Vehicle Price",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "price",
+      "height": 2832,
+      "allDisplayedAmounts": true
     },
     {
       "id": "cash-back-or-low-interest",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "compare",
+      "height": 2220,
+      "allDisplayedAmounts": true
     },
     {
       "id": "auto-lease",
-      "mode": "Lease Payment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "payment",
+      "height": 1758,
+      "allDisplayedAmounts": true
     },
     {
       "id": "auto-lease",
-      "mode": "Vehicle Price from Payment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "price",
+      "height": 1758,
+      "allDisplayedAmounts": true
     },
     {
       "id": "interest",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "accumulation",
+      "height": 3136,
+      "allDisplayedAmounts": true
     },
     {
       "id": "investment",
-      "mode": "End Amount",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "end",
+      "height": 3147,
+      "allDisplayedAmounts": true
     },
     {
       "id": "investment",
-      "mode": "Contribute Amount",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "contribution",
+      "height": 3359,
+      "allDisplayedAmounts": true
     },
     {
       "id": "investment",
-      "mode": "Return Rate",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "return",
+      "height": 3359,
+      "allDisplayedAmounts": true
     },
     {
       "id": "investment",
-      "mode": "Starting Amount",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "starting",
+      "height": 3359,
+      "allDisplayedAmounts": true
     },
     {
       "id": "investment",
-      "mode": "Invest Length",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "length",
+      "height": 3359,
+      "allDisplayedAmounts": true
     },
     {
       "id": "finance",
-      "mode": "Solve FV",
-      "width": 1200,
+      "mode": "fv",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "finance",
-      "mode": "Solve PMT",
-      "width": 1200,
+      "mode": "pmt",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "finance",
-      "mode": "Solve I/Y",
-      "width": 1200,
+      "mode": "i-y",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "finance",
-      "mode": "Solve N",
-      "width": 1200,
+      "mode": "n",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "finance",
-      "mode": "Solve PV",
-      "width": 1200,
+      "mode": "pv",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "compound-interest",
-      "mode": "Equivalent Interest Rate",
-      "width": 1200,
+      "mode": "conversion",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "compound-interest",
-      "mode": "Compound Growth",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "growth",
+      "height": 3188,
+      "allDisplayedAmounts": true
     },
     {
       "id": "interest-rate",
-      "mode": "default",
-      "width": 1200,
+      "mode": "rate",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "savings",
-      "mode": "Savings Calculator",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "accumulation",
+      "height": 3136,
+      "allDisplayedAmounts": true
     },
     {
       "id": "savings",
-      "mode": "Savings Goal: Monthly Deposit",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "goal-contribution",
+      "height": 3359,
+      "allDisplayedAmounts": true
     },
     {
       "id": "savings",
-      "mode": "Savings Goal: Time Needed",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "goal-time",
+      "height": 3318,
+      "allDisplayedAmounts": true
     },
     {
       "id": "simple-interest",
-      "mode": "Balance",
-      "width": 1200,
+      "mode": "balance",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "simple-interest",
-      "mode": "Principal",
-      "width": 1200,
+      "mode": "principal",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "simple-interest",
-      "mode": "Term",
-      "width": 1200,
+      "mode": "years",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "simple-interest",
-      "mode": "Rate",
-      "width": 1200,
+      "mode": "rate",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "cd",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "accumulation",
+      "height": 2456,
+      "allDisplayedAmounts": true
     },
     {
       "id": "bond",
-      "mode": "Solve Price",
-      "width": 1200,
+      "mode": "price",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "bond",
-      "mode": "Solve Face",
-      "width": 1200,
+      "mode": "face",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "bond",
-      "mode": "Solve Yield",
-      "width": 1200,
+      "mode": "yield",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "bond",
-      "mode": "Solve Maturity",
-      "width": 1200,
+      "mode": "years",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "bond",
-      "mode": "Solve Coupon",
-      "width": 1200,
+      "mode": "coupon",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "bond",
-      "mode": "Settlement-Date Pricing",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "dated",
+      "height": 1755,
+      "allDisplayedAmounts": true
     },
     {
       "id": "mutual-fund",
-      "mode": "default",
-      "width": 1200,
+      "mode": "projection",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "average-return",
-      "mode": "Average and Cumulative Return",
-      "width": 1200,
+      "mode": "returns",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "average-return",
-      "mode": "Dated Cash Flows",
-      "width": 1200,
+      "mode": "cashflows",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "average-return",
-      "mode": "Variable Period Returns",
-      "width": 1200,
+      "mode": "variable-periods",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "irr",
-      "mode": "Fixed Cash Flow",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "fixed",
+      "height": 1775,
+      "allDisplayedAmounts": true
     },
     {
       "id": "irr",
-      "mode": "Unequal Annual Cash Flows",
-      "width": 1200,
+      "mode": "irregular",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "roi",
-      "mode": "Use Investment Length",
-      "width": 1200,
+      "mode": "length",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "roi",
-      "mode": "Use Dates",
-      "width": 1200,
+      "mode": "dates",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "payback-period",
-      "mode": "Fixed Cash Flow",
-      "width": 1200,
+      "mode": "fixed",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "payback-period",
-      "mode": "Irregular Cash Flows",
-      "width": 1200,
+      "mode": "irregular",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "present-value",
-      "mode": "Future Lump Sum",
-      "width": 1200,
+      "mode": "lump",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "present-value",
-      "mode": "Periodic Payments",
-      "width": 1200,
+      "mode": "annuity",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "future-value",
-      "mode": "default",
-      "width": 1200,
+      "mode": "growth",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "retirement",
-      "mode": "Required Savings",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "required",
+      "height": 2340,
+      "allDisplayedAmounts": true
     },
     {
       "id": "retirement",
-      "mode": "Saving Plan",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "saving",
+      "height": 2135,
+      "allDisplayedAmounts": true
     },
     {
       "id": "retirement",
-      "mode": "Monthly Withdrawal",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "withdrawal",
+      "height": 1830,
+      "allDisplayedAmounts": true
     },
     {
       "id": "retirement",
-      "mode": "Savings Longevity",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "longevity",
+      "height": 2538,
+      "allDisplayedAmounts": true
     },
     {
       "id": "401k",
-      "mode": "401(k) Projection",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "projection",
+      "height": 4266,
+      "allDisplayedAmounts": true
     },
     {
       "id": "401k",
-      "mode": "Early Withdrawal Cost",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "early",
+      "height": 1924,
+      "allDisplayedAmounts": true
     },
     {
       "id": "401k",
-      "mode": "Maximize Employer Match",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "match",
+      "height": 2958,
+      "allDisplayedAmounts": true
     },
     {
       "id": "pension",
-      "mode": "Lump Sum vs. Monthly Pension",
-      "width": 1200,
+      "mode": "lump",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "pension",
-      "mode": "Single Life vs. Joint Survivor",
-      "width": 1200,
+      "mode": "survivor",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "pension",
-      "mode": "Work Longer",
-      "width": 1200,
+      "mode": "longer",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "social-security",
-      "mode": "Ideal Application Age",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "ideal",
+      "height": 2182,
+      "allDisplayedAmounts": true
     },
     {
       "id": "social-security",
-      "mode": "Compare Application Ages",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "compare",
+      "height": 1801,
+      "allDisplayedAmounts": true
     },
     {
       "id": "annuity",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "growth",
+      "height": 2497,
+      "allDisplayedAmounts": true
     },
     {
       "id": "annuity-payout",
-      "mode": "Fix Length",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "length",
+      "height": 2285,
+      "allDisplayedAmounts": true
     },
     {
       "id": "annuity-payout",
-      "mode": "Fix Payment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "payment",
+      "height": 2456,
+      "allDisplayedAmounts": true
     },
     {
       "id": "roth-ira",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "comparison",
+      "height": 2755,
+      "allDisplayedAmounts": true
     },
     {
       "id": "ira",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "comparison",
+      "height": 2796,
+      "allDisplayedAmounts": true
     },
     {
       "id": "rmd",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "annual",
+      "height": 2018,
+      "allDisplayedAmounts": true
     },
     {
       "id": "income-tax",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "federal",
+      "height": 3355,
+      "allDisplayedAmounts": true
     },
     {
       "id": "salary",
-      "mode": "default",
-      "width": 1200,
+      "mode": "conversion",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "marriage-tax",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "comparison",
+      "height": 1837,
+      "allDisplayedAmounts": true
     },
     {
       "id": "estate-tax",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "federal",
+      "height": 1890,
+      "allDisplayedAmounts": true
     },
     {
       "id": "take-home-paycheck",
-      "mode": "Paycheck Estimate",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "source-paycheck",
+      "height": 2570,
+      "allDisplayedAmounts": true
     },
     {
       "id": "take-home-paycheck",
-      "mode": "Take-Home Paycheck",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "paycheck",
+      "height": 1801,
+      "allDisplayedAmounts": true
     },
     {
       "id": "loan",
-      "mode": "Amortized Loan",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "amortized",
+      "height": 2463,
+      "allDisplayedAmounts": true
     },
     {
       "id": "loan",
-      "mode": "Deferred Payment Loan",
-      "width": 1200,
+      "mode": "deferred",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "loan",
-      "mode": "Bond Present Value",
-      "width": 1200,
+      "mode": "bond",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "payment",
-      "mode": "Fixed Term",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "term",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "payment",
-      "mode": "Fixed Payment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "payment",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "currency",
-      "mode": "Custom Exchange Rate",
-      "width": 1200,
+      "mode": "manual",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "currency",
-      "mode": "Saved Reference Rates",
-      "width": 1200,
+      "mode": "snapshot",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "inflation",
-      "mode": "Historical CPI",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "historical",
+      "height": 1714,
+      "allDisplayedAmounts": true
     },
     {
       "id": "inflation",
-      "mode": "Future Value",
-      "width": 1200,
+      "mode": "forward",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "inflation",
-      "mode": "Past Value",
-      "width": 1200,
+      "mode": "backward",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "inflation",
-      "mode": "Custom CPI Indexes",
-      "width": 1200,
+      "mode": "custom",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "sales-tax",
-      "mode": "After-Tax Price",
-      "width": 1200,
+      "mode": "after",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "sales-tax",
-      "mode": "Before-Tax Price",
-      "width": 1200,
+      "mode": "before",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "sales-tax",
-      "mode": "Sales Tax Rate",
-      "width": 1200,
+      "mode": "rate",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "credit-card",
-      "mode": "Fixed Monthly Amount",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "payment",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "credit-card",
-      "mode": "Fixed Timeframe",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "term",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "credit-card",
-      "mode": "Percentage Minimum Payment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "minimum",
+      "height": 2117,
+      "allDisplayedAmounts": true
     },
     {
       "id": "credit-cards-payoff",
-      "mode": "default",
-      "width": 1200,
+      "mode": "avalanche",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "debt-payoff",
-      "mode": "Debt Payoff Plan",
-      "width": 1200,
+      "mode": "avalanche",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "debt-payoff",
-      "mode": "Debt Snowball",
-      "width": 1200,
+      "mode": "snowball",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "debt-consolidation",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "comparison",
+      "height": 2418,
+      "allDisplayedAmounts": true
     },
     {
       "id": "repayment",
-      "mode": "Loan Payoff with Extra Payments",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "extra-payments",
+      "height": 2709,
+      "allDisplayedAmounts": true
     },
     {
       "id": "repayment",
-      "mode": "Fixed Term",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "term",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "repayment",
-      "mode": "Fixed Payment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "payment",
+      "height": 2247,
+      "allDisplayedAmounts": true
     },
     {
       "id": "student-loan",
-      "mode": "Normal Repayment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "normal",
+      "height": 2206,
+      "allDisplayedAmounts": true
     },
     {
       "id": "student-loan",
-      "mode": "Solve payment",
-      "width": 1200,
+      "mode": "solve-payment",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "student-loan",
-      "mode": "Solve principal",
-      "width": 1200,
+      "mode": "solve-principal",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "student-loan",
-      "mode": "Solve rate",
-      "width": 1200,
+      "mode": "solve-rate",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "student-loan",
-      "mode": "Solve term",
-      "width": 1200,
+      "mode": "solve-term",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "student-loan",
-      "mode": "Extra Repayment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "extra",
+      "height": 2206,
+      "allDisplayedAmounts": true
     },
     {
       "id": "student-loan",
-      "mode": "Pay Off Altogether",
-      "width": 1200,
+      "mode": "all",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "student-loan",
-      "mode": "In-School Loan Projection",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "projection",
+      "height": 2589,
+      "allDisplayedAmounts": true
     },
     {
       "id": "college-cost",
-      "mode": "default",
-      "width": 1200,
+      "mode": "planning",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "vat",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "any-two",
+      "height": 1751,
+      "allDisplayedAmounts": true
     },
     {
       "id": "depreciation",
-      "mode": "Straight Line",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "straight",
+      "height": 2490,
+      "allDisplayedAmounts": true
     },
     {
       "id": "depreciation",
-      "mode": "Declining Balance",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "declining",
+      "height": 2490,
+      "allDisplayedAmounts": true
     },
     {
       "id": "depreciation",
-      "mode": "Sum of Years’ Digits",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "syd",
+      "height": 2490,
+      "allDisplayedAmounts": true
     },
     {
       "id": "margin",
-      "mode": "Profit · Solve revenue",
-      "width": 1200,
+      "mode": "revenue",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "margin",
-      "mode": "Profit · Solve cost",
-      "width": 1200,
+      "mode": "cost",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "margin",
-      "mode": "Profit · Solve margin",
-      "width": 1200,
+      "mode": "margin",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "margin",
-      "mode": "Profit · Solve profit",
-      "width": 1200,
+      "mode": "profit",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "margin",
-      "mode": "Stock Margin",
-      "width": 1200,
+      "mode": "stock",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "margin",
-      "mode": "Currency Margin",
-      "width": 1200,
+      "mode": "currency",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "margin",
-      "mode": "Markup from Cost",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "markup",
+      "height": 1755,
+      "allDisplayedAmounts": true
     },
     {
       "id": "discount",
-      "mode": "Percent Off",
-      "width": 1200,
+      "mode": "percent",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "discount",
-      "mode": "Amount Off",
-      "width": 1200,
+      "mode": "amount",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "discount",
-      "mode": "Original Price",
-      "width": 1200,
+      "mode": "original",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "discount",
-      "mode": "Discount Rate",
-      "width": 1200,
+      "mode": "rate",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "business-loan",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "repayment",
+      "height": 2630,
+      "allDisplayedAmounts": true
     },
     {
       "id": "personal-loan",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "repayment",
+      "height": 2630,
+      "allDisplayedAmounts": true
     },
     {
       "id": "boat-loan",
-      "mode": "Monthly Payment",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "payment",
+      "height": 2377,
+      "allDisplayedAmounts": true
     },
     {
       "id": "boat-loan",
-      "mode": "Boat Price",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "price",
+      "height": 2377,
+      "allDisplayedAmounts": true
     },
     {
       "id": "lease",
-      "mode": "Fixed Interest Rate",
-      "width": 1200,
+      "mode": "rate",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "lease",
-      "mode": "Fixed Monthly Payment",
-      "width": 1200,
+      "mode": "payment",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "budget",
-      "mode": "default",
-      "width": 1200,
+      "mode": "budget",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "commission",
-      "mode": "Commission Calculator",
-      "width": 1200,
+      "mode": "any-two",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "commission",
-      "mode": "Solve commission",
-      "width": 1200,
+      "mode": "commission",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "commission",
-      "mode": "Solve sales",
-      "width": 1200,
+      "mode": "sales",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "commission",
-      "mode": "Solve rate",
-      "width": 1200,
+      "mode": "rate",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "commission",
-      "mode": "Tiered Commission and Base Pay",
-      "width": 1200,
+      "mode": "tiered",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "percentage",
-      "mode": "Percent of a Number",
-      "width": 1200,
+      "mode": "of",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "percentage",
-      "mode": "Percentage Change",
-      "width": 1200,
+      "mode": "change",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "percentage",
-      "mode": "What Percent?",
-      "width": 1200,
+      "mode": "ratio",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "tip-bill-split",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "split",
+      "height": 1919,
+      "allDisplayedAmounts": true
     },
     {
       "id": "date",
-      "mode": "Days Between Dates",
-      "width": 1200,
+      "mode": "difference",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "date",
-      "mode": "Add or Subtract Days",
-      "width": 1200,
+      "mode": "add",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "unit-converter",
-      "mode": "Length",
-      "width": 1200,
+      "mode": "length",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "unit-converter",
-      "mode": "Mass",
-      "width": 1200,
+      "mode": "mass",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "unit-converter",
-      "mode": "Temperature",
-      "width": 1200,
+      "mode": "temperature",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "unit-converter",
-      "mode": "Area",
-      "width": 1200,
+      "mode": "area",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "unit-converter",
-      "mode": "Volume",
-      "width": 1200,
+      "mode": "volume",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "unit-converter",
-      "mode": "Speed",
-      "width": 1200,
+      "mode": "speed",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "scientific",
-      "mode": "default",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "evaluate",
+      "height": 1774,
+      "allDisplayedAmounts": true
     },
     {
       "id": "markup",
-      "mode": "Selling Price",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "price",
+      "height": 2012,
+      "allDisplayedAmounts": true
     },
     {
       "id": "markup",
-      "mode": "Reverse Markup",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "reverse",
+      "height": 2012,
+      "allDisplayedAmounts": true
     },
     {
       "id": "markup",
-      "mode": "Price from Margin",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "margin",
+      "height": 2012,
+      "allDisplayedAmounts": true
     },
     {
       "id": "markup",
-      "mode": "Convert Rates",
-      "width": 1200,
+      "mode": "convert",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "markup",
-      "mode": "Markup & Margin",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "compare",
+      "height": 2012,
+      "allDisplayedAmounts": true
     },
     {
       "id": "cagr",
-      "mode": "CAGR",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "rate",
+      "height": 2053,
+      "allDisplayedAmounts": true
     },
     {
       "id": "cagr",
-      "mode": "Ending Value",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "ending",
+      "height": 2053,
+      "allDisplayedAmounts": true
     },
     {
       "id": "cagr",
-      "mode": "Beginning Value",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "beginning",
+      "height": 2053,
+      "allDisplayedAmounts": true
     },
     {
       "id": "cagr",
-      "mode": "CAGR with Dates",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "dates",
+      "height": 2012,
+      "allDisplayedAmounts": true
     },
     {
       "id": "emergency-fund",
-      "mode": "Reserve Goal",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "goal",
+      "height": 2012,
+      "allDisplayedAmounts": true
     },
     {
       "id": "emergency-fund",
-      "mode": "Savings Plan",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "plan",
+      "height": 2012,
+      "allDisplayedAmounts": true
     },
     {
       "id": "break-even",
-      "mode": "Break-Even Point",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "units",
+      "height": 2265,
+      "allDisplayedAmounts": true
     },
     {
       "id": "break-even",
-      "mode": "Target Profit",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "profit",
+      "height": 2224,
+      "allDisplayedAmounts": true
     },
     {
       "id": "break-even",
-      "mode": "Break-Even Price",
-      "width": 1200,
+      "mode": "price",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     },
     {
       "id": "investment-fee",
-      "mode": "Fee Impact",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "impact",
+      "height": 3094,
+      "allDisplayedAmounts": true
     },
     {
       "id": "investment-fee",
-      "mode": "Compare Fees",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "compare",
+      "height": 3063,
+      "allDisplayedAmounts": true
     },
     {
       "id": "real-return",
-      "mode": "Real Return",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "rate",
+      "height": 1923,
+      "allDisplayedAmounts": true
     },
     {
       "id": "real-return",
-      "mode": "Purchasing Power",
-      "width": 1200,
-      "height": 1680,
-      "textWithinCard": true
+      "mode": "value",
+      "height": 1707,
+      "allDisplayedAmounts": true
     },
     {
       "id": "real-return",
-      "mode": "Required Nominal Return",
-      "width": 1200,
+      "mode": "nominal",
       "height": 1680,
-      "textWithinCard": true
+      "allDisplayedAmounts": true
     }
   ],
-  "errors": []
+  "errors": [],
+  "unexpected": [],
+  "scope": "Chromium static export; exact existing AdSense loader stubbed. PNGs rendered locally with the actual Inter font."
 }

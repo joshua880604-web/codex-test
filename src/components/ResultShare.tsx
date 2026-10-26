@@ -1,10 +1,11 @@
 "use client";
 import {useEffect,useRef,useState} from 'react';
-import type {Mode,Result,Values} from '@/lib/types';
-import {calculationLink,summaryMetrics,summaryText,modeCaption} from '@/lib/sharing';
-export default function ResultShare({id,title,path,mode,values,result}:{id:string;title:string;path:string;mode:Mode;values:Values;result:Result}){
+import type {Field,Mode,Result,Values} from '@/lib/types';
+import {calculationLink,summaryText,modeCaption} from '@/lib/sharing';
+export default function ResultShare({id,title,path,mode,values,result,fields}:{id:string;title:string;path:string;mode:Mode;values:Values;result:Result;fields:Field[]}){
  const [include,setInclude]=useState(false),[status,setStatus]=useState(''),[manual,setManual]=useState(''),[exporting,setExporting]=useState(false),[local,setLocal]=useState(false);
- const textRef=useRef<HTMLTextAreaElement>(null),metrics=summaryMetrics(id,result,mode.id),caption=modeCaption(mode,values);
+ const [pngInputs,setPngInputs]=useState(false);
+ const textRef=useRef<HTMLTextAreaElement>(null),caption=modeCaption(mode,values);
  useEffect(()=>{setLocal(['localhost','127.0.0.1','[::1]'].includes(location.hostname));},[]);
  useEffect(()=>{if(manual){textRef.current?.focus();textRef.current?.select();}},[manual]);
  const link=()=>calculationLink(location.origin,path,mode,values,include);
@@ -15,20 +16,22 @@ export default function ResultShare({id,title,path,mode,values,result}:{id:strin
  async function share(){try{const url=link();if(navigator.share){await navigator.share({title,url});setStatus('Share dialog completed.');}else await copy(url,'Link copied.');}catch(e){setStatus((e as Error).name==='AbortError'?'Sharing canceled.':(e as Error).message);}}
  async function copySummary(){try{await copy(summaryText(title,mode,id,result,link(),values),'Result summary copied. It contains calculation amounts.');}catch(e){setStatus((e as Error).message);}}
  async function exportImage(){
-  setExporting(true);try{const [{resultImage},{resultCardCopy}]=await Promise.all([import('@/lib/result-image'),import('@/lib/result-card-copy')]);
-   let imageMetrics=metrics,notes=[...(id==='irr'&&result.metrics.length>1?['Multiple IRRs detected; there is no single unambiguous rate.']:[]),...result.notes??[]],copy=resultCardCopy(id,mode.id,values,result);
+  setExporting(true);try{const [{resultImage},{resultCardCopy},{imageMetrics,imageDetails}]=await Promise.all([import('@/lib/result-image'),import('@/lib/result-card-copy'),import('@/lib/result-image-data')]);
+   const exportMetrics=imageMetrics(id,mode.id,result);
+   let notes=[...(id==='irr'&&result.metrics.length>1?['Multiple IRRs detected; there is no single unambiguous rate.']:[]),...result.notes??[]],copy=resultCardCopy(id,mode.id,values,result);
    if(id==='401k'&&mode.id==='projection'){
     const {retirementStory}=await import('@/lib/retirement-story');const story=retirementStory(values,result);
-    if(story){imageMetrics=[metrics[0],...story.parts.map(part=>({label:part.label,value:part.value,format:'money' as const}))];copy={...copy,interpretation:story.cardInterpretation};notes=['Illustration only. Before tax, with constant returns, full vesting and no fees. See the tool for contribution limits and timing assumptions.'];}
+    if(story){const growth=story.parts.at(-1)!;exportMetrics.push({label:growth.label,value:growth.value,format:'money'});copy={...copy,interpretation:story.cardInterpretation};notes=[...notes,'Illustration only. Before tax, with constant returns, full vesting and no fees. See the tool for contribution limits and timing assumptions.'];}
    }
-   const blob=await resultImage(title,caption,imageMetrics,notes,calculationLink(location.origin,path,mode,values),copy);
-   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=id+'-result.png';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);setStatus('PNG downloaded. It contains result amounts and the tool address, without an input list.');
+   const blob=await resultImage(title,caption,exportMetrics,notes,calculationLink(location.origin,path,mode,values),copy,imageDetails(id,mode,values,result,fields,pngInputs));
+   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=id+'-result.png';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);setStatus(pngInputs?'PNG downloaded with results and input details.':'PNG downloaded with results and calculation notes. Input details were not included.');
   }catch(e){setStatus((e as Error).message);}finally{setExporting(false);}
  }
  return <section className="share-panel" aria-label="Share result">
   <h3>Save or share this result</h3>
   <div className="result-actions"><button onClick={copySummary}>Copy result summary</button><button onClick={exportImage} disabled={exporting}>{exporting?'Creating PNG…':'Download result PNG'}</button></div>
-  <p className="share-help">Summaries and images include result amounts. Review before sharing.</p>
+  <label className="share-choice"><input type="checkbox" checked={pngInputs} onChange={e=>{setPngInputs(e.target.checked);setStatus('');}}/> Include input details in PNG</label>
+  <p className="share-help">PNG includes results, available charts and calculation notes. Review before sharing.</p>
   <details className="share-options" onToggle={e=>{if(!e.currentTarget.open){setInclude(false);setManual('');setStatus('');}}}>
    <summary>Share a link or include inputs</summary>
    <label className="share-choice"><input type="checkbox" checked={include} onChange={e=>{setInclude(e.target.checked);setStatus('');setManual('');}}/> Include current inputs in the link</label>

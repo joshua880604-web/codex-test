@@ -50,13 +50,13 @@ try {
   await page.goto(`${base}/${id}-calculator.html?mode=${mode}`);await page.locator('.result-trend svg').waitFor();
   await page.locator('.workspace-sharing > summary').click();
   const pending=page.waitForEvent('download');await page.getByRole('button',{name:'Download result PNG',exact:true}).click();
-  const image=await pending;const bytes=await fs.readFile(await image.path());assert.equal(bytes.readUInt32BE(16),1200);assert.equal(bytes.readUInt32BE(20),1680);
+  const image=await pending;const bytes=await fs.readFile(await image.path());assert.equal(bytes.readUInt32BE(16),1200);assert.ok(bytes.readUInt32BE(20)>=1680);
   await image.saveAs(`${dir}/${id}-export.png`);
   const input=page.locator('.calculator-form input[type=number]').first();await input.fill('');
   assert.equal(await page.locator('.result-trend').count(),0);assert.equal(await page.locator('.result').count(),0);
   await page.getByRole('button',{name:'Calculate',exact:true}).click();assert.equal(await page.locator('.result').count(),0);
   await page.getByRole('button',{name:'Reset',exact:true}).click();await page.getByRole('button',{name:'Calculate',exact:true}).click();await page.locator('.result-trend svg').waitFor();
-  checks.push({id,mode,sharedLink:true,png:'1200x1680',editingClearsChart:true,invalidClearsChart:true,reset:true});
+  checks.push({id,mode,sharedLink:true,png:'1200px wide; adaptive height',editingClearsChart:true,invalidClearsChart:true,reset:true});
  }
  for(const [name,query,expected] of [
   ['loss','principal=1000&years=2&rate=-10&compound=Annually&monthly=0&annual=0','-$190.00'],

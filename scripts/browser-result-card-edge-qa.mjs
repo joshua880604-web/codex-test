@@ -21,18 +21,18 @@ try{
   const numbers=await page.locator('.result .metric strong').allTextContents();
   const pending=page.waitForEvent('download');await page.getByRole('button',{name:'Download result PNG',exact:true}).click();const download=await pending;
   const file='/workspace/work/result-cards/'+name+'.png';await download.saveAs(file);
-  const png=await fs.readFile(file);assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),1680);
+  const png=await fs.readFile(file);assert.equal(png.readUInt32BE(16),1200);assert.ok(png.readUInt32BE(20)>=1680);
   const drawn=await page.evaluate(()=>window.cardText),text=drawn.map(x=>x.text).join(' '),compact=drawn.map(x=>x.text).join('').replace(/\s/g,'');
   for(const number of numbers.slice(0,5))assert.ok(compact.includes(number.replace(/\s/g,'')),name+' preserves displayed value '+number);
-  assert.ok(drawn.every(t=>t.x>=64&&t.x+t.width<=1137&&t.y+parseInt(t.font.match(/\d+px/)[0])<=1656));
+  assert.ok(drawn.every(t=>t.x>=64&&t.x+t.width<=1137&&t.y+parseInt(t.font.match(/\d+px/)[0])<=png.readUInt32BE(20)-24));
   assert.ok(text.includes('https://calculatorfree.io/'));assert.ok(!/LOCAL PREVIEW|\?mode=|#calc=|principal=/.test(text));
-  checks.push({name,aspectRatio:'5:7',valuesMatchDisplayedResult:true,productionBrand:true,cleanToolAddress:true,textWithinCard:true});
+  checks.push({name,height:png.readUInt32BE(20),valuesMatchDisplayedResult:true,productionBrand:true,cleanToolAddress:true,textWithinCard:true});
  }
- const preview=await browser.newPage({viewport:{width:390,height:546},deviceScaleFactor:1});
+ const preview=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1});
  for(const name of ['mortgage','scientific']){
   const png=await fs.readFile('/workspace/work/result-cards/'+name+'.png');
-  await preview.setContent('<style>html,body{margin:0}img{display:block;width:390px;height:546px}</style><img src="data:image/png;base64,'+png.toString('base64')+'">');
+  await preview.setContent('<style>html,body{margin:0}img{display:block;width:390px;height:auto}</style><img src="data:image/png;base64,'+png.toString('base64')+'">');
   await preview.locator('img').evaluate(img=>img.decode());await preview.screenshot({path:'/workspace/work/result-cards/'+name+'-mobile.png'});
  }
- await fs.writeFile('docs/financial-clone/evidence/browser-result-card-edge-qa.json',JSON.stringify({tested_at:new Date().toISOString(),checks,mobilePreview:{width:390,height:546}},null,2));console.log({checks:checks.length});
+ await fs.writeFile('docs/financial-clone/evidence/browser-result-card-edge-qa.json',JSON.stringify({tested_at:new Date().toISOString(),checks,mobilePreview:{width:390,height:844}},null,2));console.log({checks:checks.length});
 }finally{await browser.close();}

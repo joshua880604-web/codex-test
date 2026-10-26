@@ -64,12 +64,12 @@ try{
  await page.getByRole('button',{name:'Copy result summary',exact:true}).click();await page.getByText('Result summary copied. It contains calculation amounts.',{exact:true}).waitFor();
  assert.ok((await page.evaluate(()=>navigator.clipboard.readText())).includes(selectedBalance));
  const downloading=page.waitForEvent('download');await page.getByRole('button',{name:'Download result PNG',exact:true}).click();const download=await downloading;
- await download.saveAs(output+'/401k-later-result.png');const png=await fs.readFile(output+'/401k-later-result.png');assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),1680);
+ await download.saveAs(output+'/401k-later-result.png');const png=await fs.readFile(output+'/401k-later-result.png');assert.equal(png.readUInt32BE(16),1200);assert.ok(png.readUInt32BE(20)>=1680);
  assert.ok(await page.evaluate(value=>window.__drawnText.some(t=>t.includes(value)),selectedBalance));
- for(const label of ['Existing savings','Your future contributions','Future employer match','Projected investment growth','READING YOUR RESULT'])assert.ok(await page.evaluate(value=>window.__drawnText.includes(value),label),'PNG is missing '+label);
+ for(const label of ['Starting 401(k) balance','Employee contributions','Employer contributions','Projected investment growth','Reading your result'])assert.ok(await page.evaluate(value=>window.__drawnText.includes(value),label),'PNG is missing '+label);
  assert.ok((await page.evaluate(()=>window.__drawnText.join(' '))).includes(new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(await metric(page,'Initial withdrawal in today’s dollars'))));
  const csvDownloading=page.waitForEvent('download');await page.getByRole('button',{name:'Download retirement CSV',exact:true}).click();const csv=await csvDownloading;const csvText=await fs.readFile(await csv.path(),'utf8');assert.equal(csvText.trim().split('\n').length,22);
- checks.push('Share link, copied summary, 5:7 PNG and withdrawal CSV all use the selected scenario');
+ checks.push('Share link, copied summary, adaptive-height PNG and withdrawal CSV all use the selected scenario');
  await restore(page);assert.deepEqual(await inputValues(page),originalInputs);assert.equal(await metric(page,'Projected 401(k) balance'),originalBalance);
  checks.push('Restore returns exact original inputs and result');
  await scenario(page,'save-more');await field(page,'return').fill('7');assert.equal(await page.locator('.result').count(),0);

@@ -1,0 +1,26 @@
+# Rich result PNG reports — October 26, 2026
+
+Download result PNG now creates an Inter/violet report matching the current website: two-color CalculatorFree.io wordmark, pale ground, thin borders, rounded cards and the violet primary-result gradient. Every report includes the requested “Free Forever - No Credit Card Required” badge below its wordmark.
+
+The export retains the existing primary/highlight order and adds every remaining result, the current interpretation, calculation method, model notes and jurisdiction/year scope where applicable. A balance/growth chart appears only when the existing resultTrend adapter recognizes the actual calculated schedule. It uses those same points, endpoints and series; no schedule or return is recalculated for the picture. CD curves remain explicitly before tax; after-tax results are separate. The 401(k) report retains the existing story's investment growth/loss figure and adds all underlying results, including withdrawal figures. Marriage tax preserves the existing positive savings/cost summary convention.
+
+Reports remain 1200px wide, with a minimum height of 1680px and an adaptive height instead of a fixed 5:7 crop. Values wrap or reduce their display font before wrapping, without abbreviating or dropping financial digits. Normal-mode reports tested at 1680–4947px high. The tested detailed 2025 tax report with input details is 8244px high. The canvas has a 12000px height guard (under 16 million pixels); unusually large reports produce a readable recovery message rather than silently omitting results.
+
+“Include input details in PNG” is a separate, unchecked-by-default option. It receives the calculator's current displayed field set, excluding hidden drafts/internal fields; selected dollar/percentage units, decimals, dates and zeroes are retained. Long entry lists/text are explicitly represented by their row/character count and marked not included, instead of clipping them into an apparently complete list. Default PNGs retain the existing no-input-list behavior. The link-sharing opt-in is independent, and image footers always use a clean tool address without query/fragment inputs. Editing inputs removes the stale export and resets its input-detail opt-in after recalculation.
+
+The report is generated locally with Canvas. It waits for the site's existing Inter font, uses no image service, canvas screenshot library, new font or runtime API, and keeps PNG/data modules dynamically imported only after clicking Download result PNG. Text and numeric snapshots use the already calculated result. The existing tool/summary and CSV workflows remain available. UI layout, formulas, policy rates, sitemap and llms content did not change.
+
+## Verification
+
+- Production build and TypeScript check passed.
+- 960 unit/integration tests passed: the prior 953 plus seven report-data tests. Coverage includes every default result, non-mutation, marriage savings normalization, decimal/unit/date fidelity, hidden-field exclusion, long-list handling, input opt-in, actual trend endpoints and tax-year scope.
+- 193 calculation modes successfully downloaded real PNGs in Chromium. Checks cover width/adaptive height, all displayed amounts, text boundaries, actual Inter availability, Inter canvas fonts, 900 headings, two-color wordmark, requested free badge, clean URLs and omitted default input sections. No browser runtime errors or unexpected network requests.
+- 15 focused cases/checks passed: Mortgage, detailed Mortgage, FHA, CD at 100% tax, 401(k), 401(k) losses, negative compounding, tax year 2025, VAT, a 14-digit loan, leap-day date arithmetic, JPY, scientific results, direct-loan hidden purchase drafts, and stale export/input-opt-in reset.
+- 17 lazy-loading/runtime checks passed, including PNG code absent before export and present after export; no unrelated calculation/data modules loaded initially. The old directory-only marker was updated because calculator search is now intentionally shared with sidebars. The exact existing AdSense loader is stubbed; these checks do not assess live advertisements or public-origin performance.
+- Representative downloaded images were opened and reviewed: Mortgage, VAT and a 401(k) loss. They show the new style and free badge, full numbers, readable sections and model assumptions. The 1200px images support zooming; large input-rich reports are intentionally taller.
+
+Evidence: evidence/browser-result-card-qa.json and evidence/browser-lazy-loading-qa.json. Browser tests use the static export with Chromium; physical iPhone Safari was not tested. The PNG check script accepts QA_BASE_URL and PNG_EVIDENCE_DIR for local preview/evidence paths. Other PNG dimension checks now accept adaptive height while retaining their original semantic assertions.
+
+## Design review
+
+The current website's approved Inter/violet language is retained, including the explicitly requested gradient, static shadows, thin borders and free badge. No direction redraw, new imagery or new calculator layout was needed. Self-review: design 8.5, usability 8.5, content fidelity 9. The result is richer and longer than the former compact card; input details remain optional, and very large entry lists are clearly summarized. The image is a computation snapshot, not a guarantee or a full amortization CSV.
