@@ -1,6 +1,7 @@
 "use client";
 import {useEffect,useRef} from 'react';
-const links=[['All calculators','/financial-calculator.html'],['Find a calculator','/financial-calculator.html#directory-search'],['Mortgage & Housing','/financial-calculator.html#mortgage-housing'],['Loans & Debt','/financial-calculator.html#loans-debt'],['Saving & Investing','/financial-calculator.html#saving-investing'],['Retirement','/financial-calculator.html#retirement'],['Tax & Salary','/financial-calculator.html#tax-salary'],['Everyday tools','/financial-calculator.html#everyday'],['Financial glossary','/glossary/'],['Methodology & sources','/methodology.html']];
+import {categoryNavigation} from '@/lib/calculator-categories';
+const links=[['All calculators','/financial-calculator.html'],['Find a calculator','/financial-calculator.html#directory-search'],...categoryNavigation.map(link=>[link.title,link.href]),['Financial glossary','/glossary/'],['Methodology & sources','/methodology.html']];
 export default function MobileNavigation(){
  const menu=useRef<HTMLDetailsElement>(null),trigger=useRef<HTMLElement>(null);
  useEffect(()=>{

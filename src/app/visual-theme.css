@@ -154,3 +154,14 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
  .benefits-list li {font-size:12px;}
 }
 @media print {.header-description,.site-benefits {display:none;}}
+
+/* Shared category navigation keeps existing routes, frame and phone first screen. */
+.top-nav > div {flex-wrap:wrap;overflow-x:visible;}
+.top-nav a {flex:0 0 auto;white-space:nowrap;font-size:13px;padding-inline:8px;}
+.calculator-directory .category-subgroup + .category-subgroup {margin-top:16px;}
+.calculator-directory .category-subgroup h4 {font-size:12px;line-height:1.5;font-weight:650;color:#52627a;margin:12px 0 2px;}
+.category-overview {display:block;font-size:13px;line-height:1.5;padding-top:12px;border-top:1px solid #edf1f7;margin-top:8px;}
+.estate-categories .category-subgroup {border:1px solid #dce4f1;border-radius:18px;background:#fff;padding:20px;margin:20px 0;}
+.estate-categories .category-subgroup h2 {font-size:19px;line-height:1.4;margin:0 0 12px;}
+.side-category-links {display:grid;gap:2px;}
+.side-category-links a {display:block;font-size:13px;line-height:1.5;padding:8px 0;}

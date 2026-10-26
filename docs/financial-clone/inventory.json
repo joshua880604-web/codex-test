@@ -388,7 +388,12 @@
         ],
         "formula": "Payment = P \u00d7 i / (1 \u2212 (1+i)^\u2212N), with a period-by-period balance schedule."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "amortization",
@@ -482,7 +487,12 @@
         ],
         "formula": "Interest = opening balance \u00d7 monthly rate; principal = payment \u2212 interest."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "mortgage-payoff",
@@ -942,7 +952,12 @@
         ],
         "formula": "Remaining balance = P(1+i)^k \u2212 A((1+i)^k\u22121)/i; simulate subsequent repayments."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "house-affordability",
@@ -1145,7 +1160,12 @@
         ],
         "formula": "Budget = mortgage payment + annual property tax/12 + monthly insurance and HOA."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "rent",
@@ -1196,7 +1216,12 @@
         ],
         "formula": "Rent budget = min(gross monthly income \u00d7 housing ratio, gross income \u00d7 debt ratio \u2212 other debts)."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "debt-to-income-ratio",
@@ -1373,7 +1398,12 @@
         ],
         "formula": "DTI = monthly debt payments / gross monthly income \u00d7 100%."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "real-estate",
@@ -1386,7 +1416,12 @@
     "source_mode_groups": [
       "directory only"
     ],
-    "implemented_modes": []
+    "implemented_modes": [],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "refinance",
@@ -1534,7 +1569,12 @@
         ],
         "formula": "New principal = balance + cash out + financed costs; compare amortization cash flows."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "rental-property",
@@ -1731,7 +1771,12 @@
         ],
         "formula": "NOI = effective income \u2212 operating expenses; equity cash flow = NOI \u2212 debt service."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "apr",
@@ -1874,7 +1919,12 @@
         ],
         "formula": "Net proceeds = \u03a3 payment\u209c/(1+APR/f)^t."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "fha-loan",
@@ -2301,7 +2351,12 @@
         ],
         "formula": "Payment = P \u00d7 i / (1 \u2212 (1+i)^\u2212N), with a period-by-period balance schedule."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "va-mortgage",
@@ -2728,7 +2783,12 @@
         ],
         "formula": "Payment = P \u00d7 i / (1 \u2212 (1+i)^\u2212N), with a period-by-period balance schedule."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "home-equity-loan",
@@ -2787,7 +2847,12 @@
         ],
         "formula": "Amortize the financed balance; solve APR from net proceeds and loan payments."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "heloc",
@@ -2883,7 +2948,12 @@
         ],
         "formula": "Maximum credit = home value \u00d7 maximum LTV \u2212 outstanding mortgage balance."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "down-payment",
@@ -3028,7 +3098,12 @@
         ],
         "formula": "Cash = house price \u00d7 down payment fraction + closing costs."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "rent-vs-buy",
@@ -3175,7 +3250,12 @@
         ],
         "formula": "Compare buyer equity after sale with the renter portfolio, adding monthly cash-flow differences."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "auto-loan",
@@ -3372,7 +3452,12 @@
         ],
         "formula": "Financed amount = vehicle price \u2212 incentives \u2212 down payment \u2212 trade value + trade debt + financed taxes and fees."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "cash-back-or-low-interest",
@@ -3483,7 +3568,12 @@
         ],
         "formula": "Compare total loan payments on the rebate-reduced balance and the promotional-rate balance."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "auto-lease",
@@ -3620,7 +3710,12 @@
         ],
         "formula": "Base payment = (capitalized cost \u2212 residual)/months + (capitalized cost + residual) \u00d7 money factor; money factor = APR/2400."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "interest",
@@ -3701,7 +3796,12 @@
         ],
         "formula": "Balance grows at the equivalent periodic rate, with contributions added at the selected timing."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "investment",
@@ -4048,7 +4148,12 @@
         ],
         "formula": "Solve the periodic contribution and compound growth cash-flow equation."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "finance",
@@ -4311,7 +4416,12 @@
         ],
         "formula": "PV \u00d7 (1+i)^N + PMT \u00d7 annuity factor + FV = 0."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "compound-interest",
@@ -4417,7 +4527,12 @@
         ],
         "formula": "Balance grows at the equivalent periodic rate, with contributions added at the selected timing."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "interest-rate",
@@ -4462,7 +4577,12 @@
         ],
         "formula": "Numerically solve P = A \u00d7 (1 \u2212 (1+i)^\u2212N) / i."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "savings",
@@ -4683,7 +4803,12 @@
         ],
         "formula": "Solve the periodic contribution and compound growth cash-flow equation."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "simple-interest",
@@ -4848,7 +4973,12 @@
         ],
         "formula": "A = P \u00d7 (1 + r \u00d7 t)."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "cd",
@@ -4905,7 +5035,12 @@
         ],
         "formula": "FV = P \u00d7 (1 + r/m)^(m\u00d7t). Taxes are applied to total interest."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "bond",
@@ -5194,7 +5329,12 @@
         ],
         "formula": "Dirty price discounts all remaining payments; clean price = dirty price \u2212 accrued coupon."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "mutual-fund",
@@ -5269,7 +5409,12 @@
         ],
         "formula": "Front-end charges reduce each contribution; recurring expenses reduce the effective annual return."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "average-return",
@@ -5329,7 +5474,12 @@
         ],
         "formula": "Growth = product(1 + period return); annualized return = growth^(1/total years) \u2212 1."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "irr",
@@ -5418,7 +5568,12 @@
         ],
         "formula": "NPV = \u03a3 CF\u209c/(1+r)^t = 0."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "roi",
@@ -5489,7 +5644,12 @@
         ],
         "formula": "ROI = (returned \u2212 invested)/invested; annualized = (returned/invested)^(1/years) \u2212 1."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "payback-period",
@@ -5572,7 +5732,12 @@
         ],
         "formula": "Find when cumulative (discounted) cash flow first recovers the initial investment."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "present-value",
@@ -5649,7 +5814,12 @@
         ],
         "formula": "PV = FV/(1+r)^N + PMT \u00d7 (1 \u2212 (1+r)^\u2212N)/r."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "future-value",
@@ -5700,7 +5870,12 @@
         ],
         "formula": "FV = PV \u00d7 (1+r)^N + PMT \u00d7 ((1+r)^N\u22121)/r."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "retirement",
@@ -5919,7 +6094,12 @@
         ],
         "formula": "N = \u2212ln(1 \u2212 PV\u00d7i/PMT)/ln(1+i); actual month-end withdrawals use ceil(N), with the last withdrawal capped at the available balance."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "retirement",
+      "title": "Retirement",
+      "route_preserved": true
+    }
   },
   {
     "id": "401k",
@@ -6106,7 +6286,12 @@
         ],
         "formula": "Employer match = first band \u00d7 first match rate + additional band \u00d7 second match rate."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "retirement",
+      "title": "Retirement",
+      "route_preserved": true
+    }
   },
   {
     "id": "pension",
@@ -6275,7 +6460,12 @@
         ],
         "formula": "Discount each benefit stream to the earlier retirement age."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "retirement",
+      "title": "Retirement",
+      "route_preserved": true
+    }
   },
   {
     "id": "social-security",
@@ -6376,7 +6566,12 @@
         ],
         "formula": "Discount each benefit stream to the earlier application age."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "retirement",
+      "title": "Retirement",
+      "route_preserved": true
+    }
   },
   {
     "id": "annuity",
@@ -6433,7 +6628,12 @@
         ],
         "formula": "Monthly and annual annuity accumulation factors use their respective periodic rates."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "retirement",
+      "title": "Retirement",
+      "route_preserved": true
+    }
   },
   {
     "id": "annuity-payout",
@@ -6510,7 +6710,12 @@
         ],
         "formula": "Payout = principal / annuity present-value factor."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "retirement",
+      "title": "Retirement",
+      "route_preserved": true
+    }
   },
   {
     "id": "roth-ira",
@@ -6573,7 +6778,12 @@
         ],
         "formula": "Roth earnings compound tax-free; taxable earnings are reduced by annual tax."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "retirement",
+      "title": "Retirement",
+      "route_preserved": true
+    }
   },
   {
     "id": "ira",
@@ -6642,7 +6852,12 @@
         ],
         "formula": "Traditional after-tax balance = pre-tax account \u00d7 (1 \u2212 retirement tax); Roth uses after-tax contributions."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "retirement",
+      "title": "Retirement",
+      "route_preserved": true
+    }
   },
   {
     "id": "rmd",
@@ -6706,7 +6921,12 @@
         ],
         "formula": "RMD = previous year-end balance / applicable IRS distribution period."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "retirement",
+      "title": "Retirement",
+      "route_preserved": true
+    }
   },
   {
     "id": "income-tax",
@@ -7058,7 +7278,12 @@
         ],
         "formula": "Progressive ordinary tax + preferential capital-gains tax + applicable additional taxes \u2212 credits."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "tax-salary",
+      "title": "Tax & Income",
+      "route_preserved": true
+    }
   },
   {
     "id": "salary",
@@ -7115,7 +7340,12 @@
         ],
         "formula": "Annual pay = hourly rate \u00d7 weekly hours \u00d7 52; adjusted annual pay subtracts unpaid days."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "tax-salary",
+      "title": "Tax & Income",
+      "route_preserved": true
+    }
   },
   {
     "id": "marriage-tax",
@@ -7562,7 +7792,12 @@
         ],
         "formula": "Marriage penalty = joint federal liability \u2212 sum of unmarried federal liabilities."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "tax-salary",
+      "title": "Tax & Income",
+      "route_preserved": true
+    }
   },
   {
     "id": "estate-tax",
@@ -7673,7 +7908,12 @@
         ],
         "formula": "Unified estate/gift tax on adjusted taxable transfers minus applicable exclusion credit and prior gift tax."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "tax-salary",
+      "title": "Tax & Income",
+      "route_preserved": true
+    }
   },
   {
     "id": "take-home-paycheck",
@@ -8085,7 +8325,12 @@
         ],
         "formula": "Net pay = gross wages \u2212 pre-tax deductions \u2212 estimated taxes \u2212 after-tax deductions."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "tax-salary",
+      "title": "Tax & Income",
+      "route_preserved": true
+    }
   },
   {
     "id": "loan",
@@ -8218,7 +8463,12 @@
         ],
         "formula": "Present value = face value/(1+r/m)^(m\u00d7years)."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "payment",
@@ -8289,7 +8539,12 @@
         ],
         "formula": "Fixed installment amortization; solve the payment count when the installment is supplied."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "currency",
@@ -8366,7 +8621,12 @@
         ],
         "formula": "Cross rate = USD-to-target reference / USD-to-source reference."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "inflation",
@@ -8494,7 +8754,12 @@
         ],
         "formula": "Adjusted amount = original amount \u00d7 end CPI/start CPI."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "sales-tax",
@@ -8565,7 +8830,12 @@
         ],
         "formula": "After-tax price = before-tax price \u00d7 (1 + tax rate)."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "tax-salary",
+      "title": "Tax & Income",
+      "route_preserved": true
+    }
   },
   {
     "id": "credit-card",
@@ -8673,7 +8943,12 @@
         ],
         "formula": "Monthly interest = opening balance \u00d7 APR/12; apply the selected payment rule."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "credit-cards-payoff",
@@ -8706,7 +8981,12 @@
         ],
         "formula": "Debt avalanche: minimums on all debts, extra to the highest rate; freed payments roll over."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "debt-payoff",
@@ -8807,7 +9087,12 @@
         ],
         "formula": "Accrue monthly interest, pay minimums, then rank remaining balances from smallest to largest. Ties use the higher APR first."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "debt-consolidation",
@@ -8858,7 +9143,12 @@
         ],
         "formula": "Consolidate balances and compare total interest plus origination fees on future cash flows."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "repayment",
@@ -9002,7 +9292,12 @@
         ],
         "formula": "Fixed installment amortization; solve the payment count when the installment is supplied."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "student-loan",
@@ -9280,7 +9575,12 @@
         ],
         "formula": "Borrow at each academic year start; accrue simple interest during school and grace, then capitalize once."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "college-cost",
@@ -9349,7 +9649,12 @@
         ],
         "formula": "Discount future annual college costs to enrollment, then solve the savings contribution required."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "vat",
@@ -9394,7 +9699,12 @@
         ],
         "formula": "Gross price = net price + tax amount; tax amount = net price \u00d7 VAT rate / 100."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "tax-salary",
+      "title": "Tax & Income",
+      "route_preserved": true
+    }
   },
   {
     "id": "depreciation",
@@ -9600,7 +9910,12 @@
         ],
         "formula": "Depreciation = (cost \u2212 salvage) \u00d7 remaining life / sum of years."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "business-finance",
+      "title": "Business Finance",
+      "route_preserved": true
+    }
   },
   {
     "id": "margin",
@@ -9761,7 +10076,12 @@
         ],
         "formula": "Selling price = cost \u00d7 (1 + markup/100); margin = markup/(100 + markup) \u00d7 100%."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "business-finance",
+      "title": "Business Finance",
+      "route_preserved": true
+    }
   },
   {
     "id": "discount",
@@ -9852,7 +10172,12 @@
         ],
         "formula": "Sale price = original price \u00d7 (1 \u2212 discount rate)."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "everyday",
+      "title": "Everyday Tools",
+      "route_preserved": true
+    }
   },
   {
     "id": "business-loan",
@@ -9939,7 +10264,12 @@
         ],
         "formula": "APR solves net proceeds against all periodic loan payments and insurance charges."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "business-finance",
+      "title": "Business Finance",
+      "route_preserved": true
+    }
   },
   {
     "id": "personal-loan",
@@ -10015,7 +10345,12 @@
         ],
         "formula": "APR solves net proceeds against all periodic loan payments and insurance charges."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "boat-loan",
@@ -10140,7 +10475,12 @@
         ],
         "formula": "Financed balance = price \u2212 down \u2212 trade + financed tax and fees."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "lease",
@@ -10229,7 +10569,12 @@
         ],
         "formula": "Asset value = payment \u00d7 annuity present-value factor + residual/(1+i)^N."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "route_preserved": true
+    }
   },
   {
     "id": "budget",
@@ -10748,7 +11093,12 @@
         ],
         "formula": "Monthly surplus = monthly after-tax income \u2212 spending \u2212 savings allocations."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "commission",
@@ -10882,7 +11232,12 @@
         ],
         "formula": "Progressive commission applies each rate only to sales inside that band."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "tax-salary",
+      "title": "Tax & Income",
+      "route_preserved": true
+    }
   },
   {
     "id": "percentage",
@@ -10951,7 +11306,12 @@
         ],
         "formula": "Percentage = part / whole \u00d7 100%."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "everyday",
+      "title": "Everyday Tools",
+      "route_preserved": true
+    }
   },
   {
     "id": "tip-bill-split",
@@ -11000,7 +11360,12 @@
         ],
         "formula": "Total = bill + additional tax + tip on bill. Divide the rounded total into currency minor units and allocate any remainder one unit at a time."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "everyday",
+      "title": "Everyday Tools",
+      "route_preserved": true
+    }
   },
   {
     "id": "date",
@@ -11056,7 +11421,12 @@
         ],
         "formula": "Resulting calendar day = starting calendar day + signed number of days."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "everyday",
+      "title": "Everyday Tools",
+      "route_preserved": true
+    }
   },
   {
     "id": "unit-converter",
@@ -11218,7 +11588,12 @@
         ],
         "formula": "Base value = input \u00d7 source factor + source offset; output = (base value \u2212 target offset) / target factor."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "everyday",
+      "title": "Everyday Tools",
+      "route_preserved": true
+    }
   },
   {
     "id": "scientific",
@@ -11249,7 +11624,12 @@
         ],
         "formula": "Powers are right-associative and precede a leading minus: 2^3^2 = 512; \u22122^2 = \u22124. Factorial and percent apply to the preceding value."
       }
-    ]
+    ],
+    "display_category": {
+      "id": "everyday",
+      "title": "Everyday Tools",
+      "route_preserved": true
+    }
   },
   {
     "id": "markup",
@@ -11366,7 +11746,12 @@
         ]
       }
     ],
-    "reference_parity": "not-applicable-independent-addition"
+    "reference_parity": "not-applicable-independent-addition",
+    "display_category": {
+      "id": "business-finance",
+      "title": "Business Finance",
+      "route_preserved": true
+    }
   },
   {
     "id": "cagr",
@@ -11495,7 +11880,12 @@
         ]
       }
     ],
-    "reference_parity": "not-applicable-independent-addition"
+    "reference_parity": "not-applicable-independent-addition",
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "emergency-fund",
@@ -11571,7 +11961,12 @@
         ]
       }
     ],
-    "reference_parity": "not-applicable-independent-addition"
+    "reference_parity": "not-applicable-independent-addition",
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "break-even",
@@ -11679,7 +12074,12 @@
         ]
       }
     ],
-    "reference_parity": "not-applicable-independent-addition"
+    "reference_parity": "not-applicable-independent-addition",
+    "display_category": {
+      "id": "business-finance",
+      "title": "Business Finance",
+      "route_preserved": true
+    }
   },
   {
     "id": "investment-fee",
@@ -11834,7 +12234,12 @@
         ]
       }
     ],
-    "reference_parity": "not-applicable-independent-addition"
+    "reference_parity": "not-applicable-independent-addition",
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "real-return",
@@ -11930,7 +12335,12 @@
         ]
       }
     ],
-    "reference_parity": "not-applicable-independent-addition"
+    "reference_parity": "not-applicable-independent-addition",
+    "display_category": {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "route_preserved": true
+    }
   },
   {
     "id": "pmi",
@@ -12206,7 +12616,12 @@
         "formula": "Request benchmark = earlier scheduled or actual 80% original-value date. Automatic benchmark = earlier original-schedule 78% date or month after the original term midpoint, if current."
       }
     ],
-    "reference_parity": "not-applicable-independent-addition"
+    "reference_parity": "not-applicable-independent-addition",
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "biweekly-mortgage",
@@ -12269,7 +12684,12 @@
         "formula": "Monthly P&I = P \u00d7 i / (1 \u2212 (1 + i)^\u2212n). Biweekly payment = monthly / 2 + extra. Model rate = annual / 26; matched monthly budget = biweekly \u00d7 26 / 12."
       }
     ],
-    "reference_parity": "not-applicable-independent-addition"
+    "reference_parity": "not-applicable-independent-addition",
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   },
   {
     "id": "discount-points",
@@ -12364,6 +12784,11 @@
         "formula": "Point cost = principal \u00d7 points / 100. Net horizon saving B = cumulative interest A \u2212 cumulative interest B \u2212 (upfront B \u2212 upfront A). Cash-flow saving excludes the balance advantage."
       }
     ],
-    "reference_parity": "not-applicable-independent-addition"
+    "reference_parity": "not-applicable-independent-addition",
+    "display_category": {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "route_preserved": true
+    }
   }
 ]

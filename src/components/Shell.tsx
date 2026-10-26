@@ -1,4 +1,5 @@
 import {siteName} from "@/lib/site";
+import {categoryNavigation,sidebarTools} from '@/lib/calculator-categories';
 import MobileNavigation from "./MobileNavigation";
 import CalculatorSearch from "./CalculatorSearch";
 import SiteBenefits, { FreeBadge } from "./SiteBenefits";
@@ -26,50 +27,24 @@ export function Header() {
       </header>
       <nav className="top-nav" aria-label="Main navigation">
         <div>
-          <a className="selected" href="/financial-calculator.html">
-            Financial Calculators
-          </a>
-          <a href="/financial-calculator.html#everyday">Everyday Tools</a>
-          <a href="/real-estate-calculator.html">Real Estate</a>
-          <a href="/financial-calculator.html#saving-investing">Investment</a>
-          <a href="/financial-calculator.html#retirement">Retirement</a>
+          <a href="/financial-calculator.html">All calculators</a>
+          {categoryNavigation.map(link=><a key={link.id} href={link.href}>{link.title}</a>)}
           <a href="/glossary/">Glossary</a>
         </div>
       </nav>
     </>
   );
 }
-export function Sidebar() {
-  const ids = [
-    "mortgage",
-    "pmi",
-    "biweekly-mortgage",
-    "discount-points",
-    "loan",
-    "auto-loan",
-    "interest",
-    "payment",
-    "retirement",
-    "amortization",
-    "investment",
-    "currency",
-    "inflation",
-    "finance",
-    "mortgage-payoff",
-    "income-tax",
-    "compound-interest",
-    "salary",
-    "401k",
-    "interest-rate",
-    "sales-tax",
-  ];
+export function Sidebar({calculatorId}:{calculatorId?:string}={}) {
+  const context=sidebarTools(calculatorId);
+  const ids=context.ids;
   return (
     <aside className="sidebar">
       <CalculatorSearch id="sidebar-search" compact/>
       <SiteBenefits />
       <section className="side-group" aria-labelledby="side-financial-heading">
       <h2 className="side-heading" id="side-financial-heading">
-        <a href="/financial-calculator.html">Financial Calculators</a>
+        <a href={context.href}>{context.title}</a>
       </h2>
       <div className="side-links">
         {ids.map((id) => {
@@ -81,13 +56,13 @@ export function Sidebar() {
           );
         })}
       </div>
-      <a className="more-tools" href="/financial-calculator.html">
-        More Financial Calculators »
+      <a className="more-tools" href={context.href}>
+        Browse all tools »
       </a>
       </section>
-      <section className="side-group side-group-secondary" aria-labelledby="side-everyday-heading">
-      <h2 className="side-heading" id="side-everyday-heading">Everyday Tools</h2>
-      <div className="side-links">{calculators.filter(c=>c.category === "Everyday Tools").map(c=><a key={c.id} href={routeFor(c.id)}>{c.title}</a>)}</div>
+      <section className="side-group side-group-secondary" aria-labelledby="side-categories-heading">
+      <h2 className="side-heading" id="side-categories-heading">Browse categories</h2>
+      <nav className="side-category-links" aria-label="Calculator categories">{categoryNavigation.map(link=><a key={link.id} href={link.href}>{link.title}</a>)}</nav>
       </section>
       <div className="side-note">
         <h3>Plan with clear assumptions</h3>

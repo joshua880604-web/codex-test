@@ -1,3 +1,4 @@
+import {calculatorCategory,categoryHref} from '@/lib/calculator-categories';
 import SearchTasks from "@/components/SearchTasks";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -77,6 +78,7 @@ export default async function Page({
   if (c && !c.directory) {
     try { initialResult = runCalculation(c.id, c.modes[0].id, defaults(c.modes[0])); } catch { /* Valid empty defaults may need user input. */ }
   }
+  const displayCategory = c ? calculatorCategory(c.id) : undefined;
   const title =
     c?.title ??
     (slug === "about.html"
@@ -91,7 +93,7 @@ export default async function Page({
       <main id="main">
         <div className="breadcrumb">
           <a href="/">home</a> /{" "}
-          <a href={c?.category === "Everyday Tools" ? "/financial-calculator.html#everyday" : "/financial-calculator.html"}>{c?.category === "Everyday Tools" ? "everyday tools" : "financial"}</a>
+          <a href={displayCategory ? categoryHref(displayCategory.id) : "/financial-calculator.html"}>{displayCategory?.title ?? "financial"}</a>
           {c && <> / {c.title.toLowerCase()}</>}
         </div>
         <h1>{title}</h1>
@@ -198,7 +200,7 @@ export default async function Page({
           </section>
         )}
       </main>
-      {!["financial-calculator.html","methodology.html"].includes(slug) && <Sidebar />}
+      {!["financial-calculator.html","methodology.html"].includes(slug) && <Sidebar calculatorId={c?.id} />}
     </div>
   );
 }

@@ -104,3 +104,7 @@ User explicitly requested removal of the reference domain from the website. Remo
 ## 2026-10-26 — Dedicated PMI, biweekly and discount-points tools
 
 User explicitly requested these three priorities after FNCalculator review. Implement independently scoped models, preserve earlier Mortgage calculations and layout, and add distinct searchable pages instead of duplicate keyword variants. Keep PMI request/automatic/midpoint logic distinct, date/disclose the estimate card, and offer actual quotes. Compare biweekly with an equal-annual-budget monthly alternative. Points compare entered quote rates and both cash-flow and balance-aware horizon costs. Do not infer keyword revenue, live reference numeric parity, actual cancellation approval or Safari-device verification.
+
+## 2026-10-26 — Category organization
+
+User approved six financial categories plus supporting general tools, consistent desktop/mobile navigation, scenario subgroups and contextual sidebars. Preserve every old page URL and category fragment. Use a separate display taxonomy so calculation-engine source categories and policy/form behavior remain intact.

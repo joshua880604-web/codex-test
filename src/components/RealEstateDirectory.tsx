@@ -1,40 +1,8 @@
-import { calculators, routeFor } from "@/lib/calculators";
-const financial = [
-  "mortgage",
-  "pmi",
-  "biweekly-mortgage",
-  "discount-points",
-  "amortization",
-  "house-affordability",
-  "debt-to-income-ratio",
-  "mortgage-payoff",
-  "refinance",
-  "fha-loan",
-  "va-mortgage",
-  "down-payment",
-  "apr",
-  "home-equity-loan",
-  "heloc",
-  "rental-property",
-  "rent",
-  "rent-vs-buy",
-];
+import {calculators,routeFor} from '@/lib/calculators';
+import {calculatorCategories} from '@/lib/calculator-categories';
+import CategoryToolList from './CategoryToolList';
 export default function RealEstateDirectory() {
-  return (
-    <>
-      <p>Choose a tool for financing, owning, or investing in real estate.</p>
-      <h2>Financial</h2>
-      <ul className="estate-list">
-        {financial.map((id) => {
-          const c = calculators.find((x) => x.id === id)!;
-          return (
-            <li key={id}>
-              <a href={routeFor(id)}>{c.title}</a>
-              <span> — {c.intro}</span>
-            </li>
-          );
-        })}
-      </ul>
-    </>
-  );
+  const group=calculatorCategories.find(group=>group.id==='mortgage-housing')!;
+  const tools=group.tools.filter(id=>id!=='real-estate').map(id=>{const tool=calculators.find(tool=>tool.id===id)!;return {...tool,local_route:routeFor(id)};});
+  return <><p>Choose a tool for buying a home, reducing interest, refinancing, or comparing rent and property investment.</p><div className="estate-categories"><CategoryToolList group={group} tools={tools} detailed/></div></>;
 }

@@ -1,16 +1,13 @@
 import {calculators} from './catalog';
 import {searchTasks} from './keyword-targets';
 
-export const directoryGroups=[
- {id:'mortgage-housing',title:'Mortgage & Housing',categories:['Mortgage and Real Estate'],popular:['mortgage','mortgage-payoff','house-affordability','refinance']},
- {id:'loans-debt',title:'Loans & Debt',categories:['Auto'],popular:['loan','auto-loan','credit-card','debt-payoff']},
- {id:'saving-investing',title:'Saving & Investing',categories:['Investment'],popular:['compound-interest','savings','investment','cd']},
- {id:'retirement',title:'Retirement',categories:['Retirement'],popular:['retirement','401k','roth-ira','rmd']},
- {id:'tax-salary',title:'Tax & Salary',categories:['Tax and Salary'],popular:['income-tax','take-home-paycheck','salary','sales-tax']},
- {id:'everyday',title:'Everyday',categories:['Everyday Tools'],popular:['percentage','scientific','date','unit-converter']},
-];
-const otherGroups:Record<string,string>={markup:'everyday','break-even':'everyday',currency:'everyday',budget:'everyday',depreciation:'everyday',margin:'everyday',discount:'everyday',commission:'tax-salary','sales-tax':'tax-salary',vat:'tax-salary',inflation:'saving-investing','college-cost':'saving-investing'};
-export function directoryGroup(id:string,category:string){return otherGroups[id]??directoryGroups.find(g=>g.categories.includes(category))?.id??'loans-debt';}
+export { calculatorCategories as directoryGroups } from './calculator-categories';
+import { calculatorCategory } from './calculator-categories';
+export function directoryGroup(id:string,_category?:string){
+ const group=calculatorCategory(id);
+ if(!group)throw new Error('Assign a display category for calculator '+id);
+ return group.id;
+}
 const toolAliases:Record<string,string[]>={
  pmi:['private mortgage insurance','pmi removal','pmi cancellation','mortgage insurance cancellation','ltv calculator'],
  'biweekly-mortgage':['bi-weekly mortgage payment','biweekly mortgage payment','biweekly payment','bi-weekly payment','fortnightly mortgage payment'],

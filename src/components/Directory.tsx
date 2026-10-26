@@ -1,5 +1,6 @@
 "use client";
-import {directoryGroups,directoryGroup,directorySort,directoryDescriptions} from "@/lib/directory";
+import {directoryGroups,directoryGroup,directorySort} from "@/lib/directory";
+import CategoryToolList from './CategoryToolList';
 import QuickCalculator from "./QuickCalculator";
 import CalculatorSearch from "./CalculatorSearch";
 import SiteBenefits, { FreeBadge } from "./SiteBenefits";
@@ -14,7 +15,8 @@ const featured = [
   ["savings", "Work toward a savings goal"],
 ];
 export default function Directory({ propertyOnly = false }: { propertyOnly?: boolean }) {
-  const tools=calculators.filter(c=>!propertyOnly||c.category==="Mortgage and Real Estate");
+  const searchable=calculators.filter(c=>!propertyOnly||directoryGroup(c.id)==="mortgage-housing");
+  const tools=searchable.filter(c=>c.id!=="real-estate");
   const groups=directoryGroups.map(g=>({...g,tools:directorySort(tools.filter(c=>directoryGroup(c.id,c.category)===g.id),g.popular)})).filter(g=>g.tools.length);
   return (
     <div className="calculator-directory">
@@ -22,7 +24,7 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
         ? "Calculators for mortgages, property investment, and home ownership."
         : "Find the right tool for your loans, savings, retirement, taxes, and everyday calculations."}</p>
       <div className={propertyOnly ? undefined : "directory-tools"}>
-      <CalculatorSearch id="directory-search" tools={tools} minimal={!propertyOnly}/>
+      <CalculatorSearch id="directory-search" tools={searchable} minimal={!propertyOnly}/>
       {!propertyOnly&&<div className="directory-quick"><QuickCalculator/></div>}
       {!propertyOnly && <section className="featured-tools" aria-labelledby="featured-heading">
         <div className="benefits-mobile-badge"><FreeBadge /></div>
@@ -40,11 +42,12 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
       </nav>}
       <div className="directory-list-heading"><h2>All calculators</h2></div>
       <div className="directory-grid" id="calculator-list">
-        {groups.map(({ id, title, tools }) => <section key={id} id={id} aria-labelledby={id + "-heading"} tabIndex={-1}>
-          {({"mortgage-housing":["mortgage-and-real-estate"],"loans-debt":["auto","other"],"saving-investing":["investment"],"tax-salary":["tax-and-salary"],"everyday":["everyday-tools"]} as Record<string,string[]>)[id]?.map(anchor=><span key={anchor} id={anchor} aria-hidden="true"/>)}
+        {groups.map(group => { const {id,title,tools}=group; return <section key={id} id={id} aria-labelledby={id + "-heading"} tabIndex={-1}>
+          {group.aliases.map(anchor=><span key={anchor} id={anchor} aria-hidden="true"/>)}
           <h3 id={id + "-heading"}>{title}<span>{tools.length}</span></h3>
-          <ul>{tools.map(c => <li key={c.id}><a href={routeFor(c.id)}>{c.title}{directoryDescriptions[c.id]&&<small>{directoryDescriptions[c.id]}</small>}</a></li>)}</ul>
-        </section>)}
+          <CategoryToolList group={group} tools={tools}/>
+          {id==="mortgage-housing"&&<a className="category-overview" href="/real-estate-calculator.html">Browse mortgage &amp; housing tools »</a>}
+        </section>; })}
       </div>
 
     </div>

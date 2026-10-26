@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-26T09:03:12.757Z",
+  "existingCalculatorAndDirectoryURLs": 85,
+  "unchangedModes": 198,
+  "unchangedFieldsAndFullDefaultResults": true,
+  "unchangedSitemap": true,
+  "unchangedRedirects": true,
+  "noRouteConfigurationChanges": true,
+  "groups": [
+    {
+      "id": "mortgage-housing",
+      "title": "Mortgage & Housing",
+      "tools": 18
+    },
+    {
+      "id": "loans-debt",
+      "title": "Loans & Debt",
+      "tools": 14
+    },
+    {
+      "id": "saving-investing",
+      "title": "Savings & Investing",
+      "tools": 24
+    },
+    {
+      "id": "retirement",
+      "title": "Retirement",
+      "tools": 9
+    },
+    {
+      "id": "tax-salary",
+      "title": "Tax & Income",
+      "tools": 8
+    },
+    {
+      "id": "business-finance",
+      "title": "Business Finance",
+      "tools": 5
+    },
+    {
+      "id": "everyday",
+      "title": "Everyday Tools",
+      "tools": 6
+    }
+  ],
+  "tests": 1001,
+  "browserChecks": 38,
+  "localHTTPURLs": 85,
+  "lazyChecks": 23,
+  "productionBuild": "passed",
+  "staticSEOChecks": 149,
+  "mobileFirstScreenPreserved": true,
+  "nativeSafari": "unverified",
+  "visualFailures": 0,
+  "visualWarnings": [
+    {
+      "level": "WARN",
+      "id": "ragged-row",
+      "width": 1440,
+      "message": "2 pair(s) of cards in one row end at different heights (by 348px, 484px).",
+      "fix": "Cards that share a row share a bottom edge: balance them by their content (the same number of rows, a block of similar height beside it), or stack them. In testing, ragged rows were marked down every time.",
+      "alsoAt": [
+        768
+      ]
+    }
+  ],
+  "warningReason": "Unequal category lengths preserve the existing directory layout; no artificial rows."
+}

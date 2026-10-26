@@ -81,3 +81,7 @@ Existing financial source records and data dates remain unchanged. See methodolo
 Text accessed: https://www.fncalculator.com/ ; https://www.fncalculator.com/financialcalculator?type=loanPointCalculator ; https://www.fncalculator.com/financialcalculator?type=loanBiweeklyCalculator . Observed catalog and form labels, not live numeric/visual parity. Homepage did not show a dedicated PMI entry.
 
 Primary rules: https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/ ; https://ncua.gov/regulation-supervision/manuals-guides/federal-consumer-financial-protection-guide/compliance-management/lending-regulations/homeowners-protection-act-pmi-cancellation-act ; https://www.consumerfinance.gov/ask-cfpb/how-should-i-use-lender-credits-and-points-also-called-discount-points-en-136/ ; https://www.consumerfinance.gov/owning-a-home/compare/compare-loan-estimates/ . PMI estimate retains https://www.nationalmi.com/wp-content/uploads/2022/02/MA.MN_.BP_.2022-03.pdf (effective2022-03-01, reviewed2026-10-26), disclosed dated base estimate, not a live rate.
+
+## 2026-10-26 — Category organization
+
+This change uses the authorized classification proposal and the existing source catalog, captured routes/modes/default-result hashes, canonical/sitemap and redirect artifacts. No new financial or policy sources are needed because mathematical models and rules are unchanged.
