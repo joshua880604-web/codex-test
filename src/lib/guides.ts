@@ -728,3 +728,8 @@ relatedCalculatorIds.pmi = ["mortgage", "fha-loan", "down-payment", "amortizatio
 relatedCalculatorIds["biweekly-mortgage"] = ["mortgage", "mortgage-payoff", "amortization", "discount-points"];
 relatedCalculatorIds["discount-points"] = ["mortgage", "refinance", "apr", "biweekly-mortgage"];
 for (const id of ["mortgage", "amortization", "mortgage-payoff", "refinance"]) relatedCalculatorIds[id] = [...new Set([...(relatedCalculatorIds[id] ?? []), "pmi", "biweekly-mortgage", "discount-points"])];
+
+import investmentDecisionGuides from './investment-decisions-guides.json';
+Object.assign(guides, investmentDecisionGuides as unknown as Record<string,Guide>);
+relatedCalculatorIds['tax-equivalent-yield']=['treasury-bill','bond','cd','income-tax','real-return'];
+relatedCalculatorIds['treasury-bill']=['tax-equivalent-yield','cd','bond','interest','savings'];

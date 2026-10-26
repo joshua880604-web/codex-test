@@ -1,0 +1,149 @@
+{
+  "tax-equivalent-yield": {
+    "checkedOn": "2026-10-27",
+    "summary": "Tax-equivalent yield is the taxable annual yield needed to match an exempt option after the taxes entered here. Compare like-for-like annual yield conventions in an ordinary taxable account; a higher equivalent yield does not imply equal credit, interest-rate or liquidity risk.",
+    "scope": "User-entered marginal-rate model for federally exempt interest and taxable interest. State/local treatment is selected explicitly, optional surtax is entered, and all rates are combined without deduction interactions. No automatic bracket, AMT, NIIT eligibility, fund-distribution tax allocation, capital-gain or retirement-account model.",
+    "examples": [
+      {
+        "title": "Four percent exempt equals five percent taxable at a 20% rate",
+        "mode": "compare",
+        "values": {
+          "exempt_yield": 4,
+          "taxable_yield": 5,
+          "federal": 20,
+          "state": 0,
+          "local": 0,
+          "surtax": 0,
+          "muni_state": "Exempt",
+          "amount": 10000
+        },
+        "inputs": "4% federally/state/local exempt yield; taxable comparison5%; combined taxable marginal rate20%; investment$10,000.",
+        "steps": [
+          "Equivalent taxable yield =4%/(1−0.20)=5%.",
+          "After-tax taxable yield =5%×0.80=4%.",
+          "Both options produce$400 annual after-tax income on$10,000."
+        ],
+        "answer": "The tax-equivalent taxable yield is5%; income advantage is$0.",
+        "expected": {
+          "label": "Tax-equivalent taxable yield",
+          "value": 5
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Which tax rate should I enter?",
+        "answer": "Use the marginal rates that apply to the next dollar of this interest income, not your average tax rate. Federal, state, local and optional additional investment-income rates are added. This simplified model does not calculate tax brackets, deductibility interactions or NIIT thresholds."
+      },
+      {
+        "question": "Are all municipal bonds completely tax-free?",
+        "answer": "No. This tool assumes the entered exempt yield qualifies for federal exemption, but you must select its state/local treatment. Out-of-state interest, partly exempt fund distributions, private-activity bond AMT and capital gains need separate analysis. Selecting Exempt does not establish eligibility."
+      },
+      {
+        "question": "Can I compare this with a Treasury bill or CD?",
+        "answer": "Use comparable annual yield conventions, but check tax treatment. This taxable option is subject to all entered rates; Treasury bill interest is federally taxable but state/local exempt. A fully exempt municipal-versus-Treasury comparison can use zero state/local rates. A state-taxed municipal bond versus a state-exempt Treasury requires separate per-investment state rates and is not represented by this simplified form."
+      },
+      {
+        "question": "Does the sensitivity table show current tax brackets?",
+        "answer": "No. It varies a hypothetical combined tax rate on the taxable option while keeping the exempt option’s tax treatment fixed. It is a mathematical comparison, not a state/federal tax schedule."
+      }
+    ],
+    "sources": [
+      {
+        "title": "IRS Publication550: investment income, exempt interest and special tax treatment",
+        "url": "https://www.irs.gov/publications/p550"
+      },
+      {
+        "title": "Eaton Vance: tax-equivalent comparison scope and limitations",
+        "url": "https://www.eatonvance.com/taxes-and-tools/tax-tools/tax-equivalent-yield-calculator.html"
+      }
+    ]
+  },
+  "treasury-bill": {
+    "checkedOn": "2026-10-27",
+    "summary": "A Treasury bill pays its face value at maturity; discount interest is the difference from its purchase price. This calculator separates bank discount rate, return on the actual purchase cost, simple annualization and hypothetical effective annual yield. Fees and your federal tax assumptions are reported separately.",
+    "scope": "Ordinary U.S. Treasury bill held to maturity, positive discount/par price and1..366 whole days. Quotes are manual assumptions, not live auction data. No official auction Investment Rate, early-sale valuation, investment ladder, full tax-basis/accrual treatment or retirement-account model.",
+    "examples": [
+      {
+        "title": "TreasuryDirect discount-pricing example",
+        "mode": "discount",
+        "values": {
+          "face": 1000,
+          "days": 182,
+          "discount": 0.145,
+          "fee": 0,
+          "federal": 0,
+          "surtax": 0,
+          "year_days": "365"
+        },
+        "inputs": "Face$1,000;182 days; bank discount rate0.145%; no fee/tax in this illustration.",
+        "steps": [
+          "Price =1,000×(1−0.00145×182/360).",
+          "Unrounded price =$999.2669444444; displayed price =$999.27.",
+          "Unrounded interest =$0.7330555556. Actual broker/auction rounding may differ."
+        ],
+        "answer": "Displayed purchase price is$999.27.",
+        "expected": {
+          "label": "Purchase price before fee",
+          "value": 999.2669444444444
+        }
+      },
+      {
+        "title": "Quoted price separates gross profit from fee and tax",
+        "mode": "price",
+        "values": {
+          "face": 10000,
+          "days": 91,
+          "price100": 98,
+          "fee": 10,
+          "federal": 24,
+          "surtax": 0,
+          "year_days": "365"
+        },
+        "inputs": "$10,000 face bought at$98 per$100 face;91 days; fee$10; federal marginal tax24%.",
+        "steps": [
+          "Purchase price =10,000×98/100=$9,800; purchase cash including fee =$9,810.",
+          "Gross discount interest =$200; estimated federal tax =$48.",
+          "Net profit =200−10−48=$142."
+        ],
+        "answer": "Net maturity profit after entered fee and estimated tax is$142.",
+        "expected": {
+          "label": "Net profit at maturity after fee and tax",
+          "value": 142
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Which rate goes in Quoted bank discount rate?",
+        "answer": "Use a quote explicitly expressed as a bank discount rate. Its denominator is face value and its year basis is360 days. Do not enter a broker Investment Rate, APY or simple annualized yield as a bank discount quote. If you know the price, use Yield from Purchase Price instead."
+      },
+      {
+        "question": "Why is simple annualized yield not the official Treasury Investment Rate?",
+        "answer": "The displayed simple annualized yield scales return on price by365 or366 divided by holding days. Official auction and broker bond-equivalent conventions can differ, especially for longer bills. This calculator deliberately labels its own convention and does not claim official Investment Rate output."
+      },
+      {
+        "question": "Is the effective annual yield guaranteed?",
+        "answer": "No. It assumes reinvestment repeatedly at the same holding-period return across a full year. Bills pay at maturity, and future auction rates are unknown. It is a mathematical comparison figure, not an accrued daily payout or guaranteed annual return."
+      },
+      {
+        "question": "How are federal tax and state taxes handled?",
+        "answer": "The tool estimates federal tax plus an entered effective surtax on positive gross discount interest. Bill interest is exempt from state/local income tax. Fees reduce net profit but are not deducted from the estimated tax base; secondary-sale gains, accrual rules and investor-specific basis adjustments are excluded."
+      },
+      {
+        "question": "Can I enter a 13-week or 26-week term?",
+        "answer": "Use91 or182 days for nominal13- or26-week examples, or enter the actual settlement-to-maturity day count. Common nominal week terms are4,6,8,13,17,26 and52 weeks; holidays and actual issue/maturity dates can affect the correct days. A52-week shortcut is364 days, not automatically365."
+      }
+    ],
+    "sources": [
+      {
+        "title": "TreasuryDirect: bill discount pricing formula and example",
+        "url": "https://treasurydirect.gov/marketable-securities/understanding-pricing/"
+      },
+      {
+        "title": "TreasuryDirect: bill terms, maturity payments and tax treatment",
+        "url": "https://treasurydirect.gov/marketable-securities/treasury-bills/"
+      }
+    ]
+  }
+}

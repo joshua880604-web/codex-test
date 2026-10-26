@@ -20,10 +20,10 @@ export const calculatorCategories: CalculatorCategory[] = [
       {title:'Credit cards & debt strategies',tools:['credit-card','credit-cards-payoff','debt-payoff','debt-consolidation']},
     ] },
   { id: 'saving-investing', title: 'Savings & Investing', popular: ['compound-interest','savings','investment','cd'], aliases: ['investment'],
-    tools: ['interest','investment','finance','compound-interest','interest-rate','savings','simple-interest','cd','bond','mutual-fund','average-return','irr','roi','payback-period','present-value','future-value','inflation','college-cost','cagr','emergency-fund','investment-fee','real-return','currency','budget'],
+    tools: ['interest','investment','finance','compound-interest','interest-rate','savings','simple-interest','cd','bond','mutual-fund','average-return','irr','roi','payback-period','present-value','future-value','inflation','college-cost','cagr','emergency-fund','investment-fee','real-return','currency','budget','tax-equivalent-yield','treasury-bill'],
     sections: [
-      { title: 'Savings & personal planning', tools: ['savings','cd','emergency-fund','budget','college-cost'] },
-      { title: 'Investment returns & fees', tools: ['investment','compound-interest','roi','cagr','real-return','mutual-fund','investment-fee','average-return','bond','irr','payback-period'] },
+      { title: 'Savings & personal planning', tools: ['savings','cd','treasury-bill','emergency-fund','budget','college-cost'] },
+      { title: 'Investment returns & fees', tools: ['investment','compound-interest','roi','cagr','real-return','mutual-fund','investment-fee','average-return','bond','tax-equivalent-yield','irr','payback-period'] },
       { title: 'Interest & financial basics', tools: ['interest','simple-interest','interest-rate','finance','present-value','future-value','inflation','currency'] },
     ] },
   { id: 'retirement', title: 'Retirement', popular: ['retirement','401k','roth-ira','rmd'], aliases: [],

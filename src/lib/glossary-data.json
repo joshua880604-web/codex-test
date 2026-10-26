@@ -661,6 +661,10 @@
       {
         "id": "interest-rate",
         "text": "Solve an interest-rate assumption; review its compounding basis."
+      },
+      {
+        "id": "treasury-bill",
+        "text": "Distinguish bank discount rate from holding-period and simple annualized bill returns."
       }
     ],
     "related": [
@@ -1205,6 +1209,10 @@
       {
         "id": "bond",
         "text": "Price fixed-coupon bonds or solve for yield under explicit coupon timing."
+      },
+      {
+        "id": "tax-equivalent-yield",
+        "text": "Compare taxable and federally exempt annual yields under entered taxes."
       }
     ],
     "related": [

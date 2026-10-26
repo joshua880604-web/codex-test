@@ -3,6 +3,8 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "tax-equivalent-yield": return "U.S. taxable-account yield comparison using entered marginal rates. No automatic tax brackets, exemption eligibility, AMT or state/federal deduction interactions.";
+    case "treasury-bill": return "U.S. Treasury bill held to maturity. Bank discount pricing uses 360 days; simple annualized returns use the selected 365/366 days and are not the official auction Investment Rate. No live quotes.";
     case "mortgage-recast": return "Fixed-rate monthly P&I only. Same rate and remaining contractual term; recast requires servicer approval. Taxes, insurance, PMI cancellation and FHA/VA/USDA eligibility are not modeled.";
     case "pmi": return "U.S. conventional borrower-paid PMI. Original-value 80% requests, scheduled 78% termination and original-term midpoint are distinct; FHA/VA and investor-specific appreciation rules are excluded.";
     case "biweekly-mortgage": return "Fixed-rate P&I comparison with 26 credited periods/year; not twice-monthly payments or a dated daily-accrual simulation.";

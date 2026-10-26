@@ -37,6 +37,8 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 - [IRR Calculator](https://www.calculatorfree.io/irr-calculator): Estimate annual IRR from modeled periodic cash flows or unequal amounts at successive year ends. Freely chosen calendar transaction dates are handled by Average Return's Dated Cash Flows mode.
 - [Average Return Calculator](https://www.calculatorfree.io/average-return-calculator): Compare arithmetic and geometric returns; Dated Cash Flows calculates an annual money-weighted return from real YYYY-MM-DD transaction dates and amounts, showing multiple roots when found.
 - [CD Calculator](https://www.calculatorfree.io/cd-calculator): Estimate certificate of deposit maturity value and after-tax interest under entered assumptions.
+- [Treasury Bill Calculator](https://www.calculatorfree.io/treasury-bill-calculator)
+- [Tax Equivalent Yield Calculator](https://www.calculatorfree.io/tax-equivalent-yield-calculator)
 - [CAGR Calculator](https://www.calculatorfree.io/cagr-calculator): Annualize growth between beginning and ending values, or solve for an implied beginning or ending value, without intermediate cash flows.
 
 ## Financial mathematics

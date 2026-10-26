@@ -12874,6 +12874,249 @@
     ],
     "spec": "specs/mortgage-recast.md",
     "evidence": "mortgage-recast-2026-10-26.md"
+  },
+  {
+    "id": "tax-equivalent-yield",
+    "title": "Tax Equivalent Yield Calculator",
+    "category": "Investment",
+    "local_route": "/tax-equivalent-yield-calculator.html",
+    "display_category": "Savings & Investing",
+    "display_category_id": "saving-investing",
+    "directory": false,
+    "source_url": "https://www.irs.gov/publications/p550",
+    "source_status": "independently specified; primary source text reviewed; interactive parity unverified",
+    "implemented_modes": [
+      {
+        "id": "compare",
+        "title": "Compare After-Tax Yields",
+        "fields": [
+          {
+            "key": "exempt_yield",
+            "label": "Federally tax-exempt annual yield",
+            "value": 4,
+            "unit": "%",
+            "min": 0,
+            "max": 99
+          },
+          {
+            "key": "taxable_yield",
+            "label": "Taxable annual yield to compare",
+            "value": 5,
+            "unit": "%",
+            "min": 0,
+            "max": 99
+          },
+          {
+            "key": "federal",
+            "label": "Federal marginal income tax rate",
+            "value": 24,
+            "unit": "%",
+            "min": 0,
+            "max": 99
+          },
+          {
+            "key": "state",
+            "label": "State marginal tax rate",
+            "value": 0,
+            "unit": "%",
+            "min": 0,
+            "max": 99
+          },
+          {
+            "key": "local",
+            "label": "Local marginal tax rate",
+            "value": 0,
+            "unit": "%",
+            "min": 0,
+            "max": 99
+          },
+          {
+            "key": "muni_state",
+            "label": "State/local treatment of exempt option",
+            "value": "Exempt",
+            "type": "select",
+            "options": [
+              "Exempt",
+              "Taxed"
+            ]
+          },
+          {
+            "key": "surtax",
+            "label": "Additional tax on taxable interest",
+            "value": 0,
+            "unit": "%",
+            "min": 0,
+            "max": 99,
+            "hint": "Optional effective investment-income surtax rate, such as NIIT if applicable. No eligibility or income-threshold test is performed."
+          },
+          {
+            "key": "amount",
+            "label": "Investment amount for income comparison",
+            "value": 10000,
+            "unit": "$",
+            "min": 0,
+            "max": 1000000000000
+          }
+        ],
+        "description": "Compare federally tax-exempt and taxable annual yields using your marginal tax assumptions. Review the required taxable yield and annual after-tax income; no state or federal tax bracket is selected automatically.",
+        "formula": "Equivalent taxable yield = exempt yield × (1 − exempt-option tax rate) / (1 − taxable-option tax rate). After-tax yield = entered annual yield × (1 − applicable tax rate)."
+      }
+    ],
+    "spec": "specs/tax-equivalent-yield.md",
+    "evidence": "investment-decisions-2026-10-27.md"
+  },
+  {
+    "id": "treasury-bill",
+    "title": "Treasury Bill Calculator",
+    "category": "Investment",
+    "local_route": "/treasury-bill-calculator.html",
+    "display_category": "Savings & Investing",
+    "display_category_id": "saving-investing",
+    "directory": false,
+    "source_url": "https://treasurydirect.gov/marketable-securities/understanding-pricing/",
+    "source_status": "independently specified; primary source text reviewed; interactive parity unverified",
+    "implemented_modes": [
+      {
+        "id": "discount",
+        "title": "Price from Discount Rate",
+        "fields": [
+          {
+            "key": "face",
+            "label": "Total face value",
+            "value": 10000,
+            "unit": "$",
+            "min": 100,
+            "max": 1000000000,
+            "step": 100
+          },
+          {
+            "key": "days",
+            "label": "Holding length",
+            "value": 91,
+            "unit": "days",
+            "min": 1,
+            "max": 366,
+            "step": 1
+          },
+          {
+            "key": "discount",
+            "label": "Quoted bank discount rate",
+            "value": 4.5,
+            "unit": "%",
+            "min": 0,
+            "max": 99
+          },
+          {
+            "key": "year_days",
+            "label": "Annualization year length",
+            "value": "365",
+            "type": "select",
+            "options": [
+              "365",
+              "366"
+            ]
+          },
+          {
+            "key": "fee",
+            "label": "Purchase fee",
+            "value": 0,
+            "unit": "$",
+            "min": 0,
+            "max": 1000000000
+          },
+          {
+            "key": "federal",
+            "label": "Federal marginal tax rate",
+            "value": 24,
+            "unit": "%",
+            "min": 0,
+            "max": 99
+          },
+          {
+            "key": "surtax",
+            "label": "Additional tax on bill interest",
+            "value": 0,
+            "unit": "%",
+            "min": 0,
+            "max": 99,
+            "hint": "Enter an effective surtax only if applicable; this tool does not test NIIT eligibility."
+          }
+        ],
+        "description": "Enter the bank discount rate, face value and actual days to maturity. Compare purchase price, maturity interest and returns after your entered fee and tax assumptions.",
+        "formula": "Price = face × (1 − bank discount rate / 100 × days / 360). Net profit = face − price − fee − estimated federal tax. Simple annualized yield = holding-period return × selected year days / holding days."
+      },
+      {
+        "id": "price",
+        "title": "Yield from Purchase Price",
+        "fields": [
+          {
+            "key": "face",
+            "label": "Total face value",
+            "value": 10000,
+            "unit": "$",
+            "min": 100,
+            "max": 1000000000,
+            "step": 100
+          },
+          {
+            "key": "days",
+            "label": "Holding length",
+            "value": 91,
+            "unit": "days",
+            "min": 1,
+            "max": 366,
+            "step": 1
+          },
+          {
+            "key": "price100",
+            "label": "Purchase price per $100 face",
+            "value": 98,
+            "unit": "$",
+            "min": 0.000001,
+            "max": 100
+          },
+          {
+            "key": "year_days",
+            "label": "Annualization year length",
+            "value": "365",
+            "type": "select",
+            "options": [
+              "365",
+              "366"
+            ]
+          },
+          {
+            "key": "fee",
+            "label": "Purchase fee",
+            "value": 0,
+            "unit": "$",
+            "min": 0,
+            "max": 1000000000
+          },
+          {
+            "key": "federal",
+            "label": "Federal marginal tax rate",
+            "value": 24,
+            "unit": "%",
+            "min": 0,
+            "max": 99
+          },
+          {
+            "key": "surtax",
+            "label": "Additional tax on bill interest",
+            "value": 0,
+            "unit": "%",
+            "min": 0,
+            "max": 99,
+            "hint": "Enter an effective surtax only if applicable; this tool does not test NIIT eligibility."
+          }
+        ],
+        "description": "Enter your price quote per $100 face and holding days. Calculate discount interest, bank discount rate, simple annualized yield and hypothetical effective annual yield without confusing their bases.",
+        "formula": "Total price = face × quoted price per $100 / 100. Holding return = (face − price) / price. Bank discount rate = (face − price) / face × 360 / days. Effective annual yield = (face / price)^(selected year days / days) − 1."
+      }
+    ],
+    "spec": "specs/treasury-bill.md",
+    "evidence": "investment-decisions-2026-10-27.md"
   }
 ]
 

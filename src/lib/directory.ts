@@ -9,6 +9,8 @@ export function directoryGroup(id:string,_category?:string){
  return group.id;
 }
 const toolAliases:Record<string,string[]>={
+ 'tax-equivalent-yield':['taxable equivalent yield','tax equivalent yield','municipal bond tax equivalent yield'],
+ 'treasury-bill':['t bill','t-bill','tbill','us treasury bill','treasury bill interest'],
  'mortgage-recast':['recast mortgage','recast mortgage calculator','recast calculator','mortgage recasting','loan recast'],
  pmi:['private mortgage insurance','pmi removal','pmi cancellation','mortgage insurance cancellation','ltv calculator'],
  'biweekly-mortgage':['bi-weekly mortgage payment','biweekly mortgage payment','biweekly payment','bi-weekly payment','fortnightly mortgage payment'],

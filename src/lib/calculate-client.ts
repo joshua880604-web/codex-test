@@ -9,6 +9,8 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
   Other: () => import('./calculators/other-core').then(m => m.otherCoreCalculators),
 };
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
+  'tax-equivalent-yield': () => import('./calculators/investment-decisions').then(m => m.investmentDecisions),
+  'treasury-bill': () => import('./calculators/investment-decisions').then(m => m.investmentDecisions),
   'mortgage-recast': () => import('./calculators/mortgage-recast').then(m => [m.mortgageRecast]),
   pmi: () => import('./calculators/mortgage-tools').then(m => m.mortgageTools),
   'biweekly-mortgage': () => import('./calculators/mortgage-tools').then(m => m.mortgageTools),

@@ -138,7 +138,7 @@
     "guides": [
       [
         "Plan savings and cash reserves",
-        "Savings solves supported balance and contribution goals. CD estimates a time-deposit outcome, while Emergency Fund, Budget and College Cost help organize personal planning assumptions."
+        "Savings solves supported balance and contribution goals. CD estimates a time-deposit outcome, while Emergency Fund, Budget and College Cost help organize personal planning assumptions. Treasury Bill calculates maturity profit from a discount rate or price; Tax Equivalent Yield compares annual yields under entered tax assumptions."
       ],
       [
         "Project growth or compare investments",
@@ -161,6 +161,10 @@
       [
         "CD yield vs. investment return",
         "A deposit product has contractual terms that must be checked with its issuer. An investment projection uses uncertain return assumptions and can involve loss of principal."
+      ],
+      [
+        "CD vs. Treasury Bill vs. Tax Equivalent Yield",
+        "CD projects compounded deposit earnings; Treasury Bill compares purchase cost with face value at maturity. Tax Equivalent Yield converts annual yields under tax assumptions, without equating credit risk or forecasting prices."
       ]
     ],
     "questions": [

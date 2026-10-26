@@ -74,3 +74,6 @@ for (const [id, entry] of Object.entries(mortgageToolTargets)) { searchTasks[id]
 keywordTitles.cd = "CD Calculator - Interest, APY & Maturity";
 searchTasks.cd[0].description = "Estimate CD maturity value and interest for terms such as 6, 12 or 14 months. Match the entered nominal rate to its compounding frequency; monthly schedule interest is accrued, not a cash payout.";
 searchTasks.cd[0].aliases = [...new Set([...(searchTasks.cd[0].aliases ?? []), "12 month CD calculator", "14 month CD calculator", "Monthly CD interest calculator"])];
+
+import investmentDecisionTargets from "./investment-decisions-targets.json";
+for (const [id, entry] of Object.entries(investmentDecisionTargets)) {searchTasks[id]=entry.tasks;keywordTitles[id]=entry.title;}

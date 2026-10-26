@@ -1,0 +1,36 @@
+{
+  "tax-equivalent-yield": {
+    "title": "Tax Equivalent Yield Calculator",
+    "tasks": [
+      {
+        "keyword": "Tax equivalent yield calculator",
+        "mode": "compare",
+        "description": "Compare taxable and tax-exempt annual yields using entered federal and state/local tax assumptions. Estimate tax-equivalent yield and after-tax income.",
+        "aliases": [
+          "Taxable equivalent yield calculator",
+          "Municipal bond tax equivalent yield calculator"
+        ]
+      }
+    ]
+  },
+  "treasury-bill": {
+    "title": "Treasury Bill Calculator - Price & Yield",
+    "tasks": [
+      {
+        "keyword": "Treasury bill calculator",
+        "mode": "discount",
+        "description": "Calculate bill price and maturity profit from a bank discount rate. Compare holding-period returns, annualized yields and entered tax and fee assumptions.",
+        "aliases": [
+          "T bill calculator",
+          "T-bill calculator",
+          "US treasury bill calculator"
+        ]
+      },
+      {
+        "keyword": "Treasury bill yield from price calculator",
+        "mode": "price",
+        "description": "Enter a purchase quote per $100 face to calculate holding-period return and separately labeled bank-discount, simple annualized and effective annual yields."
+      }
+    ]
+  }
+}

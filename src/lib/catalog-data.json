@@ -520,5 +520,17 @@
     "category": "Mortgage and Real Estate",
     "title": "Mortgage Recast Calculator",
     "local_route": "/mortgage-recast-calculator.html"
+  },
+  {
+    "id": "tax-equivalent-yield",
+    "title": "Tax Equivalent Yield Calculator",
+    "category": "Investment",
+    "local_route": "/tax-equivalent-yield-calculator.html"
+  },
+  {
+    "id": "treasury-bill",
+    "title": "Treasury Bill Calculator",
+    "category": "Investment",
+    "local_route": "/treasury-bill-calculator.html"
   }
 ]

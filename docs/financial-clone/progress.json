@@ -5725,6 +5725,60 @@
       "Native Safari and lender quote/reference numeric parity unverified; not prerequisites for independently specified model."
     ],
     "updated_at": "2026-10-26"
+  },
+  {
+    "id": "tax-equivalent-yield",
+    "mode": "compare",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "passed",
+    "evidence": {
+      "report": "investment-decisions-2026-10-27.md",
+      "qa": "evidence/investment-decisions-qa.json"
+    },
+    "blockers": [
+      "Native Safari and live reference submissions unverified"
+    ],
+    "updated_at": "2026-10-27"
+  },
+  {
+    "id": "treasury-bill",
+    "mode": "discount",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "passed",
+    "evidence": {
+      "report": "investment-decisions-2026-10-27.md",
+      "qa": "evidence/investment-decisions-qa.json"
+    },
+    "blockers": [
+      "Native Safari and live reference submissions unverified"
+    ],
+    "updated_at": "2026-10-27"
+  },
+  {
+    "id": "treasury-bill",
+    "mode": "price",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "passed",
+    "evidence": {
+      "report": "investment-decisions-2026-10-27.md",
+      "qa": "evidence/investment-decisions-qa.json"
+    },
+    "blockers": [
+      "Native Safari and live reference submissions unverified"
+    ],
+    "updated_at": "2026-10-27"
   }
 ]
 

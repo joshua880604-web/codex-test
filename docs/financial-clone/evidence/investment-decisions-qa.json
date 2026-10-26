@@ -1,0 +1,155 @@
+{
+  "date": "2026-10-27",
+  "tools": [
+    "tax-equivalent-yield",
+    "treasury-bill"
+  ],
+  "newModes": 3,
+  "catalogEntries": 88,
+  "functionalTools": 87,
+  "modes": 202,
+  "sitemapPages": 154,
+  "unitTests": 1038,
+  "previousRoutesUnchanged": 86,
+  "previousFullDefaultHashesUnchanged": 199,
+  "browser": {
+    "passed": true,
+    "checks": [
+      {
+        "width": 320,
+        "id": "tax-equivalent-yield",
+        "initial": true,
+        "noOverflow": true,
+        "finalLinks": true,
+        "schema": true
+      },
+      {
+        "width": 320,
+        "taxEquivalent5Percent": true
+      },
+      {
+        "width": 320,
+        "id": "treasury-bill",
+        "initial": true,
+        "noOverflow": true,
+        "finalLinks": true,
+        "schema": true
+      },
+      {
+        "width": 320,
+        "billPriceMode142Profit": true
+      },
+      {
+        "width": 390,
+        "id": "tax-equivalent-yield",
+        "initial": true,
+        "noOverflow": true,
+        "finalLinks": true,
+        "schema": true
+      },
+      {
+        "width": 390,
+        "taxEquivalent5Percent": true
+      },
+      {
+        "id": "tax-equivalent-yield",
+        "csv": true,
+        "pngWithoutAndWithInputs": true
+      },
+      {
+        "id": "tax-equivalent-yield",
+        "invalidInputNoStaleResult": true
+      },
+      {
+        "width": 390,
+        "id": "treasury-bill",
+        "initial": true,
+        "noOverflow": true,
+        "finalLinks": true,
+        "schema": true
+      },
+      {
+        "width": 390,
+        "billPriceMode142Profit": true
+      },
+      {
+        "id": "treasury-bill",
+        "csv": true,
+        "pngWithoutAndWithInputs": true
+      },
+      {
+        "id": "treasury-bill",
+        "invalidInputNoStaleResult": true
+      },
+      {
+        "width": 768,
+        "id": "tax-equivalent-yield",
+        "initial": true,
+        "noOverflow": true,
+        "finalLinks": true,
+        "schema": true
+      },
+      {
+        "width": 768,
+        "taxEquivalent5Percent": true
+      },
+      {
+        "width": 768,
+        "id": "treasury-bill",
+        "initial": true,
+        "noOverflow": true,
+        "finalLinks": true,
+        "schema": true
+      },
+      {
+        "width": 768,
+        "billPriceMode142Profit": true
+      },
+      {
+        "width": 1440,
+        "id": "tax-equivalent-yield",
+        "initial": true,
+        "noOverflow": true,
+        "finalLinks": true,
+        "schema": true
+      },
+      {
+        "width": 1440,
+        "taxEquivalent5Percent": true
+      },
+      {
+        "width": 1440,
+        "id": "treasury-bill",
+        "initial": true,
+        "noOverflow": true,
+        "finalLinks": true,
+        "schema": true
+      },
+      {
+        "width": 1440,
+        "billPriceMode142Profit": true
+      },
+      {
+        "id": "tax-equivalent-yield",
+        "staticResultWithoutJS": true
+      },
+      {
+        "id": "treasury-bill",
+        "staticResultWithoutJS": true
+      }
+    ],
+    "errors": []
+  },
+  "categoryBrowserChecks": 18,
+  "lazyChecks": 29,
+  "lazyErrors": [],
+  "unexpectedRequests": [],
+  "staticFinalAnchors": 8014,
+  "limitations": [
+    "Native Safari unverified",
+    "No original interactive reference-form parity",
+    "No live auction quote or automatic state tax brackets",
+    "No direct production HTTP probe under managed host policy",
+    "No ranking/revenue or field-speed guarantee"
+  ]
+}

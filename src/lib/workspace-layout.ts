@@ -2,6 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
+  "tax-equivalent-yield", "treasury-bill",
   "pmi", "biweekly-mortgage", "discount-points", "mortgage-recast",
   "compound-interest", "investment", "loan",
   "mortgage", "fha-loan", "va-mortgage", "amortization", "mortgage-payoff", "refinance", "home-equity-loan", "heloc",
@@ -16,6 +17,8 @@ export function workspaceLayout(id: string, mode: string): "split" | "stacked" |
 }
 
 const priorities: Record<string, string[]> = {
+  "tax-equivalent-yield": ["Tax-equivalent taxable yield", "Tax-exempt option after-tax yield", "Taxable option after-tax yield"],
+  "treasury-bill": ["Net profit at maturity after fee and tax", "Purchase price before fee", "Gross discount interest at maturity"],
   "mortgage-recast": ["New monthly P&I after recast", "Monthly P&I reduction", "Recast net interest savings after fee"],
   "pmi": ["Initial monthly PMI", "Original loan-to-value ratio", "Initial total loan payment"],
   "pmi:cancellation": ["Modeled current monthly PMI", "Cancellation status", "LTV using original value"],
