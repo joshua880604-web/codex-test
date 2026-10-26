@@ -12,7 +12,8 @@ test('Every existing catalog entry has exactly one primary display category',()=
 test('Business and personal-finance tools are no longer mixed with general utilities',()=>{
  for(const id of ['business-loan','margin','markup','break-even','depreciation'])assert.equal(calculatorCategory(id)?.id,'business-finance');
  for(const id of ['budget','currency','emergency-fund'])assert.equal(calculatorCategory(id)?.id,'saving-investing');
- for(const id of ['percentage','scientific','date','unit-converter','tip-bill-split'])assert.equal(calculatorCategory(id)?.id,'everyday');
+ for(const id of ['percentage','scientific','date','unit-converter','tip-bill-split','vat'])assert.equal(calculatorCategory(id)?.id,'everyday');
+ assert.equal(calculatorCategory('sales-tax')?.id,'tax-salary');
  for(const id of ['pmi','biweekly-mortgage','discount-points'])assert.equal(calculatorCategory(id)?.id,'mortgage-housing');
 });
 test('Scenario sections cover every functional tool in their category exactly once',()=>{

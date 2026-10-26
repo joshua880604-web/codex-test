@@ -24,11 +24,11 @@ export const calculatorCategories: CalculatorCategory[] = [
   { id: 'retirement', title: 'Retirement', popular: ['retirement','401k','roth-ira','rmd'], aliases: [],
     tools: ['retirement','401k','pension','social-security','annuity','annuity-payout','roth-ira','ira','rmd'] },
   { id: 'tax-salary', title: 'Tax & Income', popular: ['income-tax','take-home-paycheck','salary','sales-tax'], aliases: ['tax-and-salary'],
-    tools: ['income-tax','salary','marriage-tax','estate-tax','take-home-paycheck','sales-tax','vat','commission'] },
+    tools: ['income-tax','salary','marriage-tax','estate-tax','take-home-paycheck','sales-tax','commission'] },
   { id: 'business-finance', title: 'Business Finance', popular: ['break-even','margin','markup','business-loan','depreciation'], aliases: [],
     tools: ['break-even','margin','markup','business-loan','depreciation'] },
   { id: 'everyday', title: 'Everyday Tools', popular: ['percentage','scientific','date','unit-converter'], aliases: ['everyday-tools'],
-    tools: ['percentage','scientific','date','unit-converter','tip-bill-split','discount'] },
+    tools: ['percentage','scientific','date','unit-converter','tip-bill-split','discount','vat'] },
 ];
 const categoryByTool = new Map(calculatorCategories.flatMap(group => group.tools.map(id => [id, group] as const)));
 export function calculatorCategory(id: string) { return categoryByTool.get(id); }

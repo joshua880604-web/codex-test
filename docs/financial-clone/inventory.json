@@ -9701,8 +9701,8 @@
       }
     ],
     "display_category": {
-      "id": "tax-salary",
-      "title": "Tax & Income",
+      "id": "everyday",
+      "title": "Everyday Tools",
       "route_preserved": true
     }
   },

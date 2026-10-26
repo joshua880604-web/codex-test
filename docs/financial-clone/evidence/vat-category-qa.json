@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-26T09:31:13.087Z",
+  "checks": [
+    {
+      "width": 390,
+      "homeCategoryOwnership": true
+    },
+    {
+      "width": 390,
+      "slug": "vat",
+      "classification": "Everyday Tools",
+      "urlAndCanonicalPreserved": true,
+      "recalculation": true
+    },
+    {
+      "width": 390,
+      "slug": "sales-tax",
+      "classification": "Tax & Income",
+      "urlAndCanonicalPreserved": true,
+      "recalculation": true
+    },
+    {
+      "width": 1440,
+      "homeCategoryOwnership": true
+    },
+    {
+      "width": 1440,
+      "slug": "vat",
+      "classification": "Everyday Tools",
+      "urlAndCanonicalPreserved": true,
+      "recalculation": true
+    },
+    {
+      "width": 1440,
+      "slug": "sales-tax",
+      "classification": "Tax & Income",
+      "urlAndCanonicalPreserved": true,
+      "recalculation": true
+    }
+  ],
+  "errors": [],
+  "scope": "Local production export in Chromium; original AdSense loader stubbed",
+  "tests": 1001,
+  "unchangedDefaultModes": 198,
+  "urlsAndSitemapUnchanged": true,
+  "change": "VAT primary display category moved from Tax & Income to Everyday Tools; Sales Tax stays Tax & Income."
+}
