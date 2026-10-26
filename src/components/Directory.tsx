@@ -2,7 +2,7 @@
 import {directoryGroups,directoryGroup,directorySort,directoryDescriptions} from "@/lib/directory";
 import QuickCalculator from "./QuickCalculator";
 import CalculatorSearch from "./CalculatorSearch";
-import SiteBenefits from "./SiteBenefits";
+import SiteBenefits, { FreeBadge } from "./SiteBenefits";
 import { calculators, routeFor } from "@/lib/catalog";
 
 const featured = [
@@ -25,12 +25,13 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
       <CalculatorSearch id="directory-search" tools={tools} minimal={!propertyOnly}/>
       {!propertyOnly&&<div className="directory-quick"><QuickCalculator/></div>}
       {!propertyOnly && <section className="featured-tools" aria-labelledby="featured-heading">
-        <SiteBenefits />
+        <div className="benefits-mobile-badge"><FreeBadge /></div>
         <h2 id="featured-heading">Popular financial calculators</h2>
         <div className="featured-grid">{featured.map(([id, description]) => {
           const calculator = calculators.find(c => c.id === id)!;
           return <a key={id} href={routeFor(id)}><strong>{calculator.title}</strong><span>{description}</span></a>;
         })}</div>
+        <SiteBenefits showMobileBadge={false} />
       </section>}
       </div>
       {groups.length > 1 && <nav className="directory-categories" aria-label="Calculator categories">

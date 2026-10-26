@@ -9,9 +9,9 @@ export function FreeBadge() {
   </span>;
 }
 
-export default function SiteBenefits() {
+export default function SiteBenefits({ showMobileBadge = true }: { showMobileBadge?: boolean }) {
   return <div className="site-benefits">
-    <div className="benefits-mobile-badge"><FreeBadge /></div>
+    {showMobileBadge && <div className="benefits-mobile-badge"><FreeBadge /></div>}
     <ul className="benefits-list" aria-label="Calculator benefits">
       <li>
         <span className="benefit-icon" aria-hidden="true">
