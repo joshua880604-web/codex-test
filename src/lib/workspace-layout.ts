@@ -2,6 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
+  "pmi", "biweekly-mortgage", "discount-points",
   "compound-interest", "investment", "loan",
   "mortgage", "fha-loan", "va-mortgage", "amortization", "mortgage-payoff", "refinance", "home-equity-loan", "heloc",
   "auto-loan", "auto-lease", "boat-loan", "business-loan", "personal-loan", "payment", "credit-card", "debt-consolidation", "repayment", "student-loan",
@@ -15,6 +16,10 @@ export function workspaceLayout(id: string, mode: string): "split" | "stacked" |
 }
 
 const priorities: Record<string, string[]> = {
+  "pmi": ["Initial monthly PMI", "Original loan-to-value ratio", "Initial total loan payment"],
+  "pmi:cancellation": ["Modeled current monthly PMI", "Cancellation status", "LTV using original value"],
+  "biweekly-mortgage": ["Biweekly payment", "Interest saved versus standard monthly", "Years to payoff with biweekly payments"],
+  "discount-points": ["Net borrowing-cost savings at horizon (B vs A)", "Monthly payment saving (A minus B)", "First net-cost break-even month"],
   "mortgage:biweekly": ["Biweekly payment", "Total interest", "Years to payoff"],
   "fha-loan:biweekly": ["Biweekly payment", "Total interest", "Years to payoff"],
   "va-mortgage:biweekly": ["Biweekly payment", "Total interest", "Years to payoff"],

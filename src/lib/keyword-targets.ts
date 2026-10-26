@@ -65,3 +65,7 @@ for(const [id,keyword] of Object.entries(primaryQueries)){
 // User-researched evergreen tools own distinct intents; legacy functions remain available.
 import evergreenTargets from "./evergreen-targets.json";
 for(const [id,entry] of Object.entries(evergreenTargets)){searchTasks[id]=entry.tasks;keywordTitles[id]=entry.title;}
+
+// Dedicated mortgage pages own these intents; retain the older calculation modes.
+import mortgageToolTargets from "./mortgage-tools-targets.json";
+for (const [id, entry] of Object.entries(mortgageToolTargets)) { searchTasks[id] = entry.tasks; keywordTitles[id] = entry.title; }

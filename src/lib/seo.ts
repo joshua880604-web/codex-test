@@ -56,6 +56,9 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
 }
 // Dates record reviewed content changes, never the current build time.
 export const contentUpdatedOn: Record<string, string> = {
+  "/pmi-calculator.html": "2026-10-26",
+  "/biweekly-mortgage-calculator.html": "2026-10-26",
+  "/discount-points-calculator.html": "2026-10-26",
   ...Object.fromEntries(Object.entries(longTailContent).map(([id,content])=>[catalog.find(c=>c.id===id)!.local_route,content.updatedOn])),
   "/fha-loan-calculator.html": "2026-10-25",
   "/marriage-calculator.html": "2026-10-25",

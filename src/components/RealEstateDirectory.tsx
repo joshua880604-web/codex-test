@@ -1,6 +1,9 @@
 import { calculators, routeFor } from "@/lib/calculators";
 const financial = [
   "mortgage",
+  "pmi",
+  "biweekly-mortgage",
+  "discount-points",
   "amortization",
   "house-affordability",
   "debt-to-income-ratio",

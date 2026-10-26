@@ -576,5 +576,29 @@
     "mode": "rate",
     "description": "Convert nominal returns into real returns with the exact Fisher relationship. Estimate inflation-adjusted future value and required nominal return using your own inflation assumptions, without relying on external economic data.",
     "titleSuffix": "Inflation-Adjusted Return & Value"
+  },
+  {
+    "id": "pmi",
+    "mode": "estimate",
+    "keyword": "PMI calculator",
+    "titleSuffix": "Cost, LTV & PMI Removal",
+    "description": "Estimate conventional private mortgage insurance from original LTV, term and an illustrative credit band.",
+    "researchStatus": "Requested editorial priority; competitor catalog reviewed; no independent search-volume or revenue estimate"
+  },
+  {
+    "id": "biweekly-mortgage",
+    "mode": "biweekly",
+    "keyword": "Biweekly mortgage calculator",
+    "titleSuffix": "Savings & Payoff",
+    "description": "Compare 26 half-monthly payments per year with ordinary monthly and equal-budget monthly payments.",
+    "researchStatus": "Requested editorial priority; competitor catalog reviewed; no independent search-volume or revenue estimate"
+  },
+  {
+    "id": "discount-points",
+    "mode": "compare",
+    "keyword": "Discount points calculator",
+    "titleSuffix": "Mortgage Points & Break-Even",
+    "description": "Compare entered mortgage rate and point quotes, monthly savings and net cost at a sale or refinancing horizon.",
+    "researchStatus": "Requested editorial priority; competitor catalog reviewed; no independent search-volume or revenue estimate"
   }
 ]

@@ -666,7 +666,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       </div>
       {id === "mortgage" && <nav className="mortgage-related-tools" aria-label="Related mortgage calculators">
         <strong>Other mortgage tools</strong>
-        {[["fha-loan", "FHA loan"], ["va-mortgage", "VA mortgage"], ["refinance", "Refinance"], ["mortgage-payoff", "Mortgage payoff"], ["heloc", "HELOC"], ["rental-property", "Rental property"]].map(([tool, label]) => <a key={tool} href={routeFor(tool)}>{label}</a>)}
+        {[["pmi", "PMI"], ["biweekly-mortgage", "Biweekly payments"], ["discount-points", "Discount points"], ["fha-loan", "FHA loan"], ["va-mortgage", "VA mortgage"], ["refinance", "Refinance"], ["mortgage-payoff", "Mortgage payoff"], ["heloc", "HELOC"], ["rental-property", "Rental property"]].map(([tool, label]) => <a key={tool} href={routeFor(tool)}>{label}</a>)}
       </nav>}
       {id === "mortgage" && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       <section className="explanation">

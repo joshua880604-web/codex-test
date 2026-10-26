@@ -1,3 +1,4 @@
+import mortgageToolsGuides from "./mortgage-tools-guides.json";
 import insightExamples from "./insight-examples.json";
 import extendedGuides from "./extended-guides.json";
 import { longTailContent, type LongTailLink } from "./long-tail-content";
@@ -719,3 +720,10 @@ guides.mortgage.checkedOn='2026-10-26';
 
 guides.mortgage.questions.push({question:'Can I enter a loan amount instead of a home price?',answer:'Yes. Select Loan amount to enter principal directly. For an existing mortgage, use its current balance and remaining term, and enter your actual PMI quote in Manual mode. The projection excludes past interest and purchase costs. Automatic PMI and 80% cancellation require the original home value, defined as the lower original purchase price and appraisal. This calculator models fixed-rate residential repayment; commercial, adjustable-rate and interest-only structures need different models.'});
 guides.mortgage.examples.push({title:'Project an existing balance with no interest',mode:'monthly',values:{loan_basis:'Loan amount',loan_amount:12000,years:1,months:0,rate:0,pmi_method:'Manual',pmi:0,tax:0,insurance:0,hoa:0,other:0,extra_monthly:0,extra_yearly:0,extra_once:0},inputs:'Current balance $12,000; one year remaining; 0% interest; no entered housing costs, PMI or extra principal.',steps:['Remaining term = 12 monthly payments.','At zero interest, monthly principal = 12000 ÷ 12 = 1000.','No interest or entered housing costs are added.'],answer:'Monthly principal and interest is $1,000. The projection starts at the entered balance and excludes past payments.',expected:{label:'Monthly principal & interest',value:1000}});
+
+// Independent mortgage decision tools, with official policy sources and worked cases.
+Object.assign(guides, mortgageToolsGuides as unknown as Record<string, Guide>);
+relatedCalculatorIds.pmi = ["mortgage", "fha-loan", "down-payment", "amortization"];
+relatedCalculatorIds["biweekly-mortgage"] = ["mortgage", "mortgage-payoff", "amortization", "discount-points"];
+relatedCalculatorIds["discount-points"] = ["mortgage", "refinance", "apr", "biweekly-mortgage"];
+for (const id of ["mortgage", "amortization", "mortgage-payoff", "refinance"]) relatedCalculatorIds[id] = [...new Set([...(relatedCalculatorIds[id] ?? []), "pmi", "biweekly-mortgage", "discount-points"])];

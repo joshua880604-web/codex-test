@@ -1,0 +1,256 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-26T07:38:56.457Z",
+  "checks": [
+    {
+      "id": "pmi",
+      "mode": "estimate",
+      "width": 320,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "pmi",
+      "mode": "quote",
+      "width": 320,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "pmi",
+      "mode": "cancellation",
+      "width": 320,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "biweekly-mortgage",
+      "mode": "biweekly",
+      "width": 320,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "discount-points",
+      "mode": "compare",
+      "width": 320,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": false
+    },
+    {
+      "id": "pmi",
+      "mode": "estimate",
+      "width": 390,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "pmi",
+      "mode": "quote",
+      "width": 390,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "pmi",
+      "mode": "cancellation",
+      "width": 390,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "biweekly-mortgage",
+      "mode": "biweekly",
+      "width": 390,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "discount-points",
+      "mode": "compare",
+      "width": 390,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": false
+    },
+    {
+      "id": "pmi",
+      "mode": "estimate",
+      "width": 768,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "pmi",
+      "mode": "quote",
+      "width": 768,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "pmi",
+      "mode": "cancellation",
+      "width": 768,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "biweekly-mortgage",
+      "mode": "biweekly",
+      "width": 768,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "discount-points",
+      "mode": "compare",
+      "width": 768,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": false
+    },
+    {
+      "id": "pmi",
+      "mode": "estimate",
+      "width": 1440,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "pmi",
+      "mode": "quote",
+      "width": 1440,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "pmi",
+      "mode": "cancellation",
+      "width": 1440,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "biweekly-mortgage",
+      "mode": "biweekly",
+      "width": 1440,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": true
+    },
+    {
+      "id": "discount-points",
+      "mode": "compare",
+      "width": 1440,
+      "noOverflow": true,
+      "wideReports": true,
+      "chart": true,
+      "periodToggle": false
+    },
+    "6% down conventional PMI rate, not FHA",
+    "Market appreciation does not cancel PMI; 80% still requires request",
+    "Past due retains PMI after original scheduled 78%",
+    "Explicit request/automatic billing conventions",
+    "Unsupported estimated LTV gives quote-mode action; reset clears stale result",
+    "Zero interest biweekly and matched budget; 26/24 explanation",
+    "No quoted rate benefit cannot recover positive points",
+    "Independent CFPB quote fixture with cash and balance identity",
+    {
+      "search": "pmi",
+      "target": "pmi",
+      "mode": "estimate"
+    },
+    {
+      "search": "pmi removal",
+      "target": "pmi",
+      "mode": "cancellation"
+    },
+    {
+      "search": "biweekly mortgage calculator",
+      "target": "biweekly-mortgage",
+      "mode": "biweekly"
+    },
+    {
+      "search": "mortgage points",
+      "target": "discount-points",
+      "mode": "compare"
+    },
+    "Home instant search finds new tool",
+    "Real estate directory links all three pages"
+  ],
+  "exports": [
+    {
+      "sample": "pmi-estimate-result",
+      "include": true,
+      "height": 6264,
+      "displayedAmounts": true,
+      "freeBadge": true
+    },
+    {
+      "sample": "pmi-quote-result",
+      "include": true,
+      "height": 6018,
+      "displayedAmounts": true,
+      "freeBadge": true
+    },
+    {
+      "sample": "pmi-cancellation-result",
+      "include": true,
+      "height": 6169,
+      "displayedAmounts": true,
+      "freeBadge": true
+    },
+    {
+      "sample": "biweekly-mortgage-biweekly-result",
+      "include": true,
+      "height": 5127,
+      "displayedAmounts": true,
+      "freeBadge": true
+    },
+    {
+      "sample": "discount-points-compare-result",
+      "include": true,
+      "height": 5815,
+      "displayedAmounts": true,
+      "freeBadge": true
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "scope": "Local production export, Chromium; exact existing AdSense loader stubbed; no native Safari or reference-site numeric parity claim"
+}

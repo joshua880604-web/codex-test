@@ -5602,5 +5602,100 @@
     "updated_at": "2026-10-21T08:11:50.216011+00:00",
     "local_implementation": "passed",
     "functional_delivery": "independent-model-tested"
+  },
+  {
+    "id": "pmi",
+    "mode": "estimate",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not-applicable-independent-addition",
+    "browser": "passed",
+    "visual": "passed",
+    "functional_delivery": "implemented_with_documented_independent_model",
+    "evidence": {
+      "text_spec": "specs/pmi.md",
+      "numeric": "evidence/mortgage-tools-qa.json",
+      "browser": "evidence/browser-mortgage-tools-qa.json",
+      "scope": "mortgage-tools-2026-10-26.md"
+    },
+    "fully_complete": true,
+    "updated_at": "2026-10-26T07:41:20.432Z"
+  },
+  {
+    "id": "pmi",
+    "mode": "quote",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not-applicable-independent-addition",
+    "browser": "passed",
+    "visual": "passed",
+    "functional_delivery": "implemented_with_documented_independent_model",
+    "evidence": {
+      "text_spec": "specs/pmi.md",
+      "numeric": "evidence/mortgage-tools-qa.json",
+      "browser": "evidence/browser-mortgage-tools-qa.json",
+      "scope": "mortgage-tools-2026-10-26.md"
+    },
+    "fully_complete": true,
+    "updated_at": "2026-10-26T07:41:20.432Z"
+  },
+  {
+    "id": "pmi",
+    "mode": "cancellation",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not-applicable-independent-addition",
+    "browser": "passed",
+    "visual": "passed",
+    "functional_delivery": "implemented_with_documented_independent_model",
+    "evidence": {
+      "text_spec": "specs/pmi.md",
+      "numeric": "evidence/mortgage-tools-qa.json",
+      "browser": "evidence/browser-mortgage-tools-qa.json",
+      "scope": "mortgage-tools-2026-10-26.md"
+    },
+    "fully_complete": true,
+    "updated_at": "2026-10-26T07:41:20.432Z"
+  },
+  {
+    "id": "biweekly-mortgage",
+    "mode": "biweekly",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not-applicable-independent-addition",
+    "browser": "passed",
+    "visual": "passed",
+    "functional_delivery": "implemented_with_documented_independent_model",
+    "evidence": {
+      "text_spec": "specs/biweekly-mortgage.md",
+      "numeric": "evidence/mortgage-tools-qa.json",
+      "browser": "evidence/browser-mortgage-tools-qa.json",
+      "scope": "mortgage-tools-2026-10-26.md"
+    },
+    "fully_complete": true,
+    "updated_at": "2026-10-26T07:41:20.432Z"
+  },
+  {
+    "id": "discount-points",
+    "mode": "compare",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "not-applicable-independent-addition",
+    "browser": "passed",
+    "visual": "passed",
+    "functional_delivery": "implemented_with_documented_independent_model",
+    "evidence": {
+      "text_spec": "specs/discount-points.md",
+      "numeric": "evidence/mortgage-tools-qa.json",
+      "browser": "evidence/browser-mortgage-tools-qa.json",
+      "scope": "mortgage-tools-2026-10-26.md"
+    },
+    "fully_complete": true,
+    "updated_at": "2026-10-26T07:41:20.432Z"
   }
 ]

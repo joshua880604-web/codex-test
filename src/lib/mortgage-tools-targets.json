@@ -1,0 +1,60 @@
+{
+  "pmi": {
+    "title": "PMI Calculator - Cost, LTV & PMI Removal",
+    "tasks": [
+      {
+        "keyword": "PMI calculator",
+        "mode": "estimate",
+        "description": "Estimate conventional private mortgage insurance from original LTV, term and an illustrative credit band.",
+        "aliases": [
+          "Private mortgage insurance calculator"
+        ]
+      },
+      {
+        "keyword": "PMI cancellation calculator",
+        "mode": "cancellation",
+        "description": "Compare original-value 80% requests, scheduled 78% termination and midpoint protection. Current market LTV is reported separately.",
+        "aliases": [
+          "PMI removal calculator",
+          "LTV calculator for PMI",
+          "LTV calculator"
+        ]
+      },
+      {
+        "keyword": "PMI calculator with lender quote",
+        "mode": "quote",
+        "description": "Enter a quoted annual PMI rate instead of using the illustrative insurer card."
+      }
+    ]
+  },
+  "biweekly-mortgage": {
+    "title": "Biweekly Mortgage Payment Calculator - Savings & Payoff",
+    "tasks": [
+      {
+        "keyword": "Biweekly mortgage calculator",
+        "mode": "biweekly",
+        "description": "Compare 26 half-monthly payments per year with ordinary monthly and equal-budget monthly payments.",
+        "aliases": [
+          "Biweekly mortgage payment calculator",
+          "Bi-weekly payment calculator",
+          "Mortgage payment every two weeks calculator"
+        ]
+      }
+    ]
+  },
+  "discount-points": {
+    "title": "Discount Points Calculator - Mortgage Points & Break-Even",
+    "tasks": [
+      {
+        "keyword": "Discount points calculator",
+        "mode": "compare",
+        "description": "Compare entered mortgage rate and point quotes, monthly savings and net cost at a sale or refinancing horizon.",
+        "aliases": [
+          "Mortgage points calculator",
+          "Mortgage points break even calculator",
+          "Mortgage points vs no points calculator"
+        ]
+      }
+    ]
+  }
+}

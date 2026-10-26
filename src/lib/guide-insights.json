@@ -320,5 +320,86 @@
       "W-4 elections, year-to-date payroll and IRS Publication 15-T withholding are not fully modeled."
     ],
     "checkedOn": "2026-10-21"
+  },
+  "pmi": {
+    "answer": "Conventional PMI pricing and cancellation are separate questions. Original loan-to-value determines the illustrative premium; the original-value 80% request, original-schedule 78% automatic termination and month-after-midpoint rule determine distinct potential ending dates.",
+    "results": [
+      {
+        "label": "Initial monthly PMI",
+        "meaning": "The modeled initial conventional premium, excluding home insurance and property taxes."
+      },
+      {
+        "label": "80% request benchmark",
+        "meaning": "An opportunity to apply after the qualifying payment; approval and conditions still apply."
+      },
+      {
+        "label": "Scheduled 78% benchmark",
+        "meaning": "The original-schedule automatic threshold if payments are current, separate from actual accelerated LTV."
+      }
+    ],
+    "compare": [
+      "Hold price, appraisal and loan terms fixed; compare an illustrative rate with your lender’s annual quote.",
+      "Then compare extra principal and the requested versus automatic scenarios without changing original value."
+    ],
+    "checks": [
+      "Use original value, not a new appreciated appraisal, for HPA thresholds.",
+      "Current payments are required for automatic termination.",
+      "Do not add the two alternative PMI schedule columns together."
+    ],
+    "checkedOn": "2026-10-26"
+  },
+  "biweekly-mortgage": {
+    "answer": "Paying half a monthly payment every two weeks produces 26 half-payments, equal to 13 monthly payments per modeled year. The calculator compares this with ordinary monthly payments and with a monthly plan that has the same annual outlay.",
+    "results": [
+      {
+        "label": "Biweekly payment",
+        "meaning": "Half the normal monthly P&I plus entered extra per biweekly payment."
+      },
+      {
+        "label": "Extra annual outlay versus monthly",
+        "meaning": "Additional annual cash required by the 26-payment plan."
+      },
+      {
+        "label": "Matched-budget monthly total interest",
+        "meaning": "A monthly alternative with the same annual payment budget."
+      }
+    ],
+    "compare": [
+      "Compare standard monthly with 26 credited payments per year.",
+      "Compare biweekly with the equal-annual-budget monthly alternative to separate timing from extra principal."
+    ],
+    "checks": [
+      "26 biweekly payments differ from 24 semimonthly payments.",
+      "Verify how a servicer credits partial payments and whether fees apply.",
+      "The model uses annual rate divided by 26, not daily calendar accrual."
+    ],
+    "checkedOn": "2026-10-26"
+  },
+  "discount-points": {
+    "answer": "Compare two fixed-rate loan quotes with the same principal and term. Points cost 1% of principal per point, but the rate reduction must come from the lender’s actual quote. The comparison distinguishes monthly cash savings from interest-and-fee savings at a sale or refinancing horizon.",
+    "results": [
+      {
+        "label": "Net borrowing-cost savings at horizon (B vs A)",
+        "meaning": "Interest and upfront costs saved by offer B; positive favors B, negative favors A."
+      },
+      {
+        "label": "Net cash-flow savings at horizon",
+        "meaning": "Payment savings less additional upfront cost, excluding the balance difference."
+      },
+      {
+        "label": "First net-cost break-even month",
+        "meaning": "The first modeled month that B’s interest/fee cost is no higher than A’s, not a guarantee of permanent advantage."
+      }
+    ],
+    "compare": [
+      "Enter two actual same-principal, same-term Loan Estimate rate/point quotes.",
+      "Change only the sale/refinance holding period to compare short- and long-term costs."
+    ],
+    "checks": [
+      "One point is a fee equal to 1% of principal, not a fixed rate reduction.",
+      "Points and fees are paid in cash in this model.",
+      "Compare cash-flow savings and remaining principal together."
+    ],
+    "checkedOn": "2026-10-26"
   }
 }

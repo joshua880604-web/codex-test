@@ -1,0 +1,274 @@
+{
+  "pmi": {
+    "checkedOn": "2026-10-26",
+    "summary": "Conventional PMI pricing and cancellation are separate questions. Original loan-to-value determines the illustrative premium; the original-value 80% request, original-schedule 78% automatic termination and month-after-midpoint rule determine distinct potential ending dates.",
+    "scope": "U.S. borrower-paid monthly conventional PMI on unmodified, fully amortizing fixed-rate principal-residence loans closed on or after July 29, 1999. It excludes FHA MIP, VA, lender-paid insurance, high-risk exceptions and investor-specific appreciation rules. Rates from a dated insurer card are illustrations, not quotes.",
+    "examples": [
+      {
+        "title": "A quoted PMI premium with zero interest",
+        "mode": "quote",
+        "values": {
+          "price": 200000,
+          "down": 10,
+          "annual_pmi": 0.5,
+          "rate": 0,
+          "years": 30,
+          "extra": 0,
+          "first_due": "2026-11-01"
+        },
+        "inputs": "Purchase and original value $200,000; 10% down; quoted annual PMI 0.5%; zero interest; 30 years; no extra principal.",
+        "steps": [
+          "Original loan = 200,000 × 90% = 180,000; original LTV = 90%.",
+          "Monthly PMI = 180,000 × 0.5% / 12 = 75.",
+          "Monthly P&I = 180,000 / 360 = 500. After payment 40 the balance is 160,000, the 80% request threshold.",
+          "This model charges through the qualifying request payment, then stops after assumed approval. Scheduled 78% termination has a separate due-date convention."
+        ],
+        "answer": "Initial monthly PMI is $75; an 80% request requires borrower action and all conditions.",
+        "expected": {
+          "label": "Initial monthly PMI",
+          "value": 75
+        }
+      },
+      {
+        "title": "A low current LTV does not prove PMI has ended",
+        "mode": "cancellation",
+        "values": {
+          "original_value": 400000,
+          "original_loan": 380000,
+          "balance": 320000,
+          "current_value": 500000,
+          "rate": 0,
+          "years": 30,
+          "elapsed": 10,
+          "monthly_pmi": 150,
+          "current": "Yes",
+          "conditions": "Not confirmed"
+        },
+        "inputs": "Original value $400,000; original loan $380,000; current balance $320,000; current home value $500,000; ten payments completed.",
+        "steps": [
+          "Current-market LTV = 320,000 / 500,000 = 64%.",
+          "Original-value LTV = 320,000 / 400,000 = 80%.",
+          "The 80% request threshold is met, but payment history, liens, value evidence and written approval still need confirmation.",
+          "The scheduled 78% date remains tied to the original amortization, so an entered $150 premium is not silently removed just because the balance is now at 80%."
+        ],
+        "answer": "The modeled current quote remains $150 while the request is unapproved.",
+        "expected": {
+          "label": "Modeled current monthly PMI",
+          "value": 150
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Does PMI automatically stop at 80% LTV?",
+        "answer": "No. At 80% of original value you may request cancellation in writing, subject to current payments, good history, no junior liens and value evidence. Automatic termination generally uses scheduled 78%, with a midpoint backstop if current."
+      },
+      {
+        "question": "Can a higher current appraisal remove PMI?",
+        "answer": "It can matter under investor-specific appreciation rules, which may require seasoning and a new appraisal. This calculator reports current-value LTV separately and does not substitute it for original value under the HPA rules."
+      },
+      {
+        "question": "Do extra payments move the automatic 78% date?",
+        "answer": "They can move the actual 80% request threshold forward. The statutory scheduled 78% date is based on the original amortization; an early payoff separately ends the loan."
+      },
+      {
+        "question": "What if payments are past due?",
+        "answer": "Automatic and midpoint termination require current payments. The existing-loan mode keeps the quoted premium active when payments are not current and does not invent a catch-up or cancellation date."
+      },
+      {
+        "question": "Are these FHA MIP or government PMI rates?",
+        "answer": "No. FHA has separate MIP rules. The estimate uses a dated National MI conventional base-rate card with stated coverage assumptions. Use My Quote for your actual annual rate, or FHA Loan Calculator for FHA insurance."
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: PMI cancellation, original value, 78% and midpoint rules",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/"
+      },
+      {
+        "title": "NCUA: Homeowners Protection Act cancellation and termination",
+        "url": "https://ncua.gov/regulation-supervision/manuals-guides/federal-consumer-financial-protection-guide/compliance-management/lending-regulations/homeowners-protection-act-pmi-cancellation-act"
+      },
+      {
+        "title": "National MI: Monthly Advantage base-rate card, effective March 2022",
+        "url": "https://www.nationalmi.com/wp-content/uploads/2022/02/MA.MN_.BP_.2022-03.pdf"
+      }
+    ]
+  },
+  "biweekly-mortgage": {
+    "checkedOn": "2026-10-26",
+    "summary": "Paying half a monthly payment every two weeks produces 26 half-payments, equal to 13 monthly payments per modeled year. The calculator compares this with ordinary monthly payments and with a monthly plan that has the same annual outlay.",
+    "scope": "Fixed nominal-rate P&I with equal 1/26-year periods and immediate crediting of each payment. This is not twice-monthly payment, an exact 14-day daily-interest calendar, or a lender holding-account simulation. Taxes, insurance, PMI, fees and penalties are excluded.",
+    "examples": [
+      {
+        "title": "An extra annual payment without interest",
+        "mode": "biweekly",
+        "values": {
+          "principal": 12000,
+          "rate": 0,
+          "years": 1,
+          "months": 0,
+          "extra": 0
+        },
+        "inputs": "$12,000 principal, zero interest, 12 months remaining, no extra payment above the half-monthly amount.",
+        "steps": [
+          "Monthly payment = 12,000 / 12 = 1,000.",
+          "Biweekly payment = 1,000 / 2 = 500; a full-year budget is 500 × 26 = 13,000.",
+          "Only 24 payments of $500 are needed to repay $12,000.",
+          "There is no interest saving at 0%, even though the modeled loan is repaid earlier."
+        ],
+        "answer": "Biweekly payment is $500, with 24 actual payments and zero interest.",
+        "expected": {
+          "label": "Biweekly payment",
+          "value": 500
+        }
+      },
+      {
+        "title": "Same annual budget, monthly alternative",
+        "mode": "biweekly",
+        "values": {
+          "principal": 12000,
+          "rate": 0,
+          "years": 1,
+          "months": 0,
+          "extra": 0
+        },
+        "inputs": "Use the same zero-interest $12,000 example.",
+        "steps": [
+          "The biweekly annual budget is $13,000.",
+          "A matched monthly plan pays 13,000 / 12 = 1,083.333333 per month.",
+          "Both plans pay extra relative to $1,000 per month; the different period lengths affect the actual last payment."
+        ],
+        "answer": "The matched-budget monthly amount is about $1,083.33.",
+        "expected": {
+          "label": "Monthly payment with the same annual budget",
+          "value": 1083.3333333333333
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Is biweekly the same as twice a month?",
+        "answer": "No. Biweekly is modeled as 26 payments per year; semimonthly is 24. The extra two half-payments account for a large part of accelerated payoff."
+      },
+      {
+        "question": "Will my servicer immediately credit each half-payment?",
+        "answer": "Not necessarily. Ask how partial payments are applied and whether there are fees. Holding two halves until the monthly due date changes the timing benefit."
+      },
+      {
+        "question": "Why include an equal-budget monthly comparison?",
+        "answer": "It separates paying extra from paying earlier. A monthly extra-principal plan can reproduce much of the saving without enrolling in a biweekly service."
+      },
+      {
+        "question": "Does this use actual 14-day payment dates?",
+        "answer": "No. It uses annual nominal rate divided by 26 and equal modeled periods. Real daily accrual, calendar alignment and years with 27 pay dates require the lender’s actual convention."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FNCalculator: dedicated biweekly payment comparison inputs",
+        "url": "https://www.fncalculator.com/financialcalculator?type=loanBiweeklyCalculator"
+      },
+      {
+        "title": "CFPB: mortgage principal and interest amortization",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-does-paying-down-a-mortgage-work-en-1943/"
+      }
+    ]
+  },
+  "discount-points": {
+    "checkedOn": "2026-10-26",
+    "summary": "Compare two fixed-rate loan quotes with the same principal and term. Points cost 1% of principal per point, but the rate reduction must come from the lender’s actual quote. The comparison distinguishes monthly cash savings from interest-and-fee savings at a sale or refinancing horizon.",
+    "scope": "Cash-paid points and entered upfront costs on same-principal, same-term fixed-rate quotes. Negative points represent an entered lender credit. No financed fees, tax deduction, discounting, ownership-cost difference, PMI or prepayment penalty is inferred.",
+    "examples": [
+      {
+        "title": "One point costs one percent, not a promised rate reduction",
+        "mode": "compare",
+        "values": {
+          "principal": 100000,
+          "years": 30,
+          "rate_a": 6,
+          "points_a": 0,
+          "rate_b": 5.75,
+          "points_b": 1,
+          "fees_a": 0,
+          "fees_b": 0,
+          "hold": 60
+        },
+        "inputs": "$100,000 principal; A quoted at 6% with no points; B quoted at 5.75% with one point. Both quotes are entered assumptions.",
+        "steps": [
+          "Offer B point cost = 100,000 × 1% = 1,000.",
+          "Each monthly payment is calculated from its own quoted rate over 360 months.",
+          "The rate reduction is not generated from the number of points: the lender must quote both.",
+          "At sale or refinancing compare interest plus upfront costs, not only the difference in payments."
+        ],
+        "answer": "One point costs $1,000 on this loan; the break-even depends on the quoted rates and holding period.",
+        "expected": {
+          "label": "Offer B points or credit amount",
+          "value": 1000
+        }
+      },
+      {
+        "title": "Points with no rate benefit never recover their cost",
+        "mode": "compare",
+        "values": {
+          "principal": 12000,
+          "years": 2,
+          "rate_a": 0,
+          "points_a": 0,
+          "rate_b": 0,
+          "points_b": 1,
+          "fees_a": 0,
+          "fees_b": 0,
+          "hold": 12
+        },
+        "inputs": "Both loans are $12,000 for two years at 0%; only offer B charges one point.",
+        "steps": [
+          "Both monthly payments are 12,000 / 24 = 500.",
+          "Offer B costs an extra 12,000 × 1% = 120 upfront.",
+          "There is no interest or payment saving to offset the extra cost."
+        ],
+        "answer": "B is $120 more expensive at the selected horizon; no break-even is reached within the term.",
+        "expected": {
+          "label": "Net borrowing-cost savings at horizon (B vs A)",
+          "value": -120
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "Does one point always reduce my rate by 0.25%?",
+        "answer": "No. One point describes a fee equal to 1% of principal. The lender, loan type and market determine the quoted rate change."
+      },
+      {
+        "question": "Why are cash-flow and borrowing-cost break-even different?",
+        "answer": "Payment savings exclude differences in principal repaid. Borrowing-cost savings compare interest and upfront costs, equivalently including the remaining-balance advantage at sale or refinancing."
+      },
+      {
+        "question": "What holding period should I use?",
+        "answer": "Use the expected time before selling, refinancing or paying off the loan, and compare shorter and longer alternatives. Zero months compares upfront costs only."
+      },
+      {
+        "question": "Can I enter lender credits?",
+        "answer": "Yes. Negative points are treated as a cash credit at closing. A higher-rate quote can start ahead and later become more costly; first break-even is not a promise of a permanent advantage."
+      },
+      {
+        "question": "Are taxes or financed points included?",
+        "answer": "No. Points and entered other fees are paid in cash. Tax deductibility, financed closing costs and the opportunity cost of cash need a different analysis."
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: discount points, lender credits and lender-specific rate changes",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-should-i-use-lender-credits-and-points-also-called-discount-points-en-136/"
+      },
+      {
+        "title": "CFPB: compare loan estimates",
+        "url": "https://www.consumerfinance.gov/owning-a-home/compare/compare-loan-estimates/"
+      },
+      {
+        "title": "FNCalculator: loan point quote-comparison fields",
+        "url": "https://www.fncalculator.com/financialcalculator?type=loanPointCalculator"
+      }
+    ]
+  }
+}

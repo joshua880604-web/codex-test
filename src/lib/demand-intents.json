@@ -64,10 +64,10 @@
       "mode": "monthly"
     },
     {
-      "id": "mortgage",
+      "id": "biweekly-mortgage",
       "keyword": "Biweekly mortgage calculator",
       "mode": "biweekly",
-      "description": "Compare monthly mortgage payments with half a monthly payment every two weeks under the stated interest assumptions. This is not the same as two payments per month."
+      "description": "Compare 26 half-monthly payments per year with ordinary monthly and equal-budget monthly payments."
     },
     {
       "id": "mortgage",

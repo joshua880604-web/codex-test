@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "verified_at": "2026-10-26T07:41:20.432Z",
+  "tests": 996,
+  "oldMetricSetsUnchanged": 193,
+  "independentMethod": "Independent 55-digit Decimal closed-form amortization; not application code. CFPB example uses 180000 at 5.0% versus 4.875% with 0.375 points.",
+  "independentControls": [
+    {
+      "label": "Standard monthly payment",
+      "actual": 599.5505251527524,
+      "independentExpected": "599.5505251527523945914612436844759150370427424964214457",
+      "passed": true
+    },
+    {
+      "label": "Biweekly total interest",
+      "actual": 91026.18257628381,
+      "independentExpected": "91026.1825762838343796001608080404608278136478637155091",
+      "passed": true
+    },
+    {
+      "label": "Number of biweekly payments",
+      "actual": 638,
+      "independentExpected": 638,
+      "passed": true
+    },
+    {
+      "label": "Offer A monthly P&I",
+      "actual": 966.2789214218502,
+      "independentExpected": "966.2789214218501726912866424025981482487117423308847351",
+      "passed": true
+    },
+    {
+      "label": "Offer B monthly P&I",
+      "actual": 952.5748029288011,
+      "independentExpected": "952.5748029288010998785145144955480928336686522547995610",
+      "passed": true
+    },
+    {
+      "label": "Net borrowing-cost savings at horizon (B vs A)",
+      "actual": 442.490915082024,
+      "independentExpected": "442.49091508203845375472371454967841010482259520135695",
+      "passed": true
+    },
+    {
+      "label": "Net cash-flow savings at horizon",
+      "actual": 147.24710958296782,
+      "independentExpected": "147.2471095829443687663276744230033249025854045651104460",
+      "passed": true
+    },
+    {
+      "label": "Balance advantage of B at horizon",
+      "actual": 295.2438054990489,
+      "independentExpected": "295.2438054990940849883960401266750852022371906362465",
+      "passed": true
+    }
+  ],
+  "browserChecks": 34,
+  "pngExports": 5,
+  "lazyChecks": 23,
+  "seoPages": 149,
+  "tools": 84,
+  "modes": 198,
+  "searchTasks": 209,
+  "limitations": [
+    "No reference-site live numeric or visual parity claim",
+    "No native Safari/iPhone run",
+    "Ad loader stubbed in Chromium; real inventory/revenue not tested",
+    "Dated PMI base-rate estimate, not a lender quote or eligibility decision"
+  ],
+  "visual": {
+    "inspectorFailures": 0,
+    "inspectorWarnings": [
+      "Corner radii inherit approved existing cards/controls/pills",
+      "Below-fold detail blocks preserve user-approved form/result/report layout"
+    ],
+    "layoutPreserved": true
+  }
+}

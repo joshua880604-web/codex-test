@@ -100,3 +100,7 @@ User requested an Omni-informed methodology improvement. Preserve the establishe
 ## 2026-10-22 — Public domain exclusion
 
 User explicitly requested removal of the reference domain from the website. Remove visible mentions, outbound exits and unused serialized runtime provenance; keep research provenance only in documentation that is not copied to the public export. Preserve genuine official source links. Enforce the requirement on the complete static export at build time, including JavaScript and RSC payloads. Internal provenance is not a source for public-model fields.
+
+## 2026-10-26 — Dedicated PMI, biweekly and discount-points tools
+
+User explicitly requested these three priorities after FNCalculator review. Implement independently scoped models, preserve earlier Mortgage calculations and layout, and add distinct searchable pages instead of duplicate keyword variants. Keep PMI request/automatic/midpoint logic distinct, date/disclose the estimate card, and offer actual quotes. Compare biweekly with an equal-annual-budget monthly alternative. Points compare entered quote rates and both cash-flow and balance-aware horizon costs. Do not infer keyword revenue, live reference numeric parity, actual cancellation approval or Safari-device verification.

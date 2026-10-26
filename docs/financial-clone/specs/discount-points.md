@@ -1,0 +1,7 @@
+# Discount Points Calculator
+
+Route /discount-points-calculator.html, mode compare. Fields: same principal/term, each offer's rate and points/credit percentage, other cash upfront costs and whole-month sale/refinance horizon (0 through term). Positive principal, 1–40 whole years, rates 0–30%, points -20%–20%.
+
+Cost of points = principal×points/100. One point does not imply a standard rate reduction. Generate two original monthly amortizations with exact remaining balance and capped final payment. Upfront difference = B−A. Cash-flow savings = payments A−B−upfront difference. Balance advantage = balance A−B. Net borrowing-cost savings = interest A−B−upfront difference = cash-flow savings + balance advantage. Show selected horizon, lifetime totals and first nonnegative cash/net-cost month. Credits/higher rates may reverse advantage. A shortcut cost/monthly-saving ratio can be outside the loan term; do not report it as a completed scheduled break-even.
+
+No financed fees, extra payments, tax deductions, time-value discounting, PMI, different terms/principals or penalties. Graph full-term net-cost and cash-flow savings, starting at negative additional upfront cost, and label scope. Table monthly only because columns are cumulative snapshots, not annual cash flows. Existing CSV/PNG/export styles retained. Test CFPB $180k quote example with independent Decimal fixture, zero horizon, equal rate, negative credits, swapped quotes and cash-plus-balance identity. Reference form text observed; live numeric parity unverified.

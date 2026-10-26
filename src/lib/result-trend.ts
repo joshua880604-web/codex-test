@@ -6,8 +6,9 @@ export type ResultTrend = {
   secondaryKey?: "contributions" | "comparison"; secondaryLabel?: string;
   points: TrendPoint[]; sampled: boolean;
 };
-const loanIds = ["loan", "mortgage", "fha-loan", "va-mortgage", "amortization", "mortgage-payoff", "refinance", "home-equity-loan", "heloc", "auto-loan", "boat-loan", "business-loan", "personal-loan", "payment", "credit-card", "debt-consolidation", "repayment", "student-loan"];
+const loanIds = ["pmi", "biweekly-mortgage", "loan", "mortgage", "fha-loan", "va-mortgage", "amortization", "mortgage-payoff", "refinance", "home-equity-loan", "heloc", "auto-loan", "boat-loan", "business-loan", "personal-loan", "payment", "credit-card", "debt-consolidation", "repayment", "student-loan"];
 const loanColumns = [
+  ["Month", "Payment", "Interest", "Principal", "Balance", "PMI if requested", "PMI automatic only"],
   ["Period", "Payment", "Interest", "Principal", "Balance"],
   ["Month", "Payment", "Interest", "Principal", "Balance"],
   ["Payment #", "Payment", "Interest", "Principal", "Balance"],
@@ -28,7 +29,14 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
   let xIndex = 0, balanceIndex = -1, scale = 1, secondaryIndex = -1;
   let secondaryKey: ResultTrend["secondaryKey"], secondaryLabel: string | undefined;
   let start: TrendPoint | null = null;
-  if (["investment", "interest", "savings", "compound-interest"].includes(id) && matches(["Month", "Contributions", "Net earnings", "Balance"])) {
+  if (id === "discount-points" && matches(["Month", "Net cash-flow savings", "Balance advantage of B", "Net borrowing-cost savings", "Balance A", "Balance B"])) {
+    const upfront = result.metrics.find(m => m.label === "Additional upfront cost for B")?.value;
+    if (!finite(upfront)) return null;
+    start = { x: 0, balance: -upfront, comparison: -upfront };
+    balanceIndex = 3; secondaryIndex = 1; scale = 1 / 12; secondaryKey = "comparison"; secondaryLabel = "Net cash-flow savings";
+    title = "Discount points savings over the full term"; balanceLabel = "Net borrowing-cost savings";
+    help = "Positive favors offer B; negative favors A. Borrowing-cost savings include the remaining-balance difference. The primary result uses your selected holding period, while this curve covers the full loan term.";
+  } else if (["investment", "interest", "savings", "compound-interest"].includes(id) && matches(["Month", "Contributions", "Net earnings", "Balance"])) {
     const principal = result.metrics.find(m => m.label === "Starting amount")?.value;
     if (!finite(principal)) return null;
     start = { x: 0, balance: principal, contributions: principal };
@@ -43,6 +51,8 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
     start = { x: 0, balance: firstBalance + firstPrincipal };
     title = "Remaining loan balance"; xLabel = "Payment number"; balanceLabel = "Remaining principal";
     help = "Principal remaining after each payment; interest and ownership costs are separate.";
+    if (id === "pmi") help = "Underlying loan principal only. PMI premiums and cancellation scenarios appear separately in results and calculation details.";
+    if (id === "biweekly-mortgage") help = "Principal after each credited biweekly payment, using 26 equal modeled periods per year. Taxes, insurance and PMI are excluded.";
     if (id === "refinance") help = "New loan principal after each payment, including any financed closing costs or cash-out. This is not the old-loan schedule.";
     if (id === "heloc") help = "Principal across the modeled draw and repayment phases. This schedule assumes the initial advance and no additional draws.";
   } else if (id === "cd" && matches(["Month", "Period interest", "Cumulative interest", "Balance before tax"])) {

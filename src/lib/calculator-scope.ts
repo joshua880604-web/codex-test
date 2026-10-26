@@ -3,6 +3,9 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "pmi": return "U.S. conventional borrower-paid PMI. Original-value 80% requests, scheduled 78% termination and original-term midpoint are distinct; FHA/VA and investor-specific appreciation rules are excluded.";
+    case "biweekly-mortgage": return "Fixed-rate P&I comparison with 26 credited periods/year; not twice-monthly payments or a dated daily-accrual simulation.";
+    case "discount-points": return "Compare entered fixed-rate quotes and upfront costs in USD. One point costs 1% of principal; rate reductions are lender-specific.";
     case "mortgage":
       return mode === "biweekly"
         ? "Fixed-rate residential mortgage comparison. Biweekly results exclude taxes, insurance and PMI."

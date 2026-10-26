@@ -40,7 +40,7 @@ test("Production sitemap lists canonical pages and only reviewed content dates",
     SITE_INDEXABLE: "true",
   });
   const entries = sitemapEntries(config);
-  assert.equal(entries.length, 146);
+  assert.equal(entries.length, 149);
   assert.equal(new Set(entries.map((e) => e.url)).size, entries.length);
   assert.ok(
     entries.every(
@@ -58,7 +58,7 @@ test("Production sitemap lists canonical pages and only reviewed content dates",
   assert.equal(sitemapEntries(siteConfig({})).length, 0);
   assert.equal(entries.filter(e=>e.lastModified).length,Object.keys(contentUpdatedOn).length);
   assert.equal(contentUpdatedOn['/mortgage-calculator.html'],'2026-10-26');
-  assert.ok(Object.entries(contentUpdatedOn).filter(([path])=>path!=='/mortgage-calculator.html').every(([,date])=>date==='2026-10-25'));
+  assert.ok(Object.entries(contentUpdatedOn).filter(([path])=>!['/mortgage-calculator.html','/pmi-calculator.html','/biweekly-mortgage-calculator.html','/discount-points-calculator.html'].includes(path)).every(([,date])=>date==='2026-10-25'));
   assert.ok(!entries.some(e=>e.url.endsWith('/llms.txt')||e.url.endsWith('/sitemap.xml')));
 });
 test("Calculator canonicals consolidate shared query variants and schema matches the real app", () => {
@@ -130,9 +130,9 @@ test("Contextual related tools are real, distinct and not self-links", () => {
 
 test("Every functional calculator has a unique guide, reproducible examples and specific questions", () => {
   const tools=calculators.filter(c=>!c.directory);
-  assert.equal(tools.length,81);
-  assert.equal(Object.keys(guides).length,81);
-  assert.equal(new Set(Object.values(guides).map(g=>g.summary)).size,81);
+  assert.equal(tools.length,84);
+  assert.equal(Object.keys(guides).length,84);
+  assert.equal(new Set(Object.values(guides).map(g=>g.summary)).size,84);
   for(const tool of tools){
     const guide=guides[tool.id];assert.ok(guide,tool.id);
     assert.ok(guide.summary.length>80 && guide.scope.length>50,tool.id);

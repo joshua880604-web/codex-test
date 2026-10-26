@@ -9,6 +9,9 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
   Other: () => import('./calculators/other-core').then(m => m.otherCoreCalculators),
 };
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
+  pmi: () => import('./calculators/mortgage-tools').then(m => m.mortgageTools),
+  'biweekly-mortgage': () => import('./calculators/mortgage-tools').then(m => m.mortgageTools),
+  'discount-points': () => import('./calculators/mortgage-tools').then(m => m.mortgageTools),
   currency: () => import('./calculators/currency').then(m => [m.currencyCalculator]),
   inflation: () => import('./calculators/inflation').then(m => [m.inflationCalculator]),
   rmd: () => import('./calculators/rmd').then(m => [m.rmdCalculator]),

@@ -5,6 +5,10 @@ import {formatMetric} from './sharing';
 export function resultContext(id:string,mode:string,values:Values,result:Result):string|null {
  const metric=(label:string)=>result.metrics.find(m=>m.label===label);
  const text=(label:string)=>{const m=metric(label);return m?formatMetric(m):null;};
+ if(id==='pmi'&&mode==='cancellation')return `Current PMI is modeled at ${text('Modeled current monthly PMI')}. ${text('Cancellation status')}. Today's appraisal does not replace original value for the statutory 80%/78% rules.`;
+ if(id==='pmi')return `Initial conventional PMI is ${text('Initial monthly PMI')} on an original LTV of ${text('Original loan-to-value ratio')}. The 80% request requires approval; scheduled 78% and midpoint termination are separate benchmarks. These premiums are not homeowners insurance or FHA MIP.`;
+ if(id==='biweekly-mortgage')return `The biweekly amount is ${text('Biweekly payment')}, with ${text('Extra annual outlay versus monthly')} more annual outlay than standard monthly payments. The matched-budget monthly comparison separates extra principal from earlier payment crediting.`;
+ if(id==='discount-points')return `At ${values.hold} months, modeled borrowing-cost savings for offer B are ${text('Net borrowing-cost savings at horizon (B vs A)')}; positive favors B and negative favors A. Cash-flow savings are ${text('Net cash-flow savings at horizon')}, with the remaining-balance difference reported separately.`;
  if(id==='markup'&&text('Profit margin'))return `Markup is ${text('Markup on cost')} of cost; profit margin is ${text('Profit margin')} of selling price. They describe the same gross profit using different denominators.`;
  if(id==='cagr'&&text('Compound annual growth rate'))return `The endpoint values imply ${text('Compound annual growth rate')} annual compound growth. This smooths the full period into one rate and excludes any intermediate deposits or withdrawals.`;
  if(id==='emergency-fund'&&mode==='goal'&&text('Remaining savings gap'))return `Your selected reserve target is ${text('Emergency fund target')}. The remaining gap is ${text('Remaining savings gap')}; the reserve duration is your planning choice.`;

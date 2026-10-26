@@ -54,6 +54,12 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 - [Salary Calculator](https://calculatorfree.io/salary-calculator.html): Convert pay frequencies and compare unadjusted pay with holiday- and vacation-adjusted pay.
 - [Take-Home Paycheck Calculator](https://calculatorfree.io/take-home-pay-calculator.html): Estimate pay using 2026 U.S. federal rules and explicit state/local effective-rate assumptions; this is not a complete state or city tax engine.
 
+## Mortgage decision tools
+
+- [PMI Calculator](https://calculatorfree.io/pmi-calculator.html): Conventional borrower-paid PMI estimates, original/current LTV and separate 80% request, scheduled 78% and midpoint checks; U.S. rules and dated insurer assumptions are stated.
+- [Biweekly Mortgage Payment Calculator](https://calculatorfree.io/biweekly-mortgage-calculator.html): Compare 26 credited payments per year, ordinary monthly and equal-budget monthly alternatives; not an exact 14-day calendar model.
+- [Discount Points Calculator](https://calculatorfree.io/discount-points-calculator.html): Enter actual loan quotes; compare cash-flow and balance-aware break-even, upfront fees and holding-period borrowing costs.
+
 ## Business finance
 
 - [Margin Calculator](https://calculatorfree.io/margin-calculator.html): Solve profit, revenue, cost, margin, or markup; separate modes estimate stock and foreign-exchange margin requirements.

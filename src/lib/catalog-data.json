@@ -496,5 +496,23 @@
     "category": "Investment",
     "source_url": "https://github.com/joshua880604-web/codex-test",
     "local_route": "/real-return-calculator.html"
+  },
+  {
+    "id": "pmi",
+    "category": "Mortgage and Real Estate",
+    "title": "PMI Calculator",
+    "local_route": "/pmi-calculator.html"
+  },
+  {
+    "id": "biweekly-mortgage",
+    "category": "Mortgage and Real Estate",
+    "title": "Biweekly Mortgage Payment Calculator",
+    "local_route": "/biweekly-mortgage-calculator.html"
+  },
+  {
+    "id": "discount-points",
+    "category": "Mortgage and Real Estate",
+    "title": "Discount Points Calculator",
+    "local_route": "/discount-points-calculator.html"
   }
 ]

@@ -1,3 +1,4 @@
+import {mortgageTools} from "./mortgage-tools";
 import {evergreenCalculators} from "./evergreen";
 import { calculateMode } from "../calculate-mode";
 import data from "../catalog-data.json";
@@ -10,6 +11,7 @@ import { otherCalculators } from "./other";
 import { defaults, type Calculator, type Values, type Result } from "../types";
 export const calculators: Calculator[] = [
   ...evergreenCalculators,
+  ...mortgageTools,
   ...propertyCalculators,
   ...investmentCalculators,
   ...retirementCalculators,

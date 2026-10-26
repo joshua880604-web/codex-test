@@ -42,6 +42,9 @@ export function Header() {
 export function Sidebar() {
   const ids = [
     "mortgage",
+    "pmi",
+    "biweekly-mortgage",
+    "discount-points",
     "loan",
     "auto-loan",
     "interest",

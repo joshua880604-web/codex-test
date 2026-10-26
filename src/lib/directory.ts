@@ -12,6 +12,9 @@ export const directoryGroups=[
 const otherGroups:Record<string,string>={markup:'everyday','break-even':'everyday',currency:'everyday',budget:'everyday',depreciation:'everyday',margin:'everyday',discount:'everyday',commission:'tax-salary','sales-tax':'tax-salary',vat:'tax-salary',inflation:'saving-investing','college-cost':'saving-investing'};
 export function directoryGroup(id:string,category:string){return otherGroups[id]??directoryGroups.find(g=>g.categories.includes(category))?.id??'loans-debt';}
 const toolAliases:Record<string,string[]>={
+ pmi:['private mortgage insurance','pmi removal','pmi cancellation','mortgage insurance cancellation','ltv calculator'],
+ 'biweekly-mortgage':['bi-weekly mortgage payment','biweekly mortgage payment','biweekly payment','bi-weekly payment','fortnightly mortgage payment'],
+ 'discount-points':['mortgage points','discount point','mortgage points break even','points calculator','buy down rate'],
  'auto-loan':['car payment','car loan','vehicle finance'],
  'auto-lease':['car lease','vehicle lease'],
  'take-home-paycheck':['paycheck','take home pay','gross to net pay'],
