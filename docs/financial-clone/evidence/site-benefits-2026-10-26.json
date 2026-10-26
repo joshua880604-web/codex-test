@@ -1,0 +1,261 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "kind": "home",
+      "width": 320,
+      "height": 480,
+      "quickBottom": 474,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 320,
+      "height": 568,
+      "quickBottom": 560,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 360,
+      "height": 540,
+      "quickBottom": 474,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 360,
+      "height": 560,
+      "quickBottom": 474,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 360,
+      "height": 561,
+      "quickBottom": 560,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 360,
+      "height": 600,
+      "quickBottom": 560,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 360,
+      "height": 640,
+      "quickBottom": 596,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 375,
+      "height": 667,
+      "quickBottom": 596,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 390,
+      "height": 600,
+      "quickBottom": 560,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 390,
+      "height": 664,
+      "quickBottom": 596,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 390,
+      "height": 844,
+      "quickBottom": 596,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 412,
+      "height": 732,
+      "quickBottom": 596,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 412,
+      "height": 915,
+      "quickBottom": 596,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 700,
+      "height": 700,
+      "quickBottom": 596,
+      "benefitsAfterMobileCalculator": true,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 768,
+      "height": 1024,
+      "quickBottom": 719.796875,
+      "benefitsAfterMobileCalculator": false,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 850,
+      "height": 1000,
+      "quickBottom": 705.796875,
+      "benefitsAfterMobileCalculator": false,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 851,
+      "height": 1000,
+      "quickBottom": 709.796875,
+      "benefitsAfterMobileCalculator": false,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 1024,
+      "height": 1000,
+      "quickBottom": 709.796875,
+      "benefitsAfterMobileCalculator": false,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "home",
+      "width": 1440,
+      "height": 1000,
+      "quickBottom": 709.796875,
+      "benefitsAfterMobileCalculator": false,
+      "brandingAndBenefits": true
+    },
+    {
+      "kind": "calculator",
+      "id": "mortgage",
+      "width": 320,
+      "defaultResultUnchanged": true,
+      "mainWidthUnchanged": true,
+      "benefitsBelowSearch": true
+    },
+    {
+      "kind": "calculator",
+      "id": "cd",
+      "width": 320,
+      "defaultResultUnchanged": true,
+      "mainWidthUnchanged": true,
+      "benefitsBelowSearch": true
+    },
+    {
+      "kind": "calculator",
+      "id": "mortgage",
+      "width": 390,
+      "defaultResultUnchanged": true,
+      "mainWidthUnchanged": true,
+      "benefitsBelowSearch": true
+    },
+    {
+      "kind": "calculator",
+      "id": "cd",
+      "width": 390,
+      "defaultResultUnchanged": true,
+      "mainWidthUnchanged": true,
+      "benefitsBelowSearch": true
+    },
+    {
+      "kind": "calculator",
+      "id": "mortgage",
+      "width": 768,
+      "defaultResultUnchanged": true,
+      "mainWidthUnchanged": true,
+      "benefitsBelowSearch": true
+    },
+    {
+      "kind": "calculator",
+      "id": "cd",
+      "width": 768,
+      "defaultResultUnchanged": true,
+      "mainWidthUnchanged": true,
+      "benefitsBelowSearch": true
+    },
+    {
+      "kind": "calculator",
+      "id": "mortgage",
+      "width": 1440,
+      "defaultResultUnchanged": true,
+      "mainWidthUnchanged": true,
+      "benefitsBelowSearch": true
+    },
+    {
+      "kind": "calculator",
+      "id": "cd",
+      "width": 1440,
+      "defaultResultUnchanged": true,
+      "mainWidthUnchanged": true,
+      "benefitsBelowSearch": true
+    },
+    {
+      "kind": "searchAndPrivacy",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "tested_at": "2026-10-26T06:09:56.931Z",
+  "scope": "Chromium against actual static build; exact existing AdSense script stubbed. No physical iPhone or live ad measurement.",
+  "build": "passed",
+  "typecheck": "passed",
+  "visual_inspector": {
+    "failures": 0,
+    "warnings": [
+      "unused-canvas",
+      "radius-mix",
+      "ragged-row",
+      "below-fold"
+    ],
+    "explicit_reference_allowances": [
+      "gradient",
+      "button-fx",
+      "palette-purple",
+      "heavy-shadow",
+      "icon-chips"
+    ]
+  },
+  "brand_colors": {
+    "Calculator": "#7562c7",
+    "Free": "#b45309",
+    ".io": "#64748b"
+  },
+  "contrast_on_white": {
+    "Free": 5.02,
+    "badge": 4.92
+  },
+  "placement": {
+    "desktop": "Free badge in existing header description slot; benefits above homepage popular tools and below calculator sidebar search.",
+    "mobile": "Badge and benefits below homepage quick calculator or inside the existing calculator sidebar; no added content before mobile inputs."
+  },
+  "assets": "Inline SVG only; no new font, icon library, remote image, network endpoint or animation."
+}

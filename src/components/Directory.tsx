@@ -2,6 +2,7 @@
 import {directoryGroups,directoryGroup,directorySort,directoryDescriptions} from "@/lib/directory";
 import QuickCalculator from "./QuickCalculator";
 import CalculatorSearch from "./CalculatorSearch";
+import SiteBenefits from "./SiteBenefits";
 import { calculators, routeFor } from "@/lib/catalog";
 
 const featured = [
@@ -24,6 +25,7 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
       <CalculatorSearch id="directory-search" tools={tools} minimal={!propertyOnly}/>
       {!propertyOnly&&<div className="directory-quick"><QuickCalculator/></div>}
       {!propertyOnly && <section className="featured-tools" aria-labelledby="featured-heading">
+        <SiteBenefits />
         <h2 id="featured-heading">Popular financial calculators</h2>
         <div className="featured-grid">{featured.map(([id, description]) => {
           const calculator = calculators.find(c => c.id === id)!;

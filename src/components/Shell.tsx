@@ -1,6 +1,7 @@
 import {siteName} from "@/lib/site";
 import MobileNavigation from "./MobileNavigation";
 import CalculatorSearch from "./CalculatorSearch";
+import SiteBenefits, { FreeBadge } from "./SiteBenefits";
 import { calculators, routeFor } from "@/lib/calculators";
 export function Header() {
   return (
@@ -19,7 +20,7 @@ export function Header() {
           </a>
           <MobileNavigation/>
           <span className="header-description">
-            Free financial planning tools
+            <FreeBadge />
           </span>
         </div>
       </header>
@@ -62,6 +63,7 @@ export function Sidebar() {
   return (
     <aside className="sidebar">
       <CalculatorSearch id="sidebar-search" compact/>
+      <SiteBenefits />
       <section className="side-group" aria-labelledby="side-financial-heading">
       <h2 className="side-heading" id="side-financial-heading">
         <a href="/financial-calculator.html">Financial Calculators</a>
