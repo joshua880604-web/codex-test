@@ -5,11 +5,11 @@ export type CalculatorCategory = {
 };
 export const calculatorCategories: CalculatorCategory[] = [
   { id: 'mortgage-housing', title: 'Mortgage & Housing', popular: ['mortgage','pmi','house-affordability','mortgage-payoff'], aliases: ['mortgage-and-real-estate'],
-    tools: ['mortgage','amortization','mortgage-payoff','house-affordability','rent','debt-to-income-ratio','real-estate','refinance','rental-property','apr','fha-loan','va-mortgage','home-equity-loan','heloc','down-payment','rent-vs-buy','pmi','biweekly-mortgage','discount-points'],
+    tools: ['mortgage','amortization','mortgage-payoff','house-affordability','rent','debt-to-income-ratio','real-estate','refinance','rental-property','apr','fha-loan','va-mortgage','home-equity-loan','heloc','down-payment','rent-vs-buy','pmi','biweekly-mortgage','discount-points','mortgage-recast'],
     sections: [
       { title: 'Buying a home & loan costs', tools: ['mortgage','house-affordability','down-payment','debt-to-income-ratio','pmi','discount-points','fha-loan','va-mortgage','apr'] },
       { title: 'Payoff & interest savings', tools: ['mortgage-payoff','biweekly-mortgage','amortization'] },
-      { title: 'Refinancing & home equity', tools: ['refinance','home-equity-loan','heloc'] },
+      { title: 'Refinancing & home equity', tools: ['refinance','mortgage-recast','home-equity-loan','heloc'] },
       { title: 'Renting & property investment', tools: ['rent','rent-vs-buy','rental-property'] },
     ] },
   { id: 'loans-debt', title: 'Loans & Debt', popular: ['loan','auto-loan','credit-card','debt-payoff'], aliases: ['auto','other'],

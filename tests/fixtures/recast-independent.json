@@ -1,0 +1,164 @@
+[
+  {
+    "name": "standard",
+    "inputs": {
+      "principal": "300000",
+      "rate": "6",
+      "years": "25",
+      "months": "0",
+      "lump": "50000",
+      "fee": "250"
+    },
+    "expected": {
+      "New monthly P&I after recast": 1610.7535037137714,
+      "Monthly P&I reduction": 322.1507007427543,
+      "Baseline remaining interest": 279871.26133695774,
+      "Recast remaining interest": 233226.05111413143,
+      "Lump-sum-only remaining interest": 153213.94783442956,
+      "Recast net interest savings after fee": 46395.21022282629,
+      "Baseline months to payoff": 300,
+      "Recast months to payoff": 300,
+      "Lump-sum-only months to payoff": 209,
+      "Recast total future cash outlay": 533476.0511141315
+    }
+  },
+  {
+    "name": "short",
+    "inputs": {
+      "principal": "10000",
+      "rate": "12",
+      "years": "1",
+      "months": "0",
+      "lump": "2000",
+      "fee": "100"
+    },
+    "expected": {
+      "New monthly P&I after recast": 710.7903094267336,
+      "Monthly P&I reduction": 177.6975773566834,
+      "Baseline remaining interest": 661.8546414010049,
+      "Recast remaining interest": 529.4837131208039,
+      "Lump-sum-only remaining interest": 426.3067593847333,
+      "Recast net interest savings after fee": 32.37092828020098,
+      "Baseline months to payoff": 12,
+      "Recast months to payoff": 12,
+      "Lump-sum-only months to payoff": 10,
+      "Recast total future cash outlay": 10629.483713120804
+    }
+  },
+  {
+    "name": "zero",
+    "inputs": {
+      "principal": "12000",
+      "rate": "0",
+      "years": "1",
+      "months": "0",
+      "lump": "3000",
+      "fee": "100"
+    },
+    "expected": {
+      "New monthly P&I after recast": 750.0,
+      "Monthly P&I reduction": 250.0,
+      "Baseline remaining interest": 0.0,
+      "Recast remaining interest": 0.0,
+      "Lump-sum-only remaining interest": 0.0,
+      "Recast net interest savings after fee": -100.0,
+      "Baseline months to payoff": 12,
+      "Recast months to payoff": 12,
+      "Lump-sum-only months to payoff": 9,
+      "Recast total future cash outlay": 12100.0
+    }
+  },
+  {
+    "name": "one-month",
+    "inputs": {
+      "principal": "1000",
+      "rate": "6",
+      "years": "0",
+      "months": "1",
+      "lump": "200",
+      "fee": "25"
+    },
+    "expected": {
+      "New monthly P&I after recast": 804.0,
+      "Monthly P&I reduction": 201.0,
+      "Baseline remaining interest": 5.0,
+      "Recast remaining interest": 4.0,
+      "Lump-sum-only remaining interest": 4.0,
+      "Recast net interest savings after fee": -24.0,
+      "Baseline months to payoff": 1,
+      "Recast months to payoff": 1,
+      "Lump-sum-only months to payoff": 1,
+      "Recast total future cash outlay": 1029.0
+    }
+  },
+  {
+    "name": "high-rate-long",
+    "inputs": {
+      "principal": "250000",
+      "rate": "30",
+      "years": "40",
+      "months": "0",
+      "lump": "10000",
+      "fee": "0"
+    },
+    "expected": {
+      "New monthly P&I after recast": 6000.042726661005,
+      "Monthly P&I reduction": 250.00178027754188,
+      "Baseline remaining interest": 2750021.3633305025,
+      "Recast remaining interest": 2640020.5087972824,
+      "Lump-sum-only remaining interest": 574716.6912360607,
+      "Recast net interest savings after fee": 110000.8545332201,
+      "Baseline months to payoff": 480,
+      "Recast months to payoff": 480,
+      "Lump-sum-only months to payoff": 131,
+      "Recast total future cash outlay": 2890020.5087972824
+    }
+  },
+  {
+    "name": "prior-extra",
+    "inputs": {
+      "principal": "100000",
+      "rate": "6",
+      "years": "30",
+      "months": "0",
+      "lump": "10000",
+      "fee": "500",
+      "current_payment": "2000"
+    },
+    "expected": {
+      "New monthly P&I after recast": 539.5954726374772,
+      "Monthly P&I reduction": 1460.404527362523,
+      "Baseline remaining interest": 15361.356634939906,
+      "Recast remaining interest": 104254.37014949178,
+      "Lump-sum-only remaining interest": 12212.052343669882,
+      "Recast net interest savings after fee": -89393.01351455187,
+      "Baseline months to payoff": 58,
+      "Recast months to payoff": 360,
+      "Lump-sum-only months to payoff": 52,
+      "Recast total future cash outlay": 204754.37014949176
+    }
+  },
+  {
+    "name": "no-lump",
+    "inputs": {
+      "principal": "150000",
+      "rate": "5",
+      "years": "15",
+      "months": "0",
+      "lump": "0",
+      "fee": "300"
+    },
+    "expected": {
+      "New monthly P&I after recast": 1186.1904401123168,
+      "Monthly P&I reduction": 0.0,
+      "Baseline remaining interest": 63514.27922021701,
+      "Recast remaining interest": 63514.27922021701,
+      "Lump-sum-only remaining interest": 63514.27922021701,
+      "Recast net interest savings after fee": -300.0,
+      "Baseline months to payoff": 180,
+      "Recast months to payoff": 180,
+      "Lump-sum-only months to payoff": 180,
+      "Recast total future cash outlay": 213814.279220217
+    }
+  }
+]

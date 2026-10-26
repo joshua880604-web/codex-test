@@ -57,5 +57,21 @@
         ]
       }
     ]
+  },
+  "mortgage-recast": {
+    "title": "Mortgage Recast Calculator - Payment & Savings",
+    "tasks": [
+      {
+        "keyword": "Mortgage recast calculator",
+        "mode": "compare",
+        "description": "Estimate your new mortgage payment after recasting. Compare a lump sum with and without recast, including fees, future interest and payoff time.",
+        "aliases": [
+          "Recast mortgage calculator",
+          "Recast calculator",
+          "Mortgage loan recast calculator",
+          "Recast mortgage payment calculator"
+        ]
+      }
+    ]
   }
 }

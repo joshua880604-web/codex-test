@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {gzipSync} from 'node:zlib';
 const {chromium}=await import('/opt/codex/cua_node/lib/node_modules/playwright/index.mjs');
-const markers={mortgageTools:'The matched-budget comparison pays the same annual amount',engine:'These inputs do not produce a finite result',other:'No prepayment penalties or new borrowing',property:'Yearly extra payment start must be a whole payment month',retirement:'Retirement age must be at least current age',cpi:'CUUR0000SA0',fx:'Frankfurter v2',joint:'current post-2021 factors',directory:'Popular financial calculators',png:'Image export is unavailable in this browser',scientific:'Expression is too long (maximum 2,000 characters).'};
+const markers={recast:'A recast needs a remaining loan balance',mortgageTools:'The matched-budget comparison pays the same annual amount',engine:'These inputs do not produce a finite result',other:'No prepayment penalties or new borrowing',property:'Yearly extra payment start must be a whole payment month',retirement:'Retirement age must be at least current age',cpi:'CUUR0000SA0',fx:'Frankfurter v2',joint:'current post-2021 factors',directory:'Popular financial calculators',png:'Image export is unavailable in this browser',scientific:'Expression is too long (maximum 2,000 characters).'};
 const assets=await fs.readdir('out/_next/static/chunks'),chunks={};
 for(const name of assets.filter(n=>n.endsWith('.js'))){const text=await fs.readFile('out/_next/static/chunks/'+name,'utf8');for(const [key,marker] of Object.entries(markers))if(text.includes(marker))(chunks[key]??=[]).push('/_next/static/chunks/'+name);}
 for(const key of Object.keys(markers))assert.ok(chunks[key]?.length,'Missing bundle marker '+key);
@@ -10,7 +10,7 @@ const base=process.env.QA_BASE_URL??'http://127.0.0.1:3000',browser=await chromi
 const checks=[],measurements=[],errors=[],external=[];
 const adLoader='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5145325695425659';
 // Search is shared with sidebars; the directory marker names its own component.
-const categories=['mortgageTools','engine','other','property','retirement','cpi','fx','joint','png','scientific'];
+const categories=['recast','mortgageTools','engine','other','property','retirement','cpi','fx','joint','png','scientific'];
 function loaded(resources,key){return chunks[key].some(name=>resources.some(r=>r.path===name));}
 async function fresh(options={}){
  const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce',acceptDownloads:true,...options});
@@ -21,13 +21,14 @@ async function fresh(options={}){
 }
 try{
  // Static content must remain usable/readable when all JS is disabled.
- for(const id of ['financial','mortgage','401k','scientific','student-loan','pmi','biweekly-mortgage','discount-points']){
+ for(const id of ['financial','mortgage','401k','scientific','student-loan','pmi','biweekly-mortgage','discount-points','mortgage-recast']){
   const {page}=await fresh({javaScriptEnabled:false});await page.goto(`${base}/${id}-calculator.html`);await page.locator('h1').waitFor();
   if(id==='financial'){assert.ok(await page.locator('.directory-grid a').count()>=81);await page.locator('#quick-expression').waitFor();}
   else {assert.ok(await page.locator('.calculator-form input,.calculator-form textarea').count()>0);await page.locator('.result h2').waitFor();await page.locator('.calculator-guide').waitFor();}
   checks.push({id,staticHtmlWithoutJavaScript:true});await page.close();
  }
- for(const [id,expected] of [['pmi','mortgageTools'],['biweekly-mortgage','mortgageTools'],['discount-points','mortgageTools'],['financial','scientific'],['mortgage','property'],['401k','retirement'],['vat','other'],['inflation','cpi'],['currency','fx'],['rmd','joint'],['cagr','engine']]){
+ for(const [id,expected] of [['mortgage-recast','recast'],['pmi','mortgageTools'],['biweekly-mortgage','mortgageTools'],['discount-points','mortgageTools'],['financial','scientific'],['mortgage','property'],['401k','retirement'],['vat','other'],['inflation','cpi'],['currency','fx'],['rmd','joint'],['cagr','engine']]){
+  console.log('Checking lazy runtime: '+id);
   const {page,resources,settle}=await fresh();await page.goto(`${base}/${id}-calculator.html`);await settle();
   const initial=resources.map(r=>({...r}));
   for(const key of categories)assert.equal(loaded(initial,key),false,id+' eagerly loaded '+key);

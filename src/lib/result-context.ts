@@ -5,6 +5,7 @@ import {formatMetric} from './sharing';
 export function resultContext(id:string,mode:string,values:Values,result:Result):string|null {
  const metric=(label:string)=>result.metrics.find(m=>m.label===label);
  const text=(label:string)=>{const m=metric(label);return m?formatMetric(m):null;};
+ if(id==='mortgage-recast')return `Recast P&I is ${text('New monthly P&I after recast')}, a monthly reduction of ${text('Monthly P&I reduction')}. Net future interest savings after the cash-paid fee are ${text('Recast net interest savings after fee')}; a negative value means higher modeled cost. Compare keeping the same payment after the lump sum below. Taxes, insurance and PMI are separate.`;
  if(id==='pmi'&&mode==='cancellation')return `Current PMI is modeled at ${text('Modeled current monthly PMI')}. ${text('Cancellation status')}. Today's appraisal does not replace original value for the statutory 80%/78% rules.`;
  if(id==='pmi')return `Initial conventional PMI is ${text('Initial monthly PMI')} on an original LTV of ${text('Original loan-to-value ratio')}. The 80% request requires approval; scheduled 78% and midpoint termination are separate benchmarks. These premiums are not homeowners insurance or FHA MIP.`;
  if(id==='biweekly-mortgage')return `The biweekly amount is ${text('Biweekly payment')}, with ${text('Extra annual outlay versus monthly')} more annual outlay than standard monthly payments. The matched-budget monthly comparison separates extra principal from earlier payment crediting.`;

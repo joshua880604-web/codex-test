@@ -199,7 +199,7 @@
             "unit": null
           }
         ],
-        "formula": "Payment = P \u00d7 i / (1 \u2212 (1+i)^\u2212N), with a period-by-period balance schedule."
+        "formula": "Payment = P × i / (1 − (1+i)^−N), with a period-by-period balance schedule."
       },
       {
         "id": "biweekly",
@@ -386,7 +386,7 @@
             "unit": null
           }
         ],
-        "formula": "Payment = P \u00d7 i / (1 \u2212 (1+i)^\u2212N), with a period-by-period balance schedule."
+        "formula": "Payment = P × i / (1 − (1+i)^−N), with a period-by-period balance schedule."
       }
     ],
     "display_category": {
@@ -485,7 +485,7 @@
             "unit": null
           }
         ],
-        "formula": "Interest = opening balance \u00d7 monthly rate; principal = payment \u2212 interest."
+        "formula": "Interest = opening balance × monthly rate; principal = payment − interest."
       }
     ],
     "display_category": {
@@ -514,7 +514,7 @@
     "implemented_modes": [
       {
         "id": "remaining-extra",
-        "title": "Current balance \u00b7 Extra payments",
+        "title": "Current balance · Extra payments",
         "fields": [
           {
             "key": "principal",
@@ -559,11 +559,11 @@
             "unit": "month"
           }
         ],
-        "formula": "Remaining balance = P(1+i)^k \u2212 A((1+i)^k\u22121)/i; simulate subsequent repayments."
+        "formula": "Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments."
       },
       {
         "id": "remaining-normal",
-        "title": "Current balance \u00b7 Normal repayment",
+        "title": "Current balance · Normal repayment",
         "fields": [
           {
             "key": "principal",
@@ -608,11 +608,11 @@
             "unit": "month"
           }
         ],
-        "formula": "Remaining balance = P(1+i)^k \u2212 A((1+i)^k\u22121)/i; simulate subsequent repayments."
+        "formula": "Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments."
       },
       {
         "id": "remaining-biweekly",
-        "title": "Current balance \u00b7 Biweekly",
+        "title": "Current balance · Biweekly",
         "fields": [
           {
             "key": "principal",
@@ -657,11 +657,11 @@
             "unit": "month"
           }
         ],
-        "formula": "Remaining balance = P(1+i)^k \u2212 A((1+i)^k\u22121)/i; simulate subsequent repayments."
+        "formula": "Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments."
       },
       {
         "id": "remaining-all",
-        "title": "Current balance \u00b7 Pay off now",
+        "title": "Current balance · Pay off now",
         "fields": [
           {
             "key": "principal",
@@ -706,11 +706,11 @@
             "unit": "month"
           }
         ],
-        "formula": "Remaining balance = P(1+i)^k \u2212 A((1+i)^k\u22121)/i; simulate subsequent repayments."
+        "formula": "Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments."
       },
       {
         "id": "known-extra",
-        "title": "Original loan \u00b7 Extra payments",
+        "title": "Original loan · Extra payments",
         "fields": [
           {
             "key": "principal",
@@ -767,11 +767,11 @@
             "unit": "month"
           }
         ],
-        "formula": "Remaining balance = P(1+i)^k \u2212 A((1+i)^k\u22121)/i; simulate subsequent repayments."
+        "formula": "Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments."
       },
       {
         "id": "known-normal",
-        "title": "Original loan \u00b7 Normal repayment",
+        "title": "Original loan · Normal repayment",
         "fields": [
           {
             "key": "principal",
@@ -828,11 +828,11 @@
             "unit": "month"
           }
         ],
-        "formula": "Remaining balance = P(1+i)^k \u2212 A((1+i)^k\u22121)/i; simulate subsequent repayments."
+        "formula": "Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments."
       },
       {
         "id": "known-biweekly",
-        "title": "Original loan \u00b7 Biweekly",
+        "title": "Original loan · Biweekly",
         "fields": [
           {
             "key": "principal",
@@ -889,11 +889,11 @@
             "unit": "month"
           }
         ],
-        "formula": "Remaining balance = P(1+i)^k \u2212 A((1+i)^k\u22121)/i; simulate subsequent repayments."
+        "formula": "Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments."
       },
       {
         "id": "known-all",
-        "title": "Original loan \u00b7 Pay off now",
+        "title": "Original loan · Pay off now",
         "fields": [
           {
             "key": "principal",
@@ -950,7 +950,7 @@
             "unit": "month"
           }
         ],
-        "formula": "Remaining balance = P(1+i)^k \u2212 A((1+i)^k\u22121)/i; simulate subsequent repayments."
+        "formula": "Remaining balance = P(1+i)^k − A((1+i)^k−1)/i; simulate subsequent repayments."
       }
     ],
     "display_category": {
@@ -1214,7 +1214,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Rent budget = min(gross monthly income \u00d7 housing ratio, gross income \u00d7 debt ratio \u2212 other debts)."
+        "formula": "Rent budget = min(gross monthly income × housing ratio, gross income × debt ratio − other debts)."
       }
     ],
     "display_category": {
@@ -1396,7 +1396,7 @@
             "unit": null
           }
         ],
-        "formula": "DTI = monthly debt payments / gross monthly income \u00d7 100%."
+        "formula": "DTI = monthly debt payments / gross monthly income × 100%."
       }
     ],
     "display_category": {
@@ -1769,7 +1769,7 @@
             "unit": "%"
           }
         ],
-        "formula": "NOI = effective income \u2212 operating expenses; equity cash flow = NOI \u2212 debt service."
+        "formula": "NOI = effective income − operating expenses; equity cash flow = NOI − debt service."
       }
     ],
     "display_category": {
@@ -1844,7 +1844,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Net proceeds = \u03a3 payment\u209c/(1+APR/f)^t."
+        "formula": "Net proceeds = Σ paymentₜ/(1+APR/f)^t."
       },
       {
         "id": "mortgage",
@@ -1917,7 +1917,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Net proceeds = \u03a3 payment\u209c/(1+APR/f)^t."
+        "formula": "Net proceeds = Σ paymentₜ/(1+APR/f)^t."
       }
     ],
     "display_category": {
@@ -2144,7 +2144,7 @@
             "unit": "years"
           }
         ],
-        "formula": "Payment = P \u00d7 i / (1 \u2212 (1+i)^\u2212N), with a period-by-period balance schedule."
+        "formula": "Payment = P × i / (1 − (1+i)^−N), with a period-by-period balance schedule."
       },
       {
         "id": "biweekly",
@@ -2349,7 +2349,7 @@
             "unit": "years"
           }
         ],
-        "formula": "Payment = P \u00d7 i / (1 \u2212 (1+i)^\u2212N), with a period-by-period balance schedule."
+        "formula": "Payment = P × i / (1 − (1+i)^−N), with a period-by-period balance schedule."
       }
     ],
     "display_category": {
@@ -2576,7 +2576,7 @@
             "unit": null
           }
         ],
-        "formula": "Payment = P \u00d7 i / (1 \u2212 (1+i)^\u2212N), with a period-by-period balance schedule."
+        "formula": "Payment = P × i / (1 − (1+i)^−N), with a period-by-period balance schedule."
       },
       {
         "id": "biweekly",
@@ -2781,7 +2781,7 @@
             "unit": null
           }
         ],
-        "formula": "Payment = P \u00d7 i / (1 \u2212 (1+i)^\u2212N), with a period-by-period balance schedule."
+        "formula": "Payment = P × i / (1 − (1+i)^−N), with a period-by-period balance schedule."
       }
     ],
     "display_category": {
@@ -2921,7 +2921,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Average draw payment = balance \u00d7 monthly interest + annual fee/12 during draw only; repayment amortizes the balance without the annual fee."
+        "formula": "Average draw payment = balance × monthly interest + annual fee/12 during draw only; repayment amortizes the balance without the annual fee."
       },
       {
         "id": "maximum-credit",
@@ -2946,7 +2946,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Maximum credit = home value \u00d7 maximum LTV \u2212 outstanding mortgage balance."
+        "formula": "Maximum credit = home value × maximum LTV − outstanding mortgage balance."
       }
     ],
     "display_category": {
@@ -3010,7 +3010,7 @@
             "unit": "years"
           }
         ],
-        "formula": "Cash = house price \u00d7 down payment fraction + closing costs."
+        "formula": "Cash = house price × down payment fraction + closing costs."
       },
       {
         "id": "cash",
@@ -3053,7 +3053,7 @@
             "unit": "years"
           }
         ],
-        "formula": "Cash = house price \u00d7 down payment fraction + closing costs."
+        "formula": "Cash = house price × down payment fraction + closing costs."
       },
       {
         "id": "percent",
@@ -3096,7 +3096,7 @@
             "unit": "years"
           }
         ],
-        "formula": "Cash = house price \u00d7 down payment fraction + closing costs."
+        "formula": "Cash = house price × down payment fraction + closing costs."
       }
     ],
     "display_category": {
@@ -3359,7 +3359,7 @@
             "unit": null
           }
         ],
-        "formula": "Financed amount = vehicle price \u2212 incentives \u2212 down payment \u2212 trade value + trade debt + financed taxes and fees."
+        "formula": "Financed amount = vehicle price − incentives − down payment − trade value + trade debt + financed taxes and fees."
       },
       {
         "id": "price",
@@ -3450,7 +3450,7 @@
             "unit": null
           }
         ],
-        "formula": "Financed amount = vehicle price \u2212 incentives \u2212 down payment \u2212 trade value + trade debt + financed taxes and fees."
+        "formula": "Financed amount = vehicle price − incentives − down payment − trade value + trade debt + financed taxes and fees."
       }
     ],
     "display_category": {
@@ -3647,7 +3647,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Base payment = (capitalized cost \u2212 residual)/months + (capitalized cost + residual) \u00d7 money factor; money factor = APR/2400."
+        "formula": "Base payment = (capitalized cost − residual)/months + (capitalized cost + residual) × money factor; money factor = APR/2400."
       },
       {
         "id": "price",
@@ -3708,7 +3708,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Base payment = (capitalized cost \u2212 residual)/months + (capitalized cost + residual) \u00d7 money factor; money factor = APR/2400."
+        "formula": "Base payment = (capitalized cost − residual)/months + (capitalized cost + residual) × money factor; money factor = APR/2400."
       }
     ],
     "display_category": {
@@ -4218,7 +4218,7 @@
             "unit": null
           }
         ],
-        "formula": "PV \u00d7 (1+i)^N + PMT \u00d7 annuity factor + FV = 0."
+        "formula": "PV × (1+i)^N + PMT × annuity factor + FV = 0."
       },
       {
         "id": "pmt",
@@ -4267,7 +4267,7 @@
             "unit": null
           }
         ],
-        "formula": "PV \u00d7 (1+i)^N + PMT \u00d7 annuity factor + FV = 0."
+        "formula": "PV × (1+i)^N + PMT × annuity factor + FV = 0."
       },
       {
         "id": "i-y",
@@ -4316,7 +4316,7 @@
             "unit": null
           }
         ],
-        "formula": "PV \u00d7 (1+i)^N + PMT \u00d7 annuity factor + FV = 0."
+        "formula": "PV × (1+i)^N + PMT × annuity factor + FV = 0."
       },
       {
         "id": "n",
@@ -4365,7 +4365,7 @@
             "unit": null
           }
         ],
-        "formula": "PV \u00d7 (1+i)^N + PMT \u00d7 annuity factor + FV = 0."
+        "formula": "PV × (1+i)^N + PMT × annuity factor + FV = 0."
       },
       {
         "id": "pv",
@@ -4414,7 +4414,7 @@
             "unit": null
           }
         ],
-        "formula": "PV \u00d7 (1+i)^N + PMT \u00d7 annuity factor + FV = 0."
+        "formula": "PV × (1+i)^N + PMT × annuity factor + FV = 0."
       }
     ],
     "display_category": {
@@ -4458,7 +4458,7 @@
             "unit": null
           }
         ],
-        "formula": "Effective yield = (1 + r/m)^m \u2212 1; equivalent nominal rate = n \u00d7 ((1 + yield)^(1/n) \u2212 1)."
+        "formula": "Effective yield = (1 + r/m)^m − 1; equivalent nominal rate = n × ((1 + yield)^(1/n) − 1)."
       },
       {
         "id": "growth",
@@ -4575,7 +4575,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Numerically solve P = A \u00d7 (1 \u2212 (1+i)^\u2212N) / i."
+        "formula": "Numerically solve P = A × (1 − (1+i)^−N) / i."
       }
     ],
     "display_category": {
@@ -4860,7 +4860,7 @@
             "unit": null
           }
         ],
-        "formula": "A = P \u00d7 (1 + r \u00d7 t)."
+        "formula": "A = P × (1 + r × t)."
       },
       {
         "id": "principal",
@@ -4897,7 +4897,7 @@
             "unit": null
           }
         ],
-        "formula": "A = P \u00d7 (1 + r \u00d7 t)."
+        "formula": "A = P × (1 + r × t)."
       },
       {
         "id": "years",
@@ -4934,7 +4934,7 @@
             "unit": null
           }
         ],
-        "formula": "A = P \u00d7 (1 + r \u00d7 t)."
+        "formula": "A = P × (1 + r × t)."
       },
       {
         "id": "rate",
@@ -4971,7 +4971,7 @@
             "unit": null
           }
         ],
-        "formula": "A = P \u00d7 (1 + r \u00d7 t)."
+        "formula": "A = P × (1 + r × t)."
       }
     ],
     "display_category": {
@@ -5033,7 +5033,7 @@
             "unit": "%"
           }
         ],
-        "formula": "FV = P \u00d7 (1 + r/m)^(m\u00d7t). Taxes are applied to total interest."
+        "formula": "FV = P × (1 + r/m)^(m×t). Taxes are applied to total interest."
       }
     ],
     "display_category": {
@@ -5100,7 +5100,7 @@
             "unit": null
           }
         ],
-        "formula": "Price = coupon \u00d7 annuity factor + face/(1+y/f)^(years\u00d7f)."
+        "formula": "Price = coupon × annuity factor + face/(1+y/f)^(years×f)."
       },
       {
         "id": "face",
@@ -5143,7 +5143,7 @@
             "unit": null
           }
         ],
-        "formula": "Price = coupon \u00d7 annuity factor + face/(1+y/f)^(years\u00d7f)."
+        "formula": "Price = coupon × annuity factor + face/(1+y/f)^(years×f)."
       },
       {
         "id": "yield",
@@ -5186,7 +5186,7 @@
             "unit": null
           }
         ],
-        "formula": "Price = coupon \u00d7 annuity factor + face/(1+y/f)^(years\u00d7f)."
+        "formula": "Price = coupon × annuity factor + face/(1+y/f)^(years×f)."
       },
       {
         "id": "years",
@@ -5229,7 +5229,7 @@
             "unit": null
           }
         ],
-        "formula": "Price = coupon \u00d7 annuity factor + face/(1+y/f)^(years\u00d7f)."
+        "formula": "Price = coupon × annuity factor + face/(1+y/f)^(years×f)."
       },
       {
         "id": "coupon",
@@ -5272,7 +5272,7 @@
             "unit": null
           }
         ],
-        "formula": "Price = coupon \u00d7 annuity factor + face/(1+y/f)^(years\u00d7f)."
+        "formula": "Price = coupon × annuity factor + face/(1+y/f)^(years×f)."
       },
       {
         "id": "dated",
@@ -5327,7 +5327,7 @@
             "unit": null
           }
         ],
-        "formula": "Dirty price discounts all remaining payments; clean price = dirty price \u2212 accrued coupon."
+        "formula": "Dirty price discounts all remaining payments; clean price = dirty price − accrued coupon."
       }
     ],
     "display_category": {
@@ -5446,7 +5446,7 @@
             "unit": ""
           }
         ],
-        "formula": "Arithmetic = sum(r)/N; geometric = product(1+r)^(1/N)\u22121."
+        "formula": "Arithmetic = sum(r)/N; geometric = product(1+r)^(1/N)−1."
       },
       {
         "id": "cashflows",
@@ -5459,7 +5459,7 @@
             "unit": null
           }
         ],
-        "formula": "\u03a3 CF\u1d62/(1+r)^((date\u1d62\u2212date\u2080)/365) = 0."
+        "formula": "Σ CFᵢ/(1+r)^((dateᵢ−date₀)/365) = 0."
       },
       {
         "id": "variable-periods",
@@ -5472,7 +5472,7 @@
             "unit": null
           }
         ],
-        "formula": "Growth = product(1 + period return); annualized return = growth^(1/total years) \u2212 1."
+        "formula": "Growth = product(1 + period return); annualized return = growth^(1/total years) − 1."
       }
     ],
     "display_category": {
@@ -5547,7 +5547,7 @@
             "unit": null
           }
         ],
-        "formula": "NPV = \u03a3 CF\u209c/(1+r)^t = 0."
+        "formula": "NPV = Σ CFₜ/(1+r)^t = 0."
       },
       {
         "id": "irregular",
@@ -5566,7 +5566,7 @@
             "unit": null
           }
         ],
-        "formula": "NPV = \u03a3 CF\u209c/(1+r)^t = 0."
+        "formula": "NPV = Σ CFₜ/(1+r)^t = 0."
       }
     ],
     "display_category": {
@@ -5611,7 +5611,7 @@
             "unit": "years"
           }
         ],
-        "formula": "ROI = (returned \u2212 invested)/invested; annualized = (returned/invested)^(1/years) \u2212 1."
+        "formula": "ROI = (returned − invested)/invested; annualized = (returned/invested)^(1/years) − 1."
       },
       {
         "id": "dates",
@@ -5642,7 +5642,7 @@
             "unit": null
           }
         ],
-        "formula": "ROI = (returned \u2212 invested)/invested; annualized = (returned/invested)^(1/years) \u2212 1."
+        "formula": "ROI = (returned − invested)/invested; annualized = (returned/invested)^(1/years) − 1."
       }
     ],
     "display_category": {
@@ -5775,7 +5775,7 @@
             "unit": "%"
           }
         ],
-        "formula": "PV = FV/(1+r)^N + PMT \u00d7 (1 \u2212 (1+r)^\u2212N)/r."
+        "formula": "PV = FV/(1+r)^N + PMT × (1 − (1+r)^−N)/r."
       },
       {
         "id": "annuity",
@@ -5812,7 +5812,7 @@
             "unit": null
           }
         ],
-        "formula": "PV = FV/(1+r)^N + PMT \u00d7 (1 \u2212 (1+r)^\u2212N)/r."
+        "formula": "PV = FV/(1+r)^N + PMT × (1 − (1+r)^−N)/r."
       }
     ],
     "display_category": {
@@ -5868,7 +5868,7 @@
             "unit": null
           }
         ],
-        "formula": "FV = PV \u00d7 (1+r)^N + PMT \u00d7 ((1+r)^N\u22121)/r."
+        "formula": "FV = PV × (1+r)^N + PMT × ((1+r)^N−1)/r."
       }
     ],
     "display_category": {
@@ -5975,7 +5975,7 @@
             "unit": null
           }
         ],
-        "formula": "Target = sum of first-year income gap \u00d7 (1 + inflation)^(year \u2212 1) / (1 + return)^year; required monthly saving funds target less future current savings."
+        "formula": "Target = sum of first-year income gap × (1 + inflation)^(year − 1) / (1 + return)^year; required monthly saving funds target less future current savings."
       },
       {
         "id": "saving",
@@ -6012,7 +6012,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Monthly saving = (target \u2212 future current savings)/annuity accumulation factor."
+        "formula": "Monthly saving = (target − future current savings)/annuity accumulation factor."
       },
       {
         "id": "withdrawal",
@@ -6067,7 +6067,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Retirement balance includes current savings, month-end deposits and additional year-end deposits. Initial monthly withdrawal = retirement balance \u00d7 (1 + monthly inflation) / real-rate monthly annuity present-value factor."
+        "formula": "Retirement balance includes current savings, month-end deposits and additional year-end deposits. Initial monthly withdrawal = retirement balance × (1 + monthly inflation) / real-rate monthly annuity present-value factor."
       },
       {
         "id": "longevity",
@@ -6092,7 +6092,7 @@
             "unit": "%"
           }
         ],
-        "formula": "N = \u2212ln(1 \u2212 PV\u00d7i/PMT)/ln(1+i); actual month-end withdrawals use ceil(N), with the last withdrawal capped at the available balance."
+        "formula": "N = −ln(1 − PV×i/PMT)/ln(1+i); actual month-end withdrawals use ceil(N), with the last withdrawal capped at the available balance."
       }
     ],
     "display_category": {
@@ -6186,7 +6186,7 @@
             "unit": "%"
           }
         ],
-        "formula": "For each year: employee = min(annual salary \u00d7 contribution%, age-based annual limit); employer = min(employee, annual salary \u00d7 match limit%) \u00d7 match%; ending balance = opening balance \u00d7 (1 + annual return) + employee + employer. Starting balance plus employee contributions = starting 401(k) balance + sum of annual employee amounts."
+        "formula": "For each year: employee = min(annual salary × contribution%, age-based annual limit); employer = min(employee, annual salary × match limit%) × match%; ending balance = opening balance × (1 + annual return) + employee + employer. Starting balance plus employee contributions = starting 401(k) balance + sum of annual employee amounts."
       },
       {
         "id": "early",
@@ -6241,7 +6241,7 @@
             "unit": null
           }
         ],
-        "formula": "Net withdrawal = gross \u2212 marginal income tax \u2212 applicable 10% additional tax."
+        "formula": "Net withdrawal = gross − marginal income tax − applicable 10% additional tax."
       },
       {
         "id": "match",
@@ -6284,7 +6284,7 @@
             "unit": "% of salary"
           }
         ],
-        "formula": "Employer match = first band \u00d7 first match rate + additional band \u00d7 second match rate."
+        "formula": "Employer match = first band × first match rate + additional band × second match rate."
       }
     ],
     "display_category": {
@@ -6850,7 +6850,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Traditional after-tax balance = pre-tax account \u00d7 (1 \u2212 retirement tax); Roth uses after-tax contributions."
+        "formula": "Traditional after-tax balance = pre-tax account × (1 − retirement tax); Roth uses after-tax contributions."
       }
     ],
     "display_category": {
@@ -7276,7 +7276,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Progressive ordinary tax + preferential capital-gains tax + applicable additional taxes \u2212 credits."
+        "formula": "Progressive ordinary tax + preferential capital-gains tax + applicable additional taxes − credits."
       }
     ],
     "display_category": {
@@ -7338,7 +7338,7 @@
             "unit": "days"
           }
         ],
-        "formula": "Annual pay = hourly rate \u00d7 weekly hours \u00d7 52; adjusted annual pay subtracts unpaid days."
+        "formula": "Annual pay = hourly rate × weekly hours × 52; adjusted annual pay subtracts unpaid days."
       }
     ],
     "display_category": {
@@ -7383,414 +7383,414 @@
           },
           {
             "key": "wages",
-            "label": "You \u00b7 Your annual wages",
+            "label": "You · Your annual wages",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "business",
-            "label": "You \u00b7 Your net business income",
+            "label": "You · Your net business income",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "interest",
-            "label": "You \u00b7 Taxable interest",
+            "label": "You · Taxable interest",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "exempt_interest",
-            "label": "You \u00b7 Tax-exempt interest",
+            "label": "You · Tax-exempt interest",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "dividends",
-            "label": "You \u00b7 Nonqualified dividends",
+            "label": "You · Nonqualified dividends",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "qualified",
-            "label": "You \u00b7 Qualified dividends",
+            "label": "You · Qualified dividends",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "short",
-            "label": "You \u00b7 Net short-term capital gains",
+            "label": "You · Net short-term capital gains",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "long",
-            "label": "You \u00b7 Net long-term capital gains",
+            "label": "You · Net long-term capital gains",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "social",
-            "label": "You \u00b7 Social Security benefits",
+            "label": "You · Social Security benefits",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "other",
-            "label": "You \u00b7 Other taxable income",
+            "label": "You · Other taxable income",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "adjustments",
-            "label": "You \u00b7 Eligible IRA and other above-line deductions",
+            "label": "You · Eligible IRA and other above-line deductions",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "student",
-            "label": "You \u00b7 Student loan interest paid",
+            "label": "You · Student loan interest paid",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "itemized",
-            "label": "You \u00b7 Eligible itemized deductions excluding SALT",
+            "label": "You · Eligible itemized deductions excluding SALT",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "salt",
-            "label": "You \u00b7 State/local income and property taxes paid",
+            "label": "You · State/local income and property taxes paid",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "age65",
-            "label": "You \u00b7 Eligible people age 65 or older",
+            "label": "You · Eligible people age 65 or older",
             "type": "number",
             "unit": "people"
           },
           {
             "key": "tips",
-            "label": "You \u00b7 Qualified reported tips",
+            "label": "You · Qualified reported tips",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "overtime",
-            "label": "You \u00b7 Qualified overtime premium",
+            "label": "You · Qualified overtime premium",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "car",
-            "label": "You \u00b7 Qualified new-vehicle loan interest",
+            "label": "You · Qualified new-vehicle loan interest",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "children",
-            "label": "You \u00b7 Qualifying children under 17",
+            "label": "You · Qualifying children under 17",
             "type": "number",
             "unit": "people"
           },
           {
             "key": "dependents",
-            "label": "You \u00b7 Other qualifying dependents",
+            "label": "You · Other qualifying dependents",
             "type": "number",
             "unit": "people"
           },
           {
             "key": "education0",
-            "label": "You \u00b7 Student 1 eligible education expenses",
+            "label": "You · Student 1 eligible education expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "education_type0",
-            "label": "You \u00b7 Student 1 education credit",
+            "label": "You · Student 1 education credit",
             "type": "select",
             "unit": null
           },
           {
             "key": "education1",
-            "label": "You \u00b7 Student 2 eligible education expenses",
+            "label": "You · Student 2 eligible education expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "education_type1",
-            "label": "You \u00b7 Student 2 education credit",
+            "label": "You · Student 2 education credit",
             "type": "select",
             "unit": null
           },
           {
             "key": "education2",
-            "label": "You \u00b7 Student 3 eligible education expenses",
+            "label": "You · Student 3 eligible education expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "education_type2",
-            "label": "You \u00b7 Student 3 education credit",
+            "label": "You · Student 3 education credit",
             "type": "select",
             "unit": null
           },
           {
             "key": "education3",
-            "label": "You \u00b7 Student 4 eligible education expenses",
+            "label": "You · Student 4 eligible education expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "education_type3",
-            "label": "You \u00b7 Student 4 education credit",
+            "label": "You · Student 4 education credit",
             "type": "select",
             "unit": null
           },
           {
             "key": "aotc_refundable",
-            "label": "You \u00b7 Eligible for refundable American Opportunity credit?",
+            "label": "You · Eligible for refundable American Opportunity credit?",
             "type": "select",
             "unit": null
           },
           {
             "key": "care",
-            "label": "You \u00b7 Qualifying dependent care expenses",
+            "label": "You · Qualifying dependent care expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "care_people",
-            "label": "You \u00b7 Qualifying people for dependent care",
+            "label": "You · Qualifying people for dependent care",
             "type": "number",
             "unit": "people"
           },
           {
             "key": "credits",
-            "label": "You \u00b7 Other eligible nonrefundable credits",
+            "label": "You · Other eligible nonrefundable credits",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "amt",
-            "label": "You \u00b7 Other AMT adjustments",
+            "label": "You · Other AMT adjustments",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "qbi",
-            "label": "You \u00b7 Apply simplified eligible QBI deduction?",
+            "label": "You · Apply simplified eligible QBI deduction?",
             "type": "select",
             "unit": null
           },
           {
             "key": "p2_wages",
-            "label": "Partner \u00b7 Your annual wages",
+            "label": "Partner · Your annual wages",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_business",
-            "label": "Partner \u00b7 Your net business income",
+            "label": "Partner · Your net business income",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_interest",
-            "label": "Partner \u00b7 Taxable interest",
+            "label": "Partner · Taxable interest",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_exempt_interest",
-            "label": "Partner \u00b7 Tax-exempt interest",
+            "label": "Partner · Tax-exempt interest",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_dividends",
-            "label": "Partner \u00b7 Nonqualified dividends",
+            "label": "Partner · Nonqualified dividends",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_qualified",
-            "label": "Partner \u00b7 Qualified dividends",
+            "label": "Partner · Qualified dividends",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_short",
-            "label": "Partner \u00b7 Net short-term capital gains",
+            "label": "Partner · Net short-term capital gains",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_long",
-            "label": "Partner \u00b7 Net long-term capital gains",
+            "label": "Partner · Net long-term capital gains",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_social",
-            "label": "Partner \u00b7 Social Security benefits",
+            "label": "Partner · Social Security benefits",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_other",
-            "label": "Partner \u00b7 Other taxable income",
+            "label": "Partner · Other taxable income",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_adjustments",
-            "label": "Partner \u00b7 Eligible IRA and other above-line deductions",
+            "label": "Partner · Eligible IRA and other above-line deductions",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_student",
-            "label": "Partner \u00b7 Student loan interest paid",
+            "label": "Partner · Student loan interest paid",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_itemized",
-            "label": "Partner \u00b7 Eligible itemized deductions excluding SALT",
+            "label": "Partner · Eligible itemized deductions excluding SALT",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_salt",
-            "label": "Partner \u00b7 State/local income and property taxes paid",
+            "label": "Partner · State/local income and property taxes paid",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_age65",
-            "label": "Partner \u00b7 Eligible people age 65 or older",
+            "label": "Partner · Eligible people age 65 or older",
             "type": "number",
             "unit": "people"
           },
           {
             "key": "p2_tips",
-            "label": "Partner \u00b7 Qualified reported tips",
+            "label": "Partner · Qualified reported tips",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_overtime",
-            "label": "Partner \u00b7 Qualified overtime premium",
+            "label": "Partner · Qualified overtime premium",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_car",
-            "label": "Partner \u00b7 Qualified new-vehicle loan interest",
+            "label": "Partner · Qualified new-vehicle loan interest",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_children",
-            "label": "Partner \u00b7 Qualifying children under 17",
+            "label": "Partner · Qualifying children under 17",
             "type": "number",
             "unit": "people"
           },
           {
             "key": "p2_dependents",
-            "label": "Partner \u00b7 Other qualifying dependents",
+            "label": "Partner · Other qualifying dependents",
             "type": "number",
             "unit": "people"
           },
           {
             "key": "p2_education0",
-            "label": "Partner \u00b7 Student 1 eligible education expenses",
+            "label": "Partner · Student 1 eligible education expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_education_type0",
-            "label": "Partner \u00b7 Student 1 education credit",
+            "label": "Partner · Student 1 education credit",
             "type": "select",
             "unit": null
           },
           {
             "key": "p2_education1",
-            "label": "Partner \u00b7 Student 2 eligible education expenses",
+            "label": "Partner · Student 2 eligible education expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_education_type1",
-            "label": "Partner \u00b7 Student 2 education credit",
+            "label": "Partner · Student 2 education credit",
             "type": "select",
             "unit": null
           },
           {
             "key": "p2_education2",
-            "label": "Partner \u00b7 Student 3 eligible education expenses",
+            "label": "Partner · Student 3 eligible education expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_education_type2",
-            "label": "Partner \u00b7 Student 3 education credit",
+            "label": "Partner · Student 3 education credit",
             "type": "select",
             "unit": null
           },
           {
             "key": "p2_education3",
-            "label": "Partner \u00b7 Student 4 eligible education expenses",
+            "label": "Partner · Student 4 eligible education expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_education_type3",
-            "label": "Partner \u00b7 Student 4 education credit",
+            "label": "Partner · Student 4 education credit",
             "type": "select",
             "unit": null
           },
           {
             "key": "p2_aotc_refundable",
-            "label": "Partner \u00b7 Eligible for refundable American Opportunity credit?",
+            "label": "Partner · Eligible for refundable American Opportunity credit?",
             "type": "select",
             "unit": null
           },
           {
             "key": "p2_care",
-            "label": "Partner \u00b7 Qualifying dependent care expenses",
+            "label": "Partner · Qualifying dependent care expenses",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_care_people",
-            "label": "Partner \u00b7 Qualifying people for dependent care",
+            "label": "Partner · Qualifying people for dependent care",
             "type": "number",
             "unit": "people"
           },
           {
             "key": "p2_credits",
-            "label": "Partner \u00b7 Other eligible nonrefundable credits",
+            "label": "Partner · Other eligible nonrefundable credits",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_amt",
-            "label": "Partner \u00b7 Other AMT adjustments",
+            "label": "Partner · Other AMT adjustments",
             "type": "number",
             "unit": "$"
           },
           {
             "key": "p2_qbi",
-            "label": "Partner \u00b7 Apply simplified eligible QBI deduction?",
+            "label": "Partner · Apply simplified eligible QBI deduction?",
             "type": "select",
             "unit": null
           }
         ],
-        "formula": "Marriage penalty = joint federal liability \u2212 sum of unmarried federal liabilities."
+        "formula": "Marriage penalty = joint federal liability − sum of unmarried federal liabilities."
       }
     ],
     "display_category": {
@@ -8058,7 +8058,7 @@
             "unit": null
           }
         ],
-        "formula": "This-job net = this-job gross \u2212 withheld deductions \u2212 allocated annual federal tax \u2212 this-job payroll taxes \u2212 entered state/city tax. Other job wages affect brackets but are not included in this paycheck."
+        "formula": "This-job net = this-job gross − withheld deductions − allocated annual federal tax − this-job payroll taxes − entered state/city tax. Other job wages affect brackets but are not included in this paycheck."
       },
       {
         "id": "paycheck",
@@ -8323,7 +8323,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Net pay = gross wages \u2212 pre-tax deductions \u2212 estimated taxes \u2212 after-tax deductions."
+        "formula": "Net pay = gross wages − pre-tax deductions − estimated taxes − after-tax deductions."
       }
     ],
     "display_category": {
@@ -8387,7 +8387,7 @@
             "unit": null
           }
         ],
-        "formula": "Payment = P \u00d7 i/(1\u2212(1+i)^\u2212N). Compound frequency and payment frequency are independent."
+        "formula": "Payment = P × i/(1−(1+i)^−N). Compound frequency and payment frequency are independent."
       },
       {
         "id": "deferred",
@@ -8424,7 +8424,7 @@
             "unit": null
           }
         ],
-        "formula": "Maturity value = principal \u00d7 (1+r/m)^(m\u00d7years)."
+        "formula": "Maturity value = principal × (1+r/m)^(m×years)."
       },
       {
         "id": "bond",
@@ -8461,7 +8461,7 @@
             "unit": null
           }
         ],
-        "formula": "Present value = face value/(1+r/m)^(m\u00d7years)."
+        "formula": "Present value = face value/(1+r/m)^(m×years)."
       }
     ],
     "display_category": {
@@ -8588,7 +8588,7 @@
             "unit": ""
           }
         ],
-        "formula": "Converted = source amount \u00d7 exchange rate."
+        "formula": "Converted = source amount × exchange rate."
       },
       {
         "id": "snapshot",
@@ -8677,7 +8677,7 @@
             "unit": null
           }
         ],
-        "formula": "Adjusted amount = original amount \u00d7 end CPI/start CPI."
+        "formula": "Adjusted amount = original amount × end CPI/start CPI."
       },
       {
         "id": "forward",
@@ -8702,7 +8702,7 @@
             "unit": "years"
           }
         ],
-        "formula": "Adjusted amount = amount \u00d7 (1 + inflation)^years; divide to work backwards."
+        "formula": "Adjusted amount = amount × (1 + inflation)^years; divide to work backwards."
       },
       {
         "id": "backward",
@@ -8727,7 +8727,7 @@
             "unit": "years"
           }
         ],
-        "formula": "Adjusted amount = amount \u00d7 (1 + inflation)^years; divide to work backwards."
+        "formula": "Adjusted amount = amount × (1 + inflation)^years; divide to work backwards."
       },
       {
         "id": "custom",
@@ -8752,7 +8752,7 @@
             "unit": "index points"
           }
         ],
-        "formula": "Adjusted amount = original amount \u00d7 end CPI/start CPI."
+        "formula": "Adjusted amount = original amount × end CPI/start CPI."
       }
     ],
     "display_category": {
@@ -8790,7 +8790,7 @@
             "unit": "%"
           }
         ],
-        "formula": "After-tax price = before-tax price \u00d7 (1 + tax rate)."
+        "formula": "After-tax price = before-tax price × (1 + tax rate)."
       },
       {
         "id": "before",
@@ -8809,7 +8809,7 @@
             "unit": "%"
           }
         ],
-        "formula": "After-tax price = before-tax price \u00d7 (1 + tax rate)."
+        "formula": "After-tax price = before-tax price × (1 + tax rate)."
       },
       {
         "id": "rate",
@@ -8828,7 +8828,7 @@
             "unit": "$"
           }
         ],
-        "formula": "After-tax price = before-tax price \u00d7 (1 + tax rate)."
+        "formula": "After-tax price = before-tax price × (1 + tax rate)."
       }
     ],
     "display_category": {
@@ -8873,7 +8873,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Monthly interest = opening balance \u00d7 APR/12; apply the selected payment rule."
+        "formula": "Monthly interest = opening balance × APR/12; apply the selected payment rule."
       },
       {
         "id": "term",
@@ -8904,7 +8904,7 @@
             "unit": "months"
           }
         ],
-        "formula": "Monthly interest = opening balance \u00d7 APR/12; apply the selected payment rule."
+        "formula": "Monthly interest = opening balance × APR/12; apply the selected payment rule."
       },
       {
         "id": "minimum",
@@ -8941,7 +8941,7 @@
             "unit": null
           }
         ],
-        "formula": "Monthly interest = opening balance \u00d7 APR/12; apply the selected payment rule."
+        "formula": "Monthly interest = opening balance × APR/12; apply the selected payment rule."
       }
     ],
     "display_category": {
@@ -9042,7 +9042,7 @@
             "unit": ""
           }
         ],
-        "formula": "Accrue each loan\u2019s interest separately and apply minimums followed by avalanche extra payments."
+        "formula": "Accrue each loan’s interest separately and apply minimums followed by avalanche extra payments."
       },
       {
         "id": "snowball",
@@ -9524,7 +9524,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Interest avoided = remaining scheduled payments \u2212 current principal."
+        "formula": "Interest avoided = remaining scheduled payments − current principal."
       },
       {
         "id": "projection",
@@ -9697,7 +9697,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Gross price = net price + tax amount; tax amount = net price \u00d7 VAT rate / 100."
+        "formula": "Gross price = net price + tax amount; tax amount = net price × VAT rate / 100."
       }
     ],
     "display_category": {
@@ -9780,7 +9780,7 @@
             "unit": null
           }
         ],
-        "formula": "Annual depreciation = (cost \u2212 salvage)/life."
+        "formula": "Annual depreciation = (cost − salvage)/life."
       },
       {
         "id": "declining",
@@ -9847,11 +9847,11 @@
             "unit": null
           }
         ],
-        "formula": "Depreciation = opening book value \u00d7 factor/life, capped at salvage."
+        "formula": "Depreciation = opening book value × factor/life, capped at salvage."
       },
       {
         "id": "syd",
-        "title": "Sum of Years\u2019 Digits",
+        "title": "Sum of Years’ Digits",
         "fields": [
           {
             "key": "cost",
@@ -9908,7 +9908,7 @@
             "unit": null
           }
         ],
-        "formula": "Depreciation = (cost \u2212 salvage) \u00d7 remaining life / sum of years."
+        "formula": "Depreciation = (cost − salvage) × remaining life / sum of years."
       }
     ],
     "display_category": {
@@ -9933,7 +9933,7 @@
     "implemented_modes": [
       {
         "id": "revenue",
-        "title": "Profit \u00b7 Solve revenue",
+        "title": "Profit · Solve revenue",
         "fields": [
           {
             "key": "cost",
@@ -9948,11 +9948,11 @@
             "unit": "%"
           }
         ],
-        "formula": "Margin = (revenue \u2212 cost)/revenue; markup = (revenue \u2212 cost)/cost."
+        "formula": "Margin = (revenue − cost)/revenue; markup = (revenue − cost)/cost."
       },
       {
         "id": "cost",
-        "title": "Profit \u00b7 Solve cost",
+        "title": "Profit · Solve cost",
         "fields": [
           {
             "key": "revenue",
@@ -9967,11 +9967,11 @@
             "unit": "%"
           }
         ],
-        "formula": "Margin = (revenue \u2212 cost)/revenue; markup = (revenue \u2212 cost)/cost."
+        "formula": "Margin = (revenue − cost)/revenue; markup = (revenue − cost)/cost."
       },
       {
         "id": "margin",
-        "title": "Profit \u00b7 Solve margin",
+        "title": "Profit · Solve margin",
         "fields": [
           {
             "key": "cost",
@@ -9986,11 +9986,11 @@
             "unit": "$"
           }
         ],
-        "formula": "Margin = (revenue \u2212 cost)/revenue; markup = (revenue \u2212 cost)/cost."
+        "formula": "Margin = (revenue − cost)/revenue; markup = (revenue − cost)/cost."
       },
       {
         "id": "profit",
-        "title": "Profit \u00b7 Solve profit",
+        "title": "Profit · Solve profit",
         "fields": [
           {
             "key": "cost",
@@ -10005,7 +10005,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Margin = (revenue \u2212 cost)/revenue; markup = (revenue \u2212 cost)/cost."
+        "formula": "Margin = (revenue − cost)/revenue; markup = (revenue − cost)/cost."
       },
       {
         "id": "stock",
@@ -10030,7 +10030,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Required equity = share price \u00d7 shares \u00d7 margin requirement."
+        "formula": "Required equity = share price × shares × margin requirement."
       },
       {
         "id": "currency",
@@ -10055,7 +10055,7 @@
             "unit": "to 1"
           }
         ],
-        "formula": "Required margin = units \u00d7 FX rate / leverage."
+        "formula": "Required margin = units × FX rate / leverage."
       },
       {
         "id": "markup",
@@ -10074,7 +10074,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Selling price = cost \u00d7 (1 + markup/100); margin = markup/(100 + markup) \u00d7 100%."
+        "formula": "Selling price = cost × (1 + markup/100); margin = markup/(100 + markup) × 100%."
       }
     ],
     "display_category": {
@@ -10113,7 +10113,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Sale price = original price \u00d7 (1 \u2212 discount rate)."
+        "formula": "Sale price = original price × (1 − discount rate)."
       },
       {
         "id": "amount",
@@ -10132,7 +10132,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Sale price = original price \u00d7 (1 \u2212 discount rate)."
+        "formula": "Sale price = original price × (1 − discount rate)."
       },
       {
         "id": "original",
@@ -10151,7 +10151,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Sale price = original price \u00d7 (1 \u2212 discount rate)."
+        "formula": "Sale price = original price × (1 − discount rate)."
       },
       {
         "id": "rate",
@@ -10170,7 +10170,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Sale price = original price \u00d7 (1 \u2212 discount rate)."
+        "formula": "Sale price = original price × (1 − discount rate)."
       }
     ],
     "display_category": {
@@ -10418,7 +10418,7 @@
             "unit": "years"
           }
         ],
-        "formula": "Financed balance = price \u2212 down \u2212 trade + financed tax and fees."
+        "formula": "Financed balance = price − down − trade + financed tax and fees."
       },
       {
         "id": "price",
@@ -10473,7 +10473,7 @@
             "unit": "years"
           }
         ],
-        "formula": "Financed balance = price \u2212 down \u2212 trade + financed tax and fees."
+        "formula": "Financed balance = price − down − trade + financed tax and fees."
       }
     ],
     "display_category": {
@@ -10530,7 +10530,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Asset value = payment \u00d7 annuity present-value factor + residual/(1+i)^N."
+        "formula": "Asset value = payment × annuity present-value factor + residual/(1+i)^N."
       },
       {
         "id": "payment",
@@ -10567,7 +10567,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Asset value = payment \u00d7 annuity present-value factor + residual/(1+i)^N."
+        "formula": "Asset value = payment × annuity present-value factor + residual/(1+i)^N."
       }
     ],
     "display_category": {
@@ -10600,7 +10600,7 @@
           },
           {
             "key": "Income_0",
-            "label": "Income \u00b7 Salary",
+            "label": "Income · Salary",
             "type": "number",
             "unit": "$"
           },
@@ -10612,7 +10612,7 @@
           },
           {
             "key": "Income_1",
-            "label": "Income \u00b7 Pension",
+            "label": "Income · Pension",
             "type": "number",
             "unit": "$"
           },
@@ -10624,7 +10624,7 @@
           },
           {
             "key": "Income_2",
-            "label": "Income \u00b7 Investment income",
+            "label": "Income · Investment income",
             "type": "number",
             "unit": "$"
           },
@@ -10636,7 +10636,7 @@
           },
           {
             "key": "Income_3",
-            "label": "Income \u00b7 Other income",
+            "label": "Income · Other income",
             "type": "number",
             "unit": "$"
           },
@@ -10648,7 +10648,7 @@
           },
           {
             "key": "Housing_0",
-            "label": "Housing \u00b7 Mortgage or rent",
+            "label": "Housing · Mortgage or rent",
             "type": "number",
             "unit": "$"
           },
@@ -10660,7 +10660,7 @@
           },
           {
             "key": "Housing_1",
-            "label": "Housing \u00b7 Property tax",
+            "label": "Housing · Property tax",
             "type": "number",
             "unit": "$"
           },
@@ -10672,7 +10672,7 @@
           },
           {
             "key": "Housing_2",
-            "label": "Housing \u00b7 Home insurance",
+            "label": "Housing · Home insurance",
             "type": "number",
             "unit": "$"
           },
@@ -10684,7 +10684,7 @@
           },
           {
             "key": "Housing_3",
-            "label": "Housing \u00b7 Utilities",
+            "label": "Housing · Utilities",
             "type": "number",
             "unit": "$"
           },
@@ -10696,7 +10696,7 @@
           },
           {
             "key": "Housing_4",
-            "label": "Housing \u00b7 Maintenance",
+            "label": "Housing · Maintenance",
             "type": "number",
             "unit": "$"
           },
@@ -10708,7 +10708,7 @@
           },
           {
             "key": "Housing_5",
-            "label": "Housing \u00b7 HOA",
+            "label": "Housing · HOA",
             "type": "number",
             "unit": "$"
           },
@@ -10720,7 +10720,7 @@
           },
           {
             "key": "Housing_6",
-            "label": "Housing \u00b7 Other housing",
+            "label": "Housing · Other housing",
             "type": "number",
             "unit": "$"
           },
@@ -10732,7 +10732,7 @@
           },
           {
             "key": "Transportation_0",
-            "label": "Transportation \u00b7 Vehicle payments",
+            "label": "Transportation · Vehicle payments",
             "type": "number",
             "unit": "$"
           },
@@ -10744,7 +10744,7 @@
           },
           {
             "key": "Transportation_1",
-            "label": "Transportation \u00b7 Auto insurance",
+            "label": "Transportation · Auto insurance",
             "type": "number",
             "unit": "$"
           },
@@ -10756,7 +10756,7 @@
           },
           {
             "key": "Transportation_2",
-            "label": "Transportation \u00b7 Fuel",
+            "label": "Transportation · Fuel",
             "type": "number",
             "unit": "$"
           },
@@ -10768,7 +10768,7 @@
           },
           {
             "key": "Transportation_3",
-            "label": "Transportation \u00b7 Public transit",
+            "label": "Transportation · Public transit",
             "type": "number",
             "unit": "$"
           },
@@ -10780,7 +10780,7 @@
           },
           {
             "key": "Transportation_4",
-            "label": "Transportation \u00b7 Vehicle maintenance",
+            "label": "Transportation · Vehicle maintenance",
             "type": "number",
             "unit": "$"
           },
@@ -10792,7 +10792,7 @@
           },
           {
             "key": "Transportation_5",
-            "label": "Transportation \u00b7 Other transportation",
+            "label": "Transportation · Other transportation",
             "type": "number",
             "unit": "$"
           },
@@ -10804,7 +10804,7 @@
           },
           {
             "key": "Debt_0",
-            "label": "Debt \u00b7 Credit cards",
+            "label": "Debt · Credit cards",
             "type": "number",
             "unit": "$"
           },
@@ -10816,7 +10816,7 @@
           },
           {
             "key": "Debt_1",
-            "label": "Debt \u00b7 Student loans",
+            "label": "Debt · Student loans",
             "type": "number",
             "unit": "$"
           },
@@ -10828,7 +10828,7 @@
           },
           {
             "key": "Debt_2",
-            "label": "Debt \u00b7 Other debt",
+            "label": "Debt · Other debt",
             "type": "number",
             "unit": "$"
           },
@@ -10840,7 +10840,7 @@
           },
           {
             "key": "Living_0",
-            "label": "Living \u00b7 Groceries",
+            "label": "Living · Groceries",
             "type": "number",
             "unit": "$"
           },
@@ -10852,7 +10852,7 @@
           },
           {
             "key": "Living_1",
-            "label": "Living \u00b7 Dining",
+            "label": "Living · Dining",
             "type": "number",
             "unit": "$"
           },
@@ -10864,7 +10864,7 @@
           },
           {
             "key": "Living_2",
-            "label": "Living \u00b7 Clothing",
+            "label": "Living · Clothing",
             "type": "number",
             "unit": "$"
           },
@@ -10876,7 +10876,7 @@
           },
           {
             "key": "Living_3",
-            "label": "Living \u00b7 Entertainment",
+            "label": "Living · Entertainment",
             "type": "number",
             "unit": "$"
           },
@@ -10888,7 +10888,7 @@
           },
           {
             "key": "Living_4",
-            "label": "Living \u00b7 Other living",
+            "label": "Living · Other living",
             "type": "number",
             "unit": "$"
           },
@@ -10900,7 +10900,7 @@
           },
           {
             "key": "Health_0",
-            "label": "Health \u00b7 Health insurance",
+            "label": "Health · Health insurance",
             "type": "number",
             "unit": "$"
           },
@@ -10912,7 +10912,7 @@
           },
           {
             "key": "Health_1",
-            "label": "Health \u00b7 Medical costs",
+            "label": "Health · Medical costs",
             "type": "number",
             "unit": "$"
           },
@@ -10924,7 +10924,7 @@
           },
           {
             "key": "Children_0",
-            "label": "Children \u00b7 Childcare",
+            "label": "Children · Childcare",
             "type": "number",
             "unit": "$"
           },
@@ -10936,7 +10936,7 @@
           },
           {
             "key": "Children_1",
-            "label": "Children \u00b7 Education",
+            "label": "Children · Education",
             "type": "number",
             "unit": "$"
           },
@@ -10948,7 +10948,7 @@
           },
           {
             "key": "Children_2",
-            "label": "Children \u00b7 Child support",
+            "label": "Children · Child support",
             "type": "number",
             "unit": "$"
           },
@@ -10960,7 +10960,7 @@
           },
           {
             "key": "Children_3",
-            "label": "Children \u00b7 Other child expenses",
+            "label": "Children · Other child expenses",
             "type": "number",
             "unit": "$"
           },
@@ -10972,7 +10972,7 @@
           },
           {
             "key": "Savings_0",
-            "label": "Savings \u00b7 Emergency fund",
+            "label": "Savings · Emergency fund",
             "type": "number",
             "unit": "$"
           },
@@ -10984,7 +10984,7 @@
           },
           {
             "key": "Savings_1",
-            "label": "Savings \u00b7 Retirement saving",
+            "label": "Savings · Retirement saving",
             "type": "number",
             "unit": "$"
           },
@@ -10996,7 +10996,7 @@
           },
           {
             "key": "Savings_2",
-            "label": "Savings \u00b7 Investments",
+            "label": "Savings · Investments",
             "type": "number",
             "unit": "$"
           },
@@ -11008,7 +11008,7 @@
           },
           {
             "key": "Savings_3",
-            "label": "Savings \u00b7 Other saving",
+            "label": "Savings · Other saving",
             "type": "number",
             "unit": "$"
           },
@@ -11020,7 +11020,7 @@
           },
           {
             "key": "Miscellaneous_0",
-            "label": "Miscellaneous \u00b7 Travel",
+            "label": "Miscellaneous · Travel",
             "type": "number",
             "unit": "$"
           },
@@ -11032,7 +11032,7 @@
           },
           {
             "key": "Miscellaneous_1",
-            "label": "Miscellaneous \u00b7 Gifts",
+            "label": "Miscellaneous · Gifts",
             "type": "number",
             "unit": "$"
           },
@@ -11044,7 +11044,7 @@
           },
           {
             "key": "Miscellaneous_2",
-            "label": "Miscellaneous \u00b7 Charity",
+            "label": "Miscellaneous · Charity",
             "type": "number",
             "unit": "$"
           },
@@ -11056,7 +11056,7 @@
           },
           {
             "key": "Miscellaneous_3",
-            "label": "Miscellaneous \u00b7 Pets",
+            "label": "Miscellaneous · Pets",
             "type": "number",
             "unit": "$"
           },
@@ -11068,7 +11068,7 @@
           },
           {
             "key": "Miscellaneous_4",
-            "label": "Miscellaneous \u00b7 Personal care",
+            "label": "Miscellaneous · Personal care",
             "type": "number",
             "unit": "$"
           },
@@ -11080,7 +11080,7 @@
           },
           {
             "key": "Miscellaneous_5",
-            "label": "Miscellaneous \u00b7 Other expenses",
+            "label": "Miscellaneous · Other expenses",
             "type": "number",
             "unit": "$"
           },
@@ -11091,7 +11091,7 @@
             "unit": null
           }
         ],
-        "formula": "Monthly surplus = monthly after-tax income \u2212 spending \u2212 savings allocations."
+        "formula": "Monthly surplus = monthly after-tax income − spending − savings allocations."
       }
     ],
     "display_category": {
@@ -11136,7 +11136,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Commission = sales \u00d7 rate / 100."
+        "formula": "Commission = sales × rate / 100."
       },
       {
         "id": "commission",
@@ -11155,7 +11155,7 @@
             "unit": "%"
           }
         ],
-        "formula": "Commission = sales \u00d7 commission rate."
+        "formula": "Commission = sales × commission rate."
       },
       {
         "id": "sales",
@@ -11174,7 +11174,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Commission = sales \u00d7 commission rate."
+        "formula": "Commission = sales × commission rate."
       },
       {
         "id": "rate",
@@ -11193,7 +11193,7 @@
             "unit": "$"
           }
         ],
-        "formula": "Commission = sales \u00d7 commission rate."
+        "formula": "Commission = sales × commission rate."
       },
       {
         "id": "tiered",
@@ -11266,7 +11266,7 @@
             "unit": null
           }
         ],
-        "formula": "Result = number \u00d7 percentage / 100."
+        "formula": "Result = number × percentage / 100."
       },
       {
         "id": "change",
@@ -11285,7 +11285,7 @@
             "unit": null
           }
         ],
-        "formula": "Change = (new \u2212 original) / |original| \u00d7 100%."
+        "formula": "Change = (new − original) / |original| × 100%."
       },
       {
         "id": "ratio",
@@ -11304,7 +11304,7 @@
             "unit": null
           }
         ],
-        "formula": "Percentage = part / whole \u00d7 100%."
+        "formula": "Percentage = part / whole × 100%."
       }
     ],
     "display_category": {
@@ -11400,7 +11400,7 @@
             "unit": null
           }
         ],
-        "formula": "Exclusive difference = end calendar day \u2212 start calendar day. Including both endpoints adds one day to the magnitude."
+        "formula": "Exclusive difference = end calendar day − start calendar day. Including both endpoints adds one day to the magnitude."
       },
       {
         "id": "add",
@@ -11461,7 +11461,7 @@
             "unit": null
           }
         ],
-        "formula": "Base value = input \u00d7 source factor + source offset; output = (base value \u2212 target offset) / target factor."
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
       },
       {
         "id": "mass",
@@ -11486,7 +11486,7 @@
             "unit": null
           }
         ],
-        "formula": "Base value = input \u00d7 source factor + source offset; output = (base value \u2212 target offset) / target factor."
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
       },
       {
         "id": "temperature",
@@ -11511,7 +11511,7 @@
             "unit": null
           }
         ],
-        "formula": "Base value = input \u00d7 source factor + source offset; output = (base value \u2212 target offset) / target factor."
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
       },
       {
         "id": "area",
@@ -11536,7 +11536,7 @@
             "unit": null
           }
         ],
-        "formula": "Base value = input \u00d7 source factor + source offset; output = (base value \u2212 target offset) / target factor."
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
       },
       {
         "id": "volume",
@@ -11561,7 +11561,7 @@
             "unit": null
           }
         ],
-        "formula": "Base value = input \u00d7 source factor + source offset; output = (base value \u2212 target offset) / target factor."
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
       },
       {
         "id": "speed",
@@ -11586,7 +11586,7 @@
             "unit": null
           }
         ],
-        "formula": "Base value = input \u00d7 source factor + source offset; output = (base value \u2212 target offset) / target factor."
+        "formula": "Base value = input × source factor + source offset; output = (base value − target offset) / target factor."
       }
     ],
     "display_category": {
@@ -11622,7 +11622,7 @@
             "unit": null
           }
         ],
-        "formula": "Powers are right-associative and precede a leading minus: 2^3^2 = 512; \u22122^2 = \u22124. Factorial and percent apply to the preceding value."
+        "formula": "Powers are right-associative and precede a leading minus: 2^3^2 = 512; −2^2 = −4. Factorial and percent apply to the preceding value."
       }
     ],
     "display_category": {
@@ -11650,7 +11650,7 @@
             "label": "Cost per unit",
             "value": 100,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "markup",
@@ -11670,7 +11670,7 @@
             "label": "Selling price",
             "value": 150,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "markup",
@@ -11690,7 +11690,7 @@
             "label": "Cost per unit",
             "value": 100,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "margin",
@@ -11734,14 +11734,14 @@
             "label": "Cost per unit",
             "value": 100,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "price",
             "label": "Selling price",
             "value": 150,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           }
         ]
       }
@@ -11772,7 +11772,7 @@
             "label": "Beginning value",
             "value": 10000,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "end",
@@ -11786,7 +11786,7 @@
             "label": "Number of years",
             "value": 10,
             "unit": "years",
-            "min": 1e-06,
+            "min": 0.000001,
             "max": 1000
           }
         ]
@@ -11800,7 +11800,7 @@
             "label": "Beginning value",
             "value": 10000,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "rate",
@@ -11814,7 +11814,7 @@
             "label": "Number of years",
             "value": 10,
             "unit": "years",
-            "min": 1e-06,
+            "min": 0.000001,
             "max": 1000
           }
         ]
@@ -11828,7 +11828,7 @@
             "label": "Ending value",
             "value": 20000,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "rate",
@@ -11842,7 +11842,7 @@
             "label": "Number of years",
             "value": 10,
             "unit": "years",
-            "min": 1e-06,
+            "min": 0.000001,
             "max": 1000
           }
         ]
@@ -11856,7 +11856,7 @@
             "label": "Beginning value",
             "value": 10000,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "end",
@@ -11906,14 +11906,14 @@
             "label": "Essential monthly expenses",
             "value": 3000,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "months",
             "label": "Target reserve months",
             "value": 6,
             "unit": "months",
-            "min": 1e-06,
+            "min": 0.000001,
             "max": 120
           },
           {
@@ -11934,14 +11934,14 @@
             "label": "Essential monthly expenses",
             "value": 3000,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "months",
             "label": "Target reserve months",
             "value": 6,
             "unit": "months",
-            "min": 1e-06,
+            "min": 0.000001,
             "max": 120
           },
           {
@@ -11994,7 +11994,7 @@
             "label": "Selling price per unit",
             "value": 50,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "variable",
@@ -12021,7 +12021,7 @@
             "label": "Selling price per unit",
             "value": 50,
             "unit": "$",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "variable",
@@ -12062,7 +12062,7 @@
             "label": "Expected units sold",
             "value": 500,
             "unit": "units",
-            "min": 1e-06
+            "min": 0.000001
           },
           {
             "key": "profit",
@@ -12301,7 +12301,7 @@
             "label": "Number of years",
             "value": 10,
             "unit": "years",
-            "min": 1e-06,
+            "min": 0.000001,
             "max": 1000
           },
           {
@@ -12431,7 +12431,7 @@
           }
         ],
         "description": "Estimate conventional PMI from original LTV and an illustrative credit/term rate card; compare requested and automatic cancellation scenarios.",
-        "formula": "LTV = original loan / original value \u00d7 100. Monthly PMI = original loan \u00d7 annual premium rate / 12. 80% request and scheduled 78% / midpoint termination use separate dates."
+        "formula": "LTV = original loan / original value × 100. Monthly PMI = original loan × annual premium rate / 12. 80% request and scheduled 78% / midpoint termination use separate dates."
       },
       {
         "id": "quote",
@@ -12504,7 +12504,7 @@
           }
         ],
         "description": "Use your own annual borrower-paid PMI rate and compare the two cancellation paths without estimating an insurer rate.",
-        "formula": "Monthly quoted PMI = original principal \u00d7 annual PMI percentage / 100 / 12. Premium timing follows the stated cancellation scenario."
+        "formula": "Monthly quoted PMI = original principal × annual PMI percentage / 100 / 12. Premium timing follows the stated cancellation scenario."
       },
       {
         "id": "cancellation",
@@ -12681,7 +12681,7 @@
           }
         ],
         "description": "Compare accelerated half-monthly payments every two weeks with standard monthly payments and a monthly plan using the same annual budget.",
-        "formula": "Monthly P&I = P \u00d7 i / (1 \u2212 (1 + i)^\u2212n). Biweekly payment = monthly / 2 + extra. Model rate = annual / 26; matched monthly budget = biweekly \u00d7 26 / 12."
+        "formula": "Monthly P&I = P × i / (1 − (1 + i)^−n). Biweekly payment = monthly / 2 + extra. Model rate = annual / 26; matched monthly budget = biweekly × 26 / 12."
       }
     ],
     "reference_parity": "not-applicable-independent-addition",
@@ -12781,7 +12781,7 @@
           }
         ],
         "description": "Compare actual rate/points quotes, cash-flow and balance-aware break-even, and savings at your expected sale or refinance date.",
-        "formula": "Point cost = principal \u00d7 points / 100. Net horizon saving B = cumulative interest A \u2212 cumulative interest B \u2212 (upfront B \u2212 upfront A). Cash-flow saving excludes the balance advantage."
+        "formula": "Point cost = principal × points / 100. Net horizon saving B = cumulative interest A − cumulative interest B − (upfront B − upfront A). Cash-flow saving excludes the balance advantage."
       }
     ],
     "reference_parity": "not-applicable-independent-addition",
@@ -12790,5 +12790,90 @@
       "title": "Mortgage & Housing",
       "route_preserved": true
     }
+  },
+  {
+    "id": "mortgage-recast",
+    "title": "Mortgage Recast Calculator",
+    "category": "Mortgage and Real Estate",
+    "local_route": "/mortgage-recast-calculator.html",
+    "source_url": "https://www.thetruthaboutmortgage.com/mortgage-recast-calculator/",
+    "source_status": "behavior reviewed as text; independently designed actual-balance model",
+    "display_category": "Mortgage & Housing",
+    "display_category_id": "mortgage-housing",
+    "directory": false,
+    "implemented_modes": [
+      {
+        "id": "compare",
+        "title": "Recast vs Keep Payment",
+        "fields": [
+          {
+            "key": "principal",
+            "label": "Current principal balance",
+            "value": 300000,
+            "unit": "$",
+            "min": 0.01,
+            "max": 1000000000000
+          },
+          {
+            "key": "rate",
+            "label": "Current annual interest rate",
+            "value": 6,
+            "unit": "%",
+            "min": 0,
+            "max": 30
+          },
+          {
+            "key": "years",
+            "label": "Remaining term",
+            "value": 25,
+            "unit": "years",
+            "min": 0,
+            "max": 40,
+            "step": 1
+          },
+          {
+            "key": "months",
+            "label": "Additional remaining months",
+            "value": 0,
+            "unit": "months",
+            "min": 0,
+            "max": 11,
+            "step": 1
+          },
+          {
+            "key": "lump",
+            "label": "Lump-sum principal payment now",
+            "value": 50000,
+            "unit": "$",
+            "min": 0,
+            "max": 1000000000000
+          },
+          {
+            "key": "fee",
+            "label": "Recast fee (cash paid now)",
+            "value": 0,
+            "unit": "$",
+            "min": 0,
+            "max": 1000000000,
+            "hint": "Enter your servicer’s actual fee; no universal fee is assumed."
+          },
+          {
+            "key": "current_payment",
+            "label": "Current monthly P&I (optional)",
+            "value": "",
+            "unit": "$",
+            "min": 0.01,
+            "optional": true,
+            "max": 1000000000000,
+            "hint": "From your statement, excluding escrow, insurance and extra principal. Blank estimates P&I from balance and remaining term."
+          }
+        ],
+        "description": "Compare keeping your current loan, paying a lump sum and recasting, or paying the same lump sum while keeping your current P&I. Enter your actual balance, remaining term and servicer fee.",
+        "formula": "Recast P&I = (balance − lump sum) × i / [1 − (1 + i)^−n], i = annual rate / 100 / 12. At 0%, payment = (balance − lump sum) / n. Net interest savings = baseline future interest − recast future interest − cash-paid fee."
+      }
+    ],
+    "spec": "specs/mortgage-recast.md",
+    "evidence": "mortgage-recast-2026-10-26.md"
   }
 ]
+

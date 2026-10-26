@@ -5706,5 +5706,25 @@
     },
     "fully_complete": true,
     "updated_at": "2026-10-26T07:41:20.432Z"
+  },
+  {
+    "id": "mortgage-recast",
+    "mode": "compare",
+    "spec": "passed",
+    "implementation": "passed",
+    "math": "passed",
+    "reference_parity": "unverified",
+    "browser": "passed",
+    "visual": "passed",
+    "evidence": {
+      "spec": "specs/mortgage-recast.md",
+      "report": "mortgage-recast-2026-10-26.md",
+      "qa": "evidence/mortgage-recast-qa.json"
+    },
+    "blockers": [
+      "Native Safari and lender quote/reference numeric parity unverified; not prerequisites for independently specified model."
+    ],
+    "updated_at": "2026-10-26"
   }
 ]
+

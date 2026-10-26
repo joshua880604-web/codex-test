@@ -2,6 +2,7 @@
 import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import dynamic from "next/dynamic";
 import ResultShare from "./ResultShare";
+import RecastComparison from "./RecastComparison";
 import {inputHint,resultContext} from "@/lib/result-context";
 import { formatMetric, sharedInputs } from "@/lib/sharing";
 import TaskModePicker from "./TaskModePicker";
@@ -249,7 +250,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" }),
       );
     a.href = url;
-    a.download = id + (extra ? "-retirement" : "") + "-schedule.csv";
+    a.download = id + (extra ? id === "mortgage-recast" ? "-comparison" : "-retirement" : "") + "-schedule.csv";
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -426,7 +427,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               )}
             </>
           )}
-          {result.additionalTables?.map(table => <section key={table.title}>
+          {result.additionalTables?.filter((_, index) => id !== "mortgage-recast" || index !== 0).map(table => <section key={table.title}>
             <h3>{table.title}</h3>
             {table.note && <p className="result-note">{table.note}</p>}
             <div className="result-actions"><button onClick={() => download(table)}>Download retirement CSV</button></div>
@@ -658,6 +659,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       )}
       </div>
       {wideReports && result && <>
+        {id === "mortgage-recast" && result.additionalTables?.[0] && <RecastComparison table={result.additionalTables[0]} onDownload={() => download(result.additionalTables![0])}/>}
         <ResultTrend key={mode.id + "-chart"} id={id} mode={mode.id} values={values} result={result} wide report/>
         <section className="workspace-report workspace-report-details" aria-label="Calculation details">
           {calculationDetails}
@@ -666,7 +668,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       </div>
       {id === "mortgage" && <nav className="mortgage-related-tools" aria-label="Related mortgage calculators">
         <strong>Other mortgage tools</strong>
-        {[["pmi", "PMI"], ["biweekly-mortgage", "Biweekly payments"], ["discount-points", "Discount points"], ["fha-loan", "FHA loan"], ["va-mortgage", "VA mortgage"], ["refinance", "Refinance"], ["mortgage-payoff", "Mortgage payoff"], ["heloc", "HELOC"], ["rental-property", "Rental property"]].map(([tool, label]) => <a key={tool} href={routeFor(tool)}>{label}</a>)}
+        {[["pmi", "PMI"], ["biweekly-mortgage", "Biweekly payments"], ["discount-points", "Discount points"], ["mortgage-recast", "Recast"], ["fha-loan", "FHA loan"], ["va-mortgage", "VA mortgage"], ["refinance", "Refinance"], ["mortgage-payoff", "Mortgage payoff"], ["heloc", "HELOC"], ["rental-property", "Rental property"]].map(([tool, label]) => <a key={tool} href={routeFor(tool)}>{label}</a>)}
       </nav>}
       {id === "mortgage" && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       <section className="explanation">

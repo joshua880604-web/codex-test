@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-26",
+  "id": "mortgage-recast",
+  "mode": "compare",
+  "legacyCompatibleRoute": "/mortgage-recast-calculator.html",
+  "productionCanonical": "https://www.calculatorfree.io/mortgage-recast-calculator",
+  "catalogEntries": 86,
+  "functionalCalculators": 85,
+  "modes": 199,
+  "sitemapPages": 152,
+  "unitTests": 1021,
+  "independentDecimalControls": 7,
+  "oldToolURLsUnchanged": 85,
+  "oldFullDefaultFieldModeResultHashesUnchanged": 198,
+  "browser": {
+    "passed": true,
+    "checks": [
+      {
+        "width": 320,
+        "initial": true,
+        "comparisonRows": 3,
+        "noOverflow": true,
+        "canonical": true
+      },
+      {
+        "width": 320,
+        "zeroRateRecast750": true,
+        "feeIncluded": true
+      },
+      {
+        "width": 390,
+        "initial": true,
+        "comparisonRows": 3,
+        "noOverflow": true,
+        "canonical": true
+      },
+      {
+        "width": 390,
+        "zeroRateRecast750": true,
+        "feeIncluded": true
+      },
+      {
+        "width": 390,
+        "comparisonCSV": true,
+        "yearlySchedule": true,
+        "pngWithoutInputs": true
+      },
+      {
+        "width": 390,
+        "fullPayoffValidation": true,
+        "noStaleResult": true,
+        "pngWithInputs": true
+      },
+      {
+        "width": 768,
+        "initial": true,
+        "comparisonRows": 3,
+        "noOverflow": true,
+        "canonical": true
+      },
+      {
+        "width": 768,
+        "zeroRateRecast750": true,
+        "feeIncluded": true
+      },
+      {
+        "width": 1440,
+        "initial": true,
+        "comparisonRows": 3,
+        "noOverflow": true,
+        "canonical": true
+      },
+      {
+        "width": 1440,
+        "zeroRateRecast750": true,
+        "feeIncluded": true
+      },
+      {
+        "serverRenderedWithoutJS": true
+      }
+    ],
+    "errors": [],
+    "external": [],
+    "scope": "Local production export in Chromium; not native Safari or lender quote parity"
+  },
+  "categoryBrowser": {
+    "checks": 18,
+    "routes": 86,
+    "errors": []
+  },
+  "lazyBrowser": {
+    "checks": 25,
+    "errors": [],
+    "unexpectedExternal": []
+  },
+  "limitations": [
+    "No native iOS Safari test",
+    "No live lender submission or original interactive numeric/visual parity",
+    "No direct public-domain HTTP verification under managed host policy",
+    "No ranking or revenue guarantee"
+  ],
+  "sourceFiles": [
+    {
+      "name": "recast-mortgage-calculator_serp_urls_us_2026-10-26_23-34-29.xlsx",
+      "sha256": "56adb7a566813b1c48fe46221e9f5ea48ca3ebe091d3385ae7cdf0435e29b346"
+    },
+    {
+      "name": "Semrush-\u5173\u952e\u8bcd\u5206\u6790\uff1a\u6982\u89c8_(Desktop)-recast_mortgage_calculator-26th_Oct_2026.pdf",
+      "sha256": "2d844929754c9941f8af44f94017219631800afa05da533b21039c8f13c09349"
+    }
+  ]
+}

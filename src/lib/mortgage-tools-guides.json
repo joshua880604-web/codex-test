@@ -278,5 +278,100 @@
         "url": "https://www.fncalculator.com/financialcalculator?type=loanPointCalculator"
       }
     ]
+  },
+  "mortgage-recast": {
+    "checkedOn": "2026-10-26",
+    "summary": "A mortgage recast applies an immediate lump-sum principal payment, then recalculates monthly principal and interest using the same fixed rate and remaining contractual term. Compare that lower payment with keeping the original payment after the same lump sum; these choices have different interest costs and payoff times.",
+    "scope": "Fixed-rate, fully amortizing monthly principal and interest from the current balance onward. Fees are paid in cash now. Loan eligibility, actual processing delays, daily accrued interest, taxes, insurance, PMI removal, variable rates, balloon and interest-only loans, investment opportunity cost and prior payments are excluded.",
+    "examples": [
+      {
+        "title": "Zero-interest recast lowers payment but the fee still costs money",
+        "mode": "compare",
+        "values": {
+          "principal": 12000,
+          "rate": 0,
+          "years": 1,
+          "months": 0,
+          "lump": 3000,
+          "fee": 100
+        },
+        "inputs": "$12,000 current balance; 12 months remaining; 0% interest; $3,000 paid now; $100 cash recast fee; current P&I left blank.",
+        "steps": [
+          "Baseline monthly P&I = 12,000 / 12 = 1,000.",
+          "New balance = 12,000 − 3,000 = 9,000; recast P&I = 9,000 / 12 = 750.",
+          "Keeping $1,000 payments after the same lump sum pays off $9,000 in nine months.",
+          "Both alternatives have zero interest; the $100 fee makes net recast interest savings −$100."
+        ],
+        "answer": "The new monthly P&I is $750; monthly relief is $250, not an interest saving.",
+        "expected": {
+          "label": "New monthly P&I after recast",
+          "value": 750
+        }
+      },
+      {
+        "title": "A one-year balance with two months already prepaid",
+        "mode": "compare",
+        "values": {
+          "principal": 10000,
+          "rate": 0,
+          "years": 1,
+          "months": 0,
+          "lump": 2000,
+          "fee": 0,
+          "current_payment": 1000
+        },
+        "inputs": "$10,000 current balance; contractual remaining term 12 months; 0% interest; actual scheduled P&I $1,000; $2,000 lump sum.",
+        "steps": [
+          "The unchanged loan takes 10 payments of $1,000, ahead of the entered contractual term.",
+          "Recast spreads $8,000 across 12 remaining contractual months: about $666.67 monthly.",
+          "Without recasting, keeping $1,000 pays $8,000 off in eight months."
+        ],
+        "answer": "The actual-payment baseline matters after past extra principal: keeping the payment is paid off four months before recast.",
+        "expected": {
+          "label": "Lump-sum-only months to payoff",
+          "value": 8
+        }
+      }
+    ],
+    "questions": [
+      {
+        "question": "How is a mortgage recast different from refinancing?",
+        "answer": "Recast keeps the entered interest rate and remaining contractual term and changes the payment after a principal reduction. Refinancing replaces the loan and may change its rate, term and fees. Use Refinance for that decision; this tool does not assume a new market rate."
+      },
+      {
+        "question": "Should I recast or just make a lump-sum principal payment?",
+        "answer": "Compare monthly relief with total future cost. Recasting usually lowers the required P&I payment; keeping the old payment after the same lump sum generally repays sooner and saves more interest. The three-scenario comparison includes each lump sum and the cash recast fee in total future cash, so principal is not mislabeled as savings."
+      },
+      {
+        "question": "What if I have already made extra mortgage payments?",
+        "answer": "Use your actual current principal balance and remaining contractual term, and enter the scheduled monthly P&I from your statement. Exclude escrow and voluntary extra payments. Leaving P&I blank estimates a payment from balance and term, which can understate the original payment after prior principal curtailments."
+      },
+      {
+        "question": "How much does a recast cost, and what is the minimum lump sum?",
+        "answer": "Enter your servicer’s actual recast fee; zero is only a starting assumption, not a promise of free service. Minimum principal reductions, fees, loan eligibility and processing time vary. A calculation with a small or zero lump sum is a sensitivity example, not confirmation of eligibility."
+      },
+      {
+        "question": "Does recasting cancel PMI or lower taxes and insurance?",
+        "answer": "No automatic change is modeled. Recast changes principal and interest. Property tax and homeowners insurance are separate, and any PMI cancellation request must follow the applicable servicer and loan rules. Use the dedicated PMI tool for an unmodified conventional-loan estimate; do not assume its original-schedule dates remain valid after a loan modification."
+      },
+      {
+        "question": "Can this calculate FHA, VA, USDA, ARM or interest-only recasts?",
+        "answer": "No. This tool models fixed-rate fully amortizing P&I, not program eligibility. Chase’s published recast guidance excludes FHA, VA and USDA loans. Check your own servicer and investor before making a lump-sum payment."
+      },
+      {
+        "question": "Why can net recast savings be negative?",
+        "answer": "Fees can exceed the future interest reduction. If your current scheduled P&I would already repay the loan early, stretching the reduced balance across the full remaining contractual term can also increase interest compared with keeping that payment. Negative values are shown rather than changed to zero."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Fannie Mae: principal curtailment and recast over the remaining term",
+        "url": "https://singlefamily.fanniemae.com/job-aid/loan-delivery/topic/loan_delivery_job_aids_recast_loan_overview.htm"
+      },
+      {
+        "title": "Chase: recast, refinance and loan eligibility",
+        "url": "https://www.chase.com/personal/mortgage/education/managing-your-mortgage/what-is-mortgage-recast"
+      }
+    ]
   }
 }

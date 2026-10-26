@@ -9,6 +9,7 @@ export function directoryGroup(id:string,_category?:string){
  return group.id;
 }
 const toolAliases:Record<string,string[]>={
+ 'mortgage-recast':['recast mortgage','recast mortgage calculator','recast calculator','mortgage recasting','loan recast'],
  pmi:['private mortgage insurance','pmi removal','pmi cancellation','mortgage insurance cancellation','ltv calculator'],
  'biweekly-mortgage':['bi-weekly mortgage payment','biweekly mortgage payment','biweekly payment','bi-weekly payment','fortnightly mortgage payment'],
  'discount-points':['mortgage points','discount point','mortgage points break even','points calculator','buy down rate'],
@@ -22,6 +23,7 @@ const toolAliases:Record<string,string[]>={
  finance:['financial calculator','time value of money','tvm'],
 };
 export const directoryDescriptions:Record<string,string>={
+ 'mortgage-recast':'Lower P&I after a lump sum, or keep paying to finish sooner.',
  'interest-rate':'Find the rate needed to reach a target.',
  'interest':'Project a balance from a given rate.',
  'apr':'Compare interest and borrowing fees.',

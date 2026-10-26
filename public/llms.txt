@@ -65,6 +65,7 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 - [PMI Calculator](https://www.calculatorfree.io/pmi-calculator): Conventional borrower-paid PMI estimates, original/current LTV and separate 80% request, scheduled 78% and midpoint checks; U.S. rules and dated insurer assumptions are stated.
 - [Biweekly Mortgage Payment Calculator](https://www.calculatorfree.io/biweekly-mortgage-calculator): Compare 26 credited payments per year, ordinary monthly and equal-budget monthly alternatives; not an exact 14-day calendar model.
 - [Discount Points Calculator](https://www.calculatorfree.io/discount-points-calculator): Enter actual loan quotes; compare cash-flow and balance-aware break-even, upfront fees and holding-period borrowing costs.
+- [Mortgage Recast Calculator](https://www.calculatorfree.io/mortgage-recast-calculator)
 
 ## Business finance
 

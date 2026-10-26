@@ -514,5 +514,11 @@
     "category": "Mortgage and Real Estate",
     "title": "Discount Points Calculator",
     "local_route": "/discount-points-calculator.html"
+  },
+  {
+    "id": "mortgage-recast",
+    "category": "Mortgage and Real Estate",
+    "title": "Mortgage Recast Calculator",
+    "local_route": "/mortgage-recast-calculator.html"
   }
 ]

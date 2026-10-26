@@ -508,6 +508,10 @@
       {
         "id": "biweekly-mortgage",
         "text": "Biweekly Mortgage Payment Calculator"
+      },
+      {
+        "id": "mortgage-recast",
+        "text": "Compare re-amortizing a reduced balance with keeping the current payment."
       }
     ],
     "related": [

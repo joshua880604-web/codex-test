@@ -16,7 +16,7 @@
       ],
       [
         "Compare ways to reduce costs",
-        "Mortgage Payoff and Biweekly explore repayment changes; Discount Points compares actual rate and fee quotes. Refinance compares a replacement loan, including entered closing costs."
+        "Mortgage Payoff and Biweekly explore repayment changes; Discount Points compares actual rate and fee quotes. Refinance compares a replacement loan, including entered closing costs. Recast compares a lower payment after a lump sum against keeping the current payment; the existing rate and remaining term are retained."
       ]
     ],
     "differences": [
@@ -31,6 +31,10 @@
       [
         "Biweekly vs. Mortgage Payoff",
         "Biweekly assumes 26 credited periods per year and includes an equal-budget monthly comparison. Mortgage Payoff offers other extra-principal schedules."
+      ],
+      [
+        "Recast vs. Payoff vs. Refinance",
+        "Recast spreads a reduced balance across the same remaining contractual term. Payoff explores paying faster while keeping a payment. Refinance replaces the loan and may change rate and term."
       ]
     ],
     "questions": [

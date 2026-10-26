@@ -29,7 +29,15 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
   let xIndex = 0, balanceIndex = -1, scale = 1, secondaryIndex = -1;
   let secondaryKey: ResultTrend["secondaryKey"], secondaryLabel: string | undefined;
   let start: TrendPoint | null = null;
-  if (id === "discount-points" && matches(["Month", "Net cash-flow savings", "Balance advantage of B", "Net borrowing-cost savings", "Balance A", "Balance B"])) {
+  if (id === "mortgage-recast" && matches(["Month", "Recast payment", "Recast interest", "Recast principal", "Recast balance", "Lump-sum-only balance"])) {
+    const opening = result.metrics.find(m => m.label === "Principal after lump sum")?.value;
+    if (!finite(opening)) return null;
+    start = { x: 0, balance: opening, comparison: opening };
+    balanceIndex = 4; secondaryIndex = 5; scale = 1 / 12;
+    secondaryKey = "comparison"; secondaryLabel = "Lump sum; keep payment";
+    title = "Balance after the lump sum"; balanceLabel = "Lump sum + recast";
+    help = "Both curves start after the same immediate principal payment. Recast uses a lower P&I over the remaining contractual term; keeping the payment can finish sooner. The unchanged-loan baseline appears in the comparison table.";
+  } else if (id === "discount-points" && matches(["Month", "Net cash-flow savings", "Balance advantage of B", "Net borrowing-cost savings", "Balance A", "Balance B"])) {
     const upfront = result.metrics.find(m => m.label === "Additional upfront cost for B")?.value;
     if (!finite(upfront)) return null;
     start = { x: 0, balance: -upfront, comparison: -upfront };

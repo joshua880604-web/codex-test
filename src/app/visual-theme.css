@@ -170,3 +170,5 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .calculator-disclaimer h2 {font-size:17px;line-height:1.4;color:#101828;margin:0 0 10px;}
 .calculator-disclaimer p {font-size:14px;line-height:1.65;margin:0 0 10px;}
 .calculator-disclaimer .disclaimer-purpose {font-size:13px;margin-bottom:0;}
+.recast-comparison table {min-width:700px;}
+.recast-comparison tbody th {min-width:140px;position:sticky;left:0;top:auto;background:#fff;color:#172033;font-weight:600;}

@@ -723,6 +723,7 @@ guides.mortgage.examples.push({title:'Project an existing balance with no intere
 
 // Independent mortgage decision tools, with official policy sources and worked cases.
 Object.assign(guides, mortgageToolsGuides as unknown as Record<string, Guide>);
+relatedCalculatorIds["mortgage-recast"] = ["mortgage-payoff", "refinance", "mortgage", "amortization", "pmi"];
 relatedCalculatorIds.pmi = ["mortgage", "fha-loan", "down-payment", "amortization"];
 relatedCalculatorIds["biweekly-mortgage"] = ["mortgage", "mortgage-payoff", "amortization", "discount-points"];
 relatedCalculatorIds["discount-points"] = ["mortgage", "refinance", "apr", "biweekly-mortgage"];
