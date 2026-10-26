@@ -20,6 +20,8 @@ export function siteConfig(
       throw new Error(
         "SITE_URL must be a public HTTPS origin, without a path, credentials, query or fragment.",
       );
+    // Both public hostnames serve the same site; production redirects to www.
+    if (url.hostname === "calculatorfree.io") url.hostname = "www.calculatorfree.io";
     origin = url.origin;
   }
   if (env.SITE_INDEXABLE === "true" && !origin)
@@ -31,7 +33,15 @@ export function siteConfig(
   };
 }
 export function absoluteURL(path: string, config = siteConfig()) {
-  return config.origin ? new URL(path, config.origin).href : undefined;
+  if (!config.origin) return undefined;
+  const url = new URL(path, config.origin);
+  // Pages serves the exported *.html documents at extensionless final URLs.
+  // Keep route/catalog filenames intact so existing links and saved URLs work.
+  if (["calculatorfree.io", "www.calculatorfree.io"].includes(url.hostname)) {
+    url.hostname = "www.calculatorfree.io";
+    url.pathname = url.pathname.replace(/\.html$/, "");
+  }
+  return url.href;
 }
 export function serializeSchema(value: unknown) {
   return JSON.stringify(value).replace(/</g, "\\u003c");

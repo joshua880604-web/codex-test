@@ -4,7 +4,10 @@ from html.parser import HTMLParser
 import json,sys,re
 import xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[1]
-origin=sys.argv[1] if len(sys.argv)>1 else None
+origin=sys.argv[1].rstrip('/') if len(sys.argv)>1 else None
+if origin=='https://calculatorfree.io':origin='https://www.calculatorfree.io'
+def canonical(route):
+ return origin+(route[:-5] if origin=='https://www.calculatorfree.io' and route.endswith('.html') else route)
 class Page(HTMLParser):
  def __init__(self):super().__init__();self.metas={};self.canon=[];self.h1s=[];self.in_h1=False;self.in_schema=False;self.schema_text='';self.schemas=[];self.text=[]
  def handle_starttag(self,tag,attrs):
@@ -31,7 +34,7 @@ for route in paths:
  assert len(p.h1s)==1,(route,p.h1s)
  assert p.metas.get('description'),route
  assert ('noindex' not in p.metas.get('robots','')) if origin else ('noindex' in p.metas.get('robots',''))
- assert p.canon==([origin+route] if origin else []),(route,p.canon)
+ assert p.canon==([canonical(route)] if origin else []),(route,p.canon)
  if route=='/methodology.html':assert p.h1s==['Calculation methodology and sources']
  entry=next((x for x in catalog if x['local_route']==route),None)
  if entry and entry['id']!='real-estate':
@@ -39,6 +42,9 @@ for route in paths:
   for heading in ['Understanding this calculation','Worked examples','Common questions','Scope and assumptions','Sources']:
    assert heading in ''.join(p.text),(route,heading)
   graph=p.schemas[0]['@graph'];assert graph[0]['name']==entry['title']
+  app=graph[0];assert app['offers']['price']=='0' and app['offers']['priceCurrency']=='USD'
+  assert 'aggregateRating' not in app and 'review' not in app
+  if origin:assert app['url']==canonical(route) and app['offers']['url']==canonical(route)
   if origin:assert any(x['@type']=='BreadcrumbList' for x in graph)
  if route=='/vat-calculator.html':
   assert 'Remove 20% VAT from a gross price of 120' in ''.join(p.text)
@@ -60,7 +66,7 @@ namespace={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 locations=[node.text for node in ET.fromstring(sitemap).findall('s:url/s:loc',namespace)]
 if origin:
  assert len(locations)==len(set(locations))==len(checks)
- assert set(locations)=={origin+route for route in paths}
+ assert set(locations)=={canonical(route) for route in paths}
  assert all('?' not in url and '#' not in url for url in locations)
  assert origin+'/sitemap.xml' in robots
 else:assert not locations and 'Sitemap:' not in robots
@@ -69,9 +75,9 @@ assert llms==(root/'public/llms.txt').read_text()
 llms_links=re.findall(r'^- \[[^]]+\]\(([^)]+)\)',llms,re.M)
 assert llms.startswith('# CalculatorFree.io\n') and len(llms_links)==len(set(llms_links))
 # The curated guide uses the established public origin even for noindex previews.
-canonical_origin='https://calculatorfree.io'
+canonical_origin='https://www.calculatorfree.io'
 assert all(url.startswith(canonical_origin+'/') and '?' not in url and '#' not in url for url in llms_links)
-assert set(llms_links)<={canonical_origin+route for route in paths}|{canonical_origin+'/sitemap.xml'}
+assert set(llms_links)<={canonical_origin+(route[:-5] if route.endswith('.html') else route) for route in paths}|{canonical_origin+'/sitemap.xml'}
 assert llms.index('## Business finance')<llms.index('## Supporting general-purpose calculators')
 report={'passed':True,'configuration':'indexable-test-origin' if origin else 'default-noindex-preview','test_origin':origin,'pages':len(checks),'checks':checks,'no_live_indexing_or_ranking_claim':True}
 out=root/'docs/financial-clone/evidence'/('seo-production-build.json' if origin else 'seo-preview-build.json')

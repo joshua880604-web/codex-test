@@ -33,11 +33,12 @@
       {
         "keyword": "Biweekly mortgage calculator",
         "mode": "biweekly",
-        "description": "Compare 26 half-monthly payments per year with ordinary monthly and equal-budget monthly payments.",
+        "description": "Compare 26 biweekly payments with ordinary monthly and equal-budget monthly payments. Add extra principal per biweekly payment to estimate interest savings and earlier payoff.",
         "aliases": [
           "Biweekly mortgage payment calculator",
           "Bi-weekly payment calculator",
-          "Mortgage payment every two weeks calculator"
+          "Mortgage payment every two weeks calculator",
+          "Biweekly mortgage calculator with extra payments"
         ]
       }
     ]
@@ -48,7 +49,7 @@
       {
         "keyword": "Discount points calculator",
         "mode": "compare",
-        "description": "Compare entered mortgage rate and point quotes, monthly savings and net cost at a sale or refinancing horizon.",
+        "description": "Compare two lender rate and point quotes. Estimate upfront point costs, monthly savings and break-even before a planned sale or refinance; one point costs 1% of the loan amount.",
         "aliases": [
           "Mortgage points calculator",
           "Mortgage points break even calculator",

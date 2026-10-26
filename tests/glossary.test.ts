@@ -34,7 +34,7 @@ test('DCA illustration uses share-weighted cost and shows the ending loss',()=>{
  assert.equal(term.example.calculator,undefined);assert.match(term.pitfall.text,/does not replay share prices/);
 });
 test('Glossary structured data and sitemap describe real visible pages without invented authority',()=>{
- const config={origin:'https://calculatorfree.io',indexable:true};
+ const config={origin:'https://www.calculatorfree.io',indexable:true};
  const entries=sitemapEntries(config),hub=glossarySchema(undefined,config);
  assert.equal(glossaryTerms.length,59);assert.equal(new Set(glossaryTerms.map(term=>term.slug)).size,glossaryTerms.length);
  assert.equal(hub['@graph'][0]['@type'],'DefinedTermSet');

@@ -30,3 +30,7 @@ For search indexing, set SITE_URL=https://your-real-domain and SITE_INDEXABLE=tr
 `public/_redirects` sends / to /financial-calculator.html. The build finalizer preserves the existing .html URLs by normalizing Next.js export filenames. This application uses normal HTML links with full document navigation; adding Next Link/prefetch later requires revalidating the export routing/RSC assets. On hosts other than Pages configure the same homepage redirect if desired; index.html remains usable.
 
 Saved exchange-rate dates are displayed; update the bundled data and rebuild to refresh them. Manual rates support BTC without providing market data. Official tax/CPI tables are also bundled and change only with a new build. Source attribution links are ordinary links, not automatic API requests.
+
+## Confirmed production canonical URLs (2026-10-26)
+
+For this site set SITE_URL=https://www.calculatorfree.io and SITE_INDEXABLE=true. The old non-www SITE_URL value is normalized for compatibility. Cloudflare Pages redirects .html requests to extensionless addresses; exported document filenames and old catalog URLs remain unchanged. SEO metadata and sitemap use www extensionless destinations; glossary URLs retain directory trailing slashes. Arbitrary other hosting origins retain their own paths. Never use the local static preview's lack of extension redirects as evidence about production response codes.

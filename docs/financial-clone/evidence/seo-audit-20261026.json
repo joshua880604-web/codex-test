@@ -1,0 +1,85 @@
+{
+  "userConfirmedFinalURL": "https://www.calculatorfree.io/cd-calculator",
+  "sourceFiles": {
+    "markup": {
+      "file": "calculatorfree.io_structured_data_that_contains_markup_errors_20261026.xlsx",
+      "sha256": "ab4bc707dbd1940635c7ed8d7496415f07e20a98d9069ab4545f6ee8e68d6294"
+    },
+    "sitemap": {
+      "file": "calculatorfree.io_wrong_pages_found_in_sitemap_20261026.xlsx",
+      "sha256": "64b8aeaae2a6ecba16befe349baf278e9999e64da786f9e22f379cf540defd5a"
+    },
+    "keywords": {
+      "file": "gap.keywords_2026-10-26T14_56_15.281Z.xlsx",
+      "sha256": "bfe14200891802795ad19bbfddf31f656805b9d2612659c343910dae7e1a2728"
+    }
+  },
+  "reportedSitemapRedirects": 63,
+  "reportedDestinationsRepresentedInNewSitemap": true,
+  "browser": {
+    "passed": true,
+    "results": [
+      {
+        "width": 390,
+        "slug": "cd",
+        "oldURLStatus": 200,
+        "canonical": true,
+        "noOverflow": true
+      },
+      {
+        "width": 390,
+        "slug": "biweekly-mortgage",
+        "oldURLStatus": 200,
+        "canonical": true,
+        "noOverflow": true
+      },
+      {
+        "width": 390,
+        "slug": "discount-points",
+        "oldURLStatus": 200,
+        "canonical": true,
+        "noOverflow": true
+      },
+      {
+        "width": 390,
+        "cd14MonthPreset": true
+      },
+      {
+        "width": 1440,
+        "slug": "cd",
+        "oldURLStatus": 200,
+        "canonical": true,
+        "noOverflow": true
+      },
+      {
+        "width": 1440,
+        "slug": "biweekly-mortgage",
+        "oldURLStatus": 200,
+        "canonical": true,
+        "noOverflow": true
+      },
+      {
+        "width": 1440,
+        "slug": "discount-points",
+        "oldURLStatus": 200,
+        "canonical": true,
+        "noOverflow": true
+      },
+      {
+        "width": 1440,
+        "cd14MonthPreset": true
+      }
+    ],
+    "errors": []
+  },
+  "unitTests": 1004,
+  "staticSEOPages": 151,
+  "unchangedCalculationModes": 198,
+  "oldToolRoutes": 85,
+  "limitations": [
+    "Production final destination confirmed by user for CD; managed network does not allow direct public-domain probes.",
+    "No fabricated review or aggregate rating; SoftwareApplication rich-result rating requirement remains unmet.",
+    "No live Google indexing, ranking or ad-revenue measurement.",
+    "Keyword export has exactly 50,000 rows and may be capped; its regional setting is not encoded in workbook."
+  ]
+}

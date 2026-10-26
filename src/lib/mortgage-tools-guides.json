@@ -162,6 +162,10 @@
       {
         "question": "Does this use actual 14-day payment dates?",
         "answer": "No. It uses annual nominal rate divided by 26 and equal modeled periods. Real daily accrual, calendar alignment and years with 27 pay dates require the lender’s actual convention."
+      },
+      {
+        "question": "How do I use the biweekly mortgage calculator with extra payments?",
+        "answer": "Enter extra principal in Extra per biweekly payment. This amount is added to each half-monthly payment, not once per month: $100 extra means $2,600 over 26 modeled payments in a full year. Compare both ordinary monthly payments and the equal-budget monthly alternative; actual total extra paid ends when the loan is repaid. Confirm that your servicer applies extra funds to principal and credits partial payments as assumed."
       }
     ],
     "sources": [
@@ -254,6 +258,10 @@
       {
         "question": "Are taxes or financed points included?",
         "answer": "No. Points and entered other fees are paid in cash. Tax deductibility, financed closing costs and the opportunity cost of cash need a different analysis."
+      },
+      {
+        "question": "Is a mortgage points calculator the same as a discount points calculator?",
+        "answer": "Here both names mean comparing upfront discount points against the interest rate in each lender quote. Enter points and other upfront costs separately for offers A and B. Origination fees do not automatically buy a lower rate, and this model does not infer a rate reduction from the number of points. Compare the net borrowing cost at your expected sale or refinance date as well as monthly payment savings."
       }
     ],
     "sources": [

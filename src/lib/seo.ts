@@ -108,6 +108,12 @@ export function calculatorSchema(calc: Calculator, config = siteConfig()) {
     browserRequirements: "Requires JavaScript",
     featureList: searchTasks[calc.id]?.map(task=>task.keyword) ?? calc.modes.map(mode=>mode.title),
     isAccessibleForFree: true,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      ...(url ? { url } : {}),
+    },
     inLanguage: "en",
     ...(url ? { "@id": url + "#calculator", url } : {}),
   };

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { siteConfig, serializeSchema } from "../src/lib/site";
+import { siteConfig, serializeSchema, absoluteURL } from "../src/lib/site";
 import {
   sitemapEntries,
   calculatorMetadata,
@@ -58,7 +58,7 @@ test("Production sitemap lists canonical pages and only reviewed content dates",
   assert.equal(sitemapEntries(siteConfig({})).length, 0);
   assert.equal(entries.filter(e=>e.lastModified).length,Object.keys(contentUpdatedOn).length);
   assert.equal(contentUpdatedOn['/mortgage-calculator.html'],'2026-10-26');
-  assert.ok(Object.entries(contentUpdatedOn).filter(([path])=>!['/mortgage-calculator.html','/pmi-calculator.html','/biweekly-mortgage-calculator.html','/discount-points-calculator.html','/real-estate-calculator.html','/loan-calculators.html','/savings-investment-calculators.html'].includes(path)).every(([,date])=>date==='2026-10-25'));
+  assert.ok(Object.entries(contentUpdatedOn).filter(([path])=>!['/mortgage-calculator.html','/pmi-calculator.html','/biweekly-mortgage-calculator.html','/discount-points-calculator.html','/real-estate-calculator.html','/loan-calculators.html','/savings-investment-calculators.html','/cd-calculator.html'].includes(path)).every(([,date])=>date==='2026-10-25'));
   assert.ok(!entries.some(e=>e.url.endsWith('/llms.txt')||e.url.endsWith('/sitemap.xml')));
 });
 test("Calculator canonicals consolidate shared query variants and schema matches the real app", () => {
@@ -146,4 +146,25 @@ test("Every functional calculator has a unique guide, reproducible examples and 
       }
     }
   }
+});
+
+
+test("Production SEO follows the confirmed www extensionless destination while old routes stay intact", () => {
+ for (const origin of ["https://calculatorfree.io", "https://www.calculatorfree.io"]) {
+  const config=siteConfig({SITE_URL:origin,SITE_INDEXABLE:"true"});
+  assert.equal(config.origin,"https://www.calculatorfree.io");
+  assert.equal(absoluteURL("/cd-calculator.html",config),"https://www.calculatorfree.io/cd-calculator");
+  assert.equal(absoluteURL("/glossary/",config),"https://www.calculatorfree.io/glossary/");
+  const entries=sitemapEntries(config);
+  assert.equal(entries.length,151);
+  assert.equal(new Set(entries.map(e=>e.url)).size,151);
+  assert.ok(entries.every(e=>e.url.startsWith("https://www.calculatorfree.io/")&&!e.url.endsWith(".html")&&!e.url.includes("?")));
+  for (const calc of calculators.filter(c=>!c.directory)) {
+   const app=calculatorSchema(calc,config)["@graph"][0];
+   assert.equal(app.url,calculatorMetadata(calc,config).alternates?.canonical);
+   assert.deepEqual(app.offers,{"@type":"Offer",price:"0",priceCurrency:"USD",url:app.url});
+   assert.ok(!("aggregateRating" in app)&&!("review" in app));
+  }
+ }
+ assert.equal(absoluteURL("/cd-calculator.html",siteConfig({SITE_URL:"https://finance.example",SITE_INDEXABLE:"true"})),"https://finance.example/cd-calculator.html");
 });
