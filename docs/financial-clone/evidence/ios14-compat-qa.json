@@ -1,0 +1,89 @@
+{
+  "reviewed_on": "2026-10-26",
+  "reported_device": "iPhone XR running iOS14.4.2, built-in Safari/WebKit",
+  "baseline_commit": "eae5abb40315dfefb5eff50b2a06638265e2f98b",
+  "confirmed_causes": {
+    "syntax": {
+      "baseline": "eae5abb40315dfefb5eff50b2a06638265e2f98b",
+      "unsupportedBeforeSafari16_4": [
+        {
+          "file": "1j71-lr846dcd.js",
+          "staticBlocks": 1
+        }
+      ]
+    },
+    "scientific_submit": {
+      "scope": "Chromium with requestSubmit removed; not a native old-iOS engine",
+      "errors": [
+        "e.currentTarget.requestSubmit is not a function"
+      ]
+    }
+  },
+  "repairs": [
+    "Final-export Babel preset-env transform for Safari14/iOS14.0, including precompiled framework chunks; ES2020 parser guard",
+    "ES5 feature-detected bootstrap inserted before every other script",
+    "Native-validation-preserving requestSubmit fallback for scientific keypad and Enter",
+    "Deployment cache key safari14-v1 for initial and lazy framework assets",
+    "vh fallbacks before svh/dvh for schedules and suggestions"
+  ],
+  "tests": {
+    "baseline": 917,
+    "new": 19,
+    "total": 936,
+    "passed": 936
+  },
+  "browser": {
+    "mode_calculations": 193,
+    "checks": 204,
+    "passed": true,
+    "javascript_errors": 0,
+    "environment": "Chromium with XR-sized touch viewport/UA and selected missing APIs; NOT native iOS14.4.2 WebKit"
+  },
+  "syntax": {
+    "passed": true,
+    "tested_at": "2026-10-26T01:30:24.859Z",
+    "javascript_files": 42,
+    "html_documents": 149,
+    "checks": [
+      "All emitted JavaScript and executable inline scripts parse with an ES2020 ceiling",
+      "ES5 compatibility bootstrap is the first script in every HTML document",
+      "Framework asset URLs carry a new deployment cache key"
+    ],
+    "limits": "Syntax and API compatibility checks are not a native iOS14.4.2 device test."
+  },
+  "defaults": {
+    "total": 193,
+    "identical": 193,
+    "passed": true
+  },
+  "homepage": {
+    "viewports": 14,
+    "passed": true
+  },
+  "build": "passed",
+  "typecheck": "passed",
+  "seo": {
+    "canonicals": 146,
+    "passed": true
+  },
+  "brand": {
+    "text_assets": 530,
+    "passed": true
+  },
+  "long_tail": {
+    "pages": 30,
+    "answers": 40,
+    "links": 65,
+    "passed": true
+  },
+  "discovery": {
+    "tools": 81,
+    "tasks": 195,
+    "passed": true
+  },
+  "limits": [
+    "No physical iPhone XR/iOS14.4.2 or old WebKit engine available; device confirmation remains pending.",
+    "Direct live-origin response not verified by this local QA.",
+    "Existing publisher loader stubbed; no live advertising assertion."
+  ]
+}

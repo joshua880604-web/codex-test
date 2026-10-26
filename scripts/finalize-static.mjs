@@ -21,4 +21,6 @@ await mkdir(glossary,{recursive:true});
  }
 await rename('out/glossary.html',join(glossary,'index.html'));
 console.log('Prepared glossary directory documents.');
+const {prepareBrowserCompatibility}=await import('./prepare-browser-compat.mjs');
+await prepareBrowserCompatibility();
 await import('./check-public-brand.mjs');

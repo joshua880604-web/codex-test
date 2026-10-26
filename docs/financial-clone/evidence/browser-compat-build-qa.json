@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-26T01:30:24.859Z",
+  "javascript_files": 42,
+  "html_documents": 149,
+  "checks": [
+    "All emitted JavaScript and executable inline scripts parse with an ES2020 ceiling",
+    "ES5 compatibility bootstrap is the first script in every HTML document",
+    "Framework asset URLs carry a new deployment cache key"
+  ],
+  "limits": "Syntax and API compatibility checks are not a native iOS14.4.2 device test."
+}

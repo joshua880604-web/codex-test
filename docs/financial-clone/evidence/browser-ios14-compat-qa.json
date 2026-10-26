@@ -1,0 +1,1407 @@
+{
+  "passed": true,
+  "tested_at": "2026-10-26T01:33:23.835Z",
+  "browser": "Chromium with iPhone XR viewport/touch/UA and selected missing APIs. This is not an iOS14.4.2 WebKit/device run.",
+  "calculator_modes": 193,
+  "checks": [
+    {
+      "id": "mortgage",
+      "mode": "monthly",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mortgage",
+      "mode": "biweekly",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "amortization",
+      "mode": "schedule",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "remaining-extra",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "remaining-normal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "remaining-biweekly",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "remaining-all",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "known-extra",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "known-normal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "known-biweekly",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "known-all",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "house-affordability",
+      "mode": "income",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "house-affordability",
+      "mode": "budget",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "rent",
+      "mode": "affordability",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "mode": "ratio",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "refinance",
+      "mode": "balance",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "refinance",
+      "mode": "original",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "rental-property",
+      "mode": "projection",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "apr",
+      "mode": "loan",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "apr",
+      "mode": "mortgage",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "fha-loan",
+      "mode": "monthly",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "fha-loan",
+      "mode": "biweekly",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "va-mortgage",
+      "mode": "monthly",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "va-mortgage",
+      "mode": "biweekly",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "home-equity-loan",
+      "mode": "loan",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "heloc",
+      "mode": "draw-repay",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "heloc",
+      "mode": "maximum-credit",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "down-payment",
+      "mode": "price",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "down-payment",
+      "mode": "cash",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "down-payment",
+      "mode": "percent",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "rent-vs-buy",
+      "mode": "comparison",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "auto-loan",
+      "mode": "payment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "auto-loan",
+      "mode": "price",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "mode": "compare",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "auto-lease",
+      "mode": "payment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "auto-lease",
+      "mode": "price",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "interest",
+      "mode": "accumulation",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "investment",
+      "mode": "end",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "investment",
+      "mode": "contribution",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "investment",
+      "mode": "return",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "investment",
+      "mode": "starting",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "investment",
+      "mode": "length",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "finance",
+      "mode": "fv",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "finance",
+      "mode": "pmt",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "finance",
+      "mode": "i-y",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "finance",
+      "mode": "n",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "finance",
+      "mode": "pv",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "compound-interest",
+      "mode": "growth",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "compound-interest",
+      "mode": "conversion",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "interest-rate",
+      "mode": "rate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "savings",
+      "mode": "accumulation",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "savings",
+      "mode": "goal-contribution",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "savings",
+      "mode": "goal-time",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "simple-interest",
+      "mode": "balance",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "simple-interest",
+      "mode": "principal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "simple-interest",
+      "mode": "years",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "simple-interest",
+      "mode": "rate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "cd",
+      "mode": "accumulation",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "bond",
+      "mode": "price",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "bond",
+      "mode": "face",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "bond",
+      "mode": "yield",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "bond",
+      "mode": "years",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "bond",
+      "mode": "coupon",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "bond",
+      "mode": "dated",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "mutual-fund",
+      "mode": "projection",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "average-return",
+      "mode": "returns",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "average-return",
+      "mode": "cashflows",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "average-return",
+      "mode": "variable-periods",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "irr",
+      "mode": "fixed",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "irr",
+      "mode": "irregular",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "roi",
+      "mode": "length",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "roi",
+      "mode": "dates",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "payback-period",
+      "mode": "fixed",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "payback-period",
+      "mode": "irregular",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "present-value",
+      "mode": "lump",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "present-value",
+      "mode": "annuity",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "future-value",
+      "mode": "growth",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "retirement",
+      "mode": "required",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "retirement",
+      "mode": "saving",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "retirement",
+      "mode": "withdrawal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "retirement",
+      "mode": "longevity",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "401k",
+      "mode": "projection",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "401k",
+      "mode": "early",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "401k",
+      "mode": "match",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "pension",
+      "mode": "lump",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "pension",
+      "mode": "survivor",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "pension",
+      "mode": "longer",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "social-security",
+      "mode": "ideal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "social-security",
+      "mode": "compare",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "annuity",
+      "mode": "growth",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "annuity-payout",
+      "mode": "length",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "annuity-payout",
+      "mode": "payment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "roth-ira",
+      "mode": "comparison",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "ira",
+      "mode": "comparison",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "rmd",
+      "mode": "annual",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "income-tax",
+      "mode": "federal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "salary",
+      "mode": "conversion",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "marriage-tax",
+      "mode": "comparison",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "estate-tax",
+      "mode": "federal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "take-home-paycheck",
+      "mode": "source-paycheck",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "take-home-paycheck",
+      "mode": "paycheck",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "loan",
+      "mode": "amortized",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "loan",
+      "mode": "deferred",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "loan",
+      "mode": "bond",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "payment",
+      "mode": "term",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "payment",
+      "mode": "payment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "currency",
+      "mode": "manual",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "currency",
+      "mode": "snapshot",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "inflation",
+      "mode": "historical",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "inflation",
+      "mode": "forward",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "inflation",
+      "mode": "backward",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "inflation",
+      "mode": "custom",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "sales-tax",
+      "mode": "after",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "sales-tax",
+      "mode": "before",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "sales-tax",
+      "mode": "rate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "credit-card",
+      "mode": "payment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "credit-card",
+      "mode": "term",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "credit-card",
+      "mode": "minimum",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "credit-cards-payoff",
+      "mode": "avalanche",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "debt-payoff",
+      "mode": "avalanche",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "debt-payoff",
+      "mode": "snowball",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "debt-consolidation",
+      "mode": "comparison",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "repayment",
+      "mode": "extra-payments",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "repayment",
+      "mode": "term",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "repayment",
+      "mode": "payment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "normal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "solve-payment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "solve-principal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "solve-rate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "solve-term",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "extra",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "all",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "projection",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "college-cost",
+      "mode": "planning",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "vat",
+      "mode": "any-two",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "depreciation",
+      "mode": "straight",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "depreciation",
+      "mode": "declining",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "depreciation",
+      "mode": "syd",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "margin",
+      "mode": "revenue",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "margin",
+      "mode": "cost",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "margin",
+      "mode": "margin",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "margin",
+      "mode": "profit",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "margin",
+      "mode": "stock",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "margin",
+      "mode": "currency",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "margin",
+      "mode": "markup",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "discount",
+      "mode": "percent",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "discount",
+      "mode": "amount",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "discount",
+      "mode": "original",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "discount",
+      "mode": "rate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "business-loan",
+      "mode": "repayment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "personal-loan",
+      "mode": "repayment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "boat-loan",
+      "mode": "payment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "boat-loan",
+      "mode": "price",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "lease",
+      "mode": "rate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "lease",
+      "mode": "payment",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "budget",
+      "mode": "budget",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "commission",
+      "mode": "any-two",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "commission",
+      "mode": "commission",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "commission",
+      "mode": "sales",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "commission",
+      "mode": "rate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "commission",
+      "mode": "tiered",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "percentage",
+      "mode": "of",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "percentage",
+      "mode": "change",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "percentage",
+      "mode": "ratio",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "tip-bill-split",
+      "mode": "split",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "date",
+      "mode": "difference",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "date",
+      "mode": "add",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "length",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "mass",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "temperature",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "area",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "volume",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "speed",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "scientific",
+      "mode": "evaluate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "markup",
+      "mode": "price",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "markup",
+      "mode": "reverse",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "markup",
+      "mode": "margin",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "markup",
+      "mode": "convert",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "markup",
+      "mode": "compare",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "cagr",
+      "mode": "rate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "cagr",
+      "mode": "ending",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "cagr",
+      "mode": "beginning",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "cagr",
+      "mode": "dates",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "emergency-fund",
+      "mode": "goal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "emergency-fund",
+      "mode": "plan",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "break-even",
+      "mode": "units",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "break-even",
+      "mode": "profit",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "break-even",
+      "mode": "price",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "investment-fee",
+      "mode": "impact",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "investment-fee",
+      "mode": "compare",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "real-return",
+      "mode": "rate",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "real-return",
+      "mode": "value",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "id": "real-return",
+      "mode": "nominal",
+      "calculation": true,
+      "hydratedSubmit": true,
+      "noOverflow": true
+    },
+    {
+      "case": "legacy form Enter 2+3*4",
+      "passed": true
+    },
+    {
+      "case": "legacy form Enter 5!",
+      "passed": true
+    },
+    {
+      "case": "legacy scientific equals key",
+      "passed": true
+    },
+    {
+      "case": "requestSubmit fallback preserves native required-field validation",
+      "passed": true
+    },
+    {
+      "case": "mortgage lazy chart and complete CSV with missing native APIs",
+      "passed": true
+    },
+    {
+      "case": "XR-sized complete quick calculator and basic calculation",
+      "passed": true
+    },
+    {
+      "case": "directory live search under legacy API profile",
+      "passed": true
+    },
+    {
+      "case": "mortgage result width 390",
+      "passed": true
+    },
+    {
+      "case": "mortgage result width 414",
+      "passed": true
+    },
+    {
+      "case": "mortgage result width 768",
+      "passed": true
+    },
+    {
+      "case": "mortgage result width 1440",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "versioned_assets": 30,
+  "ads": "Only exact existing publisher loader stubbed."
+}
