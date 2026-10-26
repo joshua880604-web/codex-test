@@ -1,0 +1,1197 @@
+{
+  "tested_at": "2026-10-26T02:27:24.709Z",
+  "passed": true,
+  "calculator_modes": 193,
+  "checks": [
+    {
+      "id": "mortgage",
+      "mode": "monthly",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mortgage",
+      "mode": "biweekly",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "amortization",
+      "mode": "schedule",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "remaining-extra",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "remaining-normal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "remaining-biweekly",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "remaining-all",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "known-extra",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "known-normal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "known-biweekly",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mortgage-payoff",
+      "mode": "known-all",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "house-affordability",
+      "mode": "income",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "house-affordability",
+      "mode": "budget",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "rent",
+      "mode": "affordability",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "debt-to-income-ratio",
+      "mode": "ratio",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "refinance",
+      "mode": "balance",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "refinance",
+      "mode": "original",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "rental-property",
+      "mode": "projection",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "apr",
+      "mode": "loan",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "apr",
+      "mode": "mortgage",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "fha-loan",
+      "mode": "monthly",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "fha-loan",
+      "mode": "biweekly",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "va-mortgage",
+      "mode": "monthly",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "va-mortgage",
+      "mode": "biweekly",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "home-equity-loan",
+      "mode": "loan",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "heloc",
+      "mode": "draw-repay",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "heloc",
+      "mode": "maximum-credit",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "down-payment",
+      "mode": "price",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "down-payment",
+      "mode": "cash",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "down-payment",
+      "mode": "percent",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "rent-vs-buy",
+      "mode": "comparison",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "auto-loan",
+      "mode": "payment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "auto-loan",
+      "mode": "price",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "cash-back-or-low-interest",
+      "mode": "compare",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "auto-lease",
+      "mode": "payment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "auto-lease",
+      "mode": "price",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "interest",
+      "mode": "accumulation",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "investment",
+      "mode": "end",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "investment",
+      "mode": "contribution",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "investment",
+      "mode": "return",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "investment",
+      "mode": "starting",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "investment",
+      "mode": "length",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "finance",
+      "mode": "fv",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "finance",
+      "mode": "pmt",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "finance",
+      "mode": "i-y",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "finance",
+      "mode": "n",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "finance",
+      "mode": "pv",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "compound-interest",
+      "mode": "growth",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "compound-interest",
+      "mode": "conversion",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "interest-rate",
+      "mode": "rate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "savings",
+      "mode": "accumulation",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "savings",
+      "mode": "goal-contribution",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "savings",
+      "mode": "goal-time",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "simple-interest",
+      "mode": "balance",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "simple-interest",
+      "mode": "principal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "simple-interest",
+      "mode": "years",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "simple-interest",
+      "mode": "rate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "cd",
+      "mode": "accumulation",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "bond",
+      "mode": "price",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "bond",
+      "mode": "face",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "bond",
+      "mode": "yield",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "bond",
+      "mode": "years",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "bond",
+      "mode": "coupon",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "bond",
+      "mode": "dated",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "mutual-fund",
+      "mode": "projection",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "average-return",
+      "mode": "returns",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "average-return",
+      "mode": "cashflows",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "average-return",
+      "mode": "variable-periods",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "irr",
+      "mode": "fixed",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "irr",
+      "mode": "irregular",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "roi",
+      "mode": "length",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "roi",
+      "mode": "dates",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "payback-period",
+      "mode": "fixed",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "payback-period",
+      "mode": "irregular",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "present-value",
+      "mode": "lump",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "present-value",
+      "mode": "annuity",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "future-value",
+      "mode": "growth",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "retirement",
+      "mode": "required",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "retirement",
+      "mode": "saving",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "retirement",
+      "mode": "withdrawal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "retirement",
+      "mode": "longevity",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "401k",
+      "mode": "projection",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "401k",
+      "mode": "early",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "401k",
+      "mode": "match",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "pension",
+      "mode": "lump",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "pension",
+      "mode": "survivor",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "pension",
+      "mode": "longer",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "social-security",
+      "mode": "ideal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "social-security",
+      "mode": "compare",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "annuity",
+      "mode": "growth",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "annuity-payout",
+      "mode": "length",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "annuity-payout",
+      "mode": "payment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "roth-ira",
+      "mode": "comparison",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "ira",
+      "mode": "comparison",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "rmd",
+      "mode": "annual",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "income-tax",
+      "mode": "federal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "salary",
+      "mode": "conversion",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "marriage-tax",
+      "mode": "comparison",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "estate-tax",
+      "mode": "federal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "take-home-paycheck",
+      "mode": "source-paycheck",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "take-home-paycheck",
+      "mode": "paycheck",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "loan",
+      "mode": "amortized",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "loan",
+      "mode": "deferred",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "loan",
+      "mode": "bond",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "payment",
+      "mode": "term",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "payment",
+      "mode": "payment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "currency",
+      "mode": "manual",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "currency",
+      "mode": "snapshot",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "inflation",
+      "mode": "historical",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "inflation",
+      "mode": "forward",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "inflation",
+      "mode": "backward",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "inflation",
+      "mode": "custom",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "sales-tax",
+      "mode": "after",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "sales-tax",
+      "mode": "before",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "sales-tax",
+      "mode": "rate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "credit-card",
+      "mode": "payment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "credit-card",
+      "mode": "term",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "credit-card",
+      "mode": "minimum",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "credit-cards-payoff",
+      "mode": "avalanche",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "debt-payoff",
+      "mode": "avalanche",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "debt-payoff",
+      "mode": "snowball",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "debt-consolidation",
+      "mode": "comparison",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "repayment",
+      "mode": "extra-payments",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "repayment",
+      "mode": "term",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "repayment",
+      "mode": "payment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "normal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "solve-payment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "solve-principal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "solve-rate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "solve-term",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "extra",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "all",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "student-loan",
+      "mode": "projection",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "college-cost",
+      "mode": "planning",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "vat",
+      "mode": "any-two",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "depreciation",
+      "mode": "straight",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "depreciation",
+      "mode": "declining",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "depreciation",
+      "mode": "syd",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "margin",
+      "mode": "revenue",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "margin",
+      "mode": "cost",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "margin",
+      "mode": "margin",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "margin",
+      "mode": "profit",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "margin",
+      "mode": "stock",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "margin",
+      "mode": "currency",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "margin",
+      "mode": "markup",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "discount",
+      "mode": "percent",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "discount",
+      "mode": "amount",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "discount",
+      "mode": "original",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "discount",
+      "mode": "rate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "business-loan",
+      "mode": "repayment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "personal-loan",
+      "mode": "repayment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "boat-loan",
+      "mode": "payment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "boat-loan",
+      "mode": "price",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "lease",
+      "mode": "rate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "lease",
+      "mode": "payment",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "budget",
+      "mode": "budget",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "commission",
+      "mode": "any-two",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "commission",
+      "mode": "commission",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "commission",
+      "mode": "sales",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "commission",
+      "mode": "rate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "commission",
+      "mode": "tiered",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "percentage",
+      "mode": "of",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "percentage",
+      "mode": "change",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "percentage",
+      "mode": "ratio",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "tip-bill-split",
+      "mode": "split",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "date",
+      "mode": "difference",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "date",
+      "mode": "add",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "length",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "mass",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "temperature",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "area",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "volume",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "unit-converter",
+      "mode": "speed",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "scientific",
+      "mode": "evaluate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "markup",
+      "mode": "price",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "markup",
+      "mode": "reverse",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "markup",
+      "mode": "margin",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "markup",
+      "mode": "convert",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "markup",
+      "mode": "compare",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "cagr",
+      "mode": "rate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "cagr",
+      "mode": "ending",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "cagr",
+      "mode": "beginning",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "cagr",
+      "mode": "dates",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "emergency-fund",
+      "mode": "goal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "emergency-fund",
+      "mode": "plan",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "break-even",
+      "mode": "units",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "break-even",
+      "mode": "profit",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "break-even",
+      "mode": "price",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "investment-fee",
+      "mode": "impact",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "investment-fee",
+      "mode": "compare",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "real-return",
+      "mode": "rate",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "real-return",
+      "mode": "value",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "id": "real-return",
+      "mode": "nominal",
+      "hydratedCalculation": true,
+      "noticeHidden": true
+    },
+    {
+      "case": "modern mortgage viewport 390",
+      "passed": true
+    },
+    {
+      "case": "modern mortgage viewport 414",
+      "passed": true
+    },
+    {
+      "case": "modern mortgage viewport 768",
+      "passed": true
+    },
+    {
+      "case": "modern mortgage viewport 1440",
+      "passed": true
+    },
+    {
+      "case": "modern chart and CSV",
+      "passed": true
+    },
+    {
+      "case": "modern scientific Enter",
+      "passed": true
+    },
+    {
+      "case": "old iOS notice without application bundles",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "scope": "Modern Chromium runtime; old-iOS UA is used only to verify the notice with application bundles blocked. No Safari/WebKit device run.",
+  "ads": "Exact existing publisher loader stubbed."
+}

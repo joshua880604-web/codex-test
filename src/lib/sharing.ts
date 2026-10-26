@@ -31,6 +31,7 @@ export function sharedInputs(calc:Calculator,search:string,hash:string){
  if(calc.id==='mortgage'&&!params.has('pmi_method')&&['pmi','pmi_unit','pmi_years','pmi_policy'].some(key=>params.has(key)))values.pmi_method='Manual';
  if((calc.id==='vat'||(calc.id==='commission'&&mode.id==='any-two'))&&fields.some(f=>params.has(f.key)))for(const f of fields)values[f.key]='';
  for(const f of fields)if(params.has(f.key))values[f.key]=params.get(f.key)!;
+ if(calc.id==='mortgage'&&values.loan_basis==='Loan amount'&&!params.has('pmi_method'))values.pmi_method='Manual';
  return {mode,values};
 }
 export function summaryMetrics(id:string,result:Result,mode=''):Metric[]{

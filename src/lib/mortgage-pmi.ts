@@ -1,11 +1,13 @@
 import rates from './mortgage-pmi-rates.json';
 import type {Values} from './types';
+import {mortgageLoanBasis} from './mortgage-inputs';
 export const pmiCreditBands = rates.credit_bands;
 export const automaticPmi = (v:Values) => v.pmi_method === 'Automatic estimate';
 const pmiFields = new Set(['pmi_method','pmi_credit','pmi','pmi_unit','pmi_years','pmi_policy','appraised_value']);
 export function mortgagePmiFieldVisible(mode:string,v:Values,key:string):boolean {
   if(!pmiFields.has(key))return true;
   if(mode==='biweekly')return false;
+  if(key==='appraised_value' && mortgageLoanBasis(v))return false;
   const auto=automaticPmi(v);
   if(key==='pmi_credit')return auto;
   if(['pmi','pmi_unit','pmi_policy'].includes(key))return !auto;

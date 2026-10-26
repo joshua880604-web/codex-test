@@ -1,0 +1,213 @@
+{
+  "tested_at": "2026-10-26T02:30:44.269Z",
+  "passed": true,
+  "checks": [
+    {
+      "width": 320,
+      "case": "compact purchase default, closed groups, visible interest, first-screen Calculate, no overflow, preserved frame",
+      "calculateBottom": 826.34375,
+      "passed": true
+    },
+    {
+      "width": 320,
+      "case": "purchase automatic PMI and keyboard submit",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "case": "direct amount preserves principal on switch, defaults manual PMI, clears stale result",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "case": "returning to either input basis restores its own PMI settings",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "case": "explicit home value controls PMI, missing value errors, manual recovery, independent savings control",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "case": "full-width chart and reconciled monthly/yearly CSV",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "case": "biweekly shares loan draft and excludes costs; reset restores purchase defaults",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "compact purchase default, closed groups, visible interest, first-screen Calculate, no overflow, preserved frame",
+      "calculateBottom": 826.34375,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "purchase automatic PMI and keyboard submit",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "direct amount preserves principal on switch, defaults manual PMI, clears stale result",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "returning to either input basis restores its own PMI settings",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "explicit home value controls PMI, missing value errors, manual recovery, independent savings control",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "full-width chart and reconciled monthly/yearly CSV",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": "biweekly shares loan draft and excludes costs; reset restores purchase defaults",
+      "passed": true
+    },
+    {
+      "width": 414,
+      "case": "compact purchase default, closed groups, visible interest, first-screen Calculate, no overflow, preserved frame",
+      "calculateBottom": 826.34375,
+      "passed": true
+    },
+    {
+      "width": 414,
+      "case": "purchase automatic PMI and keyboard submit",
+      "passed": true
+    },
+    {
+      "width": 414,
+      "case": "direct amount preserves principal on switch, defaults manual PMI, clears stale result",
+      "passed": true
+    },
+    {
+      "width": 414,
+      "case": "returning to either input basis restores its own PMI settings",
+      "passed": true
+    },
+    {
+      "width": 414,
+      "case": "explicit home value controls PMI, missing value errors, manual recovery, independent savings control",
+      "passed": true
+    },
+    {
+      "width": 414,
+      "case": "full-width chart and reconciled monthly/yearly CSV",
+      "passed": true
+    },
+    {
+      "width": 414,
+      "case": "biweekly shares loan draft and excludes costs; reset restores purchase defaults",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "compact purchase default, closed groups, visible interest, first-screen Calculate, no overflow, preserved frame",
+      "calculateBottom": 900.265625,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "purchase automatic PMI and keyboard submit",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "direct amount preserves principal on switch, defaults manual PMI, clears stale result",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "returning to either input basis restores its own PMI settings",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "explicit home value controls PMI, missing value errors, manual recovery, independent savings control",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "full-width chart and reconciled monthly/yearly CSV",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": "biweekly shares loan draft and excludes costs; reset restores purchase defaults",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "compact purchase default, closed groups, visible interest, first-screen Calculate, no overflow, preserved frame",
+      "calculateBottom": 888.265625,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "purchase automatic PMI and keyboard submit",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "direct amount preserves principal on switch, defaults manual PMI, clears stale result",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "returning to either input basis restores its own PMI settings",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "explicit home value controls PMI, missing value errors, manual recovery, independent savings control",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "full-width chart and reconciled monthly/yearly CSV",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": "biweekly shares loan draft and excludes costs; reset restores purchase defaults",
+      "passed": true
+    },
+    {
+      "case": "direct query hydrates with manual PMI",
+      "passed": true
+    },
+    {
+      "case": "fha-loan retained",
+      "passed": true
+    },
+    {
+      "case": "va-mortgage retained",
+      "passed": true
+    },
+    {
+      "case": "cd retained",
+      "passed": true
+    },
+    {
+      "case": "loan retained",
+      "passed": true
+    },
+    {
+      "case": "server-rendered form and default result remain available",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "scope": "Production static export in Chromium. Native Safari/iPhone not tested. Existing publisher loader stubbed."
+}

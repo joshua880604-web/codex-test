@@ -13,6 +13,8 @@ import { workspaceLayout, workspaceMetrics } from "@/lib/workspace-layout";
 import { calculatorScope } from "@/lib/calculator-scope";
 import { fhaMipTerms } from "@/lib/fha-mip";
 import { mortgagePmiFieldVisible } from "@/lib/mortgage-pmi";
+import { mortgageInputVisible, mortgagePmiDraft, switchMortgageBasis } from "@/lib/mortgage-inputs";
+import MortgageFields from "./MortgageFields";
 import type { Calculator, Field, Result, Values } from "@/lib/types";
 import type { RetirementPlan, RetirementScenario } from "@/lib/retirement-story";
 const ScientificKeypad = dynamic(() => import("./ScientificKeypad"));
@@ -64,6 +66,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const resultRef = useRef<HTMLDivElement>(null),
     request = useRef(0);
   const modeDrafts = useRef<Record<string, Values>>({});
+  const mortgageBasisDrafts = useRef<Record<string, Values>>({});
   const compactModes = calc.modes.length >= 4 || id === "savings";
   const payoff = id === "mortgage-payoff";
   const taskModes = Boolean(taskModeGroups[id]) || id === "savings";
@@ -93,6 +96,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         const {mode:initial,values:v}=shared;
         clearScenarios();
         modeDrafts.current = {};
+        mortgageBasisDrafts.current = {};
         setModeId(initial.id);setValues(v);setResult(null);setError("");setNotice("");setShowAll(false);setYearly(false);
         runCalculation(id,initial.id,v).then(next=>{
           if(token===request.current)setResult(next);
@@ -111,6 +115,10 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     setCalculating(false);
     setValues((v) => {
       const next = {...v, [key]: value};
+      if (id === "mortgage" && key === "loan_basis") {
+        mortgageBasisDrafts.current[v.loan_basis ?? "Home price & down payment"] = mortgagePmiDraft(v);
+        return switchMortgageBasis(v, value, mortgageBasisDrafts.current[value]);
+      }
       if (id === "fha-loan" && key === "mip_method") {
         const price = Number(v.price), down = v.down_unit === "Dollars" ? Number(v.down) : price * Number(v.down) / 100;
         try {
@@ -165,8 +173,13 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         0,
       );
     } catch (e) {
-      if (token === request.current)
+      if (token === request.current) {
         setError(e instanceof Error ? e.message : "Unable to calculate.");
+        if (id === "mortgage" && e instanceof Error && /original home value/i.test(e.message)) {
+          const details = workspaceRef.current?.querySelector<HTMLDetailsElement>('[data-mortgage-group="pmi"]');
+          if (details) details.open = true;
+        }
+      }
     } finally {
       if (token === request.current) setCalculating(false);
     }
@@ -198,6 +211,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   }
   function reset() {
     request.current++;
+    mortgageBasisDrafts.current = {};
     clearScenarios();
     setCalculating(false);
     const scope = modeDraftScope(id, modeId);
@@ -298,7 +312,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
                     ].includes(x),
                 )
                 .map((x) => (
-                  <option key={x}>{x}</option>
+                  <option key={x} value={x}>{id === "mortgage" && field.key === "down_unit" ? x === "Percent" ? "%" : "$" : x}</option>
                 ))}
             </select>
           ) : field.type === "textarea" ? (
@@ -430,7 +444,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       !(["qbi_active", "p2_qbi_active"].includes(f.key) && ((id === "marriage-tax" ? values.qbi !== "Yes" && values.p2_qbi !== "Yes" : values.qbi !== "Yes") || values.year === "2025")) &&
       !(f.key === "spouse_qbi_active" && (values.qbi !== "Yes" || values.year === "2025" || values.filing !== "Married filing jointly")) &&
       !(id === "va-mortgage" && ["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key)) &&
-      !(id === "mortgage" && !mortgagePmiFieldVisible(mode.id, values, f.key)) &&
+      !(id === "mortgage" && (!mortgageInputVisible(mode.id, values, f.key) || !mortgagePmiFieldVisible(mode.id, values, f.key))) &&
       !(id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) || (values.mip_method !== "Manual" && ["upfront", "annual_mip", "mip_years"].includes(f.key))))),
     optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
     main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),
@@ -438,11 +452,11 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   return (
     <>
       <p className="intro">{calc.intro}</p>
-      {scope && <p className="result-note calculator-scope">{scope}</p>}
+      {scope && <p className={"result-note calculator-scope" + (id === "mortgage" ? " mortgage-scope" : "")}>{scope}</p>}
       {id === "irr" && <p className="result-note dated-cash-flow-link">For cash flows on specific calendar dates, use the <a href={routeFor("average-return") + "?mode=cashflows"}>Average Return Calculator’s Dated Cash Flows mode</a>.</p>}
-      {shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
+      {id !== "mortgage" && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       {calc.modes.length > 1 && (
-        <div className={"mode-tabs" + (compactModes ? " compact-mode-tabs" : "")} role="tablist" aria-label="Calculation mode">
+        <div className={"mode-tabs" + (compactModes ? " compact-mode-tabs" : "") + (id === "mortgage" ? " mortgage-mode-tabs" : "")} role="tablist" aria-label="Calculation mode">
           {calc.modes.map((m) => (
             <button
               role="tab"
@@ -506,15 +520,15 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         aria-label={compactModes ? mode.title : undefined}
         aria-labelledby={!compactModes && calc.modes.length > 1 ? "tab-" + modeId : undefined}
       >
-        <p className="mode-description">{mode.description}</p>
+        {id !== "mortgage" && <p className="mode-description">{mode.description}</p>}
         <form aria-busy={calculating} onKeyDown={e=>{if(id === "scientific" && (e.target as HTMLElement).tagName === "TEXTAREA" && e.key === "Enter" && !e.shiftKey){e.preventDefault();e.currentTarget.requestSubmit();}}} onSubmit={calculate} className="calculator-form" onInvalidCapture={(e) => {
           const field = e.target as HTMLInputElement;
           const details = field.closest("details");
           if (details) details.open = true;
           setResult(null);
         }}>
-          {id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
-          {id !== "marriage-tax" && advanced.length > 0 && (
+          {id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
+          {id !== "mortgage" && id !== "marriage-tax" && advanced.length > 0 && (
             <details className="advanced" key={mode.id}>
               <summary>More options ({advanced.length})</summary>
               {advanced.map(f => input(f))}
@@ -627,8 +641,9 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               </div>
             )}
           </div>
-          {context && <p className="result-context">{context}</p>}
+          {context && id !== "mortgage" && <p className="result-context">{context}</p>}
           {summary && summary.highlights.length > 0 && <dl className="workspace-key-figures" aria-label="Key calculated figures">{summary.highlights.map(m => <div className="metric" key={m.label}><dt><span>{m.label}</span></dt><dd><strong>{formatMetric(m)}</strong></dd></div>)}</dl>}
+          {context && id === "mortgage" && <p className="result-context">{context}</p>}
           {summary && summary.details.length > 0 && <details className="workspace-breakdown" key={mode.id + "-breakdown"}>
             <summary>Result breakdown ({summary.details.length})</summary>
             {summary.details.map(m => <div className="metric" key={m.label}><span>{m.label}</span><strong>{formatMetric(m)}</strong></div>)}
@@ -649,6 +664,11 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         </section>
       </>}
       </div>
+      {id === "mortgage" && <nav className="mortgage-related-tools" aria-label="Related mortgage calculators">
+        <strong>Other mortgage tools</strong>
+        {[["fha-loan", "FHA loan"], ["va-mortgage", "VA mortgage"], ["refinance", "Refinance"], ["mortgage-payoff", "Mortgage payoff"], ["heloc", "HELOC"], ["rental-property", "Rental property"]].map(([tool, label]) => <a key={tool} href={routeFor(tool)}>{label}</a>)}
+      </nav>}
+      {id === "mortgage" && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       <section className="explanation">
         <h2>How to use this calculator</h2>
         <p>

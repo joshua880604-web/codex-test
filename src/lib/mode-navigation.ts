@@ -38,6 +38,7 @@ export const savingsChoices: ModeChoice[] = [
 
 // Scopes describe input meaning, not just matching field keys. Nothing is persisted.
 export function modeDraftScope(calculatorId: string, modeId: string): string | undefined {
+  if (calculatorId === "mortgage") return "mortgage";
   if (calculatorId === "mortgage-payoff") return modeId.split("-")[0];
   if (calculatorId === "savings") return "savings";
   if (calculatorId === "student-loan") {

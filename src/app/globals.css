@@ -1676,3 +1676,35 @@ body:has(.calculator-page) {--shell-width:1120px;}
   font-size:14px;
   line-height:1.5;
 }
+
+/* Mortgage's two input paths share one compact form and full-width reports. */
+.mortgage-basis {border:0;margin:0 0 12px;padding:0;min-width:0;}
+.mortgage-basis legend {font-size:13px;font-weight:600;margin-bottom:4px;color:var(--ink);}
+.mortgage-basis > div {display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:8px;}
+.mortgage-basis label {display:flex;align-items:center;gap:7px;min-height:44px;font-size:13px;line-height:1.35;cursor:pointer;}
+.mortgage-basis input {width:16px;height:16px;margin:0;accent-color:var(--green);flex:none;}
+.mortgage-basis input:focus-visible {outline:2px solid var(--green);outline-offset:3px;}
+.calculator-workspace .mortgage-fields .field-row {margin:0 0 10px;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:8px;}
+.mortgage-down-pair {display:grid;grid-template-columns:minmax(0,1fr) 62px;gap:8px;margin-bottom:10px;align-items:center;}
+.calculator-workspace .mortgage-down-pair .field-row {margin:0;}
+.calculator-workspace .mortgage-down-pair .field-row:last-child {display:block;}
+.mortgage-down-pair .field-row:last-child > label {position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.calculator-workspace .mortgage-down-pair .field-row:first-child {grid-template-columns:minmax(0,1fr) minmax(0,.7fr);}
+.mortgage-field:empty {display:none;}
+.mortgage-options {border-top:1px solid var(--module-border);}
+.calculator-workspace .mortgage-options {margin:0;padding-top:0;}
+.calculator-workspace .mortgage-options > summary {padding:7px 0;margin-bottom:0;min-height:44px;line-height:1.4;}
+.mortgage-options summary small {display:block;font-size:12px;font-weight:400;color:var(--muted);margin:2px 0 0 15px;}
+.mortgage-input-help {font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 10px;}
+.mortgage-related-tools {display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;margin:24px 0;font-size:14px;}
+.mortgage-related-tools strong {flex-basis:100%;font-weight:600;}
+.mortgage-related-tools a {display:inline-flex;align-items:center;min-height:44px;}
+@media (max-width:360px) {
+ .mortgage-basis > div {gap:6px;}
+ .mortgage-basis label {font-size:12px;}
+}
+
+.mortgage-scope {padding:0;border:0;background:none;margin:6px 0;font-size:12px;}
+.mortgage-mode-tabs {flex-wrap:nowrap;}
+.mortgage-mode-tabs button {min-width:0;padding:8px 6px;font-size:12px;}
+.calculator-form:has(.mortgage-fields) .form-actions {padding-top:0;border-top:0;margin-top:12px;min-height:44px;}

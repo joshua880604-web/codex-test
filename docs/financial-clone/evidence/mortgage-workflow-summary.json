@@ -1,0 +1,70 @@
+{
+  "tested_at": "2026-10-26T02:32:01.651452+00:00",
+  "passed": true,
+  "tests": 953,
+  "new_tests": 21,
+  "default_metric_sets_unchanged": 193,
+  "workflow_browser_checks": 41,
+  "retained_pmi_browser_checks": 39,
+  "cross_calculator_modes": 193,
+  "cross_calculator_browser_checks": 200,
+  "viewport_widths": [
+    320,
+    390,
+    414,
+    768,
+    1440
+  ],
+  "first_screen_purchase_calculate_bottoms": [
+    {
+      "width": 320,
+      "bottom": 826.34375
+    },
+    {
+      "width": 390,
+      "bottom": 826.34375
+    },
+    {
+      "width": 414,
+      "bottom": 826.34375
+    },
+    {
+      "width": 768,
+      "bottom": 900.265625
+    },
+    {
+      "width": 1440,
+      "bottom": 888.265625
+    }
+  ],
+  "typecheck": "passed",
+  "production_build": "passed",
+  "seo_canonical_pages": 146,
+  "long_tail_pages": 30,
+  "long_tail_answers": 40,
+  "long_tail_links": 65,
+  "discovery_tools": 81,
+  "discovery_tasks": 195,
+  "public_brand_guard_text_assets": 529,
+  "visual_inspector_failures": 0,
+  "visual_inspector_warnings": [
+    {
+      "id": "unused-canvas",
+      "message": "The content stops 287px short of the right edge while it starts 180px from the sidebar."
+    },
+    {
+      "id": "heavy-borders",
+      "message": "8 panel borders are dark against their ground: #c7d5df on #ffffff (1.5:1) | #c7d5df on #ffffff (1.5:1) | #c7d5df on #ffffff (1.5:1)"
+    },
+    {
+      "id": "ragged-row",
+      "message": "1 pair(s) of cards in one row end at different heights (by 123px)."
+    },
+    {
+      "id": "below-fold",
+      "message": "Only 5 of 13 blocks start on the first 1440px screen."
+    }
+  ],
+  "visual_warning_rationale": "Existing user-approved frame, sidebar, thin borders, independent form/result heights and below-fold explanatory content are preserved.",
+  "limits": "Local Chromium production-export checks, exact existing publisher loader stubbed; no native Safari/iPhone, live ads, lender quote or competitor parity validation."
+}

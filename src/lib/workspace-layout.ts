@@ -50,7 +50,9 @@ const priorities: Record<string, string[]> = {
   "retirement:withdrawal": ["Initial monthly withdrawal", "Monthly withdrawal in today’s dollars", "Balance at retirement"],
 };
 export function workspaceMetrics(id: string, mode: string, result: Result): { primary: Metric; highlights: Metric[]; details: Metric[] } {
-  const labels = priorities[id + ":" + mode] ?? priorities[id];
+  const labels = id === "mortgage" && mode === "monthly"
+    ? ["Monthly principal & interest", "Initial monthly total", "Total interest", "Interest saved with extra payments", "Payments avoided", "Years to payoff"]
+    : priorities[id + ":" + mode] ?? priorities[id];
   // Preserve the three published pilots' original primary/breakdown presentation.
   const pilot = ["compound-interest", "investment", "loan"].includes(id);
   const selected = labels?.map(label => result.metrics.find(metric => metric.label === label)).filter((metric): metric is Metric => Boolean(metric)) ?? [];

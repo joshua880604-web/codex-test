@@ -3,6 +3,10 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "mortgage":
+      return mode === "biweekly"
+        ? "Fixed-rate residential mortgage comparison. Biweekly results exclude taxes, insurance and PMI."
+        : "U.S. PMI assumptions; enter your local housing costs.";
     case "fha-loan":
       return "U.S. FHA payment planning. Automatic premiums use ordinary forward-loan rules; Manual accepts checked special or historical terms. Appraisal, underwriting and local loan eligibility still require verification.";
     case "va-mortgage":

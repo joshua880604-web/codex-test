@@ -1,6 +1,6 @@
 {
   "mortgage": {
-    "updatedOn": "2026-10-25",
+    "updatedOn": "2026-10-26",
     "items": [
       {
         "anchor": "use-monthly-cost",
@@ -24,7 +24,7 @@
           "mortgage calculator with extra payments"
         ],
         "question": "Where do I enter extra mortgage principal payments?",
-        "answer": "Open More options for recurring monthly or annual extra principal, a one-time payment, or dated extra payments. Recalculate and review the payoff date, interest and complete schedule. If you already have a loan balance and regular payment, the dedicated Mortgage Payoff tool can start from those figures.",
+        "answer": "Open Extra payments & dates for recurring monthly or annual extra principal, a one-time payment, or dated extra payments. Recalculate and review payoff timing, interest saved and the complete schedule. For a current balance and known regular payment, use the dedicated Mortgage Payoff tool.",
         "links": [
           {
             "id": "mortgage-payoff",

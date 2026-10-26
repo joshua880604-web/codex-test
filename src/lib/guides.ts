@@ -143,7 +143,7 @@ export const guides: Record<string, Guide> = {
     summary:
       "A mortgage payment can include principal and interest plus property taxes, insurance and other ownership costs. The principal-and-interest amount alone is not the total monthly housing cost.",
     scope:
-      "This example isolates principal and interest. Actual escrow, PMI/MIP, fees and cancellation rules depend on the selected assumptions and loan program. It is a planning estimate rather than a lender quote.",
+      "Fixed-rate residential mortgage planning with U.S. housing-cost and PMI assumptions. Start with a home price and down payment, or enter a loan amount directly. For an existing loan, use the current balance, remaining term and actual PMI quote; past costs are excluded. Commercial mortgages, adjustable rates and interest-only phases require different models. This is an estimate rather than a lender quote.",
     examples: [
       {
         title: "Separate loan payment from ownership costs",
@@ -716,3 +716,6 @@ guides.mortgage.sources.push(
 );
 guides.mortgage.examples.push({title:'Automatic PMI with 4% down',mode:'monthly',values:{price:400000,down:4,down_unit:'Percent',years:30,months:0,pmi_method:'Automatic estimate',pmi_credit:'740-759',appraised_value:''},inputs:'Home price 400,000; 4% down; 30-year fixed loan; assumed credit score 740–759; appraisal left blank.',steps:['Original loan = 400,000 × 96% = 384,000; original LTV = 96%.','The published base-rate card gives 0.70% annually for this term, LTV and credit band.','Initial monthly PMI = 384,000 × 0.007 ÷ 12 = 224.'],answer:'Estimated initial PMI is 224 per month, included in the initial monthly total. This is a base-rate illustration, not a lender quote.',expected:{label:'Initial monthly PMI',value:224}});
 guides.mortgage.checkedOn='2026-10-26';
+
+guides.mortgage.questions.push({question:'Can I enter a loan amount instead of a home price?',answer:'Yes. Select Loan amount to enter principal directly. For an existing mortgage, use its current balance and remaining term, and enter your actual PMI quote in Manual mode. The projection excludes past interest and purchase costs. Automatic PMI and 80% cancellation require the original home value, defined as the lower original purchase price and appraisal. This calculator models fixed-rate residential repayment; commercial, adjustable-rate and interest-only structures need different models.'});
+guides.mortgage.examples.push({title:'Project an existing balance with no interest',mode:'monthly',values:{loan_basis:'Loan amount',loan_amount:12000,years:1,months:0,rate:0,pmi_method:'Manual',pmi:0,tax:0,insurance:0,hoa:0,other:0,extra_monthly:0,extra_yearly:0,extra_once:0},inputs:'Current balance $12,000; one year remaining; 0% interest; no entered housing costs, PMI or extra principal.',steps:['Remaining term = 12 monthly payments.','At zero interest, monthly principal = 12000 ÷ 12 = 1000.','No interest or entered housing costs are added.'],answer:'Monthly principal and interest is $1,000. The projection starts at the entered balance and excludes past payments.',expected:{label:'Monthly principal & interest',value:1000}});

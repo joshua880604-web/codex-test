@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';import assert from 'node:assert/strict';
 import {chromium} from '/opt/codex/cua_node/lib/node_modules/playwright/index.mjs';
-const base='http://127.0.0.1:3000',dir='/workspace/work/automatic-pmi-20261026';
+const base=process.env.QA_BASE??'http://127.0.0.1:3000',dir=process.env.QA_DIR??'/workspace/work/automatic-pmi-20261026';
 await fs.mkdir(dir,{recursive:true});
 const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox','--disable-dev-shm-usage']});
 const checks=[],errors=[],unexpected=[];
@@ -8,9 +8,9 @@ const route=r=>{const u=r.request().url();if(u.startsWith(base+'/'))return r.con
 try {
  const ctx=await browser.newContext({acceptDownloads:true,reducedMotion:'reduce'});await ctx.route('**/*',route);const page=await ctx.newPage();page.on('pageerror',e=>errors.push(e.message));
  const visit=async(v={},mode='monthly')=>{await page.goto(base+'/mortgage-calculator.html?'+new URLSearchParams({mode,...v}),{waitUntil:'networkidle'});};
- const result=async()=>{await page.locator('.result h2').waitFor();assert.deepEqual(await page.locator('.error[role="alert"]').allTextContents(),[]);};
+ const result=async()=>{await page.locator('.result h2').waitFor();assert.deepEqual(await page.locator('.error[role="alert"]').allTextContents(),[]);await breakdown();};
  const metric=label=>page.locator('.metric').filter({has:page.getByText(label,{exact:true})}).locator('strong');
- const more=async()=>{const d=page.locator('.calculator-form details.advanced');if(await d.getAttribute('open')===null)await d.locator(':scope > summary').click();};
+ const more=async()=>{for(const d of await page.locator('.calculator-form details.advanced').all())if(await d.getAttribute('open')===null)await d.locator(':scope > summary').click();};
  const breakdown=async()=>{const d=page.locator('.workspace-breakdown');if(await d.count()&&await d.getAttribute('open')===null)await d.locator(':scope > summary').click();};
  const calculate=async()=>{await page.getByRole('button',{name:'Calculate',exact:true}).click();};
  const csv=async(name)=>{const pending=page.waitForEvent('download');await page.getByRole('button',{name:'Download CSV',exact:true}).click();const d=await pending,p=dir+'/'+name+'.csv';await d.saveAs(p);return (await fs.readFile(p,'utf8')).trim().split(/\r?\n/).map(line=>line.split(',').map(cell=>cell.replace(/^"|"$/g,'')));};
@@ -45,7 +45,7 @@ try {
   await visit({down:'4',pmi:'0',pmi_years:'1'});await result();await more();assert.equal(await page.getByLabel('PMI calculation',{exact:true}).inputValue(),'Manual');assert.equal(await metric('Initial monthly PMI').innerText(),'$0.00');checks.push({width,case:'legacy explicit zero quote is preserved',passed:true});
  }
  for(const id of ['fha-loan','va-mortgage']){await page.goto(base+'/'+id+'-calculator.html',{waitUntil:'networkidle'});await result();assert.equal(await page.getByLabel('PMI calculation',{exact:true}).count(),0);checks.push({case:id+' keeps program-specific rules',passed:true});}
- const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});await nojs.route('**/*',route);const np=await nojs.newPage();await np.goto(base+'/mortgage-calculator.html');assert.equal(await np.getByLabel('PMI calculation',{exact:true}).inputValue(),'Automatic estimate');assert.ok((await np.locator('.result').innerText()).includes('Initial monthly PMI'));checks.push({case:'server-rendered automatic defaults without JavaScript',passed:true});await nojs.close();
+ const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});await nojs.route('**/*',route);const np=await nojs.newPage();await np.goto(base+'/mortgage-calculator.html');assert.equal(await np.getByLabel('PMI calculation',{exact:true}).inputValue(),'Automatic estimate');await np.locator('.workspace-breakdown > summary').click();assert.ok((await np.locator('.result').innerText()).includes('Initial monthly PMI'));checks.push({case:'server-rendered automatic defaults without JavaScript',passed:true});await nojs.close();
  assert.deepEqual(errors,[]);assert.deepEqual(unexpected,[]);
  await fs.writeFile('docs/financial-clone/evidence/browser-automatic-pmi-qa.json',JSON.stringify({tested_at:new Date().toISOString(),checks,errors,unexpected,passed:true,scope:'Local production build; exact existing publisher loader stubbed. Direct live-origin and reference-site parity unverified.'},null,2)+'\n');console.log({checks:checks.length,passed:true});
 } finally {await browser.close();}
