@@ -10,6 +10,15 @@ const config = siteConfig();
 export const metadata: Metadata = {
   ...(config.origin ? { metadataBase: new URL(config.origin) } : {}),
   robots: { index: config.indexable, follow: true },
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=20261027", sizes: "16x16 32x32 48x48 64x64", type: "image/x-icon" },
+      { url: "/favicon-48.png?v=20261027", sizes: "48x48", type: "image/png" },
+      { url: "/favicon.svg?v=20261027", sizes: "any", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico?v=20261027",
+    apple: { url: "/apple-touch-icon.png?v=20261027", sizes: "180x180", type: "image/png" },
+  },
   title: {
     default: siteName,
     template: `%s | ${siteName}`,
