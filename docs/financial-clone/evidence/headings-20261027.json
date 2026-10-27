@@ -1,0 +1,361 @@
+{
+  "passed": true,
+  "glossaryPages": 59,
+  "about": {
+    "h1": "About our financial calculators",
+    "title": "About calculatorfree.io"
+  },
+  "allSearchTitlesUnchanged": true,
+  "allCanonicalURLsUnchanged": true,
+  "termsHaveCoreSections": 59,
+  "results": [
+    {
+      "path": "/glossary/compound-interest/",
+      "h1": "Compound interest",
+      "title": "What Is Compound Interest? Definition and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/cagr/",
+      "h1": "CAGR",
+      "title": "What Is CAGR? Compound Annual Growth Rate Explained"
+    },
+    {
+      "path": "/glossary/real-rate-of-return/",
+      "h1": "Real rate of return",
+      "title": "What Is Real Rate of Return? Inflation-Adjusted Example"
+    },
+    {
+      "path": "/glossary/expense-ratio/",
+      "h1": "Expense ratio",
+      "title": "What Is an Expense Ratio? Fund Fees Explained | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/dollar-cost-averaging/",
+      "h1": "Dollar-cost averaging",
+      "title": "What Is Dollar-Cost Averaging? Example and Limitations"
+    },
+    {
+      "path": "/glossary/401k/",
+      "h1": "401(k)",
+      "title": "What Is a 401(k)? Contributions and Employer Match | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/amortization/",
+      "h1": "Amortization",
+      "title": "What Is Loan Amortization? Principal and Interest Explained"
+    },
+    {
+      "path": "/glossary/markup-vs-margin/",
+      "h1": "Markup vs. margin",
+      "title": "Markup vs. Margin: Difference, Formulas and Example"
+    },
+    {
+      "path": "/glossary/simple-interest/",
+      "h1": "Simple interest",
+      "title": "Simple interest: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/apy/",
+      "h1": "APY",
+      "title": "APY: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/inflation/",
+      "h1": "Inflation",
+      "title": "Inflation: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/time-value-of-money/",
+      "h1": "Time value of money",
+      "title": "Time value of money: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/return-on-investment/",
+      "h1": "Return on investment (ROI)",
+      "title": "Return on investment (ROI): Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/internal-rate-of-return/",
+      "h1": "Internal rate of return (IRR)",
+      "title": "Internal rate of return (IRR): Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/net-present-value/",
+      "h1": "Net present value (NPV)",
+      "title": "Net present value (NPV): Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/payback-period/",
+      "h1": "Payback period",
+      "title": "Payback period: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/bond-yield/",
+      "h1": "Bond yield",
+      "title": "Bond yield: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/certificate-of-deposit/",
+      "h1": "Certificate of deposit (CD)",
+      "title": "Certificate of deposit (CD): Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/mutual-funds-and-etfs/",
+      "h1": "Mutual funds and ETFs",
+      "title": "Mutual funds and ETFs: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/arithmetic-vs-geometric-return/",
+      "h1": "Arithmetic vs. geometric return",
+      "title": "Arithmetic vs. geometric return: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/annuity/",
+      "h1": "Annuity",
+      "title": "Annuity: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/traditional-vs-roth-ira/",
+      "h1": "Traditional vs. Roth IRA",
+      "title": "Traditional vs. Roth IRA: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/employer-match-and-vesting/",
+      "h1": "Employer match and vesting",
+      "title": "Employer match and vesting: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/required-minimum-distribution/",
+      "h1": "Required minimum distribution (RMD)",
+      "title": "Required minimum distribution (RMD): Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/social-security-benefits/",
+      "h1": "Social Security retirement benefits",
+      "title": "Social Security retirement benefits: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/withdrawal-rate/",
+      "h1": "Withdrawal rate",
+      "title": "Withdrawal rate: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/defined-benefit-pension/",
+      "h1": "Defined-benefit pension",
+      "title": "Defined-benefit pension: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/apr/",
+      "h1": "Annual percentage rate (APR)",
+      "title": "Annual percentage rate (APR): Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/principal-and-interest/",
+      "h1": "Principal and interest",
+      "title": "Principal and interest: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/fixed-vs-variable-interest/",
+      "h1": "Fixed vs. variable interest",
+      "title": "Fixed vs. variable interest: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/debt-to-income-ratio/",
+      "h1": "Debt-to-income ratio (DTI)",
+      "title": "Debt-to-income ratio (DTI): Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/debt-consolidation/",
+      "h1": "Debt consolidation",
+      "title": "Debt consolidation: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/debt-snowball-vs-avalanche/",
+      "h1": "Debt snowball vs. avalanche",
+      "title": "Debt snowball vs. avalanche: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/capitalized-interest/",
+      "h1": "Capitalized interest",
+      "title": "Capitalized interest: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/interest-only-and-balloon-loans/",
+      "h1": "Interest-only and balloon loans",
+      "title": "Interest-only and balloon loans: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/loan-to-value-ratio/",
+      "h1": "Loan-to-value ratio (LTV)",
+      "title": "Loan-to-value ratio (LTV): Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/home-equity-and-heloc/",
+      "h1": "Home equity and HELOC",
+      "title": "Home equity and HELOC: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/mortgage-points/",
+      "h1": "Mortgage points",
+      "title": "Mortgage points: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/mortgage-escrow/",
+      "h1": "Mortgage escrow",
+      "title": "Mortgage escrow: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/private-mortgage-insurance/",
+      "h1": "Private mortgage insurance (PMI)",
+      "title": "Private mortgage insurance (PMI): Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/refinance-break-even/",
+      "h1": "Refinance break-even",
+      "title": "Refinance break-even: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/cap-rate-vs-cash-on-cash-return/",
+      "h1": "Cap rate vs. cash-on-cash return",
+      "title": "Cap rate vs. cash-on-cash return: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/down-payment/",
+      "h1": "Down payment",
+      "title": "Down payment: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/marginal-vs-effective-tax-rate/",
+      "h1": "Marginal vs. effective tax rate",
+      "title": "Marginal vs. effective tax rate: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/deduction-vs-credit/",
+      "h1": "Tax deduction vs. tax credit",
+      "title": "Tax deduction vs. tax credit: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/gross-vs-net-pay/",
+      "h1": "Gross pay vs. net pay",
+      "title": "Gross pay vs. net pay: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/sales-tax-vs-vat/",
+      "h1": "Sales tax vs. VAT",
+      "title": "Sales tax vs. VAT: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/estate-vs-inheritance-tax/",
+      "h1": "Estate tax vs. inheritance tax",
+      "title": "Estate tax vs. inheritance tax: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/break-even-point/",
+      "h1": "Break-even point",
+      "title": "Break-even point: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/contribution-margin/",
+      "h1": "Contribution margin",
+      "title": "Contribution margin: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/depreciation/",
+      "h1": "Depreciation",
+      "title": "Depreciation: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/commission/",
+      "h1": "Commission",
+      "title": "Commission: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/lease-residual-value/",
+      "h1": "Lease residual value",
+      "title": "Lease residual value: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/ecpm/",
+      "h1": "eCPM",
+      "title": "eCPM: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/emergency-fund/",
+      "h1": "Emergency fund",
+      "title": "Emergency fund: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/budget-and-savings-rate/",
+      "h1": "Budget and savings rate",
+      "title": "Budget and savings rate: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/exchange-rate/",
+      "h1": "Exchange rate",
+      "title": "Exchange rate: Definition, Formula and Example | calculatorfree.io"
+    },
+    {
+      "path": "/glossary/percentage-vs-percentage-points/",
+      "h1": "Percentage vs. percentage points",
+      "title": "Percentage vs. percentage points: Definition, Formula and Example"
+    },
+    {
+      "path": "/glossary/margin-and-leverage/",
+      "h1": "Trading margin and leverage",
+      "title": "Trading margin and leverage: Definition, Formula and Example"
+    }
+  ],
+  "browser": {
+    "passed": true,
+    "checks": [
+      {
+        "width": 320,
+        "page": "about",
+        "noOverflow": true
+      },
+      {
+        "width": 320,
+        "page": "apr",
+        "noOverflow": true,
+        "shortH1": true
+      },
+      {
+        "width": 390,
+        "page": "about",
+        "noOverflow": true
+      },
+      {
+        "width": 390,
+        "page": "apr",
+        "noOverflow": true,
+        "shortH1": true
+      },
+      {
+        "width": 1440,
+        "page": "about",
+        "noOverflow": true
+      },
+      {
+        "width": 1440,
+        "page": "apr",
+        "noOverflow": true,
+        "shortH1": true
+      }
+    ],
+    "errors": [],
+    "legacyURL": true
+  },
+  "validation": {
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "seoPages": 154,
+    "internalAnchors": 8022,
+    "fragmentPresets": 478,
+    "queryAnchors": 0
+  },
+  "limits": [
+    "Local production export/Chromium only",
+    "Live public domain and native Safari not tested",
+    "SEMrush re-crawl pending"
+  ]
+}

@@ -17,7 +17,7 @@ export default async function TermPage({params}:{params:Promise<{term:string}>})
  const entry=glossaryTerm((await params).term);if(!entry)notFound();
  return <div className="page-wrap glossary-page"><main id="main"><article className="glossary-article">
   <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href={glossaryPath}>Glossary</SiteLink> / <span aria-current="page">{entry.name}</span></nav>
-  <p className="glossary-category">{entry.category}</p><h1>{entry.title}</h1>
+  <p className="glossary-category">{entry.category}</p><h1>{entry.name}</h1>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(glossarySchema(entry))}}/>
   <p className="glossary-definition">{entry.definition}</p>
   {entry.scope&&<p className="glossary-scope"><strong>Scope:</strong> {entry.scope}</p>}

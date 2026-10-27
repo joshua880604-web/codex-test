@@ -92,7 +92,7 @@ export default async function Page({
   const title =
     c?.title ??
     (slug === "about.html"
-      ? `About ${siteName}`
+      ? "About our financial calculators"
       : slug === "privacy.html"
         ? "Privacy"
         : slug === "methodology.html"
