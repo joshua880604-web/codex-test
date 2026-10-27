@@ -1,5 +1,6 @@
 "use client";
 import SiteLink from "@/components/SiteLink";
+import CreditCardFields from "./CreditCardFields";
 import { calculatorPresetHref } from "@/lib/preset-links";
 
 import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
@@ -287,6 +288,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   }
   function input(field: Field, person?: string) {
     if (field.key === "verified_rate") return null;
+    if (id === "credit-cards-payoff" && field.key === "debts") return <CreditCardFields key={field.key} value={values.debts ?? ""} onChange={value=>update("debts",value)} />;
     const inputId = id + "-" + mode.id + "-" + field.key;
     const hint = field.hint ?? inputHint(id,mode.id,field.key) ?? (id === "401k" && mode.id === "projection" ? ({
       match: "The percentage your employer adds for each eligible dollar you contribute. 50% means $0.50 per $1.",
