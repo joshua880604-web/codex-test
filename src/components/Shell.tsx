@@ -3,6 +3,7 @@ import SiteLink from "@/components/SiteLink";
 import {siteName} from "@/lib/site";
 import {categoryNavigation,sidebarTools} from '@/lib/calculator-categories';
 import ThemeChoices from "./ThemeChoices";
+import FavoritesMenu from "./FavoritesMenu";
 import MobileNavigation from "./MobileNavigation";
 import CalculatorSearch from "./CalculatorSearch";
 import SiteBenefits, { FreeBadge } from "./SiteBenefits";
@@ -31,6 +32,7 @@ export function Header() {
           </SiteLink>
           <MobileNavigation/>
           <div className="header-actions">
+          <FavoritesMenu/>
           <details className="theme-menu theme-tools"><summary>Theme</summary><div className="theme-panel"><strong>Appearance</strong><ThemeChoices/><small>Saved in this browser.</small></div></details>
           <span className="header-description">
             <FreeBadge />

@@ -53,7 +53,7 @@ export async function generateMetadata({
     return pageMetadata(
       "/privacy.html",
       "Privacy",
-      "How local calculator inputs, share links and offline exchange rates are handled.",
+      "How calculator favorites, browser preferences, share links and Google advertising are handled.",
     );
   if (slug === "methodology.html")
     return pageMetadata(
@@ -125,8 +125,8 @@ export default async function Page({
           <>
             <p>
               Calculator calculations run locally in your browser. You do not
-              need an account, and this application does not provide persistent
-              storage of your calculation inputs.
+              need an account. Favorites and appearance preferences
+              can be saved in this browser when you choose to use those features.
             </p>
             <h2>Google advertising</h2>
             <p>
@@ -145,6 +145,8 @@ export default async function Page({
               <SiteLink href="https://myadcenter.google.com/">Google My Ad Center</SiteLink>{" "}
               and manage cookies through your browser settings.
             </p>
+            <h2>Favorite calculators</h2>
+            <p>Choosing the star on a calculator saves its identifier in this browser. This feature does not store your calculation inputs or results and does not upload your favorites to an account or server. Open Favorites to return to a calculator or remove it from your list. Favorites are not synchronized between devices, and clearing site data or using a different browser profile can remove or hide the list.</p>
             <h2>Calculations and sharing</h2>
             <p>
               Tool links exclude inputs by default. If you choose to include inputs,

@@ -61,7 +61,7 @@ test("Production sitemap lists canonical pages and only reviewed content dates",
   assert.equal(contentUpdatedOn['/guides/'],'2026-10-27');
   assert.equal(contentUpdatedOn['/guides/debt-snowball-vs-avalanche/'],'2026-10-27');
   assert.equal(contentUpdatedOn['/guides/mortgage-recast-vs-refinance/'],'2026-10-27');
-  assert.ok(Object.entries(contentUpdatedOn).filter(([path])=>!['/guides/debt-snowball-vs-avalanche/','/guides/','/guides/mortgage-recast-vs-refinance/','/mortgage-calculator.html','/pmi-calculator.html','/biweekly-mortgage-calculator.html','/discount-points-calculator.html','/real-estate-calculator.html','/loan-calculators.html','/savings-investment-calculators.html','/cd-calculator.html','/mortgage-recast-calculator.html','/tax-equivalent-yield-calculator.html','/treasury-bill-calculator.html'].includes(path)).every(([,date])=>date==='2026-10-25'));
+  assert.ok(Object.entries(contentUpdatedOn).filter(([path])=>!['/privacy.html','/guides/debt-snowball-vs-avalanche/','/guides/','/guides/mortgage-recast-vs-refinance/','/mortgage-calculator.html','/pmi-calculator.html','/biweekly-mortgage-calculator.html','/discount-points-calculator.html','/real-estate-calculator.html','/loan-calculators.html','/savings-investment-calculators.html','/cd-calculator.html','/mortgage-recast-calculator.html','/tax-equivalent-yield-calculator.html','/treasury-bill-calculator.html'].includes(path)).every(([,date])=>date==='2026-10-25'));
   assert.ok(!entries.some(e=>e.url.endsWith('/llms.txt')||e.url.endsWith('/sitemap.xml')));
 });
 test("Calculator canonicals consolidate shared query variants and schema matches the real app", () => {

@@ -1,6 +1,7 @@
 "use client";
 import SiteLink from "@/components/SiteLink";
 import CreditCardFields from "./CreditCardFields";
+import FavoriteButton from "./FavoriteButton";
 import { calculatorPresetHref } from "@/lib/preset-links";
 
 import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
@@ -485,7 +486,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     advanced = optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
   return (
     <>
-      <p className="intro">{calc.intro}</p>
+      <div className="calculator-intro-row"><p className="intro">{calc.intro}</p><FavoriteButton id={id}/></div>
       {id === "credit-card" && <p className="result-note">One card: compare fixed payments, a payoff deadline or a minimum-payment rule below. For several cards sharing one monthly budget, use the <SiteLink href={routeFor("credit-cards-payoff")}>Multiple Credit Cards Payoff Calculator</SiteLink>.</p>}
       {id === "credit-cards-payoff" && <p className="result-note">Enter your total monthly budget, including all minimum payments. For one card and a target payoff date, use the <SiteLink href={routeFor("credit-card")}>Single Credit Card Payoff Calculator</SiteLink>. To compare repayment strategies, use the <SiteLink href={routeFor("debt-payoff")}>Debt Snowball and Avalanche Calculator</SiteLink>.</p>}
       {scope && <p className={"result-note calculator-scope" + (id === "mortgage" ? " mortgage-scope" : "")}>{scope}</p>}
