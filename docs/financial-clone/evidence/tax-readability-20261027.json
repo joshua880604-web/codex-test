@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "scope": "Two explanatory guides only; no calculator engine, field, data, URL, title or canonical changes",
+  "tests": 1041,
+  "typecheck": "passed",
+  "productionExport": "passed",
+  "seoPages": 154,
+  "internalAnchors": 8022,
+  "visibleUpdatedCopy": true,
+  "treasuryBillGuideUnchanged": true,
+  "exampleNumericInputsAndExpectedValuesUnchanged": true,
+  "limits": [
+    "SEMrush readability result pending",
+    "Live domain HTTP/native Safari not verified"
+  ]
+}

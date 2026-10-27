@@ -1,0 +1,5 @@
+# Tax explanation readability — 2026-10-27
+
+Rewrote federal income-tax and tax-equivalent-yield guide summaries, scope and FAQs with shorter sentences and explanations of QBI, AMT and NIIT. Preserved substantive conditions: separate-return spouse itemization, net eligible passive income, NIIT scope, active-business minimum-QBI model assumptions, exemption eligibility, state/local tax treatment and the unsupported state-taxed-municipal-versus-state-exempt-Treasury case. Reformatted the existing tax-equivalent-yield example text with clear amounts and spacing; exact numerical inputs/expected answer retained. Treasury Bill guide unchanged.
+
+Only two guide sources change; no engine, rate table, field, disclaimer, route, title or schema edits.1041 tests, TypeScript and production export passed.154-page SEO/8022 internal links passed. Updated copy confirmed in static HTML; no visible JSON code fences present. No claim about SEMrush score until a new crawl. Native Safari/live custom-domain HTTP unverified. Evidence:evidence/tax-readability-20261027.json.

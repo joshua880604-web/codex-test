@@ -412,9 +412,9 @@ export const guides: Record<string, Guide> = {
   },
   "income-tax": {
     summary:
-      "A federal income tax estimate starts with income, subtracts applicable deductions and applies the selected year’s ordinary and preferential tax rules and entered credits.",
+      "Start by choosing your tax year and filing status. Enter your income, deductions and credits. The calculator estimates federal income tax under the selected rules. Some types of income, such as eligible long-term gains, use different tax rates.",
     scope:
-      "Supports selected 2025/2026 federal rules under the inputs shown. It is not a complete tax return or state/local tax engine. QBI, AMT, credit eligibility, separate-return elections and special income require the stated assumptions to be checked.",
+      "This tool covers selected federal rules for 2025 and 2026. It does not prepare a full tax return or calculate state and local income tax. Qualified business income (QBI) is income that may qualify for a business deduction. Alternative minimum tax (AMT) is a separate tax calculation. Check the stated limits for these rules, tax credits, separate returns and special income.",
     examples: [
       {
         title: "A basic 2026 single wage-earner estimate",
@@ -435,12 +435,12 @@ export const guides: Record<string, Guide> = {
       {
         question: "Is my marginal rate applied to all income?",
         answer:
-          "No. Under progressive ordinary brackets, each slice of taxable income is taxed at its bracket’s rate. Preferential income and credits can change the calculation.",
+          "No. Each slice of ordinary taxable income uses the rate for that bracket. Your top rate does not apply to every dollar. Some investment income uses special rates. Tax credits can also reduce the final amount.",
       },
       {
         question: "Is annual tax the same as paycheck withholding?",
         answer:
-          "No. Tax liability estimates what is owed for the year; withholding is money paid during the year and depends on payroll rules and elections.",
+          "No. Your tax liability is the tax owed for the year. Withholding is tax already taken from your pay. Payroll rules and your withholding choices affect that amount.",
       },
     ],
     sources: [
@@ -680,9 +680,9 @@ for (const id of ["income-tax", "take-home-paycheck", "marriage-tax"]) guides[id
 
 // Reviewed policy conditions; no new jurisdiction or full-return engine implied.
 guides['income-tax'].questions.push(
-  {question:'Does net rental income enter the 3.8% NIIT calculation?',answer:'Eligible net rental, royalty and passive income enters the NIIT base when you select Yes. Enter net income after applicable expenses and loss limits. An established exclusion can be selected as No; ordinary retirement distributions and unrelated other income are not automatically NII.'},
-  {question:'What if my spouse itemizes on a separate return?',answer:'For Married filing separately, select Yes to the spouse-itemization question. Your standard deduction is then unavailable, and the model uses your own eligible itemized deductions. This condition is separate from whether you lived apart all year.'},
-  {question:'When does the 2026 $400 minimum QBI deduction apply?',answer:'Select the simplified QBI deduction and indicate material participation only for an eligible active business. The model tests eligible net active QBI after half regular self-employment tax against the $1,000 threshold. It applies the greater of the modeled deduction or $400 in 2026. Other QBI adjustments, income-based business limits and eligibility still require review.'}
+  {question:'Does net rental income enter the 3.8% NIIT calculation?',answer:'NIIT means Net Investment Income Tax. It is an extra 3.8% federal tax that can apply to investment income. Select Yes to include eligible net rental, royalty and passive income in this calculation. Enter income after allowed expenses and loss limits. Select No only when an exclusion applies. Ordinary retirement distributions and unrelated other income are not automatically treated as net investment income.'},
+  {question:'What if my spouse itemizes on a separate return?',answer:'Choose Married filing separately and answer Yes if your spouse itemizes deductions. You then cannot use the standard deduction. The model uses your own eligible itemized deductions instead. Whether you lived apart all year is a separate question.'},
+  {question:'When does the 2026 $400 minimum QBI deduction apply?',answer:'QBI means qualified business income. Select the simplified QBI deduction. Indicate material participation only if you meet that requirement for an eligible active business. The model subtracts half of regular self-employment tax from eligible net active QBI. It checks that amount against the $1,000 threshold. For qualifying cases in 2026, it uses the larger of $400 or the modeled deduction. Other QBI adjustments, income-based business limits and eligibility rules still need separate review.'}
 );
 guides['income-tax'].sources.push(
   {title:'IRS: NIIT income, deductions and exclusions',url:'https://www.irs.gov/newsroom/questions-and-answers-on-the-net-investment-income-tax'},

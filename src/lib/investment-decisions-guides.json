@@ -1,8 +1,8 @@
 {
   "tax-equivalent-yield": {
     "checkedOn": "2026-10-27",
-    "summary": "Tax-equivalent yield is the taxable annual yield needed to match an exempt option after the taxes entered here. Compare like-for-like annual yield conventions in an ordinary taxable account; a higher equivalent yield does not imply equal credit, interest-rate or liquidity risk.",
-    "scope": "User-entered marginal-rate model for federally exempt interest and taxable interest. State/local treatment is selected explicitly, optional surtax is entered, and all rates are combined without deduction interactions. No automatic bracket, AMT, NIIT eligibility, fund-distribution tax allocation, capital-gain or retirement-account model.",
+    "summary": "Tax-equivalent yield answers a simple question: what taxable annual yield would match your tax-exempt income after tax? Enter both yields and the tax rates that apply to this interest. Use the same annual yield basis for both options. This comparison is for an ordinary taxable account. Equal after-tax income does not mean equal investment risk.",
+    "scope": "You enter the marginal tax rates: the rates on the next dollar of interest. The tool assumes the exempt option qualifies for federal tax exemption. Choose whether state and local taxes apply to it. Enter any extra investment-income tax rate yourself. The tool adds the entered rates without adjusting for tax deductions. It does not choose a tax bracket or check exemption eligibility. It does not model alternative minimum tax (AMT), eligibility for Net Investment Income Tax (NIIT), partly exempt fund payments, capital gains or retirement accounts.",
     "examples": [
       {
         "title": "Four percent exempt equals five percent taxable at a 20% rate",
@@ -17,13 +17,13 @@
           "muni_state": "Exempt",
           "amount": 10000
         },
-        "inputs": "4% federally/state/local exempt yield; taxable comparison5%; combined taxable marginal rate20%; investment$10,000.",
+        "inputs": "Invest $10,000. The exempt annual yield is 4%, with no federal, state or local tax. The taxable annual yield is 5%. Its combined marginal tax rate is 20%.",
         "steps": [
-          "Equivalent taxable yield =4%/(1−0.20)=5%.",
-          "After-tax taxable yield =5%×0.80=4%.",
-          "Both options produce$400 annual after-tax income on$10,000."
+          "Required taxable yield: 4% ÷ (1 − 0.20) = 5%.",
+          "Taxable yield after tax: 5% × 0.80 = 4%.",
+          "Each option earns $400 a year after tax on $10,000."
         ],
-        "answer": "The tax-equivalent taxable yield is5%; income advantage is$0.",
+        "answer": "The required taxable yield is 5%. Both options earn the same after-tax income, so the income advantage is $0.",
         "expected": {
           "label": "Tax-equivalent taxable yield",
           "value": 5
@@ -33,19 +33,19 @@
     "questions": [
       {
         "question": "Which tax rate should I enter?",
-        "answer": "Use the marginal rates that apply to the next dollar of this interest income, not your average tax rate. Federal, state, local and optional additional investment-income rates are added. This simplified model does not calculate tax brackets, deductibility interactions or NIIT thresholds."
+        "answer": "Use the rates that apply to the next dollar of this interest income. These are marginal rates, not your average tax rate. The tool adds federal, state, local and any extra investment-income tax rate you enter. It does not select tax brackets or adjust for deductions. It also does not check whether Net Investment Income Tax (NIIT) applies to you."
       },
       {
         "question": "Are all municipal bonds completely tax-free?",
-        "answer": "No. This tool assumes the entered exempt yield qualifies for federal exemption, but you must select its state/local treatment. Out-of-state interest, partly exempt fund distributions, private-activity bond AMT and capital gains need separate analysis. Selecting Exempt does not establish eligibility."
+        "answer": "No. This tool assumes the bond qualifies for federal tax exemption. You must choose its state and local tax treatment. Out-of-state interest may be taxable. Fund payments may be only partly exempt. Some private-activity bonds can trigger alternative minimum tax (AMT). Capital gains need a separate calculation. Choosing Exempt does not prove that you qualify."
       },
       {
         "question": "Can I compare this with a Treasury bill or CD?",
-        "answer": "Use comparable annual yield conventions, but check tax treatment. This taxable option is subject to all entered rates; Treasury bill interest is federally taxable but state/local exempt. A fully exempt municipal-versus-Treasury comparison can use zero state/local rates. A state-taxed municipal bond versus a state-exempt Treasury requires separate per-investment state rates and is not represented by this simplified form."
+        "answer": "Yes, if you use the same annual yield basis and check each tax rule. This form applies all entered rates to the taxable option. Treasury bill interest is subject to federal tax but exempt from state and local tax. To compare a fully exempt municipal bond with a Treasury bill, set state and local rates to zero. This form cannot model a state-taxed municipal bond against a state-exempt Treasury bill. That case needs separate state tax rates for each investment."
       },
       {
         "question": "Does the sensitivity table show current tax brackets?",
-        "answer": "No. It varies a hypothetical combined tax rate on the taxable option while keeping the exempt option’s tax treatment fixed. It is a mathematical comparison, not a state/federal tax schedule."
+        "answer": "No. The table tests different combined tax rates for the taxable option. The exempt option keeps the tax treatment you selected. These are comparison scenarios, not current federal or state tax brackets."
       }
     ],
     "sources": [
