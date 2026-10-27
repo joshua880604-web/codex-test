@@ -1,4 +1,5 @@
 "use client";
+import ThemeChoices from "./ThemeChoices";
 import SiteLink from "@/components/SiteLink";
 
 import {useEffect,useRef} from 'react';
@@ -15,6 +16,6 @@ export default function MobileNavigation(){
  },[]);
  return <details className="mobile-menu" ref={menu}>
   <summary ref={trigger} aria-controls="mobile-navigation">Menu <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 4h12M2 8h12M2 12h12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg></summary>
-  <nav id="mobile-navigation" aria-label="Mobile navigation">{links.map(([label,href])=><SiteLink key={href} href={href} onClick={()=>{if(menu.current)menu.current.open=false;}}>{label}</SiteLink>)}</nav>
+  <nav id="mobile-navigation" aria-label="Mobile navigation">{links.map(([label,href])=><SiteLink key={href} href={href} onClick={()=>{if(menu.current)menu.current.open=false;}}>{label}</SiteLink>)}<section className="mobile-theme theme-tools" aria-label="Appearance"><strong>Appearance</strong><ThemeChoices/><small>Saved in this browser.</small></section></nav>
  </details>;
 }

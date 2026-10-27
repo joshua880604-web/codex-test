@@ -2,6 +2,7 @@
 import SiteLink from "@/components/SiteLink";
 import {siteName} from "@/lib/site";
 import {categoryNavigation,sidebarTools} from '@/lib/calculator-categories';
+import ThemeChoices from "./ThemeChoices";
 import MobileNavigation from "./MobileNavigation";
 import CalculatorSearch from "./CalculatorSearch";
 import SiteBenefits, { FreeBadge } from "./SiteBenefits";
@@ -22,9 +23,12 @@ export function Header() {
             <span className="brand-wordmark"><span>Calculator</span><span className="brand-free">Free</span><span className="brand-domain">.io</span></span>
           </SiteLink>
           <MobileNavigation/>
+          <div className="header-actions">
+          <details className="theme-menu theme-tools"><summary>Theme</summary><div className="theme-panel"><strong>Appearance</strong><ThemeChoices/><small>Saved in this browser.</small></div></details>
           <span className="header-description">
             <FreeBadge />
           </span>
+          </div>
         </div>
       </header>
       <nav className="top-nav" aria-label="Main navigation">
