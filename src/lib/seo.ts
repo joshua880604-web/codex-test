@@ -1,4 +1,4 @@
-import {guidesPath,recastGuide} from './editorial-guides';
+import {guidesPath,editorialGuides} from './editorial-guides';
 import {categoryPages,type CategoryPage} from './category-pages';
 import {calculatorCategories,calculatorCategory,categoryPaths} from './calculator-categories';
 import guideInsights from "./guide-insights.json";
@@ -59,8 +59,8 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
 }
 // Dates record reviewed content changes, never the current build time.
 export const contentUpdatedOn: Record<string, string> = {
-  [guidesPath]:recastGuide.publishedOn,
-  [recastGuide.path]:recastGuide.publishedOn,
+  [guidesPath]:'2026-10-27',
+  ...Object.fromEntries(editorialGuides.map(guide=>[guide.path,guide.publishedOn])),
   "/tax-equivalent-yield-calculator.html": "2026-10-27",
   "/treasury-bill-calculator.html": "2026-10-27",
   "/mortgage-recast-calculator.html": "2026-10-26",
@@ -97,7 +97,7 @@ export function sitemapEntries(config: SiteConfig = siteConfig()) {
     "/methodology.html",
     glossaryPath,
     guidesPath,
-    recastGuide.path,
+    ...editorialGuides.map(guide=>guide.path),
     ...glossaryTerms.map(term=>glossaryTermPath(term.slug)),
   ].map((path) => ({ url: absoluteURL(path, config)!, ...(contentUpdatedOn[path] ? { lastModified: contentUpdatedOn[path] } : {}) }));
 }

@@ -7,6 +7,13 @@ import MobileNavigation from "./MobileNavigation";
 import CalculatorSearch from "./CalculatorSearch";
 import SiteBenefits, { FreeBadge } from "./SiteBenefits";
 import { calculators, routeFor } from "@/lib/calculators";
+const primaryCategoryIds=['mortgage-housing','loans-debt','saving-investing','retirement'];
+function NavigationMenu({label,id,links}:{label:string;id:string;links:{title:string;href:string}[]}){
+  return <details className="nav-menu" name="desktop-navigation">
+    <summary aria-controls={id}>{label}<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></summary>
+    <div className="nav-panel" id={id}>{links.map(link=><SiteLink href={link.href} key={link.href}>{link.title}</SiteLink>)}</div>
+  </details>;
+}
 export function Header() {
   return (
     <>
@@ -24,7 +31,6 @@ export function Header() {
           </SiteLink>
           <MobileNavigation/>
           <div className="header-actions">
-          <SiteLink href="/guides/" style={{display:"inline-flex",alignItems:"center",minHeight:44,fontSize:14}}>Guides</SiteLink>
           <details className="theme-menu theme-tools"><summary>Theme</summary><div className="theme-panel"><strong>Appearance</strong><ThemeChoices/><small>Saved in this browser.</small></div></details>
           <span className="header-description">
             <FreeBadge />
@@ -33,10 +39,11 @@ export function Header() {
         </div>
       </header>
       <nav className="top-nav" aria-label="Main navigation">
-        <div>
+        <div className="desktop-navigation">
           <SiteLink href="/financial-calculator.html">All calculators</SiteLink>
-          {categoryNavigation.map(link=><SiteLink key={link.id} href={link.href}>{link.title}</SiteLink>)}
-          <SiteLink href="/glossary/">Glossary</SiteLink>
+          {categoryNavigation.filter(link=>primaryCategoryIds.includes(link.id)).map(link=><SiteLink key={link.id} href={link.href}>{link.id==='mortgage-housing'?'Mortgages':link.title}</SiteLink>)}
+          <NavigationMenu label="More" id="desktop-more-links" links={categoryNavigation.filter(link=>!primaryCategoryIds.includes(link.id))}/>
+          <NavigationMenu label="Learn" id="desktop-learn-links" links={[{title:'Glossary',href:'/glossary/'},{title:'Guides',href:'/guides/'}]}/>
         </div>
       </nav>
     </>
@@ -94,7 +101,8 @@ export function Footer() {
         <SiteLink href="/methodology.html">Methodology &amp; sources</SiteLink>
         <span> · </span>
         <SiteLink href="/glossary/">Glossary</SiteLink>
-          <SiteLink href="/guides/">Guides</SiteLink>
+        <span> · </span>
+        <SiteLink href="/guides/">Guides</SiteLink>
       </div>
       <p>
         © {new Date().getFullYear()} {siteName}. Independent planning

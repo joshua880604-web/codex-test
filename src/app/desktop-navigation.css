@@ -1,0 +1,12 @@
+/* Native disclosures keep every category and learning link in the initial HTML. */
+.top-nav .desktop-navigation{flex-wrap:nowrap;overflow:visible;}
+.top-nav .nav-menu{position:relative;flex:none;--nav-panel-bg:#fff;--nav-hover-bg:#f3f1ff;}
+.top-nav .nav-menu>summary{display:flex;align-items:center;gap:6px;min-height:44px;padding:0 10px;border-right:1px solid var(--rule);color:var(--muted);font-size:13px;white-space:nowrap;cursor:pointer;list-style:none;}
+.top-nav .nav-menu>summary::-webkit-details-marker{display:none;}
+.top-nav .nav-menu[open]>summary,.top-nav .nav-menu>summary:hover{background:var(--nav-hover-bg);color:var(--link);}
+.top-nav .nav-menu[open]>summary svg{transform:rotate(180deg);}
+.top-nav .nav-panel{position:absolute;top:100%;right:0;z-index:60;width:230px;padding:8px;background:var(--nav-panel-bg);border:1px solid var(--rule);border-radius:0 0 14px 14px;box-shadow:0 12px 28px #1018281a;}
+.top-nav .nav-panel a,.top-nav .nav-panel a:first-child{display:flex;align-items:center;min-height:44px;padding:10px 12px;border:0;border-radius:8px;color:var(--ink);white-space:normal;line-height:1.5;}
+.top-nav .nav-panel a:hover,.top-nav .nav-panel a:focus-visible{background:var(--nav-hover-bg);color:var(--link);}
+.top-nav .nav-menu>summary:focus-visible{outline:3px solid var(--link);outline-offset:-3px;}
+@media screen{.dark .top-nav .nav-menu{--nav-panel-bg:#151e2d;--nav-hover-bg:#202d42;}}

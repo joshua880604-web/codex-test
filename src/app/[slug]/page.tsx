@@ -1,4 +1,4 @@
-import {recastGuide} from '@/lib/editorial-guides';
+import {editorialGuides} from '@/lib/editorial-guides';
 import About from '@/components/About';
 
 import SiteLink from "@/components/SiteLink";
@@ -167,7 +167,7 @@ export default async function Page({
             <CalculatorDisclaimer id={c.id}/>
             <SearchTasks id={c.id} />
             <CalculatorGuide calculator={c} />
-            {recastGuide.calculatorIds.includes(c.id)&&<section className="related"><h2>Related guide</h2><p><SiteLink href={recastGuide.path}>Mortgage recast vs. refinance and extra principal</SiteLink>: compare upfront cash, monthly payments, future interest and payoff dates with worked examples.</p></section>}
+            {editorialGuides.filter(guide=>guide.calculatorIds.includes(c.id)).map(guide=><section className="related" key={guide.path}><h2>Related guide</h2><p><SiteLink href={guide.path}>{guide.heading}</SiteLink>: {guide.cardIntro}</p></section>)}
           </>
         ) : (
           <Directory />

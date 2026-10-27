@@ -1,4 +1,5 @@
 @import "./dark-pro.css";
+@import "./desktop-navigation.css";
 @font-face {
  font-family:"Inter";
  src:url("/fonts/inter-latin-variable-3100e775.woff2") format("woff2");
