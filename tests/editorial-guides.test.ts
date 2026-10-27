@@ -13,13 +13,15 @@ test('Editorial guide entries have real calculator relationships and one canonic
  }
  assert.deepEqual(cdSavingsGuide.calculatorIds,['cd','savings','emergency-fund']);
 });
-test('CD article and Guides collection describe the same visible article without invented credentials',()=>{
- const graph=editorialSchema(cdSavingsGuide,config)['@graph'];const article=graph[0] as any;
- assert.equal(article['@type'],'Article');assert.equal(article.headline,cdSavingsGuide.heading);
- assert.equal(article.datePublished,cdSavingsGuide.publishedOn);assert.equal(article.author['@type'],'Organization');
+test('Articles and Guides collection describe the same visible entries without invented credentials',()=>{
+ for(const guide of editorialGuides){
+ const graph=editorialSchema(guide,config)['@graph'];const article=graph[0] as any;
+ assert.equal(article['@type'],'Article');assert.equal(article.headline,guide.heading);
+ assert.equal(article.datePublished,guide.publishedOn);assert.equal(article.author['@type'],'Organization');
  assert.ok(!('reviewedBy' in article));
  const hub=editorialSchema(false,config)['@graph'][0] as any;
  assert.equal(hub.hasPart.filter((a:any)=>a.url===article.url).length,1);
  const breadcrumb=graph.find(a=>a['@type']==='BreadcrumbList') as any;
  assert.equal(breadcrumb.itemListElement.at(-1).item,article.url);
+ }
 });

@@ -31,7 +31,25 @@ export const cdSavingsGuide:EditorialGuide={
  topic:'Savings & investing',breadcrumb:'CD vs. savings account',
  cardIntro:'Compare the same $10,000 over matched periods. See what a rate change or an illustrated early-exit penalty does to the difference in dollars.',
 };
-export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide];
+export const carPayoffGuide:EditorialGuide={
+ path:'/guides/pay-off-car-loan-early/',
+ title:'Paying Off a Car Loan Early: Savings, Costs & Examples',
+ heading:'Paying Off a Car Loan Early: Savings, Costs, and Examples',
+ description:'Compare extra monthly car-loan payments with lump sums using worked examples. Review interest savings, payment timing, contract terms and calculator inputs.',
+ publishedOn:'2026-10-27',calculatorIds:['repayment','auto-loan'],
+ topic:'Loans & debt',breadcrumb:'Paying off a car loan early',
+ cardIntro:'See how monthly extras and a $2,000 lump sum affect a $20,000 balance. Compare interest, payoff periods and the cash each plan requires.',
+};
+export const biweeklyGuide:EditorialGuide={
+ path:'/guides/biweekly-vs-monthly-mortgage-payments/',
+ title:'Biweekly vs. Monthly Mortgage Payments: A Fair Comparison',
+ heading:'Biweekly vs. Monthly Mortgage Payments: A Same-Budget Comparison',
+ description:'Compare biweekly mortgage payments with standard monthly and equal-budget monthly plans. See interest, payoff time, partial-payment rules and worked examples.',
+ publishedOn:'2026-10-27',calculatorIds:['biweekly-mortgage','mortgage-payoff','mortgage'],
+ topic:'Mortgages',breadcrumb:'Biweekly vs. monthly mortgage payments',
+ cardIntro:'Separate the extra annual payment from the schedule: compare standard monthly, accelerated biweekly and monthly payments with the same annual budget.',
+};
+export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);
