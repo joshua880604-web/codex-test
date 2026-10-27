@@ -14,6 +14,6 @@ export default function CategoryLanding({id}:{id:string}) {
    <section id="category-tools"><h2>All {group.title.toLowerCase()} tools</h2><div className="estate-categories"><CategoryToolList group={group} tools={tools} detailed/></div></section>
    <section id="tool-differences"><h2>Understand the differences</h2>{page.differences.map(([title,text])=><div key={title}><h3>{title}</h3><p>{text}</p></div>)}</section>
    <section id="category-questions"><h2>Common questions</h2>{page.questions.map(([title,text])=><div key={title}><h3>{title}</h3><p>{text}</p></div>)}</section>
-   <section id="category-concepts"><h2>Related financial concepts</h2><ul>{page.concepts.map(([slug,label])=><li key={slug}><SiteLink href={'/glossary/'+slug+'/'}>{label}</SiteLink></li>)}</ul><p>Review each calculator's assumptions, limitations and sources before making a decision. <SiteLink href="/methodology.html">Calculation methodology</SiteLink>.</p></section>
+   <section id="category-concepts"><h2>Related concepts</h2><ul>{page.concepts.map(([slug,label])=><li key={slug}><SiteLink href={'/glossary/'+slug+'/'}>{label}</SiteLink></li>)}</ul><p>Review each calculator's assumptions, limitations and sources before making a decision. <SiteLink href="/methodology.html">Calculation methodology</SiteLink>.</p></section>
  </div>;
 }

@@ -65,7 +65,7 @@ export const contentUpdatedOn: Record<string, string> = {
   "/tax-equivalent-yield-calculator.html": "2026-10-27",
   "/treasury-bill-calculator.html": "2026-10-27",
   "/mortgage-recast-calculator.html": "2026-10-26",
-  ...Object.fromEntries(categoryPages.map(page=>[page.path,"2026-10-26"])),
+  ...Object.fromEntries(categoryPages.map(page=>[page.path,page.updatedOn])),
   "/pmi-calculator.html": "2026-10-26",
   "/biweekly-mortgage-calculator.html": "2026-10-26",
   "/discount-points-calculator.html": "2026-10-27",

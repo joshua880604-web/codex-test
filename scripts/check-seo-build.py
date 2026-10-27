@@ -27,15 +27,22 @@ catalog=json.loads((root/'src/lib/catalog-data.json').read_text())
 terms=json.loads((root/'src/lib/glossary-data.json').read_text())
 paths=[x['local_route'] for x in catalog]+['/loan-calculators.html','/savings-investment-calculators.html','/financial-calculator.html','/about.html','/privacy.html','/methodology.html','/glossary/']+['/glossary/'+term['slug']+'/' for term in terms]
 paths+=['/guides/','/guides/mortgage-recast-vs-refinance/','/guides/debt-snowball-vs-avalanche/']
+new_categories=['/retirement-calculators.html','/tax-income-calculators.html','/business-calculators.html','/everyday-calculators.html']
+paths+=new_categories
 checks=[]
 for route in paths:
  file=root/'out'/route[1:]
  if route.endswith('/'):file=file/'index.html'
+ elif route in new_categories:file=file.with_suffix('.html')
  p=Page();p.feed(file.read_text())
  assert len(p.h1s)==1,(route,p.h1s)
  assert p.metas.get('description'),route
  assert ('noindex' not in p.metas.get('robots','')) if origin else ('noindex' in p.metas.get('robots',''))
  assert p.canon==([canonical(route)] if origin else []),(route,p.canon)
+ if route in new_categories:
+  graph=p.schemas[0]['@graph'];assert graph[0]['@type']=='CollectionPage'
+  assert any(x['@type']=='ItemList' for x in graph)
+  assert any(x['@type']=='BreadcrumbList' for x in graph)
  if route=='/methodology.html':assert p.h1s==['Calculation methodology and sources']
  entry=next((x for x in catalog if x['local_route']==route),None)
  if entry and entry['id']!='real-estate':

@@ -5,8 +5,8 @@ import {calculators} from '../src/lib/catalog';
 import glossary from '../src/lib/glossary-data.json';
 import {categoryPageSchema,sitemapEntries} from '../src/lib/seo';
 const config={origin:'https://finance.example',indexable:true};
-test('Three category directories have unique nonconflicting paths and reuse the existing housing URL',()=>{
- assert.equal(categoryPages.length,3);assert.equal(new Set(categoryPages.map(p=>p.path)).size,3);
+test('All seven category directories have unique nonconflicting paths and reuse the existing housing URL',()=>{
+ assert.equal(categoryPages.length,7);assert.equal(new Set(categoryPages.map(p=>p.path)).size,7);
  for(const p of categoryPages){assert.equal(categoryHref(p.id),p.path);assert.ok(p.guides.length>=3&&p.differences.length>=3&&p.questions.length>=3);for(const [slug] of p.concepts)assert.ok(glossary.some(t=>t.slug===slug),slug);if(p.id==='mortgage-housing')assert.equal(p.path,'/real-estate-calculator.html');else assert.ok(!calculators.some(c=>c.local_route===p.path));}
 });
 test('Category collection schema covers only real tools in visible scenario order, once each',()=>{

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 const base=process.env.QA_BASE_URL??'http://127.0.0.1:3641';
 const catalog=JSON.parse(await fs.readFile('src/lib/catalog-data.json','utf8'));
-const routes=[...new Set([...catalog.map(c=>c.local_route),'/financial-calculator.html','/about.html','/privacy.html','/methodology.html','/loan-calculators.html','/savings-investment-calculators.html'])];
+const routes=[...new Set([...catalog.map(c=>c.local_route),'/financial-calculator.html','/about.html','/privacy.html','/methodology.html','/loan-calculators.html','/savings-investment-calculators.html','/retirement-calculators.html','/tax-income-calculators.html','/business-calculators.html','/everyday-calculators.html'])];
 const expected=new Map([['/','/financial-calculator'],['/index.html','/financial-calculator'],['/glossary.html','/glossary/'],...routes.map(p=>[p,p.slice(0,-5)])]);
 const rules=new Map((await fs.readFile('out/_redirects','utf8')).split(/\r?\n/).filter(l=>l.trim()&&!l.trim().startsWith('#')).map(l=>{const [a,b,c]=l.split(/\s+/);assert.equal(c,'301');return[a,b];}));
 assert.deepEqual(rules,expected);

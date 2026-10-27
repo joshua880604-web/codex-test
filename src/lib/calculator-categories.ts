@@ -27,17 +27,21 @@ export const calculatorCategories: CalculatorCategory[] = [
       { title: 'Interest & financial basics', tools: ['interest','simple-interest','interest-rate','finance','present-value','future-value','inflation','currency'] },
     ] },
   { id: 'retirement', title: 'Retirement', popular: ['retirement','401k','roth-ira','rmd'], aliases: [],
-    tools: ['retirement','401k','pension','social-security','annuity','annuity-payout','roth-ira','ira','rmd'] },
+    tools: ['retirement','401k','pension','social-security','annuity','annuity-payout','roth-ira','ira','rmd'],
+    sections: [{"title": "Retirement savings goals", "tools": ["retirement"]}, {"title": "Retirement accounts", "tools": ["401k", "roth-ira", "ira"]}, {"title": "Income & distributions", "tools": ["pension", "social-security", "annuity", "annuity-payout", "rmd"]}] },
   { id: 'tax-salary', title: 'Tax & Income', popular: ['income-tax','take-home-paycheck','salary','sales-tax'], aliases: ['tax-and-salary'],
-    tools: ['income-tax','salary','marriage-tax','estate-tax','take-home-paycheck','sales-tax','commission'] },
+    tools: ['income-tax','salary','marriage-tax','estate-tax','take-home-paycheck','sales-tax','commission'],
+    sections: [{"title": "Income tax & filing scenarios", "tools": ["income-tax", "marriage-tax"]}, {"title": "Paychecks & earnings", "tools": ["take-home-paycheck", "salary", "commission"]}, {"title": "Estate & purchase taxes", "tools": ["estate-tax", "sales-tax"]}] },
   { id: 'business-finance', title: 'Business Finance', popular: ['break-even','margin','markup','business-loan','depreciation'], aliases: [],
-    tools: ['break-even','margin','markup','business-loan','depreciation'] },
+    tools: ['break-even','margin','markup','business-loan','depreciation'],
+    sections: [{"title": "Business financing", "tools": ["business-loan"]}, {"title": "Pricing & profitability", "tools": ["break-even", "margin", "markup"]}, {"title": "Asset costs", "tools": ["depreciation"]}] },
   { id: 'everyday', title: 'Everyday Tools', popular: ['percentage','scientific','date','unit-converter'], aliases: ['everyday-tools'],
-    tools: ['percentage','scientific','date','unit-converter','tip-bill-split','discount','vat'] },
+    tools: ['percentage','scientific','date','unit-converter','tip-bill-split','discount','vat'],
+    sections: [{"title": "Numbers & expressions", "tools": ["percentage", "scientific"]}, {"title": "Dates & units", "tools": ["date", "unit-converter"]}, {"title": "Bills & purchase prices", "tools": ["tip-bill-split", "discount", "vat"]}] },
 ];
 const categoryByTool = new Map(calculatorCategories.flatMap(group => group.tools.map(id => [id, group] as const)));
 export function calculatorCategory(id: string) { return categoryByTool.get(id); }
-export const categoryPaths: Record<string,string> = {'mortgage-housing':'/real-estate-calculator.html','loans-debt':'/loan-calculators.html','saving-investing':'/savings-investment-calculators.html'};
+export const categoryPaths: Record<string,string> = {'mortgage-housing':'/real-estate-calculator.html','loans-debt':'/loan-calculators.html','saving-investing':'/savings-investment-calculators.html','retirement':'/retirement-calculators.html','tax-salary':'/tax-income-calculators.html','business-finance':'/business-calculators.html','everyday':'/everyday-calculators.html'};
 export function categoryHref(id: string) { return categoryPaths[id] ?? '/financial-calculator.html#' + id; }
 export const categoryNavigation = calculatorCategories.map(({id,title}) => ({id,title,href:categoryHref(id)}));
 export const overviewTools = ['mortgage','loan','compound-interest','pmi','savings','retirement','income-tax','take-home-paycheck'];

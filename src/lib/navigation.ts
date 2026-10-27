@@ -1,7 +1,8 @@
 import catalog from './catalog-data.json';
+import {categoryPaths} from './calculator-categories';
 
 // File routes remain stable. Only links to known public documents are normalized.
-const documents = new Set([...catalog.map(tool => tool.local_route), '/financial-calculator.html', '/about.html', '/privacy.html', '/methodology.html', '/loan-calculators.html', '/savings-investment-calculators.html']);
+const documents = new Set([...Object.values(categoryPaths),...catalog.map(tool => tool.local_route), '/financial-calculator.html', '/about.html', '/privacy.html', '/methodology.html', '/loan-calculators.html', '/savings-investment-calculators.html']);
 function relativeHref(href: string): string {
   const split = href.search(/[?#]/), path = split < 0 ? href : href.slice(0, split), suffix = split < 0 ? '' : href.slice(split);
   if (path === '/') return '/financial-calculator' + suffix;

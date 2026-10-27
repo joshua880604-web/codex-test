@@ -64,7 +64,8 @@
         "private-mortgage-insurance",
         "Private mortgage insurance"
       ]
-    ]
+    ],
+    "updatedOn": "2026-10-26"
   },
   {
     "id": "loans-debt",
@@ -127,7 +128,8 @@
         "debt-consolidation",
         "Debt consolidation"
       ]
-    ]
+    ],
+    "updatedOn": "2026-10-26"
   },
   {
     "id": "saving-investing",
@@ -198,6 +200,279 @@
         "inflation",
         "Inflation"
       ]
-    ]
+    ],
+    "updatedOn": "2026-10-26"
+  },
+  {
+    "id": "retirement",
+    "heading": "Retirement Planning Calculators",
+    "title": "Retirement Planning Calculators - Savings, Accounts & Income",
+    "description": "Choose retirement, 401(k), IRA, pension, annuity and RMD calculators. Explore savings goals, account growth and retirement income with explicit assumptions.",
+    "intro": "Choose a tool for the retirement decision in front of you: how much to save, how an account may grow, or how to draw income later. Start with Retirement for an overall savings and withdrawal estimate, then use the account-specific tools to examine the assumptions behind it.",
+    "guides": [
+      [
+        "Build a retirement savings target",
+        "Use the Retirement Calculator to connect your current savings, time to retirement and planned withdrawals. Try more than one return and inflation assumption rather than treating one projection as a forecast."
+      ],
+      [
+        "Explore retirement accounts",
+        "Use 401(k) to examine contributions and an entered employer match. Traditional IRA and Roth IRA address different tax treatments. Check the selected tool’s supported years, limits and eligibility assumptions before comparing results."
+      ],
+      [
+        "Plan income and withdrawals",
+        "Use Annuity Payout for payment size or duration, RMD for a required-distribution estimate, and Pension for the modeled benefit options. Social Security provides an estimate under its stated assumptions; confirm your personal benefit record with the Social Security Administration."
+      ]
+    ],
+    "differences": [
+      [
+        "Retirement vs. 401(k)",
+        "Retirement models an overall savings and withdrawal plan. A 401(k) calculation focuses on that account’s contributions, employer match and growth; it does not represent every source of retirement income."
+      ],
+      [
+        "Traditional IRA vs. Roth IRA",
+        "Traditional and Roth accounts differ in when taxes may apply. Compare consistent contributions and tax assumptions, and distinguish an account-growth illustration from a determination of contribution eligibility or deductibility."
+      ],
+      [
+        "Annuity accumulation vs. Annuity Payout",
+        "Annuity projects an accumulating balance. Annuity Payout explores drawing from a balance. Neither calculation is an insurer quote or a guarantee of lifetime payments."
+      ],
+      [
+        "RMD vs. a withdrawal plan",
+        "An RMD estimates a required distribution under the selected rules. It does not establish a sustainable spending amount or cover every exception and inherited-account situation."
+      ]
+    ],
+    "questions": [
+      [
+        "Are the projected returns guaranteed?",
+        "No. Entered returns simplify uncertain future outcomes. Fixed-return projections do not capture the full effect of market volatility or the order of investment returns."
+      ],
+      [
+        "Should I include inflation?",
+        "Keep income targets, returns and expenses on a consistent basis. A future dollar amount buys less when prices rise; review how the chosen tool treats inflation before comparing scenarios."
+      ],
+      [
+        "Can I add all of these results together?",
+        "Only after checking for overlapping balances and income sources. A retirement total that already includes an IRA should not have that same IRA balance added a second time."
+      ]
+    ],
+    "concepts": [
+      [
+        "401k",
+        "401(k)"
+      ],
+      [
+        "traditional-vs-roth-ira",
+        "Traditional vs. Roth IRA"
+      ],
+      [
+        "withdrawal-rate",
+        "Withdrawal rate"
+      ],
+      [
+        "required-minimum-distribution",
+        "Required minimum distributions"
+      ]
+    ],
+    "updatedOn": "2026-10-27"
+  },
+  {
+    "id": "tax-salary",
+    "heading": "Tax & Income Calculators",
+    "title": "Tax & Income Calculators - Federal Tax, Paychecks & Salary",
+    "description": "Find U.S. federal income tax, take-home pay, salary, commission, marriage tax, estate tax and sales tax calculators. Choose the tool for your income question.",
+    "intro": "Start with the amount you want to understand: annual federal income tax, take-home pay, gross salary or a separate transaction tax. These tools cover different calculations; a paycheck estimate and a tax-return estimate are not interchangeable.",
+    "guides": [
+      [
+        "Estimate annual federal income tax",
+        "Use the Federal Income Tax Calculator for the supported tax year, filing status and entered income, deductions and credits. Review the included taxes and limitations; this is an estimate rather than a filed return."
+      ],
+      [
+        "Understand pay and earnings",
+        "Use Take-Home Paycheck to estimate net pay under the available payroll assumptions. Salary converts gross earnings between pay periods and work schedules. Commission calculates earnings from an entered rate and sales amount."
+      ],
+      [
+        "Check a specific tax question",
+        "Marriage Tax compares the modeled filing scenarios. Estate Tax addresses its stated federal estate-tax assumptions, while Sales Tax calculates a purchase tax from the rate you supply. These tools do not automatically determine all state and local obligations."
+      ]
+    ],
+    "differences": [
+      [
+        "Income tax vs. paycheck withholding",
+        "Income tax estimates an annual liability. Withholding is money paid toward tax through payroll. A refund or balance due also depends on payments, withholding and credits, not just the gross salary."
+      ],
+      [
+        "Salary conversion vs. take-home pay",
+        "Salary converts earnings using hours, workdays and pay periods. It does not turn gross pay into net pay. Use the paycheck tool for the tax and deduction assumptions it supports."
+      ],
+      [
+        "Marginal vs. effective tax rate",
+        "A marginal rate applies to the next taxable dollar within a bracket. An effective rate summarizes tax relative to the income measure used; the two percentages answer different questions."
+      ]
+    ],
+    "questions": [
+      [
+        "Which tax year should I choose?",
+        "Choose the year the income belongs to and verify that the calculator supports it. Filing a return in a later calendar year does not change the tax year of the income."
+      ],
+      [
+        "Does the federal tax estimate include every tax I owe?",
+        "No. Check the calculator’s scope for payroll taxes and other adjustments. State, local, self-employment and special tax situations may require separate calculations or professional guidance."
+      ],
+      [
+        "Can these tools tell me my exact refund?",
+        "Only modeled inputs are considered. An actual refund depends on the completed return and payments already made. Verify withholding records, credits and other income before relying on an estimate."
+      ]
+    ],
+    "concepts": [
+      [
+        "marginal-vs-effective-tax-rate",
+        "Marginal vs. effective tax rate"
+      ],
+      [
+        "deduction-vs-credit",
+        "Deductions vs. credits"
+      ],
+      [
+        "gross-vs-net-pay",
+        "Gross vs. net pay"
+      ],
+      [
+        "estate-vs-inheritance-tax",
+        "Estate vs. inheritance tax"
+      ]
+    ],
+    "updatedOn": "2026-10-27"
+  },
+  {
+    "id": "business-finance",
+    "heading": "Business Calculators",
+    "title": "Business Calculators - Loans, Break-Even, Margin & Markup",
+    "description": "Use online business calculators for loan payments, break-even sales, profit margin, markup and depreciation. Choose a tool for financing, pricing or asset costs.",
+    "intro": "Use these online business calculators to explore financing payments, pricing decisions and asset costs. Choose the business question first: the same percentage can mean a margin on sales or a markup on cost, and the distinction changes the result.",
+    "guides": [
+      [
+        "Estimate financing payments",
+        "Business Loan models payments and borrowing costs from entered loan terms and supported fees. Use actual lender quotes when comparing offers; an estimated payment is not a financing approval."
+      ],
+      [
+        "Set prices and sales targets",
+        "Margin and Markup work from different percentage bases. Use Break-Even to connect fixed costs with selling price and variable cost per unit, then explore what happens if costs or prices change."
+      ],
+      [
+        "Explore asset depreciation",
+        "Depreciation spreads an entered depreciable amount using the selected method. Review the supported methods and assumptions; a planning schedule does not automatically establish the tax deduction allowed for a particular asset."
+      ]
+    ],
+    "differences": [
+      [
+        "Margin vs. markup",
+        "Margin expresses profit as a share of selling price; markup expresses profit as a share of cost. At a cost of $80 and a price of $100, profit is $20, margin is 20% and markup is 25%."
+      ],
+      [
+        "Break-even sales vs. profit",
+        "Break-even covers the entered fixed and variable costs without a remaining operating profit in the model. A profit target requires additional sales or a change in costs or pricing."
+      ],
+      [
+        "Depreciation vs. loan payments",
+        "Depreciation allocates asset cost over time. Loan payments are financing cash flows that can include principal and interest. They should not be substituted for each other in a budget."
+      ]
+    ],
+    "questions": [
+      [
+        "Which calculator should I use to set a selling price?",
+        "Use Markup if your target is a percentage above cost, or Margin if the target is a percentage of the selling price. Then check break-even sales using consistent cost assumptions."
+      ],
+      [
+        "Does a positive margin guarantee a profitable business?",
+        "No. The costs included in the calculation matter. A unit margin may leave out rent, payroll, financing, taxes and other overhead; include relevant expenses when reviewing the whole business."
+      ],
+      [
+        "Can I use these results for accounting or tax filings?",
+        "Use the outputs as planning illustrations. Accounting policies, tax rules, asset treatment and loan terms may require adjustments; confirm the treatment applicable to your business."
+      ]
+    ],
+    "concepts": [
+      [
+        "markup-vs-margin",
+        "Markup vs. margin"
+      ],
+      [
+        "break-even-point",
+        "Break-even point"
+      ],
+      [
+        "contribution-margin",
+        "Contribution margin"
+      ],
+      [
+        "depreciation",
+        "Depreciation"
+      ]
+    ],
+    "updatedOn": "2026-10-27"
+  },
+  {
+    "id": "everyday",
+    "heading": "Everyday Calculators",
+    "title": "Everyday Calculators - Percentages, Dates, Units & Discounts",
+    "description": "Find lightweight calculators for percentages, scientific expressions, dates, unit conversion, tips, discounts and VAT. Choose a tool for everyday calculations.",
+    "intro": "Choose a focused tool for everyday numbers: work out a percentage, compare dates, convert a unit or check a purchase total. Each calculator provides its own inputs and result explanation, so you can check the meaning of the answer as well as the number.",
+    "guides": [
+      [
+        "Work with numbers and expressions",
+        "Use Percentage for percentage amounts and changes. Scientific Calculator handles supported mathematical expressions and functions; check angle units and expression syntax when using trigonometry or powers."
+      ],
+      [
+        "Compare dates or convert units",
+        "Use Date for the supported date intervals and date arithmetic. Unit Converter changes a value between compatible units; confirm the selected unit category and direction before using the result."
+      ],
+      [
+        "Check a bill or purchase",
+        "Use Tip & Bill Split for a tip and shared bill, Discount for a reduced price, and VAT for adding or removing an entered VAT rate. These tools use your inputs rather than looking up a merchant’s charges or current jurisdiction rules."
+      ]
+    ],
+    "differences": [
+      [
+        "Percentage change vs. percentage points",
+        "A rise from 10% to 15% is five percentage points, or a 50% increase relative to the original 10%. Choose the calculation that matches the question."
+      ],
+      [
+        "Discount vs. VAT",
+        "A discount reduces a price. VAT adds tax to a net amount or extracts included tax from a gross amount. Use consistent starting prices and check the order in which a seller applies adjustments."
+      ],
+      [
+        "Date intervals vs. unit conversion",
+        "Calendar intervals depend on the dates and the tool’s counting convention. Months are not all the same length, so a fixed number of days should not automatically be treated as an exact calendar month."
+      ]
+    ],
+    "questions": [
+      [
+        "Do I need an account to use these tools?",
+        "No account is needed. You can open a calculator directly, enter values and calculate. Optional Favorites are saved in the current browser rather than an online account."
+      ],
+      [
+        "Does VAT look up the correct tax rate for me?",
+        "No. Supply the applicable rate and select whether you are adding VAT or removing included VAT. Check the tax rules for the product and jurisdiction separately."
+      ],
+      [
+        "Why can a rounded result differ slightly from my own calculation?",
+        "Displayed precision may be shorter than the precision used internally. Check the selected units, percentage base and rounding before comparing results, especially when repeating a calculation across many items."
+      ]
+    ],
+    "concepts": [
+      [
+        "percentage-vs-percentage-points",
+        "Percentages vs. percentage points"
+      ],
+      [
+        "sales-tax-vs-vat",
+        "Sales tax vs. VAT"
+      ],
+      [
+        "markup-vs-margin",
+        "Markup vs. margin"
+      ]
+    ],
+    "updatedOn": "2026-10-27"
   }
 ]
