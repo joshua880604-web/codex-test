@@ -1,3 +1,2 @@
-"use client";
-import dynamic from "next/dynamic";
-export default dynamic(() => import("./Directory"));
+// The directory and featured links are static; interactive children keep their own client boundaries.
+export { default } from "./Directory";

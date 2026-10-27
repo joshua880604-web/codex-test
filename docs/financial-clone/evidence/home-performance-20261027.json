@@ -1,0 +1,135 @@
+{
+  "passed": true,
+  "before": {
+    "resources": [
+      {
+        "path": "/_next/static/chunks/19wg2q9r2_sev.js",
+        "bytes": 21767,
+        "gzip": 7304
+      },
+      {
+        "path": "/_next/static/chunks/1j71-lr846dcd.js",
+        "bytes": 181018,
+        "gzip": 48742
+      },
+      {
+        "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+        "bytes": 10030,
+        "gzip": 3940
+      },
+      {
+        "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+        "bytes": 229820,
+        "gzip": 71969
+      },
+      {
+        "path": "/_next/static/chunks/2fz397og3kw3a.js",
+        "bytes": 27995,
+        "gzip": 6500
+      },
+      {
+        "path": "/_next/static/chunks/0aq8obacpz6wd.js",
+        "bytes": 5070,
+        "gzip": 1826
+      },
+      {
+        "path": "/_next/static/chunks/2_yoqq3xygq6q.js",
+        "bytes": 65465,
+        "gzip": 16774
+      },
+      {
+        "path": "/_next/static/chunks/35i4luqdhfj_r.js",
+        "bytes": 9748,
+        "gzip": 3602
+      }
+    ],
+    "bytes": 550913,
+    "gzip": 160657,
+    "count": 8
+  },
+  "after": {
+    "resources": [
+      {
+        "path": "/_next/static/chunks/19wg2q9r2_sev.js",
+        "bytes": 21767,
+        "gzip": 7304
+      },
+      {
+        "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+        "bytes": 10030,
+        "gzip": 3940
+      },
+      {
+        "path": "/_next/static/chunks/098_voljfzkmr.js",
+        "bytes": 35429,
+        "gzip": 8805
+      },
+      {
+        "path": "/_next/static/chunks/3f1ie_z2citu5.js",
+        "bytes": 9267,
+        "gzip": 3450
+      },
+      {
+        "path": "/_next/static/chunks/1j71-lr846dcd.js",
+        "bytes": 181018,
+        "gzip": 48742
+      },
+      {
+        "path": "/_next/static/chunks/2khxl0v1q4i6n.js",
+        "bytes": 229820,
+        "gzip": 71969
+      }
+    ],
+    "bytes": 487331,
+    "gzip": 144210,
+    "count": 6
+  },
+  "reduction": {
+    "decodedBytes": 63582,
+    "percent": 11.54,
+    "gzipEstimateBytes": 16447,
+    "requests": 2
+  },
+  "unchangedMainTextAndLinks": 110,
+  "homeBrowser": {
+    "passed": true,
+    "checks": [
+      {
+        "initialSearchEngineAbsent": true,
+        "staticLinks": true
+      },
+      {
+        "lateImportDoesNotNavigateStaleQuery": true
+      },
+      {
+        "immediateSubmitAwaitsSearchAndPreservesPreset": true
+      },
+      {
+        "chunkFailureShowsFallbackAndRetainsLinks": true
+      },
+      {
+        "directoryAndQuickFormVisibleWithoutJS": true
+      }
+    ],
+    "errors": [],
+    "searchChunk": "/_next/static/chunks/40ffa4n79c1oh.js"
+  },
+  "checks": {
+    "tests": 1041,
+    "typecheck": true,
+    "productionBuild": true,
+    "directBrowser": 8,
+    "presetBrowser": 29,
+    "lazyBrowser": 29,
+    "seoPages": 154,
+    "internalAnchors": 8022,
+    "fragmentPresets": 478,
+    "queryAnchors": 0
+  },
+  "limits": [
+    "Local Chromium production-export measurement; exact external ad loader stubbed",
+    "Gzip numbers are estimates, not network transfer bytes",
+    "No live PageSpeed/CrUX or native Safari measurement; no promised score",
+    "Ads/font/styles/models/URLs unchanged"
+  ]
+}

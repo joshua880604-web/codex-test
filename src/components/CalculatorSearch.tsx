@@ -4,13 +4,25 @@ import SiteLink from "@/components/SiteLink";
 import {useEffect,useRef,useState,type FormEvent,type KeyboardEvent} from "react";
 import {calculators} from "@/lib/catalog";
 import {navigationHref} from "@/lib/navigation";
-import {directorySearch,directoryTarget} from "@/lib/directory";
+type SearchEngine = typeof import("@/lib/directory");
+let searchPromise: Promise<SearchEngine> | undefined;
+function loadSearch() {
+  return searchPromise ??= import("@/lib/directory").catch(error=>{searchPromise=undefined;throw error;});
+}
 
 export default function CalculatorSearch({id,tools=calculators,compact=false,minimal=false}:{id:string;tools?:typeof calculators;compact?:boolean;minimal?:boolean}) {
   const [query,setQuery]=useState("");
+  const [engine,setEngine]=useState<SearchEngine|null>(null),[loadError,setLoadError]=useState(false);
   const [open,setOpen]=useState(false),[active,setActive]=useState(-1),[expanded,setExpanded]=useState(false);
   const form=useRef<HTMLFormElement>(null),input=useRef<HTMLInputElement>(null);
-  const search=query.trim(),results=directorySearch(tools,search);
+  const search=query.trim(),results=engine&&search?engine.directorySearch(tools,search):[];
+  const loading=!!search&&!engine&&!loadError;
+  useEffect(()=>{
+    if(!search || engine)return;
+    let current=true;setLoadError(false);
+    loadSearch().then(next=>{if(current)setEngine(next);}).catch(()=>{if(current)setLoadError(true);});
+    return()=>{current=false;};
+  },[search,engine]);
   const visible=expanded?results:results.slice(0,8),showing=open&&!!search;
   const listId=id+'-suggestions',optionId=(i:number)=>id+'-option-'+i;
   useEffect(()=>{
@@ -21,12 +33,18 @@ export default function CalculatorSearch({id,tools=calculators,compact=false,min
   useEffect(()=>{
     if(showing&&active>=0)document.getElementById(id+'-option-'+active)?.scrollIntoView({block:'nearest'});
   },[active,showing,id]);
-  function submit(e:FormEvent){
+  async function submit(e:FormEvent){
     e.preventDefault();
     if(!search){input.current?.focus();return;}
-    const selected=showing&&active>=0?visible[active]:undefined;
-    const targetId=directoryTarget(tools,search)?.id;
-    const target=selected??results.find(r=>r.tool.id===targetId);
+    const submitted=query,selected=showing&&active>=0?visible[active]:undefined;
+    let available:SearchEngine;
+    try { available=engine??await loadSearch(); }
+    catch {if(input.current?.value===submitted)setLoadError(true);return;}
+    if(input.current?.value!==submitted)return;
+    setEngine(available);setLoadError(false);
+    const matches=available.directorySearch(tools,search);
+    const targetId=available.directoryTarget(tools,search)?.id;
+    const target=selected??matches.find(r=>r.tool.id===targetId);
     if(target){
       const href=navigationHref(target.href),url=new URL(href,window.location.href);
       if(url.href===window.location.href && url.hash.startsWith('#calc='))window.dispatchEvent(new Event('calculator-preset'));
@@ -56,10 +74,12 @@ export default function CalculatorSearch({id,tools=calculators,compact=false,min
         <ul id={listId} role="listbox" aria-label="Matching calculators">
           {visible.map(({tool,href},i)=><li key={tool.id} role="presentation"><SiteLink id={optionId(i)} href={href} role="option" aria-selected={i===active} tabIndex={-1} onMouseDown={e=>e.preventDefault()}>{tool.title}</SiteLink></li>)}
         </ul>
-        {!results.length&&<p>No calculators found. Try “loan”, “tax”, or “interest”.</p>}
+        {loading&&<p>Loading calculator search…</p>}
+        {loadError&&<p>Search could not load. Try again or browse the calculator categories.</p>}
+        {!loading&&!loadError&&!results.length&&<p>No calculators found. Try “loan”, “tax”, or “interest”.</p>}
         {!expanded&&results.length>visible.length&&<button type="button" className="directory-search-more" onClick={()=>{setExpanded(true);input.current?.focus();}}>Show all {results.length} matching calculators</button>}
       </div>}
     </div>
-    <span role="status" aria-live="polite">{search?`${results.length} ${results.length===1?'calculator':'calculators'} found`:compact?'':`${tools.length} tools available`}</span>
+    <span role="status" aria-live="polite">{search?(loading?"Loading calculator search…":loadError?"Search unavailable. Browse the calculator categories.":`${results.length} ${results.length===1?'calculator':'calculators'} found`):compact?'':`${tools.length} tools available`}</span>
   </form>;
 }

@@ -1,4 +1,3 @@
-"use client";
 import SiteLink from "@/components/SiteLink";
 
 import {directoryGroups,directoryGroup,directorySort} from "@/lib/directory";
@@ -27,7 +26,7 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
         ? "Calculators for mortgages, property investment, and home ownership."
         : "Find the right tool for your loans, savings, retirement, taxes, and everyday calculations."}</p>
       <div className={propertyOnly ? undefined : "directory-tools"}>
-      <CalculatorSearch id="directory-search" tools={searchable} minimal={!propertyOnly}/>
+      <CalculatorSearch id="directory-search" {...(propertyOnly ? {tools:searchable} : {})} minimal={!propertyOnly}/>
       {!propertyOnly&&<div className="directory-quick"><QuickCalculator/></div>}
       {!propertyOnly && <section className="featured-tools" aria-labelledby="featured-heading">
         <div className="benefits-mobile-badge"><FreeBadge /></div>

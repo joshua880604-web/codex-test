@@ -2,16 +2,17 @@ import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {gzipSync} from 'node:zlib';
 const {chromium}=await import('/opt/codex/cua_node/lib/node_modules/playwright/index.mjs');
-const markers={investmentDecisions:'Each combined marginal tax rate must be below 100%',recast:'A recast needs a remaining loan balance',mortgageTools:'The matched-budget comparison pays the same annual amount',engine:'These inputs do not produce a finite result',other:'No prepayment penalties or new borrowing',property:'Yearly extra payment start must be a whole payment month',retirement:'Retirement age must be at least current age',cpi:'CUUR0000SA0',fx:'Frankfurter v2',joint:'current post-2021 factors',directory:'Popular financial calculators',png:'Image export is unavailable in this browser',scientific:'Expression is too long (maximum 2,000 characters).'};
+const markers={search:'401k with catch up contributions',investmentDecisions:'Each combined marginal tax rate must be below 100%',recast:'A recast needs a remaining loan balance',mortgageTools:'The matched-budget comparison pays the same annual amount',engine:'These inputs do not produce a finite result',other:'No prepayment penalties or new borrowing',property:'Yearly extra payment start must be a whole payment month',retirement:'Retirement age must be at least current age',cpi:'CUUR0000SA0',fx:'Frankfurter v2',joint:'current post-2021 factors',directory:'Popular financial calculators',png:'Image export is unavailable in this browser',scientific:'Expression is too long (maximum 2,000 characters).'};
 const assets=await fs.readdir('out/_next/static/chunks'),chunks={};
 for(const name of assets.filter(n=>n.endsWith('.js'))){const text=await fs.readFile('out/_next/static/chunks/'+name,'utf8');for(const [key,marker] of Object.entries(markers))if(text.includes(marker))(chunks[key]??=[]).push('/_next/static/chunks/'+name);}
-for(const key of Object.keys(markers))assert.ok(chunks[key]?.length,'Missing bundle marker '+key);
+for(const key of Object.keys(markers))if(key!=='directory')assert.ok(chunks[key]?.length,'Missing bundle marker '+key);
+assert.equal(chunks.directory,undefined,'Static directory text leaked into a client bundle');
 const base=process.env.QA_BASE_URL??'http://127.0.0.1:3000',browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
 const checks=[],measurements=[],errors=[],external=[];
 const adLoader='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5145325695425659';
 // Search is shared with sidebars; the directory marker names its own component.
-const categories=['investmentDecisions','recast','mortgageTools','engine','other','property','retirement','cpi','fx','joint','png','scientific'];
-function loaded(resources,key){return chunks[key].some(name=>resources.some(r=>r.path===name));}
+const categories=['search','investmentDecisions','recast','mortgageTools','engine','other','property','retirement','cpi','fx','joint','png','scientific'];
+function loaded(resources,key){return (chunks[key]??[]).some(name=>resources.some(r=>r.path===name));}
 async function fresh(options={}){
  const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce',acceptDownloads:true,...options});
  const resources=[],jobs=[];page.on('response',r=>{if(new URL(r.url()).pathname.endsWith('.js'))jobs.push(r.body().then(b=>resources.push({path:new URL(r.url()).pathname,decodedBytes:b.length,gzipEstimate:gzipSync(b).length})).catch(()=>{}));});
@@ -32,7 +33,7 @@ try{
   const {page,resources,settle}=await fresh();await page.goto(`${base}/${id}-calculator.html`);await settle();
   const initial=resources.map(r=>({...r}));
   for(const key of categories)assert.equal(loaded(initial,key),false,id+' eagerly loaded '+key);
-  assert.equal(loaded(initial,'directory'),id==='financial',id+' directory isolation');
+  assert.equal(loaded(initial,'directory'),false,id+' static directory isolation');
   const blocking=await page.locator('script[src]').evaluateAll(els=>els.filter(el=>!el.async&&!el.defer&&!el.noModule&&el.type!=='module').map(el=>el.src));assert.deepEqual(blocking,[]);
   if(id==='financial'){await page.locator('#quick-expression').fill('2+3*4');await page.getByRole('button',{name:'Calculate =',exact:true}).click();await page.waitForFunction(()=>document.querySelector('.quick-answer')?.textContent==='14');}
   else {await page.getByRole('button',{name:'Calculate',exact:true}).click();await page.locator('.result h2').waitFor();}
