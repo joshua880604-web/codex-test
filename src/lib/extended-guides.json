@@ -2784,8 +2784,8 @@
     "checkedOn": "2026-10-20"
   },
   "credit-card": {
-    "summary": "Estimate payoff with fixed payments, a chosen term or a minimum-payment rule. Review the payoff time and interest impact of changing the payment amount.",
-    "scope": "The model uses APR divided into monthly interest and assumes no new purchases or unentered fees. Actual statement daily balances and promotional terms can differ.",
+    "summary": "For a single card, estimate how long a fixed monthly payment takes, find the payment for a chosen deadline, or model a percentage minimum with a dollar floor. Compare total interest and payment count, not just the first payment.",
+    "scope": "One balance at a constant APR using opening monthly balance × APR/12. No new purchases, unentered fees, grace periods, daily statement balances, promotional-rate changes or multiple APR buckets are modeled. Minimum-payment mode uses your entered percentage, dollar floor and interest option; it does not read issuer rules. Results are estimates, not a statement or lender payoff quote.",
     "examples": [
       {
         "title": "Pay down a zero-APR credit card with fixed payments",
@@ -2805,6 +2805,93 @@
           "value": 0,
           "tolerance": 0.005
         }
+      },
+      {
+        "title": "Pay $150 monthly on a card at 24% APR",
+        "mode": "payment",
+        "values": {
+          "principal": 5000,
+          "rate": 24,
+          "payment": 150
+        },
+        "inputs": "$5,000 starting card balance, 24% constant APR; no new charges, fees or rate changes.",
+        "steps": [
+          "Same $5,000 balance and 24% APR for every example; no new charges or fees.",
+          "At $150 fixed monthly, payoff takes 56 payments and $3,322.09 interest. At $250, it takes 26 payments and $1,449.36 interest.",
+          "The percentage-minimum example uses 3% of opening balance or $25, whichever is larger, without adding interest on top of that minimum. It is a chosen rule, not a universal card policy."
+        ],
+        "answer": "56 payments; $3,322.09 interest.",
+        "expected": {
+          "label": "Total interest",
+          "value": 3322.0867837911164,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Pay $250 monthly on the same card",
+        "mode": "payment",
+        "values": {
+          "principal": 5000,
+          "rate": 24,
+          "payment": 250
+        },
+        "inputs": "$5,000 starting card balance, 24% constant APR; no new charges, fees or rate changes.",
+        "steps": [
+          "Same $5,000 balance and 24% APR for every example; no new charges or fees.",
+          "At $150 fixed monthly, payoff takes 56 payments and $3,322.09 interest. At $250, it takes 26 payments and $1,449.36 interest.",
+          "The percentage-minimum example uses 3% of opening balance or $25, whichever is larger, without adding interest on top of that minimum. It is a chosen rule, not a universal card policy."
+        ],
+        "answer": "26 payments; $1,449.36 interest.",
+        "expected": {
+          "label": "Total interest",
+          "value": 1449.3641423448164,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Repay the same card in 24 months",
+        "mode": "term",
+        "values": {
+          "principal": 5000,
+          "rate": 24,
+          "years": 2,
+          "months": 0
+        },
+        "inputs": "$5,000 starting card balance, 24% constant APR; no new charges, fees or rate changes.",
+        "steps": [
+          "Same $5,000 balance and 24% APR for every example; no new charges or fees.",
+          "At $150 fixed monthly, payoff takes 56 payments and $3,322.09 interest. At $250, it takes 26 payments and $1,449.36 interest.",
+          "The percentage-minimum example uses 3% of opening balance or $25, whichever is larger, without adding interest on top of that minimum. It is a chosen rule, not a universal card policy."
+        ],
+        "answer": "Unrounded modeled monthly payment about $264.36; $1,344.53 total interest. Display rounding can differ from an issuer’s scheduled payment.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 264.35548626624944,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Compare a declining percentage minimum",
+        "mode": "minimum",
+        "values": {
+          "principal": 5000,
+          "rate": 24,
+          "minimum": 3,
+          "floor": 25,
+          "interest_extra": "No"
+        },
+        "inputs": "$5,000 starting card balance, 24% constant APR; no new charges, fees or rate changes.",
+        "steps": [
+          "Same $5,000 balance and 24% APR for every example; no new charges or fees.",
+          "At $150 fixed monthly, payoff takes 56 payments and $3,322.09 interest. At $250, it takes 26 payments and $1,449.36 interest.",
+          "The percentage-minimum example uses 3% of opening balance or $25, whichever is larger, without adding interest on top of that minimum. It is a chosen rule, not a universal card policy."
+        ],
+        "answer": "234 months; $8,886.95 total interest under this entered minimum rule.",
+        "expected": {
+          "label": "Months to repay",
+          "value": 234,
+          "tolerance": 0.005
+        }
       }
     ],
     "questions": [
@@ -2815,15 +2902,27 @@
       {
         "question": "What if my payment does not cover interest?",
         "answer": "The balance cannot be repaid under that fixed-payment assumption. Increase payment or review the entered APR."
+      },
+      {
+        "question": "Does this calculate my actual credit card statement interest?",
+        "answer": "No. It uses APR/12 on monthly opening balances. Issuers may use average daily balances, different APRs, fees and grace periods. Use your statement and issuer terms for the actual amount due."
+      },
+      {
+        "question": "Should I use this for several credit cards?",
+        "answer": "This form models one balance at one APR. Use Multiple Credit Cards Payoff for separate balances and minimums sharing one total monthly budget. Use Debt Payoff to compare snowball with avalanche."
       }
     ],
     "sources": [
       {
         "title": "Calculation methodology, rule versions and testing limitations",
         "url": "/methodology.html"
+      },
+      {
+        "title": "CFPB: How credit card companies calculate interest",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-does-my-credit-card-company-calculate-the-amount-of-interest-i-owe-en-51/"
       }
     ],
-    "checkedOn": "2026-10-20"
+    "checkedOn": "2026-10-27"
   },
   "credit-cards-payoff": {
     "summary": "Plan payments across multiple cards with one combined budget. The avalanche approach pays required minimums first and directs extra money toward higher-rate debt.",
@@ -2864,11 +2963,11 @@
         "url": "/methodology.html"
       }
     ],
-    "checkedOn": "2026-10-20"
+    "checkedOn": "2026-10-27"
   },
   "debt-payoff": {
-    "summary": "Project multiple debts using minimum payments plus recurring or lump-sum extra payments. The rollover option controls whether freed payments remain available for other debts.",
-    "scope": "The strategy is an entered cash-flow plan, not a negotiated debt settlement. Fees, variable rates and new borrowing are outside unentered assumptions.",
+    "summary": "Compare debt avalanche (highest APR first) and debt snowball (smallest remaining balance first). Enter the same debts, extra payments and rollover choice to compare payoff time and interest fairly. Both plans pay every entered minimum before allocating extra money.",
+    "scope": "Monthly APR/12 projection with fixed entered minimum dollar payments and no new borrowing, fees or rate changes. These minimums do not decline automatically with balances. Snowball ranks after monthly interest and minimum payments. Rollover No lowers future budgets after a debt is cleared, so it is not an equal-budget comparison against Yes. This is a modeled repayment plan, not debt settlement or a lender payoff quote.",
     "examples": [
       {
         "title": "Use extra payments on multiple zero-rate debts",
@@ -2891,6 +2990,110 @@
           "value": 0,
           "tolerance": 0.005
         }
+      },
+      {
+        "title": "Avalanche with payment rollover",
+        "mode": "avalanche",
+        "values": {
+          "debts": "Small, 1000, 50, 6\nLarge, 5000, 150, 24",
+          "extra": 100,
+          "yearly": 0,
+          "once": 0,
+          "once_month": 1,
+          "rollover": "Yes"
+        },
+        "inputs": "Same two debts in every comparison: $1,000 at 6% APR with a $50 minimum, and $5,000 at 24% APR with a $150 minimum. Add $100 monthly; no annual or one-time extra.",
+        "steps": [
+          "The initial budget is $50 + $150 + $100 = $300 per month.",
+          "Avalanche prioritizes the higher APR after minimums; snowball prioritizes the smaller remaining balance.",
+          "Keep total monthly payment fixed? = Yes. Freed minimum payments stay available for remaining debts.",
+          "This scenario takes 25 months, with $1,496.01 interest and $7,496.01 paid. The final payment is capped at the amount owed.",
+          "With rollover Yes, avalanche takes 25 months and $1,496.01 interest; snowball takes 26 months and $1,646.15 interest. Turning rollover off changes the budget as well as the outcome."
+        ],
+        "answer": "25 months; total interest $1,496.01; total paid $7,496.01.",
+        "expected": {
+          "label": "Total interest",
+          "value": 1496.0078302213965,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Snowball with payment rollover",
+        "mode": "snowball",
+        "values": {
+          "debts": "Small, 1000, 50, 6\nLarge, 5000, 150, 24",
+          "extra": 100,
+          "yearly": 0,
+          "once": 0,
+          "once_month": 1,
+          "rollover": "Yes"
+        },
+        "inputs": "Same two debts in every comparison: $1,000 at 6% APR with a $50 minimum, and $5,000 at 24% APR with a $150 minimum. Add $100 monthly; no annual or one-time extra.",
+        "steps": [
+          "The initial budget is $50 + $150 + $100 = $300 per month.",
+          "Avalanche prioritizes the higher APR after minimums; snowball prioritizes the smaller remaining balance.",
+          "Keep total monthly payment fixed? = Yes. Freed minimum payments stay available for remaining debts.",
+          "This scenario takes 26 months, with $1,646.15 interest and $7,646.15 paid. The final payment is capped at the amount owed.",
+          "With rollover Yes, avalanche takes 25 months and $1,496.01 interest; snowball takes 26 months and $1,646.15 interest. Turning rollover off changes the budget as well as the outcome."
+        ],
+        "answer": "26 months; total interest $1,646.15; total paid $7,646.15.",
+        "expected": {
+          "label": "Total interest",
+          "value": 1646.1530426075774,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Avalanche with rollover turned off",
+        "mode": "avalanche",
+        "values": {
+          "debts": "Small, 1000, 50, 6\nLarge, 5000, 150, 24",
+          "extra": 100,
+          "yearly": 0,
+          "once": 0,
+          "once_month": 1,
+          "rollover": "No"
+        },
+        "inputs": "Same two debts in every comparison: $1,000 at 6% APR with a $50 minimum, and $5,000 at 24% APR with a $150 minimum. Add $100 monthly; no annual or one-time extra.",
+        "steps": [
+          "The initial budget is $50 + $150 + $100 = $300 per month.",
+          "Avalanche prioritizes the higher APR after minimums; snowball prioritizes the smaller remaining balance.",
+          "Keep total monthly payment fixed? = No. A cleared debt’s minimum is removed from future budgets; the $100 extra continues.",
+          "This scenario takes 26 months, with $1,502.01 interest and $7,502.01 paid. The final payment is capped at the amount owed.",
+          "With rollover Yes, avalanche takes 25 months and $1,496.01 interest; snowball takes 26 months and $1,646.15 interest. Turning rollover off changes the budget as well as the outcome."
+        ],
+        "answer": "26 months; total interest $1,502.01; total paid $7,502.01.",
+        "expected": {
+          "label": "Total interest",
+          "value": 1502.0083868258243,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Snowball with rollover turned off",
+        "mode": "snowball",
+        "values": {
+          "debts": "Small, 1000, 50, 6\nLarge, 5000, 150, 24",
+          "extra": 100,
+          "yearly": 0,
+          "once": 0,
+          "once_month": 1,
+          "rollover": "No"
+        },
+        "inputs": "Same two debts in every comparison: $1,000 at 6% APR with a $50 minimum, and $5,000 at 24% APR with a $150 minimum. Add $100 monthly; no annual or one-time extra.",
+        "steps": [
+          "The initial budget is $50 + $150 + $100 = $300 per month.",
+          "Avalanche prioritizes the higher APR after minimums; snowball prioritizes the smaller remaining balance.",
+          "Keep total monthly payment fixed? = No. A cleared debt’s minimum is removed from future budgets; the $100 extra continues.",
+          "This scenario takes 31 months, with $1,890.02 interest and $7,890.02 paid. The final payment is capped at the amount owed.",
+          "With rollover Yes, avalanche takes 25 months and $1,496.01 interest; snowball takes 26 months and $1,646.15 interest. Turning rollover off changes the budget as well as the outcome."
+        ],
+        "answer": "31 months; total interest $1,890.02; total paid $7,890.02.",
+        "expected": {
+          "label": "Total interest",
+          "value": 1890.0216034003618,
+          "tolerance": 0.005
+        }
       }
     ],
     "questions": [
@@ -2901,15 +3104,27 @@
       {
         "question": "Can I add an annual bonus to debt payoff?",
         "answer": "Use the annual or one-time extra-payment settings and verify their timing. Do not also count the same amount as recurring monthly extra."
+      },
+      {
+        "question": "Is Additional monthly payment my total monthly budget?",
+        "answer": "No. It is extra above the sum of minimum payments in your debt list. Minimums of $50 and $150 plus $100 extra create an initial $300 monthly budget. Do not enter $300 as extra unless you mean to pay $500 in total. The separate Multiple Credit Cards Payoff Calculator asks for a total budget instead."
+      },
+      {
+        "question": "How should I compare snowball and avalanche fairly?",
+        "answer": "Use exactly the same balances, APRs, minimums, extra payments and rollover choice. Change only the strategy first. Then change the extra amount as a separate comparison. Snowball can clear a small debt sooner, while the interest and payoff outcomes depend on the inputs; it does not guarantee the lowest interest."
       }
     ],
     "sources": [
       {
         "title": "Calculation methodology, rule versions and testing limitations",
         "url": "/methodology.html"
+      },
+      {
+        "title": "CFPB: Your Money, Your Goals — debt action plan",
+        "url": "https://www.consumerfinance.gov/consumer-tools/educator-tool/your-money-your-goals/toolkit/"
       }
     ],
-    "checkedOn": "2026-10-20"
+    "checkedOn": "2026-10-27"
   },
   "debt-consolidation": {
     "summary": "Compare current debt repayment with a new amortizing consolidation loan. Origination fees and whether they are financed affect the cost comparison.",

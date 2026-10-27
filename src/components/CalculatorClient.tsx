@@ -484,6 +484,8 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   return (
     <>
       <p className="intro">{calc.intro}</p>
+      {id === "credit-card" && <p className="result-note">One card: compare fixed payments, a payoff deadline or a minimum-payment rule below. For several cards sharing one monthly budget, use the <SiteLink href={routeFor("credit-cards-payoff")}>Multiple Credit Cards Payoff Calculator</SiteLink>.</p>}
+      {id === "credit-cards-payoff" && <p className="result-note">Enter your total monthly budget, including all minimum payments. For one card and a target payoff date, use the <SiteLink href={routeFor("credit-card")}>Single Credit Card Payoff Calculator</SiteLink>. To compare repayment strategies, use the <SiteLink href={routeFor("debt-payoff")}>Debt Snowball and Avalanche Calculator</SiteLink>.</p>}
       {scope && <p className={"result-note calculator-scope" + (id === "mortgage" ? " mortgage-scope" : "")}>{scope}</p>}
       {id === "irr" && <p className="result-note dated-cash-flow-link">For cash flows on specific calendar dates, use the <SiteLink href={calculatorPresetHref(routeFor("average-return"), "cashflows")}>Average Return Calculator’s Dated Cash Flows mode</SiteLink>.</p>}
       {id !== "mortgage" && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}

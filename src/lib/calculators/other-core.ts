@@ -429,11 +429,11 @@ const debtPayoff = tool(
   [
     {
       id: "avalanche",
-      title: "Debt Payoff Plan",
+      title: "Debt Avalanche",
       fields: [
         debtField(),
-        select("rollover", "Keep total monthly payment fixed?", ["Yes", "No"]),
-        num("extra", "Additional monthly payment", 100, "$"),
+        { ...select("rollover", "Keep total monthly payment fixed?", ["Yes", "No"]), hint: "Yes keeps freed minimum payments in the budget. No removes a paid-off debt’s minimum from future monthly budgets." },
+        { ...num("extra", "Additional monthly payment", 100, "$"), hint: "Extra above all listed minimum payments. Do not include the minimums again." },
         num("yearly", "Extra yearly payment", 0, "$"),
         num("once", "One-time extra payment", 0, "$"),
         num("once_month", "One-time payment month", 1, "", 1),

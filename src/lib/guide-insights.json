@@ -257,15 +257,16 @@
       }
     ],
     "compare": [
-      "Compare Avalanche and Debt Snowball with exactly the same debts, extra payments and rollover choice.",
-      "Then increase the extra monthly amount without changing the strategy to isolate the effect of payment size."
+      "Hold balances, APRs, minimums, extra payments and rollover choice constant; change only Debt Avalanche versus Debt Snowball.",
+      "Load the worked examples below: the same $6,000 debts and initial $300 monthly budget show both strategies and both rollover choices.",
+      "Compare interest and months first. Changing rollover changes the later budget, so review it separately from the strategy."
     ],
     "checks": [
       "APR values in the debt list are annual percentages; balances and minimum payments are dollar amounts.",
       "Keeping the total payment fixed rolls freed payments into other debts; turning rollover off changes the budget.",
       "Snowball does not guarantee the lowest interest bill."
     ],
-    "checkedOn": "2026-10-21"
+    "checkedOn": "2026-10-27"
   },
   "rmd": {
     "answer": "This owner-account RMD estimate divides the prior year-end balance by the applicable life-expectancy divisor. Verify the account type, distribution year and selected table before using the amount.",
