@@ -60,7 +60,7 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
 // Dates record reviewed content changes, never the current build time.
 export const contentUpdatedOn: Record<string, string> = {
   "/privacy.html":"2026-10-27",
-  [guidesPath]:'2026-10-27',
+  [guidesPath]:'2026-10-28',
   ...Object.fromEntries(editorialGuides.map(guide=>[guide.path,guide.publishedOn])),
   "/tax-equivalent-yield-calculator.html": "2026-10-27",
   "/treasury-bill-calculator.html": "2026-10-27",

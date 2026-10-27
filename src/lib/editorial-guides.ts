@@ -58,7 +58,25 @@ export const pointsGuide:EditorialGuide={
  topic:'Mortgages',breadcrumb:'Are mortgage points worth it?',
  cardIntro:'Compare a $4,000 points purchase across several holding periods. See why payment recovery and borrowing-cost break-even differ, and how fees can change the result.',
 };
-export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide];
+export const emergencyGuide:EditorialGuide={
+ path:'/guides/how-much-emergency-fund-should-i-have/',
+ title:'How Much Emergency Fund Should You Have? Targets & Plans',
+ heading:'How Much Emergency Fund Should You Have? Targets and Savings Plans',
+ description:'Build an emergency-fund target from essential expenses. Compare reserve months, current savings, monthly deposits and rebuilding with reproducible examples.',
+ publishedOn:'2026-10-28',calculatorIds:['emergency-fund','budget','savings'],
+ topic:'Savings & investing',breadcrumb:'How much emergency fund?',
+ cardIntro:'Turn a $3,200 essential-expense budget into three-, six- and nine-month scenarios. Compare the savings gap, deposit schedule and rebuilding time.',
+};
+export const rentBuyGuide:EditorialGuide={
+ path:'/guides/rent-vs-buy-a-house/',
+ title:'Rent vs. Buy a House: Costs, Equity & Holding Period',
+ heading:'Rent vs. Buy a House: Compare Costs, Equity, and Time',
+ description:'Compare renting and buying over matched exit dates with sale costs, mortgage balances and invested savings. Test appreciation, returns and maintenance assumptions.',
+ publishedOn:'2026-10-28',calculatorIds:['rent-vs-buy','rent','mortgage','house-affordability'],
+ topic:'Mortgages',breadcrumb:'Rent vs. buy a house',
+ cardIntro:'Compare sale equity with the renter’s invested cash at years 1, 3, 5 and 10. See how one changed assumption can reverse the model result.',
+};
+export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);
