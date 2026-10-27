@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "width": 320,
+      "noOverflow": true,
+      "sections": 5,
+      "canonical": true
+    },
+    {
+      "width": 390,
+      "noOverflow": true,
+      "sections": 5,
+      "canonical": true
+    },
+    {
+      "width": 1440,
+      "noOverflow": true,
+      "sections": 5,
+      "canonical": true
+    }
+  ],
+  "errors": [],
+  "legacyURL": true,
+  "typecheck": "passed",
+  "build": "passed",
+  "staticSEO": 154,
+  "internalAnchors": 8022,
+  "mainWordCount": 454,
+  "claims": "Existing documented features; no invented team, qualifications, history or testimonials",
+  "liveDomain": "unverified"
+}

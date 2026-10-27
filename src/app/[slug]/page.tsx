@@ -1,3 +1,4 @@
+import About from '@/components/About';
 
 import SiteLink from "@/components/SiteLink";
 import {categoryPages,categoryPageBySlug} from '@/lib/category-pages';
@@ -45,7 +46,7 @@ export async function generateMetadata({
     return pageMetadata(
       "/about.html",
       `About ${siteName}`,
-      "Learn about these independent financial calculators, their calculation methods and review status.",
+      "Learn how CalculatorFree supports U.S. financial planning with free tools, explicit assumptions, sourced data and clear privacy and calculation limits.",
     );
   if (slug === "privacy.html")
     return pageMetadata(
@@ -118,27 +119,7 @@ export default async function Page({
         {slug === "methodology.html" ? (
           <Methodology />
         ) : slug === "about.html" ? (
-          <>
-            <p>
-              Independent English-language financial planning tools with
-              formulas, schedules, and explicit assumptions.
-            </p>
-            <p>
-              Read our{" "}
-              <SiteLink href="/methodology.html">
-                calculation methodology, data versions and review status
-              </SiteLink>
-              , or inspect the{" "}
-              <SiteLink href="https://github.com/joshua880604-web/codex-test/tree/financial-calculators">
-                public project and tests
-              </SiteLink>
-              .
-            </p>
-            <p>
-              {siteName} provides independent planning tools. Calculations run in
-              your browser. Currency conversion uses a manual rate or a bundled dated snapshot; no external API is contacted.
-            </p>
-          </>
+          <About />
         ) : slug === "privacy.html" ? (
           <>
             <p>
