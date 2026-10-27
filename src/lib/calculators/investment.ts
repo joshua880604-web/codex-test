@@ -307,6 +307,24 @@ for (const [source, id, title] of [
     },
   });
 }
+// APY belongs only to Savings; shared investment/interest calculators retain their conventions.
+for (const mode of savings.modes) {
+  const calculate = mode.calculate;
+  mode.fields = mode.fields.flatMap(field => field.key === "rate" ? [
+    { ...select("rate_type", "Rate type", ["Nominal interest rate", "APY"], "Nominal interest rate"), optional: true },
+    { ...field, label: "Annual rate / APY", hint: "APY already includes compounding. Choose Nominal interest rate for a stated rate with a separate compounding frequency." },
+  ] : [{ ...field, ...(field.key === "compound" ? { hint: "Used for nominal rates only; ignored when Rate type is APY." } : {}) }]);
+  mode.formula += " For APY, monthly rate = (1 + APY/100)^(1/12) - 1; the compounding selector is ignored.";
+  mode.calculate = values => {
+    if (values.rate_type && !["Nominal interest rate", "APY"].includes(values.rate_type)) throw new Error("Choose a valid savings rate type.");
+    const apy = values.rate_type === "APY";
+    if (apy && n(values, "rate") <= -100) throw new Error("APY must be greater than -100%.");
+    // An effective annual yield is the equivalent of a nominal rate compounded annually.
+    const result = calculate(apy ? { ...values, compound: "Annually" } : values);
+    if (apy) result.notes = [...(result.notes ?? []), "APY is a constant effective annual yield. The compounding selector is ignored; monthly growth uses (1 + APY/100)^(1/12) - 1. Actual bank rates can change; bank day counts, crediting and rounding can differ. No live rates are fetched."];
+    return result;
+  };
+}
 const tvmFields = () => [
   num("N", "Number of periods (N)", 120, "periods", 0.001),
   num("rate", "Annual interest (I/Y)", 6, "%", -99),

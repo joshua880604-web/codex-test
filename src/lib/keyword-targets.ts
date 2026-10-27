@@ -77,3 +77,10 @@ searchTasks.cd[0].aliases = [...new Set([...(searchTasks.cd[0].aliases ?? []), "
 
 import investmentDecisionTargets from "./investment-decisions-targets.json";
 for (const [id, entry] of Object.entries(investmentDecisionTargets)) {searchTasks[id]=entry.tasks;keywordTitles[id]=entry.title;}
+
+// US research: serve high-yield and goal intents from the existing Savings page.
+for (const task of searchTasks.savings) {
+  task.aliases = task.aliases?.filter(alias => !["high yield savings calculator", "high yield savings account calculator", "hysa calculator"].includes(alias.toLowerCase()));
+  if (task.mode === "accumulation") task.description = "Project savings with deposits and an entered APY or nominal rate. Match the rate type and contribution timing; current bank offers are not fetched.";
+}
+searchTasks.savings.push({keyword:"High yield savings calculator",mode:"accumulation",description:"Project savings using an entered APY, monthly deposits and term. APY includes compounding; account yields can change and no live rates are fetched.",values:{rate_type:"APY"},aliases:["High yield savings account calculator","HYSA calculator"]});

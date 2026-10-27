@@ -1175,8 +1175,8 @@
     "checkedOn": "2026-10-20"
   },
   "savings": {
-    "summary": "Use the savings goal calculator to find the monthly deposit needed for a target or the first whole month reaching it. Use the savings calculator with monthly deposits to project a balance instead. Choose the mode that matches the unknown in your plan.",
-    "scope": "The projection uses a constant return and simplified tax/inflation treatment. It does not forecast bank rates or market outcomes.",
+    "summary": "Project savings with monthly deposits, find the monthly amount needed for a savings goal, or calculate the first month reaching it. For a high-yield savings account projection, select APY and enter your own yield assumption. Nominal interest rates use the selected compounding frequency.",
+    "scope": "Assumes a constant rate and entered deposits; it does not fetch bank offers or forecast future high-yield savings rates. APY uses equivalent monthly growth and ignores the compounding selector. Months are equal modeled periods, not exact bank dates. Positive interest tax is deducted at each modeled year end and at the final partial year; inflation adjusts purchasing power, not the account balance.",
     "examples": [
       {
         "title": "Build savings with monthly deposits and no interest",
@@ -1256,6 +1256,91 @@
           "label": "Months to savings goal",
           "value": 12
         }
+      },
+      {
+        "title": "One year of savings at an illustrative 4% APY",
+        "mode": "accumulation",
+        "values": {
+          "principal": 10000,
+          "rate_type": "APY",
+          "rate": 4,
+          "compound": "Monthly",
+          "annual": 0,
+          "timing": "End of period",
+          "tax": 0,
+          "inflation": 0,
+          "years": 1,
+          "months": 0,
+          "monthly": 200,
+          "annual_increase": 0,
+          "monthly_increase": 0
+        },
+        "inputs": "Illustrative 4% APY, $10,000 starting savings, no annual contribution, tax or inflation; deposits at month end. Rate held constant for comparison, not a bank quote.",
+        "steps": [
+          "Starting $10,000 grows to $10,400 over one modeled year.",
+          "Twelve $200 month-end deposits add $2,400; each earns only after it is deposited."
+        ],
+        "answer": "Ending balance: $12,843.69.",
+        "expected": {
+          "label": "Ending balance",
+          "value": 12843.688421266808,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Save $15,000 in one year with interest",
+        "mode": "goal-contribution",
+        "values": {
+          "principal": 10000,
+          "rate_type": "APY",
+          "rate": 4,
+          "compound": "Monthly",
+          "annual": 0,
+          "timing": "End of period",
+          "tax": 0,
+          "inflation": 0,
+          "end": 15000,
+          "years": 1,
+          "months": 0
+        },
+        "inputs": "Illustrative 4% APY, $10,000 starting savings, no annual contribution, tax or inflation; deposits at month end. Rate held constant for comparison, not a bank quote.",
+        "steps": [
+          "The starting $10,000 grows to $10,400 at 4% APY.",
+          "The remaining $4,600 is funded by month-end deposits and their growth."
+        ],
+        "answer": "Required monthly deposit: $376.48.",
+        "expected": {
+          "label": "Required monthly deposit",
+          "value": 376.4800749528749,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Reach $15,000 with $200 monthly deposits",
+        "mode": "goal-time",
+        "values": {
+          "principal": 10000,
+          "rate_type": "APY",
+          "rate": 4,
+          "compound": "Monthly",
+          "annual": 0,
+          "timing": "End of period",
+          "tax": 0,
+          "inflation": 0,
+          "end": 15000,
+          "monthly": 200
+        },
+        "inputs": "Illustrative 4% APY, $10,000 starting savings, no annual contribution, tax or inflation; deposits at month end. Rate held constant for comparison, not a bank quote.",
+        "steps": [
+          "Starting with $10,000, add $200 at each month end at 4% APY.",
+          "The model first reaches $15,000 in month 21. It checks whole months, rather than rounding a fractional estimate down."
+        ],
+        "answer": "Months to savings goal: 21.",
+        "expected": {
+          "label": "Months to savings goal",
+          "value": 21,
+          "tolerance": 0.005
+        }
       }
     ],
     "questions": [
@@ -1274,15 +1359,31 @@
       {
         "question": "How long will it take to reach my savings goal?",
         "answer": "Open Savings Goal: Time Needed and enter your recurring deposits. The solver checks whole months up to 200 years; it reports an error if the target is not reached within that modeled limit."
+      },
+      {
+        "question": "How do I use this as a high yield savings calculator?",
+        "answer": "Choose the balance projection mode, select APY, and enter your starting amount, deposits, term and assumed APY. APY includes compounding, so the compounding selector is ignored. Compare a lower-rate scenario too: savings account yields can change, and this tool does not fetch current bank rates or include account fees."
+      },
+      {
+        "question": "Should I enter APY or a nominal interest rate?",
+        "answer": "Use APY for an effective annual yield. Use Nominal interest rate when you have a stated annual rate plus a compounding frequency. The same choice applies to balance, monthly-deposit and time-to-goal modes. Existing saved links without a rate type keep nominal-rate behavior."
       }
     ],
     "sources": [
       {
         "title": "Calculation methodology, rule versions and testing limitations",
         "url": "/methodology.html"
+      },
+      {
+        "title": "Investor.gov: Savings Goal Calculator",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/savings-goal-calculator"
+      },
+      {
+        "title": "CFPB: Annual Percentage Yield calculation",
+        "url": "https://www.consumerfinance.gov/rules-policy/regulations/1030/a/"
       }
     ],
-    "checkedOn": "2026-10-20"
+    "checkedOn": "2026-10-27"
   },
   "simple-interest": {
     "summary": "Calculate simple interest without interest-on-interest. Match the rate's time unit with the duration before solving for balance, principal, time or rate.",
@@ -4097,8 +4198,8 @@
     ]
   },
   "emergency-fund": {
-    "checkedOn": "2026-10-21",
-    "summary": "Estimate an emergency savings target from essential monthly expenses and your chosen reserve months. Review the current savings gap and months covered, then plan how many monthly deposits would reach that goal.",
+    "checkedOn": "2026-10-27",
+    "summary": "Estimate a reserve target, remaining savings gap and months already covered from essential monthly spending. Compare 3-, 6- and 12-month scenarios below, then open Savings Plan to estimate the monthly deposits needed to close the gap. Reserve months are your planning choice.",
     "scope": "The reserve duration is a user-selected planning assumption, not a personalized financial recommendation. Count accessible savings reserved for emergencies. Expenses stay constant and savings-plan mode assumes no interest, tax or inflation; deposits occur at month end.",
     "examples": [
       {
@@ -4141,6 +4242,50 @@
           "value": 26,
           "tolerance": 1e-05
         }
+      },
+      {
+        "title": "Compare a 3-month emergency reserve",
+        "mode": "plan",
+        "values": {
+          "expenses": 3000,
+          "months": 3,
+          "savings": 5000,
+          "deposit": 500
+        },
+        "inputs": "$3,000 essential monthly expenses; 3 reserve months; $5,000 already set aside; $500 monthly deposits. No interest.",
+        "steps": [
+          "Target = 3,000 × 3 = 9,000.",
+          "Remaining gap = 9,000 − 5,000 = 4,000.",
+          "4,000 / 500 = 8 month-end deposits. Compare the other reserve scenarios; the duration is your choice."
+        ],
+        "answer": "Target $9,000; gap $4,000; 8 months to fund it.",
+        "expected": {
+          "label": "Months to reach target",
+          "value": 8,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Compare a 12-month emergency reserve",
+        "mode": "plan",
+        "values": {
+          "expenses": 3000,
+          "months": 12,
+          "savings": 5000,
+          "deposit": 500
+        },
+        "inputs": "$3,000 essential monthly expenses; 12 reserve months; $5,000 already set aside; $500 monthly deposits. No interest.",
+        "steps": [
+          "Target = 3,000 × 12 = 36,000.",
+          "Remaining gap = 36,000 − 5,000 = 31,000.",
+          "31,000 / 500 = 62 month-end deposits. Compare the other reserve scenarios; the duration is your choice."
+        ],
+        "answer": "Target $36,000; gap $31,000; 62 months to fund it.",
+        "expected": {
+          "label": "Months to reach target",
+          "value": 62,
+          "tolerance": 1e-05
+        }
       }
     ],
     "questions": [
@@ -4155,9 +4300,25 @@
       {
         "question": "What if I am self-employed or my income varies?",
         "answer": "Enter essential expenses and choose a reserve duration appropriate to the uncertainty you want to model. The calculator does not prescribe a self-employed reserve or assume future earnings."
+      },
+      {
+        "question": "What should I include in essential monthly expenses?",
+        "answer": "Add housing, basic groceries, utilities, essential transport, insurance, minimum debt payments, medicines and necessary dependent care. Use your records to estimate costs. Count housing insurance or property tax only once if already included in a mortgage escrow payment. Convert predictable annual bills to monthly amounts. The calculator takes one monthly total; it does not automatically add these categories."
+      },
+      {
+        "question": "Should I choose 3, 6 or 12 months of reserves?",
+        "answer": "These are comparison scenarios, not personalized recommendations. With $3,000 essential monthly spending, the targets are $9,000, $18,000 and $36,000. Consider income stability, dependents, insurance and available support when choosing your own assumption."
+      },
+      {
+        "question": "Does the savings plan include interest or changing living costs?",
+        "answer": "No. The plan uses constant expenses and month-end deposits without interest, taxes or inflation. For an interest-bearing balance projection or savings goal, use the separate Savings Calculator and enter its assumptions. Do not treat that projection as the same model."
       }
     ],
     "sources": [
+      {
+        "title": "CFPB: An essential guide to building an emergency fund",
+        "url": "https://www.consumerfinance.gov/an-essential-guide-to-building-an-emergency-fund/"
+      },
       {
         "title": "Independent model implementation and documented equations",
         "url": "https://github.com/joshua880604-web/codex-test/blob/static-preview-20261021/src/lib/calculators/evergreen.ts"

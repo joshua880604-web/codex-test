@@ -153,11 +153,11 @@
       "Then change the return assumption separately; check how inflation changes purchasing power without changing the nominal account balance."
     ],
     "checks": [
-      "An APY is an effective annual yield; do not treat it as a nominal monthly-compounded quote.",
+      "Select APY for an effective annual yield; compounding is ignored in that setting. Select Nominal interest rate for a stated rate plus compounding frequency.",
       "Beginning-of-period deposits earn interest sooner than end-of-period deposits.",
       "No bank offers or current high-yield account rates are fetched."
     ],
-    "checkedOn": "2026-10-21"
+    "checkedOn": "2026-10-27"
   },
   "retirement": {
     "answer": "Retirement planning separates the target fund, future saving and retirement withdrawals. Select the mode that answers your question and read its return, inflation and payment-timing assumptions.",
