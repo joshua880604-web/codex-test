@@ -49,7 +49,16 @@ export const biweeklyGuide:EditorialGuide={
  topic:'Mortgages',breadcrumb:'Biweekly vs. monthly mortgage payments',
  cardIntro:'Separate the extra annual payment from the schedule: compare standard monthly, accelerated biweekly and monthly payments with the same annual budget.',
 };
-export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide];
+export const pointsGuide:EditorialGuide={
+ path:'/guides/are-mortgage-points-worth-it/',
+ title:'Are Mortgage Points Worth It? Costs & Break-Even Examples',
+ heading:'Are Mortgage Points Worth It? Compare Costs and Break-Even',
+ description:'Compare mortgage points using same-loan quotes, monthly payments, cash-flow and balance-aware break-even, holding periods, extra fees and lender credits.',
+ publishedOn:'2026-10-27',calculatorIds:['discount-points','mortgage','refinance'],
+ topic:'Mortgages',breadcrumb:'Are mortgage points worth it?',
+ cardIntro:'Compare a $4,000 points purchase across several holding periods. See why payment recovery and borrowing-cost break-even differ, and how fees can change the result.',
+};
+export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);
