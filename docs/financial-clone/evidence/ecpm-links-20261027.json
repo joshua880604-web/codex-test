@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "sitemapPages": 154,
+  "incomingBefore": [
+    "/glossary/"
+  ],
+  "incomingAfter": [
+    "/glossary/",
+    "/glossary/return-on-investment/",
+    "/glossary/percentage-vs-percentage-points/"
+  ],
+  "canonicalUnchanged": "https://www.calculatorfree.io/glossary/ecpm/",
+  "oldURLRetained": true,
+  "noNewCalculatorOrRatingData": true,
+  "scope": "Static production-export links; live custom-domain and native Safari not verified",
+  "validation": {
+    "glossarySuites": "tests/glossary.test.ts and tests/glossary-arithmetic.test.ts passed with --test-isolation=none",
+    "typecheck": "passed",
+    "productionExport": "passed",
+    "seoPages": 154,
+    "internalAnchors": 8016,
+    "fragmentPresets": 478,
+    "internalQueryAnchors": 0
+  }
+}

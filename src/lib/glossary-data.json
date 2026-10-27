@@ -908,7 +908,7 @@
       "Total investment return"
     ],
     "definition": "ROI expresses an investment’s gain or loss relative to its cost over a stated holding period.",
-    "explanation": "Define proceeds, income and costs consistently. A total ROI does not adjust for how long the investment was held. Annualizing a single initial outlay and final receipt is different from measuring a portfolio with intervening deposits or withdrawals.",
+    "explanation": "Define proceeds, income and costs consistently. A total ROI does not adjust for how long the investment was held. Annualizing a single initial outlay and final receipt is different from measuring a portfolio with intervening deposits or withdrawals. For advertising, eCPM summarizes cost or revenue per 1,000 ad impressions. It does not include all the costs and receipts needed to establish ROI.",
     "formula": "ROI = (total amount received − investment cost) / investment cost",
     "formulaNote": "A positive cost is required. Include relevant income and fees consistently; multiply the ratio by 100 to show a percentage.",
     "example": {
@@ -953,7 +953,8 @@
     ],
     "related": [
       "cagr",
-      "internal-rate-of-return"
+      "internal-rate-of-return",
+      "ecpm"
     ],
     "sources": [
       {
@@ -3588,7 +3589,7 @@
       "Basis points"
     ],
     "definition": "Percentage points measure the arithmetic difference between percentage rates; percentage change measures the difference relative to a starting value.",
-    "explanation": "A move from 5% to 6% is one percentage point but a 20% relative increase in the rate. A basis point is one hundredth of a percentage point. Always name the base when describing a percentage increase, discount, tip or margin.",
+    "explanation": "A move from 5% to 6% is one percentage point but a 20% relative increase in the rate. A basis point is one hundredth of a percentage point. Always name the base when describing a percentage increase, discount, tip or margin. For example, an ad eCPM rising from $3 to $3.60 increases by 20%. This is a relative percentage change, not a percentage-point change: eCPM is a currency amount per 1,000 impressions, not a percentage rate.",
     "formula": "Relative change = (new value − old value) / old value × 100%; percentage-point change = new percentage − old percentage",
     "formulaNote": "Relative change is undefined when the old value is zero. Negative starting values require additional interpretation; a percentage-point difference does not require division.",
     "example": {
@@ -3624,7 +3625,8 @@
     "related": [
       "markup-vs-margin",
       "fixed-vs-variable-interest",
-      "commission"
+      "commission",
+      "ecpm"
     ],
     "sources": [
       {
