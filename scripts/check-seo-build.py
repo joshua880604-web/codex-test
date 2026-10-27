@@ -26,7 +26,7 @@ class Page(HTMLParser):
 catalog=json.loads((root/'src/lib/catalog-data.json').read_text())
 terms=json.loads((root/'src/lib/glossary-data.json').read_text())
 paths=[x['local_route'] for x in catalog]+['/loan-calculators.html','/savings-investment-calculators.html','/financial-calculator.html','/about.html','/privacy.html','/methodology.html','/glossary/']+['/glossary/'+term['slug']+'/' for term in terms]
-paths+=['/guides/','/guides/mortgage-recast-vs-refinance/','/guides/debt-snowball-vs-avalanche/']
+paths+=['/guides/cd-vs-savings-account/','/guides/','/guides/mortgage-recast-vs-refinance/','/guides/debt-snowball-vs-avalanche/']
 new_categories=['/retirement-calculators.html','/tax-income-calculators.html','/business-calculators.html','/everyday-calculators.html']
 paths+=new_categories
 checks=[]
@@ -71,7 +71,9 @@ for route in paths:
   graph=p.schemas[0]['@graph'];assert graph[0]['@type']==('CollectionPage' if route=='/guides/' else 'Article')
   if route!='/guides/':
    assert graph[0]['headline']==p.h1s[0]
-   expected=['$1,610.75','$153,213.95','$1,753.77','27.9 months','not an equal-cash ranking'] if 'mortgage-recast' in route else ['$1,792.13','$2,204.57','$412.44','Month 6','Month 22','50-digit decimal']
+   if 'mortgage-recast' in route:expected=['$1,610.75','$153,213.95','$1,753.77','27.9 months','not an equal-cash ranking']
+   elif 'cd-vs-savings' in route:expected=['$10,450.00','$10,425.00','$10,374.73','$10,499.88','$10,122.52','$87.76','50-digit Decimal','not current bank offers','does not model early closure or penalties']
+   else:expected=['$1,792.13','$2,204.57','$412.44','Month 6','Month 22','50-digit decimal']
    for text in expected:
     assert text in ''.join(p.text),(route,text)
    assert graph[0]['datePublished']=='2026-10-27'

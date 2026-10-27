@@ -1,0 +1,25 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {editorialGuides,cdSavingsGuide,editorialSchema} from '../src/lib/editorial-guides';
+import {calculators} from '../src/lib/catalog';
+import {sitemapEntries} from '../src/lib/seo';
+const config={origin:'https://www.calculatorfree.io',indexable:true};
+test('Editorial guide entries have real calculator relationships and one canonical sitemap entry',()=>{
+ assert.equal(new Set(editorialGuides.map(g=>g.path)).size,editorialGuides.length);
+ for(const guide of editorialGuides){
+  assert.ok(guide.path.startsWith('/guides/')&&guide.path.endsWith('/'));
+  assert.ok(guide.calculatorIds.every(id=>calculators.some(c=>c.id===id)));
+  assert.equal(sitemapEntries(config).filter(x=>x.url===config.origin+guide.path).length,1);
+ }
+ assert.deepEqual(cdSavingsGuide.calculatorIds,['cd','savings','emergency-fund']);
+});
+test('CD article and Guides collection describe the same visible article without invented credentials',()=>{
+ const graph=editorialSchema(cdSavingsGuide,config)['@graph'];const article=graph[0] as any;
+ assert.equal(article['@type'],'Article');assert.equal(article.headline,cdSavingsGuide.heading);
+ assert.equal(article.datePublished,cdSavingsGuide.publishedOn);assert.equal(article.author['@type'],'Organization');
+ assert.ok(!('reviewedBy' in article));
+ const hub=editorialSchema(false,config)['@graph'][0] as any;
+ assert.equal(hub.hasPart.filter((a:any)=>a.url===article.url).length,1);
+ const breadcrumb=graph.find(a=>a['@type']==='BreadcrumbList') as any;
+ assert.equal(breadcrumb.itemListElement.at(-1).item,article.url);
+});

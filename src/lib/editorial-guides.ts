@@ -21,7 +21,17 @@ export const debtGuide:EditorialGuide={
  topic:'Loans & debt',breadcrumb:'Debt snowball vs. avalanche',
  cardIntro:'Compare three debts with the same $400 budget. See the first payoff milestone, final payoff, interest cost and what changes when payments stop rolling forward.',
 };
-export const editorialGuides=[recastGuide,debtGuide];
+export const cdSavingsGuide:EditorialGuide={
+ path:'/guides/cd-vs-savings-account/',
+ title:'CD vs. Savings Account: Rates, Access & Examples',
+ heading:'CD vs. Savings Account: Rates, Access, and Worked Examples',
+ description:'Compare CDs with savings and high-yield savings accounts using equal-deposit examples, changing APYs, early-withdrawal costs and calculator presets.',
+ publishedOn:'2026-10-27',
+ calculatorIds:['cd','savings','emergency-fund'],
+ topic:'Savings & investing',breadcrumb:'CD vs. savings account',
+ cardIntro:'Compare the same $10,000 over matched periods. See what a rate change or an illustrated early-exit penalty does to the difference in dollars.',
+};
+export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);
