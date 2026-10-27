@@ -1,7 +1,8 @@
 import {readdir,rm,rename,stat,mkdir} from 'node:fs/promises';
 import {join} from 'node:path';
 // The application uses normal <a> document navigation, not Next Link/RSC prefetch.
-// Preserve its public *.html URLs on static hosts, including Cloudflare Pages.
+// Export physical *.html documents for extensionless static serving.
+// Legacy public *.html requests redirect via _redirects; these are storage files.
 let count=0;
 for(const name of await readdir('out')){
  if(!name.endsWith('.html.html'))continue;

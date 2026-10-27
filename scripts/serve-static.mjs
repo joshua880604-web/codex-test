@@ -3,12 +3,15 @@ import {readFile,stat} from 'node:fs/promises';
 import {resolve,extname,sep} from 'node:path';
 const root=resolve('out'),port=Number(process.env.PORT??3000);
 const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.txt':'text/plain; charset=utf-8','.xml':'application/xml','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.woff2':'font/woff2'};
+const redirects=new Map((await readFile(resolve(root,'_redirects'),'utf8')).split(/\r?\n/).filter(line=>line.trim()&&!line.trim().startsWith('#')).map(line=>{const [from,to,status]=line.trim().split(/\s+/);return [from,{to,status:Number(status??302)}];}));
 try{await stat(root)}catch{throw new Error('Run npm run build first to generate out/.');}
 createServer(async(req,res)=>{
  if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}
  try{
-  const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
-  if(pathname==='/'){res.writeHead(301,{Location:'/financial-calculator'});res.end();return;}
+  const url=new URL(req.url,'http://localhost');
+  const pathname=decodeURIComponent(url.pathname);
+  const redirect=redirects.get(pathname);
+  if(redirect){res.writeHead(redirect.status,{Location:redirect.to+url.search});res.end();return;}
   let file=resolve(root,'.'+pathname);
   if(!file.startsWith(root+sep)){res.writeHead(403);res.end();return;}
   if (!extname(pathname) && !pathname.endsWith('/')) {
