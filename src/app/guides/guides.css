@@ -1,0 +1,15 @@
+.guides-page .guide-card{border:1px solid var(--rule,#dce5eb);border-radius:16px;padding:20px 24px;margin:28px 0;}
+.guides-page .guide-card h2{margin-top:8px;}
+.editorial-article p,.editorial-article li{line-height:1.8;}
+.editorial-article h2{margin-top:36px;line-height:1.35;}
+.editorial-article h3{margin-top:24px;line-height:1.4;}
+.editorial-article .guide-byline{font-size:13px;line-height:1.7;}
+.editorial-article .guide-nav{font-size:13px;gap:4px 18px;}
+.editorial-article .guide-table{max-width:100%;overflow-x:auto;margin:24px 0;border:1px solid var(--rule,#dce5eb);border-radius:8px;}
+.editorial-article table{width:100%;min-width:640px;border-collapse:collapse;font-size:14px;line-height:1.6;background:transparent;color:inherit;margin:0;}
+.editorial-article table caption{text-align:left;padding:12px;font-weight:600;color:inherit;}
+.editorial-article table th,.editorial-article table td{padding:12px;vertical-align:top;text-align:left;white-space:normal;border:0;border-top:1px solid var(--rule,#dce5eb);background:transparent;color:inherit;}
+.editorial-article table th[scope=row]{font-weight:500;}
+.editorial-article code{white-space:normal;overflow-wrap:anywhere;}
+@media(max-width:700px){.guides-page .guide-card{padding:16px;}.editorial-article h1{font-size:28px;}.editorial-article .guide-table{font-size:13px;}}
+@media print{.editorial-article .guide-table{overflow:visible;}.editorial-article table{min-width:0;font-size:10px;}.editorial-article .guide-nav{display:none;}}

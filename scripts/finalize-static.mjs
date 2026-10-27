@@ -22,4 +22,14 @@ await mkdir(glossary,{recursive:true});
  }
 await rename('out/glossary.html',join(glossary,'index.html'));
 console.log('Prepared glossary directory documents.');
+// Guides are static directory documents, with no client router dependency.
+const guides='out/guides';
+await mkdir(guides,{recursive:true});
+for(const name of await readdir(guides)){
+ if(!name.endsWith('.html')||name==='index.html')continue;
+ const folder=join(guides,name.slice(0,-5));await mkdir(folder,{recursive:true});
+ await rename(join(guides,name),join(folder,'index.html'));
+}
+await rename('out/guides.html',join(guides,'index.html'));
+console.log('Prepared guides directory documents.');
 await import('./check-public-brand.mjs');

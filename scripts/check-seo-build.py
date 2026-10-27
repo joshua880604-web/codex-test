@@ -26,6 +26,7 @@ class Page(HTMLParser):
 catalog=json.loads((root/'src/lib/catalog-data.json').read_text())
 terms=json.loads((root/'src/lib/glossary-data.json').read_text())
 paths=[x['local_route'] for x in catalog]+['/loan-calculators.html','/savings-investment-calculators.html','/financial-calculator.html','/about.html','/privacy.html','/methodology.html','/glossary/']+['/glossary/'+term['slug']+'/' for term in terms]
+paths+=['/guides/','/guides/mortgage-recast-vs-refinance/']
 checks=[]
 for route in paths:
  file=root/'out'/route[1:]
@@ -58,6 +59,14 @@ for route in paths:
   if term:
    assert term['definition'] in ''.join(p.text),route
    assert term['example']['answer'] in ''.join(p.text),route
+ if route.startswith('/guides/'):
+  assert len(p.schemas)==1,route
+  graph=p.schemas[0]['@graph'];assert graph[0]['@type']==('CollectionPage' if route=='/guides/' else 'Article')
+  if route!='/guides/':
+   assert graph[0]['headline']==p.h1s[0]
+   for text in ['$1,610.75','$153,213.95','$1,753.77','27.9 months','not an equal-cash ranking']:
+    assert text in ''.join(p.text),(route,text)
+   assert graph[0]['datePublished']=='2026-10-27'
  checks.append({'route':route,'canonical':p.canon,'h1':p.h1s[0]})
 sitemap=(root/'out/sitemap.xml').read_text()
 robots=(root/'out/robots.txt').read_text()

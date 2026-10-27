@@ -24,6 +24,7 @@ export function Header() {
           </SiteLink>
           <MobileNavigation/>
           <div className="header-actions">
+          <SiteLink href="/guides/" style={{display:"inline-flex",alignItems:"center",minHeight:44,fontSize:14}}>Guides</SiteLink>
           <details className="theme-menu theme-tools"><summary>Theme</summary><div className="theme-panel"><strong>Appearance</strong><ThemeChoices/><small>Saved in this browser.</small></div></details>
           <span className="header-description">
             <FreeBadge />
@@ -93,6 +94,7 @@ export function Footer() {
         <SiteLink href="/methodology.html">Methodology &amp; sources</SiteLink>
         <span> · </span>
         <SiteLink href="/glossary/">Glossary</SiteLink>
+          <SiteLink href="/guides/">Guides</SiteLink>
       </div>
       <p>
         © {new Date().getFullYear()} {siteName}. Independent planning

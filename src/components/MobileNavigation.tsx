@@ -4,7 +4,7 @@ import SiteLink from "@/components/SiteLink";
 
 import {useEffect,useRef} from 'react';
 import {categoryNavigation} from '@/lib/calculator-categories';
-const links=[['All calculators','/financial-calculator.html'],['Find a calculator','/financial-calculator.html#directory-search'],...categoryNavigation.map(link=>[link.title,link.href]),['Financial glossary','/glossary/'],['Methodology & sources','/methodology.html']];
+const links=[['All calculators','/financial-calculator.html'],['Find a calculator','/financial-calculator.html#directory-search'],...categoryNavigation.map(link=>[link.title,link.href]),['Financial glossary','/glossary/'],['Financial guides','/guides/'],['Methodology & sources','/methodology.html']];
 export default function MobileNavigation(){
  const menu=useRef<HTMLDetailsElement>(null),trigger=useRef<HTMLElement>(null);
  useEffect(()=>{
