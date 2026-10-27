@@ -64,7 +64,7 @@ export const contentUpdatedOn: Record<string, string> = {
   ...Object.fromEntries(categoryPages.map(page=>[page.path,"2026-10-26"])),
   "/pmi-calculator.html": "2026-10-26",
   "/biweekly-mortgage-calculator.html": "2026-10-26",
-  "/discount-points-calculator.html": "2026-10-26",
+  "/discount-points-calculator.html": "2026-10-27",
   ...Object.fromEntries(Object.entries(longTailContent).map(([id,content])=>[catalog.find(c=>c.id===id)!.local_route,content.updatedOn])),
   "/fha-loan-calculator.html": "2026-10-25",
   "/marriage-calculator.html": "2026-10-25",

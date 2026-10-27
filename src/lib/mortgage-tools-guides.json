@@ -96,8 +96,8 @@
     ]
   },
   "biweekly-mortgage": {
-    "checkedOn": "2026-10-26",
-    "summary": "Paying half a monthly payment every two weeks produces 26 half-payments, equal to 13 monthly payments per modeled year. The calculator compares this with ordinary monthly payments and with a monthly plan that has the same annual outlay.",
+    "checkedOn": "2026-10-27",
+    "summary": "Use this biweekly mortgage calculator to compare monthly payments with half-payments every two weeks. See interest savings, payoff time and the effect of extra principal. The equal-budget monthly comparison shows how much of the saving comes from paying more each year.",
     "scope": "Fixed nominal-rate P&I with equal 1/26-year periods and immediate crediting of each payment. This is not twice-monthly payment, an exact 14-day daily-interest calendar, or a lender holding-account simulation. Taxes, insurance, PMI, fees and penalties are excluded.",
     "examples": [
       {
@@ -144,6 +144,31 @@
           "label": "Monthly payment with the same annual budget",
           "value": 1083.3333333333333
         }
+      },
+      {
+        "title": "A $300,000 mortgage at 6%: monthly versus biweekly",
+        "mode": "biweekly",
+        "values": {
+          "principal": 300000,
+          "rate": 6,
+          "years": 30,
+          "months": 0,
+          "extra": 0
+        },
+        "inputs": "$300,000 current principal, fixed 6% nominal annual rate and 30 years remaining. No extra beyond half the monthly P&I. Equal modeled 1/26-year periods and immediate crediting.",
+        "steps": [
+          "Ordinary monthly P&I is about $1,798.65; each biweekly payment is about $899.33.",
+          "The 26-payment annual budget is $23,382.47, equivalent to about $1,948.54 per month. It exceeds the ordinary monthly budget by one monthly payment each full modeled year.",
+          "Ordinary monthly interest totals about $347,514.57 over 30 years. Biweekly interest totals about $273,078.55 over 638 payments (24.54 modeled years).",
+          "The equal-budget monthly plan has about $273,849.21 interest over 24.58 years. Biweekly saves about $770.66 against that plan; most of its $74,436.02 saving against ordinary monthly payments comes from the higher annual outlay.",
+          "Extra per biweekly payment adds to every half-payment. Confirm how your servicer applies partial payments, principal and fees."
+        ],
+        "answer": "Modeled biweekly interest saving versus ordinary monthly payments: $74,436.02; payoff about 5.46 years earlier.",
+        "expected": {
+          "label": "Interest saved versus standard monthly",
+          "value": 74436.01943612151,
+          "tolerance": 0.005
+        }
       }
     ],
     "questions": [
@@ -180,8 +205,8 @@
     ]
   },
   "discount-points": {
-    "checkedOn": "2026-10-26",
-    "summary": "Compare two fixed-rate loan quotes with the same principal and term. Points cost 1% of principal per point, but the rate reduction must come from the lender’s actual quote. The comparison distinguishes monthly cash savings from interest-and-fee savings at a sale or refinancing horizon.",
+    "checkedOn": "2026-10-27",
+    "summary": "Use this mortgage points calculator to compare paying discount points with another fixed-rate quote. See the upfront cost, monthly payment savings and break-even timing. Then compare net borrowing costs at the date you expect to sell, refinance or repay.",
     "scope": "Cash-paid points and entered upfront costs on same-principal, same-term fixed-rate quotes. Negative points represent an entered lender credit. No financed fees, tax deduction, discounting, ownership-cost difference, PMI or prepayment penalty is inferred.",
     "examples": [
       {
@@ -235,6 +260,90 @@
         "expected": {
           "label": "Net borrowing-cost savings at horizon (B vs A)",
           "value": -120
+        }
+      },
+      {
+        "title": "Buying one point: sell or refinance after 3 years",
+        "mode": "compare",
+        "values": {
+          "principal": 300000,
+          "years": 30,
+          "rate_a": 6.5,
+          "points_a": 0,
+          "rate_b": 6,
+          "points_b": 1,
+          "fees_a": 0,
+          "fees_b": 0,
+          "hold": 36
+        },
+        "inputs": "Illustrative $300,000, 30-year quotes: A at 6.5% with no points; B at 6% with one point. Both fees paid in cash. Compare after 36 payments. These are assumptions, not lender offers.",
+        "steps": [
+          "B costs $3,000 upfront; monthly P&I is about $1,798.65 versus $1,896.20 for A.",
+          "After 36 payments, payment savings less the upfront cost are $511.89.",
+          "Including B's lower remaining balance, net borrowing-cost savings are $1,511.41.",
+          "For these inputs, net-cost break-even first occurs in month 24; cash-flow break-even first occurs in month 31. Repeat with your own quoted rates and likely holding periods."
+        ],
+        "answer": "B has $1,511.41 lower modeled interest and upfront costs at this horizon.",
+        "expected": {
+          "label": "Net borrowing-cost savings at horizon (B vs A)",
+          "value": 1511.40525408688,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Buying one point: sell or refinance after 5 years",
+        "mode": "compare",
+        "values": {
+          "principal": 300000,
+          "years": 30,
+          "rate_a": 6.5,
+          "points_a": 0,
+          "rate_b": 6,
+          "points_b": 1,
+          "fees_a": 0,
+          "fees_b": 0,
+          "hold": 60
+        },
+        "inputs": "Illustrative $300,000, 30-year quotes: A at 6.5% with no points; B at 6% with one point. Both fees paid in cash. Compare after 60 payments. These are assumptions, not lender offers.",
+        "steps": [
+          "B costs $3,000 upfront; monthly P&I is about $1,798.65 versus $1,896.20 for A.",
+          "After 60 payments, payment savings less the upfront cost are $2,853.15.",
+          "Including B's lower remaining balance, net borrowing-cost savings are $4,523.01.",
+          "For these inputs, net-cost break-even first occurs in month 24; cash-flow break-even first occurs in month 31. Repeat with your own quoted rates and likely holding periods."
+        ],
+        "answer": "B has $4,523.01 lower modeled interest and upfront costs at this horizon.",
+        "expected": {
+          "label": "Net borrowing-cost savings at horizon (B vs A)",
+          "value": 4523.011557471473,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Buying one point: sell or refinance after 10 years",
+        "mode": "compare",
+        "values": {
+          "principal": 300000,
+          "years": 30,
+          "rate_a": 6.5,
+          "points_a": 0,
+          "rate_b": 6,
+          "points_b": 1,
+          "fees_a": 0,
+          "fees_b": 0,
+          "hold": 120
+        },
+        "inputs": "Illustrative $300,000, 30-year quotes: A at 6.5% with no points; B at 6% with one point. Both fees paid in cash. Compare after 120 payments. These are assumptions, not lender offers.",
+        "steps": [
+          "B costs $3,000 upfront; monthly P&I is about $1,798.65 versus $1,896.20 for A.",
+          "After 120 payments, payment savings less the upfront cost are $8,706.30.",
+          "Including B's lower remaining balance, net borrowing-cost savings are $11,977.50.",
+          "For these inputs, net-cost break-even first occurs in month 24; cash-flow break-even first occurs in month 31. Repeat with your own quoted rates and likely holding periods."
+        ],
+        "answer": "B has $11,977.50 lower modeled interest and upfront costs at this horizon.",
+        "expected": {
+          "label": "Net borrowing-cost savings at horizon (B vs A)",
+          "value": 11977.503600338183,
+          "tolerance": 0.005
         }
       }
     ],

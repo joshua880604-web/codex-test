@@ -470,20 +470,26 @@ const cd = tool(
       title: "CD Return",
       fields: [
         num("principal", "Initial deposit", 10000, "$"),
-        num("rate", "Interest rate", 5, "%", -99),
-        compoundField(),
+        { ...select("rate_type", "Rate type", ["Nominal interest rate", "APY"], "Nominal interest rate"), optional: true },
+        { ...num("rate", "Annual rate / APY", 5, "%", -99), hint: "Choose the rate type above. APY already includes compounding; do not compound it again." },
+        { ...compoundField(), hint: "Used for nominal interest rates only. Ignored when Rate type is APY." },
         num("years", "Deposit length", 3, "years", 0),
         num("months", "Additional months", 0, "months"),
         num("tax", "Marginal tax rate", 22, "%"),
       ],
       description: "Estimate the CD maturity value and after-tax interest.",
-      formula: "FV = P × (1 + r/m)^(m×t). Taxes are applied to total interest.",
+      formula: "Nominal rate: FV = P × (1 + r/m)^(m×t). APY: FV = P × (1 + APY)^t. Rates are decimals; t is years. Taxes are applied to total positive interest.",
       calculate: (v) => {
+        if (v.rate_type && !["Nominal interest rate", "APY"].includes(v.rate_type)) throw new Error("Choose a valid CD rate type.");
+        const apy = v.rate_type === "APY";
+        const annualRate = n(v, "rate");
+        if (apy && annualRate <= -100) throw new Error("APY must be greater than -100%.");
+        const monthlyRate = apy ? Math.expm1(Math.log1p(annualRate / 100) / 12) : periodic(annualRate, freq(v.compound), 12);
         const p = n(v, "principal"),
           fv = future(
             p,
             0,
-            periodic(n(v, "rate"), freq(v.compound), 12),
+            monthlyRate,
             n(v, "years") * 12 + n(v, "months"),
           ),
           interest = fv - p,
@@ -493,14 +499,14 @@ const cd = tool(
         const rows:(number|string)[][]=[], yearly:(number|string)[][]=[];
         let previous=p;
         for(let i=1;i<=Math.ceil(term);i++){
-          const month=Math.min(i,term), balance=future(p,0,periodic(n(v,"rate"),freq(v.compound),12),month);
+          const month=Math.min(i,term), balance=future(p,0,monthlyRate,month);
           rows.push([month,balance-previous,balance-p,balance]);previous=balance;
           if(i%12===0 || i===Math.ceil(term))yearly.push([month/12,balance-p,balance]);
         }
         return {
           columns:["Month","Period interest","Cumulative interest","Balance before tax"], rows,
           schedulePeriod:"Monthly", annualColumns:["Year","Cumulative interest","Balance before tax"], annualRows:yearly,
-          notes:["Schedule balances are before tax. The marginal tax estimate is applied to positive total interest at maturity; it does not model annual tax cash flows, early withdrawal penalties or changing rates."],
+          notes:[...(apy ? ["APY already includes compounding. The selected compounding frequency is ignored. Growth uses a constant effective annual yield and term in months / 12, not exact bank day-count or crediting conventions."] : []), "Schedule balances are before tax. The marginal tax estimate is applied to positive total interest at maturity; it does not model annual tax cash flows, early withdrawal penalties or changing rates."],
           metrics: [
             money("Maturity balance", fv),
             money("Interest earned", interest),
