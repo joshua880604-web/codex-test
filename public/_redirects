@@ -1,4 +1,5 @@
 # One canonical URL per document. Query strings are retained by Pages.
+# Renamed calculators: preserve old route ownership, with no redirect chains.
 / /financial-calculator 301
 /index.html /financial-calculator 301
 /glossary.html /glossary/ 301
@@ -23,9 +24,9 @@
 /college-cost-calculator.html /college-cost-calculator 301
 /commission-calculator.html /commission-calculator 301
 /compound-interest-calculator.html /compound-interest-calculator 301
-/credit-card-calculator.html /credit-card-calculator 301
-/credit-card-payoff-calculator.html /credit-card-payoff-calculator 301
-/currency-calculator.html /currency-calculator 301
+/credit-card-calculator.html /single-credit-card-payoff-calculator 301
+/credit-card-payoff-calculator.html /multiple-credit-card-payoff-calculator 301
+/currency-calculator.html /currency-converter 301
 /date-calculator.html /date-calculator 301
 /debt-consolidation-calculator.html /debt-consolidation-calculator 301
 /debt-payoff-calculator.html /debt-payoff-calculator 301
@@ -72,10 +73,10 @@
 /real-estate-calculator.html /real-estate-calculator 301
 /real-return-calculator.html /real-return-calculator 301
 /refinance-calculator.html /refinance-calculator 301
-/rent-calculator.html /rent-calculator 301
+/rent-calculator.html /rent-affordability-calculator 301
 /rent-vs-buy-calculator.html /rent-vs-buy-calculator 301
 /rental-property-calculator.html /rental-property-calculator 301
-/repayment-calculator.html /repayment-calculator 301
+/repayment-calculator.html /loan-repayment-calculator 301
 /retirement-calculator.html /retirement-calculator 301
 /rmd-calculator.html /rmd-calculator 301
 /roi-calculator.html /roi-calculator 301
@@ -88,7 +89,7 @@
 /simple-interest-calculator.html /simple-interest-calculator 301
 /social-security-calculator.html /social-security-calculator 301
 /student-loan-calculator.html /student-loan-calculator 301
-/take-home-pay-calculator.html /take-home-pay-calculator 301
+/take-home-pay-calculator.html /paycheck-calculator 301
 /tax-calculator.html /tax-calculator 301
 /tax-equivalent-yield-calculator.html /tax-equivalent-yield-calculator 301
 /tip-bill-split-calculator.html /tip-bill-split-calculator 301
@@ -100,3 +101,15 @@
 /tax-income-calculators.html /tax-income-calculators 301
 /business-calculators.html /business-calculators 301
 /everyday-calculators.html /everyday-calculators 301
+/take-home-pay-calculator /paycheck-calculator 301
+/paycheck-calculator.html /paycheck-calculator 301
+/repayment-calculator /loan-repayment-calculator 301
+/loan-repayment-calculator.html /loan-repayment-calculator 301
+/rent-calculator /rent-affordability-calculator 301
+/rent-affordability-calculator.html /rent-affordability-calculator 301
+/currency-calculator /currency-converter 301
+/currency-converter.html /currency-converter 301
+/credit-card-calculator /single-credit-card-payoff-calculator 301
+/single-credit-card-payoff-calculator.html /single-credit-card-payoff-calculator 301
+/credit-card-payoff-calculator /multiple-credit-card-payoff-calculator 301
+/multiple-credit-card-payoff-calculator.html /multiple-credit-card-payoff-calculator 301

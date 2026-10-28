@@ -60,7 +60,7 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 - [Income Tax Calculator](https://www.calculatorfree.io/tax-calculator): Estimate selected 2025 or 2026 U.S. federal income tax and withholding balance, including entered eligible passive NIIT income, MFS spouse itemization and year-specific AMT adjustments. The 2026 active-QBI minimum requires the stated eligibility; this is not a complete return-preparation engine.
 - [Salary Calculator](https://www.calculatorfree.io/salary-calculator): Convert pay frequencies and compare unadjusted pay with holiday- and vacation-adjusted pay.
-- [Take-Home Paycheck Calculator](https://www.calculatorfree.io/take-home-pay-calculator): Estimate pay using 2026 U.S. federal rules and explicit state/local effective-rate assumptions; this is not a complete state or city tax engine.
+- [Paycheck Calculator](https://www.calculatorfree.io/paycheck-calculator): Estimate pay using 2026 U.S. federal rules and explicit state/local effective-rate assumptions; this is not a complete state or city tax engine.
 
 ## Mortgage decision tools
 

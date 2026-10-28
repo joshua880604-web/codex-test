@@ -28,7 +28,7 @@ try{
   }
   checks.push(record);
  }
- await page.goto(base+'/currency-calculator.html?mode=live&amount=100&from=USD&to=EUR');
+ await page.goto(base+'/currency-converter.html?mode=live&amount=100&from=USD&to=EUR');
  await page.getByRole('tab',{name:'Saved Reference Rates'}).waitFor();await page.locator('.result h2').waitFor();
  if(!await page.getByRole('tab',{name:'Saved Reference Rates'}).evaluate(el=>el.getAttribute('aria-selected')==='true'))throw Error('Legacy live link not migrated');
  if(external.length||api.length||errors.length||failed.length)throw Error(JSON.stringify({external,api,errors,failed}));

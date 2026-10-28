@@ -84,7 +84,7 @@ export const contentUpdatedOn: Record<string, string> = {
   "/rmd-calculator.html": "2026-10-25",
   "/tax-calculator.html": "2026-10-25",
   "/estate-tax-calculator.html": "2026-10-25",
-  "/take-home-pay-calculator.html": "2026-10-28",
+  "/paycheck-calculator.html": "2026-10-28",
   "/social-security-calculator.html": "2026-10-25",
 };
 export function sitemapEntries(config: SiteConfig = siteConfig()) {

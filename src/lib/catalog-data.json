@@ -27,7 +27,7 @@
     "id": "rent",
     "category": "Mortgage and Real Estate",
     "title": "Rent Affordability Calculator",
-    "local_route": "/rent-calculator.html"
+    "local_route": "/rent-affordability-calculator.html"
   },
   {
     "id": "debt-to-income-ratio",
@@ -291,7 +291,7 @@
     "id": "take-home-paycheck",
     "category": "Tax and Salary",
     "title": "Paycheck Calculator",
-    "local_route": "/take-home-pay-calculator.html"
+    "local_route": "/paycheck-calculator.html"
   },
   {
     "id": "loan",
@@ -309,7 +309,7 @@
     "id": "currency",
     "category": "Other",
     "title": "Currency Converter",
-    "local_route": "/currency-calculator.html"
+    "local_route": "/currency-converter.html"
   },
   {
     "id": "inflation",
@@ -327,13 +327,13 @@
     "id": "credit-card",
     "category": "Other",
     "title": "Credit Card Payoff Calculator",
-    "local_route": "/credit-card-calculator.html"
+    "local_route": "/single-credit-card-payoff-calculator.html"
   },
   {
     "id": "credit-cards-payoff",
     "category": "Other",
     "title": "Multiple Credit Card Payoff Calculator",
-    "local_route": "/credit-card-payoff-calculator.html"
+    "local_route": "/multiple-credit-card-payoff-calculator.html"
   },
   {
     "id": "debt-payoff",
@@ -351,7 +351,7 @@
     "id": "repayment",
     "category": "Other",
     "title": "Loan Repayment Calculator",
-    "local_route": "/repayment-calculator.html"
+    "local_route": "/loan-repayment-calculator.html"
   },
   {
     "id": "student-loan",
