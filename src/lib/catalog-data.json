@@ -556,5 +556,11 @@
     "title": "Current Ratio Calculator",
     "category": "Other",
     "local_route": "/current-ratio-calculator.html"
+  },
+  {
+    "id": "coast-fire",
+    "title": "Coast FIRE Calculator",
+    "category": "Retirement",
+    "local_route": "/coast-fire-calculator.html"
   }
 ]

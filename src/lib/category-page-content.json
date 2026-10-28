@@ -221,6 +221,10 @@
       [
         "Plan income and withdrawals",
         "Use Annuity Payout for payment size or duration, RMD for a required-distribution estimate, and Pension for the modeled benefit options. Social Security provides an estimate under its stated assumptions; confirm your personal benefit record with the Social Security Administration."
+      ],
+      [
+        "Check a Coast FIRE milestone",
+        "Coast FIRE estimates how much invested now could grow to an entered retirement target without future deposits. It also models continued investments until that milestone. It does not fund living costs before retirement or guarantee a safe withdrawal rate."
       ]
     ],
     "differences": [

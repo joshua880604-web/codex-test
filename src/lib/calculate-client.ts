@@ -10,6 +10,7 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
 };
 const businessTools = () => import('./calculators/business-tools').then(m => m.businessTools);
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
+  'coast-fire': () => import('./calculators/coast-fire').then(m => [m.coastFire]),
   roas: businessTools, 'landed-cost': businessTools, 'quick-ratio': businessTools, 'current-ratio': businessTools,
   'tax-equivalent-yield': () => import('./calculators/investment-decisions').then(m => m.investmentDecisions),
   'treasury-bill': () => import('./calculators/investment-decisions').then(m => m.investmentDecisions),

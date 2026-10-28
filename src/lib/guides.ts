@@ -1,3 +1,4 @@
+import coastContent from './coast-fire-content.json';
 import businessContent from './business-tool-content.json';
 import refresh from "./researched-calculator-content.json";
 import { calculatorPresetHref } from './preset-links';
@@ -739,6 +740,11 @@ for(const [id,patch] of Object.entries(refresh as unknown as Record<string,{upda
 Object.assign(guides,Object.fromEntries(Object.entries(businessContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
 Object.assign(relatedCalculatorIds,{roas:['landed-cost','margin','break-even','roi'],'landed-cost':['roas','markup','margin'],'quick-ratio':['current-ratio','business-loan','break-even'],'current-ratio':['quick-ratio','business-loan','break-even']});
 for(const id of ['margin','markup','break-even'])relatedCalculatorIds[id]=[...new Set(['roas','landed-cost',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+// Independent Coast FIRE planning uses real purchasing power and stops deposits at the threshold.
+Object.assign(guides,Object.fromEntries(Object.entries(coastContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['coast-fire']=['retirement','compound-interest','real-return','401k','roth-ira','investment-fee'];
+relatedCalculatorIds.retirement=[...new Set(['coast-fire',...(relatedCalculatorIds.retirement??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {

@@ -2,6 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
+  "coast-fire",
   "roas", "landed-cost", "quick-ratio", "current-ratio",
   "tax-equivalent-yield", "treasury-bill",
   "pmi", "biweekly-mortgage", "discount-points", "mortgage-recast",
@@ -18,6 +19,7 @@ export function workspaceLayout(id: string, mode: string): "split" | "stacked" |
 }
 
 const priorities: Record<string, string[]> = {
+  "coast-fire": ["Coast FIRE number today", "Age at Coast FIRE", "Time until Coast FIRE", "Modeled Coast status"],
   "tax-equivalent-yield": ["Tax-equivalent taxable yield", "Tax-exempt option after-tax yield", "Taxable option after-tax yield"],
   "treasury-bill": ["Net profit at maturity after fee and tax", "Purchase price before fee", "Gross discount interest at maturity"],
   "mortgage-recast": ["New monthly P&I after recast", "Monthly P&I reduction", "Recast net interest savings after fee"],

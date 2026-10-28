@@ -195,6 +195,10 @@
       {
         "id": "inflation",
         "text": "Explore price-level changes and review the tool’s historical-data coverage."
+      },
+      {
+        "id": "coast-fire",
+        "text": "Convert nominal growth and inflation into a consistent purchasing-power scenario."
       }
     ],
     "related": [
@@ -1743,6 +1747,10 @@
       {
         "id": "annuity-payout",
         "text": "Inspect fixed-term balance depletion under stated assumptions."
+      },
+      {
+        "id": "coast-fire",
+        "text": "Use an entered withdrawal rate to size a target, without treating it as a guaranteed safe rate."
       }
     ],
     "related": [

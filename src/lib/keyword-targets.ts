@@ -140,3 +140,7 @@ searchTasks['cash-back-or-low-interest'][0].description='Compare an automotive c
 // User-researched business tools share one page per distinct calculation task.
 import businessTargets from './business-tool-targets.json';
 for (const [id, entry] of Object.entries(businessTargets)) {searchTasks[id]=entry.tasks;keywordTitles[id]=entry.title;}
+
+// US Coast FIRE research: one task-specific page, independent from full retirement drawdown.
+keywordTitles['coast-fire']='Coast FIRE Calculator - Your Number & Time to Coast';
+searchTasks['coast-fire']=[{keyword:'Coast FIRE calculator',mode:'coast',description:'Estimate your Coast FIRE number and time to the threshold in today’s dollars, with monthly investments that stop when it is reached. Constant-return scenario, not guaranteed retirement income.',aliases:['CoastFIRE calculator','Coast fire number calculator','Coast fire calculator with inflation']}];

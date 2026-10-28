@@ -1,0 +1,354 @@
+{
+  "coast-fire": {
+    "updatedOn": "2026-10-28",
+    "summary": "Coast FIRE is a modeled savings milestone: the invested retirement portfolio can grow toward a future retirement target without more deposits. This calculator first sizes that target from your budget and chosen withdrawal rate, then discounts it to today using an exact inflation-adjusted return. If you are below the threshold, monthly investments continue until the first whole-month crossing or your target retirement age.",
+    "scope": "All monetary inputs, outputs and timeline amounts are in today’s USD. Annual return is an assumed effective nominal rate after the fees and tax drag you choose to allow for; inflation is removed using (1 + return) / (1 + inflation), not simple subtraction. Monthly investments are constant in purchasing power, implying nominal increases with inflation, and stop at the first modeled Coast crossing. Ages are whole years, current age must precede target age and no projection extends past age 120. Annual budget and withdrawal rate must be positive. Market paths, sequence risk, pre-retirement living costs, account eligibility or access, tax brackets, pensions and Social Security benefits are outside the model. An entered withdrawal rate is a target-sizing assumption, not a demonstrated safe withdrawal policy.",
+    "examples": [
+      {
+        "title": "Invest until age 49, then model a contribution-free path to 65",
+        "mode": "coast",
+        "values": {
+          "age": "35",
+          "retire": "65",
+          "balance": "150000",
+          "spending": "40000",
+          "withdrawal": "4",
+          "monthly": "1000",
+          "return": "7",
+          "inflation": "2.5"
+        },
+        "inputs": "age: 35; retire: 65; balance: 150000; spending: 40000; withdrawal: 4; monthly: 1000; return: 7; inflation: 2.5. All monetary inputs are in today’s USD.",
+        "steps": [
+          "A $40,000 annual portfolio-funded budget at a 4% withdrawal assumption gives a $1,000,000 target in today’s USD.",
+          "Real annual growth = 1.07 / 1.025 − 1 = approximately 4.39024%.",
+          "Today’s Coast threshold = 1,000,000 / (1.07 / 1.025)^30 = $275,551.41.",
+          "Starting with $150,000 and adding $1,000 in today’s dollars at each month end first meets the moving threshold after 168 months. Deposits then stop."
+        ],
+        "answer": "The first modeled crossing is at age 49. Total new investments are $168,000; the projected retirement balance is $1,001,701.23 in today’s USD. This is a constant-return scenario, not permission to retire at 49.",
+        "expected": {
+          "label": "Retirement balance on modeled path",
+          "value": 1001701.2273836234,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Meet the modeled threshold now without new investments",
+        "mode": "coast",
+        "values": {
+          "age": "40",
+          "retire": "50",
+          "balance": "400000",
+          "spending": "40000",
+          "withdrawal": "4",
+          "monthly": "0",
+          "return": "10",
+          "inflation": "0"
+        },
+        "inputs": "age: 40; retire: 50; balance: 400000; spending: 40000; withdrawal: 4; monthly: 0; return: 10; inflation: 0. All monetary inputs are in today’s USD.",
+        "steps": [
+          "Age 40 to 50 leaves 10 years. The $40,000 budget and 4% withdrawal assumption give a $1,000,000 target.",
+          "At an illustrative 10% nominal return and zero inflation, the current threshold is 1,000,000 / 1.10^10 = $385,543.29.",
+          "The entered $400,000 exceeds that threshold; no deposits are needed on the modeled path."
+        ],
+        "answer": "The portfolio meets the modeled Coast threshold now and projects to $1,037,496.98 at 50. The 10% return is illustrative, not an expected or promised outcome.",
+        "expected": {
+          "label": "Coast FIRE number today",
+          "value": 385543.2894295317,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Recognize a plan that reaches the threshold only at retirement",
+        "mode": "coast",
+        "values": {
+          "age": "40",
+          "retire": "50",
+          "balance": "180000",
+          "spending": "12000",
+          "withdrawal": "4",
+          "monthly": "1000",
+          "return": "5",
+          "inflation": "5"
+        },
+        "inputs": "age: 40; retire: 50; balance: 180000; spending: 12000; withdrawal: 4; monthly: 1000; return: 5; inflation: 5. All monetary inputs are in today’s USD.",
+        "steps": [
+          "A $12,000 annual budget divided by 4% requires $300,000.",
+          "Equal 5% nominal return and 5% inflation give zero real growth.",
+          "Starting with $180,000, 120 month-end deposits of $1,000 bring the portfolio to $300,000."
+        ],
+        "answer": "The threshold is reached only at age 50. There is no earlier contribution-free coast period in this scenario.",
+        "expected": {
+          "label": "Retirement balance on modeled path",
+          "value": 300000.0,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Show an unreached milestone rather than inventing a Coast age",
+        "mode": "coast",
+        "values": {
+          "age": "40",
+          "retire": "50",
+          "balance": "10000",
+          "spending": "12000",
+          "withdrawal": "4",
+          "monthly": "0",
+          "return": "0",
+          "inflation": "0"
+        },
+        "inputs": "age: 40; retire: 50; balance: 10000; spending: 12000; withdrawal: 4; monthly: 0; return: 0; inflation: 0. All monetary inputs are in today’s USD.",
+        "steps": [
+          "At a $12,000 annual budget and 4% withdrawal input, the target is $300,000.",
+          "With zero return, zero inflation and zero new deposits, $10,000 stays $10,000 for the whole 10-year horizon.",
+          "The result therefore reports that the Coast threshold is not reached by the target age."
+        ],
+        "answer": "No Coast age is inferred beyond age 50. The current gap to the Coast threshold is $290,000.",
+        "expected": {
+          "label": "Current gap to Coast threshold",
+          "value": 290000.0,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-coast-number-formula",
+        "queries": [
+          "coast fire calculator",
+          "how to calculate coast fire number",
+          "coast fire number calculator"
+        ],
+        "question": "How do I calculate my Coast FIRE number?",
+        "answer": "First divide the annual budget the portfolio must fund by the chosen withdrawal rate. Then discount that target by your assumed real growth over the years to retirement. In the linked example, $40,000 / 4% = $1,000,000; discounting for 30 years at the real rate implied by 7% return and 2.5% inflation gives $275,551.41 today. This is an assumed threshold, not a guaranteed retirement balance.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Try the $275,551.41 threshold example",
+            "values": {
+              "age": "35",
+              "retire": "65",
+              "balance": "150000",
+              "spending": "40000",
+              "withdrawal": "4",
+              "monthly": "1000",
+              "return": "7",
+              "inflation": "2.5"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-coast-versus-fire",
+        "queries": [
+          "what is coast fire calculator",
+          "coast fire retirement calculator"
+        ],
+        "question": "Does reaching Coast FIRE mean I can retire today?",
+        "answer": "No. Coast FIRE concerns whether this retirement portfolio can grow to a future target without more deposits under the assumptions. It does not pay living expenses before retirement. Full FIRE concerns the assets needed to support withdrawals; this tool does not simulate those withdrawals or establish that the chosen rate will last.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Review the future target and today’s threshold",
+            "values": {
+              "age": "35",
+              "retire": "65",
+              "balance": "150000",
+              "spending": "40000",
+              "withdrawal": "4",
+              "monthly": "1000",
+              "return": "7",
+              "inflation": "2.5"
+            }
+          },
+          {
+            "id": "retirement",
+            "mode": "required",
+            "label": "Explore a separate retirement planning model"
+          }
+        ]
+      },
+      {
+        "anchor": "use-coast-inflation",
+        "queries": [
+          "coast fire calculator with inflation",
+          "how to calculate coast fire"
+        ],
+        "question": "How does the calculator account for inflation?",
+        "answer": "It uses exact real growth: (1 + nominal return) / (1 + inflation) − 1. With 7% nominal growth and 2.5% inflation, that is about 4.39024%, rather than the 4.5% subtraction approximation. Enter retirement spending in today’s dollars and do not inflate it again. All displayed amounts use today’s purchasing power, so they are not nominal future account statements.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Use the inflation-adjusted example",
+            "values": {
+              "age": "35",
+              "retire": "65",
+              "balance": "150000",
+              "spending": "40000",
+              "withdrawal": "4",
+              "monthly": "1000",
+              "return": "7",
+              "inflation": "2.5"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-coast-stop-deposits",
+        "queries": [
+          "coast fire calculator with monthly contributions",
+          "coastfire calculator"
+        ],
+        "question": "When do monthly investments stop in this projection?",
+        "answer": "Deposits are made at month end until the first whole month the portfolio meets that month’s remaining Coast requirement. They stop after that deposit. If the portfolio meets the threshold now, no new deposits are used. If it never meets the threshold by the target age, deposits continue through that age. The table and graph follow this same path rather than silently continuing deposits after coasting.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "See deposits stop after 168 months",
+            "values": {
+              "age": "35",
+              "retire": "65",
+              "balance": "150000",
+              "spending": "40000",
+              "withdrawal": "4",
+              "monthly": "1000",
+              "return": "7",
+              "inflation": "2.5"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-coast-no-reach",
+        "queries": [
+          "how to calculate my coast fire number",
+          "calculate coast fire number"
+        ],
+        "question": "What if I do not reach the Coast threshold before retirement?",
+        "answer": "The result says Not reached by target age rather than supplying an age outside the entered horizon. A first crossing at the target retirement age is labeled separately because no earlier coast period remains. Review the budget, retirement age, savings and return assumptions, but do not increase an assumed return merely to make a plan appear funded.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Review a first crossing only at retirement",
+            "values": {
+              "age": "40",
+              "retire": "50",
+              "balance": "180000",
+              "spending": "12000",
+              "withdrawal": "4",
+              "monthly": "1000",
+              "return": "5",
+              "inflation": "5"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-coast-contribution-dollars",
+        "queries": [
+          "coast fire calculator with inflation",
+          "coast fire calculator with contributions"
+        ],
+        "question": "Are monthly investments fixed nominal dollars?",
+        "answer": "No. They are fixed in today’s purchasing power in this model. A $1,000 monthly input therefore implies nominal deposits that rise with the assumed inflation rate. A fixed $1,000 nominal deposit every month would buy less over time and can produce a later crossing. This version does not simulate that alternative contribution schedule.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Review the constant-purchasing-power assumptions",
+            "values": {
+              "age": "35",
+              "retire": "65",
+              "balance": "150000",
+              "spending": "40000",
+              "withdrawal": "4",
+              "monthly": "1000",
+              "return": "7",
+              "inflation": "2.5"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-coast-couples-benefits",
+        "queries": [
+          "coast fire calculator for couples",
+          "coast fire calculator with social security"
+        ],
+        "question": "Can couples use this calculator, and does it include Social Security?",
+        "answer": "A couple can enter a combined portfolio and budget if one shared target retirement age is an acceptable simplification. Different ages, separate retirement dates and account-access restrictions are not modeled. Social Security and pensions are not calculated or automatically deducted. If you have assessed other income separately, enter only the annual amount this portfolio must fund, using a consistent tax and purchasing-power basis.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Use one combined portfolio scenario",
+            "values": {
+              "age": "35",
+              "retire": "65",
+              "balance": "150000",
+              "spending": "40000",
+              "withdrawal": "4",
+              "monthly": "1000",
+              "return": "7",
+              "inflation": "2.5"
+            }
+          },
+          {
+            "id": "social-security",
+            "mode": "ideal",
+            "label": "Review separate Social Security assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-coast-withdrawal-risk",
+        "queries": [
+          "coast fire calculator retirement",
+          "coast fire calculator uk",
+          "coast fire calculator canada"
+        ],
+        "question": "Is the default withdrawal rate safe, and does this handle local tax rules?",
+        "answer": "The illustrative 4% input only sizes the target; it does not prove withdrawal safety for a portfolio or retirement length. Returns are constant in the projection, so market volatility and sequence-of-returns risk are absent. All amounts display in USD, and the tool does not apply U.S., Canadian, UK or other tax or account rules. Review access restrictions, taxes and your broader retirement plan separately.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Explore a lower 3.5% withdrawal assumption",
+            "values": {
+              "age": "35",
+              "retire": "65",
+              "balance": "150000",
+              "spending": "40000",
+              "withdrawal": "3.5",
+              "monthly": "1000",
+              "return": "7",
+              "inflation": "2.5"
+            }
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "SEC Investor.gov: compound growth inputs and contribution timing",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+      },
+      {
+        "title": "WalletBurst: the Coast FIRE concept and present-value relationship",
+        "url": "https://walletburst.com/tools/coast-fire-calc/"
+      },
+      {
+        "title": "NerdWallet: Coast FIRE planning context and assumptions",
+        "url": "https://www.nerdwallet.com/investing/calculators/coast-fire-calculator"
+      },
+      {
+        "title": "OpenStax: present value and the exact Fisher relationship",
+        "url": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance"
+      }
+    ]
+  }
+}

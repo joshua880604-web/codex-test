@@ -3,6 +3,7 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "coast-fire": return "Constant-return Coast FIRE scenario in today’s USD. Monthly investments stop at the modeled threshold. Pre-retirement living costs, actual benefit eligibility and guaranteed withdrawal safety are not calculated.";
     case "roas": return "Revenue-based ROAS and contribution-margin scenarios. No live attribution, automatic bidding or guarantee of company net profit.";
     case "landed-cost": return "One homogeneous shipment in USD with manually entered duties and nonrecoverable taxes. No tariff lookup, customs classification, tax advice or currency conversion.";
     case "quick-ratio": return "Accounting acid-test ratio from same-date current balances. Inventory, prepayments and other non-quick assets are excluded; no SaaS MRR calculation.";

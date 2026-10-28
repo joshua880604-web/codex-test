@@ -1,3 +1,4 @@
+import {coastFire} from "./coast-fire";
 import {businessTools} from "./business-tools";
 import {investmentDecisions} from "./investment-decisions";
 import {mortgageRecast} from "./mortgage-recast";
@@ -13,6 +14,7 @@ import { everydayCalculators } from "./everyday";
 import { otherCalculators } from "./other";
 import { defaults, type Calculator, type Values, type Result } from "../types";
 export const calculators: Calculator[] = [
+  coastFire,
   ...businessTools,
   ...evergreenCalculators,
   ...mortgageTools,

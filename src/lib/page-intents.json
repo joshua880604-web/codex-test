@@ -632,5 +632,13 @@
     "titleSuffix": "Formula & Working Capital",
     "description": "Calculate current ratio and working capital from current asset and liability totals or components at the same date. Not a cash-flow forecast.",
     "researchStatus": "User-provided Semrush US broad match, Questions and bulk, 2026-10-28; see business-candidates-20261028 research."
+  },
+  {
+    "id": "coast-fire",
+    "mode": "coast",
+    "keyword": "Coast FIRE calculator",
+    "titleSuffix": "Your Number & Time to Coast",
+    "description": "Estimate a future retirement savings threshold in today’s purchasing power, and when a monthly investment path reaches it. No account data or withdrawal guarantee.",
+    "researchStatus": "User-provided Semrush US Broad Match, Questions, bulk and SERP, 2026-10-28."
   }
 ]

@@ -29,7 +29,14 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
   let xIndex = 0, balanceIndex = -1, scale = 1, secondaryIndex = -1;
   let secondaryKey: ResultTrend["secondaryKey"], secondaryLabel: string | undefined;
   let start: TrendPoint | null = null;
-  if (id === "mortgage-recast" && matches(["Month", "Recast payment", "Recast interest", "Recast principal", "Recast balance", "Lump-sum-only balance"])) {
+  if (id === "coast-fire" && matches(["Age", "Balance", "Coast threshold", "Cumulative new investments"])) {
+    const coast=result.metrics.find(m=>m.label==="Coast FIRE number today")?.value;
+    if(!finite(coast))return null;
+    start={x:input("age"),balance:input("balance"),comparison:coast};
+    xLabel="Age";balanceIndex=1;secondaryIndex=2;secondaryKey="comparison";secondaryLabel="Coast threshold (today’s USD)";
+    title="Invest, then coast: today’s purchasing power";balanceLabel="Modeled portfolio (today’s USD)";
+    help="The portfolio follows the calculated path: month-end investments stop at the first modeled threshold crossing, or continue through the target age if it is not reached. All amounts are in today’s USD; neither line simulates market volatility or pays pre-retirement living costs.";
+  } else if (id === "mortgage-recast" && matches(["Month", "Recast payment", "Recast interest", "Recast principal", "Recast balance", "Lump-sum-only balance"])) {
     const opening = result.metrics.find(m => m.label === "Principal after lump sum")?.value;
     if (!finite(opening)) return null;
     start = { x: 0, balance: opening, comparison: opening };
