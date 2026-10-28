@@ -94,3 +94,16 @@ searchTasks['fha-loan'][0].description='Estimate FHA monthly payments with down 
 searchTasks['va-mortgage'][0].description='Estimate a VA purchase loan payment with the funding fee financed or paid upfront, down payment and entered ownership costs. Confirm eligibility separately.';
 searchTasks['va-mortgage'][0].aliases=[...new Set([...(searchTasks['va-mortgage'][0].aliases??[]),'VA loan calculator','VA home loan calculator','VA loan payment calculator'])];
 searchTasks['fha-loan'][0].aliases=[...new Set([...(searchTasks['fha-loan'][0].aliases??[]),'FHA loan payment calculator','FHA mortgage calculator'])];
+
+// User-provided retirement US keyword research, reviewed 2026-10-28.
+keywordTitles['401k']='401k Calculator - Contributions, Match & Growth';
+keywordTitles['roth-ira']='Roth IRA Calculator - Growth & Contributions';
+keywordTitles.rmd='RMD Calculator - Required Minimum Distributions';
+const withdrawalTask=searchTasks.retirement.find(task=>task.mode==='withdrawal')!;
+withdrawalTask.aliases=[...new Set([withdrawalTask.keyword,...(withdrawalTask.aliases??[])])].filter(keyword=>keyword.toLowerCase()!=='retirement withdrawal calculator');
+withdrawalTask.keyword='Retirement withdrawal calculator';
+withdrawalTask.description='Estimate before-tax monthly withdrawals with entered return, inflation and lifespan assumptions. Constant-return results are not guaranteed income or safe withdrawal rates.';
+searchTasks['roth-ira'][0].description='Project Roth IRA growth with year-end contributions and a simplified taxable comparison. Contribution eligibility and qualified tax-free distributions require separate checks.';
+searchTasks['roth-ira'][0].aliases=[...new Set([...(searchTasks['roth-ira'][0].aliases??[]),'Roth IRA calculator','Roth IRA growth calculator'])];
+searchTasks.rmd[0].aliases=[...new Set([...(searchTasks.rmd[0].aliases??[]),searchTasks.rmd[0].keyword,'Required minimum distribution calculator'])];
+searchTasks.rmd[0].keyword='RMD calculator';

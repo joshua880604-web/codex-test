@@ -1440,5 +1440,667 @@
         "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-private-mortgage-insurance-en-122/"
       }
     ]
+  },
+  "retirement": {
+    "updatedOn": "2026-10-28",
+    "summary": "Plan a retirement savings target, estimate inflation-adjusted monthly withdrawals, or test how long a fixed monthly withdrawal lasts. Choose the mode that matches the question; a fixed-return illustration is not a guaranteed retirement income plan.",
+    "scope": "Constant effective annual returns and user-entered inflation, not a simulation of changing market returns or their sequence. Withdrawals and balances are before tax and fees. Monthly Withdrawal solves for depletion at the selected lifespan with monthly inflation increases; Savings Longevity instead uses a fixed dollar withdrawal. Neither mode determines account-specific RMDs, tax treatment, benefit eligibility or a safe withdrawal rate.",
+    "items": [
+      {
+        "anchor": "use-retirement-monthly-income",
+        "queries": [
+          "retirement withdrawal calculator",
+          "simple retirement withdrawal calculator"
+        ],
+        "question": "How much can I withdraw monthly from $1 million in retirement?",
+        "answer": "In Monthly Withdrawal, set current age equal to retirement age to start with your balance today. For age 65 to 90, a $1 million balance, constant 4% effective annual return and 2% inflation give an initial $4,217.99 monthly withdrawal, increasing monthly with inflation. This model targets depletion at age 90; it is before tax and fees, not a guaranteed income.",
+        "links": [
+          {
+            "id": "retirement",
+            "mode": "withdrawal",
+            "label": "Try the $1 million / 25-year withdrawal example",
+            "values": {
+              "age": "65",
+              "retire": "65",
+              "life": "90",
+              "balance": "1000000",
+              "saving": "0",
+              "annual": "0",
+              "return": "4",
+              "inflation": "2"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-retirement-inflation-withdrawal",
+        "queries": [
+          "retirement withdrawal calculator with inflation",
+          "retirement calculator with withdrawals"
+        ],
+        "question": "How does inflation change the monthly withdrawal estimate?",
+        "answer": "At the same $1 million balance, 25-year horizon and 4% constant return, zero inflation gives a fixed $5,238.96 monthly withdrawal. With 2% inflation, the first payment falls to $4,217.99 so later payments can rise. If retirement starts in the future, the today-dollar metric also discounts that first retirement payment back to the current age.",
+        "links": [
+          {
+            "id": "retirement",
+            "mode": "withdrawal",
+            "label": "Compare zero inflation",
+            "values": {
+              "age": "65",
+              "retire": "65",
+              "life": "90",
+              "balance": "1000000",
+              "saving": "0",
+              "annual": "0",
+              "return": "4",
+              "inflation": "0"
+            }
+          },
+          {
+            "id": "retirement",
+            "mode": "withdrawal",
+            "label": "Compare 2% inflation",
+            "values": {
+              "age": "65",
+              "retire": "65",
+              "life": "90",
+              "balance": "1000000",
+              "saving": "0",
+              "annual": "0",
+              "return": "4",
+              "inflation": "2"
+            }
+          }
+        ],
+        "replacesQuestion": "What does an inflation-adjusted balance mean?"
+      },
+      {
+        "anchor": "use-retirement-safe-rate",
+        "queries": [
+          "what is a safe withdrawal rate in retirement",
+          "retirement withdrawal rate"
+        ],
+        "question": "Does the calculator prove that a withdrawal rate is safe?",
+        "answer": "No. It solves cash flows using constant return, inflation and lifespan assumptions. It does not test market crashes, changing returns, the order of gains and losses or living beyond the chosen horizon. A 4% first-year spending illustration on $1 million is $40,000 annually, but entering that amount does not establish its safety. Compare assumptions rather than treating one result as a promise.",
+        "links": [
+          {
+            "id": "retirement",
+            "mode": "longevity",
+            "label": "Test a fixed $3,333.33 monthly withdrawal",
+            "values": {
+              "balance": "1000000",
+              "withdrawal": "3333.3333333333335",
+              "return": "4"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-retirement-tax-vs-rmd",
+        "queries": [
+          "best retirement withdrawal calculator with taxes",
+          "taxes on withdrawals from retirement accounts"
+        ],
+        "question": "Are retirement withdrawals shown after tax, and are they RMDs?",
+        "answer": "No. Monthly Withdrawal is a before-tax spending illustration, not a tax calculation or an IRS minimum. Account type, basis and withdrawal eligibility affect taxation. RMD Calculator separately estimates eligible non-Roth owner-account minimums. An early 401(k) distribution has another tax model; neither result substitutes for a complete tax return.",
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Estimate a non-Roth owner-account RMD"
+          },
+          {
+            "id": "401k",
+            "mode": "early",
+            "label": "Review a separate early 401(k) withdrawal illustration"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Start withdrawals from $1 million with 2% inflation",
+        "mode": "withdrawal",
+        "values": {
+          "age": "65",
+          "retire": "65",
+          "life": "90",
+          "balance": "1000000",
+          "saving": "0",
+          "annual": "0",
+          "return": "4",
+          "inflation": "2"
+        },
+        "inputs": "Retire now at 65; horizon to age 90; $1 million balance; no new contributions; 4% effective annual return; 2% inflation.",
+        "steps": [
+          "The horizon is 25 × 12 = 300 monthly payments.",
+          "Convert return and inflation to their equivalent monthly rates.",
+          "Solve for the first month-end payment whose discounted value, including monthly inflation increases, equals $1 million."
+        ],
+        "answer": "Initial monthly withdrawal is $4,217.99 before tax and fees; later payments rise with the inflation assumption.",
+        "expected": {
+          "label": "Initial monthly withdrawal",
+          "value": 4217.987759429365,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Compare the same retirement with fixed dollar withdrawals",
+        "mode": "withdrawal",
+        "values": {
+          "age": "65",
+          "retire": "65",
+          "life": "90",
+          "balance": "1000000",
+          "saving": "0",
+          "annual": "0",
+          "return": "4",
+          "inflation": "0"
+        },
+        "inputs": "Same $1 million balance, age 65 to 90 and 4% effective annual return; change inflation to 0%.",
+        "steps": [
+          "The horizon remains 300 months.",
+          "With no inflation, every modeled withdrawal has the same dollar amount.",
+          "Use the monthly annuity payment at the effective monthly return."
+        ],
+        "answer": "The constant monthly withdrawal is $5,238.96, with no inflation increase or remaining balance target.",
+        "expected": {
+          "label": "Initial monthly withdrawal",
+          "value": 5238.962727766243,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "SEC Investor.gov: investment uncertainty, volatility and inflation risk",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/what-risk"
+      }
+    ]
+  },
+  "401k": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-401k-contribution-match",
+        "queries": [
+          "how much should you contribute to 401k",
+          "401k employer match calculator"
+        ],
+        "question": "How much should I contribute to receive the employer match?",
+        "answer": "Use your plan’s actual matching tiers. In Projection, a 50% match on employee contributions up to 6% of an $80,000 salary means $4,800 employee contributions and a $2,400 employer match for one full year. Maximize Employer Match supports two tiers and equal-pay assumptions. Vesting, eligibility and any annual true-up depend on your plan; the result is not a personal savings recommendation.",
+        "links": [
+          {
+            "id": "401k",
+            "mode": "projection",
+            "label": "Try 6% employee contributions and a 50% match",
+            "values": {
+              "age": "35",
+              "retire": "36",
+              "life": "90",
+              "salary": "80000",
+              "balance": "0",
+              "contribution": "6",
+              "match": "50",
+              "match_limit": "6",
+              "salary_growth": "0",
+              "return": "6",
+              "inflation": "0"
+            }
+          },
+          {
+            "id": "401k",
+            "mode": "match",
+            "label": "Enter your plan’s matching tiers"
+          }
+        ]
+      },
+      {
+        "anchor": "use-401k-annual-limit",
+        "queries": [
+          "how much can i contribute to my 401k",
+          "401k max contribution 2026"
+        ],
+        "question": "Which 2026 employee contribution limits does this model use?",
+        "answer": "The base elective-deferral limit is $24,500. If permitted by the plan, catch-up is $8,000 at age 50 or older, with a higher $11,250 catch-up for ages 60–63 instead. Traditional and Roth employee deferrals share the limit. This projection holds 2026 limits fixed in future years; actual eligibility, calendar-year-end age, compensation and plan rules still need checking.",
+        "links": [
+          {
+            "id": "401k",
+            "mode": "match",
+            "label": "Review the modeled limit for your age",
+            "values": {
+              "age": "60"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-401k-early-withdrawal-tax",
+        "queries": [
+          "401k early withdrawal",
+          "early withdrawal penalty 401k"
+        ],
+        "question": "How much would I receive from an early $10,000 401(k) withdrawal?",
+        "answer": "With illustrative 22% federal and 5% state marginal tax rates, no local tax and no selected exception, this model subtracts $2,700 income tax and a $1,000 additional early-distribution tax, leaving $6,300. A qualifying exception can waive the additional tax without removing ordinary income tax. This is an estimate using entered rates, not your actual withholding or complete tax liability.",
+        "links": [
+          {
+            "id": "401k",
+            "mode": "early",
+            "label": "Try the $10,000 early-withdrawal example",
+            "values": {
+              "withdrawal": "10000",
+              "federal": "22",
+              "state": "5",
+              "local": "0",
+              "employed": "Yes",
+              "separated55": "No",
+              "disabled": "No",
+              "exception": "No"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-401k-year-end-deposits",
+        "queries": [
+          "401k growth calculator",
+          "401k calculator with employer match"
+        ],
+        "question": "When are contributions added in the 401(k) growth projection?",
+        "answer": "The model applies each year’s return to the opening balance, then adds employee contributions and the employer match at year end. It then updates salary for the next year. Actual payroll deposits usually occur throughout the year, so the projection is a timing illustration. Starting balance, new employee deposits, employer deposits and investment growth remain separate.",
+        "links": [
+          {
+            "id": "401k",
+            "mode": "projection",
+            "label": "See a one-year contribution example",
+            "values": {
+              "age": "35",
+              "retire": "36",
+              "life": "90",
+              "salary": "80000",
+              "balance": "0",
+              "contribution": "6",
+              "match": "50",
+              "match_limit": "6",
+              "salary_growth": "0",
+              "return": "6",
+              "inflation": "0"
+            }
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Separate employee contributions from the employer match",
+        "mode": "projection",
+        "values": {
+          "age": "35",
+          "retire": "36",
+          "life": "90",
+          "salary": "80000",
+          "balance": "0",
+          "contribution": "6",
+          "match": "50",
+          "match_limit": "6",
+          "salary_growth": "0",
+          "return": "6",
+          "inflation": "0"
+        },
+        "inputs": "Age 35 to 36; salary $80,000; starting balance $0; employee contribution 6%; employer matches 50% up to 6% of salary; 6% return; no salary growth.",
+        "steps": [
+          "Employee contribution = 80,000 × 6% = 4,800.",
+          "Employer match = min(4,800, 80,000 × 6%) × 50% = 2,400.",
+          "Opening balance is zero and contributions arrive at year end, so ending balance = 4,800 + 2,400 = 7,200."
+        ],
+        "answer": "Projected 401(k) balance is $7,200 after one year under the model’s deposit timing.",
+        "expected": {
+          "label": "Projected 401(k) balance",
+          "value": 7200,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Estimate the net of an early $10,000 distribution",
+        "mode": "early",
+        "values": {
+          "withdrawal": "10000",
+          "federal": "22",
+          "state": "5",
+          "local": "0",
+          "employed": "Yes",
+          "separated55": "No",
+          "disabled": "No",
+          "exception": "No"
+        },
+        "inputs": "A taxable $10,000 early distribution; entered federal/state/local rates 22% / 5% / 0%; no disability, separation or other exception.",
+        "steps": [
+          "Estimated income tax = 10,000 × (22% + 5%) = 2,700.",
+          "Additional early-distribution tax = 10,000 × 10% = 1,000.",
+          "Net = 10,000 − 2,700 − 1,000 = 6,300."
+        ],
+        "answer": "Estimated net received is $6,300; actual tax and withholding can differ.",
+        "expected": {
+          "label": "Net amount received",
+          "value": 6300,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "IRS: published 2026 401(k) limits and age-based catch-up amounts",
+        "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500"
+      },
+      {
+        "title": "IRS: additional early-distribution tax and qualifying exceptions",
+        "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-exceptions-to-tax-on-early-distributions"
+      }
+    ]
+  },
+  "roth-ira": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate Roth IRA growth from an opening balance, annual contributions and an assumed return, alongside a simplified taxable investment comparison. Contributions are made at year end; tax-free values assume qualified Roth distributions.",
+    "scope": "U.S. annual-deposit illustration using fixed 2026 IRA caps in every projected year, with the age-50 catch-up based on the entered annual age. It assumes eligible compensation, permitted contributions and qualified Roth distributions. It does not determine MAGI phaseouts, contribution eligibility, conversions, backdoor Roth steps or early-distribution ordering. The taxable comparison taxes positive returns annually at the entered rate; it does not model tax deferral, capital-gains realization or all investment tax rules.",
+    "items": [
+      {
+        "anchor": "use-roth-growth-example",
+        "queries": [
+          "roth ira calculator",
+          "roth ira growth calculator"
+        ],
+        "question": "How much could a Roth IRA grow with $6,000 annual contributions?",
+        "answer": "With $10,000 already invested, $6,000 at each year end and an illustrative 6% annual return for 10 years, the modeled Roth balance is $96,993.25. New contributions total $60,000; the opening balance is separate. The result assumes permitted contributions and qualified distributions, and the return is not guaranteed.",
+        "links": [
+          {
+            "id": "roth-ira",
+            "mode": "comparison",
+            "label": "Try the 10-year Roth growth example",
+            "values": {
+              "age": "35",
+              "retire": "45",
+              "balance": "10000",
+              "contribution": "6000",
+              "max": "No",
+              "return": "6",
+              "tax": "22"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-eligibility-vs-growth",
+        "queries": [
+          "roth ira contribution calculator",
+          "roth ira contribution limits"
+        ],
+        "question": "Does this calculator determine how much I am eligible to contribute?",
+        "answer": "No. It applies a fixed-year contribution cap to the projection but does not calculate your income-based eligibility or combined IRA contribution room. Eligible compensation, filing status, MAGI and contributions to other traditional or Roth IRAs can matter. Verify your permitted contribution separately before using an amount in this growth illustration.",
+        "links": [
+          {
+            "id": "roth-ira",
+            "mode": "comparison",
+            "label": "Project an independently checked contribution amount"
+          }
+        ],
+        "replacesQuestion": "Does the Roth IRA projection check my income eligibility?"
+      },
+      {
+        "anchor": "use-roth-versus-traditional-tool",
+        "queries": [
+          "roth ira calculator vs traditional",
+          "roth ira growth calculator"
+        ],
+        "question": "Does the taxable comparison represent a traditional IRA?",
+        "answer": "No. Roth IRA Calculator compares Roth accumulation with a simplified taxable investment account. A traditional IRA has a different tax structure. Use IRA Calculator for the separate traditional / Roth / taxable comparison. Neither tool decides deductibility or contribution eligibility.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare traditional, Roth and taxable assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-annual-monthly-timing",
+        "queries": [
+          "roth ira calculator monthly contribution",
+          "roth ira calculator with contributions"
+        ],
+        "question": "Can I enter a monthly Roth IRA contribution?",
+        "answer": "This form takes an annual amount and deposits it at year end. A $500 monthly savings budget totals $6,000 annually, but twelve earlier deposits have different growth timing. Enter $6,000 for this annual illustration; do not enter $500 as if it were an annual total. Use a monthly-contribution growth tool for timing comparisons, with eligibility checked separately.",
+        "links": [
+          {
+            "id": "roth-ira",
+            "mode": "comparison",
+            "label": "Use a $6,000 year-end contribution",
+            "values": {
+              "age": "35",
+              "retire": "45",
+              "balance": "10000",
+              "contribution": "6000",
+              "max": "No",
+              "return": "6",
+              "tax": "22"
+            }
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore monthly deposits separately",
+            "values": {
+              "monthly": "500",
+              "annual": "0"
+            }
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Project ten annual Roth IRA deposits of $6,000",
+        "mode": "comparison",
+        "values": {
+          "age": "35",
+          "retire": "45",
+          "balance": "10000",
+          "contribution": "6000",
+          "max": "No",
+          "return": "6",
+          "tax": "22"
+        },
+        "inputs": "Age 35 to 45; opening balance $10,000; $6,000 deposited at each year end; maximum-contribution switch off; 6% annual return; taxable comparison rate 22%.",
+        "steps": [
+          "Opening balance grows for ten years.",
+          "The ten annual deposits total $60,000 and grow for different numbers of years.",
+          "Roth ending balance = 10,000 × 1.06^10 + 6,000 × (1.06^10 − 1) / 0.06."
+        ],
+        "answer": "Modeled Roth balance is $96,993.25, assuming permitted contributions and qualified distributions.",
+        "expected": {
+          "label": "Roth IRA balance",
+          "value": 96993.2466197139,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Compare Roth growth with zero investment return",
+        "mode": "comparison",
+        "values": {
+          "age": "35",
+          "retire": "45",
+          "balance": "10000",
+          "contribution": "6000",
+          "max": "No",
+          "return": "0",
+          "tax": "22"
+        },
+        "inputs": "Keep the $10,000 opening balance and ten $6,000 year-end deposits; change the assumed return to 0%.",
+        "steps": [
+          "New deposits = 6,000 × 10 = 60,000.",
+          "With zero growth, opening balance plus deposits = 10,000 + 60,000.",
+          "Both modeled account balances are the same because there are no gains to tax in the taxable comparison."
+        ],
+        "answer": "Both modeled balances are $70,000; contribution and withdrawal eligibility still require separate checks.",
+        "expected": {
+          "label": "Roth IRA balance",
+          "value": 70000.0,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "IRS: Roth IRA contributions, combined limits and qualified distributions",
+        "url": "https://www.irs.gov/retirement-plans/roth-iras"
+      },
+      {
+        "title": "IRS: IRA distributions and qualified Roth withdrawal rules",
+        "url": "https://www.irs.gov/publications/p590b"
+      }
+    ]
+  },
+  "rmd": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-rmd-prior-year-balance",
+        "queries": [
+          "how to calculate rmd for 2026",
+          "required minimum distribution calculator"
+        ],
+        "question": "How do I calculate a 2026 owner-account RMD?",
+        "answer": "Use the eligible account’s balance on December 31, 2025 and the applicable IRS distribution period for your age in 2026. In the Uniform Lifetime Table, age 73 uses 26.5: $265,000 / 26.5 = $10,000. The selected future return does not change this first-year calculation; deadline choices and account-specific exceptions require separate review.",
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Calculate the age-73 example for 2026",
+            "values": {
+              "birth": "1953",
+              "year": "2026",
+              "balance": "265000",
+              "spouse": "No",
+              "spouse_birth": "1964",
+              "return": "0",
+              "projection": "1"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-rmd-younger-spouse",
+        "queries": [
+          "rmd calculator spouse more than 10 years younger",
+          "rmd spouse calculator"
+        ],
+        "question": "Which RMD table applies if my spouse is younger?",
+        "answer": "Use the joint-life option only when your spouse is the sole beneficiary and is more than 10 years younger. Otherwise this owner-account model uses the Uniform Lifetime Table. An exactly 10-year difference does not qualify for the joint-life option. Confirm beneficiary status and both birth years before choosing a table.",
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Review owner and spouse table inputs"
+          }
+        ]
+      },
+      {
+        "anchor": "use-rmd-inherited-account",
+        "queries": [
+          "inherited ira rmd calculator",
+          "rmd on inherited ira"
+        ],
+        "question": "Can I use this calculator for an inherited IRA?",
+        "answer": "No. This tool models eligible original-owner accounts. Beneficiary distributions can depend on the original owner’s death date, required beginning date, beneficiary category and applicable life-expectancy or 10-year rules. An inherited Roth account can also have beneficiary requirements even though a Roth owner has no lifetime RMD. Do not use this owner table to calculate an inherited-account obligation.",
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Review the owner-account tool and its scope"
+          }
+        ]
+      },
+      {
+        "anchor": "use-rmd-monthly-tax",
+        "queries": [
+          "rmd monthly withdrawal",
+          "how much tax is withheld from rmd"
+        ],
+        "question": "Is the annual RMD my monthly after-tax retirement income?",
+        "answer": "No. It is a gross annual minimum under the selected owner-account assumptions, not a spending recommendation or tax-withholding calculation. For example, $10,000 / 12 is $833.33 per month as a budgeting average, not an IRS monthly payment requirement. Use Retirement Calculator for a separate spending illustration; taxation and withdrawal scheduling need separate checks.",
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Review the gross annual minimum",
+            "values": {
+              "birth": "1953",
+              "year": "2026",
+              "balance": "265000",
+              "spouse": "No",
+              "spouse_birth": "1964",
+              "return": "0",
+              "projection": "1"
+            }
+          },
+          {
+            "id": "retirement",
+            "mode": "withdrawal",
+            "label": "Explore a separate monthly spending plan"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Compute a $10,000 RMD at age 73",
+        "mode": "annual",
+        "values": {
+          "birth": "1953",
+          "year": "2026",
+          "balance": "265000",
+          "spouse": "No",
+          "spouse_birth": "1964",
+          "return": "0",
+          "projection": "1"
+        },
+        "inputs": "Born 1953; distribution year 2026; eligible non-Roth owner balance $265,000 on December 31, 2025; Uniform Lifetime Table; one-year calculation.",
+        "steps": [
+          "Age in 2026 = 2026 − 1953 = 73.",
+          "The IRS Uniform Lifetime Table divisor at age 73 is 26.5.",
+          "Gross annual RMD = 265,000 / 26.5 = 10,000."
+        ],
+        "answer": "Annual RMD is $10,000 before any tax; this is an original-owner example.",
+        "expected": {
+          "label": "Annual RMD",
+          "value": 10000.0,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Compute a 2026 owner RMD at age 80",
+        "mode": "annual",
+        "values": {
+          "birth": "1946",
+          "year": "2026",
+          "balance": "500000",
+          "spouse": "No",
+          "spouse_birth": "1964",
+          "return": "0",
+          "projection": "1"
+        },
+        "inputs": "Born 1946; year 2026; eligible prior December 31 balance $500,000; Uniform Lifetime Table; one-year calculation.",
+        "steps": [
+          "Age in the distribution year is 80.",
+          "The applicable Uniform Lifetime Table divisor is 20.2.",
+          "Annual RMD = 500,000 / 20.2 = 24,752.4752475."
+        ],
+        "answer": "Annual RMD is approximately $24,752.48 before tax; confirm the custodian’s calculation and deadline separately.",
+        "expected": {
+          "label": "Annual RMD",
+          "value": 24752.47524752475,
+          "tolerance": 0.01
+        }
+      }
+    ]
   }
 }
