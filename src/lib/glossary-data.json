@@ -204,7 +204,8 @@
     "related": [
       "inflation",
       "apy",
-      "withdrawal-rate"
+      "withdrawal-rate",
+      "coast-fire"
     ],
     "sources": [
       {
@@ -1756,7 +1757,8 @@
     "related": [
       "required-minimum-distribution",
       "annuity",
-      "real-rate-of-return"
+      "real-rate-of-return",
+      "coast-fire"
     ],
     "sources": [
       {
@@ -3825,5 +3827,94 @@
     ],
     "checkedOn": "2026-10-28",
     "scope": "General accounting concept with hypothetical balances, not an audited financial opinion or credit decision."
+  },
+  {
+    "slug": "coast-fire",
+    "name": "Coast FIRE",
+    "title": "What Is Coast FIRE? Meaning, Number & Example",
+    "description": "Coast FIRE is a future-retirement savings milestone. Learn the meaning, inflation-adjusted formula and why reaching the number does not fund retirement today.",
+    "category": "Retirement",
+    "aliases": [
+      "CoastFIRE",
+      "Coasting to financial independence"
+    ],
+    "definition": "Coast FIRE is a planning milestone where an invested retirement portfolio is projected to grow to a future retirement target without further contributions, assuming it is left invested and the chosen return and spending assumptions hold.",
+    "explanation": "The Coast FIRE number discounts a future retirement portfolio target back to the current age. More time lowers the required starting amount when the assumed inflation-adjusted return is positive; less time raises it. Reaching the number concerns future retirement saving. You still need a separate way to pay living expenses during the coast period, and the result needs reassessment when investments or spending plans change.",
+    "formula": "Coast number = (annual portfolio-funded spending / withdrawal rate) / (1 + real annual return)^years; real annual return = (1 + nominal return) / (1 + inflation) − 1",
+    "formulaNote": "Use decimal rates and the years from current age to target retirement age. Budget, target and Coast number share today’s purchasing power. This is a constant-return present-value model; the withdrawal assumption sizes a target and does not prove its sustainability.",
+    "example": {
+      "title": "A future $1 million target needs a smaller portfolio today",
+      "intro": "Consider a hypothetical person aged 35 targeting retirement at 65 with $40,000 annual portfolio-funded spending in today’s USD. Use a 4% withdrawal assumption, 7% nominal return after fees and 2.5% inflation.",
+      "steps": [
+        "The future portfolio target is $40,000 / 0.04 = $1,000,000 in today’s purchasing power.",
+        "Exact real annual return is 1.07 / 1.025 − 1, approximately 4.39024%.",
+        "Discount over 30 years: $1,000,000 / (1.07 / 1.025)^30 = $275,551.41."
+      ],
+      "answer": "The modeled Coast FIRE number today is $275,551.41. That is a savings milestone for age 65, not $1 million available at 35.",
+      "assumptions": "All amounts in today’s USD; constant effective returns; no deposits or withdrawals in the no-contribution path; no automatic taxes, benefits or account-access rules. Defaults are illustrative.",
+      "calculator": {
+        "id": "coast-fire",
+        "mode": "coast",
+        "values": {
+          "age": "35",
+          "retire": "65",
+          "balance": "150000",
+          "spending": "40000",
+          "return": "7",
+          "inflation": "2.5",
+          "withdrawal": "4",
+          "monthly": "0"
+        },
+        "expected": [
+          {
+            "label": "Coast FIRE number today",
+            "value": 275551.40590090706,
+            "tolerance": 0.005
+          },
+          {
+            "label": "Full FIRE portfolio target",
+            "value": 1000000
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "Reaching Coast FIRE is not the same as being able to retire now",
+      "text": "A Coast plan relies on leaving the portfolio invested until the target retirement age. Drawing from it earlier to cover living costs changes the plan. Barista FIRE commonly means supplementing work income with portfolio withdrawals, so it is not interchangeable with this no-withdrawal Coast model. Neither label establishes that a chosen withdrawal rate is safe."
+    },
+    "scope": "A planning concept, not a regulated account type, benefit entitlement or tax rule. FIRE abbreviates Financial Independence, Retire Early; a Coast plan may still target a conventional retirement age.",
+    "tools": [
+      {
+        "id": "coast-fire",
+        "text": "Calculate the current threshold, the first modeled crossing month and the subsequent stop-and-coast path."
+      },
+      {
+        "id": "retirement",
+        "text": "Explore separate retirement saving and withdrawal models with their own timing assumptions."
+      }
+    ],
+    "related": [
+      "compound-interest",
+      "real-rate-of-return",
+      "withdrawal-rate",
+      "time-value-of-money"
+    ],
+    "guides": [
+      {
+        "title": "How to Calculate Coast FIRE: Formula, Age & Examples",
+        "path": "/guides/how-to-calculate-coast-fire/"
+      }
+    ],
+    "sources": [
+      {
+        "title": "WalletBurst: the Coast FIRE planning concept",
+        "url": "https://walletburst.com/coast-fire/"
+      },
+      {
+        "title": "OpenStax: present value and nominal versus real interest",
+        "url": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance"
+      }
+    ],
+    "checkedOn": "2026-10-28"
   }
 ]

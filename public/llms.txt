@@ -49,6 +49,10 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 ## Retirement planning
 
+- [Coast FIRE Calculator](https://www.calculatorfree.io/coast-fire-calculator): Estimate today’s retirement savings threshold, the first modeled crossing and a stop-and-coast path. All amounts are today’s USD; no pre-retirement withdrawals or probability of success is modeled.
+- [How to calculate Coast FIRE](https://www.calculatorfree.io/guides/how-to-calculate-coast-fire/): Formula, age and return comparisons, and the distinction from Barista FIRE.
+- [Coast FIRE meaning](https://www.calculatorfree.io/glossary/coast-fire/): Definition, exact real-return formula and a worked savings-threshold example.
+
 - [401(k) Calculator](https://www.calculatorfree.io/401k-calculator): U.S. planning under fixed 2026 contribution and age-based catch-up rules. Limits combine traditional and Roth deferrals; applicable high-earner catch-up must be Roth. The growth projection does not split their tax treatments or project future legal limit changes.
 - [Retirement Calculator](https://www.calculatorfree.io/retirement-calculator): Estimate required savings, periodic saving, monthly withdrawals, or savings longevity under stated assumptions.
 - [IRA Calculator](https://www.calculatorfree.io/ira-calculator): Compare U.S. Traditional IRA, Roth IRA and taxable saving under fixed 2026 contribution limits and entered tax assumptions; eligibility is not inferred.

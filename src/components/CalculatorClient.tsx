@@ -464,7 +464,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           {result.additionalTables?.filter((_, index) => id !== "mortgage-recast" || index !== 0).map(table => <section key={table.title}>
             <h3>{table.title}</h3>
             {table.note && <p className="result-note">{table.note}</p>}
-            <div className="result-actions"><button onClick={() => download(table)}>Download retirement CSV</button></div>
+            <div className="result-actions"><button onClick={() => download(table)}>{id === 'coast-fire' ? 'Download comparison CSV' : 'Download retirement CSV'}</button></div>
             <div className="table-scroll" role="region" aria-label={table.title + " table"} tabIndex={0}>
               <table><thead><tr>{table.columns.map(column => <th scope="col" key={column}>{column}</th>)}</tr></thead>
                 <tbody>{table.rows.map((row, i) => <tr key={i}>{row.map((value, j) => <td key={j}>{typeof value === "number" ? amount(value, Number.isInteger(value) ? 0 : 2) : value}</td>)}</tr>)}</tbody>

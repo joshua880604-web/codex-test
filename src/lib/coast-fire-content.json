@@ -330,6 +330,76 @@
             }
           }
         ]
+      },
+      {
+        "anchor": "use-coast-number-by-age",
+        "queries": [
+          "coast fire number by age",
+          "coastfire number by age",
+          "when will i hit coast fire"
+        ],
+        "question": "What is my Coast FIRE number by age?",
+        "answer": "There is no universal number for an age. With a $40,000 portfolio-funded annual budget, a 4% withdrawal assumption, age 65 retirement and constant 7% nominal return with 2.5% inflation, the modeled threshold is $179,309.59 at 25, $275,551.41 at 35, $423,449.63 at 45 and $650,730.07 at 55, all in today’s USD. These are separate current-age scenarios, not recommended savings benchmarks or the balance path of one person. Calculate with your own budget and horizon; the result also shows the first modeled crossing under your monthly investment input.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Try current age 45 with the same assumptions",
+            "values": {
+              "age": "45",
+              "retire": "65",
+              "balance": "150000",
+              "spending": "40000",
+              "return": "7",
+              "inflation": "2.5",
+              "withdrawal": "4",
+              "monthly": "1000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-coast-compare-assumptions",
+        "queries": [
+          "coast fire chart",
+          "coast fire formula",
+          "coast fire calculator with inflation"
+        ],
+        "question": "How can I compare different returns and retirement ages?",
+        "answer": "Calculate, then open the result’s calculation details. The return comparison changes only nominal return by two percentage points below and above your entry. The retirement-age comparison changes only that age by five years. Both show today’s required portfolio and current gap; they do not recompute a Coast age for every row. Keep inflation and the budget on the same basis, and read each table’s limits. A smaller threshold at a higher return is an arithmetic result, not evidence that taking more risk makes the plan reliable.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Compare 5%, 7% and 9% nominal returns",
+            "values": {
+              "age": "35",
+              "retire": "65",
+              "balance": "150000",
+              "spending": "40000",
+              "return": "7",
+              "inflation": "2.5",
+              "withdrawal": "4",
+              "monthly": "1000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-coast-barista-difference",
+        "queries": [
+          "coast fire vs barista fire",
+          "barista fire vs coast fire"
+        ],
+        "question": "Is Coast FIRE the same as Barista FIRE?",
+        "answer": "The labels describe different cash-flow plans, although usage varies. A Coast plan leaves the retirement portfolio invested without deposits or withdrawals during the coast period and pays present living costs from other resources. A Barista plan commonly combines work income with portfolio withdrawals to cover present spending. This calculator models the first plan. If you withdraw from the portfolio before the target retirement age, its no-withdrawal Coast projection no longer describes your cash flow.",
+        "links": [
+          {
+            "id": "retirement",
+            "mode": "withdrawal",
+            "label": "Explore a separate retirement withdrawal model"
+          }
+        ]
       }
     ],
     "sources": [
@@ -348,6 +418,10 @@
       {
         "title": "OpenStax: present value and the exact Fisher relationship",
         "url": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance"
+      },
+      {
+        "title": "WalletBurst: Barista FIRE and its different use of portfolio withdrawals",
+        "url": "https://walletburst.com/barista-fire/"
       }
     ]
   }

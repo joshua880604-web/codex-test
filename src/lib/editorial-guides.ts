@@ -1,6 +1,6 @@
 import {absoluteURL,directoryPath,siteConfig,siteName} from './site';
 export const guidesPath='/guides/';
-export type EditorialGuide={path:string;title:string;heading:string;description:string;publishedOn:string;updatedOn?:string;calculatorIds:string[];topic:string;breadcrumb:string;cardIntro:string};
+export type EditorialGuide={path:string;title:string;heading:string;description:string;publishedOn:string;updatedOn?:string;calculatorIds:string[];topic:string;breadcrumb:string;cardIntro:string;format?:string};
 export const recastGuide:EditorialGuide={
  path:'/guides/mortgage-recast-vs-refinance/',
  title:'Mortgage Recast vs. Refinance: Payments, Costs & Extra Principal',
@@ -146,7 +146,16 @@ export const marginMarkupGuide:EditorialGuide={
  topic:'Business finance',breadcrumb:'Margin vs. markup',
  cardIntro:'See why a 30% markup does not produce a 30% margin. Compare selling prices, discounts and cost increases with the same stated unit-cost assumptions.',
 };
-export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide,marginMarkupGuide];
+export const coastFireGuide:EditorialGuide={
+ path:'/guides/how-to-calculate-coast-fire/',
+ title:'How to Calculate Coast FIRE: Formula, Age & Examples',
+ heading:'How to Calculate Coast FIRE: Your Number, Age, and Assumptions',
+ description:'Calculate your Coast FIRE number with an inflation-adjusted formula. Compare age and return scenarios, monthly saving, and Coast FIRE versus Barista FIRE.',
+ publishedOn:'2026-10-28',calculatorIds:['coast-fire','retirement','compound-interest'],
+ topic:'Retirement',breadcrumb:'How to calculate Coast FIRE',format:'Planning guide',
+ cardIntro:'Work from your retirement budget to today’s required portfolio, compare ages and returns, and see why reaching a Coast milestone is different from retiring today.',
+};
+export const editorialGuides=[coastFireGuide,recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide,marginMarkupGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);

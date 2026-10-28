@@ -13,6 +13,7 @@ export type GlossaryTerm = {
   example:{title:string;intro:string;steps:string[];answer:string;assumptions:string;calculator?:GlossaryExampleCalculation;calculationNote?:string};
   pitfall:{title:string;text:string};tools:{id:string;text:string}[];related:string[];
   sources:{title:string;url:string}[];checkedOn:string;scope?:string;
+  guides?:{title:string;path:string}[];
 };
 export const glossaryCategories=['Saving & investing','Retirement','Loans & debt','Housing & property','Tax & income','Business & pricing','Everyday money'];
 export const glossaryPath='/glossary/';

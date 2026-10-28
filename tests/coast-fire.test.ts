@@ -40,3 +40,25 @@ test('Coast chart uses the calculated stop-and-coast path and ends at target age
 test('Invalid ages, budgets, withdrawal rates, rates and nonfinite values are rejected',()=>{
  const invalid:Record<string,string|number>[]=[{age:65,retire:65},{age:70,retire:65},{age:35.5},{retire:65.5},{retire:121},{age:-1},{spending:0},{withdrawal:0},{withdrawal:101},{return:-100},{inflation:-100},{monthly:-1},{balance:-1},{balance:''},{return:'Infinity'},{age:0,retire:120,return:1000,inflation:-99.99}];for(const changes of invalid)assert.throws(()=>run(changes),JSON.stringify(changes));
 });
+
+test('Coast sensitivity tables match independent Decimal present values and change only their named assumption',()=>{
+ const {result}=run();const returns=result.additionalTables![0],ages=result.additionalTables![1];
+ assert.deepEqual(returns.columns,['Nominal return (%)','Real return (%)','Coast number today (USD)','Current gap (USD)']);
+ assert.deepEqual(returns.rows.map(row=>row[0]),[5,7,9]);
+ const expectedReturns=[[5,2.4390243902439024,485329.8348311899],[7,4.390243902439025,275551.40590090706],[9,6.341463414634147,158096.05154074388]];
+ expectedReturns.forEach((expected,i)=>{expected.forEach((v,j)=>close(Number(returns.rows[i][j]),v));close(Number(returns.rows[i][3]),Math.max(0,expected[2]-150000));});
+ const expectedAges=[[60,25,341587.6752880674],[65,30,275551.40590090706],[70,35,222281.37250541733]];
+ expectedAges.forEach((expected,i)=>{expected.forEach((v,j)=>close(Number(ages.rows[i][j]),v));close(Number(ages.rows[i][3]),expected[2]-150000);});
+ assert.ok(returns.note!.includes('not your Coast age'));assert.ok(ages.note!.includes('today’s USD'));
+});
+test('Sensitivity comparisons exclude unsupported horizons and keep valid boundary results finite',()=>{
+ const boundaryCases:Record<string,number>[]=[{age:115,retire:120},{age:35,retire:36},{return:-99,inflation:0,age:40,retire:41},{return:1000}];
+ for(const changes of boundaryCases){
+  const {result}=run(changes);const tables=result.additionalTables!;
+  assert.ok(tables[1].rows.every(row=>Number(row[0])>Number(changes.age??35)&&Number(row[0])<=120));
+  assert.ok(tables[0].rows.every(row=>Number(row[0])>-100&&Number(row[0])<=1000));
+  assert.ok(tables.every(table=>table.rows.every(row=>row.every(value=>typeof value!=='number'||Number.isFinite(value)))));
+ }
+ const zero=run({return:5,inflation:5}).result.additionalTables![1];assert.ok(zero.rows.every(row=>Number(row[2])===1000000));
+ const funded=run({balance:1000000}).result.additionalTables!;assert.ok(funded.every(table=>table.rows.every(row=>Number(row[3])===0)));
+});

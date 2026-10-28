@@ -35,6 +35,14 @@ export function coastFireProjection(v:Values):Result {
  }
  const time=first===null?'Not reached by target age':first===0?'Now':first===months?'At target retirement age':elapsed(first);
  const status=first===0?'Meets modeled threshold now':first===null?'Not reached by target retirement age':first===months?'Reached only at retirement':'Below today; reaches threshold later';
+ const returnRows=[-2,0,2].map(change=>read(v,'return')+change).filter(rate=>rate>-100&&rate<=1000).flatMap(rate=>{
+  const log=Math.log1p(rate/100)-Math.log1p(inflation),required=target*Math.exp(-log*years);
+  return Number.isFinite(required)&&required>0?[[rate,Math.expm1(log)*100,required,Math.max(0,required-initial)]]:[];
+ });
+ const ageRows=[retire-5,retire,retire+5].filter(endAge=>endAge>age&&endAge<=120).flatMap(endAge=>{
+  const required=target*Math.exp(-logAnnual*(endAge-age));
+  return Number.isFinite(required)&&required>0?[[endAge,endAge-age,required,Math.max(0,required-initial)]]:[];
+ });
  return {metrics:[
   money('Coast FIRE number today',coast),
   {...metric('Modeled Coast status',first===0?1:first===null?0:first===months?2:3),displayValue:status},
@@ -44,7 +52,10 @@ export function coastFireProjection(v:Values):Result {
   money('Retirement balance without new investments',noDeposits),money('Retirement shortfall without new investments',Math.max(0,target-noDeposits)),
   money('Retirement balance on modeled path',balance),money('New investments on modeled path',added),
   metric('Real annual return assumption',real*100,'percent'),
- ],columns:['Age','Balance','Coast threshold','Cumulative new investments'],rows,notes:[
+ ],columns:['Age','Balance','Coast threshold','Cumulative new investments'],rows,additionalTables:[
+  {title:'Compare nominal return assumptions',columns:['Nominal return (%)','Real return (%)','Coast number today (USD)','Current gap (USD)'],rows:returnRows,note:'Changes only nominal annual return by two percentage points below and above your input. Budget, inflation, withdrawal rate and ages stay fixed. This compares today’s threshold, not your Coast age or a probability of success. Unsupported rates or numerical ranges are omitted. All money is in today’s USD.'},
+  {title:'Compare target retirement ages',columns:['Target retirement age','Years remaining','Coast number today (USD)','Current gap (USD)'],rows:ageRows,note:'Changes only target retirement age by five years below and above your input. Current age, budget, inflation, return and withdrawal rate stay fixed. Only ages above your current age and at most 120 are shown; unsupported numerical ranges are omitted. This does not reprice healthcare, pension benefits or the withdrawal assumption. All money is in today’s USD.'},
+ ],notes:[
   'Every monetary result, chart point and table amount is in today’s USD. Exact real growth = (1 + nominal return) / (1 + inflation) − 1. Do not inflate the retirement budget again. Returns are constant effective annual assumptions, not market forecasts.',
   'Monthly investments are constant in today’s purchasing power, which implies nominal increases with inflation. They are deposited at month end until the first whole month that the modeled Coast threshold is met; then deposits stop. Rows show that stop-and-coast path, or continued investing through the target age if the threshold is never reached.',
   first===0?'The entered portfolio meets the threshold under these assumptions now. Future monthly investments are not used on the modeled path. This is not proof that you can retire today.':first===null?'The entered monthly investment does not reach the threshold by the target retirement age under these assumptions. No Coast age is inferred beyond that horizon.':first===months?'The threshold is first met at the target retirement age, so no earlier contribution-free coast period remains.':'The modeled threshold is first reached after '+elapsed(first)+'. Deposits stop after that month; growth then continues to the target retirement age.',

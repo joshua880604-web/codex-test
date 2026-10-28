@@ -402,5 +402,38 @@
       "Compare cash-flow savings and remaining principal together."
     ],
     "checkedOn": "2026-10-26"
+  },
+  "coast-fire": {
+    "answer": "Find the retirement portfolio needed today to grow toward a future spending target without further deposits. Below that threshold, this model adds monthly investments until the first whole-month crossing, then stops deposits. It does not fund living costs before retirement.",
+    "results": [
+      {
+        "label": "Coast FIRE number today",
+        "meaning": "The invested balance required now under your budget, withdrawal rate, return, inflation and retirement-age assumptions. It is not the full retirement portfolio target."
+      },
+      {
+        "label": "Age at Coast FIRE",
+        "meaning": "The first modeled month when the portfolio meets the moving Coast threshold. “Not reached by target age” means the model found no crossing within your selected horizon."
+      },
+      {
+        "label": "Current gap to Coast threshold",
+        "meaning": "Today’s threshold minus the current retirement portfolio, floored at zero. Monthly deposits can close the moving gap; this is not an extra immediate-payment requirement."
+      },
+      {
+        "label": "Retirement balance on modeled path",
+        "meaning": "The projected balance after deposits stop at the first crossing, or after deposits continue to retirement if the threshold is never reached. Amounts retain today’s purchasing power."
+      }
+    ],
+    "compare": [
+      "Calculate your starting plan and read both the current threshold and expected crossing time.",
+      "Open calculation details to compare return and target retirement-age thresholds while keeping other inputs fixed.",
+      "To compare the full timeline, change one input in the form, calculate again and compare the resulting age and path. Use the existing CSV or result-summary exports to retain each scenario."
+    ],
+    "checks": [
+      "Every dollar amount is in today’s USD. Do not inflate the retirement budget a second time.",
+      "The return field is nominal, after fees. Inflation is deducted through the exact real-growth relationship.",
+      "Monthly deposits maintain purchasing power and end at the first modeled crossing. No pre-retirement withdrawals are modeled.",
+      "Default rates are illustrations. Lower returns, higher spending or different withdrawal assumptions can change the conclusion; no probability of success is calculated."
+    ],
+    "checkedOn": "2026-10-28"
   }
 }
