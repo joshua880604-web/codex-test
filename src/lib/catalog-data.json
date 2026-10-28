@@ -26,7 +26,7 @@
   {
     "id": "rent",
     "category": "Mortgage and Real Estate",
-    "title": "Rent Calculator",
+    "title": "Rent Affordability Calculator",
     "local_route": "/rent-calculator.html"
   },
   {
@@ -290,7 +290,7 @@
   {
     "id": "take-home-paycheck",
     "category": "Tax and Salary",
-    "title": "Take-Home-Paycheck Calculator",
+    "title": "Paycheck Calculator",
     "local_route": "/take-home-pay-calculator.html"
   },
   {
@@ -308,7 +308,7 @@
   {
     "id": "currency",
     "category": "Other",
-    "title": "Currency Calculator",
+    "title": "Currency Converter",
     "local_route": "/currency-calculator.html"
   },
   {
@@ -326,13 +326,13 @@
   {
     "id": "credit-card",
     "category": "Other",
-    "title": "Credit Card Calculator",
+    "title": "Credit Card Payoff Calculator",
     "local_route": "/credit-card-calculator.html"
   },
   {
     "id": "credit-cards-payoff",
     "category": "Other",
-    "title": "Credit Cards Payoff Calculator",
+    "title": "Multiple Credit Card Payoff Calculator",
     "local_route": "/credit-card-payoff-calculator.html"
   },
   {
@@ -350,7 +350,7 @@
   {
     "id": "repayment",
     "category": "Other",
-    "title": "Repayment Calculator",
+    "title": "Loan Repayment Calculator",
     "local_route": "/repayment-calculator.html"
   },
   {

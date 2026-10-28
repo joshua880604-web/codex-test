@@ -35,7 +35,7 @@ export const calculatorCategories: CalculatorCategory[] = [
   { id: 'business-finance', title: 'Business Finance', popular: ['break-even','margin','markup','business-loan','depreciation'], aliases: [],
     tools: ['break-even','margin','markup','business-loan','depreciation'],
     sections: [{"title": "Business financing", "tools": ["business-loan"]}, {"title": "Pricing & profitability", "tools": ["break-even", "margin", "markup"]}, {"title": "Asset costs", "tools": ["depreciation"]}] },
-  { id: 'everyday', title: 'Everyday Tools', popular: ['percentage','scientific','date','unit-converter'], aliases: ['everyday-tools'],
+  { id: 'everyday', title: 'Everyday Calculators', popular: ['percentage','scientific','date','unit-converter'], aliases: ['everyday-tools'],
     tools: ['percentage','scientific','date','unit-converter','tip-bill-split','discount','vat'],
     sections: [{"title": "Numbers & expressions", "tools": ["percentage", "scientific"]}, {"title": "Dates & units", "tools": ["date", "unit-converter"]}, {"title": "Bills & purchase prices", "tools": ["tip-bill-split", "discount", "vat"]}] },
 ];

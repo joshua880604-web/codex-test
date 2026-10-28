@@ -65,7 +65,7 @@
         "Private mortgage insurance"
       ]
     ],
-    "updatedOn": "2026-10-26"
+    "updatedOn": "2026-10-28"
   },
   {
     "id": "loans-debt",
@@ -84,7 +84,7 @@
       ],
       [
         "Plan debt repayment",
-        "Use Credit Card for one balance, Credit Cards Payoff for multiple cards, and Debt Payoff for strategy comparisons. Debt Consolidation compares a replacement borrowing plan."
+        "Use Credit Card Payoff for one balance, Multiple Credit Card Payoff for multiple cards, and Debt Payoff for strategy comparisons. Debt Consolidation compares a replacement borrowing plan."
       ]
     ],
     "differences": [
@@ -129,7 +129,7 @@
         "Debt consolidation"
       ]
     ],
-    "updatedOn": "2026-10-26"
+    "updatedOn": "2026-10-28"
   },
   {
     "id": "saving-investing",
@@ -201,7 +201,7 @@
         "Inflation"
       ]
     ],
-    "updatedOn": "2026-10-26"
+    "updatedOn": "2026-10-28"
   },
   {
     "id": "retirement",
@@ -288,7 +288,7 @@
       ],
       [
         "Understand pay and earnings",
-        "Use Take-Home Paycheck to estimate net pay under the available payroll assumptions. Salary converts gross earnings between pay periods and work schedules. Commission calculates earnings from an entered rate and sales amount."
+        "Use Paycheck Calculator to estimate net pay under the available payroll assumptions. Salary converts gross earnings between pay periods and work schedules. Commission calculates earnings from an entered rate and sales amount."
       ],
       [
         "Check a specific tax question",
@@ -341,7 +341,7 @@
         "Estate vs. inheritance tax"
       ]
     ],
-    "updatedOn": "2026-10-27"
+    "updatedOn": "2026-10-28"
   },
   {
     "id": "business-finance",
@@ -409,7 +409,7 @@
         "Depreciation"
       ]
     ],
-    "updatedOn": "2026-10-27"
+    "updatedOn": "2026-10-28"
   },
   {
     "id": "everyday",
@@ -473,6 +473,6 @@
         "Markup vs. margin"
       ]
     ],
-    "updatedOn": "2026-10-27"
+    "updatedOn": "2026-10-28"
   }
 ]

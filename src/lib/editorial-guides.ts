@@ -137,7 +137,16 @@ export const iraGuide:EditorialGuide={
  "breadcrumb": "Roth IRA vs. Traditional IRA",
  "cardIntro": "Compare the same $6,000 pretax annual budget at three retirement tax rates. Distinguish equal contributions from equal cash cost and review eligibility."
 };
-export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide];
+export const marginMarkupGuide:EditorialGuide={
+ path:'/guides/margin-vs-markup/',
+ title:'Margin vs. Markup: Formulas, Pricing & Worked Examples',
+ heading:'Margin vs. Markup: Calculate Selling Price Without Mixing the Percentages',
+ description:'Compare margin and markup with the same cost and selling price. Convert percentages, set target prices and test discounts or cost changes with calculator examples.',
+ publishedOn:'2026-10-28',calculatorIds:['margin','markup','break-even'],
+ topic:'Business finance',breadcrumb:'Margin vs. markup',
+ cardIntro:'See why a 30% markup does not produce a 30% margin. Compare selling prices, discounts and cost increases with the same stated unit-cost assumptions.',
+};
+export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide,marginMarkupGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);

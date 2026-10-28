@@ -221,10 +221,10 @@ const credit = tool(
     id,
     title:
       id === "payment"
-        ? "Fixed Monthly Amount"
+        ? "Fixed Monthly Payment"
         : id === "term"
-          ? "Fixed Timeframe"
-          : "Percentage Minimum Payment",
+          ? "Payoff by Deadline"
+          : "Minimum Payment",
     fields: [
       num("principal", "Credit card balance", 10000, "$"),
       num("rate", "Annual percentage rate", 20, "%"),
@@ -836,7 +836,7 @@ const margin = tool(
   [
     ...["revenue", "cost", "margin", "profit"].map((key): Mode => ({
       id: key,
-      title: "Profit · Solve " + key,
+      title: "Profit Margin · Find " + key,
       fields:
         key === "revenue"
           ? [

@@ -40,7 +40,7 @@ test("Production sitemap lists canonical pages and only reviewed content dates",
     SITE_INDEXABLE: "true",
   });
   const entries = sitemapEntries(config);
-  assert.equal(entries.length, 171);
+  assert.equal(entries.length, 172);
   assert.equal(new Set(entries.map((e) => e.url)).size, entries.length);
   assert.ok(
     entries.every(
@@ -61,7 +61,7 @@ test("Production sitemap lists canonical pages and only reviewed content dates",
   assert.equal(contentUpdatedOn['/guides/'],'2026-10-28');
   assert.equal(contentUpdatedOn['/guides/debt-snowball-vs-avalanche/'],'2026-10-28');
   assert.equal(contentUpdatedOn['/guides/mortgage-recast-vs-refinance/'],'2026-10-28');
-  assert.ok(Object.entries(contentUpdatedOn).filter(([path])=>!['/guides/should-i-pay-off-debt-or-save/','/guides/apr-vs-interest-rate/','/guides/is-refinancing-worth-it/','/guides/roth-ira-vs-traditional-ira/','/guides/how-much-emergency-fund-should-i-have/','/guides/rent-vs-buy-a-house/','/guides/are-mortgage-points-worth-it/','/guides/pay-off-car-loan-early/','/guides/biweekly-vs-monthly-mortgage-payments/','/guides/cd-vs-savings-account/','/retirement-calculators.html','/tax-income-calculators.html','/business-calculators.html','/everyday-calculators.html','/privacy.html','/guides/debt-snowball-vs-avalanche/','/guides/','/guides/mortgage-recast-vs-refinance/','/mortgage-calculator.html','/pmi-calculator.html','/biweekly-mortgage-calculator.html','/discount-points-calculator.html','/real-estate-calculator.html','/loan-calculators.html','/savings-investment-calculators.html','/cd-calculator.html','/mortgage-recast-calculator.html','/tax-equivalent-yield-calculator.html','/treasury-bill-calculator.html'].includes(path)).every(([,date])=>date==='2026-10-25'));
+  assert.ok(Object.entries(contentUpdatedOn).filter(([path])=>!['/guides/margin-vs-markup/','/salary-calculator.html','/take-home-pay-calculator.html','/credit-card-calculator.html','/credit-card-payoff-calculator.html','/repayment-calculator.html','/rent-calculator.html','/currency-calculator.html','/margin-calculator.html','/markup-calculator.html','/guides/should-i-pay-off-debt-or-save/','/guides/apr-vs-interest-rate/','/guides/is-refinancing-worth-it/','/guides/roth-ira-vs-traditional-ira/','/guides/how-much-emergency-fund-should-i-have/','/guides/rent-vs-buy-a-house/','/guides/are-mortgage-points-worth-it/','/guides/pay-off-car-loan-early/','/guides/biweekly-vs-monthly-mortgage-payments/','/guides/cd-vs-savings-account/','/retirement-calculators.html','/tax-income-calculators.html','/business-calculators.html','/everyday-calculators.html','/privacy.html','/guides/debt-snowball-vs-avalanche/','/guides/','/guides/mortgage-recast-vs-refinance/','/mortgage-calculator.html','/pmi-calculator.html','/biweekly-mortgage-calculator.html','/discount-points-calculator.html','/real-estate-calculator.html','/loan-calculators.html','/savings-investment-calculators.html','/cd-calculator.html','/mortgage-recast-calculator.html','/tax-equivalent-yield-calculator.html','/treasury-bill-calculator.html'].includes(path)).every(([,date])=>date==='2026-10-25'));
   assert.ok(!entries.some(e=>e.url.endsWith('/llms.txt')||e.url.endsWith('/sitemap.xml')));
 });
 test("Calculator canonicals consolidate shared query variants and schema matches the real app", () => {
@@ -159,8 +159,8 @@ test("Production SEO follows the confirmed www extensionless destination while o
   assert.equal(absoluteURL("/cd-calculator.html",config),"https://www.calculatorfree.io/cd-calculator");
   assert.equal(absoluteURL("/glossary/",config),"https://www.calculatorfree.io/glossary/");
   const entries=sitemapEntries(config);
-  assert.equal(entries.length,171);
-  assert.equal(new Set(entries.map(e=>e.url)).size,171);
+  assert.equal(entries.length,172);
+  assert.equal(new Set(entries.map(e=>e.url)).size,172);
   assert.ok(entries.every(e=>e.url.startsWith("https://www.calculatorfree.io/")&&!e.url.endsWith(".html")&&!e.url.includes("?")));
   for (const calc of calculators.filter(c=>!c.directory)) {
    const app=calculatorSchema(calc,config)["@graph"][0];

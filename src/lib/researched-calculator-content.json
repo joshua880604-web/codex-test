@@ -1,0 +1,658 @@
+{
+  "salary": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-salary-to-hourly",
+        "queries": [
+          "salary to hourly calculator",
+          "salary to hourly",
+          "annual salary to hourly"
+        ],
+        "question": "How do I convert an annual salary to an hourly rate?",
+        "answer": "Divide annual gross salary by the annual hours you assume. At 40 hours per week for 52 weeks, $62,400 / 2,080 = $30 per hour. This is gross pay, not take-home pay. In this model, non-hourly inputs are interpreted as adjusted pay; set time-off days to zero for the simple 52-week comparison. Paid leave should not automatically be subtracted as lost earnings.",
+        "links": [
+          {
+            "id": "salary",
+            "mode": "conversion",
+            "label": "Convert $62,400 annual salary to hourly",
+            "values": {
+              "salary": "62400",
+              "frequency": "Annually",
+              "hours": "40",
+              "days": "5",
+              "holidays": "0",
+              "vacation": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-hourly-to-paycheck",
+        "queries": [
+          "hourly paycheck calculator",
+          "paycheck calculator after taxes"
+        ],
+        "question": "Does hourly-to-salary conversion calculate my paycheck after taxes?",
+        "answer": "No. Salary Conversion converts gross earnings and selected unpaid time off. To estimate take-home pay, first convert hourly pay using your actual hours and paid weeks, then enter the annual wage in Paycheck Calculator with your tax and deduction assumptions. Neither tool predicts overtime eligibility or your employer’s exact payroll withholding.",
+        "links": [
+          {
+            "id": "salary",
+            "mode": "conversion",
+            "label": "Convert $18 per hour to annual gross pay",
+            "values": {
+              "salary": "18",
+              "frequency": "Hourly",
+              "hours": "40",
+              "days": "5",
+              "holidays": "0",
+              "vacation": "0"
+            }
+          },
+          {
+            "id": "take-home-paycheck",
+            "mode": "paycheck",
+            "label": "Estimate take-home pay from annual wages"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Convert $62,400 annual salary to $30 per hour",
+        "mode": "conversion",
+        "values": {
+          "salary": "62400",
+          "frequency": "Annually",
+          "hours": "40",
+          "days": "5",
+          "holidays": "0",
+          "vacation": "0"
+        },
+        "inputs": "Annual salary $62,400; 40 hours and 5 days per week; no unpaid holidays or vacation.",
+        "steps": [
+          "Annual hours = 40 × 52 = 2,080.",
+          "Hourly gross pay = 62,400 / 2,080 = 30."
+        ],
+        "answer": "The equivalent gross hourly rate is $30.00.",
+        "expected": {
+          "label": "Unadjusted hourly rate",
+          "value": 30,
+          "tolerance": 0.01
+        }
+      }
+    ]
+  },
+  "take-home-paycheck": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-fica-oasdi",
+        "queries": [
+          "what is fica on my paycheck",
+          "what is oasdi on my paycheck"
+        ],
+        "question": "What are FICA and OASDI on my paycheck?",
+        "answer": "FICA is the federal payroll-tax framework that includes Social Security and Medicare taxes. OASDI refers to the Social Security portion, not an extra tax to add on top of Social Security. Review the Social Security and Medicare rows in this result rather than subtracting FICA and OASDI twice. Individual payroll deductions and covered wages can differ.",
+        "links": [
+          {
+            "id": "take-home-paycheck",
+            "mode": "paycheck",
+            "label": "Review modeled payroll-tax deductions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-actual-paycheck",
+        "queries": [
+          "how much will my paycheck be",
+          "how to calculate take home pay",
+          "paycheck calculator after taxes"
+        ],
+        "question": "Why does this estimate differ from my actual paycheck?",
+        "answer": "This tool estimates annual tax liability and allocates it across equal pay periods. It does not reproduce the IRS Publication 15-T withholding calculation from your Form W-4. State and local taxes use effective rates you enter, not a complete jurisdiction-specific engine. Bonuses, changing wages, benefit treatment and employer rounding can also differ. Compare the result with your pay statement and official withholding resources.",
+        "links": [
+          {
+            "id": "take-home-paycheck",
+            "mode": "paycheck",
+            "label": "Estimate pay with explicit tax and deduction assumptions"
+          }
+        ],
+        "replacesQuestion": "Why can my actual paycheck differ from this estimate?"
+      },
+      {
+        "anchor": "use-pay-frequency",
+        "queries": [
+          "biweekly paycheck calculator",
+          "semimonthly paycheck calculator"
+        ],
+        "question": "Why do biweekly and semimonthly paychecks differ?",
+        "answer": "No. This model uses 26 equal pay periods for biweekly pay and 24 for semimonthly pay. With the same annual modeled take-home amount, dividing by 26 yields a smaller payment than dividing by 24. Real payroll calendars can have a different count in some years; use the arrangement that matches the scenario and do not treat this as a dated payroll calendar.",
+        "links": [
+          {
+            "id": "take-home-paycheck",
+            "mode": "paycheck",
+            "label": "Compare pay frequencies"
+          }
+        ],
+        "replacesQuestion": "Is biweekly the same as twice a month?"
+      }
+    ],
+    "sources": [
+      {
+        "title": "IRS: Social Security, Medicare and FICA",
+        "url": "https://www.irs.gov/taxtopics/tc751"
+      },
+      {
+        "title": "IRS: Publication 15-T payroll withholding methods",
+        "url": "https://www.irs.gov/publications/p15t"
+      }
+    ]
+  },
+  "credit-card": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-payoff-time",
+        "queries": [
+          "how long to pay off credit card",
+          "credit card payoff calculator with extra payments"
+        ],
+        "question": "How long will it take to pay off my credit card?",
+        "answer": "For a single fixed-rate balance, choose Fixed Monthly Payment and enter the total amount you plan to pay. On the illustrative $6,000 balance at 20% APR, $200 per month takes 42 payments; $300 takes 25. Interest falls from $2,386.99 to $1,359.64. These monthly-accrual examples assume no new charges, fees or rate changes; they are not your issuer’s daily statement calculation.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Calculate a $200 total monthly payment",
+            "values": {
+              "principal": "6000",
+              "rate": "20",
+              "payment": "200"
+            }
+          },
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Compare a $300 total monthly payment",
+            "values": {
+              "principal": "6000",
+              "rate": "20",
+              "payment": "300"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-minimum-rule",
+        "queries": [
+          "credit card minimum payment calculator",
+          "how to calculate credit card payoff"
+        ],
+        "question": "How does the credit card minimum payment calculator work?",
+        "answer": "Enter the balance percentage, dollar floor and whether monthly interest is added to that percentage. The payment changes as the balance declines. In the linked $6,000, 20% example, 2% of opening balance plus interest gives a first payment of $220: $120 plus $100 interest. The $25 floor matters later. Your issuer’s rules may differ; the model does not calculate an official minimum due.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "minimum",
+            "label": "Model a percentage minimum plus interest",
+            "values": {
+              "principal": "6000",
+              "rate": "20",
+              "minimum": "2",
+              "floor": "25",
+              "interest_extra": "Yes"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-one-or-many-cards",
+        "queries": [
+          "multiple credit card payment calculator",
+          "multiple credit card payoff calculator"
+        ],
+        "question": "Which calculator should I use for multiple credit cards?",
+        "answer": "This form models one balance at one APR. Multiple Credit Card Payoff accepts separate balances, rates and minimums under one total monthly budget. Debt Snowball and Avalanche compares repayment orders. Do not average several APRs and assume the single-card schedule will reproduce separate card balances.",
+        "links": [
+          {
+            "id": "credit-cards-payoff",
+            "mode": "avalanche",
+            "label": "Plan a total budget for multiple cards"
+          },
+          {
+            "id": "debt-payoff",
+            "mode": "snowball",
+            "label": "Compare a debt snowball strategy"
+          }
+        ],
+        "replacesQuestion": "Should I use this for several credit cards?"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Pay $300 instead of $200 on a $6,000 card balance",
+        "mode": "payment",
+        "values": {
+          "principal": "6000",
+          "rate": "20",
+          "payment": "300"
+        },
+        "inputs": "One $6,000 card; fixed 20% APR; total monthly payment $300; no new charges.",
+        "steps": [
+          "Monthly interest initially = 6,000 × 20% / 12 = 100.",
+          "The first $300 payment repays $200 of principal.",
+          "The final payment is capped at the amount owed."
+        ],
+        "answer": "The model needs 25 payments and charges $1,359.64 interest.",
+        "expected": {
+          "label": "Total interest",
+          "value": 1359.6416610544109,
+          "tolerance": 0.01
+        }
+      }
+    ]
+  },
+  "credit-cards-payoff": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-total-card-budget",
+        "queries": [
+          "multiple credit card payoff calculator",
+          "multiple credit card payment calculator"
+        ],
+        "question": "Does my total card budget include the minimum payments?",
+        "answer": "Enter the total you can pay across all listed cards, including their minimums. For minimums totaling $250, a $400 budget leaves $150 initially available above the minimums; entering $150 as the total would not cover them. The highest-APR-first method allocates extra money under the model. Required payments still need to be made on time.",
+        "links": [
+          {
+            "id": "credit-cards-payoff",
+            "mode": "avalanche",
+            "label": "Plan a combined card-payment budget"
+          }
+        ],
+        "replacesQuestion": "Is the card payoff budget extra or total money?"
+      }
+    ]
+  },
+  "repayment": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-loan-lump-sum",
+        "queries": [
+          "loan repayment calculator with lump sum",
+          "early car loan payoff calculator"
+        ],
+        "question": "How do I compare a lump sum with extra monthly loan payments?",
+        "answer": "Keep the current balance, rate and regular payment unchanged, then change one extra-payment input at a time. A one-time payment in month 1 is applied after that month’s modeled interest. In the linked $20,000, 6%, $400-payment case, a $2,000 lump sum leaves 52 payments and $2,455.31 interest; $100 extra monthly leaves 45 payments and $2,370.33 interest. Those plans require different cash timing and total extras, so they are not an equal-budget ranking.",
+        "links": [
+          {
+            "id": "repayment",
+            "mode": "extra-payments",
+            "label": "Test a $2,000 payment in month 1",
+            "values": {
+              "principal": "20000",
+              "rate": "6",
+              "payment": "400",
+              "extra_monthly": "0",
+              "extra_yearly": "0",
+              "extra_once": "2000",
+              "extra_once_month": "1"
+            }
+          },
+          {
+            "id": "repayment",
+            "mode": "extra-payments",
+            "label": "Test $100 extra each month",
+            "values": {
+              "principal": "20000",
+              "rate": "6",
+              "payment": "400",
+              "extra_monthly": "100",
+              "extra_yearly": "0",
+              "extra_once": "0",
+              "extra_once_month": "1"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-interest-saved",
+        "queries": [
+          "loan payoff calculator with extra payments",
+          "how much interest will i save by paying extra"
+        ],
+        "question": "How much interest will I save by paying extra?",
+        "answer": "The tool compares the extra-payment schedule with the same loan paid at the entered regular payment. In the linked example, $100 extra monthly saves $701.94 of interest and 13 payment periods. Extra principal is repayment of existing debt, not an additional fee or an investment gain. Check prepayment terms and how your lender applies the money; daily accrual and charges can change an actual payoff.",
+        "links": [
+          {
+            "id": "repayment",
+            "mode": "extra-payments",
+            "label": "Compare interest and payment count with the baseline",
+            "values": {
+              "principal": "20000",
+              "rate": "6",
+              "payment": "400",
+              "extra_monthly": "100",
+              "extra_yearly": "0",
+              "extra_once": "0",
+              "extra_once_month": "1"
+            }
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Add a $2,000 lump sum in the first payment month",
+        "mode": "extra-payments",
+        "values": {
+          "principal": "20000",
+          "rate": "6",
+          "payment": "400",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "2000",
+          "extra_once_month": "1"
+        },
+        "inputs": "Current balance $20,000; annual rate 6%; regular monthly payment $400; one-time extra $2,000 in month 1.",
+        "steps": [
+          "First-month interest = 20,000 × 6% / 12 = 100.",
+          "The first payment totals $2,400 and reduces principal by $2,300.",
+          "Keep the regular $400 payment afterward; cap the last payment."
+        ],
+        "answer": "The model needs 52 payments and charges $2,455.31 interest.",
+        "expected": {
+          "label": "Total interest",
+          "value": 2455.3068881740787,
+          "tolerance": 0.01
+        }
+      }
+    ]
+  },
+  "rent": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-rent-from-hourly",
+        "queries": [
+          "how much rent can i afford making $18 an hour",
+          "how much rent can i afford making $22 an hour"
+        ],
+        "question": "How much rent can I afford at $18 or $22 per hour?",
+        "answer": "First choose your work-hours assumption. At 40 paid hours per week for 52 weeks, gross annual pay is $37,440 at $18/hour and $45,760 at $22/hour. With no monthly debt, a 30% rent ratio and 36% total-debt ratio, the model gives $936 and $1,144 monthly. These are illustrative planning ceilings, not a landlord’s approval or a guarantee that the remaining budget covers living costs.",
+        "links": [
+          {
+            "id": "rent",
+            "mode": "affordability",
+            "label": "Test the $18/hour income scenario",
+            "values": {
+              "income": "37440",
+              "frequency": "Annually",
+              "debts": "0",
+              "housing_ratio": "30",
+              "debt_ratio": "36"
+            }
+          },
+          {
+            "id": "rent",
+            "mode": "affordability",
+            "label": "Test the $22/hour income scenario",
+            "values": {
+              "income": "45760",
+              "frequency": "Annually",
+              "debts": "0",
+              "housing_ratio": "30",
+              "debt_ratio": "36"
+            }
+          },
+          {
+            "id": "salary",
+            "mode": "conversion",
+            "label": "Change the hourly-to-annual pay assumptions",
+            "values": {
+              "salary": "18",
+              "frequency": "Hourly",
+              "hours": "40",
+              "days": "5",
+              "holidays": "0",
+              "vacation": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-rent-gross-net",
+        "queries": [
+          "should rent be 30 percent of gross or net income",
+          "rent affordability calculator based on income"
+        ],
+        "question": "Does the rent budget use gross income or net pay?",
+        "answer": "This model expects gross income and applies your selected rent and total-debt ratios to it. It does not automatically subtract tax, utilities, food, savings or moving costs. A 30% input is a scenario, not a universal safe limit or a rental-assistance rule. Check the proposed rent against actual take-home pay and the rest of your spending separately.",
+        "links": [
+          {
+            "id": "rent",
+            "mode": "affordability",
+            "label": "Set your own gross-income ratios"
+          },
+          {
+            "id": "take-home-paycheck",
+            "mode": "paycheck",
+            "label": "Estimate take-home pay separately"
+          }
+        ],
+        "replacesQuestion": "Should rent affordability use gross or take-home income?"
+      },
+      {
+        "anchor": "use-rent-50000",
+        "queries": [
+          "how much rent can i afford making 50000 a year",
+          "rent calculator based on salary"
+        ],
+        "question": "How much rent can I afford on $50,000 a year with debt payments?",
+        "answer": "At $50,000 gross annual pay, monthly income is $4,166.67. A 30% rent cap is $1,250, but a 36% total-debt cap leaves $1,000 after $500 of monthly non-housing debt. This tool uses the smaller amount, $1,000. Changing the debt amount can therefore matter even when the rent ratio stays fixed.",
+        "links": [
+          {
+            "id": "rent",
+            "mode": "affordability",
+            "label": "Test $50,000 income and $500 monthly debt",
+            "values": {
+              "income": "50000",
+              "frequency": "Annually",
+              "debts": "500",
+              "housing_ratio": "30",
+              "debt_ratio": "36"
+            }
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Compare two rent limits on $50,000 annual income",
+        "mode": "affordability",
+        "values": {
+          "income": "50000",
+          "frequency": "Annually",
+          "debts": "500",
+          "housing_ratio": "30",
+          "debt_ratio": "36"
+        },
+        "inputs": "Annual gross income $50,000; monthly non-housing debt $500; rent ratio 30%; total-debt ratio 36%.",
+        "steps": [
+          "Gross monthly income = 50,000 / 12 = 4,166.67.",
+          "Rent-ratio limit = 4,166.67 × 30% = 1,250.",
+          "Combined-debt room = 4,166.67 × 36% − 500 = 1,000."
+        ],
+        "answer": "The modeled monthly rent budget is $1,000, the smaller limit.",
+        "expected": {
+          "label": "Monthly rent budget",
+          "value": 1000,
+          "tolerance": 0.01
+        }
+      }
+    ]
+  },
+  "margin": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-gross-net-profit",
+        "queries": [
+          "gross profit margin calculator",
+          "how to calculate gross profit margin",
+          "how to calculate net profit margin"
+        ],
+        "question": "Does this calculate gross margin or net profit margin?",
+        "answer": "The business modes calculate (revenue minus entered cost) divided by revenue. When cost is the cost of goods sold, that is gross margin. Net profit requires all applicable expenses and taxes; it is not automatically computed from a product-cost input. Keep stock and currency collateral modes separate from business profit percentages.",
+        "links": [
+          {
+            "id": "margin",
+            "mode": "margin",
+            "label": "Compare revenue, cost, profit and gross margin",
+            "values": {
+              "cost": "100",
+              "revenue": "150"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-margin-markup",
+        "queries": [
+          "difference between margin and markup",
+          "margin and markup calculator"
+        ],
+        "question": "How are gross margin and markup different?",
+        "answer": "Both use the same dollar difference, but margin divides it by selling price and markup divides it by cost. Cost $100 and selling price $150 give $50 profit, 50% markup and 33.3333% gross margin. A 30% markup is not a 30% margin. Use Markup Calculator to convert percentages or solve a selling price from either target.",
+        "links": [
+          {
+            "id": "margin",
+            "mode": "margin",
+            "label": "Calculate gross margin from cost and revenue",
+            "values": {
+              "cost": "100",
+              "revenue": "150"
+            }
+          },
+          {
+            "id": "markup",
+            "mode": "price",
+            "label": "Set a 30% markup",
+            "values": {
+              "cost": "100",
+              "markup": "30"
+            }
+          },
+          {
+            "id": "markup",
+            "mode": "margin",
+            "label": "Set a 30% target margin",
+            "values": {
+              "cost": "100",
+              "margin": "30"
+            }
+          }
+        ],
+        "replacesQuestion": "What is the difference between margin and markup?"
+      }
+    ],
+    "sources": [
+      {
+        "title": "AccountingCoach: Gross margin and markup denominators",
+        "url": "https://www.accountingcoach.com/blog/gross-margin-markup"
+      }
+    ]
+  },
+  "markup": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-selling-price",
+        "queries": [
+          "how to calculate selling price using markup percentage",
+          "how to calculate markup percentage"
+        ],
+        "question": "How do I calculate selling price using markup?",
+        "answer": "Use selling price = cost × (1 + markup/100). With $100 cost and 30% markup, price is $130 and profit is $30. Gross margin is 30/130 = 23.0769%, because it uses selling price as the denominator. Do not subtract 30% from the selling price to reverse a 30% markup; divide by 1.30 instead.",
+        "links": [
+          {
+            "id": "markup",
+            "mode": "price",
+            "label": "Price a $100 item at 30% markup",
+            "values": {
+              "cost": "100",
+              "markup": "30"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-margin-markup-conversion",
+        "queries": [
+          "how to calculate markup from margin",
+          "what is the difference between margin and markup"
+        ],
+        "question": "How do I convert markup to margin, or margin to markup?",
+        "answer": "Margin as a decimal = markup / (1 + markup). Markup = margin / (1 − margin). Enter percentages in the form: 50% markup corresponds to 33.3333% margin, while a 30% margin requires about 42.8571% markup. These conversions do not include sales tax, overhead or channel fees unless already accounted for in the stated cost model.",
+        "links": [
+          {
+            "id": "markup",
+            "mode": "convert",
+            "label": "Convert 50% markup to margin",
+            "values": {
+              "rate": "50",
+              "direction": "Markup to margin"
+            }
+          },
+          {
+            "id": "markup",
+            "mode": "convert",
+            "label": "Convert a 30% margin to markup",
+            "values": {
+              "rate": "30",
+              "direction": "Margin to markup"
+            }
+          }
+        ],
+        "replacesQuestion": "What is markup vs margin?"
+      }
+    ],
+    "sources": [
+      {
+        "title": "AccountingCoach: Gross margin and markup denominators",
+        "url": "https://www.accountingcoach.com/blog/gross-margin-markup"
+      }
+    ]
+  },
+  "currency": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-custom-exchange-rate",
+        "queries": [
+          "manual currency converter",
+          "currency converter with custom exchange rate",
+          "how to calculate currency conversion"
+        ],
+        "question": "How do I convert currencies with a custom exchange rate?",
+        "answer": "Enter target-currency units for one source-currency unit. For 1 USD = 0.90 EUR, converting 100 USD gives 90 EUR. Reverse conversion requires the inverse rate, 1/0.90, with rounding only at the end. This is a hypothetical manual rate, not a live quote. The separate saved-reference mode identifies its stored dates and does not fetch a fresh rate.",
+        "links": [
+          {
+            "id": "currency",
+            "mode": "manual",
+            "label": "Convert 100 USD at a hypothetical 0.90 EUR rate",
+            "values": {
+              "amount": "100",
+              "from": "USD",
+              "to": "EUR",
+              "rate": "0.9"
+            }
+          }
+        ],
+        "replacesQuestion": "How do I enter a custom exchange rate?"
+      }
+    ]
+  }
+}

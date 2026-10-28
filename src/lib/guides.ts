@@ -1,3 +1,4 @@
+import refresh from "./researched-calculator-content.json";
 import { calculatorPresetHref } from './preset-links';
 import mortgageToolsGuides from "./mortgage-tools-guides.json";
 import insightExamples from "./insight-examples.json";
@@ -734,3 +735,13 @@ import investmentDecisionGuides from './investment-decisions-guides.json';
 Object.assign(guides, investmentDecisionGuides as unknown as Record<string,Guide>);
 relatedCalculatorIds['tax-equivalent-yield']=['treasury-bill','bond','cd','income-tax','real-return'];
 relatedCalculatorIds['treasury-bill']=['tax-equivalent-yield','cd','bond','interest','savings'];
+
+// Reviewed calculator names, model explanations and worked examples share stable routes.
+for(const [id,patch] of Object.entries(refresh as unknown as Record<string,{updatedOn:string;summary?:string;scope?:string;examples?:WorkedExample[];sources?:Guide['sources']}>)){
+ const guide=guides[id];
+ if(patch.summary)guide.summary=patch.summary;
+ if(patch.scope)guide.scope=patch.scope;
+ if(patch.examples)guide.examples.push(...patch.examples);
+ for(const source of patch.sources??[])if(!guide.sources.some(item=>item.url===source.url))guide.sources.push(source);
+ guide.checkedOn=patch.updatedOn;
+}

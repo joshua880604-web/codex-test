@@ -18,11 +18,16 @@ const toolAliases:Record<string,string[]>={
  'discount-points':['mortgage points','discount point','mortgage points break even','points calculator','buy down rate'],
  'auto-loan':['car payment','car loan','vehicle finance'],
  'auto-lease':['car lease','vehicle lease'],
- 'take-home-paycheck':['paycheck','take home pay','gross to net pay'],
+ 'credit-card':['credit card','single credit card','credit card payment','credit card minimum payment'],
+ 'credit-cards-payoff':['credit cards payoff','multiple credit cards payoff','multiple credit card payment'],
+ repayment:['repayment','loan repayment','loan payoff','early loan payoff'],
+ rent:['rent','rent budget','rent affordability'],
+ currency:['currency calculator','currency converter','manual currency converter'],
+ 'take-home-paycheck':['paycheck','take home pay','take-home-paycheck','gross to net pay','net pay'],
  'income-tax':['federal tax','federal income tax'],
  '401k':['401(k)','401 k','employer match'],
  rmd:['required minimum distribution'],roi:['return on investment'],irr:['internal rate of return'],
- heloc:['home equity line of credit'],margin:['profit margin'],date:['days between dates'],
+ heloc:['home equity line of credit'],margin:['profit margin','gross profit margin','stock margin','currency margin'],date:['days between dates'],
  finance:['financial calculator','time value of money','tvm'],
 };
 export const directoryDescriptions:Record<string,string>={
@@ -30,7 +35,7 @@ export const directoryDescriptions:Record<string,string>={
  'interest-rate':'Find the rate needed to reach a target.',
  'interest':'Project a balance from a given rate.',
  'apr':'Compare interest and borrowing fees.',
- 'margin':'Profit as a share of the selling price.',
+ 'margin':'Profit margin, or separate stock and FX collateral calculations.',
  'payment':'Solve for a loan payment or amount.',
 };
 export function directorySort(tools:typeof calculators,popular:string[]){

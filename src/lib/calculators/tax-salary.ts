@@ -262,7 +262,7 @@ const salary = tool(
   [
     {
       id: "conversion",
-      title: "Salary Conversion",
+      title: "Salary to Hourly & Pay Conversion",
       fields: [
         num("salary", "Salary amount", 30, "$"),
         select(
@@ -545,7 +545,7 @@ const takehome = tool(
   [
     {
       id: "paycheck",
-      title: "Take-Home Paycheck",
+      title: "Estimated Take-Home Pay",
       fields: [
         ...fields().filter((f) => !["year", "withheld"].includes(f.key)),
         select(

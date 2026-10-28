@@ -1,7 +1,7 @@
 {
   "titles": {
     "auto-loan": "Auto Loan Calculator - Car Payments, Trade-In & Taxes",
-    "salary": "Salary Calculator - Hourly, Monthly & Annual Pay",
+    "salary": "Salary Calculator - Salary to Hourly & Annual Pay",
     "sales-tax": "Sales Tax Calculator - Add Tax or Find Pre-Tax Price",
     "rent": "Rent Affordability Calculator - Monthly Rent Budget",
     "mortgage-payoff": "Mortgage Payoff Calculator - Extra Payments & Interest Savings",
@@ -19,15 +19,15 @@
     "annuity-payout": "Annuity Payout Calculator - Income & Payment Duration",
     "retirement": "Retirement Calculator - Savings, Income & Withdrawals",
     "401k": "401k Calculator - Growth, Match & Early Withdrawal",
-    "credit-card": "Credit Card Payoff Calculator - Payments & Interest",
+    "credit-card": "Credit Card Payoff Calculator - Payment, Time & Minimums",
     "debt-payoff": "Debt Payoff Calculator - Avalanche & Snowball",
-    "margin": "Profit Margin Calculator - Cost, Revenue & Profit",
+    "margin": "Margin Calculator - Profit, Markup & Trading Margin",
     "student-loan": "Student Loan Calculator - Payments, Payoff & Interest",
     "income-tax": "Federal Income Tax Calculator - 2025 & 2026 Estimate",
     "vat": "VAT Calculator - Add VAT, Remove VAT & Find the Rate",
     "mutual-fund": "Mutual Fund Calculator - Growth, Expenses & Fees",
     "average-return": "Average Return Calculator - Annualized Cash-Flow Returns",
-    "credit-cards-payoff": "Credit Cards Payoff Calculator - Multiple Card Plan",
+    "credit-cards-payoff": "Multiple Credit Card Payoff Calculator - Total Budget",
     "debt-consolidation": "Debt Consolidation Calculator - Payment & Total Cost",
     "auto-lease": "Auto Lease Calculator - Car Lease Payment & Residual",
     "down-payment": "Down Payment Calculator - Home Purchase Cash Needed",
@@ -35,7 +35,8 @@
     "apr": "APR Calculator - Loan Fees & Annual Borrowing Cost",
     "repayment": "Loan Repayment Calculator - Extra Payments & Payoff",
     "pension": "Pension Calculator - Lump Sum vs Monthly Income",
-    "take-home-paycheck": "Paycheck Calculator - Estimated Take-Home Pay"
+    "take-home-paycheck": "Paycheck Calculator - Estimated Take-Home Pay",
+    "currency": "Currency Converter - Custom & Dated Reference Rates"
   },
   "intents": [
     {
@@ -401,6 +402,18 @@
       "id": "salary",
       "keyword": "Annual salary to monthly calculator",
       "mode": "conversion"
+    },
+    {
+      "id": "credit-card",
+      "keyword": "Credit card minimum payment calculator",
+      "mode": "minimum",
+      "description": "Model a declining percentage minimum with a dollar floor. Enter whether monthly interest is added and check the issuer’s actual rule."
+    },
+    {
+      "id": "currency",
+      "keyword": "Manual currency converter",
+      "mode": "manual",
+      "description": "Convert currencies with a rate you supply, or use a separately dated saved reference snapshot. No live quote is fetched."
     }
   ]
 }
