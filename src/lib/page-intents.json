@@ -34,10 +34,10 @@
   {
     "id": "rental-property",
     "mode": "projection",
-    "keyword": "Rental property cash flow calculator",
+    "keyword": "Rental property calculator",
     "titleSuffix": "Cash Flow & Rental Returns",
-    "description": "Estimate rental income, operating costs, mortgage payments and sale proceeds over your holding period. Income tax and depreciation tax benefits are excluded.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Project rental-property cash flow, cap rate, cash-on-cash and sale proceeds under entered financing and operating assumptions. Before tax.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions and bulk, 2026-10-28; /workspace/work/semrush-batch1-20261028/data.json"
   },
   {
     "id": "apr",
@@ -129,11 +129,11 @@
   },
   {
     "id": "investment",
-    "mode": "contribution",
-    "keyword": "Investment calculator for monthly contributions",
+    "mode": "end",
+    "keyword": "Investment calculator",
     "titleSuffix": "Contributions & Target Balance",
-    "description": "Find the recurring contribution needed for an investment target. Other modes solve ending balance, starting amount, return or time under constant-return assumptions.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Project investment growth with monthly and annual deposits, or solve starting amount, required return, contribution or time to a target.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions, 2026-10-28; /workspace/work/semrush-batch2-20261028/data.json"
   },
   {
     "id": "finance",
@@ -193,19 +193,19 @@
   },
   {
     "id": "irr",
-    "mode": "irregular",
-    "keyword": "IRR calculator with unequal cash flows",
+    "mode": "fixed",
+    "keyword": "IRR calculator",
     "titleSuffix": "Annualized Cash-Flow Returns",
-    "description": "Find annual internal rates of return from unequal year-end cash flows. Multiple or no valid rates may exist; use Average Return for calendar-dated cash flows.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Calculate effective annual IRRs for recurring or unequal year-end cash flows. Review signs, timing and possible multiple roots.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions, 2026-10-28; /workspace/work/semrush-batch2-20261028/data.json"
   },
   {
     "id": "roi",
-    "mode": "dates",
-    "keyword": "ROI calculator with investment dates",
+    "mode": "length",
+    "keyword": "ROI calculator",
     "titleSuffix": "Total & Annualized ROI",
-    "description": "Calculate total and annualized investment return using investment costs, proceeds and holding dates. Intermediate cash flows require an IRR-style calculation.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Calculate total and annualized return from an initial investment and terminal returned amount. Use entered years or actual dates.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions and bulk, 2026-10-28; /workspace/work/semrush-batch1-20261028/data.json"
   },
   {
     "id": "payback-period",
@@ -234,34 +234,34 @@
   {
     "id": "pension",
     "mode": "lump",
-    "keyword": "Lump sum vs monthly pension calculator",
+    "keyword": "Pension calculator",
     "titleSuffix": "Lump Sum & Pension Income",
-    "description": "Compare the discounted value of a lump sum and pension payments over an entered lifespan. This deterministic comparison excludes actuarial mortality probabilities.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Compare quoted pension payments with a lump sum, single-life with joint-survivor income, or earlier and later retirement starts.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions, 2026-10-28; /workspace/work/semrush-batch2-20261028/data.json"
   },
   {
     "id": "social-security",
-    "mode": "compare",
-    "keyword": "Social Security claiming age calculator",
+    "mode": "ideal",
+    "keyword": "Social Security calculator",
     "titleSuffix": "Compare Claiming Ages",
-    "description": "Compare estimated benefits at different claiming ages under modeled early and delayed retirement adjustments. Spousal coordination and earnings-test withholding are excluded.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Compare Social Security retirement claiming ages using entered benefit estimates, lifespan, COLA and discount assumptions. No earnings-record benefit determination.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions, 2026-10-28; /workspace/work/semrush-batch2-20261028/data.json"
   },
   {
     "id": "annuity",
     "mode": "growth",
-    "keyword": "Annuity calculator with monthly contributions",
+    "keyword": "Annuity calculator",
     "titleSuffix": "Accumulation & Contributions",
-    "description": "Project annuity accumulation with starting principal and scheduled monthly or annual contributions. This model does not include insurer charges or income-tax rules.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Project annuity accumulation with starting principal, monthly and annual additions and selected timing. No insurance quote or guaranteed return.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions, 2026-10-28; /workspace/work/semrush-batch2-20261028/data.json"
   },
   {
     "id": "annuity-payout",
-    "mode": "payment",
-    "keyword": "How long will my annuity payments last calculator",
+    "mode": "length",
+    "keyword": "Annuity payout calculator",
     "titleSuffix": "Payout Amount & Duration",
-    "description": "Estimate how long a fixed annuity payment can last, or solve a payment for a chosen term. The final payment is capped at the remaining balance.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Estimate fixed-term annuity payouts or how long an entered payment lasts under a constant return. Review the final payout and earnings.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions, 2026-10-28; /workspace/work/semrush-batch2-20261028/data.json"
   },
   {
     "id": "roth-ira",
@@ -394,10 +394,10 @@
   {
     "id": "debt-consolidation",
     "mode": "comparison",
-    "keyword": "Debt consolidation calculator with loan fees",
+    "keyword": "Debt consolidation calculator",
     "titleSuffix": "Compare Loans & Consolidation Costs",
-    "description": "Compare existing debts with a proposed consolidation loan, including entered fees. A smaller monthly payment can still mean more total interest.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Compare current-debt payoff with a fixed-rate consolidation loan, including fees, term and future interest. No approval or rate quote.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions and bulk, 2026-10-28; /workspace/work/semrush-batch1-20261028/data.json"
   },
   {
     "id": "student-loan",
@@ -450,10 +450,10 @@
   {
     "id": "business-loan",
     "mode": "repayment",
-    "keyword": "Business loan calculator with origination fees",
+    "keyword": "Business loan calculator",
     "titleSuffix": "Payments, Fees & Borrowing Cost",
-    "description": "Estimate business-loan payments and borrowing cost with entered fees, term and repayment frequency. The model does not determine lender approval or eligibility.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Estimate business term-loan payments, net proceeds and modeled APR with entered fees and insurance. No automatic SBA eligibility or current rates.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions and bulk, 2026-10-28; /workspace/work/semrush-batch1-20261028/data.json"
   },
   {
     "id": "personal-loan",
@@ -482,10 +482,10 @@
   {
     "id": "budget",
     "mode": "budget",
-    "keyword": "Monthly budget calculator with different pay frequencies",
+    "keyword": "Budget calculator",
     "titleSuffix": "Monthly Income & Spending",
-    "description": "Normalize entered income and expenses to a monthly budget. Use realistic recurring costs and check whether each item is weekly, monthly or annual.",
-    "researchStatus": "editorial candidate; search volume not verified"
+    "description": "Build a household budget with monthly, annual, weekly or biweekly entries, an entered tax assumption, savings allocations and surplus or deficit.",
+    "researchStatus": "User Semrush US paired Broad Match/Questions and bulk, 2026-10-28; /workspace/work/semrush-batch1-20261028/data.json"
   },
   {
     "id": "commission",
@@ -558,10 +558,11 @@
   },
   {
     "id": "break-even",
-    "keyword": "Break even point calculator",
+    "keyword": "Break even calculator",
     "mode": "units",
-    "description": "Find the units and sales revenue needed to cover fixed costs using the selling price and variable cost per unit. Review contribution margin, whole-unit rounding and the additional volume required for a target profit.",
-    "titleSuffix": "Units, Sales & Target Profit"
+    "description": "Calculate single-product break-even units, revenue, target profit or required selling price with entered fixed and variable costs.",
+    "titleSuffix": "Units, Sales & Target Profit",
+    "researchStatus": "User Semrush US paired Broad Match/Questions and bulk, 2026-10-28; /workspace/work/semrush-batch1-20261028/data.json"
   },
   {
     "id": "investment-fee",

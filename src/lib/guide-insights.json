@@ -519,5 +519,349 @@
       "Nonannual comparisons with Excel must use equivalent period rates; dated XIRR is a different model."
     ],
     "checkedOn": "2026-10-28"
+  },
+  "rental-property": {
+    "answer": "Read property operations, financing cash flow and sale proceeds separately. First-year cap rate and cash-on-cash are not the full holding-period annual IRR.",
+    "results": [
+      {
+        "label": "First-year cash flow",
+        "meaning": "First-year operating income less operating costs and modeled mortgage payments; excludes the terminal sale."
+      },
+      {
+        "label": "Capitalization rate",
+        "meaning": "First-year NOI divided by entered after-repair value, or purchase price if that value is zero."
+      },
+      {
+        "label": "First-year cash-on-cash",
+        "meaning": "First-year cash flow divided by initial cash including closing costs and initial repairs."
+      },
+      {
+        "label": "Total investment profit",
+        "meaning": "Sum of yearly operating cash flows and net sale proceeds, minus initial cash. It is not an annual percentage."
+      }
+    ],
+    "compare": [
+      "Review the year table and initial cash before comparing return percentages.",
+      "Hold operations fixed and change only financing or the known sale price.",
+      "Read yearly cash flow and full project profit together; a positive year does not guarantee a profitable sale."
+    ],
+    "checks": [
+      "Monthly rent and other income become annual amounts; recurring expenses are annual inputs.",
+      "Vacancy applies to rent only; management applies to effective rent plus other income.",
+      "No tax depreciation, income tax, capital-gains tax, appraisal or market forecast is generated."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "debt-consolidation": {
+    "answer": "Compare future interest plus the origination fee against the current avalanche payoff benchmark. A lower monthly payment alone does not show a saving.",
+    "results": [
+      {
+        "label": "Payment per period",
+        "meaning": "The new fixed monthly principal-and-interest payment, including a financed fee in principal when selected."
+      },
+      {
+        "label": "Current plan total interest",
+        "meaning": "Future interest from a fixed combined monthly budget equal to entered minimums, with avalanche rollover."
+      },
+      {
+        "label": "Interest and fee savings",
+        "meaning": "Current-plan interest minus new-loan interest minus the origination fee. Negative means the new scenario has higher modeled borrowing costs."
+      }
+    ],
+    "compare": [
+      "Keep existing debt balances, payments and rates fixed.",
+      "Compare the offered rate, term and fee, checking whether the fee is financed.",
+      "Review payment affordability and total cost separately; different terms are not equal monthly-budget comparisons."
+    ],
+    "checks": [
+      "Debt amounts have no thousands separators; every line has name, balance, payment and APR.",
+      "Current minimum amounts are fixed entries, not declining issuer formulas.",
+      "No new borrowing, credit-score prediction, approval or government consolidation benefit is inferred."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "business-loan": {
+    "answer": "Separate base loan amount, repayment balance, net cash proceeds and payment including insurance. The cash-flow APR reflects entered fees, not loan eligibility.",
+    "results": [
+      {
+        "label": "Payment including insurance",
+        "meaning": "Periodic loan installment plus the entered insurance charge per payment."
+      },
+      {
+        "label": "Net proceeds after fees",
+        "meaning": "Net initial cash in the model. Financed fees increase principal; upfront or deducted fees lower net initial cash on a common comparison basis."
+      },
+      {
+        "label": "Nominal APR including insurance",
+        "meaning": "Periodic cash-flow rate multiplied by payments per year. Not an automatically supplied lender quote or an effective annual yield."
+      }
+    ],
+    "compare": [
+      "Enter a consistent base amount, term, rate and repayment frequency.",
+      "Change the fee treatment while holding the offered base loan fixed.",
+      "Compare net initial cash, installments and total cost rather than payment alone."
+    ],
+    "checks": [
+      "Compounding and payment frequency are separate choices.",
+      "Loan Total payments and its table exclude separate insurance; include those charges when reconciling combined cash outflow.",
+      "No automatic SBA program rules, variable-rate resets, factor-rate pricing or approval calculation."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "budget": {
+    "answer": "Normalize income, spending, debt and savings allocations to a monthly equivalent, then check the unallocated balance after the entered flat-tax assumption.",
+    "results": [
+      {
+        "label": "Monthly take-home income",
+        "meaning": "All entered income normalized to monthly, less the single assumed tax percentage. This is not a payroll-tax computation."
+      },
+      {
+        "label": "Monthly spending and saving",
+        "meaning": "Monthly equivalents of all non-income categories, including the named saving allocations."
+      },
+      {
+        "label": "Monthly surplus / deficit",
+        "meaning": "Take-home income less spending and saving allocations. A positive result is still unallocated; a negative result is a shortfall."
+      }
+    ],
+    "compare": [
+      "Set the correct frequency for every income and outflow line.",
+      "Review the flat tax rate, especially if entries are already take-home amounts.",
+      "Change one spending or savings allocation and compare the resulting surplus."
+    ],
+    "checks": [
+      "Biweekly uses 26 occurrences per year and Weekly uses 52, divided by 12.",
+      "Saving is already included in the outflow total; do not deduct it again.",
+      "No automatic needs/wants classification, tax return or bank data connection."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "break-even": {
+    "answer": "Choose quantity, target profit or required price. Whole-unit quantity results round upward; price mode retains internal fractional-cent precision.",
+    "results": [
+      {
+        "label": "Break-even units (whole units)",
+        "meaning": "The smallest whole unit count covering fixed costs at the entered positive unit contribution."
+      },
+      {
+        "label": "Revenue at whole units",
+        "meaning": "Selling price multiplied by rounded-up units; it can differ from theoretical continuous break-even sales."
+      },
+      {
+        "label": "Contribution margin per unit",
+        "meaning": "Price minus variable unit cost, before covering fixed cost."
+      },
+      {
+        "label": "Required selling price",
+        "meaning": "In Price mode, variable unit cost plus fixed cost and target profit divided by entered volume."
+      }
+    ],
+    "compare": [
+      "Keep the product and fixed-cost period consistent.",
+      "Change price or unit variable cost separately when comparing quantity.",
+      "Compare theoretical and whole-unit quantities, or use Price mode for a specified volume."
+    ],
+    "checks": [
+      "Quantity modes require selling price above variable unit cost.",
+      "Single-product model: no weighted multi-product mix or variable capacity step costs.",
+      "Social Security, mortgage-point and advertising break-even are different models."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "roi": {
+    "answer": "Return on investment (ROI) is gain or loss divided by initial cost. Total ROI covers the entire holding period; annualized ROI is its compound yearly equivalent. Enter the full amount returned, including the principal recovered, rather than the gain alone. This calculator uses an initial commitment and a terminal returned value; dated intermediate cash flows need a different model.",
+    "results": [
+      {
+        "label": "Investment gain",
+        "meaning": "Terminal returned amount minus initial cost; returned amount means full terminal value, not gain alone."
+      },
+      {
+        "label": "Return on investment",
+        "meaning": "Total gain divided by cost, independent of holding length."
+      },
+      {
+        "label": "Annualized return",
+        "meaning": "Compound annual equivalent using entered years or actual elapsed days divided by 365 in Dates mode."
+      }
+    ],
+    "compare": [
+      "Define cost and returned amount consistently, including relevant charges once.",
+      "Compare total ROI with annualized return at the same duration.",
+      "Use Rental Property, Investment, or Dated Cash Flows when operating income or additional deposits have their own timing."
+    ],
+    "checks": [
+      "Cost must be positive and duration greater than zero. Negative returns are supported.",
+      "Dates mode uses actual days / 365; a leap-year interval can differ from one entered year.",
+      "No automatic taxes, advertising attribution, valuation or universal good-return threshold."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "investment": {
+    "answer": "Choose the missing variable, then compare ending balance, contributions and earnings on a consistent rate and timing basis.",
+    "results": [
+      {
+        "label": "Ending balance",
+        "meaning": "Projected nominal balance after contributions and the entered simplified tax assumption."
+      },
+      {
+        "label": "Total contributions",
+        "meaning": "Starting balance plus deposits; investment earnings are separate."
+      },
+      {
+        "label": "Return Rate",
+        "meaning": "In that solve mode, an implied nominal annual rate with the selected compounding. Not an available investment quote."
+      },
+      {
+        "label": "Invest Length",
+        "meaning": "First whole month reaching the goal, shown in years."
+      }
+    ],
+    "compare": [
+      "Hold the starting balance and horizon fixed when comparing deposit amounts.",
+      "Compare beginning and end timing separately from rates.",
+      "Review inflation-adjusted value separately from nominal balance."
+    ],
+    "checks": [
+      "Compounding frequency applies to a nominal annual rate.",
+      "Tax is a simplified rate on positive interest at year-end or the final partial year; no loss carryforward.",
+      "No actual market returns, account tax rules or withdrawal sequence simulation."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "irr": {
+    "answer": "Read each detected rate with the exact signed cash-flow times. Multiple roots are an ambiguity to inspect, not a choice of which return to advertise.",
+    "results": [
+      {
+        "label": "Annual IRR 1",
+        "meaning": "A detected effective annual rate that makes modeled NPV zero; the first root is not a preferred recommendation."
+      }
+    ],
+    "compare": [
+      "Keep zero periods so later flows do not move earlier.",
+      "Match timing and frequency before comparing with a spreadsheet.",
+      "Use Dated Cash Flows for actual calendar dates and MIRR for explicit reinvestment assumptions."
+    ],
+    "checks": [
+      "Enter initial investment as a positive amount; the tool converts it to an outflow.",
+      "Monthly flows still produce effective annual headline rates.",
+      "The bounded search does not guarantee every root; IRR is not a risk measure."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "annuity": {
+    "answer": "Separate the accumulation balance from the money contributed. A projected future balance is not a lifetime payout quote.",
+    "results": [
+      {
+        "label": "Annuity future value",
+        "meaning": "Starting principal and deposits grown at the entered constant effective annual return."
+      },
+      {
+        "label": "Total additions",
+        "meaning": "Monthly and annual additions after the initial principal."
+      },
+      {
+        "label": "Growth",
+        "meaning": "Future value minus all contributions, without contract fees or tax calculations."
+      }
+    ],
+    "compare": [
+      "Hold return and total contribution amounts fixed to compare timing.",
+      "Use Annuity Payout only after defining a balance to withdraw.",
+      "Compare a lower return assumption before interpreting a long horizon."
+    ],
+    "checks": [
+      "Annual return is effective; monthly growth uses its equivalent rate.",
+      "First-row addition includes the starting principal.",
+      "No insurance guarantees, riders, surrender charges or tax treatment are priced."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "annuity-payout": {
+    "answer": "Review how much is principal returned, how much is modeled earnings and when the last payout occurs. The payout frequency and final payment date matter when comparing scenarios.",
+    "results": [
+      {
+        "label": "Payment each period",
+        "meaning": "Fix Length’s regular payout for the selected frequency; a partial final period can produce a different last amount."
+      },
+      {
+        "label": "Payout duration in years",
+        "meaning": "Fix Payment’s actual final payment date, using whole payout dates."
+      },
+      {
+        "label": "Total investment earnings",
+        "meaning": "Total paid minus entered principal. It is distinct from a payout ratio."
+      }
+    ],
+    "compare": [
+      "Keep principal and effective annual return fixed when comparing payments.",
+      "Inspect the last schedule row for a capped final amount.",
+      "Compare frequency and horizon separately; this is not a life-contingent quote."
+    ],
+    "checks": [
+      "Payments occur at period end.",
+      "The annual return is converted to the equivalent monthly, quarterly or annual rate.",
+      "No insurance fees, tax or lifetime guarantee is supplied."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "pension": {
+    "answer": "Compare plan quotes on the same valuation date with a consistent discount rate, COLA and entered lifespan.",
+    "results": [
+      {
+        "label": "Present value of pension",
+        "meaning": "Discounted monthly benefit stream through the entered horizon, valued at retirement."
+      },
+      {
+        "label": "Pension value advantage",
+        "meaning": "Pension stream value minus entered lump sum; positive does not alone decide suitability."
+      },
+      {
+        "label": "Joint-survivor value advantage",
+        "meaning": "Joint and survivor stream value minus single-life stream value for deterministic entered lifespans."
+      },
+      {
+        "label": "Undiscounted break-even years",
+        "meaning": "Lump sum divided by initial annual pension; ignores COLA, investment returns and survival probabilities."
+      }
+    ],
+    "compare": [
+      "Obtain actual benefit and lump-sum quotes from the plan.",
+      "Vary lifespan and discount assumptions separately.",
+      "Review liquidity, tax and survivor needs outside the numerical comparison."
+    ],
+    "checks": [
+      "No salary/service-based pension entitlement calculation.",
+      "Benefits occur at monthly end; COLA uses annual anniversaries.",
+      "Work Longer excludes salary and additional contributions while working."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "social-security": {
+    "answer": "Match the dollar basis of benefit inputs before comparing claiming ages. The highest present value depends on the entered horizon and discount assumptions.",
+    "results": [
+      {
+        "label": "Highest present-value application age",
+        "meaning": "Best of nine whole ages 62–70 under Ideal mode’s assumptions, not household claiming advice."
+      },
+      {
+        "label": "Initial monthly benefit at selected age",
+        "meaning": "Modeled starting benefit before tax and deductions, including assumed waiting COLA in Ideal mode."
+      },
+      {
+        "label": "Second option advantage",
+        "meaning": "Compare mode’s second stream PV minus first, both valued at the earlier claim age."
+      }
+    ],
+    "compare": [
+      "Use SSA estimates and verify whether they include future inflation.",
+      "Use Ideal’s common age-62-dollar PIA or Compare’s nominal claim-date quotes consistently.",
+      "Vary lifespan and discount rate to understand the sensitivity."
+    ],
+    "checks": [
+      "COLA and discount are entered future assumptions, not known future rates.",
+      "No earnings-record PIA determination, withholding, benefit tax, Medicare or household survivor coordination.",
+      "Actual SSA date, rounding and credit posting rules can differ from the simplified monthly schedule."
+    ],
+    "checkedOn": "2026-10-28"
   }
 }

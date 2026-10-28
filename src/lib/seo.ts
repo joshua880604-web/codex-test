@@ -77,7 +77,7 @@ export const contentUpdatedOn: Record<string, string> = {
   "/methodology.html": "2026-10-25",
   "/compound-interest-calculator.html": "2026-10-25",
   "/average-return-calculator.html": "2026-10-25",
-  "/irr-calculator.html": "2026-10-25",
+  "/irr-calculator.html": "2026-10-28",
   "/401k-calculator.html": "2026-10-28",
   "/ira-calculator.html": "2026-10-25",
   "/roth-ira-calculator.html": "2026-10-28",
@@ -85,7 +85,7 @@ export const contentUpdatedOn: Record<string, string> = {
   "/tax-calculator.html": "2026-10-25",
   "/estate-tax-calculator.html": "2026-10-25",
   "/paycheck-calculator.html": "2026-10-28",
-  "/social-security-calculator.html": "2026-10-25",
+  "/social-security-calculator.html": "2026-10-28",
 };
 export function sitemapEntries(config: SiteConfig = siteConfig()) {
   if (!config.origin || !config.indexable) return [];

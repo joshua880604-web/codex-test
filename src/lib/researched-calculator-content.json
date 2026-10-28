@@ -4025,5 +4025,3922 @@
         "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-qualify-for-an-advertised-0-auto-financing-en-781/"
       }
     ]
+  },
+  "rental-property": {
+    "updatedOn": "2026-10-28",
+    "summary": "Rental property returns depend on both yearly operations and the eventual sale. This projection separates effective rent and other income, operating costs, mortgage payments, annual equity cash flow and net exit proceeds. Read first-year cap rate, cash-on-cash return and annual project IRR as different measurements; a positive first-year rental cash flow can coexist with an overall investment loss.",
+    "scope": "Single-property, whole-year holding projection in nominal USD. Monthly rent and other income are annualized; vacancy applies to rent only and management is a percentage of effective rent plus other income. Individual expense and income growth assumptions are annual. Financing is a fixed-rate monthly amortizing loan, or select no financing. Initial cash includes down payment or cash price plus purchase closing costs and initial repairs. Cap rate uses the entered after-repair value, or purchase price when that field is zero. Sale occurs at the holding year-end, with selling costs and remaining debt deducted; that year’s operating cash flow is included too. No rental income tax, tax depreciation, capital-gains tax, market appraisal or guaranteed return is calculated.",
+    "sources": [
+      {
+        "title": "Nareit: property operating income and excluded financing costs",
+        "url": "https://www.reit.com/glossary/net-operating-income"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Separate cash purchase operating income from total return",
+        "mode": "projection",
+        "values": {
+          "price": "100000",
+          "financed": "No",
+          "down": "20",
+          "rate": "0",
+          "years": "10",
+          "closing": "2000",
+          "repairs": "3000",
+          "repaired_value": "0",
+          "rent": "1200",
+          "other_income": "50",
+          "vacancy": "5",
+          "management": "10",
+          "tax": "1200",
+          "insurance": "600",
+          "hoa": "0",
+          "maintenance": "1200",
+          "other": "0",
+          "rent_growth": "0",
+          "other_income_growth": "0",
+          "tax_growth": "0",
+          "insurance_growth": "0",
+          "hoa_growth": "0",
+          "maintenance_growth": "0",
+          "other_growth": "0",
+          "appreciation": "0",
+          "hold": "1",
+          "sale_known": "Yes",
+          "sale_price": "100000",
+          "selling": "0"
+        },
+        "inputs": "Purchase price: $100,000; Use financing?: No; Down payment: 20 %; Interest rate: 0 %; Loan term: 10 years; Purchase closing costs: $2,000; Initial repairs: $3,000; Property value after repairs (0 = purchase price): $0; Monthly rent: $1,200; Other monthly income: $50; Vacancy rate: 5 %; Management fee: 10 % of income; Annual property tax: $1,200; Annual insurance: $600; Annual HOA: $0; Annual maintenance: $1,200; Other annual expenses: $0; Annual rent increase: 0 %; Annual other-income increase: 0 %; Annual property tax increase: 0 %; Annual insurance increase: 0 %; Annual HOA increase: 0 %; Annual maintenance increase: 0 %; Annual other-expense increase: 0 %; Annual appreciation: 0 %; Holding period: 1 years; Use known sale price?: Yes; Known sale price: $100,000; Selling cost: 0 %. Amounts in USD.",
+        "steps": [
+          "Initial cash = $100,000 price + $2,000 closing costs + $3,000 initial repairs = $105,000.",
+          "Effective first-year income = $1,200 × 12 × 95% + $50 × 12 = $14,280. Operating costs = $3,000 + 10% × $14,280 = $4,428.",
+          "NOI and cash flow without debt are $9,852. At the known $100,000 year-end sale with zero selling costs, total profit is $9,852 + $100,000 − $105,000."
+        ],
+        "answer": "First-year cap rate is 9.852%; cash-on-cash is about 9.38286%. Total one-year profit is $4,852, which is not the same as NOI.",
+        "expected": {
+          "label": "Total investment profit",
+          "value": 4852.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Isolate how leverage changes invested cash and cash-on-cash",
+        "mode": "projection",
+        "values": {
+          "price": "100000",
+          "financed": "Yes",
+          "down": "20",
+          "rate": "0",
+          "years": "10",
+          "closing": "2000",
+          "repairs": "3000",
+          "repaired_value": "0",
+          "rent": "1200",
+          "other_income": "50",
+          "vacancy": "5",
+          "management": "10",
+          "tax": "1200",
+          "insurance": "600",
+          "hoa": "0",
+          "maintenance": "1200",
+          "other": "0",
+          "rent_growth": "0",
+          "other_income_growth": "0",
+          "tax_growth": "0",
+          "insurance_growth": "0",
+          "hoa_growth": "0",
+          "maintenance_growth": "0",
+          "other_growth": "0",
+          "appreciation": "0",
+          "hold": "1",
+          "sale_known": "Yes",
+          "sale_price": "100000",
+          "selling": "0"
+        },
+        "inputs": "Purchase price: $100,000; Use financing?: Yes; Down payment: 20 %; Interest rate: 0 %; Loan term: 10 years; Purchase closing costs: $2,000; Initial repairs: $3,000; Property value after repairs (0 = purchase price): $0; Monthly rent: $1,200; Other monthly income: $50; Vacancy rate: 5 %; Management fee: 10 % of income; Annual property tax: $1,200; Annual insurance: $600; Annual HOA: $0; Annual maintenance: $1,200; Other annual expenses: $0; Annual rent increase: 0 %; Annual other-income increase: 0 %; Annual property tax increase: 0 %; Annual insurance increase: 0 %; Annual HOA increase: 0 %; Annual maintenance increase: 0 %; Annual other-expense increase: 0 %; Annual appreciation: 0 %; Holding period: 1 years; Use known sale price?: Yes; Known sale price: $100,000; Selling cost: 0 %. Amounts in USD.",
+        "steps": [
+          "A hypothetical 0% $80,000 mortgage over 10 years has $8,000 first-year principal payments; zero interest is an arithmetic control, not an available offer.",
+          "Initial cash falls to $25,000; the same $9,852 NOI less $8,000 debt service leaves $1,852 first-year cash flow.",
+          "Loan balance is $72,000 at sale, so a $100,000 sale yields $28,000 before the zero entered selling costs."
+        ],
+        "answer": "Cash-on-cash is 7.408%; one-year profit remains $4,852 in this zero-interest comparison. Financing does not itself raise NOI.",
+        "expected": {
+          "label": "First-year cash-on-cash",
+          "value": 7.408,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Keep positive rental cash flow separate from an exit loss",
+        "mode": "projection",
+        "values": {
+          "price": "100000",
+          "financed": "No",
+          "down": "20",
+          "rate": "0",
+          "years": "10",
+          "closing": "2000",
+          "repairs": "3000",
+          "repaired_value": "0",
+          "rent": "1200",
+          "other_income": "50",
+          "vacancy": "5",
+          "management": "10",
+          "tax": "1200",
+          "insurance": "600",
+          "hoa": "0",
+          "maintenance": "1200",
+          "other": "0",
+          "rent_growth": "0",
+          "other_income_growth": "0",
+          "tax_growth": "0",
+          "insurance_growth": "0",
+          "hoa_growth": "0",
+          "maintenance_growth": "0",
+          "other_growth": "0",
+          "appreciation": "0",
+          "hold": "1",
+          "sale_known": "Yes",
+          "sale_price": "80000",
+          "selling": "0"
+        },
+        "inputs": "Purchase price: $100,000; Use financing?: No; Down payment: 20 %; Interest rate: 0 %; Loan term: 10 years; Purchase closing costs: $2,000; Initial repairs: $3,000; Property value after repairs (0 = purchase price): $0; Monthly rent: $1,200; Other monthly income: $50; Vacancy rate: 5 %; Management fee: 10 % of income; Annual property tax: $1,200; Annual insurance: $600; Annual HOA: $0; Annual maintenance: $1,200; Other annual expenses: $0; Annual rent increase: 0 %; Annual other-income increase: 0 %; Annual property tax increase: 0 %; Annual insurance increase: 0 %; Annual HOA increase: 0 %; Annual maintenance increase: 0 %; Annual other-expense increase: 0 %; Annual appreciation: 0 %; Holding period: 1 years; Use known sale price?: Yes; Known sale price: $80,000; Selling cost: 0 %. Amounts in USD.",
+        "steps": [
+          "Keep the unfinanced $105,000 initial cash and $9,852 first-year operating cash flow.",
+          "Change only the known year-end sale price from $100,000 to $80,000, with zero selling costs.",
+          "Total profit = $9,852 + $80,000 − $105,000."
+        ],
+        "answer": "The project loses $15,148 overall despite positive $9,852 operating cash flow.",
+        "expected": {
+          "label": "Total investment profit",
+          "value": -15148.0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-rental-return-measures",
+        "queries": [
+          "how to calculate rental property roi",
+          "rental property roi calculator"
+        ],
+        "question": "How do NOI, cash flow, cap rate and cash-on-cash differ?",
+        "answer": "NOI deducts operating costs before financing. Cash flow then deducts modeled debt service. First-year cap rate divides NOI by the entered after-repair value, or purchase price when that value is zero; cash-on-cash divides first-year cash flow by initial cash invested. The annual IRR uses the full sequence including purchase cash, yearly cash flows and net sale proceeds. They are not interchangeable percentages.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Compare the return measures",
+            "values": {
+              "price": "100000",
+              "financed": "No",
+              "down": "20",
+              "rate": "0",
+              "years": "10",
+              "closing": "2000",
+              "repairs": "3000",
+              "repaired_value": "0",
+              "rent": "1200",
+              "other_income": "50",
+              "vacancy": "5",
+              "management": "10",
+              "tax": "1200",
+              "insurance": "600",
+              "hoa": "0",
+              "maintenance": "1200",
+              "other": "0",
+              "rent_growth": "0",
+              "other_income_growth": "0",
+              "tax_growth": "0",
+              "insurance_growth": "0",
+              "hoa_growth": "0",
+              "maintenance_growth": "0",
+              "other_growth": "0",
+              "appreciation": "0",
+              "hold": "1",
+              "sale_known": "Yes",
+              "sale_price": "100000",
+              "selling": "0"
+            }
+          },
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Reconcile NOI separately"
+          }
+        ],
+        "replacesQuestion": "What is the difference between NOI and rental cash flow?"
+      },
+      {
+        "anchor": "use-rental-exit-loss",
+        "queries": [
+          "how to calculate if a rental property is profitable",
+          "return on rental property calculator"
+        ],
+        "question": "Can positive rental cash flow still produce an investment loss?",
+        "answer": "Yes. Annual cash flow omits the initial cash commitment and sale result. In the one-year example, $9,852 operating cash flow and an $80,000 sale still produce a $15,148 loss against $105,000 initial cash. A sale after a different holding period, different selling costs or a mortgage payoff changes the result; no universal good-return threshold is assumed.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Try a positive-cash-flow exit loss",
+            "values": {
+              "price": "100000",
+              "financed": "No",
+              "down": "20",
+              "rate": "0",
+              "years": "10",
+              "closing": "2000",
+              "repairs": "3000",
+              "repaired_value": "0",
+              "rent": "1200",
+              "other_income": "50",
+              "vacancy": "5",
+              "management": "10",
+              "tax": "1200",
+              "insurance": "600",
+              "hoa": "0",
+              "maintenance": "1200",
+              "other": "0",
+              "rent_growth": "0",
+              "other_income_growth": "0",
+              "tax_growth": "0",
+              "insurance_growth": "0",
+              "hoa_growth": "0",
+              "maintenance_growth": "0",
+              "other_growth": "0",
+              "appreciation": "0",
+              "hold": "1",
+              "sale_known": "Yes",
+              "sale_price": "80000",
+              "selling": "0"
+            }
+          }
+        ],
+        "replacesQuestion": "Does a positive rental cash flow guarantee a good return?"
+      },
+      {
+        "anchor": "use-rental-mortgage",
+        "queries": [
+          "how to calculate roi on rental property with a mortgage"
+        ],
+        "question": "How does a mortgage change rental property ROI?",
+        "answer": "Financing reduces the cash purchase contribution but adds debt service and a remaining balance to repay at sale. It can change cash-on-cash and equity IRR without changing the same property’s NOI. Set down payment, rate and term from a consistent offer, or choose no financing for a cash purchase. The zero-interest example isolates the arithmetic; actual loan interest can materially change the comparison.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Inspect an isolated financing example",
+            "values": {
+              "price": "100000",
+              "financed": "Yes",
+              "down": "20",
+              "rate": "0",
+              "years": "10",
+              "closing": "2000",
+              "repairs": "3000",
+              "repaired_value": "0",
+              "rent": "1200",
+              "other_income": "50",
+              "vacancy": "5",
+              "management": "10",
+              "tax": "1200",
+              "insurance": "600",
+              "hoa": "0",
+              "maintenance": "1200",
+              "other": "0",
+              "rent_growth": "0",
+              "other_income_growth": "0",
+              "tax_growth": "0",
+              "insurance_growth": "0",
+              "hoa_growth": "0",
+              "maintenance_growth": "0",
+              "other_growth": "0",
+              "appreciation": "0",
+              "hold": "1",
+              "sale_known": "Yes",
+              "sale_price": "100000",
+              "selling": "0"
+            }
+          },
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Compare the cash purchase",
+            "values": {
+              "price": "100000",
+              "financed": "No",
+              "down": "20",
+              "rate": "0",
+              "years": "10",
+              "closing": "2000",
+              "repairs": "3000",
+              "repaired_value": "0",
+              "rent": "1200",
+              "other_income": "50",
+              "vacancy": "5",
+              "management": "10",
+              "tax": "1200",
+              "insurance": "600",
+              "hoa": "0",
+              "maintenance": "1200",
+              "other": "0",
+              "rent_growth": "0",
+              "other_income_growth": "0",
+              "tax_growth": "0",
+              "insurance_growth": "0",
+              "hoa_growth": "0",
+              "maintenance_growth": "0",
+              "other_growth": "0",
+              "appreciation": "0",
+              "hold": "1",
+              "sale_known": "Yes",
+              "sale_price": "100000",
+              "selling": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-rental-vacancy-costs",
+        "queries": [
+          "rental property cash flow calculator",
+          "rental property expenses calculator"
+        ],
+        "question": "How are vacancy, management and repairs treated?",
+        "answer": "Vacancy reduces scheduled rent only. Other income is entered separately and should reflect its own collection assumptions. Management is applied to effective rent plus other income. Initial repairs belong in initial cash; recurring annual maintenance is an operating expense. Keep these distinct and avoid putting the same expense in more than one field.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Review income and expense inputs",
+            "values": {
+              "price": "100000",
+              "financed": "No",
+              "down": "20",
+              "rate": "0",
+              "years": "10",
+              "closing": "2000",
+              "repairs": "3000",
+              "repaired_value": "0",
+              "rent": "1200",
+              "other_income": "50",
+              "vacancy": "5",
+              "management": "10",
+              "tax": "1200",
+              "insurance": "600",
+              "hoa": "0",
+              "maintenance": "1200",
+              "other": "0",
+              "rent_growth": "0",
+              "other_income_growth": "0",
+              "tax_growth": "0",
+              "insurance_growth": "0",
+              "hoa_growth": "0",
+              "maintenance_growth": "0",
+              "other_growth": "0",
+              "appreciation": "0",
+              "hold": "1",
+              "sale_known": "Yes",
+              "sale_price": "100000",
+              "selling": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-rental-depreciation-scope",
+        "queries": [
+          "how to calculate depreciation on rental property",
+          "rental property depreciation calculator"
+        ],
+        "question": "Does this calculate rental depreciation or after-tax returns?",
+        "answer": "No. The projection is before income tax, tax depreciation deductions and capital-gains tax. It does not classify building versus land, choose an IRS depreciation method or determine deductible expenses. A general mathematical Depreciation Calculator is not a rental-property tax return. Use the property results as a before-tax scenario and verify the applicable tax treatment separately.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Review the before-tax property model"
+          }
+        ]
+      },
+      {
+        "anchor": "use-rental-value-scope",
+        "queries": [
+          "how to value rental property calculator",
+          "how much is my rental property worth calculator"
+        ],
+        "question": "Does a projected sale price establish the property’s market value?",
+        "answer": "No. Choose a known sale price for a specified scenario or apply your entered annual appreciation to the after-repair value, falling back to purchase price when it is zero. The tool subtracts entered selling costs and outstanding loan balance at the holding year-end. It does not obtain comparable sales, an appraisal or current market forecasts.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Test a known exit price",
+            "values": {
+              "price": "100000",
+              "financed": "No",
+              "down": "20",
+              "rate": "0",
+              "years": "10",
+              "closing": "2000",
+              "repairs": "3000",
+              "repaired_value": "0",
+              "rent": "1200",
+              "other_income": "50",
+              "vacancy": "5",
+              "management": "10",
+              "tax": "1200",
+              "insurance": "600",
+              "hoa": "0",
+              "maintenance": "1200",
+              "other": "0",
+              "rent_growth": "0",
+              "other_income_growth": "0",
+              "tax_growth": "0",
+              "insurance_growth": "0",
+              "hoa_growth": "0",
+              "maintenance_growth": "0",
+              "other_growth": "0",
+              "appreciation": "0",
+              "hold": "1",
+              "sale_known": "Yes",
+              "sale_price": "100000",
+              "selling": "0"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "debt-consolidation": {
+    "updatedOn": "2026-10-28",
+    "summary": "Compare the future interest of the listed debts with a new fixed-rate consolidation loan after including an entered origination fee. The current-debt benchmark maintains the combined listed minimum-payment budget and rolls freed money to remaining balances by highest interest first. Compare modeled financing cost as well as the new payment: a lower installment can come from a longer and more expensive term.",
+    "scope": "Each debt line is name, current balance, fixed monthly minimum payment, annual APR. Current repayment uses monthly interest and a fixed combined budget equal to the sum of those entered payments, with avalanche rollover and no new charges. It does not reproduce a lender’s declining minimum formula or changing rates. The new loan uses fixed monthly amortization, the entered term and a fee percentage of total old balance. Financed fees increase principal; upfront fees still count in the interest-and-fee comparison. No approval, credit-score change, debt forgiveness, balance-transfer promotion or federal student-loan consolidation rules are inferred.",
+    "sources": [
+      {
+        "title": "CFPB: consolidation payments, loan costs and term-extension risks",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-do-i-need-to-know-if-im-thinking-about-consolidating-my-credit-card-debt-en-1861/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Compare interest plus fees rather than the rate alone",
+        "mode": "comparison",
+        "values": {
+          "debts": "Loan A, 12000, 300, 12",
+          "new_rate": "8",
+          "years": "4",
+          "fees": "3",
+          "finance": "Yes"
+        },
+        "inputs": "Debts: Loan A, 12000, 300, 12; New loan rate: 8 %; New loan term: 4 years; Origination fees: 3 %; Finance fees?: Yes. Amounts in USD.",
+        "steps": [
+          "A single $12,000 debt at 12% APR is repaid with a fixed $300 monthly budget; independent remaining interest is $3,401.60.",
+          "At 8% for 48 months, a 3% $360 financed fee increases new principal to $12,360. The new payment is $301.74.",
+          "Cost saving = old future interest − new future interest − origination fee."
+        ],
+        "answer": "Modeled interest-and-fee savings are $917.90. The new payment is slightly higher than $300, so this is a cost comparison, not equal monthly spending.",
+        "expected": {
+          "label": "Interest and fee savings",
+          "value": 917.9008469004176,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "A lower payment can cost more over a longer term",
+        "mode": "comparison",
+        "values": {
+          "debts": "Loan A, 12000, 300, 12",
+          "new_rate": "8",
+          "years": "8",
+          "fees": "3",
+          "finance": "Yes"
+        },
+        "inputs": "Debts: Loan A, 12000, 300, 12; New loan rate: 8 %; New loan term: 8 years; Origination fees: 3 %; Finance fees?: Yes. Amounts in USD.",
+        "steps": [
+          "Keep the same old debt, rate and fee, but extend the new 8% loan from four to eight years.",
+          "The monthly payment falls to $174.73, while new interest rises to $4,414.02.",
+          "$3,401.60 old interest − $4,414.02 new interest − $360 fee is negative."
+        ],
+        "answer": "The result is −$1,372.42 savings: modeled borrowing costs are higher despite the lower payment.",
+        "expected": {
+          "label": "Interest and fee savings",
+          "value": -1372.4187226056742,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Pay the consolidation fee upfront instead of financing it",
+        "mode": "comparison",
+        "values": {
+          "debts": "Loan A, 12000, 300, 12",
+          "new_rate": "8",
+          "years": "4",
+          "fees": "3",
+          "finance": "No"
+        },
+        "inputs": "Debts: Loan A, 12000, 300, 12; New loan rate: 8 %; New loan term: 4 years; Origination fees: 3 %; Finance fees?: No. Amounts in USD.",
+        "steps": [
+          "Keep the four-year 8% offer and $360 origination fee.",
+          "With Finance fees set to No, new principal stays $12,000; payment is $292.96, and the $360 fee is separate upfront cash.",
+          "Include the upfront fee once in the cost comparison."
+        ],
+        "answer": "Modeled savings are $979.76; the upfront fee still needs funding.",
+        "expected": {
+          "label": "Interest and fee savings",
+          "value": 979.7561449615805,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-consolidation-savings",
+        "queries": [
+          "how to calculate savings from debt consolidation",
+          "debt consolidation payment calculator"
+        ],
+        "question": "How do I calculate savings from debt consolidation?",
+        "answer": "Compare future interest on the current-debt benchmark with interest on the new loan plus its origination fee. Positive Interest and fee savings favors the new loan on this modeled cost basis; negative means it costs more. The calculation excludes past interest and does not judge whether the new monthly payment or upfront cash is affordable.",
+        "links": [
+          {
+            "id": "debt-consolidation",
+            "mode": "comparison",
+            "label": "Compare a four-year consolidation offer",
+            "values": {
+              "debts": "Loan A, 12000, 300, 12",
+              "new_rate": "8",
+              "years": "4",
+              "fees": "3",
+              "finance": "Yes"
+            }
+          }
+        ],
+        "replacesQuestion": "Does a lower consolidation rate always save money?"
+      },
+      {
+        "anchor": "use-consolidation-fees",
+        "queries": [
+          "how to calculate debt consolidation loan savings"
+        ],
+        "question": "How are consolidation origination fees counted?",
+        "answer": "The fee is the entered percentage of total existing balance. Financing it adds that amount to the new principal, so it can also generate interest. Paying it upfront leaves the new principal lower but still requires cash and still reduces reported savings. The tool subtracts the fee once when comparing future interest and fees.",
+        "links": [
+          {
+            "id": "debt-consolidation",
+            "mode": "comparison",
+            "label": "Finance the $360 fee",
+            "values": {
+              "debts": "Loan A, 12000, 300, 12",
+              "new_rate": "8",
+              "years": "4",
+              "fees": "3",
+              "finance": "Yes"
+            }
+          },
+          {
+            "id": "debt-consolidation",
+            "mode": "comparison",
+            "label": "Pay the $360 fee upfront",
+            "values": {
+              "debts": "Loan A, 12000, 300, 12",
+              "new_rate": "8",
+              "years": "4",
+              "fees": "3",
+              "finance": "No"
+            }
+          }
+        ],
+        "replacesQuestion": "Are financed consolidation fees free?"
+      },
+      {
+        "anchor": "use-consolidation-term",
+        "queries": [
+          "how to calculate monthly savings on debt consolidation",
+          "should i consolidate my debt calculator"
+        ],
+        "question": "Does a lower consolidation payment mean I save money?",
+        "answer": "No. The same $12,000 debt can have a $174.73 payment over an eight-year 8% consolidation loan but cost $1,372.42 more in modeled interest and fees than the fixed-$300 current plan. Compare the term, payment, upfront cash and total future cost together. A longer term can trade near-term relief for greater cost.",
+        "links": [
+          {
+            "id": "debt-consolidation",
+            "mode": "comparison",
+            "label": "Inspect a lower-payment, higher-cost example",
+            "values": {
+              "debts": "Loan A, 12000, 300, 12",
+              "new_rate": "8",
+              "years": "8",
+              "fees": "3",
+              "finance": "Yes"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-consolidation-current-plan",
+        "queries": [
+          "how do debt consolidation calculators estimate interest savings",
+          "how to check accuracy of debt consolidation calculator"
+        ],
+        "question": "What repayment plan is used for the existing debts?",
+        "answer": "Enter one line per debt: name, balance, monthly payment and annual APR, without thousands separators. The benchmark uses the sum of entered monthly payments as a fixed budget, pays the listed minimum amounts and rolls remaining money toward the highest-rate debt. Actual issuer minimums can decline and rates can change; this comparison does not reproduce those rules.",
+        "links": [
+          {
+            "id": "debt-consolidation",
+            "mode": "comparison",
+            "label": "Review debt-entry assumptions"
+          },
+          {
+            "id": "debt-payoff",
+            "mode": "avalanche",
+            "label": "Explore a separate payoff strategy"
+          }
+        ]
+      },
+      {
+        "anchor": "use-consolidation-eligibility",
+        "queries": [
+          "should i consolidate my credit card debt calculator"
+        ],
+        "question": "Does the result tell me whether I qualify or should consolidate?",
+        "answer": "No. The rate, term and fee are inputs, not a quote or approval. The tool does not estimate your credit-score response, eligibility or whether consolidation solves a spending shortfall. Review the actual written offer and your budget; the modeled cost comparison is only one part of the decision.",
+        "links": [
+          {
+            "id": "budget",
+            "mode": "budget",
+            "label": "Check a separate household budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-consolidation-other-products",
+        "queries": [
+          "student loan debt consolidation calculator"
+        ],
+        "question": "Can this model balance transfers, debt settlement or federal student-loan consolidation?",
+        "answer": "It models a new fixed-rate installment loan paying off listed balances. It does not calculate changing promotional card rates, settlement or forgiveness, government repayment benefits or collateral consequences. Using those labels would not make the ordinary loan model equivalent to those products.",
+        "links": [
+          {
+            "id": "debt-consolidation",
+            "mode": "comparison",
+            "label": "Use the fixed-rate loan comparison"
+          }
+        ]
+      }
+    ]
+  },
+  "business-loan": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate fixed-rate business loan repayments and distinguish the stated rate from a fee-adjusted cash-flow APR. Compounding and payment frequency are independent choices. Review loan fees, net proceeds and payments including entered insurance, rather than comparing installments alone. The tool is an entered-offer model, not a lender, SBA eligibility engine or current-rate service.",
+    "scope": "Fixed-rate amortizing business term loan in USD using the chosen compounding and repayment frequencies. Origination fee is a percentage of the entered base amount; documentation and other fees are fixed amounts. Financed fees increase the repayment balance; deducted or upfront fees reduce net initial cash on the common cash-flow comparison basis. Modeled nominal APR equates net proceeds to periodic payments including entered insurance, then multiplies by payment frequency; it is not a guaranteed lender disclosure or offer. Total payments and the amortization table cover loan principal and interest, excluding separate insurance. No variable-rate resets, daily-revenue advance, factor-rate pricing, approval amount or automatic SBA terms are inferred.",
+    "sources": [
+      {
+        "title": "SBA: fixed versus variable repayment and lender-specific 7(a) terms",
+        "url": "https://www.sba.gov/loans/7a-loans/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "See how deducted fees reduce proceeds and raise modeled APR",
+        "mode": "repayment",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "12",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "origination": "3",
+          "documentation": "120",
+          "other_fee": "20",
+          "treatment": "Deducted from proceeds",
+          "insurance": "0"
+        },
+        "inputs": "Loan amount: $12,000; Loan term: 1 years; Additional months: 0 months; Interest rate: 12 %; Compounding: Monthly; Payment frequency: Monthly; Origination fee: 3 %; Documentation fee: $120; Other fees: $20; Fee treatment: Deducted from proceeds; Insurance per payment: $0. Amounts in USD.",
+        "steps": [
+          "Loan amount $12,000; nominal 12% with monthly compounding and 12 monthly payments.",
+          "Fees = $360 origination + $120 documentation + $20 other = $500, deducted from proceeds. Net initial cash = $11,500.",
+          "The $12,000 repayment balance produces $1,066.19 monthly principal and interest."
+        ],
+        "answer": "Modeled nominal cash-flow APR is about 20.16142%, reflecting less initial cash; it is not an available lender rate.",
+        "expected": {
+          "label": "Net proceeds after fees",
+          "value": 11500.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Finance the same $500 fees instead",
+        "mode": "repayment",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "12",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "origination": "3",
+          "documentation": "120",
+          "other_fee": "20",
+          "treatment": "Financed",
+          "insurance": "0"
+        },
+        "inputs": "Loan amount: $12,000; Loan term: 1 years; Additional months: 0 months; Interest rate: 12 %; Compounding: Monthly; Payment frequency: Monthly; Origination fee: 3 %; Documentation fee: $120; Other fees: $20; Fee treatment: Financed; Insurance per payment: $0. Amounts in USD.",
+        "steps": [
+          "Finance the $500 fee on the same $12,000 base amount.",
+          "Repayment balance becomes $12,500; net initial cash is $12,000.",
+          "Monthly principal and interest rises to $1,110.61."
+        ],
+        "answer": "The financed-fee example has $12,000 net proceeds and $1,110.61 monthly loan payment; compare both cash and repayment cost.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 1110.6098584792715,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Keep insurance separate from interest totals",
+        "mode": "repayment",
+        "values": {
+          "principal": "12000",
+          "years": "1",
+          "months": "0",
+          "rate": "0",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "origination": "0",
+          "documentation": "0",
+          "other_fee": "0",
+          "treatment": "Paid upfront",
+          "insurance": "10"
+        },
+        "inputs": "Loan amount: $12,000; Loan term: 1 years; Additional months: 0 months; Interest rate: 0 %; Compounding: Monthly; Payment frequency: Monthly; Origination fee: 0 %; Documentation fee: $0; Other fees: $0; Fee treatment: Paid upfront; Insurance per payment: $10. Amounts in USD.",
+        "steps": [
+          "A hypothetical $12,000, one-year 0% loan with no fees has $1,000 monthly principal payments.",
+          "Add $10 insurance per payment: the combined periodic payment becomes $1,010.",
+          "Loan Total payments remains $12,000; adding 12 insurance charges gives $12,120 of combined outflow."
+        ],
+        "answer": "Interest is zero, but modeled nominal APR including insurance is about 1.84098%. This is an arithmetic illustration, not a 0% offer.",
+        "expected": {
+          "label": "Payment including insurance",
+          "value": 1010.0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-business-payment",
+        "queries": [
+          "how to calculate business loan repayments",
+          "how is interest calculated on a business loan"
+        ],
+        "question": "How are business loan payments and interest calculated?",
+        "answer": "The payment amortizes the modeled repayment balance over the selected number of installments. With monthly compounding and monthly payments, the periodic rate is the annual nominal rate divided by 12. Other frequency choices use an equivalent periodic rate. Each schedule row applies interest to the outstanding balance and then reduces principal; the stated interest rate is not the fee-adjusted APR.",
+        "links": [
+          {
+            "id": "business-loan",
+            "mode": "repayment",
+            "label": "Inspect a monthly repayment example",
+            "values": {
+              "principal": "12000",
+              "years": "1",
+              "months": "0",
+              "rate": "12",
+              "compound": "Monthly",
+              "pay": "Monthly",
+              "origination": "3",
+              "documentation": "120",
+              "other_fee": "20",
+              "treatment": "Deducted from proceeds",
+              "insurance": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-business-fee-treatment",
+        "queries": [
+          "business loan apr calculator"
+        ],
+        "question": "How do financed fees change payment and net proceeds?",
+        "answer": "Financed fees are added to the repayment balance. Fees deducted from proceeds or paid upfront are represented as lower net initial cash when comparing all cash flows. With a $12,000 base amount and $500 fees, financing uses a $12,500 repayment balance and $12,000 net proceeds; deducting fees uses a $12,000 balance and $11,500 net proceeds.",
+        "links": [
+          {
+            "id": "business-loan",
+            "mode": "repayment",
+            "label": "Deduct the $500 fee",
+            "values": {
+              "principal": "12000",
+              "years": "1",
+              "months": "0",
+              "rate": "12",
+              "compound": "Monthly",
+              "pay": "Monthly",
+              "origination": "3",
+              "documentation": "120",
+              "other_fee": "20",
+              "treatment": "Deducted from proceeds",
+              "insurance": "0"
+            }
+          },
+          {
+            "id": "business-loan",
+            "mode": "repayment",
+            "label": "Finance the $500 fee",
+            "values": {
+              "principal": "12000",
+              "years": "1",
+              "months": "0",
+              "rate": "12",
+              "compound": "Monthly",
+              "pay": "Monthly",
+              "origination": "3",
+              "documentation": "120",
+              "other_fee": "20",
+              "treatment": "Financed",
+              "insurance": "0"
+            }
+          }
+        ],
+        "replacesQuestion": "Why can business loan proceeds be lower than principal?"
+      },
+      {
+        "anchor": "use-business-cost-comparison",
+        "queries": [
+          "business loan payment calculator",
+          "small business loan payment calculator"
+        ],
+        "question": "Does a lower business loan payment mean lower total cost?",
+        "answer": "Not necessarily. A longer term may reduce installments while adding interest, and deducted fees can reduce cash received. Compare the amount advanced, net proceeds, repayment frequency, fees and full schedule. Keep the purpose and cash needed consistent; identical base amounts do not guarantee identical cash available after fees.",
+        "links": [
+          {
+            "id": "business-loan",
+            "mode": "repayment",
+            "label": "Compare an actual entered loan offer"
+          }
+        ],
+        "replacesQuestion": "Should I compare business loans by payment alone?"
+      },
+      {
+        "anchor": "use-business-insurance-frequency",
+        "queries": [
+          "business loan calculator monthly payment",
+          "business loan interest calculator"
+        ],
+        "question": "Does Total payments include insurance, and can I change payment frequency?",
+        "answer": "Payment including insurance includes the entered charge per installment. Total payments and the amortization table report principal and loan interest; insurance is separate. For $10 each over 12 payments, add $120 when reconciling combined cash outflow. Choose compounding and payment frequency independently from the supported options; frequency alone does not make this a revenue-based advance model.",
+        "links": [
+          {
+            "id": "business-loan",
+            "mode": "repayment",
+            "label": "Reconcile a separate insurance charge",
+            "values": {
+              "principal": "12000",
+              "years": "1",
+              "months": "0",
+              "rate": "0",
+              "compound": "Monthly",
+              "pay": "Monthly",
+              "origination": "0",
+              "documentation": "0",
+              "other_fee": "0",
+              "treatment": "Paid upfront",
+              "insurance": "10"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-business-approval",
+        "queries": [
+          "how much can i borrow business loan calculator",
+          "how to calculate business loan eligibility"
+        ],
+        "question": "Does this tell me how much business financing I qualify for?",
+        "answer": "No. Loan amount, rate and term are entered assumptions. The tool does not assess business revenue, credit, collateral, debt-service coverage or a lender’s underwriting. It calculates repayment for a supplied scenario rather than an approval amount.",
+        "links": [
+          {
+            "id": "business-loan",
+            "mode": "repayment",
+            "label": "Model an entered principal and rate"
+          }
+        ]
+      },
+      {
+        "anchor": "use-business-sba-factor",
+        "queries": [
+          "sba business loan calculator"
+        ],
+        "question": "Does this apply SBA rules, variable rates or merchant cash-advance factor rates?",
+        "answer": "No automatic SBA guarantee fee, eligibility rule or rate cap is selected. An applicable fixed-rate term-loan quote can be entered, but variable-rate resets need separate scenarios. A factor rate or percentage-of-sales repayment is a different pricing model; do not type a factor multiple into the annual interest field.",
+        "links": [
+          {
+            "id": "business-loan",
+            "mode": "repayment",
+            "label": "Use the fixed-rate amortizing model"
+          }
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "updatedOn": "2026-10-28",
+    "summary": "Build a monthly household budget by converting each income and allocation to a common period. The model applies your single entered tax percentage to all gross income, then subtracts spending, debt payments and savings allocations. A positive balance is unallocated money, not automatically additional savings; a negative balance is a modeled shortfall.",
+    "scope": "Personal or household USD budget, not business-accounting, loan eligibility or a tax return. Every line has its own Monthly, Annually, Biweekly or Weekly frequency. Annual factors are 12, 1, 26 and 52 respectively, then divided by 12 for monthly equivalents. The tax assumption is one flat rate on all entered gross income; it does not calculate actual payroll or income-tax rules. If all income entered is already take-home pay, set this extra tax rate to zero to avoid double subtraction. Savings and retirement allocations count among outflows. No bank synchronization, automated needs/wants classification or 50/30/20 allocation is implemented.",
+    "sources": [
+      {
+        "title": "CFPB: monthly income minus spending budget worksheet",
+        "url": "https://files.consumerfinance.gov/f/documents/cfpb_well-being_monthly-budget.pdf"
+      },
+      {
+        "title": "Consumer.gov: record spending and plan the next budget",
+        "url": "https://consumer.gov/content/make-budget-worksheet"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Convert annual salary and reserve money for saving",
+        "mode": "budget",
+        "values": {
+          "tax": "20",
+          "Income_0": "72000",
+          "Incomef0": "Annually",
+          "Income_1": "0",
+          "Incomef1": "Monthly",
+          "Income_2": "0",
+          "Incomef2": "Monthly",
+          "Income_3": "0",
+          "Incomef3": "Monthly",
+          "Housing_0": "1500",
+          "Housingf0": "Monthly",
+          "Housing_1": "0",
+          "Housingf1": "Monthly",
+          "Housing_2": "0",
+          "Housingf2": "Monthly",
+          "Housing_3": "0",
+          "Housingf3": "Monthly",
+          "Housing_4": "0",
+          "Housingf4": "Monthly",
+          "Housing_5": "0",
+          "Housingf5": "Monthly",
+          "Housing_6": "0",
+          "Housingf6": "Monthly",
+          "Transportation_0": "0",
+          "Transportationf0": "Monthly",
+          "Transportation_1": "0",
+          "Transportationf1": "Monthly",
+          "Transportation_2": "0",
+          "Transportationf2": "Monthly",
+          "Transportation_3": "0",
+          "Transportationf3": "Monthly",
+          "Transportation_4": "0",
+          "Transportationf4": "Monthly",
+          "Transportation_5": "0",
+          "Transportationf5": "Monthly",
+          "Debt_0": "0",
+          "Debtf0": "Monthly",
+          "Debt_1": "0",
+          "Debtf1": "Monthly",
+          "Debt_2": "0",
+          "Debtf2": "Monthly",
+          "Living_0": "600",
+          "Livingf0": "Monthly",
+          "Living_1": "0",
+          "Livingf1": "Monthly",
+          "Living_2": "0",
+          "Livingf2": "Monthly",
+          "Living_3": "0",
+          "Livingf3": "Monthly",
+          "Living_4": "0",
+          "Livingf4": "Monthly",
+          "Health_0": "0",
+          "Healthf0": "Monthly",
+          "Health_1": "0",
+          "Healthf1": "Monthly",
+          "Children_0": "0",
+          "Childrenf0": "Monthly",
+          "Children_1": "0",
+          "Childrenf1": "Monthly",
+          "Children_2": "0",
+          "Childrenf2": "Monthly",
+          "Children_3": "0",
+          "Childrenf3": "Monthly",
+          "Savings_0": "200",
+          "Savingsf0": "Monthly",
+          "Savings_1": "300",
+          "Savingsf1": "Monthly",
+          "Savings_2": "0",
+          "Savingsf2": "Monthly",
+          "Savings_3": "0",
+          "Savingsf3": "Monthly",
+          "Miscellaneous_0": "0",
+          "Miscellaneousf0": "Monthly",
+          "Miscellaneous_1": "0",
+          "Miscellaneousf1": "Monthly",
+          "Miscellaneous_2": "0",
+          "Miscellaneousf2": "Monthly",
+          "Miscellaneous_3": "0",
+          "Miscellaneousf3": "Monthly",
+          "Miscellaneous_4": "0",
+          "Miscellaneousf4": "Monthly",
+          "Miscellaneous_5": "0",
+          "Miscellaneousf5": "Monthly"
+        },
+        "inputs": "Income tax on gross income: 20 %; Income · Salary: $72,000; Salary frequency: Annually; Housing · Mortgage or rent: $1,500; Living · Groceries: $600; Savings · Emergency fund: $200; Savings · Retirement saving: $300. Amounts in USD. Other income and outflow amounts are zero; unspecified frequencies are monthly.",
+        "steps": [
+          "$72,000 annual gross salary / 12 = $6,000 monthly; the entered 20% flat tax assumption leaves $4,800.",
+          "Monthly housing $1,500 + groceries $600 + emergency saving $200 + retirement saving $300 = $2,600 allocated.",
+          "Monthly unallocated surplus = $4,800 − $2,600."
+        ],
+        "answer": "Monthly surplus is $2,200 and annual equivalent is $26,400. The $500 of named saving is already allocated, not added twice.",
+        "expected": {
+          "label": "Monthly surplus / deficit",
+          "value": 2200.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Normalize biweekly income and annual bills",
+        "mode": "budget",
+        "values": {
+          "tax": "10",
+          "Income_0": "2000",
+          "Incomef0": "Biweekly",
+          "Income_1": "0",
+          "Incomef1": "Monthly",
+          "Income_2": "0",
+          "Incomef2": "Monthly",
+          "Income_3": "0",
+          "Incomef3": "Monthly",
+          "Housing_0": "1500",
+          "Housingf0": "Monthly",
+          "Housing_1": "0",
+          "Housingf1": "Monthly",
+          "Housing_2": "1200",
+          "Housingf2": "Annually",
+          "Housing_3": "2400",
+          "Housingf3": "Annually",
+          "Housing_4": "0",
+          "Housingf4": "Monthly",
+          "Housing_5": "0",
+          "Housingf5": "Monthly",
+          "Housing_6": "0",
+          "Housingf6": "Monthly",
+          "Transportation_0": "0",
+          "Transportationf0": "Monthly",
+          "Transportation_1": "0",
+          "Transportationf1": "Monthly",
+          "Transportation_2": "0",
+          "Transportationf2": "Monthly",
+          "Transportation_3": "0",
+          "Transportationf3": "Monthly",
+          "Transportation_4": "0",
+          "Transportationf4": "Monthly",
+          "Transportation_5": "0",
+          "Transportationf5": "Monthly",
+          "Debt_0": "0",
+          "Debtf0": "Monthly",
+          "Debt_1": "0",
+          "Debtf1": "Monthly",
+          "Debt_2": "0",
+          "Debtf2": "Monthly",
+          "Living_0": "600",
+          "Livingf0": "Monthly",
+          "Living_1": "0",
+          "Livingf1": "Monthly",
+          "Living_2": "0",
+          "Livingf2": "Monthly",
+          "Living_3": "0",
+          "Livingf3": "Monthly",
+          "Living_4": "0",
+          "Livingf4": "Monthly",
+          "Health_0": "0",
+          "Healthf0": "Monthly",
+          "Health_1": "0",
+          "Healthf1": "Monthly",
+          "Children_0": "0",
+          "Childrenf0": "Monthly",
+          "Children_1": "0",
+          "Childrenf1": "Monthly",
+          "Children_2": "0",
+          "Childrenf2": "Monthly",
+          "Children_3": "0",
+          "Childrenf3": "Monthly",
+          "Savings_0": "200",
+          "Savingsf0": "Monthly",
+          "Savings_1": "0",
+          "Savingsf1": "Monthly",
+          "Savings_2": "0",
+          "Savingsf2": "Monthly",
+          "Savings_3": "0",
+          "Savingsf3": "Monthly",
+          "Miscellaneous_0": "0",
+          "Miscellaneousf0": "Monthly",
+          "Miscellaneous_1": "0",
+          "Miscellaneousf1": "Monthly",
+          "Miscellaneous_2": "0",
+          "Miscellaneousf2": "Monthly",
+          "Miscellaneous_3": "0",
+          "Miscellaneousf3": "Monthly",
+          "Miscellaneous_4": "0",
+          "Miscellaneousf4": "Monthly",
+          "Miscellaneous_5": "0",
+          "Miscellaneousf5": "Monthly"
+        },
+        "inputs": "Income tax on gross income: 10 %; Income · Salary: $2,000; Salary frequency: Biweekly; Housing · Mortgage or rent: $1,500; Housing · Home insurance: $1,200; Home insurance frequency: Annually; Housing · Utilities: $2,400; Utilities frequency: Annually; Living · Groceries: $600; Savings · Emergency fund: $200. Amounts in USD. Other income and outflow amounts are zero; unspecified frequencies are monthly.",
+        "steps": [
+          "$2,000 biweekly × 26 / 12 = $4,333.33 gross monthly equivalent; the entered 10% flat tax leaves $3,900.",
+          "Annual $1,200 insurance becomes $100 monthly and annual $2,400 utilities becomes $200 monthly.",
+          "Together with $1,500 housing, $600 groceries and $200 saving, monthly allocations total $2,600."
+        ],
+        "answer": "Monthly surplus is $1,300. Biweekly pay is not treated as exactly twice each month.",
+        "expected": {
+          "label": "Monthly surplus / deficit",
+          "value": 1300.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Show a shortfall without hiding it",
+        "mode": "budget",
+        "values": {
+          "tax": "0",
+          "Income_0": "2000",
+          "Incomef0": "Monthly",
+          "Income_1": "0",
+          "Incomef1": "Monthly",
+          "Income_2": "0",
+          "Incomef2": "Monthly",
+          "Income_3": "0",
+          "Incomef3": "Monthly",
+          "Housing_0": "1500",
+          "Housingf0": "Monthly",
+          "Housing_1": "0",
+          "Housingf1": "Monthly",
+          "Housing_2": "0",
+          "Housingf2": "Monthly",
+          "Housing_3": "0",
+          "Housingf3": "Monthly",
+          "Housing_4": "0",
+          "Housingf4": "Monthly",
+          "Housing_5": "0",
+          "Housingf5": "Monthly",
+          "Housing_6": "0",
+          "Housingf6": "Monthly",
+          "Transportation_0": "0",
+          "Transportationf0": "Monthly",
+          "Transportation_1": "0",
+          "Transportationf1": "Monthly",
+          "Transportation_2": "0",
+          "Transportationf2": "Monthly",
+          "Transportation_3": "0",
+          "Transportationf3": "Monthly",
+          "Transportation_4": "0",
+          "Transportationf4": "Monthly",
+          "Transportation_5": "0",
+          "Transportationf5": "Monthly",
+          "Debt_0": "0",
+          "Debtf0": "Monthly",
+          "Debt_1": "0",
+          "Debtf1": "Monthly",
+          "Debt_2": "0",
+          "Debtf2": "Monthly",
+          "Living_0": "600",
+          "Livingf0": "Monthly",
+          "Living_1": "0",
+          "Livingf1": "Monthly",
+          "Living_2": "0",
+          "Livingf2": "Monthly",
+          "Living_3": "0",
+          "Livingf3": "Monthly",
+          "Living_4": "0",
+          "Livingf4": "Monthly",
+          "Health_0": "0",
+          "Healthf0": "Monthly",
+          "Health_1": "0",
+          "Healthf1": "Monthly",
+          "Children_0": "0",
+          "Childrenf0": "Monthly",
+          "Children_1": "0",
+          "Childrenf1": "Monthly",
+          "Children_2": "0",
+          "Childrenf2": "Monthly",
+          "Children_3": "0",
+          "Childrenf3": "Monthly",
+          "Savings_0": "0",
+          "Savingsf0": "Monthly",
+          "Savings_1": "0",
+          "Savingsf1": "Monthly",
+          "Savings_2": "0",
+          "Savingsf2": "Monthly",
+          "Savings_3": "0",
+          "Savingsf3": "Monthly",
+          "Miscellaneous_0": "0",
+          "Miscellaneousf0": "Monthly",
+          "Miscellaneous_1": "0",
+          "Miscellaneousf1": "Monthly",
+          "Miscellaneous_2": "0",
+          "Miscellaneousf2": "Monthly",
+          "Miscellaneous_3": "0",
+          "Miscellaneousf3": "Monthly",
+          "Miscellaneous_4": "0",
+          "Miscellaneousf4": "Monthly",
+          "Miscellaneous_5": "0",
+          "Miscellaneousf5": "Monthly"
+        },
+        "inputs": "Income · Salary: $2,000; Housing · Mortgage or rent: $1,500; Living · Groceries: $600. Amounts in USD. Other income and outflow amounts are zero; unspecified frequencies are monthly.",
+        "steps": [
+          "Use $2,000 monthly take-home income and a zero additional tax assumption.",
+          "Housing $1,500 plus groceries $600 allocates $2,100.",
+          "Income minus allocations is negative."
+        ],
+        "answer": "The budget shows −$100 monthly and −$1,200 annual equivalent; it does not create a borrowing plan.",
+        "expected": {
+          "label": "Monthly surplus / deficit",
+          "value": -100.0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-budget-saving",
+        "queries": [
+          "how to budget and save money calculator",
+          "monthly budget calculator"
+        ],
+        "question": "Does the budget include savings and retirement contributions?",
+        "answer": "Yes. The Savings group contains emergency, retirement, investment and other saving allocations. They reduce the unallocated surplus along with bills and debt payments. If a result leaves $2,200 surplus after $500 entered saving, the $500 is already assigned; do not count it again as part of that surplus.",
+        "links": [
+          {
+            "id": "budget",
+            "mode": "budget",
+            "label": "Try a budget with named savings",
+            "values": {
+              "tax": "20",
+              "Income_0": "72000",
+              "Incomef0": "Annually",
+              "Income_1": "0",
+              "Incomef1": "Monthly",
+              "Income_2": "0",
+              "Incomef2": "Monthly",
+              "Income_3": "0",
+              "Incomef3": "Monthly",
+              "Housing_0": "1500",
+              "Housingf0": "Monthly",
+              "Housing_1": "0",
+              "Housingf1": "Monthly",
+              "Housing_2": "0",
+              "Housingf2": "Monthly",
+              "Housing_3": "0",
+              "Housingf3": "Monthly",
+              "Housing_4": "0",
+              "Housingf4": "Monthly",
+              "Housing_5": "0",
+              "Housingf5": "Monthly",
+              "Housing_6": "0",
+              "Housingf6": "Monthly",
+              "Transportation_0": "0",
+              "Transportationf0": "Monthly",
+              "Transportation_1": "0",
+              "Transportationf1": "Monthly",
+              "Transportation_2": "0",
+              "Transportationf2": "Monthly",
+              "Transportation_3": "0",
+              "Transportationf3": "Monthly",
+              "Transportation_4": "0",
+              "Transportationf4": "Monthly",
+              "Transportation_5": "0",
+              "Transportationf5": "Monthly",
+              "Debt_0": "0",
+              "Debtf0": "Monthly",
+              "Debt_1": "0",
+              "Debtf1": "Monthly",
+              "Debt_2": "0",
+              "Debtf2": "Monthly",
+              "Living_0": "600",
+              "Livingf0": "Monthly",
+              "Living_1": "0",
+              "Livingf1": "Monthly",
+              "Living_2": "0",
+              "Livingf2": "Monthly",
+              "Living_3": "0",
+              "Livingf3": "Monthly",
+              "Living_4": "0",
+              "Livingf4": "Monthly",
+              "Health_0": "0",
+              "Healthf0": "Monthly",
+              "Health_1": "0",
+              "Healthf1": "Monthly",
+              "Children_0": "0",
+              "Childrenf0": "Monthly",
+              "Children_1": "0",
+              "Childrenf1": "Monthly",
+              "Children_2": "0",
+              "Childrenf2": "Monthly",
+              "Children_3": "0",
+              "Childrenf3": "Monthly",
+              "Savings_0": "200",
+              "Savingsf0": "Monthly",
+              "Savings_1": "300",
+              "Savingsf1": "Monthly",
+              "Savings_2": "0",
+              "Savingsf2": "Monthly",
+              "Savings_3": "0",
+              "Savingsf3": "Monthly",
+              "Miscellaneous_0": "0",
+              "Miscellaneousf0": "Monthly",
+              "Miscellaneous_1": "0",
+              "Miscellaneousf1": "Monthly",
+              "Miscellaneous_2": "0",
+              "Miscellaneousf2": "Monthly",
+              "Miscellaneous_3": "0",
+              "Miscellaneousf3": "Monthly",
+              "Miscellaneous_4": "0",
+              "Miscellaneousf4": "Monthly",
+              "Miscellaneous_5": "0",
+              "Miscellaneousf5": "Monthly"
+            }
+          }
+        ],
+        "replacesQuestion": "Are savings treated as part of my monthly budget?"
+      },
+      {
+        "anchor": "use-budget-frequency",
+        "queries": [
+          "how to budget your paycheck calculator",
+          "how to calculate personal budget"
+        ],
+        "question": "How do weekly, biweekly and annual amounts become monthly?",
+        "answer": "Each line has its own frequency. The monthly equivalent is amount × annual occurrences / 12, using 52 for Weekly, 26 for Biweekly, 12 for Monthly and 1 for Annually. Thus $2,000 biweekly becomes about $4,333.33 gross monthly equivalent. This is an average allocation, not an exact paycheck-date cash-flow calendar.",
+        "links": [
+          {
+            "id": "budget",
+            "mode": "budget",
+            "label": "Compare biweekly income and annual bills",
+            "values": {
+              "tax": "10",
+              "Income_0": "2000",
+              "Incomef0": "Biweekly",
+              "Income_1": "0",
+              "Incomef1": "Monthly",
+              "Income_2": "0",
+              "Incomef2": "Monthly",
+              "Income_3": "0",
+              "Incomef3": "Monthly",
+              "Housing_0": "1500",
+              "Housingf0": "Monthly",
+              "Housing_1": "0",
+              "Housingf1": "Monthly",
+              "Housing_2": "1200",
+              "Housingf2": "Annually",
+              "Housing_3": "2400",
+              "Housingf3": "Annually",
+              "Housing_4": "0",
+              "Housingf4": "Monthly",
+              "Housing_5": "0",
+              "Housingf5": "Monthly",
+              "Housing_6": "0",
+              "Housingf6": "Monthly",
+              "Transportation_0": "0",
+              "Transportationf0": "Monthly",
+              "Transportation_1": "0",
+              "Transportationf1": "Monthly",
+              "Transportation_2": "0",
+              "Transportationf2": "Monthly",
+              "Transportation_3": "0",
+              "Transportationf3": "Monthly",
+              "Transportation_4": "0",
+              "Transportationf4": "Monthly",
+              "Transportation_5": "0",
+              "Transportationf5": "Monthly",
+              "Debt_0": "0",
+              "Debtf0": "Monthly",
+              "Debt_1": "0",
+              "Debtf1": "Monthly",
+              "Debt_2": "0",
+              "Debtf2": "Monthly",
+              "Living_0": "600",
+              "Livingf0": "Monthly",
+              "Living_1": "0",
+              "Livingf1": "Monthly",
+              "Living_2": "0",
+              "Livingf2": "Monthly",
+              "Living_3": "0",
+              "Livingf3": "Monthly",
+              "Living_4": "0",
+              "Livingf4": "Monthly",
+              "Health_0": "0",
+              "Healthf0": "Monthly",
+              "Health_1": "0",
+              "Healthf1": "Monthly",
+              "Children_0": "0",
+              "Childrenf0": "Monthly",
+              "Children_1": "0",
+              "Childrenf1": "Monthly",
+              "Children_2": "0",
+              "Childrenf2": "Monthly",
+              "Children_3": "0",
+              "Childrenf3": "Monthly",
+              "Savings_0": "200",
+              "Savingsf0": "Monthly",
+              "Savings_1": "0",
+              "Savingsf1": "Monthly",
+              "Savings_2": "0",
+              "Savingsf2": "Monthly",
+              "Savings_3": "0",
+              "Savingsf3": "Monthly",
+              "Miscellaneous_0": "0",
+              "Miscellaneousf0": "Monthly",
+              "Miscellaneous_1": "0",
+              "Miscellaneousf1": "Monthly",
+              "Miscellaneous_2": "0",
+              "Miscellaneousf2": "Monthly",
+              "Miscellaneous_3": "0",
+              "Miscellaneousf3": "Monthly",
+              "Miscellaneous_4": "0",
+              "Miscellaneousf4": "Monthly",
+              "Miscellaneous_5": "0",
+              "Miscellaneousf5": "Monthly"
+            }
+          }
+        ],
+        "replacesQuestion": "How should I enter annual insurance or other yearly bills?"
+      },
+      {
+        "anchor": "use-budget-tax",
+        "queries": [
+          "how to calculate budget"
+        ],
+        "question": "Should I enter gross or take-home income?",
+        "answer": "The calculator applies its single tax percentage to all income entries after frequency conversion. Enter gross amounts with a chosen simplified tax assumption, or enter already-net amounts and set the extra tax rate to zero. It does not determine federal, state or payroll withholding, and it cannot apply different tax treatments to different income lines.",
+        "links": [
+          {
+            "id": "budget",
+            "mode": "budget",
+            "label": "Try gross income with an entered tax rate",
+            "values": {
+              "tax": "20",
+              "Income_0": "72000",
+              "Incomef0": "Annually",
+              "Income_1": "0",
+              "Incomef1": "Monthly",
+              "Income_2": "0",
+              "Incomef2": "Monthly",
+              "Income_3": "0",
+              "Incomef3": "Monthly",
+              "Housing_0": "1500",
+              "Housingf0": "Monthly",
+              "Housing_1": "0",
+              "Housingf1": "Monthly",
+              "Housing_2": "0",
+              "Housingf2": "Monthly",
+              "Housing_3": "0",
+              "Housingf3": "Monthly",
+              "Housing_4": "0",
+              "Housingf4": "Monthly",
+              "Housing_5": "0",
+              "Housingf5": "Monthly",
+              "Housing_6": "0",
+              "Housingf6": "Monthly",
+              "Transportation_0": "0",
+              "Transportationf0": "Monthly",
+              "Transportation_1": "0",
+              "Transportationf1": "Monthly",
+              "Transportation_2": "0",
+              "Transportationf2": "Monthly",
+              "Transportation_3": "0",
+              "Transportationf3": "Monthly",
+              "Transportation_4": "0",
+              "Transportationf4": "Monthly",
+              "Transportation_5": "0",
+              "Transportationf5": "Monthly",
+              "Debt_0": "0",
+              "Debtf0": "Monthly",
+              "Debt_1": "0",
+              "Debtf1": "Monthly",
+              "Debt_2": "0",
+              "Debtf2": "Monthly",
+              "Living_0": "600",
+              "Livingf0": "Monthly",
+              "Living_1": "0",
+              "Livingf1": "Monthly",
+              "Living_2": "0",
+              "Livingf2": "Monthly",
+              "Living_3": "0",
+              "Livingf3": "Monthly",
+              "Living_4": "0",
+              "Livingf4": "Monthly",
+              "Health_0": "0",
+              "Healthf0": "Monthly",
+              "Health_1": "0",
+              "Healthf1": "Monthly",
+              "Children_0": "0",
+              "Childrenf0": "Monthly",
+              "Children_1": "0",
+              "Childrenf1": "Monthly",
+              "Children_2": "0",
+              "Childrenf2": "Monthly",
+              "Children_3": "0",
+              "Childrenf3": "Monthly",
+              "Savings_0": "200",
+              "Savingsf0": "Monthly",
+              "Savings_1": "300",
+              "Savingsf1": "Monthly",
+              "Savings_2": "0",
+              "Savingsf2": "Monthly",
+              "Savings_3": "0",
+              "Savingsf3": "Monthly",
+              "Miscellaneous_0": "0",
+              "Miscellaneousf0": "Monthly",
+              "Miscellaneous_1": "0",
+              "Miscellaneousf1": "Monthly",
+              "Miscellaneous_2": "0",
+              "Miscellaneousf2": "Monthly",
+              "Miscellaneous_3": "0",
+              "Miscellaneousf3": "Monthly",
+              "Miscellaneous_4": "0",
+              "Miscellaneousf4": "Monthly",
+              "Miscellaneous_5": "0",
+              "Miscellaneousf5": "Monthly"
+            }
+          },
+          {
+            "id": "budget",
+            "mode": "budget",
+            "label": "Use net income without another tax deduction",
+            "values": {
+              "tax": "0",
+              "Income_0": "2000",
+              "Incomef0": "Monthly",
+              "Income_1": "0",
+              "Incomef1": "Monthly",
+              "Income_2": "0",
+              "Incomef2": "Monthly",
+              "Income_3": "0",
+              "Incomef3": "Monthly",
+              "Housing_0": "1500",
+              "Housingf0": "Monthly",
+              "Housing_1": "0",
+              "Housingf1": "Monthly",
+              "Housing_2": "0",
+              "Housingf2": "Monthly",
+              "Housing_3": "0",
+              "Housingf3": "Monthly",
+              "Housing_4": "0",
+              "Housingf4": "Monthly",
+              "Housing_5": "0",
+              "Housingf5": "Monthly",
+              "Housing_6": "0",
+              "Housingf6": "Monthly",
+              "Transportation_0": "0",
+              "Transportationf0": "Monthly",
+              "Transportation_1": "0",
+              "Transportationf1": "Monthly",
+              "Transportation_2": "0",
+              "Transportationf2": "Monthly",
+              "Transportation_3": "0",
+              "Transportationf3": "Monthly",
+              "Transportation_4": "0",
+              "Transportationf4": "Monthly",
+              "Transportation_5": "0",
+              "Transportationf5": "Monthly",
+              "Debt_0": "0",
+              "Debtf0": "Monthly",
+              "Debt_1": "0",
+              "Debtf1": "Monthly",
+              "Debt_2": "0",
+              "Debtf2": "Monthly",
+              "Living_0": "600",
+              "Livingf0": "Monthly",
+              "Living_1": "0",
+              "Livingf1": "Monthly",
+              "Living_2": "0",
+              "Livingf2": "Monthly",
+              "Living_3": "0",
+              "Livingf3": "Monthly",
+              "Living_4": "0",
+              "Livingf4": "Monthly",
+              "Health_0": "0",
+              "Healthf0": "Monthly",
+              "Health_1": "0",
+              "Healthf1": "Monthly",
+              "Children_0": "0",
+              "Childrenf0": "Monthly",
+              "Children_1": "0",
+              "Childrenf1": "Monthly",
+              "Children_2": "0",
+              "Childrenf2": "Monthly",
+              "Children_3": "0",
+              "Childrenf3": "Monthly",
+              "Savings_0": "0",
+              "Savingsf0": "Monthly",
+              "Savings_1": "0",
+              "Savingsf1": "Monthly",
+              "Savings_2": "0",
+              "Savingsf2": "Monthly",
+              "Savings_3": "0",
+              "Savingsf3": "Monthly",
+              "Miscellaneous_0": "0",
+              "Miscellaneousf0": "Monthly",
+              "Miscellaneous_1": "0",
+              "Miscellaneousf1": "Monthly",
+              "Miscellaneous_2": "0",
+              "Miscellaneousf2": "Monthly",
+              "Miscellaneous_3": "0",
+              "Miscellaneousf3": "Monthly",
+              "Miscellaneous_4": "0",
+              "Miscellaneousf4": "Monthly",
+              "Miscellaneous_5": "0",
+              "Miscellaneousf5": "Monthly"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-budget-percentages",
+        "queries": [
+          "how to calculate budget percentages",
+          "50 30 20 budget calculator"
+        ],
+        "question": "Does this automatically create a 50/30/20 budget?",
+        "answer": "No. It totals the categories and amounts you enter without classifying needs, wants or saving under a preset rule. As a separate arithmetic illustration, 50%, 30% and 20% of $4,800 take-home income are $2,400, $1,440 and $960. You can compare your own allocations manually; those figures are not a recommendation for every household.",
+        "links": [
+          {
+            "id": "budget",
+            "mode": "budget",
+            "label": "Review the $4,800 take-home scenario",
+            "values": {
+              "tax": "20",
+              "Income_0": "72000",
+              "Incomef0": "Annually",
+              "Income_1": "0",
+              "Incomef1": "Monthly",
+              "Income_2": "0",
+              "Incomef2": "Monthly",
+              "Income_3": "0",
+              "Incomef3": "Monthly",
+              "Housing_0": "1500",
+              "Housingf0": "Monthly",
+              "Housing_1": "0",
+              "Housingf1": "Monthly",
+              "Housing_2": "0",
+              "Housingf2": "Monthly",
+              "Housing_3": "0",
+              "Housingf3": "Monthly",
+              "Housing_4": "0",
+              "Housingf4": "Monthly",
+              "Housing_5": "0",
+              "Housingf5": "Monthly",
+              "Housing_6": "0",
+              "Housingf6": "Monthly",
+              "Transportation_0": "0",
+              "Transportationf0": "Monthly",
+              "Transportation_1": "0",
+              "Transportationf1": "Monthly",
+              "Transportation_2": "0",
+              "Transportationf2": "Monthly",
+              "Transportation_3": "0",
+              "Transportationf3": "Monthly",
+              "Transportation_4": "0",
+              "Transportationf4": "Monthly",
+              "Transportation_5": "0",
+              "Transportationf5": "Monthly",
+              "Debt_0": "0",
+              "Debtf0": "Monthly",
+              "Debt_1": "0",
+              "Debtf1": "Monthly",
+              "Debt_2": "0",
+              "Debtf2": "Monthly",
+              "Living_0": "600",
+              "Livingf0": "Monthly",
+              "Living_1": "0",
+              "Livingf1": "Monthly",
+              "Living_2": "0",
+              "Livingf2": "Monthly",
+              "Living_3": "0",
+              "Livingf3": "Monthly",
+              "Living_4": "0",
+              "Livingf4": "Monthly",
+              "Health_0": "0",
+              "Healthf0": "Monthly",
+              "Health_1": "0",
+              "Healthf1": "Monthly",
+              "Children_0": "0",
+              "Childrenf0": "Monthly",
+              "Children_1": "0",
+              "Childrenf1": "Monthly",
+              "Children_2": "0",
+              "Childrenf2": "Monthly",
+              "Children_3": "0",
+              "Childrenf3": "Monthly",
+              "Savings_0": "200",
+              "Savingsf0": "Monthly",
+              "Savings_1": "300",
+              "Savingsf1": "Monthly",
+              "Savings_2": "0",
+              "Savingsf2": "Monthly",
+              "Savings_3": "0",
+              "Savingsf3": "Monthly",
+              "Miscellaneous_0": "0",
+              "Miscellaneousf0": "Monthly",
+              "Miscellaneous_1": "0",
+              "Miscellaneousf1": "Monthly",
+              "Miscellaneous_2": "0",
+              "Miscellaneousf2": "Monthly",
+              "Miscellaneous_3": "0",
+              "Miscellaneousf3": "Monthly",
+              "Miscellaneous_4": "0",
+              "Miscellaneousf4": "Monthly",
+              "Miscellaneous_5": "0",
+              "Miscellaneousf5": "Monthly"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-budget-shortfall",
+        "queries": [
+          "how to calculate your budget",
+          "budget breakdown calculator"
+        ],
+        "question": "What does a negative budget result mean?",
+        "answer": "Entered spending and saving exceed the modeled after-tax income on a monthly-equivalent basis. Check frequencies and double counting first, then compare changing one allocation at a time. Annual surplus is monthly surplus multiplied by 12; it is not a forecast of variable income, emergency bills or borrowing costs.",
+        "links": [
+          {
+            "id": "budget",
+            "mode": "budget",
+            "label": "Inspect a $100 monthly shortfall",
+            "values": {
+              "tax": "0",
+              "Income_0": "2000",
+              "Incomef0": "Monthly",
+              "Income_1": "0",
+              "Incomef1": "Monthly",
+              "Income_2": "0",
+              "Incomef2": "Monthly",
+              "Income_3": "0",
+              "Incomef3": "Monthly",
+              "Housing_0": "1500",
+              "Housingf0": "Monthly",
+              "Housing_1": "0",
+              "Housingf1": "Monthly",
+              "Housing_2": "0",
+              "Housingf2": "Monthly",
+              "Housing_3": "0",
+              "Housingf3": "Monthly",
+              "Housing_4": "0",
+              "Housingf4": "Monthly",
+              "Housing_5": "0",
+              "Housingf5": "Monthly",
+              "Housing_6": "0",
+              "Housingf6": "Monthly",
+              "Transportation_0": "0",
+              "Transportationf0": "Monthly",
+              "Transportation_1": "0",
+              "Transportationf1": "Monthly",
+              "Transportation_2": "0",
+              "Transportationf2": "Monthly",
+              "Transportation_3": "0",
+              "Transportationf3": "Monthly",
+              "Transportation_4": "0",
+              "Transportationf4": "Monthly",
+              "Transportation_5": "0",
+              "Transportationf5": "Monthly",
+              "Debt_0": "0",
+              "Debtf0": "Monthly",
+              "Debt_1": "0",
+              "Debtf1": "Monthly",
+              "Debt_2": "0",
+              "Debtf2": "Monthly",
+              "Living_0": "600",
+              "Livingf0": "Monthly",
+              "Living_1": "0",
+              "Livingf1": "Monthly",
+              "Living_2": "0",
+              "Livingf2": "Monthly",
+              "Living_3": "0",
+              "Livingf3": "Monthly",
+              "Living_4": "0",
+              "Livingf4": "Monthly",
+              "Health_0": "0",
+              "Healthf0": "Monthly",
+              "Health_1": "0",
+              "Healthf1": "Monthly",
+              "Children_0": "0",
+              "Childrenf0": "Monthly",
+              "Children_1": "0",
+              "Childrenf1": "Monthly",
+              "Children_2": "0",
+              "Childrenf2": "Monthly",
+              "Children_3": "0",
+              "Childrenf3": "Monthly",
+              "Savings_0": "0",
+              "Savingsf0": "Monthly",
+              "Savings_1": "0",
+              "Savingsf1": "Monthly",
+              "Savings_2": "0",
+              "Savingsf2": "Monthly",
+              "Savings_3": "0",
+              "Savingsf3": "Monthly",
+              "Miscellaneous_0": "0",
+              "Miscellaneousf0": "Monthly",
+              "Miscellaneous_1": "0",
+              "Miscellaneousf1": "Monthly",
+              "Miscellaneous_2": "0",
+              "Miscellaneousf2": "Monthly",
+              "Miscellaneous_3": "0",
+              "Miscellaneousf3": "Monthly",
+              "Miscellaneous_4": "0",
+              "Miscellaneousf4": "Monthly",
+              "Miscellaneous_5": "0",
+              "Miscellaneousf5": "Monthly"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-budget-household",
+        "queries": [
+          "family budget calculator",
+          "how to calculate a budget for a house"
+        ],
+        "question": "Can I use this for a household, home purchase or business budget?",
+        "answer": "You can pool household income and shared bills once using consistent frequencies. This does not calculate a maximum home price, lender approval or a business profit-and-loss statement. Use the separate affordability or business tools for those tasks rather than treating a household surplus as an approved loan payment.",
+        "links": [
+          {
+            "id": "house-affordability",
+            "mode": "income",
+            "label": "Explore a separate house-affordability scenario"
+          },
+          {
+            "id": "budget",
+            "mode": "budget",
+            "label": "Enter household allocations"
+          }
+        ]
+      }
+    ]
+  },
+  "break-even": {
+    "updatedOn": "2026-10-28",
+    "summary": "Find the sales volume needed to cover fixed costs when a single product has a constant unit price and variable cost. Break-Even Point reports whole-unit quantity and its revenue, Target Profit adds an operating-profit goal, and Break-Even Price solves a unit price for an entered volume. Keep the cost period and product definition consistent across comparisons.",
+    "scope": "Single-product, constant-price and constant-variable-cost USD model for one chosen cost period. Unit contribution must be positive in quantity modes. Whole-unit results round up; theoretical fractional quantity is also shown. Price mode accepts an entered volume and does not automatically round its result up to a quoted cent. No taxes, interest, capacity limit, multiple-product sales mix, option payoff, mortgage-point recovery, Social Security timing or advertising ROAS model is supplied by this tool.",
+    "sources": [
+      {
+        "title": "SBA: break-even analysis entry point",
+        "url": "https://www.sba.gov/counseling/plan-your-business/break-even-point-calculator/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Cover $10,000 fixed cost at $20 unit contribution",
+        "mode": "units",
+        "values": {
+          "fixed": "10000",
+          "price": "50",
+          "variable": "30"
+        },
+        "inputs": "Fixed costs per period: $10,000; Selling price per unit: $50; Variable cost per unit: $30. Amounts in USD.",
+        "steps": [
+          "Selling price $50 minus $30 variable cost leaves $20 contribution per unit.",
+          "Break-even quantity = $10,000 / $20 = 500 units.",
+          "Revenue = 500 × $50; contribution equals fixed cost."
+        ],
+        "answer": "Break-even is 500 units and $25,000 revenue for the chosen cost period.",
+        "expected": {
+          "label": "Break-even units (whole units)",
+          "value": 500.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Round a fractional break-even point upward",
+        "mode": "units",
+        "values": {
+          "fixed": "10001",
+          "price": "50",
+          "variable": "30"
+        },
+        "inputs": "Fixed costs per period: $10,001; Selling price per unit: $50; Variable cost per unit: $30. Amounts in USD.",
+        "steps": [
+          "Change fixed cost to $10,001 and keep $20 unit contribution.",
+          "Theoretical quantity = $10,001 / $20 = 500.05; whole units round up to 501.",
+          "501 × $50 gives $25,050 revenue; 501 × $20 − $10,001 gives $19 profit."
+        ],
+        "answer": "The theoretical point is 500.05 units, but the whole-unit plan needs 501 units.",
+        "expected": {
+          "label": "Break-even units (whole units)",
+          "value": 501.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Add a target operating profit",
+        "mode": "profit",
+        "values": {
+          "fixed": "10000",
+          "price": "50",
+          "variable": "30",
+          "profit": "5000"
+        },
+        "inputs": "Fixed costs per period: $10,000; Selling price per unit: $50; Variable cost per unit: $30; Target profit per period: $5,000. Amounts in USD.",
+        "steps": [
+          "Fixed costs $10,000 plus target profit $5,000 require $15,000 contribution.",
+          "At $20 contribution per unit, $15,000 / $20 = 750 units."
+        ],
+        "answer": "The target requires 750 units and $37,500 revenue, before excluded taxes or financing costs.",
+        "expected": {
+          "label": "Units for target profit",
+          "value": 750.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Solve a selling price at an entered volume",
+        "mode": "price",
+        "values": {
+          "fixed": "10000",
+          "variable": "30",
+          "units": "500",
+          "profit": "5000"
+        },
+        "inputs": "Fixed costs per period: $10,000; Variable cost per unit: $30; Expected units sold: 500 units; Target profit per period: $5,000. Amounts in USD.",
+        "steps": [
+          "Use $30 unit variable cost, $10,000 fixed cost, $5,000 target profit and 500 units.",
+          "Required price = $30 + ($10,000 + $5,000) / 500."
+        ],
+        "answer": "The required unit selling price is $60; price mode does not automatically round a fractional-cent quote upward.",
+        "expected": {
+          "label": "Required selling price",
+          "value": 60.0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-breakeven-formula",
+        "queries": [
+          "how to calculate break even point",
+          "how to calculate break even point in units"
+        ],
+        "question": "How do I calculate break-even units and sales revenue?",
+        "answer": "Subtract variable cost per unit from unit selling price, then divide fixed costs by that contribution. $10,000 / ($50 − $30) = 500 units, with $25,000 revenue. Keep fixed costs, expected volume and any target profit within the same period. The reported whole-unit revenue uses rounded-up units, so it can exceed the theoretical continuous-sales threshold.",
+        "links": [
+          {
+            "id": "break-even",
+            "mode": "units",
+            "label": "Calculate 500 break-even units",
+            "values": {
+              "fixed": "10000",
+              "price": "50",
+              "variable": "30"
+            }
+          }
+        ],
+        "replacesQuestion": "What is the break even point formula?"
+      },
+      {
+        "anchor": "use-breakeven-contribution",
+        "queries": [
+          "contribution margin break even calculator",
+          "break even point formula calculator"
+        ],
+        "question": "What is contribution margin per unit and its ratio?",
+        "answer": "Contribution per unit is price minus variable unit cost. Contribution margin ratio is that amount divided by price. At a $50 price and $30 variable cost, contribution is $20 and the ratio is 40%. That contribution must still cover the selected fixed costs; it is not automatically net profit.",
+        "links": [
+          {
+            "id": "break-even",
+            "mode": "units",
+            "label": "Review the $20 contribution example",
+            "values": {
+              "fixed": "10000",
+              "price": "50",
+              "variable": "30"
+            }
+          },
+          {
+            "id": "margin",
+            "mode": "margin",
+            "label": "Compare the separate profit-margin model"
+          }
+        ],
+        "replacesQuestion": "What is contribution margin ratio?"
+      },
+      {
+        "anchor": "use-breakeven-rounding",
+        "queries": [
+          "break even point in sales calculator",
+          "how to calculate break even sales"
+        ],
+        "question": "Why do whole-unit revenue and theoretical break-even sales differ?",
+        "answer": "Fractional theoretical units may not be sellable. At $10,001 fixed costs and $20 contribution, 500.05 theoretical units round up to 501. Actual revenue at 501 units is $25,050 and modeled operating profit is $19. Read the theoretical quantity alongside the whole-unit requirement rather than rounding down.",
+        "links": [
+          {
+            "id": "break-even",
+            "mode": "units",
+            "label": "Try a fractional theoretical point",
+            "values": {
+              "fixed": "10001",
+              "price": "50",
+              "variable": "30"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-breakeven-target-price",
+        "queries": [
+          "break even price calculator"
+        ],
+        "question": "Can I solve for target profit or the required selling price?",
+        "answer": "Yes. Target Profit adds the entered profit to fixed costs before dividing by unit contribution. Break-Even Price instead uses entered volume: variable unit cost plus (fixed cost + target profit) / volume. It computes the algebraic price, so any fractional-cent quoting policy needs separate attention.",
+        "links": [
+          {
+            "id": "break-even",
+            "mode": "profit",
+            "label": "Solve 750 target-profit units",
+            "values": {
+              "fixed": "10000",
+              "price": "50",
+              "variable": "30",
+              "profit": "5000"
+            }
+          },
+          {
+            "id": "break-even",
+            "mode": "price",
+            "label": "Solve the $60 selling price",
+            "values": {
+              "fixed": "10000",
+              "variable": "30",
+              "units": "500",
+              "profit": "5000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-breakeven-no-contribution",
+        "queries": [
+          "break even analysis calculator"
+        ],
+        "question": "What if the selling price is at or below variable cost?",
+        "answer": "Quantity modes require a positive contribution per unit. When price does not exceed variable cost, selling more units cannot cover a positive fixed-cost total in this constant-cost model, so the calculator rejects the input rather than returning a misleading break-even count. Price mode can be used to explore the price needed at a supplied volume.",
+        "links": [
+          {
+            "id": "break-even",
+            "mode": "price",
+            "label": "Explore a required unit price",
+            "values": {
+              "fixed": "10000",
+              "variable": "30",
+              "units": "500",
+              "profit": "5000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-breakeven-other-models",
+        "queries": [
+          "multi product break even calculator",
+          "how to calculate break even point for social security",
+          "how to calculate break even roas"
+        ],
+        "question": "What if I sell several products or mean a different kind of break-even?",
+        "answer": "This tool has one unit price and variable cost, so it does not track a multi-product sales mix or changing contribution margins. Social Security timing, option contracts and mortgage points require different cash-flow models. For advertising, use the separate ROAS break-even model based on a pre-ad contribution margin.",
+        "links": [
+          {
+            "id": "roas",
+            "mode": "break-even",
+            "label": "Calculate advertising break-even ROAS"
+          },
+          {
+            "id": "discount-points",
+            "mode": "compare",
+            "label": "Compare mortgage-point costs"
+          }
+        ],
+        "replacesQuestion": "Can I calculate multiple products?"
+      }
+    ]
+  },
+  "roi": {
+    "updatedOn": "2026-10-28",
+    "summary": "Return on investment (ROI) measures gain or loss relative to a positive initial cost. Total ROI covers the full holding period; annualized ROI expresses the same two-amount change as a compound yearly rate. Use this simple investment ROI calculator for an initial commitment and final returned value, then compare the same cost basis, duration and risk before interpreting the percentages.",
+    "scope": "Simple initial-cost and terminal-value USD comparison, not an investment forecast, advertising attribution or a sequence of dated cash flows. Cost must be positive and duration greater than zero. Returned amount is a nonnegative terminal value; a lower value than cost gives negative ROI. Length mode uses entered years; Dates mode uses actual elapsed days divided by 365, so a leap-year interval need not equal one model year. Include relevant costs consistently rather than adding fees twice. No automatic taxes, trading fees, inflation, property operations or risk-adjusted good-return benchmark is inferred.",
+    "sources": [
+      {
+        "title": "SEC Investor.gov: compounding context and editable return assumptions",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Distinguish total ROI from a compound annual return",
+        "mode": "length",
+        "values": {
+          "cost": "10000",
+          "returned": "15000",
+          "years": "5"
+        },
+        "inputs": "Amount invested: $10,000; Amount returned: $15,000; Investment length: 5 years. Amounts in USD.",
+        "steps": [
+          "Cost $10,000; terminal returned amount $15,000; holding length 5 years.",
+          "Gain is $5,000; total ROI = $5,000 / $10,000 = 50%.",
+          "Annual equivalent = (15,000 / 10,000)^(1/5) − 1."
+        ],
+        "answer": "Total ROI is 50%, but the compound annual equivalent is about 8.44718%, not 50% per year or 10% compounded per year.",
+        "expected": {
+          "label": "Annualized return",
+          "value": 8.447177119769862,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Preserve a negative investment return",
+        "mode": "length",
+        "values": {
+          "cost": "10000",
+          "returned": "8000",
+          "years": "2"
+        },
+        "inputs": "Amount invested: $10,000; Amount returned: $8,000; Investment length: 2 years. Amounts in USD.",
+        "steps": [
+          "Pay $10,000 initially and receive $8,000 at the end of two years.",
+          "Dollar gain = −$2,000 and total ROI = −20%.",
+          "Annual equivalent = (8,000 / 10,000)^(1/2) − 1."
+        ],
+        "answer": "Annualized return is about −10.55728%; the loss is not hidden by the annualization.",
+        "expected": {
+          "label": "Return on investment",
+          "value": -20.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Use the date mode’s actual-days-over-365 convention",
+        "mode": "dates",
+        "values": {
+          "cost": "10000",
+          "returned": "11000",
+          "start": "2024-01-01",
+          "end": "2025-01-01"
+        },
+        "inputs": "Amount invested: $10,000; Amount returned: $11,000; Start date: 2024-01-01; End date: 2025-01-01. Amounts in USD.",
+        "steps": [
+          "Start January 1, 2024 and end January 1, 2025: 366 elapsed days.",
+          "The model length is 366 / 365 years, not exactly 1.",
+          "A 10% total gain annualizes as 1.10^(365 / 366) − 1."
+        ],
+        "answer": "Total ROI is 10% and annualized return is about 9.97136%. The difference follows this tool’s explicit date convention.",
+        "expected": {
+          "label": "Annualized return",
+          "value": 9.971358593414124,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Compare a smaller total ROI over a shorter holding period",
+        "mode": "length",
+        "values": {
+          "cost": "10000",
+          "returned": "14000",
+          "years": "2"
+        },
+        "inputs": "Amount invested: $10,000; amount returned: $14,000; investment length: 2 years.",
+        "steps": [
+          "Gain = $14,000 − $10,000 = $4,000; total ROI = $4,000 / $10,000 = 40%.",
+          "Annualized ROI = (14,000 / 10,000)^(1/2) − 1.",
+          "Compare with the 50% total ROI over five years example: the shorter investment has a lower total gain but a higher compound annual equivalent."
+        ],
+        "answer": "The two-year annualized return is about 18.32160%, compared with 8.44718% for the five-year 50% gain. The annualized comparison alone does not measure risk.",
+        "expected": {
+          "label": "Annualized return",
+          "value": "18.3215956619923208513465658312323409683100246158868064575940",
+          "tolerance": 0.0001
+        }
+      },
+      {
+        "title": "Include entry and exit fees once",
+        "mode": "length",
+        "values": {
+          "cost": "10100",
+          "returned": "11900",
+          "years": "1"
+        },
+        "inputs": "Purchase amount: $10,000; entry fee paid at purchase: $100; final sale proceeds before exit fee: $12,000; exit fee: $100; length: 1 year.",
+        "steps": [
+          "Amount invested = $10,000 purchase + $100 entry fee = $10,100.",
+          "Amount returned = $12,000 sale proceeds − $100 exit fee = $11,900.",
+          "Net gain = $11,900 − $10,100 = $1,800; total ROI = $1,800 / $10,100."
+        ],
+        "answer": "Net ROI is about 17.82178%, rather than the 20% obtained by ignoring both fees. This example has only purchase-date and sale-date cash flows.",
+        "expected": {
+          "label": "Annualized return",
+          "value": "17.8217821782178217821782178217821782178217821782178217821780",
+          "tolerance": 0.0001
+        }
+      },
+      {
+        "title": "Interpret annualization of a six-month gain",
+        "mode": "length",
+        "values": {
+          "cost": "10000",
+          "returned": "11000",
+          "years": "0.5"
+        },
+        "inputs": "Amount invested: $10,000; amount returned: $11,000; investment length: 0.5 years.",
+        "steps": [
+          "Realized total ROI = ($11,000 − $10,000) / $10,000 = 10%.",
+          "Annualized ROI = (11,000 / 10,000)^(1/0.5) − 1 = 21%.",
+          "That 21% is the compound annual equivalent of the observed half-year change, not a prediction for the next six months."
+        ],
+        "answer": "Total ROI is 10%; annualized ROI is 21%. A short holding period can amplify the annualized number without establishing a repeatable return.",
+        "expected": {
+          "label": "Annualized return",
+          "value": "21.00",
+          "tolerance": 0.0001
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-roi-formula",
+        "queries": [
+          "how to calculate roi",
+          "how to calculate roi percentage"
+        ],
+        "question": "How do I calculate ROI as a percentage?",
+        "answer": "Subtract the initial investment cost from the returned amount, divide by that cost and multiply by 100. A $10,000 cost and $15,000 terminal value give a $5,000 gain and 50% total ROI. Enter returned value, not just the $5,000 gain, in the Returned amount field.",
+        "links": [
+          {
+            "id": "roi",
+            "mode": "length",
+            "label": "Calculate a 50% total ROI",
+            "values": {
+              "cost": "10000",
+              "returned": "15000",
+              "years": "5"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-roi-annualization",
+        "queries": [
+          "annualized roi calculator",
+          "how is roi calculated"
+        ],
+        "question": "How is annualized ROI different from total ROI?",
+        "answer": "Total ROI ignores how long the gain took. The compound annual equivalent is (returned / cost)^(1 / years) − 1. A 50% gain over five years is about 8.44718% per year on that basis. Dividing 50% by five gives an arithmetic average that does not compound back to the same ending value.",
+        "links": [
+          {
+            "id": "roi",
+            "mode": "length",
+            "label": "Compare total and annualized returns",
+            "values": {
+              "cost": "10000",
+              "returned": "15000",
+              "years": "5"
+            }
+          }
+        ],
+        "replacesQuestion": "Is a 50% ROI the same as 50% per year?"
+      },
+      {
+        "anchor": "use-roi-costs",
+        "queries": [
+          "business roi calculator",
+          "how to calculate return on investment roi"
+        ],
+        "question": "How should fees and operating costs be included in ROI?",
+        "answer": "Use consistent cost and returned-value definitions, accounting for relevant charges once rather than treating gross revenue as profit or deducting a fee twice. This form has a single initial cost and terminal returned amount. If substantial expenses or receipts occur at different times, a cash-flow model is more appropriate than collapsing them into two amounts.",
+        "links": [
+          {
+            "id": "roi",
+            "mode": "length",
+            "label": "Compare consistently defined cost and return"
+          },
+          {
+            "id": "average-return",
+            "mode": "cashflows",
+            "label": "Use actual dated cash flows"
+          }
+        ],
+        "replacesQuestion": "Should fees be included in ROI?"
+      },
+      {
+        "anchor": "use-roi-loss",
+        "queries": [
+          "roi calculator"
+        ],
+        "question": "Can ROI be negative?",
+        "answer": "Yes. $10,000 invested and $8,000 returned gives a $2,000 loss and −20% total ROI. The annualized result also reflects that loss. The initial cost must stay positive; a zero investment denominator cannot produce a defined ROI percentage in this form.",
+        "links": [
+          {
+            "id": "roi",
+            "mode": "length",
+            "label": "Inspect a negative ROI",
+            "values": {
+              "cost": "10000",
+              "returned": "8000",
+              "years": "2"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-roi-date-basis",
+        "queries": [
+          "roi time calculator"
+        ],
+        "question": "Why can date-based and entered-year results differ?",
+        "answer": "Dates mode counts actual elapsed days and divides by 365. January 1, 2024 to January 1, 2025 spans 366 days, so its model length is slightly more than one year. A 10% total gain then annualizes to about 9.97136%. Length mode uses your entered year value directly; compare the same duration before comparing outputs.",
+        "links": [
+          {
+            "id": "roi",
+            "mode": "dates",
+            "label": "Check a leap-year date interval",
+            "values": {
+              "cost": "10000",
+              "returned": "11000",
+              "start": "2024-01-01",
+              "end": "2025-01-01"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-roi-other-tasks",
+        "queries": [
+          "how to calculate rental property roi"
+        ],
+        "question": "Which tool should I use for rental property, advertising or recurring investments?",
+        "answer": "Rental-property ROI involves operating costs, financing and a sale sequence; use the dedicated Rental Property model. ROAS compares attributed ad revenue with spend and is not net-profit ROI. Use Investment for a deposit-and-growth scenario, or Dated Cash Flows for the timing of actual contributions and withdrawals. This simple ROI form does not automatically infer those inputs.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Model a property investment"
+          },
+          {
+            "id": "roas",
+            "mode": "actual",
+            "label": "Calculate revenue-based ROAS"
+          },
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Project regular investments"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roi-short-period",
+        "queries": [
+          "is roi calculated annually",
+          "is roi calculated annually or monthly",
+          "roi calculator months"
+        ],
+        "question": "Is ROI always annual, and can I use a holding period shorter than a year?",
+        "answer": "Total ROI applies to the entire holding period, not automatically to a month or year. Length mode accepts fractions of a year: six months is 0.5 years. A 10% total gain over that interval has a 21% compound annual equivalent, but that does not predict the next six months or mean you earned 21% during the observed period. Dates mode uses actual elapsed days divided by 365, so six calendar months need not equal exactly 0.5 years.",
+        "links": [
+          {
+            "id": "roi",
+            "mode": "length",
+            "label": "Inspect a six-month annualization",
+            "values": {
+              "cost": "10000",
+              "returned": "11000",
+              "years": "0.5"
+            }
+          },
+          {
+            "id": "roi",
+            "mode": "dates",
+            "label": "Use actual start and end dates"
+          }
+        ]
+      }
+    ]
+  },
+  "investment": {
+    "updatedOn": "2026-10-28",
+    "summary": "Project investment growth with a starting amount, recurring deposits and an assumed compound return, or solve for one missing input. The five modes separate ending balance, monthly contribution, required return, starting amount and time to a target. These are scenarios, not forecasts of a particular stock, fund or account. For return from just a purchase and sale amount, use ROI; for cash flows on specific dates, use Dated Cash Flows.",
+    "scope": "Monthly cash-flow projection with a nominal annual rate and selected compounding frequency converted to a monthly equivalent. Monthly and annual deposits follow the selected beginning/end timing. Additional months are supported; time-to-target selects the first whole month reaching the goal within 200 years. The entered tax assumption is charged on positive interest at each year-end or final partial year, with no loss carryforward; it is not an account-specific tax calculation. Inflation discounts the ending amount separately. No live prices, stock selection, fees or uncertain return sequence are inferred.",
+    "examples": [
+      {
+        "title": "Reconcile one-year compound growth without deposits",
+        "mode": "end",
+        "values": {
+          "principal": "1000",
+          "years": "1",
+          "months": "0",
+          "rate": "10",
+          "compound": "Annually",
+          "annual": "0",
+          "monthly": "0",
+          "timing": "End of period",
+          "tax": "0",
+          "inflation": "0"
+        },
+        "inputs": "Starting amount: $1,000; Investment length: 1 years; Additional months: 0 months; Annual interest / return rate: 10 %; Compounding: Annually; Annual contribution: $0; Monthly contribution: $0; Contribution timing: End of period; Tax on interest: 0 %; Inflation rate: 0 %. Amounts in USD.",
+        "steps": [
+          "Start with $1,000, a 10% nominal rate compounded annually and no contributions.",
+          "One-year ending balance = $1,000 × 1.10. Set tax and inflation to zero to isolate growth."
+        ],
+        "answer": "The ending balance is $1,100, including $100 growth.",
+        "expected": {
+          "label": "Ending balance",
+          "value": "1100",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Solve a monthly contribution at zero return",
+        "mode": "contribution",
+        "values": {
+          "principal": "0",
+          "years": "1",
+          "months": "0",
+          "rate": "0",
+          "compound": "Annually",
+          "annual": "0",
+          "timing": "End of period",
+          "tax": "0",
+          "inflation": "0",
+          "end": "1200"
+        },
+        "inputs": "Starting amount: $0; Investment length: 1 years; Additional months: 0 months; Annual interest / return rate: 0 %; Compounding: Annually; Annual contribution: $0; Contribution timing: End of period; Tax on interest: 0 %; Inflation rate: 0 %; Target end amount: $1,200. Amounts in USD.",
+        "steps": [
+          "Start at zero, target $1,200 after 12 months, and set annual additions, tax and inflation to zero.",
+          "With no investment return, monthly contribution = $1,200 / 12."
+        ],
+        "answer": "The required monthly contribution is $100. A 0% assumption is an arithmetic illustration.",
+        "expected": {
+          "label": "Contribute Amount",
+          "value": "100",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Solve the annual return implied by a target",
+        "mode": "return",
+        "values": {
+          "principal": "1000",
+          "years": "1",
+          "months": "0",
+          "compound": "Annually",
+          "annual": "0",
+          "monthly": "0",
+          "timing": "End of period",
+          "tax": "0",
+          "inflation": "0",
+          "end": "1100"
+        },
+        "inputs": "Starting amount: $1,000; Investment length: 1 years; Additional months: 0 months; Compounding: Annually; Annual contribution: $0; Monthly contribution: $0; Contribution timing: End of period; Tax on interest: 0 %; Inflation rate: 0 %; Target end amount: $1,100. Amounts in USD.",
+        "steps": [
+          "Start with $1,000 and target $1,100 after one year, with no deposits.",
+          "Use annual compounding and zero tax/inflation. Required rate = $1,100 / $1,000 − 1."
+        ],
+        "answer": "The implied annual rate is 10%; the calculation does not establish that an investment can earn it.",
+        "expected": {
+          "label": "Return Rate",
+          "value": "10",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Find the initial investment needed for a target",
+        "mode": "starting",
+        "values": {
+          "years": "1",
+          "months": "0",
+          "rate": "10",
+          "compound": "Annually",
+          "annual": "0",
+          "monthly": "0",
+          "timing": "End of period",
+          "tax": "0",
+          "inflation": "0",
+          "end": "1100"
+        },
+        "inputs": "Investment length: 1 years; Additional months: 0 months; Annual interest / return rate: 10 %; Compounding: Annually; Annual contribution: $0; Monthly contribution: $0; Contribution timing: End of period; Tax on interest: 0 %; Inflation rate: 0 %; Target end amount: $1,100. Amounts in USD.",
+        "steps": [
+          "Target $1,100 in one year at 10% with annual compounding and no deposits.",
+          "Required starting amount = $1,100 / 1.10."
+        ],
+        "answer": "The required initial amount is $1,000 under the entered assumptions.",
+        "expected": {
+          "label": "Starting Amount",
+          "value": "1000",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Find the first whole month reaching a goal",
+        "mode": "length",
+        "values": {
+          "principal": "0",
+          "rate": "0",
+          "compound": "Annually",
+          "annual": "0",
+          "monthly": "100",
+          "timing": "End of period",
+          "tax": "0",
+          "inflation": "0",
+          "end": "1200"
+        },
+        "inputs": "Starting amount: $0; Annual interest / return rate: 0 %; Compounding: Annually; Annual contribution: $0; Monthly contribution: $100; Contribution timing: End of period; Tax on interest: 0 %; Inflation rate: 0 %; Target end amount: $1,200. Amounts in USD.",
+        "steps": [
+          "Start at zero and contribute $100 at each month-end, with zero return and no annual addition.",
+          "Eleven deposits total $1,100; twelve total $1,200."
+        ],
+        "answer": "The first month reaching the $1,200 goal is month 12, or 1 year.",
+        "expected": {
+          "label": "Invest Length",
+          "value": "1",
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-investment-growth-deposits",
+        "queries": [
+          "investment calculator with monthly contributions",
+          "how much will my investment grow calculator"
+        ],
+        "question": "How do I calculate investment growth with recurring deposits?",
+        "answer": "Enter your starting balance, time horizon, annual rate and compounding choice, then monthly and annual additions. The schedule grows each balance between deposits, so later contributions earn for less time. At zero return, a $1,200 goal over 12 months from zero requires $100 each month. Beginning-of-period deposits normally earn more than otherwise identical end-of-period deposits when returns are positive.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "contribution",
+            "label": "Try the monthly contribution example",
+            "values": {
+              "principal": "0",
+              "years": "1",
+              "months": "0",
+              "rate": "0",
+              "compound": "Annually",
+              "annual": "0",
+              "timing": "End of period",
+              "tax": "0",
+              "inflation": "0",
+              "end": "1200"
+            }
+          },
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Project an ending balance"
+          }
+        ],
+        "replacesQuestion": "Can I calculate investment growth with monthly contributions?"
+      },
+      {
+        "anchor": "use-investment-required-rate",
+        "queries": [
+          "how to calculate investment rate of return",
+          "how to calculate return rate on investment"
+        ],
+        "question": "Does a required investment return mean that return is achievable?",
+        "answer": "No. Return Rate solves the rate that makes your entered contributions and starting amount reach the target in this model. It is an implied assumption rather than a forecast, quote or recommendation. If the result seems implausible, compare a longer horizon, a larger starting amount or more contributions. A solver failure can mean the goal is outside its supported rate range.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "return",
+            "label": "Inspect an implied 10% return",
+            "values": {
+              "principal": "1000",
+              "years": "1",
+              "months": "0",
+              "compound": "Annually",
+              "annual": "0",
+              "monthly": "0",
+              "timing": "End of period",
+              "tax": "0",
+              "inflation": "0",
+              "end": "1100"
+            }
+          },
+          {
+            "id": "investment",
+            "mode": "contribution",
+            "label": "Solve contributions instead"
+          }
+        ],
+        "replacesQuestion": "Does solving for a required return show an achievable investment?"
+      },
+      {
+        "anchor": "use-investment-vs-roi",
+        "queries": [
+          "how to calculate return on investment",
+          "how do you calculate return on investment"
+        ],
+        "question": "Should I use investment growth, ROI or IRR?",
+        "answer": "Use this growth calculator to project a balance from recurring deposits and an assumed rate. Use ROI for total and annualized return from an initial cost and a final returned amount. Use IRR for a sequence of signed cash flows; actual dated cash flows belong in Dated Cash Flows. A 10% assumption in a growth projection is not a measured 10% investment performance.",
+        "links": [
+          {
+            "id": "roi",
+            "mode": "length",
+            "label": "Calculate total and annualized ROI"
+          },
+          {
+            "id": "irr",
+            "mode": "irregular",
+            "label": "Calculate IRR"
+          },
+          {
+            "id": "average-return",
+            "mode": "cashflows",
+            "label": "Use actual cash-flow dates"
+          }
+        ]
+      },
+      {
+        "anchor": "use-investment-goal-time",
+        "queries": [
+          "investment growth calculator"
+        ],
+        "question": "How can I find the starting amount or time needed to reach my goal?",
+        "answer": "Starting Amount solves the initial balance with the other assumptions fixed. Invest Length tests whole months and returns the first month reaching the target, up to 200 years. At zero return, $100 month-end deposits reach $1,200 in 12 months from zero. An already achieved goal can need no additional time; an unreachable goal should prompt a change to assumptions rather than an assumed guaranteed return.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "starting",
+            "label": "Find a starting balance",
+            "values": {
+              "years": "1",
+              "months": "0",
+              "rate": "10",
+              "compound": "Annually",
+              "annual": "0",
+              "monthly": "0",
+              "timing": "End of period",
+              "tax": "0",
+              "inflation": "0",
+              "end": "1100"
+            }
+          },
+          {
+            "id": "investment",
+            "mode": "length",
+            "label": "Find time to a target",
+            "values": {
+              "principal": "0",
+              "rate": "0",
+              "compound": "Annually",
+              "annual": "0",
+              "monthly": "100",
+              "timing": "End of period",
+              "tax": "0",
+              "inflation": "0",
+              "end": "1200"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-investment-inflation-tax",
+        "queries": [
+          "investment calculator inflation",
+          "investment calculator with tax"
+        ],
+        "question": "How do tax and inflation change the investment projection?",
+        "answer": "The tax field applies one assumed rate to positive interest at year-end or the final partial year. It does not distinguish dividends, capital gains, tax brackets or tax-advantaged accounts. Inflation separately translates the nominal ending balance into an inflation-adjusted amount. Use consistent nominal return and inflation assumptions; entering a real return and then deducting inflation again double counts it.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare tax and inflation assumptions"
+          },
+          {
+            "id": "real-return",
+            "mode": "rate",
+            "label": "Compare nominal and real returns"
+          }
+        ]
+      },
+      {
+        "anchor": "use-investment-withdrawals",
+        "queries": [
+          "how long will my investments last calculator"
+        ],
+        "question": "Can this estimate how long retirement withdrawals will last?",
+        "answer": "The growth forms solve saving and accumulation goals; they do not model a retirement spending plan. Use Retirement withdrawal or Savings Longevity for withdrawals, and enter a horizon and assumptions appropriate to that question. Neither constant-return model simulates market sequences or guarantees that savings will last for life.",
+        "links": [
+          {
+            "id": "retirement",
+            "mode": "withdrawal",
+            "label": "Estimate a retirement withdrawal"
+          },
+          {
+            "id": "retirement",
+            "mode": "longevity",
+            "label": "Explore savings longevity"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "Investor.gov: compound growth inputs and compounding frequency",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+      }
+    ]
+  },
+  "irr": {
+    "updatedOn": "2026-10-28",
+    "summary": "Internal rate of return is a discount rate that makes the net present value of signed investment cash flows zero. This calculator reports effective annual IRRs for either scheduled recurring flows and an ending value or a list of unequal year-end flows. Timing and sign conventions matter; multiple mathematical solutions can exist.",
+    "scope": "Enter the initial investment as a positive amount; it becomes a time-zero outflow. Fixed mode supports the selected recurring-flow frequency and timing plus terminal value at the exact holding end. Unequal cash-flow amounts occur at successive year ends, not arbitrary dates; retain zero entries for empty years. All displayed roots are effective annual rates. The bounded numerical search may not find every solution, especially nearly repeated roots; IRR is not a risk measure, ROI or a promise of reinvestment at that rate.",
+    "examples": [
+      {
+        "title": "Verify a simple annual IRR",
+        "mode": "fixed",
+        "values": {
+          "initial": "1000",
+          "years": "1",
+          "months": "0",
+          "cash_action": "Net cash flow",
+          "inflow": "0",
+          "cash_frequency": "Annually",
+          "ending": "1100",
+          "timing": "End of period"
+        },
+        "inputs": "Initial investment (outflow at time zero): $1,000; Holding length: 1 years; Additional holding months: 0 months; Recurring cash flow: Net cash flow; Net cash flow each period: $0; Cash flow frequency: Annually; Ending value: $1,100; Cash flow timing: End of period. Amounts in USD.",
+        "steps": [
+          "Pay $1,000 at time zero, receive no recurring flows, and receive $1,100 at the end of one year.",
+          "Solve −$1,000 + $1,100 / (1 + r) = 0."
+        ],
+        "answer": "The effective annual IRR is 10%.",
+        "expected": {
+          "label": "Annual IRR 1",
+          "value": "10",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Recognize two valid IRRs for one cash-flow sequence",
+        "mode": "irregular",
+        "values": {
+          "initial": "100",
+          "flows": "230, -132"
+        },
+        "inputs": "Initial investment (outflow at time zero): $100; Subsequent cash flows by year: 230, -132. Amounts in USD.",
+        "steps": [
+          "Enter initial investment 100 and subsequent year-end flows 230, −132.",
+          "The equation −100 + 230/(1+r) − 132/(1+r)² = 0 has roots r = 0.10 and r = 0.20."
+        ],
+        "answer": "The detected annual IRRs are 10% and 20%. A single return figure would hide the ambiguity.",
+        "expected": {
+          "label": "Annual IRR 2",
+          "value": "20",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Preserve an empty year and a negative annual return",
+        "mode": "irregular",
+        "values": {
+          "initial": "1000",
+          "flows": "0, 800"
+        },
+        "inputs": "Initial investment (outflow at time zero): $1,000; Subsequent cash flows by year: 0, 800. Amounts in USD.",
+        "steps": [
+          "Pay $1,000 now, receive zero in year one and $800 at the end of year two.",
+          "Enter flows 0, 800. Solve (1+r)² = 0.8."
+        ],
+        "answer": "The effective annual IRR is about −10.55728%, different from the −20% total ROI.",
+        "expected": {
+          "label": "Annual IRR 1",
+          "value": "-10.5572809000084121436330532507489505823752656155389710291641",
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-irr-equation",
+        "queries": [
+          "how to calculate irr",
+          "how is irr calculated"
+        ],
+        "question": "How is internal rate of return calculated?",
+        "answer": "Find a rate r such that the sum of each signed cash flow divided by (1+r) raised to its time in years equals zero. Include the initial negative outflow at time zero. For −$1,000 now and $1,100 after one year, that rate is 10%. Timing affects the equation, so an identical total received over a longer period can have a different IRR.",
+        "links": [
+          {
+            "id": "irr",
+            "mode": "fixed",
+            "label": "Try a one-year 10% IRR",
+            "values": {
+              "initial": "1000",
+              "years": "1",
+              "months": "0",
+              "cash_action": "Net cash flow",
+              "inflow": "0",
+              "cash_frequency": "Annually",
+              "ending": "1100",
+              "timing": "End of period"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-irr-multiple-roots",
+        "queries": [
+          "how do you calculate irr"
+        ],
+        "question": "Why can cash flows have more than one IRR?",
+        "answer": "A sequence that changes sign more than once can produce multiple roots. The example −100, 230, −132 has both 10% and 20% annual IRRs. Other sequences may have no economically useful root. Review cash-flow amounts and times rather than selecting whichever rate looks best; the numerical search reports detected roots without guaranteeing that all roots were found.",
+        "links": [
+          {
+            "id": "irr",
+            "mode": "irregular",
+            "label": "Inspect both IRR solutions",
+            "values": {
+              "initial": "100",
+              "flows": "230, -132"
+            }
+          },
+          {
+            "id": "mirr",
+            "mode": "cashflows",
+            "label": "Compare an explicit MIRR assumption"
+          }
+        ],
+        "replacesQuestion": "Can an investment have more than one IRR?"
+      },
+      {
+        "anchor": "use-irr-risk-roi",
+        "queries": [
+          "how to calculate irr"
+        ],
+        "question": "Does IRR tell me an investment is better or safer?",
+        "answer": "No. IRR does not measure risk, liquidity, capital required or the dollar value created. Compare project size and cash-flow timing alongside returns. ROI ignores intermediate cash-flow timing; MIRR uses explicit financing and reinvestment rates under its own assumptions. A higher IRR alone does not establish that one investment is appropriate.",
+        "links": [
+          {
+            "id": "roi",
+            "mode": "length",
+            "label": "Compare total ROI"
+          },
+          {
+            "id": "mirr",
+            "mode": "cashflows",
+            "label": "Review MIRR"
+          }
+        ],
+        "replacesQuestion": "Does IRR include risk?"
+      },
+      {
+        "anchor": "use-irr-annual-frequency",
+        "queries": [
+          "irr calculator monthly",
+          "annual irr calculator"
+        ],
+        "question": "Are these IRRs annual even when cash flows are monthly?",
+        "answer": "Yes. Fixed mode places recurring flows at the selected frequency and timing, then reports effective annual rates. Monthly cash flows do not make the headline a monthly rate. The terminal value arrives at the exact end date implied by entered years and months; a partial final period does not invent a prorated recurring payment.",
+        "links": [
+          {
+            "id": "irr",
+            "mode": "fixed",
+            "label": "Review recurring-flow timing"
+          }
+        ],
+        "replacesQuestion": "Is this IRR result annual or monthly?"
+      },
+      {
+        "anchor": "use-irr-dates",
+        "queries": [
+          "irr calculator irregular cash flows"
+        ],
+        "question": "Can I enter unequal amounts or actual irregular cash-flow dates?",
+        "answer": "Unequal mode accepts different amounts at successive year ends. Enter zeros to preserve years with no cash flow, and use negative subsequent amounts for additional investments. For actual calendar dates, use Dated Cash Flows in Average Return instead. A yearly IRR calculation and a dated XIRR calculation can differ because their timing assumptions differ.",
+        "links": [
+          {
+            "id": "irr",
+            "mode": "irregular",
+            "label": "Keep an empty year",
+            "values": {
+              "initial": "1000",
+              "flows": "0, 800"
+            }
+          },
+          {
+            "id": "average-return",
+            "mode": "cashflows",
+            "label": "Use dated cash flows"
+          }
+        ],
+        "replacesQuestion": "Can I enter cash flows on irregular dates?"
+      },
+      {
+        "anchor": "use-irr-spreadsheet",
+        "queries": [
+          "how to calculate irr in excel",
+          "how to calculate irr on financial calculator"
+        ],
+        "question": "Why might a spreadsheet or financial calculator show a different IRR?",
+        "answer": "First match the initial sign, all subsequent amounts, empty periods, timing, frequency and final value. A spreadsheet IRR function generally treats entries as equally spaced; XIRR uses dates. A calculator may report a per-period rate while this page reports an effective annual rate. Different guesses and numerical searches can also select different roots for nonconventional cash flows.",
+        "links": [
+          {
+            "id": "irr",
+            "mode": "irregular",
+            "label": "Check a multiple-root example",
+            "values": {
+              "initial": "100",
+              "flows": "230, -132"
+            }
+          },
+          {
+            "id": "average-return",
+            "mode": "cashflows",
+            "label": "Check actual dated flows"
+          }
+        ]
+      }
+    ],
+    "sources": []
+  },
+  "annuity": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate the accumulation value of a starting balance with monthly and annual additions before withdrawals begin. Contribution timing and the assumed annual growth rate determine the projection. For income from an existing balance use Annuity Payout; for the present value of known future payments use Present Value. This projection is not an insurance quote.",
+    "scope": "Constant effective annual growth converted to an equivalent monthly rate. Contributions occur at the selected beginning or end of each month; annual additions occur at the beginning or end of each saving year. Accumulation length must contain a whole number of months. Starting principal is included in the first schedule row’s addition. No insurance guarantees, mortality credits, surrender charges, riders, caps, taxes or automatic contract fees are priced.",
+    "examples": [
+      {
+        "title": "Project contributions at period end",
+        "mode": "growth",
+        "values": {
+          "principal": "1000",
+          "annual": "500",
+          "monthly": "100",
+          "timing": "End of period",
+          "rate": "12",
+          "years": "1"
+        },
+        "inputs": "Starting principal: $1,000; Annual addition: $500; Monthly addition: $100; Contribution timing: End of period; Annual growth rate: 12 %; Accumulation length: 1 years. Amounts in USD.",
+        "steps": [
+          "Use $1,000 initially, $100 each month-end and $500 at year-end, with a hypothetical 12% effective annual return.",
+          "Monthly rate j = 1.12^(1/12) − 1. Future value = 1,000 × 1.12 + 100 × ((1+j)^12 − 1)/j + 500."
+        ],
+        "answer": "Future value is $2,884.65, consisting of $2,700 contributed and $184.65 modeled growth.",
+        "expected": {
+          "label": "Annuity future value",
+          "value": "2884.64979083531784160257654854999858767158826559017435880248",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Compare beginning-of-period contributions",
+        "mode": "growth",
+        "values": {
+          "principal": "1000",
+          "annual": "500",
+          "monthly": "100",
+          "timing": "Beginning of period",
+          "rate": "12",
+          "years": "1"
+        },
+        "inputs": "Starting principal: $1,000; Annual addition: $500; Monthly addition: $100; Contribution timing: Beginning of period; Annual growth rate: 12 %; Accumulation length: 1 years. Amounts in USD.",
+        "steps": [
+          "Keep the same starting amount, additions, annual return and one-year horizon.",
+          "The $500 annual addition is invested at the start; every monthly addition earns for one additional month."
+        ],
+        "answer": "Future value is $2,956.65 with the same $2,700 contributed: $72 more than end timing in this example.",
+        "expected": {
+          "label": "Annuity future value",
+          "value": "2956.64979083531784160257654854999858767158826559017435880248",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Reconcile deposits with no growth",
+        "mode": "growth",
+        "values": {
+          "principal": "1000",
+          "annual": "500",
+          "monthly": "100",
+          "timing": "End of period",
+          "rate": "0",
+          "years": "1"
+        },
+        "inputs": "Starting principal: $1,000; Annual addition: $500; Monthly addition: $100; Contribution timing: End of period; Annual growth rate: 0 %; Accumulation length: 1 years. Amounts in USD.",
+        "steps": [
+          "Start with $1,000 and add 12 × $100 monthly plus $500 annually.",
+          "At 0% growth, future value equals all contributions."
+        ],
+        "answer": "Future value is $2,700, of which $1,700 is new additions and $0 is growth.",
+        "expected": {
+          "label": "Annuity future value",
+          "value": "2700",
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-annuity-future-value",
+        "queries": [
+          "how to calculate future value of annuity",
+          "how do you calculate the future value of an annuity"
+        ],
+        "question": "How do I calculate the future value of annuity contributions?",
+        "answer": "Grow the starting balance and each contribution for the time it is invested. With monthly end deposits C, monthly equivalent rate j and N months, the deposit portion is C × ((1+j)^N − 1)/j; add growth on initial principal and separately timed annual deposits. At zero return, simply add the starting amount and contributions.",
+        "links": [
+          {
+            "id": "annuity",
+            "mode": "growth",
+            "label": "Try a future-value example",
+            "values": {
+              "principal": "1000",
+              "annual": "500",
+              "monthly": "100",
+              "timing": "End of period",
+              "rate": "12",
+              "years": "1"
+            }
+          },
+          {
+            "id": "annuity",
+            "mode": "growth",
+            "label": "Check a zero-return control",
+            "values": {
+              "principal": "1000",
+              "annual": "500",
+              "monthly": "100",
+              "timing": "End of period",
+              "rate": "0",
+              "years": "1"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-annuity-deposit-timing",
+        "queries": [
+          "annuity due calculator",
+          "ordinary annuity calculator"
+        ],
+        "question": "Can I combine monthly and annual deposits and change their timing?",
+        "answer": "Yes. Both additions are included. Beginning timing places monthly deposits at month start and annual deposits at the start of each saving year; End timing places them at the corresponding ends. At a positive return, earlier contributions earn longer. A partial final year receives an annual deposit only if its scheduled deposit date is reached.",
+        "links": [
+          {
+            "id": "annuity",
+            "mode": "growth",
+            "label": "Compare end timing",
+            "values": {
+              "principal": "1000",
+              "annual": "500",
+              "monthly": "100",
+              "timing": "End of period",
+              "rate": "12",
+              "years": "1"
+            }
+          },
+          {
+            "id": "annuity",
+            "mode": "growth",
+            "label": "Compare beginning timing",
+            "values": {
+              "principal": "1000",
+              "annual": "500",
+              "monthly": "100",
+              "timing": "Beginning of period",
+              "rate": "12",
+              "years": "1"
+            }
+          }
+        ],
+        "replacesQuestion": "Can I enter both annual and monthly annuity contributions?"
+      },
+      {
+        "anchor": "use-annuity-guarantee",
+        "queries": [
+          "how is annuity calculated",
+          "annuity calculator"
+        ],
+        "question": "Is the annuity growth rate a guaranteed insurance return?",
+        "answer": "No. The entered rate is a constant projection assumption. Actual annuity contracts can have explicit fees, implicit costs, caps and withdrawal restrictions. This page does not price those terms or an insurer’s guarantees. Review the specific contract and use a consistent rate assumption; a positive projected balance is not a recommendation to buy an annuity.",
+        "links": [
+          {
+            "id": "annuity",
+            "mode": "growth",
+            "label": "Review accumulation assumptions"
+          }
+        ],
+        "replacesQuestion": "Does the assumed annuity return represent a guarantee?"
+      },
+      {
+        "anchor": "use-annuity-accumulation-vs-income",
+        "queries": [
+          "how to calculate annuity payments",
+          "income annuity calculator"
+        ],
+        "question": "Is annuity accumulation the same as monthly retirement income?",
+        "answer": "No. Accumulation estimates a future balance while you are adding money. Annuity Payout estimates period-end withdrawals from an existing balance under a constant return and chosen term or payment. Lifetime insurance payments can depend on contract guarantees and life-contingent pricing that neither projection supplies.",
+        "links": [
+          {
+            "id": "annuity-payout",
+            "mode": "length",
+            "label": "Estimate fixed-term payouts"
+          },
+          {
+            "id": "annuity-payout",
+            "mode": "payment",
+            "label": "Estimate payout duration"
+          }
+        ]
+      },
+      {
+        "anchor": "use-annuity-present-value",
+        "queries": [
+          "how to calculate the present value of an annuity",
+          "present value of annuity calculator"
+        ],
+        "question": "Where can I calculate the present value of future annuity payments?",
+        "answer": "Use Present Value for discounting a specified payment stream and terminal amount under its stated timing. This page works forward from principal and deposits to accumulation value. Present value, future value and an insurer’s purchase quote answer different questions; match the frequency and rate basis before comparing them.",
+        "links": [
+          {
+            "id": "present-value",
+            "mode": "annuity",
+            "label": "Discount future payments"
+          },
+          {
+            "id": "annuity-payout",
+            "mode": "length",
+            "label": "Estimate withdrawals"
+          }
+        ]
+      },
+      {
+        "anchor": "use-annuity-costs-scope",
+        "queries": [
+          "annuity investment calculator"
+        ],
+        "question": "Does this include annuity taxes and surrender charges?",
+        "answer": "No. It projects contributions and growth without calculating tax treatment, surrender charges, death benefits or optional riders. Those depend on the contract, account and circumstances. Adding the same cost through both a reduced return assumption and a separate adjustment can double count it; reconcile any assumptions with actual contract disclosures.",
+        "links": [
+          {
+            "id": "annuity",
+            "mode": "growth",
+            "label": "Review the projection"
+          },
+          {
+            "id": "investment-fee",
+            "mode": "compare",
+            "label": "Compare an investment fee scenario"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "Investor.gov: annuity types, costs and contract considerations",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/annuities"
+      }
+    ]
+  },
+  "annuity-payout": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate a fixed period-end payout from a balance and term, or estimate how many payments a chosen withdrawal can support. Review principal, investment earnings, payout frequency and the final payment separately. This is a constant-return depletion model rather than a quote for lifetime annuity insurance.",
+    "scope": "Annual return is effective and converted to the selected monthly, quarterly or annual payout rate. Fix Length uses the annuity payment equation; a partial final period earns a fractional-period return and the final payment drains the balance. Fix Payment uses full payout dates with a final payment capped by the remaining balance; duration ends on that date. No mortality pooling, variable market returns, taxes, insurance fees or contract guarantees are modeled.",
+    "examples": [
+      {
+        "title": "Divide a balance into twelve zero-return payouts",
+        "mode": "length",
+        "values": {
+          "principal": "1200",
+          "rate": "0",
+          "frequency": "Monthly",
+          "years": "1"
+        },
+        "inputs": "Annuity principal: $1,200; Annual return: 0 %; Payout frequency: Monthly; Payout length: 1 years. Amounts in USD.",
+        "steps": [
+          "Enter $1,200 principal, 0% annual return, Monthly frequency and a one-year length.",
+          "Payment = $1,200 / 12."
+        ],
+        "answer": "There are twelve $100 payments, $1,200 paid in total and no investment earnings.",
+        "expected": {
+          "label": "Payment each period",
+          "value": "100",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Use an effective annual return for monthly payouts",
+        "mode": "length",
+        "values": {
+          "principal": "1200",
+          "rate": "12",
+          "frequency": "Monthly",
+          "years": "1"
+        },
+        "inputs": "Annuity principal: $1,200; Annual return: 12 %; Payout frequency: Monthly; Payout length: 1 years. Amounts in USD.",
+        "steps": [
+          "Enter $1,200, hypothetical 12% effective annual return and twelve monthly end payments.",
+          "Convert to j = 1.12^(1/12) − 1. Payment = 1,200 × j / (1 − (1+j)^−12)."
+        ],
+        "answer": "Regular monthly payout is about $106.27448; total payouts are $1,275.29, including $75.29 modeled earnings. The annual return is not simply divided by 12.",
+        "expected": {
+          "label": "Payment each period",
+          "value": "106.274480867329310215176774967132311617959849472842127699646",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Cap a final payout instead of inventing a full payment",
+        "mode": "payment",
+        "values": {
+          "principal": "1200",
+          "rate": "0",
+          "frequency": "Monthly",
+          "payment": "500"
+        },
+        "inputs": "Annuity principal: $1,200; Annual return: 0 %; Payout frequency: Monthly; Payment each period: $500. Amounts in USD.",
+        "steps": [
+          "With $1,200, zero return and a chosen $500 monthly payment, the first two payouts total $1,000.",
+          "The third monthly payout is the remaining $200."
+        ],
+        "answer": "Total payouts are $1,200 over 3 months, or 0.25 years; the final payment is smaller than $500.",
+        "expected": {
+          "label": "Total payouts",
+          "value": "1200",
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-annuity-payout-formula",
+        "queries": [
+          "how to calculate an annuity payout",
+          "how to calculate annuity payout"
+        ],
+        "question": "How is a fixed annuity payout calculated in this model?",
+        "answer": "Choose Fix Length and enter the balance, effective annual return, payout frequency and term. For complete periods, payment = principal × j / (1 − (1+j)^−N), where j is the equivalent payout-period rate. At zero return, divide principal by the number of periods. The schedule separates investment earnings from principal being returned.",
+        "links": [
+          {
+            "id": "annuity-payout",
+            "mode": "length",
+            "label": "Check twelve $100 payments",
+            "values": {
+              "principal": "1200",
+              "rate": "0",
+              "frequency": "Monthly",
+              "years": "1"
+            }
+          },
+          {
+            "id": "annuity-payout",
+            "mode": "length",
+            "label": "Inspect the effective-rate example",
+            "values": {
+              "principal": "1200",
+              "rate": "12",
+              "frequency": "Monthly",
+              "years": "1"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-annuity-payout-life",
+        "queries": [
+          "how much will an annuity payout calculator",
+          "annuity lifetime payout calculator"
+        ],
+        "question": "Does the projected payout guarantee lifetime income?",
+        "answer": "No. This model depletes an entered balance over a chosen horizon or payment schedule. It does not use life-contingent insurance pricing, mortality pooling or an insurer’s contract guarantees. A lifetime annuity quote must be obtained for the actual product and terms; a projected fixed-term payment is not an equivalent quote.",
+        "links": [
+          {
+            "id": "annuity-payout",
+            "mode": "length",
+            "label": "Set a fixed payout horizon"
+          },
+          {
+            "id": "pension",
+            "mode": "survivor",
+            "label": "Compare entered pension options"
+          }
+        ],
+        "replacesQuestion": "Will an annuity payout last for life?"
+      },
+      {
+        "anchor": "use-annuity-payout-duration",
+        "queries": [
+          "annuity payout calculator"
+        ],
+        "question": "How does a chosen payment affect how long the balance lasts?",
+        "answer": "A larger withdrawal generally exhausts the same balance sooner under the same constant return. Fix Payment calculates full payment dates and caps the last payment at the remaining funds. For $1,200 at zero return and $500 monthly, the schedule pays $500, $500 and $200, ending after three months rather than treating 2.4 full payments as a date.",
+        "links": [
+          {
+            "id": "annuity-payout",
+            "mode": "payment",
+            "label": "Inspect the smaller final payout",
+            "values": {
+              "principal": "1200",
+              "rate": "0",
+              "frequency": "Monthly",
+              "payment": "500"
+            }
+          }
+        ],
+        "replacesQuestion": "Why does a higher withdrawal shorten duration?"
+      },
+      {
+        "anchor": "use-annuity-payout-rate",
+        "queries": [
+          "how is annuity payout rate calculated",
+          "how to calculate annuity payout rate"
+        ],
+        "question": "Is an annuity payout rate the same as an investment return?",
+        "answer": "No. Annualized cash paid divided by principal is a payout ratio, and it can include your own principal. It is not the rate earned on the investment. In the zero-return example, the entire $1,200 balance is paid over a year even though investment earnings are $0. Review Total investment earnings separately from the payment amount.",
+        "links": [
+          {
+            "id": "annuity-payout",
+            "mode": "length",
+            "label": "Separate paid principal from earnings",
+            "values": {
+              "principal": "1200",
+              "rate": "0",
+              "frequency": "Monthly",
+              "years": "1"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-annuity-payout-frequency",
+        "queries": [
+          "payout annuity calculator",
+          "monthly annuity payout calculator"
+        ],
+        "question": "Why does payout frequency change the result?",
+        "answer": "Monthly, quarterly and annual payments arrive at different times. The model converts the same effective annual return to the corresponding period rate, with payments at period end. Frequency affects how long money remains invested. In Fix Length a partial final period can produce a different final payout, so inspect the schedule rather than multiplying a rounded regular payment by a fractional count.",
+        "links": [
+          {
+            "id": "annuity-payout",
+            "mode": "length",
+            "label": "Compare payout frequencies"
+          }
+        ]
+      },
+      {
+        "anchor": "use-annuity-payout-fees",
+        "queries": [
+          "how to calculate my current annuity payout",
+          "annuity payout calculator"
+        ],
+        "question": "Does the payout estimate include contract fees or tax?",
+        "answer": "No. It uses the principal, return and payout settings you enter. Contract fees, taxes, death benefits, inflation protection and surrender terms require separate review. If a selected payment is no larger than modeled positive interest per period, the tool can report that the balance is not exhausted under the constant-return assumption; that does not guarantee permanent income in actual markets.",
+        "links": [
+          {
+            "id": "annuity-payout",
+            "mode": "payment",
+            "label": "Check payment sustainability"
+          },
+          {
+            "id": "annuity",
+            "mode": "growth",
+            "label": "Project accumulation instead"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "Investor.gov: annuity fees, risks and product terms",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/annuities"
+      }
+    ]
+  },
+  "pension": {
+    "updatedOn": "2026-10-28",
+    "summary": "Compare a quoted lump sum with monthly pension income, a single-life pension with a joint-survivor option, or earlier and later retirement starts. Enter plan benefit quotes, discount rate, COLA and lifespans consistently. The result is a scenario comparison, not a calculation of the pension benefit you have earned.",
+    "scope": "Benefits are paid monthly at period end and discounted with an effective annual rate. COLA increases benefits on modeled annual anniversaries. Lump Sum compares the payment stream with the entered cash offer; its undiscounted break-even ignores COLA and investment returns. Survivor comparison uses deterministic entered lifespans, not mortality probabilities. Work Longer excludes employment salary and additional retirement contributions. No salary/service accrual, FERS eligibility, actuarial lump-sum quote, tax or plan solvency calculation is supplied.",
+    "examples": [
+      {
+        "title": "Compare an undiscounted pension with a cash offer",
+        "mode": "lump",
+        "values": {
+          "age": "65",
+          "life": "85",
+          "lump": "300000",
+          "monthly": "2000",
+          "return": "0",
+          "cola": "0"
+        },
+        "inputs": "Retirement age: 65 years; Life expectancy: 85 years; Lump sum offered: $300,000; Monthly pension: $2,000; Annual discount / investment return: 0 %; Annual pension COLA: 0 %. Amounts in USD.",
+        "steps": [
+          "A $2,000 monthly pension from age 65 through a 20-year entered horizon totals $480,000.",
+          "At zero COLA and discount, compare that amount with a $300,000 lump sum."
+        ],
+        "answer": "The pension value advantage is $180,000. Simple undiscounted break-even is $300,000 / $24,000 = 12.5 years.",
+        "expected": {
+          "label": "Pension value advantage",
+          "value": "180000",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Discount the same monthly pension",
+        "mode": "lump",
+        "values": {
+          "age": "65",
+          "life": "85",
+          "lump": "300000",
+          "monthly": "2000",
+          "return": "5",
+          "cola": "0"
+        },
+        "inputs": "Retirement age: 65 years; Life expectancy: 85 years; Lump sum offered: $300,000; Monthly pension: $2,000; Annual discount / investment return: 5 %; Annual pension COLA: 0 %. Amounts in USD.",
+        "steps": [
+          "Keep $2,000 monthly for 20 years and zero COLA, but set a 5% effective annual discount rate.",
+          "Convert to a monthly equivalent j and value the stream as 2,000 × (1 − (1+j)^−240)/j."
+        ],
+        "answer": "Pension present value is $305,886.89, an advantage of $5,886.89 over the $300,000 lump sum under these assumptions.",
+        "expected": {
+          "label": "Present value of pension",
+          "value": "305886.885237942127647867221398492722285485275163310464819997",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Separate joint income from the later survivor benefit",
+        "mode": "survivor",
+        "values": {
+          "age": "65",
+          "life": "85",
+          "spouse": "62",
+          "spouse_life": "90",
+          "single": "2500",
+          "joint": "2100",
+          "survivor": "50",
+          "return": "0",
+          "cola": "0"
+        },
+        "inputs": "Your retirement age: 65 years; Your life expectancy: 85 years; Spouse age at your retirement: 62 years; Spouse life expectancy: 90 years; Single-life monthly pension: $2,500; Joint-survivor monthly pension: $2,100; Survivor benefit: 50 % of joint pension; Annual discount rate: 0 %; Annual COLA: 0 %. Amounts in USD.",
+        "steps": [
+          "At zero discount/COLA, single-life $2,500 for 20 years totals $600,000.",
+          "Joint $2,100 for 20 years plus a 50% survivor payment of $1,050 for the spouse’s remaining 8 years totals $604,800."
+        ],
+        "answer": "The modeled joint-survivor advantage is $4,800 for these exact lifespans; it is not a mortality-weighted guarantee.",
+        "expected": {
+          "label": "Joint-survivor value advantage",
+          "value": "4800",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Compare the payment years lost by retiring later",
+        "mode": "longer",
+        "values": {
+          "age1": "62",
+          "payment1": "1800",
+          "age2": "67",
+          "payment2": "2600",
+          "life": "90",
+          "return": "0",
+          "cola": "0"
+        },
+        "inputs": "Earlier retirement age: 62 years; Earlier monthly pension: $1,800; Later retirement age: 67 years; Later monthly pension: $2,600; Life expectancy: 90 years; Annual discount rate: 0 %; Annual COLA: 0 %. Amounts in USD.",
+        "steps": [
+          "At zero discount/COLA, $1,800 monthly from 62 to 90 totals $604,800.",
+          "Starting at 67 gives 23 years of $2,600 payments, totaling $717,600."
+        ],
+        "answer": "The later pension advantage is $112,800; wages and new saving while working are excluded.",
+        "expected": {
+          "label": "Later pension advantage",
+          "value": "112800",
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-pension-value-lump",
+        "queries": [
+          "how to calculate pension value",
+          "how much is my pension worth calculator"
+        ],
+        "question": "How can I compare monthly pension income with a lump sum?",
+        "answer": "Enter the plan’s monthly payment and cash offer, retirement age, lifespan assumption, discount rate and COLA. Compare the pension stream’s retirement-date present value with the lump sum. A higher discount rate reduces the present value of the same future payments. The cash comparison also omits tax, liquidity needs and plan-specific protections; it does not tell the plan what lump sum to offer.",
+        "links": [
+          {
+            "id": "pension",
+            "mode": "lump",
+            "label": "Compare without discounting",
+            "values": {
+              "age": "65",
+              "life": "85",
+              "lump": "300000",
+              "monthly": "2000",
+              "return": "0",
+              "cola": "0"
+            }
+          },
+          {
+            "id": "pension",
+            "mode": "lump",
+            "label": "Add a discount assumption",
+            "values": {
+              "age": "65",
+              "life": "85",
+              "lump": "300000",
+              "monthly": "2000",
+              "return": "5",
+              "cola": "0"
+            }
+          }
+        ],
+        "replacesQuestion": "How should I compare a pension with a lump sum?"
+      },
+      {
+        "anchor": "use-pension-survivor",
+        "queries": [
+          "joint and survivor pension calculator"
+        ],
+        "question": "How do the entered lifespans change a survivor pension comparison?",
+        "answer": "The model pays the quoted joint amount during your entered remaining lifespan, then the entered survivor percentage if your spouse’s remaining horizon extends longer. A joint option can start with a lower monthly amount but protect a longer-lived spouse. Change both horizons and the survivor percentage; deterministic lifespans are scenarios rather than actuarial probabilities.",
+        "links": [
+          {
+            "id": "pension",
+            "mode": "survivor",
+            "label": "Inspect a 50% survivor scenario",
+            "values": {
+              "age": "65",
+              "life": "85",
+              "spouse": "62",
+              "spouse_life": "90",
+              "single": "2500",
+              "joint": "2100",
+              "survivor": "50",
+              "return": "0",
+              "cola": "0"
+            }
+          }
+        ],
+        "replacesQuestion": "Does a survivor pension always have a higher value?"
+      },
+      {
+        "anchor": "use-pension-benefit-entitlement",
+        "queries": [
+          "how to calculate pension",
+          "how to calculate federal employee pension",
+          "how to calculate fers pension"
+        ],
+        "question": "Can this calculate my pension entitlement from salary and service?",
+        "answer": "No. Obtain the monthly benefit and any lump-sum or survivor quotes from your plan administrator. FERS and other plans have their own salary, service, eligibility and reduction rules; this comparison does not implement them. Enter confirmed quotes here to compare payment streams under common financial assumptions, and use the plan’s official calculation for the benefit earned.",
+        "links": [
+          {
+            "id": "pension",
+            "mode": "lump",
+            "label": "Compare confirmed plan quotes"
+          }
+        ]
+      },
+      {
+        "anchor": "use-pension-work-longer",
+        "queries": [
+          "pension retirement calculator"
+        ],
+        "question": "Does a larger later pension always make working longer better?",
+        "answer": "No. Later payments start after years of earlier benefits have been forgone. Work Longer discounts both streams to the earlier retirement age, with the entered COLA and lifespan. Salary earned, new contributions, health, leisure and taxes are excluded. Review how the comparison changes with different horizons rather than treating the payment increase as the complete decision.",
+        "links": [
+          {
+            "id": "pension",
+            "mode": "longer",
+            "label": "Compare earlier and later payments",
+            "values": {
+              "age1": "62",
+              "payment1": "1800",
+              "age2": "67",
+              "payment2": "2600",
+              "life": "90",
+              "return": "0",
+              "cola": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-pension-break-even",
+        "queries": [
+          "how to calculate a lump sum pension payout",
+          "lump sum pension calculator"
+        ],
+        "question": "What does the pension break-even figure mean?",
+        "answer": "The displayed Undiscounted break-even years is entered lump sum divided by twelve times the initial monthly pension. It ignores COLA, discounting, tax and survival probabilities, so it is a simple reference rather than the date when an invested lump sum and pension have equal economic value. Compare discounted present values separately.",
+        "links": [
+          {
+            "id": "pension",
+            "mode": "lump",
+            "label": "Check the 12.5-year simple reference",
+            "values": {
+              "age": "65",
+              "life": "85",
+              "lump": "300000",
+              "monthly": "2000",
+              "return": "0",
+              "cola": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-pension-cola-discount",
+        "queries": [
+          "how to calculate pension plan",
+          "pension present value calculator"
+        ],
+        "question": "How should I set pension COLA and the discount rate?",
+        "answer": "Use the actual plan terms for COLA and a consistent nominal annual discount assumption. The model increases benefits on annual anniversaries and discounts monthly end payments; actual plan calendars can differ. A real discount rate combined with nominal COLA can count inflation inconsistently. Test several plausible assumptions and keep them the same across options.",
+        "links": [
+          {
+            "id": "pension",
+            "mode": "lump",
+            "label": "Review a discounted stream",
+            "values": {
+              "age": "65",
+              "life": "85",
+              "lump": "300000",
+              "monthly": "2000",
+              "return": "5",
+              "cola": "0"
+            }
+          },
+          {
+            "id": "social-security",
+            "mode": "compare",
+            "label": "Compare Social Security quotes separately"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "OPM: FERS benefit computation is plan-specific",
+        "url": "https://www.opm.gov/retirement-center/fers-information/computation/"
+      }
+    ]
+  },
+  "social-security": {
+    "updatedOn": "2026-10-28",
+    "summary": "Compare Social Security retirement claiming ages using an entered benefit estimate, assumed COLA, discount rate and lifespan. Ideal Application Age compares whole ages 62–70; Compare Application Ages accepts two nominal claim-date quotes. The highest modeled present value is a scenario result, not an official benefit determination or a recommendation for every household.",
+    "scope": "US retirement-benefit comparison, not a calculation from lifetime earnings. Ideal mode applies birth-year FRA and claiming-age factors for birth years 1943 onward to a common PIA expressed in age-62 dollars; assumed COLA applies while waiting and after claiming. Compare mode takes each nominal claim-date quote as entered, with COLA only after that option starts. Monthly end benefits and anniversary COLAs simplify actual SSA calendars, rounding and credit posting. Earnings-test withholding, benefit taxation, Medicare deductions and spousal/survivor coordination are excluded.",
+    "examples": [
+      {
+        "title": "Compare the number of payment years at zero discount",
+        "mode": "compare",
+        "values": {
+          "age1": "62",
+          "monthly1": "1400",
+          "age2": "70",
+          "monthly2": "2480",
+          "life": "90",
+          "return": "0",
+          "cola": "0"
+        },
+        "inputs": "First application age: 62 years; First claim-date monthly benefit: $1,400; Second application age: 70 years; Second claim-date monthly benefit: $2,480; Life expectancy: 90 years; Annual discount rate: 0 %; Annual COLA: 0 %. Amounts in USD.",
+        "steps": [
+          "Use nominal claim-date quotes of $1,400 monthly at 62 and $2,480 at 70, with lifespan 90 and zero COLA/discount.",
+          "The first stream pays 28 × 12 × $1,400 = $470,400; the second pays 20 × 12 × $2,480 = $595,200."
+        ],
+        "answer": "The second option’s modeled advantage is $124,800 for this horizon. These are hypothetical inputs, not an official quote.",
+        "expected": {
+          "label": "Second option advantage",
+          "value": "124800",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Put two claiming streams on the same valuation date",
+        "mode": "compare",
+        "values": {
+          "age1": "62",
+          "monthly1": "1400",
+          "age2": "70",
+          "monthly2": "2480",
+          "life": "90",
+          "return": "3",
+          "cola": "0"
+        },
+        "inputs": "First application age: 62 years; First claim-date monthly benefit: $1,400; Second application age: 70 years; Second claim-date monthly benefit: $2,480; Life expectancy: 90 years; Annual discount rate: 3 %; Annual COLA: 0 %. Amounts in USD.",
+        "steps": [
+          "Keep the same quoted amounts, zero COLA and lifespan, but set nominal discount to 3%.",
+          "Discount monthly payments in each stream and additionally discount the age-70 stream eight years back to age 62."
+        ],
+        "answer": "Age-62 present values are $319,548.39 for the first stream and $354,293.99 for the second, a $34,745.59 second-option advantage.",
+        "expected": {
+          "label": "Second option present value",
+          "value": "354293.988049715184579767478821916558127775730357048729992253",
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Test how a short entered horizon changes the best whole age",
+        "mode": "ideal",
+        "values": {
+          "birth": "1960",
+          "life": "70",
+          "pia": "2000",
+          "return": "0",
+          "cola": "0"
+        },
+        "inputs": "Birth year: 1,960; Life expectancy: 70 years; FRA monthly benefit in age-62 dollars: $2,000; Nominal annual discount rate: 0 %; Assumed annual COLA: 0 %. Amounts in USD.",
+        "steps": [
+          "For birth year 1960, FRA is 67; a hypothetical $2,000 PIA becomes $1,400 at age 62 before COLA.",
+          "Set lifespan 70 and zero COLA/discount. Eight years at $1,400 gives $134,400."
+        ],
+        "answer": "Age 62 has the highest modeled present value among the nine tested whole ages in this short-horizon example.",
+        "expected": {
+          "label": "Highest present-value application age",
+          "value": "62",
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-social-security-estimate",
+        "queries": [
+          "how is social security calculated",
+          "how are social security benefits calculated"
+        ],
+        "question": "Does this calculate my official Social Security benefit from earnings?",
+        "answer": "No. SSA determines retirement benefits using your earnings record and eligibility. Check your Social Security account for official estimates, then use this tool to compare claiming assumptions. Ideal mode needs a full-retirement-age benefit on its specified age-62 dollar basis; Compare mode accepts consistent nominal amounts quoted for each claim date. Salary alone is not enough to reproduce an official estimate.",
+        "links": [
+          {
+            "id": "social-security",
+            "mode": "compare",
+            "label": "Compare official quotes on a consistent basis"
+          }
+        ],
+        "replacesQuestion": "Should I enter an official benefit estimate?"
+      },
+      {
+        "anchor": "use-social-security-best-age",
+        "queries": [
+          "when should i take social security calculator",
+          "social security break even calculator"
+        ],
+        "question": "Does the largest monthly benefit mean the best claiming age?",
+        "answer": "No. Waiting can increase monthly retirement benefits but leaves fewer payment years. The result changes with lifespan, discount rate and COLA. Ideal mode compares present value at age 62 across whole ages 62–70; it does not optimize a household’s tax or survivor strategy. The short-horizon example favors 62, while a longer horizon can favor later claiming.",
+        "links": [
+          {
+            "id": "social-security",
+            "mode": "ideal",
+            "label": "Inspect a short horizon",
+            "values": {
+              "birth": "1960",
+              "life": "70",
+              "pia": "2000",
+              "return": "0",
+              "cola": "0"
+            }
+          },
+          {
+            "id": "social-security",
+            "mode": "compare",
+            "label": "Compare two longer-horizon quotes",
+            "values": {
+              "age1": "62",
+              "monthly1": "1400",
+              "age2": "70",
+              "monthly2": "2480",
+              "life": "90",
+              "return": "0",
+              "cola": "0"
+            }
+          }
+        ],
+        "replacesQuestion": "Does the highest monthly Social Security payment mean the best claiming age?"
+      },
+      {
+        "anchor": "use-social-security-cola-basis",
+        "queries": [
+          "how to calculate my social security benefits"
+        ],
+        "question": "How do I avoid counting Social Security COLA twice?",
+        "answer": "In Ideal mode, enter a common FRA benefit in age-62 dollars: the model adds assumed COLA during the wait and afterward. In Compare mode, enter nominal amounts at each claiming date: it adds COLA only after each start. A quote already including future inflation must not receive the waiting increase a second time; today-dollar quotes need conversion before using nominal future COLA and discount rates.",
+        "links": [
+          {
+            "id": "social-security",
+            "mode": "ideal",
+            "label": "Review the common PIA basis"
+          },
+          {
+            "id": "social-security",
+            "mode": "compare",
+            "label": "Use claim-date quotes"
+          }
+        ],
+        "replacesQuestion": "Does COLA apply while I wait to claim Social Security?"
+      },
+      {
+        "anchor": "use-social-security-fra",
+        "queries": [
+          "social security full retirement age calculator"
+        ],
+        "question": "How does full retirement age affect the modeled benefit?",
+        "answer": "FRA depends on birth year. For birth year 1960 or later, FRA is 67 and claiming at 62 reduces the modeled retirement benefit by 30% before COLA. The model applies early reductions monthly and delayed credits for the supported birth years through age 70. Actual benefit commencement, birthdays and credit posting can require finer SSA date rules.",
+        "links": [
+          {
+            "id": "social-security",
+            "mode": "ideal",
+            "label": "Check the FRA-67 example",
+            "values": {
+              "birth": "1960",
+              "life": "70",
+              "pia": "2000",
+              "return": "0",
+              "cola": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-social-security-discount",
+        "queries": [
+          "social security benefits calculator",
+          "when to collect social security calculator"
+        ],
+        "question": "What does present value add to a claiming-age comparison?",
+        "answer": "Present value puts payments arriving at different times on a common date. A higher positive discount rate places less weight on distant payments; a longer lifespan adds more later payments. Compare mode discounts to the earlier entered claiming age. Its dollar advantage depends on those assumptions, so test more than one horizon and discount rate.",
+        "links": [
+          {
+            "id": "social-security",
+            "mode": "compare",
+            "label": "Compare without discounting",
+            "values": {
+              "age1": "62",
+              "monthly1": "1400",
+              "age2": "70",
+              "monthly2": "2480",
+              "life": "90",
+              "return": "0",
+              "cola": "0"
+            }
+          },
+          {
+            "id": "social-security",
+            "mode": "compare",
+            "label": "Compare at 3% discount",
+            "values": {
+              "age1": "62",
+              "monthly1": "1400",
+              "age2": "70",
+              "monthly2": "2480",
+              "life": "90",
+              "return": "3",
+              "cola": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-social-security-exclusions",
+        "queries": [
+          "how to calculate social security tax",
+          "social security spousal benefits calculator"
+        ],
+        "question": "Does this include benefit tax, working income or spouse benefits?",
+        "answer": "No. This page compares retirement-benefit streams before tax and deductions, without earnings-test withholding or spousal and survivor coordination. Actual net checks can also include Medicare deductions. Use SSA’s guidance for eligibility and household benefits and a suitable tax calculation for taxes; do not interpret the displayed benefit as guaranteed take-home income.",
+        "links": [
+          {
+            "id": "social-security",
+            "mode": "compare",
+            "label": "Review a retirement-benefit comparison"
+          },
+          {
+            "id": "retirement",
+            "mode": "required",
+            "label": "Plan other retirement income"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "SSA: retirement planning and official benefit estimates",
+        "url": "https://www.ssa.gov/retirement/plan-for-retirement"
+      },
+      {
+        "title": "SSA: retirement age and early benefit reductions",
+        "url": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html"
+      },
+      {
+        "title": "SSA: delayed retirement credits",
+        "url": "https://www.ssa.gov/benefits/retirement/planner/delayret.html"
+      }
+    ]
   }
 }

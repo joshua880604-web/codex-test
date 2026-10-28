@@ -751,6 +751,12 @@ Object.assign(guides,Object.fromEntries(Object.entries(strategyContent).map(([id
 Object.assign(relatedCalculatorIds,{noi:['rental-property','rent-vs-buy','mortgage','margin'],fire:['coast-fire','retirement','compound-interest','real-return','401k'],mirr:['irr','roi','payback-period','present-value','future-value']});
 for(const [id,addition] of [['coast-fire','fire'],['retirement','fire'],['rental-property','noi'],['irr','mirr'],['roi','mirr']] as const)relatedCalculatorIds[id]=[...new Set([addition,...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
+// Contextual links from the first paired Semrush optimization batch.
+for(const [id,added] of Object.entries({'rental-property':['noi','roi'],'debt-consolidation':['debt-payoff','credit-card','budget'],'business-loan':['break-even','current-ratio','loan'],'budget':['emergency-fund','debt-consolidation','retirement'],'break-even':['margin','markup','roas'],'roi':['rental-property','investment','mirr','roas']}))relatedCalculatorIds[id]=[...new Set([...added,...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+// Keep retirement and investment tasks connected without creating duplicate calculator routes.
+for (const [id,added] of Object.entries({investment:['roi','irr','compound-interest','retirement'],irr:['mirr','roi','average-return'],annuity:['annuity-payout','present-value','investment'],'annuity-payout':['annuity','pension','retirement'],pension:['social-security','retirement','annuity-payout'],'social-security':['pension','retirement','coast-fire']})) relatedCalculatorIds[id]=[...new Set([...added,...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {
   for (const {queries: _queries, replacesQuestion, ...item} of content.items) {

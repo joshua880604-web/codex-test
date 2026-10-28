@@ -149,3 +149,62 @@ searchTasks['coast-fire']=[{keyword:'Coast FIRE calculator',mode:'coast',descrip
 searchTasks["noi"][0].aliases=["Net operating income calculator", "Real estate NOI calculator", "Rental property NOI calculator"];
 searchTasks["fire"][0].aliases=["FIRE number calculator", "Financial independence calculator", "Early retirement FIRE calculator"];
 searchTasks["mirr"][0].aliases=["Modified internal rate of return calculator", "MIRR formula calculator"];
+
+// Semrush US paired broad and question exports, batch 1, reviewed 2026-10-28.
+keywordTitles["rental-property"]="Rental Property Calculator - Cash Flow & Returns";
+searchTasks["rental-property"][0].keyword="Rental property calculator";
+searchTasks["rental-property"][0].description="Project rental-property cash flow, cap rate, cash-on-cash and sale proceeds under entered financing and operating assumptions. Before tax.";
+searchTasks["rental-property"][0].aliases=[...new Set([...(searchTasks["rental-property"][0].aliases??[]),...["Rental property ROI calculator", "Rental cash flow calculator", "Investment property calculator"]])];
+keywordTitles["debt-consolidation"]="Debt Consolidation Calculator - Payments & Savings";
+searchTasks["debt-consolidation"][0].keyword="Debt consolidation calculator";
+searchTasks["debt-consolidation"][0].description="Compare current-debt payoff with a fixed-rate consolidation loan, including fees, term and future interest. No approval or rate quote.";
+searchTasks["debt-consolidation"][0].aliases=[...new Set([...(searchTasks["debt-consolidation"][0].aliases??[]),...["Debt consolidation loan calculator", "Debt consolidation payment calculator", "Debt consolidation savings calculator"]])];
+keywordTitles["business-loan"]="Business Loan Calculator - Payments, Fees & APR";
+searchTasks["business-loan"][0].keyword="Business loan calculator";
+searchTasks["business-loan"][0].description="Estimate business term-loan payments, net proceeds and modeled APR with entered fees and insurance. No automatic SBA eligibility or current rates.";
+searchTasks["business-loan"][0].aliases=[...new Set([...(searchTasks["business-loan"][0].aliases??[]),...["Small business loan payment calculator", "Business loan interest calculator", "Business loan repayment calculator"]])];
+keywordTitles["budget"]="Budget Calculator - Monthly Income, Spending & Savings";
+searchTasks["budget"][0].keyword="Budget calculator";
+searchTasks["budget"][0].description="Build a household budget with monthly, annual, weekly or biweekly entries, an entered tax assumption, savings allocations and surplus or deficit.";
+searchTasks["budget"][0].aliases=[...new Set([...(searchTasks["budget"][0].aliases??[]),...["Monthly budget calculator", "Personal budget calculator", "Household budget calculator", "Family budget calculator"]])];
+keywordTitles["break-even"]="Break-Even Calculator - Units, Sales & Target Profit";
+searchTasks["break-even"][0].keyword="Break even calculator";
+searchTasks["break-even"][0].description="Calculate single-product break-even units, revenue, target profit or required selling price with entered fixed and variable costs.";
+searchTasks["break-even"][0].aliases=[...new Set([...(searchTasks["break-even"][0].aliases??[]),...["Break even point calculator", "Break even analysis calculator", "Break even sales calculator"]])];
+keywordTitles["roi"]="ROI Calculator - Return on Investment & Annualized ROI";
+searchTasks["roi"][0].keyword="ROI calculator";
+searchTasks["roi"][0].description="Calculate total and annualized return from an initial investment and terminal returned amount. Use entered years or actual dates.";
+searchTasks["roi"][0].aliases=[...new Set([...(searchTasks["roi"][0].aliases??[]),...["Return on investment calculator", "Annualized ROI calculator", "ROI percentage calculator"]])];
+
+// Paired Semrush US retirement and investment research, reviewed 2026-10-28.
+keywordTitles["investment"]="Investment Calculator - Growth, Contributions & Goals";
+searchTasks["investment"][0].keyword="Investment calculator";
+searchTasks["investment"][0].description="Project investment growth with monthly and annual deposits, or solve starting amount, required return, contribution or time to a target.";
+searchTasks["investment"][0].aliases=[...new Set([...(searchTasks["investment"][0].aliases??[]),...["Investment growth calculator", "Investment calculator with monthly contributions", "Investment goal calculator"]])];
+keywordTitles["irr"]="IRR Calculator - Internal Rate of Return & Cash Flows";
+searchTasks["irr"][0].keyword="IRR calculator";
+searchTasks["irr"][0].description="Calculate effective annual IRRs for recurring or unequal year-end cash flows. Review signs, timing and possible multiple roots.";
+searchTasks["irr"][0].aliases=[...new Set([...(searchTasks["irr"][0].aliases??[]),...["Internal rate of return calculator", "IRR cash flow calculator", "Annual IRR calculator"]])];
+keywordTitles["social-security"]="Social Security Calculator - Compare Claiming Ages";
+searchTasks["social-security"][0].keyword="Social Security calculator";
+searchTasks["social-security"][0].description="Compare Social Security retirement claiming ages using entered benefit estimates, lifespan, COLA and discount assumptions. No earnings-record benefit determination.";
+searchTasks["social-security"][0].aliases=[...new Set([...(searchTasks["social-security"][0].aliases??[]),...["Social Security claiming age calculator", "Social Security retirement comparison calculator"]])];
+keywordTitles["pension"]="Pension Calculator - Lump Sum & Survivor Comparisons";
+searchTasks["pension"][0].keyword="Pension calculator";
+searchTasks["pension"][0].description="Compare quoted pension payments with a lump sum, single-life with joint-survivor income, or earlier and later retirement starts.";
+searchTasks["pension"][0].aliases=[...new Set([...(searchTasks["pension"][0].aliases??[]),...["Pension lump sum calculator", "Pension present value calculator", "Joint survivor pension calculator"]])];
+keywordTitles["annuity"]="Annuity Calculator - Future Value & Contributions";
+searchTasks["annuity"][0].keyword="Annuity calculator";
+searchTasks["annuity"][0].description="Project annuity accumulation with starting principal, monthly and annual additions and selected timing. No insurance quote or guaranteed return.";
+searchTasks["annuity"][0].aliases=[...new Set([...(searchTasks["annuity"][0].aliases??[]),...["Annuity future value calculator", "Annuity accumulation calculator"]])];
+keywordTitles["annuity-payout"]="Annuity Payout Calculator - Payments & Duration";
+searchTasks["annuity-payout"][0].keyword="Annuity payout calculator";
+searchTasks["annuity-payout"][0].description="Estimate fixed-term annuity payouts or how long an entered payment lasts under a constant return. Review the final payout and earnings.";
+searchTasks["annuity-payout"][0].aliases=[...new Set([...(searchTasks["annuity-payout"][0].aliases??[]),...["Monthly annuity payout calculator", "Payout annuity calculator", "Annuity payout duration calculator"]])];
+
+// Keep the updated research aliases unique without moving existing preset tasks.
+{ const updated=new Set(['rental-property','debt-consolidation','business-loan','budget','break-even','roi','investment','irr','social-security','pension','annuity','annuity-payout']);
+  const reserved=new Set(Object.values(searchTasks).flatMap(tasks=>tasks.map(task=>task.keyword.toLowerCase())));
+  const aliases=new Set(Object.entries(searchTasks).filter(([id])=>!updated.has(id)).flatMap(([,tasks])=>tasks.flatMap(task=>(task.aliases??[]).map(alias=>alias.toLowerCase()))));
+  for(const [id,tasks] of Object.entries(searchTasks)) if(updated.has(id)) for(const task of tasks) task.aliases=(task.aliases??[]).filter(alias=>{const key=alias.toLowerCase();if(reserved.has(key)||aliases.has(key))return false;aliases.add(key);return true;});
+}

@@ -6,6 +6,7 @@ import type { Calculator } from "@/lib/types";
 import { routeFor } from "@/lib/calculators";
 import { guides, notesCheckedOn } from "@/lib/guides";
 import GlossaryLinks from './GlossaryLinks';
+import RoiReference from './RoiReference';
 import { longTailHref } from '@/lib/long-tail-content';
 export default function CalculatorGuide({
   calculator,
@@ -22,6 +23,7 @@ export default function CalculatorGuide({
           <nav className="guide-nav" aria-label="Calculation guide sections">
             {insight && <SiteLink href="#reading-results">Reading results</SiteLink>}
             {insight && <SiteLink href="#compare-scenarios">Compare scenarios</SiteLink>}
+            {calculator.id === "roi" && <SiteLink href="#roi-formulas">ROI formulas</SiteLink>}
             <SiteLink href="#worked-examples">Examples</SiteLink><SiteLink href="#common-questions">Questions</SiteLink>
             <SiteLink href="#scope-assumptions">Assumptions</SiteLink><SiteLink href="#sources">Sources</SiteLink>
           </nav>
@@ -36,6 +38,7 @@ export default function CalculatorGuide({
             <h3>Check before comparing</h3><ul>{insight.checks.map(check=><li key={check}>{check}</li>)}</ul>
             <p className="content-date">Result explanations checked <time dateTime={insight.checkedOn}>{insight.checkedOn}</time> against this calculator’s local model. Model scope and sources appear below.</p>
           </>}
+          {calculator.id === "roi" && <RoiReference />}
           <h2 id="worked-examples">Worked examples</h2>
           {guide.examples.map((example) => {
             return (
