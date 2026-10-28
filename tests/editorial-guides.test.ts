@@ -17,11 +17,23 @@ test('Articles and Guides collection describe the same visible entries without i
  for(const guide of editorialGuides){
  const graph=editorialSchema(guide,config)['@graph'];const article=graph[0] as any;
  assert.equal(article['@type'],'Article');assert.equal(article.headline,guide.heading);
- assert.equal(article.datePublished,guide.publishedOn);assert.equal(article.author['@type'],'Organization');
+ assert.equal(article.datePublished,guide.publishedOn);assert.equal(article.dateModified,guide.updatedOn??guide.publishedOn);assert.equal(article.author['@type'],'Organization');
  assert.ok(!('reviewedBy' in article));
  const hub=editorialSchema(false,config)['@graph'][0] as any;
  assert.equal(hub.hasPart.filter((a:any)=>a.url===article.url).length,1);
  const breadcrumb=graph.find(a=>a['@type']==='BreadcrumbList') as any;
  assert.equal(breadcrumb.itemListElement.at(-1).item,article.url);
  }
+});
+
+test('Substantive question updates preserve original publication and advance reviewed sitemap dates',()=>{
+ const updated=editorialGuides.filter(g=>g.updatedOn);
+ assert.equal(updated.length,8);
+ for(const guide of updated){
+  assert.equal(guide.updatedOn,'2026-10-28');
+  assert.ok(guide.publishedOn<=guide.updatedOn!);
+  const entry=sitemapEntries(config).find(e=>e.url===config.origin+guide.path)!;
+  assert.equal(entry.lastModified,guide.updatedOn);
+ }
+ assert.equal(editorialGuides.filter(g=>g.publishedOn==='2026-10-27').length,6);
 });
