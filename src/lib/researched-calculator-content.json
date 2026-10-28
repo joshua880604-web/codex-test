@@ -3170,5 +3170,860 @@
         "url": "https://consumer.ftc.gov/articles/home-equity-loans-and-home-equity-lines-credit"
       }
     ]
+  },
+  "boat-loan": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate a fixed-rate boat loan payment or solve a purchase price from a monthly financing budget. Include the down payment, trade credit and manually entered tax and fees, then budget for ownership costs separately.",
+    "scope": "Monthly fixed-rate amortization with no balloon or extra payments. Sales tax is the entered percentage of the full boat price; trade-in tax credits, jurisdiction rules and outstanding trade debt are not inferred. Taxes and fees can be financed or paid upfront. A modeled boat price is not an appraisal or credit approval. Insurance, fuel, dockage, storage, maintenance, surveys and depreciation are not included unless separately budgeted. Current rates, lender term limits, boat-age eligibility and credit requirements are not fetched.",
+    "items": [
+      {
+        "anchor": "use-boat-monthly-payment",
+        "queries": [
+          "boat loan payment calculator",
+          "boat payment calculator",
+          "calculate boat loan payment"
+        ],
+        "question": "How much is the payment on a $50,000 boat?",
+        "answer": "With $10,000 down, no trade-in, 7% entered sales tax and $500 fees financed, the modeled balance is $44,000. At an illustrative fixed 7% annual rate for 10 years, the monthly payment is $510.88 and total interest is $17,305.28. The $10,000 down payment is separate from total loan payments. These assumptions are not a current lender offer.",
+        "links": [
+          {
+            "id": "boat-loan",
+            "mode": "payment",
+            "label": "Try the $50,000 boat purchase",
+            "values": {
+              "price": "50000",
+              "down": "10000",
+              "trade": "0",
+              "tax": "7",
+              "fees": "500",
+              "finance": "Yes",
+              "rate": "7",
+              "years": "10"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-boat-loan-term",
+        "queries": [
+          "how long are boat loans",
+          "how long are boat loan terms",
+          "how long is a boat loan term"
+        ],
+        "question": "How long are boat loans, and what does a longer term change?",
+        "answer": "Available terms depend on the lender, boat and loan amount. BoatUS describes partner loans with terms up to 20 years, subject to restrictions; that is not a term available to every borrower. For the same $44,000 balance at an assumed 7%, extending this example from 10 to 20 years lowers the monthly payment from $510.88 to $341.13 but raises total interest from $17,305.28 to $37,871.57.",
+        "links": [
+          {
+            "id": "boat-loan",
+            "mode": "payment",
+            "label": "Compare 10 years",
+            "values": {
+              "price": "50000",
+              "down": "10000",
+              "trade": "0",
+              "tax": "7",
+              "fees": "500",
+              "finance": "Yes",
+              "rate": "7",
+              "years": "10"
+            }
+          },
+          {
+            "id": "boat-loan",
+            "mode": "payment",
+            "label": "Compare 20 years",
+            "values": {
+              "price": "50000",
+              "down": "10000",
+              "trade": "0",
+              "tax": "7",
+              "fees": "500",
+              "finance": "Yes",
+              "rate": "7",
+              "years": "20"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-boat-used-rate",
+        "queries": [
+          "used boat loan calculator",
+          "what is the interest rate on a boat loan",
+          "boat loan interest rates"
+        ],
+        "question": "Can I use this calculator for a used boat or a current interest-rate quote?",
+        "answer": "You can model a used boat using its purchase price and your quoted rate and term. The calculator does not price the boat, fetch live rates or decide whether its age, condition or your credit qualifies. Use an actual offer rather than treating the illustrative 7% input as today’s market rate. Review lender fees and any survey or insurance requirements separately.",
+        "links": [
+          {
+            "id": "boat-loan",
+            "mode": "payment",
+            "label": "Enter a used-boat quote",
+            "values": {
+              "price": "50000",
+              "down": "10000",
+              "trade": "0",
+              "tax": "7",
+              "fees": "500",
+              "finance": "Yes",
+              "rate": "7",
+              "years": "10"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-boat-tax-upfront",
+        "queries": [
+          "boat loan calculator with down payment",
+          "boat loan calculator with taxes"
+        ],
+        "question": "Should I finance boat taxes and fees or pay them upfront?",
+        "answer": "For the $50,000 example, the entered 7% tax is $3,500 and fees are $500. Financing both produces a $44,000 balance and $510.88 monthly payment. Paying them upfront leaves $40,000 financed and a $464.43 payment, but raises upfront cash from $10,000 to $14,000. This form applies tax to the full price and does not automatically apply a state trade-in tax credit.",
+        "links": [
+          {
+            "id": "boat-loan",
+            "mode": "payment",
+            "label": "Finance tax and fees",
+            "values": {
+              "price": "50000",
+              "down": "10000",
+              "trade": "0",
+              "tax": "7",
+              "fees": "500",
+              "finance": "Yes",
+              "rate": "7",
+              "years": "10"
+            }
+          },
+          {
+            "id": "boat-loan",
+            "mode": "payment",
+            "label": "Pay tax and fees upfront",
+            "values": {
+              "price": "50000",
+              "down": "10000",
+              "trade": "0",
+              "tax": "7",
+              "fees": "500",
+              "finance": "No",
+              "rate": "7",
+              "years": "10"
+            }
+          }
+        ],
+        "replacesQuestion": "How do financed boat taxes and fees affect payment?"
+      },
+      {
+        "anchor": "use-boat-price-budget",
+        "queries": [
+          "boat affordability calculator",
+          "boat payment calculator"
+        ],
+        "question": "What boat price fits a $700 monthly loan budget?",
+        "answer": "Boat Price mode works backward from the entered payment. With $10,000 down, no trade-in, 7% annual interest, a 10-year term, 7% sales tax and $500 fees financed, $700 per month supports a modeled boat price of $65,222.85. This is financing capacity under the inputs, not an affordable ownership budget or approval; reserve money for operating and storage costs.",
+        "links": [
+          {
+            "id": "boat-loan",
+            "mode": "price",
+            "label": "Solve the price from $700 per month",
+            "values": {
+              "down": "10000",
+              "trade": "0",
+              "tax": "7",
+              "fees": "500",
+              "finance": "Yes",
+              "rate": "7",
+              "years": "10",
+              "payment": "700"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-boat-early-payoff",
+        "queries": [
+          "boat loan payoff calculator",
+          "pay off boat loan early"
+        ],
+        "question": "Can I calculate extra payments on a boat loan?",
+        "answer": "This Boat Loan form shows scheduled payments and has no extra-payment field. For an existing fixed-rate loan, use Loan Repayment with the current principal, regular monthly payment and extra payment assumptions. Check the contract for prepayment charges and obtain a payoff quote from the lender; a model may differ from dated daily interest and fees.",
+        "links": [
+          {
+            "id": "repayment",
+            "mode": "extra-payments",
+            "label": "Explore extra payments on an existing loan"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Finance tax and fees on a $50,000 boat",
+        "mode": "payment",
+        "values": {
+          "price": "50000",
+          "down": "10000",
+          "trade": "0",
+          "tax": "7",
+          "fees": "500",
+          "finance": "Yes",
+          "rate": "7",
+          "years": "10"
+        },
+        "inputs": "Boat $50,000; $10,000 down; no trade; tax 7%; fees $500 financed; annual interest 7%; 10 years.",
+        "steps": [
+          "Tax = 50,000 × 7% = 3,500.",
+          "Financed balance = 50,000 − 10,000 + 3,500 + 500 = 44,000.",
+          "Amortize $44,000 over 120 monthly payments at 7% / 12."
+        ],
+        "answer": "Monthly payment is $510.88; total interest is $17,305.28, excluding separately budgeted ownership costs.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 510.8773085619458,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Compare a 20-year term on the same boat",
+        "mode": "payment",
+        "values": {
+          "price": "50000",
+          "down": "10000",
+          "trade": "0",
+          "tax": "7",
+          "fees": "500",
+          "finance": "Yes",
+          "rate": "7",
+          "years": "20"
+        },
+        "inputs": "Keep the $44,000 financed balance and 7% annual rate; change the term to 20 years.",
+        "steps": [
+          "Use 240 monthly payments instead of 120.",
+          "The longer term reduces each installment but leaves principal outstanding for longer.",
+          "Compare lifetime interest as well as the payment."
+        ],
+        "answer": "Monthly payment falls to $341.13; total interest rises to $37,871.57. The entered term is an illustration, not an available loan offer.",
+        "expected": {
+          "label": "Total interest",
+          "value": 37871.56760135315,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Pay boat tax and fees upfront",
+        "mode": "payment",
+        "values": {
+          "price": "50000",
+          "down": "10000",
+          "trade": "0",
+          "tax": "7",
+          "fees": "500",
+          "finance": "No",
+          "rate": "7",
+          "years": "10"
+        },
+        "inputs": "Same $50,000 boat and $10,000 down; pay $3,500 tax and $500 fees separately; 7% annual interest; 10 years.",
+        "steps": [
+          "Upfront cash = 10,000 + 3,500 + 500 = 14,000.",
+          "Only $40,000 is financed.",
+          "Amortize $40,000 over 120 months."
+        ],
+        "answer": "Monthly payment is $464.43 and upfront cash is $14,000.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 464.4339168744962,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Work backward from a $700 monthly boat payment",
+        "mode": "price",
+        "values": {
+          "down": "10000",
+          "trade": "0",
+          "tax": "7",
+          "fees": "500",
+          "finance": "Yes",
+          "rate": "7",
+          "years": "10",
+          "payment": "700"
+        },
+        "inputs": "Monthly payment $700; down $10,000; trade $0; annual interest 7%; 10 years; tax 7% and fees $500 financed.",
+        "steps": [
+          "Find the present value of 120 payments of $700 at a monthly rate of 7% / 12.",
+          "Add the $10,000 down payment, subtract $500 fees, and divide by 1.07 to remove financed tax.",
+          "Keep ongoing boat expenses outside the financing budget."
+        ],
+        "answer": "Modeled boat purchase price is $65,222.85.",
+        "expected": {
+          "label": "Boat price",
+          "value": 65222.84850370499,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "BoatUS: boat loan terms, used-boat review and underwriting limitations",
+        "url": "https://www.boatus.com/faq/boat-loans"
+      },
+      {
+        "title": "BoatUS: loan payments and separate boat ownership expenses",
+        "url": "https://www.boatus.com/products-and-services/boat-loans"
+      }
+    ]
+  },
+  "auto-lease": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate a car lease payment from negotiated price, residual, capital reductions, capitalized acquisition fees and a money factor, or solve vehicle price from a target payment. Enter a residual from the lease offer rather than treating it as a resale guarantee.",
+    "scope": "Simplified monthly depreciation-plus-rent-charge lease model. The APR (%) selector is an illustrative money-factor equivalent using APR / 2400, not a regulatory lease APR disclosure or an amortizing-loan rate. Monthly tax is applied to the base payment; state upfront taxes, trade-in tax credits and other jurisdiction rules are not inferred. Total lease cash outlay equals modeled payments plus entered cash down; it excludes the value of any trade-in, refundable deposits, unentered charges, disposition, excess mileage, wear, early termination and an optional buyout. Residual must be entered and is not calculated from MSRP. No complete lease-versus-buy ownership comparison is produced.",
+    "items": [
+      {
+        "anchor": "use-lease-payment-formula",
+        "queries": [
+          "how to calculate auto lease payment",
+          "how are auto lease payments calculated",
+          "car lease payment calculator"
+        ],
+        "question": "How is an auto lease payment calculated?",
+        "answer": "The model adds monthly depreciation and a rent charge, then applies the entered monthly tax rate. For a $35,000 vehicle, $3,000 down, $700 capitalized acquisition fees, no trade and $20,000 residual over 36 months, adjusted capitalized cost is $32,700. At the 5% APR-equivalent input, depreciation is $352.78, rent is $109.79 and 7% monthly tax is $32.38, giving a $494.95 payment.",
+        "links": [
+          {
+            "id": "auto-lease",
+            "mode": "payment",
+            "label": "Try the $494.95 lease illustration",
+            "values": {
+              "price": "35000",
+              "residual": "20000",
+              "down": "3000",
+              "trade": "0",
+              "fees": "700",
+              "months": "36",
+              "rate": "5",
+              "rate_unit": "APR (%)",
+              "tax": "7"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-lease-money-factor",
+        "queries": [
+          "how to calculate auto lease money factor",
+          "how to calculate money factor on auto lease",
+          "money factor calculator"
+        ],
+        "question": "How do I convert a lease money factor to the rate input?",
+        "answer": "This tool uses money factor = APR-equivalent percentage / 2,400. A quoted factor of 0.0025 corresponds to a 6% equivalent: select Money factor and enter 0.0025, or select APR (%) and enter 6. These inputs produce the same modeled rent charge. This convention is not a disclosed lease APR, and the factor cannot be reliably inferred from the monthly payment alone without the other lease terms.",
+        "links": [
+          {
+            "id": "auto-lease",
+            "mode": "payment",
+            "label": "Enter money factor 0.0025",
+            "values": {
+              "price": "35000",
+              "residual": "20000",
+              "down": "3000",
+              "trade": "0",
+              "fees": "700",
+              "months": "36",
+              "rate": "0.0025",
+              "rate_unit": "Money factor",
+              "tax": "7"
+            }
+          },
+          {
+            "id": "auto-lease",
+            "mode": "payment",
+            "label": "Compare its 6% equivalent",
+            "values": {
+              "price": "35000",
+              "residual": "20000",
+              "down": "3000",
+              "trade": "0",
+              "fees": "700",
+              "months": "36",
+              "rate": "6",
+              "rate_unit": "APR (%)",
+              "tax": "7"
+            }
+          }
+        ],
+        "replacesQuestion": "Is an APR percentage the same as a money factor?"
+      },
+      {
+        "anchor": "use-lease-residual-input",
+        "queries": [
+          "auto lease residual value calculator",
+          "how to calculate payment from resedual auto lease"
+        ],
+        "question": "Does this calculator determine the lease residual value?",
+        "answer": "No. Enter the dollar residual from the actual offer. If a quote states a residual percentage, first multiply that percentage by the specified MSRP basis; for example, 60% of a $40,000 MSRP is $24,000. Do not apply the percentage to the negotiated price unless that is the stated basis. A higher entered residual lowers modeled depreciation, but the rent charge also changes; it is not a guaranteed resale price.",
+        "links": [
+          {
+            "id": "auto-lease",
+            "mode": "payment",
+            "label": "Review a lease with an entered $20,000 residual",
+            "values": {
+              "price": "35000",
+              "residual": "20000",
+              "down": "3000",
+              "trade": "0",
+              "fees": "700",
+              "months": "36",
+              "rate": "5",
+              "rate_unit": "APR (%)",
+              "tax": "7"
+            }
+          }
+        ],
+        "replacesQuestion": "How does residual value affect an auto lease payment?"
+      },
+      {
+        "anchor": "use-lease-price-from-payment",
+        "queries": [
+          "auto lease monthly payment calculator",
+          "auto lease payment calculator"
+        ],
+        "question": "What negotiated vehicle price fits a $500 monthly lease payment?",
+        "answer": "With a $20,000 residual, $3,000 cash down, no trade, $700 capitalized fees, 36 months, 5% APR-equivalent input and 7% monthly tax, Vehicle Price from Payment solves a negotiated price of $35,158.07. The entered $500 includes modeled monthly tax. This does not mean $500 with nothing due at signing: the $3,000 cash down remains separate, and actual signing charges need the lease disclosure.",
+        "links": [
+          {
+            "id": "auto-lease",
+            "mode": "price",
+            "label": "Solve a vehicle price from $500 monthly",
+            "values": {
+              "residual": "20000",
+              "down": "3000",
+              "trade": "0",
+              "fees": "700",
+              "months": "36",
+              "rate": "5",
+              "rate_unit": "APR (%)",
+              "tax": "7",
+              "payment": "500"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-lease-buyout-limits",
+        "queries": [
+          "auto lease buyout calculator",
+          "auto lease vs buy calculator",
+          "lease vs buy car calculator"
+        ],
+        "question": "Can I use this result as a lease buyout price or a complete lease-versus-buy comparison?",
+        "answer": "No. The residual is an input to the lease estimate, not a dated buyout quote. An actual purchase option can involve additional charges and tax. Total lease cash outlay here counts modeled installments plus cash down, excludes any trade-in value, and does not include buying the vehicle at the end. A fair lease-versus-buy decision also needs the same time horizon, ownership value, mileage, insurance and contract charges.",
+        "links": [
+          {
+            "id": "auto-lease",
+            "mode": "payment",
+            "label": "Review the lease assumptions",
+            "values": {
+              "price": "35000",
+              "residual": "20000",
+              "down": "3000",
+              "trade": "0",
+              "fees": "700",
+              "months": "36",
+              "rate": "5",
+              "rate_unit": "APR (%)",
+              "tax": "7"
+            }
+          },
+          {
+            "id": "auto-loan",
+            "mode": "payment",
+            "label": "Estimate purchase financing separately"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Build a monthly lease payment from its components",
+        "mode": "payment",
+        "values": {
+          "price": "35000",
+          "residual": "20000",
+          "down": "3000",
+          "trade": "0",
+          "fees": "700",
+          "months": "36",
+          "rate": "5",
+          "rate_unit": "APR (%)",
+          "tax": "7"
+        },
+        "inputs": "Price $35,000; residual $20,000; down $3,000; no trade; capitalized fees $700; 36 months; 5% APR-equivalent input; 7% monthly tax.",
+        "steps": [
+          "Adjusted capitalized cost = 35,000 − 3,000 + 700 = 32,700.",
+          "Depreciation = (32,700 − 20,000) / 36 = 352.7778.",
+          "Money factor = 5 / 2,400; rent = (32,700 + 20,000) × factor = 109.7917.",
+          "Apply 7% tax to the $462.5694 base payment."
+        ],
+        "answer": "Monthly payment is $494.95; modeled cash outlay is $20,818.18, including $3,000 down but no buyout or unentered charges.",
+        "expected": {
+          "label": "Monthly lease payment",
+          "value": 494.94930555555555,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Use a quoted money factor of 0.0025",
+        "mode": "payment",
+        "values": {
+          "price": "35000",
+          "residual": "20000",
+          "down": "3000",
+          "trade": "0",
+          "fees": "700",
+          "months": "36",
+          "rate": "0.0025",
+          "rate_unit": "Money factor",
+          "tax": "7"
+        },
+        "inputs": "Keep the $32,700 capitalized cost, $20,000 residual, 36-month term and 7% monthly tax; enter money factor 0.0025.",
+        "steps": [
+          "Depreciation remains $352.7778 per month.",
+          "Rent = (32,700 + 20,000) × 0.0025 = 131.75.",
+          "Add depreciation and rent, then multiply by 1.07."
+        ],
+        "answer": "Monthly lease payment is $518.44. A 6% APR-equivalent input produces the same modeled amount.",
+        "expected": {
+          "label": "Monthly lease payment",
+          "value": 518.4447222222223,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Solve vehicle price from a $500 tax-inclusive lease payment",
+        "mode": "price",
+        "values": {
+          "residual": "20000",
+          "down": "3000",
+          "trade": "0",
+          "fees": "700",
+          "months": "36",
+          "rate": "5",
+          "rate_unit": "APR (%)",
+          "tax": "7",
+          "payment": "500"
+        },
+        "inputs": "Target $500 monthly; residual $20,000; down $3,000; no trade; capitalized fees $700; 36 months; 5% APR-equivalent input; monthly tax 7%.",
+        "steps": [
+          "Remove monthly tax from the payment: 500 / 1.07.",
+          "Solve adjusted capitalized cost from base payment = (capital − residual) / 36 + (capital + residual) × (5 / 2,400).",
+          "Add back cash down and subtract the capitalized fees to recover vehicle price."
+        ],
+        "answer": "Negotiated vehicle price is $35,158.07; $3,000 cash down is still required separately.",
+        "expected": {
+          "label": "Vehicle price",
+          "value": 35158.07433166703,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: lease payment components, residual and lease-versus-buy differences",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-should-i-know-about-leasing-versus-buying-a-car-en-815/"
+      }
+    ]
+  },
+  "cash-back-or-low-interest": {
+    "updatedOn": "2026-10-28",
+    "summary": "Compare an automotive cash rebate with standard-rate financing against a mutually exclusive promotional low-rate loan. Use actual offer rates and compare modeled payments plus upfront cash over the same full loan term.",
+    "scope": "Both offers share the entered price, down payment, trade equity, term and fee settings; only the rebate and financing rate differ. Cash back reduces the purchase financing rather than arriving later as a separate check. Fixed monthly amortization is held to term, with no early payoff, changing rate, refinancing or eligibility calculation. Selected dealer-purchase tax treatments use the entered rate and simplified assumptions; local surtax caps and taxable fees may need manual adjustment. This is not a credit-card rewards, rebate-check or current vehicle-incentive finder.",
+    "items": [
+      {
+        "anchor": "use-rebate-auto-meaning",
+        "queries": [
+          "what is a cash rebate on a car",
+          "what is cash rebate on cars",
+          "cash rebate meaning"
+        ],
+        "question": "What is a cash rebate on a car in this calculator?",
+        "answer": "It is a purchase incentive applied to reduce the financed balance in the cash-back offer. This model compares that offer at its entered rate with a lower-rate offer that has no rebate. It does not treat cash back as credit-card rewards or a check received later, and it assumes the two offers cannot be combined. Confirm the incentive amount, timing and eligibility in the actual offer.",
+        "links": [
+          {
+            "id": "cash-back-or-low-interest",
+            "mode": "compare",
+            "label": "Compare an applied $2,500 rebate",
+            "values": {
+              "price": "35000",
+              "down": "5000",
+              "months": "60",
+              "cashback": "2500",
+              "standard": "7",
+              "low": "2.9",
+              "tax_state": "Manual",
+              "purchase_year": "2026",
+              "trade": "0",
+              "owed": "0",
+              "tax": "0",
+              "fees": "0",
+              "trade_credit": "Yes",
+              "rebate_tax": "No",
+              "finance_fees": "Yes"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-rebate-vs-low-rate",
+        "queries": [
+          "cash back or low interest calculator",
+          "cash back vs low interest car loan calculator"
+        ],
+        "question": "Is a cash rebate better than a lower interest rate?",
+        "answer": "It depends on the amount financed, rate difference and term. For a $35,000 car, $5,000 down, no tax or fees and 60 months, a $2,500 rebate with 7% interest costs $544.53 monthly versus $537.73 at 2.9% without a rebate. With equal upfront cash, the low-rate offer costs $408.26 less over the term. Increasing only the rebate to $4,000 reverses the result: cash back costs $1,373.85 less. These are illustrative offers.",
+        "links": [
+          {
+            "id": "cash-back-or-low-interest",
+            "mode": "compare",
+            "label": "Compare a $2,500 rebate",
+            "values": {
+              "price": "35000",
+              "down": "5000",
+              "months": "60",
+              "cashback": "2500",
+              "standard": "7",
+              "low": "2.9",
+              "tax_state": "Manual",
+              "purchase_year": "2026",
+              "trade": "0",
+              "owed": "0",
+              "tax": "0",
+              "fees": "0",
+              "trade_credit": "Yes",
+              "rebate_tax": "No",
+              "finance_fees": "Yes"
+            }
+          },
+          {
+            "id": "cash-back-or-low-interest",
+            "mode": "compare",
+            "label": "Compare a $4,000 rebate",
+            "values": {
+              "price": "35000",
+              "down": "5000",
+              "months": "60",
+              "cashback": "4000",
+              "standard": "7",
+              "low": "2.9",
+              "tax_state": "Manual",
+              "purchase_year": "2026",
+              "trade": "0",
+              "owed": "0",
+              "tax": "0",
+              "fees": "0",
+              "trade_credit": "Yes",
+              "rebate_tax": "No",
+              "finance_fees": "Yes"
+            }
+          }
+        ],
+        "replacesQuestion": "Is the biggest cash rebate always the better deal?"
+      },
+      {
+        "anchor": "use-rebate-zero-rate",
+        "queries": [
+          "cash rebate car",
+          "cash back rebates on new cars"
+        ],
+        "question": "Can I compare cash back with a 0% financing offer?",
+        "answer": "Yes. Enter 0 as the Promotional low rate and enter the actual rate offered with the rebate separately. Keep the same term, down payment and purchase assumptions unless the real offers differ. This form has one shared term, so it cannot directly compare a 36-month promotion with a 60-month rebate loan in one result. A zero rate does not remove tax, fees or qualification requirements.",
+        "links": [
+          {
+            "id": "cash-back-or-low-interest",
+            "mode": "compare",
+            "label": "Illustrate a 0% alternative over the same 60 months",
+            "values": {
+              "price": "35000",
+              "down": "5000",
+              "months": "60",
+              "cashback": "2500",
+              "standard": "7",
+              "low": "0",
+              "tax_state": "Manual",
+              "purchase_year": "2026",
+              "trade": "0",
+              "owed": "0",
+              "tax": "0",
+              "fees": "0",
+              "trade_credit": "Yes",
+              "rebate_tax": "No",
+              "finance_fees": "Yes"
+            }
+          }
+        ],
+        "replacesQuestion": "Should both offers use the same term and down payment?"
+      },
+      {
+        "anchor": "use-rebate-tax-assumptions",
+        "queries": [
+          "cash rebate on car sales tax",
+          "car rebate before or after tax"
+        ],
+        "question": "Does a cash rebate reduce the sales tax in this comparison?",
+        "answer": "It depends on the applicable purchase rules. In Manual mode you choose whether the rebate reduces the taxable price. With a $35,000 price, no trade and 7% tax, a $2,500 rebate gives $2,450 tax if it does not reduce the tax base, or $2,275 if it does. These are alternative input assumptions, not a statement of any state’s rule. Check whether tax and fees are financed or paid upfront, because that also changes the cash-flow comparison.",
+        "links": [
+          {
+            "id": "cash-back-or-low-interest",
+            "mode": "compare",
+            "label": "Manual example: rebate does not reduce tax",
+            "values": {
+              "price": "35000",
+              "down": "5000",
+              "months": "60",
+              "cashback": "2500",
+              "standard": "7",
+              "low": "2.9",
+              "tax_state": "Manual",
+              "purchase_year": "2026",
+              "trade": "0",
+              "owed": "0",
+              "tax": "7",
+              "fees": "0",
+              "trade_credit": "Yes",
+              "rebate_tax": "No",
+              "finance_fees": "Yes"
+            }
+          },
+          {
+            "id": "cash-back-or-low-interest",
+            "mode": "compare",
+            "label": "Manual example: rebate reduces tax",
+            "values": {
+              "price": "35000",
+              "down": "5000",
+              "months": "60",
+              "cashback": "2500",
+              "standard": "7",
+              "low": "2.9",
+              "tax_state": "Manual",
+              "purchase_year": "2026",
+              "trade": "0",
+              "owed": "0",
+              "tax": "7",
+              "fees": "0",
+              "trade_credit": "Yes",
+              "rebate_tax": "Yes",
+              "finance_fees": "Yes"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-rebate-eligibility-payoff",
+        "queries": [
+          "cash rebates on new cars",
+          "best cash rebates on cars",
+          "cash back or low interest"
+        ],
+        "question": "Does the cheaper result guarantee an available offer or remain valid if I repay early?",
+        "answer": "No. The calculator does not find current manufacturer incentives or check your eligibility. Promotional financing can have vehicle, credit and term restrictions. The cost advantage here assumes every scheduled payment is made for the full entered term; early payoff or refinancing changes the interest comparison and may involve contract charges. Use the written offers and ask for the relevant payoff terms before deciding.",
+        "links": [
+          {
+            "id": "cash-back-or-low-interest",
+            "mode": "compare",
+            "label": "Review the full-term comparison",
+            "values": {
+              "price": "35000",
+              "down": "5000",
+              "months": "60",
+              "cashback": "2500",
+              "standard": "7",
+              "low": "2.9",
+              "tax_state": "Manual",
+              "purchase_year": "2026",
+              "trade": "0",
+              "owed": "0",
+              "tax": "0",
+              "fees": "0",
+              "trade_credit": "Yes",
+              "rebate_tax": "No",
+              "finance_fees": "Yes"
+            }
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Compare a $2,500 rebate at 7% with 2.9% financing",
+        "mode": "compare",
+        "values": {
+          "price": "35000",
+          "down": "5000",
+          "months": "60",
+          "cashback": "2500",
+          "standard": "7",
+          "low": "2.9",
+          "tax_state": "Manual",
+          "purchase_year": "2026",
+          "trade": "0",
+          "owed": "0",
+          "tax": "0",
+          "fees": "0",
+          "trade_credit": "Yes",
+          "rebate_tax": "No",
+          "finance_fees": "Yes"
+        },
+        "inputs": "Car $35,000; down $5,000; 60 months; rebate $2,500 at 7% or no rebate at 2.9%; Manual tax 0%; fees and trade $0.",
+        "steps": [
+          "Cash-back principal = 35,000 − 5,000 − 2,500 = 27,500.",
+          "Low-rate principal = 35,000 − 5,000 = 30,000.",
+          "Compare the 60 monthly installments and the same $5,000 upfront cash."
+        ],
+        "answer": "Cash back costs $544.53 monthly versus $537.73 at the low rate. Cash-back cost advantage is −$408.26, favoring the low-rate offer.",
+        "expected": {
+          "label": "Cash-back cost advantage",
+          "value": -408.26142857071216,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "See how a $4,000 rebate reverses the comparison",
+        "mode": "compare",
+        "values": {
+          "price": "35000",
+          "down": "5000",
+          "months": "60",
+          "cashback": "4000",
+          "standard": "7",
+          "low": "2.9",
+          "tax_state": "Manual",
+          "purchase_year": "2026",
+          "trade": "0",
+          "owed": "0",
+          "tax": "0",
+          "fees": "0",
+          "trade_credit": "Yes",
+          "rebate_tax": "No",
+          "finance_fees": "Yes"
+        },
+        "inputs": "Use the same $35,000 price, $5,000 down, 60 months, 7% rebate-offer rate and 2.9% promotion; increase rebate to $4,000; tax, fees and trade $0.",
+        "steps": [
+          "Rebate-offer principal falls to $26,000.",
+          "The low-rate principal stays at $30,000.",
+          "Compare scheduled payments over the full term, including equal upfront cash."
+        ],
+        "answer": "Cash-back payment is $514.83 monthly. Positive cash-back cost advantage of $1,373.85 favors the rebate offer under these assumptions.",
+        "expected": {
+          "label": "Cash-back cost advantage",
+          "value": 1373.846440060746,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: promotional 0% financing, manufacturer incentives and eligibility",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-qualify-for-an-advertised-0-auto-financing-en-781/"
+      }
+    ]
   }
 }

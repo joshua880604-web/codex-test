@@ -126,3 +126,13 @@ searchTasks.heloc[0].aliases=[...new Set([...(searchTasks.heloc[0].aliases??[]),
 searchTasks.heloc.push({keyword:'HELOC borrowing limit calculator',mode:'maximum-credit',description:'Estimate potential additional credit from home value, existing mortgage and an entered combined-LTV ceiling. This does not determine lender approval.',aliases:['How much HELOC can I get','HELOC credit limit calculator']});
 searchTasks['home-equity-loan'][0].aliases=[...new Set([...(searchTasks['home-equity-loan'][0].aliases??[]),'Home equity loan payment calculator'])];
 searchTasks['home-equity-loan'][0].description='Estimate fixed home equity loan payments, closing-cost treatment and an illustrative cash-flow APR. Existing mortgage and ownership costs are separate.';
+
+// User-provided US boat financing and auto-offer research, reviewed 2026-10-28.
+searchTasks['boat-loan'][0].aliases=[...new Set([...(searchTasks['boat-loan'][0].aliases??[]),searchTasks['boat-loan'][0].keyword,'Boat payment calculator','Boat loan payment calculator','Used boat loan calculator'])];
+searchTasks['boat-loan'][0].keyword='Boat loan calculator';
+searchTasks['boat-loan'][0].description='Estimate boat loan payments with down payment, trade credit and entered tax and fees, or solve a boat price from a monthly financing budget. Rates and lender eligibility are not determined.';
+searchTasks['auto-lease'][0].aliases=[...new Set([...(searchTasks['auto-lease'][0].aliases??[]),searchTasks['auto-lease'][0].keyword,'Car lease payment calculator','Auto lease payment calculator'])];
+searchTasks['auto-lease'][0].keyword='Auto lease calculator';
+searchTasks['auto-lease'][0].description='Estimate car lease payments from negotiated price, residual, capitalized fees and a money factor, or solve price from payment. Monthly tax is an entered assumption; buyout costs are separate.';
+searchTasks['cash-back-or-low-interest'][0].aliases=[...new Set([...(searchTasks['cash-back-or-low-interest'][0].aliases??[]),'Cash rebate vs low interest calculator','Cash back or low interest calculator'])];
+searchTasks['cash-back-or-low-interest'][0].description='Compare an automotive cash rebate with standard financing against a low-rate offer over the same term. Include entered tax, fees and upfront cash; current deals and eligibility are not fetched.';
