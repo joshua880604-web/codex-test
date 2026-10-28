@@ -107,3 +107,13 @@ searchTasks['roth-ira'][0].description='Project Roth IRA growth with year-end co
 searchTasks['roth-ira'][0].aliases=[...new Set([...(searchTasks['roth-ira'][0].aliases??[]),'Roth IRA calculator','Roth IRA growth calculator'])];
 searchTasks.rmd[0].aliases=[...new Set([...(searchTasks.rmd[0].aliases??[]),searchTasks.rmd[0].keyword,'Required minimum distribution calculator'])];
 searchTasks.rmd[0].keyword='RMD calculator';
+
+// User-provided US student/personal loan keyword research, reviewed 2026-10-28.
+keywordTitles['personal-loan']='Personal Loan Calculator - Payments, Fees & APR';
+const studentMonthly=searchTasks['student-loan'].find(task=>task.mode==='normal')!;
+studentMonthly.aliases=[...new Set([studentMonthly.keyword,...(studentMonthly.aliases??[]),'Student loan calculator','Student loan repayment calculator'])];
+studentMonthly.keyword='Student loan payment calculator';
+studentMonthly.description='Estimate fixed monthly student loan payments and interest from an entered balance, rate and term. Daily accrual, income-driven plans and forgiveness are not calculated.';
+searchTasks['student-loan']=[studentMonthly,...searchTasks['student-loan'].filter(task=>task!==studentMonthly)];
+searchTasks['personal-loan'][0].aliases=[...new Set([...(searchTasks['personal-loan'][0].aliases??[]),'Personal loan calculator','Personal loan payment calculator','Personal loan APR calculator'])];
+searchTasks['personal-loan'][0].description='Estimate monthly installments, fees, net proceeds and an illustrative cash-flow APR. Enter actual offer terms; approval and current lender rates are not determined.';

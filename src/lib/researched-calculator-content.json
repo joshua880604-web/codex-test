@@ -2102,5 +2102,516 @@
         }
       }
     ]
+  },
+  "student-loan": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate a fixed monthly student loan payment, compare extra principal payments, or illustrate borrowing before graduation. Review repayment balance, total interest and payment count separately; this is not a loan-servicer statement or a federal program eligibility tool.",
+    "scope": "Fixed-rate, monthly-period repayment with entered balances and terms, not dated daily interest accrual. Extra payments assume principal reduction after the period’s interest. The in-school scenario borrows at each school-year start, accrues simple monthly interest through the entered grace period and capitalizes unpaid interest once. It does not determine borrowing limits, subsidy eligibility, actual capitalization events, variable rates, income-driven repayment or forgiveness. A full-payoff estimate excludes daily accrued interest since your last payment.",
+    "items": [
+      {
+        "anchor": "use-student-monthly-payment",
+        "queries": [
+          "student loan payment calculator",
+          "student loan repayment calculator"
+        ],
+        "question": "What is the monthly payment on a $30,000 student loan?",
+        "answer": "At an illustrative fixed 6% annual interest rate over 10 years, monthly-period repayment of $30,000 gives a regular payment of $333.06 and total interest of $9,967.38. The model uses unrounded internal payments and caps the final installment. Fees, payment dates and a servicer’s daily accrual can change an actual statement.",
+        "links": [
+          {
+            "id": "student-loan",
+            "mode": "normal",
+            "label": "Try $30,000 at 6% over 10 years",
+            "values": {
+              "principal": "30000",
+              "years": "10",
+              "months": "0",
+              "rate": "6"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-student-extra-principal",
+        "queries": [
+          "student loan extra payment calculator",
+          "student loan payoff calculator"
+        ],
+        "question": "How much can an extra $100 per month save on a student loan?",
+        "answer": "In the $30,000 / 6% / 10-year example, adding $100 to the regular payment raises the initial monthly total to $433.06. The model pays off in 86 payments instead of 120 and lowers interest to $6,921.10, saving $3,046.28. Confirm that the servicer applies excess payments toward the balance rather than merely advancing the next due date.",
+        "links": [
+          {
+            "id": "student-loan",
+            "mode": "extra",
+            "label": "Compare an extra $100 per month",
+            "values": {
+              "principal": "30000",
+              "years": "10",
+              "months": "0",
+              "rate": "6",
+              "extra_monthly": "100",
+              "extra_yearly": "0",
+              "extra_once": "0",
+              "extra_once_month": "1"
+            }
+          }
+        ],
+        "replacesQuestion": "How do extra student loan payments help?"
+      },
+      {
+        "anchor": "use-student-daily-interest",
+        "queries": [
+          "how does student loan interest work",
+          "student loan interest calculator"
+        ],
+        "question": "Why might this estimate differ from my student loan statement?",
+        "answer": "This repayment schedule uses one monthly rate, annual rate divided by 12. Actual student loans may accrue simple interest daily, with the amount affected by days between payments, unpaid interest and transaction dates. Servicer payments generally cover owed fees and interest before principal. Use the statement’s balance and terms, and obtain a dated payoff quote for an exact settlement amount.",
+        "links": [
+          {
+            "id": "student-loan",
+            "mode": "normal",
+            "label": "Estimate a monthly-period repayment schedule",
+            "values": {
+              "principal": "30000",
+              "years": "10",
+              "months": "0",
+              "rate": "6"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-student-idr-forgiveness",
+        "queries": [
+          "student loan income based repayment calculator",
+          "student loan forgiveness calculator"
+        ],
+        "question": "Does this calculate income-driven repayment or loan forgiveness?",
+        "answer": "No. These modes model fixed-payment repayment and a simplified in-school borrowing scenario. They do not determine eligibility, income-driven payment amounts, qualifying-payment counts or forgiveness. Use Federal Student Aid’s current repayment resources and your servicer for program-specific choices; program availability and rules can change.",
+        "links": [
+          {
+            "id": "student-loan",
+            "mode": "normal",
+            "label": "Use the fixed-payment model only"
+          }
+        ],
+        "replacesQuestion": "Can this calculate income-driven student loan payments?"
+      },
+      {
+        "anchor": "use-student-in-school-interest",
+        "queries": [
+          "student loan interest while in school",
+          "student loan capitalization calculator"
+        ],
+        "question": "How does paying interest while in school change the projection?",
+        "answer": "In this simplified scenario, paying the accrued interest keeps it out of the balance entering repayment. If you do not pay it, the model adds it once after school and the entered grace period. It does not decide whether a loan is subsidized or when capitalization is legally allowed; use your loan’s actual terms rather than assuming every federal loan follows this scenario.",
+        "links": [
+          {
+            "id": "student-loan",
+            "mode": "projection",
+            "label": "Illustrate unpaid in-school interest",
+            "values": {
+              "principal": "0",
+              "annual": "10000",
+              "school": "2",
+              "grace": "6",
+              "rate": "6",
+              "years": "10",
+              "pay_interest": "No"
+            }
+          },
+          {
+            "id": "student-loan",
+            "mode": "projection",
+            "label": "Compare paying in-school interest",
+            "values": {
+              "principal": "0",
+              "annual": "10000",
+              "school": "2",
+              "grace": "6",
+              "rate": "6",
+              "years": "10",
+              "pay_interest": "Yes"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-student-payoff-quote",
+        "queries": [
+          "pay off student loan early calculator",
+          "student loan payoff amount"
+        ],
+        "question": "Is Pay Off Altogether an exact payoff quote?",
+        "answer": "No. It reports the entered principal and the modeled future interest avoided under a fixed payment. It does not add daily accrued interest since the last payment or reconcile account transactions. Ask your servicer for a payoff amount valid through your intended payment date, and distinguish that quote from an estimate of future interest savings.",
+        "links": [
+          {
+            "id": "student-loan",
+            "mode": "all",
+            "label": "Estimate interest avoided on an entered balance",
+            "values": {
+              "principal": "30000",
+              "rate": "6",
+              "payment": "350"
+            }
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Repay a $30,000 student loan over ten years",
+        "mode": "normal",
+        "values": {
+          "principal": "30000",
+          "years": "10",
+          "months": "0",
+          "rate": "6"
+        },
+        "inputs": "Balance $30,000; fixed 6% annual rate; 10 years; monthly-period payments; no fees or extra principal.",
+        "steps": [
+          "Monthly interest rate = 0.06 / 12 = 0.005.",
+          "Regular payment = 30,000 × 0.005 / (1 − 1.005^(−120)).",
+          "Sum interest over the monthly schedule using internal precision."
+        ],
+        "answer": "Regular payment is $333.06; modeled total interest is $9,967.38 over 120 payments.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 333.06150582494837,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Add $100 monthly to the same student loan",
+        "mode": "extra",
+        "values": {
+          "principal": "30000",
+          "years": "10",
+          "months": "0",
+          "rate": "6",
+          "extra_monthly": "100",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "inputs": "Same $30,000 balance, 6% rate and original 10-year term; add $100 every month; no annual or one-time extra payment.",
+        "steps": [
+          "Regular payment is $333.0615058 before rounding.",
+          "Initial total payment = regular payment + 100 = $433.06.",
+          "Reduce each remaining balance after monthly interest; cap the final payment at the amount owed."
+        ],
+        "answer": "Payoff takes 86 payments and total interest is $6,921.10: 34 payments fewer and $3,046.28 less interest.",
+        "expected": {
+          "label": "Number of payments",
+          "value": 86,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Illustrate two years of borrowing before repayment",
+        "mode": "projection",
+        "values": {
+          "principal": "0",
+          "annual": "10000",
+          "school": "2",
+          "grace": "6",
+          "rate": "6",
+          "years": "10",
+          "pay_interest": "No"
+        },
+        "inputs": "No starting debt; borrow $10,000 at each of two school-year starts; six-month grace period; 6% assumed interest; no in-school interest payments; 10-year repayment.",
+        "steps": [
+          "Total borrowed principal = 2 × 10,000 = 20,000.",
+          "The first borrowing accrues for 30 months and the second for 18 months.",
+          "Simplified interest = 10,000 × 6% × (30 + 18) / 12 = 2,400; repayment balance = 22,400."
+        ],
+        "answer": "Illustrative balance entering repayment is $22,400, with a monthly-period payment of $248.69. Subsidy and actual capitalization rules are excluded.",
+        "expected": {
+          "label": "Balance entering repayment",
+          "value": 22400.0,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: extra student loan payments and paid-ahead status",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/can-i-make-additional-payments-on-my-student-loan-en-607/"
+      },
+      {
+        "title": "CFPB: student loan payment allocation to fees, interest and principal",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-is-my-student-loan-payment-applied-to-my-account-en-605/"
+      },
+      {
+        "title": "Edfinancial, an official federal servicer: daily interest and payment application",
+        "url": "https://edfinancial.studentaid.gov/Payments-Interest-and-Fees"
+      },
+      {
+        "title": "Federal Student Aid: current repayment calculator and program resources",
+        "url": "https://studentaid.gov/repayment-calculator"
+      }
+    ]
+  },
+  "personal-loan": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate personal loan payments, entered fees, net proceeds and a cash-flow APR illustration. Compare how deducting a fee or financing it changes both the amount available and future payments; the stated interest rate alone does not describe all entered borrowing costs.",
+    "scope": "Fixed-rate monthly installments with entered origination, documentation and other fees, plus any entered insurance per payment. The nominal cash-flow APR includes all entered insurance, even if optional, and is not a lender’s regulatory APR disclosure. It does not determine credit approval, fetch offers, classify required finance charges, model dated irregular cash flows or apply prepayment penalties. This form does not simulate extra principal payments. Paid upfront and Deducted from proceeds share the same time-zero net cash-flow value here, although the actual cash deposit and separate fee payment differ.",
+    "items": [
+      {
+        "anchor": "use-personal-monthly-payment",
+        "queries": [
+          "personal loan payment calculator",
+          "personal loan calculator"
+        ],
+        "question": "What is the monthly payment on a $20,000 personal loan?",
+        "answer": "For a $20,000 loan at an illustrative 12% fixed annual rate over 36 months, the regular payment is $664.29 before any per-payment insurance. With a 3% fee deducted, the payment still amortizes $20,000 but net proceeds after the $600 fee are $19,400. The example is not a current loan offer.",
+        "links": [
+          {
+            "id": "personal-loan",
+            "mode": "repayment",
+            "label": "Try $20,000 over three years",
+            "values": {
+              "principal": "20000",
+              "years": "3",
+              "months": "0",
+              "rate": "12",
+              "origination": "3",
+              "documentation": "0",
+              "other_fee": "0",
+              "treatment": "Deducted from proceeds",
+              "insurance": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-personal-fee-treatment",
+        "queries": [
+          "personal loan origination fee calculator",
+          "personal loan calculator with origination fee"
+        ],
+        "question": "How does an origination fee change the money I receive and repay?",
+        "answer": "With $20,000 principal and a 3% fee, Deducted from proceeds gives $19,400 net cash and a $20,000 repayment balance. Financed gives $20,000 cash and a $20,600 repayment balance. Paid upfront has a separate $600 payment; the model shows the same $19,400 economic net cash flow as deducting it. Compare scenarios at the cash amount you actually need.",
+        "links": [
+          {
+            "id": "personal-loan",
+            "mode": "repayment",
+            "label": "Model a deducted fee",
+            "values": {
+              "principal": "20000",
+              "years": "3",
+              "months": "0",
+              "rate": "12",
+              "origination": "3",
+              "documentation": "0",
+              "other_fee": "0",
+              "treatment": "Deducted from proceeds",
+              "insurance": "0"
+            }
+          },
+          {
+            "id": "personal-loan",
+            "mode": "repayment",
+            "label": "Model a financed fee",
+            "values": {
+              "principal": "20000",
+              "years": "3",
+              "months": "0",
+              "rate": "12",
+              "origination": "3",
+              "documentation": "0",
+              "other_fee": "0",
+              "treatment": "Financed",
+              "insurance": "0"
+            }
+          }
+        ],
+        "replacesQuestion": "How does an origination fee affect a personal loan?"
+      },
+      {
+        "anchor": "use-personal-apr-interest",
+        "queries": [
+          "personal loan apr calculator",
+          "personal loan interest calculator"
+        ],
+        "question": "Why is the modeled APR higher than the interest rate?",
+        "answer": "The stated rate determines interest on the financed balance. The cash-flow APR also reflects entered fees and insurance payments. In the three-year $20,000 example at 12%, a deducted $600 fee raises the modeled nominal APR to about 14.13% with no insurance. Use the lender’s disclosed APR for the actual offer; this model does not classify every charge under disclosure rules.",
+        "links": [
+          {
+            "id": "personal-loan",
+            "mode": "repayment",
+            "label": "Compare the stated rate and modeled cash-flow APR",
+            "values": {
+              "principal": "20000",
+              "years": "3",
+              "months": "0",
+              "rate": "12",
+              "origination": "3",
+              "documentation": "0",
+              "other_fee": "0",
+              "treatment": "Deducted from proceeds",
+              "insurance": "0"
+            }
+          },
+          {
+            "id": "apr",
+            "mode": "loan",
+            "label": "Explore a separate APR calculation"
+          }
+        ]
+      },
+      {
+        "anchor": "use-personal-extra-payment",
+        "queries": [
+          "personal loan extra payment calculator",
+          "personal loan payoff calculator"
+        ],
+        "question": "Where can I compare extra payments on an existing personal loan?",
+        "answer": "This form shows the contracted installment schedule and fee-adjusted cash flows. For an existing fixed-rate balance, use Loan Repayment Calculator with your current balance, contractual payment and extra principal amount. That separate payoff illustration excludes new origination fees, insurance and any prepayment penalty; check the agreement before treating an interest saving as a net saving.",
+        "links": [
+          {
+            "id": "repayment",
+            "mode": "extra-payments",
+            "label": "Compare extra principal on a fixed-rate balance"
+          }
+        ]
+      },
+      {
+        "anchor": "use-personal-zero-interest-fees",
+        "queries": [
+          "zero interest personal loan calculator",
+          "personal loan 0 interest"
+        ],
+        "question": "Can a 0% interest personal loan still have a borrowing cost?",
+        "answer": "Yes. With $20,000 repaid over 36 months at 0% interest, a deducted $600 fee leaves $19,400 available but requires $20,000 of repayments. The model’s nominal cash-flow APR is about 1.99% despite zero stated interest. Other charges or insurance can change the comparison.",
+        "links": [
+          {
+            "id": "personal-loan",
+            "mode": "repayment",
+            "label": "Try 0% interest with a deducted fee",
+            "values": {
+              "principal": "20000",
+              "years": "3",
+              "months": "0",
+              "rate": "0",
+              "origination": "3",
+              "documentation": "0",
+              "other_fee": "0",
+              "treatment": "Deducted from proceeds",
+              "insurance": "0"
+            }
+          }
+        ],
+        "replacesQuestion": "Is a 0% loan necessarily cost-free?"
+      },
+      {
+        "anchor": "use-personal-approval-rates",
+        "queries": [
+          "how much personal loan can i get",
+          "personal loan rates"
+        ],
+        "question": "Does this calculator show what loan I can qualify for?",
+        "answer": "No. You enter the amount, rate, term and charges. The result does not check your credit, verify income, compare lenders or fetch current rates. A payment fitting a chosen budget does not establish approval. Use actual offer disclosures for costs, eligibility and any fees or penalties absent from the model.",
+        "links": [
+          {
+            "id": "personal-loan",
+            "mode": "repayment",
+            "label": "Evaluate terms from an actual offer"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Compare a 12% loan with a deducted 3% fee",
+        "mode": "repayment",
+        "values": {
+          "principal": "20000",
+          "years": "3",
+          "months": "0",
+          "rate": "12",
+          "origination": "3",
+          "documentation": "0",
+          "other_fee": "0",
+          "treatment": "Deducted from proceeds",
+          "insurance": "0"
+        },
+        "inputs": "Loan $20,000; 12%; 36 months; 3% origination fee deducted; documentation, other fees and insurance zero.",
+        "steps": [
+          "Fee = 20,000 × 3% = 600; net proceeds = 19,400.",
+          "Monthly payment amortizes $20,000 at 1% per month over 36 payments.",
+          "Solve the monthly discount rate equating $19,400 received to the payment stream, then multiply by 12."
+        ],
+        "answer": "Monthly payment is $664.29; modeled nominal APR is approximately 14.13%.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 664.2861962570239,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Finance the same personal loan origination fee",
+        "mode": "repayment",
+        "values": {
+          "principal": "20000",
+          "years": "3",
+          "months": "0",
+          "rate": "12",
+          "origination": "3",
+          "documentation": "0",
+          "other_fee": "0",
+          "treatment": "Financed",
+          "insurance": "0"
+        },
+        "inputs": "Same $20,000 base amount, 12%, 36 months and 3% fee; choose Financed; no other charges.",
+        "steps": [
+          "Fee remains $600; financed principal = 20,600.",
+          "Net cash available is $20,000 before any unentered charges.",
+          "The larger financed balance raises monthly payment to $684.21."
+        ],
+        "answer": "Modeled nominal APR is about 14.07%. The cash received and repayment balance differ from the deducted-fee case, so this is not a recommendation of the cheaper offer.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 684.2147821447346,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Show the cost of a fee on a zero-interest loan",
+        "mode": "repayment",
+        "values": {
+          "principal": "20000",
+          "years": "3",
+          "months": "0",
+          "rate": "0",
+          "origination": "3",
+          "documentation": "0",
+          "other_fee": "0",
+          "treatment": "Deducted from proceeds",
+          "insurance": "0"
+        },
+        "inputs": "Loan $20,000; 0% stated interest; 36 months; $600 fee deducted; no insurance or other charges.",
+        "steps": [
+          "Monthly payment before display rounding = 20,000 / 36 = 555.5555556.",
+          "Net proceeds after the fee are $19,400, while total modeled payments are $20,000.",
+          "The monthly cash-flow discount rate annualized nominally is about 1.99%."
+        ],
+        "answer": "The regular payment displays as $555.56; the fee creates a positive modeled APR even with zero interest.",
+        "expected": {
+          "label": "Nominal APR including insurance",
+          "value": 1.986955223645712,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: personal installment loan fees and disclosure documents",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/do-personal-installment-loans-have-fees-en-2120/"
+      },
+      {
+        "title": "CFPB: interest rate and APR describe different borrowing costs",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-loan-interest-rate-and-the-apr-en-733/"
+      }
+    ]
   }
 }
