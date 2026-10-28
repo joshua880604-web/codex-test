@@ -29,7 +29,14 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
   let xIndex = 0, balanceIndex = -1, scale = 1, secondaryIndex = -1;
   let secondaryKey: ResultTrend["secondaryKey"], secondaryLabel: string | undefined;
   let start: TrendPoint | null = null;
-  if (id === "coast-fire" && matches(["Age", "Balance", "Coast threshold", "Cumulative new investments"])) {
+  if (id === "fire" && matches(["Age", "Balance", "FIRE target", "Cumulative new investments"])) {
+    const target=result.metrics.find(m=>m.label==="FIRE portfolio target")?.value;
+    if(!finite(target))return null;
+    start={x:input("age"),balance:input("balance"),comparison:target};
+    xLabel="Age";balanceIndex=1;secondaryIndex=2;secondaryKey="comparison";secondaryLabel="Full FIRE target (today’s USD)";
+    title="Invest toward a full FIRE target";balanceLabel="Modeled portfolio (today’s USD)";
+    help="The calculated savings path ends at the first full-target crossing or projection age limit. All amounts are in today’s USD; no later deposits, withdrawals, market volatility or success probability are simulated.";
+  } else if (id === "coast-fire" && matches(["Age", "Balance", "Coast threshold", "Cumulative new investments"])) {
     const coast=result.metrics.find(m=>m.label==="Coast FIRE number today")?.value;
     if(!finite(coast))return null;
     start={x:input("age"),balance:input("balance"),comparison:coast};

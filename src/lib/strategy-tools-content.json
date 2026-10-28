@@ -1,0 +1,622 @@
+{
+  "noi": {
+    "updatedOn": "2026-10-28",
+    "summary": "Net operating income isolates a rental property’s operations before financing. Start with potential rent, subtract the entered vacancy and collection loss, add other operating income and deduct property-level operating costs. This tool reconciles the components and reports annual NOI plus its monthly equivalent; it is not business-wide net income or cash left after a mortgage.",
+    "scope": "Use one property or a consistently combined property portfolio and one reporting period. Dollar entries are monthly or annual as selected, in USD; changing that selector reinterprets rather than converts the values. Vacancy applies only to scheduled rent; other income must already reflect its own losses. Expenses are entered dollar amounts. NOI excludes debt service, owner income tax, depreciation, capital expenditure and replacement reserves. Lenders may use different reserve-adjusted definitions. Negative NOI is allowed; ratios are undefined at zero effective income.",
+    "sources": [
+      {
+        "title": "Nareit: property-level NOI and excluded financing and capital costs",
+        "url": "https://www.reit.com/glossary/net-operating-income"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Turn monthly rent and operating costs into annual NOI",
+        "mode": "operating-income",
+        "values": {
+          "period": "Monthly",
+          "rent": "4000",
+          "other_income": "100",
+          "vacancy": "5",
+          "taxes": "400",
+          "insurance": "150",
+          "repairs": "250",
+          "management": "300",
+          "utilities": "100",
+          "hoa": "0",
+          "other_expenses": "50"
+        },
+        "inputs": "period: Monthly; rent: 4000; other_income: 100; vacancy: 5; taxes: 400; insurance: 150; repairs: 250; management: 300; utilities: 100; hoa: 0; other_expenses: 50.",
+        "steps": [
+          "Scheduled rent $4,000 less 5% loss gives $3,800; add $100 other income for $3,900 monthly effective income.",
+          "Operating costs total $1,250 per month. NOI = $3,900 − $1,250 = $2,650.",
+          "Annual NOI = $2,650 × 12 = $31,800."
+        ],
+        "answer": "Annual NOI is $31,800; monthly equivalent $2,650 before financing and capital costs.",
+        "expected": {
+          "label": "Annual net operating income",
+          "value": 31800.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Reconcile the same property with annual entries",
+        "mode": "operating-income",
+        "values": {
+          "period": "Annually",
+          "rent": "48000",
+          "other_income": "1200",
+          "vacancy": "5",
+          "taxes": "4800",
+          "insurance": "1800",
+          "repairs": "3000",
+          "management": "3600",
+          "utilities": "1200",
+          "hoa": "0",
+          "other_expenses": "600"
+        },
+        "inputs": "period: Annually; rent: 48000; other_income: 1200; vacancy: 5; taxes: 4800; insurance: 1800; repairs: 3000; management: 3600; utilities: 1200; hoa: 0; other_expenses: 600.",
+        "steps": [
+          "Enter $48,000 scheduled rent and $1,200 other income, with 5% rental loss.",
+          "Annual effective income = $48,000 − $2,400 + $1,200 = $46,800.",
+          "Deduct $15,000 annual operating costs."
+        ],
+        "answer": "The same-period annual inputs produce the same $31,800 NOI.",
+        "expected": {
+          "label": "Annual net operating income",
+          "value": 31800.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Show a genuine operating deficit",
+        "mode": "operating-income",
+        "values": {
+          "period": "Monthly",
+          "rent": "1000",
+          "other_income": "0",
+          "vacancy": "10",
+          "taxes": "500",
+          "insurance": "300",
+          "repairs": "200",
+          "management": "100",
+          "utilities": "100",
+          "hoa": "0",
+          "other_expenses": "0"
+        },
+        "inputs": "period: Monthly; rent: 1000; other_income: 0; vacancy: 10; taxes: 500; insurance: 300; repairs: 200; management: 100; utilities: 100; hoa: 0; other_expenses: 0.",
+        "steps": [
+          "Monthly rent $1,000 less 10% loss gives $900 effective income.",
+          "Costs total $1,200, so NOI is −$300 monthly.",
+          "Annualize −$300 × 12."
+        ],
+        "answer": "Annual NOI is −$3,600; negative operating income is not hidden.",
+        "expected": {
+          "label": "Annual net operating income",
+          "value": -3600.0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-noi-formula",
+        "queries": [
+          "how to calculate net operating income",
+          "how to find net operating income"
+        ],
+        "question": "How do I calculate net operating income for a rental property?",
+        "answer": "Subtract vacancy and collection losses from scheduled gross rent, add other operating income and deduct operating costs for the same period. $4,000 rent minus $200 loss plus $100 other income minus $1,250 expenses gives $2,650 monthly NOI. This property measure differs from a company income-statement operating-profit calculation.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-noi-expenses",
+        "queries": [
+          "net operating income expenses",
+          "what is included in net operating income"
+        ],
+        "question": "Which expenses belong in NOI?",
+        "answer": "This model includes entered property taxes, insurance, routine repairs, management, owner-paid utilities, association charges and other operating costs. Expense classification matters: use the other-cost field only for operations, not a new roof, debt principal, interest or owner income tax. A lender may apply separate replacement reserves or underwriting adjustments.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-noi-mortgage",
+        "queries": [
+          "does net operating income include mortgage",
+          "noi vs cash flow"
+        ],
+        "question": "Does NOI include mortgage payments or depreciation?",
+        "answer": "No. NOI here is before debt service, depreciation and capital expenditure. Financing changes cash available to an owner without changing the property’s operating result. Use the separate rental-property projection for a broader financing, holding-period and sale scenario.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Explore the rental-property model"
+          }
+        ]
+      },
+      {
+        "anchor": "use-noi-vacancy",
+        "queries": [
+          "net operating income vacancy",
+          "how to figure net operating income"
+        ],
+        "question": "How should vacancy and other income be entered?",
+        "answer": "Enter potential scheduled rent before this tool’s vacancy deduction. The percentage applies to rent only. Enter parking, laundry or other income after its own expected losses. Using already-collected rent and then applying vacancy again would understate revenue.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-noi-period",
+        "queries": [
+          "monthly net operating income",
+          "annual net operating income"
+        ],
+        "question": "Can I calculate monthly and annual NOI?",
+        "answer": "Yes. Every dollar input uses the selected period. The report annualizes the reconciliation, then divides annual NOI by 12 for the monthly equivalent. Switching Monthly to Annually does not automatically multiply your typed numbers; convert every income and expense consistently first.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-noi-negative",
+        "queries": [
+          "can net operating income be negative",
+          "noi margin"
+        ],
+        "question": "Can NOI be negative, and what if the property has no income?",
+        "answer": "Negative NOI means the modeled operating costs exceed effective operating income. If effective income is zero, NOI can still be a negative dollar amount, but NOI margin and the operating-expense ratio are undefined. The tool labels those ratios rather than presenting a misleading zero percent.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-noi-cap-rate",
+        "queries": [
+          "net operating income cap rate",
+          "noi vs net income"
+        ],
+        "question": "Is NOI the same as cap rate or net income?",
+        "answer": "No. NOI is a dollar operating amount. A capitalization rate relates an annual NOI definition to a property value. Net income can include financing, depreciation and other items outside this model. No cap rate or valuation is inferred just from the NOI input sheet.",
+        "links": [
+          {
+            "id": "rental-property",
+            "mode": "projection",
+            "label": "Review property return assumptions"
+          }
+        ]
+      }
+    ]
+  },
+  "fire": {
+    "updatedOn": "2026-10-28",
+    "summary": "A FIRE number is an assumed portfolio target for Financial Independence, Retire Early. Divide the annual spending the portfolio must fund by a chosen withdrawal rate, then model current investments and monthly additions until that full target is first reached. This page answers the full-target savings question; Coast FIRE instead asks what smaller balance could grow to a later target without more contributions.",
+    "scope": "A single current age and projection age limit, with all money in today’s USD. Constant effective nominal return is adjusted for inflation using the exact real-growth relationship. Monthly investments maintain purchasing power and occur at month end. The path ends at the first full-target crossing or the age limit. No withdrawals after FIRE, random or historical returns, success probability, benefit eligibility, tax return, contribution cap or early-account-access rules are modeled. Four percent and the default return are illustrations, not assurances of safe retirement.",
+    "sources": [
+      {
+        "title": "Charles Schwab: FIRE targets and planning risks",
+        "url": "https://www.schwab.com/learn/story/fire-movement"
+      },
+      {
+        "title": "OpenStax: present value and exact nominal versus real interest",
+        "url": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance"
+      },
+      {
+        "title": "SEC Investor.gov: compound-interest inputs",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Reach a $1 million full FIRE target with monthly investing",
+        "mode": "plan",
+        "values": {
+          "age": "35",
+          "max_age": "80",
+          "balance": "150000",
+          "spending": "40000",
+          "monthly": "2000",
+          "return": "7",
+          "inflation": "2.5",
+          "withdrawal": "4"
+        },
+        "inputs": "age: 35; max_age: 80; balance: 150000; spending: 40000; monthly: 2000; return: 7; inflation: 2.5; withdrawal: 4.",
+        "steps": [
+          "Annual portfolio-funded spending $40,000 / 4% = $1,000,000 in today’s USD.",
+          "Exact real return = 1.07 / 1.025 − 1 = approximately 4.39024%. Start with $150,000 and add $2,000 at each month end.",
+          "The first whole-month crossing occurs after 221 months. Deposits and the savings projection stop there."
+        ],
+        "answer": "The modeled target crossing is age 53 years, 5 months. Total new investments are $442,000 and the endpoint is $1,003,515.17 in today’s USD; this is not a withdrawal-sustainability result.",
+        "expected": {
+          "label": "Portfolio at projection endpoint",
+          "value": 1003515.1746189375,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Reach a target with no real investment growth",
+        "mode": "plan",
+        "values": {
+          "age": "40",
+          "max_age": "50",
+          "balance": "180000",
+          "spending": "12000",
+          "monthly": "1000",
+          "return": "5",
+          "inflation": "5",
+          "withdrawal": "4"
+        },
+        "inputs": "age: 40; max_age: 50; balance: 180000; spending: 12000; monthly: 1000; return: 5; inflation: 5; withdrawal: 4.",
+        "steps": [
+          "$12,000 annual budget / 4% = $300,000 target.",
+          "Equal 5% nominal return and 5% inflation give zero real growth.",
+          "Starting with $180,000, 120 deposits of $1,000 produce $300,000."
+        ],
+        "answer": "The target is first reached at age 50, after 10 years.",
+        "expected": {
+          "label": "FIRE portfolio target",
+          "value": 300000.0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Recognize an already-met sizing target",
+        "mode": "plan",
+        "values": {
+          "age": "35",
+          "max_age": "80",
+          "balance": "1000000",
+          "spending": "40000",
+          "monthly": "2000",
+          "return": "7",
+          "inflation": "2.5",
+          "withdrawal": "4"
+        },
+        "inputs": "age: 35; max_age: 80; balance: 1000000; spending: 40000; monthly: 2000; return: 7; inflation: 2.5; withdrawal: 4.",
+        "steps": [
+          "A $40,000 budget and 4% assumption imply $1,000,000.",
+          "Entered current assets already equal $1,000,000.",
+          "The projection ends now, so no future monthly investments are counted."
+        ],
+        "answer": "The sizing target is met now; actual retirement feasibility still requires a separate review.",
+        "expected": {
+          "label": "New investments through endpoint",
+          "value": 0.0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-fire-number",
+        "queries": [
+          "how to calculate fire number",
+          "what is my fire number calculator"
+        ],
+        "question": "How do I calculate my FIRE number?",
+        "answer": "Divide the annual spending this portfolio must fund by a chosen annual withdrawal rate written as a decimal. $40,000 / 0.04 = $1,000,000, or 25 times spending. Budget for any taxes and costs the portfolio must pay. The number is a sizing assumption; a withdrawal-rate input alone does not prove that retirement spending will be sustainable.",
+        "links": [
+          {
+            "id": "fire",
+            "mode": "plan",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fire-age",
+        "queries": [
+          "fire retirement age calculator",
+          "when can i retire fire calculator"
+        ],
+        "question": "How does the calculator estimate my FIRE age?",
+        "answer": "It grows your invested assets with an exact inflation-adjusted monthly rate and adds the monthly investment at month end. It reports the first whole month meeting the full FIRE target, then ends the projection. If the selected age limit arrives first, it reports no crossing within that horizon rather than extrapolating an unsupported retirement age.",
+        "links": [
+          {
+            "id": "fire",
+            "mode": "plan",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fire-coast",
+        "queries": [
+          "fire vs coast fire",
+          "coast fire calculator"
+        ],
+        "question": "How is FIRE different from Coast FIRE?",
+        "answer": "This page targets the full portfolio needed for the entered spending and withdrawal assumption. A Coast threshold is a present value for a later retirement target, assuming the portfolio remains invested without withdrawals. Meeting Coast FIRE can occur earlier, but it does not fund present living expenses.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Calculate the separate Coast FIRE milestone"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fire-lean-fat",
+        "queries": [
+          "lean fire calculator",
+          "fat fire calculator"
+        ],
+        "question": "Can I explore Lean FIRE or Fat FIRE?",
+        "answer": "Use the retirement budget that reflects the lifestyle you are evaluating, and keep return and withdrawal assumptions consistent when comparing. Lean and Fat are community spending labels without universal dollar cutoffs. The same full-target model can compare lower and higher budgets; there is no separate guarantee or automatic lifestyle classification.",
+        "links": [
+          {
+            "id": "fire",
+            "mode": "plan",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fire-inflation",
+        "queries": [
+          "fire calculator inflation",
+          "fire calculator real return"
+        ],
+        "question": "Should I enter real or nominal returns?",
+        "answer": "Enter a nominal effective annual return after fees, plus a separate inflation assumption. The model uses (1 + nominal) / (1 + inflation) − 1. All budgets, monthly deposits and results remain in today’s purchasing power. Entering an already-real return in the nominal field would deduct inflation twice.",
+        "links": [
+          {
+            "id": "fire",
+            "mode": "plan",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fire-zero",
+        "queries": [
+          "fire calculator no savings",
+          "fire target not reached"
+        ],
+        "question": "What if I cannot reach the target by the projection limit?",
+        "answer": "The result labels the target as not reached and shows the portfolio at the age limit. A zero monthly investment tests current assets alone. Change one assumption at a time, such as budget or monthly investing, to understand the arithmetic; do not treat a higher assumed return as evidence that a plan is safer.",
+        "links": [
+          {
+            "id": "fire",
+            "mode": "plan",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fire-risk",
+        "queries": [
+          "fire calculator safe withdrawal rate",
+          "fire calculator social security"
+        ],
+        "question": "Does reaching the FIRE number guarantee I can retire?",
+        "answer": "No. This is a constant-return savings projection and target-sizing calculation. It does not model retirement withdrawals, future market sequences, account access, benefit start dates or a probability of success. Those issues require a separate plan; Social Security and pension amounts are not estimated here.",
+        "links": [
+          {
+            "id": "retirement",
+            "mode": "withdrawal",
+            "label": "Explore a separate withdrawal calculation"
+          }
+        ]
+      }
+    ]
+  },
+  "mirr": {
+    "updatedOn": "2026-10-28",
+    "summary": "Modified internal rate of return separates the financing cost of project payments from the return assumed on reinvested receipts. The model discounts negative cash flows to time zero, compounds positive cash flows to the last period, then finds the equivalent growth rate between those two totals. Enter a complete signed series with equal spacing, including zero periods.",
+    "scope": "Cash flows are USD amounts at equally spaced dates, with the first entry at time zero and 2–601 entries. At least one positive and one negative amount is required. Both financing and reinvestment inputs are effective annual rates; selected spacing converts them to equivalent period rates. Results show periodic and effective annual MIRR. Internal blank lines and labels are rejected instead of silently omitted; use explicit 0 for no-flow periods. No irregular-date XIRR, actual financing schedule, tax estimate, inflation adjustment or project accept/reject advice is supplied.",
+    "sources": [
+      {
+        "title": "Microsoft Excel: MIRR function, timing, signs and published sample",
+        "url": "https://support.microsoft.com/en-us/excel/functions/mirr-function"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Reinvest annual project receipts at 10%",
+        "mode": "cashflows",
+        "values": {
+          "flows": "-10000\n3000\n4000\n5000",
+          "period": "Annually",
+          "finance": "8",
+          "reinvest": "10"
+        },
+        "inputs": "flows: -10000, 3000, 4000, 5000; period: Annually; finance: 8; reinvest: 10.",
+        "steps": [
+          "Time-zero outflow is $10,000. Receipts are $3,000, $4,000 and $5,000 at the next three year ends.",
+          "Terminal receipts = $3,000 × 1.10² + $4,000 × 1.10 + $5,000 = $13,030.",
+          "MIRR = (13,030 / 10,000)^(1/3) − 1."
+        ],
+        "answer": "Annual MIRR is approximately 9.22318%. The financing rate does not change the time-zero-only payment.",
+        "expected": {
+          "label": "Effective annual MIRR",
+          "value": 9.223177108014076,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Preserve a zero month and annualize the periodic return",
+        "mode": "cashflows",
+        "values": {
+          "flows": "-1000\n0\n1100",
+          "period": "Monthly",
+          "finance": "0",
+          "reinvest": "0"
+        },
+        "inputs": "flows: -1000, 0, 1100; period: Monthly; finance: 0; reinvest: 0.",
+        "steps": [
+          "Use −$1,000 at month zero, $0 at month one and $1,100 at month two.",
+          "At zero financing and reinvestment rates, periodic MIRR = (1,100 / 1,000)^(1/2) − 1 ≈ 4.88088%.",
+          "Effective annual equivalent = (1.048808848…)^12 − 1."
+        ],
+        "answer": "The annual equivalent is 77.1561%; this annualizes a two-month example and is not a forecast of a year of repeatable returns.",
+        "expected": {
+          "label": "Effective annual MIRR",
+          "value": 77.1561,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Keep a negative MIRR rather than hiding the loss",
+        "mode": "cashflows",
+        "values": {
+          "flows": "-1000\n200\n200",
+          "period": "Annually",
+          "finance": "0",
+          "reinvest": "0"
+        },
+        "inputs": "flows: -1000, 200, 200; period: Annually; finance: 0; reinvest: 0.",
+        "steps": [
+          "Pay $1,000 now and receive $200 at each of the next two year ends.",
+          "With both rates zero, PV of payments is $1,000 and terminal receipts total $400.",
+          "MIRR = (400 / 1,000)^(1/2) − 1."
+        ],
+        "answer": "Annual MIRR is approximately −36.75445%.",
+        "expected": {
+          "label": "Effective annual MIRR",
+          "value": -36.754446796632415,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-mirr-definition",
+        "queries": [
+          "what is mirr",
+          "modified internal rate of return"
+        ],
+        "question": "What is MIRR and how is it calculated?",
+        "answer": "MIRR uses two explicit assumptions. Discount each negative payment to time zero at the financing rate, compound each positive receipt to the final period at the reinvestment rate, divide the receipt terminal value by the absolute payment present value, and take the Nth root minus one. N is the number of intervals, one fewer than the number of entries.",
+        "links": [
+          {
+            "id": "mirr",
+            "mode": "cashflows",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mirr-irr",
+        "queries": [
+          "mirr vs irr",
+          "difference between irr and mirr"
+        ],
+        "question": "What is the difference between MIRR and IRR?",
+        "answer": "IRR finds a discount rate that makes the net present value of the original cash-flow sequence zero; some sequences have multiple or no relevant IRRs. MIRR instead transforms outflows and inflows using separate entered rates, then reports an equivalent rate over the selected horizon. Its single output depends on those assumptions and is not proof that a project creates value.",
+        "links": [
+          {
+            "id": "irr",
+            "mode": "irregular",
+            "label": "Explore the separate IRR model"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mirr-excel",
+        "queries": [
+          "how to calculate mirr in excel",
+          "mirr excel formula"
+        ],
+        "question": "How do I match Excel MIRR?",
+        "answer": "Use the same ordered numeric cash flows and effective rates per cash-flow period. For annual flows, Excel MIRR(values, finance_rate, reinvest_rate) uses the annual rates directly. For monthly or quarterly flows, this site accepts effective annual inputs and converts them first; use those displayed period rates in Excel. Our parser rejects internal blank lines, while spreadsheet references can ignore empty or text cells.",
+        "links": [
+          {
+            "id": "mirr",
+            "mode": "cashflows",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mirr-periods",
+        "queries": [
+          "mirr monthly cash flows",
+          "how to calculate mirr manually"
+        ],
+        "question": "Why must I include a zero cash-flow period?",
+        "answer": "A zero preserves a real interval. −1000, 0, 1100 spans two periods; −1000, 1100 spans one. Removing the zero changes both reinvestment timing and the root used in MIRR. Enter one amount per line and use 0 rather than an internal blank line, a label or a thousands-separated number.",
+        "links": [
+          {
+            "id": "mirr",
+            "mode": "cashflows",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mirr-rates",
+        "queries": [
+          "mirr finance rate reinvestment rate",
+          "mirr calculator annual rate"
+        ],
+        "question": "What rates should I enter for monthly or quarterly cash flows?",
+        "answer": "Both fields are effective annual assumptions. The tool converts each with (1 + annual rate)^(1 / periods per year) − 1; it does not divide an effective annual percentage by 12 or 4. The annual MIRR then compounds the periodic MIRR. A nominal APR quotation may need a separate conversion before use.",
+        "links": [
+          {
+            "id": "mirr",
+            "mode": "cashflows",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mirr-negative",
+        "queries": [
+          "can mirr be negative",
+          "negative mirr"
+        ],
+        "question": "Can MIRR be negative or have several sign changes?",
+        "answer": "Yes. A project can have a negative equivalent MIRR, and additional later payments are discounted separately at the finance rate. The complete series still needs at least one receipt and one payment. All-positive, all-negative or all-zero series cannot produce this MIRR definition.",
+        "links": [
+          {
+            "id": "mirr",
+            "mode": "cashflows",
+            "label": "Try the calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mirr-dates",
+        "queries": [
+          "mirr vs xirr",
+          "mirr discounting approach"
+        ],
+        "question": "Does this calculate XIRR or every MIRR variant?",
+        "answer": "No. This uses the combined present-value-of-payments and terminal-value-of-receipts method for equal intervals. It does not implement an irregular-date XIRR or a discounting-only variant merely by changing a label. Use a dated-cash-flow tool if actual calendar gaps matter.",
+        "links": [
+          {
+            "id": "average-return",
+            "mode": "cashflows",
+            "label": "Review dated cash-flow returns"
+          }
+        ]
+      }
+    ]
+  }
+}

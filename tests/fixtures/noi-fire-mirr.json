@@ -1,0 +1,396 @@
+[
+  {
+    "id": "noi",
+    "key": "default",
+    "values": {
+      "period": "Monthly",
+      "rent": "4000",
+      "other_income": "100",
+      "vacancy": "5",
+      "taxes": "400",
+      "insurance": "150",
+      "repairs": "250",
+      "management": "300",
+      "utilities": "100",
+      "hoa": "0",
+      "other_expenses": "50"
+    },
+    "expected": {
+      "Annual net operating income": 31800.0,
+      "Monthly net operating income": 2650.0,
+      "Effective annual operating income": 46800.0,
+      "Annual operating expenses": 15000.0,
+      "Annual vacancy and collection loss": 2400.0,
+      "NOI margin": 67.94871794871794,
+      "Operating expense ratio": 32.05128205128205
+    }
+  },
+  {
+    "id": "noi",
+    "key": "annual",
+    "values": {
+      "period": "Annually",
+      "rent": "48000",
+      "other_income": "1200",
+      "vacancy": "5",
+      "taxes": "4800",
+      "insurance": "1800",
+      "repairs": "3000",
+      "management": "3600",
+      "utilities": "1200",
+      "hoa": "0",
+      "other_expenses": "600"
+    },
+    "expected": {
+      "Annual net operating income": 31800.0,
+      "Monthly net operating income": 2650.0,
+      "Effective annual operating income": 46800.0,
+      "Annual operating expenses": 15000.0,
+      "Annual vacancy and collection loss": 2400.0,
+      "NOI margin": 67.94871794871794,
+      "Operating expense ratio": 32.05128205128205
+    }
+  },
+  {
+    "id": "noi",
+    "key": "loss",
+    "values": {
+      "period": "Monthly",
+      "rent": "1000",
+      "other_income": "0",
+      "vacancy": "10",
+      "taxes": "500",
+      "insurance": "300",
+      "repairs": "200",
+      "management": "100",
+      "utilities": "100",
+      "hoa": "0",
+      "other_expenses": "0"
+    },
+    "expected": {
+      "Annual net operating income": -3600.0,
+      "Monthly net operating income": -300.0,
+      "Effective annual operating income": 10800.0,
+      "Annual operating expenses": 14400.0,
+      "Annual vacancy and collection loss": 1200.0,
+      "NOI margin": -33.333333333333336,
+      "Operating expense ratio": 133.33333333333334
+    }
+  },
+  {
+    "id": "noi",
+    "key": "zero-income",
+    "values": {
+      "period": "Monthly",
+      "rent": "0",
+      "other_income": "0",
+      "vacancy": "5",
+      "taxes": "100",
+      "insurance": "0",
+      "repairs": "0",
+      "management": "0",
+      "utilities": "0",
+      "hoa": "0",
+      "other_expenses": "0"
+    },
+    "expected": {
+      "Annual net operating income": -1200.0,
+      "Monthly net operating income": -100.0,
+      "Effective annual operating income": 0.0,
+      "Annual operating expenses": 1200.0,
+      "Annual vacancy and collection loss": 0.0
+    }
+  },
+  {
+    "id": "noi",
+    "key": "vacant",
+    "values": {
+      "period": "Monthly",
+      "rent": "4000",
+      "other_income": "100",
+      "vacancy": "100",
+      "taxes": "400",
+      "insurance": "150",
+      "repairs": "250",
+      "management": "300",
+      "utilities": "100",
+      "hoa": "0",
+      "other_expenses": "50"
+    },
+    "expected": {
+      "Annual net operating income": -13800.0,
+      "Monthly net operating income": -1150.0,
+      "Effective annual operating income": 1200.0,
+      "Annual operating expenses": 15000.0,
+      "Annual vacancy and collection loss": 48000.0,
+      "NOI margin": -1150.0,
+      "Operating expense ratio": 1250.0
+    }
+  },
+  {
+    "id": "fire",
+    "key": "default",
+    "values": {
+      "age": "35",
+      "max_age": "80",
+      "balance": "150000",
+      "spending": "40000",
+      "monthly": "2000",
+      "return": "7",
+      "inflation": "2.5",
+      "withdrawal": "4"
+    },
+    "expected": {
+      "FIRE portfolio target": 1000000.0,
+      "Current gap to FIRE target": 850000.0,
+      "Portfolio at projection endpoint": 1003515.1746189375,
+      "New investments through endpoint": 442000.0,
+      "Real annual return assumption": 4.390243902439025,
+      "Projection endpoint age": 53.416666666666664,
+      "Annual spending multiple": 25.0,
+      "Modeled target status": 2.0,
+      "Age at modeled FIRE target": 53.416666666666664,
+      "Time to modeled FIRE target": 18.416666666666668
+    }
+  },
+  {
+    "id": "fire",
+    "key": "zero-real",
+    "values": {
+      "age": "40",
+      "max_age": "50",
+      "balance": "180000",
+      "spending": "12000",
+      "monthly": "1000",
+      "return": "5",
+      "inflation": "5",
+      "withdrawal": "4"
+    },
+    "expected": {
+      "FIRE portfolio target": 300000.0,
+      "Current gap to FIRE target": 120000.0,
+      "Portfolio at projection endpoint": 300000.0,
+      "New investments through endpoint": 120000.0,
+      "Real annual return assumption": 0.0,
+      "Projection endpoint age": 50.0,
+      "Annual spending multiple": 25.0,
+      "Modeled target status": 2.0,
+      "Age at modeled FIRE target": 50.0,
+      "Time to modeled FIRE target": 10.0
+    }
+  },
+  {
+    "id": "fire",
+    "key": "now",
+    "values": {
+      "age": "35",
+      "max_age": "80",
+      "balance": "1000000",
+      "spending": "40000",
+      "monthly": "2000",
+      "return": "7",
+      "inflation": "2.5",
+      "withdrawal": "4"
+    },
+    "expected": {
+      "FIRE portfolio target": 1000000.0,
+      "Current gap to FIRE target": 0.0,
+      "Portfolio at projection endpoint": 1000000.0,
+      "New investments through endpoint": 0.0,
+      "Real annual return assumption": 4.390243902439025,
+      "Projection endpoint age": 35.0,
+      "Annual spending multiple": 25.0,
+      "Modeled target status": 1.0,
+      "Age at modeled FIRE target": 35.0,
+      "Time to modeled FIRE target": 0.0
+    }
+  },
+  {
+    "id": "fire",
+    "key": "not-reached",
+    "values": {
+      "age": "35",
+      "max_age": "80",
+      "balance": "0",
+      "spending": "40000",
+      "monthly": "0",
+      "return": "7",
+      "inflation": "2.5",
+      "withdrawal": "4"
+    },
+    "expected": {
+      "FIRE portfolio target": 1000000.0,
+      "Current gap to FIRE target": 1000000.0,
+      "Portfolio at projection endpoint": 0.0,
+      "New investments through endpoint": 0.0,
+      "Real annual return assumption": 4.390243902439025,
+      "Projection endpoint age": 80.0,
+      "Annual spending multiple": 25.0,
+      "Modeled target status": 0.0
+    }
+  },
+  {
+    "id": "fire",
+    "key": "negative-real",
+    "values": {
+      "age": "40",
+      "max_age": "41",
+      "balance": "100000",
+      "spending": "12000",
+      "monthly": "0",
+      "return": "-5",
+      "inflation": "0",
+      "withdrawal": "4"
+    },
+    "expected": {
+      "FIRE portfolio target": 300000.0,
+      "Current gap to FIRE target": 200000.0,
+      "Portfolio at projection endpoint": 95000.0,
+      "New investments through endpoint": 0.0,
+      "Real annual return assumption": -5.0,
+      "Projection endpoint age": 41.0,
+      "Annual spending multiple": 25.0,
+      "Modeled target status": 0.0
+    }
+  },
+  {
+    "id": "mirr",
+    "key": "default",
+    "values": {
+      "flows": "-10000\n3000\n4000\n5000",
+      "period": "Annually",
+      "finance": "8",
+      "reinvest": "10"
+    },
+    "expected": {
+      "Effective annual MIRR": 9.223177108014076,
+      "MIRR per cash-flow period": 9.223177108014076,
+      "Present value of outflows": 10000.0,
+      "Terminal value of reinvested inflows": 13030.0,
+      "Number of cash-flow periods": 3.0,
+      "Horizon in years": 3.0,
+      "Effective financing rate per period": 8.0,
+      "Effective reinvestment rate per period": 10.0
+    }
+  },
+  {
+    "id": "mirr",
+    "key": "monthly",
+    "values": {
+      "flows": "-10000\n3000\n4000\n5000",
+      "period": "Monthly",
+      "finance": "8",
+      "reinvest": "10"
+    },
+    "expected": {
+      "Effective annual MIRR": 112.94035905555147,
+      "MIRR per cash-flow period": 6.501281079715909,
+      "Present value of outflows": 10000.0,
+      "Terminal value of reinvested inflows": 12079.932165035778,
+      "Number of cash-flow periods": 3.0,
+      "Horizon in years": 0.25,
+      "Effective financing rate per period": 0.6434030110003455,
+      "Effective reinvestment rate per period": 0.7974140428903741
+    }
+  },
+  {
+    "id": "mirr",
+    "key": "quarterly",
+    "values": {
+      "flows": "-10000\n3000\n4000\n5000",
+      "period": "Quarterly",
+      "finance": "8",
+      "reinvest": "10"
+    },
+    "expected": {
+      "Effective annual MIRR": 30.9719172871799,
+      "MIRR per cash-flow period": 6.978017730275345,
+      "Present value of outflows": 10000.0,
+      "Terminal value of reinvested inflows": 12242.881300848236,
+      "Number of cash-flow periods": 3.0,
+      "Horizon in years": 0.75,
+      "Effective financing rate per period": 1.9426546908273512,
+      "Effective reinvestment rate per period": 2.411368908444513
+    }
+  },
+  {
+    "id": "mirr",
+    "key": "sign-changes",
+    "values": {
+      "flows": "-10000\n8000\n-2000\n6000",
+      "period": "Annually",
+      "finance": "8",
+      "reinvest": "10"
+    },
+    "expected": {
+      "Effective annual MIRR": 10.205999743574896,
+      "MIRR per cash-flow period": 10.205999743574896,
+      "Present value of outflows": 11714.677640603566,
+      "Terminal value of reinvested inflows": 15680.0,
+      "Number of cash-flow periods": 3.0,
+      "Horizon in years": 3.0,
+      "Effective financing rate per period": 8.0,
+      "Effective reinvestment rate per period": 10.0
+    }
+  },
+  {
+    "id": "mirr",
+    "key": "loss",
+    "values": {
+      "flows": "-1000\n200\n200",
+      "period": "Annually",
+      "finance": "0",
+      "reinvest": "0"
+    },
+    "expected": {
+      "Effective annual MIRR": -36.754446796632415,
+      "MIRR per cash-flow period": -36.754446796632415,
+      "Present value of outflows": 1000.0,
+      "Terminal value of reinvested inflows": 400.0,
+      "Number of cash-flow periods": 2.0,
+      "Horizon in years": 2.0,
+      "Effective financing rate per period": 0.0,
+      "Effective reinvestment rate per period": 0.0
+    }
+  },
+  {
+    "id": "mirr",
+    "key": "zero-period",
+    "values": {
+      "flows": "-1000\n0\n1100",
+      "period": "Monthly",
+      "finance": "0",
+      "reinvest": "0"
+    },
+    "expected": {
+      "Effective annual MIRR": 77.1561,
+      "MIRR per cash-flow period": 4.880884817015155,
+      "Present value of outflows": 1000.0,
+      "Terminal value of reinvested inflows": 1100.0,
+      "Number of cash-flow periods": 2.0,
+      "Horizon in years": 0.16666666666666666,
+      "Effective financing rate per period": 0.0,
+      "Effective reinvestment rate per period": 0.0
+    }
+  },
+  {
+    "id": "mirr",
+    "key": "microsoft",
+    "values": {
+      "flows": "-120000\n39000\n30000\n21000\n37000\n46000",
+      "period": "Annually",
+      "finance": "10",
+      "reinvest": "12"
+    },
+    "expected": {
+      "Effective annual MIRR": 12.609413036590514,
+      "MIRR per cash-flow period": 12.609413036590514,
+      "Present value of outflows": 120000.0,
+      "Terminal value of reinvested inflows": 217297.49504,
+      "Number of cash-flow periods": 5.0,
+      "Horizon in years": 5.0,
+      "Effective financing rate per period": 10.0,
+      "Effective reinvestment rate per period": 12.0
+    }
+  }
+]

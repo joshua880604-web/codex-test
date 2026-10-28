@@ -1,3 +1,4 @@
+import strategyContent from './strategy-tools-content.json';
 import coastContent from './coast-fire-content.json';
 import businessContent from './business-tool-content.json';
 import refresh from "./researched-calculator-content.json";
@@ -745,6 +746,10 @@ for(const id of ['margin','markup','break-even'])relatedCalculatorIds[id]=[...ne
 Object.assign(guides,Object.fromEntries(Object.entries(coastContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
 relatedCalculatorIds['coast-fire']=['retirement','compound-interest','real-return','401k','roth-ira','investment-fee'];
 relatedCalculatorIds.retirement=[...new Set(['coast-fire',...(relatedCalculatorIds.retirement??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(strategyContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+Object.assign(relatedCalculatorIds,{noi:['rental-property','rent-vs-buy','mortgage','margin'],fire:['coast-fire','retirement','compound-interest','real-return','401k'],mirr:['irr','roi','payback-period','present-value','future-value']});
+for(const [id,addition] of [['coast-fire','fire'],['retirement','fire'],['rental-property','noi'],['irr','mirr'],['roi','mirr']] as const)relatedCalculatorIds[id]=[...new Set([addition,...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {

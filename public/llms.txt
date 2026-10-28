@@ -15,6 +15,8 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 ## Mortgage and housing
 
+- [NOI Calculator](https://www.calculatorfree.io/noi-calculator): Reconcile rental-property operating income and costs before financing and capital expenditure, with monthly or annual entries.
+
 - [Mortgage and housing calculator directory](https://www.calculatorfree.io/real-estate-calculator): Choose buying, insurance, payoff, refinance and rent-versus-buy tools by housing decision.
 
 - [Mortgage Calculator](https://www.calculatorfree.io/mortgage-calculator): Estimate payments and ownership costs, model extra principal payments, and compare biweekly payments. Monthly mode automatically estimates PMI from original LTV, an assumed credit-score range and loan term using a dated National MI base-rate card; actual quotes can be entered manually. The requested 80% cancellation model uses the lower of purchase price and original appraisal. Biweekly mode excludes PMI and ownership expenses; cash purchases retain ownership-cost estimates without a loan schedule.
@@ -43,11 +45,15 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 ## Financial mathematics
 
+- [MIRR Calculator](https://www.calculatorfree.io/mirr-calculator): Equal-period signed cash flows with separate effective annual financing and reinvestment assumptions; reports periodic and annualized modified returns.
+
 - [Finance Calculator](https://www.calculatorfree.io/finance-calculator): Solve time-value-of-money variables under the entered payment, rate and timing assumptions.
 - [Future Value Calculator](https://www.calculatorfree.io/future-value-calculator): Estimate future value from starting principal and payments under the selected timing and rate.
 - [Present Value Calculator](https://www.calculatorfree.io/present-value-calculator): Discount a future amount and modeled payments to a present value.
 
 ## Retirement planning
+
+- [FIRE Calculator](https://www.calculatorfree.io/fire-calculator): Full financial-independence target and first savings crossing, in today’s USD. No withdrawal simulation or probability of success.
 
 - [Coast FIRE Calculator](https://www.calculatorfree.io/coast-fire-calculator): Estimate today’s retirement savings threshold, the first modeled crossing and a stop-and-coast path. All amounts are today’s USD; no pre-retirement withdrawals or probability of success is modeled.
 - [How to calculate Coast FIRE](https://www.calculatorfree.io/guides/how-to-calculate-coast-fire/): Formula, age and return comparisons, and the distinction from Barista FIRE.

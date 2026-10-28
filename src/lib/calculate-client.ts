@@ -10,6 +10,9 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
 };
 const businessTools = () => import('./calculators/business-tools').then(m => m.businessTools);
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
+  noi: () => import('./calculators/noi').then(m => [m.noiCalculator]),
+  fire: () => import('./calculators/fire').then(m => [m.fireCalculator]),
+  mirr: () => import('./calculators/mirr').then(m => [m.mirrCalculator]),
   'coast-fire': () => import('./calculators/coast-fire').then(m => [m.coastFire]),
   roas: businessTools, 'landed-cost': businessTools, 'quick-ratio': businessTools, 'current-ratio': businessTools,
   'tax-equivalent-yield': () => import('./calculators/investment-decisions').then(m => m.investmentDecisions),

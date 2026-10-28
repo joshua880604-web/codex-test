@@ -1,0 +1,29 @@
+import {tool} from './helpers';
+import {num,money,metric,number as read,type Values,type Result} from '../types';
+const finite=(x:number)=>{if(!Number.isFinite(x))throw new Error('These assumptions exceed the supported projection range. Check rates, budget and horizon.');return x;};
+const elapsed=(months:number)=>`${Math.floor(months/12)} years, ${months%12} months`;
+export function fireProjection(v:Values):Result{
+ const age=read(v,'age'),end=read(v,'max_age');if(!Number.isInteger(age)||!Number.isInteger(end)||age<0||end>120||age>=end)throw new Error('Use whole-number ages from 0 to 120; the projection limit must be above current age.');
+ const spending=read(v,'spending'),withdrawal=read(v,'withdrawal')/100,initial=read(v,'balance'),monthly=read(v,'monthly'),nominal=read(v,'return')/100,inflation=read(v,'inflation')/100;
+ if(spending<=0||withdrawal<=0||withdrawal>1)throw new Error('Use a positive annual budget and withdrawal rate no greater than 100%.');
+ if(initial<0||monthly<0||nominal<=-1||inflation<=-1)throw new Error('Assets and investments cannot be negative; return and inflation must exceed -100%.');
+ const target=finite(spending/withdrawal),log=Math.log1p(nominal)-Math.log1p(inflation),growth=Math.exp(log/12),real=Math.expm1(log),months=(end-age)*12;
+ let balance=initial,added=0,first:number|null=initial>=target?0:null,last=0;
+ const rows:(number|string)[][]=[];
+ if(first===0)rows.push([age,balance,target,0]);
+ else for(let m=1;m<=months;m++){
+  balance=finite(balance*growth+monthly);added=finite(added+monthly);last=m;
+  if(balance>=target)first=m;
+  if(m%12===0||m===months||first!==null)rows.push([age+m/12,balance,target,added]);
+  if(first!==null)break;
+ }
+ return{metrics:[money('FIRE portfolio target',target),{...metric('Age at modeled FIRE target',first===null?0:age+first/12),displayValue:first===null?'Not reached by projection limit':first===0?`${age} years`:elapsed(age*12+first)},
+ {...metric('Time to modeled FIRE target',first===null?0:first/12),displayValue:first===null?'Not reached by projection limit':first===0?'Now':elapsed(first)},
+ {...metric('Modeled target status',first===null?0:first===0?1:2),displayValue:first===null?'Not reached within selected horizon':first===0?'Meets modeled target now':'First modeled target crossing'},money('Current gap to FIRE target',Math.max(0,target-initial)),metric('Current target funded',initial/target*100,'percent'),money('Portfolio at projection endpoint',balance),money('New investments through endpoint',added),metric('Projection endpoint age',age+last/12),metric('Real annual return assumption',real*100,'percent'),metric('Annual spending multiple',1/withdrawal)],columns:['Age','Balance','FIRE target','Cumulative new investments'],rows,notes:[
+ 'All dollar inputs, results and chart amounts are in today’s USD. Exact real growth = (1 + nominal return) / (1 + inflation) − 1. The annual portfolio-funded budget includes any taxes or costs you choose to allow for; do not inflate that budget again.',
+ 'Monthly investments are paid at month end and constant in purchasing power, implying nominal increases with inflation. The projection ends at the first whole-month crossing of the full FIRE target, or the selected age limit if not reached. It does not continue deposits or model withdrawals after that endpoint.',
+ first===null?'No target crossing was found by the selected limit. The result does not infer an age beyond that horizon.':first===0?'The entered assets already meet the sizing target under these assumptions. Future deposits are not used; this is not proof that the portfolio can support your actual retirement.':'The first modeled crossing is after '+elapsed(first!)+'. This is a savings milestone under constant assumptions, not a retirement recommendation.',
+ 'This full-target calculation differs from Coast FIRE, which discounts a later retirement target to a smaller threshold today. No historical backtest, random market path, success probability, account-access rule, contribution limit, benefit estimate or automatic tax calculation is included.',
+ 'The chosen withdrawal rate sizes a portfolio target only. It does not establish a safe rate or simulate how long withdrawals last. Reassess spending, returns, health costs, taxes, other income and sequence risk separately.']};
+}
+export const fireCalculator=tool('fire',[{id:'plan',title:'FIRE Number and Target Age',description:'Find a full financial-independence portfolio target and the first modeled month your savings reach it.',formula:'FIRE target = annual portfolio-funded spending / withdrawal rate. Grow current assets with the exact real monthly return and end-month contributions until the first full-target crossing.',fields:[{...num('age','Current age',35,'years'),step:1,max:119},{...num('max_age','Projection age limit',80,'years',1),step:1,max:120,hint:'Stops earlier if the full target is reached. This is a search horizon, not a requested retirement date.'},{...num('balance','Current invested assets for FIRE',150000,'$'),hint:'Today’s USD; exclude separately needed emergency cash and unavailable home equity.'},{...num('spending','Annual portfolio-funded retirement budget',40000,'$'),hint:'Today’s USD, including any taxes or costs the portfolio must fund.'},{...num('monthly','Monthly investment until FIRE target',2000,'$'),hint:'Today’s purchasing power, at month end. No contributions after the target crossing.'},{...num('return','Nominal annual return, after fees',7,'%',-99.99),max:1000},{...num('inflation','Annual inflation assumption',2.5,'%',-99.99),max:1000},{...num('withdrawal','Assumed annual withdrawal rate',4,'%'),max:100,hint:'Sizes a target; 4% is illustrative and not a safe-withdrawal guarantee.'}],calculate:fireProjection}], 'Find your FIRE number and estimate when current assets and monthly investing first reach that full financial-independence target, using explicit inflation-adjusted assumptions.');

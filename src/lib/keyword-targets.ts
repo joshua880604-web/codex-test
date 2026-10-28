@@ -144,3 +144,8 @@ for (const [id, entry] of Object.entries(businessTargets)) {searchTasks[id]=entr
 // US Coast FIRE research: one task-specific page, independent from full retirement drawdown.
 keywordTitles['coast-fire']='Coast FIRE Calculator - Your Number & Time to Coast';
 searchTasks['coast-fire']=[{keyword:'Coast FIRE calculator',mode:'coast',description:'Estimate your Coast FIRE number and time to the threshold in today’s dollars, with monthly investments that stop when it is reached. Constant-return scenario, not guaranteed retirement income.',aliases:['CoastFIRE calculator','Coast fire number calculator','Coast fire calculator with inflation']}];
+
+// Original, user-researched NOI, FIRE and MIRR tasks.
+searchTasks["noi"][0].aliases=["Net operating income calculator", "Real estate NOI calculator", "Rental property NOI calculator"];
+searchTasks["fire"][0].aliases=["FIRE number calculator", "Financial independence calculator", "Early retirement FIRE calculator"];
+searchTasks["mirr"][0].aliases=["Modified internal rate of return calculator", "MIRR formula calculator"];

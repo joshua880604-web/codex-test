@@ -3,6 +3,10 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "noi": return "Property-level NOI before financing, capital expenditure or replacement reserves, depreciation and owner income tax. Enter all money in one selected reporting period; no appraisal or lender-specific underwriting is inferred.";
+    case "fire": return "Full FIRE portfolio target and first monthly crossing under constant real-return assumptions. Not Coast FIRE, a retirement drawdown simulation, account eligibility, benefit estimate or probability of success.";
+    case "mirr": return "Equal-period signed project cash flows, including time zero. Both rate inputs are effective annual rates converted to the selected spacing; irregular-date XIRR and automatic project costs are excluded.";
+
     case "coast-fire": return "Constant-return Coast FIRE scenario in today’s USD. Monthly investments stop at the modeled threshold. Pre-retirement living costs, actual benefit eligibility and guaranteed withdrawal safety are not calculated.";
     case "roas": return "Revenue-based ROAS and contribution-margin scenarios. No live attribution, automatic bidding or guarantee of company net profit.";
     case "landed-cost": return "One homogeneous shipment in USD with manually entered duties and nonrecoverable taxes. No tariff lookup, customs classification, tax advice or currency conversion.";

@@ -1,3 +1,6 @@
+import {noiCalculator} from "./noi";
+import {fireCalculator} from "./fire";
+import {mirrCalculator} from "./mirr";
 import {coastFire} from "./coast-fire";
 import {businessTools} from "./business-tools";
 import {investmentDecisions} from "./investment-decisions";
@@ -14,6 +17,7 @@ import { everydayCalculators } from "./everyday";
 import { otherCalculators } from "./other";
 import { defaults, type Calculator, type Values, type Result } from "../types";
 export const calculators: Calculator[] = [
+  noiCalculator,fireCalculator,mirrCalculator,
   coastFire,
   ...businessTools,
   ...evergreenCalculators,

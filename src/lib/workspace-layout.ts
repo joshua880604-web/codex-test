@@ -2,6 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
+  "noi", "fire", "mirr",
   "coast-fire",
   "roas", "landed-cost", "quick-ratio", "current-ratio",
   "tax-equivalent-yield", "treasury-bill",
@@ -19,6 +20,9 @@ export function workspaceLayout(id: string, mode: string): "split" | "stacked" |
 }
 
 const priorities: Record<string, string[]> = {
+  noi: ["Annual net operating income", "Monthly net operating income", "Annual operating expenses"],
+  fire: ["FIRE portfolio target", "Age at modeled FIRE target", "Time to modeled FIRE target", "Modeled target status"],
+  mirr: ["Effective annual MIRR", "MIRR per cash-flow period", "Present value of outflows"],
   "coast-fire": ["Coast FIRE number today", "Age at Coast FIRE", "Time until Coast FIRE", "Modeled Coast status"],
   "tax-equivalent-yield": ["Tax-equivalent taxable yield", "Tax-exempt option after-tax yield", "Taxable option after-tax yield"],
   "treasury-bill": ["Net profit at maturity after fee and tax", "Purchase price before fee", "Gross discount interest at maturity"],

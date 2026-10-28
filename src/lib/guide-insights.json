@@ -435,5 +435,89 @@
       "Default rates are illustrations. Lower returns, higher spending or different withdrawal assumptions can change the conclusion; no probability of success is calculated."
     ],
     "checkedOn": "2026-10-28"
+  },
+  "noi": {
+    "answer": "NOI separates a property’s operations from financing. Choose one reporting period for every income and expense field, then review the annual reconciliation before interpreting cash flow or returns.",
+    "results": [
+      {
+        "label": "Annual net operating income",
+        "meaning": "Effective annual operating income minus annual operating expenses, before debt service, capital costs and owner income tax."
+      },
+      {
+        "label": "Monthly net operating income",
+        "meaning": "Annual NOI divided by 12, not a month-by-month seasonal forecast."
+      },
+      {
+        "label": "NOI margin",
+        "meaning": "NOI divided by effective operating income. Undefined at zero effective income."
+      }
+    ],
+    "compare": [
+      "Calculate with scheduled rent before vacancy. Review each annualized income and cost row.",
+      "Change one operating assumption, such as vacancy or repairs, while holding other entries fixed.",
+      "Compare the NOI difference before considering a separate financing or value model."
+    ],
+    "checks": [
+      "All monetary fields use the selected reporting period. The selector does not convert typed values.",
+      "Management is an entered dollar cost, not an automatically applied percentage.",
+      "Do not count mortgage payments, capital improvements or replacement reserves as operating expenses in this model."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "fire": {
+    "answer": "This is a full FIRE savings target, not the smaller present-value Coast milestone. The projection ends when assets first reach the target, or at your selected age limit.",
+    "results": [
+      {
+        "label": "FIRE portfolio target",
+        "meaning": "Annual portfolio-funded spending divided by the entered withdrawal rate, in today’s USD."
+      },
+      {
+        "label": "Age at modeled FIRE target",
+        "meaning": "First whole-month crossing under constant returns and monthly deposits. No age is inferred if the target is not reached within the limit."
+      },
+      {
+        "label": "Portfolio at projection endpoint",
+        "meaning": "Savings at the crossing or age limit. This is not a projected balance after retirement withdrawals."
+      }
+    ],
+    "compare": [
+      "Calculate a budget and investment plan using consistent real-dollar inputs.",
+      "Change monthly investing or the budget separately and compare the first crossing.",
+      "Use Coast FIRE only for the distinct question of growing to a later retirement target without further deposits."
+    ],
+    "checks": [
+      "All money is in today’s purchasing power. Nominal return and inflation are separate inputs.",
+      "Monthly deposits maintain purchasing power and stop when the savings projection ends.",
+      "Reaching a withdrawal-rate sizing target does not establish withdrawal safety or access to retirement accounts."
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  "mirr": {
+    "answer": "MIRR transforms payments and receipts using different rate assumptions. Reconcile time-zero outflow cost with terminal reinvested receipts before comparing periodic and annual rates.",
+    "results": [
+      {
+        "label": "Effective annual MIRR",
+        "meaning": "Compound annual equivalent of the calculated periodic MIRR, not a forecast or actual annual profit."
+      },
+      {
+        "label": "MIRR per cash-flow period",
+        "meaning": "Equivalent rate for the selected yearly, quarterly or monthly interval."
+      },
+      {
+        "label": "Present value of outflows",
+        "meaning": "Positive magnitude of all negative payments discounted to time zero at the financing assumption."
+      }
+    ],
+    "compare": [
+      "Enter the full signed series from time zero, preserving each zero interval.",
+      "Hold the series fixed and change only financing or reinvestment assumptions.",
+      "For a spacing change, remember that both rate inputs stay effective annual rates while the horizon and equivalent period rates change."
+    ],
+    "checks": [
+      "One number per line; no labels or thousands separators.",
+      "Both positive and negative cash flows are required. Internal blank lines are rejected.",
+      "Nonannual comparisons with Excel must use equivalent period rates; dated XIRR is a different model."
+    ],
+    "checkedOn": "2026-10-28"
   }
 }

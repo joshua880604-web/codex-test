@@ -640,5 +640,29 @@
     "titleSuffix": "Your Number & Time to Coast",
     "description": "Estimate a future retirement savings threshold in today’s purchasing power, and when a monthly investment path reaches it. No account data or withdrawal guarantee.",
     "researchStatus": "User-provided Semrush US Broad Match, Questions, bulk and SERP, 2026-10-28."
+  },
+  {
+    "id": "noi",
+    "mode": "operating-income",
+    "keyword": "NOI Calculator (Net Operating Income)",
+    "titleSuffix": "Rent & Operating Costs",
+    "description": "Calculate rental-property net operating income from rent, vacancy and operating costs, before debt service and capital expenditure.",
+    "researchStatus": "User Semrush US broad match and Questions, 2026-10-28; /workspace/work/next-tools-research-20261028/research.md."
+  },
+  {
+    "id": "fire",
+    "mode": "plan",
+    "keyword": "FIRE Calculator",
+    "titleSuffix": "FIRE Number & Financial Independence Age",
+    "description": "Calculate a FIRE number and the first modeled age when invested assets and monthly contributions reach the full financial-independence target.",
+    "researchStatus": "User Semrush US broad match and Questions, 2026-10-28; /workspace/work/next-tools-research-20261028/research.md."
+  },
+  {
+    "id": "mirr",
+    "mode": "cashflows",
+    "keyword": "MIRR Calculator",
+    "titleSuffix": "Modified Internal Rate of Return",
+    "description": "Calculate periodic and effective annual modified internal rate of return with separate financing and reinvestment assumptions.",
+    "researchStatus": "User Semrush US broad match and Questions, 2026-10-28; /workspace/work/next-tools-research-20261028/research.md."
   }
 ]

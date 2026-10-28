@@ -562,5 +562,23 @@
     "title": "Coast FIRE Calculator",
     "category": "Retirement",
     "local_route": "/coast-fire-calculator.html"
+  },
+  {
+    "id": "noi",
+    "category": "Mortgage and Real Estate",
+    "title": "NOI Calculator (Net Operating Income)",
+    "local_route": "/noi-calculator.html"
+  },
+  {
+    "id": "fire",
+    "category": "Retirement",
+    "title": "FIRE Calculator",
+    "local_route": "/fire-calculator.html"
+  },
+  {
+    "id": "mirr",
+    "category": "Investment",
+    "title": "MIRR Calculator",
+    "local_route": "/mirr-calculator.html"
   }
 ]

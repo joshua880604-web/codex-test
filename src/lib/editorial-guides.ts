@@ -151,7 +151,7 @@ export const coastFireGuide:EditorialGuide={
  title:'How to Calculate Coast FIRE: Formula, Age & Examples',
  heading:'How to Calculate Coast FIRE: Your Number, Age, and Assumptions',
  description:'Calculate your Coast FIRE number with an inflation-adjusted formula. Compare age and return scenarios, monthly saving, and Coast FIRE versus Barista FIRE.',
- publishedOn:'2026-10-28',calculatorIds:['coast-fire','retirement','compound-interest'],
+ publishedOn:'2026-10-28',calculatorIds:['coast-fire','fire','retirement','compound-interest'],
  topic:'Retirement',breadcrumb:'How to calculate Coast FIRE',format:'Planning guide',
  cardIntro:'Work from your retirement budget to today’s required portfolio, compare ages and returns, and see why reaching a Coast milestone is different from retiring today.',
 };

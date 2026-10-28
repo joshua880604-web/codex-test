@@ -1030,12 +1030,17 @@
       {
         "id": "rental-property",
         "text": "Review the modeled dated investment cash flows, costs and sale assumptions."
+      },
+      {
+        "id": "mirr",
+        "text": "Compare a modified return using separate financing and reinvestment assumptions."
       }
     ],
     "related": [
       "net-present-value",
       "cagr",
-      "return-on-investment"
+      "return-on-investment",
+      "modified-internal-rate-of-return"
     ],
     "sources": [
       {
@@ -2646,12 +2651,17 @@
       {
         "id": "rental-property",
         "text": "Inspect the tool’s NOI, financing, initial-cash and sale assumptions."
+      },
+      {
+        "id": "noi",
+        "text": "Reconcile the property-level income and expense definition before relating NOI to value."
       }
     ],
     "related": [
       "internal-rate-of-return",
       "return-on-investment",
-      "loan-to-value-ratio"
+      "loan-to-value-ratio",
+      "net-operating-income"
     ],
     "sources": [
       {
@@ -3891,13 +3901,18 @@
       {
         "id": "retirement",
         "text": "Explore separate retirement saving and withdrawal models with their own timing assumptions."
+      },
+      {
+        "id": "fire",
+        "text": "Compare the full FIRE savings target and its first crossing with the separate Coast milestone."
       }
     ],
     "related": [
       "compound-interest",
       "real-rate-of-return",
       "withdrawal-rate",
-      "time-value-of-money"
+      "time-value-of-money",
+      "fire-number"
     ],
     "guides": [
       {
@@ -3913,6 +3928,219 @@
       {
         "title": "OpenStax: present value and nominal versus real interest",
         "url": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance"
+      }
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  {
+    "slug": "net-operating-income",
+    "name": "Net operating income (NOI)",
+    "title": "What Is Net Operating Income? NOI Formula & Example",
+    "description": "Net operating income is a property’s effective operating revenue minus property-level operating expenses, before financing, capital expenditure, depreciation and owner income tax.",
+    "category": "Housing & property",
+    "aliases": [
+      "NOI",
+      "Rental property operating income"
+    ],
+    "definition": "Net operating income is a property’s effective operating revenue minus property-level operating expenses, before financing, capital expenditure, depreciation and owner income tax.",
+    "explanation": "Effective revenue accounts for the modeled rental vacancy loss and other operating income. Compare properties using the same period and expense definition. The result does not tell you how much cash remains after paying a mortgage or replacing major assets.",
+    "formula": "NOI = scheduled rent − vacancy and collection loss + other operating income − operating expenses",
+    "formulaNote": "Use one property or a consistently combined property portfolio and one reporting period. Dollar entries are monthly or annual as selected, in USD; changing that selector reinterprets rather than converts the values. Vacancy applies only to scheduled rent; other income must already reflect its own losses. Expenses are entered dollar amounts. NOI excludes debt service, owner income tax, depreciation, capital expenditure and replacement reserves. Lenders may use different reserve-adjusted definitions. Negative NOI is allowed; ratios are undefined at zero effective income.",
+    "example": {
+      "title": "Turn monthly rent and operating costs into annual NOI",
+      "intro": "period: Monthly; rent: 4000; other_income: 100; vacancy: 5; taxes: 400; insurance: 150; repairs: 250; management: 300; utilities: 100; hoa: 0; other_expenses: 50.",
+      "steps": [
+        "Scheduled rent $4,000 less 5% loss gives $3,800; add $100 other income for $3,900 monthly effective income.",
+        "Operating costs total $1,250 per month. NOI = $3,900 − $1,250 = $2,650.",
+        "Annual NOI = $2,650 × 12 = $31,800."
+      ],
+      "answer": "Annual NOI is $31,800; monthly equivalent $2,650 before financing and capital costs.",
+      "assumptions": "Use one property or a consistently combined property portfolio and one reporting period. Dollar entries are monthly or annual as selected, in USD; changing that selector reinterprets rather than converts the values. Vacancy applies only to scheduled rent; other income must already reflect its own losses. Expenses are entered dollar amounts. NOI excludes debt service, owner income tax, depreciation, capital expenditure and replacement reserves. Lenders may use different reserve-adjusted definitions. Negative NOI is allowed; ratios are undefined at zero effective income.",
+      "calculator": {
+        "id": "noi",
+        "mode": "operating-income",
+        "values": {
+          "period": "Monthly",
+          "rent": "4000",
+          "other_income": "100",
+          "vacancy": "5",
+          "taxes": "400",
+          "insurance": "150",
+          "repairs": "250",
+          "management": "300",
+          "utilities": "100",
+          "hoa": "0",
+          "other_expenses": "50"
+        },
+        "expected": [
+          {
+            "label": "Annual net operating income",
+            "value": 31800.0,
+            "tolerance": 0.005
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "NOI is not cash after financing",
+      "text": "This model includes entered property taxes, insurance, routine repairs, management, owner-paid utilities, association charges and other operating costs. Expense classification matters: use the other-cost field only for operations, not a new roof, debt principal, interest or owner income tax. A lender may apply separate replacement reserves or underwriting adjustments."
+    },
+    "tools": [
+      {
+        "id": "noi",
+        "text": "Net operating income isolates a rental property’s operations before financing. Start with potential rent, subtract the entered vacancy and collection loss, add other operating income and deduct property-level operating costs. This tool reconciles the components and reports annual NOI plus its monthly equivalent; it is not business-wide net income or cash left after a mortgage."
+      }
+    ],
+    "related": [
+      "cap-rate-vs-cash-on-cash-return",
+      "mortgage-escrow"
+    ],
+    "sources": [
+      {
+        "title": "Nareit: property-level NOI and excluded financing and capital costs",
+        "url": "https://www.reit.com/glossary/net-operating-income"
+      }
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  {
+    "slug": "fire-number",
+    "name": "FIRE number",
+    "title": "What Is a FIRE Number? Formula and Spending Example",
+    "description": "A FIRE number is a portfolio-sizing target obtained by dividing annual portfolio-funded retirement spending by an assumed withdrawal rate.",
+    "category": "Retirement",
+    "aliases": [
+      "Financial independence number",
+      "Full FIRE target"
+    ],
+    "definition": "A FIRE number is a portfolio-sizing target obtained by dividing annual portfolio-funded retirement spending by an assumed withdrawal rate.",
+    "explanation": "FIRE abbreviates Financial Independence, Retire Early. A full target differs from a Coast milestone: Coast discounts a later target to a required balance now. Meeting a savings target does not establish whether the portfolio can support actual retirement withdrawals.",
+    "formula": "FIRE number = annual portfolio-funded spending / assumed annual withdrawal rate",
+    "formulaNote": "A single current age and projection age limit, with all money in today’s USD. Constant effective nominal return is adjusted for inflation using the exact real-growth relationship. Monthly investments maintain purchasing power and occur at month end. The path ends at the first full-target crossing or the age limit. No withdrawals after FIRE, random or historical returns, success probability, benefit eligibility, tax return, contribution cap or early-account-access rules are modeled. Four percent and the default return are illustrations, not assurances of safe retirement.",
+    "example": {
+      "title": "Reach a $1 million full FIRE target with monthly investing",
+      "intro": "age: 35; max_age: 80; balance: 150000; spending: 40000; monthly: 2000; return: 7; inflation: 2.5; withdrawal: 4.",
+      "steps": [
+        "Annual portfolio-funded spending $40,000 / 4% = $1,000,000 in today’s USD.",
+        "Exact real return = 1.07 / 1.025 − 1 = approximately 4.39024%. Start with $150,000 and add $2,000 at each month end.",
+        "The first whole-month crossing occurs after 221 months. Deposits and the savings projection stop there."
+      ],
+      "answer": "The modeled target crossing is age 53 years, 5 months. Total new investments are $442,000 and the endpoint is $1,003,515.17 in today’s USD; this is not a withdrawal-sustainability result.",
+      "assumptions": "A single current age and projection age limit, with all money in today’s USD. Constant effective nominal return is adjusted for inflation using the exact real-growth relationship. Monthly investments maintain purchasing power and occur at month end. The path ends at the first full-target crossing or the age limit. No withdrawals after FIRE, random or historical returns, success probability, benefit eligibility, tax return, contribution cap or early-account-access rules are modeled. Four percent and the default return are illustrations, not assurances of safe retirement.",
+      "calculator": {
+        "id": "fire",
+        "mode": "plan",
+        "values": {
+          "age": "35",
+          "max_age": "80",
+          "balance": "150000",
+          "spending": "40000",
+          "monthly": "2000",
+          "return": "7",
+          "inflation": "2.5",
+          "withdrawal": "4"
+        },
+        "expected": [
+          {
+            "label": "FIRE portfolio target",
+            "value": 1000000.0,
+            "tolerance": 0.005
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "A sizing target is not a withdrawal guarantee",
+      "text": "It grows your invested assets with an exact inflation-adjusted monthly rate and adds the monthly investment at month end. It reports the first whole month meeting the full FIRE target, then ends the projection. If the selected age limit arrives first, it reports no crossing within that horizon rather than extrapolating an unsupported retirement age."
+    },
+    "tools": [
+      {
+        "id": "fire",
+        "text": "A FIRE number is an assumed portfolio target for Financial Independence, Retire Early. Divide the annual spending the portfolio must fund by a chosen withdrawal rate, then model current investments and monthly additions until that full target is first reached. This page answers the full-target savings question; Coast FIRE instead asks what smaller balance could grow to a later target without more contributions."
+      }
+    ],
+    "related": [
+      "coast-fire",
+      "withdrawal-rate",
+      "real-rate-of-return"
+    ],
+    "sources": [
+      {
+        "title": "Charles Schwab: FIRE targets and planning risks",
+        "url": "https://www.schwab.com/learn/story/fire-movement"
+      },
+      {
+        "title": "OpenStax: present value and exact nominal versus real interest",
+        "url": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance"
+      },
+      {
+        "title": "SEC Investor.gov: compound-interest inputs",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+      }
+    ],
+    "checkedOn": "2026-10-28"
+  },
+  {
+    "slug": "modified-internal-rate-of-return",
+    "name": "Modified internal rate of return (MIRR)",
+    "title": "What Is MIRR? Modified Return Formula & Example",
+    "description": "MIRR is an equivalent return for equally spaced project cash flows after separately discounting payments at a financing rate and compounding receipts at a reinvestment rate.",
+    "category": "Saving & investing",
+    "aliases": [
+      "MIRR",
+      "Modified IRR"
+    ],
+    "definition": "MIRR is an equivalent return for equally spaced project cash flows after separately discounting payments at a financing rate and compounding receipts at a reinvestment rate.",
+    "explanation": "Unlike IRR, MIRR uses two explicit rate assumptions to transform the signed cash flows. The period count is one fewer than the complete number of entries including time zero. Periodic and annualized rates differ for subannual cash-flow spacing.",
+    "formula": "Periodic MIRR = (terminal value of positive flows / absolute present value of negative flows)^(1 / periods) − 1",
+    "formulaNote": "Cash flows are USD amounts at equally spaced dates, with the first entry at time zero and 2–601 entries. At least one positive and one negative amount is required. Both financing and reinvestment inputs are effective annual rates; selected spacing converts them to equivalent period rates. Results show periodic and effective annual MIRR. Internal blank lines and labels are rejected instead of silently omitted; use explicit 0 for no-flow periods. No irregular-date XIRR, actual financing schedule, tax estimate, inflation adjustment or project accept/reject advice is supplied.",
+    "example": {
+      "title": "Reinvest annual project receipts at 10%",
+      "intro": "flows: -10000, 3000, 4000, 5000; period: Annually; finance: 8; reinvest: 10.",
+      "steps": [
+        "Time-zero outflow is $10,000. Receipts are $3,000, $4,000 and $5,000 at the next three year ends.",
+        "Terminal receipts = $3,000 × 1.10² + $4,000 × 1.10 + $5,000 = $13,030.",
+        "MIRR = (13,030 / 10,000)^(1/3) − 1."
+      ],
+      "answer": "Annual MIRR is approximately 9.22318%. The financing rate does not change the time-zero-only payment.",
+      "assumptions": "Cash flows are USD amounts at equally spaced dates, with the first entry at time zero and 2–601 entries. At least one positive and one negative amount is required. Both financing and reinvestment inputs are effective annual rates; selected spacing converts them to equivalent period rates. Results show periodic and effective annual MIRR. Internal blank lines and labels are rejected instead of silently omitted; use explicit 0 for no-flow periods. No irregular-date XIRR, actual financing schedule, tax estimate, inflation adjustment or project accept/reject advice is supplied.",
+      "calculator": {
+        "id": "mirr",
+        "mode": "cashflows",
+        "values": {
+          "flows": "-10000\n3000\n4000\n5000",
+          "period": "Annually",
+          "finance": "8",
+          "reinvest": "10"
+        },
+        "expected": [
+          {
+            "label": "Effective annual MIRR",
+            "value": 9.223177108014076,
+            "tolerance": 0.005
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "The ordering and rate convention matter",
+      "text": "IRR finds a discount rate that makes the net present value of the original cash-flow sequence zero; some sequences have multiple or no relevant IRRs. MIRR instead transforms outflows and inflows using separate entered rates, then reports an equivalent rate over the selected horizon. Its single output depends on those assumptions and is not proof that a project creates value."
+    },
+    "tools": [
+      {
+        "id": "mirr",
+        "text": "Modified internal rate of return separates the financing cost of project payments from the return assumed on reinvested receipts. The model discounts negative cash flows to time zero, compounds positive cash flows to the last period, then finds the equivalent growth rate between those two totals. Enter a complete signed series with equal spacing, including zero periods."
+      }
+    ],
+    "related": [
+      "internal-rate-of-return",
+      "net-present-value",
+      "time-value-of-money"
+    ],
+    "sources": [
+      {
+        "title": "Microsoft Excel: MIRR function, timing, signs and published sample",
+        "url": "https://support.microsoft.com/en-us/excel/functions/mirr-function"
       }
     ],
     "checkedOn": "2026-10-28"
