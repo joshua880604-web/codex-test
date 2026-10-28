@@ -346,9 +346,9 @@
   {
     "id": "business-finance",
     "heading": "Business Calculators",
-    "title": "Business Calculators - Loans, Break-Even, Margin & Markup",
-    "description": "Use online business calculators for loan payments, break-even sales, profit margin, markup and depreciation. Choose a tool for financing, pricing or asset costs.",
-    "intro": "Use these online business calculators to explore financing payments, pricing decisions and asset costs. Choose the business question first: the same percentage can mean a margin on sales or a markup on cost, and the distinction changes the result.",
+    "title": "Business Calculators - ROAS, Landed Cost & Financial Ratios",
+    "description": "Explore business calculators for advertising ROAS, landed cost, quick and current ratios, loan payments, profit margin, markup and break-even sales.",
+    "intro": "Choose a business calculator for advertising returns, shipment acquisition costs, short-term liquidity, pricing or financing. Match the tool to the question: revenue returned by advertising is different from profit, and a balance-sheet liquidity ratio is different from a cash-flow forecast.",
     "guides": [
       [
         "Estimate financing payments",
@@ -361,6 +361,14 @@
       [
         "Explore asset depreciation",
         "Depreciation spreads an entered depreciable amount using the selected method. Review the supported methods and assumptions; a planning schedule does not automatically establish the tax deduction allowed for a particular asset."
+      ],
+      [
+        "Review advertising and shipment costs",
+        "ROAS compares attributed revenue with advertising spend or explores contribution-based break-even and target scenarios. Landed Cost adds manually entered acquisition charges for a shipment; it does not fetch tariff rates or classify goods."
+      ],
+      [
+        "Check business liquidity",
+        "Current Ratio includes entered current assets; Quick Ratio excludes inventory, prepayments and other non-quick assets. Use balances from the same date and review the quality and timing of those balances."
       ]
     ],
     "differences": [
@@ -389,6 +397,10 @@
       [
         "Can I use these results for accounting or tax filings?",
         "Use the outputs as planning illustrations. Accounting policies, tax rules, asset treatment and loan terms may require adjustments; confirm the treatment applicable to your business."
+      ],
+      [
+        "Does a high ROAS guarantee profit?",
+        "No. ROAS compares revenue with advertising expense. Product costs, fulfillment, transaction charges and other expenses affect what remains. Use the contribution-based modes with a consistent definition of costs, then review overhead and taxes separately."
       ]
     ],
     "concepts": [

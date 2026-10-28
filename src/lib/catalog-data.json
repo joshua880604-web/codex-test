@@ -532,5 +532,29 @@
     "title": "Treasury Bill Calculator",
     "category": "Investment",
     "local_route": "/treasury-bill-calculator.html"
+  },
+  {
+    "id": "roas",
+    "title": "ROAS Calculator",
+    "category": "Other",
+    "local_route": "/roas-calculator.html"
+  },
+  {
+    "id": "landed-cost",
+    "title": "Landed Cost Calculator",
+    "category": "Other",
+    "local_route": "/landed-cost-calculator.html"
+  },
+  {
+    "id": "quick-ratio",
+    "title": "Quick Ratio Calculator",
+    "category": "Other",
+    "local_route": "/quick-ratio-calculator.html"
+  },
+  {
+    "id": "current-ratio",
+    "title": "Current Ratio Calculator",
+    "category": "Other",
+    "local_route": "/current-ratio-calculator.html"
   }
 ]

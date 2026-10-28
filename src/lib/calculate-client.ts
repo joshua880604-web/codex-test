@@ -8,7 +8,9 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
   'Everyday Tools': () => import('./calculators/everyday').then(m => m.everydayCalculators),
   Other: () => import('./calculators/other-core').then(m => m.otherCoreCalculators),
 };
+const businessTools = () => import('./calculators/business-tools').then(m => m.businessTools);
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
+  roas: businessTools, 'landed-cost': businessTools, 'quick-ratio': businessTools, 'current-ratio': businessTools,
   'tax-equivalent-yield': () => import('./calculators/investment-decisions').then(m => m.investmentDecisions),
   'treasury-bill': () => import('./calculators/investment-decisions').then(m => m.investmentDecisions),
   'mortgage-recast': () => import('./calculators/mortgage-recast').then(m => [m.mortgageRecast]),

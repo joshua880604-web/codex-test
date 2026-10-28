@@ -1,0 +1,828 @@
+{
+  "roas": {
+    "updatedOn": "2026-10-28",
+    "summary": "ROAS measures attributed revenue per dollar spent on advertising. Use Actual ROAS for reporting, Break-Even for the threshold implied by an entered pre-ad contribution margin, or Target Profit Margin to find the ad budget compatible with a chosen contribution target.",
+    "scope": "All dollar inputs are USD and must use a consistent reporting period, attribution scope and revenue definition. This model treats contribution margin as the share of revenue left after included non-ad variable costs, not markup. Break-even covers those costs and advertising only; fixed overhead, income taxes and financing are not inferred. Target mode assumes the pre-ad margin stays constant as spending changes and computes a threshold rather than forecasting demand. No ad platform connection, automatic bidding, benchmark or guaranteed net profit is provided.",
+    "examples": [
+      {
+        "title": "Turn $12,000 of revenue and $3,000 of ads into 4x ROAS",
+        "mode": "actual",
+        "values": {
+          "revenue": "12000",
+          "spend": "3000"
+        },
+        "inputs": "Attributed revenue $12,000; advertising spend $3,000; same period and currency.",
+        "steps": [
+          "Divide revenue by advertising spend: 12,000 / 3,000 = 4.",
+          "Convert the multiple to a percentage: 4 × 100 = 400%.",
+          "The $9,000 difference still has to cover non-ad costs; it is not profit."
+        ],
+        "answer": "ROAS is 4x, or 400%.",
+        "expected": {
+          "label": "ROAS (multiple)",
+          "value": 4,
+          "tolerance": 0.0001
+        }
+      },
+      {
+        "title": "Find break-even ROAS with a 40% contribution margin",
+        "mode": "break-even",
+        "values": {
+          "contribution_margin": "40",
+          "revenue": "10000"
+        },
+        "inputs": "Revenue scenario $10,000; contribution before ads 40% of revenue.",
+        "steps": [
+          "Pre-ad contribution = 10,000 × 40% = 4,000.",
+          "The maximum ad spend that leaves zero contribution is $4,000.",
+          "Required revenue-to-ad-spend multiple = 1 / 0.40 = 2.5."
+        ],
+        "answer": "Break-even ROAS is 2.5x (250%); maximum advertising spend is $4,000. Unentered overhead is still separate.",
+        "expected": {
+          "label": "Break-even ROAS (multiple)",
+          "value": 2.5,
+          "tolerance": 0.0001
+        }
+      },
+      {
+        "title": "Leave a 10% post-ad contribution from a 40% pre-ad margin",
+        "mode": "target",
+        "values": {
+          "contribution_margin": "40",
+          "revenue": "10000",
+          "target_margin": "10"
+        },
+        "inputs": "Revenue $10,000; pre-ad contribution margin 40%; target post-ad contribution margin 10%.",
+        "steps": [
+          "The share of revenue available for advertising is 40% − 10% = 30%.",
+          "Maximum ad spend = 10,000 × 30% = 3,000.",
+          "Required ROAS = 1 / 0.30 = 3.333333…; target contribution is $1,000."
+        ],
+        "answer": "Required ROAS is about 3.3333x, leaving $1,000 contribution after advertising under these assumptions.",
+        "expected": {
+          "label": "Maximum advertising spend for target",
+          "value": 3000,
+          "tolerance": 0.0001
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-roas-formula",
+        "queries": [
+          "roas calculator",
+          "return on ad spend calculator",
+          "how to calculate roas"
+        ],
+        "question": "How do I calculate ROAS?",
+        "answer": "Divide revenue attributed to advertising by advertising spend measured on the same basis. $12,000 / $3,000 = 4x, also shown as 400%. A 4x result means $4 of revenue per $1 of ads; it does not mean $4 of profit. Advertising spend must be positive for the ratio to be defined.",
+        "links": [
+          {
+            "id": "roas",
+            "mode": "actual",
+            "label": "Try the 4x example",
+            "values": {
+              "revenue": "12000",
+              "spend": "3000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-roas-break-even",
+        "queries": [
+          "break even roas calculator",
+          "breakeven roas calculator",
+          "how to calculate break even roas"
+        ],
+        "question": "How do I calculate break-even ROAS?",
+        "answer": "Use 1 divided by the contribution margin before advertising expressed as a decimal. At 40%, 1 / 0.40 = 2.5x. Include product costs, fulfillment and transaction charges in your margin if they are relevant. Do not subtract advertising within that pre-ad margin and then subtract it again. This threshold does not automatically cover fixed overhead or income tax.",
+        "links": [
+          {
+            "id": "roas",
+            "mode": "break-even",
+            "label": "Calculate a 40% contribution threshold",
+            "values": {
+              "contribution_margin": "40",
+              "revenue": "10000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-roas-vs-roi",
+        "queries": [
+          "roi vs roas calculation",
+          "roas profit calculator"
+        ],
+        "question": "What is the difference between ROAS and ROI?",
+        "answer": "ROAS compares attributed revenue with advertising expense. ROI instead compares a defined net return with a defined investment cost. At 4x ROAS, a low contribution margin can still leave too little to pay advertising or overhead. Review costs explicitly rather than treating the revenue-minus-ad-spend line as net profit.",
+        "links": [
+          {
+            "id": "roi",
+            "mode": "length",
+            "label": "Review the separate investment ROI model"
+          },
+          {
+            "id": "roas",
+            "mode": "break-even",
+            "label": "Check a contribution-based threshold",
+            "values": {
+              "contribution_margin": "40",
+              "revenue": "10000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-roas-target",
+        "queries": [
+          "target roas calculator",
+          "how to calculate target roas"
+        ],
+        "question": "How does a target profit margin change required ROAS?",
+        "answer": "In this model, subtract the desired post-ad contribution margin from the pre-ad contribution margin, then take the reciprocal. A 40% pre-ad margin and 10% post-ad target leave 30% for ads, requiring 3.3333x ROAS. The target must be lower than the pre-ad margin. This is a cost-based scenario, not a recommendation for a Google Ads bid setting.",
+        "links": [
+          {
+            "id": "roas",
+            "mode": "target",
+            "label": "Try the 10% contribution target",
+            "values": {
+              "contribution_margin": "40",
+              "revenue": "10000",
+              "target_margin": "10"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-roas-good-result",
+        "queries": [
+          "calculate minimum roas",
+          "how to calculate profitable roas for my business"
+        ],
+        "question": "Is 3x ROAS always profitable?",
+        "answer": "No. At a 40% pre-ad contribution margin, revenue of $3 for every $1 of ads leaves $1.20 before ads and $0.20 after ads, before unentered fixed costs and tax. At a 25% margin, the same $3 produces only $0.75 before that $1 ad expense. Use your actual cost definition and business context instead of a universal good-ROAS benchmark.",
+        "links": [
+          {
+            "id": "roas",
+            "mode": "break-even",
+            "label": "Check a 25% margin",
+            "values": {
+              "contribution_margin": "25",
+              "revenue": "10000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-roas-attribution",
+        "queries": [
+          "how to calculate roas google ads",
+          "how to calculate roas in meta ads"
+        ],
+        "question": "Why can Google, Meta and my store report different ROAS?",
+        "answer": "Different attribution windows, conversion dates, revenue adjustments and conversion-value definitions can produce different reported results. This calculator uses the revenue and spend you enter; it does not reconcile tracking systems. Avoid simply adding revenue claimed by multiple platforms when the same order may be attributed more than once.",
+        "links": [
+          {
+            "id": "roas",
+            "mode": "actual",
+            "label": "Compare consistent entered revenue and spend",
+            "values": {
+              "revenue": "12000",
+              "spend": "3000"
+            }
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "Google Ads: conversion values and reporting basis",
+        "url": "https://support.google.com/google-ads/answer/13064207?hl=en"
+      },
+      {
+        "title": "Google Ads: target ROAS bidding differs from a static cost threshold",
+        "url": "https://support.google.com/google-ads/answer/6268637?hl=en"
+      }
+    ]
+  },
+  "landed-cost": {
+    "updatedOn": "2026-10-28",
+    "summary": "Landed cost brings the goods invoice and the entered shipment acquisition charges into one total and a per-unit estimate. This tool spreads costs evenly across whole units of a single product and keeps tariff classification and tax decisions outside the calculator.",
+    "scope": "One homogeneous shipment, one currency (USD), whole units and nonnegative costs. Goods is a shipment total, not a unit price. Duty, tax and brokerage amounts are entered manually; no HS/HTS lookup, current rate, origin rule, de minimis exemption or customs valuation is inferred. Recoverable taxes are excluded from the economic-cost estimate. The result is not an official inventory or tax basis and does not include ongoing selling expenses. Multi-SKU allocation by weight, value or volume and currency conversion are outside this version.",
+    "examples": [
+      {
+        "title": "Estimate $6,800 landed cost for 500 units",
+        "mode": "shipment",
+        "values": {
+          "quantity": "500",
+          "goods": "5000",
+          "freight": "800",
+          "insurance": "50",
+          "duties": "400",
+          "taxes": "150",
+          "brokerage": "100",
+          "port": "75",
+          "inland": "200",
+          "other": "25"
+        },
+        "inputs": "500 units; goods $5,000; freight $800; insurance $50; manually entered duty $400; nonrecoverable taxes $150; brokerage $100; port $75; inland $200; other $25.",
+        "steps": [
+          "Additional shipment costs = 800 + 50 + 400 + 150 + 100 + 75 + 200 + 25 = 1,800.",
+          "Total landed cost = 5,000 + 1,800 = 6,800.",
+          "Cost per unit = 6,800 / 500 = 13.60; uplift over goods invoice = 1,800 / 5,000 = 36%."
+        ],
+        "answer": "Estimated landed cost is $6,800 in total, or $13.60 per unit. No tax rate was inferred.",
+        "expected": {
+          "label": "Landed cost per unit",
+          "value": 13.6,
+          "tolerance": 0.0001
+        }
+      },
+      {
+        "title": "Avoid adding charges twice to an all-in quote",
+        "mode": "shipment",
+        "values": {
+          "quantity": "500",
+          "goods": "6800",
+          "freight": "0",
+          "insurance": "0",
+          "duties": "0",
+          "taxes": "0",
+          "brokerage": "0",
+          "port": "0",
+          "inland": "0",
+          "other": "0"
+        },
+        "inputs": "A hypothetical all-in invoice of $6,800 already includes every cost intended for the model; 500 units; all additional fields zero.",
+        "steps": [
+          "Enter $6,800 once in the invoice field.",
+          "Leave separately included costs at zero, rather than adding the same freight or duty again.",
+          "Divide the entered total by 500. A bundled quote alone does not identify the customs tax base."
+        ],
+        "answer": "The planning estimate remains $13.60 per unit; invoice classification and tax recoverability still need separate review.",
+        "expected": {
+          "label": "Landed cost per unit",
+          "value": 13.6,
+          "tolerance": 0.0001
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-landed-definition",
+        "queries": [
+          "landed cost calculator",
+          "what is landed cost",
+          "what is included in landed cost"
+        ],
+        "question": "What does landed cost include?",
+        "answer": "For this tool it is the goods invoice plus the additional freight, insurance, duties, nonrecoverable import taxes and shipment fees you enter to bring one shipment to the selected destination. Ongoing advertising, storage after arrival, financing and general overhead are not automatically included. Check the invoice and contract so that included charges are not counted twice.",
+        "links": [
+          {
+            "id": "landed-cost",
+            "mode": "shipment",
+            "label": "Review an itemized shipment example",
+            "values": {
+              "quantity": "500",
+              "goods": "5000",
+              "freight": "800",
+              "insurance": "50",
+              "duties": "400",
+              "taxes": "150",
+              "brokerage": "100",
+              "port": "75",
+              "inland": "200",
+              "other": "25"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-landed-unit-cost",
+        "queries": [
+          "how to calculate landed cost per unit",
+          "total landed cost calculator"
+        ],
+        "question": "How do I calculate landed cost per unit?",
+        "answer": "Add the entered costs once, then divide by the number of whole units. A $6,800 shipment of 500 identical units gives $13.60 each. Equal allocation is appropriate only for the homogeneous-product assumption here. Different products, weights or tariff treatments may need a different allocation basis.",
+        "links": [
+          {
+            "id": "landed-cost",
+            "mode": "shipment",
+            "label": "Calculate $13.60 per unit",
+            "values": {
+              "quantity": "500",
+              "goods": "5000",
+              "freight": "800",
+              "insurance": "50",
+              "duties": "400",
+              "taxes": "150",
+              "brokerage": "100",
+              "port": "75",
+              "inland": "200",
+              "other": "25"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-landed-import-duties",
+        "queries": [
+          "how to calculate landed cost of imported goods",
+          "does landed cost include tariffs"
+        ],
+        "question": "Does this calculator work out my import duty or tariff rate?",
+        "answer": "No. Enter the checked duty amount as a cost. The tool does not classify the product, identify its origin or select a legal duty rate or tax base. A landed-cost total and a customs value serve different purposes; do not assume a percentage of every shipping and insurance charge is the duty owed. Verify the actual amount with the relevant authority or broker.",
+        "links": [
+          {
+            "id": "landed-cost",
+            "mode": "shipment",
+            "label": "Use manually checked import charges",
+            "values": {
+              "quantity": "500",
+              "goods": "5000",
+              "freight": "800",
+              "insurance": "50",
+              "duties": "400",
+              "taxes": "150",
+              "brokerage": "100",
+              "port": "75",
+              "inland": "200",
+              "other": "25"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-landed-vat",
+        "queries": [
+          "does landed cost include vat",
+          "does landed cost include gst"
+        ],
+        "question": "Should I include recoverable VAT or GST?",
+        "answer": "This economic-cost model asks for nonrecoverable import taxes. Exclude a tax you expect to recover from that field, after checking the treatment applicable to you. Paying recoverable tax at clearance still creates a cash requirement even if it is excluded from economic cost. The calculator does not decide recoverability or produce an import cash-flow schedule.",
+        "links": [
+          {
+            "id": "landed-cost",
+            "mode": "shipment",
+            "label": "Review the nonrecoverable-tax input",
+            "values": {
+              "quantity": "500",
+              "goods": "5000",
+              "freight": "800",
+              "insurance": "50",
+              "duties": "400",
+              "taxes": "150",
+              "brokerage": "100",
+              "port": "75",
+              "inland": "200",
+              "other": "25"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-landed-ddp",
+        "queries": [
+          "landed cost formula",
+          "how do you calculate landed cost"
+        ],
+        "question": "How do I avoid double-counting freight or a DDP quote?",
+        "answer": "Check what your quoted amount already includes and who owes the remaining charges. If an all-in amount already contains freight, insurance and import charges intended for this estimate, enter it once and leave those duplicate fields at zero. Do not assume the Incoterm label alone lists every included destination fee; use the actual contract and invoice.",
+        "links": [
+          {
+            "id": "landed-cost",
+            "mode": "shipment",
+            "label": "Try one all-in $6,800 amount",
+            "values": {
+              "quantity": "500",
+              "goods": "6800",
+              "freight": "0",
+              "insurance": "0",
+              "duties": "0",
+              "taxes": "0",
+              "brokerage": "0",
+              "port": "0",
+              "inland": "0",
+              "other": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-landed-pricing",
+        "queries": [
+          "landed cost calculation",
+          "landed cost meaning"
+        ],
+        "question": "Is landed cost the same as my selling price or final cost of sales?",
+        "answer": "No. Landed cost is an acquisition-cost estimate for this shipment. Selling prices may need to cover advertising, payment processing, returns, overhead and profit as well. The timing and accounting treatment of inventory and cost of sales require separate records. Use a consistent per-unit cost as an input to pricing tools rather than treating the shipment total as a unit cost.",
+        "links": [
+          {
+            "id": "markup",
+            "mode": "price",
+            "label": "Explore a markup on unit cost"
+          },
+          {
+            "id": "roas",
+            "mode": "break-even",
+            "label": "Review advertising contribution assumptions"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "International Trade Administration: landed-cost components and shipment responsibility",
+        "url": "https://www.trade.gov/determine-total-export-price"
+      }
+    ]
+  },
+  "quick-ratio": {
+    "updatedOn": "2026-10-28",
+    "summary": "The accounting quick ratio compares selected liquid current assets with current liabilities. Enter cash, short-term investments and net current receivables directly, or subtract inventory, prepayments and other non-quick amounts from a current-asset total.",
+    "scope": "Use a single balance-sheet date and USD amounts with consistent current classifications. Receivables are entered net of relevant allowances; liquidity and collectibility are assumptions, not verified facts. The exclusion method requires all non-quick amounts to be entered once and rejects exclusions larger than current assets. The model has no live company data, SaaS MRR calculation, cash-flow timing forecast, industry benchmark or credit approval. A zero current-liability denominator is undefined, even when quick assets are also zero.",
+    "examples": [
+      {
+        "title": "Calculate quick ratio from liquid-asset components",
+        "mode": "components",
+        "values": {
+          "cash": "20000",
+          "securities": "5000",
+          "receivables": "15000",
+          "liabilities": "25000"
+        },
+        "inputs": "Cash $20,000; liquid short-term investments $5,000; net current receivables $15,000; current liabilities $25,000.",
+        "steps": [
+          "Quick assets = 20,000 + 5,000 + 15,000 = 40,000.",
+          "Quick ratio = 40,000 / 25,000 = 1.6.",
+          "Quick assets exceed entered current liabilities by $15,000; timing and collectibility remain untested."
+        ],
+        "answer": "Quick ratio is 1.6, or 1.6:1. This is not a blanket healthy-business rating.",
+        "expected": {
+          "label": "Quick ratio",
+          "value": 1.6,
+          "tolerance": 0.0001
+        }
+      },
+      {
+        "title": "Reconcile quick ratio using exclusions",
+        "mode": "exclusions",
+        "values": {
+          "assets": "80000",
+          "inventory": "30000",
+          "prepaid": "5000",
+          "nonquick": "5000",
+          "liabilities": "25000"
+        },
+        "inputs": "Current assets $80,000; inventory $30,000; prepayments $5,000; other non-quick assets $5,000; current liabilities $25,000.",
+        "steps": [
+          "Excluded amounts = 30,000 + 5,000 + 5,000 = 40,000.",
+          "Quick assets = 80,000 − 40,000 = 40,000.",
+          "Divide quick assets by $25,000 of current liabilities."
+        ],
+        "answer": "The exclusion method gives the same quick ratio of 1.6.",
+        "expected": {
+          "label": "Quick ratio",
+          "value": 1.6,
+          "tolerance": 0.0001
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-quick-formula",
+        "queries": [
+          "quick ratio calculator",
+          "how to calculate quick ratio",
+          "acid test ratio calculator"
+        ],
+        "question": "How do I calculate the quick ratio?",
+        "answer": "Add cash and cash equivalents, liquid short-term investments and net current accounts receivable, then divide by current liabilities. In the linked example, $40,000 / $25,000 = 1.6, or 1.6:1. Use amounts from the same date, without counting the same asset in more than one field.",
+        "links": [
+          {
+            "id": "quick-ratio",
+            "mode": "components",
+            "label": "Calculate the 1.6 quick ratio",
+            "values": {
+              "cash": "20000",
+              "securities": "5000",
+              "receivables": "15000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-quick-inventory",
+        "queries": [
+          "why does quick ratio excludes inventory",
+          "does quick ratio include inventory"
+        ],
+        "question": "Why does the quick ratio exclude inventory and prepaid expenses?",
+        "answer": "Inventory may need to be sold before it becomes available cash, and a prepaid expense generally cannot be used to settle another current obligation. This tool excludes both. If other current assets are not quick assets under your classification, exclude those separately too; simply subtracting inventory can leave an overstated quick-asset total.",
+        "links": [
+          {
+            "id": "quick-ratio",
+            "mode": "exclusions",
+            "label": "Review all excluded asset categories",
+            "values": {
+              "assets": "80000",
+              "inventory": "30000",
+              "prepaid": "5000",
+              "nonquick": "5000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-quick-receivables",
+        "queries": [
+          "does quick ratio include accounts receivable",
+          "calculate quick ratio from balance sheet"
+        ],
+        "question": "Should I use gross or net accounts receivable?",
+        "answer": "Use the current collectible receivable amount after relevant allowances and avoid including long-term balances. A receivable appearing in the numerator does not guarantee cash will arrive before a liability falls due. Review restrictions, collectibility and collection timing separately; this calculator only divides the balances you enter.",
+        "links": [
+          {
+            "id": "quick-ratio",
+            "mode": "components",
+            "label": "Enter net current receivables",
+            "values": {
+              "cash": "20000",
+              "securities": "5000",
+              "receivables": "15000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-quick-vs-current",
+        "queries": [
+          "quick ratio vs current ratio",
+          "current ratio vs quick ratio"
+        ],
+        "question": "How is quick ratio different from current ratio?",
+        "answer": "Current ratio includes the entered current assets, including inventory and prepayments. Quick ratio narrows the numerator to quick assets. With $80,000 of current assets, $40,000 of quick assets and $25,000 of current liabilities, current ratio is 3.2 while quick ratio is 1.6. The difference describes asset composition rather than two conflicting calculations.",
+        "links": [
+          {
+            "id": "current-ratio",
+            "mode": "totals",
+            "label": "Compare the 3.2 current ratio",
+            "values": {
+              "assets": "80000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-quick-good",
+        "queries": [
+          "what is a good quick ratio",
+          "is a high quick ratio good"
+        ],
+        "question": "Is a quick ratio above 1 always good?",
+        "answer": "A ratio above 1 means entered quick assets exceed entered current liabilities at that date. It does not establish cash availability when bills fall due, asset quality, profitability or a healthy business. Compare the composition and timing of balances with relevant industry conditions and trends instead of applying one universal target.",
+        "links": [
+          {
+            "id": "quick-ratio",
+            "mode": "components",
+            "label": "Review the ratio and underlying amounts",
+            "values": {
+              "cash": "20000",
+              "securities": "5000",
+              "receivables": "15000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-quick-zero-saas",
+        "queries": [
+          "can a quick ratio be negative",
+          "saas quick ratio"
+        ],
+        "question": "What if current liabilities are zero, or I meant the SaaS quick ratio?",
+        "answer": "A zero liability denominator makes the accounting ratio undefined, so the tool asks for a positive amount instead of displaying infinity. Negative component inputs are not supported. SaaS quick ratio instead concerns recurring-revenue growth and losses; that is a different metric and is not calculated here.",
+        "links": [
+          {
+            "id": "quick-ratio",
+            "mode": "components",
+            "label": "Use the accounting quick-ratio form",
+            "values": {
+              "cash": "20000",
+              "securities": "5000",
+              "receivables": "15000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "OpenStax: current and quick ratio definitions and interpretation",
+        "url": "https://openstax.org/books/principles-finance/pages/6-3-liquidity-ratios"
+      },
+      {
+        "title": "CFI: quick assets, inventory and prepaid expense exclusions",
+        "url": "https://corporatefinanceinstitute.com/resources/accounting/quick-ratio-definition/"
+      }
+    ]
+  },
+  "current-ratio": {
+    "updatedOn": "2026-10-28",
+    "summary": "Current ratio divides total current assets by current liabilities, while working capital subtracts those liabilities from the asset total. Use the balance-sheet totals or build a current-asset total from non-overlapping components; do not enter both at once.",
+    "scope": "Use same-date USD amounts with appropriate current classifications. Component mode adds cash, short-term investments, net current receivables, inventory, prepayments and other current assets; it does not classify or audit balances for you. Results are snapshots, not cash-flow forecasts, profitability measures or credit decisions. A positive asset-minus-liability difference is not proof that all obligations can be paid on time. Zero current liabilities produce an undefined ratio, not an infinite score or automatic healthy rating.",
+    "examples": [
+      {
+        "title": "Compare a current ratio of 3.2 with $55,000 working capital",
+        "mode": "totals",
+        "values": {
+          "assets": "80000",
+          "liabilities": "25000"
+        },
+        "inputs": "Total current assets $80,000; current liabilities $25,000.",
+        "steps": [
+          "Current ratio = 80,000 / 25,000 = 3.2.",
+          "Working capital = 80,000 − 25,000 = 55,000.",
+          "The ratio is a multiple; working capital is a USD amount."
+        ],
+        "answer": "Current ratio is 3.2, with $55,000 working capital. Neither is a net-profit measure.",
+        "expected": {
+          "label": "Working capital",
+          "value": 55000,
+          "tolerance": 0.0001
+        }
+      },
+      {
+        "title": "Build the same current assets from components",
+        "mode": "components",
+        "values": {
+          "cash": "20000",
+          "securities": "5000",
+          "receivables": "15000",
+          "liabilities": "25000",
+          "inventory": "30000",
+          "prepaid": "5000",
+          "other_current": "5000"
+        },
+        "inputs": "Cash $20,000; investments $5,000; net current receivables $15,000; inventory $30,000; prepayments $5,000; other current assets $5,000; current liabilities $25,000.",
+        "steps": [
+          "Add the six current-asset amounts once: total $80,000.",
+          "Divide $80,000 by $25,000.",
+          "Do not add a separate $80,000 total to those components."
+        ],
+        "answer": "The components give a current ratio of 3.2 and working capital of $55,000.",
+        "expected": {
+          "label": "Current ratio",
+          "value": 3.2,
+          "tolerance": 0.0001
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-current-formula",
+        "queries": [
+          "current ratio calculator",
+          "how to calculate current ratio",
+          "current ratio formula"
+        ],
+        "question": "How do I calculate the current ratio?",
+        "answer": "Divide total current assets by total current liabilities using consistent balances from the same date. $80,000 / $25,000 = 3.2, also written 3.2:1. You can enter totals directly or use the component mode when the current-asset details are available.",
+        "links": [
+          {
+            "id": "current-ratio",
+            "mode": "totals",
+            "label": "Try $80,000 assets and $25,000 liabilities",
+            "values": {
+              "assets": "80000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-current-inventory",
+        "queries": [
+          "is inventory included in current ratio",
+          "are prepaid expenses included in current ratio"
+        ],
+        "question": "Are inventory and prepaid expenses included in current ratio?",
+        "answer": "Yes, when they are classified as current assets in the balance sheet used for the calculation. Enter them separately in component mode or include them once in the current-asset total. They are excluded from this site’s quick-ratio numerator, so the two ratios can differ even with identical current liabilities.",
+        "links": [
+          {
+            "id": "current-ratio",
+            "mode": "components",
+            "label": "Build current assets from the details",
+            "values": {
+              "cash": "20000",
+              "securities": "5000",
+              "receivables": "15000",
+              "liabilities": "25000",
+              "inventory": "30000",
+              "prepaid": "5000",
+              "other_current": "5000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-current-working-capital",
+        "queries": [
+          "working capital calculator",
+          "current ratio and working capital"
+        ],
+        "question": "What is the difference between current ratio and working capital?",
+        "answer": "They use the same two totals but answer in different units. Current ratio = current assets / current liabilities. Working capital = current assets − current liabilities. With $80,000 and $25,000, those are 3.2 and $55,000 respectively. Neither is a profit margin; positive working capital also does not show when cash will be collected.",
+        "links": [
+          {
+            "id": "current-ratio",
+            "mode": "totals",
+            "label": "Compare ratio and dollar difference",
+            "values": {
+              "assets": "80000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-current-good",
+        "queries": [
+          "what is a good current ratio",
+          "is a high current ratio good"
+        ],
+        "question": "Is a higher current ratio always better?",
+        "answer": "No. A higher number may reflect a larger buffer, but it can also reflect slow-moving inventory, delayed collections or idle assets. The tool does not attach a universal good/bad score. Review asset quality, liability timing, the industry and changes over time alongside the calculation.",
+        "links": [
+          {
+            "id": "quick-ratio",
+            "mode": "exclusions",
+            "label": "Compare the narrower quick-asset measure",
+            "values": {
+              "assets": "80000",
+              "inventory": "30000",
+              "prepaid": "5000",
+              "nonquick": "5000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-current-below-one",
+        "queries": [
+          "what does current ratio tell you",
+          "what does a current ratio mean"
+        ],
+        "question": "Does a current ratio below 1 mean a company is bankrupt?",
+        "answer": "No. It means the entered current assets are less than entered current liabilities at that date. Cash-flow timing, operating model, credit access and other obligations are not captured by that comparison alone. Treat it as a reason to examine the underlying balances rather than an automatic legal or credit conclusion.",
+        "links": [
+          {
+            "id": "current-ratio",
+            "mode": "totals",
+            "label": "Illustrate $20,000 assets against $25,000 liabilities",
+            "values": {
+              "assets": "20000",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-current-zero",
+        "queries": [
+          "how to compute current ratio",
+          "current ratio equation"
+        ],
+        "question": "How are zero assets or zero current liabilities handled?",
+        "answer": "Zero current assets with positive current liabilities produce a ratio of 0 and negative working capital. With zero current liabilities, the ratio is undefined even if current assets are also zero, so this form requests a positive denominator. It does not display infinity or interpret the absence of current liabilities as a solvency guarantee.",
+        "links": [
+          {
+            "id": "current-ratio",
+            "mode": "totals",
+            "label": "Explore a zero-current-asset scenario",
+            "values": {
+              "assets": "0",
+              "liabilities": "25000"
+            }
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "OpenStax: current and quick ratio definitions and interpretation",
+        "url": "https://openstax.org/books/principles-finance/pages/6-3-liquidity-ratios"
+      }
+    ]
+  }
+}

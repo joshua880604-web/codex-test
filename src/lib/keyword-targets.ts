@@ -136,3 +136,7 @@ searchTasks['auto-lease'][0].keyword='Auto lease calculator';
 searchTasks['auto-lease'][0].description='Estimate car lease payments from negotiated price, residual, capitalized fees and a money factor, or solve price from payment. Monthly tax is an entered assumption; buyout costs are separate.';
 searchTasks['cash-back-or-low-interest'][0].aliases=[...new Set([...(searchTasks['cash-back-or-low-interest'][0].aliases??[]),'Cash rebate vs low interest calculator','Cash back or low interest calculator'])];
 searchTasks['cash-back-or-low-interest'][0].description='Compare an automotive cash rebate with standard financing against a low-rate offer over the same term. Include entered tax, fees and upfront cash; current deals and eligibility are not fetched.';
+
+// User-researched business tools share one page per distinct calculation task.
+import businessTargets from './business-tool-targets.json';
+for (const [id, entry] of Object.entries(businessTargets)) {searchTasks[id]=entry.tasks;keywordTitles[id]=entry.title;}

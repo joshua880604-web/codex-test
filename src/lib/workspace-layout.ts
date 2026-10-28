@@ -2,6 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
+  "roas", "landed-cost", "quick-ratio", "current-ratio",
   "tax-equivalent-yield", "treasury-bill",
   "pmi", "biweekly-mortgage", "discount-points", "mortgage-recast",
   "compound-interest", "investment", "loan",

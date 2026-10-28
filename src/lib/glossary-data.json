@@ -590,6 +590,10 @@
       {
         "id": "break-even",
         "text": "Explore how fixed and variable costs affect the sales needed to break even."
+      },
+      {
+        "id": "landed-cost",
+        "text": "Estimate a shipment acquisition cost per unit before using a consistent cost in a pricing calculation."
       }
     ],
     "related": [
@@ -3121,6 +3125,10 @@
       {
         "id": "break-even",
         "text": "Inspect unit contribution and the contribution margin ratio before comparing sales targets."
+      },
+      {
+        "id": "roas",
+        "text": "Use a contribution margin before advertising to find the modeled advertising break-even threshold."
       }
     ],
     "related": [
@@ -3685,5 +3693,129 @@
     ],
     "checkedOn": "2026-10-23",
     "scope": "General financial concept; examples are hypothetical."
+  },
+  {
+    "slug": "quick-ratio",
+    "name": "Quick ratio",
+    "title": "Quick ratio: Definition, Formula and Example",
+    "description": "Quick ratio compares selected liquid current assets with current liabilities at one balance-sheet date. It is also called the accounting acid-test ratio.",
+    "category": "Business & pricing",
+    "aliases": [
+      "Accounting acid-test ratio"
+    ],
+    "definition": "Quick ratio compares selected liquid current assets with current liabilities at one balance-sheet date. It is also called the accounting acid-test ratio.",
+    "explanation": "Cash, liquid short-term investments and net current receivables are included in the linked component model. Inventory, prepayments and other non-quick current assets are excluded. The narrower numerator distinguishes it from current ratio; this is unrelated to the SaaS recurring-revenue quick ratio.",
+    "formula": "Quick ratio = quick assets / current liabilities",
+    "formulaNote": "Use consistently classified balances from the same date and currency. With zero current liabilities the ratio is undefined, even when assets are zero.",
+    "example": {
+      "title": "Compare the entered balance-sheet amounts",
+      "intro": "Hypothetical USD balances, not an industry benchmark or actual company statement.",
+      "steps": [
+        "Use the balances in the linked example without counting any item twice.",
+        "Divide the included asset amount by $25,000 of current liabilities.",
+        "Interpret the ratio together with asset quality, cash-flow timing and relevant business context."
+      ],
+      "answer": "With $40,000 of quick assets and $25,000 of current liabilities, quick ratio is 1.6:1.",
+      "assumptions": "Same-date USD balances and positive current liabilities. No verification of collectibility, industry averages or future cash flow.",
+      "calculator": {
+        "id": "quick-ratio",
+        "mode": "components",
+        "values": {
+          "cash": 20000,
+          "securities": 5000,
+          "receivables": 15000,
+          "liabilities": 25000
+        },
+        "expected": [
+          {
+            "label": "Quick ratio",
+            "value": 1.6
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "A ratio is not a solvency guarantee",
+      "text": "A high ratio can coexist with slow collections or idle assets; a low ratio alone is not a bankruptcy determination. Review business context and trends rather than applying a universal healthy cutoff."
+    },
+    "tools": [
+      {
+        "id": "quick-ratio",
+        "text": "Calculate this accounting liquidity measure using your own current balances."
+      }
+    ],
+    "related": [
+      "current-ratio",
+      "return-on-investment"
+    ],
+    "sources": [
+      {
+        "title": "OpenStax: Liquidity ratios",
+        "url": "https://openstax.org/books/principles-finance/pages/6-3-liquidity-ratios"
+      }
+    ],
+    "checkedOn": "2026-10-28",
+    "scope": "General accounting concept with hypothetical balances, not an audited financial opinion or credit decision."
+  },
+  {
+    "slug": "current-ratio",
+    "name": "Current ratio",
+    "title": "Current ratio: Definition, Formula and Example",
+    "description": "Current ratio divides current assets by current liabilities, describing their relative size at one balance-sheet date. It is a liquidity measure, not a profit margin.",
+    "category": "Business & pricing",
+    "aliases": [
+      "Current assets to current liabilities"
+    ],
+    "definition": "Current ratio divides current assets by current liabilities, describing their relative size at one balance-sheet date. It is a liquidity measure, not a profit margin.",
+    "explanation": "Current assets may include inventory and prepaid expenses as well as cash and receivables. Working capital uses the same two totals but subtracts liabilities instead of dividing. Classification, collectibility and the dates when amounts turn into cash affect interpretation.",
+    "formula": "Current ratio = current assets / current liabilities; working capital = current assets − current liabilities",
+    "formulaNote": "Use consistently classified balances from the same date and currency. With zero current liabilities the ratio is undefined, even when assets are zero.",
+    "example": {
+      "title": "Compare the entered balance-sheet amounts",
+      "intro": "Hypothetical USD balances, not an industry benchmark or actual company statement.",
+      "steps": [
+        "Use the balances in the linked example without counting any item twice.",
+        "Divide the included asset amount by $25,000 of current liabilities.",
+        "Interpret the ratio together with asset quality, cash-flow timing and relevant business context."
+      ],
+      "answer": "With $80,000 of current assets and $25,000 of current liabilities, current ratio is 3.2:1 and working capital is $55,000.",
+      "assumptions": "Same-date USD balances and positive current liabilities. No verification of collectibility, industry averages or future cash flow.",
+      "calculator": {
+        "id": "current-ratio",
+        "mode": "totals",
+        "values": {
+          "assets": 80000,
+          "liabilities": 25000
+        },
+        "expected": [
+          {
+            "label": "Current ratio",
+            "value": 3.2
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "A ratio is not a solvency guarantee",
+      "text": "A high ratio can coexist with slow collections or idle assets; a low ratio alone is not a bankruptcy determination. Review business context and trends rather than applying a universal healthy cutoff."
+    },
+    "tools": [
+      {
+        "id": "current-ratio",
+        "text": "Calculate this accounting liquidity measure using your own current balances."
+      }
+    ],
+    "related": [
+      "quick-ratio",
+      "return-on-investment"
+    ],
+    "sources": [
+      {
+        "title": "OpenStax: Liquidity ratios",
+        "url": "https://openstax.org/books/principles-finance/pages/6-3-liquidity-ratios"
+      }
+    ],
+    "checkedOn": "2026-10-28",
+    "scope": "General accounting concept with hypothetical balances, not an audited financial opinion or credit decision."
   }
 ]

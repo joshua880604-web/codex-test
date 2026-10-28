@@ -3,6 +3,10 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "roas": return "Revenue-based ROAS and contribution-margin scenarios. No live attribution, automatic bidding or guarantee of company net profit.";
+    case "landed-cost": return "One homogeneous shipment in USD with manually entered duties and nonrecoverable taxes. No tariff lookup, customs classification, tax advice or currency conversion.";
+    case "quick-ratio": return "Accounting acid-test ratio from same-date current balances. Inventory, prepayments and other non-quick assets are excluded; no SaaS MRR calculation.";
+    case "current-ratio": return "Same-date current asset and liability classifications. Working capital is a dollar difference, not a profitability percentage or future cash-flow guarantee.";
     case "tax-equivalent-yield": return "U.S. taxable-account yield comparison using entered marginal rates. No automatic tax brackets, exemption eligibility, AMT or state/federal deduction interactions.";
     case "treasury-bill": return "U.S. Treasury bill held to maturity. Bank discount pricing uses 360 days; simple annualized returns use the selected 365/366 days and are not the official auction Investment Rate. No live quotes.";
     case "mortgage-recast": return "Fixed-rate monthly P&I only. Same rate and remaining contractual term; recast requires servicer approval. Taxes, insurance, PMI cancellation and FHA/VA/USDA eligibility are not modeled.";

@@ -600,5 +600,37 @@
     "titleSuffix": "Mortgage Points & Break-Even",
     "description": "Compare entered mortgage rate and point quotes, monthly savings and net cost at a sale or refinancing horizon.",
     "researchStatus": "Requested editorial priority; competitor catalog reviewed; no independent search-volume or revenue estimate"
+  },
+  {
+    "id": "roas",
+    "mode": "actual",
+    "keyword": "ROAS calculator",
+    "titleSuffix": "Return on Ad Spend & Break-Even",
+    "description": "Calculate revenue-based return on ad spend, break-even ROAS and target contribution scenarios. No ad account connection or guaranteed profit.",
+    "researchStatus": "User-provided Semrush US broad match, Questions and bulk, 2026-10-28; see business-candidates-20261028 research."
+  },
+  {
+    "id": "landed-cost",
+    "mode": "shipment",
+    "keyword": "Landed cost calculator",
+    "titleSuffix": "Total & Per-Unit Import Costs",
+    "description": "Estimate shipment and per-unit landed cost from goods, freight, insurance and manually entered import charges in USD. No tariff lookup.",
+    "researchStatus": "User-provided Semrush US broad match, Questions and bulk, 2026-10-28; see business-candidates-20261028 research."
+  },
+  {
+    "id": "quick-ratio",
+    "mode": "components",
+    "keyword": "Quick ratio calculator",
+    "titleSuffix": "Acid-Test Formula & Components",
+    "description": "Calculate the accounting quick ratio from cash, liquid short-term investments and net current receivables, or exclude non-quick assets from a balance-sheet total.",
+    "researchStatus": "User-provided Semrush US broad match, Questions and bulk, 2026-10-28; see business-candidates-20261028 research."
+  },
+  {
+    "id": "current-ratio",
+    "mode": "totals",
+    "keyword": "Current ratio calculator",
+    "titleSuffix": "Formula & Working Capital",
+    "description": "Calculate current ratio and working capital from current asset and liability totals or components at the same date. Not a cash-flow forecast.",
+    "researchStatus": "User-provided Semrush US broad match, Questions and bulk, 2026-10-28; see business-candidates-20261028 research."
   }
 ]

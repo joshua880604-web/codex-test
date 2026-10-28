@@ -1,3 +1,4 @@
+import businessContent from './business-tool-content.json';
 import refresh from "./researched-calculator-content.json";
 import { calculatorPresetHref } from './preset-links';
 import mortgageToolsGuides from "./mortgage-tools-guides.json";
@@ -733,6 +734,11 @@ for(const [id,patch] of Object.entries(refresh as unknown as Record<string,{upda
  for(const source of patch.sources??[])if(!guide.sources.some(item=>item.url===source.url))guide.sources.push(source);
  guide.checkedOn=patch.updatedOn;
 }
+
+// Original business tools use their own definitions and examples, then the shared question renderer.
+Object.assign(guides,Object.fromEntries(Object.entries(businessContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+Object.assign(relatedCalculatorIds,{roas:['landed-cost','margin','break-even','roi'],'landed-cost':['roas','markup','margin'],'quick-ratio':['current-ratio','business-loan','break-even'],'current-ratio':['quick-ratio','business-loan','break-even']});
+for(const id of ['margin','markup','break-even'])relatedCalculatorIds[id]=[...new Set(['roas','landed-cost',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {

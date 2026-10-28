@@ -1,0 +1,72 @@
+{
+  "roas": {
+    "title": "ROAS Calculator - Return on Ad Spend & Break-Even",
+    "tasks": [
+      {
+        "keyword": "ROAS calculator",
+        "mode": "actual",
+        "description": "Calculate revenue-based return on ad spend, break-even ROAS and target contribution scenarios. No ad account connection or guaranteed profit.",
+        "aliases": [
+          "Return on ad spend calculator",
+          "ROAS percentage calculator"
+        ]
+      },
+      {
+        "keyword": "Break even ROAS calculator",
+        "mode": "break-even",
+        "description": "Find an advertising break-even threshold from an entered contribution margin before ads. Fixed overhead and taxes remain separate.",
+        "aliases": [
+          "Breakeven ROAS calculator"
+        ]
+      },
+      {
+        "keyword": "Target ROAS calculator",
+        "mode": "target",
+        "description": "Find a cost-based ROAS threshold and maximum ad spend for an entered post-ad contribution target. This is not an automated bidding recommendation."
+      }
+    ]
+  },
+  "landed-cost": {
+    "title": "Landed Cost Calculator - Total & Per-Unit Import Costs",
+    "tasks": [
+      {
+        "keyword": "Landed cost calculator",
+        "mode": "shipment",
+        "description": "Estimate shipment and per-unit landed cost from goods, freight, insurance and manually entered import charges in USD. No tariff lookup.",
+        "aliases": [
+          "Total landed cost calculator",
+          "Landed cost per unit calculator",
+          "Import landed cost calculator"
+        ]
+      }
+    ]
+  },
+  "quick-ratio": {
+    "title": "Quick Ratio Calculator - Acid-Test Formula & Components",
+    "tasks": [
+      {
+        "keyword": "Quick ratio calculator",
+        "mode": "components",
+        "description": "Calculate the accounting quick ratio from cash, liquid short-term investments and net current receivables, or exclude non-quick assets from a balance-sheet total.",
+        "aliases": [
+          "Acid test ratio calculator",
+          "Quick asset ratio calculator"
+        ]
+      }
+    ]
+  },
+  "current-ratio": {
+    "title": "Current Ratio Calculator - Formula & Working Capital",
+    "tasks": [
+      {
+        "keyword": "Current ratio calculator",
+        "mode": "totals",
+        "description": "Calculate current ratio and working capital from current asset and liability totals or components at the same date. Not a cash-flow forecast.",
+        "aliases": [
+          "Working capital calculator",
+          "Current assets to current liabilities ratio calculator"
+        ]
+      }
+    ]
+  }
+}
