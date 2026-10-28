@@ -76,7 +76,68 @@ export const rentBuyGuide:EditorialGuide={
  topic:'Mortgages',breadcrumb:'Rent vs. buy a house',
  cardIntro:'Compare sale equity with the renter’s invested cash at years 1, 3, 5 and 10. See how one changed assumption can reverse the model result.',
 };
-export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide];
+export const debtSaveGuide:EditorialGuide={
+ "path": "/guides/should-i-pay-off-debt-or-save/",
+ "title": "Should I Pay Off Debt or Save? Cash & Interest Compared",
+ "heading": "Should I Pay Off Debt or Save? Compare Interest, Cash Reserves, and Timing",
+ "description": "Compare extra debt payments with retaining savings. Work through interest costs, cash reserves, monthly allocations and reproducible repayment examples.",
+ "publishedOn": "2026-10-28",
+ "calculatorIds": [
+  "repayment",
+  "emergency-fund",
+  "savings",
+  "budget"
+ ],
+ "topic": "Loans & debt",
+ "breadcrumb": "Should I pay off debt or save?",
+ "cardIntro": "Compare a $6,000 debt and a $200 extra monthly budget. Separate interest savings from cash access and see what a split allocation changes."
+};
+export const aprGuide:EditorialGuide={
+ "path": "/guides/apr-vs-interest-rate/",
+ "title": "APR vs. Interest Rate: Fees, Payments & Loan Cost",
+ "heading": "APR vs. Interest Rate: Compare Loan Fees, Payments, and Total Cost",
+ "description": "Compare APR and loan interest rates using matched fixed-rate offers. See upfront fees, monthly payments, effective rates and early-payoff costs.",
+ "publishedOn": "2026-10-28",
+ "calculatorIds": [
+  "apr",
+  "loan",
+  "personal-loan"
+ ],
+ "topic": "Loans & debt",
+ "breadcrumb": "APR vs. interest rate",
+ "cardIntro": "Compare two $20,000 loan offers to see why a lower interest rate and smaller payment can still produce a higher APR and total borrowing cost."
+};
+export const refinanceGuide:EditorialGuide={
+ "path": "/guides/is-refinancing-worth-it/",
+ "title": "Is Refinancing Worth It? Fees, Terms & Break-Even",
+ "heading": "Is Refinancing Worth It? Compare Fees, Loan Terms, and Your Holding Period",
+ "description": "Evaluate mortgage refinancing with matched holding periods, payments, remaining balances, cash or financed fees and explicit break-even examples.",
+ "publishedOn": "2026-10-28",
+ "calculatorIds": [
+  "refinance",
+  "mortgage",
+  "discount-points"
+ ],
+ "topic": "Mortgages",
+ "breadcrumb": "Is refinancing worth it?",
+ "cardIntro": "Compare keeping a 25-year mortgage with replacing it for 25 or 30 years. Include fees and remaining balances before calling a smaller payment a saving."
+};
+export const iraGuide:EditorialGuide={
+ "path": "/guides/roth-ira-vs-traditional-ira/",
+ "title": "Roth IRA vs. Traditional IRA: Equal-Budget Tax Examples",
+ "heading": "Roth IRA vs. Traditional IRA: Compare Taxes on the Same Savings Budget",
+ "description": "Compare Roth and Traditional IRAs on the same pretax budget with tax-rate examples, 2026 contribution limits, eligibility checks and model limitations.",
+ "publishedOn": "2026-10-28",
+ "calculatorIds": [
+  "ira",
+  "roth-ira",
+  "retirement"
+ ],
+ "topic": "Retirement",
+ "breadcrumb": "Roth IRA vs. Traditional IRA",
+ "cardIntro": "Compare the same $6,000 pretax annual budget at three retirement tax rates. Distinguish equal contributions from equal cash cost and review eligibility."
+};
+export const editorialGuides=[recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);

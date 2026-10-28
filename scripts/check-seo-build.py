@@ -26,7 +26,7 @@ class Page(HTMLParser):
 catalog=json.loads((root/'src/lib/catalog-data.json').read_text())
 terms=json.loads((root/'src/lib/glossary-data.json').read_text())
 paths=[x['local_route'] for x in catalog]+['/loan-calculators.html','/savings-investment-calculators.html','/financial-calculator.html','/about.html','/privacy.html','/methodology.html','/glossary/']+['/glossary/'+term['slug']+'/' for term in terms]
-paths+=['/guides/how-much-emergency-fund-should-i-have/','/guides/rent-vs-buy-a-house/','/guides/are-mortgage-points-worth-it/','/guides/pay-off-car-loan-early/','/guides/biweekly-vs-monthly-mortgage-payments/','/guides/cd-vs-savings-account/','/guides/','/guides/mortgage-recast-vs-refinance/','/guides/debt-snowball-vs-avalanche/']
+paths+=['/guides/should-i-pay-off-debt-or-save/','/guides/apr-vs-interest-rate/','/guides/is-refinancing-worth-it/','/guides/roth-ira-vs-traditional-ira/','/guides/how-much-emergency-fund-should-i-have/','/guides/rent-vs-buy-a-house/','/guides/are-mortgage-points-worth-it/','/guides/pay-off-car-loan-early/','/guides/biweekly-vs-monthly-mortgage-payments/','/guides/cd-vs-savings-account/','/guides/','/guides/mortgage-recast-vs-refinance/','/guides/debt-snowball-vs-avalanche/']
 new_categories=['/retirement-calculators.html','/tax-income-calculators.html','/business-calculators.html','/everyday-calculators.html']
 paths+=new_categories
 checks=[]
@@ -74,6 +74,10 @@ for route in paths:
    if 'mortgage-recast' in route:expected=['$1,610.75','$153,213.95','$1,753.77','27.9 months','not an equal-cash ranking']
    elif 'cd-vs-savings' in route:expected=['$10,450.00','$10,425.00','$10,374.73','$10,499.88','$10,122.52','$87.76','50-digit Decimal','not current bank offers','does not model early closure or penalties']
    elif 'are-mortgage-points-worth-it' in route:expected=['40.44 months','month 32','-$439.14','$955.14','$516.00','-$484.00','4,680','50-digit Decimal','not current rates']
+   elif 'should-i-pay-off-debt' in route:expected=['$3,254.63','$1,739.24','$1,204.64','50-digit Decimal','not a complete simulation']
+   elif 'apr-vs-interest-rate' in route:expected=['9.175%','$4,761.44','$4,331.67','not a replacement','50-digit Decimal']
+   elif 'is-refinancing-worth-it' in route:expected=['27.27 months','$318,212.12','$9,873.45','$8,567.62','50-digit Decimal']
+   elif 'roth-ira-vs-traditional' in route:expected=['$369,992.31','$417,427.22','$322,557.40','$7,500','50-digit Decimal']
    elif 'how-much-emergency-fund' in route:expected=['$19,200.00','$13,200.00','1.875 months','50-digit Decimal','30th','not a personalized recommendation']
    elif 'rent-vs-buy-a-house' in route:expected=['$89,600','$14,576.51','$4,280.33','$36,426.94','50-digit Decimal','240 yearly rows','not a declining-price test']
    elif 'pay-off-car-loan' in route:expected=['$701.94','$2,370.33','$137.70','50-digit Decimal','daily-interest','precomputed']
@@ -81,7 +85,7 @@ for route in paths:
    else:expected=['$1,792.13','$2,204.57','$412.44','Month 6','Month 22','50-digit decimal']
    for text in expected:
     assert text in ''.join(p.text),(route,text)
-   expected_date='2026-10-28' if route in ['/guides/how-much-emergency-fund-should-i-have/','/guides/rent-vs-buy-a-house/'] else '2026-10-27'
+   expected_date='2026-10-28' if route in ['/guides/should-i-pay-off-debt-or-save/','/guides/apr-vs-interest-rate/','/guides/is-refinancing-worth-it/','/guides/roth-ira-vs-traditional-ira/','/guides/how-much-emergency-fund-should-i-have/','/guides/rent-vs-buy-a-house/'] else '2026-10-27'
    assert graph[0]['datePublished']==expected_date
  checks.append({'route':route,'canonical':p.canon,'h1':p.h1s[0]})
 sitemap=(root/'out/sitemap.xml').read_text()
