@@ -84,3 +84,13 @@ for (const task of searchTasks.savings) {
   if (task.mode === "accumulation") task.description = "Project savings with deposits and an entered APY or nominal rate. Match the rate type and contribution timing; current bank offers are not fetched.";
 }
 searchTasks.savings.push({keyword:"High yield savings calculator",mode:"accumulation",description:"Project savings using an entered APY, monthly deposits and term. APY includes compounding; account yields can change and no live rates are fetched.",values:{rate_type:"APY"},aliases:["High yield savings account calculator","HYSA calculator"]});
+
+// User-provided US broad-match and question research, reviewed 2026-10-28.
+keywordTitles['house-affordability']='House Affordability Calculator - Income & Monthly Budget';
+keywordTitles['fha-loan']='FHA Loan Calculator - Payment, Down Payment & MIP';
+keywordTitles['va-mortgage']='VA Loan Calculator - Monthly Payment & Funding Fee';
+searchTasks['house-affordability'][0].description='Estimate how much house fits your gross income or monthly housing budget, with down payment, debts, tax and insurance assumptions. Not lender approval.';
+searchTasks['fha-loan'][0].description='Estimate FHA monthly payments with down payment, financed upfront MIP, recurring mortgage insurance and entered ownership costs. Eligibility is not determined.';
+searchTasks['va-mortgage'][0].description='Estimate a VA purchase loan payment with the funding fee financed or paid upfront, down payment and entered ownership costs. Confirm eligibility separately.';
+searchTasks['va-mortgage'][0].aliases=[...new Set([...(searchTasks['va-mortgage'][0].aliases??[]),'VA loan calculator','VA home loan calculator','VA loan payment calculator'])];
+searchTasks['fha-loan'][0].aliases=[...new Set([...(searchTasks['fha-loan'][0].aliases??[]),'FHA loan payment calculator','FHA mortgage calculator'])];

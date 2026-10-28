@@ -654,5 +654,791 @@
         "replacesQuestion": "How do I enter a custom exchange rate?"
       }
     ]
+  },
+  "house-affordability": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate how much house fits either your gross household income or a monthly housing budget. Compare income ratios, existing debt, down payment, interest and entered ownership costs before choosing a price range.",
+    "scope": "U.S. fixed-rate planning, not preapproval. Income mode uses gross annual household income and user-selected housing and total-debt ratios. The model includes entered tax, home insurance, HOA and maintenance, but does not calculate PMI, closing costs, utilities, reserves or lender eligibility. Budget separately for these costs; do not treat the maximum price as a spending recommendation.",
+    "items": [
+      {
+        "anchor": "use-home-price-from-income",
+        "queries": [
+          "how much house can i afford calculator",
+          "house affordability calculator based on income"
+        ],
+        "question": "How much house can I afford on a $100,000 salary?",
+        "answer": "There is no single salary-to-price multiplier. With $100,000 gross annual income, $500 monthly debt and illustrative 28% housing / 36% total-debt limits, this model allows $2,333.33 per month for entered housing costs. At 6% over 30 years, 20% down, 1.2% property tax and $1,500 annual home insurance, the estimated price is $380,983.32. PMI and closing costs are excluded.",
+        "links": [
+          {
+            "id": "house-affordability",
+            "mode": "income",
+            "label": "Try the $100,000 income example",
+            "values": {
+              "income": "100000",
+              "debt": "500",
+              "front": "28",
+              "back": "36",
+              "down": "20",
+              "down_unit": "Percent",
+              "rate": "6",
+              "years": "30",
+              "tax_rate": "1.2",
+              "tax_unit": "Percent of home value",
+              "insurance": "1500",
+              "insurance_unit": "Dollars per year",
+              "hoa": "0",
+              "hoa_unit": "Dollars per month",
+              "maintenance": "0",
+              "maintenance_unit": "Dollars per year"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-home-price-existing-debt",
+        "queries": [
+          "how much house can i afford dti calculator",
+          "how much house to afford with debt calculator"
+        ],
+        "question": "How does existing monthly debt change home affordability?",
+        "answer": "Income mode takes the smaller of the housing-only limit and the total-debt limit after subtracting entered monthly debt. In the same $100,000-income example, increasing debt from $500 to $1,000 lowers the housing budget to $2,000 and the estimated price to $323,476.41. These are adjustable planning ratios, not universal lending limits.",
+        "links": [
+          {
+            "id": "house-affordability",
+            "mode": "income",
+            "label": "Compare with $1,000 monthly debt",
+            "values": {
+              "income": "100000",
+              "debt": "1000",
+              "front": "28",
+              "back": "36",
+              "down": "20",
+              "down_unit": "Percent",
+              "rate": "6",
+              "years": "30",
+              "tax_rate": "1.2",
+              "tax_unit": "Percent of home value",
+              "insurance": "1500",
+              "insurance_unit": "Dollars per year",
+              "hoa": "0",
+              "hoa_unit": "Dollars per month",
+              "maintenance": "0",
+              "maintenance_unit": "Dollars per year"
+            }
+          },
+          {
+            "id": "debt-to-income-ratio",
+            "mode": "ratio",
+            "label": "Review debt-to-income inputs"
+          }
+        ],
+        "replacesQuestion": "How much house can I afford with existing debt?"
+      },
+      {
+        "anchor": "use-home-price-monthly-budget",
+        "queries": [
+          "house affordability calculator based on monthly payment",
+          "how much house can i afford calculator monthly payment"
+        ],
+        "question": "Can I calculate a home price from a monthly payment budget?",
+        "answer": "Yes. Choose Monthly Budget and enter the amount available for all modeled housing costs, not just principal and interest. Taxes, insurance, HOA and maintenance consume part of that budget. A larger mortgage term or down payment changes the result; closing cash and an emergency reserve still need separate planning.",
+        "links": [
+          {
+            "id": "house-affordability",
+            "mode": "budget",
+            "label": "Start with a $2,000 monthly housing budget",
+            "values": {
+              "budget": "2000"
+            }
+          },
+          {
+            "id": "down-payment",
+            "mode": "price",
+            "label": "Plan the down payment"
+          }
+        ]
+      },
+      {
+        "anchor": "use-home-price-gross-or-net",
+        "queries": [
+          "house affordability calculator net income",
+          "how much house can i afford calculator gross income"
+        ],
+        "question": "Should I enter gross income or take-home pay?",
+        "answer": "Use gross annual household income before taxes for Income mode. Entering take-home pay changes the meaning of the selected ratios. For a personal spending limit based on actual cash flow, set a sustainable monthly housing amount in Monthly Budget mode and keep room for other expenses and savings.",
+        "links": [
+          {
+            "id": "house-affordability",
+            "mode": "income",
+            "label": "Use gross annual income"
+          },
+          {
+            "id": "house-affordability",
+            "mode": "budget",
+            "label": "Use a personal monthly budget"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Estimate a home price from $100,000 gross income",
+        "mode": "income",
+        "values": {
+          "income": "100000",
+          "debt": "500",
+          "front": "28",
+          "back": "36",
+          "down": "20",
+          "down_unit": "Percent",
+          "rate": "6",
+          "years": "30",
+          "tax_rate": "1.2",
+          "tax_unit": "Percent of home value",
+          "insurance": "1500",
+          "insurance_unit": "Dollars per year",
+          "hoa": "0",
+          "hoa_unit": "Dollars per month",
+          "maintenance": "0",
+          "maintenance_unit": "Dollars per year"
+        },
+        "inputs": "Gross income $100,000; $500 monthly debt; 28% / 36% limits; 20% down; 6% for 30 years; property tax 1.2%; annual insurance $1,500; no HOA or maintenance.",
+        "steps": [
+          "Gross monthly income = 100,000 / 12 = 8,333.33.",
+          "Housing budget = min(8,333.33 × 28%, 8,333.33 × 36% − 500) = 2,333.33.",
+          "After $125 monthly insurance, solve for a price whose 80% mortgage payment and 0.1% monthly property tax use the remaining budget."
+        ],
+        "answer": "Estimated home price is $380,983.32, before unmodeled costs and any lender review.",
+        "expected": {
+          "label": "Estimated home price",
+          "value": 380983.3228793403,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Compare the same income with $1,000 monthly debt",
+        "mode": "income",
+        "values": {
+          "income": "100000",
+          "debt": "1000",
+          "front": "28",
+          "back": "36",
+          "down": "20",
+          "down_unit": "Percent",
+          "rate": "6",
+          "years": "30",
+          "tax_rate": "1.2",
+          "tax_unit": "Percent of home value",
+          "insurance": "1500",
+          "insurance_unit": "Dollars per year",
+          "hoa": "0",
+          "hoa_unit": "Dollars per month",
+          "maintenance": "0",
+          "maintenance_unit": "Dollars per year"
+        },
+        "inputs": "Keep the preceding assumptions; increase monthly debt to $1,000.",
+        "steps": [
+          "The housing-only ceiling stays $2,333.33.",
+          "The total-debt ceiling becomes 8,333.33 × 36% − 1,000 = 2,000.",
+          "The lower ceiling governs; apply the same down payment, interest, tax and insurance assumptions."
+        ],
+        "answer": "The modeled price falls to $323,476.41.",
+        "expected": {
+          "label": "Estimated home price",
+          "value": 323476.40621830785,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Freddie Mac: income, housing costs and affordability planning",
+        "url": "https://myhome.freddiemac.com/buying/what-can-you-afford"
+      }
+    ]
+  },
+  "fha-loan": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-fha-payment-components",
+        "queries": [
+          "fha loan payment calculator",
+          "fha loan mortgage calculator"
+        ],
+        "question": "What is included in this FHA monthly payment estimate?",
+        "answer": "Monthly principal and interest repay the base loan plus financed upfront MIP. Initial monthly total adds the modeled annual MIP installment and entered property tax, home insurance, HOA and other costs. Enter local costs explicitly; zero does not mean they are waived. Biweekly Comparison excludes these ownership costs and recurring MIP.",
+        "links": [
+          {
+            "id": "fha-loan",
+            "mode": "monthly",
+            "label": "Review FHA payment components"
+          }
+        ],
+        "replacesQuestion": "Does the FHA monthly payment include mortgage insurance?"
+      },
+      {
+        "anchor": "use-fha-low-down-payment",
+        "queries": [
+          "fha loan down payment",
+          "fha loan down payment calculator"
+        ],
+        "question": "How does a 3.5% down payment affect an FHA estimate?",
+        "answer": "For an illustrative $300,000 purchase, 3.5% down is $10,500 and the base loan is $289,500. At the modeled 1.75% upfront premium, financing MIP adds $5,066.25. At 6% for 30 years, principal and interest are $1,766.07 per month, before recurring MIP and ownership costs. This input example does not establish eligibility.",
+        "links": [
+          {
+            "id": "fha-loan",
+            "mode": "monthly",
+            "label": "Calculate the $300,000 / 3.5% example",
+            "values": {
+              "price": "300000",
+              "down": "3.5",
+              "down_unit": "Percent",
+              "years": "30",
+              "months": "0",
+              "rate": "6",
+              "appraised_value": "",
+              "mip_method": "Automatic",
+              "tax": "0",
+              "insurance": "0",
+              "hoa": "0",
+              "other": "0",
+              "extra_monthly": "0",
+              "extra_yearly": "0",
+              "extra_once": "0",
+              "dated": ""
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-fha-mip-removal",
+        "queries": [
+          "how to get rid of pmi on fha loan",
+          "how to remove pmi from fha loan"
+        ],
+        "question": "Can I remove FHA mortgage insurance at 20% equity?",
+        "answer": "FHA MIP follows different rules from conventional PMI. For ordinary loans with case numbers assigned on or after June 3, 2013, original LTV of 90% or less generally means 11 years of annual MIP, or earlier maturity; above 90%, it generally lasts for the loan term. Reaching 20% equity later does not apply the conventional PMI cancellation rule.",
+        "links": [
+          {
+            "id": "fha-loan",
+            "mode": "monthly",
+            "label": "Compare 10% down under automatic MIP rules",
+            "values": {
+              "price": "300000",
+              "down": "10",
+              "down_unit": "Percent",
+              "years": "30",
+              "months": "0",
+              "rate": "6",
+              "appraised_value": "",
+              "mip_method": "Automatic",
+              "tax": "0",
+              "insurance": "0",
+              "hoa": "0",
+              "other": "0",
+              "extra_monthly": "0",
+              "extra_yearly": "0",
+              "extra_once": "0",
+              "dated": ""
+            }
+          },
+          {
+            "id": "pmi",
+            "mode": "cancellation",
+            "label": "Use conventional PMI rules only for conventional loans"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fha-upfront-vs-annual",
+        "queries": [
+          "fha home loan mortgage insurance",
+          "mortgage insurance on fha loans"
+        ],
+        "question": "Are upfront MIP and annual MIP the same charge?",
+        "answer": "No. Upfront MIP is a one-time premium financed into this model’s loan balance. Annual MIP is collected monthly using HUD’s scheduled-balance method and can change by mortgage year. It is also separate from homeowners insurance. The ordinary forward-loan model excludes historical and special-program premium rules unless you enter verified Manual terms.",
+        "links": [
+          {
+            "id": "fha-loan",
+            "mode": "monthly",
+            "label": "Separate the upfront fee from recurring MIP"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "FHA purchase with 3.5% down and financed upfront MIP",
+        "mode": "monthly",
+        "values": {
+          "price": "300000",
+          "down": "3.5",
+          "down_unit": "Percent",
+          "years": "30",
+          "months": "0",
+          "rate": "6",
+          "appraised_value": "",
+          "mip_method": "Automatic",
+          "tax": "0",
+          "insurance": "0",
+          "hoa": "0",
+          "other": "0",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "dated": ""
+        },
+        "inputs": "Price $300,000; original appraisal at least the price; 3.5% down; 6%; 30 years; Automatic MIP; entered ownership costs and extra payments zero.",
+        "steps": [
+          "Base loan = 300,000 − 10,500 = 289,500.",
+          "Upfront MIP = 289,500 × 1.75% = 5,066.25; financed principal = 294,566.25.",
+          "Principal and interest = $1,766.07. The model applies 0.55% annual MIP for 30 years; the first mortgage-year installment is $131.95 monthly."
+        ],
+        "answer": "Initial loan payment including modeled MIP is $1,898.02; tax, home insurance and other ownership costs are excluded from this example.",
+        "expected": {
+          "label": "Monthly principal & interest",
+          "value": 1766.0734987977694,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "FHA purchase with 10% down",
+        "mode": "monthly",
+        "values": {
+          "price": "300000",
+          "down": "10",
+          "down_unit": "Percent",
+          "years": "30",
+          "months": "0",
+          "rate": "6",
+          "appraised_value": "",
+          "mip_method": "Automatic",
+          "tax": "0",
+          "insurance": "0",
+          "hoa": "0",
+          "other": "0",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "dated": ""
+        },
+        "inputs": "Same $300,000 purchase, 6% and 30-year term; increase down payment to 10%; other entered costs zero.",
+        "steps": [
+          "Base loan = 270,000; upfront MIP = 4,725; financed principal = 274,725.",
+          "Original LTV is 90%, so the modeled annual MIP rate is 0.50% and duration is 11 years.",
+          "Principal and interest = $1,647.12; first mortgage-year MIP = $111.87 monthly."
+        ],
+        "answer": "Initial loan payment including modeled MIP is $1,758.99 before ownership costs.",
+        "expected": {
+          "label": "Monthly principal & interest",
+          "value": 1647.115180225899,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "HUD: annual MIP duration for case numbers assigned from June 3, 2013",
+        "url": "https://www.hud.gov/sites/documents/13-04ml.pdf"
+      },
+      {
+        "title": "HUD: monthly MIP calculation and scheduled balances",
+        "url": "https://www.hud.gov/hud-partners/housing-premium-calculation"
+      }
+    ]
+  },
+  "va-mortgage": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-va-payment-funding-fee",
+        "queries": [
+          "va loan payment calculator",
+          "va home loan calculator"
+        ],
+        "question": "How does the VA funding fee affect my monthly payment?",
+        "answer": "Financing a nonexempt purchase funding fee increases principal and interest. In the illustrative $400,000 first-use purchase with no down payment, the 2.15% fee is $8,600. At 6% for 30 years, financing it raises monthly principal and interest from $2,398.20 to $2,449.76. Paying it at closing requires more cash upfront.",
+        "links": [
+          {
+            "id": "va-mortgage",
+            "mode": "monthly",
+            "label": "Finance the purchase funding fee",
+            "values": {
+              "price": "400000",
+              "down": "0",
+              "down_unit": "Percent",
+              "rate": "6",
+              "years": "30",
+              "months": "0",
+              "repeat": "No",
+              "exempt": "No",
+              "fee_treatment": "Finance fee",
+              "tax": "0",
+              "insurance": "0",
+              "hoa": "0",
+              "other": "0",
+              "extra_monthly": "0",
+              "extra_yearly": "0",
+              "extra_once": "0",
+              "dated": ""
+            }
+          },
+          {
+            "id": "va-mortgage",
+            "mode": "monthly",
+            "label": "Compare paying the fee at closing",
+            "values": {
+              "price": "400000",
+              "down": "0",
+              "down_unit": "Percent",
+              "rate": "6",
+              "years": "30",
+              "months": "0",
+              "repeat": "No",
+              "exempt": "No",
+              "fee_treatment": "Pay upfront",
+              "tax": "0",
+              "insurance": "0",
+              "hoa": "0",
+              "other": "0",
+              "extra_monthly": "0",
+              "extra_yearly": "0",
+              "extra_once": "0",
+              "dated": ""
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-va-no-pmi",
+        "queries": [
+          "do va loans have pmi",
+          "do va loans require mortgage insurance"
+        ],
+        "question": "Do VA loans have PMI or FHA mortgage insurance?",
+        "answer": "VA-backed purchase loans do not require conventional PMI or FHA MIP. A VA funding fee may still apply unless you qualify for an exemption. Property tax, homeowners insurance, HOA and other ownership costs remain separate from principal and interest; enter them to estimate the broader monthly expense.",
+        "links": [
+          {
+            "id": "va-mortgage",
+            "mode": "monthly",
+            "label": "Review the VA monthly cost breakdown"
+          }
+        ],
+        "replacesQuestion": "Is the mortgage payment the same as my total housing expense?"
+      },
+      {
+        "anchor": "use-va-down-payment-fee",
+        "queries": [
+          "do va loans require a down payment",
+          "va loan down payment"
+        ],
+        "question": "Can a down payment reduce the VA funding fee?",
+        "answer": "Yes. Under the purchase fee table effective April 7, 2023, nonexempt first use below 5% down uses 2.15%; subsequent use uses 3.3%. At least 5% down uses 1.5%, and at least 10% uses 1.25%. These are fee bands, not a determination of entitlement, appraisal sufficiency or lender approval.",
+        "links": [
+          {
+            "id": "va-mortgage",
+            "mode": "monthly",
+            "label": "Compare a 5% down payment",
+            "values": {
+              "price": "400000",
+              "down": "5",
+              "down_unit": "Percent",
+              "rate": "6",
+              "years": "30",
+              "months": "0",
+              "repeat": "No",
+              "exempt": "No",
+              "fee_treatment": "Finance fee",
+              "tax": "0",
+              "insurance": "0",
+              "hoa": "0",
+              "other": "0",
+              "extra_monthly": "0",
+              "extra_yearly": "0",
+              "extra_once": "0",
+              "dated": ""
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-va-fee-exemption",
+        "queries": [
+          "who is exempt from va loan funding fee",
+          "va loan funding fee exemption"
+        ],
+        "question": "How do I account for a VA funding-fee exemption?",
+        "answer": "Select Exempt only after confirming your status with VA and your lender. Qualifying service-connected disability and certain survivor or active-duty circumstances can exempt the fee. The calculator uses your selection; it does not verify a Certificate of Eligibility or determine a refund. It models ordinary purchase loans, not IRRRL or cash-out fee schedules.",
+        "links": [
+          {
+            "id": "va-mortgage",
+            "mode": "monthly",
+            "label": "Model a confirmed funding-fee exemption",
+            "values": {
+              "price": "400000",
+              "down": "0",
+              "down_unit": "Percent",
+              "rate": "6",
+              "years": "30",
+              "months": "0",
+              "repeat": "No",
+              "exempt": "Yes",
+              "fee_treatment": "Finance fee",
+              "tax": "0",
+              "insurance": "0",
+              "hoa": "0",
+              "other": "0",
+              "extra_monthly": "0",
+              "extra_yearly": "0",
+              "extra_once": "0",
+              "dated": ""
+            }
+          }
+        ],
+        "replacesQuestion": "Is a VA funding-fee exemption automatic?"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Finance the funding fee on a $400,000 VA purchase",
+        "mode": "monthly",
+        "values": {
+          "price": "400000",
+          "down": "0",
+          "down_unit": "Percent",
+          "rate": "6",
+          "years": "30",
+          "months": "0",
+          "repeat": "No",
+          "exempt": "No",
+          "fee_treatment": "Finance fee",
+          "tax": "0",
+          "insurance": "0",
+          "hoa": "0",
+          "other": "0",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "dated": ""
+        },
+        "inputs": "First use; not exempt; $400,000 price; zero down; fee financed; 6%; 30 years; entered ownership costs and extras zero.",
+        "steps": [
+          "Funding fee = 400,000 × 2.15% = 8,600.",
+          "Financed loan amount = 400,000 + 8,600 = 408,600.",
+          "Apply the fixed monthly amortization formula to $408,600 over 360 payments."
+        ],
+        "answer": "Monthly principal and interest are $2,449.76, excluding ownership costs.",
+        "expected": {
+          "label": "Monthly principal & interest",
+          "value": 2449.7634457741465,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Pay the same VA funding fee at closing",
+        "mode": "monthly",
+        "values": {
+          "price": "400000",
+          "down": "0",
+          "down_unit": "Percent",
+          "rate": "6",
+          "years": "30",
+          "months": "0",
+          "repeat": "No",
+          "exempt": "No",
+          "fee_treatment": "Pay upfront",
+          "tax": "0",
+          "insurance": "0",
+          "hoa": "0",
+          "other": "0",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "dated": ""
+        },
+        "inputs": "Keep the $400,000 first-use purchase, zero down, 6% and 30 years; pay the $8,600 fee at closing.",
+        "steps": [
+          "The fee stays $8,600 but is not added to principal.",
+          "Financed loan amount stays $400,000.",
+          "Monthly principal and interest are $2,398.20, $51.56 less than financing the fee."
+        ],
+        "answer": "Lower monthly payments require $8,600 more upfront for this fee; other closing costs remain separate.",
+        "expected": {
+          "label": "Monthly principal & interest",
+          "value": 2398.2021006110094,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "VA: purchase-loan eligibility, down payment and no PMI or MIP",
+        "url": "https://www.va.gov/housing-assistance/home-loans/loan-types/purchase-loan/"
+      }
+    ]
+  },
+  "pmi": {
+    "updatedOn": "2026-10-28",
+    "items": [
+      {
+        "anchor": "use-pmi-500k-house",
+        "queries": [
+          "how much is pmi on a 500k house",
+          "how much is pmi on 500k"
+        ],
+        "question": "How much is PMI on a $500,000 house?",
+        "answer": "The price alone is not enough: down payment and the lender’s premium quote matter. With 10% down, the loan is $450,000. An illustrative 0.50% annual quote gives $450,000 × 0.005 / 12 = $187.50 monthly PMI. Use My Quote for an actual annual rate; this is not a current lender offer.",
+        "links": [
+          {
+            "id": "pmi",
+            "mode": "quote",
+            "label": "Try $500,000 with 10% down and a 0.50% quote",
+            "values": {
+              "price": "500000",
+              "down": "10",
+              "appraisal": "",
+              "annual_pmi": "0.5",
+              "rate": "6",
+              "years": "30",
+              "first_due": "2026-11-01",
+              "extra": "0"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-pmi-credit-band",
+        "queries": [
+          "is pmi based on credit score",
+          "pmi rates based on credit score"
+        ],
+        "question": "Does credit score change the PMI estimate?",
+        "answer": "Yes. Estimate mode uses the selected credit band, original loan-to-value ratio and term with a published National MI base-rate card effective March 2022. It is an illustrative rate, not a live market quote or approval. For an actual lender offer, enter the quoted annual rate in My Quote instead.",
+        "links": [
+          {
+            "id": "pmi",
+            "mode": "estimate",
+            "label": "Compare an illustrative credit band",
+            "values": {
+              "credit": "740-759"
+            }
+          },
+          {
+            "id": "pmi",
+            "mode": "quote",
+            "label": "Use your lender’s quoted annual rate"
+          }
+        ]
+      },
+      {
+        "anchor": "use-pmi-20-percent-down",
+        "queries": [
+          "pmi 20 percent",
+          "pmi 20 down"
+        ],
+        "question": "Will putting 20% down eliminate conventional PMI?",
+        "answer": "On a conventional purchase, 20% down normally avoids PMI. This model uses the lower of price and original appraisal: a low appraisal can leave original LTV above 80% despite a down payment equal to 20% of the price. FHA MIP is different. For an existing loan, use cancellation rules rather than treating today’s equity as a new down payment.",
+        "links": [
+          {
+            "id": "pmi",
+            "mode": "quote",
+            "label": "Compare 20% down when appraisal equals price",
+            "values": {
+              "price": "500000",
+              "down": "20",
+              "appraisal": "",
+              "annual_pmi": "0.5",
+              "rate": "6",
+              "years": "30",
+              "first_due": "2026-11-01",
+              "extra": "0"
+            }
+          },
+          {
+            "id": "fha-loan",
+            "mode": "monthly",
+            "label": "Review separate FHA insurance rules"
+          }
+        ]
+      },
+      {
+        "anchor": "use-pmi-request-vs-automatic",
+        "queries": [
+          "when pmi stops",
+          "how to remove pmi in california"
+        ],
+        "question": "When can I request PMI removal, and when does it stop automatically?",
+        "answer": "For covered conventional loans, 80% of original value is a borrower-requested cancellation threshold, subject to written request and other conditions. Scheduled 78% and the month after the original term’s midpoint are separate automatic protections requiring current payments. This calculator distinguishes them; local or investor-specific appraisal rules need separate confirmation.",
+        "links": [
+          {
+            "id": "pmi",
+            "mode": "cancellation",
+            "label": "Check an existing loan’s cancellation benchmarks"
+          }
+        ],
+        "replacesQuestion": "Does PMI automatically stop at 80% LTV?"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Estimate PMI on a $500,000 home using a lender quote",
+        "mode": "quote",
+        "values": {
+          "price": "500000",
+          "down": "10",
+          "appraisal": "",
+          "annual_pmi": "0.5",
+          "rate": "6",
+          "years": "30",
+          "first_due": "2026-11-01",
+          "extra": "0"
+        },
+        "inputs": "Price and original value $500,000; 10% down; illustrative 0.50% annual PMI quote; 6%; 30 years.",
+        "steps": [
+          "Loan amount = 500,000 × 90% = 450,000.",
+          "Monthly quoted PMI = 450,000 × 0.50% / 12 = 187.50.",
+          "Principal and interest and any property tax or homeowners insurance are separate costs."
+        ],
+        "answer": "Initial monthly PMI is $187.50; the quoted annual premium is an assumption.",
+        "expected": {
+          "label": "Initial monthly PMI",
+          "value": 187.5,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Compare PMI with a 20% down payment",
+        "mode": "quote",
+        "values": {
+          "price": "500000",
+          "down": "20",
+          "appraisal": "",
+          "annual_pmi": "0.5",
+          "rate": "6",
+          "years": "30",
+          "first_due": "2026-11-01",
+          "extra": "0"
+        },
+        "inputs": "Same $500,000 purchase and appraisal; change down payment from 10% to 20%.",
+        "steps": [
+          "Loan amount = 500,000 × 80% = 400,000.",
+          "Original LTV = 400,000 / 500,000 = 80%.",
+          "The model therefore does not charge conventional PMI, even though the quote field still contains 0.50%."
+        ],
+        "answer": "Modeled monthly PMI is $0; other mortgage and ownership costs remain.",
+        "expected": {
+          "label": "Initial monthly PMI",
+          "value": 0.0,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: conventional PMI, down payments and payment options",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-private-mortgage-insurance-en-122/"
+      }
+    ]
   }
 }

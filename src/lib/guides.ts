@@ -664,18 +664,6 @@ relatedCalculatorIds.inflation = [...new Set([...(relatedCalculatorIds.inflation
 relatedCalculatorIds.margin = [...new Set([...(relatedCalculatorIds.margin??[]),"markup","break-even"])];
 relatedCalculatorIds["mutual-fund"] = [...new Set([...(relatedCalculatorIds["mutual-fund"]??[]),"investment-fee"])];
 
-// Enrich existing canonical guides and merge questions covering the same task.
-for (const [id, content] of Object.entries(longTailContent)) {
-  for (const {queries: _queries, replacesQuestion, ...item} of content.items) {
-    if (replacesQuestion) {
-      const index = guides[id].questions.findIndex(question => question.question === replacesQuestion);
-      if (index < 0) throw new Error(`Missing guide question to replace: ${id} / ${replacesQuestion}`);
-      guides[id].questions[index] = item;
-    } else guides[id].questions.push(item);
-  }
-  guides[id].checkedOn = content.updatedOn;
-}
-
 // Reviewed repairs to the shared U.S. tax rules.
 for (const id of ["income-tax", "take-home-paycheck", "marriage-tax"]) guides[id].checkedOn = "2026-10-25";
 
@@ -745,3 +733,16 @@ for(const [id,patch] of Object.entries(refresh as unknown as Record<string,{upda
  for(const source of patch.sources??[])if(!guide.sources.some(item=>item.url===source.url))guide.sources.push(source);
  guide.checkedOn=patch.updatedOn;
 }
+
+// Enrich existing canonical guides and merge questions covering the same task.
+for (const [id, content] of Object.entries(longTailContent)) {
+  for (const {queries: _queries, replacesQuestion, ...item} of content.items) {
+    if (replacesQuestion) {
+      const index = guides[id].questions.findIndex(question => question.question === replacesQuestion);
+      if (index < 0) throw new Error(`Missing guide question to replace: ${id} / ${replacesQuestion}`);
+      guides[id].questions[index] = item;
+    } else guides[id].questions.push(item);
+  }
+  guides[id].checkedOn = [guides[id].checkedOn ?? '', content.updatedOn].sort().at(-1);
+}
+
