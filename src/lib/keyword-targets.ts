@@ -117,3 +117,12 @@ studentMonthly.description='Estimate fixed monthly student loan payments and int
 searchTasks['student-loan']=[studentMonthly,...searchTasks['student-loan'].filter(task=>task!==studentMonthly)];
 searchTasks['personal-loan'][0].aliases=[...new Set([...(searchTasks['personal-loan'][0].aliases??[]),'Personal loan calculator','Personal loan payment calculator','Personal loan APR calculator'])];
 searchTasks['personal-loan'][0].description='Estimate monthly installments, fees, net proceeds and an illustrative cash-flow APR. Enter actual offer terms; approval and current lender rates are not determined.';
+
+// User-provided US equity borrowing research, reviewed 2026-10-28.
+keywordTitles['home-equity-loan']='Home Equity Loan Calculator - Payments, Fees & APR';
+searchTasks.heloc[0].keyword='HELOC payment calculator';
+searchTasks.heloc[0].description='Compare a modeled interest-only draw period with later amortizing repayment at one entered rate. Annual fees apply during draw only; actual rate resets and additional draws are not simulated.';
+searchTasks.heloc[0].aliases=[...new Set([...(searchTasks.heloc[0].aliases??[]),'HELOC calculator','HELOC repayment calculator'])];
+searchTasks.heloc.push({keyword:'HELOC borrowing limit calculator',mode:'maximum-credit',description:'Estimate potential additional credit from home value, existing mortgage and an entered combined-LTV ceiling. This does not determine lender approval.',aliases:['How much HELOC can I get','HELOC credit limit calculator']});
+searchTasks['home-equity-loan'][0].aliases=[...new Set([...(searchTasks['home-equity-loan'][0].aliases??[]),'Home equity loan payment calculator'])];
+searchTasks['home-equity-loan'][0].description='Estimate fixed home equity loan payments, closing-cost treatment and an illustrative cash-flow APR. Existing mortgage and ownership costs are separate.';

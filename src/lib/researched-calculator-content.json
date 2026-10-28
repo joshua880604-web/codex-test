@@ -2613,5 +2613,562 @@
         "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-loan-interest-rate-and-the-apr-en-733/"
       }
     ]
+  },
+  "heloc": {
+    "updatedOn": "2026-10-28",
+    "summary": "Compare an interest-only HELOC draw payment with the later amortizing repayment, or estimate equity-based borrowing capacity. Use the outstanding amount actually borrowed for payment calculations; a credit limit is not the same as the drawn balance.",
+    "scope": "The full entered balance is outstanding from the start, remains constant through draw and is repaid after draw at one fixed entered rate. Additional draws, principal payments during draw, dated rate resets, daily accrual, balloons and lender minimum-payment formulas are not simulated. Annual maintenance fees apply only during draw, averaged monthly with partial years prorated. Closing costs are paid upfront or deducted, not added to principal. Modeled cash-flow APR includes entered fees and is not the disclosed open-end HELOC APR. Maximum Credit uses your home value, existing mortgage and chosen combined-LTV ceiling; approval, other liens, changing appraisals, taxes and deductibility are not determined.",
+    "items": [
+      {
+        "anchor": "use-heloc-payment-example",
+        "queries": [
+          "heloc payment calculator",
+          "heloc repayment calculator"
+        ],
+        "question": "What are the payments on a $60,000 HELOC in this model?",
+        "answer": "At an illustrative 8% rate, a $60,000 balance has $400 monthly interest during draw. An entered $75 annual draw fee adds $6.25 as an average monthly allocation, for $406.25. Repaying the unchanged balance over 15 years then requires $573.39 per month, with no annual-fee allocation in repayment. The example uses five draw years and $1,500 upfront closing costs.",
+        "links": [
+          {
+            "id": "heloc",
+            "mode": "draw-repay",
+            "label": "Try the $60,000 draw-and-repayment example",
+            "values": {
+              "principal": "60000",
+              "rate": "8",
+              "draw": "5",
+              "years": "15",
+              "closing": "1500",
+              "closing_unit": "Dollars",
+              "closing_treatment": "Upfront",
+              "charge": "75"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-heloc-rate-sensitivity",
+        "queries": [
+          "heloc payment calculator interest rate",
+          "heloc interest only payment calculator"
+        ],
+        "question": "How would a higher interest rate change these HELOC payments?",
+        "answer": "Re-running the same $60,000 example at 10% changes the average draw payment from $406.25 to $506.25 and the 15-year repayment from $573.39 to $644.76. These are two separate constant-rate scenarios. They do not simulate an 8%-to-10% reset partway through one loan, or predict a lender’s index, margin, caps or future rates.",
+        "links": [
+          {
+            "id": "heloc",
+            "mode": "draw-repay",
+            "label": "Compare the 8% scenario",
+            "values": {
+              "principal": "60000",
+              "rate": "8",
+              "draw": "5",
+              "years": "15",
+              "closing": "1500",
+              "closing_unit": "Dollars",
+              "closing_treatment": "Upfront",
+              "charge": "75"
+            }
+          },
+          {
+            "id": "heloc",
+            "mode": "draw-repay",
+            "label": "Compare a separate 10% scenario",
+            "values": {
+              "principal": "60000",
+              "rate": "10",
+              "draw": "5",
+              "years": "15",
+              "closing": "1500",
+              "closing_unit": "Dollars",
+              "closing_treatment": "Upfront",
+              "charge": "75"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-heloc-equity-vs-cltv",
+        "queries": [
+          "how much heloc can i get",
+          "heloc borrowing limit calculator"
+        ],
+        "question": "Does an 80% combined-LTV limit mean I can borrow 80% of my equity?",
+        "answer": "No. In Maximum Credit, the entered percentage applies to the full home value before subtracting the entered mortgage. A $500,000 value, $300,000 mortgage and illustrative 80% combined-LTV ceiling give $400,000 total secured debt capacity, leaving $100,000 potential additional credit. The 80% input is an assumption, not a universal lender rule or approval.",
+        "links": [
+          {
+            "id": "heloc",
+            "mode": "maximum-credit",
+            "label": "Try the $100,000 capacity example",
+            "values": {
+              "value": "500000",
+              "mortgage": "300000",
+              "ltv": "80"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-heloc-annual-fee",
+        "queries": [
+          "heloc annual fee",
+          "heloc fees"
+        ],
+        "question": "How does the annual HELOC fee affect the estimated payments?",
+        "answer": "The entered yearly fee is spread over draw months only. At $75 per year for a five-year draw, that is $6.25 per modeled draw month and $375 total. Actual lenders may bill annually or charge during other periods. Check your agreement: this model stops the annual fee when repayment begins and does not infer a lender’s actual fee policy.",
+        "links": [
+          {
+            "id": "heloc",
+            "mode": "draw-repay",
+            "label": "Review a $75 annual draw fee",
+            "values": {
+              "principal": "60000",
+              "rate": "8",
+              "draw": "5",
+              "years": "15",
+              "closing": "1500",
+              "closing_unit": "Dollars",
+              "closing_treatment": "Upfront",
+              "charge": "75"
+            }
+          }
+        ],
+        "replacesQuestion": "When is the HELOC annual fee charged?"
+      },
+      {
+        "anchor": "use-heloc-closing-cash",
+        "queries": [
+          "heloc closing costs",
+          "heloc closing cost calculator"
+        ],
+        "question": "Do upfront or deducted HELOC closing costs change the loan balance?",
+        "answer": "Not in this model. With $60,000 outstanding and $1,500 closing costs, Upfront disburses $60,000 and requires $1,500 outside cash; Deducted from loan disburses $58,500. Both leave $60,000 to repay and $58,500 economic net proceeds for the cash-flow APR. This HELOC form does not finance costs on top of principal.",
+        "links": [
+          {
+            "id": "heloc",
+            "mode": "draw-repay",
+            "label": "Pay closing costs from outside cash",
+            "values": {
+              "principal": "60000",
+              "rate": "8",
+              "draw": "5",
+              "years": "15",
+              "closing": "1500",
+              "closing_unit": "Dollars",
+              "closing_treatment": "Upfront",
+              "charge": "75"
+            }
+          },
+          {
+            "id": "heloc",
+            "mode": "draw-repay",
+            "label": "Compare costs deducted from the advance",
+            "values": {
+              "principal": "60000",
+              "rate": "8",
+              "draw": "5",
+              "years": "15",
+              "closing": "1500",
+              "closing_unit": "Dollars",
+              "closing_treatment": "Deducted from loan",
+              "charge": "75"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-heloc-compare-equity-loan",
+        "queries": [
+          "heloc vs home equity loan",
+          "home equity loan vs heloc"
+        ],
+        "question": "How should I compare HELOC and home equity loan payments?",
+        "answer": "A home equity loan usually provides a lump sum and often has a fixed rate; a HELOC is revolving credit and usually has a variable rate. An interest-only draw payment leaves the principal outstanding. Compare the repayment phase, total horizon, cash received and fees as well as the initial payment. The two calculators use your assumptions and do not choose a product for you.",
+        "links": [
+          {
+            "id": "home-equity-loan",
+            "mode": "loan",
+            "label": "Review a fixed-rate lump-sum illustration",
+            "values": {
+              "principal": "60000",
+              "years": "15",
+              "months": "0",
+              "rate": "8",
+              "closing": "1500",
+              "treatment": "Paid upfront"
+            }
+          },
+          {
+            "id": "heloc",
+            "mode": "draw-repay",
+            "label": "Review the modeled HELOC phases",
+            "values": {
+              "principal": "60000",
+              "rate": "8",
+              "draw": "5",
+              "years": "15",
+              "closing": "1500",
+              "closing_unit": "Dollars",
+              "closing_treatment": "Upfront",
+              "charge": "75"
+            }
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Compare the two phases of a $60,000 HELOC",
+        "mode": "draw-repay",
+        "values": {
+          "principal": "60000",
+          "rate": "8",
+          "draw": "5",
+          "years": "15",
+          "closing": "1500",
+          "closing_unit": "Dollars",
+          "closing_treatment": "Upfront",
+          "charge": "75"
+        },
+        "inputs": "Balance $60,000; 8% annual rate throughout; five-year draw; 15-year repayment; $1,500 closing costs paid upfront; $75 annual draw fee.",
+        "steps": [
+          "Monthly interest during draw = 60,000 × 8% / 12 = 400.",
+          "Allocate annual fee = 75 / 12 = 6.25; average draw payment = 406.25.",
+          "After draw, amortize the same $60,000 over 180 months at 8%; the model stops the annual fee."
+        ],
+        "answer": "Average monthly draw payment is $406.25; monthly repayment is $573.39. Annual billing dates and actual variable-rate terms can differ.",
+        "expected": {
+          "label": "Monthly repayment",
+          "value": 573.3912505982108,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Stress-test the same HELOC at a constant 10% rate",
+        "mode": "draw-repay",
+        "values": {
+          "principal": "60000",
+          "rate": "10",
+          "draw": "5",
+          "years": "15",
+          "closing": "1500",
+          "closing_unit": "Dollars",
+          "closing_treatment": "Upfront",
+          "charge": "75"
+        },
+        "inputs": "Keep the $60,000 balance, five-year draw, 15-year repayment and fees; use 10% for the whole scenario.",
+        "steps": [
+          "Monthly draw interest = 60,000 × 10% / 12 = 500.",
+          "Add $6.25 average monthly fee during draw for $506.25.",
+          "Amortize $60,000 over 180 months at the new constant monthly rate."
+        ],
+        "answer": "Monthly repayment becomes $644.76. This is a separate scenario, not a dated rate-reset schedule.",
+        "expected": {
+          "label": "Monthly repayment",
+          "value": 644.7630706248697,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Estimate additional credit under an assumed 80% combined LTV",
+        "mode": "maximum-credit",
+        "values": {
+          "value": "500000",
+          "mortgage": "300000",
+          "ltv": "80"
+        },
+        "inputs": "Home value $500,000; outstanding mortgage $300,000; entered maximum combined LTV 80%.",
+        "steps": [
+          "Maximum total secured debt = 500,000 × 80% = 400,000.",
+          "Subtract the entered mortgage: 400,000 − 300,000 = 100,000.",
+          "Income, credit, other liens, appraisal decisions and lender rules require separate review."
+        ],
+        "answer": "Estimated additional HELOC capacity is $100,000; this is not an approval or a required borrowing amount.",
+        "expected": {
+          "label": "Estimated maximum HELOC",
+          "value": 100000,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: HELOC draws, repayment and variable rates",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-107/"
+      },
+      {
+        "title": "CFPB: home equity loan versus revolving HELOC",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-home-equity-loan-and-a-home-equity-line-of-credit-heloc-en-247/"
+      },
+      {
+        "title": "FTC: home equity borrowing costs, eligibility and HELOC APR conventions",
+        "url": "https://consumer.ftc.gov/articles/home-equity-loans-and-home-equity-lines-credit"
+      },
+      {
+        "title": "CFPB: HELOC offer comparison, variable-rate terms and fees",
+        "url": "https://files.consumerfinance.gov/f/documents/cfpb_heloc-brochure.pdf"
+      }
+    ]
+  },
+  "home-equity-loan": {
+    "updatedOn": "2026-10-28",
+    "summary": "Estimate fixed home equity loan installments, interest, net proceeds and a fee-adjusted nominal APR illustration. Compare closing costs paid upfront, deducted from proceeds or financed into the balance; this is a lump-sum loan model rather than revolving credit.",
+    "scope": "Fixed-rate monthly amortization with all entered closing costs treated as time-zero charges. This is not lender approval or a regulatory APR disclosure. Property appraisal, lien priority, debt qualification, tax deductions, variable rates, balloons, dated daily interest and unentered fees are outside the model. This form has no extra-payment mode. Your existing mortgage, property taxes, homeowners insurance and HOA charges are not added to its payment. Paid upfront and Deducted from proceeds have the same economic net proceeds for this cash-flow calculation, although actual cash deposited and separate fee payments differ.",
+    "items": [
+      {
+        "anchor": "use-equity-monthly-payment",
+        "queries": [
+          "home equity loan payment calculator",
+          "home equity loan monthly payment calculator"
+        ],
+        "question": "What is the monthly payment on a $60,000 home equity loan?",
+        "answer": "At an illustrative fixed 8% annual rate over 15 years, a $60,000 loan with no closing costs has a monthly payment of $573.39. Modeled interest totals $43,210.43 over 180 payments. This is the new loan’s principal and interest only; it is not a lender quote or your total housing payment.",
+        "links": [
+          {
+            "id": "home-equity-loan",
+            "mode": "loan",
+            "label": "Try $60,000 at 8% for 15 years",
+            "values": {
+              "principal": "60000",
+              "years": "15",
+              "months": "0",
+              "rate": "8",
+              "closing": "0",
+              "treatment": "Paid upfront"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-equity-closing-treatment",
+        "queries": [
+          "home equity loan closing costs",
+          "home equity loan calculator with closing costs"
+        ],
+        "question": "How do upfront and financed closing costs change the payment?",
+        "answer": "On the same $60,000 loan, paying $1,500 upfront leaves principal at $60,000 and monthly payment at $573.39. Financing the cost raises principal to $61,500 and payment to $587.73. Paid upfront shows $58,500 economic net proceeds; Financed shows $60,000. The cash received, outside cash required and total interest must be compared together.",
+        "links": [
+          {
+            "id": "home-equity-loan",
+            "mode": "loan",
+            "label": "Compare $1,500 paid upfront",
+            "values": {
+              "principal": "60000",
+              "years": "15",
+              "months": "0",
+              "rate": "8",
+              "closing": "1500",
+              "treatment": "Paid upfront"
+            }
+          },
+          {
+            "id": "home-equity-loan",
+            "mode": "loan",
+            "label": "Compare $1,500 financed",
+            "values": {
+              "principal": "60000",
+              "years": "15",
+              "months": "0",
+              "rate": "8",
+              "closing": "1500",
+              "treatment": "Financed"
+            }
+          }
+        ],
+        "replacesQuestion": "Does paying closing costs upfront lower the installment?"
+      },
+      {
+        "anchor": "use-equity-apr-comparison",
+        "queries": [
+          "home equity loan interest calculator",
+          "home equity loan apr calculator"
+        ],
+        "question": "Is this loan APR directly comparable with a HELOC headline APR?",
+        "answer": "Use caution. This tool’s cash-flow APR includes entered closing costs, while a disclosed HELOC APR is generally based on interest alone. The HELOC tool separately calculates an illustrative fee-inclusive cash-flow measure. Compare actual lender disclosures, fees, payment phases and rate terms. Neither calculator determines how each charge must be classified for a regulatory disclosure.",
+        "links": [
+          {
+            "id": "home-equity-loan",
+            "mode": "loan",
+            "label": "Review closing costs in the modeled loan APR",
+            "values": {
+              "principal": "60000",
+              "years": "15",
+              "months": "0",
+              "rate": "8",
+              "closing": "1500",
+              "treatment": "Paid upfront"
+            }
+          },
+          {
+            "id": "heloc",
+            "mode": "draw-repay",
+            "label": "Review the separate HELOC cash-flow assumptions",
+            "values": {
+              "principal": "60000",
+              "rate": "8",
+              "draw": "5",
+              "years": "15",
+              "closing": "1500",
+              "closing_unit": "Dollars",
+              "closing_treatment": "Upfront",
+              "charge": "75"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-equity-early-payoff",
+        "queries": [
+          "home equity loan payoff calculator",
+          "home equity loan extra payment calculator"
+        ],
+        "question": "Can I compare extra payments on an existing home equity loan?",
+        "answer": "This page models the regular installment schedule. For an existing fixed-rate loan, use Loan Repayment Calculator with your current balance, contractual payment and planned extra principal. That separate calculation excludes closing-cost refunds and any early-termination or prepayment charges. Check the actual agreement before interpreting reduced interest as a net saving.",
+        "links": [
+          {
+            "id": "repayment",
+            "mode": "extra-payments",
+            "label": "Compare extra principal on a fixed-rate balance"
+          }
+        ]
+      },
+      {
+        "anchor": "use-equity-borrowing-eligibility",
+        "queries": [
+          "how much home equity loan can i get",
+          "home equity loan borrowing calculator"
+        ],
+        "question": "Does entering a loan amount show how much I can qualify for?",
+        "answer": "No. This form estimates repayment for an amount you choose; it does not evaluate credit, income, property eligibility or the lender’s combined-LTV limit. The HELOC tool’s Maximum Credit mode can illustrate home-value capacity using a ceiling you enter, but that result also is not an approval or a universal home equity loan limit.",
+        "links": [
+          {
+            "id": "heloc",
+            "mode": "maximum-credit",
+            "label": "Explore equity-based capacity assumptions",
+            "values": {
+              "value": "500000",
+              "mortgage": "300000",
+              "ltv": "80"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-equity-total-housing-cost",
+        "queries": [
+          "home equity loan monthly payment calculator",
+          "home equity loan second mortgage payment"
+        ],
+        "question": "Does this payment include my existing mortgage and ownership costs?",
+        "answer": "No. The result covers this new installment loan only. Add your existing mortgage payment, property taxes, homeowners insurance, HOA and other ownership costs separately when planning your budget. A home equity loan is secured by your home; a manageable new-loan installment alone does not establish affordability of all obligations.",
+        "links": [
+          {
+            "id": "home-equity-loan",
+            "mode": "loan",
+            "label": "Review the new loan’s payment only",
+            "values": {
+              "principal": "60000",
+              "years": "15",
+              "months": "0",
+              "rate": "8",
+              "closing": "0",
+              "treatment": "Paid upfront"
+            }
+          },
+          {
+            "id": "debt-to-income-ratio",
+            "mode": "ratio",
+            "label": "Review entered debt-to-income assumptions"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "title": "Estimate a $60,000 fixed home equity loan without closing costs",
+        "mode": "loan",
+        "values": {
+          "principal": "60000",
+          "years": "15",
+          "months": "0",
+          "rate": "8",
+          "closing": "0",
+          "treatment": "Paid upfront"
+        },
+        "inputs": "Principal $60,000; fixed annual rate 8%; 15 years; no additional months; closing costs zero.",
+        "steps": [
+          "Monthly rate = 0.08 / 12; number of payments = 15 × 12 = 180.",
+          "Payment = 60,000 × monthly rate / (1 − (1 + monthly rate)^(−180)).",
+          "Total interest = sum of scheduled payments − 60,000."
+        ],
+        "answer": "Monthly payment is $573.39 and modeled total interest is $43,210.43, before other housing obligations.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 573.3912505982108,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Pay $1,500 closing costs upfront on the same loan",
+        "mode": "loan",
+        "values": {
+          "principal": "60000",
+          "years": "15",
+          "months": "0",
+          "rate": "8",
+          "closing": "1500",
+          "treatment": "Paid upfront"
+        },
+        "inputs": "Same $60,000 principal, 8% rate and 15-year term; $1,500 closing costs paid upfront.",
+        "steps": [
+          "Principal and scheduled monthly payment stay at $60,000 and $573.39.",
+          "Economic net proceeds = 60,000 − 1,500 = 58,500.",
+          "Discount the payment stream against that net amount to calculate a fee-adjusted nominal APR."
+        ],
+        "answer": "Modeled nominal APR is about 8.42%; the installment is unchanged because costs are not financed.",
+        "expected": {
+          "label": "Nominal APR",
+          "value": 8.421713060882308,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "Finance $1,500 closing costs into the home equity loan",
+        "mode": "loan",
+        "values": {
+          "principal": "60000",
+          "years": "15",
+          "months": "0",
+          "rate": "8",
+          "closing": "1500",
+          "treatment": "Financed"
+        },
+        "inputs": "Same $60,000 base amount, 8% rate and 15-year term; $1,500 costs financed.",
+        "steps": [
+          "Financed principal = 60,000 + 1,500 = 61,500.",
+          "Net cash available is $60,000 before any unentered charges.",
+          "Amortizing $61,500 over 180 months raises monthly payment to $587.73."
+        ],
+        "answer": "Modeled interest is $44,290.69. Compare cash received and fees as well as monthly payment; the modeled nominal APR is about 8.41%.",
+        "expected": {
+          "label": "Payment per period",
+          "value": 587.7260318631661,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: home equity lump-sum loans and costs",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-loan-en-106/"
+      },
+      {
+        "title": "CFPB: existing first mortgage and home equity borrowing",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-home-equity-loan-and-a-home-equity-line-of-credit-heloc-en-247/"
+      },
+      {
+        "title": "FTC: home equity loan and HELOC costs and APR distinctions",
+        "url": "https://consumer.ftc.gov/articles/home-equity-loans-and-home-equity-lines-credit"
+      }
+    ]
   }
 }
