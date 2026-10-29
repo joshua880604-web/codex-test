@@ -2,7 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
-  "debt-snowball", "debt-avalanche",
+  "brrrr", "debt-snowball", "debt-avalanche",
   "rmd", "self-employment-tax", "hsa", "noi", "fire", "mirr", "fat-fire", "lean-fire",
   "coast-fire", "barista-fire",
   "roas", "landed-cost", "quick-ratio", "current-ratio",
@@ -17,10 +17,11 @@ export const workspaceIds = [
 export function hasCalculatorWorkspace(id: string): boolean { return (workspaceIds as readonly string[]).includes(id); }
 export function workspaceLayout(id: string, mode: string): "split" | "stacked" | null {
   if (!hasCalculatorWorkspace(id)) return null;
-  return (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
+  return id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
 }
 
 const priorities: Record<string, string[]> = {
+  brrrr:['Cash remaining in deal (signed)','Net refinance cash to you (signed)','Monthly cash flow after reserve','Post-refinance cash-on-cash return'],
   'barista-fire':['Required portfolio at part-time start','Projected portfolio at part-time start','Shortfall at part-time start','Modeled plan status','Unfunded bridge spending'],
   rmd:['Annual RMD','Remaining RMD for selected year','Monthly budgeting equivalent of annual RMD','Distribution period','Required starting age'],
   'credit-card:minimum':['Initial modeled minimum payment','Initial payment including extra','Months to repay','Total interest','Total payments'],

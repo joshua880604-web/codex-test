@@ -5,6 +5,7 @@ export function calculatorScope(id: string, mode: string, values: Values): strin
   switch (id) {
     case "debt-snowball":
     case "debt-avalanche": return "Fixed-APR monthly debt projection. Total budget includes all minimums. Compare both methods with the same rollover and one-time payment assumptions; actual statements may use daily interest and changing minimum rules.";
+    case "brrrr": return "One USD rental deal: cash-funded rehab, a fully drawn interest-only acquisition loan and one fixed-rate refinance. Includes reserves separately from NOI. No lender qualification, tax calculation, sale forecast or repeated deals.";
     case "noi": return "Property-level NOI before financing, capital expenditure or replacement reserves, depreciation and owner income tax. Enter all money in one selected reporting period; no appraisal or lender-specific underwriting is inferred.";
     case "barista-fire": return "Today’s USD; dated part-time income and monthly portfolio withdrawals bridge to a full-retirement sizing target. No lifetime withdrawal simulation, safe-rate guarantee, automatic benefits or tax calculation.";
     case "fat-fire":

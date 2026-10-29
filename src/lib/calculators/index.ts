@@ -1,3 +1,4 @@
+import {brrrrCalculator} from './brrrr';
 import {baristaFireCalculator} from './barista-fire';
 import {selfEmploymentTaxCalculator} from './self-employment-tax';
 import {hsaCalculator} from './hsa';
@@ -22,7 +23,7 @@ import { everydayCalculators } from "./everyday";
 import { otherCalculators } from "./other";
 import { defaults, type Calculator, type Values, type Result } from "../types";
 export const calculators: Calculator[] = [
-  baristaFireCalculator,selfEmploymentTaxCalculator,hsaCalculator,debtSnowball,debtAvalanche,leanFireCalculator,fatFireCalculator,noiCalculator,fireCalculator,mirrCalculator,
+  brrrrCalculator,baristaFireCalculator,selfEmploymentTaxCalculator,hsaCalculator,debtSnowball,debtAvalanche,leanFireCalculator,fatFireCalculator,noiCalculator,fireCalculator,mirrCalculator,
   coastFire,
   ...businessTools,
   ...evergreenCalculators,

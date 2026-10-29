@@ -1,0 +1,242 @@
+{
+  "brrrr": {
+    "updatedOn": "2026-10-29",
+    "summary": "A BRRRR deal ties together purchase funding, renovation, rental operations and refinancing. This free calculator separates total project cost from the cash you supply, pays off the acquisition loan before calculating cash returned, and reconciles the money left in the property. It also shows stabilized cash flow and how a lower ARV or different refinance rate changes the result.",
+    "scope": "One property in USD. Rehab and closing costs are cash-funded. Acquisition debt is fully advanced at purchase, interest-only, with unchanged principal repaid at refinance; interest and points are paid in cash. No rent during the hold, amortizing acquisition payments, staged renovation draws or capitalized interest. Refinance is a fixed-rate amortizing loan sized from entered ARV and LTV, with fees deducted once from proceeds. Rental values describe an unchanged stabilized month. Operating expenses exclude financing and the separately entered capital reserve. No tax, appraisal, qualification, lender-specific DSCR, resale, multi-property cycle or loan-approval forecast.",
+    "sources": [
+      {
+        "title": "InvestFourMore: BRRRR strategy and cash recovery concept",
+        "url": "https://investfourmore.com/brrrr-calculator/"
+      },
+      {
+        "title": "Freddie Mac: understanding refinancing costs",
+        "url": "https://myhome.freddiemac.com/refinancing/costs-of-refinancing"
+      },
+      {
+        "title": "Fannie Mae: cash-out refinance eligibility and transaction limits",
+        "url": "https://selling-guide.fanniemae.com/sel/b2-1.3-03/cash-out-refinance-transactions"
+      },
+      {
+        "title": "CFPB: closing disclosure, loan costs and cash to close",
+        "url": "https://www.consumerfinance.gov/owning-a-home/closing-disclosure/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Reconcile cash invested with refinance proceeds",
+        "mode": "deal",
+        "values": {
+          "price": 150000,
+          "closing": 5000,
+          "rehab": 30000,
+          "contingency": 0,
+          "loan": 100000,
+          "loan_rate": 0,
+          "points": 0,
+          "months": 6,
+          "holding": 500,
+          "arv": 240000,
+          "ltv": 75,
+          "refi_costs": 4000,
+          "refi_rate": 0,
+          "years": 30,
+          "rent": 2000,
+          "vacancy": 5,
+          "other_income": 0,
+          "operating": 600,
+          "reserve": 100
+        },
+        "inputs": "Purchase $150,000; acquisition loan $100,000; closing $5,000; rehab $30,000; six months of $500 holding costs. Both loan rates are 0% for this arithmetic example. ARV $240,000, LTV 75%, refinance costs $4,000 and 30-year repayment.",
+        "steps": [
+          "All-in pre-refinance cost = $150,000 + $5,000 + $30,000 + $3,000 = $188,000. Subtract $100,000 acquisition funding: your cash is $88,000.",
+          "New loan = $240,000 × 75% = $180,000. Pay off $100,000 and deduct $4,000 fees: net cash received is $76,000.",
+          "Cash remaining = $88,000 − $76,000 = $12,000. Refinance costs have been counted once."
+        ],
+        "answer": "The model leaves $12,000 of your cash in the property. A zero-rate refinance payment of $500/month and the entered rental budget produce $700/month after reserve.",
+        "expected": {
+          "label": "Cash remaining in deal (signed)",
+          "value": 12000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Cash returned above the original investment",
+        "mode": "deal",
+        "values": {
+          "price": 150000,
+          "closing": 5000,
+          "rehab": 30000,
+          "contingency": 0,
+          "loan": 100000,
+          "loan_rate": 0,
+          "points": 0,
+          "months": 6,
+          "holding": 500,
+          "arv": 300000,
+          "ltv": 75,
+          "refi_costs": 4000,
+          "refi_rate": 0,
+          "years": 30,
+          "rent": 2000,
+          "vacancy": 5,
+          "other_income": 0,
+          "operating": 600,
+          "reserve": 100
+        },
+        "inputs": "Same example, but ARV $300,000 at 75% LTV.",
+        "steps": [
+          "New loan = $225,000. After the $100,000 payoff and $4,000 fees, net proceeds are $121,000.",
+          "Original cash invested was $88,000. Signed cash remaining = $88,000 − $121,000 = −$33,000.",
+          "The $225,000 loan is still owed. Zero-rate monthly debt service becomes $625; cash flow after reserve becomes $575."
+        ],
+        "answer": "You receive $33,000 above prior cash invested. Cash-on-cash return is not applicable because no positive cash remains; this is not an infinite or risk-free return.",
+        "expected": {
+          "label": "Cash remaining in deal (signed)",
+          "value": -33000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-brrrr-meaning",
+        "queries": [
+          "what is brrrr",
+          "brrrr method calculator"
+        ],
+        "question": "What does BRRRR mean in real estate?",
+        "answer": "BRRRR stands for Buy, Rehab, Rent, Refinance, Repeat. An investor improves and rents a property, then seeks a new loan that may return some invested cash. This tool evaluates one property and one refinance. Borrowed proceeds are not profit, and the ability to repeat depends on cash, lending terms and the next property.",
+        "links": [
+          {
+            "id": "brrrr",
+            "mode": "deal",
+            "label": "Run your BRRRR deal"
+          }
+        ]
+      },
+      {
+        "anchor": "use-brrrr-cash-left",
+        "queries": [
+          "how to calculate brrrr",
+          "brrrr refinance calculator"
+        ],
+        "question": "How is cash left in a BRRRR deal calculated?",
+        "answer": "Subtract net refinance cash from the cash you invested before refinance. Net refinance cash is the new loan minus the acquisition principal payoff and refinance fees. A negative result means you received more cash than you previously invested, not that the property has no debt.",
+        "links": [
+          {
+            "id": "brrrr",
+            "mode": "deal",
+            "label": "Run your BRRRR deal"
+          }
+        ]
+      },
+      {
+        "anchor": "use-brrrr-fees",
+        "queries": [
+          "brrrr calculator costs"
+        ],
+        "question": "Are refinance fees counted twice?",
+        "answer": "No. Acquisition costs, renovation, holding costs and acquisition interest and points determine pre-refinance cash invested. Refinance fees are then deducted once from the new loan proceeds. Do not put the same charge into purchase closing costs, holding costs and refinance costs.",
+        "links": [
+          {
+            "id": "brrrr",
+            "mode": "deal",
+            "label": "Run your BRRRR deal"
+          }
+        ]
+      },
+      {
+        "anchor": "use-brrrr-cash-purchase",
+        "queries": [
+          "brrrr calculator cash purchase"
+        ],
+        "question": "Can I calculate a cash purchase or an interest-only acquisition loan?",
+        "answer": "Yes. Set acquisition principal to zero for a cash purchase. Otherwise, the calculator assumes the loan is fully advanced at purchase, charges simple monthly interest paid in cash and keeps principal unchanged until refinance. It does not model renovation loan draws, amortizing acquisition payments, capitalized interest or prepayment penalties.",
+        "links": [
+          {
+            "id": "brrrr",
+            "mode": "deal",
+            "label": "Run your BRRRR deal"
+          }
+        ]
+      },
+      {
+        "anchor": "use-brrrr-roi",
+        "queries": [
+          "how to calculate roi on a brrrr"
+        ],
+        "question": "How do I calculate cash-on-cash return after a BRRRR refinance?",
+        "answer": "Divide stabilized annual cash flow after the capital replacement reserve and refinance debt service by positive cash remaining in the deal. This is a cash-yield measure, not total project ROI or an annualized gain over the rehab period. When cash remaining is negative or rounds to zero at cent precision, the ratio is not applicable; the calculator never labels it an infinite return.",
+        "links": [
+          {
+            "id": "brrrr",
+            "mode": "deal",
+            "label": "Run your BRRRR deal"
+          }
+        ]
+      },
+      {
+        "anchor": "use-brrrr-ltv",
+        "queries": [
+          "brrrr loan to value"
+        ],
+        "question": "Can I assume every BRRRR property will refinance at 75% LTV?",
+        "answer": "No. The LTV input sizes a hypothetical loan from your ARV assumption. Appraisal, seasoning, loan purpose, documented investment, lender rules and cash-out limits can change or prevent refinancing. The tool does not apply a lender’s underwriting or determine eligibility. Test a lower ARV and LTV as well as a higher rate.",
+        "links": [
+          {
+            "id": "brrrr",
+            "mode": "deal",
+            "label": "Run your BRRRR deal"
+          }
+        ]
+      },
+      {
+        "anchor": "use-brrrr-cash-in",
+        "queries": [
+          "brrrr cash out refinance"
+        ],
+        "question": "What if the new loan does not cover the old debt and fees?",
+        "answer": "Net refinance cash becomes negative and the calculator shows additional cash due at closing. That amount increases the signed cash remaining in the deal. Cash is not treated as recovered when you need to bring more money to the refinance.",
+        "links": [
+          {
+            "id": "brrrr",
+            "mode": "deal",
+            "label": "Run your BRRRR deal"
+          }
+        ]
+      },
+      {
+        "anchor": "use-brrrr-noi",
+        "queries": [
+          "brrrr rental cash flow"
+        ],
+        "question": "How do NOI, reserves and cash flow differ?",
+        "answer": "NOI subtracts operating expenses from rent after vacancy and other net income. The cash-flow estimate then subtracts the separately entered capital replacement reserve and monthly refinance principal and interest. Owner income tax, depreciation, appreciation and sale proceeds are not included. NOI/P&I coverage is labeled separately and does not establish a lender-specific DSCR.",
+        "links": [
+          {
+            "id": "brrrr",
+            "mode": "deal",
+            "label": "Run your BRRRR deal"
+          }
+        ]
+      },
+      {
+        "anchor": "use-brrrr-spreadsheet",
+        "queries": [
+          "brrrr calculator spreadsheet",
+          "brrrr calculator excel download",
+          "free brrrr calculator spreadsheet"
+        ],
+        "question": "Can I export my BRRRR calculation to a spreadsheet?",
+        "answer": "Yes. Download CSV for the pre-refinance funding breakdown, refinance reconciliation, monthly cash flow or ARV and rate comparisons. CSV files open in Excel and Google Sheets as values; they are not an Excel workbook with editable calculation formulas. Change inputs here and calculate again to update the export.",
+        "links": [
+          {
+            "id": "brrrr",
+            "mode": "deal",
+            "label": "Run your BRRRR deal"
+          }
+        ]
+      }
+    ]
+  }
+}

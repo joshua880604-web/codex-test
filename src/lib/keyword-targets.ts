@@ -243,3 +243,6 @@ searchTasks.rmd[0].description='Calculate an eligible original-owner RMD from th
 
 keywordTitles['barista-fire']='Barista FIRE Calculator - Your Number & Part-Time Plan';
 searchTasks['barista-fire']=[{keyword:'Barista FIRE calculator',mode:'plan',description:'Estimate the assets required for a part-time bridge and later full retirement.',aliases:['Barista FIRE number calculator','How to calculate Barista FIRE']}];
+
+keywordTitles.brrrr='BRRRR Calculator - Cash Left, Refinance & Rental Cash Flow';
+searchTasks.brrrr=[{keyword:'BRRRR calculator',mode:'deal',description:'Estimate cash recovered, remaining cash and post-refinance rental cash flow.',aliases:['BRRRR method calculator','Free BRRRR calculator','BRRRR refinance calculator']}];

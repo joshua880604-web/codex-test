@@ -4032,6 +4032,10 @@
       {
         "id": "noi",
         "text": "Net operating income isolates a rental property’s operations before financing. Start with potential rent, subtract the entered vacancy and collection loss, add other operating income and deduct property-level operating costs. This tool reconciles the components and reports annual NOI plus its monthly equivalent; it is not business-wide net income or cash left after a mortgage."
+      },
+      {
+        "id": "brrrr",
+        "text": "Follow acquisition cash, refinance proceeds and stabilized rental cash flow for a BRRRR deal."
       }
     ],
     "related": [

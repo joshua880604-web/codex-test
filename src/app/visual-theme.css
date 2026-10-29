@@ -201,3 +201,8 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .embed-options select{margin-left:10px;max-width:180px;min-height:44px;padding:8px 12px;border:1px solid var(--control);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;font-weight:400}
 .embed-options textarea{display:block;width:100%;margin-top:6px;min-height:150px;padding:12px;border:1px solid var(--control);border-radius:12px;background:var(--surface);color:var(--ink);font:12px/1.5 monospace;overflow-wrap:anywhere}
 .embed-options iframe{display:block;margin-top:16px;max-width:100%}
+
+/* BRRRR uses grouped full-width controls within a wider deal worksheet. */
+.brrrr-fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px;}
+.calculator-workspace .brrrr-fields .field-row {grid-template-columns:minmax(0,1fr);gap:6px;}
+@media(max-width:600px){.brrrr-fields {grid-template-columns:minmax(0,1fr);gap:8px;}}

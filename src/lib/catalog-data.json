@@ -622,5 +622,11 @@
     "title": "Barista FIRE Calculator",
     "category": "Retirement",
     "local_route": "/barista-fire-calculator.html"
+  },
+  {
+    "id": "brrrr",
+    "title": "BRRRR Calculator",
+    "category": "Mortgage and Real Estate",
+    "local_route": "/brrrr-calculator.html"
   }
 ]

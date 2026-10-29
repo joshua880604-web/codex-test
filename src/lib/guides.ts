@@ -1,3 +1,4 @@
+import brrrrContent from './brrrr-content.json';
 import baristaContent from './barista-fire-content.json';
 import rmdRefresh from './rmd-refresh-content.json';
 import batchContent from './semrush-five-content.json';
@@ -793,6 +794,10 @@ guides.rmd.summary=refreshedRmd.summary;guides.rmd.scope=refreshedRmd.scope;guid
 Object.assign(guides,Object.fromEntries(Object.entries(baristaContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
 relatedCalculatorIds['barista-fire']=['coast-fire','fire','lean-fire','fat-fire','retirement','budget'];
 for(const id of ['coast-fire','fire','lean-fire','fat-fire','retirement'])relatedCalculatorIds[id]=[...new Set(['barista-fire',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(brrrrContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds.brrrr=['rental-property','noi','refinance','mortgage','roi'];
+for(const id of ['rental-property','noi','refinance'])relatedCalculatorIds[id]=[...new Set(['brrrr',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {
