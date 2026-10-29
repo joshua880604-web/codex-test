@@ -43,7 +43,7 @@ export default function ResultTrend({ id, mode, values, result, wide=false, repo
     </ul>
     <p className="trend-help">{trend.sampled ? "A simplified view of the calculated schedule. " : ""}{trend.help} Open calculation details for exact values.</p>
   </figure>;
-  return report ? <section className="workspace-report workspace-report-chart" aria-label="Balance chart">
+  return report ? <section className="workspace-report workspace-report-chart" aria-label={id==='covered-call'?'Expiry payoff chart':'Balance chart'}>
     {id === "cd" ? <details className="workspace-chart"><summary>View balance chart</summary>{figure}</details> : figure}
   </section> : figure;
 }

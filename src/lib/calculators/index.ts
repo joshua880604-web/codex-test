@@ -1,3 +1,7 @@
+import {coveredCallCalculator} from './covered-call';
+import {houseHackingCalculator} from './house-hacking';
+import {mortgageInvestCalculator} from './mortgage-vs-invest';
+import {cashOnCashCalculator} from './cash-on-cash';
 import {brrrrCalculator} from './brrrr';
 import {baristaFireCalculator} from './barista-fire';
 import {selfEmploymentTaxCalculator} from './self-employment-tax';
@@ -23,7 +27,7 @@ import { everydayCalculators } from "./everyday";
 import { otherCalculators } from "./other";
 import { defaults, type Calculator, type Values, type Result } from "../types";
 export const calculators: Calculator[] = [
-  brrrrCalculator,baristaFireCalculator,selfEmploymentTaxCalculator,hsaCalculator,debtSnowball,debtAvalanche,leanFireCalculator,fatFireCalculator,noiCalculator,fireCalculator,mirrCalculator,
+  coveredCallCalculator, houseHackingCalculator,mortgageInvestCalculator,cashOnCashCalculator,brrrrCalculator,baristaFireCalculator,selfEmploymentTaxCalculator,hsaCalculator,debtSnowball,debtAvalanche,leanFireCalculator,fatFireCalculator,noiCalculator,fireCalculator,mirrCalculator,
   coastFire,
   ...businessTools,
   ...evergreenCalculators,

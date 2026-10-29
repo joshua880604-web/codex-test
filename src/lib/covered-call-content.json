@@ -1,0 +1,297 @@
+{
+  "covered-call": {
+    "updatedOn": "2026-10-29",
+    "summary": "This free covered call calculator evaluates a standard stock buy-write at expiry using your entered stock price, strike, premium and trading fees. It compares the combined position with holding the same shares alone, shows limited upside and substantial stock downside, and separates gross premium from total profit. The payoff chart is a set of stock-price scenarios rather than a price forecast.",
+    "scope": "USD standard contracts only, exactly 100 newly purchased shares per short call. Positive net-debit buy-write with manually entered per-share premium, stock purchase fees, per-contract option opening fees and one fixed expiry exit-cost allowance. Prices are evaluated at expiry; dividends, taxes, historical holding gains, adjusted contracts, early-close option prices, assignment timing, margin, financing, rolls and implied volatility are excluded. Annualization is a simple one-trade illustration.",
+    "sources": [
+      {
+        "title": "OIC: covered call / buy-write payoff, limitations and assignment",
+        "url": "https://www.optionseducation.org/strategies/all-strategies/covered-call-buy-write"
+      }
+    ],
+    "examples": [
+      {
+        "title": "An upside rally with capped expiry profit",
+        "mode": "expiry",
+        "values": {
+          "stock": 50,
+          "strike": 55,
+          "premium": 2,
+          "contracts": 1,
+          "stock_fee": 0,
+          "option_fee": 0,
+          "exit_fee": 0,
+          "expiry": 60,
+          "days": 30
+        },
+        "inputs": "Buy 100 shares at $50, sell one $55 call for $2/share, assume no fees, and test a $60 stock price at expiry. Calendar days: 30.",
+        "steps": [
+          "Stock purchase $5,000 minus gross premium $200 gives a $4,800 net initial debit.",
+          "At $60, stock value is $6,000 and the short-call intrinsic liability is $500; combined expiry value is $5,500.",
+          "Covered call profit = $5,500 \u2212 $4,800 = $700. Shares alone earn $1,000, so covered call profit is $300 lower at this price.",
+          "Break-even = $4,800 \u00f7 100 = $48. If the stock goes to zero, the covered call loses $4,800; receiving $200 was not a guarantee against loss."
+        ],
+        "expected": {
+          "label": "Covered call profit / loss at your expiry price",
+          "value": 700,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Fees and two contracts during a stock decline",
+        "mode": "expiry",
+        "values": {
+          "stock": 50,
+          "strike": 55,
+          "premium": 2,
+          "contracts": 2,
+          "stock_fee": 5,
+          "option_fee": 0.65,
+          "exit_fee": 3,
+          "expiry": 45,
+          "days": 30
+        },
+        "inputs": "Buy 200 shares at $50 and sell two $55 calls for $2/share. Total stock entry fee $5, option opening fee $0.65 per contract, fixed expiry exit costs $3. Stock ends at $45.",
+        "steps": [
+          "Gross premium = $2 \u00d7 200 = $400; option opening fees = $0.65 \u00d7 2 = $1.30.",
+          "Net debit = $10,000 + $5 + $1.30 \u2212 $400 = $9,606.30.",
+          "Expiry combined value = $45 \u00d7 200 = $9,000. P/L = $9,000 \u2212 $9,606.30 \u2212 $3 = \u2212$609.30.",
+          "Shares-only loss is $9,000 \u2212 $10,000 \u2212 $5 \u2212 $3 = \u2212$1,008. The call improves the comparison by $398.70 while the overall trade still loses money."
+        ],
+        "expected": {
+          "label": "Covered call profit / loss at your expiry price",
+          "value": -609.3,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-covered-call-profit",
+        "queries": [
+          "how to calculate covered call profit",
+          "covered call profit calculator"
+        ],
+        "question": "How do you calculate covered call profit at expiry?",
+        "answer": "For this buy-write, subtract the net initial debit and entered expiry exit costs from 100 \u00d7 contracts \u00d7 the lower of the expiry stock price and strike. The stock value and short-call intrinsic liability are reconciled separately below. Below strike, stock value is marked to market; profit is not automatically realized cash.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-premium",
+        "queries": [
+          "how to calculate covered call premium",
+          "how is the premium calculated for buy write covered call"
+        ],
+        "question": "How do I calculate the total covered call premium?",
+        "answer": "Multiply the quoted premium per share by 100 and by the number of standard contracts. A $2 per-share premium on two contracts gives $400 gross premium. Enter the premium from your option quote or an explicit assumption; this calculator totals it but does not price options or estimate a fair premium.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-debit",
+        "queries": [
+          "how is the net debit calculated in covered calls"
+        ],
+        "question": "How is the net debit calculated in a covered call?",
+        "answer": "Net initial debit equals the stock purchase amount plus total stock purchase fees and option opening fees, minus the gross option premium received. Option opening fee is per contract; stock fees are entered for the entire position. Net debit is the return denominator here, not a statement of broker margin or buying-power requirements.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-return",
+        "queries": [
+          "how to calculate covered call returns",
+          "how to calculate return on a covered call",
+          "how to calculate return on covered calls"
+        ],
+        "question": "How do you calculate covered call return?",
+        "answer": "This tool divides the selected expiry profit or loss by the positive net initial debit and multiplies by 100. It includes entered stock and option opening fees and the flat expiry exit-cost allowance. Other tools may use gross stock cost instead; compare denominators as well as percentages. Premium alone is not total return.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-annual",
+        "queries": [
+          "how to calculate annual return on weekly covered calls"
+        ],
+        "question": "Can I annualize a weekly or monthly covered call return?",
+        "answer": "The displayed simple annualized maximum return multiplies the one-trade maximum return by 365 divided by calendar days to expiry. It does not compound or assume future contracts actually earn the same return. Renewing a call changes available premiums and strikes, exposes you to new price changes and may be affected by assignment; this number is an illustration, not annual income.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-break-even",
+        "queries": [
+          "covered call break even calculator"
+        ],
+        "question": "What is the break-even stock price after fees?",
+        "answer": "Divide net initial debit plus the entered expiry exit-cost allowance by covered shares. This is an achievable break-even only if that price is at or below strike. If it is above strike, the capped payoff never covers the modeled costs and the result explicitly says there is no break-even.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-maximum",
+        "queries": [
+          "covered call maximum profit calculator"
+        ],
+        "question": "Why is the maximum covered call profit capped?",
+        "answer": "At or above strike, the stock gain is offset by the short call\u2019s intrinsic liability. Maximum expiry profit is strike times covered shares minus net initial debit and expiry exit costs. It can be negative if your entered costs exceed the capped value. The shares-only line continues to participate in stock price increases.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-risk",
+        "queries": [
+          "covered call loss calculator"
+        ],
+        "question": "Can I lose money even after collecting a premium?",
+        "answer": "Yes. A stock-price decline can exceed the premium received. The zero-stock-price scenario shows loss equal to the net initial debit plus your assumed fixed expiry exit costs. Selling the call does not establish a protective floor for the stock; the chart starts at zero to make that downside visible.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-contract",
+        "queries": [
+          "covered calls calculator",
+          "covered call option calculator"
+        ],
+        "question": "How many shares does each covered call require here?",
+        "answer": "This model purchases exactly 100 shares per standard contract and covers them with one short call. It accepts whole contracts only and automatically scales stock, premium and option opening fees. Adjusted contracts, uncovered stock or calls, synthetic positions and poor man\u2019s covered calls require a different model.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-assignment",
+        "queries": [
+          "in the money covered call calculator"
+        ],
+        "question": "Does the calculator predict early assignment or guarantee I keep my shares?",
+        "answer": "No. Above strike at expiry it assumes delivery at strike; exactly at strike the assignment outcome is uncertain. Early assignment, dividend dates and exercise instructions can change actual timing. Before expiry an option also has time value; this tool does not price an early close or predict assignment probability.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      },
+      {
+        "anchor": "use-covered-call-comparison",
+        "queries": [
+          "free covered call calculator",
+          "covered call calculator free"
+        ],
+        "question": "How is the shares-only comparison kept consistent?",
+        "answer": "Both paths use the same number of shares, stock entry price, total stock purchase fee and fixed expiry exit-cost allowance. Shares-only receives no option premium and pays no option opening fee. The comparison excludes dividends, taxes, interest on premium, financing and slippage; it is not a risk-adjusted recommendation or lifetime return on an existing holding.",
+        "links": [
+          {
+            "id": "roi",
+            "text": "Compare a clearly defined investment return basis.",
+            "mode": "length"
+          },
+          {
+            "id": "investment",
+            "text": "Explore a separate long-term investment projection.",
+            "mode": "end"
+          }
+        ]
+      }
+    ]
+  }
+}

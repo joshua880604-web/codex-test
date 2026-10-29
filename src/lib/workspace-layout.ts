@@ -2,7 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
-  "brrrr", "debt-snowball", "debt-avalanche",
+  "covered-call", "house-hacking", "mortgage-vs-invest", "cash-on-cash-return", "brrrr", "debt-snowball", "debt-avalanche",
   "rmd", "self-employment-tax", "hsa", "noi", "fire", "mirr", "fat-fire", "lean-fire",
   "coast-fire", "barista-fire",
   "roas", "landed-cost", "quick-ratio", "current-ratio",
@@ -17,10 +17,14 @@ export const workspaceIds = [
 export function hasCalculatorWorkspace(id: string): boolean { return (workspaceIds as readonly string[]).includes(id); }
 export function workspaceLayout(id: string, mode: string): "split" | "stacked" | null {
   if (!hasCalculatorWorkspace(id)) return null;
-  return id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
+  return id === "covered-call" || id === "house-hacking" || id === "mortgage-vs-invest" || (id === "cash-on-cash-return" && mode === "property") || id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
 }
 
 const priorities: Record<string, string[]> = {
+  'covered-call':['Covered call profit / loss at your expiry price','Maximum expiry profit (may be negative)','Worst-case loss at zero stock price','Break-even stock price'],
+  'house-hacking':['Monthly net housing cash cost','Monthly budget difference versus renting','Initial cash required','Effective monthly tenant rent'],
+  'mortgage-vs-invest':['Invest-first advantage at horizon','Paydown-first investments minus mortgage','Invest-first investments minus mortgage','Modeled comparison'],
+  'cash-on-cash-return':['Cash-on-cash return','Annual cash flow used','Cash invested','Monthly cash flow equivalent'],
   brrrr:['Cash remaining in deal (signed)','Net refinance cash to you (signed)','Monthly cash flow after reserve','Post-refinance cash-on-cash return'],
   'barista-fire':['Required portfolio at part-time start','Projected portfolio at part-time start','Shortfall at part-time start','Modeled plan status','Unfunded bridge spending'],
   rmd:['Annual RMD','Remaining RMD for selected year','Monthly budgeting equivalent of annual RMD','Distribution period','Required starting age'],

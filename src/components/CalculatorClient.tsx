@@ -9,12 +9,19 @@ import dynamic from "next/dynamic";
 import {coastFieldVisible} from '@/lib/coast-household';
 const CoastFields=dynamic(()=>import('./CoastPlan'));
 const CoastResults=dynamic(()=>import('./CoastPlan').then(m=>m.CoastResults));
+const CoveredCallFields=dynamic(()=>import('./CoveredCallFields'));
+const HouseHackFields=dynamic(()=>import('./HouseHackPlan'));
+const HouseRentalFields=dynamic(()=>import('./HouseHackPlan').then(m=>m.HouseRentalFields));
+const MortgageInvestFields=dynamic(()=>import('./MortgageInvestFields'));
+const CashReturnFields=dynamic(()=>import('./CashReturnFields'));
 const BrrrrFields=dynamic(()=>import('./BrrrrFields'));
 const BaristaFields=dynamic(()=>import('./BaristaFields'));
 const FireBudgetFields=dynamic(()=>import('./FireBudgetPlan'));
 const FireBudgetReport=dynamic(()=>import('./FireBudgetPlan').then(m=>m.FireBudgetReport));
 const DebtStrategyReport=dynamic(()=>import('./DebtStrategyReport'));
 import ResultShare from "./ResultShare";
+import {hasShareTools} from "@/lib/share-tools";
+const ShareToolsDialog=dynamic(()=>import("./ShareToolsDialog"),{ssr:false});
 import RecastComparison from "./RecastComparison";
 import {inputHint,resultContext} from "@/lib/result-context";
 import { formatMetric, sharedInputs } from "@/lib/sharing";
@@ -64,6 +71,8 @@ function ResultTables({tables,onDownload,label="Download table CSV"}:{tables:Non
 }
 export default function CalculatorClient({ calc, initialResult, shortcuts = [] }: { calc: Calculator; initialResult: Result | null; shortcuts?: {keyword: string; mode: string}[] }) {
   const id = calc.id;
+  const enhancedSharing=hasShareTools(id);
+  const [shareOpen,setShareOpen]=useState(false);
   const runCalculation = (_id: string, mode: string, values: Values) => runClientCalculation(calc.id, calc.category, mode, values);
   const [modeId, setModeId] = useState(calc.modes[0].id);
   const mode = calc.modes.find((m) => m.id === modeId)!;
@@ -80,7 +89,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const workspace = workspaceLayout(id, mode.id);
   const hasWorkspace = Boolean(workspace);
   const wideReports = hasWorkspace;
-  const prominentTables = ["cd","apr","credit-card","self-employment-tax","barista-fire","brrrr"].includes(id);
+  const prominentTables = ["cd","apr","credit-card","self-employment-tax","barista-fire","brrrr","cash-on-cash-return","mortgage-vs-invest","house-hacking","covered-call"].includes(id);
   const summary = result && hasWorkspace ? workspaceMetrics(id, mode.id, result) : null;
   const tableRows =
     yearly && result?.annualRows ? result.annualRows : result?.rows;
@@ -309,6 +318,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   }
   function input(field: Field, person?: string) {
     if (field.key === "verified_rate") return null;
+    if(id === "house-hacking" && field.key === "rentals") return <HouseRentalFields key={field.key} value={values.rentals??"[]"} onChange={value=>update("rentals",value)}/>;
     if (["credit-cards-payoff","debt-snowball","debt-avalanche"].includes(id) && field.key === "debts") return <CreditCardFields kind={id === "credit-cards-payoff" ? "card" : "debt"} key={field.key} value={values.debts ?? ""} onChange={value=>update("debts",value)} />;
     const inputId = id + "-" + mode.id + "-" + field.key;
     const hint = field.hint ?? inputHint(id,mode.id,field.key) ?? (id === "401k" && mode.id === "projection" ? ({
@@ -496,10 +506,11 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       !(id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) || (values.mip_method !== "Manual" && ["upfront", "annual_mip", "mip_years"].includes(f.key))))),
     optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
     main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),
-    advanced = ['brrrr','barista-fire','lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
+    advanced = ['covered-call','house-hacking','brrrr','barista-fire','lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
   return (
     <>
-      <div className="calculator-intro-row"><p className="intro">{calc.intro}</p><FavoriteButton id={id}/></div>
+      <div className="calculator-intro-row"><p className="intro">{calc.intro}</p>{enhancedSharing?<div className="calculator-utility-actions"><FavoriteButton id={id}/><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share / Export</button></div>:<FavoriteButton id={id}/>}</div>
+      {shareOpen&&enhancedSharing&&<ShareToolsDialog id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result} fields={visible} onClose={()=>setShareOpen(false)}/>}
       {id === "credit-card" && <p className="result-note">One card: compare fixed payments, a payoff deadline or a minimum-payment rule below. For several cards sharing one monthly budget, use the <SiteLink href={routeFor("credit-cards-payoff")}>Multiple Credit Cards Payoff Calculator</SiteLink>.</p>}
       {id === "credit-cards-payoff" && <p className="result-note">Enter your total monthly budget, including all minimum payments. For one card and a target payoff date, use the <SiteLink href={routeFor("credit-card")}>Single Credit Card Payoff Calculator</SiteLink>. To compare repayment strategies, use the <SiteLink href={routeFor("debt-payoff")}>Debt Snowball and Avalanche Calculator</SiteLink>.</p>}
       {scope && <p className={"result-note calculator-scope" + (id === "mortgage" ? " mortgage-scope" : "")}>{scope}</p>}
@@ -578,7 +589,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           if (details) details.open = true;
           setResult(null);
         }}>
-          {['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : id==='brrrr' ? <BrrrrFields fields={visible} renderField={input}/> : id==='barista-fire' ? <BaristaFields fields={visible} renderField={input}/> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
+          {['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : id==='covered-call' ? <CoveredCallFields fields={visible} renderField={input}/> : id==='house-hacking' ? <HouseHackFields fields={visible} renderField={input}/> : id==='mortgage-vs-invest' ? <MortgageInvestFields fields={visible} renderField={input}/> : id==='cash-on-cash-return' && mode.id==='property' ? <CashReturnFields fields={visible} renderField={input}/> : id==='brrrr' ? <BrrrrFields fields={visible} renderField={input}/> : id==='barista-fire' ? <BaristaFields fields={visible} renderField={input}/> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
           {id !== "mortgage" && id !== "marriage-tax" && advanced.length > 0 && (
             <details className="advanced" key={mode.id}>
               <summary>More options ({advanced.length})</summary>
@@ -700,11 +711,11 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
             {summary.details.map(m => <div className="metric" key={m.label}><span>{m.label}</span><strong>{formatMetric(m)}</strong></div>)}
           </details>}
           <div className="result-actions">
-            <button onClick={() => window.print()}>Print</button>
-            {result.rows && !wideReports && <button onClick={() => download()}>Download CSV</button>}
+            {enhancedSharing?<button type="button" onClick={()=>setShareOpen(true)}>Share / Export</button>:<button onClick={() => window.print()}>Print</button>}
+            {result.rows && !wideReports && !enhancedSharing && <button onClick={() => download()}>Download CSV</button>}
           </div>
           {!wideReports && calculationDetails}
-          {hasWorkspace ? <details className="workspace-sharing" key={mode.id + "-sharing"}><summary>Save or share result</summary><ResultShare id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result} fields={visible}/></details> : <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result} fields={visible}/>}
+          {!enhancedSharing&&(hasWorkspace ? <details className="workspace-sharing" key={mode.id + "-sharing"}><summary>Save or share result</summary><ResultShare id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result} fields={visible}/></details> : <ResultShare key={mode.id} id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result} fields={visible}/>)}
         </div>
       )}
       </div>

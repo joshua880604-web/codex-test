@@ -1,0 +1,226 @@
+{
+  "mortgage-vs-invest": {
+    "updatedOn": "2026-10-29",
+    "summary": "Paying down a mortgage and investing use the same available cash in different ways. This calculator follows both paths month by month with identical initial cash, total monthly budgets and comparison dates. It invests freed payments after payoff, caps the final loan payment and compares investment assets minus remaining debt. The house itself is common to both paths and is excluded from the difference.",
+    "scope": "Nominal USD, one fixed-rate mortgage and a hypothetical constant effective investment return. Scheduled P&I is computed from the entered remaining balance and term; no recast. Initial cash is applied or invested immediately, investment growth precedes end-month deposits, and all unused payment budget is invested. No tax deduction, actual investment tax calculation, penalty, escrow, PMI cancellation, refinancing, volatility or inflation adjustment. Positions exclude common home value and other assets; results are not advice or a forecast.",
+    "sources": [
+      {
+        "title": "CFPB: prepayment penalties and checking mortgage terms",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-prepayment-penalty-en-1957/"
+      },
+      {
+        "title": "Investor.gov: investment risk and uncertainty",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/what-risk"
+      },
+      {
+        "title": "CFPB: principal, interest and other mortgage payment components",
+        "url": "https://www.consumerfinance.gov/owning-a-home/closing-disclosure/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "A fair zero-return comparison reinvests freed payments",
+        "mode": "compare",
+        "values": {
+          "principal": 12000,
+          "rate": 0,
+          "term": 1,
+          "lump": 6000,
+          "extra": 0,
+          "horizon": 1,
+          "return": 0
+        },
+        "inputs": "$12,000 mortgage at 0% with one year left; $6,000 initial cash; no monthly extra; one-year comparison; 0% investment return.",
+        "steps": [
+          "Scheduled P&I is $12,000 ÷ 12 = $1,000 a month in both paths.",
+          "Paydown-first reduces the loan to $6,000 immediately and pays it off in month 6. It invests the $1,000 budget in months 7–12, ending with $6,000.",
+          "Invest-first keeps $6,000 invested and finishes its mortgage in month 12. Both final positions are $6,000."
+        ],
+        "answer": "The modeled advantage is $0. Ignoring six freed payments would incorrectly make investing look $6,000 better.",
+        "expected": {
+          "label": "Invest-first advantage at horizon",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Equal monthly growth produces equal positions",
+        "mode": "compare",
+        "values": {
+          "principal": 150000,
+          "rate": 6,
+          "term": 10,
+          "lump": 10000,
+          "extra": 200,
+          "horizon": 5,
+          "return": 6.167781186449828
+        },
+        "inputs": "$150,000 mortgage, 6% nominal annual interest and ten years left; $10,000 initial cash, $200 extra monthly and a five-year comparison. Investment return is set to the mortgage’s effective annual growth equivalent.",
+        "steps": [
+          "Monthly mortgage interest is 6% ÷ 12 = 0.5%.",
+          "The matching effective annual investment return is (1.005^12 − 1) × 100, about 6.1678%.",
+          "Because both monthly growth rates and the cash budgets match, investments minus mortgage follows the same net path under these assumptions."
+        ],
+        "answer": "The advantage rounds to $0 at five years. This is a mathematical check, not an available or guaranteed investment rate.",
+        "expected": {
+          "label": "Invest-first advantage at horizon",
+          "value": 0,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-mortgage-invest-compare",
+        "queries": [
+          "pay off mortgage vs invest calculator",
+          "invest vs pay off mortgage calculator"
+        ],
+        "question": "How does this calculator compare paying off a mortgage with investing?",
+        "answer": "It gives both paths the same initial cash and total monthly budget, then stops them at the same comparison date. One applies the initial cash and monthly extra to principal; the other invests them while making scheduled loan payments. Both invest any budget released after payoff. The result compares investments minus remaining mortgage, excluding the same home value.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mortgage-invest-freed-payments",
+        "queries": [
+          "paying off mortgage early vs investing calculator"
+        ],
+        "question": "What happens to the mortgage payment after the loan is paid off?",
+        "answer": "The full shared monthly budget goes into the investment account in that path. If the final loan payment uses only part of that month’s budget, the remainder is invested in the same month. Ignoring these investments would unfairly disadvantage paying down the mortgage.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mortgage-invest-lump-sum",
+        "queries": [
+          "pay off mortgage early vs invest calculator"
+        ],
+        "question": "Can I compare a lump sum, monthly extra payments, or both?",
+        "answer": "Yes. Set either initial cash or monthly extra to zero to isolate the other choice. Initial cash beyond the mortgage balance is invested immediately in the paydown-first path. Both paths use the same total initial cash and monthly budget, so excess cash is never discarded.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mortgage-invest-rates",
+        "queries": [
+          "mortgage rate vs investment return"
+        ],
+        "question": "Why can equal annual mortgage and investment rates give different results?",
+        "answer": "The mortgage input is nominal annual interest divided by 12. The investment input is an effective annual return converted by its twelfth root. The matching annual investment growth rate is (1 + mortgage rate / 12)^12 − 1. That reference only equalizes monthly growth in this simplified model; it is not a risk-adjusted market hurdle or a promise of investment income.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mortgage-invest-taxes",
+        "queries": [
+          "paying off mortgage vs investing after tax"
+        ],
+        "question": "Does the calculator include mortgage-interest deductions or investment taxes?",
+        "answer": "It does not calculate a tax return, mortgage-interest deduction or tax on selling investments or withdrawing from a retirement account. Enter an investment return after fees and your chosen allowance for tax drag. Actual deductions, account rules, capital-gains timing and tax brackets can require a separate comparison.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mortgage-invest-term",
+        "queries": [
+          "mortgage payoff comparison horizon"
+        ],
+        "question": "What if the comparison date is before or after the mortgage term?",
+        "answer": "Before payoff, remaining debt is subtracted from each investment account at that date. After payoff, the freed payment budget is invested for the remaining comparison months. The tool does not infer a later payoff date when the loan is still outstanding at your selected horizon.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mortgage-invest-net-position",
+        "queries": [
+          "mortgage vs investing net worth"
+        ],
+        "question": "Why can investments minus mortgage be negative?",
+        "answer": "The chart excludes the home and other assets common to both paths. A negative value therefore means the modeled investment account is smaller than the remaining mortgage, not that all your household assets are worth less than all your debts. The difference between the two paths remains comparable because the same home value cancels.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mortgage-invest-risk",
+        "queries": [
+          "should i pay off mortgage or invest"
+        ],
+        "question": "Does a higher modeled result mean investing is the better decision?",
+        "answer": "No. A constant assumed investment return cannot describe market losses, volatility or uncertain timing. Paying down debt can also reduce accessible cash. Compare lower-return scenarios, loan terms, available liquidity and account restrictions rather than treating the larger number as a recommendation.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mortgage-invest-payment",
+        "queries": [
+          "extra mortgage payment vs recast"
+        ],
+        "question": "Does the payment decrease after an initial principal payment?",
+        "answer": "No recast is modeled. The scheduled principal-and-interest amount is calculated once using the entered balance, mortgage rate and remaining term, then kept unchanged. Paydown-first adds the monthly extra and may finish earlier. The schedule excludes escrow, property taxes, insurance and PMI changes.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      },
+      {
+        "anchor": "use-mortgage-invest-csv",
+        "queries": [
+          "pay off mortgage vs invest spreadsheet"
+        ],
+        "question": "Can I export the comparison to Excel?",
+        "answer": "Yes. Download the monthly schedule and the return-sensitivity table as CSV. The schedule includes both investment accounts, remaining loans, positions and cumulative interest at each month. CSV contains calculated values, not a native Excel workbook with formulas. Recalculate here after changing assumptions.",
+        "links": [
+          {
+            "id": "mortgage-vs-invest",
+            "mode": "compare",
+            "label": "Compare your two paths"
+          }
+        ]
+      }
+    ]
+  }
+}

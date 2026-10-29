@@ -628,5 +628,29 @@
     "title": "BRRRR Calculator",
     "category": "Mortgage and Real Estate",
     "local_route": "/brrrr-calculator.html"
+  },
+  {
+    "id": "cash-on-cash-return",
+    "title": "Cash-on-Cash Return Calculator",
+    "category": "Mortgage and Real Estate",
+    "local_route": "/cash-on-cash-return-calculator.html"
+  },
+  {
+    "id": "mortgage-vs-invest",
+    "title": "Pay Off Mortgage vs. Invest Calculator",
+    "category": "Mortgage and Real Estate",
+    "local_route": "/pay-off-mortgage-vs-invest-calculator.html"
+  },
+  {
+    "id": "house-hacking",
+    "title": "House Hacking Calculator",
+    "category": "Mortgage and Real Estate",
+    "local_route": "/house-hacking-calculator.html"
+  },
+  {
+    "id": "covered-call",
+    "title": "Covered Call Calculator",
+    "category": "Investment",
+    "local_route": "/covered-call-calculator.html"
   }
 ]

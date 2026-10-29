@@ -1,0 +1,271 @@
+{
+  "house-hacking": {
+    "updatedOn": "2026-10-29",
+    "summary": "House hacking combines your own housing with rental income from other rooms or units. This free calculator keeps your own living space outside the rent list and reconciles tenant income with the whole-property monthly cash budget. It shows net housing cost, a comparable renting-budget difference, initial cash required and vacancy sensitivity. These are budget estimates rather than a promise of free housing or an investment return.",
+    "scope": "Owner-occupied property in USD. One stabilized monthly snapshot, with a fixed-rate amortizing loan and manual monthly mortgage insurance. Upfront costs other than the purchase loan are cash-funded. Enter tenant spaces only, all owner-paid recurring costs and comparable alternative renting expenses. One loss allowance applies to all rents. Annualized values multiply the snapshot by 12; no timing, tax allocation, legal occupancy, loan qualification, appreciation, sale, refinance or investment opportunity cost is modeled.",
+    "sources": [
+      {
+        "title": "WalletBurst: house hacking with rooms or separate units",
+        "url": "https://walletburst.com/tools/house-hacking-calculator/"
+      },
+      {
+        "title": "CFPB: mortgage principal, interest, escrow and cash to close",
+        "url": "https://www.consumerfinance.gov/owning-a-home/closing-disclosure/"
+      },
+      {
+        "title": "IRS Publication 527: residential rental property and personal use",
+        "url": "https://www.irs.gov/publications/p527"
+      }
+    ],
+    "examples": [
+      {
+        "title": "A duplex budget with one tenant unit",
+        "mode": "living",
+        "values": {
+          "arrangement": "Separate rental units",
+          "price": 200000,
+          "loan": 180000,
+          "rate": 0,
+          "years": 30,
+          "closing": 4000,
+          "repairs": 1000,
+          "initial_reserve": 5000,
+          "rentals": "[{\"name\": \"Other unit\", \"rent\": 1200}]",
+          "vacancy": 5,
+          "other_income": 0,
+          "mortgage_insurance": 100,
+          "tax": 300,
+          "insurance": 100,
+          "hoa": 0,
+          "utilities": 100,
+          "maintenance": 100,
+          "capital": 50,
+          "management": 0,
+          "other_costs": 0,
+          "current_rent": 1500
+        },
+        "inputs": "Purchase $200,000 with a $180,000 loan at 0% for a 30-year arithmetic example; initial closing $4,000, repairs $1,000 and reserves $5,000. One tenant pays $1,200/month before 5% rent loss. Alternative all-in renting budget $1,500/month.",
+        "steps": [
+          "Monthly P&I = $180,000 \u00f7 360 = $500. Other entered monthly costs total $750, so the full housing budget is $1,250.",
+          "Effective tenant rent = $1,200 \u00d7 95% = $1,140. Your own unit contributes no cash rent.",
+          "Net housing cash cost = $1,250 \u2212 $1,140 = $110. Difference versus renting = $1,500 \u2212 $110 = $1,390/month."
+        ],
+        "answer": "Net monthly housing cash cost is $110. Initial cash is $20,000 + $4,000 + $1,000 + $5,000 = $30,000. The budget difference is not a return on that cash.",
+        "expected": {
+          "label": "Monthly net housing cash cost",
+          "value": 110,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "The same budget with different room rents",
+        "mode": "living",
+        "values": {
+          "arrangement": "Rooms in a shared home",
+          "price": 200000,
+          "loan": 180000,
+          "rate": 0,
+          "years": 30,
+          "closing": 4000,
+          "repairs": 1000,
+          "initial_reserve": 5000,
+          "rentals": "[{\"name\": \"Room A\", \"rent\": 700}, {\"name\": \"Room B\", \"rent\": 500}]",
+          "vacancy": 5,
+          "other_income": 0,
+          "mortgage_insurance": 100,
+          "tax": 300,
+          "insurance": 100,
+          "hoa": 0,
+          "utilities": 100,
+          "maintenance": 100,
+          "capital": 50,
+          "management": 0,
+          "other_costs": 0,
+          "current_rent": 1500
+        },
+        "inputs": "Use the same property and costs, but rent two rooms at $700 and $500/month. Your own room is not entered.",
+        "steps": [
+          "Only the two tenant rooms are entered: scheduled rent is still $1,200.",
+          "With the same 5% allowance, effective tenant rent remains $1,140.",
+          "Net housing cash cost is still $110; changing the arrangement label does not change the arithmetic."
+        ],
+        "answer": "Two different room rents produce the same total budget offset as the one-unit example. Legal occupancy and financing terms need separate verification.",
+        "expected": {
+          "label": "Effective monthly tenant rent",
+          "value": 1140,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-house-hack-meaning",
+        "queries": [
+          "house hacking",
+          "house hacking calculator"
+        ],
+        "question": "What is house hacking?",
+        "answer": "House hacking means living in part of a property while renting other rooms or units to help pay the housing budget. This calculator measures the resulting recurring cash cost and compares it with your entered renting budget. It does not assume the rental income covers every cost or that owner occupancy guarantees financing.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-owner-space",
+        "queries": [
+          "house hacking calculator owner occupied"
+        ],
+        "question": "Do I include rent for the room or unit where I live?",
+        "answer": "No. Add only spaces rented to tenants. A market rent you could charge for your own space is not actual cash received while you live there. Tenant deposits and owner salary are also excluded from rental housing income. Changing from separate units to shared rooms does not automatically add an owner unit to the calculation.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-cost",
+        "queries": [
+          "how to calculate house hacking"
+        ],
+        "question": "How is my net housing cost calculated?",
+        "answer": "Add mortgage principal and interest, entered insurance and taxes, HOA, owner-paid utilities, maintenance, management, other costs and the capital replacement reserve. Then subtract tenant rent after the vacancy allowance and other net housing income. The result is a cash budget, not property-level NOI or a total investment return.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-rooms",
+        "queries": [
+          "house hacking calculator for rooms",
+          "duplex house hacking calculator"
+        ],
+        "question": "Can I enter different rents for multiple rooms or units?",
+        "answer": "Yes. Add up to ten rented spaces and give each a nickname and scheduled monthly rent. The calculator applies the same vacancy and collection-loss percentage to all entered rents. Your own space stays outside the rent list. Ten entries are a software limit, not a statement about legal occupancy or mortgage-program eligibility.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-vacancy",
+        "queries": [
+          "house hacking vacancy calculator"
+        ],
+        "question": "How does vacancy affect the result?",
+        "answer": "The model reduces scheduled tenant rent by the entered vacancy and collection allowance. At 100% rent loss, effective tenant rent is zero while housing costs continue. The comparison table tests several loss allowances with the same costs and other income. It does not forecast which rooms will actually be vacant.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-renting",
+        "queries": [
+          "house hacking vs renting"
+        ],
+        "question": "What should I enter for the alternative renting budget?",
+        "answer": "Use a comparable all-in monthly housing budget if you rent elsewhere, including relevant utilities, renters insurance and other housing costs. A positive budget difference means the entered house-hacking snapshot costs less each month. Upfront cash, investment opportunity cost, home appreciation, sale and income tax are not included in that difference.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-cash",
+        "queries": [
+          "house hacking down payment calculator"
+        ],
+        "question": "What is included in initial cash required?",
+        "answer": "Cash toward the price, cash-paid acquisition closing and loan fees, initial cash repairs and initial reserve funds are added together. The purchase loan funds only the price in this model. Upfront reserve cash and the ongoing monthly replacement allowance have different roles; neither should be entered twice in the same part of the budget.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-insurance",
+        "queries": [
+          "house hacking mortgage insurance"
+        ],
+        "question": "Does the calculator estimate PMI or MIP automatically?",
+        "answer": "No. Enter a monthly lender quote or a clearly identified planning assumption for mortgage insurance. With a zero purchase loan, the calculator sets this cost to zero. Otherwise the amount remains fixed in the snapshot; eligibility, upfront mortgage insurance and cancellation dates are not calculated. Enter ordinary property insurance separately.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-negative-cost",
+        "queries": [
+          "house hacking live for free"
+        ],
+        "question": "Does a negative housing cost mean I can live for free?",
+        "answer": "It means entered net housing income exceeds the entered monthly budget under these assumptions. It does not guarantee the income, full occupancy or complete expense estimates. Actual repairs, legal obligations, financing, tax and other household costs may change the result. A positive monthly budget difference is not cash-on-cash return or profit.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-timing",
+        "queries": [
+          "house hacking annual savings"
+        ],
+        "question": "Are annualized figures a full-year forecast?",
+        "answer": "No. They repeat the stabilized monthly snapshot twelve times. They do not simulate loan payoff during a year, changes in insurance, uneven vacancies, move-in dates or rent increases. First-payment principal reduction is shown separately and is not cash income added back to your housing budget.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-house-hack-tax-and-move",
+        "queries": [
+          "house hacking taxes",
+          "house hacking after moving out"
+        ],
+        "question": "Does this cover taxes or the property after I move out?",
+        "answer": "Tax rules can depend on the personal and rental use of the property; this calculator does not allocate expenses, calculate depreciation or prepare a tax return. Moving out can change insurance, management and financing assumptions. Use the rental property calculator with updated costs and rent for a separate full-rental projection.",
+        "links": [
+          {
+            "id": "house-hacking",
+            "mode": "living",
+            "label": "Run your house-hacking budget"
+          }
+        ]
+      }
+    ]
+  }
+}

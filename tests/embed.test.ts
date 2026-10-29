@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import embedTools from '../src/lib/embed-tools.json';
 import {embedCode,embedTool,embedURL} from '../src/lib/embed-code';
 import {calculators} from '../src/lib/calculators';
 
-test('Embeds are opt-in for ROI and Coast FIRE and preserve the public calculator destinations',()=>{
- for(const id of ['roi','coast-fire']){const tool=embedTool(id)!;assert.ok(tool);assert.equal(calculators.find(c=>c.id===id)?.title,tool.title);assert.equal(new URL(embedURL(id)).pathname,'/embed/'+tool.slug+'/');}
- assert.equal(embedTool('mortgage'),undefined);assert.throws(()=>embedURL('mortgage'));
+test('Approved embeds preserve every public calculator destination',()=>{
+ for(const {id} of embedTools){const tool=embedTool(id)!;assert.ok(tool);assert.equal(calculators.find(c=>c.id===id)?.title,tool.title);assert.equal(new URL(embedURL(id)).pathname,'/embed/'+tool.slug+'/');}
+ assert.equal(embedTool('mortgage'),undefined);assert.equal(embedTool('covered-call'),undefined);assert.throws(()=>embedURL('mortgage'));
 });
 test('Copied embed code has a lazy titled frame, no input payload, and qualified attribution',()=>{
  const code=embedCode('roi','dark',800);assert.match(code,/src="https:\/\/www\.calculatorfree\.io\/embed\/roi-calculator\/\?theme=dark"/);assert.match(code,/loading="lazy"/);assert.match(code,/title="ROI Calculator by CalculatorFree.io"/);assert.match(code,/referrerpolicy="no-referrer"/);assert.match(code,/rel="nofollow noopener"/);assert.ok(!/share_version|cost=|returned=|balance=|<script/.test(code));

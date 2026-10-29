@@ -24,6 +24,11 @@ const finite = (value: unknown): value is number => typeof value === "number" &&
 export function resultTrend(id: string, mode: string, values: Values, result: Result): ResultTrend | null {
   const rows = result.rows, columns = result.columns;
   if (!rows?.length || !columns) return null;
+  if(id==='covered-call' && columns[1]==='Covered call P/L (USD)' && columns[2]==='Shares-only P/L (USD)'){
+    const points=rows.map(row=>({x:Number(row[0]),balance:Number(row[1]),comparison:Number(row[2])}));
+    if(points.length<2||points.some((p,i)=>!finite(p.x)||!finite(p.balance)||!finite(p.comparison)||(i>0&&p.x<=points[i-1].x)))return null;
+    return {title:'Profit / loss at expiry by stock price',xLabel:'Stock price at expiry (USD/share)',balanceLabel:'Covered call P/L',secondaryKey:'comparison',secondaryLabel:'Shares-only P/L',points,sampled:false,help:'Expiry outcomes from the calculated price-scenario table. Gains are capped at strike while stock downside remains. These are price scenarios, not a time path, probabilities or a prediction. Fees are included; dividends and taxes are excluded.'};
+  }
   const matches = (expected: string[]) => expected.length === columns.length && expected.every((column, i) => column === columns[i]);
   const input = (key: string) => values[key]?.trim() ? Number(values[key]) : NaN;
   let title = "Balance over time", xLabel = "Years", balanceLabel = "Balance", help = "";
@@ -35,6 +40,11 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
     start={x:0,balance:original};balanceIndex=3;xLabel='Payment month';
     title='Debt balance on your payoff plan';balanceLabel='Remaining debt';
     help='Monthly interest is added before minimum and prioritized extra payments. This is the selected strategy with fixed entered APRs and minimums, not a lender statement or credit-score forecast.';
+  } else if (id==='mortgage-vs-invest' && columns[3]==='Paydown-path position') {
+    const opening=input('lump')-input('principal');start={x:0,balance:opening,comparison:opening};
+    balanceIndex=3;secondaryIndex=6;scale=1/12;secondaryKey='comparison';secondaryLabel='Invest first';
+    xLabel='Years';title='Investments minus remaining mortgage';balanceLabel='Pay down first';
+    help='Same cash and monthly budget in both paths, including investing unused final payments and freed payments after payoff. Positions exclude the same home value; negative values are not total household net worth. Constant-return illustrations, not forecasts.';
   } else if (id==='barista-fire' && columns[8]==='Closing portfolio (today’s USD)') {
     start={x:input('age'),balance:input('balance')};balanceIndex=8;xLabel='Age';title='Portfolio across your Barista FIRE plan';balanceLabel='Portfolio (today’s USD)';
     help='Calculated annual endpoints through saving, part-time earnings and any later income-free bridge. Stops at the full-retirement target age; no lifetime withdrawals or market volatility are simulated.';

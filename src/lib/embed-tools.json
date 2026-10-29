@@ -1,4 +1,128 @@
 [
-  {"id":"roi","slug":"roi-calculator","title":"ROI Calculator","height":800},
-  {"id":"coast-fire","slug":"coast-fire-calculator","title":"Coast FIRE Calculator","height":1000}
+  {
+    "id": "roi",
+    "slug": "roi-calculator",
+    "title": "ROI Calculator",
+    "height": 800
+  },
+  {
+    "id": "coast-fire",
+    "slug": "coast-fire-calculator",
+    "title": "Coast FIRE Calculator",
+    "height": 1000
+  },
+  {
+    "id": "fire",
+    "slug": "fire-calculator",
+    "title": "FIRE Calculator",
+    "height": 800
+  },
+  {
+    "id": "lean-fire",
+    "slug": "lean-fire-calculator",
+    "title": "Lean FIRE Calculator",
+    "height": 1000
+  },
+  {
+    "id": "fat-fire",
+    "slug": "fat-fire-calculator",
+    "title": "Fat FIRE Calculator",
+    "height": 1000
+  },
+  {
+    "id": "barista-fire",
+    "slug": "barista-fire-calculator",
+    "title": "Barista FIRE Calculator",
+    "height": 800
+  },
+  {
+    "id": "rmd",
+    "slug": "rmd-calculator",
+    "title": "RMD Calculator",
+    "height": 800
+  },
+  {
+    "id": "hsa",
+    "slug": "hsa-calculator",
+    "title": "HSA Calculator",
+    "height": 800
+  },
+  {
+    "id": "brrrr",
+    "slug": "brrrr-calculator",
+    "title": "BRRRR Calculator",
+    "height": 1000
+  },
+  {
+    "id": "rent-vs-buy",
+    "slug": "rent-vs-buy-calculator",
+    "title": "Rent vs. Buy Calculator",
+    "height": 1000
+  },
+  {
+    "id": "mortgage-vs-invest",
+    "slug": "pay-off-mortgage-vs-invest-calculator",
+    "title": "Pay Off Mortgage vs. Invest Calculator",
+    "height": 800
+  },
+  {
+    "id": "mortgage-payoff",
+    "slug": "mortgage-payoff-calculator",
+    "title": "Mortgage Payoff Calculator",
+    "height": 800
+  },
+  {
+    "id": "house-affordability",
+    "slug": "house-affordability-calculator",
+    "title": "House Affordability Calculator",
+    "height": 1000
+  },
+  {
+    "id": "pmi",
+    "slug": "pmi-calculator",
+    "title": "PMI Calculator",
+    "height": 800
+  },
+  {
+    "id": "heloc",
+    "slug": "heloc-calculator",
+    "title": "HELOC Calculator",
+    "height": 800
+  },
+  {
+    "id": "debt-snowball",
+    "slug": "debt-snowball-calculator",
+    "title": "Debt Snowball Calculator",
+    "height": 1000
+  },
+  {
+    "id": "debt-avalanche",
+    "slug": "debt-avalanche-calculator",
+    "title": "Debt Avalanche Calculator",
+    "height": 1000
+  },
+  {
+    "id": "credit-cards-payoff",
+    "slug": "multiple-credit-card-payoff-calculator",
+    "title": "Multiple Credit Card Payoff Calculator",
+    "height": 1000
+  },
+  {
+    "id": "roas",
+    "slug": "roas-calculator",
+    "title": "ROAS Calculator",
+    "height": 800
+  },
+  {
+    "id": "landed-cost",
+    "slug": "landed-cost-calculator",
+    "title": "Landed Cost Calculator",
+    "height": 800
+  },
+  {
+    "id": "break-even",
+    "slug": "break-even-calculator",
+    "title": "Break-Even Calculator",
+    "height": 800
+  }
 ]

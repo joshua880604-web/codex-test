@@ -153,14 +153,17 @@ export default async function Page({
               they appear in the link’s address fragment and can be read by anyone
               who receives it. They are not encrypted and may remain in browser
               history. Existing query-based links may also expose values to server
-              logs. Copied summaries and PNG images contain result amounts. Only
+              logs. Copied summaries, tables, CSV files, PNG images and print/PDF reports
+              contain result amounts. Input details are added to PNG and print/PDF
+              reports only when you choose that option. Social sharing opens the
+              selected platform with your chosen link; its privacy practices apply. Only
               share information you intend recipients to see. Currency conversion uses a manually entered
               rate or a dated snapshot bundled with the site. No external API
               requests are made for currency rates.
             </p>
             <h2>Embedded calculators</h2>
             <p>
-              The standalone ROI and Coast FIRE embeds do not load our advertising
+              Our standalone calculator embeds do not load our advertising
               script. Their calculations run in your browser and do not send the
               amounts you enter to a calculation API. Embed code starts with
               example values and includes only appearance settings, not the

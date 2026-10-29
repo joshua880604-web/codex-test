@@ -1,6 +1,7 @@
 @import "./dark-pro.css";
 @import "./desktop-navigation.css";
 @import "./favorites.css";
+@import "./share-tools.css";
 @font-face {
  font-family:"Inter";
  src:url("/fonts/inter-latin-variable-3100e775.woff2") format("woff2");
@@ -203,6 +204,18 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .embed-options iframe{display:block;margin-top:16px;max-width:100%}
 
 /* BRRRR uses grouped full-width controls within a wider deal worksheet. */
-.brrrr-fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px;}
-.calculator-workspace .brrrr-fields .field-row {grid-template-columns:minmax(0,1fr);gap:6px;}
-@media(max-width:600px){.brrrr-fields {grid-template-columns:minmax(0,1fr);gap:8px;}}
+.brrrr-fields,.cash-return-fields,.mortgage-invest-fields,.house-hack-fields,.covered-call-fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px;}
+.calculator-workspace .brrrr-fields .field-row,.calculator-workspace .cash-return-fields .field-row,.calculator-workspace .mortgage-invest-fields .field-row,.calculator-workspace .house-hack-fields .field-row,.calculator-workspace .covered-call-fields .field-row {grid-template-columns:minmax(0,1fr);gap:6px;}
+@media(max-width:600px){.brrrr-fields,.cash-return-fields,.mortgage-invest-fields,.house-hack-fields,.covered-call-fields {grid-template-columns:minmax(0,1fr);gap:8px;}}
+
+.house-hack-comparison {grid-column:1/-1;}
+.house-rental-editor {min-width:0;}
+.house-rental-card {min-width:0;margin:14px 0;padding:12px;border:1px solid var(--control);border-radius:14px;}
+.house-rental-card legend {padding:0 5px;font-weight:650;font-size:13px;}
+.house-rental-card label {display:block;margin:10px 0 6px;font-size:13px;font-weight:600;}
+.house-rental-card input {display:block;box-sizing:border-box;width:100%;min-width:0;min-height:44px;padding:10px 12px;border:1px solid var(--control);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;font-size:16px;text-align:left;}
+.house-rental-editor button {min-height:44px;border:1px solid var(--control);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;padding:8px 12px;}
+.house-rental-editor .house-rental-remove {margin-top:8px;background:transparent;font-size:12px;}
+.house-rental-actions {display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+.house-rental-actions span {font-size:12px;}
+.house-rental-editor button:disabled {opacity:.5;cursor:default;}

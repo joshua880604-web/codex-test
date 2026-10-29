@@ -246,3 +246,15 @@ searchTasks['barista-fire']=[{keyword:'Barista FIRE calculator',mode:'plan',desc
 
 keywordTitles.brrrr='BRRRR Calculator - Cash Left, Refinance & Rental Cash Flow';
 searchTasks.brrrr=[{keyword:'BRRRR calculator',mode:'deal',description:'Estimate cash recovered, remaining cash and post-refinance rental cash flow.',aliases:['BRRRR method calculator','Free BRRRR calculator','BRRRR refinance calculator']}];
+
+keywordTitles['cash-on-cash-return']='Cash-on-Cash Return Calculator - Rental Cash Yield';
+searchTasks['cash-on-cash-return']=[{keyword:'Simple cash-on-cash return calculator',mode:'simple',description:'Calculate a cash yield from known cash flow and cash invested.',aliases:['Cash on cash return calculator','How to calculate cash on cash return']},{keyword:'Real estate cash-on-cash return calculator',mode:'property',description:'Include rental income, expenses, financing, repairs and cash reserves.'}];
+
+keywordTitles['mortgage-vs-invest']='Pay Off Mortgage vs. Invest Calculator - Compare Both Paths';
+searchTasks['mortgage-vs-invest']=[{keyword:'Pay off mortgage vs invest calculator',mode:'compare',description:'Compare the same funds and timeframe, including investing freed mortgage payments.',aliases:['Invest vs pay off mortgage calculator','Paying off mortgage vs investing calculator']}];
+
+keywordTitles['house-hacking']='House Hacking Calculator - Your Net Housing Cost';
+searchTasks['house-hacking']=[{keyword:'House hacking calculator',mode:'living',description:'Estimate owner-occupied cash costs after tenant rent and compare a renting budget.',aliases:['House hack calculator','House hacking calculator for rooms','Duplex house hacking calculator']}];
+
+keywordTitles['covered-call']='Covered Call Calculator - Profit, Break-Even & Payoff';
+searchTasks['covered-call']=[{keyword:'Covered call calculator',mode:'expiry',description:'Calculate expiry profit, break-even, downside and a shares-only comparison with manual premium and fees.',aliases:['Covered calls calculator','Covered call option calculator','Free covered call calculator','Covered call profit calculator']}];

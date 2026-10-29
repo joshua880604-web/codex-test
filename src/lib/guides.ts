@@ -1,3 +1,7 @@
+import coveredCallContent from './covered-call-content.json';
+import houseHackContent from './house-hacking-content.json';
+import mortgageInvestContent from './mortgage-vs-invest-content.json';
+import cashReturnContent from './cash-on-cash-content.json';
 import brrrrContent from './brrrr-content.json';
 import baristaContent from './barista-fire-content.json';
 import rmdRefresh from './rmd-refresh-content.json';
@@ -798,6 +802,22 @@ for(const id of ['coast-fire','fire','lean-fire','fat-fire','retirement'])relate
 Object.assign(guides,Object.fromEntries(Object.entries(brrrrContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
 relatedCalculatorIds.brrrr=['rental-property','noi','refinance','mortgage','roi'];
 for(const id of ['rental-property','noi','refinance'])relatedCalculatorIds[id]=[...new Set(['brrrr',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(cashReturnContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['cash-on-cash-return']=['rental-property','brrrr','noi','roi','irr'];
+for(const id of ['rental-property','brrrr','noi'])relatedCalculatorIds[id]=[...new Set(['cash-on-cash-return',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(mortgageInvestContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['mortgage-vs-invest']=['mortgage-payoff','mortgage','investment','compound-interest','mortgage-recast'];
+for(const id of ['mortgage-payoff','mortgage','investment','compound-interest'])relatedCalculatorIds[id]=[...new Set(['mortgage-vs-invest',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(houseHackContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['house-hacking']=['mortgage','rent-vs-buy','rental-property','cash-on-cash-return','noi','pmi'];
+for(const id of ['mortgage','rent-vs-buy','rental-property'])relatedCalculatorIds[id]=[...new Set(['house-hacking',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(coveredCallContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['covered-call']=['roi','investment','average-return','real-return','compound-interest'];
+for(const id of ['roi','investment','average-return'])relatedCalculatorIds[id]=[...new Set(['covered-call',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {
