@@ -16,6 +16,6 @@ test('Embed configuration cannot inject code, arbitrary URLs, dimensions or them
  for(const height of [-1,0,801,Infinity,NaN])assert.throws(()=>embedCode('roi','light',height));
  assert.throws(()=>embedURL('roi','dark" onload="x' as 'dark'));
 });
-test('Only embed documents receive the restrictive ad-free framing and noindex policy',async()=>{
- const headers=await readFile('public/_headers','utf8');const section=headers.split('/embed/*')[1].split('/embed/assets/*')[0];assert.match(section,/frame-ancestors \*/);assert.match(section,/connect-src 'none'/);assert.match(section,/X-Robots-Tag: noindex/);assert.ok(!headers.split('/embed/*')[0].includes('X-Robots-Tag: noindex'));
+test('Embed policy permits opaque local-file parents while retaining resource restrictions and noindex',async()=>{
+ const headers=await readFile('public/_headers','utf8');const section=headers.split('/embed/*')[1].split('/embed/assets/*')[0];assert.ok(!/(?:^|;)\s*frame-ancestors\b/.test(section));assert.ok(!/X-Frame-Options:/i.test(section));assert.match(section,/connect-src 'none'/);assert.match(section,/X-Robots-Tag: noindex/);assert.ok(!headers.split('/embed/*')[0].includes('X-Robots-Tag: noindex'));
 });

@@ -6,9 +6,11 @@
 /fonts/*.woff2
   Cache-Control: public, max-age=31536000, immutable
 
-# Standalone widgets may be framed; they cannot fetch ads or send calculator inputs.
+# Public widgets intentionally allow every parent, including opaque file:// origins.
+# Do not add frame-ancestors *: it rejects local-file/non-network parents.
+# Keep widget resource/connection restrictions; normal page policies are untouched.
 /embed/*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors *
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'self' data:; base-uri 'none'; form-action 'none'
   X-Robots-Tag: noindex
 
 /embed/assets/*
