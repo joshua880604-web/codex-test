@@ -49,6 +49,17 @@ const colors = [
   "#b26969",
   "#64a7a0",
 ];
+function ResultTables({tables,onDownload,label="Download table CSV"}:{tables:NonNullable<Result['additionalTables']>;onDownload:(table:NonNullable<Result['additionalTables']>[number])=>void;label?:string}) {
+ return <>{tables.map(table=><section key={table.title}>
+  <h3>{table.title}</h3>{table.note&&<p className="result-note">{table.note}</p>}
+  <div className="result-actions"><button onClick={()=>onDownload(table)}>{label}</button></div>
+  <div className="table-scroll" role="region" aria-label={table.title+" table"} tabIndex={0}>
+   <table><thead><tr>{table.columns.map(column=><th scope="col" key={column}>{column}</th>)}</tr></thead>
+    <tbody>{table.rows.map((row,i)=><tr key={i}>{row.map((value,j)=><td key={j}>{typeof value==="number"?amount(value,Number.isInteger(value)?0:2):value}</td>)}</tr>)}</tbody>
+   </table>
+  </div>
+ </section>)}</>;
+}
 export default function CalculatorClient({ calc, initialResult, shortcuts = [] }: { calc: Calculator; initialResult: Result | null; shortcuts?: {keyword: string; mode: string}[] }) {
   const id = calc.id;
   const runCalculation = (_id: string, mode: string, values: Values) => runClientCalculation(calc.id, calc.category, mode, values);
@@ -67,6 +78,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const workspace = workspaceLayout(id, mode.id);
   const hasWorkspace = Boolean(workspace);
   const wideReports = hasWorkspace;
+  const prominentTables = ["cd","apr","credit-card","self-employment-tax"].includes(id);
   const summary = result && hasWorkspace ? workspaceMetrics(id, mode.id, result) : null;
   const tableRows =
     yearly && result?.annualRows ? result.annualRows : result?.rows;
@@ -289,7 +301,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" }),
       );
     a.href = url;
-    a.download = id + (extra ? id === "mortgage-recast" ? "-comparison" : "-retirement" : "") + "-schedule.csv";
+    a.download = id + (extra ? id === "mortgage-recast" ? "-comparison" : prominentTables ? "-table" : "-retirement" : "") + "-schedule.csv";
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -467,16 +479,8 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               )}
             </>
           )}
-          {result.additionalTables?.filter((_, index) => !['coast-fire','lean-fire','fat-fire','debt-snowball','debt-avalanche'].includes(id) && (id !== "mortgage-recast" || index !== 0)).map(table => <section key={table.title}>
-            <h3>{table.title}</h3>
-            {table.note && <p className="result-note">{table.note}</p>}
-            <div className="result-actions"><button onClick={() => download(table)}>{id === 'coast-fire' ? 'Download comparison CSV' : 'Download retirement CSV'}</button></div>
-            <div className="table-scroll" role="region" aria-label={table.title + " table"} tabIndex={0}>
-              <table><thead><tr>{table.columns.map(column => <th scope="col" key={column}>{column}</th>)}</tr></thead>
-                <tbody>{table.rows.map((row, i) => <tr key={i}>{row.map((value, j) => <td key={j}>{typeof value === "number" ? amount(value, Number.isInteger(value) ? 0 : 2) : value}</td>)}</tr>)}</tbody>
-              </table>
-            </div>
-          </section>)}
+          {!prominentTables && <ResultTables tables={result.additionalTables?.filter((_, index) => !['coast-fire','lean-fire','fat-fire','debt-snowball','debt-avalanche'].includes(id) && (id !== "mortgage-recast" || index !== 0))??[]} onDownload={download} label={id==='coast-fire'?'Download comparison CSV':'Download retirement CSV'}/>}
+
           </CalculationDetails>
   );
   const simple = mode.fields.length <= 14,
@@ -708,6 +712,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         {['debt-snowball','debt-avalanche'].includes(id) && <DebtStrategyReport id={id} values={values} result={result} onDownload={download}/>}
         {id === "mortgage-recast" && result.additionalTables?.[0] && <RecastComparison table={result.additionalTables[0]} onDownload={() => download(result.additionalTables![0])}/>}
         <ResultTrend key={mode.id + "-chart"} id={id} mode={mode.id} values={values} result={result} wide report/>
+        {prominentTables&&Boolean(result.additionalTables?.length)&&<section className="workspace-report" aria-label="Comparison and reconciliation tables"><ResultTables tables={result.additionalTables!} onDownload={download}/></section>}
         <section className="workspace-report workspace-report-details" aria-label="Calculation details">
           {calculationDetails}
         </section>

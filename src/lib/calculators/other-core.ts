@@ -1,3 +1,4 @@
+import {minimumPaymentPlan} from '../credit-minimum';
 import {parseDebts,debtSchedule} from '../debt-repayment';
 export {parseDebts,debtSchedule} from '../debt-repayment';
 export type {Debt} from '../debt-repayment';
@@ -245,6 +246,7 @@ const credit = tool(
                 "No",
                 "Yes",
               ]),
+              {...num("extra", "Extra above the monthly minimum", 0, "$"), optional:true, hint:"Adds a fixed amount to each recalculated minimum. The final payment is capped at the amount owed."},
             ]),
     ],
     description: "Estimate payoff time and interest assuming no new charges.",
@@ -263,33 +265,17 @@ const credit = tool(
           id === "payment" ? n(v, "payment") : undefined,
         );
       }
-      let b = p,
-        total = 0;
-      const rows: (number | string)[][] = [];
-      for (let i = 1; i <= 12000 && b > 1e-7; i++) {
-        const interest = b * r,
-          requested = Math.max(
-            n(v, "floor"),
-            b * pct(v, "minimum") + (v.interest_extra === "Yes" ? interest : 0),
-          ),
-          pay = Math.min(b + interest, requested);
-        if (pay <= interest)
-          throw new Error("Minimum payment does not cover interest.");
-        const principal = pay - interest;
-        b = Math.max(0, b - principal);
-        total += interest;
-        rows.push([i, pay, interest, principal, b]);
-      }
-      if (b > 1e-6)
-        throw new Error("Balance is not repaid within the supported term.");
+      const input={balance:p,apr:n(v,'rate'),percent:n(v,'minimum'),floor:n(v,'floor'),interestExtra:v.interest_extra==='Yes',extra:v.extra? n(v,'extra'):0};
+      const plan=minimumPaymentPlan(input);
+      const comparisons=[...new Set([0,input.extra,25,50])].map(extra=>{
+        try {const candidate=minimumPaymentPlan({...input,extra});return [extra,candidate.firstPayment,candidate.months,candidate.total,candidate.totalPayments];}
+        catch {return [extra,'Not available','Not repaid under this rule','Not available','Not available'];}
+      });
       return {
-        metrics: [
-          metric("Months to repay", rows.length),
-          money("Total interest", total),
-          money("Total payments", p + total),
-        ],
-        columns: ["Month", "Payment", "Interest", "Principal", "Balance"],
-        rows,
+        metrics:[metric('Months to repay',plan.months),money('Total interest',plan.total),money('Total payments',plan.totalPayments),money('Initial modeled minimum payment',plan.firstMinimum),money('Initial payment including extra',plan.firstPayment)],
+        columns:['Month','Payment','Interest','Principal','Balance'],rows:plan.rows,
+        additionalTables:[{title:'Minimum payments versus a little extra',columns:['Extra above monthly minimum (USD)','First payment (USD)','Months to repay','Total interest (USD)','Total payments (USD)'],rows:comparisons,note:'Each scenario recalculates the minimum on the remaining opening balance each month, then adds a fixed extra payment. This is not a fixed-total-payment plan. Unrepayable scenarios have no estimated payoff or interest total.'}],
+        notes:['Monthly interest is opening balance × APR / 12. The minimum is the larger of the dollar floor or the selected percent of opening balance, plus interest only when selected. The final payment cannot exceed the balance plus interest. Real issuers may use statement balances, daily interest, fees and different rounding rules.','No new purchases, annual fees, late fees, promotional APR changes, multiple APR balances or past-due amounts are modeled. Your statement gives the actual minimum due.'],
       };
     },
   })),

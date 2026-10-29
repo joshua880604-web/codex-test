@@ -604,5 +604,17 @@
     "title": "Debt Avalanche Calculator",
     "category": "Other",
     "local_route": "/debt-avalanche-calculator.html"
+  },
+  {
+    "id": "hsa",
+    "title": "HSA Calculator",
+    "category": "Retirement",
+    "local_route": "/hsa-calculator.html"
+  },
+  {
+    "id": "self-employment-tax",
+    "title": "Self-Employment Tax Calculator",
+    "category": "Tax and Salary",
+    "local_route": "/self-employment-tax-calculator.html"
   }
 ]

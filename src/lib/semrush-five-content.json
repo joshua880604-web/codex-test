@@ -1,0 +1,579 @@
+{
+  "apr": {
+    "updatedOn": "2026-10-29",
+    "summary": "Use this APR calculator to turn a loan interest rate, financed fees and upfront charges into a comparable annual percentage rate. Review nominal APR, effective annual cost and a dollar reconciliation of the cash received and amounts repaid. Switch to Mortgage APR when points or an entered mortgage-insurance charge apply.",
+    "sources": [
+      {
+        "title": "CFPB: loan interest rate versus APR",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-loan-interest-rate-and-the-apr-en-733/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "A no-fee loan keeps the nominal annual rate",
+        "mode": "loan",
+        "values": {
+          "principal": "10000",
+          "rate": "12",
+          "years": "1",
+          "months": "0",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "financed": "0",
+          "upfront": "0"
+        },
+        "inputs": "$10,000 principal, 12% nominal interest compounded monthly, 12 monthly payments and no fees.",
+        "steps": [
+          "The periodic interest rate is 12% / 12 = 1%.",
+          "Discounting the scheduled payments at 1% per month returns the $10,000 proceeds. Nominal APR is 1% \u00d7 12 = 12%."
+        ],
+        "answer": "Nominal APR is 12%; effective annual APR is approximately 12.6825%.",
+        "expected": {
+          "label": "Nominal APR",
+          "value": 12,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-apr-how-calculated",
+        "queries": [
+          "how to calculate apr",
+          "how is apr calculated",
+          "how to calculate apr on a loan"
+        ],
+        "question": "How do you calculate APR on a loan?",
+        "answer": "Calculate each scheduled payment using the repayment balance and loan rate, then solve the periodic discount rate that makes the present value of payments equal the net proceeds. Annualize that rate by the payment frequency. A fee divided by principal alone does not capture when repayments occur.",
+        "links": [
+          {
+            "id": "apr",
+            "mode": "loan",
+            "label": "Open APR calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-apr-fee-treatment",
+        "queries": [
+          "Should financed fees and upfront fees go in the same box?"
+        ],
+        "question": "Should financed fees and upfront fees go in the same box?",
+        "answer": "No. In this model, financed fees increase the repayment balance; upfront fees and points reduce cash proceeds. Enter a fee once in its applicable field. The reconciliation table shows both effects. Legal APR disclosures can exclude some charges, so confirm which fees belong in a lender comparison.",
+        "links": [
+          {
+            "id": "apr",
+            "mode": "loan",
+            "label": "Open APR calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-apr-credit-card",
+        "queries": [
+          "credit card apr calculator",
+          "apr calculator credit card"
+        ],
+        "question": "Can I use this APR calculator for credit card interest?",
+        "answer": "This page solves the APR of a scheduled installment loan from its cash flows. For a card with a quoted APR, use the single-card calculator to model payments and payoff. That model uses monthly interest; real card statements often use daily balances and may contain several APRs.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "minimum",
+            "label": "Open credit card calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-apr-apy",
+        "queries": [
+          "apr calculator savings",
+          "apy to apr calculator"
+        ],
+        "question": "Is APR the same as APY on savings?",
+        "answer": "No. The loan result shows nominal annualized borrowing cost, while effective annual APR includes compounding of that periodic yield. CD APY describes an effective annual deposit yield. Use the CD calculator\u2019s APY setting for savings instead of treating this loan-fee model as a deposit quote.",
+        "links": [
+          {
+            "id": "cd",
+            "mode": "accumulation",
+            "label": "Open CD calculator"
+          }
+        ]
+      }
+    ]
+  },
+  "cd": {
+    "updatedOn": "2026-10-29",
+    "sources": [
+      {
+        "title": "CFPB: APY calculation rules",
+        "url": "https://www.consumerfinance.gov/rules-policy/regulations/1030/a/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "A six-month CD quoted at 4% APY",
+        "mode": "accumulation",
+        "values": {
+          "principal": "10000",
+          "rate_type": "APY",
+          "rate": "4",
+          "compound": "Monthly",
+          "years": "0",
+          "months": "6",
+          "tax": "0"
+        },
+        "inputs": "$10,000 deposit, 4% APY, six months and zero tax estimate.",
+        "steps": [
+          "An APY already includes compounding. Use $10,000 \u00d7 1.04^(6/12).",
+          "Maturity balance is $10,198.0390; interest is $198.0390."
+        ],
+        "answer": "About $198.04 interest and $10,198.04 at maturity.",
+        "expected": {
+          "label": "Interest earned",
+          "value": 198.03902718557,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-cd-six-month-interest",
+        "queries": [
+          "how to calculate cd interest",
+          "how to calculate interest on a cd"
+        ],
+        "question": "How much interest does a six-month CD earn?",
+        "answer": "For a fixed APY, interest is deposit \u00d7 [(1 + APY)^(6/12) \u2212 1]. A $10,000 deposit at 4% APY earns about $198.04 over six months in this model. Bank day-count and crediting conventions may produce a slightly different amount.",
+        "links": [
+          {
+            "id": "cd",
+            "mode": "accumulation",
+            "label": "Open CD calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cd-compare-terms",
+        "queries": [
+          "Can I compare 6-month, 12-month and 24-month CDs?"
+        ],
+        "question": "How can I compare different CD terms at the same assumed rate?",
+        "answer": "Yes. The term comparison table shows several hypothetical durations using your same deposit, entered rate and rate type. Actual banks may offer a different APY for each term; rerun the calculator with each offer before comparing them. The table is not a list of current CD rates or a ladder strategy.",
+        "links": [
+          {
+            "id": "cd",
+            "mode": "accumulation",
+            "label": "Open CD calculator"
+          }
+        ],
+        "replacesQuestion": "Can I compare 6-month, 12-month and 24-month CDs?"
+      },
+      {
+        "anchor": "use-cd-quoted-rate",
+        "queries": [
+          "cd rate calculator",
+          "cd interest rate calculator"
+        ],
+        "question": "Does this CD rate calculator find today\u2019s best bank rate?",
+        "answer": "No. You supply the rate or APY from a bank offer. The tool calculates the resulting interest and maturity amount; it does not fetch quotes or predict rates. Check the term, minimum deposit, early-withdrawal terms and whether the quoted APY requires conditions.",
+        "links": [
+          {
+            "id": "cd",
+            "mode": "accumulation",
+            "label": "Open CD calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cd-add-deposits",
+        "queries": [
+          "Can I add monthly deposits to a CD in this calculator?"
+        ],
+        "question": "Can I add monthly deposits to a CD in this calculator?",
+        "answer": "This CD model uses one opening deposit and reinvested interest, with no additional deposits. If your product permits add-on deposits, use the savings or compound-interest calculator and match the account\u2019s actual contribution rules. Do not read the monthly interest table as monthly deposits or a promised cash payout.",
+        "links": [
+          {
+            "id": "cd",
+            "mode": "accumulation",
+            "label": "Open CD calculator"
+          }
+        ]
+      }
+    ]
+  },
+  "401k": {
+    "updatedOn": "2026-10-29",
+    "sources": [
+      {
+        "title": "IRS: traditional and Roth contribution tax treatment",
+        "url": "https://www.irs.gov/retirement-plans/roth-comparison-chart"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Traditional deferrals and estimated paycheck cost",
+        "mode": "tax-savings",
+        "values": {
+          "age": "35",
+          "salary": "80000",
+          "employee": "8000",
+          "roth_share": "0",
+          "prior_wages": "0",
+          "federal": "22",
+          "state": "0",
+          "paychecks": "26"
+        },
+        "inputs": "$8,000 traditional employee deferral; 22% federal marginal rate; zero state benefit; 26 equal paychecks.",
+        "steps": [
+          "Estimated current income-tax saving is $8,000 \u00d7 22% = $1,760.",
+          "Annual paycheck reduction is $8,000 \u2212 $1,760 = $6,240, or $240 per paycheck. Employee Social Security and Medicare savings are zero."
+        ],
+        "answer": "Estimated income-tax saving $1,760; paycheck reduction $240 each.",
+        "expected": {
+          "label": "Estimated annual income-tax saving",
+          "value": 1760,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-401k-tax-savings",
+        "queries": [
+          "how much does 401k contribution reduce taxes calculator"
+        ],
+        "question": "How much does a 401(k) contribution reduce taxes?",
+        "answer": "The Contribution Tax Savings mode estimates current income-tax savings from the traditional portion of an employee deferral using your entered marginal rates. An $8,000 traditional deferral at a 22% federal rate saves about $1,760 before state effects. Roth deferrals have no current deduction; neither type reduces employee Social Security or Medicare tax.",
+        "links": [
+          {
+            "id": "401k",
+            "mode": "tax-savings",
+            "label": "Open 401(k) calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-401k-life",
+        "queries": [
+          "how long will my 401k last calculator"
+        ],
+        "question": "How long will my 401(k) last?",
+        "answer": "Use the retirement calculator\u2019s savings-longevity mode to model a specific withdrawal budget, or inspect the 401(k) retirement-withdrawal schedule for its stated horizon. Results depend on investment returns, inflation, withdrawals and taxes. A modeled smooth return path does not establish a safe withdrawal rate.",
+        "links": [
+          {
+            "id": "retirement",
+            "mode": "longevity",
+            "label": "Open retirement calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-401k-roth-growth",
+        "queries": [
+          "roth 401k calculator"
+        ],
+        "question": "Does the 401(k) growth projection distinguish Roth from traditional balances?",
+        "answer": "No. The growth projection shows a combined before-distribution-tax account value under the entered return and contribution assumptions. Contribution Tax Savings separates the current-year traditional and Roth deferrals; it does not calculate qualified Roth distributions, future withdrawal taxes or determine which account type is better.",
+        "links": [
+          {
+            "id": "401k",
+            "mode": "tax-savings",
+            "label": "Open 401(k) calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-401k-rmd",
+        "queries": [
+          "how to calculate 401k rmd"
+        ],
+        "question": "Can this page calculate my required minimum distribution?",
+        "answer": "Use the separate RMD calculator for an annual required distribution. An estimated 401(k) retirement payout is a budget projection, not an RMD. Required distributions depend on the account type, applicable start age, year-end balance and IRS life-expectancy rules.",
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Open RMD calculator"
+          }
+        ]
+      }
+    ]
+  },
+  "credit-card": {
+    "updatedOn": "2026-10-29",
+    "sources": [
+      {
+        "title": "CFPB: credit-card interest methods",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-does-my-credit-card-company-calculate-the-amount-of-interest-i-owe-en-51/"
+      },
+      {
+        "title": "CFPB: minimum-payment repayment disclosure assumptions",
+        "url": "https://www.consumerfinance.gov/rules-policy/regulations/1026/m1/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "A percentage minimum plus interest",
+        "mode": "minimum",
+        "values": {
+          "principal": "10000",
+          "rate": "20",
+          "minimum": "2",
+          "floor": "25",
+          "interest_extra": "Yes",
+          "extra": "0"
+        },
+        "inputs": "$10,000 opening balance, 20% APR, 2% principal minimum, $25 floor and interest added.",
+        "steps": [
+          "First-month interest is $10,000 \u00d7 20% / 12 = $166.6667.",
+          "The modeled minimum is max($25, $10,000 \u00d7 2% + $166.6667) = $366.6667."
+        ],
+        "answer": "The first modeled minimum is about $366.67, then changes as the balance falls.",
+        "expected": {
+          "label": "Initial modeled minimum payment",
+          "value": 366.6666666667,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-card-minimum-formula",
+        "queries": [
+          "how is credit card minimum payment calculated",
+          "how to calculate minimum payment on credit card"
+        ],
+        "question": "How is the credit card minimum payment calculated?",
+        "answer": "The selected rule takes the larger of your dollar floor or a percentage of the opening balance, adding monthly interest only if you select Yes. For $10,000 at 20% APR with a 2% principal rule plus interest, the first minimum is about $366.67. Real issuers can use statement balances, fees and rounding rules that differ from this illustration.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "minimum",
+            "label": "Open credit card calculator"
+          }
+        ],
+        "replacesQuestion": "How does the credit card minimum payment calculator work?"
+      },
+      {
+        "anchor": "use-card-extra-payment",
+        "queries": [
+          "What happens if I pay $25 more than the minimum?"
+        ],
+        "question": "What happens if I pay $25 more than the minimum?",
+        "answer": "The comparison table adds a fixed extra amount to each month\u2019s recalculated minimum and shows payoff time and total interest. As the balance falls, the total monthly payment can fall too. To keep paying a fixed total amount every month, use Fixed Monthly Payment instead.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "minimum",
+            "label": "Open credit card calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-minimum-rules",
+        "queries": [
+          "Does the minimum payment percent include interest?"
+        ],
+        "question": "Does the minimum payment percent include interest?",
+        "answer": "It depends on the rule you choose. Select No to model the percent amount with no separate interest add-on; select Yes for a percent principal component plus monthly interest. Both use the dollar floor and final-payment cap. Check your statement and card agreement before choosing a rule.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "minimum",
+            "label": "Open credit card calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-statement-minimum",
+        "queries": [
+          "Is the calculated minimum the amount due on my actual statement?"
+        ],
+        "question": "Is the calculated minimum the amount due on my actual statement?",
+        "answer": "No. The calculator estimates a selected rule on an opening balance, using APR divided by 12 and no new charges. Your issuer may use average daily balances, statement interest, past-due amounts or multiple APRs. Pay at least the actual minimum by the due date shown on your statement.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "minimum",
+            "label": "Open credit card calculator"
+          }
+        ]
+      }
+    ]
+  },
+  "self-employment-tax": {
+    "updatedOn": "2026-10-29",
+    "summary": "Self-employment tax pays into Social Security and Medicare and is separate from ordinary income tax. Use net business profit after expenses, then add W-2 wages where applicable. This calculator estimates the regular method for 2025 or 2026, coordinates each spouse\u2019s Social Security wage-base room separately, and shows the SE and wage portions of Additional Medicare tax without combining them into an unexplained total.",
+    "scope": "U.S. regular nonfarm SE method; one taxpayer or two spouses filing jointly. Losses are floored at zero for each owner. Assumes entered profit is already eligible net business income. Excludes optional Schedule SE methods, church employee rules, RRTA income, foreign agreements, withholding credits, QBI and ordinary income tax. The quarterly figure is a reserve illustration, not a required estimated installment or safe-harbor calculation.",
+    "sources": [
+      {
+        "title": "IRS: self-employment tax overview",
+        "url": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes"
+      },
+      {
+        "title": "IRS: Schedule SE instructions",
+        "url": "https://www.irs.gov/instructions/i1040sse"
+      },
+      {
+        "title": "SSA: annual Social Security wage bases",
+        "url": "https://www.ssa.gov/oact/cola/cbb.html"
+      },
+      {
+        "title": "IRS: Additional Medicare Tax questions and examples",
+        "url": "https://www.irs.gov/businesses/small-businesses-self-employed/questions-and-answers-for-the-additional-medicare-tax"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Regular self-employment tax on $80,000 profit",
+        "mode": "annual",
+        "values": {
+          "year": "2026",
+          "filing": "Single",
+          "profit": "80000",
+          "ss_wages": "0",
+          "medicare_wages": "0",
+          "spouse_profit": "0",
+          "spouse_ss_wages": "0",
+          "spouse_medicare_wages": "0"
+        },
+        "inputs": "$80,000 net profit, no wages and single filing in 2026.",
+        "steps": [
+          "Adjusted earnings are $80,000 \u00d7 92.35% = $73,880.",
+          "Social Security is $73,880 \u00d7 12.4% = $9,161.12; regular Medicare is $73,880 \u00d7 2.9% = $2,142.52.",
+          "Total regular SE tax is $11,303.64. Half, $5,651.82, is the modeled income adjustment. No Additional Medicare applies."
+        ],
+        "answer": "SE tax $11,303.64; deductible half $5,651.82.",
+        "expected": {
+          "label": "Self-employment tax including SE Additional Medicare",
+          "value": 11303.64,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-se-how",
+        "queries": [
+          "how to calculate self employment tax",
+          "how is self employment tax calculated"
+        ],
+        "question": "How do I calculate self-employment tax?",
+        "answer": "For the regular method, start with net business profit after expenses. This model applies the 92.35% earnings adjustment and $400 adjusted-earnings test, then calculates the Social Security and Medicare parts. Wage-base room and Additional Medicare can change the result, so multiplying all revenue by 15.3% is not sufficient.",
+        "links": [
+          {
+            "id": "self-employment-tax",
+            "mode": "annual",
+            "label": "Open self-employment tax calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-se-w2",
+        "queries": [
+          "employed and self employed tax calculator"
+        ],
+        "question": "How is tax calculated if I am employed and self-employed?",
+        "answer": "Enter your own W-2 Social Security wages and Medicare wages separately. Your wages use your Social Security wage-base room before SE earnings. Medicare wages also use the filing-status threshold before the SE portion of Additional Medicare is calculated. A spouse\u2019s wage base is separate.",
+        "links": [
+          {
+            "id": "self-employment-tax",
+            "mode": "annual",
+            "label": "Open self-employment tax calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-se-deduction",
+        "queries": [
+          "Can I deduct half of my self-employment tax?"
+        ],
+        "question": "Can I deduct half of my self-employment tax?",
+        "answer": "The model shows half of regular Social Security and Medicare SE tax as an income adjustment. It excludes Additional Medicare from that half. This reduces modeled income for an income-tax calculation; it is not a refund of half the SE tax or a dollar-for-dollar credit.",
+        "links": [
+          {
+            "id": "self-employment-tax",
+            "mode": "annual",
+            "label": "Open self-employment tax calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-se-income-tax",
+        "queries": [
+          "Does this self-employment tax calculator include federal income tax?"
+        ],
+        "question": "Does this self-employment tax calculator include federal income tax?",
+        "answer": "No. The primary result is regular SE tax plus Additional Medicare attributable to SE earnings. Wage-only Additional Medicare is displayed separately. Use the federal income tax calculator to include ordinary income, deductions and supported credits. State tax and local business tax are outside this page.",
+        "links": [
+          {
+            "id": "income-tax",
+            "mode": "federal",
+            "label": "Open federal income tax calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-se-quarterly",
+        "queries": [
+          "how to calculate quarterly taxes for self employed"
+        ],
+        "question": "Can I divide self-employment tax by four for quarterly payments?",
+        "answer": "Dividing the SE result by four can help set aside a reserve for that component only. Required estimated payments can also include ordinary income tax and depend on prior-year tax, withholding, credits and income timing. This page does not calculate Form 1040-ES installments or underpayment penalties.",
+        "links": [
+          {
+            "id": "self-employment-tax",
+            "mode": "annual",
+            "label": "Open self-employment tax calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-se-married",
+        "queries": [
+          "How do married spouses calculate self-employment tax?"
+        ],
+        "question": "How do married spouses calculate self-employment tax?",
+        "answer": "For joint filing, enter each owner\u2019s profit and wages separately so the regular Social Security cap is applied individually. The Additional Medicare test uses joint Medicare wages and SE earnings. Separate filing uses only the individual\u2019s inputs; special community-property and joint-business allocation issues require separate review.",
+        "links": [
+          {
+            "id": "self-employment-tax",
+            "mode": "annual",
+            "label": "Open self-employment tax calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-se-profit",
+        "queries": [
+          "Should I enter 1099 revenue or net profit?"
+        ],
+        "question": "Should I enter 1099 revenue or net profit?",
+        "answer": "Enter net business profit after deductible business expenses, not the total of gross 1099 receipts. This page does not decide which expenses are deductible or subtract personal income-tax deductions from the SE-tax base.",
+        "links": [
+          {
+            "id": "self-employment-tax",
+            "mode": "annual",
+            "label": "Open self-employment tax calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-se-no-profit",
+        "queries": [
+          "Do I owe self-employment tax with no profit?"
+        ],
+        "question": "Do I owe self-employment tax with no profit?",
+        "answer": "Under this regular-method illustration, zero or negative owner profit gives zero SE tax. Adjusted net earnings below $400 also produce no regular SE tax. Special rules and optional methods are not covered, and other federal filing requirements may still apply.",
+        "links": [
+          {
+            "id": "self-employment-tax",
+            "mode": "annual",
+            "label": "Open self-employment tax calculator"
+          }
+        ]
+      }
+    ]
+  }
+}

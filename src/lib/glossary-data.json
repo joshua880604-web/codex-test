@@ -57,6 +57,10 @@
       {
         "id": "interest",
         "text": "Explore how regular contributions change the projected balance."
+      },
+      {
+        "id": "hsa",
+        "text": "Project HSA investment growth after medical spending and fees."
       }
     ],
     "related": [
@@ -2801,6 +2805,10 @@
       {
         "id": "take-home-paycheck",
         "text": "Separate withholding and payroll deductions from final income-tax liability."
+      },
+      {
+        "id": "self-employment-tax",
+        "text": "Separate SE Social Security and Medicare taxes from ordinary income tax."
       }
     ],
     "related": [

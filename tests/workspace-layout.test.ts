@@ -11,7 +11,7 @@ function run(id: string, mode: string, overrides: Record<string, string> = {}) {
   return { result, values, trend: resultTrend(id, mode, values, result), summary: workspaceMetrics(id, mode, result) };
 }
 test("workspace policy covers reviewed pages, preserves broad forms, and never loses metrics", () => {
-  assert.equal(workspaceIds.length, 61); assert.equal(new Set(workspaceIds).size, 61);
+  assert.equal(workspaceIds.length, 63); assert.equal(new Set(workspaceIds).size, 63);
   for (const id of ["income-tax", "marriage-tax", "budget", "credit-cards-payoff", "401k", "scientific"]) assert.equal(hasCalculatorWorkspace(id), false);
   assert.equal(workspaceLayout("retirement", "required"), "stacked");
   assert.equal(workspaceLayout("payback-period", "irregular"), "stacked");
@@ -37,7 +37,7 @@ test("requested payment and comparison amounts remain visible before disclosures
   const cd = run("cd", "accumulation").summary;
   assert.equal(cd.primary.label, "After-tax balance");
   assert.deepEqual(cd.highlights.map(m => m.label), ["Interest earned", "Maturity balance", "Tax on interest"]);
-  assert.equal(cd.details.length, 0, "All four CD figures remain visible without opening a disclosure");
+  assert.equal(cd.details.length, 2, "The original four CD figures stay visible; APY and term remain in the breakdown");
 });
 test("exported summaries prioritize the same result as the active workspace mode", () => {
   for (const [id, mode] of [["auto-loan", "payment"], ["auto-loan", "price"], ["cd", "accumulation"], ["mortgage", "biweekly"], ["student-loan", "projection"], ["retirement", "withdrawal"]]) {
@@ -118,10 +118,10 @@ test("every enabled curve matches the full computed schedule's exact terminal va
   let count = 0;
   for (const c of calculators.filter(c => hasCalculatorWorkspace(c.id))) for (const m of c.modes) {
     const x = run(c.id, m.id); if (!x.trend) continue; count++;
-    const balanceColumn = x.result.columns!.findIndex(label => ["Total balance", "Recast balance", "Balance", "Balance before tax", "Ending balance", "IRA balance", "Option A balance", "Book value", "Net borrowing-cost savings"].includes(label));
+    const balanceColumn = x.result.columns!.findIndex(label => ["Closing balance (USD)", "Total balance", "Recast balance", "Balance", "Balance before tax", "Ending balance", "IRA balance", "Option A balance", "Book value", "Net borrowing-cost savings"].includes(label));
     assert.equal(x.trend.points.at(-1)!.balance, x.result.rows!.at(-1)![balanceColumn], c.id + ":" + m.id);
     assert.ok(x.trend.points.every(p => Number.isFinite(p.x) && Number.isFinite(p.balance)));
     assert.ok(x.trend.points.length <= 241);
   }
-  assert.equal(count, 70);
+  assert.equal(count, 71);
 });

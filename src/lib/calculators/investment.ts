@@ -524,12 +524,15 @@ const cd = tool(
         return {
           columns:["Month","Period interest","Cumulative interest","Balance before tax"], rows,
           schedulePeriod:"Monthly", annualColumns:["Year","Cumulative interest","Balance before tax"], annualRows:yearly,
+          additionalTables:[{title:'Compare hypothetical CD terms at the same entered rate',columns:['Term (months)','Before-tax maturity balance (USD)','Interest earned (USD)','After-tax maturity balance (USD)'],rows:[6,12,18,24,36].map(months=>{const ending=future(p,0,monthlyRate,months),gain=ending-p;return [months,ending,gain,ending-Math.max(0,gain)*pct(v,'tax')];}),note:'Holds your deposit, rate and rate type constant across all terms. These are hypothetical durations, not bank quotes or a CD ladder; actual rates can differ by term. Taxes are approximated at maturity.'}],
           notes:[...(apy ? ["APY already includes compounding. The selected compounding frequency is ignored. Growth uses a constant effective annual yield and term in months / 12, not exact bank day-count or crediting conventions."] : []), "Schedule balances are before tax. The marginal tax estimate is applied to positive total interest at maturity; it does not model annual tax cash flows, early withdrawal penalties or changing rates."],
           metrics: [
             money("Maturity balance", fv),
             money("Interest earned", interest),
             money("Tax on interest", tax),
             money("After-tax balance", fv - tax),
+            metric("Effective annual yield (APY)",(Math.pow(1+monthlyRate,12)-1)*100,"percent"),
+            metric("Selected CD term in months",term),
           ],
         };
       },

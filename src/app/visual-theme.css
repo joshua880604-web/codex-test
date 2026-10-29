@@ -177,14 +177,14 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .recast-comparison tbody th {min-width:140px;position:sticky;left:0;top:auto;background:#fff;color:#172033;font-weight:600;}
 
 /* Separate card inputs share the legacy calculation/preset representation. */
-.credit-card-editor {min-width:0;width:100%;box-sizing:border-box;margin:0 0 18px;padding:0;border:0;grid-column:1/-1;}
+.credit-card-editor {min-width:0;width:100%;box-sizing:border-box;margin:0 0 18px;padding:0;border:0;grid-column:1/-1;container-type:inline-size;container-name:debt-editor;}
 .credit-card-editor > legend {font-weight:700;font-size:15px;color:#172033;padding:0;}
 .credit-card-editor-help {font-size:12px;line-height:1.6;color:#52627a;margin:8px 0 14px;}
 .credit-card-entry {min-width:0;margin:0 0 14px;padding:14px;border:1px solid #e0e5f2;border-radius:14px;background:#f8f9fd;}
 .credit-card-entry > legend {font-size:13px;font-weight:650;color:#5143b8;padding:0 5px;}
 .credit-card-inputs {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
 .credit-card-input {min-width:0;}
-.credit-card-input label {display:block;min-height:32px;font-size:12px;line-height:1.4;color:#334155;margin:0 0 6px;}
+.credit-card-input label {display:block;min-height:3.6em;font-size:12px;line-height:1.4;color:#334155;margin:0 0 6px;overflow-wrap:break-word;}
 .credit-card-input input {display:block;box-sizing:border-box;width:100%;min-width:0;min-height:44px;padding:10px 12px;border:1px solid #dce3f2;border-radius:10px;background:#fff;color:#172033;font:inherit;font-size:16px;text-align:left;}
 .credit-card-input input:focus-visible,.credit-card-editor button:focus-visible {outline:3px solid #b6a9f1;outline-offset:2px;}
 .credit-card-editor .credit-card-remove {display:block;background:transparent;color:#7b4052;border:0;border-radius:8px;font:inherit;font-size:12px;min-height:44px;padding:8px 0;margin:4px 0 -6px;box-shadow:none;}
@@ -192,8 +192,9 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .credit-card-editor .credit-card-add {background:#f1eeff;color:#5143b8;border:1px solid #d9d2fb;border-radius:10px;min-height:44px;padding:10px 16px;font:inherit;font-size:13px;font-weight:650;box-shadow:none;}
 .credit-card-editor-actions span {color:#64748b;font-size:12px;}
 .credit-card-editor button:disabled {opacity:.45;cursor:default;}
-@media (min-width:768px){.credit-card-inputs {grid-template-columns:minmax(110px,1.1fr) repeat(3,minmax(0,1fr));}}
-@media (max-width:359px){.credit-card-entry {padding:10px;}.credit-card-inputs {gap:10px;}.credit-card-input label {min-height:48px;}}
+/* Follow the form width, including narrow forms in the desktop split layout. */
+@container debt-editor (min-width:640px){.credit-card-inputs {grid-template-columns:minmax(150px,1.1fr) repeat(3,minmax(0,1fr));}}
+@container debt-editor (max-width:279px){.credit-card-entry {padding:10px;}.credit-card-inputs {grid-template-columns:1fr;gap:12px;}.credit-card-input label {min-height:0;}}
 
 /* Embed configuration loads only when its share disclosure is opened. */
 .embed-options label{display:block;margin:12px 0;font-weight:600}

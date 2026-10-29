@@ -36,6 +36,10 @@ export function calculatorScope(id: string, mode: string, values: Values): strin
     case "ira":
     case "roth-ira":
       return "U.S. IRA planning using fixed 2026 contribution limits. Contribution eligibility and tax treatment depend on the stated assumptions.";
+    case "self-employment-tax":
+      return "U.S. 2025/2026 regular self-employment tax and Additional Medicare allocation. Excludes ordinary income tax, state tax, special SE methods and withholding credits.";
+    case "hsa":
+      return "U.S. HSA planning with selected 2025 or 2026 limits. Contribution eligibility must be confirmed separately; projected limits and tax assumptions stay fixed.";
     case "rmd":
       return "U.S. RMD planning for traditional IRA and other eligible non-Roth owner accounts. Roth IRA owner balances, designated Roth plan balances for 2024 onward, inherited accounts and employer-plan deferrals are excluded.";
     case "income-tax":

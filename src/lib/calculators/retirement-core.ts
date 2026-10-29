@@ -1,3 +1,4 @@
+import {contributionTaxSavings} from '../401k-tax-savings';
 import { retirementIncome } from "../retirement-projection";
 import { employee401kLimit as limit401 } from "../retirement-limits";
 import { tool, timingField } from "./helpers";
@@ -399,6 +400,7 @@ const k401 = tool(
         };
       },
     },
+    contributionTaxSavings,
   ],
   "Project 401(k) saving, compare early withdrawal costs, and maximize matching contributions.",
 );

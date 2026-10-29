@@ -225,3 +225,14 @@ snowballComparison.keyword='Compare debt snowball and avalanche';
 snowballComparison.aliases=['Debt snowball vs avalanche calculator','Debt avalanche vs snowball calculator','Debt snowball vs debt avalanche calculator'];
 
 searchTasks['debt-snowball'][0].aliases!.push('Debt payoff calculator snowball');
+
+keywordTitles.hsa='HSA Calculator - Contribution Limits, Tax Savings & Growth';
+searchTasks.hsa=[{keyword:'HSA contribution calculator',mode:'contribution',description:'Estimate personal contribution room after employer deposits and potential tax savings.'},{keyword:'HSA growth calculator',mode:'growth',description:'Project HSA investment growth after fees and qualified medical spending.'}];
+
+keywordTitles['self-employment-tax']='Self-Employment Tax Calculator - 2025 & 2026 SE Tax';
+searchTasks['self-employment-tax']=[{keyword:'Self employment tax calculator',mode:'annual',description:'Estimate regular SE tax, W-2 wage coordination and Additional Medicare separately.',aliases:['Self employed tax calculator','Employed and self employed tax calculator','1099 self employment tax calculator']}];
+keywordTitles.cd='CD Calculator - Interest, APY & Maturity Value';
+keywordTitles.apr='APR Calculator - Loan Fees, Interest Rate & Borrowing Cost';
+searchTasks['401k'].push({keyword:'401k contribution tax savings calculator',mode:'tax-savings',description:'Estimate the income-tax saving and paycheck effect of traditional and Roth employee deferrals under 2026 limits.'});
+const minimumTask=searchTasks['credit-card'].find(t=>t.mode==='minimum');
+if(minimumTask){minimumTask.aliases=[...new Set([...(minimumTask.aliases??[]),minimumTask.keyword,'Minimum credit card payment calculator','Minimum payment credit card calculator'])];minimumTask.keyword='Credit card minimum payment calculator';minimumTask.aliases=minimumTask.aliases.filter(alias=>alias.toLowerCase()!==minimumTask.keyword.toLowerCase());minimumTask.description='Calculate the first modeled minimum payment, payoff time and interest, then compare adding a fixed extra amount each month.';}

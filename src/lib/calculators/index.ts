@@ -1,3 +1,5 @@
+import {selfEmploymentTaxCalculator} from './self-employment-tax';
+import {hsaCalculator} from './hsa';
 import {debtSnowball,debtAvalanche} from './debt-strategies';
 import {leanFireCalculator,fatFireCalculator} from './fire-budgets';
 import {noiCalculator} from "./noi";
@@ -19,7 +21,7 @@ import { everydayCalculators } from "./everyday";
 import { otherCalculators } from "./other";
 import { defaults, type Calculator, type Values, type Result } from "../types";
 export const calculators: Calculator[] = [
-  debtSnowball,debtAvalanche,leanFireCalculator,fatFireCalculator,noiCalculator,fireCalculator,mirrCalculator,
+  selfEmploymentTaxCalculator,hsaCalculator,debtSnowball,debtAvalanche,leanFireCalculator,fatFireCalculator,noiCalculator,fireCalculator,mirrCalculator,
   coastFire,
   ...businessTools,
   ...evergreenCalculators,

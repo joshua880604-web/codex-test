@@ -1,0 +1,235 @@
+{
+  "hsa": {
+    "updatedOn": "2026-10-29",
+    "summary": "A health savings account (HSA) can help an eligible person set aside money for qualified healthcare costs. This free HSA calculator separates two planning tasks: estimate annual contribution room and potential tax savings, or project an existing balance with new deposits and medical spending. Employer deposits consume contribution room but are not counted as a second personal deduction.",
+    "scope": "USD, one account owner. Choose 2025 or 2026 limits. Annual mode uses unchanged coverage and monthly prorating; no last-month rule, coverage changes or eligibility determination. Growth assumes full eligible contribution years, fixed annual limits, fixed catch-up status, nominal deposits and withdrawals, and annual effective growth before year-end cash flows. Family projections assume no contributions to another HSA using the shared base limit. Stop contributions before Medicare or other loss of eligibility. This is not a full tax return, insurance comparison or excess-contribution correction.",
+    "sources": [
+      {
+        "title": "IRS: 2026 HSA contribution limits (Revenue Procedure 2025-19)",
+        "url": "https://www.irs.gov/irb/2025-21_IRB#REV-PROC-2025-19"
+      },
+      {
+        "title": "IRS Publication 969: eligibility, contributions and distributions",
+        "url": "https://www.irs.gov/publications/p969"
+      },
+      {
+        "title": "IRS Form 8889 instructions: contribution and deduction calculations",
+        "url": "https://www.irs.gov/instructions/i8889"
+      },
+      {
+        "title": "IRS Publication 15-B: HSA payroll contribution treatment",
+        "url": "https://www.irs.gov/publications/p15b"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Self-only contribution room after employer deposits",
+        "mode": "contribution",
+        "values": {
+          "year": "2026",
+          "coverage": "Self-only",
+          "catchup": "No",
+          "months": "12",
+          "employee": "3000",
+          "employer": "500",
+          "federal": "22",
+          "state": "0",
+          "method": "Direct contribution",
+          "payroll_rate": "7.65"
+        },
+        "inputs": "2026 self-only, full-year eligibility, $500 employer contribution and $3,000 personal contribution; 22% federal rate.",
+        "steps": [
+          "Combined ceiling is $4,400; personal room is $4,400 \u2212 $500 = $3,900.",
+          "Estimated federal saving is $3,000 \u00d7 22% = $660; remaining room is $900."
+        ],
+        "answer": "Personal room $3,900; estimated tax savings $660.",
+        "expected": {
+          "label": "Estimated tax savings on personal contribution",
+          "value": 660,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "One-year HSA growth with medical spending",
+        "mode": "growth",
+        "values": {
+          "year": "2026",
+          "coverage": "Self-only",
+          "catchup": "No",
+          "balance": "5000",
+          "employee": "3000",
+          "employer": "500",
+          "years": "1",
+          "contribution_years": "1",
+          "return": "5",
+          "spending": "1000",
+          "fee": "50",
+          "inflation": "0"
+        },
+        "inputs": "$5,000 opening balance, 5% effective return, $3,500 year-end deposits, $50 fees and $1,000 qualified spending.",
+        "steps": [
+          "Opening balance earns $250; contributions add $3,500.",
+          "Subtract $50 fees and $1,000 spending: $5,000 + $250 + $3,500 \u2212 $50 \u2212 $1,000 = $7,700."
+        ],
+        "answer": "Projected year-end balance $7,700.",
+        "expected": {
+          "label": "Projected HSA balance",
+          "value": 7700,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-contribution-limit",
+        "queries": [
+          "How much can I contribute to an HSA in 2026?"
+        ],
+        "question": "How much can I contribute to an HSA in 2026?",
+        "answer": "The full-year base limit is $4,400 for self-only coverage or $8,750 for family coverage. Employer contributions count toward the same limit. An eligible owner age 55 or older can add $1,000; use the contribution mode to subtract amounts already using your limit.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "contribution",
+            "label": "Use the HSA contribution calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-partial-year",
+        "queries": [
+          "How do I calculate a prorated HSA contribution?"
+        ],
+        "question": "How do I calculate a prorated HSA contribution?",
+        "answer": "For unchanged coverage, multiply the annual base plus the eligible owner\u2019s catch-up by eligible months divided by 12. Count eligibility on each month\u2019s first day. This tool does not apply the last-month rule and its testing period; changing coverage requires a separate monthly calculation.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "contribution",
+            "label": "Use the HSA contribution calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-tax-savings",
+        "queries": [
+          "How do I calculate HSA tax savings?"
+        ],
+        "question": "How do I calculate HSA tax savings?",
+        "answer": "This estimate multiplies your personal contribution within the modeled room by the entered marginal income-tax rates. Eligible Section 125 payroll contributions can also use an entered payroll-tax savings rate. A direct contribution gets no payroll-tax savings in this model. Actual tax results depend on your circumstances.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "contribution",
+            "label": "Use the HSA contribution calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-employer",
+        "queries": [
+          "Do employer contributions reduce my HSA contribution limit?"
+        ],
+        "question": "Do employer contributions reduce my HSA contribution limit?",
+        "answer": "Yes. Enter employer contributions separately so the calculator subtracts them from the combined limit. They are not another personal deduction. Salary reductions through an eligible cafeteria plan must not also be claimed as a direct-contribution deduction.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "contribution",
+            "label": "Use the HSA contribution calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-catch-up",
+        "queries": [
+          "Can both spouses make HSA catch-up contributions?"
+        ],
+        "question": "Can both spouses make HSA catch-up contributions?",
+        "answer": "Eligible spouses age 55 or older may each have their own catch-up, deposited into their own HSA. Family base contribution room is shared. The contribution calculator includes only this owner\u2019s catch-up; include the spouse\u2019s base-limit contributions in the other shared-limit field, excluding the spouse\u2019s separate catch-up.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "contribution",
+            "label": "Use the HSA contribution calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-growth",
+        "queries": [
+          "How is HSA investment growth calculated?"
+        ],
+        "question": "How is HSA investment growth calculated?",
+        "answer": "Each projected year applies the entered effective return to the opening balance, then adds year-end contributions and pays fees and qualified medical expenses. The selected annual contribution ceiling stays fixed. Investment returns vary, and fees or investment cash thresholds can change real outcomes.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "growth",
+            "label": "Use the HSA growth calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-medicare",
+        "queries": [
+          "Can I keep contributing after enrolling in Medicare?"
+        ],
+        "question": "Can I keep contributing after enrolling in Medicare?",
+        "answer": "Medicare enrollment ends HSA contribution eligibility; retroactive coverage can affect earlier months. Existing HSA funds can remain in the account. Set eligible months and contribution years to exclude ineligible periods; the projection does not retrieve enrollment dates.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "growth",
+            "label": "Use the HSA growth calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-excess",
+        "queries": [
+          "Does this calculator fix excess HSA contributions?"
+        ],
+        "question": "Does this calculator fix excess HSA contributions?",
+        "answer": "No. The contribution mode flags planned contributions above its modeled limit and excludes the excess from estimated tax savings. It does not calculate net income attributable to excess deposits, excise tax or correction deadlines. Ask your HSA custodian about a correction.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "contribution",
+            "label": "Use the HSA contribution calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-contribute-or-spend",
+        "queries": [
+          "How much should I put in my HSA?"
+        ],
+        "question": "How much should I put in my HSA?",
+        "answer": "Start with employer deposits, affordable personal savings and expected qualified medical spending. Compare contributions and spending in the growth mode; money needed soon may not suit investment risk. This tool does not compare insurance premiums, deductibles or HSA versus PPO health plans.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "growth",
+            "label": "Use the HSA growth calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-withdrawals",
+        "queries": [
+          "Are all HSA withdrawals tax-free?"
+        ],
+        "question": "Are all HSA withdrawals tax-free?",
+        "answer": "No. This projection assumes qualified medical expenses and does not calculate nonmedical distribution taxes or penalties. Keep records and check the applicable distribution rules. State tax treatment can differ from federal treatment.",
+        "links": [
+          {
+            "id": "hsa",
+            "mode": "growth",
+            "label": "Use the HSA growth calculator"
+          }
+        ]
+      }
+    ]
+  }
+}

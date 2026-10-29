@@ -1,3 +1,5 @@
+import batchContent from './semrush-five-content.json';
+import hsaContent from './hsa-content.json';
 import debtStrategyContent from './debt-strategy-content.json';
 import fireBudgetContent from './fire-budget-content.json';
 import strategyContent from './strategy-tools-content.json';
@@ -768,6 +770,20 @@ Object.assign(guides,Object.fromEntries(Object.entries(debtStrategyContent).map(
 relatedCalculatorIds['debt-snowball']=['debt-avalanche','debt-payoff','credit-cards-payoff','credit-card','debt-consolidation','budget'];
 relatedCalculatorIds['debt-avalanche']=['debt-snowball','debt-payoff','credit-cards-payoff','credit-card','debt-consolidation','budget'];
 for(const id of ['debt-payoff','credit-cards-payoff','credit-card','debt-consolidation'])relatedCalculatorIds[id]=[...new Set(['debt-snowball','debt-avalanche',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+
+Object.assign(guides,Object.fromEntries(Object.entries(hsaContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds.hsa=['retirement','401k','roth-ira','compound-interest','income-tax'];
+for(const id of ['retirement','401k','roth-ira'])relatedCalculatorIds[id]=[...new Set(['hsa',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+// Research-backed additions retain existing content and calculator ownership.
+for(const [id,patch] of Object.entries(batchContent)){
+ const entry=patch as {summary?:string;scope?:string;examples:WorkedExample[];sources:Guide['sources'];updatedOn:string};
+ if(id==='self-employment-tax')guides[id]={summary:entry.summary!,scope:entry.scope!,examples:entry.examples,questions:[],sources:entry.sources,checkedOn:entry.updatedOn};
+ else {const guide=guides[id];if(entry.summary)guide.summary=entry.summary;guide.examples.push(...entry.examples);guide.sources=[...new Map([...guide.sources,...entry.sources].map(source=>[source.url,source])).values()];guide.checkedOn=entry.updatedOn;}
+}
+relatedCalculatorIds['self-employment-tax']=['income-tax','take-home-paycheck','business-loan','hsa'];
+for(const id of ['income-tax','take-home-paycheck'])relatedCalculatorIds[id]=[...new Set(['self-employment-tax',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {

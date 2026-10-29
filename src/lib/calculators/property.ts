@@ -799,7 +799,7 @@ const apr = tool(
         up = n(v, "upfront") + (id === "mortgage" ? p * pct(v, "points") : 0),
         net = positive(p - up, "Net loan proceeds"),
         f = freq(v.pay),
-        N = Math.round((term(v) / 12) * f),
+        N = (()=>{const periods=Math.round((term(v)/12)*f);if(periods<1||periods>12000)throw new Error("Use a positive term with at most 12,000 payments.");return periods;})(),
         a = payment(p + fees, periodic(n(v, "rate"), freq(v.compound), f), N),
         flows = [
           -net,
@@ -813,6 +813,7 @@ const apr = tool(
           ),
         ],
         roots = irr(flows);
+      if (!roots.length || !Number.isFinite(roots[0])) throw new Error('No supported APR solution for these cash flows.');
       return {
         metrics: [
           metric("Nominal APR", roots[0] * f * 100, "percent"),
@@ -824,9 +825,13 @@ const apr = tool(
           money("Periodic loan payment", a),
           money("Net proceeds", net),
           money("Total payments and upfront fees", sum(flows.slice(1)) + up),
+          money("Total borrowing cost over full term", sum(flows.slice(1)) + up - p),
+          money("Financed fee amount",fees),money("Upfront fees and points",up),
         ],
+        additionalTables:[{title:'How fees change the APR cash flows',columns:['Cash-flow item','Amount (USD)'],rows:[['Base loan principal',p],['Financed fees added to repayment balance',fees],['Opening repayment balance',p+fees],['Upfront fees and points',up],['Net cash proceeds',net],['Scheduled periodic loan payment',a],['Total scheduled payments including modeled insurance',sum(flows.slice(1))],['Full-term borrowing cost',sum(flows.slice(1))+up-p]],note:'Dollar totals are undiscounted; APR is solved separately by discounting each scheduled payment. Mortgage insurance is modeled only for the entered duration.'}],
         notes: [
-          "APR is the nominal annualized cash-flow yield; effective annual APR is also shown. Insurance duration is entered explicitly.",
+          "APR is the nominal annualized cash-flow yield; effective annual APR includes compounding. Enter only charges appropriate to your comparison. Not every closing charge is legally included in disclosed APR; this is a planning cash-flow estimate, not a certified TILA disclosure. Insurance duration is entered explicitly.",
+          "The base principal is cash borrowed before financed fees. Financed fees increase the repayment balance but do not increase cash received; upfront fees and points reduce net proceeds. Compare offers using the same payment frequency and term. Taxes, escrow and optional insurance are not automatically added.",
         ],
       };
     },

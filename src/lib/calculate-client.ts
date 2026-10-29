@@ -12,6 +12,8 @@ const businessTools = () => import('./calculators/business-tools').then(m => m.b
 const strategyTools=()=>import('./calculators/debt-strategies').then(m=>[m.debtSnowball,m.debtAvalanche]);
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
   'debt-snowball':strategyTools, 'debt-avalanche':strategyTools,
+  'self-employment-tax': () => import('./calculators/self-employment-tax').then(m => [m.selfEmploymentTaxCalculator]),
+  hsa: () => import('./calculators/hsa').then(m => [m.hsaCalculator]),
   noi: () => import('./calculators/noi').then(m => [m.noiCalculator]),
   'fat-fire': () => import('./calculators/fire-budgets').then(m => [m.fatFireCalculator]),
   'lean-fire': () => import('./calculators/fire-budgets').then(m => [m.leanFireCalculator]),

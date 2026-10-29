@@ -78,7 +78,7 @@ export const contentUpdatedOn: Record<string, string> = {
   "/compound-interest-calculator.html": "2026-10-25",
   "/average-return-calculator.html": "2026-10-25",
   "/irr-calculator.html": "2026-10-28",
-  "/401k-calculator.html": "2026-10-28",
+  "/401k-calculator.html": "2026-10-29",
   "/ira-calculator.html": "2026-10-25",
   "/roth-ira-calculator.html": "2026-10-28",
   "/rmd-calculator.html": "2026-10-28",

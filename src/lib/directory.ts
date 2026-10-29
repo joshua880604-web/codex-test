@@ -24,6 +24,7 @@ const toolAliases:Record<string,string[]>={
  rent:['rent','rent budget','rent affordability'],
  currency:['currency calculator','currency converter','manual currency converter'],
  'take-home-paycheck':['paycheck','take home pay','take-home-paycheck','gross to net pay','net pay'],
+ 'self-employment-tax':['self employment tax','self employed tax','1099 tax','freelance SE tax'],
  'income-tax':['federal tax','federal income tax'],
  '401k':['401(k)','401 k','employer match'],
  rmd:['required minimum distribution'],roi:['return on investment'],irr:['internal rate of return'],

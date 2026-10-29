@@ -3,7 +3,7 @@ import type { Metric, Result } from "./types";
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
   "debt-snowball", "debt-avalanche",
-  "noi", "fire", "mirr", "fat-fire", "lean-fire",
+  "self-employment-tax", "hsa", "noi", "fire", "mirr", "fat-fire", "lean-fire",
   "coast-fire",
   "roas", "landed-cost", "quick-ratio", "current-ratio",
   "tax-equivalent-yield", "treasury-bill",
@@ -21,6 +21,8 @@ export function workspaceLayout(id: string, mode: string): "split" | "stacked" |
 }
 
 const priorities: Record<string, string[]> = {
+  'credit-card:minimum':['Initial modeled minimum payment','Initial payment including extra','Months to repay','Total interest','Total payments'],
+  'self-employment-tax':['Self-employment tax including SE Additional Medicare','Regular Social Security SE tax','Regular Medicare SE tax','Additional Medicare tax on SE income','Deductible half of regular SE tax'],
   "debt-snowball": ["Months until debt-free", "Total interest", "First debt cleared in month", "First target for extra payment"],
   "debt-avalanche": ["Months until debt-free", "Total interest", "First debt cleared in month", "First target for extra payment"],
   noi: ["Annual net operating income", "Monthly net operating income", "Annual operating expenses"],
