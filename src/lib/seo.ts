@@ -81,7 +81,7 @@ export const contentUpdatedOn: Record<string, string> = {
   "/401k-calculator.html": "2026-10-29",
   "/ira-calculator.html": "2026-10-25",
   "/roth-ira-calculator.html": "2026-10-28",
-  "/rmd-calculator.html": "2026-10-28",
+  "/rmd-calculator.html": "2026-10-29",
   "/tax-calculator.html": "2026-10-25",
   "/estate-tax-calculator.html": "2026-10-25",
   "/paycheck-calculator.html": "2026-10-28",

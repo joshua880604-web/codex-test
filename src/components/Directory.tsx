@@ -10,11 +10,11 @@ import { calculators, routeFor } from "@/lib/catalog";
 
 const featured = [
   ["mortgage", "Estimate your monthly payment"],
-  ["loan", "Compare payments and interest"],
   ["compound-interest", "See how your savings can grow"],
+  ["coast-fire", "Find your Coast FIRE number"],
+  ["loan", "Compare payments and interest"],
+  ["roi", "Compare investment returns"],
   ["retirement", "Plan your retirement savings"],
-  ["401k", "Project contributions and growth"],
-  ["savings", "Work toward a savings goal"],
 ];
 export default function Directory({ propertyOnly = false }: { propertyOnly?: boolean }) {
   const searchable=calculators.filter(c=>!propertyOnly||directoryGroup(c.id)==="mortgage-housing");
@@ -30,7 +30,7 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
       {!propertyOnly&&<div className="directory-quick"><QuickCalculator/></div>}
       {!propertyOnly && <section className="featured-tools" aria-labelledby="featured-heading">
         <div className="benefits-mobile-badge"><FreeBadge /></div>
-        <h2 id="featured-heading">Popular financial calculators</h2>
+        <h2 id="featured-heading">Featured financial calculators</h2>
         <div className="featured-grid">{featured.map(([id, description]) => {
           const calculator = calculators.find(c => c.id === id)!;
           return <SiteLink key={id} href={routeFor(id)}><strong>{calculator.title}</strong><span>{description}</span></SiteLink>;

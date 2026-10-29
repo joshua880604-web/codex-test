@@ -11,6 +11,7 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
 const businessTools = () => import('./calculators/business-tools').then(m => m.businessTools);
 const strategyTools=()=>import('./calculators/debt-strategies').then(m=>[m.debtSnowball,m.debtAvalanche]);
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
+  'barista-fire': () => import('./calculators/barista-fire').then(m => [m.baristaFireCalculator]),
   'debt-snowball':strategyTools, 'debt-avalanche':strategyTools,
   'self-employment-tax': () => import('./calculators/self-employment-tax').then(m => [m.selfEmploymentTaxCalculator]),
   hsa: () => import('./calculators/hsa').then(m => [m.hsaCalculator]),

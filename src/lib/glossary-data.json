@@ -3954,7 +3954,8 @@
       "real-rate-of-return",
       "withdrawal-rate",
       "time-value-of-money",
-      "fire-number"
+      "fire-number",
+      "barista-fire"
     ],
     "guides": [
       {
@@ -4350,6 +4351,101 @@
       {
         "title": "Debt snowball versus avalanche",
         "path": "/guides/debt-snowball-vs-avalanche/"
+      }
+    ]
+  },
+  {
+    "slug": "barista-fire",
+    "name": "Barista FIRE",
+    "title": "Barista FIRE: Meaning, Number and Income-Stop Example",
+    "description": "Learn what Barista FIRE means, how a part-time income stop changes your number, and how it differs from Coast FIRE.",
+    "category": "Retirement",
+    "aliases": [
+      "Barista FI",
+      "Part-time financial independence"
+    ],
+    "definition": "Barista FIRE is an approach to leaving full-time work in which part-time earnings and portfolio withdrawals together pay living expenses before full retirement.",
+    "explanation": "The job does not have to be in a coffee shop. The key distinction is the need for earned income alongside assets. A useful plan specifies when work begins, when the income ends, and the portfolio needed after work ends. There is no universal Barista FIRE dollar threshold.",
+    "formula": "Required portfolio at transition = present value of monthly spending gaps + present value of full-retirement target",
+    "formulaNote": "The full-retirement sizing target is later annual portfolio-funded spending divided by the withdrawal assumption. Monthly gaps are spending less after-tax earnings, floored at zero. The calculator values dated cash flows, not permanent part-time earnings.",
+    "example": {
+      "title": "A ten-year income bridge inside a twenty-year plan",
+      "intro": "Start at age 45; income ends at 55; full retirement at 65. Bridge spending $36,000/year, after-tax income $24,000/year and later spending $24,000/year. Zero return and inflation, 4% terminal withdrawal assumption.",
+      "steps": [
+        "From 45 to 55, the portfolio funds $12,000/year for 10 years: $120,000.",
+        "From 55 to 65, it funds the full $36,000/year for 10 years: $360,000.",
+        "The full-retirement target is $24,000 ÷ 0.04 = $600,000. At zero growth, add $120,000 + $360,000 + $600,000."
+      ],
+      "answer": "The required transition portfolio is $1,080,000. Ignoring the earnings stop would understate the required bridge capital.",
+      "assumptions": "Constant purchasing power; zero returns and inflation; month-end cash flows; no taxes or benefits calculated. A terminal target is not a safe-withdrawal guarantee.",
+      "calculator": {
+        "id": "barista-fire",
+        "mode": "plan",
+        "values": {
+          "age": 45,
+          "start_age": 45,
+          "income_end": 55,
+          "retire_age": 65,
+          "balance": 760000,
+          "monthly": 0,
+          "spending": 36000,
+          "income": 24000,
+          "full_spending": 24000,
+          "return": 0,
+          "inflation": 0,
+          "withdrawal": 4
+        },
+        "expected": [
+          {
+            "label": "Required portfolio at part-time start",
+            "value": 1080000,
+            "tolerance": 0.005
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "Do not assume part-time pay lasts forever",
+      "text": "Dividing the current spending gap by 4% can understate the need when earnings end before full retirement. Also check healthcare costs, access to retirement accounts, emergency reserves and variable investment returns."
+    },
+    "tools": [
+      {
+        "id": "barista-fire",
+        "text": "Model an income bridge and full-retirement target."
+      },
+      {
+        "id": "coast-fire",
+        "text": "Compare a path with no pre-retirement portfolio withdrawals."
+      },
+      {
+        "id": "fire",
+        "text": "Size a full portfolio-funded retirement target."
+      }
+    ],
+    "related": [
+      "coast-fire",
+      "compound-interest"
+    ],
+    "sources": [
+      {
+        "title": "WalletBurst: Barista FIRE concept and planning inputs",
+        "url": "https://walletburst.com/tools/barista-fire-calc/"
+      },
+      {
+        "title": "Investor.gov: mutual fund risks and expenses",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-funds-etfs/mutual-funds"
+      },
+      {
+        "title": "IRS: early retirement distributions and exceptions",
+        "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-exceptions-to-tax-on-early-distributions"
+      }
+    ],
+    "checkedOn": "2026-10-29",
+    "scope": "All amounts are in today’s USD. Whole ages determine birthday boundaries. Monthly growth precedes end-month contributions or withdrawals. Contributions stop at the part-time start; earnings stop at the income-stop age, which may precede full retirement. Extra earnings above spending are not invested. After-tax earnings and spending allowances must account for healthcare and taxes. No Social Security, pension benefits, tax calculation, account-access rules, market paths or lifetime withdrawal simulation. The chosen withdrawal rate sizes the terminal target only; it is not a safety guarantee.",
+    "guides": [
+      {
+        "title": "Barista FIRE vs. Coast FIRE",
+        "path": "/guides/barista-fire-vs-coast-fire/"
       }
     ]
   }

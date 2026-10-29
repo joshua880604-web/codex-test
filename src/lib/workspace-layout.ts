@@ -3,8 +3,8 @@ import type { Metric, Result } from "./types";
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
   "debt-snowball", "debt-avalanche",
-  "self-employment-tax", "hsa", "noi", "fire", "mirr", "fat-fire", "lean-fire",
-  "coast-fire",
+  "rmd", "self-employment-tax", "hsa", "noi", "fire", "mirr", "fat-fire", "lean-fire",
+  "coast-fire", "barista-fire",
   "roas", "landed-cost", "quick-ratio", "current-ratio",
   "tax-equivalent-yield", "treasury-bill",
   "pmi", "biweekly-mortgage", "discount-points", "mortgage-recast",
@@ -21,6 +21,8 @@ export function workspaceLayout(id: string, mode: string): "split" | "stacked" |
 }
 
 const priorities: Record<string, string[]> = {
+  'barista-fire':['Required portfolio at part-time start','Projected portfolio at part-time start','Shortfall at part-time start','Modeled plan status','Unfunded bridge spending'],
+  rmd:['Annual RMD','Remaining RMD for selected year','Monthly budgeting equivalent of annual RMD','Distribution period','Required starting age'],
   'credit-card:minimum':['Initial modeled minimum payment','Initial payment including extra','Months to repay','Total interest','Total payments'],
   'self-employment-tax':['Self-employment tax including SE Additional Medicare','Regular Social Security SE tax','Regular Medicare SE tax','Additional Medicare tax on SE income','Deductible half of regular SE tax'],
   "debt-snowball": ["Months until debt-free", "Total interest", "First debt cleared in month", "First target for extra payment"],

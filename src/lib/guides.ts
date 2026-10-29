@@ -1,3 +1,5 @@
+import baristaContent from './barista-fire-content.json';
+import rmdRefresh from './rmd-refresh-content.json';
 import batchContent from './semrush-five-content.json';
 import hsaContent from './hsa-content.json';
 import debtStrategyContent from './debt-strategy-content.json';
@@ -784,6 +786,13 @@ for(const [id,patch] of Object.entries(batchContent)){
 }
 relatedCalculatorIds['self-employment-tax']=['income-tax','take-home-paycheck','business-loan','hsa'];
 for(const id of ['income-tax','take-home-paycheck'])relatedCalculatorIds[id]=[...new Set(['self-employment-tax',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+const refreshedRmd=rmdRefresh.rmd;
+guides.rmd.summary=refreshedRmd.summary;guides.rmd.scope=refreshedRmd.scope;guides.rmd.examples.push(...refreshedRmd.examples);guides.rmd.sources=[...new Map([...guides.rmd.sources,...refreshedRmd.sources].map(source=>[source.url,source])).values()];guides.rmd.checkedOn=refreshedRmd.updatedOn;
+
+Object.assign(guides,Object.fromEntries(Object.entries(baristaContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['barista-fire']=['coast-fire','fire','lean-fire','fat-fire','retirement','budget'];
+for(const id of ['coast-fire','fire','lean-fire','fat-fire','retirement'])relatedCalculatorIds[id]=[...new Set(['barista-fire',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {

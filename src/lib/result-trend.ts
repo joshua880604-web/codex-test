@@ -35,6 +35,9 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
     start={x:0,balance:original};balanceIndex=3;xLabel='Payment month';
     title='Debt balance on your payoff plan';balanceLabel='Remaining debt';
     help='Monthly interest is added before minimum and prioritized extra payments. This is the selected strategy with fixed entered APRs and minimums, not a lender statement or credit-score forecast.';
+  } else if (id==='barista-fire' && columns[8]==='Closing portfolio (today’s USD)') {
+    start={x:input('age'),balance:input('balance')};balanceIndex=8;xLabel='Age';title='Portfolio across your Barista FIRE plan';balanceLabel='Portfolio (today’s USD)';
+    help='Calculated annual endpoints through saving, part-time earnings and any later income-free bridge. Stops at the full-retirement target age; no lifetime withdrawals or market volatility are simulated.';
   } else if (id==='hsa' && mode==='growth' && columns[8]==='Closing balance (USD)') {
     start={x:0,balance:input('balance')};balanceIndex=8;title='HSA balance over time';balanceLabel='HSA balance (nominal USD)';
     help='Annual effective growth on opening balance, then year-end deposits, fees and qualified medical withdrawals. Limits stay fixed; unfunded expenses appear separately in the table.';

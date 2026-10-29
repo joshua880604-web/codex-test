@@ -173,7 +173,16 @@ export const avalancheMethodGuide:EditorialGuide={
  topic:'Loans & debt',breadcrumb:'Calculate debt avalanche',format:'Step-by-step guide',
  cardIntro:'Rank debts by APR, separate minimums from extra payments and audit the monthly interest and payment allocation.',
 };
-export const editorialGuides=[snowballMethodGuide,avalancheMethodGuide,coastFireGuide,recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide,marginMarkupGuide];
+export const baristaCoastGuide:EditorialGuide={
+ path:'/guides/barista-fire-vs-coast-fire/',
+ title:'Barista FIRE vs. Coast FIRE: Income, Withdrawals & Examples',
+ heading:'Barista FIRE vs. Coast FIRE: Compare the Cash Flows',
+ description:'Compare Barista FIRE and Coast FIRE using a dated part-time income bridge, portfolio withdrawals and a full-retirement target, with reproducible calculator examples.',
+ publishedOn:'2026-10-29',calculatorIds:['barista-fire','coast-fire','fire','lean-fire','fat-fire'],
+ topic:'Retirement',breadcrumb:'Barista FIRE vs. Coast FIRE',format:'Comparison guide',
+ cardIntro:'See why part-time income, its stop date and pre-retirement withdrawals change the assets you need. Compare a checked zero-growth example.',
+};
+export const editorialGuides=[baristaCoastGuide,snowballMethodGuide,avalancheMethodGuide,coastFireGuide,recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide,marginMarkupGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);

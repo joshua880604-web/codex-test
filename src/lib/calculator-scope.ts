@@ -6,6 +6,7 @@ export function calculatorScope(id: string, mode: string, values: Values): strin
     case "debt-snowball":
     case "debt-avalanche": return "Fixed-APR monthly debt projection. Total budget includes all minimums. Compare both methods with the same rollover and one-time payment assumptions; actual statements may use daily interest and changing minimum rules.";
     case "noi": return "Property-level NOI before financing, capital expenditure or replacement reserves, depreciation and owner income tax. Enter all money in one selected reporting period; no appraisal or lender-specific underwriting is inferred.";
+    case "barista-fire": return "Today’s USD; dated part-time income and monthly portfolio withdrawals bridge to a full-retirement sizing target. No lifetime withdrawal simulation, safe-rate guarantee, automatic benefits or tax calculation.";
     case "fat-fire":
     case "lean-fire": return "Full FIRE target from an itemized budget in today’s USD. Annual provisions are recurring allowances; taxes are entered estimates. No universal Lean/Fat cutoff, withdrawal guarantee or automatic benefit calculation.";
     case "fire": return "Full FIRE portfolio target and first monthly crossing under constant real-return assumptions. Not Coast FIRE, a retirement drawdown simulation, account eligibility, benefit estimate or probability of success.";
@@ -41,7 +42,7 @@ export function calculatorScope(id: string, mode: string, values: Values): strin
     case "hsa":
       return "U.S. HSA planning with selected 2025 or 2026 limits. Contribution eligibility must be confirmed separately; projected limits and tax assumptions stay fixed.";
     case "rmd":
-      return "U.S. RMD planning for traditional IRA and other eligible non-Roth owner accounts. Roth IRA owner balances, designated Roth plan balances for 2024 onward, inherited accounts and employer-plan deferrals are excluded.";
+      return "U.S. RMD planning for traditional IRA and other eligible non-Roth owner accounts. Roth IRA owner balances, designated Roth plan balances for 2024 onward, inherited accounts and employer-plan deferrals are excluded." + (values.birth === "1959" ? " For 1959 births, age 73 is a planning assumption in this tool; confirm the applicable IRS guidance with your custodian." : "");
     case "income-tax":
       return `U.S. federal income tax for tax year ${values.year === "2025" ? "2025" : "2026"}. Select the tax year before comparing estimates.`;
     case "estate-tax":

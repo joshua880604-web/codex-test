@@ -1,0 +1,208 @@
+{
+  "barista-fire": {
+    "updatedOn": "2026-10-29",
+    "summary": "Barista FIRE uses part-time earnings and invested assets together to fund living costs. This free calculator separates the savings years, a dated income-and-withdrawal bridge and the portfolio target at full retirement. It estimates the assets required at the part-time start and shows whether the entered saving plan reaches that amount.",
+    "scope": "All amounts are in today’s USD. Whole ages determine birthday boundaries. Monthly growth precedes end-month contributions or withdrawals. Contributions stop at the part-time start; earnings stop at the income-stop age, which may precede full retirement. Extra earnings above spending are not invested. After-tax earnings and spending allowances must account for healthcare and taxes. No Social Security, pension benefits, tax calculation, account-access rules, market paths or lifetime withdrawal simulation. The chosen withdrawal rate sizes the terminal target only; it is not a safety guarantee.",
+    "sources": [
+      {
+        "title": "WalletBurst: Barista FIRE concept and planning inputs",
+        "url": "https://walletburst.com/tools/barista-fire-calc/"
+      },
+      {
+        "title": "Investor.gov: mutual fund risks and expenses",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-funds-etfs/mutual-funds"
+      },
+      {
+        "title": "IRS: early retirement distributions and exceptions",
+        "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-exceptions-to-tax-on-early-distributions"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Why an income stop date changes the target",
+        "mode": "plan",
+        "values": {
+          "age": 45,
+          "start_age": 45,
+          "income_end": 55,
+          "retire_age": 65,
+          "balance": 760000,
+          "monthly": 0,
+          "spending": 36000,
+          "income": 24000,
+          "full_spending": 24000,
+          "return": 0,
+          "inflation": 0,
+          "withdrawal": 4
+        },
+        "inputs": "Start at age 45; income ends at 55; full retirement at 65. Bridge spending $36,000/year, after-tax income $24,000/year and later spending $24,000/year. Zero return and inflation, 4% terminal withdrawal assumption.",
+        "steps": [
+          "From 45 to 55, the portfolio funds $12,000/year for 10 years: $120,000.",
+          "From 55 to 65, it funds the full $36,000/year for 10 years: $360,000.",
+          "The full-retirement target is $24,000 ÷ 0.04 = $600,000. At zero growth, add $120,000 + $360,000 + $600,000."
+        ],
+        "answer": "Required assets at the part-time start are $1,080,000. Starting with $760,000 leaves $280,000 at age 65, a $320,000 target shortfall.",
+        "expected": {
+          "label": "Required portfolio at part-time start",
+          "value": 1080000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "When earnings cover the entire bridge budget",
+        "mode": "plan",
+        "values": {
+          "age": 45,
+          "start_age": 45,
+          "income_end": 65,
+          "retire_age": 65,
+          "balance": 600000,
+          "monthly": 0,
+          "spending": 36000,
+          "income": 36000,
+          "full_spending": 24000,
+          "return": 0,
+          "inflation": 0,
+          "withdrawal": 4
+        },
+        "inputs": "Same zero-growth 20-year bridge, but $36,000/year after-tax earnings cover all $36,000 spending until age 65. Start with $600,000.",
+        "steps": [
+          "The monthly portfolio-funded bridge gap is zero.",
+          "At zero growth, assets remain $600,000 through the bridge.",
+          "The age-65 target is still $600,000; future withdrawals after 65 are not projected."
+        ],
+        "answer": "Required assets at the part-time start are $600,000, and the modeled portfolio reaches the terminal target.",
+        "expected": {
+          "label": "Projected portfolio at full retirement",
+          "value": 600000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-barista-meaning",
+        "queries": [
+          "what is barista fire",
+          "barista fire meaning"
+        ],
+        "question": "What is Barista FIRE?",
+        "answer": "Barista FIRE is an approach that combines paid work with invested assets to cover living costs after leaving full-time work. You do not have to work as a barista. The important inputs are usable after-tax earnings, a realistic spending budget and how long those earnings continue.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Run your Barista FIRE plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-barista-number",
+        "queries": [
+          "barista fire number",
+          "how to calculate barista fire"
+        ],
+        "question": "How do I calculate my Barista FIRE number?",
+        "answer": "For a dated plan, add the present value of each portfolio-funded spending gap to the present value of the full-retirement target. This calculator discounts monthly cash flows using an exact inflation-adjusted return. It then compares the required amount at your chosen part-time start with projected assets at that age.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Run your Barista FIRE plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-barista-coast",
+        "queries": [
+          "barista fire vs coast fire",
+          "coast fire vs barista fire"
+        ],
+        "question": "What is the difference between Barista FIRE and Coast FIRE?",
+        "answer": "In this site’s Coast model, earned income covers living costs while the portfolio grows without withdrawals toward a later retirement target. In the Barista model, the portfolio can pay part of living costs before full retirement. Similar labels can describe different household arrangements, so compare the actual cash flows, income dates and end targets.",
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Compare the Coast FIRE calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-barista-income-stop",
+        "queries": [
+          "when can i stop working barista fire"
+        ],
+        "question": "What happens when my part-time income stops?",
+        "answer": "From the income-stop birthday, the portfolio must cover the entire bridge budget until the full-retirement birthday. At full retirement, the model checks a separate target based on your full-retirement budget. An earlier income-stop age can substantially increase the amount required when you start part-time work.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Run your Barista FIRE plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-barista-healthcare",
+        "queries": [
+          "barista fire with health insurance"
+        ],
+        "question": "Does Barista FIRE include health insurance?",
+        "answer": "Not automatically. Include premiums, deductibles, out-of-pocket expenses and other healthcare allowances in spending. Employer benefits vary by job, hours and eligibility. This calculator does not estimate insurance premiums, marketplace subsidies, Medicare eligibility or employer coverage.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Run your Barista FIRE plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-barista-jobs",
+        "queries": [
+          "barista fire jobs"
+        ],
+        "question": "How much income should I enter for a Barista FIRE job?",
+        "answer": "Enter a sustainable annual after-tax amount for your expected hours, allowing separately for work expenses. Test a lower income and an earlier stop age rather than relying only on a hoped-for salary. The tool does not forecast job availability or promise benefits. Earnings above the spending budget are not reinvested in this model.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Run your Barista FIRE plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-barista-inflation",
+        "queries": [
+          "barista fire inflation calculator"
+        ],
+        "question": "Does this calculator adjust for inflation?",
+        "answer": "Yes. It converts the entered nominal return after fees into a real return using (1 + nominal return) / (1 + inflation) − 1, then calculates monthly growth. All entered dollar amounts stay constant in today’s purchasing power. Do not add inflation to the spending inputs again.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Run your Barista FIRE plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-barista-safety",
+        "queries": [
+          "is barista fire realistic"
+        ],
+        "question": "Does reaching my Barista FIRE number mean I can safely retire?",
+        "answer": "No. The result is a constant-return cash-flow estimate with a terminal portfolio target. It does not simulate lifetime withdrawals, market drawdowns, sequence risk or success probabilities. Review account access, taxes, emergency reserves, healthcare and the possibility of losing part-time income before making a work or retirement decision.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Run your Barista FIRE plan"
+          }
+        ]
+      }
+    ]
+  }
+}

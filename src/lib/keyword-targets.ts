@@ -236,3 +236,10 @@ keywordTitles.apr='APR Calculator - Loan Fees, Interest Rate & Borrowing Cost';
 searchTasks['401k'].push({keyword:'401k contribution tax savings calculator',mode:'tax-savings',description:'Estimate the income-tax saving and paycheck effect of traditional and Roth employee deferrals under 2026 limits.'});
 const minimumTask=searchTasks['credit-card'].find(t=>t.mode==='minimum');
 if(minimumTask){minimumTask.aliases=[...new Set([...(minimumTask.aliases??[]),minimumTask.keyword,'Minimum credit card payment calculator','Minimum payment credit card calculator'])];minimumTask.keyword='Credit card minimum payment calculator';minimumTask.aliases=minimumTask.aliases.filter(alias=>alias.toLowerCase()!==minimumTask.keyword.toLowerCase());minimumTask.description='Calculate the first modeled minimum payment, payoff time and interest, then compare adding a fixed extra amount each month.';}
+
+keywordTitles.rmd='RMD Calculator - 2026 IRA Distributions & IRS Table';
+searchTasks.rmd[0].aliases=[...new Set([...(searchTasks.rmd[0].aliases??[]),'RMD calculator 2026','RMD calculator 2025','IRA RMD calculator','RMD calculator 2026 table'])];
+searchTasks.rmd[0].description='Calculate an eligible original-owner RMD from the prior December 31 balance. Review IRS factors, gross monthly equivalent and the remaining amount after credited distributions.';
+
+keywordTitles['barista-fire']='Barista FIRE Calculator - Your Number & Part-Time Plan';
+searchTasks['barista-fire']=[{keyword:'Barista FIRE calculator',mode:'plan',description:'Estimate the assets required for a part-time bridge and later full retirement.',aliases:['Barista FIRE number calculator','How to calculate Barista FIRE']}];

@@ -616,5 +616,11 @@
     "title": "Self-Employment Tax Calculator",
     "category": "Tax and Salary",
     "local_route": "/self-employment-tax-calculator.html"
+  },
+  {
+    "id": "barista-fire",
+    "title": "Barista FIRE Calculator",
+    "category": "Retirement",
+    "local_route": "/barista-fire-calculator.html"
   }
 ]

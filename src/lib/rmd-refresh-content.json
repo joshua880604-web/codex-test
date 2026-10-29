@@ -1,0 +1,159 @@
+{
+  "rmd": {
+    "updatedOn": "2026-10-29",
+    "summary": "Use this RMD calculator for 2026, 2025 or another supported distribution year to estimate an eligible original-owner account\u2019s gross annual required minimum distribution. Review the IRS factor and balance percentage, a monthly budgeting equivalent, and the remaining amount after distributions already credited to the selected year. A visible Uniform Lifetime Table reference helps explain how age changes the calculation.",
+    "scope": "Traditional IRA and other eligible non-Roth owner accounts, using verified post-2021 IRS Table II or Table III factors. Roth IRA owner balances and designated Roth plan balances for 2024 onward have no owner lifetime RMD and must not be entered here. Inherited accounts, still-working employer-plan deferrals, historical tables before 2022 and all deadline choices are not modeled. Projection begins only when the selected distribution year is already subject to an age-based owner RMD. Annual return is applied before modeled year-end withdrawals; the first-year withdrawal is the greater of credited distributions or annual RMD, not their sum. Actual payment dates, withholding, fees and other withdrawals are not modeled. Enter one owner account at a time.",
+    "sources": [
+      {
+        "title": "IRS Publication 590-B: distribution tables and owner-account rules",
+        "url": "https://www.irs.gov/publications/p590b"
+      },
+      {
+        "title": "IRS: required minimum distribution account and aggregation rules",
+        "url": "https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs"
+      },
+      {
+        "title": "IRS: first-year RMD deadlines and general rules",
+        "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-required-minimum-distributions-rmds"
+      },
+      {
+        "title": "IRS: applicable-age rules and separate 1959 cohort discussion",
+        "url": "https://www.irs.gov/irb/2024-33_IRB"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Track a remaining 2026 RMD after credited withdrawals",
+        "mode": "annual",
+        "values": {
+          "birth": "1953",
+          "year": "2026",
+          "balance": "265000",
+          "spouse": "No",
+          "spouse_birth": "1964",
+          "return": "0",
+          "projection": "1",
+          "taken": "7000"
+        },
+        "inputs": "Born 1953, distribution year 2026, December 31, 2025 balance $265,000, Uniform Lifetime factor 26.5 and $7,000 of gross distributions already credited to 2026.",
+        "steps": [
+          "Gross annual RMD = $265,000 / 26.5 = $10,000.",
+          "Remaining requirement = max(0, $10,000 \u2212 $7,000) = $3,000.",
+          "The annual budgeting average is $10,000 / 12 = $833.33, not a required monthly schedule."
+        ],
+        "answer": "Annual RMD $10,000; remaining RMD $3,000 before any separate tax calculation.",
+        "expected": {
+          "label": "Remaining RMD for selected year",
+          "value": 3000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-rmd-percentage-age73",
+        "question": "What percentage is the RMD at age 73?",
+        "answer": "Under the current Uniform Lifetime Table, age 73 has a factor of 26.5, so 100 / 26.5 is about 3.7736% of the prior year-end balance. It is a gross distribution percentage, not an investment return or a recommended spending rate. The younger-spouse Table II option can produce a different factor.",
+        "queries": [
+          "what percentage is rmd at 73 calculator",
+          "how to calculate rmd by age"
+        ],
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Use the RMD calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-rmd-table-2026",
+        "question": "Is there a different RMD table for 2026?",
+        "answer": "The implemented owner life-expectancy tables took effect in 2022 and apply to supported later years, including 2025 and 2026. Your distribution year changes your age and which previous December 31 balance to use. Select 2026 with the December 31, 2025 balance; do not enter a current intrayear balance.",
+        "queries": [
+          "rmd calculator 2026 table",
+          "how is rmd calculated for 2026"
+        ],
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Use the RMD calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-rmd-remaining-distribution",
+        "question": "How much RMD do I still need to withdraw this year?",
+        "answer": "Subtract eligible gross distributions already credited to that distribution year from the annual RMD, with a floor of zero. The calculator shows both the original annual minimum and the remaining amount. Enter gross distributions before withholding, and confirm which payments count with your custodian. A delayed prior-year first RMD is not a credit for the current year\u2019s requirement.",
+        "queries": [
+          "how do i calculate my rmd for 2026",
+          "how to calculate your rmd for 2026"
+        ],
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Use the RMD calculator",
+            "values": {
+              "birth": "1953",
+              "year": "2026",
+              "balance": "265000",
+              "spouse": "No",
+              "spouse_birth": "1964",
+              "return": "0",
+              "projection": "1",
+              "taken": "7000"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-rmd-excess-credit",
+        "question": "Can an excess RMD withdrawal reduce next year\u2019s requirement?",
+        "answer": "No. Excess distributions do not carry forward as a future-year RMD credit. A larger withdrawal may reduce the next year-end account balance and therefore affect the next RMD\u2019s starting balance, but that is different from subtracting the excess from next year\u2019s calculated requirement.",
+        "queries": [
+          "do you calculate rmd every year"
+        ],
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Use the RMD calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-rmd-multiple-accounts",
+        "question": "Can I combine IRA and 401(k) accounts for my RMD?",
+        "answer": "Calculate each account\u2019s requirement separately. Eligible IRA RMDs can generally be satisfied from one or more of those IRAs, while 401(k) plan RMDs generally must be taken separately from each plan. Do not enter a combined IRA/401(k) balance or a spouse\u2019s account balance here. Account type and special circumstances require custodian review.",
+        "queries": [
+          "how calculate rmd from ira",
+          "how to calculate rmd for 403b"
+        ],
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Use the RMD calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-rmd-first-deadline",
+        "question": "When is a first RMD due for someone turning 73 in 2026?",
+        "answer": "For an IRA owner whose first RMD year is 2026, the first distribution can generally be delayed until April 1, 2027. The 2027 requirement is still generally due by December 31, 2027, potentially producing two RMDs in one calendar year. This calculator does not choose deadlines, model that deferral or apply still-working employer-plan exceptions.",
+        "queries": [
+          "how to calculate rmd for 2026"
+        ],
+        "links": [
+          {
+            "id": "rmd",
+            "mode": "annual",
+            "label": "Use the RMD calculator"
+          }
+        ]
+      }
+    ]
+  }
+}

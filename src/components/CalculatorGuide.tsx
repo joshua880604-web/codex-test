@@ -1,3 +1,4 @@
+import RmdReference from './RmdReference';
 import { calculatorPresetHref } from '@/lib/preset-links';
 
 import SiteLink from "@/components/SiteLink";
@@ -39,6 +40,7 @@ export default function CalculatorGuide({
             <p className="content-date">Result explanations checked <time dateTime={insight.checkedOn}>{insight.checkedOn}</time> against this calculator’s local model. Model scope and sources appear below.</p>
           </>}
           {calculator.id === "roi" && <RoiReference />}
+          {['barista-fire','coast-fire'].includes(calculator.id) && <p>Compare the income and withdrawal assumptions in our <SiteLink href="/guides/barista-fire-vs-coast-fire/">Barista FIRE vs. Coast FIRE guide</SiteLink>.</p>}
           <h2 id="worked-examples">Worked examples</h2>
           {guide.examples.map((example) => {
             return (
@@ -59,6 +61,7 @@ export default function CalculatorGuide({
               </section>
             );
           })}
+          {calculator.id === "rmd" && <RmdReference/>}
           <h2 id="common-questions">Common questions</h2>
           {guide.questions.map((item) => (
             <section key={item.question} id={item.anchor}>
