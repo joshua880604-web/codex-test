@@ -194,3 +194,9 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .credit-card-editor button:disabled {opacity:.45;cursor:default;}
 @media (min-width:768px){.credit-card-inputs {grid-template-columns:minmax(110px,1.1fr) repeat(3,minmax(0,1fr));}}
 @media (max-width:359px){.credit-card-entry {padding:10px;}.credit-card-inputs {gap:10px;}.credit-card-input label {min-height:48px;}}
+
+/* Embed configuration loads only when its share disclosure is opened. */
+.embed-options label{display:block;margin:12px 0;font-weight:600}
+.embed-options select{margin-left:10px;max-width:180px;min-height:44px;padding:8px 12px;border:1px solid var(--control);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;font-weight:400}
+.embed-options textarea{display:block;width:100%;margin-top:6px;min-height:150px;padding:12px;border:1px solid var(--control);border-radius:12px;background:var(--surface);color:var(--ink);font:12px/1.5 monospace;overflow-wrap:anywhere}
+.embed-options iframe{display:block;margin-top:16px;max-width:100%}

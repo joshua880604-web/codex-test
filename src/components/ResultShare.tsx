@@ -1,10 +1,13 @@
 "use client";
+import dynamic from "next/dynamic";
+import {embedTool} from "@/lib/embed-code";
 import {useEffect,useRef,useState} from 'react';
 import type {Field,Mode,Result,Values} from '@/lib/types';
 import {calculationLink,summaryText,modeCaption} from '@/lib/sharing';
+const EmbedPanel = dynamic(() => import("./EmbedPanel"));
 export default function ResultShare({id,title,path,mode,values,result,fields}:{id:string;title:string;path:string;mode:Mode;values:Values;result:Result;fields:Field[]}){
  const [include,setInclude]=useState(false),[status,setStatus]=useState(''),[manual,setManual]=useState(''),[exporting,setExporting]=useState(false),[local,setLocal]=useState(false);
- const [pngInputs,setPngInputs]=useState(false);
+ const [pngInputs,setPngInputs]=useState(false),[embedOpen,setEmbedOpen]=useState(false);
  const textRef=useRef<HTMLTextAreaElement>(null),caption=modeCaption(mode,values);
  useEffect(()=>{setLocal(['localhost','127.0.0.1','[::1]'].includes(location.hostname));},[]);
  useEffect(()=>{if(manual){textRef.current?.focus();textRef.current?.select();}},[manual]);
@@ -39,6 +42,7 @@ export default function ResultShare({id,title,path,mode,values,result,fields}:{i
    <div className="result-actions"><button onClick={copyLink}>Copy link</button><button onClick={share}>Share link</button></div>
    {local&&<p className="share-help">Local preview: localhost links only work on this computer. Use a hosted site address before sending links to other people.</p>}
   </details>
+  {embedTool(id)&&<details className="share-options" onToggle={e=>setEmbedOpen(e.currentTarget.open)}><summary>Embed this calculator</summary>{embedOpen&&<EmbedPanel id={id}/>}</details>}
   {status&&<p role="status">{status}</p>}
   {manual&&<label>Copy this content<textarea ref={textRef} readOnly value={manual} rows={5}/></label>}
  </section>;

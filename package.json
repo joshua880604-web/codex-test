@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --use-env-proxy node_modules/next/dist/bin/next dev --hostname 0.0.0.0",
-    "build": "next build && node scripts/finalize-static.mjs",
+    "build": "next build && node --import tsx scripts/build-embeds.mts && node scripts/finalize-static.mjs",
     "start": "node scripts/serve-static.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test --test-isolation=none tests/*.test.ts",

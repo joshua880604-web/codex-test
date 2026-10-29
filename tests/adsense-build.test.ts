@@ -38,3 +38,20 @@ test('New nested HTML pages are included automatically in the build gate',async(
   await assert.rejects(checkAdSenseBuild(root),/new-page.html/);
  }finally{await rm(root,{recursive:true,force:true});}
 });
+
+test('Only the two approved embed paths may omit ads; ordinary and unexpected embed pages still need them',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'calculatorfree-embeds-'));
+ try{
+  await writeFile(join(root,'index.html'),document(loader));
+  const dir=join(root,'embed','roi-calculator');await mkdir(dir,{recursive:true});
+  await writeFile(join(dir,'index.html'),document('<meta name="robots" content="noindex,follow">'));
+  const report=await checkAdSenseBuild(root);assert.deepEqual(report.adFreeEmbedPages,['embed/roi-calculator/index.html']);
+  await writeFile(join(dir,'index.html'),document('<meta name="robots" content="noindex,follow">'+loader));
+  await assert.rejects(checkAdSenseBuild(root),/embed must be ad-free/);
+  await writeFile(join(dir,'index.html'),document(''));
+  await assert.rejects(checkAdSenseBuild(root),/embed must be noindex/);
+  await writeFile(join(dir,'index.html'),document('<meta name="robots" content="noindex,follow">'));
+  const extra=join(root,'embed','unapproved');await mkdir(extra,{recursive:true});await writeFile(join(extra,'index.html'),document(''));
+  await assert.rejects(checkAdSenseBuild(root),/exactly one AdSense/);
+ }finally{await rm(root,{recursive:true,force:true});}
+});

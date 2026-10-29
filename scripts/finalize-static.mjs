@@ -32,7 +32,7 @@ for(const name of await readdir(guides)){
 }
 await rename('out/guides.html',join(guides,'index.html'));
 console.log('Prepared guides directory documents.');
-// Every current and future exported HTML page must retain the global ad loader.
+// Normal HTML pages retain ads; only the two explicitly approved embed documents are ad-free.
 const {checkAdSenseBuild}=await import('./check-adsense-build.mjs');
 console.log('AdSense coverage:',await checkAdSenseBuild());
 await import('./check-public-brand.mjs');

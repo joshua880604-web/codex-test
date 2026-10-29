@@ -158,6 +158,20 @@ export default async function Page({
               rate or a dated snapshot bundled with the site. No external API
               requests are made for currency rates.
             </p>
+            <h2>Embedded calculators</h2>
+            <p>
+              The standalone ROI and Coast FIRE embeds do not load our advertising
+              script. Their calculations run in your browser and do not send the
+              amounts you enter to a calculation API. Embed code starts with
+              example values and includes only appearance settings, not the
+              current inputs from the full calculator. The embeds do not save
+              inputs, favorites or theme preferences in browser storage.
+            </p>
+            <p>
+              An external website hosting an embed may have its own advertising,
+              analytics and privacy practices. CalculatorFree.io attribution and
+              a link to the full calculator remain visible within our embed.
+            </p>
           </>
         ) : categoryPage && !c ? (
           <CategoryLanding id={categoryPage.id}/>

@@ -1,0 +1,31 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import {createHash} from 'node:crypto';
+import {calculators,defaults,runCalculation} from '../src/lib/calculators/index';
+import tools from '../src/lib/embed-tools.json';
+import type {Field,Metric,Result} from '../src/lib/types';
+const require=createRequire(import.meta.url);
+const webpackModule=require('next/dist/compiled/webpack/webpack');
+const webpack=webpackModule.webpack;
+const swc=require('next/dist/build/swc');
+await swc.loadBindings();
+const minimizer={apply(compiler:any){compiler.hooks.thisCompilation.tap('EmbedMinifier',(compilation:any)=>{compilation.hooks.processAssets.tapPromise({name:'EmbedMinifier',stage:webpack.Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE},async()=>{for(const asset of compilation.getAssets()){if(!asset.name.endsWith('.js'))continue;const result=await swc.minify(asset.source.source().toString(),{compress:true,mangle:true});compilation.updateAsset(asset.name,new webpackModule.sources.RawSource(result.code));}});});}};
+const root=process.cwd(),assets=path.join(root,'out/embed/assets');
+await fs.mkdir(assets,{recursive:true});
+const stats:any=await new Promise((resolve,reject)=>{
+ const compiler=webpack({mode:'production',target:['web','es2020'],entry:path.join(root,'src/embed/index.ts'),output:{path:assets,filename:'widget.[contenthash:12].js',chunkFilename:'model.[contenthash:12].js',publicPath:'auto',clean:true},resolve:{extensions:['.ts','.js','.json']},module:{rules:[{test:/\.ts$/,exclude:/node_modules/,use:path.join(root,'scripts/embed-ts-loader.cjs')}]},optimization:{minimize:true,minimizer:[minimizer]},devtool:false});
+ compiler.run((error:any,result:any)=>compiler.close((closeError:any)=>error||closeError?reject(error||closeError):result.hasErrors()?reject(new Error(result.toString({all:false,errors:true}))):resolve(result)));
+});
+const entry=stats.toJson({all:false,assets:true}).assets.find((a:any)=>a.name.startsWith('widget.')).name;
+const css=await fs.readFile('src/embed/embed.css','utf8'),cssFile='widget.'+createHash('sha256').update(css).digest('hex').slice(0,12)+'.css';await fs.writeFile(path.join(assets,cssFile),css);
+const esc=(s:unknown)=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+const metric=(m:Metric)=>m.displayValue??(m.format==='money'?new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(m.value):new Intl.NumberFormat('en-US',{maximumFractionDigits:m.format==='percent'?5:6}).format(m.value)+(m.format==='percent'?'%':''));
+function field(f:Field){const id='embed-'+f.key;let input=f.type==='select'?`<select id="${id}" name="${f.key}">${f.options!.map(o=>`<option${o===f.value?' selected':''}>${esc(o)}</option>`).join('')}</select>`:`<input id="${id}" name="${f.key}" type="${f.type==='date'?'date':'number'}" value="${esc(f.value)}"${f.type==='date'?'':` step="${f.step??'any'}"${f.min!==undefined?` min="${f.min}"`:''}${f.max!==undefined?` max="${f.max}"`:''}`}${f.optional?'':' required'}${f.hint?` aria-describedby="${id}-hint"`:''}>`;return `<div class="field"><label for="${id}">${esc(f.label)}${f.unit?' ('+esc(f.unit)+')':''}</label>${input}${f.hint?`<small id="${id}-hint">${esc(f.hint)}</small>`:''}</div>`;}
+for(const tool of tools){
+ const calc=calculators.find(c=>c.id===tool.id)!,mode=calc.modes[0],initial=runCalculation(calc.id,mode.id,defaults(mode)),mainURL='https://www.calculatorfree.io/'+tool.slug;
+ const data=JSON.stringify({id:calc.id,title:calc.title,mainURL,modes:calc.modes.map(m=>({id:m.id,title:m.title,fields:m.fields})),initial}).replaceAll('<','\\u003c');
+ const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta name="referrer" content="no-referrer"><title>${esc(tool.title)} — CalculatorFree.io Embed</title><meta name="description" content="Ad-free embeddable ${esc(tool.title)} with visible CalculatorFree.io attribution."><link rel="stylesheet" href="/embed/assets/${cssFile}"><script>try{document.documentElement.dataset.theme=new URLSearchParams(location.search).get('theme')==='dark'?'dark':'light'}catch(e){}</script><script defer src="/embed/assets/${entry}"></script></head><body><main><h1>${esc(tool.title)}</h1><p class="intro">${esc(calc.intro)}</p><p class="copyright">Interactive calculator by CalculatorFree.io. Keep attribution visible when embedding.</p>${calc.modes.length>1?`<label for="embed-mode">Calculation mode</label><select id="embed-mode">${calc.modes.map(m=>`<option value="${m.id}">${esc(m.title)}</option>`).join('')}</select>`:''}<form id="embed-form" aria-busy="false"><fieldset id="embed-fields" aria-label="Calculator inputs"><legend hidden>Calculator inputs</legend>${mode.fields.map(field).join('')}</fieldset><div class="actions"><button type="submit" disabled>Calculate</button><button type="reset">Reset</button></div></form><p id="embed-status" class="notice" role="status" aria-live="polite"></p><section id="embed-result" class="result" aria-label="Calculation result"><h2>Result · CalculatorFree.io</h2><dl class="metrics">${initial.metrics.map(m=>`<div><dt>${esc(m.label)}</dt><dd>${esc(metric(m))}</dd></div>`).join('')}</dl>${initial.notes?.length?`<details><summary>Assumptions and limitations</summary>${initial.notes.map(n=>`<p>${esc(n)}</p>`).join('')}</details>`:''}</section><p class="notice">Educational estimates only. Assumptions are editable, not forecasts or guarantees. See the full calculator for model details and sources.</p><noscript><p>JavaScript is needed to change inputs and calculate. <a href="${mainURL}" target="_blank" rel="nofollow noopener">Open the full calculator</a>.</p></noscript></main><footer id="embed-credit" class="embed-credit"><a href="${mainURL}" target="_blank" rel="nofollow noopener">© CalculatorFree.io · Open full calculator</a></footer><script id="embed-data" type="application/json">${data}</script></body></html>`;
+ const dir=path.join(root,'out/embed',tool.slug);await fs.mkdir(dir,{recursive:true});await fs.writeFile(path.join(dir,'index.html'),html);
+}
+console.log(`Built ${tools.length} ad-free, noindex embed documents with shared browser calculation models.`);

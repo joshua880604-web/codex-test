@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {embedCode,embedTool,embedURL} from '../src/lib/embed-code';
+import {calculators} from '../src/lib/calculators';
+
+test('Embeds are opt-in for ROI and Coast FIRE and preserve the public calculator destinations',()=>{
+ for(const id of ['roi','coast-fire']){const tool=embedTool(id)!;assert.ok(tool);assert.equal(calculators.find(c=>c.id===id)?.title,tool.title);assert.equal(new URL(embedURL(id)).pathname,'/embed/'+tool.slug+'/');}
+ assert.equal(embedTool('mortgage'),undefined);assert.throws(()=>embedURL('mortgage'));
+});
+test('Copied embed code has a lazy titled frame, no input payload, and qualified attribution',()=>{
+ const code=embedCode('roi','dark',800);assert.match(code,/src="https:\/\/www\.calculatorfree\.io\/embed\/roi-calculator\/\?theme=dark"/);assert.match(code,/loading="lazy"/);assert.match(code,/title="ROI Calculator by CalculatorFree.io"/);assert.match(code,/referrerpolicy="no-referrer"/);assert.match(code,/rel="nofollow noopener"/);assert.ok(!/share_version|cost=|returned=|balance=|<script/.test(code));
+});
+test('Embed configuration cannot inject code, arbitrary URLs, dimensions or themes',()=>{
+ for(const id of ['../roi','roi" onload="alert(1)','https://example.com'])assert.throws(()=>embedCode(id,'light',800));
+ for(const height of [-1,0,801,Infinity,NaN])assert.throws(()=>embedCode('roi','light',height));
+ assert.throws(()=>embedURL('roi','dark" onload="x' as 'dark'));
+});
+test('Only embed documents receive the restrictive ad-free framing and noindex policy',async()=>{
+ const headers=await readFile('public/_headers','utf8');const section=headers.split('/embed/*')[1].split('/embed/assets/*')[0];assert.match(section,/frame-ancestors \*/);assert.match(section,/connect-src 'none'/);assert.match(section,/X-Robots-Tag: noindex/);assert.ok(!headers.split('/embed/*')[0].includes('X-Robots-Tag: noindex'));
+});
