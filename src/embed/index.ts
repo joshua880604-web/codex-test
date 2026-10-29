@@ -1,5 +1,6 @@
 import { type Calculator, type Field, type Metric, type Result, type Values } from '../lib/types';
 import { guardAttribution } from './attribution';
+import {coastFieldVisible} from '../lib/coast-household';
 
 type Widget = { id: string; title: string; mainURL: string; modes: {id:string;title:string;fields:Field[]}[]; initial: Result };
 const config = JSON.parse(document.getElementById('embed-data')!.textContent!) as Widget;
@@ -31,15 +32,24 @@ function renderResult(result: Result) {
 function renderFields(){
   fieldset.replaceChildren();
   for(const field of active.fields){
-    const wrap=document.createElement('div'),label=document.createElement('label');wrap.className='field';label.htmlFor='embed-'+field.key;label.textContent=field.label+(field.unit?' ('+field.unit+')':'');
+    const wrap=document.createElement('div'),label=document.createElement('label');wrap.className='field';wrap.dataset.field=field.key;label.htmlFor='embed-'+field.key;label.textContent=field.label+(field.unit?' ('+field.unit+')':'');
     const input=field.type==='select'?document.createElement('select'):document.createElement('input');input.id=label.htmlFor;input.name=field.key;
     if(input instanceof HTMLSelectElement){for(const value of field.options??[]){const option=document.createElement('option');option.value=value;option.textContent=value;input.append(option);}}
     else {input.type=field.type==='date'?'date':'number';if(input.type==='number'){input.step=String(field.step??'any');if(field.min!==undefined)input.min=String(field.min);if(field.max!==undefined)input.max=String(field.max);}input.required=!field.optional;}
     input.value=String(field.value);wrap.append(label,input);
     if(field.hint){const hint=document.createElement('small');hint.id=input.id+'-hint';hint.textContent=field.hint;input.setAttribute('aria-describedby',hint.id);wrap.append(hint);}fieldset.append(wrap);
   }
+  syncHousehold();
 }
-function changed(){token++;submit.disabled=false;form.setAttribute('aria-busy','false');output.hidden=true;status.textContent='Inputs changed. Select Calculate to update the result.';}
+function syncHousehold(){
+  if(config.id!=='coast-fire')return;
+  const values=Object.fromEntries(new FormData(form)) as Values;
+  for(const wrap of fieldset.querySelectorAll<HTMLElement>('[data-field]')){
+    const visible=coastFieldVisible(values,wrap.dataset.field!);wrap.hidden=!visible;
+    const input=wrap.querySelector<HTMLInputElement|HTMLSelectElement>('input,select');if(input)input.disabled=!visible;
+  }
+}
+function changed(){syncHousehold();token++;submit.disabled=false;form.setAttribute('aria-busy','false');output.hidden=true;status.textContent='Inputs changed. Select Calculate to update the result.';}
 form.addEventListener('input',changed);form.addEventListener('change',changed);
 modePicker?.addEventListener('change',()=>{active=config.modes.find(mode=>mode.id===modePicker.value)!;renderFields();changed();});
 form.addEventListener('submit',async event=>{

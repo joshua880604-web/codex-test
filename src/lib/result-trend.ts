@@ -1,4 +1,5 @@
 import type { Result, Values } from "./types";
+import {coastHousehold} from './coast-household';
 
 export type TrendPoint = { x: number; balance: number; contributions?: number; comparison?: number };
 export type ResultTrend = {
@@ -39,7 +40,7 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
   } else if (id === "coast-fire" && matches(["Age", "Balance", "Coast threshold", "Cumulative new investments"])) {
     const coast=result.metrics.find(m=>m.label==="Coast FIRE number today")?.value;
     if(!finite(coast))return null;
-    start={x:input("age"),balance:input("balance"),comparison:coast};
+    start={x:input("age"),balance:coastHousehold(values).balance,comparison:coast};
     xLabel="Age";balanceIndex=1;secondaryIndex=2;secondaryKey="comparison";secondaryLabel="Coast threshold (today’s USD)";
     title="Invest, then coast: today’s purchasing power";balanceLabel="Modeled portfolio (today’s USD)";
     help="The portfolio follows the calculated path: month-end investments stop at the first modeled threshold crossing, or continue through the target age if it is not reached. All amounts are in today’s USD; neither line simulates market volatility or pays pre-retirement living costs.";

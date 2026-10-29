@@ -312,6 +312,12 @@ p {
   padding: 15px 17px;
   max-width: 100%;
 }
+.planning-fields { min-width: 0; margin: 0 0 20px; padding: 12px 0 0; border: 0; border-top: 1px solid var(--border, #dfe5ef); }
+.planning-fields legend { padding: 0 8px 0 0; font-weight: 700; }
+@media (max-width: 600px) {
+  .calculator-workspace .planning-fields .field-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .planning-fields .field-control { width: 100%; }
+}
 .field-row {
   display: grid;
   grid-template-columns: minmax(130px, 1fr) minmax(160px, 1fr);

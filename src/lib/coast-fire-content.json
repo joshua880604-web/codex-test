@@ -1,8 +1,8 @@
 {
   "coast-fire": {
-    "updatedOn": "2026-10-28",
+    "updatedOn": "2026-10-29",
     "summary": "Coast FIRE is a modeled savings milestone: the invested retirement portfolio can grow toward a future retirement target without more deposits. This calculator first sizes that target from your budget and chosen withdrawal rate, then discounts it to today using an exact inflation-adjusted return. If you are below the threshold, monthly investments continue until the first whole-month crossing or your target retirement age.",
-    "scope": "All monetary inputs, outputs and timeline amounts are in today’s USD. Annual return is an assumed effective nominal rate after the fees and tax drag you choose to allow for; inflation is removed using (1 + return) / (1 + inflation), not simple subtraction. Monthly investments are constant in purchasing power, implying nominal increases with inflation, and stop at the first modeled Coast crossing. Ages are whole years, current age must precede target age and no projection extends past age 120. Annual budget and withdrawal rate must be positive. Market paths, sequence risk, pre-retirement living costs, account eligibility or access, tax brackets, pensions and Social Security benefits are outside the model. An entered withdrawal rate is a target-sizing assumption, not a demonstrated safe withdrawal policy.",
+    "scope": "All monetary inputs, outputs and timeline amounts are in today’s USD. Annual return is an assumed effective nominal rate after the fees and tax drag you choose to allow for; inflation is removed using (1 + return) / (1 + inflation), not simple subtraction. Monthly investments are constant in purchasing power, implying nominal increases with inflation, and stop at the first modeled Coast crossing. Individual and couple plans use one shared horizon. Couple plans combine each partner’s assets and monthly investments once, using one annual household budget; different ages and retirement dates are not separately modeled. Ages are whole years, current age must precede target age and no projection extends past age 120. Annual budget and withdrawal rate must be positive. Market paths, sequence risk, pre-retirement living costs, account eligibility or access, tax brackets, pensions and Social Security benefits are outside the model. An entered withdrawal rate is a target-sizing assumption, not a demonstrated safe withdrawal policy.",
     "examples": [
       {
         "title": "Invest until age 49, then model a contribution-free path to 65",
@@ -280,7 +280,7 @@
           "coast fire calculator with social security"
         ],
         "question": "Can couples use this calculator, and does it include Social Security?",
-        "answer": "A couple can enter a combined portfolio and budget if one shared target retirement age is an acceptable simplification. Different ages, separate retirement dates and account-access restrictions are not modeled. Social Security and pensions are not calculated or automatically deducted. If you have assessed other income separately, enter only the annual amount this portfolio must fund, using a consistent tax and purchasing-power basis.",
+        "answer": "Select Couple to enter each partner’s invested retirement assets and monthly investment separately, then enter one combined annual budget funded by the portfolio. Include jointly owned assets and shared contributions only once. The planning age and retirement age define one shared horizon; different ages, retirement dates and account-access restrictions are not modeled. Social Security and pensions are not calculated. Benefits that start later cannot simply be deducted from every year’s budget; assess their timing and tax treatment separately.",
         "links": [
           {
             "id": "coast-fire",
@@ -289,12 +289,15 @@
             "values": {
               "age": "35",
               "retire": "65",
-              "balance": "150000",
+              "balance": "100000",
               "spending": "40000",
               "withdrawal": "4",
-              "monthly": "1000",
+              "monthly": "600",
               "return": "7",
-              "inflation": "2.5"
+              "inflation": "2.5",
+              "household": "Couple",
+              "partner_balance": "50000",
+              "partner_monthly": "400"
             }
           },
           {
@@ -366,7 +369,7 @@
           "coast fire calculator with inflation"
         ],
         "question": "How can I compare different returns and retirement ages?",
-        "answer": "Calculate, then open the result’s calculation details. The return comparison changes only nominal return by two percentage points below and above your entry. The retirement-age comparison changes only that age by five years. Both show today’s required portfolio and current gap; they do not recompute a Coast age for every row. Keep inflation and the budget on the same basis, and read each table’s limits. A smaller threshold at a higher return is an arithmetic result, not evidence that taking more risk makes the plan reliable.",
+        "answer": "Calculate, then read the Compare your assumptions section. The return comparison changes only nominal return by two percentage points below and above your entry. The retirement-age comparison changes only that age by five years. Both show today’s required portfolio and current gap; they do not recompute a Coast age for every row. Keep inflation and the budget on the same basis, and read each table’s limits. A smaller threshold at a higher return is an arithmetic result, not evidence that taking more risk makes the plan reliable.",
         "links": [
           {
             "id": "coast-fire",

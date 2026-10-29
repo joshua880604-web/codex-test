@@ -6,6 +6,9 @@ import { calculatorPresetHref } from "@/lib/preset-links";
 
 import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import dynamic from "next/dynamic";
+import {coastFieldVisible} from '@/lib/coast-household';
+const CoastFields=dynamic(()=>import('./CoastPlan'));
+const CoastResults=dynamic(()=>import('./CoastPlan').then(m=>m.CoastResults));
 import ResultShare from "./ResultShare";
 import RecastComparison from "./RecastComparison";
 import {inputHint,resultContext} from "@/lib/result-context";
@@ -461,7 +464,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               )}
             </>
           )}
-          {result.additionalTables?.filter((_, index) => id !== "mortgage-recast" || index !== 0).map(table => <section key={table.title}>
+          {result.additionalTables?.filter((_, index) => id !== 'coast-fire' && (id !== "mortgage-recast" || index !== 0)).map(table => <section key={table.title}>
             <h3>{table.title}</h3>
             {table.note && <p className="result-note">{table.note}</p>}
             <div className="result-actions"><button onClick={() => download(table)}>{id === 'coast-fire' ? 'Download comparison CSV' : 'Download retirement CSV'}</button></div>
@@ -475,6 +478,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   );
   const simple = mode.fields.length <= 14,
     visible = mode.fields.filter((f) => f.key !== "verified_rate" &&
+      !(id === 'coast-fire' && !coastFieldVisible(values,f.key)) &&
       !(["mfs_lived_apart", "mfs_spouse_itemizes"].includes(f.key) && (values.filing ?? values.file_status) !== "Married filing separately") &&
       !(["qbi_active", "p2_qbi_active"].includes(f.key) && ((id === "marriage-tax" ? values.qbi !== "Yes" && values.p2_qbi !== "Yes" : values.qbi !== "Yes") || values.year === "2025")) &&
       !(f.key === "spouse_qbi_active" && (values.qbi !== "Yes" || values.year === "2025" || values.filing !== "Married filing jointly")) &&
@@ -565,7 +569,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           if (details) details.open = true;
           setResult(null);
         }}>
-          {id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
+          {id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
           {id !== "mortgage" && id !== "marriage-tax" && advanced.length > 0 && (
             <details className="advanced" key={mode.id}>
               <summary>More options ({advanced.length})</summary>
@@ -696,6 +700,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       )}
       </div>
       {wideReports && result && <>
+        {id === 'coast-fire' && <CoastResults values={values} result={result} onDownload={download}/>}
         {id === "mortgage-recast" && result.additionalTables?.[0] && <RecastComparison table={result.additionalTables[0]} onDownload={() => download(result.additionalTables![0])}/>}
         <ResultTrend key={mode.id + "-chart"} id={id} mode={mode.id} values={values} result={result} wide report/>
         <section className="workspace-report workspace-report-details" aria-label="Calculation details">

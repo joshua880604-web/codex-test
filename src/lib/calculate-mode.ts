@@ -3,11 +3,13 @@ import { freq } from "./calculators/helpers";
 import type { Calculator, Values, Result } from "./types";
 import { mortgagePmiFieldVisible } from "./mortgage-pmi";
 import { mortgageInputVisible } from "./mortgage-inputs";
+import { coastFieldVisible } from './coast-household';
 export function calculateMode(calc: Calculator, modeId: string, v: Values): Result {
   const id = calc.id;
   const mode = calc.modes.find((m) => m.id === modeId);
   if (!mode) throw new Error("Unknown calculator mode.");
   for (const f of mode.fields) {
+    if (id === 'coast-fire' && !coastFieldVisible(v, f.key)) continue;
     if (id === "mortgage" && (!mortgageInputVisible(modeId, v, f.key) || !mortgagePmiFieldVisible(modeId, v, f.key))) continue;
     if (id === "va-mortgage" && ["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key)) continue;
     if (id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) ||

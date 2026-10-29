@@ -1,5 +1,6 @@
 import { tool } from './helpers';
-import {num, money, metric, number as read, type Result, type Values} from '../types';
+import {num, select, money, metric, number as read, type Result, type Values} from '../types';
+import {coastHousehold} from '../coast-household';
 
 const finite=(value:number)=>{
  if(!Number.isFinite(value))throw new Error('These assumptions exceed the supported projection range. Check the return, inflation, budget and horizon.');
@@ -10,7 +11,8 @@ const elapsed=(months:number)=>`${Math.floor(months/12)} years, ${months%12} mon
 export function coastFireProjection(v:Values):Result {
  const age=read(v,'age'),retire=read(v,'retire'),years=retire-age;
  if(!Number.isInteger(age)||!Number.isInteger(retire)||age<0||retire>120||years<=0)throw new Error('Use whole-number ages from 0 to 120, with retirement age above current age.');
- const months=years*12,initial=read(v,'balance'),spending=read(v,'spending'),withdrawal=read(v,'withdrawal')/100,contribution=read(v,'monthly');
+ const household=coastHousehold(v);
+ const months=years*12,initial=household.balance,spending=read(v,'spending'),withdrawal=read(v,'withdrawal')/100,contribution=household.monthly;
  if(spending<=0)throw new Error('Annual retirement budget must be greater than zero.');
  if(withdrawal<=0||withdrawal>1)throw new Error('Assumed withdrawal rate must be greater than zero and no more than 100%.');
  const nominal=read(v,'return')/100,inflation=read(v,'inflation')/100;
@@ -56,6 +58,7 @@ export function coastFireProjection(v:Values):Result {
   {title:'Compare nominal return assumptions',columns:['Nominal return (%)','Real return (%)','Coast number today (USD)','Current gap (USD)'],rows:returnRows,note:'Changes only nominal annual return by two percentage points below and above your input. Budget, inflation, withdrawal rate and ages stay fixed. This compares today’s threshold, not your Coast age or a probability of success. Unsupported rates or numerical ranges are omitted. All money is in today’s USD.'},
   {title:'Compare target retirement ages',columns:['Target retirement age','Years remaining','Coast number today (USD)','Current gap (USD)'],rows:ageRows,note:'Changes only target retirement age by five years below and above your input. Current age, budget, inflation, return and withdrawal rate stay fixed. Only ages above your current age and at most 120 are shown; unsupported numerical ranges are omitted. This does not reprice healthcare, pension benefits or the withdrawal assumption. All money is in today’s USD.'},
  ],notes:[
+  ...(household.couple ? ['Couple plan: both partners’ invested assets and monthly investments are combined once. The entered current age and retirement age define one shared horizon, not each partner’s age. The annual budget covers both people together. Different retirement dates, individual account access and survivor needs are not modeled.'] : []),
   'Every monetary result, chart point and table amount is in today’s USD. Exact real growth = (1 + nominal return) / (1 + inflation) − 1. Do not inflate the retirement budget again. Returns are constant effective annual assumptions, not market forecasts.',
   'Monthly investments are constant in today’s purchasing power, which implies nominal increases with inflation. They are deposited at month end until the first whole month that the modeled Coast threshold is met; then deposits stop. Rows show that stop-and-coast path, or continued investing through the target age if the threshold is never reached.',
   first===0?'The entered portfolio meets the threshold under these assumptions now. Future monthly investments are not used on the modeled path. This is not proof that you can retire today.':first===null?'The entered monthly investment does not reach the threshold by the target retirement age under these assumptions. No Coast age is inferred beyond that horizon.':first===months?'The threshold is first met at the target retirement age, so no earlier contribution-free coast period remains.':'The modeled threshold is first reached after '+elapsed(first)+'. Deposits stop after that month; growth then continues to the target retirement age.',
@@ -64,12 +67,15 @@ export function coastFireProjection(v:Values):Result {
  ]};
 }
 export const coastFire=tool('coast-fire',[{id:'coast',title:'Coast FIRE Projection',fields:[
+ {...select('household','Plan for',['Individual','Couple'],'Individual'),optional:true,hint:'Couples use one shared retirement date and a combined annual budget. Enter jointly owned assets only once.'},
  {...num('age','Current age',35,'years'),max:119,step:1},
  {...num('retire','Target retirement age',65,'years',1),max:120,step:1},
  {...num('balance','Current invested retirement assets',150000,'$'),hint:'Today’s USD. Only this retirement portfolio; exclude separately needed emergency cash and uninvested home equity.'},
+ {...num('partner_balance','Partner’s invested retirement assets',0,'$'),optional:true,hint:'Only assets not already included above. Allocate jointly owned investments once, without double counting.'},
  {...num('spending','Annual retirement budget',40000,'$'),hint:'Today’s USD funded by this portfolio, including any taxes you budget. Other income is not calculated.'},
  {...num('return','Nominal annual return, after fees',7,'%',-99.99),max:1000,hint:'Constant effective annual assumption before inflation. Fees or investment tax drag are not deducted automatically.'},
- {...num('inflation','Annual inflation assumption',2.5,'%',-99.99),max:1000},
+ {...num('inflation','Annual inflation assumption',2.5,'%',-99.99),max:1000,hint:'Enter spending and savings in today’s USD. Inflation is removed from the return automatically; do not inflate your budget again.'},
  {...num('withdrawal','Assumed annual withdrawal rate',4,'%'),max:100,hint:'Sizes the portfolio target; this is not a guaranteed safe withdrawal rate.'},
  {...num('monthly','Monthly investment before coasting',1000,'$'),hint:'Today’s USD, at month end. Stops on the modeled path once the threshold is reached; use zero for no new deposits.'},
+ {...num('partner_monthly','Partner’s monthly investment',0,'$'),optional:true,hint:'Additional monthly investment not already included above. Both contributions stop at the same modeled Coast milestone.'},
 ],description:'Find today’s Coast FIRE threshold and the first modeled month you could stop adding to this retirement portfolio.',formula:'FIRE target = annual portfolio-funded budget / withdrawal rate; Coast threshold = target / real growth^years. Monthly contributions continue only until the first threshold crossing.',calculate:coastFireProjection}], 'Estimate your Coast FIRE number, when continued investing reaches it, and a contribution-free path to your target retirement age.');
