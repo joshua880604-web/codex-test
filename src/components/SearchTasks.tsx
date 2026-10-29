@@ -2,10 +2,11 @@ import { calculatorPresetHref } from '@/lib/preset-links';
 
 import SiteLink from "@/components/SiteLink";
 import { searchTasks } from '@/lib/keyword-targets';
+import {motherPageCopy} from '@/lib/mother-page-ui';
 import { routeFor } from '@/lib/catalog';
 export default function SearchTasks({id}:{id:string}) {
  const tasks=searchTasks[id];
- if(!tasks)return null;
+ if(!tasks||motherPageCopy[id])return null;
  return <section className="search-tasks" aria-label="Choose a calculation">
   <h2>Choose what to calculate</h2>
   {tasks.map(task=>{

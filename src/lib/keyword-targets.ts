@@ -258,3 +258,10 @@ searchTasks['house-hacking']=[{keyword:'House hacking calculator',mode:'living',
 
 keywordTitles['covered-call']='Covered Call Calculator - Profit, Break-Even & Payoff';
 searchTasks['covered-call']=[{keyword:'Covered call calculator',mode:'expiry',description:'Calculate expiry profit, break-even, downside and a shares-only comparison with manual premium and fees.',aliases:['Covered calls calculator','Covered call option calculator','Free covered call calculator','Covered call profit calculator']}];
+
+// Mother-page copy reviewed against the implemented models, 2026-10-29.
+searchTasks['coast-fire'][0].description="Free Coast FIRE calculator for individuals and couples. Estimate your Coast FI number and time to coast in today’s dollars using editable return assumptions.";
+searchTasks['rent-vs-buy'][0].description="Compare renting and buying over a fixed 30-year projection, including home equity after sale, invested cash-flow differences and ownership costs.";
+searchTasks['credit-cards-payoff'][0].description="Plan repayment across multiple credit cards with one total monthly budget. Estimate payoff time, interest and payments using fixed APR assumptions.";
+searchTasks['brrrr'][0].description="Estimate cash left in a BRRRR deal, refinance proceeds and rental cash flow. Compare ARV and loan-rate scenarios using your own assumptions.";
+searchTasks['roas'][0].description="Calculate ROAS as a multiple or percentage, then check break-even and target margins using your advertising spend, revenue and entered costs.";

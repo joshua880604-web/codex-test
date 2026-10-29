@@ -1,3 +1,5 @@
+import {motherPageIds,motherPageReviewedOn} from './mother-page-ui';
+import motherPageContent from './mother-page-content.json';
 import coveredCallContent from './covered-call-content.json';
 import houseHackContent from './house-hacking-content.json';
 import mortgageInvestContent from './mortgage-vs-invest-content.json';
@@ -831,3 +833,16 @@ for (const [id, content] of Object.entries(longTailContent)) {
   guides[id].checkedOn = [guides[id].checkedOn ?? '', content.updatedOn].sort().at(-1);
 }
 
+
+guides['rent-vs-buy'].examples[0].inputs='An all-cash $120,000 home with zero appreciation, selling costs, property costs and tax adjustment. The linked settings use $1,000 monthly rent and 0% investment return; this check isolates the buyer-equity output, not the overall attractiveness of buying.';
+guides['credit-cards-payoff'].examples[0].inputs='Two $600 card balances at 0% APR, each with a $50 entered monthly minimum, and a $200 combined monthly budget. No new charges or fees.';
+
+// Reviewed mother-page notes supplement the existing examples and preserve published question anchors.
+for(const [id,patch] of Object.entries(motherPageContent)){
+ const guide=guides[id];guide.summary=patch.summary;guide.scope=patch.scope;guide.checkedOn='2026-10-29';
+ for(const question of patch.questions){const index=guide.questions.findIndex(q=>q.question===question.question);if(index>=0)guide.questions[index]={...guide.questions[index],...question};else guide.questions.push(question);}
+ for(const source of patch.sources)if(!guide.sources.some(s=>s.url===source.url))guide.sources.push(source);
+ guide.examples.push(...patch.additionalExamples);
+}
+
+for(const id of motherPageIds)guides[id].checkedOn=motherPageReviewedOn;

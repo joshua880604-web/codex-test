@@ -45,3 +45,6 @@ body:has(>.calculator-share-dialog[open]){overflow:hidden;}
 .calculator-share-dialog[open]{display:flex;flex-direction:column;overflow:hidden;}
 .share-dialog-header,.share-dialog-tabs{flex-shrink:0;}
 .share-dialog-panel{min-height:0;overflow-y:auto;overscroll-behavior:contain;}
+
+.result-share-prompt{margin:14px 0;}.result-share-prompt .calculator-share-launch{color:var(--link);font-weight:650;white-space:normal;}
+@media print{.result-share-prompt{display:none!important;}}

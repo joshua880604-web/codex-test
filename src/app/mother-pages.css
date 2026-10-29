@@ -1,0 +1,10 @@
+/* First six mother pages: make room for the task while keeping touch targets. */
+.calculator-intro-row.mother-page-intro{gap:8px;margin-bottom:10px;}
+.calculator-intro-row.mother-page-intro>.intro{margin:0;}
+.mother-page-scope{margin:8px 0 14px;}
+.mother-page-guide .guide-nav{margin-top:8px;}
+@media(max-width:600px){
+ .calculator-intro-row.mother-page-intro{row-gap:8px;margin-bottom:10px;}
+ .mother-page-intro .calculator-utility-actions{width:100%;margin:0;}
+ .mother-page-scope{font-size:12px;line-height:1.6;}
+}

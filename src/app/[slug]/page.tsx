@@ -5,6 +5,7 @@ import SiteLink from "@/components/SiteLink";
 import {categoryPages,categoryPageBySlug} from '@/lib/category-pages';
 import CategoryLanding from '@/components/CategoryLanding';
 import {calculatorCategory,categoryHref} from '@/lib/calculator-categories';
+import {motherPageCopy} from "@/lib/mother-page-ui";
 import CalculatorDisclaimer from '@/components/CalculatorDisclaimer';
 import SearchTasks from "@/components/SearchTasks";
 import type { Metadata } from "next";
@@ -186,7 +187,7 @@ export default async function Page({
             <CalculatorDisclaimer id={c.id}/>
             <SearchTasks id={c.id} />
             <CalculatorGuide calculator={c} />
-            {editorialGuides.filter(guide=>guide.calculatorIds.includes(c.id)).map(guide=><section className="related" key={guide.path}><h2>Related guide</h2><p><SiteLink href={guide.path}>{guide.heading}</SiteLink>: {guide.cardIntro}</p></section>)}
+            {motherPageCopy[c.id] ? (editorialGuides.some(guide=>guide.calculatorIds.includes(c.id))&&<section className="related"><h2>Related guides</h2><ul>{editorialGuides.filter(guide=>guide.calculatorIds.includes(c.id)).map(guide=><li key={guide.path}><SiteLink href={guide.path}>{guide.heading}</SiteLink> — {guide.cardIntro}</li>)}</ul></section>) : editorialGuides.filter(guide=>guide.calculatorIds.includes(c.id)).map(guide=><section className="related" key={guide.path}><h2>Related guide</h2><p><SiteLink href={guide.path}>{guide.heading}</SiteLink>: {guide.cardIntro}</p></section>)}
           </>
         ) : (
           <Directory />

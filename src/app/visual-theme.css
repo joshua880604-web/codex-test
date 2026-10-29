@@ -2,6 +2,7 @@
 @import "./desktop-navigation.css";
 @import "./favorites.css";
 @import "./share-tools.css";
+@import "./mother-pages.css";
 @font-face {
  font-family:"Inter";
  src:url("/fonts/inter-latin-variable-3100e775.woff2") format("woff2");

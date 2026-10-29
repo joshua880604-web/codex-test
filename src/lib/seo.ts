@@ -1,3 +1,4 @@
+import {motherPageIds,motherPageReviewedOn} from './mother-page-ui';
 import {guidesPath,editorialGuides} from './editorial-guides';
 import {categoryPages,type CategoryPage} from './category-pages';
 import {calculatorCategories,calculatorCategory,categoryPaths} from './calculator-categories';
@@ -87,6 +88,8 @@ export const contentUpdatedOn: Record<string, string> = {
   "/paycheck-calculator.html": "2026-10-28",
   "/social-security-calculator.html": "2026-10-28",
 };
+for(const id of motherPageIds)contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]=motherPageReviewedOn;
+
 export function sitemapEntries(config: SiteConfig = siteConfig()) {
   if (!config.origin || !config.indexable) return [];
   return [

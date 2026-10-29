@@ -1,3 +1,4 @@
+import {motherPageCopy} from '@/lib/mother-page-ui';
 import RmdReference from './RmdReference';
 import { calculatorPresetHref } from '@/lib/preset-links';
 
@@ -18,7 +19,7 @@ export default function CalculatorGuide({
   const insight = guideInsights[calculator.id as keyof typeof guideInsights];
   const checkedOn = guide?.checkedOn ?? notesCheckedOn;
   return (
-    <section className="calculator-guide" aria-label="Calculation guide">
+    <section className={"calculator-guide"+(motherPageCopy[calculator.id]?" mother-page-guide":"")} aria-label="Calculation guide">
       {guide && (
         <>
           <nav className="guide-nav" aria-label="Calculation guide sections">

@@ -1,0 +1,173 @@
+{
+  "rent-vs-buy": {
+    "summary": "Compare buyer equity after a modeled sale with a renter\u2019s portfolio plus refundable deposit at the same annual checkpoint. The calculation includes the entered ownership costs and cash-flow differences, so the mortgage payment alone is not the comparison. Headline figures use a fixed 30-year horizon; the yearly table shows how the two paths change before then.",
+    "scope": "A fixed 30-year, nominal-USD projection with monthly cash-flow updates and annual reporting. The mortgage term changes loan payments and the remaining balance, not the comparison horizon. Buyer equity is home value less entered selling costs and mortgage balance; renter wealth includes the modeled investment portfolio and refundable deposit. Investment returns, appreciation, rent growth and costs stay at their entered assumptions. The tax adjustment is a simplified annual comparison of mortgage interest plus property tax against the entered standard deduction, multiplied by the entered tax rate. SALT caps, loan limits, filing-specific rules, capital-gains tax and full tax liability are not calculated. A negative renter portfolio is a funding deficit, not a verified investable balance or a modeled financing arrangement. Personal flexibility, qualification and transaction timing are outside the model.",
+    "questions": [
+      {
+        "question": "Why is comparing rent with the mortgage installment incomplete?",
+        "answer": "The loan payment is only one ownership cost. This model also uses entered property tax, insurance, HOA, maintenance, purchase and selling costs. Renting can leave upfront cash and monthly differences available for investment. Compare the two modeled wealth values at the same year, rather than treating rent minus mortgage payment as profit."
+      },
+      {
+        "question": "Can I choose any rent-versus-buy comparison horizon?",
+        "answer": "Headline results use a fixed 30-year projection. The yearly table provides intermediate annual checkpoints. Changing Mortgage term changes the loan schedule; it does not add a separate five-year or ten-year comparison setting."
+      },
+      {
+        "anchor": "use-rent-buy-wealth",
+        "question": "What does buying advantage mean in the yearly table?",
+        "answer": "It is buyer equity after the modeled sale minus renter portfolio plus refundable deposit at the same year. A positive amount favors the buying path in that scenario; a negative amount favors renting. This is a modeled wealth difference, not annual cash savings, a home-price forecast or a recommendation."
+      },
+      {
+        "anchor": "use-rent-buy-opportunity",
+        "question": "How does the calculator account for the money I could invest while renting?",
+        "answer": "The renter portfolio starts with the difference between the buyer\u2019s down payment plus purchase costs and the renter\u2019s deposit plus upfront rental costs. Each month it grows at the entered investment return and is adjusted by the buying-minus-renting cash-flow difference. The refundable deposit is added back to renter wealth at the annual checkpoints. The tax adjustment, if entered, also affects the comparison."
+      },
+      {
+        "anchor": "use-rent-buy-crossover",
+        "question": "Does the first year buying leads guarantee it stays ahead?",
+        "answer": "No. The result identifies the first annual checkpoint when modeled buyer equity is at least renter wealth. It does not test that every later year stays favorable. Read later rows and compare alternative appreciation, rent growth, investment return and transaction-cost assumptions before drawing a conclusion."
+      },
+      {
+        "anchor": "use-rent-buy-tax",
+        "question": "Does this calculate my actual homeownership tax savings?",
+        "answer": "No. The model applies a simplified annual interest-plus-property-tax adjustment above the standard deduction you enter. It does not apply SALT caps, mortgage loan limits, filing-specific phaseouts or capital-gains tax. A 0% tax-rate input switches off that adjustment; it does not establish your actual tax treatment."
+      },
+      {
+        "anchor": "use-rent-buy-deficit",
+        "question": "What if the renter portfolio becomes negative?",
+        "answer": "A negative value shows a funding deficit under the modeled cash-flow comparison. It is not an ordinary positive investment account, and the calculator does not arrange borrowing or apply a separate borrowing rate or credit limit. Recheck the upfront funding and recurring costs; actual affordability and financing need separate review."
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: costs and financial considerations of homeownership",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-are-some-of-the-financial-considerations-of-buying-a-home-en-119/"
+      }
+    ],
+    "additionalExamples": [
+      {
+        "title": "Isolating purchase and selling costs",
+        "mode": "comparison",
+        "values": {
+          "price": 120000,
+          "down": 100,
+          "rate": 0,
+          "years": 30,
+          "buy_closing": 2,
+          "selling": 5,
+          "tax": 0,
+          "insurance": 0,
+          "hoa": 0,
+          "maintenance": 0,
+          "cost_growth": 0,
+          "tax_growth": 0,
+          "appreciation": 0,
+          "rent": 0,
+          "rent_growth": 0,
+          "renter_insurance": 0,
+          "deposit": 0,
+          "rental_costs": 0,
+          "return": 0,
+          "tax_rate": 0,
+          "standard": 16100
+        },
+        "inputs": "An all-cash $120,000 home, 2% purchase costs and 5% sale costs. Borrowing, rent, ownership running costs, growth and tax adjustments are set to zero to isolate transaction costs; these are arithmetic settings, not a realistic housing forecast.",
+        "steps": [
+          "Purchase cash is $120,000 + 2% \u00d7 $120,000 = $122,400. With no upfront rental costs, the comparison starts the renter portfolio at $122,400.",
+          "With zero growth and running cash flows, renter wealth stays $122,400.",
+          "A modeled sale of the unchanged $120,000 home after 5% selling costs leaves $114,000 buyer equity. The $8,400 difference is the $2,400 purchase cost plus $6,000 selling cost."
+        ],
+        "answer": "Buyer equity after 30 years is $114,000; renter terminal wealth is $122,400 under these isolating assumptions.",
+        "expected": {
+          "label": "Buyer equity after 30 years",
+          "value": 114000,
+          "tolerance": 0.005
+        }
+      }
+    ]
+  },
+  "credit-cards-payoff": {
+    "summary": "Use one monthly budget to repay several credit cards. The model adds interest at each entered APR divided by 12, pays the entered dollar minimums and directs remaining money to the highest APR first. The budget stays available as cards are paid off. Payoff time and interest are estimates under those fixed assumptions, not issuer statement figures.",
+    "scope": "Up to 20 entered card balances, each with a fixed APR and fixed dollar minimum monthly payment, using one total monthly budget. Interest is added monthly at APR / 12 before payments. Minimums are paid up to the balance owed, and remaining budget goes to the highest APR first. Freed payments remain in the total budget; the final payment is capped by the remaining debt. New purchases, fees, grace periods, daily interest, changing minimum-payment formulas and APR changes are not modeled. A promotional 0% APR stays at 0% throughout this projection. This calculator does not evaluate refinancing, balance-transfer fees, credit scores, payment due dates or lender approval. The budget must cover entered minimums and produce a repayable plan.",
+    "questions": [
+      {
+        "question": "Why prioritize the card with the highest APR?",
+        "answer": "After paying all entered minimums, this plan directs extra money to the highest-APR balance to reduce exposure to that rate first. It is a fixed-input avalanche projection, not a prediction of future issuer rates or your payment behavior. Compare the snowball tool separately if your goal is to prioritize smaller balances."
+      },
+      {
+        "anchor": "use-cards-interest",
+        "question": "How does the calculator estimate interest and payoff time?",
+        "answer": "For each month, it adds interest at each card\u2019s APR divided by 12, then allocates the monthly budget. Months until debt-free counts the monthly steps needed to clear all entered balances. Actual statements can differ because issuers may use daily balances, grace periods and separate rates for different transaction types."
+      },
+      {
+        "anchor": "use-cards-rollover",
+        "question": "What happens to payments after a card is paid off?",
+        "answer": "The total entered monthly budget stays available for the remaining cards. The paid-off card no longer needs a minimum, so that money can reach another balance. Once all cards can be cleared, the final total payment is capped at what is still owed; the model does not assume you spend unused cash."
+      },
+      {
+        "anchor": "use-cards-budget-error",
+        "question": "Why does the calculator reject my payment budget?",
+        "answer": "The total budget must be at least the sum of the entered minimum payments. It also needs to repay the modeled balances within the supported calculation period. If payments do not cover accrued interest and the balance fails to decline, the calculator reports an error instead of giving a debt-free date. Recheck APR units, balances and the total budget."
+      },
+      {
+        "anchor": "use-cards-fixed-minimum",
+        "question": "Are minimum payments recalculated as my balance falls?",
+        "answer": "No. Enter a monthly dollar minimum for each card; this projection holds it fixed while that card has a balance, capped at the amount still owed. It does not reproduce an issuer\u2019s percentage-of-balance or interest-plus-fee minimum formula. Update the inputs if the assumptions you want to model change."
+      },
+      {
+        "anchor": "use-cards-new-spending",
+        "question": "Does this include new purchases, fees or a promotional APR ending?",
+        "answer": "No. Balances only change through the modeled monthly interest and payments. A rate entered as 0% remains 0% throughout the plan; there is no automatic promotional end date. New charges, annual or late fees, deferred interest and future APR changes require a different projection or revised inputs."
+      },
+      {
+        "anchor": "use-cards-strategy-links",
+        "question": "Can I compare highest-interest-first with the snowball method?",
+        "answer": "This page uses highest-APR-first repayment with a fixed total budget. To compare a smallest-balance-first strategy, use the Debt Snowball Calculator with the same debts and total budget. Match other assumptions, such as rollover and any one-time extra payment, before comparing interest and payoff time. For one card and a payoff deadline, use the single-card calculator.",
+        "links": [
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Compare a debt snowball plan"
+          },
+          {
+            "id": "debt-avalanche",
+            "mode": "avalanche",
+            "label": "Explore avalanche scenarios"
+          },
+          {
+            "id": "credit-card",
+            "mode": "term",
+            "label": "Open the single-card calculator"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB: credit card interest and payment allocation",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-does-my-credit-card-company-calculate-the-amount-of-interest-i-owe-en-51/"
+      }
+    ],
+    "additionalExamples": [
+      {
+        "title": "Keeping a larger combined budget across both cards",
+        "mode": "avalanche",
+        "values": {
+          "debts": "Card A, 600, 50, 0\nCard B, 600, 50, 0",
+          "budget": 300
+        },
+        "inputs": "Two $600 balances at 0% APR, each with a $50 entered minimum. Compare a $300 total monthly budget with the $200 budget in the first example.",
+        "steps": [
+          "The starting balance is $1,200 and the entered minimums total $100. A $300 budget initially leaves $200 above those minimums.",
+          "With zero interest and no new charges, $1,200 \u00f7 $300 = four monthly payments. The same budget remains available after either card is cleared.",
+          "The $200 comparison requires six monthly payments under the same assumptions. Neither example includes fees or a promotional rate ending."
+        ],
+        "answer": "The $300 combined monthly budget clears these two balances in four months.",
+        "expected": {
+          "label": "Months until debt-free",
+          "value": 4,
+          "tolerance": 1e-05
+        }
+      }
+    ]
+  }
+}

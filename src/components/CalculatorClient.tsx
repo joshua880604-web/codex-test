@@ -20,6 +20,7 @@ const FireBudgetFields=dynamic(()=>import('./FireBudgetPlan'));
 const FireBudgetReport=dynamic(()=>import('./FireBudgetPlan').then(m=>m.FireBudgetReport));
 const DebtStrategyReport=dynamic(()=>import('./DebtStrategyReport'));
 import ResultShare from "./ResultShare";
+import {motherPageCopy} from "@/lib/mother-page-ui";
 import {hasShareTools} from "@/lib/share-tools";
 const ShareToolsDialog=dynamic(()=>import("./ShareToolsDialog"),{ssr:false});
 import RecastComparison from "./RecastComparison";
@@ -72,7 +73,9 @@ function ResultTables({tables,onDownload,label="Download table CSV"}:{tables:Non
 export default function CalculatorClient({ calc, initialResult, shortcuts = [] }: { calc: Calculator; initialResult: Result | null; shortcuts?: {keyword: string; mode: string}[] }) {
   const id = calc.id;
   const enhancedSharing=hasShareTools(id);
+  const motherCopy=motherPageCopy[id];
   const [shareOpen,setShareOpen]=useState(false);
+  const [showResultShare,setShowResultShare]=useState(false);
   const runCalculation = (_id: string, mode: string, values: Values) => runClientCalculation(calc.id, calc.category, mode, values);
   const [modeId, setModeId] = useState(calc.modes[0].id);
   const mode = calc.modes.find((m) => m.id === modeId)!;
@@ -120,6 +123,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   useEffect(() => {
     let lastSource:string|null=null;
     function hydrate(force = false) {
+      setShowResultShare(false);
       const source=window.location.hash.startsWith('#calc=')?window.location.hash:window.location.search;
       if(source===lastSource && !force)return;
       const previousSource = lastSource;
@@ -192,6 +196,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       }
       return next;
     });
+    setShowResultShare(false);
     setResult(null);
     setError("");
     setNotice("Inputs changed. Select Calculate to update the result.");
@@ -206,6 +211,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     modeDrafts.current = nextInputs.drafts;
     setModeId(next);
     setValues(nextInputs.values);
+    setShowResultShare(false);
     setResult(null);
     setError("");
     setNotice("");
@@ -217,6 +223,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     clearScenarios();
     setError("");
     setNotice("");
+    setShowResultShare(false);
     setResult(null);
     let v = { ...values };
     const token = ++request.current;
@@ -225,6 +232,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       const next = await runCalculation(id, mode.id, v);
       if (token !== request.current) return;
       setResult(next);
+      setShowResultShare(true);
       setShowAll(false);
       setYearly(false);
       setTimeout(
@@ -284,6 +292,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         ? Object.fromEntries(mode.fields.map((f) => [f.key, ""]))
         : defaults(mode),
     );
+    setShowResultShare(false);
     setResult(null);
     setError("");
     setNotice(
@@ -321,7 +330,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     if(id === "house-hacking" && field.key === "rentals") return <HouseRentalFields key={field.key} value={values.rentals??"[]"} onChange={value=>update("rentals",value)}/>;
     if (["credit-cards-payoff","debt-snowball","debt-avalanche"].includes(id) && field.key === "debts") return <CreditCardFields kind={id === "credit-cards-payoff" ? "card" : "debt"} key={field.key} value={values.debts ?? ""} onChange={value=>update("debts",value)} />;
     const inputId = id + "-" + mode.id + "-" + field.key;
-    const hint = field.hint ?? inputHint(id,mode.id,field.key) ?? (id === "401k" && mode.id === "projection" ? ({
+    const hint = field.hint ?? motherCopy?.hints?.[field.key] ?? inputHint(id,mode.id,field.key) ?? (id === "401k" && mode.id === "projection" ? ({
       match: "The percentage your employer adds for each eligible dollar you contribute. 50% means $0.50 per $1.",
       match_limit: "The portion of salary eligible for matching. At 6%, contributions above 6% of salary receive no additional match.",
       balance: "Your existing account total. Included once before future contributions and growth.",
@@ -509,13 +518,13 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     advanced = ['covered-call','house-hacking','brrrr','barista-fire','lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
   return (
     <>
-      <div className="calculator-intro-row"><p className="intro">{calc.intro}</p>{enhancedSharing?<div className="calculator-utility-actions"><FavoriteButton id={id}/><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share / Export</button></div>:<FavoriteButton id={id}/>}</div>
+      <div className={"calculator-intro-row"+(motherCopy?" mother-page-intro":"")}><p className="intro">{motherCopy?.intro??calc.intro}</p>{enhancedSharing?<div className="calculator-utility-actions"><FavoriteButton id={id}/><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share / Export</button></div>:<FavoriteButton id={id}/>}</div>
       {shareOpen&&enhancedSharing&&<ShareToolsDialog id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result} fields={visible} onClose={()=>setShareOpen(false)}/>}
       {id === "credit-card" && <p className="result-note">One card: compare fixed payments, a payoff deadline or a minimum-payment rule below. For several cards sharing one monthly budget, use the <SiteLink href={routeFor("credit-cards-payoff")}>Multiple Credit Cards Payoff Calculator</SiteLink>.</p>}
-      {id === "credit-cards-payoff" && <p className="result-note">Enter your total monthly budget, including all minimum payments. For one card and a target payoff date, use the <SiteLink href={routeFor("credit-card")}>Single Credit Card Payoff Calculator</SiteLink>. To compare repayment strategies, use the <SiteLink href={routeFor("debt-payoff")}>Debt Snowball and Avalanche Calculator</SiteLink>.</p>}
-      {scope && <p className={"result-note calculator-scope" + (id === "mortgage" ? " mortgage-scope" : "")}>{scope}</p>}
+      
+      {(motherCopy?.scope??scope)&&<p className={"result-note calculator-scope"+(motherCopy?" mother-page-scope":"")+(id==="mortgage"?" mortgage-scope":"")}>{motherCopy?.scope??scope}</p>}
       {id === "irr" && <p className="result-note dated-cash-flow-link">For cash flows on specific calendar dates, use the <SiteLink href={calculatorPresetHref(routeFor("average-return"), "cashflows")}>Average Return Calculator’s Dated Cash Flows mode</SiteLink>.</p>}
-      {id !== "mortgage" && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
+      {id !== "mortgage" && !motherCopy && shortcuts.length > 0 && <nav className="task-shortcuts" aria-label="Calculation shortcuts">{shortcuts.map(task=><button type="button" key={task.keyword} onClick={()=>switchMode(task.mode)}>{task.keyword}</button>)}</nav>}
       {calc.modes.length > 1 && (
         <div className={"mode-tabs" + (compactModes ? " compact-mode-tabs" : "") + (id === "mortgage" ? " mortgage-mode-tabs" : "")} role="tablist" aria-label="Calculation mode">
           {calc.modes.map((m) => (
@@ -582,12 +591,13 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         aria-label={compactModes ? mode.title : undefined}
         aria-labelledby={!compactModes && calc.modes.length > 1 ? "tab-" + modeId : undefined}
       >
-        {id !== "mortgage" && <p className="mode-description">{mode.description}</p>}
+        {id !== "mortgage" && !(motherCopy?.suppressSingleModeDescription&&calc.modes.length===1)&&<p className="mode-description">{mode.description}</p>}
         <form aria-busy={calculating} onKeyDown={e=>{if(id === "scientific" && (e.target as HTMLElement).tagName === "TEXTAREA" && e.key === "Enter" && !e.shiftKey){e.preventDefault();e.currentTarget.requestSubmit();}}} onSubmit={calculate} className="calculator-form" onInvalidCapture={(e) => {
           const field = e.target as HTMLInputElement;
           const details = field.closest("details");
           if (details) details.open = true;
-          setResult(null);
+          setShowResultShare(false);
+    setResult(null);
         }}>
           {['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : id==='covered-call' ? <CoveredCallFields fields={visible} renderField={input}/> : id==='house-hacking' ? <HouseHackFields fields={visible} renderField={input}/> : id==='mortgage-vs-invest' ? <MortgageInvestFields fields={visible} renderField={input}/> : id==='cash-on-cash-return' && mode.id==='property' ? <CashReturnFields fields={visible} renderField={input}/> : id==='brrrr' ? <BrrrrFields fields={visible} renderField={input}/> : id==='barista-fire' ? <BaristaFields fields={visible} renderField={input}/> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
           {id !== "mortgage" && id !== "marriage-tax" && advanced.length > 0 && (
@@ -703,6 +713,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               </div>
             )}
           </div>
+          {enhancedSharing && showResultShare && <div className="result-share-prompt"><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share your results</button></div>}
           {context && id !== "mortgage" && <p className="result-context">{context}</p>}
           {summary && summary.highlights.length > 0 && <dl className="workspace-key-figures" aria-label="Key calculated figures">{summary.highlights.map(m => <div className="metric" key={m.label}><dt><span>{m.label}</span></dt><dd><strong>{formatMetric(m)}</strong></dd></div>)}</dl>}
           {context && id === "mortgage" && <p className="result-context">{context}</p>}
@@ -711,7 +722,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
             {summary.details.map(m => <div className="metric" key={m.label}><span>{m.label}</span><strong>{formatMetric(m)}</strong></div>)}
           </details>}
           <div className="result-actions">
-            {enhancedSharing?<button type="button" onClick={()=>setShareOpen(true)}>Share / Export</button>:<button onClick={() => window.print()}>Print</button>}
+            {enhancedSharing?(!showResultShare&&<button type="button" onClick={()=>setShareOpen(true)}>Share / Export</button>):<button onClick={() => window.print()}>Print</button>}
             {result.rows && !wideReports && !enhancedSharing && <button onClick={() => download()}>Download CSV</button>}
           </div>
           {!wideReports && calculationDetails}

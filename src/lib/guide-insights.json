@@ -24,7 +24,7 @@
       "Do not compare a principal-and-interest payment with another quote that includes escrow.",
       "Paying off a mortgage does not remove property taxes, insurance or maintenance.",
       "For requested 80% PMI cancellation, use the appraisal at purchase if below the purchase price; a current market appraisal is not the original value.",
-      "Automatic PMI uses an assumed credit score range (default 740–759) and a dated base-rate card. Select Manual to use an actual lender quote; PMI is already included in the initial monthly total and schedule costs."
+      "Automatic PMI uses an assumed credit score range (default 740\u2013759) and a dated base-rate card. Select Manual to use an actual lender quote; PMI is already included in the initial monthly total and schedule costs."
     ],
     "checkedOn": "2026-10-26"
   },
@@ -208,7 +208,7 @@
     ],
     "checks": [
       "The draw period does not simulate gradual new advances or changing balances.",
-      "An allocated monthly account fee is not a prediction of the lender’s actual annual billing date.",
+      "An allocated monthly account fee is not a prediction of the lender\u2019s actual annual billing date.",
       "Fees can change estimated APR even when the contract interest rate stays the same."
     ],
     "checkedOn": "2026-10-21"
@@ -289,7 +289,7 @@
       "Keep the distribution year fixed when checking whether the spouse-related table selection changes the divisor."
     ],
     "checks": [
-      "Use the required prior December 31 balance rather than substituting today’s balance.",
+      "Use the required prior December 31 balance rather than substituting today\u2019s balance.",
       "Inherited accounts and some still-working exceptions are outside this owner-account model.",
       "A displayed annual RMD does not determine its income-tax treatment or payment deadline."
     ],
@@ -308,7 +308,7 @@
       },
       {
         "label": "Take-home pay per period",
-        "meaning": "This job’s modeled pay after deductions and allocated taxes; other-job income is not added to this paycheck."
+        "meaning": "This job\u2019s modeled pay after deductions and allocated taxes; other-job income is not added to this paycheck."
       }
     ],
     "compare": [
@@ -316,7 +316,7 @@
       "Compare annual totals before comparing pay periods; weekly, biweekly and semimonthly schedules have different counts."
     ],
     "checks": [
-      "Do not enter the same income as both this job’s pay and other-job income.",
+      "Do not enter the same income as both this job\u2019s pay and other-job income.",
       "State and local rates are entered estimates, not complete jurisdiction-specific returns.",
       "W-4 elections, year-to-date payroll and IRS Publication 15-T withholding are not fully modeled."
     ],
@@ -339,7 +339,7 @@
       }
     ],
     "compare": [
-      "Hold price, appraisal and loan terms fixed; compare an illustrative rate with your lender’s annual quote.",
+      "Hold price, appraisal and loan terms fixed; compare an illustrative rate with your lender\u2019s annual quote.",
       "Then compare extra principal and the requested versus automatic scenarios without changing original value."
     ],
     "checks": [
@@ -377,7 +377,7 @@
     "checkedOn": "2026-10-26"
   },
   "discount-points": {
-    "answer": "Compare two fixed-rate loan quotes with the same principal and term. Points cost 1% of principal per point, but the rate reduction must come from the lender’s actual quote. The comparison distinguishes monthly cash savings from interest-and-fee savings at a sale or refinancing horizon.",
+    "answer": "Compare two fixed-rate loan quotes with the same principal and term. Points cost 1% of principal per point, but the rate reduction must come from the lender\u2019s actual quote. The comparison distinguishes monthly cash savings from interest-and-fee savings at a sale or refinancing horizon.",
     "results": [
       {
         "label": "Net borrowing-cost savings at horizon (B vs A)",
@@ -389,7 +389,7 @@
       },
       {
         "label": "First net-cost break-even month",
-        "meaning": "The first modeled month that B’s interest/fee cost is no higher than A’s, not a guarantee of permanent advantage."
+        "meaning": "The first modeled month that B\u2019s interest/fee cost is no higher than A\u2019s, not a guarantee of permanent advantage."
       }
     ],
     "compare": [
@@ -412,15 +412,15 @@
       },
       {
         "label": "Age at Coast FIRE",
-        "meaning": "The first modeled month when the portfolio meets the moving Coast threshold. “Not reached by target age” means the model found no crossing within your selected horizon."
+        "meaning": "The first modeled month when the portfolio meets the moving Coast threshold. \u201cNot reached by target age\u201d means the model found no crossing within your selected horizon."
       },
       {
         "label": "Current gap to Coast threshold",
-        "meaning": "Today’s threshold minus the current retirement portfolio, floored at zero. Monthly deposits can close the moving gap; this is not an extra immediate-payment requirement."
+        "meaning": "Today\u2019s threshold minus the current retirement portfolio, floored at zero. Monthly deposits can close the moving gap; this is not an extra immediate-payment requirement."
       },
       {
         "label": "Retirement balance on modeled path",
-        "meaning": "The projected balance after deposits stop at the first crossing, or after deposits continue to retirement if the threshold is never reached. Amounts retain today’s purchasing power."
+        "meaning": "The projected balance after deposits stop at the first crossing, or after deposits continue to retirement if the threshold is never reached. Amounts retain today\u2019s purchasing power."
       }
     ],
     "compare": [
@@ -429,7 +429,7 @@
       "To compare the full timeline, change one input in the form, calculate again and compare the resulting age and path. Use the existing CSV or result-summary exports to retain each scenario."
     ],
     "checks": [
-      "Every dollar amount is in today’s USD. Do not inflate the retirement budget a second time.",
+      "Every dollar amount is in today\u2019s USD. Do not inflate the retirement budget a second time.",
       "The return field is nominal, after fees. Inflation is deducted through the exact real-growth relationship.",
       "Monthly deposits maintain purchasing power and end at the first modeled crossing. No pre-retirement withdrawals are modeled.",
       "Default rates are illustrations. Lower returns, higher spending or different withdrawal assumptions can change the conclusion; no probability of success is calculated."
@@ -437,7 +437,7 @@
     "checkedOn": "2026-10-28"
   },
   "noi": {
-    "answer": "NOI separates a property’s operations from financing. Choose one reporting period for every income and expense field, then review the annual reconciliation before interpreting cash flow or returns.",
+    "answer": "NOI separates a property\u2019s operations from financing. Choose one reporting period for every income and expense field, then review the annual reconciliation before interpreting cash flow or returns.",
     "results": [
       {
         "label": "Annual net operating income",
@@ -469,7 +469,7 @@
     "results": [
       {
         "label": "FIRE portfolio target",
-        "meaning": "Annual portfolio-funded spending divided by the entered withdrawal rate, in today’s USD."
+        "meaning": "Annual portfolio-funded spending divided by the entered withdrawal rate, in today\u2019s USD."
       },
       {
         "label": "Age at modeled FIRE target",
@@ -486,7 +486,7 @@
       "Use Coast FIRE only for the distinct question of growing to a later retirement target without further deposits."
     ],
     "checks": [
-      "All money is in today’s purchasing power. Nominal return and inflation are separate inputs.",
+      "All money is in today\u2019s purchasing power. Nominal return and inflation are separate inputs.",
       "Monthly deposits maintain purchasing power and stop when the savings projection ends.",
       "Reaching a withdrawal-rate sizing target does not establish withdrawal safety or access to retirement accounts."
     ],
@@ -781,11 +781,11 @@
     "results": [
       {
         "label": "Payment each period",
-        "meaning": "Fix Length’s regular payout for the selected frequency; a partial final period can produce a different last amount."
+        "meaning": "Fix Length\u2019s regular payout for the selected frequency; a partial final period can produce a different last amount."
       },
       {
         "label": "Payout duration in years",
-        "meaning": "Fix Payment’s actual final payment date, using whole payout dates."
+        "meaning": "Fix Payment\u2019s actual final payment date, using whole payout dates."
       },
       {
         "label": "Total investment earnings",
@@ -841,7 +841,7 @@
     "results": [
       {
         "label": "Highest present-value application age",
-        "meaning": "Best of nine whole ages 62–70 under Ideal mode’s assumptions, not household claiming advice."
+        "meaning": "Best of nine whole ages 62\u201370 under Ideal mode\u2019s assumptions, not household claiming advice."
       },
       {
         "label": "Initial monthly benefit at selected age",
@@ -849,12 +849,12 @@
       },
       {
         "label": "Second option advantage",
-        "meaning": "Compare mode’s second stream PV minus first, both valued at the earlier claim age."
+        "meaning": "Compare mode\u2019s second stream PV minus first, both valued at the earlier claim age."
       }
     ],
     "compare": [
       "Use SSA estimates and verify whether they include future inflation.",
-      "Use Ideal’s common age-62-dollar PIA or Compare’s nominal claim-date quotes consistently.",
+      "Use Ideal\u2019s common age-62-dollar PIA or Compare\u2019s nominal claim-date quotes consistently.",
       "Vary lifespan and discount rate to understand the sensitivity."
     ],
     "checks": [
@@ -873,7 +873,7 @@
       },
       {
         "label": "FIRE portfolio target",
-        "meaning": "The annual portfolio-funded budget divided by the chosen withdrawal-rate assumption, in today’s USD."
+        "meaning": "The annual portfolio-funded budget divided by the chosen withdrawal-rate assumption, in today\u2019s USD."
       },
       {
         "label": "Age at modeled FIRE target",
@@ -886,7 +886,7 @@
       "Change one budget input and Calculate again to see a different full projection."
     ],
     "checks": [
-      "All budget entries use today’s purchasing power; do not inflate them again.",
+      "All budget entries use today\u2019s purchasing power; do not inflate them again.",
       "Annual provisions are recurring allowances, not dated one-time expenses.",
       "The tax allowance and withdrawal rate are user assumptions; neither is an automatic tax or safety calculation."
     ],
@@ -901,7 +901,7 @@
       },
       {
         "label": "FIRE portfolio target",
-        "meaning": "The annual portfolio-funded budget divided by the chosen withdrawal-rate assumption, in today’s USD."
+        "meaning": "The annual portfolio-funded budget divided by the chosen withdrawal-rate assumption, in today\u2019s USD."
       },
       {
         "label": "Age at modeled FIRE target",
@@ -914,7 +914,7 @@
       "Change one budget input and Calculate again to see a different full projection."
     ],
     "checks": [
-      "All budget entries use today’s purchasing power; do not inflate them again.",
+      "All budget entries use today\u2019s purchasing power; do not inflate them again.",
       "Annual provisions are recurring allowances, not dated one-time expenses.",
       "The tax allowance and withdrawal rate are user assumptions; neither is an automatic tax or safety calculation."
     ],
@@ -933,7 +933,7 @@
       },
       {
         "label": "Total interest",
-        "meaning": "Sum of opening balance × APR / 12 each month. Displayed cents are rounded; daily-interest statements may differ."
+        "meaning": "Sum of opening balance \u00d7 APR / 12 each month. Displayed cents are rounded; daily-interest statements may differ."
       }
     ],
     "compare": [
@@ -961,7 +961,7 @@
       },
       {
         "label": "Total interest",
-        "meaning": "Sum of opening balance × APR / 12 each month. Displayed cents are rounded; daily-interest statements may differ."
+        "meaning": "Sum of opening balance \u00d7 APR / 12 each month. Displayed cents are rounded; daily-interest statements may differ."
       }
     ],
     "compare": [
@@ -973,6 +973,126 @@
       "Budget includes minimums; do not add them twice.",
       "Rates, minimums and monthly timing are fixed assumptions; no fees or new charges are modeled.",
       "One-time payments occur in the selected month only if a balance remains."
+    ],
+    "checkedOn": "2026-10-29"
+  },
+  "rent-vs-buy": {
+    "answer": "Compare the wealth left by both paths at the same year: buyer equity after a modeled sale versus renter portfolio plus deposit. Read the yearly comparison and its costs alongside the fixed 30-year headline results.",
+    "results": [
+      {
+        "label": "Buyer equity after 30 years",
+        "meaning": "Modeled home value after entered sale costs and remaining mortgage debt; not cumulative profit or cash saved."
+      },
+      {
+        "label": "Renter terminal wealth after 30 years",
+        "meaning": "Modeled invested funding and monthly cash-flow differences, plus the returned deposit. A negative value is a funding deficit, not a modeled borrowing arrangement."
+      },
+      {
+        "label": "First year buying leads",
+        "meaning": "First annual checkpoint when buyer equity is at least renter wealth. This can be absent and does not promise buying remains ahead later."
+      }
+    ],
+    "compare": [
+      "Run a baseline with consistent purchase, rent, ownership-cost and investment assumptions.",
+      "Change one assumption, such as appreciation or investment return, while keeping the others fixed.",
+      "Compare both wealth columns at the same annual checkpoints, including later years after any first crossover."
+    ],
+    "checks": [
+      "Mortgage term changes debt payments; headline comparison remains 30 years.",
+      "Use actual purchase and selling cost assumptions; home equity is not the same as total profit.",
+      "The entered tax adjustment is simplified and does not calculate your full tax bill."
+    ],
+    "checkedOn": "2026-10-29"
+  },
+  "credit-cards-payoff": {
+    "answer": "Start with the total monthly amount you can pay across every listed card, including minimums. Read the debt-free month count and interest together; the projection keeps APRs, dollar minimums and the total budget fixed.",
+    "results": [
+      {
+        "label": "Months until debt-free",
+        "meaning": "Monthly steps until all entered balances are cleared under the modeled interest and payment rules, not a guaranteed calendar date."
+      },
+      {
+        "label": "Total interest",
+        "meaning": "Sum of modeled monthly interest. It excludes new charges, late or annual fees and future APR changes."
+      },
+      {
+        "label": "Total paid",
+        "meaning": "Starting card balances plus modeled interest; it is not the monthly budget multiplied by every month because the final payment may be smaller."
+      }
+    ],
+    "compare": [
+      "Calculate a baseline using all current balances, entered dollar minimums and a total budget covering those minimums.",
+      "Increase only the total monthly budget, keeping balances and APRs unchanged.",
+      "Compare months and total interest. For a snowball comparison, match debts, total budget and rollover assumptions."
+    ],
+    "checks": [
+      "Enter a total budget, not only the extra above minimums.",
+      "APR is an annual percentage; interest in this model is applied monthly at APR divided by 12.",
+      "Entered minimums are fixed dollar amounts, not changing issuer formulas; no new purchases or fees are added."
+    ],
+    "checkedOn": "2026-10-29"
+  },
+  "brrrr": {
+    "answer": "Separate cash recovered at refinance from cash remaining in the deal, then check the rental cash flow supporting the new loan. More borrowing can return more initial cash without improving operating income or creating profit.",
+    "results": [
+      {
+        "label": "Cash remaining in deal (signed)",
+        "meaning": "Cash invested before refinance minus net refinance cash. A negative value means modeled cash received exceeds initial cash invested; the refinance debt remains."
+      },
+      {
+        "label": "Net refinance cash to you (signed)",
+        "meaning": "New refinance principal less acquisition-loan payoff and refinance costs. Negative proceeds mean additional cash is due at refinance."
+      },
+      {
+        "label": "Monthly cash flow after reserve",
+        "meaning": "Effective rental income less operating expenses, the separate capital reserve and refinance principal and interest."
+      },
+      {
+        "label": "Post-refinance cash-on-cash return",
+        "meaning": "Annualized stabilized cash flow divided by positive cash remaining. It is not total ROI; zero, negative or sub-cent remaining cash has no applicable percentage."
+      }
+    ],
+    "compare": [
+      "Run a baseline with checked purchase, rehab, rent, operating-cost and financing assumptions.",
+      "Use the sensitivity table to vary ARV or refinance rate one at a time.",
+      "Compare both cash remaining and monthly cash flow, rather than selecting a scenario only for the amount of cash recovered."
+    ],
+    "checks": [
+      "Refinancing turns equity into new debt; cash received is not profit.",
+      "NOI excludes financing and the separately entered capital reserve, while cash flow subtracts both.",
+      "LTV and ARV are editable assumptions, not an appraisal or loan approval."
+    ],
+    "checkedOn": "2026-10-29"
+  },
+  "roas": {
+    "answer": "Read ROAS as revenue per advertising dollar, then compare a margin-based threshold on the same reporting basis. A strong revenue multiple can still leave a loss after product costs, advertising and overhead.",
+    "results": [
+      {
+        "label": "ROAS (multiple)",
+        "meaning": "Attributed revenue divided by ad spend: 4 means $4 of revenue per $1 of ads, also 400%, not $4 of profit."
+      },
+      {
+        "label": "Revenue less advertising spend",
+        "meaning": "Revenue after subtracting ads only. Product costs, fulfillment, fees, overhead and taxes may still be unpaid."
+      },
+      {
+        "label": "Break-even ROAS (multiple)",
+        "meaning": "Reciprocal of the entered pre-ad contribution margin; it covers the costs included in that margin plus advertising, not every company expense."
+      },
+      {
+        "label": "Required ROAS (multiple)",
+        "meaning": "Threshold implied by the pre-ad margin minus the target post-ad contribution margin. The target is not final company net profit."
+      }
+    ],
+    "compare": [
+      "Use Actual ROAS with revenue and ad spend from the same period, currency and attribution scope.",
+      "Use Break-Even ROAS with a contribution margin that includes relevant non-ad variable costs.",
+      "Use Target Profit Margin to add a post-ad contribution requirement; keep the same cost definitions when comparing."
+    ],
+    "checks": [
+      "Do not add revenue claimed by multiple platforms when they may count the same order.",
+      "Use a percentage of revenue for contribution margin, not markup on cost.",
+      "Fixed overhead, financing and income tax remain separate; the tool does not automatically subtract them."
     ],
     "checkedOn": "2026-10-29"
   }
