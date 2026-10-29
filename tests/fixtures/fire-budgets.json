@@ -1,0 +1,140 @@
+[
+  {
+    "id": "lean-fire",
+    "case": "default",
+    "values": {},
+    "crossing": 178,
+    "expected": {
+      "Annual portfolio-funded budget": 31200.0,
+      "FIRE portfolio target": 780000.0,
+      "Portfolio at projection endpoint": 780754.3777925614,
+      "New investments through endpoint": 356000.0,
+      "Projection endpoint age": 49.833333333333336
+    }
+  },
+  {
+    "id": "fat-fire",
+    "case": "default",
+    "values": {},
+    "crossing": 452,
+    "expected": {
+      "Annual portfolio-funded budget": 120000.0,
+      "FIRE portfolio target": 3000000.0,
+      "Portfolio at projection endpoint": 3012129.719934032,
+      "New investments through endpoint": 904000.0,
+      "Projection endpoint age": 72.66666666666667
+    }
+  },
+  {
+    "id": "lean-fire",
+    "case": "tax-buffer",
+    "values": {
+      "tax_allowance": "3600",
+      "buffer": "10"
+    },
+    "crossing": 213,
+    "expected": {
+      "Annual portfolio-funded budget": 38280.0,
+      "FIRE portfolio target": 957000.0,
+      "Portfolio at projection endpoint": 959433.4419579724,
+      "New investments through endpoint": 426000.0,
+      "Projection endpoint age": 52.75
+    }
+  },
+  {
+    "id": "fat-fire",
+    "case": "tax-buffer",
+    "values": {
+      "tax_allowance": "12000",
+      "buffer": "10"
+    },
+    "crossing": 497,
+    "expected": {
+      "Annual portfolio-funded budget": 145200.0,
+      "FIRE portfolio target": 3630000.0,
+      "Portfolio at projection endpoint": 3636218.857382053,
+      "New investments through endpoint": 994000.0,
+      "Projection endpoint age": 76.41666666666667
+    }
+  },
+  {
+    "id": "lean-fire",
+    "case": "zero-real",
+    "values": {
+      "age": "40",
+      "max_age": "50",
+      "housing": "500",
+      "food": "200",
+      "utilities": "100",
+      "transport": "100",
+      "health": "100",
+      "essentials": "0",
+      "annual_extra": "0",
+      "tax_allowance": "0",
+      "buffer": "0",
+      "balance": "180000",
+      "monthly": "1000",
+      "return": "0",
+      "inflation": "0"
+    },
+    "crossing": 120,
+    "expected": {
+      "Annual portfolio-funded budget": 12000.0,
+      "FIRE portfolio target": 300000.0,
+      "Portfolio at projection endpoint": 300000.0,
+      "New investments through endpoint": 120000.0,
+      "Projection endpoint age": 50.0
+    }
+  },
+  {
+    "id": "fat-fire",
+    "case": "funded",
+    "values": {
+      "balance": "3000000"
+    },
+    "crossing": 0,
+    "expected": {
+      "Annual portfolio-funded budget": 120000.0,
+      "FIRE portfolio target": 3000000.0,
+      "Portfolio at projection endpoint": 3000000.0,
+      "New investments through endpoint": 0.0,
+      "Projection endpoint age": 35.0
+    }
+  },
+  {
+    "id": "lean-fire",
+    "case": "negative-growth",
+    "values": {
+      "age": "40",
+      "max_age": "50",
+      "balance": "100000",
+      "monthly": "0",
+      "return": "-5",
+      "inflation": "0"
+    },
+    "crossing": null,
+    "expected": {
+      "Annual portfolio-funded budget": 31200.0,
+      "FIRE portfolio target": 780000.0,
+      "Portfolio at projection endpoint": 59873.69392383789,
+      "New investments through endpoint": 0.0,
+      "Projection endpoint age": 50.0
+    }
+  },
+  {
+    "id": "fat-fire",
+    "case": "unreached",
+    "values": {
+      "balance": "0",
+      "monthly": "0"
+    },
+    "crossing": null,
+    "expected": {
+      "Annual portfolio-funded budget": 120000.0,
+      "FIRE portfolio target": 3000000.0,
+      "Portfolio at projection endpoint": 0.0,
+      "New investments through endpoint": 0.0,
+      "Projection endpoint age": 80.0
+    }
+  }
+]

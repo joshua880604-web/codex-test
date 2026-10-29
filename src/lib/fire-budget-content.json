@@ -1,0 +1,385 @@
+{
+  "lean-fire": {
+    "updatedOn": "2026-10-29",
+    "summary": "Lean FIRE is an approach to financial independence built around a lower-spending retirement lifestyle. This calculator starts with the budget rather than a fixed wealth label: enter housing, food, utilities, transport, healthcare and other essentials, then add recurring annual provisions and your own tax allowance. The resulting portfolio-funded budget determines your full FIRE target under an entered withdrawal-rate assumption. Current investments and monthly additions determine the first modeled month the portfolio reaches that target. A low target is useful only if the underlying spending plan is realistic for your household.",
+    "scope": "All money is in today’s USD. Monthly budget categories are multiplied by 12; annual provisions and the dollar tax allowance are added once. An optional buffer applies to that whole annual total. Provisions represent recurring annual spending, not dated one-time purchases. Exact real growth is (1 + nominal return) / (1 + inflation) − 1; monthly investments maintain purchasing power and occur at month end. The projection stops at the first full-target crossing or selected age limit. No account eligibility, tax liability, healthcare quote, pension, Social Security, withdrawal drawdown or success probability is calculated. The age limit is a search horizon, not a promised retirement date. Defaults are hypothetical examples, not recommended budgets or rates.",
+    "sources": [
+      {
+        "title": "Fidelity: Fat FIRE, Lean FIRE and retirement lifestyle choices",
+        "url": "https://www.fidelity.com/learning-center/personal-finance/what-is-fat-fire"
+      },
+      {
+        "title": "SEC Investor.gov: investment amounts, contributions and growth assumptions",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Build a $31,200 Lean FIRE budget before sizing the target",
+        "mode": "plan",
+        "values": {},
+        "inputs": "Monthly costs: housing $1,200, food $400, utilities $200, transport $200, healthcare $300 and other essentials $200. Annual provision $1,200; tax allowance $0; buffer 0%; withdrawal assumption 4%.",
+        "steps": [
+          "Monthly costs total $2,500, or $30,000 per year.",
+          "Add the recurring annual provision once: $30,000 + $1,200 = $31,200.",
+          "Divide by the illustrative withdrawal assumption: $31,200 / 0.04 = $780,000."
+        ],
+        "answer": "The modeled Lean FIRE target is $780,000 in today’s USD. This does not establish that the budget is adequate or that 4% withdrawals are safe.",
+        "expected": {
+          "label": "FIRE portfolio target",
+          "value": 780000
+        }
+      },
+      {
+        "title": "Reach a $300,000 target at zero real growth",
+        "mode": "plan",
+        "values": {
+          "age": 40,
+          "max_age": 50,
+          "housing": 500,
+          "food": 200,
+          "utilities": 100,
+          "transport": 100,
+          "health": 100,
+          "essentials": 0,
+          "annual_extra": 0,
+          "tax_allowance": 0,
+          "buffer": 0,
+          "balance": 180000,
+          "monthly": 1000,
+          "return": 0,
+          "inflation": 0,
+          "withdrawal": 4
+        },
+        "inputs": "Illustrative $1,000 monthly budget; no annual provisions, taxes or buffer. Invested assets $180,000; $1,000 month-end additions for a maximum of 10 years; zero return and inflation.",
+        "steps": [
+          "Annual spending is $12,000, so the target at 4% is $300,000.",
+          "The starting gap is $300,000 − $180,000 = $120,000.",
+          "At zero growth, 120 monthly investments of $1,000 close that gap exactly."
+        ],
+        "answer": "The first target crossing is at age 50 with $300,000. This deliberately simplified arithmetic example is not a claim that $1,000 a month is enough to live on.",
+        "expected": {
+          "label": "Portfolio at projection endpoint",
+          "value": 300000
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-lean-meaning",
+        "question": "What is Lean FIRE?",
+        "answer": "Lean FIRE means pursuing financial independence with a relatively modest spending plan. It is a budgeting approach, not a legal account type or a universally agreed dollar threshold. Household size, housing, health needs and location affect what a lean budget can support. Use your own expenses rather than treating someone else’s number as an eligibility rule.",
+        "queries": [
+          "what is lean fire",
+          "lean fire meaning",
+          "lean fire definition"
+        ],
+        "links": [
+          {
+            "id": "lean-fire",
+            "mode": "plan",
+            "label": "Build your own essential budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-lean-number",
+        "question": "How do I calculate my Lean FIRE number?",
+        "answer": "Add necessary monthly costs and multiply by 12. Add recurring annual costs and the tax allowance once, then apply any selected spending buffer. Divide the resulting annual portfolio-funded budget by the withdrawal rate written as a decimal. The default $31,200 budget and illustrative 4% assumption give $780,000. The rate sizes a target; it does not prove withdrawal safety.",
+        "queries": [
+          "what is my lean fire number",
+          "what is lean fire number",
+          "lean fire number calculator"
+        ],
+        "links": [
+          {
+            "id": "lean-fire",
+            "mode": "plan",
+            "label": "Calculate the $780,000 example"
+          }
+        ]
+      },
+      {
+        "anchor": "use-lean-fat",
+        "question": "What is the difference between Lean FIRE and Fat FIRE?",
+        "answer": "The difference is the retirement lifestyle and budget you intend to fund. Lean FIRE emphasizes necessary spending and fewer discretionary costs. Fat FIRE includes more room for lifestyle extras. Both use the same target-sizing math here. Their labels do not change investment returns, tax treatment or withdrawal safety. Compare consistent assumptions rather than declaring one lifestyle better.",
+        "queries": [
+          "lean fire vs fat fire",
+          "what is lean fire and what is fatfire"
+        ],
+        "links": [
+          {
+            "id": "fat-fire",
+            "mode": "plan",
+            "label": "Build a core-plus-lifestyle budget"
+          },
+          {
+            "id": "fire",
+            "mode": "plan",
+            "label": "Use a direct annual FIRE budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-lean-coast",
+        "question": "Is Lean FIRE the same as Coast FIRE?",
+        "answer": "No. This Lean FIRE tool calculates the full portfolio target for the entered spending plan. Coast FIRE calculates a threshold today that could grow toward a later retirement target without further deposits under constant assumptions. Reaching a Coast threshold does not pay your living costs during the coast period.",
+        "queries": [
+          "lean fire vs fat fire vs coast fire"
+        ],
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Calculate a separate Coast threshold"
+          }
+        ]
+      },
+      {
+        "anchor": "use-lean-irregular",
+        "question": "Should I include healthcare, taxes and irregular expenses?",
+        "answer": "Include the costs the retirement portfolio must fund. Enter ongoing healthcare and insurance in the monthly category, recurring annual expenses in the annual provision, and a separately assessed dollar tax allowance. Do not include the same amount twice. Large purchases with specific dates need separate planning because smoothing them into an annual allowance does not model when cash is required.",
+        "queries": [
+          "should i include healthcare, taxes and irregular expenses"
+        ],
+        "links": [
+          {
+            "id": "lean-fire",
+            "mode": "plan",
+            "label": "Review the budget categories"
+          }
+        ]
+      },
+      {
+        "anchor": "use-lean-buffer",
+        "question": "How does a spending buffer change my target?",
+        "answer": "The buffer increases the complete entered annual budget, including the tax allowance. A 10% buffer on $31,200 produces $34,320 and a $858,000 target at the same illustrative 4% assumption. It is an extra spending allowance, not an emergency-fund balance, portfolio-risk simulation or guarantee against running out of money.",
+        "queries": [
+          "how does a spending buffer change my target"
+        ],
+        "links": [
+          {
+            "id": "lean-fire",
+            "mode": "plan",
+            "label": "Try a 10% spending buffer",
+            "values": {
+              "buffer": "10"
+            }
+          }
+        ]
+      },
+      {
+        "anchor": "use-lean-work",
+        "question": "Does Lean FIRE work for every household?",
+        "answer": "A smaller spending plan mathematically produces a smaller target at the same withdrawal assumption. That does not establish whether you can sustain the spending, access the accounts or manage market declines. This model has constant returns and no withdrawal phase. Review missing costs and use the result as a scenario rather than a retirement decision.",
+        "queries": [
+          "does lean fire work"
+        ],
+        "links": [
+          {
+            "id": "fire",
+            "mode": "plan",
+            "label": "Compare a broader annual budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-lean-age",
+        "question": "Why does the calculator say the target is not reached?",
+        "answer": "No monthly crossing was found before the selected projection age limit under your entered assumptions. The calculator does not invent an age beyond that horizon. Change one assumption at a time, such as monthly investments or a realistic spending category, and recalculate. A higher assumed return can lower the modeled time without making that return more likely.",
+        "queries": [
+          "why does the calculator say the target is not reached"
+        ],
+        "links": [
+          {
+            "id": "lean-fire",
+            "mode": "plan",
+            "label": "Recalculate with your own savings plan"
+          }
+        ]
+      }
+    ]
+  },
+  "fat-fire": {
+    "updatedOn": "2026-10-29",
+    "summary": "Fat FIRE is a financial-independence approach aimed at funding a higher-spending retirement lifestyle. Instead of assigning everyone the same millionaire threshold, this calculator separates core household living costs from annual additions for travel, housing upgrades, family support, leisure and healthcare. Add your own tax allowance and optional spending buffer to build the amount your portfolio must fund. It then sizes the full FIRE target and projects when current invested assets plus monthly additions first reach it. The result helps you see the price of a lifestyle choice; it does not certify that the portfolio can fund retirement indefinitely.",
+    "scope": "Money is in today’s USD. Core monthly living costs include the baseline household budget; annual extra categories are additions to that baseline. Costs must not overlap. Annual provisions are recurring allowances, not separately timed purchases. Taxes are entered dollar allowances, with no jurisdiction or account rules applied. The buffer increases the complete annual budget, including taxes. The projection uses exact inflation-adjusted growth, month-end investments and one full-target endpoint or age limit. It has no later withdrawals, volatility, success probability, Social Security, pension timing, account access or automatic tax calculation. No universal Fat FIRE wealth or income cutoff is imposed. Defaults illustrate the calculation and are not recommended spending or investment assumptions.",
+    "sources": [
+      {
+        "title": "Fidelity: Fat FIRE, Lean FIRE and retirement lifestyle choices",
+        "url": "https://www.fidelity.com/learning-center/personal-finance/what-is-fat-fire"
+      },
+      {
+        "title": "SEC Investor.gov: investment amounts, contributions and growth assumptions",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Turn a core-plus-lifestyle budget into a $3 million target",
+        "mode": "plan",
+        "values": {},
+        "inputs": "Core costs $5,000 per month. Annual additions: travel $18,000; housing upgrades $12,000; family support $12,000; leisure $12,000; extra healthcare $6,000. Other provision $0; tax allowance $0; buffer 0%; withdrawal assumption 4%.",
+        "steps": [
+          "Annual core costs are $5,000 × 12 = $60,000.",
+          "Annual additions total $60,000, producing a $120,000 portfolio-funded budget.",
+          "At the illustrative 4% withdrawal assumption, the target is $120,000 / 0.04 = $3,000,000."
+        ],
+        "answer": "The full target is $3 million in today’s USD. These hypothetical costs do not define Fat FIRE or establish withdrawal safety.",
+        "expected": {
+          "label": "FIRE portfolio target",
+          "value": 3000000
+        }
+      },
+      {
+        "title": "Include a tax allowance before applying a spending buffer",
+        "mode": "plan",
+        "values": {
+          "tax_allowance": 12000,
+          "buffer": 10
+        },
+        "inputs": "Keep the $120,000 annual lifestyle budget, add an entered $12,000 annual tax allowance, then apply a 10% buffer. Withdrawal assumption remains 4%.",
+        "steps": [
+          "Budget before buffer = $120,000 + $12,000 = $132,000.",
+          "The 10% buffer adds $13,200, including a buffer on the tax allowance.",
+          "Final annual budget = $145,200; target = $145,200 / 0.04 = $3,630,000."
+        ],
+        "answer": "The target rises to $3.63 million. The tax allowance is supplied by the user; it is not a calculated tax bill.",
+        "expected": {
+          "label": "FIRE portfolio target",
+          "value": 3630000
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-fat-meaning",
+        "question": "What is Fat FIRE?",
+        "answer": "Fat FIRE describes pursuing financial independence with a higher-spending retirement lifestyle. The spending might include more travel, housing choices or family support. There is no single portfolio balance that qualifies every household. Start with the annual spending you want the portfolio to support, including costs and taxes that you have assessed separately.",
+        "queries": [
+          "what is fat fire",
+          "fat fire meaning"
+        ],
+        "links": [
+          {
+            "id": "fat-fire",
+            "mode": "plan",
+            "label": "Build your lifestyle budget"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fat-number",
+        "question": "How do I calculate my Fat FIRE number?",
+        "answer": "Convert core monthly living costs to annual costs, then add annual lifestyle extras and your dollar tax allowance once. Apply any spending buffer, then divide by the chosen withdrawal-rate assumption. A hypothetical $120,000 annual budget at 4% gives a $3 million target. Changing either the budget or rate changes the target; no rate is certified as safe.",
+        "queries": [
+          "how to calculate fat fire number",
+          "fat fire number"
+        ],
+        "links": [
+          {
+            "id": "fat-fire",
+            "mode": "plan",
+            "label": "Calculate the $3 million example"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fat-amount",
+        "question": "How much money do you need for Fat FIRE?",
+        "answer": "Your target depends on the budget the portfolio must fund and the withdrawal assumption. At an illustrative 4%, each $1,000 of additional annual spending adds $25,000 to the target. A lower sizing rate produces a larger target. These are arithmetic relationships, not universal thresholds or promises that a given balance will last.",
+        "queries": [
+          "how much do you need for fat fire",
+          "fat fire net worth"
+        ],
+        "links": [
+          {
+            "id": "fat-fire",
+            "mode": "plan",
+            "label": "Size a target using your own spending"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fat-lean",
+        "question": "How is Fat FIRE different from Lean FIRE?",
+        "answer": "Fat FIRE emphasizes more room for discretionary spending; Lean FIRE starts from a lower-spending lifestyle. Both use the same portfolio-sizing and growth relationships. The separate tools organize budgets differently so you can check what each lifestyle includes. Keep return, inflation and withdrawal assumptions consistent if you compare their results.",
+        "queries": [
+          "fat fire vs lean fire"
+        ],
+        "links": [
+          {
+            "id": "lean-fire",
+            "mode": "plan",
+            "label": "Itemize an essential monthly budget"
+          },
+          {
+            "id": "fire",
+            "mode": "plan",
+            "label": "Enter an annual budget directly"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fat-chubby",
+        "question": "What is Chubby FIRE versus Fat FIRE?",
+        "answer": "Chubby FIRE is often used for a spending lifestyle between leaner financial independence and a more expansive Fat FIRE budget. These community labels have no universally enforced asset boundaries. Rather than adding a new threshold rule, enter the living costs and extras you actually plan to fund in this calculator.",
+        "queries": [
+          "chubby fire vs fat fire"
+        ],
+        "links": [
+          {
+            "id": "fat-fire",
+            "mode": "plan",
+            "label": "Explore your own spending level"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fat-taxes",
+        "question": "Does this Fat FIRE calculator calculate taxes?",
+        "answer": "No. Enter your own annual dollar allowance for taxes the portfolio must fund. The model does not apply tax brackets, capital gains treatment, account types or withdrawal ordering. A 10% spending buffer also increases the entered tax allowance by 10%; it is not a 10% tax rate. Avoid counting investment tax drag in both the spending budget and return assumption without a consistent plan.",
+        "queries": [
+          "does this fat fire calculator calculate taxes"
+        ],
+        "links": [
+          {
+            "id": "fat-fire",
+            "mode": "plan",
+            "label": "Review the annual tax allowance"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fat-coast",
+        "question": "Can I stop investing when I reach a Coast FIRE number?",
+        "answer": "That is a different question from reaching the full Fat FIRE target. Coast FIRE discounts a later retirement target into a threshold today under chosen return and inflation assumptions. It does not cover living expenses before that retirement date. Use the Coast calculator separately and carry over a consistent portfolio-funded budget.",
+        "queries": [
+          "fat fire vs coast fire"
+        ],
+        "links": [
+          {
+            "id": "coast-fire",
+            "mode": "coast",
+            "label": "Explore a separate stop-and-coast plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fat-inflation",
+        "question": "Should I inflate my Fat FIRE budget before entering it?",
+        "answer": "No. Enter today’s purchasing-power costs. The model adjusts nominal returns for inflation using (1 + return) / (1 + inflation) − 1, and treats monthly investments as constant in purchasing power. Results are real-dollar scenarios, not future nominal account statements. Market variability, changing spending and retirement withdrawals require separate analysis.",
+        "queries": [
+          "should i inflate my fat fire budget before entering it"
+        ],
+        "links": [
+          {
+            "id": "fat-fire",
+            "mode": "plan",
+            "label": "Compare your budget under explicit assumptions"
+          }
+        ]
+      }
+    ]
+  }
+}

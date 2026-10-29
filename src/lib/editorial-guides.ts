@@ -17,7 +17,7 @@ export const debtGuide:EditorialGuide={
  heading:'Debt Snowball vs. Avalanche: A Same-Budget Comparison',
  description:'Compare debt snowball and avalanche using the same balances and monthly budget. See interest costs, payoff milestones, rollover effects and calculator examples.',
  publishedOn:'2026-10-27',updatedOn:'2026-10-28',
- calculatorIds:['debt-payoff','credit-cards-payoff','credit-card'],
+ calculatorIds:['debt-payoff','credit-cards-payoff','credit-card','debt-snowball','debt-avalanche'],
  topic:'Loans & debt',breadcrumb:'Debt snowball vs. avalanche',
  cardIntro:'Compare three debts with the same $400 budget. See the first payoff milestone, final payoff, interest cost and what changes when payments stop rolling forward.',
 };
@@ -155,7 +155,25 @@ export const coastFireGuide:EditorialGuide={
  topic:'Retirement',breadcrumb:'How to calculate Coast FIRE',format:'Planning guide',
  cardIntro:'Work from your retirement budget to today’s required portfolio, compare ages and returns, and see why reaching a Coast milestone is different from retiring today.',
 };
-export const editorialGuides=[coastFireGuide,recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide,marginMarkupGuide];
+export const snowballMethodGuide:EditorialGuide={
+ path:'/guides/how-to-calculate-debt-snowball/',
+ title:'How to Calculate Debt Snowball: Steps & Payment Worksheet',
+ heading:'How to Calculate a Debt Snowball Plan',
+ description:'Build a debt snowball repayment worksheet with minimums, a total budget, monthly interest and payoff milestones. Follow a checked example and open the calculator.',
+ publishedOn:'2026-10-29',calculatorIds:['debt-snowball','debt-payoff'],
+ topic:'Loans & debt',breadcrumb:'Calculate debt snowball',format:'Step-by-step guide',
+ cardIntro:'Work from a debt list to a smallest-balance-first plan, carry freed payments forward and track real payoff milestones.',
+};
+export const avalancheMethodGuide:EditorialGuide={
+ path:'/guides/how-to-calculate-debt-avalanche/',
+ title:'How to Calculate Debt Avalanche: Steps & Payment Worksheet',
+ heading:'How to Calculate a Debt Avalanche Plan',
+ description:'Build a debt avalanche repayment worksheet with minimums, a total budget, monthly interest and payoff milestones. Follow a checked example and open the calculator.',
+ publishedOn:'2026-10-29',calculatorIds:['debt-avalanche','debt-payoff'],
+ topic:'Loans & debt',breadcrumb:'Calculate debt avalanche',format:'Step-by-step guide',
+ cardIntro:'Rank debts by APR, separate minimums from extra payments and audit the monthly interest and payment allocation.',
+};
+export const editorialGuides=[snowballMethodGuide,avalancheMethodGuide,coastFireGuide,recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide,marginMarkupGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);

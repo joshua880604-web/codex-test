@@ -1,3 +1,5 @@
+import debtStrategyContent from './debt-strategy-content.json';
+import fireBudgetContent from './fire-budget-content.json';
 import strategyContent from './strategy-tools-content.json';
 import coastContent from './coast-fire-content.json';
 import businessContent from './business-tool-content.json';
@@ -756,6 +758,16 @@ for(const [id,added] of Object.entries({'rental-property':['noi','roi'],'debt-co
 
 // Keep retirement and investment tasks connected without creating duplicate calculator routes.
 for (const [id,added] of Object.entries({investment:['roi','irr','compound-interest','retirement'],irr:['mirr','roi','average-return'],annuity:['annuity-payout','present-value','investment'],'annuity-payout':['annuity','pension','retirement'],pension:['social-security','retirement','annuity-payout'],'social-security':['pension','retirement','coast-fire']})) relatedCalculatorIds[id]=[...new Set([...added,...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(fireBudgetContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['fat-fire']=['lean-fire','fire','coast-fire','retirement','compound-interest','budget'];
+relatedCalculatorIds['lean-fire']=['fat-fire','fire','coast-fire','retirement','budget','emergency-fund'];
+for(const id of ['fire','coast-fire','retirement'])relatedCalculatorIds[id]=[...new Set(['lean-fire','fat-fire',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(debtStrategyContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['debt-snowball']=['debt-avalanche','debt-payoff','credit-cards-payoff','credit-card','debt-consolidation','budget'];
+relatedCalculatorIds['debt-avalanche']=['debt-snowball','debt-payoff','credit-cards-payoff','credit-card','debt-consolidation','budget'];
+for(const id of ['debt-payoff','credit-cards-payoff','credit-card','debt-consolidation'])relatedCalculatorIds[id]=[...new Set(['debt-snowball','debt-avalanche',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {

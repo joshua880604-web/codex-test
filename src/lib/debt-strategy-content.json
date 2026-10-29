@@ -1,0 +1,372 @@
+{
+  "debt-snowball": {
+    "updatedOn": "2026-10-29",
+    "summary": "A debt snowball plan concentrates extra repayment on the smallest remaining balance while covering every required minimum. This calculator turns that ordering rule into a monthly plan: enter each debt separately, choose a total budget that already includes the minimums, and track the first cleared balance as well as the final debt-free month. It also calculates an avalanche plan with the same starting inputs, so an early milestone can be weighed against modeled interest rather than assumed to be free.",
+    "scope": "Amounts are USD. Interest accrues at APR / 12 on each month’s opening debt balances before payments. Entered APRs and dollar minimums remain fixed; minimums and final payments are capped at the amount owed. Snowball ranks balances after interest and minimums, breaking ties by higher APR; avalanche ranks by APR with entered-order ties. Rollover Yes keeps the total budget fixed until final payoff; No removes cleared debts’ minimums from later budgets. A one-time payment is additional in the selected month and unused if repayment finishes earlier. Zero starting balances are ignored. Maximum 20 uniquely named debts and 1,200 payment months. Actual daily interest, declining minimums, fees, promotions, new borrowing, secured-debt priorities and credit scores are outside the model. Full precision is retained internally; displayed cents are rounded. Comparisons with rollover off can have different future budgets.",
+    "sources": [
+      {
+        "title": "CFPB: highest-interest-rate and snowball repayment strategies",
+        "url": "https://www.consumerfinance.gov/archive/blog/how-reduce-your-debt/"
+      },
+      {
+        "title": "CFPB: daily card interest and payment allocation",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-does-my-credit-card-company-calculate-the-amount-of-interest-i-owe-en-51/"
+      },
+      {
+        "title": "CFPB: options when minimum card payments are unaffordable",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-should-i-do-if-i-cant-pay-my-credit-card-bills-en-1697/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Pay extra toward Card B while maintaining both minimums",
+        "mode": "snowball",
+        "values": {},
+        "inputs": "Card A: $5,000, $150 minimum, 22% APR. Card B: $3,000, $100 minimum, 18% APR. Total monthly budget $400; keep it fixed; no one-time payment.",
+        "steps": [
+          "Month-one interest is $91.6667 on A and $45 on B, before rounding.",
+          "Minimums total $250, leaving $150 of the $400 budget for prioritized extra repayment.",
+          "Snowball puts the extra $150 toward B; first-month balances are approximately $4,941.67 and $2,795.",
+          "B clears in month 14; its freed minimum stays in the $400 monthly budget."
+        ],
+        "answer": "The plan clears both debts in 25 monthly periods with $1,950.01 of modeled interest.",
+        "expected": {
+          "label": "Total interest",
+          "value": 1950.00650609718,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Check a zero-interest plan without adding a growth assumption",
+        "mode": "snowball",
+        "values": {
+          "debts": "Small, 500, 50, 0\nLarge, 1000, 100, 0",
+          "budget": "300",
+          "rollover": "Yes",
+          "once": "0",
+          "once_month": "1"
+        },
+        "inputs": "Two debts of $500 and $1,000, both at 0% APR; minimums $50 and $100; total monthly budget $300.",
+        "steps": [
+          "Total starting debt is $1,500; no interest or fees are added.",
+          "Keep $300 available monthly rather than dropping a freed minimum.",
+          "Five $300 payments repay the $1,500 principal. Equal-rate avalanche ties keep the entered order."
+        ],
+        "answer": "Both balances are cleared in five monthly periods with zero modeled interest.",
+        "expected": {
+          "label": "Months until debt-free",
+          "value": 5
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-snowball-definition",
+        "question": "What is the debt snowball method?",
+        "answer": "Snowball focuses extra repayment on smaller remaining balances while keeping minimums current on the rest. As a balance clears, its payment can move to the next target. This tool recalculates the smallest balance after each month’s interest and minimum payments, rather than freezing the starting order.",
+        "queries": [
+          "what is snowball debt calculator"
+        ],
+        "links": [
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Open the snowball payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-snowball-budget",
+        "question": "Does the monthly budget include minimum payments?",
+        "answer": "Yes. The monthly budget is the total for all included debts, including minimums. With $250 of minimums and a $400 total budget, the initial extra is $150, not $400. The calculator rejects a total budget below the minimums; an ordering method does not resolve that shortfall.",
+        "queries": [
+          "does the monthly budget include minimum payments"
+        ],
+        "links": [
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Open the snowball payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-snowball-calculate",
+        "question": "How do I calculate a debt snowball plan?",
+        "answer": "For each month, add opening balance × APR / 12 to every active debt. Pay the capped minimum on each, then allocate the remaining budget in ascending remaining-balance order, using higher APR first for equal balances. Repeat with the new balances, apply the selected rollover rule and stop at payoff.",
+        "queries": [
+          "how to calculate debt snowball",
+          "how to calculate snowball debt reduction"
+        ],
+        "links": [
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Open the snowball payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-snowball-compare",
+        "question": "Is snowball always cheaper or faster than avalanche?",
+        "answer": "No. Earlier small-balance milestones do not guarantee the lowest total interest or an earlier overall payoff. Compare both strategies with the same fixed budget and terms. In the default example both take 25 months, but snowball has about $126.23 more modeled interest.",
+        "queries": [
+          "debt snowball vs avalanche calculator"
+        ],
+        "links": [
+          {
+            "id": "debt-avalanche",
+            "mode": "avalanche",
+            "label": "Open the avalanche payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-snowball-rollover",
+        "question": "What happens when a debt is paid off?",
+        "answer": "With Keep monthly budget fixed set to Yes, the payment freed by a cleared balance remains available for the next target. A capped payment can also release money within that same month. No reduces future budgets by the cleared account’s entered minimum, so it is a different cash-flow plan. A cleared balance does not automatically close the credit account.",
+        "queries": [
+          "what happens when a debt is paid off"
+        ],
+        "links": [
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Open the snowball payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-snowball-excel",
+        "question": "Can I use this snowball plan in Excel or Google Sheets?",
+        "answer": "Download the schedule CSV for calculated monthly values, or download the milestone and comparison tables separately. These are data exports, not a formula-driven workbook. A spreadsheet that recalculates needs opening balances, interest, capped minimums, remaining budget, strategy priority and closing balances for each month.",
+        "queries": [
+          "debt snowball calculator excel",
+          "debt snowball calculator spreadsheet",
+          "how to calculate debt snowball in excel"
+        ],
+        "links": [
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Open the snowball payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-snowball-minimums",
+        "question": "Why might my lender statement differ from this schedule?",
+        "answer": "The model uses monthly APR / 12 and fixed dollar minimums, with no new charges or fees. Cards may accrue interest daily, change minimums or have multiple APR categories within one account. Separate balance categories cannot be assumed to follow this cross-account allocation model. Recheck actual statements and contract rules.",
+        "queries": [
+          "why might my lender statement differ from this schedule"
+        ],
+        "links": [
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Open the snowball payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-snowball-first",
+        "question": "Why is the first cleared debt different from the extra-payment target?",
+        "answer": "Minimums continue on all active debts. A small balance may therefore reach zero before the account receiving extra payments. The milestone table reports the actual modeled month each balance clears; it is not a copy of the initial priority list.",
+        "queries": [
+          "why is the first cleared debt different from the extra-payment target"
+        ],
+        "links": [
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Open the snowball payoff plan"
+          }
+        ]
+      }
+    ]
+  },
+  "debt-avalanche": {
+    "updatedOn": "2026-10-29",
+    "summary": "A debt avalanche plan directs extra repayment toward the highest APR after covering all minimums. This calculator keeps the interest-rate order separate from the payoff milestones: a smaller debt may clear through its minimum before the main target is repaid. Enter a total monthly budget, decide whether freed payments stay available, and inspect the interest and monthly balance schedule. A paired snowball result uses the same starting inputs so you can compare cost and timing without retyping the debt list.",
+    "scope": "Amounts are USD. Interest accrues at APR / 12 on each month’s opening debt balances before payments. Entered APRs and dollar minimums remain fixed; minimums and final payments are capped at the amount owed. Snowball ranks balances after interest and minimums, breaking ties by higher APR; avalanche ranks by APR with entered-order ties. Rollover Yes keeps the total budget fixed until final payoff; No removes cleared debts’ minimums from later budgets. A one-time payment is additional in the selected month and unused if repayment finishes earlier. Zero starting balances are ignored. Maximum 20 uniquely named debts and 1,200 payment months. Actual daily interest, declining minimums, fees, promotions, new borrowing, secured-debt priorities and credit scores are outside the model. Full precision is retained internally; displayed cents are rounded. Comparisons with rollover off can have different future budgets.",
+    "sources": [
+      {
+        "title": "CFPB: highest-interest-rate and snowball repayment strategies",
+        "url": "https://www.consumerfinance.gov/archive/blog/how-reduce-your-debt/"
+      },
+      {
+        "title": "CFPB: daily card interest and payment allocation",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-does-my-credit-card-company-calculate-the-amount-of-interest-i-owe-en-51/"
+      },
+      {
+        "title": "CFPB: options when minimum card payments are unaffordable",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-should-i-do-if-i-cant-pay-my-credit-card-bills-en-1697/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Target Card A’s 22% APR before Card B’s 18% APR",
+        "mode": "avalanche",
+        "values": {},
+        "inputs": "Card A: $5,000, $150 minimum, 22% APR. Card B: $3,000, $100 minimum, 18% APR. Total monthly budget $400; keep it fixed; no one-time payment.",
+        "steps": [
+          "Month-one interest is $91.6667 on A and $45 on B, before rounding.",
+          "Minimums total $250, leaving $150 of the $400 budget for prioritized extra repayment.",
+          "Avalanche puts the extra $150 toward A; first-month balances are approximately $4,791.67 and $2,945.",
+          "A clears in month 21; its freed minimum stays in the $400 monthly budget."
+        ],
+        "answer": "The plan clears both debts in 25 monthly periods with $1,823.78 of modeled interest.",
+        "expected": {
+          "label": "Total interest",
+          "value": 1823.7783340391384,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Check a zero-interest plan without adding a growth assumption",
+        "mode": "avalanche",
+        "values": {
+          "debts": "Small, 500, 50, 0\nLarge, 1000, 100, 0",
+          "budget": "300",
+          "rollover": "Yes",
+          "once": "0",
+          "once_month": "1"
+        },
+        "inputs": "Two debts of $500 and $1,000, both at 0% APR; minimums $50 and $100; total monthly budget $300.",
+        "steps": [
+          "Total starting debt is $1,500; no interest or fees are added.",
+          "Keep $300 available monthly rather than dropping a freed minimum.",
+          "Five $300 payments repay the $1,500 principal. Equal-rate avalanche ties keep the entered order."
+        ],
+        "answer": "Both balances are cleared in five monthly periods with zero modeled interest.",
+        "expected": {
+          "label": "Months until debt-free",
+          "value": 5
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-avalanche-definition",
+        "question": "What is the debt avalanche method?",
+        "answer": "Avalanche directs available extra money to the remaining debt with the highest APR, while minimums continue on every other debt. This tool uses fixed rates. It does not rank by balance size, current interest dollars or the amount of the minimum payment.",
+        "queries": [
+          "debt avalanche method calculator"
+        ],
+        "links": [
+          {
+            "id": "debt-avalanche",
+            "mode": "avalanche",
+            "label": "Open the avalanche payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-avalanche-budget",
+        "question": "Does the monthly budget include minimum payments?",
+        "answer": "Yes. The monthly budget is the total for all included debts, including minimums. With $250 of minimums and a $400 total budget, the initial extra is $150, not $400. The calculator rejects a total budget below the minimums; an ordering method does not resolve that shortfall.",
+        "queries": [
+          "does the monthly budget include minimum payments"
+        ],
+        "links": [
+          {
+            "id": "debt-avalanche",
+            "mode": "avalanche",
+            "label": "Open the avalanche payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-avalanche-calculate",
+        "question": "How do I calculate a debt avalanche plan?",
+        "answer": "For each month, add opening balance × APR / 12 to every active debt. Pay the capped minimum on each, then allocate the remaining budget in descending APR order, retaining entered order for equal rates. Repeat with the new balances, apply the selected rollover rule and stop at payoff.",
+        "queries": [
+          "debt avalanche calculator with extra payments"
+        ],
+        "links": [
+          {
+            "id": "debt-avalanche",
+            "mode": "avalanche",
+            "label": "Open the avalanche payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-avalanche-compare",
+        "question": "Is avalanche always cheaper or faster than snowball?",
+        "answer": "Highest-APR-first repayment generally targets costly balances under fixed-rate, fixed-budget assumptions. It is not a promise about every contract or changing budget. In the default example both methods take 25 months; avalanche has about $126.23 less modeled interest. With rollover off, future budgets can differ.",
+        "queries": [
+          "debt snowball vs avalanche calculator"
+        ],
+        "links": [
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Open the snowball payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-avalanche-rollover",
+        "question": "What happens when a debt is paid off?",
+        "answer": "With Keep monthly budget fixed set to Yes, the payment freed by a cleared balance remains available for the next target. A capped payment can also release money within that same month. No reduces future budgets by the cleared account’s entered minimum, so it is a different cash-flow plan. A cleared balance does not automatically close the credit account.",
+        "queries": [
+          "what happens when a debt is paid off"
+        ],
+        "links": [
+          {
+            "id": "debt-avalanche",
+            "mode": "avalanche",
+            "label": "Open the avalanche payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-avalanche-excel",
+        "question": "Can I use this avalanche plan in Excel or Google Sheets?",
+        "answer": "Download the schedule CSV for calculated monthly values, or download the milestone and comparison tables separately. These are data exports, not a formula-driven workbook. A spreadsheet that recalculates needs opening balances, interest, capped minimums, remaining budget, strategy priority and closing balances for each month.",
+        "queries": [
+          "debt avalanche calculator excel",
+          "how to calculate debt avalanche in excel"
+        ],
+        "links": [
+          {
+            "id": "debt-avalanche",
+            "mode": "avalanche",
+            "label": "Open the avalanche payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-avalanche-minimums",
+        "question": "Why might my lender statement differ from this schedule?",
+        "answer": "The model uses monthly APR / 12 and fixed dollar minimums, with no new charges or fees. Cards may accrue interest daily, change minimums or have multiple APR categories within one account. Separate balance categories cannot be assumed to follow this cross-account allocation model. Recheck actual statements and contract rules.",
+        "queries": [
+          "why might my lender statement differ from this schedule"
+        ],
+        "links": [
+          {
+            "id": "debt-avalanche",
+            "mode": "avalanche",
+            "label": "Open the avalanche payoff plan"
+          }
+        ]
+      },
+      {
+        "anchor": "use-avalanche-first",
+        "question": "Why is the first cleared debt different from the extra-payment target?",
+        "answer": "Minimums continue on all active debts. A small balance may therefore reach zero before the account receiving extra payments. The milestone table reports the actual modeled month each balance clears; it is not a copy of the initial priority list.",
+        "queries": [
+          "why is the first cleared debt different from the extra-payment target"
+        ],
+        "links": [
+          {
+            "id": "debt-avalanche",
+            "mode": "avalanche",
+            "label": "Open the avalanche payoff plan"
+          }
+        ]
+      }
+    ]
+  }
+}

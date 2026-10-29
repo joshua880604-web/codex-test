@@ -665,5 +665,37 @@
     "titleSuffix": "Modified Internal Rate of Return",
     "description": "Calculate periodic and effective annual modified internal rate of return with separate financing and reinvestment assumptions.",
     "researchStatus": "User Semrush US broad match and Questions, 2026-10-28; /workspace/work/next-tools-research-20261028/research.md."
+  },
+  {
+    "id": "fat-fire",
+    "mode": "plan",
+    "keyword": "Fat FIRE calculator",
+    "titleSuffix": "Lifestyle Budget & Retirement Target",
+    "description": "Build a Fat FIRE budget with living costs, travel and lifestyle extras. Calculate your portfolio target, gap and modeled target age in today’s dollars.",
+    "researchStatus": "User Semrush US exports reviewed 2026-10-29; calculator 390/month KD14; estimates, not traffic guarantees."
+  },
+  {
+    "id": "lean-fire",
+    "mode": "plan",
+    "keyword": "Lean FIRE calculator",
+    "titleSuffix": "Essential Budget & FIRE Number",
+    "description": "Build a Lean FIRE budget from essential monthly costs and annual provisions. Calculate your FIRE number, funding gap and modeled age in today’s dollars.",
+    "researchStatus": "User Semrush US exports reviewed 2026-10-29; calculator 140/month KD8; estimates, not traffic guarantees."
+  },
+  {
+    "id": "debt-snowball",
+    "mode": "snowball",
+    "keyword": "Debt Snowball calculator",
+    "titleSuffix": "Payoff Plan & Milestones",
+    "description": "Create a smallest-balance-first debt snowball plan. Enter debts individually, compare the same monthly budget and download a payoff schedule.",
+    "researchStatus": "User Semrush US exports reviewed 2026-10-29; 4400/month KD28"
+  },
+  {
+    "id": "debt-avalanche",
+    "mode": "avalanche",
+    "keyword": "Debt Avalanche calculator",
+    "titleSuffix": "Payoff Plan & Interest",
+    "description": "Create a highest-APR-first debt avalanche plan. Enter debts individually, compare the same monthly budget and download a payoff schedule.",
+    "researchStatus": "User Semrush US exports reviewed 2026-10-29; 1000/month KD29"
   }
 ]

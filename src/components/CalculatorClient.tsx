@@ -9,6 +9,9 @@ import dynamic from "next/dynamic";
 import {coastFieldVisible} from '@/lib/coast-household';
 const CoastFields=dynamic(()=>import('./CoastPlan'));
 const CoastResults=dynamic(()=>import('./CoastPlan').then(m=>m.CoastResults));
+const FireBudgetFields=dynamic(()=>import('./FireBudgetPlan'));
+const FireBudgetReport=dynamic(()=>import('./FireBudgetPlan').then(m=>m.FireBudgetReport));
+const DebtStrategyReport=dynamic(()=>import('./DebtStrategyReport'));
 import ResultShare from "./ResultShare";
 import RecastComparison from "./RecastComparison";
 import {inputHint,resultContext} from "@/lib/result-context";
@@ -292,7 +295,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   }
   function input(field: Field, person?: string) {
     if (field.key === "verified_rate") return null;
-    if (id === "credit-cards-payoff" && field.key === "debts") return <CreditCardFields key={field.key} value={values.debts ?? ""} onChange={value=>update("debts",value)} />;
+    if (["credit-cards-payoff","debt-snowball","debt-avalanche"].includes(id) && field.key === "debts") return <CreditCardFields kind={id === "credit-cards-payoff" ? "card" : "debt"} key={field.key} value={values.debts ?? ""} onChange={value=>update("debts",value)} />;
     const inputId = id + "-" + mode.id + "-" + field.key;
     const hint = field.hint ?? inputHint(id,mode.id,field.key) ?? (id === "401k" && mode.id === "projection" ? ({
       match: "The percentage your employer adds for each eligible dollar you contribute. 50% means $0.50 per $1.",
@@ -464,7 +467,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               )}
             </>
           )}
-          {result.additionalTables?.filter((_, index) => id !== 'coast-fire' && (id !== "mortgage-recast" || index !== 0)).map(table => <section key={table.title}>
+          {result.additionalTables?.filter((_, index) => !['coast-fire','lean-fire','fat-fire','debt-snowball','debt-avalanche'].includes(id) && (id !== "mortgage-recast" || index !== 0)).map(table => <section key={table.title}>
             <h3>{table.title}</h3>
             {table.note && <p className="result-note">{table.note}</p>}
             <div className="result-actions"><button onClick={() => download(table)}>{id === 'coast-fire' ? 'Download comparison CSV' : 'Download retirement CSV'}</button></div>
@@ -487,7 +490,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       !(id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) || (values.mip_method !== "Manual" && ["upfront", "annual_mip", "mip_years"].includes(f.key))))),
     optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
     main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),
-    advanced = optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
+    advanced = ['lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
   return (
     <>
       <div className="calculator-intro-row"><p className="intro">{calc.intro}</p><FavoriteButton id={id}/></div>
@@ -569,7 +572,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           if (details) details.open = true;
           setResult(null);
         }}>
-          {id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
+          {['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
           {id !== "mortgage" && id !== "marriage-tax" && advanced.length > 0 && (
             <details className="advanced" key={mode.id}>
               <summary>More options ({advanced.length})</summary>
@@ -701,6 +704,8 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       </div>
       {wideReports && result && <>
         {id === 'coast-fire' && <CoastResults values={values} result={result} onDownload={download}/>}
+        {['lean-fire','fat-fire'].includes(id) && <FireBudgetReport result={result} onDownload={download}/>}
+        {['debt-snowball','debt-avalanche'].includes(id) && <DebtStrategyReport id={id} values={values} result={result} onDownload={download}/>}
         {id === "mortgage-recast" && result.additionalTables?.[0] && <RecastComparison table={result.additionalTables[0]} onDownload={() => download(result.additionalTables![0])}/>}
         <ResultTrend key={mode.id + "-chart"} id={id} mode={mode.id} values={values} result={result} wide report/>
         <section className="workspace-report workspace-report-details" aria-label="Calculation details">

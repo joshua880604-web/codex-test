@@ -2,7 +2,8 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
-  "noi", "fire", "mirr",
+  "debt-snowball", "debt-avalanche",
+  "noi", "fire", "mirr", "fat-fire", "lean-fire",
   "coast-fire",
   "roas", "landed-cost", "quick-ratio", "current-ratio",
   "tax-equivalent-yield", "treasury-bill",
@@ -20,7 +21,11 @@ export function workspaceLayout(id: string, mode: string): "split" | "stacked" |
 }
 
 const priorities: Record<string, string[]> = {
+  "debt-snowball": ["Months until debt-free", "Total interest", "First debt cleared in month", "First target for extra payment"],
+  "debt-avalanche": ["Months until debt-free", "Total interest", "First debt cleared in month", "First target for extra payment"],
   noi: ["Annual net operating income", "Monthly net operating income", "Annual operating expenses"],
+  "fat-fire": ["FIRE portfolio target", "Age at modeled FIRE target", "Current gap to FIRE target", "Annual portfolio-funded budget"],
+  "lean-fire": ["FIRE portfolio target", "Age at modeled FIRE target", "Current gap to FIRE target", "Annual portfolio-funded budget"],
   fire: ["FIRE portfolio target", "Age at modeled FIRE target", "Time to modeled FIRE target", "Modeled target status"],
   mirr: ["Effective annual MIRR", "MIRR per cash-flow period", "Present value of outflows"],
   "coast-fire": ["Coast FIRE number today", "Age at Coast FIRE", "Time until Coast FIRE", "Modeled Coast status"],

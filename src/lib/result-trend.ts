@@ -30,7 +30,12 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
   let xIndex = 0, balanceIndex = -1, scale = 1, secondaryIndex = -1;
   let secondaryKey: ResultTrend["secondaryKey"], secondaryLabel: string | undefined;
   let start: TrendPoint | null = null;
-  if (id === "fire" && matches(["Age", "Balance", "FIRE target", "Cumulative new investments"])) {
+  if (['debt-snowball','debt-avalanche'].includes(id) && columns[0]==='Month' && columns[3]==='Total balance') {
+    const original=result.metrics.find(m=>m.label==='Starting total debt')!.value;
+    start={x:0,balance:original};balanceIndex=3;xLabel='Payment month';
+    title='Debt balance on your payoff plan';balanceLabel='Remaining debt';
+    help='Monthly interest is added before minimum and prioritized extra payments. This is the selected strategy with fixed entered APRs and minimums, not a lender statement or credit-score forecast.';
+  } else if (["fire","lean-fire","fat-fire"].includes(id) && matches(["Age", "Balance", "FIRE target", "Cumulative new investments"])) {
     const target=result.metrics.find(m=>m.label==="FIRE portfolio target")?.value;
     if(!finite(target))return null;
     start={x:input("age"),balance:input("balance"),comparison:target};

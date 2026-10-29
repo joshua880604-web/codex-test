@@ -85,6 +85,10 @@
       [
         "Plan debt repayment",
         "Use Credit Card Payoff for one balance, Multiple Credit Card Payoff for multiple cards, and Debt Payoff for strategy comparisons. Debt Consolidation compares a replacement borrowing plan."
+      ],
+      [
+        "Choose a repayment order",
+        "Debt Snowball prioritizes smaller balances; Debt Avalanche prioritizes higher APRs. Both show account-by-account milestones and a paired comparison. The existing combined Debt Payoff tool retains both modes. Minimums must still be covered."
       ]
     ],
     "differences": [
@@ -129,7 +133,7 @@
         "Debt consolidation"
       ]
     ],
-    "updatedOn": "2026-10-28"
+    "updatedOn": "2026-10-29"
   },
   {
     "id": "saving-investing",
@@ -225,6 +229,10 @@
       [
         "Check a Coast FIRE milestone",
         "Coast FIRE estimates how much invested now could grow to an entered retirement target without future deposits. It also models continued investments until that milestone. It does not fund living costs before retirement or guarantee a safe withdrawal rate."
+      ],
+      [
+        "Choose a FIRE spending plan",
+        "Use FIRE for a direct annual budget, Lean FIRE to itemize essential spending, or Fat FIRE to separate baseline costs from lifestyle extras. All three size a full target under entered assumptions; Coast FIRE answers the separate question of stopping contributions before a later retirement date."
       ]
     ],
     "differences": [
@@ -243,6 +251,10 @@
       [
         "RMD vs. a withdrawal plan",
         "An RMD estimates a required distribution under the selected rules. It does not establish a sustainable spending amount or cover every exception and inherited-account situation."
+      ],
+      [
+        "Lean FIRE vs. Fat FIRE vs. Coast FIRE",
+        "Lean and Fat FIRE organize different spending plans using the same full-target math; neither has a universal dollar cutoff. Coast FIRE discounts a future target to a threshold today. A target crossing does not establish safe withdrawals or fund pre-retirement living costs."
       ]
     ],
     "questions": [
@@ -277,7 +289,7 @@
         "Required minimum distributions"
       ]
     ],
-    "updatedOn": "2026-10-27"
+    "updatedOn": "2026-10-29"
   },
   {
     "id": "tax-salary",

@@ -863,5 +863,117 @@
       "Actual SSA date, rounding and credit posting rules can differ from the simplified monthly schedule."
     ],
     "checkedOn": "2026-10-28"
+  },
+  "fat-fire": {
+    "answer": "This core-plus-lifestyle budget creates a full FIRE target. It is not the discounted Coast threshold, a universal wealth cutoff or a retirement withdrawal guarantee.",
+    "results": [
+      {
+        "label": "Annual portfolio-funded budget",
+        "meaning": "Monthly costs annualized plus recurring annual provisions and tax allowance, increased by the optional spending buffer."
+      },
+      {
+        "label": "FIRE portfolio target",
+        "meaning": "The annual portfolio-funded budget divided by the chosen withdrawal-rate assumption, in today’s USD."
+      },
+      {
+        "label": "Age at modeled FIRE target",
+        "meaning": "First whole-month crossing with constant real growth and month-end investments, or an explicit not-reached result at the age limit."
+      }
+    ],
+    "compare": [
+      "Calculate with a complete budget that counts each expense once.",
+      "Review the budget-change table, which changes target size but does not recalculate ages.",
+      "Change one budget input and Calculate again to see a different full projection."
+    ],
+    "checks": [
+      "All budget entries use today’s purchasing power; do not inflate them again.",
+      "Annual provisions are recurring allowances, not dated one-time expenses.",
+      "The tax allowance and withdrawal rate are user assumptions; neither is an automatic tax or safety calculation."
+    ],
+    "checkedOn": "2026-10-29"
+  },
+  "lean-fire": {
+    "answer": "This essential-spending budget creates a full FIRE target. It is not the discounted Coast threshold, a universal wealth cutoff or a retirement withdrawal guarantee.",
+    "results": [
+      {
+        "label": "Annual portfolio-funded budget",
+        "meaning": "Monthly costs annualized plus recurring annual provisions and tax allowance, increased by the optional spending buffer."
+      },
+      {
+        "label": "FIRE portfolio target",
+        "meaning": "The annual portfolio-funded budget divided by the chosen withdrawal-rate assumption, in today’s USD."
+      },
+      {
+        "label": "Age at modeled FIRE target",
+        "meaning": "First whole-month crossing with constant real growth and month-end investments, or an explicit not-reached result at the age limit."
+      }
+    ],
+    "compare": [
+      "Calculate with a complete budget that counts each expense once.",
+      "Review the budget-change table, which changes target size but does not recalculate ages.",
+      "Change one budget input and Calculate again to see a different full projection."
+    ],
+    "checks": [
+      "All budget entries use today’s purchasing power; do not inflate them again.",
+      "Annual provisions are recurring allowances, not dated one-time expenses.",
+      "The tax allowance and withdrawal rate are user assumptions; neither is an automatic tax or safety calculation."
+    ],
+    "checkedOn": "2026-10-29"
+  },
+  "debt-snowball": {
+    "answer": "This smallest-balance-first projection pays all minimums before directing extra money. The milestones show actual modeled clearance months, not just the initial priority order.",
+    "results": [
+      {
+        "label": "Months until debt-free",
+        "meaning": "Number of monthly payment periods until every included positive balance is cleared; month 1 is the first payment period, not a calendar date."
+      },
+      {
+        "label": "First debt cleared in month",
+        "meaning": "Earliest actual modeled balance clearance. Minimum payments can clear a different debt before the extra-payment target."
+      },
+      {
+        "label": "Total interest",
+        "meaning": "Sum of opening balance × APR / 12 each month. Displayed cents are rounded; daily-interest statements may differ."
+      }
+    ],
+    "compare": [
+      "Use the same debt list, minimums and total monthly budget for both methods.",
+      "Keep rollover set to Yes for a fixed-budget comparison; No can create different future payment budgets.",
+      "Inspect total interest, the first cleared balance and the final payoff month separately."
+    ],
+    "checks": [
+      "Budget includes minimums; do not add them twice.",
+      "Rates, minimums and monthly timing are fixed assumptions; no fees or new charges are modeled.",
+      "One-time payments occur in the selected month only if a balance remains."
+    ],
+    "checkedOn": "2026-10-29"
+  },
+  "debt-avalanche": {
+    "answer": "This highest-APR-first projection pays all minimums before directing extra money. The milestones show actual modeled clearance months, not just the initial priority order.",
+    "results": [
+      {
+        "label": "Months until debt-free",
+        "meaning": "Number of monthly payment periods until every included positive balance is cleared; month 1 is the first payment period, not a calendar date."
+      },
+      {
+        "label": "First debt cleared in month",
+        "meaning": "Earliest actual modeled balance clearance. Minimum payments can clear a different debt before the extra-payment target."
+      },
+      {
+        "label": "Total interest",
+        "meaning": "Sum of opening balance × APR / 12 each month. Displayed cents are rounded; daily-interest statements may differ."
+      }
+    ],
+    "compare": [
+      "Use the same debt list, minimums and total monthly budget for both methods.",
+      "Keep rollover set to Yes for a fixed-budget comparison; No can create different future payment budgets.",
+      "Inspect total interest, the first cleared balance and the final payoff month separately."
+    ],
+    "checks": [
+      "Budget includes minimums; do not add them twice.",
+      "Rates, minimums and monthly timing are fixed assumptions; no fees or new charges are modeled.",
+      "One-time payments occur in the selected month only if a balance remains."
+    ],
+    "checkedOn": "2026-10-29"
   }
 }

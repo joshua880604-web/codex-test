@@ -208,3 +208,20 @@ searchTasks["annuity-payout"][0].aliases=[...new Set([...(searchTasks["annuity-p
   const aliases=new Set(Object.entries(searchTasks).filter(([id])=>!updated.has(id)).flatMap(([,tasks])=>tasks.flatMap(task=>(task.aliases??[]).map(alias=>alias.toLowerCase()))));
   for(const [id,tasks] of Object.entries(searchTasks)) if(updated.has(id)) for(const task of tasks) task.aliases=(task.aliases??[]).filter(alias=>{const key=alias.toLowerCase();if(reserved.has(key)||aliases.has(key))return false;aliases.add(key);return true;});
 }
+
+keywordTitles['fat-fire']='Fat FIRE Calculator - Lifestyle Budget & Retirement Target';
+keywordTitles['lean-fire']='Lean FIRE Calculator - Essential Budget & FIRE Number';
+searchTasks['fat-fire'][0].aliases=['FatFIRE calculator','Fat FIRE number calculator','How to calculate Fat FIRE number'];
+searchTasks['lean-fire'][0].aliases=['LeanFIRE calculator','Lean FIRE number calculator','What is my Lean FIRE number'];
+
+keywordTitles['debt-snowball']='Debt Snowball Calculator - Payoff Plan & Milestones';
+keywordTitles['debt-avalanche']='Debt Avalanche Calculator - Payoff Plan & Interest';
+searchTasks['debt-snowball'][0].aliases=['Snowball debt calculator','Snowball method debt calculator','Free debt snowball calculator'];
+searchTasks['debt-avalanche'][0].aliases=['Avalanche debt calculator','Debt avalanche method calculator','Debt avalanche calculator with extra payments'];
+// Standalone strategy pages own their head terms; the established tool owns comparison intent.
+searchTasks['debt-payoff'][0].aliases=(searchTasks['debt-payoff'][0].aliases??[]).filter(alias=>alias.toLowerCase()!=='debt avalanche calculator with extra payments');
+const snowballComparison=searchTasks['debt-payoff'].find(task=>task.mode==='snowball')!;
+snowballComparison.keyword='Compare debt snowball and avalanche';
+snowballComparison.aliases=['Debt snowball vs avalanche calculator','Debt avalanche vs snowball calculator','Debt snowball vs debt avalanche calculator'];
+
+searchTasks['debt-snowball'][0].aliases!.push('Debt payoff calculator snowball');

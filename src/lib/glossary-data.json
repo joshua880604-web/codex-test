@@ -199,6 +199,14 @@
       {
         "id": "coast-fire",
         "text": "Convert nominal growth and inflation into a consistent purchasing-power scenario."
+      },
+      {
+        "id": "lean-fire",
+        "text": "Use this assumption in a Lean FIRE essential budget"
+      },
+      {
+        "id": "fat-fire",
+        "text": "Use this assumption in a Fat FIRE lifestyle budget"
       }
     ],
     "related": [
@@ -1757,6 +1765,14 @@
       {
         "id": "coast-fire",
         "text": "Use an entered withdrawal rate to size a target, without treating it as a guaranteed safe rate."
+      },
+      {
+        "id": "lean-fire",
+        "text": "Use this assumption in a Lean FIRE essential budget"
+      },
+      {
+        "id": "fat-fire",
+        "text": "Use this assumption in a Fat FIRE lifestyle budget"
       }
     ],
     "related": [
@@ -2161,11 +2177,21 @@
       {
         "id": "credit-card",
         "text": "Inspect a single card’s payoff under stated payments."
+      },
+      {
+        "id": "debt-snowball",
+        "text": "Open the dedicated snowball plan."
+      },
+      {
+        "id": "debt-avalanche",
+        "text": "Open the dedicated avalanche plan."
       }
     ],
     "related": [
       "debt-consolidation",
-      "amortization"
+      "amortization",
+      "debt-snowball",
+      "debt-avalanche"
     ],
     "sources": [
       {
@@ -3905,6 +3931,14 @@
       {
         "id": "fire",
         "text": "Compare the full FIRE savings target and its first crossing with the separate Coast milestone."
+      },
+      {
+        "id": "lean-fire",
+        "text": "Use this assumption in a Lean FIRE essential budget"
+      },
+      {
+        "id": "fat-fire",
+        "text": "Use this assumption in a Fat FIRE lifestyle budget"
       }
     ],
     "related": [
@@ -4144,5 +4178,171 @@
       }
     ],
     "checkedOn": "2026-10-28"
+  },
+  {
+    "slug": "debt-snowball",
+    "name": "Debt snowball",
+    "title": "Debt Snowball: Meaning, Payment Order and Example",
+    "description": "Debt snowball prioritizes smaller remaining balances after minimum payments, then rolls freed payments into the next target.",
+    "category": "Loans & debt",
+    "aliases": [
+      "Smallest-balance-first debt repayment"
+    ],
+    "definition": "Debt snowball is a repayment ordering method that directs extra funds to smaller balances while minimum payments continue on the rest.",
+    "explanation": "Its focus is a sequence of cleared balances. A fixed payment budget can roll into the next target, but the interest cost still depends on the rates, timing and payment rules. An earlier milestone is not a promise about motivation.",
+    "formula": "Available extra = total monthly debt budget − sum of capped minimum payments",
+    "formulaNote": "The calculator ranks balances after monthly interest and minimum payments. Ties use higher APR, then entered order.",
+    "example": {
+      "title": "Follow the first month of a $400 repayment budget",
+      "intro": "Card A owes $5,000 at 22% APR with a $150 minimum; Card B owes $3,000 at 18% with a $100 minimum.",
+      "steps": [
+        "Monthly interest is $91.6667 for A and $45 for B before display rounding.",
+        "After $250 in minimums, $150 remains for extra repayment.",
+        "Snowball directs that extra to B; its month-one balance becomes $2,795."
+      ],
+      "answer": "With a fixed $400 budget, B clears in month 14 and both debts clear in month 25, with $1,950.01 modeled interest.",
+      "assumptions": "Fixed rates and minimums; monthly interest before payments; no fees, new borrowing or one-time payment; full precision internally.",
+      "calculator": {
+        "id": "debt-snowball",
+        "mode": "snowball",
+        "values": {},
+        "expected": [
+          {
+            "label": "Total interest",
+            "value": 1950.00650609718,
+            "tolerance": 0.005
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "A payment-order rule does not override loan terms",
+      "text": "Cover every required minimum and check actual interest, fees and due dates. A modeled payoff is not a settlement, account closure, credit-score prediction or instruction to miss a payment."
+    },
+    "tools": [
+      {
+        "id": "debt-snowball",
+        "text": "Build the snowball payoff timeline and milestones."
+      },
+      {
+        "id": "debt-avalanche",
+        "text": "Compare the other repayment order with consistent inputs."
+      },
+      {
+        "id": "debt-payoff",
+        "text": "Use the existing tool with both payment-order modes."
+      }
+    ],
+    "related": [
+      "debt-avalanche",
+      "debt-snowball-vs-avalanche",
+      "debt-consolidation",
+      "amortization"
+    ],
+    "sources": [
+      {
+        "title": "CFPB: two debt reduction approaches",
+        "url": "https://www.consumerfinance.gov/archive/blog/how-reduce-your-debt/"
+      },
+      {
+        "title": "CFPB: how card interest is calculated",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-does-my-credit-card-company-calculate-the-amount-of-interest-i-owe-en-51/"
+      }
+    ],
+    "checkedOn": "2026-10-29",
+    "scope": "Fixed-rate monthly payoff illustration; actual contracts and budgets may differ.",
+    "guides": [
+      {
+        "title": "How to calculate a debt snowball plan",
+        "path": "/guides/how-to-calculate-debt-snowball/"
+      },
+      {
+        "title": "Debt snowball versus avalanche",
+        "path": "/guides/debt-snowball-vs-avalanche/"
+      }
+    ]
+  },
+  {
+    "slug": "debt-avalanche",
+    "name": "Debt avalanche",
+    "title": "Debt Avalanche: Meaning, Payment Order and Example",
+    "description": "Debt avalanche prioritizes the highest interest rate after minimum payments, then redirects available extra money to the next rate.",
+    "category": "Loans & debt",
+    "aliases": [
+      "Highest-APR-first debt repayment"
+    ],
+    "definition": "Debt avalanche is a repayment ordering method that directs extra funds to the highest APR while minimum payments continue on the rest.",
+    "explanation": "Its focus is the rate applied to the outstanding balance rather than the debt’s size. A smaller debt can still clear through minimum payments first. Compare costs using a consistent budget and contractual assumptions.",
+    "formula": "Available extra = total monthly debt budget − sum of capped minimum payments",
+    "formulaNote": "The calculator uses descending APR, with entered order for equal rates. APR / 12 is a monthly approximation, not daily card interest.",
+    "example": {
+      "title": "Follow the first month of a $400 repayment budget",
+      "intro": "Card A owes $5,000 at 22% APR with a $150 minimum; Card B owes $3,000 at 18% with a $100 minimum.",
+      "steps": [
+        "Monthly interest is $91.6667 for A and $45 for B before display rounding.",
+        "After $250 in minimums, $150 remains for extra repayment.",
+        "Avalanche directs that extra to A; its month-one balance becomes about $4,791.67."
+      ],
+      "answer": "With a fixed $400 budget, A clears in month 21 and both debts clear in month 25, with $1,823.78 modeled interest.",
+      "assumptions": "Fixed rates and minimums; monthly interest before payments; no fees, new borrowing or one-time payment; full precision internally.",
+      "calculator": {
+        "id": "debt-avalanche",
+        "mode": "avalanche",
+        "values": {},
+        "expected": [
+          {
+            "label": "Total interest",
+            "value": 1823.7783340391384,
+            "tolerance": 0.005
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "A payment-order rule does not override loan terms",
+      "text": "Cover every required minimum and check actual interest, fees and due dates. A modeled payoff is not a settlement, account closure, credit-score prediction or instruction to miss a payment."
+    },
+    "tools": [
+      {
+        "id": "debt-avalanche",
+        "text": "Build the avalanche payoff timeline and milestones."
+      },
+      {
+        "id": "debt-snowball",
+        "text": "Compare the other repayment order with consistent inputs."
+      },
+      {
+        "id": "debt-payoff",
+        "text": "Use the existing tool with both payment-order modes."
+      }
+    ],
+    "related": [
+      "debt-snowball",
+      "debt-snowball-vs-avalanche",
+      "debt-consolidation",
+      "amortization"
+    ],
+    "sources": [
+      {
+        "title": "CFPB: two debt reduction approaches",
+        "url": "https://www.consumerfinance.gov/archive/blog/how-reduce-your-debt/"
+      },
+      {
+        "title": "CFPB: how card interest is calculated",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-does-my-credit-card-company-calculate-the-amount-of-interest-i-owe-en-51/"
+      }
+    ],
+    "checkedOn": "2026-10-29",
+    "scope": "Fixed-rate monthly payoff illustration; actual contracts and budgets may differ.",
+    "guides": [
+      {
+        "title": "How to calculate a debt avalanche plan",
+        "path": "/guides/how-to-calculate-debt-avalanche/"
+      },
+      {
+        "title": "Debt snowball versus avalanche",
+        "path": "/guides/debt-snowball-vs-avalanche/"
+      }
+    ]
   }
 ]

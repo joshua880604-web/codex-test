@@ -1,6 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {calculators} from '../src/lib/catalog';
+import {calculators as modelCalculators} from '../src/lib/calculators';
 import {directoryMatch,directoryTarget,directoryScore,directorySearch} from '../src/lib/directory';
 const find=(q:string)=>{const tools=calculators.filter(c=>directoryMatch(c,q));return directoryTarget(tools,q)?.id;};
 test('Exact names beat broader result matches without guessing from substrings',()=>{assert.equal(find('mortgage'),'mortgage');assert.equal(find('CAGR Calculator'),'cagr');assert.equal(find('  COMPOUND INTEREST  '),'compound-interest');assert.equal(find('investment'),'investment');assert.equal(find('tax'),undefined);});
@@ -28,11 +29,11 @@ test('Supported use cases preserve their actual mode and registered presets',()=
  for(const [q,id,mode] of [
   ['compound interest calculator with monthly contributions','compound-interest','growth'],
   ['savings calculator goal','savings','goal-contribution'],
-  ['debt snowball calculator','debt-payoff','snowball'],
-  ['debt payoff calculator snowball','debt-payoff','snowball'],
+  ['debt snowball calculator','debt-snowball','snowball'],
+  ['debt payoff calculator snowball','debt-snowball','snowball'],
   ['irr calculator with dates','average-return','cashflows'],
   ['401k catch up contributions','401k','projection'],
- ]){const result=search(q)[0];assert.equal(result.tool.id,id);assert.equal(preset(result.href).get('mode'),mode);}
+ ]){const result=search(q)[0];assert.equal(result.tool.id,id);assert.equal(preset(result.href).get('mode')??modelCalculators.find(c=>c.id===id)!.modes[0].id,mode);}
  assert.equal(search('compound interest')[0].href,'/compound-interest-calculator.html');
 });
 

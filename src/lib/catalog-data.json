@@ -580,5 +580,29 @@
     "category": "Investment",
     "title": "MIRR Calculator",
     "local_route": "/mirr-calculator.html"
+  },
+  {
+    "id": "fat-fire",
+    "title": "Fat FIRE Calculator",
+    "category": "Retirement",
+    "local_route": "/fat-fire-calculator.html"
+  },
+  {
+    "id": "lean-fire",
+    "title": "Lean FIRE Calculator",
+    "category": "Retirement",
+    "local_route": "/lean-fire-calculator.html"
+  },
+  {
+    "id": "debt-snowball",
+    "title": "Debt Snowball Calculator",
+    "category": "Other",
+    "local_route": "/debt-snowball-calculator.html"
+  },
+  {
+    "id": "debt-avalanche",
+    "title": "Debt Avalanche Calculator",
+    "category": "Other",
+    "local_route": "/debt-avalanche-calculator.html"
   }
 ]

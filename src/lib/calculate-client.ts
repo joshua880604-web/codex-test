@@ -9,8 +9,12 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
   Other: () => import('./calculators/other-core').then(m => m.otherCoreCalculators),
 };
 const businessTools = () => import('./calculators/business-tools').then(m => m.businessTools);
+const strategyTools=()=>import('./calculators/debt-strategies').then(m=>[m.debtSnowball,m.debtAvalanche]);
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
+  'debt-snowball':strategyTools, 'debt-avalanche':strategyTools,
   noi: () => import('./calculators/noi').then(m => [m.noiCalculator]),
+  'fat-fire': () => import('./calculators/fire-budgets').then(m => [m.fatFireCalculator]),
+  'lean-fire': () => import('./calculators/fire-budgets').then(m => [m.leanFireCalculator]),
   fire: () => import('./calculators/fire').then(m => [m.fireCalculator]),
   mirr: () => import('./calculators/mirr').then(m => [m.mirrCalculator]),
   'coast-fire': () => import('./calculators/coast-fire').then(m => [m.coastFire]),

@@ -3,7 +3,11 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "debt-snowball":
+    case "debt-avalanche": return "Fixed-APR monthly debt projection. Total budget includes all minimums. Compare both methods with the same rollover and one-time payment assumptions; actual statements may use daily interest and changing minimum rules.";
     case "noi": return "Property-level NOI before financing, capital expenditure or replacement reserves, depreciation and owner income tax. Enter all money in one selected reporting period; no appraisal or lender-specific underwriting is inferred.";
+    case "fat-fire":
+    case "lean-fire": return "Full FIRE target from an itemized budget in today’s USD. Annual provisions are recurring allowances; taxes are entered estimates. No universal Lean/Fat cutoff, withdrawal guarantee or automatic benefit calculation.";
     case "fire": return "Full FIRE portfolio target and first monthly crossing under constant real-return assumptions. Not Coast FIRE, a retirement drawdown simulation, account eligibility, benefit estimate or probability of success.";
     case "mirr": return "Equal-period signed project cash flows, including time zero. Both rate inputs are effective annual rates converted to the selected spacing; irregular-date XIRR and automatic project costs are excluded.";
 
