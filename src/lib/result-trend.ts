@@ -7,7 +7,7 @@ export type ResultTrend = {
   secondaryKey?: "contributions" | "comparison"; secondaryLabel?: string;
   points: TrendPoint[]; sampled: boolean;
 };
-const loanIds = ["pmi", "biweekly-mortgage", "loan", "mortgage", "fha-loan", "va-mortgage", "amortization", "mortgage-payoff", "refinance", "home-equity-loan", "heloc", "auto-loan", "boat-loan", "business-loan", "personal-loan", "payment", "credit-card", "debt-consolidation", "repayment", "student-loan"];
+const loanIds = ["credit-card-minimum-payment", "pmi", "biweekly-mortgage", "loan", "mortgage", "fha-loan", "va-mortgage", "amortization", "mortgage-payoff", "refinance", "home-equity-loan", "heloc", "auto-loan", "boat-loan", "business-loan", "personal-loan", "payment", "credit-card", "debt-consolidation", "repayment", "student-loan"];
 const loanColumns = [
   ["Month", "Payment", "Interest", "Principal", "Balance", "PMI if requested", "PMI automatic only"],
   ["Period", "Payment", "Interest", "Principal", "Balance"],

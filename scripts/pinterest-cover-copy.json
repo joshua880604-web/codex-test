@@ -1,22 +1,142 @@
 {
- "coast-fire":{"category":"RETIREMENT / FIRE","headline":"Coast FIRE","description":"Estimate the savings you need today to coast toward retirement."},
- "fire":{"category":"RETIREMENT / FIRE","headline":"FIRE","description":"Explore your financial independence target and a path toward it."},
- "lean-fire":{"category":"RETIREMENT / FIRE","headline":"Lean FIRE","description":"Explore a retirement plan built around a lean spending budget."},
- "fat-fire":{"category":"RETIREMENT / FIRE","headline":"Fat FIRE","description":"Model a retirement target around your higher-spending lifestyle."},
- "barista-fire":{"category":"RETIREMENT / FIRE","headline":"Barista FIRE","description":"Explore how part-time income could reduce your portfolio needs."},
- "rmd":{"category":"RETIREMENT PLANNING","headline":"RMD","description":"Estimate a required minimum distribution using your account assumptions."},
- "hsa":{"category":"RETIREMENT / SAVING","headline":"HSA","description":"Explore contributions, withdrawals and potential HSA account growth."},
- "brrrr":{"category":"PROPERTY INVESTING","headline":"BRRRR","description":"Estimate cash left in a deal, refinance proceeds and rental cash flow."},
- "rent-vs-buy":{"category":"MORTGAGE / HOUSING","headline":"Rent vs. Buy","description":"Compare renting and buying over a fixed 30-year projection."},
- "mortgage-vs-invest":{"category":"MORTGAGE / INVESTING","headline":"Pay Off Mortgage\nvs. Invest","description":"Compare extra mortgage payments with investing under your assumptions."},
- "mortgage-payoff":{"category":"MORTGAGE / HOUSING","headline":"Mortgage Payoff","description":"Explore how extra payments could change payoff time and interest."},
- "house-affordability":{"category":"MORTGAGE / HOUSING","headline":"House Affordability","description":"Estimate a home budget using income, debts and housing costs."},
- "pmi":{"category":"MORTGAGE / HOUSING","headline":"PMI","description":"Estimate private mortgage insurance costs under your assumptions."},
- "heloc":{"category":"MORTGAGE / HOUSING","headline":"HELOC","description":"Explore payments across a home equity line of credit’s phases."},
- "debt-snowball":{"category":"DEBT / CREDIT","headline":"Debt Snowball","description":"Explore a payoff plan that targets smaller balances first."},
- "debt-avalanche":{"category":"DEBT / CREDIT","headline":"Debt Avalanche","description":"Explore a payoff plan that targets higher interest rates first."},
- "credit-cards-payoff":{"category":"DEBT / CREDIT","headline":"Multiple Credit\nCard Payoff","description":"Plan payments across multiple cards with one monthly budget."},
- "roas":{"category":"BUSINESS FINANCE","headline":"ROAS","description":"Calculate return on ad spend and explore break-even targets."},
- "landed-cost":{"category":"BUSINESS / COMMERCE","headline":"Landed Cost","description":"Estimate the total and per-unit cost of getting goods to destination."},
- "break-even":{"category":"BUSINESS FINANCE","headline":"Break-Even","description":"Estimate the sales needed to cover your fixed and variable costs."}
+  "coast-fire": {
+    "category": "RETIREMENT / FIRE",
+    "headline": "Coast FIRE",
+    "description": "Estimate the savings you need today to coast toward retirement."
+  },
+  "fire": {
+    "category": "RETIREMENT / FIRE",
+    "headline": "FIRE",
+    "description": "Explore your financial independence target and a path toward it."
+  },
+  "lean-fire": {
+    "category": "RETIREMENT / FIRE",
+    "headline": "Lean FIRE",
+    "description": "Explore a retirement plan built around a lean spending budget."
+  },
+  "fat-fire": {
+    "category": "RETIREMENT / FIRE",
+    "headline": "Fat FIRE",
+    "description": "Model a retirement target around your higher-spending lifestyle."
+  },
+  "barista-fire": {
+    "category": "RETIREMENT / FIRE",
+    "headline": "Barista FIRE",
+    "description": "Explore how part-time income could reduce your portfolio needs."
+  },
+  "rmd": {
+    "category": "RETIREMENT PLANNING",
+    "headline": "RMD",
+    "description": "Estimate a required minimum distribution using your account assumptions."
+  },
+  "hsa": {
+    "category": "RETIREMENT / SAVING",
+    "headline": "HSA",
+    "description": "Explore contributions, withdrawals and potential HSA account growth."
+  },
+  "brrrr": {
+    "category": "PROPERTY INVESTING",
+    "headline": "BRRRR",
+    "description": "Estimate cash left in a deal, refinance proceeds and rental cash flow."
+  },
+  "rent-vs-buy": {
+    "category": "MORTGAGE / HOUSING",
+    "headline": "Rent vs. Buy",
+    "description": "Compare renting and buying over a fixed 30-year projection."
+  },
+  "mortgage-vs-invest": {
+    "category": "MORTGAGE / INVESTING",
+    "headline": "Pay Off Mortgage\nvs. Invest",
+    "description": "Compare extra mortgage payments with investing under your assumptions."
+  },
+  "mortgage-payoff": {
+    "category": "MORTGAGE / HOUSING",
+    "headline": "Mortgage Payoff",
+    "description": "Explore how extra payments could change payoff time and interest."
+  },
+  "house-affordability": {
+    "category": "MORTGAGE / HOUSING",
+    "headline": "House Affordability",
+    "description": "Estimate a home budget using income, debts and housing costs."
+  },
+  "pmi": {
+    "category": "MORTGAGE / HOUSING",
+    "headline": "PMI",
+    "description": "Estimate private mortgage insurance costs under your assumptions."
+  },
+  "heloc": {
+    "category": "MORTGAGE / HOUSING",
+    "headline": "HELOC",
+    "description": "Explore payments across a home equity line of credit\u2019s phases."
+  },
+  "debt-snowball": {
+    "category": "DEBT / CREDIT",
+    "headline": "Debt Snowball",
+    "description": "Explore a payoff plan that targets smaller balances first."
+  },
+  "debt-avalanche": {
+    "category": "DEBT / CREDIT",
+    "headline": "Debt Avalanche",
+    "description": "Explore a payoff plan that targets higher interest rates first."
+  },
+  "credit-cards-payoff": {
+    "category": "DEBT / CREDIT",
+    "headline": "Multiple Credit\nCard Payoff",
+    "description": "Plan payments across multiple cards with one monthly budget."
+  },
+  "roas": {
+    "category": "BUSINESS FINANCE",
+    "headline": "ROAS",
+    "description": "Calculate return on ad spend and explore break-even targets."
+  },
+  "landed-cost": {
+    "category": "BUSINESS / COMMERCE",
+    "headline": "Landed Cost",
+    "description": "Estimate the total and per-unit cost of getting goods to destination."
+  },
+  "break-even": {
+    "category": "BUSINESS FINANCE",
+    "headline": "Break-Even",
+    "description": "Estimate the sales needed to cover your fixed and variable costs."
+  },
+  "cap-rate": {
+    "category": "PROPERTY INVESTING",
+    "headline": "Cap Rate",
+    "description": "Explore rental NOI, cap rate and property value at your assumed target rate."
+  },
+  "credit-card-minimum-payment": {
+    "category": "DEBT / CREDIT",
+    "headline": "Credit Card\nMinimum Payment",
+    "description": "Estimate minimum-only repayment costs and compare adding extra each month."
+  },
+  "drip": {
+    "category": "INVESTING / DIVIDENDS",
+    "headline": "DRIP",
+    "description": "Compare reinvesting dividends with keeping them as cash."
+  },
+  "roth-conversion-ladder": {
+    "category": "RETIREMENT / TAX PLANNING",
+    "headline": "Roth Conversion\nLadder",
+    "description": "Explore conversion dates, tax costs and your early-retirement cash bridge."
+  },
+  "cash-on-cash-return": {
+    "category": "PROPERTY INVESTING",
+    "headline": "Cash-on-Cash\nReturn",
+    "description": "Explore rental cash yield after financing and a capital reserve."
+  },
+  "house-hacking": {
+    "category": "MORTGAGE / HOUSING",
+    "headline": "House Hacking",
+    "description": "Explore housing costs, tenant rent and the cash needed to buy."
+  },
+  "rental-property": {
+    "category": "PROPERTY INVESTING",
+    "headline": "Rental Property",
+    "description": "Compare rental cash flow, loan balances and a modeled future sale."
+  },
+  "noi": {
+    "category": "PROPERTY OPERATIONS",
+    "headline": "NOI",
+    "description": "Calculate rental operating income before financing and capital costs."
+  }
 }

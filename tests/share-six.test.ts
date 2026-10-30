@@ -1,0 +1,18 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {calculators,defaults,runCalculation,routeFor} from '../src/lib/calculators';import {shareTabs,hasPinterest,hasEmbed} from '../src/lib/share-tools';import {summaryPNGData} from '../src/lib/summary-png';import {resultExportData} from '../src/lib/result-export';import {embedCode} from '../src/lib/embed-code';import {pinterestShareURL} from '../src/lib/pinterest';
+const ids=['drip','roth-conversion-ladder','cash-on-cash-return','house-hacking','rental-property','noi'];
+test('Seven specialist modes share the exact calculations with complete private fragment and capability contracts',async()=>{
+ for(const id of ids){const c=calculators.find(c=>c.id===id)!;assert.deepEqual(shareTabs(id),['Share','Embed','Cite','Export']);assert.equal(hasEmbed(id),true);assert.equal(hasPinterest(id),true);assert.doesNotMatch(embedCode(id,'light',1000),/#calc|share_version|rentals=/);assert.doesNotMatch(pinterestShareURL(routeFor(id)+'?sensitive=12345#calc=private',c.title),/12345|private/);
+  for(const m of c.modes){const v=defaults(m),r=runCalculation(id,m.id,v),data=await resultExportData(id,m,v,r),s=summaryPNGData(id,v,m.fields,data,false);assert.ok(data.copy.interpretation);assert.doesNotMatch(data.copy.interpretation!,/null|undefined/);assert.ok(s.metrics.length>=4);assert.ok(s.notes.length>1);}
+ }
+});
+test('Roth summary retains dates, taxes, funding status and actual shortfall categories',async()=>{
+ const c=calculators.find(c=>c.id==='roth-conversion-ladder')!,m=c.modes[0],v={...defaults(m),bridge:'0'},r=runCalculation(c.id,m.id,v),s=summaryPNGData(c.id,v,m.fields,await resultExportData(c.id,m,v,r),false);for(const label of ['Estimated conversion tax','First conversion five-tax-year date','Modeled funding status','Unfunded conversion tax','Unfunded living costs'])assert.ok(s.metrics.some(m=>m.label===label),label);for(const key of ['start_year','conversion','spending','bridge','pretax'])assert.ok(s.details.inputs.some(i=>i.label===m.fields.find(f=>f.key===key)!.label));assert.ok(s.notes.some(n=>n.includes('five-tax-year')));
+});
+test('Housing summary omits tenant nicknames unless complete inputs are explicitly selected',async()=>{
+ const c=calculators.find(c=>c.id==='house-hacking')!,m=c.modes[0],v={...defaults(m),rentals:JSON.stringify([{name:'PRIVATE-NICKNAME',rent:1500}])},r=runCalculation(c.id,m.id,v),data=await resultExportData(c.id,m,v,r);assert.ok(!JSON.stringify(summaryPNGData(c.id,v,m.fields,data,false)).includes('PRIVATE-NICKNAME'));assert.ok(JSON.stringify(summaryPNGData(c.id,v,m.fields,data,true)).includes('PRIVATE-NICKNAME'));
+});
+test('Rental exports preserve every IRR root and an explicit absence status rather than manufacturing a single return',async()=>{
+ const c=calculators.find(c=>c.id==='rental-property')!,m=c.modes[0],v=defaults(m),base=runCalculation(c.id,m.id,v);for(const count of [0,2]){const r={...base,metrics:[...base.metrics.filter(m=>!m.label.startsWith('Annual IRR ')),...Array.from({length:count},(_,i)=>({label:'Annual IRR '+(i+1),value:i?20:10,format:'percent' as const}))]},data=await resultExportData(c.id,m,v,r),s=summaryPNGData(c.id,v,m.fields,data,false);assert.equal(s.metrics.filter(m=>m.label.startsWith('Annual IRR ')).length,count);assert.ok(s.notes.some(n=>count?n.startsWith('Multiple IRRs detected'):n.startsWith('No annual IRR found')));}
+ const known={...v,sale_known:'Yes'};const r=runCalculation(c.id,m.id,known),s=summaryPNGData(c.id,known,m.fields,await resultExportData(c.id,m,known,r),false);assert.ok(s.details.inputs.some(i=>i.label==='Known sale price'));assert.ok(!s.details.inputs.some(i=>i.label==='Annual appreciation'));
+});

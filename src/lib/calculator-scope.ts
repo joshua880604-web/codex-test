@@ -3,6 +3,9 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "rental-property": return "Nominal USD rental projection with entered financing, annual income/cost growth and an end-of-holding-year sale. Before owner income and capital-gains tax. Cash flow, sale proceeds and IRR are different measures; IRR may be absent or have multiple solutions. Not an appraisal or forecast.";
+    case "cap-rate": return "USD unlevered annual NOI divided by property value. Target-rate values are scenarios, not appraisals or offers; no debt service, capex, owner income tax, appreciation or total-return model.";
+    case "credit-card-minimum-payment": return "One balance, fixed APR and a user-defined opening-balance minimum rule. Monthly APR/12 interest, fractional cents retained internally, no new spending or fees. Not an issuer statement or credit-score estimate; projection limited to 100 years.";
     case "roth-conversion-ladder": return "U.S. single-owner pre-59½ bridge ending by planning age 59. Fully taxable traditional IRA conversions, separate five-tax-year clocks and outside-cash tax assumptions. No prior conversions, earnings withdrawals, tax brackets, pro-rata basis or retirement-safety determination.";
     case "drip": return "Single-asset nominal USD scenario with fractional shares and regular dividend intervals. Flat dividend tax at payout; no live quotes, inflation, sale tax, tax lots or fees. The comparison retains dividends as cash earning zero interest.";
     case "debt-snowball":

@@ -5,19 +5,19 @@ export type CalculatorCategory = {
 };
 export const calculatorCategories: CalculatorCategory[] = [
   { id: 'mortgage-housing', title: 'Mortgage & Housing', popular: ['mortgage','pmi','house-affordability','mortgage-payoff'], aliases: ['mortgage-and-real-estate'],
-    tools: ['house-hacking','mortgage-vs-invest','cash-on-cash-return','brrrr','noi','mortgage','amortization','mortgage-payoff','house-affordability','rent','debt-to-income-ratio','real-estate','refinance','rental-property','apr','fha-loan','va-mortgage','home-equity-loan','heloc','down-payment','rent-vs-buy','pmi','biweekly-mortgage','discount-points','mortgage-recast'],
+    tools: ['cap-rate','house-hacking','mortgage-vs-invest','cash-on-cash-return','brrrr','noi','mortgage','amortization','mortgage-payoff','house-affordability','rent','debt-to-income-ratio','real-estate','refinance','rental-property','apr','fha-loan','va-mortgage','home-equity-loan','heloc','down-payment','rent-vs-buy','pmi','biweekly-mortgage','discount-points','mortgage-recast'],
     sections: [
       { title: 'Buying a home & loan costs', tools: ['mortgage','house-affordability','down-payment','debt-to-income-ratio','pmi','discount-points','fha-loan','va-mortgage','apr'] },
       { title: 'Payoff & interest savings', tools: ['mortgage-payoff','mortgage-vs-invest','biweekly-mortgage','amortization'] },
       { title: 'Refinancing & home equity', tools: ['refinance','mortgage-recast','home-equity-loan','heloc'] },
-      { title: 'Renting & property investment', tools: ['rent','rent-vs-buy','house-hacking','rental-property','noi','brrrr','cash-on-cash-return'] },
+      { title: 'Renting & property investment', tools: ['cap-rate','rent','rent-vs-buy','house-hacking','rental-property','noi','brrrr','cash-on-cash-return'] },
     ] },
   { id: 'loans-debt', title: 'Loans & Debt', popular: ['loan','auto-loan','credit-card','debt-payoff'], aliases: ['auto','other'],
-    tools: ['loan','payment','auto-loan','cash-back-or-low-interest','auto-lease','credit-card','credit-cards-payoff','debt-payoff','debt-snowball','debt-avalanche','debt-consolidation','repayment','student-loan','personal-loan','boat-loan','lease'],
+    tools: ['credit-card-minimum-payment','loan','payment','auto-loan','cash-back-or-low-interest','auto-lease','credit-card','credit-cards-payoff','debt-payoff','debt-snowball','debt-avalanche','debt-consolidation','repayment','student-loan','personal-loan','boat-loan','lease'],
     sections: [
       {title:'Loans & payments',tools:['loan','payment','personal-loan','student-loan','repayment']},
       {title:'Vehicles & leasing',tools:['auto-loan','auto-lease','cash-back-or-low-interest','boat-loan','lease']},
-      {title:'Credit cards & debt strategies',tools:['credit-card','credit-cards-payoff','debt-payoff','debt-snowball','debt-avalanche','debt-consolidation']},
+      {title:'Credit cards & debt strategies',tools:['credit-card-minimum-payment','credit-card','credit-cards-payoff','debt-payoff','debt-snowball','debt-avalanche','debt-consolidation']},
     ] },
   { id: 'saving-investing', title: 'Savings & Investing', popular: ['compound-interest','savings','investment','cd'], aliases: ['investment'],
     tools: ['drip','covered-call','mirr','interest','investment','finance','compound-interest','interest-rate','savings','simple-interest','cd','bond','mutual-fund','average-return','irr','roi','payback-period','present-value','future-value','inflation','college-cost','cagr','emergency-fund','investment-fee','real-return','currency','budget','tax-equivalent-yield','treasury-bill'],

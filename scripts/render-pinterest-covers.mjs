@@ -5,6 +5,8 @@ import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE??'playwright');
 const copy=JSON.parse(await fs.readFile(root+'scripts/pinterest-cover-copy.json','utf8'));
+const requested=new Set(process.argv.slice(2));
+for(const id of requested)if(!copy[id])throw Error("Unknown Pinterest cover "+id);
 const catalog=JSON.parse(await fs.readFile(root+'src/lib/catalog-data.json','utf8'));
 const font=(await fs.readFile(root+'public/fonts/inter-latin-variable-3100e775.woff2')).toString('base64');
 const logo=await fs.readFile(root+'public/favicon.svg','utf8');
@@ -12,6 +14,7 @@ const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&g
 const browser=await chromium.launch({...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),args:['--no-sandbox','--disable-dev-shm-usage']});
 await fs.mkdir(root+'public/social/pinterest',{recursive:true});
 for(const [id,c] of Object.entries(copy)){
+ if(requested.size&&!requested.has(id))continue;
  const tool=catalog.find(t=>t.id===id);if(!tool)throw Error('Unknown cover tool '+id);
  const page=await browser.newPage({viewport:{width:1000,height:1500},deviceScaleFactor:1});
  await page.setContent(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>

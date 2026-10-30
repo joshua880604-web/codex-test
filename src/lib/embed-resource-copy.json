@@ -19,5 +19,13 @@
   "roas": "Calculate return on ad spend and explore break-even targets.",
   "landed-cost": "Estimate the total and per-unit cost of getting goods to destination.",
   "break-even": "Estimate the sales needed to cover your fixed and variable costs.",
-  "roi": "Calculate total or annualized return from investment cost, returned value and holding period."
+  "roi": "Calculate total or annualized return from investment cost, returned value and holding period.",
+  "cap-rate": "Calculate an unlevered property cap rate from annual NOI or a rental worksheet, with assumed target-rate values.",
+  "credit-card-minimum-payment": "Estimate a user-defined card minimum, changing repayment cost and the effect of paying extra.",
+  "drip": "Compare reinvesting after-tax dividends with keeping dividends as cash under the same external contributions.",
+  "roth-conversion-ladder": "Track separate five-tax-year conversion dates, outside-cash tax costs and an early-retirement funding bridge.",
+  "cash-on-cash-return": "Calculate a simple cash yield or a first-year rental cash return after financing and a capital reserve.",
+  "house-hacking": "Estimate monthly owner-occupied housing costs after tenant rent and the separate initial cash needed to buy.",
+  "rental-property": "Project annual rental cash flow, loan balances and sale proceeds using explicit holding-period assumptions.",
+  "noi": "Build property net operating income from rent, vacancy and itemized operating expenses before financing."
 }

@@ -36,5 +36,5 @@ test('DRIP lazy client, trend endpoints and full export agree with the canonical
 });
 test('DRIP has a unique canonical page, accurate questions, related tools and capability-gated sharing',()=>{
  const config={origin:'https://www.calculatorfree.io',indexable:true};assert.equal(sitemapEntries(config).filter(e=>e.url===config.origin+'/drip-calculator').length,1);assert.equal(calculatorCategory('drip')!.id,'saving-investing');assert.ok(guides.drip.questions.length>=8);for(const id of ['investment','compound-interest','covered-call'])assert.ok(relatedCalculatorIds[id].includes('drip'));
- assert.equal(hasShareTools('drip'),true);assert.equal(hasEmbed('drip'),false);assert.equal(hasPinterest('drip'),false);const schema=JSON.stringify(calculatorSchema(calc,config));assert.match(schema,/WebApplication/);assert.doesNotMatch(schema,/aggregateRating/);
+ assert.equal(hasShareTools('drip'),true);assert.equal(hasEmbed('drip'),true);assert.equal(hasPinterest('drip'),true);const schema=JSON.stringify(calculatorSchema(calc,config));assert.match(schema,/WebApplication/);assert.doesNotMatch(schema,/aggregateRating/);
 });

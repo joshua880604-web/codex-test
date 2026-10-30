@@ -1904,6 +1904,10 @@
       {
         "id": "business-loan",
         "text": "Separate financing fees from the face loan amount."
+      },
+      {
+        "id": "credit-card-minimum-payment",
+        "text": "Estimate minimum-payment interest using your APR assumption."
       }
     ],
     "related": [
@@ -2698,6 +2702,10 @@
       "text": "Debt service affects cash-on-cash even when NOI is unchanged. A projected cap rate is also not a guaranteed return. Use consistent maintenance and capital-expenditure treatment before comparing properties."
     },
     "tools": [
+      {
+        "id": "cap-rate",
+        "text": "Calculate cap rate from annual NOI or a rental worksheet."
+      },
       {
         "id": "cash-on-cash-return",
         "text": "Calculate cash yield directly or build it from a rental worksheet, with a consistent reserve definition."

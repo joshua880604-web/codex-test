@@ -271,3 +271,10 @@ searchTasks['drip']=[{keyword:'DRIP calculator',mode:'projection',description:'C
 
 keywordTitles['roth-conversion-ladder']='Roth Conversion Ladder Calculator - Five-Year Bridge';
 searchTasks['roth-conversion-ladder']=[{keyword:'Roth conversion ladder calculator',mode:'bridge',description:'Plan a Roth conversion ladder for early retirement. Track five-year dates, conversion taxes, bridge cash and funding gaps with a free yearly schedule.',aliases:['Roth IRA conversion ladder calculator','Roth conversion ladder five year rule','Roth ladder calculator']}];
+
+keywordTitles['cap-rate']='Cap Rate Calculator - NOI, Rental Income & Property Value';
+searchTasks['cap-rate']=[{keyword:'Cap rate calculator',mode:'noi',description:'Calculate cap rate from annual NOI and property value. Build rental NOI from expenses or compare values at your target cap rate.',aliases:['Capitalization rate calculator','Calculate cap rate']},{keyword:'Rental property cap rate calculator',mode:'rental',description:'Build annual NOI from rent, vacancy and itemized operating costs before financing.'}];
+keywordTitles['credit-card-minimum-payment']='Credit Card Minimum Payment Calculator - Payoff & Interest';
+searchTasks['credit-card-minimum-payment']=[{keyword:'Credit card minimum payment calculator',mode:'minimum',description:'Estimate your first minimum payment, payoff time and interest. Compare paying only the minimum with adding extra each month.',aliases:['Minimum credit card payment calculator','Minimum payment credit card calculator']}];
+// Preserve the old calculation mode and saved links; the dedicated page owns the exact minimum-payment query.
+if(minimumTask){minimumTask.keyword='Variable minimum payment payoff estimate';minimumTask.aliases=[];}

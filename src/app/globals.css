@@ -1714,3 +1714,7 @@ body:has(.calculator-page) {--shell-width:1120px;}
 .mortgage-mode-tabs {flex-wrap:nowrap;}
 .mortgage-mode-tabs button {min-width:0;padding:8px 6px;font-size:12px;}
 .calculator-form:has(.mortgage-fields) .form-actions {padding-top:0;border-top:0;margin-top:12px;min-height:44px;}
+
+/* Focused property/minimum-payment forms keep full-width controls beside long units. */
+.focused-tool-fields .field-row { grid-template-columns: minmax(0, 1fr); gap: 6px; margin-bottom: 14px; }
+.focused-tool-fields .field-control { width: 100%; }

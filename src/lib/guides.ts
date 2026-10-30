@@ -1,3 +1,4 @@
+import priorityContent from './priority-two-content.json';
 import rothLadderContent from './roth-ladder-content.json';
 import dripContent from './drip-content.json';
 import {motherPageIds,motherPageReviewedOn} from './mother-page-ui';
@@ -830,6 +831,12 @@ for(const id of ['investment','compound-interest','covered-call'])relatedCalcula
 Object.assign(guides,Object.fromEntries(Object.entries(rothLadderContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
 relatedCalculatorIds['roth-conversion-ladder']=['ira','roth-ira','fire','coast-fire','barista-fire','retirement'];
 for(const id of ['ira','roth-ira','fire','barista-fire'])relatedCalculatorIds[id]=[...new Set(['roth-conversion-ladder',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(priorityContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['cap-rate']=['noi','cash-on-cash-return','rental-property','brrrr','house-hacking','roi'];
+relatedCalculatorIds['credit-card-minimum-payment']=['credit-card','credit-cards-payoff','debt-snowball','debt-avalanche','debt-consolidation'];
+for(const id of ['noi','cash-on-cash-return','rental-property','brrrr','house-hacking'])relatedCalculatorIds[id]=[...new Set(['cap-rate',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+for(const id of ['credit-card','credit-cards-payoff','debt-snowball','debt-avalanche'])relatedCalculatorIds[id]=[...new Set(['credit-card-minimum-payment',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {

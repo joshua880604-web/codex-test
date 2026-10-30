@@ -6,6 +6,7 @@ export async function resultExportData(id:string,mode:Mode,values:Values,result:
  const [{imageMetrics},{resultCardCopy}]=await Promise.all([import('./result-image-data'),import('./result-card-copy')]);
  const metrics=imageMetrics(id,mode.id,result);
  let notes=[...(id==='irr'&&result.metrics.length>1?['Multiple IRRs detected; there is no single unambiguous rate.']:[]),...result.notes??[]];
+ if(id==='rental-property'){const roots=result.metrics.filter(m=>/^Annual IRR \d+$/.test(m.label));if(roots.length>1)notes.unshift('Multiple IRRs detected; this rental cash-flow path has more than one annual internal rate of return. Review every solution; none is automatically the correct investment return.');else if(roots.length===0)notes.unshift('No annual IRR found for this modeled rental cash-flow path. Profit and cash flow do not imply that an IRR exists.');}
  let copy=resultCardCopy(id,mode.id,values,result);
  if(id==='401k'&&mode.id==='projection'){
   const {retirementStory}=await import('./retirement-story');const story=retirementStory(values,result);

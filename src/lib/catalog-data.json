@@ -664,5 +664,17 @@
     "title": "Roth Conversion Ladder Calculator",
     "category": "Retirement",
     "local_route": "/roth-conversion-ladder-calculator.html"
+  },
+  {
+    "id": "credit-card-minimum-payment",
+    "category": "Other",
+    "title": "Credit Card Minimum Payment Calculator",
+    "local_route": "/credit-card-minimum-payment-calculator.html"
+  },
+  {
+    "id": "cap-rate",
+    "category": "Mortgage and Real Estate",
+    "title": "Cap Rate Calculator",
+    "local_route": "/cap-rate-calculator.html"
   }
 ]

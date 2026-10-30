@@ -47,10 +47,26 @@ function renderDebts(field:Field){
  });add.disabled=rows.length>=20;counter.textContent=rows.length+' of 20 debts';}
  add.addEventListener('click',()=>{rows.push({name:'Debt '+(rows.length+1),balance:'',minimum:'',apr:''});commit();draw();changed();list.querySelector<HTMLInputElement>('.debt-card:last-child input')?.focus();});draw();fieldset.append(wrap);
 }
+function renderRentals(field:Field){
+ const wrap=document.createElement('div');wrap.className='rental-editor field-wide';
+ const hidden=document.createElement('textarea');hidden.name=field.key;hidden.hidden=true;hidden.value=String(field.value);wrap.append(hidden);
+ const help=document.createElement('p');help.className='notice';help.textContent='Add only spaces rented to others. Use nicknames, not tenant names. Leave out your own room or unit.';wrap.append(help);
+ type Row={name:string;rent:string};let rows:Row[]=[];
+ try{const seed=JSON.parse(hidden.value);if(!Array.isArray(seed)||seed.length>10)throw Error('Invalid rent list');rows=seed.map(x=>({name:String(x.name??''),rent:String(x.rent??'')}));}catch{hidden.hidden=false;hidden.id='embed-rental-json';const label=document.createElement('label');label.htmlFor=hidden.id;label.textContent='Tenant spaces: JSON name and rent records';wrap.prepend(label);fieldset.append(wrap);return;}
+ const list=document.createElement('div'),add=document.createElement('button'),count=document.createElement('span');add.type='button';add.textContent='+ Add rented space';count.className='debt-count';wrap.append(list,add,count);
+ const commit=()=>{hidden.value=JSON.stringify(rows.map(row=>({name:row.name,rent:row.rent.trim()===''?null:Number(row.rent)})));};
+ function draw(){list.replaceChildren();rows.forEach((row,index)=>{const card=document.createElement('fieldset');card.className='debt-card';const legend=document.createElement('legend');legend.textContent='Rented space '+(index+1);card.append(legend);
+  for(const key of ['name','rent'] as const){const label=document.createElement('label'),input=document.createElement('input');input.id='embed-rental-'+index+'-'+key;label.htmlFor=input.id;label.textContent=key==='name'?'Space nickname':'Monthly rent (USD)';input.type=key==='name'?'text':'number';input.required=true;if(key==='name')input.maxLength=40;else{input.min='0';input.max='1000000000';input.step='any';}input.value=row[key];input.addEventListener('input',()=>{row[key]=input.value;commit();});card.append(label,input);}
+  const remove=document.createElement('button');remove.type='button';remove.textContent='Remove rented space';remove.setAttribute('aria-label','Remove rented space '+(index+1));remove.addEventListener('click',()=>{rows.splice(index,1);commit();draw();changed();add.focus();});card.append(remove);list.append(card);
+ });count.textContent=rows.length+' of 10 spaces';add.disabled=rows.length>=10;}
+ add.addEventListener('click',()=>{rows.push({name:'Space '+(rows.length+1),rent:''});commit();draw();changed();list.querySelector<HTMLInputElement>('.debt-card:last-child input')?.focus();});draw();fieldset.append(wrap);
+}
+
 function renderFields(){
   fieldset.replaceChildren();
   for(const field of active.fields){
     const wrap=document.createElement('div'),label=document.createElement('label');wrap.className='field';wrap.dataset.field=field.key;label.htmlFor='embed-field-'+field.key;label.textContent=field.label+(field.unit?' ('+field.unit+')':'');
+    if(field.key==='rentals'&&config.id==='house-hacking'){renderRentals(field);continue;}
     if(field.key==='debts'&&['debt-snowball','debt-avalanche','credit-cards-payoff'].includes(config.id)){renderDebts(field);continue;}
     const input=field.type==='select'?document.createElement('select'):field.type==='textarea'?document.createElement('textarea'):document.createElement('input');input.id=label.htmlFor;input.name=field.key;
     if(input instanceof HTMLSelectElement){for(const value of field.options??[]){const option=document.createElement('option');option.value=value;option.textContent=value;input.append(option);}}

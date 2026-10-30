@@ -124,5 +124,53 @@
     "slug": "break-even-calculator",
     "title": "Break-Even Calculator",
     "height": 800
+  },
+  {
+    "id": "cap-rate",
+    "slug": "cap-rate-calculator",
+    "title": "Cap Rate Calculator",
+    "height": 800
+  },
+  {
+    "id": "credit-card-minimum-payment",
+    "slug": "credit-card-minimum-payment-calculator",
+    "title": "Credit Card Minimum Payment Calculator",
+    "height": 1000
+  },
+  {
+    "id": "drip",
+    "slug": "drip-calculator",
+    "title": "DRIP Calculator",
+    "height": 1000
+  },
+  {
+    "id": "roth-conversion-ladder",
+    "slug": "roth-conversion-ladder-calculator",
+    "title": "Roth Conversion Ladder Calculator",
+    "height": 1000
+  },
+  {
+    "id": "cash-on-cash-return",
+    "slug": "cash-on-cash-return-calculator",
+    "title": "Cash-on-Cash Return Calculator",
+    "height": 1000
+  },
+  {
+    "id": "house-hacking",
+    "slug": "house-hacking-calculator",
+    "title": "House Hacking Calculator",
+    "height": 1000
+  },
+  {
+    "id": "rental-property",
+    "slug": "rental-property-calculator",
+    "title": "Rental Property Calculator",
+    "height": 1000
+  },
+  {
+    "id": "noi",
+    "slug": "noi-calculator",
+    "title": "NOI Calculator (Net Operating Income)",
+    "height": 1000
   }
 ]

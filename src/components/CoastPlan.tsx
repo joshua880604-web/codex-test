@@ -8,7 +8,7 @@ import type {Field, Result, Values} from '@/lib/types';
 import {coastHousehold} from '@/lib/coast-household';
 const usd=(n:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
 
-export default function CoastFields({fields,values,renderField}:{fields:Field[];values:Values;renderField:(field:Field)=>ReactNode}) {
+export default function CoastFields({fields,values,renderField,compact=false}:{fields:Field[];values:Values;renderField:(field:Field)=>ReactNode;compact?:boolean}) {
   const couple=values.household==='Couple';
   const group=(title:string,keys:string[]) => <fieldset className="planning-fields"><legend>{title}</legend>{keys.map(key=>{
     const f=fields.find(f=>f.key===key);if(!f)return null;
@@ -17,11 +17,11 @@ export default function CoastFields({fields,values,renderField}:{fields:Field[];
   })}</fieldset>;
   return <>
     {group('Your plan',['household','age','retire'])}
-    {couple&&<p className="result-note">One shared timeline: the difference between the planning ages is the number of years until both portfolios are modeled to fund retirement. This does not model different retirement dates. Enter jointly owned assets and shared savings only once.</p>}
+    {couple&&!compact&&<p className="result-note">One shared timeline: the difference between the planning ages is the number of years until both portfolios are modeled to fund retirement. This does not model different retirement dates. Enter jointly owned assets and shared savings only once.</p>}
     {group(couple?'Household investments':'Retirement investments',['balance','partner_balance','monthly','partner_monthly'])}
     {group(couple?'Shared retirement budget':'Retirement budget',['spending','withdrawal'])}
     {group('Growth and purchasing power',['return','inflation'])}
-    <p className="result-note">All amounts are in today’s USD. The calculator adjusts returns for inflation automatically. Pensions and Social Security amounts and start dates are not calculated; benefits starting later cannot simply be deducted from every year’s budget.</p>
+    {!compact&&<p className="result-note">All amounts are in today’s USD. The calculator adjusts returns for inflation automatically. Pensions and Social Security amounts and start dates are not calculated; benefits starting later cannot simply be deducted from every year’s budget.</p>}
   </>;
 }
 

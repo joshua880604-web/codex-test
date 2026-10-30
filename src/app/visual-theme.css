@@ -222,3 +222,46 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .house-rental-editor button:disabled {opacity:.5;cursor:default;}
 
 .coast-scenario-library{margin:16px 0;padding:16px;border:1px solid var(--border,#dbe3ef);border-radius:16px}.coast-scenario-library summary{cursor:pointer;font-weight:700}.coast-scenario-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.coast-scenario-cards section{min-width:0}.coast-scenario-cards button{white-space:normal;text-align:left}.coast-comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:20px}.coast-compare-card{min-width:0}.coast-comparison .field-row{display:block;margin-bottom:16px}.coast-comparison .field-row label{display:block;margin-bottom:8px}.coast-comparison input,.coast-comparison select{width:100%;min-width:0;padding:12px;border:1px solid var(--border,#cbd5e1);border-radius:10px;background:var(--surface,#fff);color:var(--ink,inherit);font:inherit}.coast-comparison small{display:block;margin-top:6px}.coast-comparison .planning-fields{margin-bottom:16px}.coast-comparison-result{margin-top:24px}@media(max-width:700px){.coast-scenario-cards,.coast-comparison-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Coast A/B responds to its available article width, including layouts with a sidebar. */
+.coast-comparison [hidden]{display:none!important}
+.coast-comparison-grid{grid-template-columns:minmax(0,1fr);gap:24px;margin-top:16px}
+.coast-comparison[data-wide=true] .coast-comparison-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.coast-comparison button{min-height:44px;max-width:100%;padding:9px 13px;border:1px solid var(--control,#cbd5e1);border-radius:10px;background:var(--surface,#fff);color:var(--ink,inherit);font:inherit;font-weight:600;white-space:normal;cursor:pointer}
+.coast-comparison button.calculate{background:#6046ef;color:#fff;border-color:transparent}
+.coast-comparison button:disabled{opacity:.65;cursor:wait}
+.coast-comparison-toolbar,.coast-result-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin:14px 0}
+.coast-comparison-toolbar>p{margin:0;font-size:13px;color:var(--muted,#53657d)}
+.coast-shared-note{font-size:13px;line-height:1.55;color:var(--muted,#53657d)}
+.coast-input-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0}
+.coast-input-tabs button[aria-selected=true]{background:var(--surface,#fff);color:var(--ink,inherit);border-color:var(--accent,#6046ef);box-shadow:inset 0 0 0 1px var(--accent,#6046ef)}
+.coast-comparison .field-row{margin-bottom:12px}
+.coast-comparison .field-row label{margin-bottom:6px;font-size:14px;line-height:1.4}
+.coast-comparison input,.coast-comparison select{min-height:44px;font-size:16px}
+.coast-compare-card h3,.coast-comparison-result h3{scroll-margin-top:88px}
+.coast-input-help{margin-top:5px;font-size:13px;line-height:1.5;color:var(--muted,#53657d)}
+.coast-input-help summary{cursor:pointer;width:fit-content;padding:4px 0;text-decoration:underline;text-underline-offset:3px}
+.coast-input-help p{margin:5px 0 8px}
+.coast-changed-badge{display:inline-block;margin-left:6px;padding:2px 6px;font-size:11px;font-weight:650;border-radius:6px;background:var(--surface,#fff);color:var(--ink,inherit);border:1px solid var(--control,#cbd5e1)}
+.coast-comparison .coast-input-different input,.coast-comparison .coast-input-different select{border-color:var(--accent,#6046ef)}
+.coast-results-table{width:100%;max-width:100%;margin:12px 0}
+.coast-results-table table{width:100%;min-width:0;table-layout:fixed;white-space:normal}
+.coast-results-table th,.coast-results-table td{position:static;white-space:normal;overflow-wrap:anywhere;padding:10px 8px;font-size:14px;vertical-align:top}
+.coast-results-table th:first-child{width:46%}
+.coast-results-table td{font-variant-numeric:tabular-nums;text-align:right}
+.coast-results-table caption{white-space:normal;text-align:left;padding:8px 0;font-size:13px;color:var(--muted,#53657d)}
+.coast-result-card{min-width:0;margin:12px 0;padding:14px;border:1px solid var(--control,#dbe3ef);border-radius:12px;background:var(--surface,#fff)}
+.coast-result-card h4{font-size:14px;line-height:1.45;margin:0 0 10px}
+.coast-result-card dl{margin:0}
+.coast-result-card dl>div{display:grid;grid-template-columns:minmax(0,1fr);gap:3px;padding:8px 0;border-top:1px solid var(--control,#dbe3ef)}
+.coast-result-card dt{font-size:13px;color:var(--muted,#53657d)}
+.coast-result-card dd,.coast-result-difference>p{margin:0;font-size:18px;font-weight:700;line-height:1.45;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.coast-result-card small{font-size:12px}
+.coast-extra-results{margin:16px 0}
+.coast-extra-results>summary{padding:10px 0;min-height:44px;cursor:pointer;font-weight:650}
+.coast-plan-links{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:16px 0}
+.coast-plan-links a{max-width:100%;overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){.coast-comparison{scroll-behavior:auto}}
+
+.coast-comparison-tools>button{min-height:44px;max-width:100%;padding:9px 13px;border:1px solid var(--control,#cbd5e1);border-radius:10px;background:var(--surface,#fff);color:var(--ink,inherit);font:inherit;font-weight:600;cursor:pointer}
+.coast-result-heading .result-actions{margin:0}

@@ -169,6 +169,11 @@ Calculator pages provide Share, Cite and Export controls; Embed appears only whe
 - [Percentage Calculator](https://www.calculatorfree.io/percentage-calculator): Calculate a percentage of a number, percentage change, or one number as a percentage of another.
 - [Scientific Calculator](https://www.calculatorfree.io/scientific-calculator): Evaluate real-number arithmetic, powers, roots, trigonometric functions, logarithms, and factorials.
 
+## Additional focused tools
+
+- [Cap Rate Calculator](https://www.calculatorfree.io/cap-rate-calculator): Calculate annual NOI yield from known income or a rental worksheet; compare values at assumed target rates. Excludes financing and total return.
+- [Credit Card Minimum Payment Calculator](https://www.calculatorfree.io/credit-card-minimum-payment-calculator): Estimate a user-defined minimum, changing payoff schedule and extra-payment comparisons. Actual statement rules may differ.
+
 ## Optional
 
 - [About CalculatorFree.io](https://www.calculatorfree.io/about): The site's independent planning tools and links to its methodology.

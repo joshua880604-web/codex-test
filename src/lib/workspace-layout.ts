@@ -2,6 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
+  "cap-rate", "credit-card-minimum-payment",
   "roth-conversion-ladder",
   "drip",
   "covered-call", "house-hacking", "mortgage-vs-invest", "cash-on-cash-return", "brrrr", "debt-snowball", "debt-avalanche",
@@ -19,10 +20,12 @@ export const workspaceIds = [
 export function hasCalculatorWorkspace(id: string): boolean { return (workspaceIds as readonly string[]).includes(id); }
 export function workspaceLayout(id: string, mode: string): "split" | "stacked" | null {
   if (!hasCalculatorWorkspace(id)) return null;
-  return id === "roth-conversion-ladder" || id === "drip" || id === "covered-call" || id === "house-hacking" || id === "mortgage-vs-invest" || (id === "cash-on-cash-return" && mode === "property") || id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
+  return (id === "cap-rate" && mode === "rental") || id === "roth-conversion-ladder" || id === "drip" || id === "covered-call" || id === "house-hacking" || id === "mortgage-vs-invest" || (id === "cash-on-cash-return" && mode === "property") || id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
 }
 
 const priorities: Record<string, string[]> = {
+  'cap-rate':['Capitalization rate','Annual net operating income','Indicated value at target cap rate','NOI surplus / shortfall versus target'],
+  'credit-card-minimum-payment':['Initial modeled minimum payment','Initial payment including extra','Months to repay','Total interest'],
   'roth-conversion-ladder':['Bridge cash required for this modeled path','Additional bridge cash needed','Modeled funding status','Estimated conversion tax'],
   drip:['Ending portfolio with DRIP','Ending wealth without reinvestment (shares + cash)','DRIP minus cash-dividend wealth','External money invested'],
   'covered-call':['Covered call profit / loss at your expiry price','Maximum expiry profit (may be negative)','Worst-case loss at zero stock price','Break-even stock price'],

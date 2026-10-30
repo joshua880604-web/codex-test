@@ -1,0 +1,499 @@
+{
+  "cap-rate": {
+    "updatedOn": "2026-10-30",
+    "summary": "Cap rate expresses one year of property net operating income as a percentage of the entered price or market value. Use known annual NOI for a quick calculation, or build it from rent, vacancy and operating expenses. The target-rate table also shows how the same NOI translates into different indicated values; it does not select a market rate or estimate an actual selling price.",
+    "scope": "USD, one property, one annual operating-income basis. Monthly inputs are annualized once; switching the reporting period reinterprets entries. Property taxes are operating expenses in this before-capex NOI convention. Financing, owner income tax, depreciation, capital replacements, acquisition costs, future appreciation and sale proceeds are excluded. Your price, NOI and target rate are assumptions, not verified comparables. Negative NOI produces a signed cap rate and no meaningful positive capitalized value.",
+    "sources": [
+      {
+        "title": "Nareit: capitalization rate, income basis and limitations",
+        "url": "https://www.reit.com/glossary/capitalization-rate"
+      },
+      {
+        "title": "OCC Commercial Real Estate Lending handbook: income and capitalization terminology",
+        "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/commercial-real-estate-lending/pub-ch-commercial-real-estate.pdf"
+      }
+    ],
+    "examples": [
+      {
+        "title": "An $18,000 NOI property at a $300,000 price",
+        "mode": "noi",
+        "values": {
+          "value": "300000",
+          "noi": "18000",
+          "target": "6"
+        },
+        "inputs": "$18,000 annual NOI, $300,000 property price and a 6% illustrative target rate.",
+        "steps": [
+          "Divide $18,000 by $300,000 and multiply by 100: the cap rate is 6%.",
+          "At unchanged NOI, a 5% target implies $360,000; a 6% target implies $300,000. These are scenarios, not appraisals."
+        ],
+        "expected": {
+          "label": "Capitalization rate",
+          "value": 6,
+          "tolerance": 1e-09
+        }
+      },
+      {
+        "title": "Vacancy and costs separate gross rent from cap rate",
+        "mode": "rental",
+        "values": {
+          "value": "300000",
+          "target": "6",
+          "period": "Monthly",
+          "rent": "3000",
+          "other_income": "0",
+          "vacancy": "10",
+          "taxes": "300",
+          "insurance": "100",
+          "repairs": "150",
+          "management": "150",
+          "utilities": "100",
+          "hoa": "0",
+          "other_expenses": "0"
+        },
+        "inputs": "$3,000 scheduled monthly rent, 10% loss, $800 monthly operating expenses, $300,000 value.",
+        "steps": [
+          "Vacancy reduces rent to $2,700 per month. Subtract $800 expenses for $1,900 monthly NOI.",
+          "Annual NOI is $22,800; $22,800 / $300,000 × 100 = 7.6%. Gross rent divided by price would overstate this operating-income yield."
+        ],
+        "expected": {
+          "label": "Capitalization rate",
+          "value": 7.6,
+          "tolerance": 1e-09
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-cap-rate-formula",
+        "queries": [
+          "how to calculate cap rate",
+          "how is cap rate calculated"
+        ],
+        "question": "How do you calculate cap rate?",
+        "answer": "Divide annual net operating income by the property price or market value, then multiply by 100. For example, $18,000 NOI on a $300,000 property is 6%. Use one consistent annual income basis; monthly NOI must first be multiplied by 12.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Build a separate NOI estimate"
+          },
+          {
+            "id": "cash-on-cash-return",
+            "mode": "property",
+            "label": "Calculate cash yield after financing"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cap-rate-rental",
+        "queries": [
+          "how to calculate cap rate on rental property"
+        ],
+        "question": "How do I calculate cap rate for a rental property?",
+        "answer": "Choose Rental Income & Expenses, enter the reporting period and scheduled rent before vacancy, then enter net other income and itemized operating costs. The tool annualizes NOI and divides by your property value. Switching Monthly to Annually does not automatically convert existing entries.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Build a separate NOI estimate"
+          },
+          {
+            "id": "cash-on-cash-return",
+            "mode": "property",
+            "label": "Calculate cash yield after financing"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cap-rate-mortgage",
+        "queries": [
+          "how to calculate cap rate with mortgage"
+        ],
+        "question": "Does cap rate include mortgage payments?",
+        "answer": "No. This is an unlevered operating-income measure, before mortgage principal and interest. Cash-on-cash return instead uses cash invested and cash flow after financing. A highly leveraged property can have a positive cap rate and negative spendable cash flow.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Build a separate NOI estimate"
+          },
+          {
+            "id": "cash-on-cash-return",
+            "mode": "property",
+            "label": "Calculate cash yield after financing"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cap-rate-good",
+        "queries": [
+          "what is a good cap rate"
+        ],
+        "question": "What is a good cap rate?",
+        "answer": "There is no universal cutoff. Location, property type, lease stability, condition and growth assumptions affect comparisons. A high number alone does not establish a good deal. This calculator supplies no market-comparable data and does not rank investments.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Build a separate NOI estimate"
+          },
+          {
+            "id": "cash-on-cash-return",
+            "mode": "property",
+            "label": "Calculate cash yield after financing"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cap-rate-expenses",
+        "queries": [
+          "what expenses are included in cap rate"
+        ],
+        "question": "Which expenses should I include in NOI?",
+        "answer": "For this worksheet include recurring property taxes, insurance, routine maintenance, management, owner-paid utilities and association costs. Exclude debt service, owner income tax, depreciation and capital improvements or replacement reserves. Do not count a cost twice; other professional NOI conventions can differ.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Build a separate NOI estimate"
+          },
+          {
+            "id": "cash-on-cash-return",
+            "mode": "property",
+            "label": "Calculate cash yield after financing"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cap-rate-value",
+        "queries": [
+          "how to calculate property value using cap rate"
+        ],
+        "question": "Can I estimate property value from a cap rate?",
+        "answer": "For positive NOI, divide annual NOI by the target rate as a decimal. At $18,000 NOI and 6%, the indicated value is $300,000. The table varies the target rate while holding NOI fixed. A credible appraisal also needs market evidence and appropriate income assumptions.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Build a separate NOI estimate"
+          },
+          {
+            "id": "cash-on-cash-return",
+            "mode": "property",
+            "label": "Calculate cash yield after financing"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cap-rate-negative",
+        "queries": [
+          "can cap rate be negative"
+        ],
+        "question": "What happens when NOI is zero or negative?",
+        "answer": "The ratio is zero or negative when property value is positive. The tool keeps that signed result visible. It does not turn an operating loss into a positive indicated value by dividing it by a positive target rate.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Build a separate NOI estimate"
+          },
+          {
+            "id": "cash-on-cash-return",
+            "mode": "property",
+            "label": "Calculate cash yield after financing"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cap-rate-roi",
+        "queries": [
+          "cap rate vs roi"
+        ],
+        "question": "Is cap rate the same as ROI or cash-on-cash return?",
+        "answer": "No. Cap rate relates annual NOI to property value. Cash-on-cash return relates annual after-financing cash flow to cash invested. A total investment return may also include principal reduction, appreciation, sale costs and taxes; those components are not included in this cap rate.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Build a separate NOI estimate"
+          },
+          {
+            "id": "cash-on-cash-return",
+            "mode": "property",
+            "label": "Calculate cash yield after financing"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cap-rate-basis",
+        "queries": [
+          "going in cap rate vs exit cap rate"
+        ],
+        "question": "Should I use purchase price, current value or an exit cap rate?",
+        "answer": "Use the value matching your question and clearly identify whether NOI is trailing or projected. A going-in purchase calculation is different from a current-value calculation. An exit rate requires a future NOI and sale scenario; this worksheet does not forecast those future amounts.",
+        "links": [
+          {
+            "id": "noi",
+            "mode": "operating-income",
+            "label": "Build a separate NOI estimate"
+          },
+          {
+            "id": "cash-on-cash-return",
+            "mode": "property",
+            "label": "Calculate cash yield after financing"
+          }
+        ]
+      }
+    ]
+  },
+  "credit-card-minimum-payment": {
+    "updatedOn": "2026-10-30",
+    "summary": "A minimum payment is an amount due for a billing cycle, not a fixed plan to clear a card quickly. This free calculator estimates your selected rule, follows the changing minimum as a balance falls and compares paying extra. Enter the rule from your agreement; the result cannot replace the amount due on your issuer’s statement.",
+    "scope": "One USD card balance, one constant APR and user-selected opening-balance percentage rule. Interest is APR/12 times opening balance; it may be added to the percentage amount before applying a dollar floor. Extra is added to each changing minimum. No fees, new purchases, multiple APR balances, daily billing dates, grace periods or promotional expirations. Internal values retain fractional cents. Unsupported non-amortizing or over-100-year paths raise an error.",
+    "sources": [
+      {
+        "title": "CFPB: how credit-card interest is calculated",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/how-does-my-credit-card-company-calculate-the-amount-of-interest-i-owe-en-51/"
+      },
+      {
+        "title": "Chase education: minimum-payment methods and checking your agreement",
+        "url": "https://www.chase.com/personal/credit-cards/education/basics/how-to-calculate-your-minimum-credit-card-payment"
+      },
+      {
+        "title": "CFPB Regulation Z Appendix M1: repayment-disclosure assumptions",
+        "url": "https://www.consumerfinance.gov/rules-policy/regulations/1026/m1/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "A percentage plus interest gives a $200 initial minimum",
+        "mode": "minimum",
+        "values": {
+          "principal": "5000",
+          "rate": "24",
+          "minimum": "2",
+          "floor": "25",
+          "interest_extra": "Yes",
+          "extra": "0"
+        },
+        "inputs": "$5,000 balance, 24% APR, 2% opening-balance minimum plus interest and a $25 floor.",
+        "steps": [
+          "First-month interest is $5,000 × 24% / 12 = $100.",
+          "The percentage component is $100. The modeled minimum is max($25, $100 + $100) = $200.",
+          "The first principal reduction is $100. Later minimums change with the opening balance until the floor applies."
+        ],
+        "expected": {
+          "label": "Initial modeled minimum payment",
+          "value": 200,
+          "tolerance": 1e-09
+        }
+      },
+      {
+        "title": "A small balance caps the final payment",
+        "mode": "minimum",
+        "values": {
+          "principal": "10",
+          "rate": "24",
+          "minimum": "2",
+          "floor": "25",
+          "interest_extra": "Yes",
+          "extra": "50"
+        },
+        "inputs": "$10 balance at 24% APR, $25 minimum floor and $50 extra.",
+        "steps": [
+          "One month’s modeled interest is $0.20, so only $10.20 is owed.",
+          "The floor and extra cannot force an overpayment. The entire $10.20 is paid in one month."
+        ],
+        "expected": {
+          "label": "Initial payment including extra",
+          "value": 10.2,
+          "tolerance": 1e-09
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-card-minimum-formula",
+        "queries": [
+          "how is credit card minimum payment calculated",
+          "how to calculate minimum payment on credit card"
+        ],
+        "question": "How is the credit card minimum payment calculated?",
+        "answer": "In this model, calculate a percentage of the opening balance and optionally add monthly interest. Compare that amount with the dollar floor and use the larger, capped at the amount owed. This is one selectable approximation; an issuer may use a different balance definition, fees and rounding.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Test a fixed total monthly payment"
+          },
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Plan repayment across multiple debts"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-minimum-find-rule",
+        "queries": [
+          "how do i find my credit card minimum payment"
+        ],
+        "question": "Where do I find my actual minimum-payment rule?",
+        "answer": "Check your current statement and cardmember agreement. Enter your own percentage, floor and interest treatment. Brand names alone are not enough to choose a rule, so this tool has no issuer preset and does not retrieve your account.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Test a fixed total monthly payment"
+          },
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Plan repayment across multiple debts"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-minimum-payoff",
+        "queries": [
+          "how long to pay off credit card with minimum payments"
+        ],
+        "question": "How long will it take to pay off a card with minimum payments?",
+        "answer": "It depends on the balance, APR, floor and percentage rule. Calculate to see a month-by-month schedule and total interest. The minimum can fall as debt falls, which can make repayment much longer than maintaining the first payment as a fixed monthly amount.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Test a fixed total monthly payment"
+          },
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Plan repayment across multiple debts"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-minimum-extra",
+        "queries": [
+          "paying more than minimum credit card payment calculator"
+        ],
+        "question": "What happens if I pay more than the minimum?",
+        "answer": "The selected extra is added to every recalculated minimum. The comparison table tests minimum only and several extra amounts with the same APR and balance. This does not hold the total payment constant. Use the fixed-payment tool if that is your intended budget.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Test a fixed total monthly payment"
+          },
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Plan repayment across multiple debts"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-minimum-interest",
+        "queries": [
+          "does minimum payment include interest"
+        ],
+        "question": "Does a minimum payment include interest?",
+        "answer": "That depends on the agreement. Here Yes adds modeled monthly interest to the percentage amount before applying the floor. No uses the percentage alone before the floor. Interest is still charged in both cases; the switch changes the payment rule, not whether borrowing has interest.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Test a fixed total monthly payment"
+          },
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Plan repayment across multiple debts"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-minimum-zero",
+        "queries": [
+          "minimum payment calculator 0 apr"
+        ],
+        "question": "Can I calculate a card with 0% APR?",
+        "answer": "Yes. Enter 0% and a rule that repays principal. The tool keeps that rate for the whole schedule. It does not model a promotional period ending, a balance-transfer fee or deferred interest becoming due.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Test a fixed total monthly payment"
+          },
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Plan repayment across multiple debts"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-minimum-not-repaid",
+        "queries": [
+          "minimum payment does not cover interest"
+        ],
+        "question": "Why does the calculator say the payment does not cover interest?",
+        "answer": "The selected rule plus extra is too small to reduce the balance. A zero-interest, zero-payment rule also cannot repay a positive balance. The tool reports an error rather than inventing a payoff date; increase the payment or check the rule. Paths longer than 100 years are outside its supported estimate.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Test a fixed total monthly payment"
+          },
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Plan repayment across multiple debts"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-minimum-statement",
+        "queries": [
+          "why is my credit card minimum payment different"
+        ],
+        "question": "Why is this estimate different from my statement?",
+        "answer": "Actual billing can use daily balances, different cycle lengths, fees, multiple APRs and statement rounding. This worksheet uses a constant monthly rate and no new activity. The current statement is the source for the payment you must make.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Test a fixed total monthly payment"
+          },
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Plan repayment across multiple debts"
+          }
+        ]
+      },
+      {
+        "anchor": "use-card-minimum-credit-score",
+        "queries": [
+          "does paying minimum affect credit score"
+        ],
+        "question": "Does this calculator predict my credit score?",
+        "answer": "No. It estimates a payment path and borrowing cost. It does not model credit utilization reporting, payment history, scoring rules or lender decisions. A calculated payoff schedule is not an affordability or credit-score assessment.",
+        "links": [
+          {
+            "id": "credit-card",
+            "mode": "payment",
+            "label": "Test a fixed total monthly payment"
+          },
+          {
+            "id": "debt-snowball",
+            "mode": "snowball",
+            "label": "Plan repayment across multiple debts"
+          }
+        ]
+      }
+    ]
+  }
+}
