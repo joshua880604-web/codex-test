@@ -46,5 +46,14 @@ body:has(>.calculator-share-dialog[open]){overflow:hidden;}
 .share-dialog-header,.share-dialog-tabs{flex-shrink:0;}
 .share-dialog-panel{min-height:0;overflow-y:auto;overscroll-behavior:contain;}
 
-.result-share-prompt{margin:14px 0;}.result-share-prompt .calculator-share-launch{color:var(--link);font-weight:650;white-space:normal;}
+.result-heading-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--control);}.result .result-heading-row>h2{margin:0;padding:0;border:0;min-width:0;}.result-heading-row .result-share-prompt{margin:0;color:var(--link);font-weight:650;white-space:normal;max-width:100%;}.mobile-title-favorite{display:none;}
+.mobile-menu nav .mobile-share-entry{grid-column:1/-1;text-align:left;min-height:48px;padding:9px 10px;border:1px solid var(--control);border-radius:10px;background:var(--surface);color:var(--link);font:inherit;font-size:14px;cursor:pointer;}
+@media(max-width:700px){.calculator-title-row{display:flex;align-items:flex-start;gap:12px;justify-content:space-between;}.calculator-title-row>h1{flex:1;min-width:0;}.mobile-title-favorite{display:block;flex:none;}.mobile-title-favorite .favorite-tools{margin:0;}.calculator-intro-row .enhanced-sharing-actions{display:none;}}
 @media print{.result-share-prompt{display:none!important;}}
+
+.share-dialog-social{flex-wrap:wrap;gap:16px 24px;}.share-dialog-social svg{display:block;}.share-dialog-social a:focus-visible{outline:2px solid var(--link);outline-offset:4px;border-radius:8px;}
+@media(max-width:400px){.share-dialog-social{gap:14px 10px;}.share-dialog-social a{min-width:58px;}}
+
+.embed-options input[type=number]{display:block;box-sizing:border-box;width:100%;max-width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--control);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;}
+.embed-resource-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;padding:0;}.embed-resource-list>li{border:1px solid var(--control);border-radius:18px;padding:20px;background:var(--surface);min-width:0;}.embed-resource-list h3{margin:0 0 10px;font-size:18px;}.embed-resource-list p{font-size:14px;line-height:1.65;}.embed-resource-list a{display:inline-flex;align-items:center;min-height:44px;}.embed-citation-help{margin:28px 0;}.embed-citation-help details{border-bottom:1px solid var(--control);padding:8px 0;}.embed-citation-help summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:650;}.embed-citation-help summary:focus-visible{outline:2px solid var(--link);outline-offset:3px;}.embed-resource-usage{scroll-margin-top:20px;}
+@media(max-width:600px){.embed-resource-list{grid-template-columns:minmax(0,1fr);}.embed-options input[type=number]{font-size:16px;}}

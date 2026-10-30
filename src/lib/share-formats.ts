@@ -8,7 +8,7 @@ export function citationText(id:string,title:string,path:string,accessed:string,
  if(!/^\d{4}-\d{2}-\d{2}$/.test(accessed)||!Number.isFinite(Date.parse(accessed))||new Date(accessed+'T00:00:00Z').toISOString().slice(0,10)!==accessed)throw new Error('Use a valid citation access date.');
  const url=canonicalCitationURL(path);
  if(format==='plain')return `${title}. CalculatorFree.io. ${url}. Accessed ${accessed}.`;
- if(format==='html')return `<a href="${html(url)}">${html(title)} by CalculatorFree.io</a> (accessed ${accessed}).`;
+ if(format==='html')return `<a href="${html(url)}">${html(title)}</a> by CalculatorFree.io (accessed ${accessed}).`;
  return `@online{calculatorfree_${id.replace(/[^a-z0-9]/gi,'_')},\n  author = {{CalculatorFree.io}},\n  title = {${bib(title)}},\n  url = {${url}},\n  urldate = {${accessed}}\n}`;
 }
 export function socialShareURL(site:'facebook'|'x'|'linkedin',url:string,title:string){
@@ -28,4 +28,12 @@ export function resultTables(result:Result):ExportTable[]{
 export function spreadsheetCell(value:string|number){return typeof value==='number'?String(value):(/^[\s\u0000-\u001f]*[=+@-]/.test(value)?"'"+value:value);}
 export function tableText(table:ExportTable,kind:'csv'|'tsv'){
  return [table.columns,...table.rows].map(row=>row.map(value=>{const s=spreadsheetCell(value);return kind==='csv'||/[\t\r\n"]/.test(s)?'"'+s.replaceAll('"','""')+'"':s;}).join(kind==='csv'?',':'\t')).join('\r\n');
+}
+
+// A GFM table is text for publishing, not spreadsheet formulas. Escape raw HTML,
+// pipes, backslashes and newlines so values cannot create extra rows or cells.
+export function markdownTable(table:ExportTable){
+ const cell=(value:string|number)=>String(value).replaceAll('\\','\\\\').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replace(/([`*_\[\]])/g,'\\$1').replaceAll('|','\\|').replace(/\r\n|\r|\n/g,'<br>');
+ const row=(values:(string|number)[])=>'| '+values.map(cell).join(' | ')+' |';
+ return [row(table.columns),row(table.columns.map(()=>'---')),...table.rows.map(row)].join('\n');
 }

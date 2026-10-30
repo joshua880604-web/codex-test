@@ -105,6 +105,8 @@ export function Footer() {
         <SiteLink href="/glossary/">Glossary</SiteLink>
         <span> · </span>
         <SiteLink href="/guides/">Guides</SiteLink>
+        <span> · </span>
+        <SiteLink href="/embed-resources">Embed calculators</SiteLink>
       </div>
       <p>
         © {new Date().getFullYear()} {siteName}. Independent planning

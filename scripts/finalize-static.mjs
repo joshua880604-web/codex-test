@@ -11,6 +11,9 @@ for(const name of await readdir('out')){
  await rename(join('out',name),target);count++;
 }
 console.log(`Prepared ${count} static .html routes.`);
+// This extensionless document uses normal anchors, not RSC navigation. Remove
+// Next's matching RSC-only directory so static hosts resolve its .html document.
+await rm('out/embed-resources',{recursive:true,force:true});
 // Glossary uses directory URLs, independent of the established calculator URLs.
 // No RSC navigation is used; canonical documents are served as index.html.
 const glossary='out/glossary';

@@ -21,7 +21,7 @@ const FireBudgetReport=dynamic(()=>import('./FireBudgetPlan').then(m=>m.FireBudg
 const DebtStrategyReport=dynamic(()=>import('./DebtStrategyReport'));
 import ResultShare from "./ResultShare";
 import {motherPageCopy} from "@/lib/mother-page-ui";
-import {hasShareTools} from "@/lib/share-tools";
+import {hasShareTools,shareOpenEvent} from "@/lib/share-tools";
 const ShareToolsDialog=dynamic(()=>import("./ShareToolsDialog"),{ssr:false});
 import RecastComparison from "./RecastComparison";
 import {inputHint,resultContext} from "@/lib/result-context";
@@ -76,6 +76,12 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const motherCopy=motherPageCopy[id];
   const [shareOpen,setShareOpen]=useState(false);
   const [showResultShare,setShowResultShare]=useState(false);
+  useEffect(()=>{
+    if(!enhancedSharing)return;
+    const open=(event:Event)=>{if((event as CustomEvent<{id:string}>).detail?.id===id)setShareOpen(true);};
+    window.addEventListener(shareOpenEvent,open);
+    return()=>window.removeEventListener(shareOpenEvent,open);
+  },[id,enhancedSharing]);
   const runCalculation = (_id: string, mode: string, values: Values) => runClientCalculation(calc.id, calc.category, mode, values);
   const [modeId, setModeId] = useState(calc.modes[0].id);
   const mode = calc.modes.find((m) => m.id === modeId)!;
@@ -518,7 +524,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     advanced = ['covered-call','house-hacking','brrrr','barista-fire','lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
   return (
     <>
-      <div className={"calculator-intro-row"+(motherCopy?" mother-page-intro":"")}><p className="intro">{motherCopy?.intro??calc.intro}</p>{enhancedSharing?<div className="calculator-utility-actions"><FavoriteButton id={id}/><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share / Export</button></div>:<FavoriteButton id={id}/>}</div>
+      <div className={"calculator-intro-row"+(motherCopy?" mother-page-intro":"")}><p className="intro">{motherCopy?.intro??calc.intro}</p>{enhancedSharing?<div className="calculator-utility-actions enhanced-sharing-actions"><FavoriteButton id={id}/><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share / Export</button></div>:<FavoriteButton id={id}/>}</div>
       {shareOpen&&enhancedSharing&&<ShareToolsDialog id={id} title={calc.title} path={routeFor(id)} mode={mode} values={values} result={result} fields={visible} onClose={()=>setShareOpen(false)}/>}
       {id === "credit-card" && <p className="result-note">One card: compare fixed payments, a payoff deadline or a minimum-payment rule below. For several cards sharing one monthly budget, use the <SiteLink href={routeFor("credit-cards-payoff")}>Multiple Credit Cards Payoff Calculator</SiteLink>.</p>}
       
@@ -636,7 +642,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       {hasWorkspace && !result && <div className="workspace-empty"><h2>Your result</h2><p>{calculating ? "Calculating your updated result…" : "Enter your values and select Calculate to see the result here."}</p></div>}
       {result && (
         <div ref={resultRef} className="result" aria-live="polite" tabIndex={-1}>
-          <h2>Result</h2>
+          {enhancedSharing?<div className="result-heading-row"><h2>Result</h2>{showResultShare&&<button type="button" className="calculator-share-launch result-share-prompt" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share your results</button>}</div>:<h2>Result</h2>}
           {id === "irr" && result.metrics.length > 1 && <p className="notice" role="status">Multiple IRRs detected. There is no single unambiguous rate for these cash flows; the first result is not a recommended return.</p>}
           <div className="result-main">
             <div className="metrics">
@@ -713,7 +719,6 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
               </div>
             )}
           </div>
-          {enhancedSharing && showResultShare && <div className="result-share-prompt"><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share your results</button></div>}
           {context && id !== "mortgage" && <p className="result-context">{context}</p>}
           {summary && summary.highlights.length > 0 && <dl className="workspace-key-figures" aria-label="Key calculated figures">{summary.highlights.map(m => <div className="metric" key={m.label}><dt><span>{m.label}</span></dt><dd><strong>{formatMetric(m)}</strong></dd></div>)}</dl>}
           {context && id === "mortgage" && <p className="result-context">{context}</p>}

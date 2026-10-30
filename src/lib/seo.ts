@@ -1,3 +1,4 @@
+import {embedResourcesPath,embedResourcesReviewedOn} from './embed-resources';
 import {motherPageIds,motherPageReviewedOn} from './mother-page-ui';
 import {guidesPath,editorialGuides} from './editorial-guides';
 import {categoryPages,type CategoryPage} from './category-pages';
@@ -61,6 +62,7 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
 // Dates record reviewed content changes, never the current build time.
 export const contentUpdatedOn: Record<string, string> = {
   "/privacy.html":"2026-10-29",
+  [embedResourcesPath]:embedResourcesReviewedOn,
   [guidesPath]:'2026-10-29',
   ...Object.fromEntries(editorialGuides.map(guide=>[guide.path,guide.updatedOn??guide.publishedOn])),
   "/tax-equivalent-yield-calculator.html": "2026-10-27",
@@ -101,6 +103,7 @@ export function sitemapEntries(config: SiteConfig = siteConfig()) {
     "/methodology.html",
     glossaryPath,
     guidesPath,
+    embedResourcesPath,
     ...editorialGuides.map(guide=>guide.path),
     ...glossaryTerms.map(term=>glossaryTermPath(term.slug)),
   ].map((path) => ({ url: absoluteURL(path, config)!, ...(contentUpdatedOn[path] ? { lastModified: contentUpdatedOn[path] } : {}) }));

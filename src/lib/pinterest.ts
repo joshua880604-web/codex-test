@@ -1,0 +1,9 @@
+import {canonicalCitationURL} from './share-formats';
+import {shareToolPaths,hasPinterest} from './share-tools';
+// Pins always use a public cover and canonical tool page, never calculation inputs.
+export function pinterestShareURL(path:string,title:string){
+ const url=canonicalCitationURL(path),id=shareToolPaths[new URL(url).pathname];
+ if(!id||!hasPinterest(id))throw new Error('Pinterest sharing is unavailable for this calculator.');
+ const media=`https://www.calculatorfree.io/social/pinterest/${id}-v1.png`;
+ return 'https://www.pinterest.com/pin/create/button/?'+new URLSearchParams({url,media,description:`${title} — a free calculator by CalculatorFree.io. Explore estimates using your own assumptions.`});
+}

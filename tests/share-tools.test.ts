@@ -1,14 +1,17 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {shareToolIds,hasShareTools} from '../src/lib/share-tools';
+import {shareToolIds,expandedShareToolIds,pinterestToolIds,hasPinterest,hasEmbed,shareTabs,hasShareTools,shareToolPaths} from '../src/lib/share-tools';
 import tools from '../src/lib/embed-tools.json';
 import {canonicalCitationURL,citationText,resultTables,spreadsheetCell,tableText,socialShareURL} from '../src/lib/share-formats';
 import {calculators,defaults,runCalculation,routeFor} from '../src/lib/calculators';
 import {runClientCalculation} from '../src/lib/calculate-client';
 import {embedCode} from '../src/lib/embed-code';
-test('Share rollout is exactly the twenty user-selected calculators with existing ROI embed retained',()=>{
- assert.equal(shareToolIds.length,20);assert.equal(new Set(shareToolIds).size,20);assert.equal(shareToolIds[0],'coast-fire');assert.equal(hasShareTools('covered-call'),false);assert.equal(hasShareTools('roi'),false);assert.equal(tools.length,21);
- for(const id of shareToolIds){assert.ok(hasShareTools(id));const tool=tools.find(t=>t.id===id)!;assert.ok(tool);assert.equal('/'+tool.slug,routeFor(id).slice(0,-5));assert.match(embedCode(id,'light',800),/rel="nofollow noopener"/);}
+test('Enhanced sharing covers the approved 36 tools while Embed and Pinterest remain capability gated',()=>{
+ assert.equal(shareToolIds.length,36);assert.equal(new Set(shareToolIds).size,36);assert.equal(expandedShareToolIds.length,16);assert.equal(pinterestToolIds.length,20);assert.equal(hasShareTools('covered-call'),false);assert.equal(hasShareTools('roi'),true);assert.equal(tools.length,21);
+ assert.equal(Object.keys(shareToolPaths).length,36);
+ for(const id of shareToolIds){assert.equal(shareToolPaths[routeFor(id).slice(0,-5)],id);assert.ok(hasShareTools(id));const tool=tools.find(t=>t.id===id);assert.equal(hasEmbed(id),Boolean(tool));assert.deepEqual(shareTabs(id),tool?['Share','Embed','Cite','Export']:['Share','Cite','Export']);if(tool){assert.equal('/'+tool.slug,routeFor(id).slice(0,-5));assert.match(embedCode(id,'light',800),/rel="nofollow noopener"/);}}
+ for(const id of expandedShareToolIds)assert.equal(hasPinterest(id),false);
+ for(const id of pinterestToolIds)assert.equal(hasPinterest(id),true);
 });
 test('Citations use canonical page URLs with no calculation or tracking payload',()=>{
  assert.equal(canonicalCitationURL('/coast-fire-calculator.html?balance=999#calc=secret'),'https://www.calculatorfree.io/coast-fire-calculator');

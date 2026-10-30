@@ -1,4 +1,7 @@
 import {editorialGuides} from '@/lib/editorial-guides';
+import FavoriteButton from "@/components/FavoriteButton";
+import {hasShareTools} from "@/lib/share-tools";
+import EmbedCitationHelp from '@/components/EmbedCitationHelp';
 import About from '@/components/About';
 
 import SiteLink from "@/components/SiteLink";
@@ -108,7 +111,7 @@ export default async function Page({
           <SiteLink href={!categoryPage&&displayCategory ? categoryHref(displayCategory.id) : "/financial-calculator.html"}>{!categoryPage&&displayCategory ? displayCategory.title : "financial"}</SiteLink>
           {categoryPage ? <> / {categoryPage.heading}</> : c && <> / {c.title.toLowerCase()}</>}
         </div>
-        <h1>{categoryPage?.heading ?? title}</h1>
+        {c && !c.directory && hasShareTools(c.id)?<div className="calculator-title-row"><h1>{categoryPage?.heading ?? title}</h1><div className="mobile-title-favorite"><FavoriteButton id={c.id}/></div></div>:<h1>{categoryPage?.heading ?? title}</h1>}
         {categoryPage&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(categoryPageSchema(categoryPage))}}/>}
         {c && !c.directory && (
           <script
@@ -187,6 +190,7 @@ export default async function Page({
             <CalculatorDisclaimer id={c.id}/>
             <SearchTasks id={c.id} />
             <CalculatorGuide calculator={c} />
+            <EmbedCitationHelp id={c.id} title={c.title}/>
             {motherPageCopy[c.id] ? (editorialGuides.some(guide=>guide.calculatorIds.includes(c.id))&&<section className="related"><h2>Related guides</h2><ul>{editorialGuides.filter(guide=>guide.calculatorIds.includes(c.id)).map(guide=><li key={guide.path}><SiteLink href={guide.path}>{guide.heading}</SiteLink> — {guide.cardIntro}</li>)}</ul></section>) : editorialGuides.filter(guide=>guide.calculatorIds.includes(c.id)).map(guide=><section className="related" key={guide.path}><h2>Related guide</h2><p><SiteLink href={guide.path}>{guide.heading}</SiteLink>: {guide.cardIntro}</p></section>)}
           </>
         ) : (
