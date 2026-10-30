@@ -4,9 +4,9 @@ import {calculatorCategory} from '../src/lib/calculator-categories';
 import {shareToolIds,remainingFinancialShareToolIds,shareToolPaths,hasShareTools,hasEmbed,hasPinterest,shareTabs,shareScenarioHelp} from '../src/lib/share-tools';
 import {calculationLink,sharedInputs,modeCaption,formatMetric} from '../src/lib/sharing';
 import {resultExportData} from '../src/lib/result-export';
-test('Sharing covers every financial calculator and no directory or everyday tool',()=>{
- const financial=calculators.filter(c=>!c.directory&&calculatorCategory(c.id)?.id!=='everyday');assert.equal(financial.length,100);assert.deepEqual(new Set(shareToolIds),new Set(financial.map(c=>c.id)));assert.equal(remainingFinancialShareToolIds.length,64);
- for(const c of calculators){if(c.directory||calculatorCategory(c.id)?.id==='everyday')assert.equal(hasShareTools(c.id),false);else{assert.equal(hasShareTools(c.id),true);assert.equal(shareToolPaths[routeFor(c.id).slice(0,-5)],c.id);assert.deepEqual(shareTabs(c.id),hasEmbed(c.id)?['Share','Embed','Cite','Export']:['Share','Cite','Export']);}}
+test('Sharing covers every financial calculator alongside the everyday extension, excluding directories',()=>{
+ const financial=calculators.filter(c=>!c.directory&&calculatorCategory(c.id)?.id!=='everyday');assert.equal(financial.length,100);assert.deepEqual(new Set(shareToolIds.filter(id=>calculatorCategory(id)?.id!=='everyday')),new Set(financial.map(c=>c.id)));assert.equal(remainingFinancialShareToolIds.length,64);
+ for(const c of calculators){if(c.directory)assert.equal(hasShareTools(c.id),false);else{assert.equal(hasShareTools(c.id),true);assert.equal(shareToolPaths[routeFor(c.id).slice(0,-5)],c.id);assert.deepEqual(shareTabs(c.id),hasEmbed(c.id)?['Share','Embed','Cite','Export']:['Share','Cite','Export']);}}
  assert.equal(shareToolIds.filter(hasEmbed).length,21);assert.equal(shareToolIds.filter(hasPinterest).length,20);
 });
 test('All 130 remaining financial modes preserve their complete input fragment round trips',()=>{

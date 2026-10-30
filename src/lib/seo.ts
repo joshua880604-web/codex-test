@@ -63,7 +63,7 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
 export const contentUpdatedOn: Record<string, string> = {
   "/privacy.html":"2026-10-29",
   [embedResourcesPath]:embedResourcesReviewedOn,
-  [guidesPath]:'2026-10-29',
+  [guidesPath]:'2026-10-30',
   ...Object.fromEntries(editorialGuides.map(guide=>[guide.path,guide.updatedOn??guide.publishedOn])),
   "/tax-equivalent-yield-calculator.html": "2026-10-27",
   "/treasury-bill-calculator.html": "2026-10-27",
@@ -91,6 +91,8 @@ export const contentUpdatedOn: Record<string, string> = {
   "/social-security-calculator.html": "2026-10-28",
 };
 for(const id of motherPageIds)contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]=motherPageReviewedOn;
+// Original blogger copy and related model analyses added on this reviewed date.
+for(const id of ["coast-fire","brrrr","roas"])contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]="2026-10-30";
 
 export function sitemapEntries(config: SiteConfig = siteConfig()) {
   if (!config.origin || !config.indexable) return [];

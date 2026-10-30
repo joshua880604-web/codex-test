@@ -1,0 +1,16 @@
+.model-study .study-scope-label{border-left:3px solid var(--link);padding:12px 16px;background:var(--surface);color:var(--ink);}
+.study-figure{margin:26px 0;border:1px solid var(--control);border-radius:14px;padding:16px;}
+.study-figure h3{margin-top:0;}.study-figure figcaption{font-size:13px;line-height:1.7;color:var(--muted);}
+.study-chart-scroll{overflow-x:auto;max-width:100%;}.study-chart-scroll:focus-visible{outline:2px solid var(--link);outline-offset:2px;}
+.study-chart-scroll svg{display:block;width:100%;min-width:600px;height:auto;color:var(--muted);}
+.study-chart-scroll svg text{fill:currentColor;font:14px Arial,sans-serif;}.study-chart-scroll svg .study-chart-axis-title{font-weight:600;}
+.study-grid-line{stroke:var(--control);stroke-width:1;}.study-zero-line{stroke:var(--muted);stroke-width:1.5;}
+.study-series{stroke:currentColor;fill:currentColor;}.study-series-0{color:#3162bc;}.study-series-1{color:#ab4a18;}.study-series-2{color:#158064;}.study-series-3{color:#8544ac;}
+[data-theme="dark-pro"] .study-series-0{color:#8cb5ff;}[data-theme="dark-pro"] .study-series-1{color:#ffb078;}[data-theme="dark-pro"] .study-series-2{color:#7bdbb5;}[data-theme="dark-pro"] .study-series-3{color:#d1a5ff;}
+.study-chart-legend{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;}.study-chart-legend li{display:flex;align-items:center;gap:7px;}.study-legend-symbol{font-size:20px;}
+.study-case-link{display:block;min-height:32px;overflow-wrap:anywhere;margin-bottom:6px;}
+@media(max-width:700px){.study-figure{padding:12px;margin-left:0;margin-right:0;}.model-study .study-scope-label{padding:10px 12px;}}
+@media print{.study-chart-scroll{overflow:visible;}.study-chart-scroll svg{min-width:0;}.study-figure{break-inside:avoid;}.study-case-link{font-size:10px;min-height:0;}}
+
+.study-chart-hint{display:none;}
+@media(max-width:700px){.model-study .study-chart-hint{display:block;font-size:13px;color:var(--muted);margin:8px 0;}.study-chart-scroll{overscroll-behavior-x:contain;}}

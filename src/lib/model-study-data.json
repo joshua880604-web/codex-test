@@ -1,0 +1,987 @@
+{
+  "checkedOn": "2026-10-30",
+  "kind": "Deterministic model sensitivity analysis; not observed market, user or historical data",
+  "coast": [
+    {
+      "nominal": 5,
+      "inflation": 2,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "5",
+        "inflation": "2",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 419108.2219230676,
+      "realReturn": 2.9411764705882355
+    },
+    {
+      "nominal": 5,
+      "inflation": 2.5,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "5",
+        "inflation": "2.5",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 485329.83483118983,
+      "realReturn": 2.439024390243903
+    },
+    {
+      "nominal": 5,
+      "inflation": 3,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "5",
+        "inflation": "3",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 561613.7978019769,
+      "realReturn": 1.9417475728155345
+    },
+    {
+      "nominal": 5,
+      "inflation": 3.5,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "5",
+        "inflation": "3.5",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 649428.7662974196,
+      "realReturn": 1.4492753623188406
+    },
+    {
+      "nominal": 5,
+      "inflation": 4,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "5",
+        "inflation": "4",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 750449.0408469349,
+      "realReturn": 0.9615384615384621
+    },
+    {
+      "nominal": 7,
+      "inflation": 2,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "7",
+        "inflation": "2",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 237953.34942822863,
+      "realReturn": 4.901960784313726
+    },
+    {
+      "nominal": 7,
+      "inflation": 2.5,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "7",
+        "inflation": "2.5",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 275551.40590090706,
+      "realReturn": 4.390243902439024
+    },
+    {
+      "nominal": 7,
+      "inflation": 3,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "7",
+        "inflation": "3",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 318862.4734177113,
+      "realReturn": 3.8834951456310685
+    },
+    {
+      "nominal": 7,
+      "inflation": 3.5,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "7",
+        "inflation": "3.5",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 368720.3974344361,
+      "realReturn": 3.3816425120772946
+    },
+    {
+      "nominal": 7,
+      "inflation": 4,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "7",
+        "inflation": "4",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 426075.78067869245,
+      "realReturn": 2.884615384615385
+    },
+    {
+      "nominal": 9,
+      "inflation": 2,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "9",
+        "inflation": "2",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 136524.38053256198,
+      "realReturn": 6.862745098039216
+    },
+    {
+      "nominal": 9,
+      "inflation": 2.5,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "9",
+        "inflation": "2.5",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 158096.05154074388,
+      "realReturn": 6.341463414634145
+    },
+    {
+      "nominal": 9,
+      "inflation": 3,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "9",
+        "inflation": "3",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 182945.53013452663,
+      "realReturn": 5.825242718446601
+    },
+    {
+      "nominal": 9,
+      "inflation": 3.5,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "9",
+        "inflation": "3.5",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 211551.23040047716,
+      "realReturn": 5.314009661835748
+    },
+    {
+      "nominal": 9,
+      "inflation": 4,
+      "values": {
+        "household": "Individual",
+        "age": "35",
+        "retire": "65",
+        "balance": "150000",
+        "partner_balance": "0",
+        "spending": "40000",
+        "return": "9",
+        "inflation": "4",
+        "withdrawal": "4",
+        "monthly": "1000",
+        "partner_monthly": "0"
+      },
+      "threshold": 244458.55524564223,
+      "realReturn": 4.8076923076923075
+    }
+  ],
+  "brrrr": [
+    {
+      "arv": 225000,
+      "rate": 6,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "225000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "6",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": 39650,
+      "payment": 1011.7415111952696,
+      "cashFlow": 378.2584888047304,
+      "loan": 168750,
+      "coc": 11.447923999134337
+    },
+    {
+      "arv": 225000,
+      "rate": 7,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "225000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "7",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": 39650,
+      "payment": 1122.6979606148716,
+      "cashFlow": 267.3020393851284,
+      "loan": 168750,
+      "coc": 8.089847345829863
+    },
+    {
+      "arv": 225000,
+      "rate": 8,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "225000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "8",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": 39650,
+      "payment": 1238.2277184214472,
+      "cashFlow": 151.7722815785528,
+      "loan": 168750,
+      "coc": 4.593360350422783
+    },
+    {
+      "arv": 250000,
+      "rate": 6,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "250000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "6",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": 20900,
+      "payment": 1124.1572346614107,
+      "cashFlow": 265.8427653385893,
+      "loan": 187500,
+      "coc": 15.263699445277853
+    },
+    {
+      "arv": 250000,
+      "rate": 7,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "250000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "7",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": 20900,
+      "payment": 1247.4421784609685,
+      "cashFlow": 142.55782153903147,
+      "loan": 187500,
+      "coc": 8.185138078796065
+    },
+    {
+      "arv": 250000,
+      "rate": 8,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "250000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "8",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": 20900,
+      "payment": 1375.8085760238303,
+      "cashFlow": 14.191423976169744,
+      "loan": 187500,
+      "coc": 0.8148186015025691
+    },
+    {
+      "arv": 275000,
+      "rate": 6,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "275000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "6",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": 2150,
+      "payment": 1236.5729581275518,
+      "cashFlow": 153.42704187244817,
+      "loan": 206250,
+      "coc": 85.6336977892734
+    },
+    {
+      "arv": 275000,
+      "rate": 7,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "275000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "7",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": 2150,
+      "payment": 1372.1863963070653,
+      "cashFlow": 17.81360369293475,
+      "loan": 206250,
+      "coc": 9.942476479777534
+    },
+    {
+      "arv": 275000,
+      "rate": 8,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "275000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "8",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": 2150,
+      "payment": 1513.3894336262133,
+      "cashFlow": -123.3894336262133,
+      "loan": 206250,
+      "coc": -68.86852109370045
+    },
+    {
+      "arv": 300000,
+      "rate": 6,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "300000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "6",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": -16600,
+      "payment": 1348.988681593693,
+      "cashFlow": 41.011318406307055,
+      "loan": 225000,
+      "coc": null
+    },
+    {
+      "arv": 300000,
+      "rate": 7,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "300000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "7",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": -16600,
+      "payment": 1496.9306141531622,
+      "cashFlow": -106.9306141531622,
+      "loan": 225000,
+      "coc": null
+    },
+    {
+      "arv": 300000,
+      "rate": 8,
+      "values": {
+        "price": "150000",
+        "closing": "4500",
+        "loan": "120000",
+        "loan_rate": "10",
+        "points": "2",
+        "rehab": "35000",
+        "contingency": "10",
+        "months": "6",
+        "holding": "500",
+        "arv": "300000",
+        "ltv": "75",
+        "refi_costs": "4000",
+        "refi_rate": "8",
+        "years": "30",
+        "rent": "2200",
+        "vacancy": "5",
+        "other_income": "0",
+        "operating": "600",
+        "reserve": "100"
+      },
+      "cashBefore": 84400,
+      "cashLeft": -16600,
+      "payment": 1650.9702912285964,
+      "cashFlow": -260.97029122859635,
+      "loan": 225000,
+      "coc": null
+    }
+  ],
+  "roas": [
+    {
+      "margin": 20,
+      "multiple": 2,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "6000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "20",
+        "revenue": "12000"
+      },
+      "spend": 6000,
+      "breakEven": 5,
+      "postAdDollars": -3600,
+      "postAdMargin": -30
+    },
+    {
+      "margin": 20,
+      "multiple": 3,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "4000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "20",
+        "revenue": "12000"
+      },
+      "spend": 4000,
+      "breakEven": 5,
+      "postAdDollars": -1600,
+      "postAdMargin": -13.333333333333334
+    },
+    {
+      "margin": 20,
+      "multiple": 4,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "3000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "20",
+        "revenue": "12000"
+      },
+      "spend": 3000,
+      "breakEven": 5,
+      "postAdDollars": -600,
+      "postAdMargin": -5
+    },
+    {
+      "margin": 20,
+      "multiple": 5,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "2400"
+      },
+      "thresholdValues": {
+        "contribution_margin": "20",
+        "revenue": "12000"
+      },
+      "spend": 2400,
+      "breakEven": 5,
+      "postAdDollars": 0,
+      "postAdMargin": 0
+    },
+    {
+      "margin": 20,
+      "multiple": 6,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "2000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "20",
+        "revenue": "12000"
+      },
+      "spend": 2000,
+      "breakEven": 5,
+      "postAdDollars": 400,
+      "postAdMargin": 3.3333333333333335
+    },
+    {
+      "margin": 30,
+      "multiple": 2,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "6000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "30",
+        "revenue": "12000"
+      },
+      "spend": 6000,
+      "breakEven": 3.3333333333333335,
+      "postAdDollars": -2400,
+      "postAdMargin": -20
+    },
+    {
+      "margin": 30,
+      "multiple": 3,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "4000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "30",
+        "revenue": "12000"
+      },
+      "spend": 4000,
+      "breakEven": 3.3333333333333335,
+      "postAdDollars": -400,
+      "postAdMargin": -3.3333333333333335
+    },
+    {
+      "margin": 30,
+      "multiple": 4,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "3000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "30",
+        "revenue": "12000"
+      },
+      "spend": 3000,
+      "breakEven": 3.3333333333333335,
+      "postAdDollars": 600,
+      "postAdMargin": 5
+    },
+    {
+      "margin": 30,
+      "multiple": 5,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "2400"
+      },
+      "thresholdValues": {
+        "contribution_margin": "30",
+        "revenue": "12000"
+      },
+      "spend": 2400,
+      "breakEven": 3.3333333333333335,
+      "postAdDollars": 1200,
+      "postAdMargin": 10
+    },
+    {
+      "margin": 30,
+      "multiple": 6,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "2000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "30",
+        "revenue": "12000"
+      },
+      "spend": 2000,
+      "breakEven": 3.3333333333333335,
+      "postAdDollars": 1600,
+      "postAdMargin": 13.333333333333334
+    },
+    {
+      "margin": 40,
+      "multiple": 2,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "6000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "40",
+        "revenue": "12000"
+      },
+      "spend": 6000,
+      "breakEven": 2.5,
+      "postAdDollars": -1200,
+      "postAdMargin": -10
+    },
+    {
+      "margin": 40,
+      "multiple": 3,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "4000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "40",
+        "revenue": "12000"
+      },
+      "spend": 4000,
+      "breakEven": 2.5,
+      "postAdDollars": 800,
+      "postAdMargin": 6.666666666666667
+    },
+    {
+      "margin": 40,
+      "multiple": 4,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "3000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "40",
+        "revenue": "12000"
+      },
+      "spend": 3000,
+      "breakEven": 2.5,
+      "postAdDollars": 1800,
+      "postAdMargin": 15
+    },
+    {
+      "margin": 40,
+      "multiple": 5,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "2400"
+      },
+      "thresholdValues": {
+        "contribution_margin": "40",
+        "revenue": "12000"
+      },
+      "spend": 2400,
+      "breakEven": 2.5,
+      "postAdDollars": 2400,
+      "postAdMargin": 20
+    },
+    {
+      "margin": 40,
+      "multiple": 6,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "2000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "40",
+        "revenue": "12000"
+      },
+      "spend": 2000,
+      "breakEven": 2.5,
+      "postAdDollars": 2800,
+      "postAdMargin": 23.333333333333332
+    },
+    {
+      "margin": 50,
+      "multiple": 2,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "6000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "50",
+        "revenue": "12000"
+      },
+      "spend": 6000,
+      "breakEven": 2,
+      "postAdDollars": 0,
+      "postAdMargin": 0
+    },
+    {
+      "margin": 50,
+      "multiple": 3,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "4000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "50",
+        "revenue": "12000"
+      },
+      "spend": 4000,
+      "breakEven": 2,
+      "postAdDollars": 2000,
+      "postAdMargin": 16.666666666666664
+    },
+    {
+      "margin": 50,
+      "multiple": 4,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "3000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "50",
+        "revenue": "12000"
+      },
+      "spend": 3000,
+      "breakEven": 2,
+      "postAdDollars": 3000,
+      "postAdMargin": 25
+    },
+    {
+      "margin": 50,
+      "multiple": 5,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "2400"
+      },
+      "thresholdValues": {
+        "contribution_margin": "50",
+        "revenue": "12000"
+      },
+      "spend": 2400,
+      "breakEven": 2,
+      "postAdDollars": 3600,
+      "postAdMargin": 30
+    },
+    {
+      "margin": 50,
+      "multiple": 6,
+      "actualValues": {
+        "revenue": "12000",
+        "spend": "2000"
+      },
+      "thresholdValues": {
+        "contribution_margin": "50",
+        "revenue": "12000"
+      },
+      "spend": 2000,
+      "breakEven": 2,
+      "postAdDollars": 4000,
+      "postAdMargin": 33.33333333333333
+    }
+  ]
+}

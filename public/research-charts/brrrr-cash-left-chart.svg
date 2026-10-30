@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="453.6pt" viewBox="0 0 720 453.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-30</dc:date>
+    <dc:description>Hypothetical model sensitivity analysis; not observed financial outcomes.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 453.6 
+L 720 453.6 
+L 720 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 93.6 326.592 
+L 691.2 326.592 
+L 691.2 90.72 
+L 93.6 90.72 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m4a74f58482" d="M 0 0 
+L 0 3.5 
+" style="stroke: #34445b; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m4a74f58482" x="158.230721" y="326.592" style="fill: #34445b; stroke: #34445b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #34445b" x="158.230721" y="341.950281" transform="rotate(-0 158.230721 341.950281)">225</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m4a74f58482" x="314.343574" y="326.592" style="fill: #34445b; stroke: #34445b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #34445b" x="314.343574" y="341.950281" transform="rotate(-0 314.343574 341.950281)">250</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m4a74f58482" x="470.456426" y="326.592" style="fill: #34445b; stroke: #34445b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #34445b" x="470.456426" y="341.950281" transform="rotate(-0 470.456426 341.950281)">275</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m4a74f58482" x="626.569279" y="326.592" style="fill: #34445b; stroke: #34445b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #34445b" x="626.569279" y="341.950281" transform="rotate(-0 626.569279 341.950281)">300</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #34445b" x="392.4" y="356.596219" transform="rotate(-0 392.4 356.596219)">After-repair value assumption (thousand USD)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <path d="M 93.6 309.771229 
+L 691.2 309.771229 
+" clip-path="url(#pa7ead6401d)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <defs>
+       <path id="mba3c8ed484" d="M 0 0 
+L -3.5 0 
+" style="stroke: #34445b; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mba3c8ed484" x="93.6" y="309.771229" style="fill: #34445b; stroke: #34445b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #34445b" x="86.6" y="313.95037" transform="rotate(-0 86.6 313.95037)">-$15,000</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <path d="M 93.6 252.590138 
+L 691.2 252.590138 
+" clip-path="url(#pa7ead6401d)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#mba3c8ed484" x="93.6" y="252.590138" style="fill: #34445b; stroke: #34445b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #34445b" x="86.6" y="256.769279" transform="rotate(-0 86.6 256.769279)">$0</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <path d="M 93.6 195.409047 
+L 691.2 195.409047 
+" clip-path="url(#pa7ead6401d)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#mba3c8ed484" x="93.6" y="195.409047" style="fill: #34445b; stroke: #34445b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #34445b" x="86.6" y="199.588188" transform="rotate(-0 86.6 199.588188)">$15,000</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <path d="M 93.6 138.227956 
+L 691.2 138.227956 
+" clip-path="url(#pa7ead6401d)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#mba3c8ed484" x="93.6" y="138.227956" style="fill: #34445b; stroke: #34445b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #34445b" x="86.6" y="142.407097" transform="rotate(-0 86.6 142.407097)">$30,000</text>
+     </g>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #34445b" x="30.855313" y="208.656" transform="rotate(-90 30.855313 208.656)">Signed cash remaining (USD)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 120.763636 252.590138 
+L 195.697806 252.590138 
+L 195.697806 101.441455 
+L 120.763636 101.441455 
+z
+" clip-path="url(#pa7ead6401d)" style="fill: #3162bc"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 276.876489 252.590138 
+L 351.810658 252.590138 
+L 351.810658 172.917818 
+L 276.876489 172.917818 
+z
+" clip-path="url(#pa7ead6401d)" style="fill: #3162bc"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 432.989342 252.590138 
+L 507.923511 252.590138 
+L 507.923511 244.394182 
+L 432.989342 244.394182 
+z
+" clip-path="url(#pa7ead6401d)" style="fill: #3162bc"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 589.102194 252.590138 
+L 664.036364 252.590138 
+L 664.036364 315.870545 
+L 589.102194 315.870545 
+z
+" clip-path="url(#pa7ead6401d)" style="fill: #3162bc"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 93.6 252.590138 
+L 691.2 252.590138 
+" clip-path="url(#pa7ead6401d)" style="fill: none; stroke: #8c99ad; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 93.6 326.592 
+L 93.6 90.72 
+" style="fill: none; stroke: #b5c1d1; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 93.6 326.592 
+L 691.2 326.592 
+" style="fill: none; stroke: #b5c1d1; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+  </g>
+  <g id="text_11">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172236" x="93.6" y="39.3735" transform="rotate(-0 93.6 39.3735)">More refinance borrowing leaves less cash in the deal</text>
+  </g>
+  <g id="text_12">
+   <!-- 7% rate slice of 12 hypothetical cases. 75% LTV; $84,400 pre-refinance cash; $4,000 refinance costs. -->
+   <g style="fill: #4b5d75" transform="translate(93.6 387.864)">
+    <text>
+     <tspan x="0" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">7</tspan>
+     <tspan x="5.726074" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">%</tspan>
+     <tspan x="14.277832" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="17.138672" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">r</tspan>
+     <tspan x="20.838867" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">a</tspan>
+     <tspan x="26.354004" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">t</tspan>
+     <tspan x="29.882812" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">e</tspan>
+     <tspan x="35.419922" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="38.280762" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">s</tspan>
+     <tspan x="42.969727" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">l</tspan>
+     <tspan x="45.470215" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">i</tspan>
+     <tspan x="47.970703" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">c</tspan>
+     <tspan x="52.918945" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">e</tspan>
+     <tspan x="58.456055" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="61.316895" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">o</tspan>
+     <tspan x="66.823242" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">f</tspan>
+     <tspan x="69.991699" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="72.852539" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">1</tspan>
+     <tspan x="78.578613" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">2</tspan>
+     <tspan x="84.304688" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="87.165527" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">h</tspan>
+     <tspan x="92.869629" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">y</tspan>
+     <tspan x="98.195801" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">p</tspan>
+     <tspan x="103.908691" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">o</tspan>
+     <tspan x="109.415039" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">t</tspan>
+     <tspan x="112.943848" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">h</tspan>
+     <tspan x="118.647949" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">e</tspan>
+     <tspan x="124.185059" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">t</tspan>
+     <tspan x="127.713867" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">i</tspan>
+     <tspan x="130.214355" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">c</tspan>
+     <tspan x="135.162598" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">a</tspan>
+     <tspan x="140.677734" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">l</tspan>
+     <tspan x="143.178223" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="146.039062" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">c</tspan>
+     <tspan x="150.987305" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">a</tspan>
+     <tspan x="156.502441" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">s</tspan>
+     <tspan x="161.191406" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">e</tspan>
+     <tspan x="166.728516" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">s</tspan>
+     <tspan x="171.41748" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">.</tspan>
+     <tspan x="174.27832" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="177.13916" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">7</tspan>
+     <tspan x="182.865234" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">5</tspan>
+     <tspan x="188.591309" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">%</tspan>
+     <tspan x="197.143066" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="200.003906" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">L</tspan>
+     <tspan x="205.018066" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">T</tspan>
+     <tspan x="210.515625" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">V</tspan>
+     <tspan x="216.672363" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">;</tspan>
+     <tspan x="219.70459" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="222.56543" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">8</tspan>
+     <tspan x="228.291504" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">4</tspan>
+     <tspan x="234.017578" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">,</tspan>
+     <tspan x="238.631836" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">4</tspan>
+     <tspan x="244.35791" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">0</tspan>
+     <tspan x="250.083984" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">0</tspan>
+     <tspan x="272.513672" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">−</tspan>
+     <tspan x="344.979492" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">;</tspan>
+     <tspan x="349.765137" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">4</tspan>
+     <tspan x="355.491211" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">,</tspan>
+     <tspan x="358.352051" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">0</tspan>
+     <tspan x="364.078125" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">0</tspan>
+     <tspan x="369.804199" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">0</tspan>
+     <tspan x="375.530273" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="378.391113" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">r</tspan>
+     <tspan x="382.091309" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">e</tspan>
+     <tspan x="387.628418" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">f</tspan>
+     <tspan x="390.796875" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">i</tspan>
+     <tspan x="393.297363" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">n</tspan>
+     <tspan x="399.001465" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">a</tspan>
+     <tspan x="404.516602" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">n</tspan>
+     <tspan x="410.220703" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">c</tspan>
+     <tspan x="415.168945" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">e</tspan>
+     <tspan x="420.706055" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75"> </tspan>
+     <tspan x="423.566895" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">c</tspan>
+     <tspan x="428.515137" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">o</tspan>
+     <tspan x="434.021484" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">s</tspan>
+     <tspan x="438.710449" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">t</tspan>
+     <tspan x="442.239258" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">s</tspan>
+     <tspan x="446.928223" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">.</tspan>
+     <tspan x="255.810059" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">p</tspan>
+     <tspan x="261.522949" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">r</tspan>
+     <tspan x="265.223145" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">e</tspan>
+     <tspan x="281.808105" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">r</tspan>
+     <tspan x="285.508301" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">e</tspan>
+     <tspan x="291.04541" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">f</tspan>
+     <tspan x="294.213867" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">i</tspan>
+     <tspan x="296.714355" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">n</tspan>
+     <tspan x="302.418457" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">a</tspan>
+     <tspan x="307.933594" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">n</tspan>
+     <tspan x="313.637695" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">c</tspan>
+     <tspan x="318.585938" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">e</tspan>
+     <tspan x="324.123047" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">c</tspan>
+     <tspan x="329.071289" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">a</tspan>
+     <tspan x="334.586426" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">s</tspan>
+     <tspan x="339.275391" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75">h</tspan>
+    </text>
+   </g>
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75" transform="translate(93.6 400.011891)">Negative cash remaining means financed cash above initial investment, not profit. Loan eligibility is not tested.</text>
+  </g>
+  <g id="text_13">
+   <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #6255aa" x="93.6" y="424.116" transform="rotate(-0 93.6 424.116)">CalculatorFree.io | Model scenarios checked October 30, 2026</text>
+  </g>
+  <g id="text_14">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4b5d75" x="93.6" y="437.724" transform="rotate(-0 93.6 437.724)">https://www.calculatorfree.io/guides/brrrr-refinance-cash-flow-analysis/</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa7ead6401d">
+   <rect x="93.6" y="90.72" width="597.6" height="235.872"/>
+  </clipPath>
+ </defs>
+</svg>
