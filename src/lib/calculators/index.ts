@@ -1,3 +1,5 @@
+import {rothLadderCalculator} from './roth-conversion-ladder';
+import {dripCalculator} from './drip';
 import {coveredCallCalculator} from './covered-call';
 import {houseHackingCalculator} from './house-hacking';
 import {mortgageInvestCalculator} from './mortgage-vs-invest';
@@ -27,7 +29,7 @@ import { everydayCalculators } from "./everyday";
 import { otherCalculators } from "./other";
 import { defaults, type Calculator, type Values, type Result } from "../types";
 export const calculators: Calculator[] = [
-  coveredCallCalculator, houseHackingCalculator,mortgageInvestCalculator,cashOnCashCalculator,brrrrCalculator,baristaFireCalculator,selfEmploymentTaxCalculator,hsaCalculator,debtSnowball,debtAvalanche,leanFireCalculator,fatFireCalculator,noiCalculator,fireCalculator,mirrCalculator,
+  rothLadderCalculator, dripCalculator, coveredCallCalculator, houseHackingCalculator,mortgageInvestCalculator,cashOnCashCalculator,brrrrCalculator,baristaFireCalculator,selfEmploymentTaxCalculator,hsaCalculator,debtSnowball,debtAvalanche,leanFireCalculator,fatFireCalculator,noiCalculator,fireCalculator,mirrCalculator,
   coastFire,
   ...businessTools,
   ...evergreenCalculators,

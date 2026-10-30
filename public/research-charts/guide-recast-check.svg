@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="504pt" viewBox="0 0 792 504" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-30</dc:date>
+    <dc:description>$300,000; 6%; 25 years. Both alternatives use the same lump sum. Future interest excludes the $300 recast fee; later monthly budgets differ.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 504 
+L 792 504 
+L 792 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 118.8 342.72 
+L 768.24 342.72 
+L 768.24 90.72 
+L 118.8 90.72 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m302a6042ca" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m302a6042ca" x="148.32" y="342.72" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="148.32" y="357.318437" transform="rotate(-0 148.32 357.318437)">10000</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m302a6042ca" x="295.92" y="342.72" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="295.92" y="357.318437" transform="rotate(-0 295.92 357.318437)">20000</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m302a6042ca" x="443.52" y="342.72" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="443.52" y="357.318437" transform="rotate(-0 443.52 357.318437)">30000</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m302a6042ca" x="591.12" y="342.72" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="591.12" y="357.318437" transform="rotate(-0 591.12 357.318437)">40000</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m302a6042ca" x="738.72" y="342.72" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="738.72" y="357.318437" transform="rotate(-0 738.72 357.318437)">50000</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #34445b" x="443.52" y="370.996562" transform="rotate(-0 443.52 370.996562)">Principal paid now (USD)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <path d="M 118.8 342.72 
+L 768.24 342.72 
+" clip-path="url(#p9e336f9e63)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7">
+      <defs>
+       <path id="m4d7eaed9da" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m4d7eaed9da" x="118.8" y="342.72" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="111.8" y="346.519219" transform="rotate(-0 111.8 346.519219)">$0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <path d="M 118.8 288.01838 
+L 768.24 288.01838 
+" clip-path="url(#p9e336f9e63)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m4d7eaed9da" x="118.8" y="288.01838" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="111.8" y="291.817599" transform="rotate(-0 111.8 291.817599)">$60,000</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10">
+      <path d="M 118.8 233.31676 
+L 768.24 233.31676 
+" clip-path="url(#p9e336f9e63)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m4d7eaed9da" x="118.8" y="233.31676" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="111.8" y="237.115979" transform="rotate(-0 111.8 237.115979)">$120,000</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12">
+      <path d="M 118.8 178.61514 
+L 768.24 178.61514 
+" clip-path="url(#p9e336f9e63)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m4d7eaed9da" x="118.8" y="178.61514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="111.8" y="182.414359" transform="rotate(-0 111.8 182.414359)">$180,000</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_14">
+      <path d="M 118.8 123.91352 
+L 768.24 123.91352 
+" clip-path="url(#p9e336f9e63)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m4d7eaed9da" x="118.8" y="123.91352" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="111.8" y="127.712739" transform="rotate(-0 111.8 127.712739)">$240,000</text>
+     </g>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #34445b" x="58.004687" y="216.72" transform="rotate(-90 58.004687 216.72)">Modeled amount (USD)</text>
+    </g>
+   </g>
+   <g id="line2d_16">
+    <path d="M 148.32 96.068372 
+L 295.92 104.573601 
+L 443.52 113.078829 
+L 591.12 121.584058 
+L 738.72 130.089286 
+" clip-path="url(#p9e336f9e63)" style="fill: none; stroke: #3162bc; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="md3697a0009" d="M 0 3 
+C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
+C 2.683901 1.55874 3 0.795609 3 0 
+C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
+C 1.55874 -2.683901 0.795609 -3 0 -3 
+C -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 
+C -2.683901 -1.55874 -3 -0.795609 -3 0 
+C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 
+C -1.55874 2.683901 -0.795609 3 0 3 
+z
+" style="stroke: #3162bc"/>
+    </defs>
+    <g clip-path="url(#p9e336f9e63)">
+     <use xlink:href="#md3697a0009" x="148.32" y="96.068372" style="fill: #3162bc; stroke: #3162bc"/>
+     <use xlink:href="#md3697a0009" x="295.92" y="104.573601" style="fill: #3162bc; stroke: #3162bc"/>
+     <use xlink:href="#md3697a0009" x="443.52" y="113.078829" style="fill: #3162bc; stroke: #3162bc"/>
+     <use xlink:href="#md3697a0009" x="591.12" y="121.584058" style="fill: #3162bc; stroke: #3162bc"/>
+     <use xlink:href="#md3697a0009" x="738.72" y="130.089286" style="fill: #3162bc; stroke: #3162bc"/>
+    </g>
+   </g>
+   <g id="line2d_17">
+    <path d="M 148.32 117.064791 
+L 295.92 142.757865 
+L 443.52 165.327386 
+L 591.12 185.288091 
+L 738.72 203.035814 
+" clip-path="url(#p9e336f9e63)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ab4a18; stroke-width: 1.5"/>
+    <defs>
+     <path id="m1c8cf7eaf8" d="M -3 3 
+L 3 3 
+L 3 -3 
+L -3 -3 
+z
+" style="stroke: #ab4a18; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#p9e336f9e63)">
+     <use xlink:href="#m1c8cf7eaf8" x="148.32" y="117.064791" style="fill: #ab4a18; stroke: #ab4a18; stroke-linejoin: miter"/>
+     <use xlink:href="#m1c8cf7eaf8" x="295.92" y="142.757865" style="fill: #ab4a18; stroke: #ab4a18; stroke-linejoin: miter"/>
+     <use xlink:href="#m1c8cf7eaf8" x="443.52" y="165.327386" style="fill: #ab4a18; stroke: #ab4a18; stroke-linejoin: miter"/>
+     <use xlink:href="#m1c8cf7eaf8" x="591.12" y="185.288091" style="fill: #ab4a18; stroke: #ab4a18; stroke-linejoin: miter"/>
+     <use xlink:href="#m1c8cf7eaf8" x="738.72" y="203.035814" style="fill: #ab4a18; stroke: #ab4a18; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 118.8 342.72 
+L 118.8 90.72 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 118.8 342.72 
+L 768.24 342.72 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_18">
+     <path d="M 126.9 316.387969 
+L 135.9 316.387969 
+L 144.9 316.387969 
+" style="fill: none; stroke: #3162bc; stroke-width: 1.5; stroke-linecap: square"/>
+     <g>
+      <use xlink:href="#md3697a0009" x="135.9" y="316.387969" style="fill: #3162bc; stroke: #3162bc"/>
+     </g>
+    </g>
+    <g id="text_13">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172236" x="152.1" y="319.537969" transform="rotate(-0 152.1 319.537969)">Recast: future interest</text>
+    </g>
+    <g id="line2d_19">
+     <path d="M 126.9 329.598281 
+L 135.9 329.598281 
+L 144.9 329.598281 
+" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ab4a18; stroke-width: 1.5"/>
+     <g>
+      <use xlink:href="#m1c8cf7eaf8" x="135.9" y="329.598281" style="fill: #ab4a18; stroke: #ab4a18; stroke-linejoin: miter"/>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172236" x="152.1" y="332.748281" transform="rotate(-0 152.1 332.748281)">Keep payment: future interest</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_15">
+   <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172236" x="118.8" y="35.837813" transform="rotate(-0 118.8 35.837813)">Model check: Mortgage Recast vs. Refinance</text>
+  </g>
+  <g id="text_16">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75" transform="translate(118.8 399.958594)">$300,000; 6%; 25 years. Both alternatives use the same lump sum. Future interest excludes the $300 recast fee;</text>
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4b5d75" transform="translate(118.8 412.088203)">later monthly budgets differ.</text>
+  </g>
+  <g id="text_17">
+   <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #6255aa" x="118.8" y="458.64" transform="rotate(-0 118.8 458.64)">CalculatorFree.io | 5 hypothetical deterministic cases | Checked October 30, 2026</text>
+  </g>
+  <g id="text_18">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4b5d75" x="118.8" y="478.8" transform="rotate(-0 118.8 478.8)">https://www.calculatorfree.io/guides/mortgage-recast-vs-refinance/</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9e336f9e63">
+   <rect x="118.8" y="90.72" width="649.44" height="252"/>
+  </clipPath>
+ </defs>
+</svg>

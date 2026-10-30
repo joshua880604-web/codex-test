@@ -6,7 +6,14 @@ Financial calculators are the site's primary focus. The links below are a curate
 
 Interactive calculations run in the browser and require JavaScript. Default inputs and results are illustrations; estimates depend on the entered values, selected mode, timing, and rounding conventions. Future return and inflation presets are editable assumptions. General financial mathematics is not a jurisdiction-specific tax model; tax and retirement rules apply only to the jurisdictions and years stated on each page. Currency conversion uses a dated bundled reference snapshot or a manually entered rate. Consult the methodology and each tool's scope before interpreting a result.
 
+Reviewed: October 30, 2026. This is a selected navigation file, not the full site inventory. Use the sitemap for all canonical pages and the visible page for current assumptions and review dates.
+
 ## Start here
+
+- [Guides](https://www.calculatorfree.io/guides/): Decision guides, worked examples and reproducible hypothetical model analyses linked to the relevant calculators.
+- [Retirement calculator directory](https://www.calculatorfree.io/retirement-calculators): Retirement income, account rules and financial-independence planning tools.
+- [Business finance calculator directory](https://www.calculatorfree.io/business-calculators): Advertising, shipment costs, profitability, liquidity and business financing tools.
+- [Tax and income calculator directory](https://www.calculatorfree.io/tax-income-calculators): Supported U.S. tax-year estimates and income conversions; check each model’s jurisdiction and exclusions.
 
 - [Financial calculator directory](https://www.calculatorfree.io/financial-calculator): Browse the site's financial tools and supporting general-purpose calculators.
 - [Calculation methodology and sources](https://www.calculatorfree.io/methodology): Validation approach, illustrative defaults, data versions, timing, rounding, and model limitations.
@@ -14,6 +21,13 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 - [Canonical sitemap](https://www.calculatorfree.io/sitemap.xml): Complete canonical page inventory; calculator modes share their parent page's canonical URL.
 
 ## Mortgage and housing
+
+- [BRRRR Calculator](https://www.calculatorfree.io/brrrr-calculator): Model one USD purchase, rehab, rental and refinance: cash left in the deal, refinance proceeds and rental cash flow. Refinance proceeds are debt, not profit; no repeated-deal simulation.
+- [Cash-on-Cash Return Calculator](https://www.calculatorfree.io/cash-on-cash-return-calculator): Calculate annual cash yield or use a first-year rental worksheet; cash flow after debt service differs from NOI and total investment return.
+- [House Hacking Calculator](https://www.calculatorfree.io/house-hacking-calculator): Estimate an owner-occupied property’s monthly housing cash budget with rent from other spaces; not a tax return or lender approval.
+- [Pay Off Mortgage vs. Invest Calculator](https://www.calculatorfree.io/pay-off-mortgage-vs-invest-calculator): Compare two equal-budget paths over an entered horizon using an assumed investment return; future returns are not guaranteed.
+- [Rent vs. Buy Calculator](https://www.calculatorfree.io/rent-vs-buy-calculator): Compare modeled renting and ownership paths under entered costs, appreciation and investment assumptions.
+- [HELOC Calculator](https://www.calculatorfree.io/heloc-calculator): Estimate payments under the supported draw and repayment assumptions; not a live lender rate or approval.
 
 - [NOI Calculator](https://www.calculatorfree.io/noi-calculator): Reconcile rental-property operating income and costs before financing and capital expenditure, with monthly or annual entries.
 
@@ -24,12 +38,21 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 ## Loans and debt
 
+- [Debt Snowball Calculator](https://www.calculatorfree.io/debt-snowball-calculator): Plan smallest-balance-first repayment with entered debts and a total monthly payment budget including minimums.
+- [Debt Avalanche Calculator](https://www.calculatorfree.io/debt-avalanche-calculator): Plan highest-APR-first repayment with entered debts and a total monthly payment budget including minimums.
+- [Multiple Credit Card Payoff Calculator](https://www.calculatorfree.io/multiple-credit-card-payoff-calculator): Model repayment across multiple cards using balances, APRs, minimums and a total monthly budget.
+
 - [Loan and debt calculator directory](https://www.calculatorfree.io/loan-calculators): Choose loan, vehicle financing, credit-card and debt payoff tools by scenario.
 
 - [Loan Calculator](https://www.calculatorfree.io/loan-calculator): Calculate fixed-rate amortized payments, deferred single repayments, or zero-coupon bond present values.
 - [Debt Payoff Calculator](https://www.calculatorfree.io/debt-payoff-calculator): Compare highest-interest-first avalanche and smallest-balance-first snowball strategies using entered debts and payments.
 
 ## Savings and investments
+
+- [DRIP Calculator](https://www.calculatorfree.io/drip-calculator): Compare dividend reinvestment with retaining cash using the same deposits, fractional shares, payout frequency, separate price/dividend growth and flat dividend tax. No live quotes or sale-tax model.
+
+- [Investment Calculator](https://www.calculatorfree.io/investment-calculator): Project investment balances and contributions under the selected rate and timing assumptions; projections are not forecasts.
+- [Covered Call Calculator](https://www.calculatorfree.io/covered-call-calculator): Model a standard stock buy-write payoff at expiry with entered premiums and costs; excludes early assignment and pre-expiry option valuation.
 
 - [Savings and investment calculator directory](https://www.calculatorfree.io/savings-investment-calculators): Choose savings goals, growth projections, investment returns and financial-mathematics tools.
 
@@ -53,10 +76,17 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 ## Retirement planning
 
+- [Roth Conversion Ladder Calculator](https://www.calculatorfree.io/roth-conversion-ladder-calculator): Track separate five-tax-year conversion cohorts, regular contribution basis, outside-cash tax costs and early-bridge gaps. Fully taxable, single-owner annual model ending by planning age 59; no earnings withdrawals, tax-bracket optimizer or age-59½ transition.
+
+- [Lean FIRE Calculator](https://www.calculatorfree.io/lean-fire-calculator): Build a lean spending budget and estimate the financial-independence target and first modeled savings crossing; deterministic assumptions, not a success probability.
+- [Fat FIRE Calculator](https://www.calculatorfree.io/fat-fire-calculator): Build a higher-spending household budget and estimate its financial-independence target under entered assumptions.
+- [Barista FIRE Calculator](https://www.calculatorfree.io/barista-fire-calculator): Model a part-time-income bridge to full retirement with entered spending, income dates and investment assumptions; distinct from stopping contributions under Coast FIRE.
+- [HSA Calculator](https://www.calculatorfree.io/hsa-calculator): Explore U.S. health savings account contributions and growth within the tool’s stated eligibility, tax-year and projection assumptions.
+
 - [FIRE Calculator](https://www.calculatorfree.io/fire-calculator): Full financial-independence target and first savings crossing, in today’s USD. No withdrawal simulation or probability of success.
 
 - [Coast FIRE Calculator](https://www.calculatorfree.io/coast-fire-calculator): Estimate today’s retirement savings threshold, the first modeled crossing and a stop-and-coast path. All amounts are today’s USD; no pre-retirement withdrawals or probability of success is modeled.
-- [How to calculate Coast FIRE](https://www.calculatorfree.io/guides/how-to-calculate-coast-fire/): Formula, age and return comparisons, and the distinction from Barista FIRE.
+- [How to calculate Coast FIRE](https://www.calculatorfree.io/guides/how-to-calculate-coast-fire/): Formula, age and return comparisons, five target-age model cases with chart and CSV, and the distinction from Barista FIRE.
 - [Coast FIRE meaning](https://www.calculatorfree.io/glossary/coast-fire/): Definition, exact real-return formula and a worked savings-threshold example.
 
 - [401(k) Calculator](https://www.calculatorfree.io/401k-calculator): U.S. planning under fixed 2026 contribution and age-based catch-up rules. Limits combine traditional and Roth deferrals; applicable high-earner catch-up must be Roth. The growth projection does not split their tax treatments or project future legal limit changes.
@@ -67,6 +97,8 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 - [Social Security Calculator](https://www.calculatorfree.io/social-security-calculator): Ideal-age planning uses FRA PIA in age-62 dollars, assumed COLA while waiting and after claiming, and a nominal discount rate. Comparison mode uses separately entered nominal claim-date benefit quotes. Earnings records and benefit statements are not retrieved.
 
 ## Tax and income
+
+- [Self-Employment Tax Calculator](https://www.calculatorfree.io/self-employment-tax-calculator): Estimate supported U.S. self-employment taxes under the selected year’s rules and entered earnings; not a complete income-tax return.
 
 - [Income Tax Calculator](https://www.calculatorfree.io/tax-calculator): Estimate selected 2025 or 2026 U.S. federal income tax and withholding balance, including entered eligible passive NIIT income, MFS spouse itemization and year-specific AMT adjustments. The 2026 active-QBI minimum requires the stated eligibility; this is not a complete return-preparation engine.
 - [Salary Calculator](https://www.calculatorfree.io/salary-calculator): Convert pay frequencies and compare unadjusted pay with holiday- and vacation-adjusted pay.
@@ -81,10 +113,49 @@ Interactive calculations run in the browser and require JavaScript. Default inpu
 
 ## Business finance
 
+- [ROAS Calculator](https://www.calculatorfree.io/roas-calculator): Calculate actual, break-even and target-margin return on ad spend using entered revenue, advertising costs and pre-ad margins; ROAS alone is not profit.
+- [Landed Cost Calculator](https://www.calculatorfree.io/landed-cost-calculator): Allocate entered shipment and import costs to estimate landed cost; not a customs classification or live tariff service.
+- [Quick Ratio Calculator](https://www.calculatorfree.io/quick-ratio-calculator): Measure liquidity from quick asset components or by excluding non-quick assets under stated balance-sheet definitions.
+- [Current Ratio Calculator](https://www.calculatorfree.io/current-ratio-calculator): Compare current assets with current liabilities using entered totals or asset components; interpretation depends on business context.
+
 - [Margin Calculator](https://www.calculatorfree.io/margin-calculator): Solve profit, revenue, cost, margin, or markup; separate modes estimate stock and foreign-exchange margin requirements.
 - [Markup Calculator](https://www.calculatorfree.io/markup-calculator): Calculate selling price or cost and convert between markup on cost and margin on revenue.
 - [Break-Even Calculator](https://www.calculatorfree.io/break-even-calculator): Estimate operating break-even under entered cost and pricing assumptions.
 - [Depreciation Calculator](https://www.calculatorfree.io/depreciation-calculator): Compare supported depreciation methods and book-value schedules; calculated book value is not a market-price estimate.
+
+## Selected guides and reproducible model analyses
+
+The six model checks below use hypothetical inputs and deterministic calculations, not observed borrower outcomes, market experiments or return forecasts. Each includes assumptions, numerical tables, charts, downloadable CSV and links to reproduce the calculations.
+
+- [Coast FIRE inflation sensitivity](https://www.calculatorfree.io/guides/coast-fire-inflation-sensitivity/): 15 modeled cases show how nominal return and inflation assumptions change the Coast FIRE threshold.
+- [BRRRR refinance and cash-flow analysis](https://www.calculatorfree.io/guides/brrrr-refinance-cash-flow-analysis/): 12 modeled cases distinguish cash released at refinance from remaining equity, debt service and rental cash flow.
+- [ROAS and profit-margin analysis](https://www.calculatorfree.io/guides/roas-profit-margin-analysis/): 20 modeled cases show why the same advertising return can imply different post-ad contribution results.
+- [Debt snowball vs. avalanche](https://www.calculatorfree.io/guides/debt-snowball-vs-avalanche/): 10 strategy runs across five equal-budget comparisons distinguish first payoff, debt-free timing and interest costs; no claim about behavioral adherence.
+- [Biweekly vs. monthly mortgage payments](https://www.calculatorfree.io/guides/biweekly-vs-monthly-mortgage-payments/): Five rate cases compare standard monthly, biweekly and matched-budget monthly plans. The residual includes payment timing and periodic-rate conventions.
+- [Are mortgage points worth it?](https://www.calculatorfree.io/guides/are-mortgage-points-worth-it/): 12 holding-period and fee cases distinguish cash-flow break-even from interest-and-balance-aware borrowing cost; no tax or opportunity-cost model.
+
+Additional decision guides with five-case model checks, charts, CSV and reproducible inputs:
+
+- [Barista FIRE vs. Coast FIRE](https://www.calculatorfree.io/guides/barista-fire-vs-coast-fire/): Compare part-time income, portfolio withdrawals and stopping retirement contributions; five income-stop-age cases isolate the bridge cash-flow effect.
+- [CD vs. savings account](https://www.calculatorfree.io/guides/cd-vs-savings-account/): Compare access to cash and certificate-of-deposit constraints; five constant-APY model cases quantify one-year dollar differences.
+- [Rent vs. buy a house](https://www.calculatorfree.io/guides/rent-vs-buy-a-house/): Understand housing costs and horizons; five appreciation cases test a common five-year exit with fixed controls.
+- [Roth IRA vs. Traditional IRA](https://www.calculatorfree.io/guides/roth-ira-vs-traditional-ira/): Five equal-pretax-budget cases compare retirement tax assumptions; eligibility, deductibility and future rules require separate checks.
+
+- [Mortgage recast vs. refinance](https://www.calculatorfree.io/guides/mortgage-recast-vs-refinance/): Five lump-sum cases compare recast payment relief with retaining the old payment; interest and liquidity are different objectives.
+- [Paying off a car loan early](https://www.calculatorfree.io/guides/pay-off-car-loan-early/): Five extra-payment budgets quantify fixed-rate interest reductions and their cash requirements.
+- [How much emergency fund?](https://www.calculatorfree.io/guides/how-much-emergency-fund-should-i-have/): Five reserve-month targets distinguish essential expenses, existing cash, funding gaps and deposit timing.
+- [Pay off debt or save?](https://www.calculatorfree.io/guides/should-i-pay-off-debt-or-save/): Five allocations of spare monthly cash quantify debt interest; this is not a terminal-wealth or liquidity valuation.
+- [APR vs. interest rate](https://www.calculatorfree.io/guides/apr-vs-interest-rate/): Five cash-paid fee amounts show why identical loan rates and payments can have different full-term borrowing costs.
+- [Is refinancing worth it?](https://www.calculatorfree.io/guides/is-refinancing-worth-it/): Five new terms separate lower payments from full-lifetime interest and fees; horizons and monthly budgets differ.
+- [Margin vs. markup](https://www.calculatorfree.io/guides/margin-vs-markup/): Five markup assumptions connect unit cost, selling price, gross profit and the different percentage denominators.
+- [How to calculate debt snowball](https://www.calculatorfree.io/guides/how-to-calculate-debt-snowball/): First-month worksheet plus five one-time-payment timing cases for smallest-balance-first repayment.
+- [How to calculate debt avalanche](https://www.calculatorfree.io/guides/how-to-calculate-debt-avalanche/): First-month worksheet plus five one-time-payment timing cases for highest-APR-first repayment.
+
+## For writers and bloggers
+
+- [Embed resources](https://www.calculatorfree.io/embed-resources): The maintained list of supported ad-free embeddable calculators, attribution requirements and embedding guidance. Embed support is limited to the listed tools.
+
+Calculator pages provide Share, Cite and Export controls; Embed appears only where supported. Sharing inputs is opt-in. Citations use the canonical calculator URL. Coast FIRE, BRRRR and ROAS also provide a “For writers & bloggers” snippet kit with scope and limitations. Follow each tool’s attribution and usage terms.
 
 ## Financial reference
 

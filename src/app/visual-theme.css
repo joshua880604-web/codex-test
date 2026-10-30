@@ -205,9 +205,9 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .embed-options iframe{display:block;margin-top:16px;max-width:100%}
 
 /* BRRRR uses grouped full-width controls within a wider deal worksheet. */
-.brrrr-fields,.cash-return-fields,.mortgage-invest-fields,.house-hack-fields,.covered-call-fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px;}
-.calculator-workspace .brrrr-fields .field-row,.calculator-workspace .cash-return-fields .field-row,.calculator-workspace .mortgage-invest-fields .field-row,.calculator-workspace .house-hack-fields .field-row,.calculator-workspace .covered-call-fields .field-row {grid-template-columns:minmax(0,1fr);gap:6px;}
-@media(max-width:600px){.brrrr-fields,.cash-return-fields,.mortgage-invest-fields,.house-hack-fields,.covered-call-fields {grid-template-columns:minmax(0,1fr);gap:8px;}}
+.drip-fields,.brrrr-fields,.cash-return-fields,.mortgage-invest-fields,.house-hack-fields,.covered-call-fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px;}
+.calculator-workspace .drip-fields .field-row,.calculator-workspace .brrrr-fields .field-row,.calculator-workspace .cash-return-fields .field-row,.calculator-workspace .mortgage-invest-fields .field-row,.calculator-workspace .house-hack-fields .field-row,.calculator-workspace .covered-call-fields .field-row {grid-template-columns:minmax(0,1fr);gap:6px;}
+@media(max-width:600px){.drip-fields,.brrrr-fields,.cash-return-fields,.mortgage-invest-fields,.house-hack-fields,.covered-call-fields {grid-template-columns:minmax(0,1fr);gap:8px;}}
 
 .house-hack-comparison {grid-column:1/-1;}
 .house-rental-editor {min-width:0;}
@@ -220,3 +220,5 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .house-rental-actions {display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
 .house-rental-actions span {font-size:12px;}
 .house-rental-editor button:disabled {opacity:.5;cursor:default;}
+
+.coast-scenario-library{margin:16px 0;padding:16px;border:1px solid var(--border,#dbe3ef);border-radius:16px}.coast-scenario-library summary{cursor:pointer;font-weight:700}.coast-scenario-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.coast-scenario-cards section{min-width:0}.coast-scenario-cards button{white-space:normal;text-align:left}.coast-comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:20px}.coast-compare-card{min-width:0}.coast-comparison .field-row{display:block;margin-bottom:16px}.coast-comparison .field-row label{display:block;margin-bottom:8px}.coast-comparison input,.coast-comparison select{width:100%;min-width:0;padding:12px;border:1px solid var(--border,#cbd5e1);border-radius:10px;background:var(--surface,#fff);color:var(--ink,inherit);font:inherit}.coast-comparison small{display:block;margin-top:6px}.coast-comparison .planning-fields{margin-bottom:16px}.coast-comparison-result{margin-top:24px}@media(max-width:700px){.coast-scenario-cards,.coast-comparison-grid{grid-template-columns:minmax(0,1fr)}}

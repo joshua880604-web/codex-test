@@ -3,6 +3,8 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "roth-conversion-ladder": return "U.S. single-owner pre-59½ bridge ending by planning age 59. Fully taxable traditional IRA conversions, separate five-tax-year clocks and outside-cash tax assumptions. No prior conversions, earnings withdrawals, tax brackets, pro-rata basis or retirement-safety determination.";
+    case "drip": return "Single-asset nominal USD scenario with fractional shares and regular dividend intervals. Flat dividend tax at payout; no live quotes, inflation, sale tax, tax lots or fees. The comparison retains dividends as cash earning zero interest.";
     case "debt-snowball":
     case "debt-avalanche": return "Fixed-APR monthly debt projection. Total budget includes all minimums. Compare both methods with the same rollover and one-time payment assumptions; actual statements may use daily interest and changing minimum rules.";
     case "cash-on-cash-return": return mode === "property" ? "First-year USD rental worksheet with actual scheduled P&I, cash-paid acquisition costs and an explicit capital reserve. Cash yield differs from cap rate and total ROI; no sale, refinance or tax calculation." : "One-year pre-income-tax cash yield from your supplied cash flow and cash investment. Monthly input is a recurring amount multiplied by 12, not an annualized total-return percentage.";

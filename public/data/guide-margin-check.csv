@@ -1,0 +1,6 @@
+﻿"Checked on","Data kind","Markup on cost (%)","Selling price","Gross profit per unit","Inputs JSON"
+"2026-10-30","Hypothetical deterministic model case; not observed data","0","100","0","{""cost"":""100"",""markup"":""0""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","25","125","25","{""cost"":""100"",""markup"":""25""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","50","150","50","{""cost"":""100"",""markup"":""50""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","75","175","75","{""cost"":""100"",""markup"":""75""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","100","200","100","{""cost"":""100"",""markup"":""100""}"

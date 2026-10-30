@@ -71,6 +71,7 @@ export default function CalculatorGuide({
             <section key={item.question} id={item.anchor}>
               <h3>{item.question}</h3>
               <p>{item.answer}</p>
+              {item.steps && <ol>{item.steps.map(step => <li key={step}>{step}</li>)}</ol>}
               {item.links && <p>{item.links.map((link,index)=><span key={link.id+link.mode}>{index>0?' · ':''}<SiteLink href={longTailHref(link)}>{link.label}</SiteLink></span>)}</p>}
             </section>
           ))}

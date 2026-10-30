@@ -1,0 +1,6 @@
+﻿"Checked on","Data kind","Month a $1,000 extra payment is credited","Total modeled interest","Inputs JSON"
+"2026-10-30","Hypothetical deterministic model case; not observed data","1","1350.5346057071308","{""debts"":""Card A, 5000, 150, 22\nCard B, 3000, 100, 18"",""budget"":""400"",""rollover"":""Yes"",""once"":""1000"",""once_month"":""1""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","4","1425.961264498793","{""debts"":""Card A, 5000, 150, 22\nCard B, 3000, 100, 18"",""budget"":""400"",""rollover"":""Yes"",""once"":""1000"",""once_month"":""4""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","7","1498.0896680765686","{""debts"":""Card A, 5000, 150, 22\nCard B, 3000, 100, 18"",""budget"":""400"",""rollover"":""Yes"",""once"":""1000"",""once_month"":""7""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","10","1566.5771161213268","{""debts"":""Card A, 5000, 150, 22\nCard B, 3000, 100, 18"",""budget"":""400"",""rollover"":""Yes"",""once"":""1000"",""once_month"":""10""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","13","1631.4690143631055","{""debts"":""Card A, 5000, 150, 22\nCard B, 3000, 100, 18"",""budget"":""400"",""rollover"":""Yes"",""once"":""1000"",""once_month"":""13""}"

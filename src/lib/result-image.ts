@@ -53,6 +53,7 @@ export async function resultImage(title: string, mode: string, metrics: Metric[]
     texts.push({ text, x: brandX, y: 63 + (44 - size), font: font(size, 700), color }); ctx.font = font(size, 700); brandX += ctx.measureText(text).width;
   }
   write(date, 840, 74, 296, 30, muted);
+  if(details.layout!=='summary'){
   const badgeText = 'Free Forever - No Credit Card Required';
   ctx.font = font(30, 700);
   box(left, 146, ctx.measureText(badgeText).width + 84, 58, 'badge', 29);
@@ -61,7 +62,8 @@ export async function resultImage(title: string, mode: string, metrics: Metric[]
     ctx!.fillStyle = '#5967cf'; ctx!.beginPath(); ctx!.arc(left + 29, 175, 11, 0, Math.PI * 2); ctx!.fill();
     ctx!.strokeStyle = '#fff'; ctx!.lineWidth = 2.8; ctx!.lineCap = 'round'; ctx!.lineJoin = 'round'; ctx!.beginPath(); ctx!.moveTo(left + 24, 175); ctx!.lineTo(left + 28, 179); ctx!.lineTo(left + 35, 171); ctx!.stroke();
   });
-  let y = write(title, left, 232, width, 54, ink, 900) + 8;
+  }
+  let y = write(title, left, details.layout==='summary'?152:232, width, details.layout==='summary'?48:54, ink, 900) + 8;
   if (mode.trim().toLowerCase() !== title.trim().toLowerCase()) y = write(mode, left, y, width, 32, muted) + 8;
   y += 22;
   if (metrics[0]) {
@@ -103,7 +105,7 @@ export async function resultImage(title: string, mode: string, metrics: Metric[]
       decorations.push(() => { ctx!.strokeStyle = '#e5ebf4'; ctx!.lineWidth = 1; ctx!.beginPath(); ctx!.moveTo(plot.left, axisY); ctx!.lineTo(plot.right, axisY); ctx!.stroke(); });
     }
     for (const f of [0, .5, 1]) {
-      const time = first.x + (last.x - first.x) * f, label = compact(time);
+      const time = first.x + (last.x - first.x) * f, label = trend.xLabel.startsWith('Tax year')?String(Math.round(time)):compact(time);
       ctx.font = font(30); const length = ctx.measureText(label).width;
       write(label, px(time) - (f === 0 ? 0 : f === 1 ? length : length / 2), plot.bottom + 12, 220, 30, muted);
     }
@@ -120,7 +122,7 @@ export async function resultImage(title: string, mode: string, metrics: Metric[]
     box(left, top, width, y - top); y += 28;
   }
   if (details.includeInputs && details.inputs.length) {
-    y = heading('Inputs & assumptions', y);
+    y = heading(details.inputHeading??'Inputs & assumptions', y);
     for (let i = 0; i < details.inputs.length; i += 2) {
       const top = y; let bottom = y;
       for (let j = i; j < Math.min(i + 2, details.inputs.length); j++) {
@@ -144,9 +146,9 @@ export async function resultImage(title: string, mode: string, metrics: Metric[]
     y += 14;
   }
   const address = resultCardAddress(toolURL), footerURL = address.label.startsWith('LOCAL PREVIEW') ? 'LOCAL PREVIEW • ' + address.url : address.url;
-  const disclaimer = (details.includeInputs ? 'Input details included. ' : 'Input details not included. ') + 'Calculation snapshot, not a quote or guarantee. Review the tool for full details and current rules.';
+  const disclaimer = details.layout==='summary' ? (details.disclosure==='all'?'Entered inputs included. ': 'Selected assumptions shown; other inputs omitted. ')+'Calculation snapshot. Review the full model at the source.' : (details.disclosure==='key' ? 'Selected assumptions included; other entered inputs omitted. ' : details.includeInputs ? 'Input details included. ' : 'Input details not included. ') + 'Calculation snapshot, not a quote or guarantee. Review the tool for full details and current rules.';
   const footerHeight = lines(copy.tagline, width, 30, 600).length * lineHeight(30) + 12 + lineHeight(36) + 12 + lines(footerURL, width, 30).length * lineHeight(30) + 16 + lines(disclaimer, width, 30).length * lineHeight(30);
-  const height = Math.max(1680, Math.ceil(y + footerHeight + 116));
+  const height = Math.max(details.layout==='summary'?1200:1680, Math.ceil(y + footerHeight + 116));
   // Stay below a 16M-pixel canvas for mobile memory. Never silently drop results.
   if (height > 12000) throw new Error('This report is too long for one PNG. Exclude input details or use the result summary and CSV.');
   const footerTop = height - footerHeight - 64;

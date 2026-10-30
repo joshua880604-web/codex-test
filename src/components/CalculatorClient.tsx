@@ -8,7 +8,11 @@ import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode }
 import dynamic from "next/dynamic";
 import {coastFieldVisible} from '@/lib/coast-household';
 const CoastFields=dynamic(()=>import('./CoastPlan'));
+const CoastScenarioLibrary=dynamic(()=>import('./CoastPlan').then(m=>m.CoastScenarioLibrary));
+const CoastComparisonTools=dynamic(()=>import('./CoastPlan').then(m=>m.CoastComparisonTools));
 const CoastResults=dynamic(()=>import('./CoastPlan').then(m=>m.CoastResults));
+const RothLadderFields=dynamic(()=>import('./RothLadderFields'));
+const DripFields=dynamic(()=>import('./DripFields'));
 const CoveredCallFields=dynamic(()=>import('./CoveredCallFields'));
 const HouseHackFields=dynamic(()=>import('./HouseHackPlan'));
 const HouseRentalFields=dynamic(()=>import('./HouseHackPlan').then(m=>m.HouseRentalFields));
@@ -98,7 +102,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const workspace = workspaceLayout(id, mode.id);
   const hasWorkspace = Boolean(workspace);
   const wideReports = hasWorkspace;
-  const prominentTables = ["cd","apr","credit-card","self-employment-tax","barista-fire","brrrr","cash-on-cash-return","mortgage-vs-invest","house-hacking","covered-call"].includes(id);
+  const prominentTables = ["roth-conversion-ladder","drip","cd","apr","credit-card","self-employment-tax","barista-fire","brrrr","cash-on-cash-return","mortgage-vs-invest","house-hacking","covered-call"].includes(id);
   const summary = result && hasWorkspace ? workspaceMetrics(id, mode.id, result) : null;
   const tableRows =
     yearly && result?.annualRows ? result.annualRows : result?.rows;
@@ -114,6 +118,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const compactModes = calc.modes.length >= 4 || id === "savings";
   const payoff = id === "mortgage-payoff";
   const taskModes = Boolean(taskModeGroups[id]) || id === "savings";
+  function loadCoastExample(next:Values,title:string){request.current++;clearScenarios();setCalculating(false);setValues({...next});setResult(null);setError('');setNotice('Example loaded: '+title+'. Review inputs, then Calculate.');setShowResultShare(false);setShowAll(false);setYearly(false);}
   function clearScenarios() { setScenarioBaseline(null); setActiveScenario(null); }
   useEffect(() => {
     if (!hasWorkspace) return;
@@ -521,7 +526,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       !(id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) || (values.mip_method !== "Manual" && ["upfront", "annual_mip", "mip_years"].includes(f.key))))),
     optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
     main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),
-    advanced = ['covered-call','house-hacking','brrrr','barista-fire','lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
+    advanced = ['roth-conversion-ladder','drip','covered-call','house-hacking','brrrr','barista-fire','lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
   return (
     <>
       <div className={"calculator-intro-row"+(motherCopy?" mother-page-intro":"")}><p className="intro">{motherCopy?.intro??calc.intro}</p>{enhancedSharing?<div className="calculator-utility-actions enhanced-sharing-actions"><FavoriteButton id={id}/><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share / Export</button></div>:<FavoriteButton id={id}/>}</div>
@@ -598,6 +603,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         aria-labelledby={!compactModes && calc.modes.length > 1 ? "tab-" + modeId : undefined}
       >
         {id !== "mortgage" && !(motherCopy?.suppressSingleModeDescription&&calc.modes.length===1)&&<p className="mode-description">{mode.description}</p>}
+        {id==='coast-fire'&&<CoastScenarioLibrary onLoad={loadCoastExample}/>}
         <form aria-busy={calculating} onKeyDown={e=>{if(id === "scientific" && (e.target as HTMLElement).tagName === "TEXTAREA" && e.key === "Enter" && !e.shiftKey){e.preventDefault();e.currentTarget.requestSubmit();}}} onSubmit={calculate} className="calculator-form" onInvalidCapture={(e) => {
           const field = e.target as HTMLInputElement;
           const details = field.closest("details");
@@ -605,7 +611,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           setShowResultShare(false);
     setResult(null);
         }}>
-          {['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : id==='covered-call' ? <CoveredCallFields fields={visible} renderField={input}/> : id==='house-hacking' ? <HouseHackFields fields={visible} renderField={input}/> : id==='mortgage-vs-invest' ? <MortgageInvestFields fields={visible} renderField={input}/> : id==='cash-on-cash-return' && mode.id==='property' ? <CashReturnFields fields={visible} renderField={input}/> : id==='brrrr' ? <BrrrrFields fields={visible} renderField={input}/> : id==='barista-fire' ? <BaristaFields fields={visible} renderField={input}/> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
+          {['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : id==='roth-conversion-ladder' ? <RothLadderFields fields={visible} renderField={input}/> : id==='drip' ? <DripFields fields={visible} renderField={input}/> : id==='covered-call' ? <CoveredCallFields fields={visible} renderField={input}/> : id==='house-hacking' ? <HouseHackFields fields={visible} renderField={input}/> : id==='mortgage-vs-invest' ? <MortgageInvestFields fields={visible} renderField={input}/> : id==='cash-on-cash-return' && mode.id==='property' ? <CashReturnFields fields={visible} renderField={input}/> : id==='brrrr' ? <BrrrrFields fields={visible} renderField={input}/> : id==='barista-fire' ? <BaristaFields fields={visible} renderField={input}/> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : main.map(f => input(f))}
           {id !== "mortgage" && id !== "marriage-tax" && advanced.length > 0 && (
             <details className="advanced" key={mode.id}>
               <summary>More options ({advanced.length})</summary>
@@ -735,6 +741,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         </div>
       )}
       </div>
+      {id==='coast-fire'&&<CoastComparisonTools values={values} mode={mode}/>}
       {wideReports && result && <>
         {id === 'coast-fire' && <CoastResults values={values} result={result} onDownload={download}/>}
         {['lean-fire','fat-fire'].includes(id) && <FireBudgetReport result={result} onDownload={download}/>}

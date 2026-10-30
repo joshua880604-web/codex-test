@@ -1,0 +1,29 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {rothLadderPlan,rothLadderCalculator as calc} from '../src/lib/calculators/roth-conversion-ladder';import {defaults,type Values} from '../src/lib/types';import fixtures from './fixtures/roth-ladder-expected.json';import {runClientCalculation} from '../src/lib/calculate-client';import {resultTrend} from '../src/lib/result-trend';import {resultExportData} from '../src/lib/result-export';import {guides,relatedCalculatorIds} from '../src/lib/guides';import {sitemapEntries,calculatorSchema} from '../src/lib/seo';import {hasShareTools,hasEmbed} from '../src/lib/share-tools';import {calculatorCategory} from '../src/lib/calculator-categories';
+const zero={...defaults(calc.modes[0]),pretax_return:'0',roth_return:'0'};const val=(r:ReturnType<typeof rothLadderPlan>,label:string)=>r.metrics.find(m=>m.label===label)!.value;const close=(a:number,b:number)=>assert.ok(Math.abs(a-b)<1e-6,a+' != '+b);
+test('Roth ladder matches all59 independent Decimal fixtures, annual cash ledgers and FIFO cohort records',()=>{
+ assert.equal(fixtures.length,59);for(const f of fixtures){const r=rothLadderPlan(f.values);r.metrics.forEach((m,i)=>close(m.value,Number(f.metrics[i])));r.rows!.forEach((row,i)=>row.forEach((v,j)=>close(Number(v),Number(f.rows[i][j]))));assert.equal(r.additionalTables![0].rows.length,f.rungs.length);r.additionalTables![0].rows.forEach((row,i)=>row.forEach((v,j)=>j===2?assert.equal(v,f.rungs[i][j]):close(Number(v),Number(f.rungs[i][j]))));}
+});
+test('Conversions mature on January1 Y+5, never Y+4; earnings never enlarge the principal record',()=>{
+ const r=rothLadderPlan(zero);assert.equal(r.additionalTables![0].rows[0][2],'January 1, 2032');r.rows!.slice(0,5).forEach(row=>assert.equal(row[9],0));assert.equal(r.rows![5][9],40000);close(val(r,'Bridge cash required for this modeled path'),280000);close(val(r,'Ending bridge cash'),20000);close(val(r,'Ending Roth IRA market value (not all accessible)'),200000);
+ const gain=rothLadderPlan({...zero,roth_return:'50'});close(val(gain,'Living costs funded by seasoned conversions'),200000);assert.ok(val(gain,'Ending Roth IRA market value (not all accessible)')>200000);
+});
+test('Tax is paid outside Roth; unpaid taxes are explicit after cash runs out',()=>{
+ const r=rothLadderPlan({...zero,bridge:'240000'});close(val(r,'Total actually converted'),400000);close(val(r,'Estimated conversion tax'),80000);close(val(r,'Unfunded conversion tax'),40000);close(val(r,'Unfunded living costs'),0);assert.equal(val(r,'First cash shortfall tax year'),2032);assert.match(r.metrics.find(m=>m.label==='Modeled funding status')!.displayValue!,/shortfall/);
+ const noCash=rothLadderPlan({...zero,bridge:'0'});close(val(noCash,'Conversion tax paid from cash'),0);close(val(noCash,'Unfunded conversion tax'),80000);close(val(noCash,'Unfunded living costs'),200000);close(val(noCash,'Additional bridge cash needed'),280000);
+});
+test('Regular contribution basis is spent first and all withdrawals are capped by market value',()=>{
+ const r=rothLadderPlan({...zero,roth_basis:'50000',roth_return:'-95',conversion:'0'});assert.equal(r.rows![0][8],40000);close(Number(r.rows![1][8]),500);assert.ok(r.rows!.every(row=>Number(row[13])>=0&&Number(row[14])>=0));
+ for(const f of fixtures){const r=rothLadderPlan(f.values);for(const row of r.rows!){close(Number(row[4]),Number(row[5])+Number(row[6]));close(Number(row[7]),Number(row[8])+Number(row[9])+Number(row[10])+Number(row[11]));}close(val(r,'Bridge cash required for this modeled path'),val(r,'Living costs funded by bridge cash')+val(r,'Estimated conversion tax')+val(r,'Unfunded living costs'));}
+});
+test('Insufficient traditional value caps conversions without inventing basis or funds',()=>{
+ const r=rothLadderPlan({...zero,pretax:'15000'});close(val(r,'Total actually converted'),15000);close(val(r,'Estimated conversion tax'),3000);close(val(r,'Planned conversions not completed due to account balance'),385000);assert.equal(r.additionalTables![0].rows.length,1);
+});
+test('Roth ladder rejects unsupported ages, horizons, tax assumptions and non-finite amounts',()=>{
+ for(const patch of [{age:'60'},{age:'40.5'},{years:'20'},{age:'58',years:'2'},{start_year:'1999'},{start_year:'2027.5'},{years:'0'},{years:'1.5'},{pretax:'-1'},{bridge:'NaN'},{roth_basis:''},{tax:'101'},{conversion_growth:'-100'},{roth_return:'101'},{pretax:'1000000000001'}] as Values[])assert.throws(()=>rothLadderPlan({...zero,...patch}));
+});
+test('Ladder client dispatch, account chart and export preserve market-value versus available-principal distinctions',async()=>{
+ const r=rothLadderPlan(zero);assert.deepEqual(await runClientCalculation(calc.id,calc.category,'bridge',zero),r);const chart=resultTrend(calc.id,'bridge',zero,r)!;assert.ok(chart);assert.equal(chart.points.at(-1)!.balance,r.rows!.at(-1)![12]);assert.equal(chart.points.at(-1)!.comparison,r.rows!.at(-1)![13]);assert.match(chart.help,/unseasoned principal and earnings/);const data=await resultExportData(calc.id,calc.modes[0],zero,r);assert.ok(data.notes.some(n=>n.includes('Unpaid tax')));assert.ok(data.scope?.includes('pro-rata'));
+});
+test('Ladder has one canonical page, relevant retirement links, real questions and gated sharing without fake ratings',()=>{
+ const config={origin:'https://www.calculatorfree.io',indexable:true};assert.equal(sitemapEntries(config).filter(e=>e.url===config.origin+'/roth-conversion-ladder-calculator').length,1);assert.equal(calculatorCategory(calc.id)!.id,'retirement');for(const id of ['ira','roth-ira','fire','barista-fire'])assert.ok(relatedCalculatorIds[id].includes(calc.id));assert.ok(guides[calc.id].questions.length>=8);assert.ok(hasShareTools(calc.id));assert.equal(hasEmbed(calc.id),false);const schema=JSON.stringify(calculatorSchema(calc,config));assert.match(schema,/WebApplication/);assert.doesNotMatch(schema,/aggregateRating/);
+});

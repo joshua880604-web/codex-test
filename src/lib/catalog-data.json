@@ -652,5 +652,17 @@
     "title": "Covered Call Calculator",
     "category": "Investment",
     "local_route": "/covered-call-calculator.html"
+  },
+  {
+    "id": "drip",
+    "title": "DRIP Calculator",
+    "category": "Investment",
+    "local_route": "/drip-calculator.html"
+  },
+  {
+    "id": "roth-conversion-ladder",
+    "title": "Roth Conversion Ladder Calculator",
+    "category": "Retirement",
+    "local_route": "/roth-conversion-ladder-calculator.html"
   }
 ]

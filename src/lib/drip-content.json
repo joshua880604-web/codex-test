@@ -1,0 +1,259 @@
+{
+  "drip": {
+    "updatedOn": "2026-10-30",
+    "summary": "This free DRIP calculator projects dividend reinvestment alongside retaining the same dividends in cash. It tracks fractional shares, external contributions, dividend-per-share growth, share-price changes and a flat dividend tax. The no-DRIP comparison includes the cash it received, giving the same starting assets and deposit budget to both paths. The dividend snowball effect is modeled here rather than in a duplicate calculator.",
+    "scope": "A hypothetical single USD stock or ETF with fractional shares and regular payout intervals. Annual yield initializes dividend per share; cash dividends grow at the separate annual per-share assumption. Price appreciation excludes dividends. Contributions occur after that month\u2019s payout. Flat dividend tax only; no live quotes, dividend guarantees, real ex-dividend dates, sale taxes, tax lots, fees, inflation or whole-share execution.",
+    "sources": [
+      {
+        "title": "IRS Topic 404: dividends and reinvestment tax context",
+        "url": "https://www.irs.gov/taxtopics/tc404"
+      },
+      {
+        "title": "Investor.gov: stocks, dividends and investment risks",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/stocks"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Quarterly reinvestment versus keeping dividends as cash",
+        "mode": "projection",
+        "values": {
+          "initial": 10000,
+          "price": 100,
+          "monthly": 0,
+          "years": 1,
+          "yield": 4,
+          "frequency": "Quarterly",
+          "price_growth": 0,
+          "dividend_growth": 0,
+          "tax": 0
+        },
+        "inputs": "$10,000 initially at $100/share, 4% starting annual dividend yield, quarterly payouts, one year, no deposits, price growth, dividend growth or tax.",
+        "steps": [
+          "Initial shares = $10,000 / $100 = 100. Quarterly dividend per share = $100 \u00d7 4% / 4 = $1.",
+          "With price and dividend per share fixed, reinvestment multiplies shares by 1.01 each quarter: $10,000 \u00d7 1.01\u2074 = $10,406.0401.",
+          "Without reinvestment, shares remain worth $10,000 and retained dividends total $400: wealth is $10,400.",
+          "The DRIP difference is $6.0401, not $406.0401, because the other investor still owns the cash dividends."
+        ],
+        "expected": {
+          "label": "Ending portfolio with DRIP",
+          "value": 10406.0401,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Zero dividends isolate equal external contributions",
+        "mode": "projection",
+        "values": {
+          "initial": 1000,
+          "price": 100,
+          "monthly": 100,
+          "years": 1,
+          "yield": 0,
+          "frequency": "Quarterly",
+          "price_growth": 0,
+          "dividend_growth": 0,
+          "tax": 0
+        },
+        "inputs": "$1,000 initially, $100/share, $100 added at each month end, one year, no dividends, price growth or tax.",
+        "steps": [
+          "External money invested = $1,000 + 12 \u00d7 $100 = $2,200.",
+          "With neither dividends nor price growth, both paths end with $2,200.",
+          "Reinvested income is zero, and the contribution is not labeled an investment gain."
+        ],
+        "expected": {
+          "label": "Ending portfolio with DRIP",
+          "value": 2200,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-drip-calculate",
+        "queries": [
+          "how to calculate drip stock",
+          "how to calculate drip returns"
+        ],
+        "question": "How does this DRIP calculator work?",
+        "answer": "Each payout equals eligible opening shares times the modeled annual dividend per share divided by payments per year. Dividend tax is deducted first. The DRIP path buys fractional shares at the modeled month-end price; the other path keeps the net dividend as cash. Both receive the same external deposits after that month\u2019s payout.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare a separate total-return projection"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore compound growth assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-drip-monthly",
+        "queries": [
+          "monthly drip calculator",
+          "monthly dividend drip calculator"
+        ],
+        "question": "Can I calculate monthly or quarterly dividend reinvestment?",
+        "answer": "Yes. Choose monthly, quarterly, semiannual or annual payments. The starting yield is annual in every case; a 4% annual yield is not a 4% monthly payout. Frequency divides the annual per-share cash dividend. Dates are regular model intervals, not a company\u2019s actual ex-dividend or payment calendar.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare a separate total-return projection"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore compound growth assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-drip-growth",
+        "queries": [
+          "dividend drip calculator",
+          "drip investment calculator"
+        ],
+        "question": "Is dividend growth the same as share-price growth?",
+        "answer": "No. Dividend growth changes the cash amount paid per share once each model year. Price appreciation changes the price used to value shares and buy fractional shares each month. Initial yield sets the first annual per-share dividend; this model does not hold yield constant as prices change.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare a separate total-return projection"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore compound growth assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-drip-total-return",
+        "queries": [
+          "drip returns calculator"
+        ],
+        "question": "Should I enter total return as share-price appreciation?",
+        "answer": "No. Total return may already include dividends. Enter a price-only appreciation assumption here because dividends are modeled separately; including them in both fields would double-count income. The smooth price path does not simulate ex-dividend price gaps.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare a separate total-return projection"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore compound growth assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-drip-tax",
+        "queries": [
+          "dividend calculator with drip"
+        ],
+        "question": "Are reinvested dividends taxed?",
+        "answer": "In a U.S. taxable account, reinvesting generally does not itself eliminate dividend income tax; treatment depends on the distribution and account. This tool deducts one entered flat dividend tax from each payout and uses the remainder. It does not determine qualified-dividend eligibility, calculate tax brackets or capital-gains tax on sale, or maintain tax lots. See IRS Topic 404 for dividend tax context.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare a separate total-return projection"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore compound growth assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-drip-snowball",
+        "queries": [
+          "dividend snowball calculator",
+          "dividend snowball effect calculator"
+        ],
+        "question": "Is a dividend snowball different from DRIP?",
+        "answer": "The snowball describes the compounding effect: reinvested dividends buy shares that may receive later dividends, while new contributions and dividend-per-share growth can add to income. This calculator models those inputs together on one page. It does not promise accelerating income, and dividend cuts or falling prices can change the outcome.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare a separate total-return projection"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore compound growth assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-drip-cash",
+        "queries": [
+          "drip calculator dividend"
+        ],
+        "question": "Why does the no-DRIP comparison include cash?",
+        "answer": "Dividends taken as cash are still part of wealth unless spent. The comparison retains that cash at zero interest and adds it to the share value. Comparing DRIP stock value only against non-DRIP stock value would omit the dividends paid to the cash investor. Contributions are identical in both paths.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare a separate total-return projection"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore compound growth assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-drip-risk",
+        "queries": [
+          "drip calculator stocks"
+        ],
+        "question": "Can reinvesting dividends finish with less wealth?",
+        "answer": "Yes. Reinvested dividends buy more of the modeled asset. A subsequent price decline can leave those shares worth less than the cash the alternative retained. The signed DRIP-minus-cash difference is preserved. No assumptions here establish future returns, dividend stability or investment suitability.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare a separate total-return projection"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore compound growth assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-drip-ticker",
+        "queries": [
+          "etf drip calculator",
+          "stock drip calculator"
+        ],
+        "question": "Can I use this for SCHD, VOO or another dividend ETF?",
+        "answer": "You can enter your own price, dividend yield and assumptions for a hypothetical stock or ETF. No ticker data or fund forecasts are fetched. Distributions may include income or return of capital that this simple dividend model does not distinguish; review the fund\u2019s actual documents and tax treatment.",
+        "links": [
+          {
+            "id": "investment",
+            "mode": "end",
+            "label": "Compare a separate total-return projection"
+          },
+          {
+            "id": "compound-interest",
+            "mode": "growth",
+            "label": "Explore compound growth assumptions"
+          }
+        ]
+      }
+    ]
+  }
+}

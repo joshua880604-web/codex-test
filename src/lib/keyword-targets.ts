@@ -265,3 +265,9 @@ searchTasks['rent-vs-buy'][0].description="Compare renting and buying over a fix
 searchTasks['credit-cards-payoff'][0].description="Plan repayment across multiple credit cards with one total monthly budget. Estimate payoff time, interest and payments using fixed APR assumptions.";
 searchTasks['brrrr'][0].description="Estimate cash left in a BRRRR deal, refinance proceeds and rental cash flow. Compare ARV and loan-rate scenarios using your own assumptions.";
 searchTasks['roas'][0].description="Calculate ROAS as a multiple or percentage, then check break-even and target margins using your advertising spend, revenue and entered costs.";
+
+keywordTitles['drip']='DRIP Calculator - Dividend Reinvestment vs. Cash';
+searchTasks['drip']=[{keyword:'DRIP calculator',mode:'projection',description:'Compare dividend reinvestment and cash dividends with the same monthly contributions, payout frequency, per-share growth and flat tax assumption.',aliases:['Dividend DRIP calculator','Dividend reinvestment calculator','Monthly DRIP calculator','Dividend snowball calculator','Dividend calculator with DRIP','Stock DRIP calculator','ETF DRIP calculator']}];
+
+keywordTitles['roth-conversion-ladder']='Roth Conversion Ladder Calculator - Five-Year Bridge';
+searchTasks['roth-conversion-ladder']=[{keyword:'Roth conversion ladder calculator',mode:'bridge',description:'Plan a Roth conversion ladder for early retirement. Track five-year dates, conversion taxes, bridge cash and funding gaps with a free yearly schedule.',aliases:['Roth IRA conversion ladder calculator','Roth conversion ladder five year rule','Roth ladder calculator']}];

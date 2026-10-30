@@ -28,7 +28,7 @@ export default function ResultTrend({ id, mode, values, result, wide=false, repo
       {trend.secondaryKey && <path d={line(trend.secondaryKey)} className="trend-contributions" />}
       <path d={line("balance")} className="trend-balance" />
       <circle cx={x(last.x)} cy={y(last.balance)} r="4" className="trend-end" />
-      {[0, .5, 1].map(fraction => { const time = first.x + (last.x - first.x) * fraction; return <text key={fraction} x={x(time)} y={bottom + 23} textAnchor={fraction === 0 ? "start" : fraction === 1 ? "end" : "middle"}>{compact(time)}</text>; })}
+      {[0, .5, 1].map(fraction => { const time = first.x + (last.x - first.x) * fraction; return <text key={fraction} x={x(time)} y={bottom + 23} textAnchor={fraction === 0 ? "start" : fraction === 1 ? "end" : "middle"}>{trend.xLabel.startsWith('Tax year')?String(Math.round(time)):compact(time)}</text>; })}
       <text x={(left + right) / 2} y={height - 6} textAnchor="middle">{trend.xLabel}</text>
       <text x={left} y="12">USD</text>
     </svg>

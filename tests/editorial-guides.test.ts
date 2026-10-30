@@ -28,9 +28,9 @@ test('Articles and Guides collection describe the same visible entries without i
 
 test('Substantive question updates preserve original publication and advance reviewed sitemap dates',()=>{
  const updated=editorialGuides.filter(g=>g.updatedOn);
- assert.equal(updated.length,8);
+ assert.equal(updated.length,17);
  for(const guide of updated){
-  assert.equal(guide.updatedOn,['/guides/debt-snowball-vs-avalanche/','/guides/biweekly-vs-monthly-mortgage-payments/','/guides/are-mortgage-points-worth-it/'].includes(guide.path)?'2026-10-30':'2026-10-28');
+  assert.equal(guide.updatedOn,'2026-10-30');
   assert.ok(guide.publishedOn<=guide.updatedOn!);
   const entry=sitemapEntries(config).find(e=>e.url===config.origin+guide.path)!;
   assert.equal(entry.lastModified,guide.updatedOn);

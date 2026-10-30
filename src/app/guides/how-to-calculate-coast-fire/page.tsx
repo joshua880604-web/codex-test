@@ -1,3 +1,4 @@
+import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
 import {coastFireGuide,editorialSchema} from '@/lib/editorial-guides';
@@ -5,21 +6,23 @@ import {directoryPath,serializeSchema} from '@/lib/site';
 import {calculatorPresetHref} from '@/lib/preset-links';
 import data from '@/lib/coast-fire-guide-data.json';
 const page=pageMetadata(coastFireGuide.path,coastFireGuide.title,coastFireGuide.description);
-export const metadata={...page,openGraph:{...page.openGraph,type:'article' as const,publishedTime:coastFireGuide.publishedOn,modifiedTime:coastFireGuide.publishedOn}};
+export const metadata={...page,openGraph:{...page.openGraph,type:'article' as const,publishedTime:coastFireGuide.publishedOn,modifiedTime:coastFireGuide.updatedOn??coastFireGuide.publishedOn}};
 const base={age:35,retire:65,balance:150000,spending:40000,return:7,inflation:2.5,withdrawal:4,monthly:1000};
 const preset=(changes:Record<string,string|number>={})=>calculatorPresetHref('/coast-fire-calculator.html','coast',{...base,...changes});
 const sections=[['formula','Calculate your Coast FIRE number'],['monthly-investing','Find when you could start coasting'],['number-by-age','Compare Coast FIRE numbers by age'],['return-assumptions','Test the return assumption'],['retirement-age','Change the target retirement age'],['coast-vs-barista','Coast FIRE vs. FIRE vs. Barista FIRE'],['before-downshifting','Review before changing work or saving'],['questions','Common planning questions'],['sources','Sources and calculation checks']];
 export default function CoastFireGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">How to calculate Coast FIRE</span></nav>
  <p className="glossary-category">Retirement · Planning guide</p><h1>{coastFireGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Calculations and sources checked <time dateTime={coastFireGuide.publishedOn}>October 28, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Calculations and sources checked <time dateTime={coastFireGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={coastFireGuide.updatedOn}>October 30, 2026</time></p>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(coastFireGuide))}}/>
  <p>To calculate Coast FIRE, divide the annual spending your retirement portfolio must fund by an assumed withdrawal rate. Then discount that portfolio target over the years until retirement using an inflation-adjusted return. The result is the invested amount needed today under those assumptions, without further deposits.</p>
  <p>A hypothetical 35-year-old targeting age 65, a $40,000 annual portfolio-funded budget, a 4% withdrawal assumption, 7% nominal return and 2.5% inflation has a modeled Coast number of <strong>$275,551.41</strong> in today’s USD. This number is sensitive to the assumptions. It does not pay the person’s living expenses from age 35 to 65 or establish that the retirement withdrawal plan will work.</p>
  <p><SiteLink className="glossary-cta" href={preset()}>Open the worked example in Coast FIRE Calculator →</SiteLink></p>
  <p>For a short definition, see <SiteLink href="/glossary/coast-fire/">Coast FIRE in the financial glossary</SiteLink>. “CoastFIRE” is another spelling of the same planning concept.</p>
- <nav className="guide-nav" aria-label="Guide sections">{sections.map(([anchor,label])=><SiteLink key={anchor} href={'#'+anchor}>{label}</SiteLink>)}</nav>
- <h2 id="formula">Calculate your Coast FIRE number in four steps</h2>
+ <RemainingGuideSummary id="coast"/>
+  <nav className="guide-nav" aria-label="Guide sections">{sections.map(([anchor,label])=><SiteLink key={anchor} href={'#'+anchor}>{label}</SiteLink>)}</nav>
+ <RemainingGuideReview id="coast"/>
+  <h2 id="formula">Calculate your Coast FIRE number in four steps</h2>
  <p>Start with a retirement budget expressed in today’s purchasing power. Include the spending and any taxes or costs the portfolio must fund. Keep money for present emergencies separate from the assets allocated to this retirement plan.</p>
  <ol>
   <li><strong>Size the future retirement portfolio.</strong> Divide $40,000 by 0.04 to get a $1,000,000 portfolio target, also in today’s purchasing power. Four percent is an illustrative sizing assumption, not a verified safe rate for this person.</li>

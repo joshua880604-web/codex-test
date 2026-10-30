@@ -1,0 +1,6 @@
+﻿"Checked on","Data kind","Essential-expense coverage (months)","Reserve target","Unfunded gap","Inputs JSON"
+"2026-10-30","Hypothetical deterministic model case; not observed data","3","9600","5600","{""expenses"":""3200"",""months"":""3"",""savings"":""4000"",""deposit"":""500""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","4","12800","8800","{""expenses"":""3200"",""months"":""4"",""savings"":""4000"",""deposit"":""500""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","5","16000","12000","{""expenses"":""3200"",""months"":""5"",""savings"":""4000"",""deposit"":""500""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","6","19200","15200","{""expenses"":""3200"",""months"":""6"",""savings"":""4000"",""deposit"":""500""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","7","22400","18400","{""expenses"":""3200"",""months"":""7"",""savings"":""4000"",""deposit"":""500""}"

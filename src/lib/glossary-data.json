@@ -61,6 +61,10 @@
       {
         "id": "hsa",
         "text": "Project HSA investment growth after medical spending and fees."
+      },
+      {
+        "id": "drip",
+        "text": "Compare dividend reinvestment with retained cash."
       }
     ],
     "related": [
@@ -1540,6 +1544,10 @@
       {
         "id": "roth-ira",
         "text": "Project a Roth balance under explicit contribution and return assumptions."
+      },
+      {
+        "id": "roth-conversion-ladder",
+        "text": "Track separate conversion clocks and early-bridge cash."
       }
     ],
     "related": [

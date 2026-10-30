@@ -1,0 +1,382 @@
+{
+  "roth-conversion-ladder": {
+    "updatedOn": "2026-10-30",
+    "summary": "A Roth conversion ladder moves pre-tax retirement money into a Roth IRA in annual steps, then uses eligible conversion principal after its separate five-tax-year waiting period. This free calculator illustrates an early-retirement ladder: conversion dates, outside-cash taxes, living-cost funding and any shortfalls. It separates regular-contribution basis, conversion principal and investment earnings; a larger Roth balance does not mean all of it is available to spend.",
+    "scope": "U.S. calendar-year, one-owner, fully taxable traditional IRA conversions. A whole-year early bridge must end by planning age 59, excluding the age-59½ transition and later retirement. No initial Roth earnings or prior conversion lots; remaining regular-contribution basis initializes Roth value. Annual conversions, taxes and spending occur at year start; account growth occurs at year end. Fixed tax and growth assumptions are scenarios, not a full tax return, eligibility test or lifetime retirement plan. No pro-rata basis, workplace-plan eligibility, special distribution exceptions, brokerage taxation, ACA/IRMAA effects or inflation-adjusted display.",
+    "sources": [
+      {
+        "title": "IRS Publication 590-B (2025): Roth ordering, separate conversion clocks and earnings rules",
+        "url": "https://www.irs.gov/publications/p590b"
+      },
+      {
+        "title": "IRS Topic 557: early IRA distributions and exceptions",
+        "url": "https://www.irs.gov/taxtopics/tc557"
+      },
+      {
+        "title": "IRS: Roth IRAs and qualified distributions",
+        "url": "https://www.irs.gov/retirement-plans/roth-iras"
+      },
+      {
+        "title": "IRS Publication 590-A (2025): contributions, conversions and rollover rules",
+        "url": "https://www.irs.gov/publications/p590a"
+      },
+      {
+        "title": "IRS: designated Roth accounts and rollover holding periods",
+        "url": "https://www.irs.gov/retirement-plans/retirement-plans-faqs-on-designated-roth-accounts"
+      }
+    ],
+    "examples": [
+      {
+        "title": "A zero-growth ten-year bridge separates spending from conversion tax",
+        "mode": "bridge",
+        "values": {
+          "start_year": 2027,
+          "age": 40,
+          "years": 10,
+          "pretax": 500000,
+          "bridge": 300000,
+          "roth_basis": 0,
+          "conversion": 40000,
+          "conversion_growth": 0,
+          "spending": 40000,
+          "spending_growth": 0,
+          "tax": 20,
+          "pretax_return": 0,
+          "roth_return": 0
+        },
+        "inputs": "2027 start, planning age40, ten years; $500,000 pre-tax IRA, $300,000 cash, no Roth contribution basis. Convert $40,000 and spend $40,000 annually, 20% conversion tax, no growth.",
+        "steps": [
+          "Each $40,000 conversion creates a separate $8,000 outside-cash tax bill. The first conversion’s five-tax-year date is January 1, 2032.",
+          "2027–2031 living costs need $200,000 of cash; ten conversion tax bills need $80,000. The 2032–2036 living costs use $200,000 of seasoned principal.",
+          "The whole bridge therefore requires $280,000 outside cash, leaving $20,000 from the entered $300,000. Ending IRA values are $100,000 traditional and $200,000 Roth; they are not after-tax net worth."
+        ],
+        "expected": {
+          "label": "Bridge cash required for this modeled path",
+          "value": 280000,
+          "tolerance": 0.005
+        }
+      },
+      {
+        "title": "Funding only the initial bridge does not fund later conversion taxes",
+        "mode": "bridge",
+        "values": {
+          "start_year": 2027,
+          "age": 40,
+          "years": 10,
+          "pretax": 500000,
+          "bridge": 240000,
+          "roth_basis": 0,
+          "conversion": 40000,
+          "conversion_growth": 0,
+          "spending": 40000,
+          "spending_growth": 0,
+          "tax": 20,
+          "pretax_return": 0,
+          "roth_return": 0
+        },
+        "inputs": "Same zero-growth ten-year plan with $240,000 rather than $300,000 outside cash.",
+        "steps": [
+          "Five living budgets plus the first five tax bills use $240,000 by the end of 2031.",
+          "In 2032 a seasoned conversion can cover $40,000 living costs, but the new $8,000 conversion tax has no remaining cash source.",
+          "Across the full horizon, unpaid conversion tax totals $40,000. The planner does not withhold tax from the Roth or fabricate a loan."
+        ],
+        "expected": {
+          "label": "Additional bridge cash needed",
+          "value": 40000,
+          "tolerance": 0.005
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-roth-ladder-calculate",
+        "queries": [
+          "roth conversion ladder calculator",
+          "roth ira conversion ladder calculator",
+          "roth conversion ladder",
+          "roth ladder conversion",
+          "what is a roth conversion ladder",
+          "roth conversion ladder explained"
+        ],
+        "question": "What is a Roth conversion ladder, and how does it work?",
+        "answer": "A Roth conversion ladder is a series of conversions from a pre-tax retirement account to a Roth IRA, with each conversion tracked separately before its principal is used for early-retirement spending. In this fully taxable IRA model, conversion tax is paid from outside cash. Living costs use remaining regular Roth contribution basis, then seasoned conversion principal, then cash. Earnings and unseasoned principal do not fill a gap.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare IRA tax-treatment assumptions"
+          },
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Model a separate part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-five-years",
+        "queries": [
+          "roth conversion ladder five year rule",
+          "what is a 5 year roth conversion ladder",
+          "5 year roth conversion ladder"
+        ],
+        "question": "When can I use principal from a new conversion?",
+        "answer": "For the calendar-year illustration, a conversion in 2027 has its five-tax-year date on January 1, 2032. Each cohort is tracked separately. This is the conversion-principal clock, not a declaration that Roth earnings qualify for tax-free distribution. The model deliberately stays within an early-retirement horizon and does not apply special exceptions.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare IRA tax-treatment assumptions"
+          },
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Model a separate part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-bridge",
+        "queries": [
+          "roth conversion ladder first five years"
+        ],
+        "question": "How much cash do I need for the first five years?",
+        "answer": "Start with the living budget not covered by remaining regular Roth contribution basis, and add the conversion taxes paid outside the IRA. The first five modeled years have no seasoned principal from new conversions. The displayed cash requirement covers the entire selected bridge; tax bills can continue after the first rung seasons.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare IRA tax-treatment assumptions"
+          },
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Model a separate part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-gross",
+        "queries": [
+          "roth conversion ladder taxes"
+        ],
+        "question": "Is the amount converted reduced by the tax bill?",
+        "answer": "Not in this model. A $40,000 conversion credits $40,000 to Roth and reduces the pre-tax IRA by $40,000. At a 20% flat tax assumption, $8,000 is a separate cash obligation. Paying tax by withholding IRA funds would create a different model and can raise early-distribution issues; it is not supported here.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare IRA tax-treatment assumptions"
+          },
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Model a separate part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-order",
+        "queries": [
+          "roth conversion ladder withdrawal order"
+        ],
+        "question": "Can I withdraw earnings or skip newer conversions to fill a gap?",
+        "answer": "No. The planner only spends the supported principal categories in their modeled order and caps Roth withdrawals at account market value. A shortfall is shown instead of taking unseasoned principal or earnings. Existing conversions, nondeductible conversion portions and exceptions would require additional records and logic.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare IRA tax-treatment assumptions"
+          },
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Model a separate part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-basis",
+        "queries": [
+          "roth conversion ladder contribution basis"
+        ],
+        "question": "What should I enter for regular Roth contribution basis?",
+        "answer": "Enter unwithdrawn regular-contribution dollars, not the Roth market balance and not gross lifetime deposits before earlier withdrawals. The starting Roth balance here equals that remaining basis; initial earnings and prior conversion lots are excluded. Actual ordering aggregates one owner’s Roth IRAs, so this is not suitable for a subset that ignores other accounts.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare IRA tax-treatment assumptions"
+          },
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Model a separate part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-tax-rate",
+        "queries": [
+          "roth conversion ladder tax calculator"
+        ],
+        "question": "Does the calculator find the best tax bracket or conversion amount?",
+        "answer": "No. The flat combined tax input is your assumed incremental tax on conversions. It does not calculate federal or state brackets, deductions, income interactions, ACA premium credits or Medicare surcharges. Use different assumptions as scenarios; this is a liquidity worksheet, not a tax optimizer.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare IRA tax-treatment assumptions"
+          },
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Model a separate part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-value",
+        "queries": [
+          "roth conversion ladder earnings"
+        ],
+        "question": "Why can the Roth account grow while my bridge still has a gap?",
+        "answer": "Market value is not the same as eligible withdrawal principal. Earnings and newer cohorts may raise the balance while the planned spending still depends on outside cash. A lower return can also reduce market value below the basis records, so the actual modeled withdrawal is capped.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare IRA tax-treatment assumptions"
+          },
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Model a separate part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-age",
+        "queries": [
+          "roth conversion ladder early retirement"
+        ],
+        "question": "Can I use this for withdrawals after age 59½?",
+        "answer": "Use a different analysis for that transition. This whole-year early-bridge version ends by planning age 59 and does not determine legal age from a birthday. It intentionally excludes age-based exceptions, later qualified earnings and the post-bridge retirement period. The displayed funding status applies only to selected years.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare IRA tax-treatment assumptions"
+          },
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Model a separate part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-start",
+        "queries": [
+          "when to start roth conversion ladder",
+          "roth conversion ladder for early retirement"
+        ],
+        "question": "When should I start a Roth conversion ladder?",
+        "answer": "Work backward from the first year you expect to spend converted principal. A 2027 conversion reaches its five-tax-year date on January 1, 2032 in this calendar-year illustration. Converting while employed can raise the tax cost; starting after leaving work requires another source for the initial bridge. Compare timing and cash needs rather than assuming that earlier is always better.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Compare a part-time-income bridge"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-steps",
+        "queries": [
+          "how to do a roth conversion ladder",
+          "how does a roth conversion ladder work",
+          "roth conversion ladder strategy"
+        ],
+        "question": "How do I build a Roth conversion ladder plan?",
+        "answer": "Use these steps to test a cash bridge before acting. The result is a scenario, not a determination of tax eligibility or an optimized conversion recommendation.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Compare a part-time-income bridge"
+          }
+        ],
+        "steps": [
+          "Set a start tax year, planning age and horizon. This calculator ends by planning age 59 and excludes the age-59½ transition.",
+          "Gather the eligible traditional IRA balance, outside cash and remaining regular Roth contribution basis. Prior conversion lots and initial Roth earnings are outside this model.",
+          "Enter annual gross conversions, living costs and an assumed incremental conversion tax rate. Set account-return and annual-change assumptions explicitly.",
+          "Fund spending before new conversions season, plus conversion taxes throughout the bridge. Do not count Roth earnings as available conversion principal.",
+          "Calculate, inspect each cohort date and any unpaid tax or living-cost gaps, then rerun alternative amounts. Check account records and applicable tax rules before a real transaction."
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-401k",
+        "queries": [
+          "roth conversion ladder 401k",
+          "does the ira conversion ladder work with roth 401k"
+        ],
+        "question": "Can I use a 401(k) or Roth 401(k) for a conversion ladder?",
+        "answer": "Pre-tax workplace money may be a source after an eligible rollover, subject to plan and distribution rules. This calculator starts with traditional IRA money and does not test 401(k) eligibility or model a direct plan rollover. Roth 401(k) money is already Roth money, not a fully taxable traditional IRA conversion. Its rollover and holding-period records need separate review; do not enter the entire Roth 401(k) balance as regular Roth IRA contribution basis.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare traditional and Roth IRA assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-backdoor",
+        "queries": [
+          "roth conversion ladder vs backdoor roth"
+        ],
+        "question": "Is a Roth conversion ladder the same as a Backdoor Roth?",
+        "answer": "No. A conversion ladder generally stages retirement money for later spending; a Backdoor Roth generally pairs a nondeductible traditional IRA contribution with a Roth conversion. Nondeductible basis and the pro-rata calculation can change tax treatment. This tool assumes fully taxable conversions and does not calculate Backdoor Roth taxes.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare traditional and Roth IRA assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-limits",
+        "queries": [
+          "roth conversion ladder limits"
+        ],
+        "question": "Do annual IRA contribution limits cap Roth conversions?",
+        "answer": "The annual regular-contribution limit is not an annual conversion cap. Conversion eligibility and taxable income still matter, and required minimum distributions cannot be converted. This planner caps modeled conversions at the available traditional IRA balance. It does not check every legal restriction or choose an affordable tax bracket.",
+        "links": [
+          {
+            "id": "ira",
+            "mode": "comparison",
+            "label": "Compare traditional and Roth IRA assumptions"
+          }
+        ]
+      },
+      {
+        "anchor": "use-roth-ladder-spreadsheet",
+        "queries": [
+          "roth conversion ladder spreadsheet",
+          "roth conversion ladder excel"
+        ],
+        "question": "Can I download a Roth conversion ladder spreadsheet?",
+        "answer": "After calculating, download the yearly ledger as CSV for Excel or Google Sheets. The separate cohort table shows each conversion’s five-tax-year date. These exports contain calculated values, not spreadsheet formulas or a tax-filing template. Use the optional results-sharing link to retain the complete input scenario.",
+        "links": [
+          {
+            "id": "barista-fire",
+            "mode": "plan",
+            "label": "Compare a part-time-income bridge"
+          }
+        ]
+      }
+    ]
+  }
+}

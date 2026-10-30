@@ -11,6 +11,8 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
 const businessTools = () => import('./calculators/business-tools').then(m => m.businessTools);
 const strategyTools=()=>import('./calculators/debt-strategies').then(m=>[m.debtSnowball,m.debtAvalanche]);
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
+  'roth-conversion-ladder':()=>import('./calculators/roth-conversion-ladder').then(m=>[m.rothLadderCalculator]),
+  drip: () => import('./calculators/drip').then(m => [m.dripCalculator]),
   'covered-call': () => import('./calculators/covered-call').then(m => [m.coveredCallCalculator]),
   'house-hacking': () => import('./calculators/house-hacking').then(m => [m.houseHackingCalculator]),
   'mortgage-vs-invest': () => import('./calculators/mortgage-vs-invest').then(m => [m.mortgageInvestCalculator]),

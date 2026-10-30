@@ -1,0 +1,1339 @@
+[
+  {
+    "id": "recast",
+    "slug": "mortgage-recast-vs-refinance",
+    "tool": "mortgage-recast",
+    "mode": "compare",
+    "axis": "lump",
+    "axisLabel": "Principal paid now (USD)",
+    "seriesLabels": [
+      "Recast: future interest",
+      "Keep payment: future interest"
+    ],
+    "rows": [
+      {
+        "x": 10000,
+        "values": {
+          "principal": "300000",
+          "rate": "6",
+          "years": "25",
+          "months": "0",
+          "lump": "10000",
+          "fee": "300",
+          "current_payment": ""
+        },
+        "outputs": [
+          270542.2192923927,
+          247512.09498192556
+        ]
+      },
+      {
+        "x": 20000,
+        "values": {
+          "principal": "300000",
+          "rate": "6",
+          "years": "25",
+          "months": "0",
+          "lump": "20000",
+          "fee": "300",
+          "current_payment": ""
+        },
+        "outputs": [
+          261213.17724782697,
+          219330.39773974748
+        ]
+      },
+      {
+        "x": 30000,
+        "values": {
+          "principal": "300000",
+          "rate": "6",
+          "years": "25",
+          "months": "0",
+          "lump": "30000",
+          "fee": "300",
+          "current_payment": ""
+        },
+        "outputs": [
+          251884.13520326198,
+          194574.80074697442
+        ]
+      },
+      {
+        "x": 40000,
+        "values": {
+          "principal": "300000",
+          "rate": "6",
+          "years": "25",
+          "months": "0",
+          "lump": "40000",
+          "fee": "300",
+          "current_payment": ""
+        },
+        "outputs": [
+          242555.0931586966,
+          172680.7088873773
+        ]
+      },
+      {
+        "x": 50000,
+        "values": {
+          "principal": "300000",
+          "rate": "6",
+          "years": "25",
+          "months": "0",
+          "lump": "50000",
+          "fee": "300",
+          "current_payment": ""
+        },
+        "outputs": [
+          233226.05111413123,
+          153213.94783442953
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cd",
+    "slug": "cd-vs-savings-account",
+    "tool": "cd",
+    "mode": "accumulation",
+    "axis": "rate",
+    "axisLabel": "Constant APY assumption (%)",
+    "seriesLabels": [
+      "One-year balance"
+    ],
+    "rows": [
+      {
+        "x": 2,
+        "values": {
+          "principal": "10000",
+          "rate_type": "APY",
+          "rate": "2",
+          "compound": "Monthly",
+          "years": "1",
+          "months": "0",
+          "tax": "0"
+        },
+        "outputs": [
+          10200
+        ]
+      },
+      {
+        "x": 3,
+        "values": {
+          "principal": "10000",
+          "rate_type": "APY",
+          "rate": "3",
+          "compound": "Monthly",
+          "years": "1",
+          "months": "0",
+          "tax": "0"
+        },
+        "outputs": [
+          10300
+        ]
+      },
+      {
+        "x": 4,
+        "values": {
+          "principal": "10000",
+          "rate_type": "APY",
+          "rate": "4",
+          "compound": "Monthly",
+          "years": "1",
+          "months": "0",
+          "tax": "0"
+        },
+        "outputs": [
+          10400
+        ]
+      },
+      {
+        "x": 5,
+        "values": {
+          "principal": "10000",
+          "rate_type": "APY",
+          "rate": "5",
+          "compound": "Monthly",
+          "years": "1",
+          "months": "0",
+          "tax": "0"
+        },
+        "outputs": [
+          10500
+        ]
+      },
+      {
+        "x": 6,
+        "values": {
+          "principal": "10000",
+          "rate_type": "APY",
+          "rate": "6",
+          "compound": "Monthly",
+          "years": "1",
+          "months": "0",
+          "tax": "0"
+        },
+        "outputs": [
+          10600
+        ]
+      }
+    ]
+  },
+  {
+    "id": "car",
+    "slug": "pay-off-car-loan-early",
+    "tool": "repayment",
+    "mode": "extra-payments",
+    "axis": "extra_monthly",
+    "axisLabel": "Extra monthly principal budget (USD)",
+    "seriesLabels": [
+      "Future interest"
+    ],
+    "rows": [
+      {
+        "x": 0,
+        "values": {
+          "principal": "20000",
+          "rate": "6",
+          "payment": "400",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          3072.27132698798
+        ]
+      },
+      {
+        "x": 50,
+        "values": {
+          "principal": "20000",
+          "rate": "6",
+          "payment": "400",
+          "extra_monthly": "50",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          2675.063919296715
+        ]
+      },
+      {
+        "x": 100,
+        "values": {
+          "principal": "20000",
+          "rate": "6",
+          "payment": "400",
+          "extra_monthly": "100",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          2370.3343384253417
+        ]
+      },
+      {
+        "x": 150,
+        "values": {
+          "principal": "20000",
+          "rate": "6",
+          "payment": "400",
+          "extra_monthly": "150",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          2129.161309769034
+        ]
+      },
+      {
+        "x": 200,
+        "values": {
+          "principal": "20000",
+          "rate": "6",
+          "payment": "400",
+          "extra_monthly": "200",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          1933.6072552463568
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emergency",
+    "slug": "how-much-emergency-fund-should-i-have",
+    "tool": "emergency-fund",
+    "mode": "plan",
+    "axis": "months",
+    "axisLabel": "Essential-expense coverage (months)",
+    "seriesLabels": [
+      "Reserve target",
+      "Unfunded gap"
+    ],
+    "rows": [
+      {
+        "x": 3,
+        "values": {
+          "expenses": "3200",
+          "months": "3",
+          "savings": "4000",
+          "deposit": "500"
+        },
+        "outputs": [
+          9600,
+          5600
+        ]
+      },
+      {
+        "x": 4,
+        "values": {
+          "expenses": "3200",
+          "months": "4",
+          "savings": "4000",
+          "deposit": "500"
+        },
+        "outputs": [
+          12800,
+          8800
+        ]
+      },
+      {
+        "x": 5,
+        "values": {
+          "expenses": "3200",
+          "months": "5",
+          "savings": "4000",
+          "deposit": "500"
+        },
+        "outputs": [
+          16000,
+          12000
+        ]
+      },
+      {
+        "x": 6,
+        "values": {
+          "expenses": "3200",
+          "months": "6",
+          "savings": "4000",
+          "deposit": "500"
+        },
+        "outputs": [
+          19200,
+          15200
+        ]
+      },
+      {
+        "x": 7,
+        "values": {
+          "expenses": "3200",
+          "months": "7",
+          "savings": "4000",
+          "deposit": "500"
+        },
+        "outputs": [
+          22400,
+          18400
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rent",
+    "slug": "rent-vs-buy-a-house",
+    "tool": "rent-vs-buy",
+    "mode": "comparison",
+    "axis": "appreciation",
+    "axisLabel": "Annual home appreciation assumption (%)",
+    "seriesLabels": [
+      "Buyer sale equity at year 5",
+      "Renter wealth at year 5"
+    ],
+    "rows": [
+      {
+        "x": 0,
+        "values": {
+          "price": "400000",
+          "down": "20",
+          "rate": "6",
+          "years": "30",
+          "buy_closing": "3",
+          "selling": "6",
+          "tax": "4800",
+          "insurance": "1500",
+          "hoa": "0",
+          "maintenance": "4000",
+          "cost_growth": "0",
+          "tax_growth": "0",
+          "appreciation": "0",
+          "rent": "2200",
+          "rent_growth": "0",
+          "renter_insurance": "200",
+          "deposit": "2200",
+          "rental_costs": "0",
+          "return": "0",
+          "tax_rate": "0",
+          "standard": "16100"
+        },
+        "outputs": [
+          78226.05816697731,
+          125613.70082932815
+        ]
+      },
+      {
+        "x": 1,
+        "values": {
+          "price": "400000",
+          "down": "20",
+          "rate": "6",
+          "years": "30",
+          "buy_closing": "3",
+          "selling": "6",
+          "tax": "4800",
+          "insurance": "1500",
+          "hoa": "0",
+          "maintenance": "4000",
+          "cost_growth": "0",
+          "tax_growth": "0",
+          "appreciation": "1",
+          "rent": "2200",
+          "rent_growth": "0",
+          "renter_insurance": "200",
+          "deposit": "2200",
+          "rental_costs": "0",
+          "return": "0",
+          "tax_rate": "0",
+          "standard": "16100"
+        },
+        "outputs": [
+          97405.83700457733,
+          125613.70082932815
+        ]
+      },
+      {
+        "x": 2,
+        "values": {
+          "price": "400000",
+          "down": "20",
+          "rate": "6",
+          "years": "30",
+          "buy_closing": "3",
+          "selling": "6",
+          "tax": "4800",
+          "insurance": "1500",
+          "hoa": "0",
+          "maintenance": "4000",
+          "cost_growth": "0",
+          "tax_growth": "0",
+          "appreciation": "2",
+          "rent": "2200",
+          "rent_growth": "0",
+          "renter_insurance": "200",
+          "deposit": "2200",
+          "rental_costs": "0",
+          "return": "0",
+          "tax_rate": "0",
+          "standard": "16100"
+        },
+        "outputs": [
+          117360.44017017732,
+          125613.70082932815
+        ]
+      },
+      {
+        "x": 3,
+        "values": {
+          "price": "400000",
+          "down": "20",
+          "rate": "6",
+          "years": "30",
+          "buy_closing": "3",
+          "selling": "6",
+          "tax": "4800",
+          "insurance": "1500",
+          "hoa": "0",
+          "maintenance": "4000",
+          "cost_growth": "0",
+          "tax_growth": "0",
+          "appreciation": "3",
+          "rent": "2200",
+          "rent_growth": "0",
+          "renter_insurance": "200",
+          "deposit": "2200",
+          "rental_costs": "0",
+          "return": "0",
+          "tax_rate": "0",
+          "standard": "16100"
+        },
+        "outputs": [
+          138113.11010377732,
+          125613.70082932815
+        ]
+      },
+      {
+        "x": 4,
+        "values": {
+          "price": "400000",
+          "down": "20",
+          "rate": "6",
+          "years": "30",
+          "buy_closing": "3",
+          "selling": "6",
+          "tax": "4800",
+          "insurance": "1500",
+          "hoa": "0",
+          "maintenance": "4000",
+          "cost_growth": "0",
+          "tax_growth": "0",
+          "appreciation": "4",
+          "rent": "2200",
+          "rent_growth": "0",
+          "renter_insurance": "200",
+          "deposit": "2200",
+          "rental_costs": "0",
+          "return": "0",
+          "tax_rate": "0",
+          "standard": "16100"
+        },
+        "outputs": [
+          159687.54946937732,
+          125613.70082932815
+        ]
+      }
+    ]
+  },
+  {
+    "id": "debt-save",
+    "slug": "should-i-pay-off-debt-or-save",
+    "tool": "repayment",
+    "mode": "extra-payments",
+    "axis": "extra_monthly",
+    "axisLabel": "Of $200 spare monthly cash, allocated to extra debt (USD)",
+    "seriesLabels": [
+      "Future debt interest"
+    ],
+    "rows": [
+      {
+        "x": 0,
+        "values": {
+          "principal": "6000",
+          "rate": "18",
+          "payment": "200",
+          "extra_monthly": "0",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          2030.9896448074385
+        ]
+      },
+      {
+        "x": 50,
+        "values": {
+          "principal": "6000",
+          "rate": "18",
+          "payment": "200",
+          "extra_monthly": "50",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          1493.81098143087
+        ]
+      },
+      {
+        "x": 100,
+        "values": {
+          "principal": "6000",
+          "rate": "18",
+          "payment": "200",
+          "extra_monthly": "100",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          1186.9606329936487
+        ]
+      },
+      {
+        "x": 150,
+        "values": {
+          "principal": "6000",
+          "rate": "18",
+          "payment": "200",
+          "extra_monthly": "150",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          987.846553132362
+        ]
+      },
+      {
+        "x": 200,
+        "values": {
+          "principal": "6000",
+          "rate": "18",
+          "payment": "200",
+          "extra_monthly": "200",
+          "extra_yearly": "0",
+          "extra_once": "0",
+          "extra_once_month": "1"
+        },
+        "outputs": [
+          848.2935261379879
+        ]
+      }
+    ]
+  },
+  {
+    "id": "apr",
+    "slug": "apr-vs-interest-rate",
+    "tool": "apr",
+    "mode": "loan",
+    "axis": "upfront",
+    "axisLabel": "Cash-paid upfront fees (USD)",
+    "seriesLabels": [
+      "Full-term borrowing cost"
+    ],
+    "rows": [
+      {
+        "x": 0,
+        "values": {
+          "principal": "20000",
+          "years": "5",
+          "months": "0",
+          "rate": "6",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "financed": "0",
+          "upfront": "0"
+        },
+        "outputs": [
+          3199.3618353134807
+        ]
+      },
+      {
+        "x": 200,
+        "values": {
+          "principal": "20000",
+          "years": "5",
+          "months": "0",
+          "rate": "6",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "financed": "0",
+          "upfront": "200"
+        },
+        "outputs": [
+          3399.3618353134807
+        ]
+      },
+      {
+        "x": 400,
+        "values": {
+          "principal": "20000",
+          "years": "5",
+          "months": "0",
+          "rate": "6",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "financed": "0",
+          "upfront": "400"
+        },
+        "outputs": [
+          3599.3618353134807
+        ]
+      },
+      {
+        "x": 600,
+        "values": {
+          "principal": "20000",
+          "years": "5",
+          "months": "0",
+          "rate": "6",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "financed": "0",
+          "upfront": "600"
+        },
+        "outputs": [
+          3799.3618353134807
+        ]
+      },
+      {
+        "x": 800,
+        "values": {
+          "principal": "20000",
+          "years": "5",
+          "months": "0",
+          "rate": "6",
+          "compound": "Monthly",
+          "pay": "Monthly",
+          "financed": "0",
+          "upfront": "800"
+        },
+        "outputs": [
+          3999.3618353134807
+        ]
+      }
+    ]
+  },
+  {
+    "id": "refinance",
+    "slug": "is-refinancing-worth-it",
+    "tool": "refinance",
+    "mode": "balance",
+    "axis": "new_years",
+    "axisLabel": "New amortization term (years)",
+    "seriesLabels": [
+      "New interest plus $3,000 fee"
+    ],
+    "rows": [
+      {
+        "x": 10,
+        "values": {
+          "principal": "250000",
+          "payment": "1800",
+          "rate": "6",
+          "new_rate": "5",
+          "new_years": "10",
+          "cashout": "0",
+          "points": "0",
+          "fees": "3000",
+          "finance": "No"
+        },
+        "outputs": [
+          71196.54571722569
+        ]
+      },
+      {
+        "x": 15,
+        "values": {
+          "principal": "250000",
+          "payment": "1800",
+          "rate": "6",
+          "new_rate": "5",
+          "new_years": "15",
+          "cashout": "0",
+          "points": "0",
+          "fees": "3000",
+          "finance": "No"
+        },
+        "outputs": [
+          108857.13203369487
+        ]
+      },
+      {
+        "x": 20,
+        "values": {
+          "principal": "250000",
+          "payment": "1800",
+          "rate": "6",
+          "new_rate": "5",
+          "new_years": "20",
+          "cashout": "0",
+          "points": "0",
+          "fees": "3000",
+          "finance": "No"
+        },
+        "outputs": [
+          148973.44352999443
+        ]
+      },
+      {
+        "x": 25,
+        "values": {
+          "principal": "250000",
+          "payment": "1800",
+          "rate": "6",
+          "new_rate": "5",
+          "new_years": "25",
+          "cashout": "0",
+          "points": "0",
+          "fees": "3000",
+          "finance": "No"
+        },
+        "outputs": [
+          191442.5311309841
+        ]
+      },
+      {
+        "x": 30,
+        "values": {
+          "principal": "250000",
+          "payment": "1800",
+          "rate": "6",
+          "new_rate": "5",
+          "new_years": "30",
+          "cashout": "0",
+          "points": "0",
+          "fees": "3000",
+          "finance": "No"
+        },
+        "outputs": [
+          236139.4607109253
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ira",
+    "slug": "roth-ira-vs-traditional-ira",
+    "tool": "ira",
+    "mode": "comparison",
+    "axis": "retire_tax",
+    "axisLabel": "Retirement tax assumption (%)",
+    "seriesLabels": [
+      "Traditional: after-tax value",
+      "Roth: equal-budget value"
+    ],
+    "rows": [
+      {
+        "x": 0,
+        "values": {
+          "age": "35",
+          "retire": "65",
+          "balance": "0",
+          "contribution": "6000",
+          "max": "No",
+          "return": "6",
+          "tax": "20",
+          "retire_tax": "0"
+        },
+        "outputs": [
+          474349.1172913253,
+          379479.29383306036
+        ]
+      },
+      {
+        "x": 10,
+        "values": {
+          "age": "35",
+          "retire": "65",
+          "balance": "0",
+          "contribution": "6000",
+          "max": "No",
+          "return": "6",
+          "tax": "20",
+          "retire_tax": "10"
+        },
+        "outputs": [
+          426914.2055621928,
+          379479.29383306036
+        ]
+      },
+      {
+        "x": 20,
+        "values": {
+          "age": "35",
+          "retire": "65",
+          "balance": "0",
+          "contribution": "6000",
+          "max": "No",
+          "return": "6",
+          "tax": "20",
+          "retire_tax": "20"
+        },
+        "outputs": [
+          379479.29383306025,
+          379479.29383306036
+        ]
+      },
+      {
+        "x": 30,
+        "values": {
+          "age": "35",
+          "retire": "65",
+          "balance": "0",
+          "contribution": "6000",
+          "max": "No",
+          "return": "6",
+          "tax": "20",
+          "retire_tax": "30"
+        },
+        "outputs": [
+          332044.38210392767,
+          379479.29383306036
+        ]
+      },
+      {
+        "x": 40,
+        "values": {
+          "age": "35",
+          "retire": "65",
+          "balance": "0",
+          "contribution": "6000",
+          "max": "No",
+          "return": "6",
+          "tax": "20",
+          "retire_tax": "40"
+        },
+        "outputs": [
+          284609.47037479514,
+          379479.29383306036
+        ]
+      }
+    ]
+  },
+  {
+    "id": "margin",
+    "slug": "margin-vs-markup",
+    "tool": "markup",
+    "mode": "price",
+    "axis": "markup",
+    "axisLabel": "Markup on cost (%)",
+    "seriesLabels": [
+      "Selling price",
+      "Gross profit per unit"
+    ],
+    "rows": [
+      {
+        "x": 0,
+        "values": {
+          "cost": "100",
+          "markup": "0"
+        },
+        "outputs": [
+          100,
+          0
+        ]
+      },
+      {
+        "x": 25,
+        "values": {
+          "cost": "100",
+          "markup": "25"
+        },
+        "outputs": [
+          125,
+          25
+        ]
+      },
+      {
+        "x": 50,
+        "values": {
+          "cost": "100",
+          "markup": "50"
+        },
+        "outputs": [
+          150,
+          50
+        ]
+      },
+      {
+        "x": 75,
+        "values": {
+          "cost": "100",
+          "markup": "75"
+        },
+        "outputs": [
+          175,
+          75
+        ]
+      },
+      {
+        "x": 100,
+        "values": {
+          "cost": "100",
+          "markup": "100"
+        },
+        "outputs": [
+          200,
+          100
+        ]
+      }
+    ]
+  },
+  {
+    "id": "coast",
+    "slug": "how-to-calculate-coast-fire",
+    "tool": "coast-fire",
+    "mode": "coast",
+    "axis": "retire",
+    "axisLabel": "Full-retirement target age",
+    "seriesLabels": [
+      "Required portfolio today"
+    ],
+    "rows": [
+      {
+        "x": 55,
+        "values": {
+          "household": "Individual",
+          "age": "35",
+          "retire": "55",
+          "balance": "150000",
+          "partner_balance": "0",
+          "spending": "40000",
+          "return": "7",
+          "inflation": "2.5",
+          "withdrawal": "4",
+          "monthly": "1000",
+          "partner_monthly": "0"
+        },
+        "outputs": [
+          423449.62649425573
+        ]
+      },
+      {
+        "x": 60,
+        "values": {
+          "household": "Individual",
+          "age": "35",
+          "retire": "60",
+          "balance": "150000",
+          "partner_balance": "0",
+          "spending": "40000",
+          "return": "7",
+          "inflation": "2.5",
+          "withdrawal": "4",
+          "monthly": "1000",
+          "partner_monthly": "0"
+        },
+        "outputs": [
+          341587.67528806743
+        ]
+      },
+      {
+        "x": 65,
+        "values": {
+          "household": "Individual",
+          "age": "35",
+          "retire": "65",
+          "balance": "150000",
+          "partner_balance": "0",
+          "spending": "40000",
+          "return": "7",
+          "inflation": "2.5",
+          "withdrawal": "4",
+          "monthly": "1000",
+          "partner_monthly": "0"
+        },
+        "outputs": [
+          275551.40590090706
+        ]
+      },
+      {
+        "x": 70,
+        "values": {
+          "household": "Individual",
+          "age": "35",
+          "retire": "70",
+          "balance": "150000",
+          "partner_balance": "0",
+          "spending": "40000",
+          "return": "7",
+          "inflation": "2.5",
+          "withdrawal": "4",
+          "monthly": "1000",
+          "partner_monthly": "0"
+        },
+        "outputs": [
+          222281.37250541733
+        ]
+      },
+      {
+        "x": 75,
+        "values": {
+          "household": "Individual",
+          "age": "35",
+          "retire": "75",
+          "balance": "150000",
+          "partner_balance": "0",
+          "spending": "40000",
+          "return": "7",
+          "inflation": "2.5",
+          "withdrawal": "4",
+          "monthly": "1000",
+          "partner_monthly": "0"
+        },
+        "outputs": [
+          179309.58617812465
+        ]
+      }
+    ]
+  },
+  {
+    "id": "snowball",
+    "slug": "how-to-calculate-debt-snowball",
+    "tool": "debt-snowball",
+    "mode": "snowball",
+    "axis": "once_month",
+    "axisLabel": "Month a $1,000 extra payment is credited",
+    "seriesLabels": [
+      "Total modeled interest"
+    ],
+    "rows": [
+      {
+        "x": 1,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "1"
+        },
+        "outputs": [
+          1494.8409451360508
+        ]
+      },
+      {
+        "x": 4,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "4"
+        },
+        "outputs": [
+          1557.1584899937188
+        ]
+      },
+      {
+        "x": 7,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "7"
+        },
+        "outputs": [
+          1616.7118996417948
+        ]
+      },
+      {
+        "x": 10,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "10"
+        },
+        "outputs": [
+          1673.5173704778595
+        ]
+      },
+      {
+        "x": 13,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "13"
+        },
+        "outputs": [
+          1732.6485857115638
+        ]
+      }
+    ]
+  },
+  {
+    "id": "avalanche",
+    "slug": "how-to-calculate-debt-avalanche",
+    "tool": "debt-avalanche",
+    "mode": "avalanche",
+    "axis": "once_month",
+    "axisLabel": "Month a $1,000 extra payment is credited",
+    "seriesLabels": [
+      "Total modeled interest"
+    ],
+    "rows": [
+      {
+        "x": 1,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "1"
+        },
+        "outputs": [
+          1350.5346057071308
+        ]
+      },
+      {
+        "x": 4,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "4"
+        },
+        "outputs": [
+          1425.961264498793
+        ]
+      },
+      {
+        "x": 7,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "7"
+        },
+        "outputs": [
+          1498.0896680765686
+        ]
+      },
+      {
+        "x": 10,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "10"
+        },
+        "outputs": [
+          1566.5771161213268
+        ]
+      },
+      {
+        "x": 13,
+        "values": {
+          "debts": "Card A, 5000, 150, 22\nCard B, 3000, 100, 18",
+          "budget": "400",
+          "rollover": "Yes",
+          "once": "1000",
+          "once_month": "13"
+        },
+        "outputs": [
+          1631.4690143631055
+        ]
+      }
+    ]
+  },
+  {
+    "id": "barista",
+    "slug": "barista-fire-vs-coast-fire",
+    "tool": "barista-fire",
+    "mode": "plan",
+    "axis": "income_end",
+    "axisLabel": "Part-time earnings stop at age",
+    "seriesLabels": [
+      "Required assets at age 45"
+    ],
+    "rows": [
+      {
+        "x": 45,
+        "values": {
+          "age": "45",
+          "start_age": "45",
+          "income_end": "45",
+          "retire_age": "65",
+          "balance": "760000",
+          "monthly": "0",
+          "spending": "36000",
+          "income": "24000",
+          "full_spending": "24000",
+          "return": "0",
+          "inflation": "0",
+          "withdrawal": "4"
+        },
+        "outputs": [
+          1320000
+        ]
+      },
+      {
+        "x": 50,
+        "values": {
+          "age": "45",
+          "start_age": "45",
+          "income_end": "50",
+          "retire_age": "65",
+          "balance": "760000",
+          "monthly": "0",
+          "spending": "36000",
+          "income": "24000",
+          "full_spending": "24000",
+          "return": "0",
+          "inflation": "0",
+          "withdrawal": "4"
+        },
+        "outputs": [
+          1200000
+        ]
+      },
+      {
+        "x": 55,
+        "values": {
+          "age": "45",
+          "start_age": "45",
+          "income_end": "55",
+          "retire_age": "65",
+          "balance": "760000",
+          "monthly": "0",
+          "spending": "36000",
+          "income": "24000",
+          "full_spending": "24000",
+          "return": "0",
+          "inflation": "0",
+          "withdrawal": "4"
+        },
+        "outputs": [
+          1080000
+        ]
+      },
+      {
+        "x": 60,
+        "values": {
+          "age": "45",
+          "start_age": "45",
+          "income_end": "60",
+          "retire_age": "65",
+          "balance": "760000",
+          "monthly": "0",
+          "spending": "36000",
+          "income": "24000",
+          "full_spending": "24000",
+          "return": "0",
+          "inflation": "0",
+          "withdrawal": "4"
+        },
+        "outputs": [
+          960000
+        ]
+      },
+      {
+        "x": 65,
+        "values": {
+          "age": "45",
+          "start_age": "45",
+          "income_end": "65",
+          "retire_age": "65",
+          "balance": "760000",
+          "monthly": "0",
+          "spending": "36000",
+          "income": "24000",
+          "full_spending": "24000",
+          "return": "0",
+          "inflation": "0",
+          "withdrawal": "4"
+        },
+        "outputs": [
+          840000
+        ]
+      }
+    ]
+  }
+]

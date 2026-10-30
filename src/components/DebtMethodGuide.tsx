@@ -1,3 +1,4 @@
+import RemainingGuideReview,{RemainingGuideSummary} from './RemainingGuideReview';
 import SiteLink from './SiteLink';
 import {snowballMethodGuide,avalancheMethodGuide,editorialSchema} from '@/lib/editorial-guides';
 import {pageMetadata} from '@/lib/seo';
@@ -5,7 +6,7 @@ import {directoryPath,serializeSchema} from '@/lib/site';
 import {calculatorPresetHref} from '@/lib/preset-links';
 export function debtMethodMetadata(strategy:'snowball'|'avalanche'){
  const guide=strategy==='snowball'?snowballMethodGuide:avalancheMethodGuide,page=pageMetadata(guide.path,guide.title,guide.description);
- return {...page,openGraph:{...page.openGraph,type:'article' as const,publishedTime:guide.publishedOn,modifiedTime:guide.publishedOn}};
+ return {...page,openGraph:{...page.openGraph,type:'article' as const,publishedTime:guide.publishedOn,modifiedTime:guide.updatedOn??guide.publishedOn}};
 }
 export default function DebtMethodGuide({strategy}:{strategy:'snowball'|'avalanche'}){
  const snow=strategy==='snowball',guide=snow?snowballMethodGuide:avalancheMethodGuide,tool='/debt-'+strategy+'-calculator';
@@ -13,10 +14,12 @@ export default function DebtMethodGuide({strategy}:{strategy:'snowball'|'avalanc
  return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
   <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">{guide.breadcrumb}</span></nav>
   <p className="glossary-category">Loans &amp; debt · Step-by-step guide</p><h1>{guide.heading}</h1>
-  <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={guide.publishedOn}>October 29, 2026</time></p>
+  <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={guide.publishedOn}>October 29, 2026</time> · Updated <time dateTime={guide.updatedOn}>October 30, 2026</time></p>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(guide))}}/>
   <p>{snow?'To calculate a debt snowball, cover every minimum and apply the remaining payment budget to the smallest remaining balance. The useful output is a monthly sequence: when the first balance clears, where its payment goes next, and what the entire plan costs.':'To calculate a debt avalanche, cover every minimum and direct the remaining budget to the highest APR. Track balances and interest month by month; the highest rate, largest balance and first balance to clear are three different things.'} Use the <SiteLink href={tool}>Debt {snow?'Snowball':'Avalanche'} Calculator</SiteLink> to run the worksheet below with your own inputs.</p>
+  <RemainingGuideSummary id={strategy}/>
   <nav className="guide-nav" aria-label="Guide sections"><SiteLink href="#prepare">Debt list</SiteLink><SiteLink href="#allocate">Payment order</SiteLink><SiteLink href="#first-month">Worked month</SiteLink><SiteLink href="#repeat">Repeat and audit</SiteLink><SiteLink href="#spreadsheet">Spreadsheet</SiteLink><SiteLink href="#questions">Questions</SiteLink><SiteLink href="#sources">Sources</SiteLink></nav>
+  <RemainingGuideReview id={strategy}/>
   <h2 id="prepare">Start with statements and one affordable total budget</h2>
   <p>Record a unique nickname, current balance, APR and required monthly minimum for each debt. Nicknames are enough; account numbers are unnecessary. Keep balances with materially different terms separate, and check that this fixed-rate monthly approximation fits the debts you enter.</p>
   <p>The example has Card A at $5,000, 22% APR and a $150 minimum, plus Card B at $3,000, 18% APR and a $100 minimum. The total budget is $400, including the $250 of minimums. Therefore $150 remains for extra repayment. Entering $400 as extra as well would count the minimums twice.</p>

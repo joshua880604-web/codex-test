@@ -4,7 +4,7 @@ import { calculatorScope } from './calculator-scope';
 import { resultTrend, type ResultTrend } from './result-trend';
 
 export type ImageInput = { label: string; value: string; summarized?: boolean };
-export type ImageDetails = { inputs: ImageInput[]; includeInputs: boolean; formula: string; scope?: string; trend: ResultTrend | null };
+export type ImageDetails = { inputs: ImageInput[]; includeInputs: boolean; formula: string; scope?: string; trend: ResultTrend | null; layout?:'summary'|'detailed'; inputHeading?:string; disclosure?:'key'|'all'|'none' };
 
 // Keep the familiar primary/highlights, then retain every remaining result.
 // Marriage's signed penalty is represented by its existing positive savings/cost label.
@@ -29,7 +29,7 @@ export function imageInputs(fields: Field[], values: Values): ImageInput[] {
     const raw = values[f.key].trim(), rows = raw.split(/\r?\n/).filter(line => line.trim()).length;
     if (raw.length > 240 || rows > 3) return { label: f.label, value: rows > 1 ? `${rows} entered rows; full list not included.` : `${raw.length} entered characters; full text not included.`, summarized: true };
     const unit = keys.has(f.key + '_unit') ? values[f.key + '_unit'] : f.unit;
-    const text = grouped(raw);
+    const text = ['year','start_year'].includes(f.key) ? raw : grouped(raw);
     const value = unit === '$' || unit === 'Dollars' ? '$' + text
       : unit === '%' || unit === 'Percent' ? text + '%'
       : unit?.startsWith('Percent of ') ? text + '% of ' + unit.slice(11)

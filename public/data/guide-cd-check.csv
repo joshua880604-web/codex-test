@@ -1,0 +1,6 @@
+﻿"Checked on","Data kind","Constant APY assumption (%)","One-year balance","Inputs JSON"
+"2026-10-30","Hypothetical deterministic model case; not observed data","2","10200","{""principal"":""10000"",""rate_type"":""APY"",""rate"":""2"",""compound"":""Monthly"",""years"":""1"",""months"":""0"",""tax"":""0""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","3","10300","{""principal"":""10000"",""rate_type"":""APY"",""rate"":""3"",""compound"":""Monthly"",""years"":""1"",""months"":""0"",""tax"":""0""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","4","10400","{""principal"":""10000"",""rate_type"":""APY"",""rate"":""4"",""compound"":""Monthly"",""years"":""1"",""months"":""0"",""tax"":""0""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","5","10500","{""principal"":""10000"",""rate_type"":""APY"",""rate"":""5"",""compound"":""Monthly"",""years"":""1"",""months"":""0"",""tax"":""0""}"
+"2026-10-30","Hypothetical deterministic model case; not observed data","6","10600","{""principal"":""10000"",""rate_type"":""APY"",""rate"":""6"",""compound"":""Monthly"",""years"":""1"",""months"":""0"",""tax"":""0""}"

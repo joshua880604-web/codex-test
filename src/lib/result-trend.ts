@@ -35,7 +35,11 @@ export function resultTrend(id: string, mode: string, values: Values, result: Re
   let xIndex = 0, balanceIndex = -1, scale = 1, secondaryIndex = -1;
   let secondaryKey: ResultTrend["secondaryKey"], secondaryLabel: string | undefined;
   let start: TrendPoint | null = null;
-  if (['debt-snowball','debt-avalanche'].includes(id) && columns[0]==='Month' && columns[3]==='Total balance') {
+  if(id==='roth-conversion-ladder' && columns[12]==='Traditional IRA year-end value (USD)' && columns[13]==='Roth IRA year-end market value (USD)'){
+    start={x:input('start_year')-1,balance:input('pretax'),comparison:input('roth_basis')};balanceIndex=12;secondaryIndex=13;secondaryKey='comparison';secondaryLabel='Roth market value';xLabel='Tax year (year-end values)';title='Account values are not immediately accessible cash';balanceLabel='Traditional IRA value';help='First point is the opening balance before the first modeled January 1. Later points are year ends after conversions, withdrawals and growth. Roth value includes unseasoned principal and earnings; traditional value is before withdrawal tax. Cash gaps and dates are in the schedules; no retirement-safety inference.';
+  } else if (id==='drip' && columns[7]==='DRIP value (USD)' && columns[12]==='No-DRIP total wealth (USD)') {
+    start={x:0,balance:input('initial'),comparison:input('initial')};balanceIndex=7;secondaryIndex=12;scale=1/12;secondaryKey='comparison';secondaryLabel='Shares + cash (no DRIP)';xLabel='Years';title='Dividend reinvestment versus retained cash';balanceLabel='DRIP portfolio';help='Same external contributions in both paths. No-DRIP wealth includes cash dividends earning zero interest. Flat dividend taxes are deducted at payout; no sale tax, fees or inflation. Constant hypothetical paths, not forecasts.';
+  } else if (['debt-snowball','debt-avalanche'].includes(id) && columns[0]==='Month' && columns[3]==='Total balance') {
     const original=result.metrics.find(m=>m.label==='Starting total debt')!.value;
     start={x:0,balance:original};balanceIndex=3;xLabel='Payment month';
     title='Debt balance on your payoff plan';balanceLabel='Remaining debt';

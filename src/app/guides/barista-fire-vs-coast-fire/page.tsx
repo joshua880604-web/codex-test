@@ -1,18 +1,21 @@
+import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {baristaCoastGuide as guide,editorialSchema} from '@/lib/editorial-guides';
 import {pageMetadata} from '@/lib/seo';
 import {directoryPath,serializeSchema} from '@/lib/site';
 import {calculatorPresetHref} from '@/lib/preset-links';
 const meta=pageMetadata(guide.path,guide.title,guide.description);
-export const metadata={...meta,openGraph:{...meta.openGraph,type:'article' as const,publishedTime:guide.publishedOn}};
+export const metadata={...meta,openGraph:{...meta.openGraph,type:'article' as const,publishedTime:guide.publishedOn,modifiedTime:guide.updatedOn??guide.publishedOn}};
 const example={age:45,start_age:45,income_end:55,retire_age:65,balance:760000,monthly:0,spending:36000,income:24000,full_spending:24000,return:0,inflation:0,withdrawal:4};
 export default function BaristaCoastComparison(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">{guide.breadcrumb}</span></nav>
  <p className="glossary-category">Retirement · Comparison guide</p><h1>{guide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime="2026-10-29">October 29, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime="2026-10-29">October 29, 2026</time> · Updated <time dateTime={guide.updatedOn}>October 30, 2026</time></p>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(guide))}}/>
  <p><strong>Barista FIRE combines earned income with portfolio withdrawals before full retirement. Coast FIRE, as modeled here, leaves the retirement portfolio invested while earned income covers current living costs.</strong> The difference is who pays today’s bills and when income stops. Use the <SiteLink href="/barista-fire-calculator">Barista FIRE calculator</SiteLink> for an income-and-withdrawal bridge or the <SiteLink href="/coast-fire-calculator">Coast FIRE calculator</SiteLink> for a no-withdrawal accumulation path.</p>
- <h2>Compare the actual money flows</h2>
+ <RemainingGuideSummary id="barista"/>
+  <RemainingGuideReview id="barista"/>
+  <h2>Compare the actual money flows</h2>
  <div className="table-scroll" role="region" tabIndex={0} aria-label="Barista FIRE and Coast FIRE differences"><table><thead><tr><th>Planning question</th><th>Barista FIRE model</th><th>Coast FIRE model</th></tr></thead><tbody>
  <tr><th>What pays pre-retirement bills?</th><td>After-tax earnings plus any portfolio-funded gap</td><td>Earned income or resources outside the modeled portfolio</td></tr>
  <tr><th>Are there early portfolio withdrawals?</th><td>Yes, when spending exceeds earnings</td><td>No</td></tr>

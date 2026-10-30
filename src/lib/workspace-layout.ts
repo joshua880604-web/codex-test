@@ -2,6 +2,8 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
+  "roth-conversion-ladder",
+  "drip",
   "covered-call", "house-hacking", "mortgage-vs-invest", "cash-on-cash-return", "brrrr", "debt-snowball", "debt-avalanche",
   "rmd", "self-employment-tax", "hsa", "noi", "fire", "mirr", "fat-fire", "lean-fire",
   "coast-fire", "barista-fire",
@@ -17,10 +19,12 @@ export const workspaceIds = [
 export function hasCalculatorWorkspace(id: string): boolean { return (workspaceIds as readonly string[]).includes(id); }
 export function workspaceLayout(id: string, mode: string): "split" | "stacked" | null {
   if (!hasCalculatorWorkspace(id)) return null;
-  return id === "covered-call" || id === "house-hacking" || id === "mortgage-vs-invest" || (id === "cash-on-cash-return" && mode === "property") || id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
+  return id === "roth-conversion-ladder" || id === "drip" || id === "covered-call" || id === "house-hacking" || id === "mortgage-vs-invest" || (id === "cash-on-cash-return" && mode === "property") || id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
 }
 
 const priorities: Record<string, string[]> = {
+  'roth-conversion-ladder':['Bridge cash required for this modeled path','Additional bridge cash needed','Modeled funding status','Estimated conversion tax'],
+  drip:['Ending portfolio with DRIP','Ending wealth without reinvestment (shares + cash)','DRIP minus cash-dividend wealth','External money invested'],
   'covered-call':['Covered call profit / loss at your expiry price','Maximum expiry profit (may be negative)','Worst-case loss at zero stock price','Break-even stock price'],
   'house-hacking':['Monthly net housing cash cost','Monthly budget difference versus renting','Initial cash required','Effective monthly tenant rent'],
   'mortgage-vs-invest':['Invest-first advantage at horizon','Paydown-first investments minus mortgage','Invest-first investments minus mortgage','Modeled comparison'],

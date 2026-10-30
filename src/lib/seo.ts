@@ -61,6 +61,8 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
 }
 // Dates record reviewed content changes, never the current build time.
 export const contentUpdatedOn: Record<string, string> = {
+  "/roth-conversion-ladder-calculator.html":"2026-10-30",
+  "/drip-calculator.html":"2026-10-30",
   "/privacy.html":"2026-10-29",
   [embedResourcesPath]:embedResourcesReviewedOn,
   [guidesPath]:'2026-10-30',

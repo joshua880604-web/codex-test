@@ -1,19 +1,22 @@
+import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
 import {marginMarkupGuide,editorialSchema} from '@/lib/editorial-guides';
 import {directoryPath,serializeSchema} from '@/lib/site';
 const page=pageMetadata(marginMarkupGuide.path,marginMarkupGuide.title,marginMarkupGuide.description);
-export const metadata={...page,openGraph:{...page.openGraph,type:'article' as const,publishedTime:marginMarkupGuide.publishedOn,modifiedTime:marginMarkupGuide.publishedOn}};
+export const metadata={...page,openGraph:{...page.openGraph,type:'article' as const,publishedTime:marginMarkupGuide.publishedOn,modifiedTime:marginMarkupGuide.updatedOn??marginMarkupGuide.publishedOn}};
 export default function MarginMarkupGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
 <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">Margin vs. markup</span></nav>
 <p className="glossary-category">Business finance · Comparison guide</p><h1>{marginMarkupGuide.heading}</h1>
-<p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={marginMarkupGuide.publishedOn}>October 28, 2026</time></p>
+<p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={marginMarkupGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={marginMarkupGuide.updatedOn}>October 30, 2026</time></p>
 <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(marginMarkupGuide))}}/>
 <p>{"Margin measures profit as a share of selling price. Markup measures the same dollar profit as a share of cost. Because the denominators differ, the percentages are usually different: a product that costs $100 and sells for $150 has a 50% markup and a 33.3333% gross margin."}</p>
 <p>{"If you want a 30% margin, adding 30% to cost will not produce it. On a $100 cost, 30% markup gives a $130 price and about 23.08% margin. A 30% margin instead requires an unrounded price of about $142.8571. This guide works through that difference, then tests a discount and a cost increase."}</p>
 <p>{"All prices and costs are hypothetical USD amounts. Examples use one unit, exclude sales tax, and treat the entered cost as that unit’s cost of goods sold. They do not establish a suitable selling price for your business or calculate net profit after every expense. Calculations retain precision internally and round only for display."}</p>
-<nav className="guide-nav" aria-label="Guide sections"><SiteLink href="#use-the-same-profit-then-choose-the-denominator">{"Use the same profit, then choose the denominator"}</SiteLink><SiteLink href="#calculate-price-from-markup-or-target-margin">{"Calculate price from markup or target margin"}</SiteLink><SiteLink href="#convert-between-markup-and-margin">{"Convert between markup and margin"}</SiteLink><SiteLink href="#a-discount-changes-the-margin-on-the-actual-sale">{"A discount changes the margin on the actual sale"}</SiteLink><SiteLink href="#recheck-price-when-the-cost-changes">{"Recheck price when the cost changes"}</SiteLink><SiteLink href="#gross-profit-is-not-the-final-money-you-keep">{"Gross profit is not the final money you keep"}</SiteLink><SiteLink href="#common-questions">{"Common questions"}</SiteLink><SiteLink href="#calculation-checks-and-scope">{"Calculation checks and scope"}</SiteLink></nav>
-<h2 id="use-the-same-profit-then-choose-the-denominator">{"Use the same profit, then choose the denominator"}</h2>
+<RemainingGuideSummary id="margin"/>
+  <nav className="guide-nav" aria-label="Guide sections"><SiteLink href="#use-the-same-profit-then-choose-the-denominator">{"Use the same profit, then choose the denominator"}</SiteLink><SiteLink href="#calculate-price-from-markup-or-target-margin">{"Calculate price from markup or target margin"}</SiteLink><SiteLink href="#convert-between-markup-and-margin">{"Convert between markup and margin"}</SiteLink><SiteLink href="#a-discount-changes-the-margin-on-the-actual-sale">{"A discount changes the margin on the actual sale"}</SiteLink><SiteLink href="#recheck-price-when-the-cost-changes">{"Recheck price when the cost changes"}</SiteLink><SiteLink href="#gross-profit-is-not-the-final-money-you-keep">{"Gross profit is not the final money you keep"}</SiteLink><SiteLink href="#common-questions">{"Common questions"}</SiteLink><SiteLink href="#calculation-checks-and-scope">{"Calculation checks and scope"}</SiteLink></nav>
+<RemainingGuideReview id="margin"/>
+  <h2 id="use-the-same-profit-then-choose-the-denominator">{"Use the same profit, then choose the denominator"}</h2>
 <p>{"Let cost be C and selling price be P. Gross profit per unit is the difference, P minus C. The formulas are:"}</p>
 <p><code>{"Markup % = (P - C) / C × 100"}</code></p>
 <p><code>{"Gross margin % = (P - C) / P × 100"}</code></p>

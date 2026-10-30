@@ -1,3 +1,5 @@
+import rothLadderContent from './roth-ladder-content.json';
+import dripContent from './drip-content.json';
 import {motherPageIds,motherPageReviewedOn} from './mother-page-ui';
 import motherPageContent from './mother-page-content.json';
 import coveredCallContent from './covered-call-content.json';
@@ -34,7 +36,7 @@ export type Guide = {
   summary: string;
   scope: string;
   examples: WorkedExample[];
-  questions: { question: string; answer: string; anchor?: string; links?: LongTailLink[] }[];
+  questions: { question: string; answer: string; steps?: string[]; anchor?: string; links?: LongTailLink[] }[];
   sources: { title: string; url: string }[];
 };
 const investor = {
@@ -820,6 +822,14 @@ for(const id of ['mortgage','rent-vs-buy','rental-property'])relatedCalculatorId
 Object.assign(guides,Object.fromEntries(Object.entries(coveredCallContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
 relatedCalculatorIds['covered-call']=['roi','investment','average-return','real-return','compound-interest'];
 for(const id of ['roi','investment','average-return'])relatedCalculatorIds[id]=[...new Set(['covered-call',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(dripContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['drip']=['investment','compound-interest','roi','covered-call','real-return','roth-ira'];
+for(const id of ['investment','compound-interest','covered-call'])relatedCalculatorIds[id]=[...new Set(['drip',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+Object.assign(guides,Object.fromEntries(Object.entries(rothLadderContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+relatedCalculatorIds['roth-conversion-ladder']=['ira','roth-ira','fire','coast-fire','barista-fire','retirement'];
+for(const id of ['ira','roth-ira','fire','barista-fire'])relatedCalculatorIds[id]=[...new Set(['roth-conversion-ladder',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {
