@@ -1,0 +1,407 @@
+{
+  "seller-financing": {
+    "updatedOn": "2026-10-31",
+    "summary": "Seller financing means the seller carries a note for part of the purchase price rather than receiving that portion in cash at closing. Owner financing and seller finance describe the same calculation here. Enter a purchase price, down payment, fixed note rate and maturity month. In Amortizing Note mode, the amortization length determines the regular monthly installment; the contractual maturity may be earlier. Interest-Only Note keeps principal unchanged until maturity. The schedule separates interest, principal and the additional balloon component so that the final-month cash requirement is visible. Use actual contract terms rather than treating the default inputs as a market quote.",
+    "scope": "Fixed-rate USD real-estate note with monthly end-of-period payments and one maturity settlement. Balloon principal is measured after that month\u2019s installment. No legal eligibility, fees, escrow, taxes, daily interest or refinancing guarantee.",
+    "sources": [
+      {
+        "title": "CFPB: balloon payments and repayment risk",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-balloon-payment-when-is-one-allowed-en-104/"
+      },
+      {
+        "title": "CFPB Regulation Z \u00a71026.36: seller-financer provisions and other loan-originator rules",
+        "url": "https://www.consumerfinance.gov/rules-policy/regulations/1026/36/"
+      }
+    ],
+    "examples": [
+      {
+        "title": "A zero-interest note with an early maturity",
+        "mode": "amortized",
+        "values": {
+          "price": 15000,
+          "down": 3000,
+          "rate": 0,
+          "years": 1,
+          "due": 6
+        },
+        "inputs": "$15,000 price, $3,000 down, 0% nominal rate, 12-month amortization and settlement after month 6.",
+        "steps": [
+          "Financed principal is $12,000. Divide by 12 for a $1,000 regular installment.",
+          "Six installments reduce principal to $6,000. The final month includes its $1,000 installment plus the $6,000 balloon."
+        ],
+        "answer": "Month 6 requires $7,000; the extra balloon component is $6,000.",
+        "expected": {
+          "label": "Total due in final month",
+          "value": 7000,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "An interest-only owner-financed note",
+        "mode": "interest-only",
+        "values": {
+          "price": 120000,
+          "down": 20000,
+          "rate": 6,
+          "due": 12
+        },
+        "inputs": "$100,000 financed at 6% annual nominal interest for 12 monthly interest-only installments.",
+        "steps": [
+          "Monthly interest is $100,000 \u00d7 6% / 12 = $500.",
+          "Principal stays at $100,000. In month 12 pay $500 interest plus all principal."
+        ],
+        "answer": "The final-month amount is $100,500 and total interest is $6,000.",
+        "expected": {
+          "label": "Total due in final month",
+          "value": 100500,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-owner-versus-seller",
+        "question": "Are owner financing and seller financing the same?",
+        "queries": [
+          "are owner financing and seller financing the same"
+        ],
+        "answer": "For this calculator they refer to the seller carrying the buyer\u2019s note. Both phrases lead to one tool with the same payment convention. Transaction documents can differ: a land contract, deed of trust or mortgage may allocate title, remedies and payment obligations differently. This worksheet does not choose a legal structure.",
+        "links": [
+          {
+            "id": "seller-financing",
+            "mode": "amortized",
+            "label": "Open seller financing calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-amortization-versus-term",
+        "question": "What is the difference between amortization and a balloon term?",
+        "queries": [
+          "what is the difference between amortization and a balloon term"
+        ],
+        "answer": "Amortization length is the payoff period used to size a payment. Maturity is when the remaining note must actually be repaid. A 30-year amortization with a 60-month maturity uses a 30-year payment but settles the unpaid principal after month 60. A long amortization does not postpone the contractual due date.",
+        "links": [
+          {
+            "id": "seller-financing",
+            "mode": "amortized",
+            "label": "Open seller financing calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-calculate-balloon",
+        "question": "How do you calculate a seller financing balloon payment?",
+        "queries": [
+          "how do you calculate a seller financing balloon payment"
+        ],
+        "answer": "Accrue monthly interest on the opening principal, subtract that month\u2019s scheduled installment and repeat until maturity. The principal left after the maturity-month installment is the additional balloon. Add that installment to the balloon to get the complete final-month payment. The payment table includes that settlement once.",
+        "links": [
+          {
+            "id": "seller-financing",
+            "mode": "amortized",
+            "label": "Open seller financing calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-interest-only-note",
+        "question": "Can I calculate interest-only seller financing?",
+        "queries": [
+          "can i calculate interest-only seller financing"
+        ],
+        "answer": "Yes. Select Interest-Only Note. Monthly interest equals principal times the annual nominal rate divided by 12. The entire principal is due at maturity in addition to the final interest installment. The tool models cash flows only; it does not determine whether interest-only terms are permissible for a particular transaction.",
+        "links": [
+          {
+            "id": "seller-financing",
+            "mode": "amortized",
+            "label": "Open seller financing calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-zero-interest",
+        "question": "Does this owner finance calculator work with zero interest?",
+        "queries": [
+          "does this owner finance calculator work with zero interest"
+        ],
+        "answer": "Yes. An amortizing zero-interest note divides principal by the amortization month count. An interest-only zero-interest note has no interim installment but still requires principal at maturity. A calculated 0% schedule does not resolve imputed-interest, tax or contract requirements.",
+        "links": [
+          {
+            "id": "seller-financing",
+            "mode": "amortized",
+            "label": "Open seller financing calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-down-payment",
+        "question": "How much down payment is required for owner financing?",
+        "queries": [
+          "how much down payment is required for owner financing"
+        ],
+        "answer": "There is no universal required down payment supplied by this model. Enter the amount from your proposed agreement; financed principal is purchase price minus down payment. A zero down payment is mathematically supported, but the result does not establish creditworthiness, legal compliance or enough reserves for ownership costs.",
+        "links": [
+          {
+            "id": "seller-financing",
+            "mode": "amortized",
+            "label": "Open seller financing calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-interest-rate",
+        "question": "What interest rate should I use for seller financing?",
+        "queries": [
+          "what interest rate should i use for seller financing"
+        ],
+        "answer": "Use the fixed annual nominal note rate in your proposed or signed agreement. The default is an illustrative assumption, not a current average rate or a recommended minimum. APR can differ when fees apply; this calculator excludes fees and is not a regulatory APR disclosure.",
+        "links": [
+          {
+            "id": "seller-financing",
+            "mode": "amortized",
+            "label": "Open seller financing calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-refinance-risk",
+        "question": "Can I refinance the balloon payment when it is due?",
+        "queries": [
+          "can i refinance the balloon payment when it is due"
+        ],
+        "answer": "Possibly, but this calculation does not assume refinancing is available. Credit, income, property value, market rates and lending standards can change. Review the full final-month amount and consider how it would be funded if a new lender does not approve a refinance.",
+        "links": [
+          {
+            "id": "seller-financing",
+            "mode": "amortized",
+            "label": "Open seller financing calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-legal-tax-scope",
+        "question": "Does the calculator confirm seller financing is legal or calculate taxes?",
+        "queries": [
+          "does the calculator confirm seller financing is legal or calculate taxes"
+        ],
+        "answer": "No. The financial schedule does not determine lending-law exemptions, ability-to-repay requirements, licensing, lien priority or state-law remedies. It also excludes installment-sale taxation and imputed interest. Review the actual transaction with appropriately qualified legal and tax professionals.",
+        "links": [
+          {
+            "id": "seller-financing",
+            "mode": "amortized",
+            "label": "Open seller financing calculator"
+          }
+        ]
+      }
+    ]
+  },
+  "fix-and-flip": {
+    "updatedOn": "2026-10-31",
+    "summary": "A house flip can show an attractive resale spread and still lose money after renovation, carrying, financing and selling costs. This fix and flip calculator reconciles those costs for one purchase and one sale. Start with purchase and closing costs, add a renovation contingency, then enter whole months of holding costs and an assumed sale price. Cash mode uses no loan costs. Interest-only financing assumes the entire acquisition loan is advanced at purchase and repaid at sale, while renovation and other costs come from cash. Read net project profit separately from cash needed before sale and net cash released at closing. The sensitivity table changes only resale price; it is a transparent scenario calculation rather than an appraisal or a forecast.",
+    "scope": "One USD buy-renovate-sell project before income tax. Cash purchase or a fully drawn acquisition-only interest-only loan; rehab is cash-funded. Sale price and costs are assumptions; cash required, profit and net sale cash are different measures.",
+    "sources": [
+      {
+        "title": "OCC Commercial Real Estate Lending handbook: construction, project and repayment risks",
+        "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/commercial-real-estate-lending/pub-ch-commercial-real-estate.pdf"
+      },
+      {
+        "title": "IRS Publication 544: property sales and tax classifications",
+        "url": "https://www.irs.gov/publications/p544"
+      }
+    ],
+    "examples": [
+      {
+        "title": "An all-cash flip with itemized selling costs",
+        "mode": "project",
+        "values": {
+          "price": 100000,
+          "closing": 3000,
+          "rehab": 20000,
+          "contingency": 10,
+          "months": 3,
+          "holding": 500,
+          "sale": 160000,
+          "selling": 5,
+          "sale_fixed": 1000,
+          "financing": "Cash"
+        },
+        "inputs": "$100,000 purchase; $3,000 closing; $20,000 renovation plus 10%; three $500 holding months; $160,000 sale less 5% and $1,000.",
+        "steps": [
+          "Renovation including contingency is $22,000. Pre-sale project cost is $126,500.",
+          "Selling costs are $9,000. Subtract $126,500 and $9,000 from $160,000."
+        ],
+        "answer": "The modeled pre-tax project profit is $24,500.",
+        "expected": {
+          "label": "Net project profit before income tax",
+          "value": 24500,
+          "tolerance": 0.01
+        }
+      },
+      {
+        "title": "A lower resale price turns the same project into a loss",
+        "mode": "project",
+        "values": {
+          "price": 100000,
+          "closing": 3000,
+          "rehab": 20000,
+          "contingency": 10,
+          "months": 3,
+          "holding": 500,
+          "sale": 100000,
+          "selling": 5,
+          "sale_fixed": 1000,
+          "financing": "Cash"
+        },
+        "inputs": "Keep the previous all-cash budget, but lower the sale price to $100,000.",
+        "steps": [
+          "Project cost stays $126,500. Selling costs become $6,000.",
+          "Profit = $100,000 \u2212 $126,500 \u2212 $6,000."
+        ],
+        "answer": "The modeled loss is $32,500; a low purchase-to-resale spread does not cover the budget.",
+        "expected": {
+          "label": "Net project profit before income tax",
+          "value": -32500,
+          "tolerance": 0.01
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-house-flipping-calculator",
+        "question": "Is a house flipping calculator different from a fix and flip calculator?",
+        "queries": [
+          "is a house flipping calculator different from a fix and flip calculator"
+        ],
+        "answer": "These phrases describe the same buy-renovate-sell worksheet here. Both use one page and the same cost model. This is a sale project, unlike BRRRR, which assumes refinancing into a rental hold. Use the tool matching the actual exit strategy.",
+        "links": [
+          {
+            "id": "fix-and-flip",
+            "mode": "project",
+            "label": "Open fix and flip calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-profit-formula",
+        "question": "How do I calculate profit on a house flip?",
+        "queries": [
+          "how do i calculate profit on a house flip"
+        ],
+        "answer": "Subtract purchase, acquisition closing, renovation including contingency, non-debt holding, interest, loan points and selling costs from the sale price. Repaying borrowed principal is a financing cash flow rather than an additional project expense. The result is before income tax and depends on your entered costs.",
+        "links": [
+          {
+            "id": "fix-and-flip",
+            "mode": "project",
+            "label": "Open fix and flip calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-cash-required",
+        "question": "How much money do I need to flip a house?",
+        "queries": [
+          "how much money do i need to flip a house"
+        ],
+        "answer": "The modeled pre-sale cash requirement is total project cost before selling costs minus the acquisition loan. It includes cash-funded renovation, closing, points and all holding costs and interest through sale. It is cumulative funding for this model, not a universal minimum or an exact closing-day requirement.",
+        "links": [
+          {
+            "id": "fix-and-flip",
+            "mode": "project",
+            "label": "Open fix and flip calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-financing-profit",
+        "question": "Does borrowing more increase flipping profit?",
+        "queries": [
+          "does borrowing more increase flipping profit"
+        ],
+        "answer": "Borrowed principal itself is not profit. Here a larger acquisition loan reduces cash funding but adds interest and possibly points, reducing project profit. Leveraged cash-on-cash ROI can rise while dollar profit falls, which is why cash funding, profit and net sale cash are shown separately.",
+        "links": [
+          {
+            "id": "fix-and-flip",
+            "mode": "project",
+            "label": "Open fix and flip calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-break-even-price",
+        "question": "What is the break-even sale price for my flip?",
+        "queries": [
+          "what is the break-even sale price for my flip"
+        ],
+        "answer": "Divide project costs plus fixed selling costs by one minus the selling-cost percentage. At that sale price the modeled project profit is zero before income tax. The formula assumes the entered holding duration and financing costs do not change when price changes.",
+        "links": [
+          {
+            "id": "fix-and-flip",
+            "mode": "project",
+            "label": "Open fix and flip calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-seventy-percent-rule",
+        "question": "Should I use the 70% rule when buying a flip?",
+        "queries": [
+          "should i use the 70% rule when buying a flip"
+        ],
+        "answer": "Treat it as a rough screening heuristic rather than an approval rule or a guarantee. A percentage of ARV minus repairs can omit closing, financing, holding and selling costs and can imply very different margins across properties. This worksheet itemizes costs and shows a zero-profit ceiling, which is not a recommended offer.",
+        "links": [
+          {
+            "id": "fix-and-flip",
+            "mode": "project",
+            "label": "Open fix and flip calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-arv",
+        "question": "What does ARV mean in house flipping?",
+        "queries": [
+          "what does arv mean in house flipping"
+        ],
+        "answer": "After-repair value is an estimate of value after renovation. The entered ARV is used as the assumed sale price, not a valuation fetched by this website. Actual sale proceeds depend on market conditions and transaction costs. Test lower sale prices and longer holding periods rather than assuming the estimate will be achieved.",
+        "links": [
+          {
+            "id": "fix-and-flip",
+            "mode": "project",
+            "label": "Open fix and flip calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-holding-delay",
+        "question": "How does a longer holding period affect my flip?",
+        "queries": [
+          "how does a longer holding period affect my flip"
+        ],
+        "answer": "Each extra month adds your non-debt carrying cost plus monthly interest on the unchanged loan principal. This model does not assume an automatic increase in sale value from waiting. Points are paid once upfront, not charged again every month.",
+        "links": [
+          {
+            "id": "fix-and-flip",
+            "mode": "project",
+            "label": "Open fix and flip calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-taxes-and-returns",
+        "question": "Is house flipping ROI an annual return or an after-tax profit?",
+        "queries": [
+          "is house flipping roi an annual return or an after-tax profit"
+        ],
+        "answer": "No. The displayed ROI is profit divided by positive cumulative cash funding for the single entered project. It is not annualized or IRR. Income taxes and a determination of capital-gain versus business-income treatment are outside the model; that classification depends on facts beyond this worksheet.",
+        "links": [
+          {
+            "id": "fix-and-flip",
+            "mode": "project",
+            "label": "Open fix and flip calculator"
+          }
+        ]
+      }
+    ]
+  }
+}

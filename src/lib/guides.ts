@@ -1,3 +1,4 @@
+import propertyDealContent from './property-deal-content.json';
 import priorityContent from './priority-two-content.json';
 import rothLadderContent from './roth-ladder-content.json';
 import dripContent from './drip-content.json';
@@ -838,6 +839,8 @@ relatedCalculatorIds['credit-card-minimum-payment']=['credit-card','credit-cards
 for(const id of ['noi','cash-on-cash-return','rental-property','brrrr','house-hacking'])relatedCalculatorIds[id]=[...new Set(['cap-rate',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 for(const id of ['credit-card','credit-cards-payoff','debt-snowball','debt-avalanche'])relatedCalculatorIds[id]=[...new Set(['credit-card-minimum-payment',...(relatedCalculatorIds[id]??[])])].slice(0,8);
 
+Object.assign(guides,Object.fromEntries(Object.entries(propertyDealContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {
   for (const {queries: _queries, replacesQuestion, ...item} of content.items) {
@@ -863,3 +866,7 @@ for(const [id,patch] of Object.entries(motherPageContent)){
 }
 
 for(const id of motherPageIds)guides[id].checkedOn=motherPageReviewedOn;
+
+relatedCalculatorIds['seller-financing']=['mortgage','amortization','fix-and-flip','brrrr','loan'];
+relatedCalculatorIds['fix-and-flip']=['seller-financing','brrrr','cash-on-cash-return','cap-rate','rental-property'];
+for(const id of ['mortgage','brrrr','rental-property','cash-on-cash-return'])relatedCalculatorIds[id]=[...new Set(['seller-financing','fix-and-flip',...(relatedCalculatorIds[id]??[])])].slice(0,8);

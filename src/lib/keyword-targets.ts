@@ -278,3 +278,8 @@ keywordTitles['credit-card-minimum-payment']='Credit Card Minimum Payment Calcul
 searchTasks['credit-card-minimum-payment']=[{keyword:'Credit card minimum payment calculator',mode:'minimum',description:'Estimate your first minimum payment, payoff time and interest. Compare paying only the minimum with adding extra each month.',aliases:['Minimum credit card payment calculator','Minimum payment credit card calculator']}];
 // Preserve the old calculation mode and saved links; the dedicated page owns the exact minimum-payment query.
 if(minimumTask){minimumTask.keyword='Variable minimum payment payoff estimate';minimumTask.aliases=[];}
+
+keywordTitles['seller-financing']='Seller Financing Calculator - Owner Finance & Balloon';
+searchTasks['seller-financing']=[{keyword:'Seller financing calculator',mode:'amortized',description:'Estimate owner-financed monthly payments, amortization and the balloon due at maturity.',aliases:['Owner financing calculator','Owner finance calculator','Seller finance calculator','Seller financing with balloon payment calculator']},{keyword:'Interest-only seller financing calculator',mode:'interest-only',description:'Separate monthly interest from the principal due at maturity.'}];
+keywordTitles['fix-and-flip']='Fix and Flip Calculator - House Flipping Profit & Costs';
+searchTasks['fix-and-flip']=[{keyword:'Fix and flip calculator',mode:'project',description:'Reconcile renovation, holding, financing and sale costs to estimate house flipping profit and cash required.',aliases:['House flipping calculator','House flip calculator','Flip house calculator','House flipping profit calculator']}];

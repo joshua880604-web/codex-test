@@ -11,7 +11,7 @@ function run(id: string, mode: string, overrides: Record<string, string> = {}) {
   return { result, values, trend: resultTrend(id, mode, values, result), summary: workspaceMetrics(id, mode, result) };
 }
 test("workspace policy covers reviewed pages, preserves broad forms, and never loses metrics", () => {
-  assert.equal(workspaceIds.length, 74); assert.equal(new Set(workspaceIds).size, 74);
+  assert.equal(workspaceIds.length, 76); assert.equal(new Set(workspaceIds).size, 76);
   for (const id of ["income-tax", "marriage-tax", "budget", "credit-cards-payoff", "401k", "scientific"]) assert.equal(hasCalculatorWorkspace(id), false);
   assert.equal(workspaceLayout("retirement", "required"), "stacked");
   assert.equal(workspaceLayout("payback-period", "irregular"), "stacked");
@@ -123,5 +123,5 @@ test("every enabled curve matches the full computed schedule's exact terminal va
     assert.ok(x.trend.points.every(p => Number.isFinite(p.x) && Number.isFinite(p.balance)));
     assert.ok(x.trend.points.length <= 241);
   }
-  assert.equal(count, 77);
+  assert.equal(count, 79);
 });

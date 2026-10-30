@@ -12,7 +12,7 @@
   "mortgage-payoff": "Explore how extra payments could change payoff time and interest.",
   "house-affordability": "Estimate a home budget using income, debts and housing costs.",
   "pmi": "Estimate private mortgage insurance costs under your assumptions.",
-  "heloc": "Explore payments across a home equity line of credit\u2019s phases.",
+  "heloc": "Explore payments across a home equity line of credit’s phases.",
   "debt-snowball": "Explore a payoff plan that targets smaller balances first.",
   "debt-avalanche": "Explore a payoff plan that targets higher interest rates first.",
   "credit-cards-payoff": "Plan payments across multiple cards with one monthly budget.",
@@ -27,5 +27,7 @@
   "cash-on-cash-return": "Calculate a simple cash yield or a first-year rental cash return after financing and a capital reserve.",
   "house-hacking": "Estimate monthly owner-occupied housing costs after tenant rent and the separate initial cash needed to buy.",
   "rental-property": "Project annual rental cash flow, loan balances and sale proceeds using explicit holding-period assumptions.",
-  "noi": "Build property net operating income from rent, vacancy and itemized operating expenses before financing."
+  "noi": "Build property net operating income from rent, vacancy and itemized operating expenses before financing.",
+  "seller-financing": "Model an owner-financed note, monthly payments and the balloon due at maturity.",
+  "fix-and-flip": "Estimate house flipping profit, pre-sale cash funding and the break-even sale price."
 }

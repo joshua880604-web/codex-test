@@ -78,10 +78,10 @@ function renderFields(){
   syncHousehold();
 }
 function syncHousehold(){
-  if(config.id!=='coast-fire')return;
+  if(config.id!=='coast-fire'&&config.id!=='fix-and-flip')return;
   const values=Object.fromEntries(new FormData(form)) as Values;
   for(const wrap of fieldset.querySelectorAll<HTMLElement>('[data-field]')){
-    const visible=coastFieldVisible(values,wrap.dataset.field!);wrap.hidden=!visible;
+    const visible=config.id==='coast-fire'?coastFieldVisible(values,wrap.dataset.field!):!(values.financing==='Cash'&&['loan','rate','points'].includes(wrap.dataset.field!));wrap.hidden=!visible;
     const input=wrap.querySelector<HTMLInputElement|HTMLSelectElement>('input,select');if(input)input.disabled=!visible;
   }
 }

@@ -676,5 +676,17 @@
     "category": "Mortgage and Real Estate",
     "title": "Cap Rate Calculator",
     "local_route": "/cap-rate-calculator.html"
+  },
+  {
+    "id": "seller-financing",
+    "category": "Mortgage and Real Estate",
+    "title": "Seller Financing Calculator",
+    "local_route": "/seller-financing-calculator.html"
+  },
+  {
+    "id": "fix-and-flip",
+    "category": "Mortgage and Real Estate",
+    "title": "Fix and Flip Calculator",
+    "local_route": "/fix-and-flip-calculator.html"
   }
 ]

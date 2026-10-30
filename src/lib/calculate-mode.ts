@@ -9,6 +9,7 @@ export function calculateMode(calc: Calculator, modeId: string, v: Values): Resu
   const mode = calc.modes.find((m) => m.id === modeId);
   if (!mode) throw new Error("Unknown calculator mode.");
   for (const f of mode.fields) {
+    if(id==='fix-and-flip' && v.financing==='Cash' && ['loan','rate','points'].includes(f.key))continue;
     if (id === 'coast-fire' && !coastFieldVisible(v, f.key)) continue;
     if (id === "mortgage" && (!mortgageInputVisible(modeId, v, f.key) || !mortgagePmiFieldVisible(modeId, v, f.key))) continue;
     if (id === "va-mortgage" && ["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key)) continue;

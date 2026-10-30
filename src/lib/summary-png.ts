@@ -14,6 +14,7 @@ export function summaryPNGData(id:string,values:Values,fields:Field[],data:{metr
  if(id==='roth-conversion-ladder')metrics.push(...data.metrics.filter(m=>m.value>0&&['Unfunded conversion tax','Unfunded living costs','Planned conversions not completed due to account balance'].includes(m.label)));
  if(id==='rental-property')metrics.push(...data.metrics.filter(m=>/^Annual IRR \d+$/.test(m.label)&&!metrics.includes(m))); 
  const keys=new Set(['rate','rate_a','rate_b','new_rate','return','inflation','withdrawal','tax','retire_tax','yield','frequency','compound','pay','years','months','year','days','from','to','price_growth','dividend_growth']);
+ if(['seller-financing','fix-and-flip'].includes(id))for(const f of fields)keys.add(f.key);
  if(id==='cap-rate')for(const key of ['value','noi','target','period'])keys.add(key);
  if(id==='credit-card-minimum-payment')for(const key of ['principal','minimum','floor','extra','interest_extra'])keys.add(key);
  if(id==='roth-conversion-ladder')for(const key of ['age','start_year','pretax','bridge','roth_basis','conversion','spending','pretax_return','roth_return','conversion_growth','spending_growth'])keys.add(key);

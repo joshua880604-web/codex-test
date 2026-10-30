@@ -67,7 +67,7 @@
   "heloc": {
     "category": "MORTGAGE / HOUSING",
     "headline": "HELOC",
-    "description": "Explore payments across a home equity line of credit\u2019s phases."
+    "description": "Explore payments across a home equity line of credit’s phases."
   },
   "debt-snowball": {
     "category": "DEBT / CREDIT",
@@ -138,5 +138,15 @@
     "category": "PROPERTY OPERATIONS",
     "headline": "NOI",
     "description": "Calculate rental operating income before financing and capital costs."
+  },
+  "seller-financing": {
+    "category": "REAL ESTATE / FINANCE",
+    "headline": "Seller Financing",
+    "description": "Explore monthly payments and the balloon due at maturity."
+  },
+  "fix-and-flip": {
+    "category": "REAL ESTATE / FINANCE",
+    "headline": "Fix & Flip",
+    "description": "Review renovation costs, cash funding and project profit."
   }
 }

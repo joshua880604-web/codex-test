@@ -61,6 +61,8 @@ export function calculatorMetadata(calc: Calculator, config = siteConfig()) {
 }
 // Dates record reviewed content changes, never the current build time.
 export const contentUpdatedOn: Record<string, string> = {
+  '/seller-financing-calculator.html':'2026-10-31',
+  '/fix-and-flip-calculator.html':'2026-10-31',
   "/cap-rate-calculator.html":"2026-10-30",
   "/credit-card-minimum-payment-calculator.html":"2026-10-30",
   "/roth-conversion-ladder-calculator.html":"2026-10-30",

@@ -3,6 +3,9 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "seller-financing": return "Fixed-rate USD real-estate note with monthly end-of-period payments and one maturity settlement. Balloon principal is measured after that month\u2019s installment. No legal eligibility, fees, escrow, taxes, daily interest or refinancing guarantee.";
+    case "fix-and-flip": return "One USD buy-renovate-sell project before income tax. Cash purchase or a fully drawn acquisition-only interest-only loan; rehab is cash-funded. Sale price and costs are assumptions; cash required, profit and net sale cash are different measures.";
+
     case "rental-property": return "Nominal USD rental projection with entered financing, annual income/cost growth and an end-of-holding-year sale. Before owner income and capital-gains tax. Cash flow, sale proceeds and IRR are different measures; IRR may be absent or have multiple solutions. Not an appraisal or forecast.";
     case "cap-rate": return "USD unlevered annual NOI divided by property value. Target-rate values are scenarios, not appraisals or offers; no debt service, capex, owner income tax, appreciation or total-return model.";
     case "credit-card-minimum-payment": return "One balance, fixed APR and a user-defined opening-balance minimum rule. Monthly APR/12 interest, fractional cents retained internally, no new spending or fees. Not an issuer statement or credit-score estimate; projection limited to 100 years.";

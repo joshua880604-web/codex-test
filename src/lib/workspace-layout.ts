@@ -2,6 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
+  'seller-financing','fix-and-flip',
   "cap-rate", "credit-card-minimum-payment",
   "roth-conversion-ladder",
   "drip",
@@ -20,10 +21,12 @@ export const workspaceIds = [
 export function hasCalculatorWorkspace(id: string): boolean { return (workspaceIds as readonly string[]).includes(id); }
 export function workspaceLayout(id: string, mode: string): "split" | "stacked" | null {
   if (!hasCalculatorWorkspace(id)) return null;
-  return (id === "cap-rate" && mode === "rental") || id === "roth-conversion-ladder" || id === "drip" || id === "covered-call" || id === "house-hacking" || id === "mortgage-vs-invest" || (id === "cash-on-cash-return" && mode === "property") || id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
+  return id === 'fix-and-flip' || (id === "cap-rate" && mode === "rental") || id === "roth-conversion-ladder" || id === "drip" || id === "covered-call" || id === "house-hacking" || id === "mortgage-vs-invest" || (id === "cash-on-cash-return" && mode === "property") || id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
 }
 
 const priorities: Record<string, string[]> = {
+ 'seller-financing':['Regular monthly payment','Balloon principal after final installment','Total due in final month','Total interest through maturity'],
+ 'fix-and-flip':['Net project profit before income tax','Total cash required before sale','Net sale cash after loan payoff','Project cash-on-cash ROI'],
   'cap-rate':['Capitalization rate','Annual net operating income','Indicated value at target cap rate','NOI surplus / shortfall versus target'],
   'credit-card-minimum-payment':['Initial modeled minimum payment','Initial payment including extra','Months to repay','Total interest'],
   'roth-conversion-ladder':['Bridge cash required for this modeled path','Additional bridge cash needed','Modeled funding status','Estimated conversion tax'],

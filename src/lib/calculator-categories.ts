@@ -5,12 +5,12 @@ export type CalculatorCategory = {
 };
 export const calculatorCategories: CalculatorCategory[] = [
   { id: 'mortgage-housing', title: 'Mortgage & Housing', popular: ['mortgage','pmi','house-affordability','mortgage-payoff'], aliases: ['mortgage-and-real-estate'],
-    tools: ['cap-rate','house-hacking','mortgage-vs-invest','cash-on-cash-return','brrrr','noi','mortgage','amortization','mortgage-payoff','house-affordability','rent','debt-to-income-ratio','real-estate','refinance','rental-property','apr','fha-loan','va-mortgage','home-equity-loan','heloc','down-payment','rent-vs-buy','pmi','biweekly-mortgage','discount-points','mortgage-recast'],
+    tools: ['seller-financing','fix-and-flip','cap-rate','house-hacking','mortgage-vs-invest','cash-on-cash-return','brrrr','noi','mortgage','amortization','mortgage-payoff','house-affordability','rent','debt-to-income-ratio','real-estate','refinance','rental-property','apr','fha-loan','va-mortgage','home-equity-loan','heloc','down-payment','rent-vs-buy','pmi','biweekly-mortgage','discount-points','mortgage-recast'],
     sections: [
-      { title: 'Buying a home & loan costs', tools: ['mortgage','house-affordability','down-payment','debt-to-income-ratio','pmi','discount-points','fha-loan','va-mortgage','apr'] },
+      { title: 'Buying a home & loan costs', tools: ['mortgage','house-affordability','down-payment','seller-financing','debt-to-income-ratio','pmi','discount-points','fha-loan','va-mortgage','apr'] },
       { title: 'Payoff & interest savings', tools: ['mortgage-payoff','mortgage-vs-invest','biweekly-mortgage','amortization'] },
       { title: 'Refinancing & home equity', tools: ['refinance','mortgage-recast','home-equity-loan','heloc'] },
-      { title: 'Renting & property investment', tools: ['cap-rate','rent','rent-vs-buy','house-hacking','rental-property','noi','brrrr','cash-on-cash-return'] },
+      { title: 'Renting & property investment', tools: ['fix-and-flip','cap-rate','rent','rent-vs-buy','house-hacking','rental-property','noi','brrrr','cash-on-cash-return'] },
     ] },
   { id: 'loans-debt', title: 'Loans & Debt', popular: ['loan','auto-loan','credit-card','debt-payoff'], aliases: ['auto','other'],
     tools: ['credit-card-minimum-payment','loan','payment','auto-loan','cash-back-or-low-interest','auto-lease','credit-card','credit-cards-payoff','debt-payoff','debt-snowball','debt-avalanche','debt-consolidation','repayment','student-loan','personal-loan','boat-loan','lease'],

@@ -178,3 +178,8 @@ Calculator pages provide Share, Cite and Export controls; Embed appears only whe
 
 - [About CalculatorFree.io](https://www.calculatorfree.io/about): The site's independent planning tools and links to its methodology.
 - [Privacy](https://www.calculatorfree.io/privacy): How calculator inputs, share links, advertising, and reference-rate data are handled.
+
+## Property transaction scenarios
+
+- [Seller Financing Calculator](https://www.calculatorfree.io/seller-financing-calculator): Fixed-rate owner-financed monthly payments and explicit final-month balloon settlement; not a contract or legal eligibility assessment.
+- [Fix and Flip Calculator](https://www.calculatorfree.io/fix-and-flip-calculator): Pre-tax house flipping profit, cumulative pre-sale cash funding, financing costs and break-even sale price; no appraisal or profit guarantee.

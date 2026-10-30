@@ -1,0 +1,49 @@
+.calculator-page .property-deal-fields .field-row {grid-template-columns:minmax(0,1fr);gap:6px;}
+/* Keep model explanations available without delaying the first input. */
+.calculator-page .calculator-help {margin:0 0 10px;min-width:0;}
+.calculator-page .calculator-help > summary {box-sizing:border-box;min-height:44px;padding:10px 0;font-size:13px;font-weight:600;line-height:1.5;color:var(--muted);cursor:pointer;overflow-wrap:anywhere;}
+.calculator-page .calculator-help-content {padding:0 0 8px;}
+.calculator-page .calculator-help-content :is(.calculator-scope,.mode-description,.result-note) {margin:0 0 10px;font-size:13px;line-height:1.6;}
+.calculator-page .calculator-help-content .calculator-scope {padding:10px 12px;}
+.calculator-page .calculator-help > summary:focus-visible {outline:2px solid var(--link);outline-offset:2px;border-radius:6px;}
+@media(max-width:700px){
+ .calculator-page .breadcrumb {font-size:12px;margin-bottom:10px;}
+ .calculator-page .calculator-intro-row {margin:0 0 8px;}
+ .calculator-page .calculator-intro-row > .intro {margin:0;font-size:14px;line-height:1.5;}
+ .calculator-page .mobile-mode-picker {margin:8px 0 0;padding:10px;}
+ .calculator-page .calculator-workspace {margin-top:8px;}
+ .calculator-page .calculator-form {min-width:0;padding:14px;}
+ /* Override split and stacked workspace rules at phone widths. */
+ .calculator-page .calculator-form .field-row,
+ .calculator-page .calculator-form > .field-row:not(.field-wide):not(:has(select)),
+ .calculator-page .calculator-form > .advanced > .field-row:not(.field-wide):not(:has(select)),
+ .calculator-page .calculator-workspace .field-row,
+ .calculator-page .calculator-workspace.workspace-stacked .field-row,
+ .calculator-page .calculator-workspace .mortgage-fields .field-row {grid-template-columns:minmax(0,1fr);gap:6px;align-items:start;margin:0 0 14px;min-width:0;}
+ .calculator-page .calculator-form .field-row > label {font-size:14px;line-height:1.45;overflow-wrap:anywhere;}
+ .calculator-page .calculator-form .field-control {width:100%;min-width:0;}
+ .calculator-page .calculator-form .field-entry {box-sizing:border-box;max-width:100%;min-width:0;}
+ .calculator-page .calculator-form .field-entry :is(input,select,textarea) {box-sizing:border-box;min-width:0;font-size:16px;}
+ .calculator-page .calculator-form .field-entry input:not([type=radio]):not([type=checkbox]),
+ .calculator-page .calculator-form .field-entry select {min-height:44px;}
+ .calculator-page .calculator-form .field-entry .unit {flex:0 0 auto;max-width:45%;font-size:12px;line-height:1.4;white-space:normal;overflow-wrap:anywhere;}
+ .calculator-page .mortgage-down-pair {grid-template-columns:minmax(0,1fr) 84px;align-items:end;gap:8px;}
+ .calculator-page .calculator-workspace .mortgage-down-pair .field-row {margin:0;}
+ .calculator-page .calculator-form .form-actions {display:flex;flex-wrap:wrap;gap:10px;}
+ .calculator-page .calculator-form .form-actions button {min-width:0;min-height:46px;font-size:16px;}
+ .calculator-page .mode-tabs button {white-space:normal;overflow-wrap:anywhere;}
+ .calculator-page .planning-fields legend {max-width:100%;font-size:15px;line-height:1.45;overflow-wrap:anywhere;}
+ .calculator-page .result-heading-row {align-items:center;}
+ .calculator-page .result-heading-row .result-share-prompt {font-size:13px;}
+ .calculator-page .credit-card-editor-actions {flex-wrap:wrap;}
+ .calculator-page .credit-card-input label {min-height:3em;}
+ .calculator-page .coast-scenario-library {margin:12px 0;padding:12px;font-size:13px;}
+ .calculator-page .coast-scenario-library > summary {min-height:44px;padding:10px 0;box-sizing:border-box;line-height:1.5;}
+}
+@media(max-width:360px){
+ .calculator-page .marriage-pair {grid-template-columns:minmax(0,1fr);}
+ .calculator-page .marriage-pair .field-row > label {margin-bottom:0;}
+ .calculator-page .credit-card-inputs {grid-template-columns:minmax(0,1fr);}
+ .calculator-page .credit-card-input label {min-height:0;}
+}
+@media print{.calculator-help {display:none;}}

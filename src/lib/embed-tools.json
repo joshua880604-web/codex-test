@@ -172,5 +172,17 @@
     "slug": "noi-calculator",
     "title": "NOI Calculator (Net Operating Income)",
     "height": 1000
+  },
+  {
+    "id": "seller-financing",
+    "slug": "seller-financing-calculator",
+    "title": "Seller Financing Calculator",
+    "height": 1000
+  },
+  {
+    "id": "fix-and-flip",
+    "slug": "fix-and-flip-calculator",
+    "title": "Fix and Flip Calculator",
+    "height": 1200
   }
 ]
