@@ -1,3 +1,5 @@
+import BlogSnippetLink from './BlogSnippetLink';
+import {hasBlogSnippetKit} from '@/lib/blog-snippet-access';
 import {motherPageCopy} from '@/lib/mother-page-ui';
 import RmdReference from './RmdReference';
 import { calculatorPresetHref } from '@/lib/preset-links';
@@ -28,6 +30,7 @@ export default function CalculatorGuide({
             {calculator.id === "roi" && <SiteLink href="#roi-formulas">ROI formulas</SiteLink>}
             <SiteLink href="#worked-examples">Examples</SiteLink><SiteLink href="#common-questions">Questions</SiteLink>
             <SiteLink href="#scope-assumptions">Assumptions</SiteLink><SiteLink href="#sources">Sources</SiteLink>
+            {hasBlogSnippetKit(calculator.id)&&<BlogSnippetLink>For writers &amp; bloggers</BlogSnippetLink>}
           </nav>
           <h2>Understanding this calculation</h2>
           <p>{insight?.answer ?? guide.summary}</p>

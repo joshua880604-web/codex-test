@@ -189,10 +189,10 @@ export default async function Page({
           <>
             <CalculatorClient calc={JSON.parse(JSON.stringify(c))} initialResult={initialResult} shortcuts={(searchTasks[c.id] ?? []).map(({keyword, mode}) => ({keyword, mode}))} />
             <CalculatorDisclaimer id={c.id}/>
+            <BlogSnippetKit id={c.id} title={c.title} path={routeFor(c.id)}/>
             <SearchTasks id={c.id} />
             <CalculatorGuide calculator={c} />
             <EmbedCitationHelp id={c.id} title={c.title}/>
-            <BlogSnippetKit id={c.id} title={c.title} path={routeFor(c.id)}/>
             {motherPageCopy[c.id] ? (editorialGuides.some(guide=>guide.calculatorIds.includes(c.id))&&<section className="related"><h2>Related guides</h2><ul>{editorialGuides.filter(guide=>guide.calculatorIds.includes(c.id)).map(guide=><li key={guide.path}><SiteLink href={guide.path}>{guide.heading}</SiteLink> — {guide.cardIntro}</li>)}</ul></section>) : editorialGuides.filter(guide=>guide.calculatorIds.includes(c.id)).map(guide=><section className="related" key={guide.path}><h2>Related guide</h2><p><SiteLink href={guide.path}>{guide.heading}</SiteLink>: {guide.cardIntro}</p></section>)}
           </>
         ) : (

@@ -17,9 +17,10 @@ export const debtGuide:EditorialGuide={
  title:'Debt Snowball vs. Avalanche: Cost and Payoff Compared',
  heading:'Debt Snowball vs. Avalanche: A Same-Budget Comparison',
  description:'Compare debt snowball and avalanche using the same balances and monthly budget. See interest costs, payoff milestones, rollover effects and calculator examples.',
- publishedOn:'2026-10-27',updatedOn:'2026-10-28',
+ publishedOn:'2026-10-27',updatedOn:'2026-10-30',
  calculatorIds:['debt-payoff','credit-cards-payoff','credit-card','debt-snowball','debt-avalanche'],
  topic:'Loans & debt',breadcrumb:'Debt snowball vs. avalanche',
+ format:'Comparison & model check',
  cardIntro:'Compare three debts with the same $400 budget. See the first payoff milestone, final payoff, interest cost and what changes when payments stop rolling forward.',
 };
 export const cdSavingsGuide:EditorialGuide={
@@ -46,8 +47,9 @@ export const biweeklyGuide:EditorialGuide={
  title:'Biweekly vs. Monthly Mortgage Payments: A Fair Comparison',
  heading:'Biweekly vs. Monthly Mortgage Payments: A Same-Budget Comparison',
  description:'Compare biweekly mortgage payments with standard monthly and equal-budget monthly plans. See interest, payoff time, partial-payment rules and worked examples.',
- publishedOn:'2026-10-27',updatedOn:'2026-10-28',calculatorIds:['biweekly-mortgage','mortgage-payoff','mortgage'],
+ publishedOn:'2026-10-27',updatedOn:'2026-10-30',calculatorIds:['biweekly-mortgage','mortgage-payoff','mortgage'],
  topic:'Mortgages',breadcrumb:'Biweekly vs. monthly mortgage payments',
+ format:'Comparison & model check',
  cardIntro:'Separate the extra annual payment from the schedule: compare standard monthly, accelerated biweekly and monthly payments with the same annual budget.',
 };
 export const pointsGuide:EditorialGuide={
@@ -55,8 +57,9 @@ export const pointsGuide:EditorialGuide={
  title:'Are Mortgage Points Worth It? Costs & Break-Even Examples',
  heading:'Are Mortgage Points Worth It? Compare Costs and Break-Even',
  description:'Compare mortgage points using same-loan quotes, monthly payments, cash-flow and balance-aware break-even, holding periods, extra fees and lender credits.',
- publishedOn:'2026-10-27',updatedOn:'2026-10-28',calculatorIds:['discount-points','mortgage','refinance'],
+ publishedOn:'2026-10-27',updatedOn:'2026-10-30',calculatorIds:['discount-points','mortgage','refinance'],
  topic:'Mortgages',breadcrumb:'Are mortgage points worth it?',
+ format:'Comparison & model check',
  cardIntro:'Compare a $4,000 points purchase across several holding periods. See why payment recovery and borrowing-cost break-even differ, and how fees can change the result.',
 };
 export const emergencyGuide:EditorialGuide={

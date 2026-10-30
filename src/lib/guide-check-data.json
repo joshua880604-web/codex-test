@@ -1,0 +1,517 @@
+{
+  "checkedOn": "2026-10-30",
+  "kind": "Hypothetical controlled model cases, not observed borrower data",
+  "debt": [
+    {
+      "budget": 300,
+      "strategy": "snowball",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "25",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 39,
+      "firstMonth": 14,
+      "interest": 3160.9584557377725,
+      "paid": 11660.958455737773
+    },
+    {
+      "budget": 300,
+      "strategy": "avalanche",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "25",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 39,
+      "firstMonth": 22,
+      "interest": 2901.737742062477,
+      "paid": 11401.737742062476
+    },
+    {
+      "budget": 400,
+      "strategy": "snowball",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "125",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 27,
+      "firstMonth": 6,
+      "interest": 2204.5654011990823,
+      "paid": 10704.565401199083
+    },
+    {
+      "budget": 400,
+      "strategy": "avalanche",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "125",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 26,
+      "firstMonth": 22,
+      "interest": 1792.1252985829813,
+      "paid": 10292.125298582981
+    },
+    {
+      "budget": 500,
+      "strategy": "snowball",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "225",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 21,
+      "firstMonth": 4,
+      "interest": 1687.6006218629202,
+      "paid": 10187.60062186292
+    },
+    {
+      "budget": 500,
+      "strategy": "avalanche",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "225",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 20,
+      "firstMonth": 16,
+      "interest": 1301.427661245023,
+      "paid": 9801.427661245023
+    },
+    {
+      "budget": 600,
+      "strategy": "snowball",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "325",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 17,
+      "firstMonth": 3,
+      "interest": 1370.6222134842856,
+      "paid": 9870.622213484286
+    },
+    {
+      "budget": 600,
+      "strategy": "avalanche",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "325",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 16,
+      "firstMonth": 12,
+      "interest": 1030.0431063089022,
+      "paid": 9530.043106308902
+    },
+    {
+      "budget": 700,
+      "strategy": "snowball",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "425",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 14,
+      "firstMonth": 3,
+      "interest": 1155.8729359311405,
+      "paid": 9655.87293593114
+    },
+    {
+      "budget": 700,
+      "strategy": "avalanche",
+      "values": {
+        "debts": "Small balance,1000,50,6\nHigh APR,5000,150,24\nMid balance,2500,75,12",
+        "rollover": "Yes",
+        "extra": "425",
+        "yearly": "0",
+        "once": "0",
+        "once_month": "1"
+      },
+      "months": 14,
+      "firstMonth": 10,
+      "interest": 858.4244478076579,
+      "paid": 9358.424447807658
+    }
+  ],
+  "biweekly": [
+    {
+      "rate": 0,
+      "values": {
+        "principal": "300000",
+        "rate": "0",
+        "years": "30",
+        "months": "0",
+        "extra": "0"
+      },
+      "monthly": 833.3333333333334,
+      "half": 416.6666666666667,
+      "matchedPayment": 902.7777777777778,
+      "annualBudget": 10833.333333333334,
+      "standardInterest": 0,
+      "biweeklyInterest": 0,
+      "matchedInterest": 0,
+      "biweeklyYears": 27.692307692307693,
+      "matchedYears": 27.75
+    },
+    {
+      "rate": 2,
+      "values": {
+        "principal": "300000",
+        "rate": "2",
+        "years": "30",
+        "months": "0",
+        "extra": "0"
+      },
+      "monthly": 1108.8584180664618,
+      "half": 554.4292090332309,
+      "matchedPayment": 1201.263286238667,
+      "annualBudget": 14415.159434864003,
+      "standardInterest": 99189.0305039262,
+      "biweeklyInterest": 88094.01236804159,
+      "matchedInterest": 88268.18676637264,
+      "biweeklyYears": 26.923076923076923,
+      "matchedYears": 27
+    },
+    {
+      "rate": 4,
+      "values": {
+        "principal": "300000",
+        "rate": "4",
+        "years": "30",
+        "months": "0",
+        "extra": "0"
+      },
+      "monthly": 1432.2458863963786,
+      "half": 716.1229431981893,
+      "matchedPayment": 1551.5997102627434,
+      "annualBudget": 18619.19652315292,
+      "standardInterest": 215608.51910269647,
+      "biweeklyInterest": 181778.54958852413,
+      "matchedInterest": 182210.57109412208,
+      "biweeklyYears": 25.884615384615383,
+      "matchedYears": 25.916666666666668
+    },
+    {
+      "rate": 6,
+      "values": {
+        "principal": "300000",
+        "rate": "6",
+        "years": "30",
+        "months": "0",
+        "extra": "0"
+      },
+      "monthly": 1798.6515754582572,
+      "half": 899.3257877291286,
+      "matchedPayment": 1948.5392067464454,
+      "annualBudget": 23382.470480957345,
+      "standardInterest": 347514.5671649732,
+      "biweeklyInterest": 273078.54772885167,
+      "matchedInterest": 273849.2053452399,
+      "biweeklyYears": 24.53846153846154,
+      "matchedYears": 24.583333333333332
+    },
+    {
+      "rate": 8,
+      "values": {
+        "principal": "300000",
+        "rate": "8",
+        "years": "30",
+        "months": "0",
+        "extra": "0"
+      },
+      "monthly": 2201.2937216381288,
+      "half": 1100.6468608190644,
+      "matchedPayment": 2384.734865107973,
+      "annualBudget": 28616.818381295674,
+      "standardInterest": 492465.7397897249,
+      "biweeklyInterest": 353570.4634078874,
+      "matchedInterest": 354741.5344417274,
+      "biweeklyYears": 22.846153846153847,
+      "matchedYears": 22.916666666666668
+    }
+  ],
+  "points": [
+    {
+      "feeB": 3000,
+      "hold": 0,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "0",
+        "fees_a": "3000",
+        "fees_b": "3000"
+      },
+      "upfront": 4000,
+      "cashSaving": -4000,
+      "balanceAdvantage": 0,
+      "netSaving": -4000,
+      "costBreak": 32,
+      "cashBreak": 41
+    },
+    {
+      "feeB": 3000,
+      "hold": 12,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "12",
+        "fees_a": "3000",
+        "fees_b": "3000"
+      },
+      "upfront": 4000,
+      "cashSaving": -2813.046508524476,
+      "balanceAdvantage": 314.99036671966314,
+      "netSaving": -2498.0561418047146,
+      "costBreak": 32,
+      "cashBreak": 41
+    },
+    {
+      "feeB": 3000,
+      "hold": 24,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "24",
+        "fees_a": "3000",
+        "fees_b": "3000"
+      },
+      "upfront": 4000,
+      "cashSaving": -1626.09301704893,
+      "balanceAdvantage": 633.6839843902271,
+      "netSaving": -992.4090326585865,
+      "costBreak": 32,
+      "cashBreak": 41
+    },
+    {
+      "feeB": 3000,
+      "hold": 36,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "36",
+        "fees_a": "3000",
+        "fees_b": "3000"
+      },
+      "upfront": 4000,
+      "cashSaving": -439.13952557352604,
+      "balanceAdvantage": 955.1420483621769,
+      "netSaving": 516.0025227888982,
+      "costBreak": 32,
+      "cashBreak": 41
+    },
+    {
+      "feeB": 3000,
+      "hold": 48,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "48",
+        "fees_a": "3000",
+        "fees_b": "3000"
+      },
+      "upfront": 4000,
+      "cashSaving": 747.8139659018489,
+      "balanceAdvantage": 1278.2818312890595,
+      "netSaving": 2026.0957971912721,
+      "costBreak": 32,
+      "cashBreak": 41
+    },
+    {
+      "feeB": 3000,
+      "hold": 60,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "60",
+        "fees_a": "3000",
+        "fees_b": "3000"
+      },
+      "upfront": 4000,
+      "cashSaving": 1934.7674573773693,
+      "balanceAdvantage": 1601.861505215522,
+      "netSaving": 3536.628962593124,
+      "costBreak": 32,
+      "cashBreak": 41
+    },
+    {
+      "feeB": 4000,
+      "hold": 0,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "0",
+        "fees_a": "3000",
+        "fees_b": "4000"
+      },
+      "upfront": 5000,
+      "cashSaving": -5000,
+      "balanceAdvantage": 0,
+      "netSaving": -5000,
+      "costBreak": 40,
+      "cashBreak": 51
+    },
+    {
+      "feeB": 4000,
+      "hold": 12,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "12",
+        "fees_a": "3000",
+        "fees_b": "4000"
+      },
+      "upfront": 5000,
+      "cashSaving": -3813.046508524476,
+      "balanceAdvantage": 314.99036671966314,
+      "netSaving": -3498.0561418047146,
+      "costBreak": 40,
+      "cashBreak": 51
+    },
+    {
+      "feeB": 4000,
+      "hold": 24,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "24",
+        "fees_a": "3000",
+        "fees_b": "4000"
+      },
+      "upfront": 5000,
+      "cashSaving": -2626.09301704893,
+      "balanceAdvantage": 633.6839843902271,
+      "netSaving": -1992.4090326585865,
+      "costBreak": 40,
+      "cashBreak": 51
+    },
+    {
+      "feeB": 4000,
+      "hold": 36,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "36",
+        "fees_a": "3000",
+        "fees_b": "4000"
+      },
+      "upfront": 5000,
+      "cashSaving": -1439.139525573526,
+      "balanceAdvantage": 955.1420483621769,
+      "netSaving": -483.9974772111018,
+      "costBreak": 40,
+      "cashBreak": 51
+    },
+    {
+      "feeB": 4000,
+      "hold": 48,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "48",
+        "fees_a": "3000",
+        "fees_b": "4000"
+      },
+      "upfront": 5000,
+      "cashSaving": -252.18603409815114,
+      "balanceAdvantage": 1278.2818312890595,
+      "netSaving": 1026.0957971912721,
+      "costBreak": 40,
+      "cashBreak": 51
+    },
+    {
+      "feeB": 4000,
+      "hold": 60,
+      "values": {
+        "principal": "400000",
+        "years": "30",
+        "rate_a": "6.75",
+        "points_a": "0",
+        "rate_b": "6.375",
+        "points_b": "1",
+        "hold": "60",
+        "fees_a": "3000",
+        "fees_b": "4000"
+      },
+      "upfront": 5000,
+      "cashSaving": 934.7674573773693,
+      "balanceAdvantage": 1601.861505215522,
+      "netSaving": 2536.628962593124,
+      "costBreak": 40,
+      "cashBreak": 51
+    }
+  ]
+}

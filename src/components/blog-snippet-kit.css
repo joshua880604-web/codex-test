@@ -1,4 +1,4 @@
-.blog-snippet-kit{border-top:1px solid var(--control);margin-top:26px;padding-top:12px;overflow-wrap:anywhere;}
+.blog-snippet-kit{scroll-margin-top:20px;border-top:1px solid var(--control);margin-top:26px;padding-top:12px;overflow-wrap:anywhere;}
 .blog-snippet-kit summary{min-height:44px;cursor:pointer;padding:12px 0;font-weight:650;}
 .blog-snippet-kit summary:focus-visible,.blog-snippet-kit button:focus-visible,.blog-snippet-kit textarea:focus-visible{outline:2px solid var(--link);outline-offset:3px;}
 .blog-snippet-kit h3{margin:22px 0 8px;font-size:16px;}
@@ -9,4 +9,4 @@
 .blog-snippet-controls button{min-height:44px;border:1px solid var(--control);border-radius:10px;padding:8px 14px;background:var(--surface);color:var(--ink);font:inherit;font-size:14px;}
 .blog-snippet-controls [role=status]{color:var(--muted);font-size:13px;}
 .blog-snippet-controls textarea{box-sizing:border-box;width:100%;max-width:100%;min-height:140px;resize:vertical;border:1px solid var(--control);border-radius:10px;padding:12px;background:var(--surface);color:var(--ink);font:inherit;font-size:14px;}
-@media print{.blog-snippet-kit{display:none;}}
+@media print{.blog-snippet-kit{scroll-margin-top:20px;display:none;}}

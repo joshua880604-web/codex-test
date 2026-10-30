@@ -3,6 +3,8 @@ import {useEffect,useRef,useState,type KeyboardEvent} from 'react';
 import {createPortal,flushSync} from 'react-dom';
 import dynamic from 'next/dynamic';
 import {hasPinterest,shareTabs,shareTabNames,shareScenarioHelp,isEverydayShareTool} from '@/lib/share-tools';
+import BlogSnippetLink from './BlogSnippetLink';
+import {hasBlogSnippetKit} from '@/lib/blog-snippet-access';
 import {pinterestShareURL} from '@/lib/pinterest';
 import type {Field,Mode,Result,Values} from '@/lib/types';
 import {calculationLink,formatMetric,summaryText,modeCaption} from '@/lib/sharing';
@@ -43,9 +45,10 @@ export default function ShareToolsDialog({id,title,path,mode,values,result,field
      <div className="result-actions"><button type="button" disabled={!link} onClick={()=>copy(link,include?'Calculation link copied with input values.':'Calculator link copied without input values.')}>Copy link</button><button type="button" disabled={!link} onClick={nativeShare}>Share link</button></div>
      {linkError&&<p role="alert">{linkError}</p>}{origin!=='https://www.calculatorfree.io'&&<p className="share-dialog-help">Preview address: this share link uses the current site. A localhost link works only on this computer.</p>}
     </>}
-    {tab==='Embed'&&<EmbedPanel id={id}/>}
+    {tab==='Embed'&&<>{hasBlogSnippetKit(id)&&<p className="share-dialog-help"><BlogSnippetLink onBeforeOpen={onClose}>Writing about this calculator? Get ready-to-use explanations →</BlogSnippetLink></p>}<EmbedPanel id={id}/></>}
     {tab==='Cite'&&<>
      <p>Cite this calculator page using its canonical address. Citations do not include your input values or calculation amounts.</p>
+     {hasBlogSnippetKit(id)&&<p className="share-dialog-help"><BlogSnippetLink onBeforeOpen={onClose}>Writing about this calculator? Get ready-to-use explanations →</BlogSnippetLink></p>}
      <label className="share-dialog-label" htmlFor="calculator-citation-format">Citation format</label><select id="calculator-citation-format" value={format} onChange={e=>{setFormat(e.target.value as CitationFormat);setStatus('');setManual('');}}><option value="plain">Plain text</option><option value="html">HTML</option><option value="bibtex">BibTeX</option></select>
      <label className="share-dialog-label" htmlFor="calculator-citation-text">Citation text</label><textarea id="calculator-citation-text" readOnly value={citation} rows={7} spellCheck={false}/><button type="button" onClick={()=>copy(citation,'Citation copied.')}>Copy citation</button>
      <p className="share-dialog-help">Accessed {accessed}. Review the calculator’s assumptions and sources when citing a calculation. You may qualify the HTML link to match your publication’s policy.</p>
