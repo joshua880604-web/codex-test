@@ -1,3 +1,4 @@
+import {calculatorScope} from './calculator-scope';
 import type {Mode,Result,Values} from './types';
 // Loaded only for an image/print export. Legacy and enhanced sharing keep the
 // same financial explanations, including the 401(k) story and IRR ambiguity.
@@ -10,5 +11,5 @@ export async function resultExportData(id:string,mode:Mode,values:Values,result:
   const {retirementStory}=await import('./retirement-story');const story=retirementStory(values,result);
   if(story){const growth=story.parts.at(-1)!;metrics.push({label:growth.label,value:growth.value,format:'money'});copy={...copy,interpretation:story.cardInterpretation};notes=[...notes,'Illustration only. Before tax, with constant returns, full vesting and no fees. See the tool for contribution limits and timing assumptions.'];}
  }
- return {metrics,notes,copy};
+ return {metrics,notes,copy,scope:calculatorScope(id,mode.id,values)};
 }
