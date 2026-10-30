@@ -1,0 +1,398 @@
+{
+  "stock-profit": {
+    "updatedOn": "2026-10-31",
+    "summary": "A price increase is not the same as a net trading profit. Buying and selling fees reduce receipts, while unreinvested cash dividends can add income to the position. This stock profit calculator starts with a quantity, buy price and sale price entered by you. Each trading side can use a fixed total fee or a percentage of gross trade value. The result separates net profit, return on purchase cost, trading fees and break-even sale price so a positive price move is not mistaken for a guaranteed gain. It models one long position bought and sold in full; an entered sale price can be hypothetical rather than a completed trade. There is no ticker lookup, investment recommendation or income-tax calculation.",
+    "scope": "One long USD stock position bought and sold in full. Manual prices, fractional shares, side-specific fees and optional unreinvested cash dividends. Before income tax; no live quote, shorting, margin, tax lots or corporate actions.",
+    "sources": [
+      {
+        "title": "SEC Investor.gov: investment fees and expenses",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/investment-fees-and-expenses"
+      },
+      {
+        "title": "IRS Publication 550: investment income, expenses and property basis",
+        "url": "https://www.irs.gov/publications/p550"
+      }
+    ],
+    "examples": [
+      {
+        "title": "A $1,000 price gain becomes $990 after fees",
+        "mode": "trade",
+        "values": {
+          "shares": 100,
+          "buy": 50,
+          "sell": 60,
+          "buy_fee_unit": "USD",
+          "buy_fee": 5,
+          "sell_fee_unit": "USD",
+          "sell_fee": 5,
+          "dividends": 0
+        },
+        "inputs": "100 shares bought at $50 and sold at $60, with $5 on each trading side and no cash dividends.",
+        "steps": [
+          "Purchase cost is $5,005. Net sale receipts are $5,995.",
+          "Subtract purchase cost from net receipts: $5,995 \u2212 $5,005 = $990."
+        ],
+        "answer": "Net profit before income tax is $990; the price-only gain was $1,000.",
+        "expected": {
+          "label": "Net profit / loss before income tax",
+          "value": 990,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "Cash dividends do not erase a price loss",
+        "mode": "trade",
+        "values": {
+          "shares": 10,
+          "buy": 100,
+          "sell": 80,
+          "buy_fee_unit": "Percent",
+          "buy_fee": 1,
+          "sell_fee_unit": "Percent",
+          "sell_fee": 2,
+          "dividends": 20
+        },
+        "inputs": "10 shares, $100 buy price, $80 sale price, 1% buy fee, 2% sell fee and $20 unreinvested dividends.",
+        "steps": [
+          "Buy fee is $10, so purchase cost is $1,010. Sell fee is $16, so net sale proceeds are $784.",
+          "Add $20 dividends: total receipts are $804. Profit is $804 \u2212 $1,010."
+        ],
+        "answer": "The modeled net loss is $206 before income tax.",
+        "expected": {
+          "label": "Net profit / loss before income tax",
+          "value": -206,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-calculate-stock-profit",
+        "question": "How do I calculate stock profit or loss?",
+        "queries": [
+          "how do i calculate stock profit or loss"
+        ],
+        "answer": "Multiply shares by the sale price, subtract the total sell fee, add any unreinvested cash dividends, then subtract shares times buy price plus the buy fee. A negative result is a loss. The calculation is economic profit before income tax, not an annualized return or a prediction.",
+        "links": [
+          {
+            "id": "stock-profit",
+            "mode": "trade",
+            "label": "Open stock profit calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-trading-fees",
+        "question": "How do trading fees affect stock profit?",
+        "queries": [
+          "how do trading fees affect stock profit"
+        ],
+        "answer": "A fixed USD fee applies once to the entire transaction. A percentage fee applies to that side\u2019s gross trade value. You can use a fixed buy fee and a percentage sell fee, or the reverse. Enter a broker\u2019s total costs consistently; do not enter a per-share fee as though it were the total amount.",
+        "links": [
+          {
+            "id": "stock-profit",
+            "mode": "trade",
+            "label": "Open stock profit calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-break-even",
+        "question": "What sale price do I need to break even?",
+        "queries": [
+          "what sale price do i need to break even"
+        ],
+        "answer": "The threshold covers the original purchase cost and the sale fee after allowing for separately entered cash dividends. With a percentage sale fee, divide the remaining cost to recover by shares times one minus that percentage. The tool handles 100% sale fees and already-recovered costs explicitly rather than displaying infinity or a negative required market price.",
+        "links": [
+          {
+            "id": "stock-profit",
+            "mode": "trade",
+            "label": "Open stock profit calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-dividends",
+        "question": "Can I include dividends in stock profit?",
+        "queries": [
+          "can i include dividends in stock profit"
+        ],
+        "answer": "Yes, enter cumulative unreinvested cash dividends in USD for this position. They are added once to receipts. Do not add the same dividends again if your entered values already represent a reinvested or total-return series. For future reinvestment scenarios use the separate DRIP calculator.",
+        "links": [
+          {
+            "id": "stock-profit",
+            "mode": "trade",
+            "label": "Open stock profit calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fractional-shares",
+        "question": "Can I calculate profit on fractional shares?",
+        "queries": [
+          "can i calculate profit on fractional shares"
+        ],
+        "answer": "Yes. The quantity can include fractions down to 0.00000001 shares. Gross buy and sale values use the complete entered quantity. Fees are still total transaction charges unless Percent is selected. Very small monetary results may round to zero in the display while retaining internal precision.",
+        "links": [
+          {
+            "id": "stock-profit",
+            "mode": "trade",
+            "label": "Open stock profit calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-profit-versus-return",
+        "question": "What is the difference between stock profit and percentage return?",
+        "queries": [
+          "what is the difference between stock profit and percentage return"
+        ],
+        "answer": "Profit is a dollar amount after the modeled fees and dividends. Return divides that profit by the original purchase cost including the buy fee. The percentage is for the entered trade, not a yearly rate. If purchase cost is zero, a percentage return is undefined even when the dollar gain can be calculated.",
+        "links": [
+          {
+            "id": "stock-profit",
+            "mode": "trade",
+            "label": "Open stock profit calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-manual-price",
+        "question": "Does this stock calculator use live prices or predict returns?",
+        "queries": [
+          "does this stock calculator use live prices or predict returns"
+        ],
+        "answer": "No. You enter both prices manually. The sale-price sensitivity table holds quantities, purchase cost, dividend cash and fee rules fixed while changing only the sale price. It illustrates the model; it is not market data, a forecast or a recommendation to sell at a target price.",
+        "links": [
+          {
+            "id": "stock-profit",
+            "mode": "trade",
+            "label": "Open stock profit calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-taxes",
+        "question": "Is the displayed stock profit after taxes?",
+        "queries": [
+          "is the displayed stock profit after taxes"
+        ],
+        "answer": "No. The model does not decide a tax lot, holding period, capital-gains rate or wash-sale adjustment. Broker records and applicable tax rules can produce a different reportable gain. The calculator is not a substitute for a tax statement or professional review of your transactions.",
+        "links": [
+          {
+            "id": "stock-profit",
+            "mode": "trade",
+            "label": "Open stock profit calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-scope",
+        "question": "Can I use it for short selling, margin or partial sales?",
+        "queries": [
+          "can i use it for short selling, margin or partial sales"
+        ],
+        "answer": "This version models a long stock position bought and sold in full without borrowing. It excludes short-sale borrowing costs, margin interest, options, stock splits, currency conversion and partial-lot sales. Use consistent unadjusted prices and quantities for the same security and the same modeled position.",
+        "links": [
+          {
+            "id": "stock-profit",
+            "mode": "trade",
+            "label": "Open stock profit calculator"
+          }
+        ]
+      }
+    ]
+  },
+  "stock-average": {
+    "updatedOn": "2026-10-31",
+    "summary": "Purchases of different sizes must be weighted by the shares bought, not counted as equally important price observations. Add one purchase card for each quantity, price and fixed total buy fee. This stock average calculator then reconciles total shares, total invested cash, weighted purchase price before fees and average acquisition cost after fees. The running table shows how each entered purchase changes that economic average. You can supply a comparison price to see an unrealized value and gain, or leave it blank when only average cost is needed. Adding lower-priced shares can reduce the average while increasing money exposed to the same security. These are intact-position arithmetic results, not a tax-lot election, a forecast of recovery or a recommendation to average down.",
+    "scope": "One security, purchases only. Quantity-weighted economic acquisition cost including fixed USD buy fees, not a tax cost-basis election. Manual optional comparison price; no sales, dividend reinvestment, splits or advice to average down.",
+    "sources": [
+      {
+        "title": "FINRA: dollar-cost averaging and its limitations",
+        "url": "https://www.finra.org/investors/insights/dollar-cost-averaging"
+      },
+      {
+        "title": "IRS Publication 550: investment basis and identification methods",
+        "url": "https://www.irs.gov/publications/p550"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Unequal purchases with total buy fees",
+        "mode": "purchases",
+        "values": {
+          "lots": "[{\"shares\": \"100\", \"price\": \"50\", \"fee\": \"5\"}, {\"shares\": \"50\", \"price\": \"40\", \"fee\": \"5\"}]",
+          "market": "45"
+        },
+        "inputs": "100 shares at $50 plus 50 at $40, each purchase with a $5 total fee.",
+        "steps": [
+          "Gross purchase value is $7,000. Buy fees add $10, giving $7,010 invested.",
+          "Total shares are 150. Divide $7,010 by 150."
+        ],
+        "answer": "Average cost including buy fees is about $46.733333 per share.",
+        "expected": {
+          "label": "Average cost per share including buy fees",
+          "value": 46.733333333333334,
+          "tolerance": 1e-05
+        }
+      },
+      {
+        "title": "A lower average does not remove the original dollar loss",
+        "mode": "purchases",
+        "values": {
+          "lots": "[{\"shares\": \"1\", \"price\": \"100\", \"fee\": \"0\"}, {\"shares\": \"9\", \"price\": \"50\", \"fee\": \"0\"}]",
+          "market": "50"
+        },
+        "inputs": "One share bought at $100, followed by nine at $50, with no fees; compare all 10 shares at $50.",
+        "steps": [
+          "Invested cash is $550 for 10 shares, so weighted cost is $55 per share, not the unweighted $75 average.",
+          "At $50 per share the position is worth $500. The remaining unrealized loss is $50."
+        ],
+        "answer": "The average falls, but the original $50 dollar loss remains at the unchanged comparison price.",
+        "expected": {
+          "label": "Average cost per share including buy fees",
+          "value": 55,
+          "tolerance": 1e-05
+        }
+      }
+    ],
+    "items": [
+      {
+        "anchor": "use-weighted-average",
+        "question": "How do I calculate average stock price?",
+        "queries": [
+          "how do i calculate average stock price"
+        ],
+        "answer": "Add each purchase\u2019s quantity times price, then divide by total shares. For average acquisition cost including fees, add all fixed purchase fees to the numerator first. The two averages differ when fees are present. Purchases of different sizes must not receive equal weight.",
+        "links": [
+          {
+            "id": "stock-average",
+            "mode": "purchases",
+            "label": "Open stock average calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-average-down",
+        "question": "How does averaging down change stock cost?",
+        "queries": [
+          "how does averaging down change stock cost"
+        ],
+        "answer": "Adding shares below your existing average usually lowers the weighted average, but it requires additional money. At an unchanged comparison price, buying new shares at that price does not erase the pre-existing dollar loss; fees may add further loss. The arithmetic does not establish that the position will recover.",
+        "links": [
+          {
+            "id": "stock-average",
+            "mode": "purchases",
+            "label": "Open stock average calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-average-up",
+        "question": "Can I use the tool for averaging up?",
+        "queries": [
+          "can i use the tool for averaging up"
+        ],
+        "answer": "Yes. Add a new purchase above the existing average and review the updated cost and total shares. The same quantity-weighted formula works for both averaging up and down. A higher or lower average by itself does not measure the quality or risk of the investment.",
+        "links": [
+          {
+            "id": "stock-average",
+            "mode": "purchases",
+            "label": "Open stock average calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-buy-fees",
+        "question": "Should commissions be included in average stock cost?",
+        "queries": [
+          "should commissions be included in average stock cost"
+        ],
+        "answer": "The fee-inclusive economic average includes the fixed total buy fee for each purchase. Enter a dollar amount for the entire row, not a per-share charge or a percentage. The tool also shows the weighted purchase price excluding those fees so the distinction remains visible.",
+        "links": [
+          {
+            "id": "stock-average",
+            "mode": "purchases",
+            "label": "Open stock average calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-same-security",
+        "question": "Can I combine different stocks or currencies?",
+        "queries": [
+          "can i combine different stocks or currencies"
+        ],
+        "answer": "No. These purchase cards describe one security on one consistent share and currency basis. Averaging prices of unrelated stocks is not a portfolio return calculation. Convert or reconcile any affected quantities and corporate actions separately before using this purchases-only worksheet.",
+        "links": [
+          {
+            "id": "stock-average",
+            "mode": "purchases",
+            "label": "Open stock average calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-comparison-price",
+        "question": "Do I need a current stock price to calculate average cost?",
+        "queries": [
+          "do i need a current stock price to calculate average cost"
+        ],
+        "answer": "No. Leave the optional comparison price blank to calculate cost, shares and invested cash without a valuation. A value of zero is treated as a genuine zero-price scenario and produces a complete loss of positive purchase cost. An entered nonzero price is manual input, not a live quote.",
+        "links": [
+          {
+            "id": "stock-average",
+            "mode": "purchases",
+            "label": "Open stock average calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-tax-cost-basis",
+        "question": "Is this average the tax cost basis for selling stock?",
+        "queries": [
+          "is this average the tax cost basis for selling stock"
+        ],
+        "answer": "Do not assume so. This is an economic average of an intact position, not an election or determination of a permitted tax method. It does not track sold lots, identification choices, wash sales, transfers or other basis adjustments. Use appropriate transaction records and applicable tax guidance for reporting.",
+        "links": [
+          {
+            "id": "stock-average",
+            "mode": "purchases",
+            "label": "Open stock average calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-sales-and-dividends",
+        "question": "Does the stock average calculator handle sales or dividend reinvestment?",
+        "queries": [
+          "does the stock average calculator handle sales or dividend reinvestment"
+        ],
+        "answer": "This version accepts purchases only. It does not remove sold shares or identify their remaining tax lots. Reinvested dividends can have additional accounting effects beyond adding a simple purchase row. Use the DRIP tool for a reinvestment scenario rather than assuming this worksheet calculates all related taxes or returns.",
+        "links": [
+          {
+            "id": "stock-average",
+            "mode": "purchases",
+            "label": "Open stock average calculator"
+          }
+        ]
+      },
+      {
+        "anchor": "use-fractional-average",
+        "question": "Can I enter fractional shares and multiple purchases?",
+        "queries": [
+          "can i enter fractional shares and multiple purchases"
+        ],
+        "answer": "Yes. Add up to 30 purchase cards with quantities down to 0.00000001 shares, prices and fixed total fees. Empty quantities or prices are rejected so an unfinished card cannot silently change the result. Internal precision is retained until display; the table preserves each entered purchase in order.",
+        "links": [
+          {
+            "id": "stock-average",
+            "mode": "purchases",
+            "label": "Open stock average calculator"
+          }
+        ]
+      }
+    ]
+  }
+}

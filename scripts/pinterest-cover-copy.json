@@ -148,5 +148,15 @@
     "category": "REAL ESTATE / FINANCE",
     "headline": "Fix & Flip",
     "description": "Review renovation costs, cash funding and project profit."
+  },
+  "stock-profit": {
+    "category": "STOCKS / INVESTING",
+    "headline": "Stock Profit",
+    "description": "Check trading costs, net profit and break-even share price."
+  },
+  "stock-average": {
+    "category": "STOCKS / INVESTING",
+    "headline": "Stock Average",
+    "description": "Calculate weighted stock cost from your separate purchases."
   }
 }

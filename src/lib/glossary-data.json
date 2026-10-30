@@ -350,6 +350,11 @@
       {
         "id": "401k",
         "text": "Explore recurring payroll contributions and an assumed employer match in a retirement projection."
+      },
+      {
+        "id": "stock-average",
+        "mode": "purchases",
+        "label": "Stock Average Calculator"
       }
     ],
     "related": [
@@ -992,6 +997,11 @@
         "id": "fix-and-flip",
         "mode": "project",
         "label": "Fix and Flip Calculator"
+      },
+      {
+        "id": "stock-profit",
+        "mode": "trade",
+        "label": "Stock Profit Calculator"
       }
     ],
     "related": [

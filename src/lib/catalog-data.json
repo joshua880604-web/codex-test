@@ -688,5 +688,17 @@
     "category": "Mortgage and Real Estate",
     "title": "Fix and Flip Calculator",
     "local_route": "/fix-and-flip-calculator.html"
+  },
+  {
+    "id": "stock-profit",
+    "category": "Investment",
+    "title": "Stock Profit Calculator",
+    "local_route": "/stock-profit-calculator.html"
+  },
+  {
+    "id": "stock-average",
+    "category": "Investment",
+    "title": "Stock Average Calculator",
+    "local_route": "/stock-average-calculator.html"
   }
 ]

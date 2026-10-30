@@ -1,0 +1,16 @@
+.calculator-page .stock-fields .field-row {grid-template-columns:minmax(0,1fr);gap:6px;}
+.stock-lots-editor {min-width:0;border:0;margin:0 0 20px;padding:0;container-type:inline-size;container-name:stock-editor;}
+.stock-lots-editor > legend {font-weight:700;font-size:15px;color:var(--ink);}
+.stock-lots-help {font-size:12px;line-height:1.6;color:var(--muted);margin:8px 0 14px;}
+.stock-lot {min-width:0;border:1px solid var(--control);border-radius:14px;padding:12px;margin:0 0 14px;background:var(--surface);}
+.stock-lot > legend {font-size:13px;font-weight:650;color:var(--link);padding:0 5px;}
+.stock-lot-inputs {display:grid;grid-template-columns:minmax(0,1fr);gap:12px;}
+.stock-lot-inputs > div {min-width:0;}
+.stock-lot-inputs label {display:block;font-size:13px;line-height:1.4;margin-bottom:6px;color:var(--ink);}
+.stock-lot-inputs input {box-sizing:border-box;width:100%;min-width:0;min-height:44px;padding:10px 12px;border:1px solid var(--control);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;font-size:16px;}
+.stock-lots-editor button {min-height:44px;border:1px solid var(--control);border-radius:10px;padding:9px 12px;background:var(--surface);color:var(--link);font:inherit;font-size:13px;font-weight:600;}
+.stock-lots-editor .stock-lot-remove {border:0;padding-left:0;font-size:12px;font-weight:400;}
+.stock-lots-editor button:disabled {opacity:.5;cursor:default;}
+.stock-lots-actions {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;}
+.stock-lots-actions span {font-size:12px;color:var(--muted);}
+@container stock-editor (min-width:540px){.stock-lot-inputs {grid-template-columns:repeat(3,minmax(0,1fr));}.stock-lot-inputs label {min-height:2.8em;}}

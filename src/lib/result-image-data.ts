@@ -1,3 +1,4 @@
+import {stockLotDrafts} from './stock-lots';
 import type { Field, Metric, Mode, Result, Values } from './types';
 import { summaryMetrics } from './sharing';
 import { calculatorScope } from './calculator-scope';
@@ -25,7 +26,8 @@ function grouped(raw: string) {
 export function imageInputs(fields: Field[], values: Values): ImageInput[] {
   const keys = new Set(fields.map(f => f.key));
   return fields.filter(f => f.key !== 'verified_rate' && values[f.key]?.trim() &&
-    !(f.key.endsWith('_unit') && keys.has(f.key.slice(0, -5)))).map(f => {
+    !(f.key.endsWith('_unit') && keys.has(f.key.slice(0, -5)))).flatMap(f => {
+    if(f.key==='lots'){try{return stockLotDrafts(values[f.key]).map((lot,i)=>({label:'Purchase '+(i+1),value:lot.shares+' shares × $'+lot.price+' + $'+lot.fee+' total buy fee'}));}catch{return [{label:f.label,value:'Purchase list could not be read.'}];}}
     const raw = values[f.key].trim(), rows = raw.split(/\r?\n/).filter(line => line.trim()).length;
     if (raw.length > 240 || rows > 3) return { label: f.label, value: rows > 1 ? `${rows} entered rows; full list not included.` : `${raw.length} entered characters; full text not included.`, summarized: true };
     const unit = keys.has(f.key + '_unit') ? values[f.key + '_unit'] : f.unit;

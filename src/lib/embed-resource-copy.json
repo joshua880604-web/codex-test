@@ -29,5 +29,7 @@
   "rental-property": "Project annual rental cash flow, loan balances and sale proceeds using explicit holding-period assumptions.",
   "noi": "Build property net operating income from rent, vacancy and itemized operating expenses before financing.",
   "seller-financing": "Model an owner-financed note, monthly payments and the balloon due at maturity.",
-  "fix-and-flip": "Estimate house flipping profit, pre-sale cash funding and the break-even sale price."
+  "fix-and-flip": "Estimate house flipping profit, pre-sale cash funding and the break-even sale price.",
+  "stock-profit": "Estimate stock profit or loss after fixed or percentage trade fees and cash dividends.",
+  "stock-average": "Add stock purchases to calculate quantity-weighted cost, shares and invested cash."
 }

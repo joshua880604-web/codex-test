@@ -183,3 +183,8 @@ Calculator pages provide Share, Cite and Export controls; Embed appears only whe
 
 - [Seller Financing Calculator](https://www.calculatorfree.io/seller-financing-calculator): Fixed-rate owner-financed monthly payments and explicit final-month balloon settlement; not a contract or legal eligibility assessment.
 - [Fix and Flip Calculator](https://www.calculatorfree.io/fix-and-flip-calculator): Pre-tax house flipping profit, cumulative pre-sale cash funding, financing costs and break-even sale price; no appraisal or profit guarantee.
+
+## Stock purchase scenarios
+
+- [Stock Profit Calculator](https://www.calculatorfree.io/stock-profit-calculator): Manual long-position buy/sell profit after fees and unreinvested cash dividends; no live quote or tax calculation.
+- [Stock Average Calculator](https://www.calculatorfree.io/stock-average-calculator): Quantity-weighted economic acquisition cost from separate purchase cards; not a tax cost-basis election or advice to average down.

@@ -2,6 +2,7 @@ import type { Metric, Result } from "./types";
 
 // Complex tax forms, multi-debt entry sheets and the 401(k) story keep their wider flow.
 export const workspaceIds = [
+  'stock-profit','stock-average',
   'seller-financing','fix-and-flip',
   "cap-rate", "credit-card-minimum-payment",
   "roth-conversion-ladder",
@@ -21,10 +22,12 @@ export const workspaceIds = [
 export function hasCalculatorWorkspace(id: string): boolean { return (workspaceIds as readonly string[]).includes(id); }
 export function workspaceLayout(id: string, mode: string): "split" | "stacked" | null {
   if (!hasCalculatorWorkspace(id)) return null;
-  return id === 'fix-and-flip' || (id === "cap-rate" && mode === "rental") || id === "roth-conversion-ladder" || id === "drip" || id === "covered-call" || id === "house-hacking" || id === "mortgage-vs-invest" || (id === "cash-on-cash-return" && mode === "property") || id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
+  return id === 'stock-average' || id === 'fix-and-flip' || (id === "cap-rate" && mode === "rental") || id === "roth-conversion-ladder" || id === "drip" || id === "covered-call" || id === "house-hacking" || id === "mortgage-vs-invest" || (id === "cash-on-cash-return" && mode === "property") || id === "brrrr" || (id === "retirement" && mode === "required") || (id === "payback-period" && mode === "irregular") ? "stacked" : "split";
 }
 
 const priorities: Record<string, string[]> = {
+ 'stock-profit':['Net profit / loss before income tax','Net return on purchase cost','Break-even sale price per share','Total trading fees'],
+ 'stock-average':['Average cost per share including buy fees','Total shares held','Total purchase cost including fees','Unrealized gain / loss before sale fees and tax'],
  'seller-financing':['Regular monthly payment','Balloon principal after final installment','Total due in final month','Total interest through maturity'],
  'fix-and-flip':['Net project profit before income tax','Total cash required before sale','Net sale cash after loan payoff','Project cash-on-cash ROI'],
   'cap-rate':['Capitalization rate','Annual net operating income','Indicated value at target cap rate','NOI surplus / shortfall versus target'],

@@ -11,6 +11,8 @@ const loaders: Record<string, () => Promise<Calculator[]>> = {
 const businessTools = () => import('./calculators/business-tools').then(m => m.businessTools);
 const strategyTools=()=>import('./calculators/debt-strategies').then(m=>[m.debtSnowball,m.debtAvalanche]);
 const dataTools: Record<string, () => Promise<Calculator[]>> = {
+  'stock-profit':()=>import('./calculators/stock-trades').then(m=>[m.stockProfitCalculator]),
+  'stock-average':()=>import('./calculators/stock-trades').then(m=>[m.stockAverageCalculator]),
   'seller-financing':()=>import('./calculators/property-deals').then(m=>[m.sellerFinancingCalculator]),
   'fix-and-flip':()=>import('./calculators/property-deals').then(m=>[m.fixFlipCalculator]),
   'cap-rate':()=>import('./calculators/cap-rate').then(m=>[m.capRateCalculator]),

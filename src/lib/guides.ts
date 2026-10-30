@@ -1,3 +1,4 @@
+import stockContent from './stock-tool-content.json';
 import propertyDealContent from './property-deal-content.json';
 import priorityContent from './priority-two-content.json';
 import rothLadderContent from './roth-ladder-content.json';
@@ -841,6 +842,8 @@ for(const id of ['credit-card','credit-cards-payoff','debt-snowball','debt-avala
 
 Object.assign(guides,Object.fromEntries(Object.entries(propertyDealContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
 
+Object.assign(guides,Object.fromEntries(Object.entries(stockContent).map(([id,c])=>[id,{summary:c.summary,scope:c.scope,examples:c.examples,questions:[],sources:c.sources,checkedOn:c.updatedOn}])));
+
 // Enrich existing canonical guides and merge questions covering the same task.
 for (const [id, content] of Object.entries(longTailContent)) {
   for (const {queries: _queries, replacesQuestion, ...item} of content.items) {
@@ -870,3 +873,7 @@ for(const id of motherPageIds)guides[id].checkedOn=motherPageReviewedOn;
 relatedCalculatorIds['seller-financing']=['mortgage','amortization','fix-and-flip','brrrr','loan'];
 relatedCalculatorIds['fix-and-flip']=['seller-financing','brrrr','cash-on-cash-return','cap-rate','rental-property'];
 for(const id of ['mortgage','brrrr','rental-property','cash-on-cash-return'])relatedCalculatorIds[id]=[...new Set(['seller-financing','fix-and-flip',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+relatedCalculatorIds['stock-profit']=['stock-average','roi','drip','covered-call','investment'];
+relatedCalculatorIds['stock-average']=['stock-profit','drip','roi','investment'];
+for(const id of ['roi','drip','covered-call','investment'])relatedCalculatorIds[id]=[...new Set(['stock-profit','stock-average',...(relatedCalculatorIds[id]??[])])].slice(0,8);

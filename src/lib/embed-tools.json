@@ -184,5 +184,17 @@
     "slug": "fix-and-flip-calculator",
     "title": "Fix and Flip Calculator",
     "height": 1200
+  },
+  {
+    "id": "stock-profit",
+    "slug": "stock-profit-calculator",
+    "title": "Stock Profit Calculator",
+    "height": 1000
+  },
+  {
+    "id": "stock-average",
+    "slug": "stock-average-calculator",
+    "title": "Stock Average Calculator",
+    "height": 1200
   }
 ]

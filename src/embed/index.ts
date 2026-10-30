@@ -1,5 +1,6 @@
 import { type Calculator, type Field, type Metric, type Result, type Values } from '../lib/types';
 import { guardAttribution } from './attribution';
+import {stockLotDrafts,type StockLotDraft} from '../lib/stock-lots';
 import {coastFieldVisible} from '../lib/coast-household';
 
 type Widget = { id: string; title: string; category:string; mainURL: string; modes: {id:string;title:string;fields:Field[]}[]; initial: Result };
@@ -25,6 +26,22 @@ function renderResult(result: Result) {
   for(const metric of result.metrics){const row=document.createElement('div'),term=document.createElement('dt'),value=document.createElement('dd');term.textContent=metric.label;value.textContent=metricText(metric);row.append(term,value);list.append(row);}output.append(list);
   if(result.notes?.length){const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Assumptions and limitations';details.append(summary);for(const note of result.notes){const p=document.createElement('p');p.textContent=note;details.append(p);}output.append(details);}
   output.hidden=false;
+}
+function renderStockLots(field:Field){
+ const wrap=document.createElement('div');wrap.className='field-wide stock-purchases';
+ const hidden=document.createElement('textarea');hidden.name=field.key;hidden.hidden=true;hidden.value=String(field.value);wrap.append(hidden);
+ const help=document.createElement('p');help.textContent='One security, purchases only. Enter shares, price and a total USD buy fee for each purchase.';help.className='notice';wrap.append(help);
+ let rows:StockLotDraft[];try{rows=stockLotDrafts(hidden.value);}catch{const message=document.createElement('p');message.textContent='Purchases could not be read. Use Reset to restore example purchases.';wrap.append(message);fieldset.append(wrap);return;}
+ const list=document.createElement('div'),add=document.createElement('button'),counter=document.createElement('span');add.type='button';add.textContent='+ Add purchase';counter.className='debt-count';wrap.append(list,add,counter);
+ const commit=()=>{hidden.value=JSON.stringify(rows);};
+ const render=()=>{list.replaceChildren();rows.forEach((row,index)=>{const card=document.createElement('fieldset');card.className='debt-card';const legend=document.createElement('legend');legend.textContent='Purchase '+(index+1);card.append(legend);const fields=document.createElement('div');fields.className='debt-inputs stock-purchase-inputs';
+ for(const key of ['shares','price','fee'] as const){const group=document.createElement('div'),label=document.createElement('label'),input=document.createElement('input');input.id='embed-stock-lot-'+index+'-'+key;label.htmlFor=input.id;label.textContent=({shares:'Shares bought',price:'Price per share (USD)',fee:'Total purchase fee (USD)'})[key];input.type='number';input.min=String(key==='shares'?1e-8:0);input.max='1000000000';input.step='any';input.required=true;input.value=row[key];input.addEventListener('input',()=>{row[key]=input.value;commit();});group.append(label,input);fields.append(group);}card.append(fields);
+ const remove=document.createElement('button');remove.type='button';remove.textContent='Remove purchase';remove.setAttribute('aria-label','Remove purchase '+(index+1));remove.disabled=rows.length===1;remove.addEventListener('click',()=>{rows=rows.filter((_,i)=>i!==index);commit();render();add.focus();changed();});card.append(remove);list.append(card);});add.disabled=rows.length>=30;counter.textContent=rows.length+' of 30 purchases';};
+ add.addEventListener('click',()=>{rows.push({shares:'',price:'',fee:'0'});commit();render();list.querySelector<HTMLInputElement>('.debt-card:last-child input')?.focus();changed();});render();fieldset.append(wrap);
+}
+function syncStockFees(){
+ if(config.id!=='stock-profit')return;const values=Object.fromEntries(new FormData(form)) as Values;
+ for(const key of ['buy_fee','sell_fee']){const wrap=fieldset.querySelector<HTMLElement>('[data-field="'+key+'"]'),input=wrap?.querySelector<HTMLInputElement>('input'),label=wrap?.querySelector('label');const percentage=values[key+'_unit']==='Percent';if(input)input.max=percentage?'100':'1000000000';if(label)label.textContent=active.fields.find(f=>f.key===key)!.label+' ('+(percentage?'%':'USD')+')';}
 }
 function renderDebts(field:Field){
  const wrap=document.createElement('div');wrap.className='debt-editor field-wide';
@@ -66,6 +83,7 @@ function renderFields(){
   fieldset.replaceChildren();
   for(const field of active.fields){
     const wrap=document.createElement('div'),label=document.createElement('label');wrap.className='field';wrap.dataset.field=field.key;label.htmlFor='embed-field-'+field.key;label.textContent=field.label+(field.unit?' ('+field.unit+')':'');
+    if(field.key==='lots'&&config.id==='stock-average'){renderStockLots(field);continue;}
     if(field.key==='rentals'&&config.id==='house-hacking'){renderRentals(field);continue;}
     if(field.key==='debts'&&['debt-snowball','debt-avalanche','credit-cards-payoff'].includes(config.id)){renderDebts(field);continue;}
     const input=field.type==='select'?document.createElement('select'):field.type==='textarea'?document.createElement('textarea'):document.createElement('input');input.id=label.htmlFor;input.name=field.key;
@@ -75,7 +93,7 @@ function renderFields(){
     input.value=String(field.value);wrap.append(label,input);
     if(field.hint){const hint=document.createElement('small');hint.id=input.id+'-hint';hint.textContent=field.hint;input.setAttribute('aria-describedby',hint.id);wrap.append(hint);}fieldset.append(wrap);
   }
-  syncHousehold();
+  syncHousehold();syncStockFees();
 }
 function syncHousehold(){
   if(config.id!=='coast-fire'&&config.id!=='fix-and-flip')return;
@@ -85,7 +103,7 @@ function syncHousehold(){
     const input=wrap.querySelector<HTMLInputElement|HTMLSelectElement>('input,select');if(input)input.disabled=!visible;
   }
 }
-function changed(){syncHousehold();token++;submit.disabled=false;form.setAttribute('aria-busy','false');output.hidden=true;status.textContent='Inputs changed. Select Calculate to update the result.';}
+function changed(){syncHousehold();syncStockFees();token++;submit.disabled=false;form.setAttribute('aria-busy','false');output.hidden=true;status.textContent='Inputs changed. Select Calculate to update the result.';}
 form.addEventListener('input',changed);form.addEventListener('change',changed);
 modePicker?.addEventListener('change',()=>{active=config.modes.find(mode=>mode.id===modePicker.value)!;renderFields();changed();});
 form.addEventListener('submit',async event=>{

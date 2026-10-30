@@ -3,6 +3,9 @@ import type { Values } from "./types";
 // Scope labels describe implemented rules, not a promise of worldwide tax support.
 export function calculatorScope(id: string, mode: string, values: Values): string | undefined {
   switch (id) {
+    case "stock-profit": return "One long USD stock position bought and sold in full. Manual prices, fractional shares, side-specific fees and optional unreinvested cash dividends. Before income tax; no live quote, shorting, margin, tax lots or corporate actions.";
+    case "stock-average": return "One security, purchases only. Quantity-weighted economic acquisition cost including fixed USD buy fees, not a tax cost-basis election. Manual optional comparison price; no sales, dividend reinvestment, splits or advice to average down.";
+
     case "seller-financing": return "Fixed-rate USD real-estate note with monthly end-of-period payments and one maturity settlement. Balloon principal is measured after that month\u2019s installment. No legal eligibility, fees, escrow, taxes, daily interest or refinancing guarantee.";
     case "fix-and-flip": return "One USD buy-renovate-sell project before income tax. Cash purchase or a fully drawn acquisition-only interest-only loan; rehab is cash-funded. Sale price and costs are assumptions; cash required, profit and net sale cash are different measures.";
 

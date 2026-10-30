@@ -1,3 +1,4 @@
+import stockContent from './stock-tool-content.json';
 import propertyDealContent from './property-deal-content.json';
 import priorityContent from './priority-two-content.json';
 import rothLadderContent from './roth-ladder-content.json';
@@ -24,7 +25,7 @@ import { routeFor } from "./catalog";
 export type LongTailLink = { id: string; mode: string; label: string; values?: Record<string, string> };
 export type LongTailQuestion = { anchor: string; queries: string[]; question: string; answer: string; steps?: string[]; links: LongTailLink[]; replacesQuestion?: string };
 const original = data as Record<string, { updatedOn: string; items: LongTailQuestion[] }>;
-const additions = {...propertyDealContent,...priorityContent,...rothLadderContent,...dripContent,...coveredCallContent,...houseHackContent,...mortgageInvestContent,...cashReturnContent,...brrrrContent,...baristaContent,...hsaContent,...debtStrategyContent,...fireBudgetContent,...refresh,...businessContent,...coastContent,...strategyContent} as unknown as Record<string, { updatedOn: string; items: LongTailQuestion[] }>;
+const additions = {...stockContent,...propertyDealContent,...priorityContent,...rothLadderContent,...dripContent,...coveredCallContent,...houseHackContent,...mortgageInvestContent,...cashReturnContent,...brrrrContent,...baristaContent,...hsaContent,...debtStrategyContent,...fireBudgetContent,...refresh,...businessContent,...coastContent,...strategyContent} as unknown as Record<string, { updatedOn: string; items: LongTailQuestion[] }>;
 for(const [id,entry] of Object.entries(batchContent)) additions[id]={updatedOn:entry.updatedOn,items:[...(additions[id]?.items??[]),...entry.items]};
 for(const [id,entry] of Object.entries(rmdRefresh)) additions[id]={updatedOn:entry.updatedOn,items:[...(additions[id]?.items??[]),...entry.items]};
 export const longTailContent = {...original,...Object.fromEntries(Object.entries(additions).map(([id,entry])=>[id,{updatedOn:entry.updatedOn,items:[...(original[id]?.items??[]),...entry.items]}]))};
