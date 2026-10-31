@@ -83,7 +83,13 @@
         "url": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance"
       }
     ],
-    "checkedOn": "2026-10-22"
+    "checkedOn": "2026-10-22",
+    "guides": [
+      {
+        "path": "/guides/should-you-reinvest-dividends/",
+        "title": "Reinvestment, price growth and retained cash"
+      }
+    ]
   },
   {
     "slug": "cagr",
@@ -1016,7 +1022,17 @@
       }
     ],
     "checkedOn": "2026-10-29",
-    "scope": "General financial concept; examples are hypothetical."
+    "scope": "General financial concept; examples are hypothetical.",
+    "guides": [
+      {
+        "path": "/guides/pay-off-mortgage-or-invest/",
+        "title": "Investment returns in a mortgage decision"
+      },
+      {
+        "path": "/guides/should-you-reinvest-dividends/",
+        "title": "Dividends versus retained cash"
+      }
+    ]
   },
   {
     "slug": "internal-rate-of-return",
@@ -1573,7 +1589,9 @@
     "related": [
       "401k",
       "required-minimum-distribution",
-      "marginal-vs-effective-tax-rate"
+      "marginal-vs-effective-tax-rate",
+      "roth-conversion-ladder",
+      "roth-ira-five-year-rules"
     ],
     "sources": [
       {
@@ -1582,7 +1600,17 @@
       }
     ],
     "checkedOn": "2026-10-23",
-    "scope": "U.S. federal IRA concepts; rules checked October 23, 2026. Examples use hypothetical tax rates, not a tax filing calculation."
+    "scope": "U.S. federal IRA concepts; rules checked October 23, 2026. Examples use hypothetical tax rates, not a tax filing calculation.",
+    "guides": [
+      {
+        "path": "/guides/roth-ira-vs-traditional-ira/",
+        "title": "Equal-budget IRA contribution comparison"
+      },
+      {
+        "path": "/guides/roth-conversion-ladder/",
+        "title": "Existing-account conversions and their separate clocks"
+      }
+    ]
   },
   {
     "slug": "employer-match-and-vesting",
@@ -2016,7 +2044,13 @@
       }
     ],
     "checkedOn": "2026-10-23",
-    "scope": "General financial concept; examples are hypothetical."
+    "scope": "General financial concept; examples are hypothetical.",
+    "guides": [
+      {
+        "path": "/guides/pay-off-mortgage-or-invest/",
+        "title": "Mortgage prepayment versus investing with the same budget"
+      }
+    ]
   },
   {
     "slug": "fixed-vs-variable-interest",
@@ -2530,7 +2564,13 @@
       }
     ],
     "checkedOn": "2026-10-23",
-    "scope": "General financial concept; examples are hypothetical."
+    "scope": "General financial concept; examples are hypothetical.",
+    "guides": [
+      {
+        "path": "/guides/are-mortgage-points-worth-it/",
+        "title": "Mortgage points: cash-flow versus balance-aware break-even"
+      }
+    ]
   },
   {
     "slug": "mortgage-escrow",
@@ -2699,8 +2739,8 @@
   {
     "slug": "cap-rate-vs-cash-on-cash-return",
     "name": "Cap rate vs. cash-on-cash return",
-    "title": "Cap rate vs. cash-on-cash return: Definition, Formula and Example",
-    "description": "Cap rate compares property net operating income with a stated property value; cash-on-cash return compares pretax cash flow after debt service with cash invested.",
+    "title": "Cap Rate vs. Cash-on-Cash Return: Formulas and Financing Examples",
+    "description": "Compare cap rate and cash-on-cash return on the same property. Five scenarios separate NOI, loan payments, closing costs and capital reserves.",
     "category": "Housing & property",
     "aliases": [
       "Capitalization rate",
@@ -2760,8 +2800,28 @@
         "url": "https://propertymetrics.com/blog/cash-on-cash-return/"
       }
     ],
-    "checkedOn": "2026-10-29",
-    "scope": "General financial concept; examples are hypothetical."
+    "checkedOn": "2026-10-31",
+    "scope": "Annual USD property comparison. Cap rate uses before-capex NOI and the entered price or value; cash-on-cash uses cash flow after financing and any stated capital reserve. No appreciation, sale, owner income tax or total return is implied.",
+    "comparison": {
+      "topic": "cap",
+      "heading": "Same property, five financing and reserve scenarios",
+      "paragraphs": [
+        "Hold the purchase price at $300,000 and annual NOI at $18,000. Every case has a 6% cap rate. Include $5,000 cash-paid closing costs, no repairs or initial reserve cash, and a 30-year amortizing loan where financed. Rent is $2,500 per month, vacancy and other income are zero, and operating expenses are $1,000 per month.",
+        "At 80% LTV and 5% loan interest, first-year P&I is $15,460.46. Annual cash flow is $2,539.54 on $65,000 cash invested, or 3.91%. At 8% interest it becomes −$3,132.42, or −4.82%, although the cap rate remains 6%. Adding a $100 monthly capital reserve lowers cash yield further to −6.67%.",
+        "Even the cash purchase has a 5.90% cash yield because its $305,000 cash basis includes closing costs while cap rate divides NOI by the $300,000 property price. Neither result is wrong; their denominators answer different questions. A higher cap rate is not automatically a better investment, and cash-on-cash is not IRR."
+      ],
+      "questions": [
+        {
+          "question": "Is cap rate the same as cash-on-cash return?",
+          "answer": "No. Cap rate relates before-financing NOI to property value; cash-on-cash relates the stated cash flow to cash invested. They can differ without borrowing when closing costs or reserves change the cash basis."
+        },
+        {
+          "question": "Which should I use for a financed rental?",
+          "answer": "Use both for different purposes: operating yield before financing, and the cash yield of your funding arrangement. Also review downside, reserves and eventual sale; neither percentage measures all risks or total return."
+        }
+      ],
+      "chart": "cap-vs-cash"
+    }
   },
   {
     "slug": "down-payment",
@@ -4170,7 +4230,9 @@
     "related": [
       "coast-fire",
       "withdrawal-rate",
-      "real-rate-of-return"
+      "real-rate-of-return",
+      "lean-fire",
+      "fat-fire"
     ],
     "sources": [
       {
@@ -4511,6 +4573,429 @@
       {
         "title": "Barista FIRE vs. Coast FIRE",
         "path": "/guides/barista-fire-vs-coast-fire/"
+      }
+    ]
+  },
+  {
+    "slug": "lean-fire",
+    "name": "Lean FIRE",
+    "title": "Lean FIRE: Definition, Example and Limitations",
+    "description": "Lean FIRE describes financial independence built around a lower-spending lifestyle; it has no universal income or wealth cutoff.",
+    "category": "Retirement",
+    "aliases": [
+      "Lean financial independence"
+    ],
+    "definition": "Lean FIRE describes financial independence built around a lower-spending lifestyle; it has no universal income or wealth cutoff.",
+    "explanation": "Start with the costs the portfolio must fund, including healthcare, recurring irregular expenses and an entered tax allowance. The calculator adds a buffer to the entire budget before sizing the full FIRE target. Avoid counting the same cost in more than one category. This is a full financial-independence target, unlike a discounted Coast FIRE threshold today.",
+    "formula": "FIRE target = annual portfolio-funded budget / withdrawal assumption",
+    "formulaNote": "Use the rate as a decimal. Default rates are illustrative; a target does not establish that later withdrawals are sustainable.",
+    "example": {
+      "title": "$30,000 annual spending at an illustrative 4% rate",
+      "intro": "Assume today’s USD, no additional spending buffer and no separate benefits.",
+      "steps": [
+        "Annual portfolio-funded budget: $30,000.",
+        "Withdrawal assumption: 4% = 0.04.",
+        "Target: $30,000 / 0.04 = $750,000."
+      ],
+      "answer": "The modeled full target is $750,000; the spending level does not define a universal Lean FIRE threshold.",
+      "assumptions": "Target sizing only. No market path, withdrawal simulation, benefit timing or automatic tax calculation."
+    },
+    "pitfall": {
+      "title": "A lifestyle label is not a safety test",
+      "text": "A smaller or larger budget changes the target, but does not determine market risk, account access or whether the spending plan is feasible. Review the withdrawal assumption and later spending separately."
+    },
+    "tools": [
+      {
+        "id": "lean-fire",
+        "text": "Build a budget and inspect the full target and modeled crossing."
+      },
+      {
+        "id": "fire",
+        "text": "Compare the same annual budget in the general full-target model."
+      }
+    ],
+    "related": [
+      "fire-number",
+      "withdrawal-rate",
+      "coast-fire",
+      "fat-fire"
+    ],
+    "sources": [
+      {
+        "title": "SEC Investor.gov: compound-growth inputs",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+      }
+    ],
+    "checkedOn": "2026-10-31",
+    "scope": "Today’s purchasing power. Constant rates and month-end contributions in the target-age projection; no Social Security or lifetime retirement withdrawal test.",
+    "guides": [
+      {
+        "path": "/guides/how-to-calculate-coast-fire/",
+        "title": "Full FIRE target versus Coast FIRE threshold"
+      },
+      {
+        "path": "/guides/barista-fire-vs-coast-fire/",
+        "title": "Income and withdrawals across FIRE approaches"
+      }
+    ]
+  },
+  {
+    "slug": "fat-fire",
+    "name": "Fat FIRE",
+    "title": "Fat FIRE: Definition, Example and Limitations",
+    "description": "Fat FIRE describes financial independence built around a higher-spending lifestyle; it has no universal portfolio threshold.",
+    "category": "Retirement",
+    "aliases": [
+      "Higher-spending financial independence"
+    ],
+    "definition": "Fat FIRE describes financial independence built around a higher-spending lifestyle; it has no universal portfolio threshold.",
+    "explanation": "Start with the costs the portfolio must fund, including healthcare, recurring irregular expenses and an entered tax allowance. The calculator adds a buffer to the entire budget before sizing the full FIRE target. Avoid counting the same cost in more than one category. This is a full financial-independence target, unlike a discounted Coast FIRE threshold today.",
+    "formula": "FIRE target = annual portfolio-funded budget / withdrawal assumption",
+    "formulaNote": "Use the rate as a decimal. Default rates are illustrative; a target does not establish that later withdrawals are sustainable.",
+    "example": {
+      "title": "$120,000 annual spending at an illustrative 4% rate",
+      "intro": "Assume today’s USD, no additional spending buffer and no separate benefits.",
+      "steps": [
+        "Annual portfolio-funded budget: $120,000.",
+        "Withdrawal assumption: 4% = 0.04.",
+        "Target: $120,000 / 0.04 = $3,000,000."
+      ],
+      "answer": "The modeled full target is $3,000,000; the spending level does not define a universal Fat FIRE threshold.",
+      "assumptions": "Target sizing only. No market path, withdrawal simulation, benefit timing or automatic tax calculation."
+    },
+    "pitfall": {
+      "title": "A lifestyle label is not a safety test",
+      "text": "A smaller or larger budget changes the target, but does not determine market risk, account access or whether the spending plan is feasible. Review the withdrawal assumption and later spending separately."
+    },
+    "tools": [
+      {
+        "id": "fat-fire",
+        "text": "Build a budget and inspect the full target and modeled crossing."
+      },
+      {
+        "id": "fire",
+        "text": "Compare the same annual budget in the general full-target model."
+      }
+    ],
+    "related": [
+      "fire-number",
+      "withdrawal-rate",
+      "coast-fire",
+      "lean-fire"
+    ],
+    "sources": [
+      {
+        "title": "SEC Investor.gov: compound-growth inputs",
+        "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+      }
+    ],
+    "checkedOn": "2026-10-31",
+    "scope": "Today’s purchasing power. Constant rates and month-end contributions in the target-age projection; no Social Security or lifetime retirement withdrawal test.",
+    "guides": [
+      {
+        "path": "/guides/how-to-calculate-coast-fire/",
+        "title": "Full FIRE target versus Coast FIRE threshold"
+      },
+      {
+        "path": "/guides/barista-fire-vs-coast-fire/",
+        "title": "Income and withdrawals across FIRE approaches"
+      }
+    ]
+  },
+  {
+    "slug": "dividend-reinvestment-plan",
+    "name": "Dividend reinvestment plan (DRIP)",
+    "title": "Dividend reinvestment plan (DRIP): Definition, Example and Limitations",
+    "description": "A dividend reinvestment plan uses dividend payments to buy additional shares rather than paying them out for the investor to retain as cash.",
+    "category": "Saving & investing",
+    "aliases": [
+      "DRIP",
+      "Dividend reinvestment"
+    ],
+    "definition": "A dividend reinvestment plan uses dividend payments to buy additional shares rather than paying them out for the investor to retain as cash.",
+    "explanation": "Reinvestment changes the share count and exposure to the same investment. It is not an extra external contribution or a guarantee of higher wealth. Share-price changes and dividends per share are separate quantities; a total-return assumption already includes distributions and should not be entered as price appreciation plus another dividend yield.",
+    "formula": "New shares from a payout = after-tax dividend cash / purchase price per share",
+    "formulaNote": "Use actual plan prices, fees and fractional-share rules for a real account. The linked calculator uses hypothetical prices and fractional shares.",
+    "example": {
+      "title": "A $100 quarterly dividend buys one share at $100",
+      "intro": "Hold 100 shares at $100 with a 4% starting annual dividend yield, quarterly payment and no current dividend tax.",
+      "steps": [
+        "Annual dividend per share: $100 × 4% = $4.",
+        "Quarterly gross dividend: 100 shares × $4 / 4 = $100.",
+        "At an unchanged $100 price, $100 buys one additional fractional-or-whole share."
+      ],
+      "answer": "The position has 101 shares after the first payout, before any external deposit.",
+      "assumptions": "Constant share price and dividend dollars per share; zero current dividend tax and no transaction costs.",
+      "calculator": {
+        "id": "drip",
+        "mode": "projection",
+        "values": {
+          "initial": 10000,
+          "price": 100,
+          "yield": 4,
+          "frequency": "Quarterly",
+          "monthly": 0,
+          "years": 1,
+          "price_growth": 0,
+          "dividend_growth": 0,
+          "tax": 0
+        },
+        "expected": [
+          {
+            "label": "Ending shares with DRIP",
+            "value": 104.060401
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "Reinvestment does not automatically remove dividend tax",
+      "text": "In a taxable account, using dividends to buy stock generally does not remove reporting obligations. Check account treatment and retain purchase records. More shares can still mean less wealth if their value falls."
+    },
+    "tools": [
+      {
+        "id": "drip",
+        "text": "Compare reinvestment with retained after-tax cash under identical external deposits."
+      }
+    ],
+    "related": [
+      "compound-interest",
+      "return-on-investment",
+      "covered-call"
+    ],
+    "sources": [
+      {
+        "title": "IRS Publication 550: dividends used to buy more stock",
+        "url": "https://www.irs.gov/publications/p550"
+      }
+    ],
+    "checkedOn": "2026-10-31",
+    "scope": "Educational concept, not broker enrollment instructions or tax-lot accounting. The calculator assumes fractional shares and no cash interest.",
+    "guides": [
+      {
+        "path": "/guides/should-you-reinvest-dividends/",
+        "title": "Reinvest dividends or retain cash: controlled comparisons"
+      }
+    ]
+  },
+  {
+    "slug": "roth-conversion-ladder",
+    "name": "Roth conversion ladder",
+    "title": "Roth conversion ladder: Definition, Example and Limitations",
+    "description": "A Roth conversion ladder stages conversions into a Roth IRA in successive tax years and plans later use of conversion principal during an early-retirement bridge.",
+    "category": "Retirement",
+    "aliases": [
+      "Roth IRA conversion ladder"
+    ],
+    "definition": "A Roth conversion ladder stages conversions into a Roth IRA in successive tax years and plans later use of conversion principal during an early-retirement bridge.",
+    "explanation": "A conversion moves existing retirement assets; it is different from a regular annual contribution. Planning must distinguish the amount converted, estimated tax, regular contribution basis, conversion-principal records and available market value. Our calculator models one owner’s all-pre-tax traditional IRA without prior conversion lots or initial Roth earnings.",
+    "formula": "Illustrative conversion tax = actual fully taxable conversion × entered flat tax assumption",
+    "formulaNote": "This is a cash-planning approximation, not a tax-bracket calculation. A conversion clock does not qualify all earnings for withdrawal.",
+    "example": {
+      "title": "$40,000 converted with an illustrative 20% tax assumption",
+      "intro": "Assume a calendar-year taxpayer converts in 2027 and pays tax from outside cash.",
+      "steps": [
+        "Gross conversion entering Roth: $40,000.",
+        "Illustrative tax: $40,000 × 20% = $8,000.",
+        "The 2027 conversion’s five-tax-year date is January 1, 2032; assess distribution conditions separately."
+      ],
+      "answer": "Budget $8,000 tax cash separately; the converted $40,000 is not the same as after-tax cash available immediately.",
+      "assumptions": "Fully taxable conversion, no withholding from IRA funds, no bracket or eligibility calculation.",
+      "calculator": {
+        "id": "roth-conversion-ladder",
+        "mode": "bridge",
+        "values": {
+          "start_year": 2027,
+          "age": 40,
+          "years": 8,
+          "pretax": 500000,
+          "bridge": 280000,
+          "roth_basis": 0,
+          "conversion": 40000,
+          "conversion_growth": 0,
+          "tax": 20,
+          "spending": 40000,
+          "spending_growth": 0,
+          "pretax_return": 0,
+          "roth_return": 0
+        },
+        "expected": [
+          {
+            "label": "Estimated conversion tax",
+            "value": 64000
+          },
+          {
+            "label": "First conversion five-tax-year date",
+            "value": 2032
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "Five years of living expenses may omit later conversion taxes",
+      "text": "The model may still need outside cash for new conversion taxes after seasoned principal starts covering living costs. Check the whole selected bridge. The detailed guide shows why $240,000 is insufficient in one eight-year example."
+    },
+    "tools": [
+      {
+        "id": "roth-conversion-ladder",
+        "text": "Inspect conversion dates, outside-cash taxes and funding shortfalls."
+      }
+    ],
+    "related": [
+      "roth-ira-five-year-rules",
+      "traditional-vs-roth-ira",
+      "fire-number"
+    ],
+    "sources": [
+      {
+        "title": "IRS Publication 590-B (2025): conversions and Roth distribution rules",
+        "url": "https://www.irs.gov/publications/p590b"
+      }
+    ],
+    "checkedOn": "2026-10-31",
+    "scope": "Definition and simplified owner-IRA bridge only. No nondeductible basis, workplace-plan eligibility, prior lots or age-59½ transition.",
+    "guides": [
+      {
+        "path": "/guides/roth-conversion-ladder/",
+        "title": "How the conversion ladder and cash bridge work"
+      }
+    ]
+  },
+  {
+    "slug": "roth-ira-five-year-rules",
+    "name": "Roth IRA five-year rules",
+    "title": "Roth IRA five-year rules: Definition, Example and Limitations",
+    "description": "Roth IRA rules use different five-tax-year periods for qualified distributions and for certain early distributions attributable to conversion amounts; the two clocks answer different questions.",
+    "category": "Retirement",
+    "aliases": [
+      "Conversion five-year clock",
+      "Roth qualified-distribution holding period"
+    ],
+    "definition": "Roth IRA rules use different five-tax-year periods for qualified distributions and for certain early distributions attributable to conversion amounts; the two clocks answer different questions.",
+    "explanation": "IRS Publication 590-B describes a separate period for each conversion and a distinct qualified-distribution test. Regular contribution basis, converted amounts and earnings are different sources. Actual distribution ordering and possible exceptions depend on records and circumstances, not simply a five-year anniversary.",
+    "formula": "Calendar-year conversion in Y: five-tax-year date = January 1 of Y + 5",
+    "formulaNote": "This date concerns the conversion period. Qualified earnings also require the applicable Roth holding period and a qualifying condition, commonly age 59½; it is not a general withdrawal permission.",
+    "example": {
+      "title": "Two conversions, two dates",
+      "intro": "Consider calendar-year conversions in 2027 and 2028.",
+      "steps": [
+        "2027 conversion: January 1, 2032.",
+        "2028 conversion: January 1, 2033.",
+        "Those dates alone do not establish that earnings are qualified."
+      ],
+      "answer": "Track conversion years separately and keep the qualified-distribution test distinct.",
+      "assumptions": "General calendar-year illustration; no exception or eligibility determination."
+    },
+    "pitfall": {
+      "title": "Seasoned principal is not the entire Roth balance",
+      "text": "Investment growth does not create more conversion principal. Losses can also leave market value below principal records. Do not read a conversion clock date as proof that all account dollars can be distributed without tax or additional tax."
+    },
+    "tools": [
+      {
+        "id": "roth-conversion-ladder",
+        "text": "View separate clock dates within the tool’s limited bridge model."
+      }
+    ],
+    "related": [
+      "roth-conversion-ladder",
+      "traditional-vs-roth-ira"
+    ],
+    "sources": [
+      {
+        "title": "IRS Publication 590-B (2025): conversions and Roth distribution rules",
+        "url": "https://www.irs.gov/publications/p590b"
+      }
+    ],
+    "checkedOn": "2026-10-31",
+    "scope": "U.S. Roth IRA conceptual summary based on Publication590-B(2025); no inherited account or designated Roth workplace-account analysis.",
+    "guides": [
+      {
+        "path": "/guides/roth-conversion-ladder/",
+        "title": "Conversion timeline and bridge examples"
+      }
+    ]
+  },
+  {
+    "slug": "covered-call",
+    "name": "Covered call",
+    "title": "Covered call: Definition, Example and Limitations",
+    "description": "A covered call combines ownership of shares with a short call on an equivalent share quantity, receiving a premium while limiting upside and retaining substantial stock downside.",
+    "category": "Saving & investing",
+    "aliases": [
+      "Buy-write",
+      "Stock covered call"
+    ],
+    "definition": "A covered call combines ownership of shares with a short call on an equivalent share quantity, receiving a premium while limiting upside and retaining substantial stock downside.",
+    "explanation": "For a standard new buy-write in the calculator, one short contract covers exactly 100 purchased shares. At expiry, the stock plus short-call economic value is capped by the strike. The premium offsets part of initial cost but is not pure profit. Before-expiry values and actual assignment timing require more than an expiry payoff diagram.",
+    "formula": "Expiry profit/loss = shares × min(expiry stock price, strike) − net initial debit − exit costs",
+    "formulaNote": "Net debit includes share purchase and opening fees less premium. Premium is per share; contract fees and position-wide fees use different units.",
+    "example": {
+      "title": "100 shares at $50 and a $55 call sold for $2 per share",
+      "intro": "Assume one standard contract and zero fees.",
+      "steps": [
+        "Stock costs $5,000; premium received is $200.",
+        "Net debit is $4,800; fee-free break-even price is $48.",
+        "At or above $55 at expiry, maximum economic profit is $5,500 − $4,800 = $700."
+      ],
+      "answer": "Upside is capped at $700, while a zero stock value loses $4,800.",
+      "assumptions": "Expiry-only new buy-write, no dividend, tax, financing or early-close model.",
+      "calculator": {
+        "id": "covered-call",
+        "mode": "expiry",
+        "values": {
+          "stock": 50,
+          "strike": 55,
+          "premium": 2,
+          "contracts": 1,
+          "stock_fee": 0,
+          "option_fee": 0,
+          "exit_fee": 0,
+          "expiry": 55,
+          "days": 30
+        },
+        "expected": [
+          {
+            "label": "Net initial debit",
+            "value": 4800
+          },
+          {
+            "label": "Maximum expiry profit (may be negative)",
+            "value": 700
+          },
+          {
+            "label": "Worst-case loss at zero stock price",
+            "value": 4800
+          }
+        ]
+      }
+    },
+    "pitfall": {
+      "title": "Covered does not mean protected against a stock crash",
+      "text": "Early assignment can occur and gains above strike are limited. The simple annualized maximum return is not APY or repeatable income. Adjusted contracts, uncovered calls and existing holdings’ tax basis require other analysis."
+    },
+    "tools": [
+      {
+        "id": "covered-call",
+        "text": "Inspect fee-adjusted expiry payoffs and a shares-only comparison."
+      }
+    ],
+    "related": [
+      "return-on-investment",
+      "margin-and-leverage",
+      "dividend-reinvestment-plan"
+    ],
+    "sources": [
+      {
+        "title": "OIC: covered call buy-write risks and payoff",
+        "url": "https://www.optionseducation.org/strategies/all-strategies/covered-call-buy-write"
+      }
+    ],
+    "checkedOn": "2026-10-31",
+    "scope": "Standard100-share USD stock buy-write at expiry. No live quote, option pricing, assignment prediction or recommendation.",
+    "guides": [
+      {
+        "path": "/guides/should-you-reinvest-dividends/",
+        "title": "Reinvestment is a different cash-flow decision"
       }
     ]
   }

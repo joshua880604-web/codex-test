@@ -1,6 +1,6 @@
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
-import {embedResources,embedResourcesPath,embedResourcesReviewedOn,embedResourcesSchema} from '@/lib/embed-resources';
+import {embedResources,embedResourceGroups,embedResourcesPath,embedResourcesReviewedOn,embedResourcesSchema} from '@/lib/embed-resources';
 import {serializeSchema} from '@/lib/site';
 export const metadata=pageMetadata(embedResourcesPath,'Free Embeddable Financial Calculators for Blogs','Browse ad-free financial calculator embeds for personal and commercial blogs. Copy iframe code, choose a height and theme, and keep visible attribution.');
 export default function EmbedResources(){return <div className="page-wrap glossary-page embed-resources-page"><main id="main">
@@ -10,12 +10,15 @@ export default function EmbedResources(){return <div className="page-wrap glossa
  <p>Browse a tool below, then open its embedding controls. The main calculator pages and this resource page may display advertising; the standalone widgets do not.</p>
  <p><a href="#usage">Setup &amp; usage guidance</a> · <a href="#supported-calculators">Supported calculators</a></p>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(embedResourcesSchema())}}/>
- <section id="supported-calculators"><h2>Choose a calculator to embed</h2><ul className="embed-resource-list">{embedResources.map(tool=><li key={tool.id}><h3>{tool.title}</h3><p>{tool.description}</p><SiteLink href={tool.path+'#embed-and-cite'}>Open {tool.title} →</SiteLink></li>)}</ul></section>
+ <section id="supported-calculators"><h2>Choose a calculator to embed</h2>
+ <nav className="embed-resource-categories" aria-label="Embed calculator topics">{embedResourceGroups.map(group=><a key={group.id} href={'#embed-'+group.id}>{group.title} <span>({group.tools.length})</span></a>)}</nav>
+ {embedResourceGroups.map(group=><section className="embed-resource-group" key={group.id} id={'embed-'+group.id} aria-labelledby={'embed-'+group.id+'-heading'}><h3 id={'embed-'+group.id+'-heading'}>{group.title}</h3><ul className="embed-resource-list">{group.tools.map(tool=><li key={tool.id}><h4>{tool.title}</h4><p>{tool.description}</p><SiteLink href={tool.path+'#embed-and-cite'}>Open {tool.title} →</SiteLink>{tool.hasSnippetKit&&<div className="embed-resource-snippet"><span>Blog snippet kit</span><SiteLink href={tool.path+'#blog-snippet-kit'}>View writing material →</SiteLink></div>}</li>)}</ul></section>)}
+ </section>
  <section id="usage" className="embed-resource-usage"><h2>Setup &amp; usage guidance</h2>
  <ol><li>Open a supported calculator. Choose <strong>Share / Export → Embed</strong>, or <strong>Menu → Share / Embed / Cite</strong> on mobile.</li><li>Select Light or Dark Pro and a frame height. Choose a preset or enter a whole number from 400 to 2400 pixels. Longer forms and reports scroll within the frame.</li><li>Copy the complete embed code into your website’s HTML or embed block. Some publishing platforms or account plans restrict iframes; preview your published page to confirm support.</li><li>Keep the widget’s attribution and accompanying credit link visible, and test the embed on a phone as well as a computer.</li></ol>
  <h3>Attribution and permitted use</h3><p>Personal and commercial blog embedding of the hosted calculator is free. Do not hide the CalculatorFree.io attribution link, crop out the credit or present the calculator as your own product. This permission covers the hosted embed, not redistribution of our source code. It does not imply endorsement of your article or business.</p>
  <h3>Inputs, advertising and privacy</h3><p>Embeds start with illustrative example values. Embedding code does not include your current inputs or calculation results. Our embed documents contain no advertising script, use no calculation API, and do not store inputs in an account. The hosting website may have its own analytics and advertising. See our <SiteLink href="/privacy">privacy information</SiteLink>.</p>
  <h3>Use estimates with context</h3><p>Link readers to the full calculator for formulas, assumptions and sources. Financial estimates are not advice, quotes or guarantees; rates, market returns and rule eligibility can differ. Hosted tools may change as models or reference data are reviewed, so verify examples before publishing. See our <SiteLink href="/methodology">methodology and limitations</SiteLink>.</p>
  <h3>Citing a calculator</h3><p>For tools with a Cite tab, copy a plain text, HTML or BibTeX citation. Citations identify the canonical calculator page and the date accessed, not your private scenario. Publishers can qualify links according to their own editorial policy.</p>
- <p>Usage guidance reviewed <time dateTime={embedResourcesReviewedOn}>October 30, 2026</time>.</p></section>
+ <p>Usage guidance reviewed <time dateTime={embedResourcesReviewedOn}>October 31, 2026</time>.</p></section>
  </main></div>;}

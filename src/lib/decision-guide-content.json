@@ -1,0 +1,376 @@
+{
+  "mortgage": {
+    "meta": {
+      "path": "/guides/pay-off-mortgage-or-invest/",
+      "title": "Pay Off Mortgage or Invest? A Same-Budget Comparison",
+      "heading": "Pay Off Your Mortgage or Invest? Compare the Same Cash Budget",
+      "description": "Compare mortgage prepayment with investing using equal initial cash and monthly budgets. See five return scenarios, freed payments, liquidity limits and reproducible inputs.",
+      "publishedOn": "2026-10-31",
+      "calculatorIds": [
+        "mortgage-vs-invest",
+        "mortgage-payoff"
+      ],
+      "topic": "Mortgages",
+      "breadcrumb": "Pay off mortgage or invest",
+      "cardIntro": "Five constant-return scenarios show why equal budgets, freed mortgage payments and rate conventions change the comparison.",
+      "format": "Decision guide & model check"
+    },
+    "intro": "There is no universal answer to whether you should pay off your mortgage or invest. Prepayment reduces debt and interest; investing keeps money exposed to uncertain returns and account-access conditions. A useful numerical comparison gives both paths the same cash, the same monthly budget and the same end date. Our five hypothetical scenarios isolate the investment-return assumption rather than predict which choice will win in real life.",
+    "calculatorId": "mortgage-vs-invest",
+    "calculatorPath": "/pay-off-mortgage-vs-invest-calculator",
+    "calculatorLabel": "Pay Off Mortgage vs. Invest Calculator",
+    "findings": [
+      "At 3% effective investment return, paydown-first finishes $7,411.97 ahead after ten years in this example. At 9%, invest-first finishes $8,598.53 ahead.",
+      "A 6% nominal mortgage rate and 6% effective investment return do not have equal monthly growth. Their difference leaves paydown-first $446.95 ahead here.",
+      "The comparison invests unused payment cash after either loan pays off. Omitting that reinvestment would disadvantage the faster-payoff path."
+    ],
+    "method": "Start with a $100,000 remaining mortgage, 6% nominal annual interest, ten years remaining, $10,000 available now and $200 extra per month. Scheduled principal and interest is $1,110.21; both paths use the unrounded scheduled payment plus $200, or about $1,310.21 monthly. The horizon is ten years. Investment returns are constant effective annual assumptions, after fees and any tax drag the reader chooses to allow for.",
+    "chart": "mortgage-vs-invest",
+    "chartAlt": "Five investment-return assumptions change invest-first advantage from negative to positive; it is zero at the mortgage’s monthly-growth equivalent.",
+    "chartCaption": "Hypothetical ten-year comparison. A positive signed advantage favors invest-first within this model. It is not a risk-adjusted recommendation.",
+    "sections": [
+      {
+        "id": "same-budget",
+        "title": "Compare cash commitments before comparing returns",
+        "paragraphs": [
+          "Paydown-first uses the $10,000 immediately to reduce principal, retains the original scheduled payment and adds the monthly $200. The loan is not recast. Invest-first invests $10,000 immediately, makes the original loan payment and invests the $200 monthly extra.",
+          "Both paths grow investments before month-end deposits. In either path, any monthly budget left after the actual mortgage payment is invested, including the unused portion of the last installment and all payments freed after payoff. The comparison therefore does not assume that the faster-payoff household simply spends its freed cash.",
+          "At the horizon, compare investment account minus remaining mortgage. The same home value cancels from both sides; we are not omitting a different appreciation forecast in one path. These displayed positions are not complete household net worth. A household may have substantial home equity and other assets outside the comparison."
+        ],
+        "links": []
+      },
+      {
+        "id": "rate-conventions",
+        "title": "Why 6% versus 6% does not quite tie",
+        "paragraphs": [
+          "The mortgage accrues at 6% / 12 each month. The equivalent effective annual growth rate is (1 + 0.06 / 12)^12 − 1, approximately 6.1678%. A 6% effective investment return instead uses (1.06)^(1/12) − 1 monthly.",
+          "In our equal-growth check, both paths finish at approximately $50,969.84 of investments minus mortgage. At an effective 6% investment return, paydown-first finishes at $50,850.12 and invest-first at $50,403.17. Matching displayed annual percentages was not a mathematically equivalent comparison.",
+          "This equality is specific to constant rates, equal cash commitments and no tax deduction or fee differences. It is not a universal required market return. Investment outcomes fluctuate, while contract terms and the treatment of extra principal also need confirmation."
+        ],
+        "links": [
+          {
+            "href": "/glossary/apy/",
+            "label": "Nominal versus effective yield"
+          },
+          {
+            "href": "/glossary/principal-and-interest/",
+            "label": "Principal and interest"
+          }
+        ]
+      },
+      {
+        "id": "decision-checks",
+        "title": "Use the result alongside liquidity and contract checks",
+        "paragraphs": [
+          "Before allocating spare cash, identify emergency reserves and other near-term needs. A lower mortgage balance is different from a liquid investment account: accessing that equity later may require approval, fees or a sale. Investments may also have account restrictions, taxes on withdrawal and losses when cash is needed.",
+          "The calculator does not model mortgage-interest deductions, a taxable sale of investments, prepayment penalties, PMI cancellation, refinancing or inflation. Do not interpret the entered after-tax-drag return as a computed personal tax rate. The CFPB notes that some contracts charge penalties for particular early repayments; check your own documents and lender."
+        ],
+        "links": [
+          {
+            "href": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-prepayment-penalty-en-1957/",
+            "label": "CFPB: prepayment penalties"
+          },
+          {
+            "href": "/guides/how-much-emergency-fund-should-i-have/",
+            "label": "Plan an emergency reserve"
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "question": "Is it better to pay off a mortgage or invest?",
+        "answer": "That depends on the loan, uncertain investment outcomes, taxes and the value of accessible cash. The table shows conditional dollar outcomes, not a personal recommendation. Compare the same budget and horizon, then review exclusions."
+      },
+      {
+        "question": "Should I pay off my mortgage before retirement?",
+        "answer": "Lower required payments can matter, but the retirement date alone does not determine the better choice. Review reserves, income timing, account access and the cash needed for taxes. This model does not test retirement spending sustainability."
+      },
+      {
+        "question": "Can I use a lump sum and still invest afterward?",
+        "answer": "Yes. The paydown path in these examples invests every freed monthly dollar after loan payoff. If you would actually change spending or saving then, change the plan rather than assuming the modeled behavior will happen automatically."
+      }
+    ],
+    "limitations": [
+      "These are deterministic nominal-USD cash-flow scenarios, not historical backtests, expected returns or probabilities.",
+      "No inflation adjustment, tax deduction, investment liquidation tax, market sequence, loan fee or changing budget is simulated. Interest avoided is measured only within the selected horizon."
+    ],
+    "sources": [
+      {
+        "href": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-prepayment-penalty-en-1957/",
+        "label": "CFPB: contractual prepayment costs"
+      },
+      {
+        "href": "https://www.investor.gov/introduction-investing/investing-basics/what-risk",
+        "label": "SEC Investor.gov: investment risk"
+      }
+    ],
+    "related": [
+      {
+        "href": "/glossary/principal-and-interest/",
+        "label": "Principal and interest"
+      },
+      {
+        "href": "/guides/is-refinancing-worth-it/",
+        "label": "Refinancing comparison"
+      },
+      {
+        "href": "/glossary/return-on-investment/",
+        "label": "ROI is not a risk measure"
+      }
+    ]
+  },
+  "drip": {
+    "meta": {
+      "path": "/guides/should-you-reinvest-dividends/",
+      "title": "Should You Reinvest Dividends or Take Cash? Examples & Taxes",
+      "heading": "Should You Reinvest Dividends or Keep the Cash?",
+      "description": "Compare DRIP with retained cash dividends using five reproducible scenarios. Separate price appreciation, dividend growth, tax assumptions and the need for income.",
+      "publishedOn": "2026-10-31",
+      "calculatorIds": [
+        "drip"
+      ],
+      "topic": "Savings & investing",
+      "breadcrumb": "Reinvest dividends or take cash",
+      "cardIntro": "Compare shares plus cash in both paths, including a declining-price scenario where reinvestment finishes lower.",
+      "format": "Decision guide & model check"
+    },
+    "intro": "Reinvesting dividends buys additional shares; taking cash keeps the payment available for spending or another use. Neither choice creates free money. To understand the difference, compare the same security and external deposits, and retain the cash in the non-reinvestment path instead of pretending it disappears. Our examples separate share-price appreciation from dividends and show a case where reinvestment finishes lower.",
+    "calculatorId": "drip",
+    "calculatorPath": "/drip-calculator",
+    "calculatorLabel": "DRIP Calculator",
+    "findings": [
+      "With a flat share price and no dividend tax, $10,000 becomes $14,888.64 with quarterly reinvestment versus $14,000 in shares plus cash after ten years.",
+      "At a constant −10% annual price change with unchanged dollars of dividends per share, reinvestment ends at $7,103.53 versus $7,486.78 with retained cash. Both are below the original $10,000.",
+      "At 3% price appreciation, the DRIP advantage is $1,508.98 before dividend tax and $1,055.03 with the illustrative 20% flat dividend-tax assumption."
+    ],
+    "method": "Use $10,000 initially invested at $100 per share, 4% starting annual dividend yield, quarterly payouts, no external monthly deposits, no dividend-per-share growth and a ten-year horizon. The first four cases change only annual share-price appreciation (−10%, 0%, 3%, 6%). A fifth repeats the 3% case with 20% tax deducted from each dividend. Retained cash earns zero interest; it is not spent.",
+    "chart": "drip-vs-cash",
+    "chartAlt": "Paired bars compare ten-year wealth with reinvestment and retained dividend cash at minus ten, zero, three and six percent price appreciation.",
+    "chartCaption": "Shares plus retained cash are included in both outcomes. Constant dividend dollars and smooth price changes are model assumptions, not company forecasts.",
+    "sections": [
+      {
+        "id": "how-drip-works",
+        "title": "What dividend reinvestment changes",
+        "paragraphs": [
+          "The starting annual dividend is $4 per share: $100 × 4%. At quarterly frequency, each opening share receives $1 at a payout before any assumed dividend growth. Reinvestment purchases fractional shares at the modeled payout-date price. New shares do not collect that same payout again.",
+          "For the flat-price, zero-tax case, each quarter adds 1% to shares. After 40 payouts, $10,000 × 1.01^40 equals $14,888.64. Without reinvestment, 100 shares remain worth $10,000 and 40 payments of $100 accumulate to $4,000. Comparing only the non-DRIP stock value would exaggerate the reinvestment benefit.",
+          "New monthly deposits, if entered in the calculator, buy shares after the dividend at month end. They are external savings, while reinvested dividends are internal flows. Do not count the same dividend as a fresh contribution."
+        ],
+        "links": [
+          {
+            "href": "/glossary/dividend-reinvestment-plan/",
+            "label": "Dividend reinvestment plan definition"
+          },
+          {
+            "href": "/glossary/compound-interest/",
+            "label": "Compounding mechanism"
+          }
+        ]
+      },
+      {
+        "id": "loss-scenario",
+        "title": "Why buying more shares can still finish lower",
+        "paragraphs": [
+          "In the −10% annual price scenario, earlier reinvestments subsequently lose value. By year ten, the additional dividends from extra shares do not offset that loss relative to leaving those payments in zero-interest cash. A larger share count therefore does not necessarily mean larger wealth.",
+          "This is deliberately a mechanical scenario: dividends per share are fixed while the share price declines. The model does not say a real business would maintain its dividend, or that the resulting yield would be sustainable. Real dividends can be cut or stopped. The smooth price path also does not simulate an ex-dividend price adjustment.",
+          "Enter price appreciation excluding dividends. A historical total-return percentage already includes distributions; using it as price growth and then adding dividends counts them twice. Dividend-per-share growth is a separate assumption and does not hold yield constant."
+        ],
+        "links": []
+      },
+      {
+        "id": "taxes",
+        "title": "Are reinvested dividends taxable?",
+        "paragraphs": [
+          "For a U.S. taxable account, reinvesting a dividend generally does not remove the need to report it as income. IRS Publication 550 explains the treatment of dividends used to buy additional stock. Ordinary versus qualified dividend treatment and your circumstances determine the applicable tax calculation; reinvestment itself is not a tax exemption.",
+          "The calculator deducts one flat scenario rate from each payout. At 3% price appreciation and the illustrative 20% rate, DRIP ends at $17,694.20, compared with $16,639.16 in shares plus retained after-tax cash. This is not a claim that 20% is your actual rate. Account rules, credits, cost-basis records and sale taxes are outside the model.",
+          "Reinvested purchases also create records that matter when shares are later sold. Keep brokerage statements; this calculator is not a tax-lot or tax-return tool. Tax-advantaged accounts have their own rules, so a zero current-tax input is an illustration, not confirmation of account eligibility."
+        ],
+        "links": [
+          {
+            "href": "https://www.irs.gov/publications/p550",
+            "label": "IRS Publication 550: dividends used to buy more stock"
+          },
+          {
+            "href": "https://www.irs.gov/taxtopics/tc404",
+            "label": "IRS Topic 404: dividends"
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "question": "Should I reinvest dividends?",
+        "answer": "Consider whether you need the cash, want more exposure to the same investment and can tolerate losses. Reinvestment may suit an accumulation plan, while cash may serve current expenses or portfolio rebalancing. These scenarios do not choose an investment for you."
+      },
+      {
+        "question": "Do you pay taxes on reinvested dividends?",
+        "answer": "In a taxable account, dividends generally remain reportable even when used to buy shares. Account type and tax rules matter; our flat input is only a simplified deduction from modeled payouts."
+      },
+      {
+        "question": "How do I reinvest dividends at Fidelity or Schwab?",
+        "answer": "Enrollment steps and eligible securities depend on your broker and account. Use the broker’s current instructions and confirm the election. This calculator does not connect to brokerage accounts or enable DRIP."
+      }
+    ],
+    "limitations": [
+      "No live quote, company forecast, stochastic price path, trading fee, sale tax or tax-lot accounting. Cash is retained with zero interest; spending it or earning interest would change the comparison.",
+      "The four chart cases have no dividend tax; the fifth table case adds a flat 20% assumption. Price and dividend growth are independent nominal assumptions, with no inflation adjustment."
+    ],
+    "sources": [
+      {
+        "href": "https://www.irs.gov/publications/p550",
+        "label": "IRS Publication 550 (2025): dividends and investment basis"
+      },
+      {
+        "href": "https://www.irs.gov/taxtopics/tc404",
+        "label": "IRS Topic 404: dividends and distributions"
+      },
+      {
+        "href": "https://www.investor.gov/introduction-investing/investing-basics/what-risk",
+        "label": "SEC Investor.gov: investment risk"
+      }
+    ],
+    "related": [
+      {
+        "href": "/glossary/dividend-reinvestment-plan/",
+        "label": "DRIP terminology"
+      },
+      {
+        "href": "/glossary/return-on-investment/",
+        "label": "Total ROI and its limitations"
+      },
+      {
+        "href": "/glossary/covered-call/",
+        "label": "Covered call: a different cash-flow strategy"
+      }
+    ]
+  },
+  "roth": {
+    "meta": {
+      "path": "/guides/roth-conversion-ladder/",
+      "title": "Roth Conversion Ladder: How It Works for Early Retirement",
+      "heading": "How a Roth Conversion Ladder Works for Early Retirement",
+      "description": "Follow conversion years, separate five-tax-year clocks and outside-cash funding with an eight-year example. Distinguish converted principal, contribution basis and earnings.",
+      "publishedOn": "2026-10-31",
+      "calculatorIds": [
+        "roth-conversion-ladder"
+      ],
+      "topic": "Retirement",
+      "breadcrumb": "Roth conversion ladder",
+      "cardIntro": "An eight-year bridge shows why five years of living expenses may not cover conversion taxes across the whole selected plan.",
+      "format": "Planning guide & model check"
+    },
+    "intro": "A Roth conversion ladder converts portions of a traditional IRA to Roth over successive tax years and plans later access to conversion principal. The difficult part is not just remembering a five-year period: living costs, taxes, prior contribution basis and actual available account value must fit together. Our zero-growth illustration makes those cash movements visible without optimizing tax brackets or promising early-retirement eligibility.",
+    "calculatorId": "roth-conversion-ladder",
+    "calculatorPath": "/roth-conversion-ladder-calculator",
+    "calculatorLabel": "Roth Conversion Ladder Calculator",
+    "findings": [
+      "With $40,000 converted and $40,000 living costs each year at a flat 20% conversion-tax assumption, the eight-year example requires $264,000 outside cash when no regular Roth basis is available.",
+      "Starting with $240,000 cash covers the first five years of $48,000 in combined annual living costs and conversion tax, but leaves $24,000 conversion tax unfunded in the remaining three years.",
+      "A 2027 conversion reaches its five-tax-year date on January 1, 2032 for this calendar-year illustration. That date does not establish that Roth earnings are qualified."
+    ],
+    "method": "The model starts at planning age 40 in tax year 2027 with $500,000 in an all-pre-tax traditional IRA. Each January 1 it converts $40,000, budgets $8,000 tax from outside cash, and funds a $40,000 living budget. Both account returns and annual budget/conversion changes are zero. The bridge runs eight years, through the 2034 step. We vary initial cash and remaining regular Roth contribution basis; there are no earlier conversions or starting Roth earnings.",
+    "chart": "roth-ladder-bridge",
+    "chartAlt": "Eight annual stacked bars show outside cash funding living expenses and tax for five years; seasoned conversion principal funds living costs from 2032 while tax still needs cash.",
+    "chartCaption": "The funded $280,000-cash case. Conversion taxes still require outside cash after seasoned principal starts funding living costs. This is a whole-year model, not a personal withdrawal schedule.",
+    "sections": [
+      {
+        "id": "separate-clocks",
+        "title": "Keep the conversion clock separate from qualified earnings",
+        "paragraphs": [
+          "IRS Publication 590-B describes separate five-tax-year periods for conversions, relevant to the additional tax on certain early distributions. The clock starts with the conversion tax year, not simply five anniversaries after a transfer date. In a calendar-year example, a 2027 conversion reaches January 1, 2032; a 2028 conversion reaches January 1, 2033.",
+          "The Roth qualified-distribution five-year requirement is a different test and also involves a qualifying condition, commonly age 59½. Do not interpret a seasoned conversion as permission to withdraw all Roth earnings. Actual ordering and exceptions require your own account records and applicable rules."
+        ],
+        "links": [
+          {
+            "href": "/glossary/roth-ira-five-year-rules/",
+            "label": "Two Roth five-year rules"
+          },
+          {
+            "href": "https://www.irs.gov/publications/p590b",
+            "label": "IRS Publication 590-B (2025)"
+          }
+        ]
+      },
+      {
+        "id": "funding-bridge",
+        "title": "Why five years of expenses may not fund the whole plan",
+        "paragraphs": [
+          "In the no-basis example, the first five annual steps need $200,000 for living costs plus $40,000 for conversion taxes. At the sixth step, the 2027 principal is seasoned and can cover $40,000 of living costs within the model. The new 2032 conversion still creates an $8,000 tax cost.",
+          "Three later years therefore require another $24,000 outside cash for taxes, even though living costs come from seasoned principal. Total required cash is $200,000 + $64,000 = $264,000. A $280,000 starting cash balance leaves $16,000; $240,000 leaves $24,000 unpaid tax. This is why the calculator checks the entire selected bridge, not just a five-year reserve slogan.",
+          "The $200,000-cash case shows $64,000 additional bridge cash needed. A reported shortfall is an unfunded intended plan, not new borrowing, an allowed withdrawal or an executable retirement strategy. Later rows retain planned costs so the gap remains visible."
+        ],
+        "links": []
+      },
+      {
+        "id": "basis-and-order",
+        "title": "Regular contribution basis changes which money pays living costs",
+        "paragraphs": [
+          "With $40,000 remaining regular Roth contribution basis and $240,000 outside cash, the first $40,000 living budget uses that basis in this model. Required outside cash falls to $224,000, leaving $16,000 at the end. This comparison changes starting resources: the basis is real pre-existing Roth money, not an extra tax benefit generated by conversion.",
+          "The tool uses regular basis, then seasoned conversion principal in year order, then outside cash for living costs. Tax is paid from outside cash first. It does not draw unseasoned conversion amounts or earnings to conceal a gap. Every Roth distribution is capped by current account value, so a principal record alone does not create spendable assets.",
+          "The starting Roth value equals entered remaining regular basis. Earlier conversion lots, nondeductible traditional basis and initial Roth earnings need a more complete record-based model. Partners cannot pool separate owners’ bases or clocks."
+        ],
+        "links": [
+          {
+            "href": "/glossary/roth-conversion-ladder/",
+            "label": "Ladder definition and scope"
+          },
+          {
+            "href": "/guides/roth-ira-vs-traditional-ira/",
+            "label": "Regular contributions are different from conversions"
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "question": "What is a Roth conversion ladder?",
+        "answer": "It is a sequence of conversions from traditional retirement assets into Roth, with each conversion tracked by tax year and later principal access considered alongside cash needs. It moves existing assets rather than creating regular contributions, and it can create tax costs before principal is used."
+      },
+      {
+        "question": "When should I start a Roth conversion ladder?",
+        "answer": "Work backward from the years you expect to need principal, while checking taxes and the cash that must fund earlier costs. The tool illustrates dates under entered assumptions; it does not recommend a start year or optimize tax brackets."
+      },
+      {
+        "question": "Does this work with a Roth 401(k)?",
+        "answer": "This calculator models an owner traditional IRA to Roth IRA bridge. It does not determine workplace-plan conversion or rollover eligibility, and a designated Roth account should not be assumed to have identical handling. Verify the plan and IRS guidance separately."
+      },
+      {
+        "question": "Is a Roth conversion ladder tax-free?",
+        "answer": "No. This example assumes the entire conversion is taxable and pays its estimated tax from outside cash. Later access to principal and the treatment of earnings involve separate rules. The flat 20% rate is illustrative."
+      }
+    ],
+    "limitations": [
+      "Whole planning years must end by age 59; the birthday transition at 59½ and later retirement withdrawals are outside this model. January 1 conversions and withdrawals simplify actual timing.",
+      "No bracket calculation, pro-rata nondeductible basis, inherited accounts, initial earnings, earlier conversion lots, ACA effects, IRMAA, estimated-tax deadlines or special distribution exceptions. Outside cash earns zero interest."
+    ],
+    "sources": [
+      {
+        "href": "https://www.irs.gov/publications/p590b",
+        "label": "IRS Publication 590-B (2025): Roth distribution and conversion rules"
+      },
+      {
+        "href": "https://www.irs.gov/taxtopics/tc557",
+        "label": "IRS Topic 557: additional tax on early distributions"
+      },
+      {
+        "href": "https://www.irs.gov/publications/p590a",
+        "label": "IRS Publication 590-A: contributions and conversions"
+      }
+    ],
+    "related": [
+      {
+        "href": "/glossary/roth-ira-five-year-rules/",
+        "label": "Conversion clocks versus qualified distributions"
+      },
+      {
+        "href": "/glossary/roth-conversion-ladder/",
+        "label": "Conversion ladder definition"
+      },
+      {
+        "href": "/guides/barista-fire-vs-coast-fire/",
+        "label": "Other early-retirement funding models"
+      }
+    ]
+  }
+}

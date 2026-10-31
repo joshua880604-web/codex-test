@@ -12,7 +12,7 @@
   "mortgage-payoff": "Explore how extra payments could change payoff time and interest.",
   "house-affordability": "Estimate a home budget using income, debts and housing costs.",
   "pmi": "Estimate private mortgage insurance costs under your assumptions.",
-  "heloc": "Explore payments across a home equity line of credit’s phases.",
+  "heloc": "Explore payments across a home equity line of credit\u2019s phases.",
   "debt-snowball": "Explore a payoff plan that targets smaller balances first.",
   "debt-avalanche": "Explore a payoff plan that targets higher interest rates first.",
   "credit-cards-payoff": "Plan payments across multiple cards with one monthly budget.",
@@ -31,5 +31,11 @@
   "seller-financing": "Model an owner-financed note, monthly payments and the balloon due at maturity.",
   "fix-and-flip": "Estimate house flipping profit, pre-sale cash funding and the break-even sale price.",
   "stock-profit": "Estimate stock profit or loss after fixed or percentage trade fees and cash dividends.",
-  "stock-average": "Add stock purchases to calculate quantity-weighted cost, shares and invested cash."
+  "stock-average": "Add stock purchases to calculate quantity-weighted cost, shares and invested cash.",
+  "discount-points": "Compare two fixed-rate mortgage quotes, upfront points and costs at a sale or refinance horizon.",
+  "covered-call": "Compare a standard covered-call buy-write with shares alone at expiry, including fees and capped upside.",
+  "compound-interest": "Project compound growth with contributions, or compare nominal interest rates and effective annual yield.",
+  "investment": "Solve for an investment\u2019s ending value, monthly contribution, return, starting amount or time under stated assumptions.",
+  "margin": "Calculate selling revenue, cost, profit margin or markup; additional modes cover stock and currency margin.",
+  "markup": "Calculate selling price from cost and markup, or compare markup with gross profit margin."
 }

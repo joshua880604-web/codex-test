@@ -1,0 +1,739 @@
+{
+  "mortgage": [
+    {
+      "label": "0.0000% effective return",
+      "values": {
+        "principal": 100000,
+        "rate": 6,
+        "term": 10,
+        "lump": 10000,
+        "extra": 200,
+        "horizon": 10,
+        "return": 0.0
+      },
+      "metrics": {
+        "Scheduled monthly principal and interest": 1110.2050194164947,
+        "Same total monthly cash budget": 1310.2050194164947,
+        "Paydown-first investments minus mortgage": 46689.919853854226,
+        "Invest-first investments minus mortgage": 34000.0,
+        "Invest-first advantage at horizon": -12689.919853854222
+      }
+    },
+    {
+      "label": "3.0000% effective return",
+      "values": {
+        "principal": 100000,
+        "rate": 6,
+        "term": 10,
+        "lump": 10000,
+        "extra": 200,
+        "horizon": 10,
+        "return": 3.0
+      },
+      "metrics": {
+        "Scheduled monthly principal and interest": 1110.2050194164947,
+        "Same total monthly cash budget": 1310.2050194164947,
+        "Paydown-first investments minus mortgage": 48740.737994940806,
+        "Invest-first investments minus mortgage": 41328.76315571127,
+        "Invest-first advantage at horizon": -7411.974839229539
+      }
+    },
+    {
+      "label": "6.0000% effective return",
+      "values": {
+        "principal": 100000,
+        "rate": 6,
+        "term": 10,
+        "lump": 10000,
+        "extra": 200,
+        "horizon": 10,
+        "return": 6.0
+      },
+      "metrics": {
+        "Scheduled monthly principal and interest": 1110.2050194164947,
+        "Same total monthly cash budget": 1310.2050194164947,
+        "Paydown-first investments minus mortgage": 50850.12028200759,
+        "Invest-first investments minus mortgage": 50403.16545099619,
+        "Invest-first advantage at horizon": -446.95483101140195
+      }
+    },
+    {
+      "label": "6.1678% effective return",
+      "values": {
+        "principal": 100000,
+        "rate": 6,
+        "term": 10,
+        "lump": 10000,
+        "extra": 200,
+        "horizon": 10,
+        "return": 6.1677811864499565
+      },
+      "metrics": {
+        "Scheduled monthly principal and interest": 1110.2050194164947,
+        "Same total monthly cash budget": 1310.2050194164947,
+        "Paydown-first investments minus mortgage": 50969.83670161566,
+        "Invest-first investments minus mortgage": 50969.83670161566,
+        "Invest-first advantage at horizon": 5e-55
+      }
+    },
+    {
+      "label": "9.0000% effective return",
+      "values": {
+        "principal": 100000,
+        "rate": 6,
+        "term": 10,
+        "lump": 10000,
+        "extra": 200,
+        "horizon": 10,
+        "return": 9.0
+      },
+      "metrics": {
+        "Scheduled monthly principal and interest": 1110.2050194164947,
+        "Same total monthly cash budget": 1310.2050194164947,
+        "Paydown-first investments minus mortgage": 53018.83605151579,
+        "Invest-first investments minus mortgage": 61617.36743802669,
+        "Invest-first advantage at horizon": 8598.531386510896
+      }
+    }
+  ],
+  "drip": [
+    {
+      "label": "-10% price growth / 0% dividend tax",
+      "values": {
+        "initial": 10000,
+        "price": 100,
+        "yield": 4,
+        "monthly": 0,
+        "years": 10,
+        "frequency": "Quarterly",
+        "price_growth": -10,
+        "dividend_growth": 0,
+        "tax": 0
+      },
+      "metrics": {
+        "Ending portfolio with DRIP": 7103.529945534872,
+        "Ending wealth without reinvestment (shares + cash)": 7486.784401,
+        "DRIP minus cash-dividend wealth": -383.2544554651274,
+        "Gross dividends with DRIP": 5435.836931320298,
+        "Dividend tax paid with DRIP": 0.0
+      }
+    },
+    {
+      "label": "0% price growth / 0% dividend tax",
+      "values": {
+        "initial": 10000,
+        "price": 100,
+        "yield": 4,
+        "monthly": 0,
+        "years": 10,
+        "frequency": "Quarterly",
+        "price_growth": 0,
+        "dividend_growth": 0,
+        "tax": 0
+      },
+      "metrics": {
+        "Ending portfolio with DRIP": 14888.63733588221,
+        "Ending wealth without reinvestment (shares + cash)": 14000.0,
+        "DRIP minus cash-dividend wealth": 888.6373358822087,
+        "Gross dividends with DRIP": 4888.637335882208,
+        "Dividend tax paid with DRIP": 0.0
+      }
+    },
+    {
+      "label": "3% price growth / 0% dividend tax",
+      "values": {
+        "initial": 10000,
+        "price": 100,
+        "yield": 4,
+        "monthly": 0,
+        "years": 10,
+        "frequency": "Quarterly",
+        "price_growth": 3,
+        "dividend_growth": 0,
+        "tax": 0
+      },
+      "metrics": {
+        "Ending portfolio with DRIP": 18948.145147335617,
+        "Ending wealth without reinvestment (shares + cash)": 17439.163793441217,
+        "DRIP minus cash-dividend wealth": 1508.9813538943972,
+        "Gross dividends with DRIP": 4792.714375170398,
+        "Dividend tax paid with DRIP": 0.0
+      }
+    },
+    {
+      "label": "6% price growth / 0% dividend tax",
+      "values": {
+        "initial": 10000,
+        "price": 100,
+        "yield": 4,
+        "monthly": 0,
+        "years": 10,
+        "frequency": "Quarterly",
+        "price_growth": 6,
+        "dividend_growth": 0,
+        "tax": 0
+      },
+      "metrics": {
+        "Ending portfolio with DRIP": 24168.82323378939,
+        "Ending wealth without reinvestment (shares + cash)": 21908.476965428537,
+        "DRIP minus cash-dividend wealth": 2260.3462683608536,
+        "Gross dividends with DRIP": 4714.3235344400555,
+        "Dividend tax paid with DRIP": 0.0
+      }
+    },
+    {
+      "label": "3% price growth / 20% dividend tax",
+      "values": {
+        "initial": 10000,
+        "price": 100,
+        "yield": 4,
+        "monthly": 0,
+        "years": 10,
+        "frequency": "Quarterly",
+        "price_growth": 3,
+        "dividend_growth": 0,
+        "tax": 20
+      },
+      "metrics": {
+        "Ending portfolio with DRIP": 17694.19775228764,
+        "Ending wealth without reinvestment (shares + cash)": 16639.163793441217,
+        "DRIP minus cash-dividend wealth": 1055.0339588464203,
+        "Gross dividends with DRIP": 4619.492349747402,
+        "Dividend tax paid with DRIP": 923.8984699494804
+      }
+    }
+  ],
+  "roth": [
+    {
+      "label": "$200,000 cash / $0 regular basis",
+      "values": {
+        "start_year": 2027,
+        "age": 40,
+        "years": 8,
+        "pretax": 500000,
+        "bridge": 200000,
+        "roth_basis": 0,
+        "conversion": 40000,
+        "conversion_growth": 0,
+        "tax": 20,
+        "spending": 40000,
+        "spending_growth": 0,
+        "pretax_return": 0,
+        "roth_return": 0
+      },
+      "metrics": {
+        "Bridge cash required for this modeled path": 264000.0,
+        "Additional bridge cash needed": 64000.0,
+        "Estimated conversion tax": 64000.0,
+        "Ending bridge cash": 0.0,
+        "Living costs funded by original Roth contributions": 0.0,
+        "Living costs funded by seasoned conversions": 120000.0,
+        "First conversion five-tax-year date": 2032
+      },
+      "rows": [
+        {
+          "year": 2027,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2028,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2029,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2030,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2031,
+          "cash_living": 0.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 40000.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2032,
+          "cash_living": 0.0,
+          "cash_tax": 0.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 8000.0
+        },
+        {
+          "year": 2033,
+          "cash_living": 0.0,
+          "cash_tax": 0.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 8000.0
+        },
+        {
+          "year": 2034,
+          "cash_living": 0.0,
+          "cash_tax": 0.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 8000.0
+        }
+      ]
+    },
+    {
+      "label": "$240,000 cash / $0 regular basis",
+      "values": {
+        "start_year": 2027,
+        "age": 40,
+        "years": 8,
+        "pretax": 500000,
+        "bridge": 240000,
+        "roth_basis": 0,
+        "conversion": 40000,
+        "conversion_growth": 0,
+        "tax": 20,
+        "spending": 40000,
+        "spending_growth": 0,
+        "pretax_return": 0,
+        "roth_return": 0
+      },
+      "metrics": {
+        "Bridge cash required for this modeled path": 264000.0,
+        "Additional bridge cash needed": 24000.0,
+        "Estimated conversion tax": 64000.0,
+        "Ending bridge cash": 0.0,
+        "Living costs funded by original Roth contributions": 0.0,
+        "Living costs funded by seasoned conversions": 120000.0,
+        "First conversion five-tax-year date": 2032
+      },
+      "rows": [
+        {
+          "year": 2027,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2028,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2029,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2030,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2031,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2032,
+          "cash_living": 0.0,
+          "cash_tax": 0.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 8000.0
+        },
+        {
+          "year": 2033,
+          "cash_living": 0.0,
+          "cash_tax": 0.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 8000.0
+        },
+        {
+          "year": 2034,
+          "cash_living": 0.0,
+          "cash_tax": 0.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 8000.0
+        }
+      ]
+    },
+    {
+      "label": "$280,000 cash / $0 regular basis",
+      "values": {
+        "start_year": 2027,
+        "age": 40,
+        "years": 8,
+        "pretax": 500000,
+        "bridge": 280000,
+        "roth_basis": 0,
+        "conversion": 40000,
+        "conversion_growth": 0,
+        "tax": 20,
+        "spending": 40000,
+        "spending_growth": 0,
+        "pretax_return": 0,
+        "roth_return": 0
+      },
+      "metrics": {
+        "Bridge cash required for this modeled path": 264000.0,
+        "Additional bridge cash needed": 0.0,
+        "Estimated conversion tax": 64000.0,
+        "Ending bridge cash": 16000.0,
+        "Living costs funded by original Roth contributions": 0.0,
+        "Living costs funded by seasoned conversions": 120000.0,
+        "First conversion five-tax-year date": 2032
+      },
+      "rows": [
+        {
+          "year": 2027,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2028,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2029,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2030,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2031,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2032,
+          "cash_living": 0.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2033,
+          "cash_living": 0.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2034,
+          "cash_living": 0.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        }
+      ]
+    },
+    {
+      "label": "$240,000 cash / $40,000 regular basis",
+      "values": {
+        "start_year": 2027,
+        "age": 40,
+        "years": 8,
+        "pretax": 500000,
+        "bridge": 240000,
+        "roth_basis": 40000,
+        "conversion": 40000,
+        "conversion_growth": 0,
+        "tax": 20,
+        "spending": 40000,
+        "spending_growth": 0,
+        "pretax_return": 0,
+        "roth_return": 0
+      },
+      "metrics": {
+        "Bridge cash required for this modeled path": 224000.0,
+        "Additional bridge cash needed": 0.0,
+        "Estimated conversion tax": 64000.0,
+        "Ending bridge cash": 16000.0,
+        "Living costs funded by original Roth contributions": 40000.0,
+        "Living costs funded by seasoned conversions": 120000.0,
+        "First conversion five-tax-year date": 2032
+      },
+      "rows": [
+        {
+          "year": 2027,
+          "cash_living": 0.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 40000.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2028,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2029,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2030,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2031,
+          "cash_living": 40000.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 0.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2032,
+          "cash_living": 0.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2033,
+          "cash_living": 0.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        },
+        {
+          "year": 2034,
+          "cash_living": 0.0,
+          "cash_tax": 8000.0,
+          "roth_basis": 0.0,
+          "seasoned": 40000.0,
+          "unfunded_living": 0.0,
+          "unfunded_tax": 0.0
+        }
+      ]
+    }
+  ],
+  "cap": [
+    {
+      "label": "0% LTV, 5% loan",
+      "values": {
+        "price": 300000,
+        "loan": 0,
+        "closing": 5000,
+        "repairs": 0,
+        "initial_reserve": 0,
+        "rate": 5,
+        "years": 30,
+        "rent": 2500,
+        "vacancy": 0,
+        "other_income": 0,
+        "operating": 1000,
+        "reserve": 0,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash invested": 305000.0,
+        "Annual cash flow used": 18000.0,
+        "First-year principal and interest paid": 0.0,
+        "Cash-on-cash return": 5.901639344262295,
+        "Cap rate at purchase price": 6.0
+      }
+    },
+    {
+      "label": "50% LTV, 5% loan",
+      "values": {
+        "price": 300000,
+        "loan": 150000,
+        "closing": 5000,
+        "repairs": 0,
+        "initial_reserve": 0,
+        "rate": 5,
+        "years": 30,
+        "rent": 2500,
+        "vacancy": 0,
+        "other_income": 0,
+        "operating": 1000,
+        "reserve": 0,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash invested": 155000.0,
+        "Annual cash flow used": 8337.210785781499,
+        "First-year principal and interest paid": 9662.789214218501,
+        "Cash-on-cash return": 5.378845668246128,
+        "Cap rate at purchase price": 6.0
+      }
+    },
+    {
+      "label": "80% LTV, 5% loan",
+      "values": {
+        "price": 300000,
+        "loan": 240000,
+        "closing": 5000,
+        "repairs": 0,
+        "initial_reserve": 0,
+        "rate": 5,
+        "years": 30,
+        "rent": 2500,
+        "vacancy": 0,
+        "other_income": 0,
+        "operating": 1000,
+        "reserve": 0,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash invested": 65000.0,
+        "Annual cash flow used": 2539.537257250397,
+        "First-year principal and interest paid": 15460.462742749603,
+        "Cash-on-cash return": 3.9069803957698417,
+        "Cap rate at purchase price": 6.0
+      }
+    },
+    {
+      "label": "80% LTV, 8% loan",
+      "values": {
+        "price": 300000,
+        "loan": 240000,
+        "closing": 5000,
+        "repairs": 0,
+        "initial_reserve": 0,
+        "rate": 8,
+        "years": 30,
+        "rent": 2500,
+        "vacancy": 0,
+        "other_income": 0,
+        "operating": 1000,
+        "reserve": 0,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash invested": 65000.0,
+        "Annual cash flow used": -3132.419727726032,
+        "First-year principal and interest paid": 21132.419727726032,
+        "Cash-on-cash return": -4.819107273424665,
+        "Cap rate at purchase price": 6.0
+      }
+    },
+    {
+      "label": "80% LTV, 8% loan + reserve",
+      "values": {
+        "price": 300000,
+        "loan": 240000,
+        "closing": 5000,
+        "repairs": 0,
+        "initial_reserve": 0,
+        "rate": 8,
+        "years": 30,
+        "rent": 2500,
+        "vacancy": 0,
+        "other_income": 0,
+        "operating": 1000,
+        "reserve": 100,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash invested": 65000.0,
+        "Annual cash flow used": -4332.419727726032,
+        "First-year principal and interest paid": 21132.419727726032,
+        "Cash-on-cash return": -6.665261119578511,
+        "Cap rate at purchase price": 6.0
+      }
+    }
+  ]
+}

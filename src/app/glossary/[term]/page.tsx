@@ -1,4 +1,5 @@
 
+import DecisionCaseTable from '@/components/DecisionCaseTable';
 import SiteLink from "@/components/SiteLink";
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
@@ -28,6 +29,7 @@ export default async function TermPage({params}:{params:Promise<{term:string}>})
    {entry.example.calculator&&<SiteLink className="glossary-cta" href={glossaryExampleLink(entry.example.calculator)}>Try these example inputs <span aria-hidden="true">→</span></SiteLink>}
    {entry.example.calculationNote&&<p className="glossary-assumptions">{entry.example.calculationNote}</p>}
   </section>
+  {entry.comparison&&<section className="glossary-comparison" aria-labelledby="financing-comparison"><h2 id="financing-comparison">{entry.comparison.heading}</h2>{entry.comparison.paragraphs.map(p=><p key={p}>{p}</p>)}<figure className="decision-guide-figure"><div className="decision-guide-chart" role="region" aria-label="Scenario chart" tabIndex={0}><img src={'/images/guides/'+entry.comparison.chart+'.png'} width={1350} height={750} loading="lazy" alt="Cap rate stays at six percent while cash-on-cash return changes with loan terms and a capital reserve."/></div><figcaption>Hypothetical annual cases, not market forecasts. Scroll the chart on smaller screens. <a href={'/images/guides/'+entry.comparison.chart+'.svg'}>Open standalone SVG</a></figcaption></figure><DecisionCaseTable topic="cap"/><p><a href="/data/decision-guides/cap-cases.csv" download>Download all five cases and input assumptions</a>. Independently calculated in Python Decimal at 60-digit precision and checked against the calculator within 0.000001 in the stated units.</p>{entry.comparison.questions.map(q=><section key={q.question}><h3>{q.question}</h3><p>{q.answer}</p></section>)}</section>}
   <section aria-labelledby="misunderstanding"><h2 id="misunderstanding">{entry.pitfall.title}</h2><p>{entry.pitfall.text}</p></section>
   {entry.tools.length>0&&<section className="glossary-calculators" aria-labelledby="calculators"><h2 id="calculators">Explore with a calculator</h2><ul>{entry.tools.map(tool=><li key={tool.id}><SiteLink href={routeFor(tool.id)}>{calculators.find(calc=>calc.id===tool.id)!.title}</SiteLink><p>{tool.text}</p></li>)}</ul></section>}
   {entry.guides?.length&&<section><h2>Put the concept into practice</h2><ul>{entry.guides.map(guide=><li key={guide.path}><SiteLink href={guide.path}>{guide.title}</SiteLink></li>)}</ul></section>}

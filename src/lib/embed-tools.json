@@ -196,5 +196,41 @@
     "slug": "stock-average-calculator",
     "title": "Stock Average Calculator",
     "height": 1200
+  },
+  {
+    "id": "discount-points",
+    "slug": "discount-points-calculator",
+    "title": "Mortgage Points Calculator",
+    "height": 1000
+  },
+  {
+    "id": "covered-call",
+    "slug": "covered-call-calculator",
+    "title": "Covered Call Calculator",
+    "height": 1000
+  },
+  {
+    "id": "compound-interest",
+    "slug": "compound-interest-calculator",
+    "title": "Compound Interest Calculator",
+    "height": 1000
+  },
+  {
+    "id": "investment",
+    "slug": "investment-calculator",
+    "title": "Investment Calculator",
+    "height": 1000
+  },
+  {
+    "id": "margin",
+    "slug": "margin-calculator",
+    "title": "Margin Calculator",
+    "height": 650
+  },
+  {
+    "id": "markup",
+    "slug": "markup-calculator",
+    "title": "Markup Calculator",
+    "height": 650
   }
 ]

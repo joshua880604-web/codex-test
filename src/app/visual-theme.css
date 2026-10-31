@@ -386,3 +386,11 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .calculator-page .calculator-form .field-entry:has(:user-invalid){border-color:#c43d4d}
 .calculator-page .calculator-form .field-entry>:is(input,select){height:44px;min-height:44px}
 .calculator-page .calculator-form .field-entry>.unit{padding-left:6px;padding-right:6px}
+
+/* Static homepage publisher shortcut; no iframe or preview loads here. */
+.directory-publisher-callout{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;margin:20px 0;padding:14px 18px;border:1px solid var(--control);border-radius:14px;background:var(--surface);min-width:0;}
+.directory-publisher-callout h2{font-size:16px;line-height:1.4;margin:0 0 4px;}
+.directory-publisher-callout p{font-size:14px;line-height:1.6;margin:0;color:var(--muted);}
+.directory-publisher-callout a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;overflow-wrap:anywhere;}
+@media(max-width:600px){.directory-publisher-callout{align-items:flex-start;flex-direction:column;gap:2px;padding:14px;}}
+@media print{.directory-publisher-callout{display:none;}}

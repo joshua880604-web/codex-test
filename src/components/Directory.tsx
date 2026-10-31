@@ -38,6 +38,10 @@ export default function Directory({ propertyOnly = false }: { propertyOnly?: boo
         <SiteBenefits showMobileBadge={false} />
       </section>}
       </div>
+      {!propertyOnly&&<aside className="directory-publisher-callout" aria-labelledby="publisher-callout-heading">
+        <div><h2 id="publisher-callout-heading">For writers &amp; bloggers</h2><p>Add a free, ad-free calculator to your website.</p></div>
+        <SiteLink href="/embed-resources">Browse embeddable calculators →</SiteLink>
+      </aside>}
       {groups.length > 1 && <nav className="directory-categories" aria-label="Calculator categories">
         <span>Browse by category</span>
         <div>{groups.map(({ id, title, tools }) => <SiteLink href={"#" + id} key={id}>{title}<span>{tools.length}</span></SiteLink>)}</div>

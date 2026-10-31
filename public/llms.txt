@@ -125,6 +125,13 @@ Reviewed: October 30, 2026. This is a selected navigation file, not the full sit
 
 ## Selected guides and reproducible model analyses
 
+- [Roth conversion ladder guide](https://www.calculatorfree.io/guides/roth-conversion-ladder/): Four outside-cash/basis cases and a dated bridge chart separate conversion clocks, living costs and conversion taxes.
+- [Pay off mortgage or invest](https://www.calculatorfree.io/guides/pay-off-mortgage-or-invest/): Five equal-budget, ten-year cases include freed-payment reinvestment and nominal/effective rate conventions.
+- [Should you reinvest dividends?](https://www.calculatorfree.io/guides/should-you-reinvest-dividends/): Five scenarios compare shares plus retained cash, including losses and a flat dividend-tax assumption.
+- [Cap rate vs. cash-on-cash return](https://www.calculatorfree.io/glossary/cap-rate-vs-cash-on-cash-return/): Definition plus five same-property loan/reserve cases; no duplicate guide URL.
+
+
+
 The six model checks below use hypothetical inputs and deterministic calculations, not observed borrower outcomes, market experiments or return forecasts. Each includes assumptions, numerical tables, charts, downloadable CSV and links to reproduce the calculations.
 
 - [Coast FIRE inflation sensitivity](https://www.calculatorfree.io/guides/coast-fire-inflation-sensitivity/): 15 modeled cases show how nominal return and inflation assumptions change the Coast FIRE threshold.
@@ -155,9 +162,18 @@ Additional decision guides with five-case model checks, charts, CSV and reproduc
 
 - [Embed resources](https://www.calculatorfree.io/embed-resources): The maintained list of supported ad-free embeddable calculators, attribution requirements and embedding guidance. Embed support is limited to the listed tools.
 
-Calculator pages provide Share, Cite and Export controls; Embed appears only where supported. Sharing inputs is opt-in. Citations use the canonical calculator URL. Coast FIRE, BRRRR and ROAS also provide a “For writers & bloggers” snippet kit with scope and limitations. Follow each tool’s attribution and usage terms.
+Calculator pages provide Share, Cite and Export controls; Embed appears only where supported. Sharing inputs is opt-in. Citations use the canonical calculator URL. Selected tools provide a “For writers & bloggers” snippet kit with methods, illustrative examples, assumptions and limitations. The Embed resources page groups supported widgets by topic and marks tools with a snippet kit. Follow each tool’s attribution and usage terms.
 
 ## Financial reference
+
+- [Lean FIRE](https://www.calculatorfree.io/glossary/lean-fire/): Lower-spending full-target concept, not a universal wealth cutoff.
+- [Fat FIRE](https://www.calculatorfree.io/glossary/fat-fire/): Higher-spending budget concept and target-sizing limitations.
+- [Dividend reinvestment plan](https://www.calculatorfree.io/glossary/dividend-reinvestment-plan/): Shares purchased from dividends, distinct from external deposits.
+- [Roth conversion ladder definition](https://www.calculatorfree.io/glossary/roth-conversion-ladder/): Conversion principal, tax cash and model scope.
+- [Roth IRA five-year rules](https://www.calculatorfree.io/glossary/roth-ira-five-year-rules/): Separate conversion clocks and qualified-distribution conditions.
+- [Covered call](https://www.calculatorfree.io/glossary/covered-call/): Standard buy-write payoff, capped upside and retained stock downside.
+
+
 
 - [Compound interest](https://www.calculatorfree.io/glossary/compound-interest/): How interest accumulates on principal and previous interest, with a worked example.
 - [Annual percentage rate (APR)](https://www.calculatorfree.io/glossary/apr/): Meaning, conventions, and limitations when comparing borrowing costs.

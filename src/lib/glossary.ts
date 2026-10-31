@@ -14,6 +14,7 @@ export type GlossaryTerm = {
   pitfall:{title:string;text:string};tools:{id:string;text:string}[];related:string[];
   sources:{title:string;url:string}[];checkedOn:string;scope?:string;
   guides?:{title:string;path:string}[];
+  comparison?:{topic:"cap";heading:string;paragraphs:string[];questions:{question:string;answer:string}[];chart:string};
 };
 export const glossaryCategories=['Saving & investing','Retirement','Loans & debt','Housing & property','Tax & income','Business & pricing','Everyday money'];
 export const glossaryPath='/glossary/';
