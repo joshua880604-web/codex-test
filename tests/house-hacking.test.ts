@@ -56,7 +56,7 @@ test('House hacking rejects unsupported financial inputs and blank values',()=>{
  for(const p of [{price:0},{loan:400001},{loan:-1},{years:0},{years:51},{years:1.01},{rate:26},{rate:-1},{vacancy:101},{vacancy:-1},{tax:-1},{tax:''},{other_income:'NaN'},{current_rent:1e10},{arrangement:'Other'}] as Record<string,string|number>[])assert.throws(()=>houseHackingPlan(input(p)));
 });
 test('House hacking lazy client and both original worked examples match the pure engine',async()=>{
- assert.deepEqual(await runClientCalculation(calc.id,calc.category,mode.id,input()),run());for(const e of guides[calc.id].examples)close(n(run(e.values),e.expected.label),e.expected.value);assert.equal(guides[calc.id].questions.length,11);
+ assert.deepEqual(await runClientCalculation(calc.id,calc.category,mode.id,input()),run());for(const e of guides[calc.id].examples)close(n(run(e.values),e.expected.label),e.expected.value);assert.equal(guides[calc.id].questions.length,13);
 });
 test('House hacking has one canonical calculator and coherent property links without invented ratings',()=>{
  const config={origin:'https://www.calculatorfree.io',indexable:true};assert.equal(sitemapEntries(config).filter(e=>e.url===config.origin+'/house-hacking-calculator').length,1);assert.equal(calculatorCategory(calc.id)!.id,'mortgage-housing');for(const id of ['mortgage','rent-vs-buy','rental-property'])assert.ok(relatedCalculatorIds[id].includes(calc.id));const schema=JSON.stringify(calculatorSchema(calc,config));assert.match(schema,/WebApplication/);assert.doesNotMatch(schema,/aggregateRating/);

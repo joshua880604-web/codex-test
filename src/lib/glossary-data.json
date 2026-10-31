@@ -2821,7 +2821,13 @@
         }
       ],
       "chart": "cap-vs-cash"
-    }
+    },
+    "guides": [
+      {
+        "title": "How to Calculate Cash-on-Cash Return: Costs & Examples",
+        "path": "/guides/how-to-calculate-cash-on-cash-return/"
+      }
+    ]
   },
   {
     "slug": "down-payment",
@@ -3317,7 +3323,13 @@
       }
     ],
     "checkedOn": "2026-10-23",
-    "scope": "General financial concept; examples are hypothetical."
+    "scope": "General financial concept; examples are hypothetical.",
+    "guides": [
+      {
+        "title": "How to Calculate Landed Cost: Shipment & Per-Unit Examples",
+        "path": "/guides/how-to-calculate-landed-cost/"
+      }
+    ]
   },
   {
     "slug": "depreciation",
@@ -4169,7 +4181,17 @@
         "url": "https://www.reit.com/glossary/net-operating-income"
       }
     ],
-    "checkedOn": "2026-10-28"
+    "checkedOn": "2026-10-28",
+    "guides": [
+      {
+        "title": "What Is House Hacking? Costs, Rent Offsets & Examples",
+        "path": "/guides/what-is-house-hacking/"
+      },
+      {
+        "title": "How to Calculate Cash-on-Cash Return: Costs & Examples",
+        "path": "/guides/how-to-calculate-cash-on-cash-return/"
+      }
+    ]
   },
   {
     "slug": "fire-number",

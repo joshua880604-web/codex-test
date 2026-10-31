@@ -164,6 +164,10 @@ Additional decision guides with five-case model checks, charts, CSV and reproduc
 - [How Compound Interest Works With Monthly Contributions](https://www.calculatorfree.io/guides/compound-interest-with-monthly-contributions/): Four matched scenarios separate money you contribute from earnings and show the effect of deposit timing.
 - [Annualized Return vs. Total Return: How to Calculate and Compare](https://www.calculatorfree.io/guides/annualized-return-vs-total-return/): The same 50% cumulative gain becomes a different annualized return over one, three or five years.
 
+- [What Is House Hacking? Costs, Rent Offsets & Examples](https://www.calculatorfree.io/guides/what-is-house-hacking/): Four rent-loss scenarios show when tenant income lowers a housing budget and when the same property costs more than renting.
+- [How to Calculate Cash-on-Cash Return: Costs & Examples](https://www.calculatorfree.io/guides/how-to-calculate-cash-on-cash-return/): Build the numerator and denominator explicitly, then test loan cost, reserves and lower rent without hiding negative cash flow.
+- [How to Calculate Landed Cost: Shipment & Per-Unit Examples](https://www.calculatorfree.io/guides/how-to-calculate-landed-cost/): Reconcile itemized and bundled quotes for 500 identical units, then test freight and entered duty amounts before using cost in pricing.
+
 ## For writers and bloggers
 
 - [Embed resources](https://www.calculatorfree.io/embed-resources): The maintained list of supported ad-free embeddable calculators, attribution requirements and embedding guidance. Embed support is limited to the listed tools.

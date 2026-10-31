@@ -58,7 +58,7 @@ test('Cash return simple and rental engine agree for exactly matched cash defini
  const property=run('property',sample),simple=run('simple',{period:'Annually',cash_invested:get(property,'Cash invested'),cash_flow:get(property,'Annual cash flow used')});close(get(simple,'Cash-on-cash return'),get(property,'Cash-on-cash return'));
 });
 test('Cash return lazy client engines and worked content examples are reproducible',async()=>{
- for(const m of calc.modes)assert.deepEqual(await runClientCalculation(calc.id,calc.category,m.id,input(m.id)),run(m.id));for(const e of guides[calc.id].examples)close(get(run(e.mode,e.values),e.expected.label),e.expected.value);assert.equal(guides[calc.id].questions.length,11);
+ for(const m of calc.modes)assert.deepEqual(await runClientCalculation(calc.id,calc.category,m.id,input(m.id)),run(m.id));for(const e of guides[calc.id].examples)close(get(run(e.mode,e.values),e.expected.label),e.expected.value);assert.equal(guides[calc.id].questions.length,13);
 });
 test('Cash return has one canonical tool and connects existing property and glossary context',()=>{
  const config={origin:'https://www.calculatorfree.io',indexable:true};assert.equal(sitemapEntries(config).filter(e=>e.url===config.origin+'/cash-on-cash-return-calculator').length,1);assert.equal(calculatorCategory(calc.id)!.id,'mortgage-housing');assert.equal(workspaceLayout(calc.id,'property'),'stacked');assert.equal(workspaceLayout(calc.id,'simple'),'split');for(const id of ['noi','brrrr','rental-property'])assert.ok(relatedCalculatorIds[id].includes(calc.id));const schema=JSON.stringify(calculatorSchema(calc,config));assert.match(schema,/WebApplication/);assert.doesNotMatch(schema,/aggregateRating/);

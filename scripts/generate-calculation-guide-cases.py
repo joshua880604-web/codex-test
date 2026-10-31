@@ -23,7 +23,10 @@ def coast(spending,household='Individual'):
  if household=='Couple':v.update(balance=200000,partner_balance=100000)
  return {'label':f'${spending:,} portfolio-funded budget','calculatorId':'coast-fire','mode':'coast','values':v,'metrics':{'Coast FIRE number today':number(threshold)},'display':[f'${target:,.2f}',f'${threshold:,.2f}']}
 cases={'mortgage':[mortgage(30,6),mortgage(15,6),mortgage(30,0)],'compound':[compound(r,t) for r,t in [(0,'End of period'),(5,'End of period'),(5,'Beginning of period'),(8,'End of period')]],'annualized':[roi(15000,t) for t in [1,3,5]]+[roi(8000,2)],'coast':[coast(40000),coast(60000,'Couple'),coast(36000)]}
-(ROOT/'src/lib/calculation-guide-cases.json').write_text(json.dumps(cases,indent=2)+'\n')
+case_file=ROOT/'src/lib/calculation-guide-cases.json'
+existing=json.loads(case_file.read_text()) if case_file.exists() else {}
+existing.update(cases)
+case_file.write_text(json.dumps(existing,indent=2)+'\n')
 for topic,rows in cases.items():
  keys=list(rows[0]['metrics'])
  with (DATA/(topic+'-cases.csv')).open('w') as f:

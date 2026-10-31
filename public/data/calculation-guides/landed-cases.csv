@@ -1,0 +1,5 @@
+Case,Total landed cost,Landed cost per unit,Additional shipment costs,Goods cost per unit,Inputs (JSON)
+Itemized quote,6800.0,13.6,1800.0,10.0,"{""brokerage"": 100, ""duties"": 400, ""freight"": 800, ""goods"": 5000, ""inland"": 200, ""insurance"": 50, ""other"": 25, ""port"": 75, ""quantity"": 500, ""taxes"": 150}"
+Higher freight,7600.0,15.2,2600.0,10.0,"{""brokerage"": 100, ""duties"": 400, ""freight"": 1600, ""goods"": 5000, ""inland"": 200, ""insurance"": 50, ""other"": 25, ""port"": 75, ""quantity"": 500, ""taxes"": 150}"
+Higher entered duties,7600.0,15.2,2600.0,10.0,"{""brokerage"": 100, ""duties"": 1200, ""freight"": 800, ""goods"": 5000, ""inland"": 200, ""insurance"": 50, ""other"": 25, ""port"": 75, ""quantity"": 500, ""taxes"": 150}"
+"Same total, bundled invoice",6800.0,13.6,0.0,13.6,"{""brokerage"": 0, ""duties"": 0, ""freight"": 0, ""goods"": 6800, ""inland"": 0, ""insurance"": 0, ""other"": 0, ""port"": 0, ""quantity"": 500, ""taxes"": 0}"

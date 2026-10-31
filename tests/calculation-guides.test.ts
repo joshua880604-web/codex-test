@@ -14,3 +14,19 @@ test('Guide dated return convention matches the engine and warns about interim c
  assert.match(content.annualized.sections.find(s=>s.id==='excel')!.paragraphs.join(' '),/divided by 365 /);
  assert.match(content.annualized.sections.find(s=>s.id==='cash-flows')!.paragraphs.join(' '),/not appropriate/);
 });
+
+test('Property and business scenarios retain losses and the bundled-quote reconciliation',()=>{
+ assert.ok(cases.house[0].metrics['Monthly budget difference versus renting']>0);
+ assert.ok(cases.house[2].metrics['Monthly budget difference versus renting']<0);
+ assert.equal(cases.house[3].metrics['Effective monthly tenant rent'],0);
+ assert.ok(cases.cash[2].metrics['Cash-on-cash return']<0);
+ assert.ok(cases.cash[4].metrics['Annual cash flow used']<0);
+ assert.equal(cases.landed[0].metrics['Total landed cost'],cases.landed[3].metrics['Total landed cost']);
+ assert.equal(cases.landed[3].metrics['Additional shipment costs'],0);
+});
+test('Each article table has the right columns and calculator inputs for every case',()=>{
+ for(const [topic,data] of Object.entries(content)){
+  const rows=cases[topic as keyof typeof content];
+  for(const row of rows){assert.equal(row.display.length,data.columns.length-1);assert.ok(data.meta.calculatorIds.includes(row.calculatorId));}
+ }
+});

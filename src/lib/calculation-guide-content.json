@@ -453,5 +453,471 @@
         "label": "Arithmetic versus geometric return"
       }
     ]
+  },
+  "house": {
+    "meta": {
+      "path": "/guides/what-is-house-hacking/",
+      "title": "What Is House Hacking? Costs, Rent Offsets & Examples",
+      "heading": "What Is House Hacking? Costs, Rent Offsets & Examples",
+      "description": "Understand house hacking with rooms or rental units, upfront cash and net housing costs. Compare four rent-loss cases with checked inputs and a calculator.",
+      "publishedOn": "2026-10-31",
+      "calculatorIds": [
+        "house-hacking"
+      ],
+      "topic": "Property investing",
+      "breadcrumb": "House hacking costs and examples",
+      "cardIntro": "Four rent-loss scenarios show when tenant income lowers a housing budget and when the same property costs more than renting.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/house-hacking-calculator",
+    "calculatorLabel": "House Hacking Calculator",
+    "intro": "House hacking means living in part of a property while renting other rooms or units to tenants. Rent can offset some of your housing costs, but the mortgage installment is only one expense. A useful calculation separates the initial cash needed to buy from the recurring cost of living there, and includes the possibility that tenant income falls short.",
+    "answer": "In our hypothetical shared-home example, two rooms each rent for $750 monthly. With a 5% rent-loss allowance, the modeled owner housing cost is $1,593.56 a month after tenant rent, versus an entered $1,800 alternative renting budget. That $206.44 monthly budget difference is not investment profit: the purchase also requires $98,000 upfront, and taxes, sale proceeds and opportunity cost are not compared.",
+    "sections": [
+      {
+        "id": "arrangements",
+        "title": "Renting rooms versus renting a separate unit",
+        "paragraphs": [
+          "Both arrangements combine your own home with rented space. In a shared home, tenants rent specified rooms while you remain in the property. In a multi-unit arrangement, you occupy one unit and rent others. Separate entrances, utility arrangements, maintenance responsibilities and privacy can change the practical trade-offs even when the arithmetic looks similar.",
+          "Our calculator lets you describe either arrangement and enter each tenant space. Your own room or unit is excluded from rent income. The arrangement selector does not establish zoning compliance, a tenancy classification or mortgage eligibility. A legal rental unit and an advertised bedroom are not automatically interchangeable."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "upfront",
+        "title": "Build the initial cash requirement before the monthly budget",
+        "paragraphs": [
+          "The example purchases a $400,000 property using a $320,000 loan. Cash toward the price is $80,000. Add $8,000 cash-paid closing costs and loan fees, $5,000 initial repairs and $5,000 initial reserve cash to reach $98,000 required at acquisition. Those are chosen inputs, not a claim about a minimum down payment or lender reserve requirement.",
+          "Borrowing is not tenant income. Keep refundable tenant deposits separate as well: cash held for a tenant is not freely available recurring revenue. Count an initial repair once in acquisition cash; do not also call the same payment a new recurring monthly maintenance bill. A future maintenance allowance represents a different period and purpose."
+        ],
+        "formula": "Initial cash = purchase price − purchase loan + cash-paid closing costs + initial repairs + initial reserve"
+      },
+      {
+        "id": "monthly",
+        "title": "Calculate the whole-property cash cost, then offset tenant rent",
+        "paragraphs": [
+          "At an illustrative 6% nominal annual loan rate over 30 years, monthly principal and interest on $320,000 is $1,918.56. Our entered monthly costs add $400 property tax, $150 property insurance, $200 owner-paid utilities, $200 routine maintenance and $150 capital replacement reserve. Mortgage insurance, HOA, management and other costs are explicitly zero in these cases. Total cost before rent is $3,018.56 monthly.",
+          "Two tenant rooms at $750 produce $1,500 scheduled monthly rent. Apply a 5% vacancy and collection-loss allowance to get $1,425 effective rent. Subtract that from $3,018.56 to get $1,593.56 of net housing cash cost. The owner’s own space contributes no imaginary rent, and no other income is entered.",
+          "Principal repayment is included in the cash you must pay even though it reduces debt and can build equity. It is not spendable income to add back to this budget. Also avoid entering an escrow-inclusive loan bill and then adding its taxes and insurance again. The model calculates principal and interest separately from those ownership costs."
+        ],
+        "formula": "Net monthly housing cash cost = mortgage P&I + entered owner costs + capital reserve − rent after losses − other net housing income"
+      },
+      {
+        "id": "rent-loss",
+        "title": "Test what happens when tenant income is interrupted",
+        "paragraphs": [
+          "Our four cases hold the loan, rooms, upfront cash and all owner costs fixed. Only the rent-loss allowance changes from 0% to 5%, 20% and 100%. At zero loss, the net housing cost is $1,518.56. At 20%, it rises to $1,818.56, slightly above the $1,800 renting alternative. With no tenant rent collected it is $3,018.56.",
+          "A percentage allowance is an expected monthly provision; it does not identify which actual month a tenant leaves or a repair occurs. The 100% case is a stress check for paying the bills without rent, not a forecast of long-run vacancy. A reserve sufficient for one month may not cover a prolonged interruption or a large replacement.",
+          "For this example, recurring costs exceed rent even at full collection, so it does not model living for free. A different input set can show a negative net housing cost, but that is only a modeled cash surplus before owner income tax, not a guarantee of a profitable or low-risk property."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "renting",
+        "title": "Compare like-for-like living budgets, not just rent and mortgage",
+        "paragraphs": [
+          "The alternative renting budget should include comparable utilities, renters insurance and other housing costs you would otherwise pay. Here it is a manually entered all-in $1,800 per month. Subtract the net house-hacking cash cost to obtain a recurring budget difference. A positive number means the modeled housing budget is lower; a negative one means it is higher.",
+          "This comparison does not price the $98,000 upfront commitment, future sale costs, appreciation, tax treatment or the return that cash could earn elsewhere. It also does not put a dollar value on privacy, time as a landlord or the flexibility to move. A monthly budget improvement is useful, but it is not a full buy-versus-rent wealth comparison.",
+          "If you move out and rent the entire property later, your owner-occupancy budget is no longer the same scenario. Update insurance, management, maintenance and financing assumptions in the rental-property tools. Do not simply add rent for your former room while assuming every other cost stays appropriate."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "checks",
+        "title": "Check financing, local permission and tax treatment separately",
+        "paragraphs": [
+          "Before using a listing’s advertised rent, verify that the relevant spaces can be rented as intended and check local requirements, HOA restrictions, lease obligations and the insurance policy. These depend on the property and location; the calculator does not issue a legal or lender approval. An owner-occupied loan may also come with occupancy conditions.",
+          "Renting part of a home can involve allocating expenses between personal and rental use. IRS Publication 527 discusses rental property and mixed-use situations, but this worksheet does not compute deductible shares, depreciation or your tax return. Its housing cost is a cash-budget figure before owner income tax.",
+          "Use the result as a checklist for missing inputs and an invitation to test weaker rents or higher costs. A promising default result is not evidence that a particular property, tenant or financing arrangement will work. Review the actual costs and cash available before committing to a purchase."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Tenant rent-loss case",
+      "Effective monthly tenant rent",
+      "Net monthly housing cost",
+      "Budget difference vs. renting"
+    ],
+    "chart": "house-hacking-budget-guide",
+    "chartAlt": "Net monthly housing cash cost rises from 1518.56 dollars at zero rent loss to 3018.56 dollars at complete rent loss; the alternative renting budget is 1800 dollars.",
+    "chartCaption": "Same $400,000 property, $320,000 loan at 6% for 30 years and $1,100 monthly non-P&I costs, including a capital reserve. Only tenant rent loss changes. A higher bar means more owner cash is needed.",
+    "questions": [
+      {
+        "question": "What is house hacking in real estate?",
+        "answer": "It is living in part of a property while renting other rooms or units. Tenant rent can offset housing costs, but upfront cash, ongoing expenses, landlord duties and the risk of lost rent remain."
+      },
+      {
+        "question": "Can I house hack a single-family home?",
+        "answer": "Renting rooms can be a house-hacking arrangement, but whether a specific setup is permitted depends on local rules, contracts and insurance. The room example illustrates a budget and does not establish legal permission or loan eligibility."
+      },
+      {
+        "question": "How much money do I need to house hack?",
+        "answer": "Add the cash purchase contribution, closing and loan fees, initial repairs and initial reserve. This example needs $98,000; that amount is an assumption, not a universal requirement. Keep reserves for ongoing living costs and interruptions in the plan."
+      },
+      {
+        "question": "Is house hacking worth it if rent does not cover the mortgage?",
+        "answer": "That question needs a whole-budget and risk comparison. Rent can reduce your housing cost without paying every bill, but taxes, maintenance, reserves and the opportunity cost of upfront cash still matter. The model does not issue a recommendation."
+      },
+      {
+        "question": "Does tenant rent count as profit?",
+        "answer": "Gross rent is revenue, not profit. In an owner-occupied budget it offsets costs. The displayed difference versus renting also includes your own housing consumption, so it is not a rental investment return."
+      },
+      {
+        "question": "Does the calculator include FHA or VA qualification?",
+        "answer": "No. The guide uses an entered loan amount and a standard fixed-rate payment. Down-payment eligibility, rental-income underwriting, occupancy conditions and mortgage-insurance rules require a separate review."
+      }
+    ],
+    "limitations": [
+      "This is an immediately stabilized monthly budget, not a multi-year wealth forecast. The rate, rents and costs are hypothetical and constant in each case.",
+      "No legal permission, lender approval, income-tax allocation, sale, depreciation, appreciation or return on the upfront cash is calculated."
+    ],
+    "sources": [
+      {
+        "href": "https://www.consumerfinance.gov/ask-cfpb/on-a-mortgage-whats-the-difference-between-my-principal-and-interest-payment-and-my-total-monthly-payment-en-1941/",
+        "label": "CFPB: loan principal and interest versus the total housing payment"
+      },
+      {
+        "href": "https://www.irs.gov/publications/p527",
+        "label": "IRS Publication 527 (2025): residential rental property and personal use"
+      }
+    ],
+    "related": [
+      {
+        "href": "/rental-property-calculator",
+        "label": "Rental Property Calculator"
+      },
+      {
+        "href": "/cash-on-cash-return-calculator",
+        "label": "Cash-on-Cash Return Calculator"
+      },
+      {
+        "href": "/guides/rent-vs-buy-a-house/",
+        "label": "Rent versus buy with a matched horizon"
+      },
+      {
+        "href": "/glossary/principal-and-interest/",
+        "label": "Principal and interest: distinguish loan payments from other costs"
+      }
+    ]
+  },
+  "cash": {
+    "meta": {
+      "path": "/guides/how-to-calculate-cash-on-cash-return/",
+      "title": "How to Calculate Cash-on-Cash Return: Costs & Examples",
+      "heading": "How to Calculate Cash-on-Cash Return: Costs & Examples",
+      "description": "Calculate rental cash-on-cash return using cash invested, operating costs, debt service and reserves. Five checked scenarios include losses and a cash purchase.",
+      "publishedOn": "2026-10-31",
+      "calculatorIds": [
+        "cash-on-cash-return"
+      ],
+      "topic": "Property investing",
+      "breadcrumb": "Calculate cash-on-cash return",
+      "cardIntro": "Build the numerator and denominator explicitly, then test loan cost, reserves and lower rent without hiding negative cash flow.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/cash-on-cash-return-calculator",
+    "calculatorLabel": "Cash-on-Cash Return Calculator",
+    "intro": "Cash-on-cash return compares annual cash flow with the cash you invested. For a financed rental, deduct operating expenses and cash debt payments before dividing by a clearly stated cash basis. This guide also deducts an ongoing capital replacement reserve from the headline yield. It is a one-year cash measure, not total property return, appreciation or a compound annual growth rate.",
+    "answer": "Our hypothetical $300,000 rental uses a $200,000 loan and $120,000 total initial cash including closing costs, repairs and reserves. After the entered rent loss, operating costs, first-year principal and interest and capital allowance, annual cash flow is $2,710.79. Dividing by $120,000 gives 2.2590% cash-on-cash return before owner income tax.",
+    "sections": [
+      {
+        "id": "formula",
+        "title": "Write the cash-on-cash formula with a stated period",
+        "paragraphs": [
+          "Use cash flow for a defined period, normally a full year, and a cash-investment amount consistent with the question. A $6,000 annual cash flow on $60,000 invested is a 10% annual cash yield. If you enter a recurring monthly cash flow in simple mode, the tool multiplies it by 12; it does not convert an irregular distribution into a growth rate.",
+          "The numerator in our rental worksheet is before owner income tax and after the stated capital allowance. Other sources may quote a yield before reserves or use a different cash basis. A percentage is comparable only after reconciling those definitions. The tool separately shows a before-reserve figure to make the deduction visible."
+        ],
+        "formula": "Cash-on-cash return (%) = annual cash flow after stated costs and financing / positive cash invested × 100"
+      },
+      {
+        "id": "cash-basis",
+        "title": "Build the denominator from actual cash committed",
+        "paragraphs": [
+          "For the base case, a $300,000 price minus a $200,000 purchase loan leaves $100,000 cash toward the price. Add $5,000 cash-paid closing costs and loan fees, $10,000 initial cash repairs and $5,000 initial reserve to get $120,000 invested. The denominator is not the $300,000 property value and not the $200,000 borrowed.",
+          "Keep the meaning of reserve cash explicit. Initial reserve is cash set aside at acquisition and included in our investment basis. The ongoing monthly replacement allowance is a deduction from period cash flow. These represent different quantities; do not duplicate one repair or one reserve contribution in several lines.",
+          "Using current equity instead of initial cash would ask a different question. After refinancing, reconcile cash returned, new fees and debt separately rather than silently replacing the denominator with an attractive smaller number. A zero or negative cash basis has no meaningful positive cash-on-cash percentage in this tool."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "cash-flow",
+        "title": "Calculate NOI, then deduct financing and the capital provision",
+        "paragraphs": [
+          "Scheduled rent is $2,500 per month. A 5% vacancy and collection-loss allowance reduces effective rent to $2,375. With no other net income and $850 monthly operating expenses, annual NOI is ($2,375 − $850) × 12 = $18,300. Operating costs should already include the applicable property tax, insurance, routine maintenance, management, HOA and owner-paid utilities.",
+          "The $200,000 mortgage at 6% nominal interest over 30 years requires about $1,199.10 monthly principal and interest. Its first 12 unrounded scheduled payments total $14,389.21. Deduct that and a $1,200 annual capital replacement allowance from $18,300 to get $2,710.79 cash flow. No additional financing payments are entered.",
+          "NOI excludes loan payments and the separate capital provision in this worksheet. Cash-on-cash includes their cash effect. Using NOI as the numerator would overstate cash available to this owner. Initial repairs are already in acquisition cash and are not deducted again as if they occurred every year."
+        ],
+        "formula": "Annual cash flow = effective operating income − operating expenses − actual first-year P&I − other financing payments − capital allowance"
+      },
+      {
+        "id": "principal",
+        "title": "Why principal repayment is not added back to cash income",
+        "paragraphs": [
+          "A mortgage installment pays both interest and principal. Principal reduces the outstanding debt and may increase equity, but the cash has still left the owner’s account. It cannot simultaneously be treated as spendable annual income. Equity growth belongs in a broader return analysis rather than this cash-yield numerator.",
+          "Similarly, appreciation is not rental cash received. A sale or refinance can generate cash but also involves fees, debt repayment and timing that a one-year stabilized operating yield does not describe. Use a holding-period or refinance model for those events rather than combining a one-time receipt with recurring rent."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "sensitivity",
+        "title": "Five cases show how a positive yield can become a loss",
+        "paragraphs": [
+          "The base case returns 2.2590%. Paying cash for the same property requires $320,000 including the same acquisition extras, produces $17,100 annual cash flow after reserve and yields 5.3438%. In this selected example, debt does not increase the cash yield. That result is conditional, not a general argument for or against borrowing.",
+          "Changing only the base loan rate from 6% to 8% turns annual cash flow into a $510.35 loss and the yield into −0.4253%. Raising only the monthly reserve from $100 to $300 leaves $310.79 annual cash flow, or 0.2590%. Reducing only the scheduled rent to $2,250 leaves a $139.21 annual loss, or −0.1160%.",
+          "Every non-base row makes one change from the base; they are separate scenarios, not a sequence of cumulative changes. The rent scenario keeps dollar operating expenses fixed. If management charges or other costs actually scale with rent, update those inputs separately. Neither the rates nor the rent figures are current market quotes."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "cap-rate",
+        "title": "Cash yield and cap rate are different measurements",
+        "paragraphs": [
+          "Cap rate uses NOI relative to the property price or a stated value basis. Cash-on-cash uses cash flow after financing relative to cash invested. In the base case, the price-based cap rate is $18,300 / $300,000 = 6.1%, while the after-reserve cash yield is 2.2590%. They can differ without either calculation being an error.",
+          "The cash-purchase and financed cases share the same NOI and purchase price; changing only financing leaves that cap rate unchanged. Changing rent can change NOI and therefore the cap rate. For a direct comparison of these measures, use the existing cap-rate-versus-cash-on-cash glossary analysis linked below rather than expecting this one-year cash guide to measure total return."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "interpretation",
+        "title": "Use the yield with liquidity and model limits",
+        "paragraphs": [
+          "There is no universal good cash-on-cash return independent of cost definitions, risk, location, reserves and alternative uses for cash. A high percentage can reflect a small denominator or omitted expenses. Inspect both dollar cash flow and cash invested before comparing percentages.",
+          "Our worksheet models the first 12 months of immediate stabilized operation. It uses actual scheduled principal and interest in that modeled year; if a supported loan ends early, it does not charge 12 full payments after payoff. It does not simulate leasing delays, a renovation period, changing rents, future sales or owner tax. These limitations matter when applying a stable annual yield to an unsettled acquisition."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Separate scenario",
+      "Cash invested",
+      "Annual cash flow after reserve",
+      "Cash-on-cash return"
+    ],
+    "chart": "cash-on-cash-method-guide",
+    "chartAlt": "Five same-property scenarios have cash-on-cash yields of 2.2590, 5.3438, minus 0.4253, 0.2590 and minus 0.1160 percent, showing adverse loan and rent cases.",
+    "chartCaption": "Each case makes one change from the base $300,000 purchase. Cash flow is before owner income tax and after the stated reserve. Percentages are not risk-adjusted forecasts.",
+    "questions": [
+      {
+        "question": "How do I calculate cash-on-cash return?",
+        "answer": "Divide a clearly defined annual cash-flow total by positive cash invested and multiply by 100. For a rental, state how operating expenses, debt service and capital reserves enter the numerator, and what upfront costs enter the denominator."
+      },
+      {
+        "question": "Is cash-on-cash return calculated before or after the mortgage?",
+        "answer": "For the financed cash yield used here, deduct actual principal and interest payments and other stated financing cash costs first. A return calculated from NOI before financing is not the same cash-on-cash numerator."
+      },
+      {
+        "question": "Do I include closing costs and initial repairs?",
+        "answer": "They are included when you fund them from cash under this acquisition basis. Add each once, alongside the cash toward the price and the initial reserve. Different cash-basis conventions must be disclosed before comparing yields."
+      },
+      {
+        "question": "Can cash-on-cash return be negative?",
+        "answer": "Yes. Negative annual cash flow divided by positive cash invested gives a negative yield. The 8% loan and lower-rent examples retain that result rather than hiding the loss."
+      },
+      {
+        "question": "Is cash-on-cash return the same as ROI or IRR?",
+        "answer": "No. This is a period cash yield. Total ROI can include other gains and costs; IRR considers supported cash-flow timing across a holding period. A one-year yield does not capture the sale, appreciation or changing equity."
+      },
+      {
+        "question": "What if I recovered all my cash through a refinance?",
+        "answer": "Do not report an infinite or automatically favorable cash yield. Reconcile the financing event and remaining cash basis. The tool marks a zero or negative basis as not applicable for a percentage; BRRRR is the more relevant refinance worksheet."
+      }
+    ],
+    "limitations": [
+      "Five cases describe the first year of an immediately stabilized property with constant monthly operating inputs and fixed-rate amortization. They are not observed deals or return forecasts.",
+      "The headline deducts a separate capital allowance and uses initial cash including reserve; no owner income tax, appreciation, sale or refinance is calculated."
+    ],
+    "sources": [
+      {
+        "href": "https://www.jpmorgan.com/insights/real-estate/commercial-term-lending/cash-on-cash-return-cocr-in-real-estate",
+        "label": "J.P. Morgan: cash-on-cash as pre-tax period cash flow relative to cash invested"
+      },
+      {
+        "href": "/methodology",
+        "label": "Our calculation methodology and model scope"
+      }
+    ],
+    "related": [
+      {
+        "href": "/glossary/cap-rate-vs-cash-on-cash-return/",
+        "label": "Cap rate versus cash-on-cash return: checked financing comparison"
+      },
+      {
+        "href": "/cap-rate-calculator",
+        "label": "Cap Rate Calculator"
+      },
+      {
+        "href": "/noi-calculator",
+        "label": "NOI Calculator"
+      },
+      {
+        "href": "/brrrr-calculator",
+        "label": "BRRRR Calculator"
+      },
+      {
+        "href": "/rental-property-calculator",
+        "label": "Rental Property Calculator"
+      }
+    ]
+  },
+  "landed": {
+    "meta": {
+      "path": "/guides/how-to-calculate-landed-cost/",
+      "title": "How to Calculate Landed Cost: Shipment & Per-Unit Examples",
+      "heading": "How to Calculate Landed Cost: Shipment & Per-Unit Examples",
+      "description": "Build landed cost from a shipment invoice, freight and entered import charges. Four checked cases show per-unit costs, sensitivity and how to avoid double counting.",
+      "publishedOn": "2026-10-31",
+      "calculatorIds": [
+        "landed-cost"
+      ],
+      "topic": "Business finance",
+      "breadcrumb": "Calculate landed cost",
+      "cardIntro": "Reconcile itemized and bundled quotes for 500 identical units, then test freight and entered duty amounts before using cost in pricing.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/landed-cost-calculator",
+    "calculatorLabel": "Landed Cost Calculator",
+    "intro": "Landed cost brings a product invoice and the additional costs of getting that shipment to its intended destination into one economic cost estimate. Start with the invoice and add only charges not already included. Then allocate the reconciled total across the units. The result can support pricing, but it is not automatically a customs valuation, tax determination or complete cost of running the business.",
+    "answer": "For an illustrative 500-unit shipment, a $5,000 goods invoice plus $1,800 of separately entered transport, insurance and import-related charges gives $6,800 total landed cost, or $13.60 per unit. The $10 invoice price per unit alone misses $3.60 of additional acquisition cost. All duty and tax amounts in these examples are manual assumptions, not current tariff rates.",
+    "sections": [
+      {
+        "id": "boundary",
+        "title": "Define what shipment and destination the quote covers",
+        "paragraphs": [
+          "Write down the product, quantity, currency and destination before adding fees. Our examples use one homogeneous product, 500 identical units and USD throughout. A total shipment amount belongs in a shipment field; entering a per-unit invoice price there would understate the total by a factor of quantity.",
+          "Reconcile who is paying each charge under the actual contract and what the invoice already includes. A quote that includes international freight should not receive that same freight as an extra cost. This worksheet does not interpret Incoterms, assign contractual obligations or convert currencies. Convert and document foreign-currency amounts consistently before using its USD fields."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "formula",
+        "title": "Add the applicable charges once, then divide by quantity",
+        "paragraphs": [
+          "The base worksheet enters $5,000 goods, $800 international freight, $50 shipment insurance, $400 duties, $150 nonrecoverable import taxes, $100 brokerage, $75 port or handling, $200 inland transport and $25 other acquisition expenses. The additional charges sum to $1,800. Total economic acquisition cost is therefore $6,800.",
+          "Dividing by 500 units gives $13.60 each. Keep the shipment total until allocation is complete, rather than rounding every component per unit first. The additional $1,800 equals a 36% uplift over the $5,000 goods invoice. That uplift is a cost comparison, not a sales margin or a statutory duty rate."
+        ],
+        "formula": "Total landed cost = entered invoice + additional freight + insurance + duties + nonrecoverable taxes + brokerage + handling + inland transport + other acquisition charges; unit cost = total / units"
+      },
+      {
+        "id": "bundled",
+        "title": "An itemized quote and a bundled quote can have the same total",
+        "paragraphs": [
+          "Suppose a checked invoice bundles exactly the same $6,800 economic total, and no further charges remain payable within the defined destination boundary. Entering $6,800 as the invoice amount and zero additional charges gives the same $13.60 per unit. The final case demonstrates that reconciliation, not a universal rule about every bundled shipping term.",
+          "If you instead enter the bundled $6,800 invoice and add the already included $1,800 again, the mistaken total becomes $8,600, or $17.20 per unit. That would overstate this specific acquisition cost by $3.60 per unit. The itemized and bundled views must describe the same included services for the comparison to be valid.",
+          "In the bundled case, the field labeled goods invoice contains bundled charges as well as the underlying goods price. Its displayed invoice cost per unit is therefore not a separately established manufacturing cost. Do not infer customs value, a duty base or accounting classification from how the economic total was entered."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "sensitivity",
+        "title": "Test freight and entered duty amounts without inventing tariff rates",
+        "paragraphs": [
+          "In one scenario, only freight rises from $800 to $1,600. Total cost becomes $7,600, or $15.20 per unit. In another, freight returns to the base amount and the manually entered duties rise from $400 to $1,200. That also produces $7,600 and $15.20 per unit. These are separate scenarios, not a combined increase.",
+          "An additional $800 shipment charge spread over 500 identical units adds $1.60 each. If both increases applied at once, the inputs would need to show both; the separate cases do not imply a joint forecast. Quantity changes also need a new quote because freight, insurance and other charges may not stay fixed.",
+          "The duty field accepts a dollar amount. The tool does not determine the product classification, origin, customs valuation, tariff rate, exemption, entry date or eligibility for a trade program. A broker or the relevant official source must support those inputs for a real shipment. A 36% overall cost uplift does not mean the duty rate is 36%."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "allocation",
+        "title": "Use a suitable allocation method for mixed products",
+        "paragraphs": [
+          "Equal per-unit allocation is appropriate only for the homogeneous-unit assumption used here. If a shipment contains small low-value items and large high-value items, spreading all costs evenly per item may distort product economics. Freight may follow weight or volume, while another charge may follow value or a product-specific basis.",
+          "The calculator does not choose or implement that mixed-product allocation. Split the analysis using a documented method and reconcile the allocated amounts back to the shipment total. Changing the denominator to sellable units after damage or breakage is also a separate decision: the current input counts the shipment units you enter, not an automatic loss estimate."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "cash-tax",
+        "title": "Separate economic cost from cash needed at clearance",
+        "paragraphs": [
+          "Our economic-cost model excludes taxes that are actually recoverable by the business. A recoverable amount can still require cash before recovery, so the cash needed to receive a shipment can exceed the cost carried in this worksheet. Whether a particular tax is recoverable is outside the calculation and depends on the relevant facts and rules.",
+          "The $150 tax input in the base example is explicitly assumed nonrecoverable. It is not a statement that a US shipment owes VAT or that a universal import tax applies. Similarly, brokerage and handling are chosen estimates; no current official fee schedule is embedded in the guide."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "pricing",
+        "title": "Move from landed cost to pricing without confusing margin and markup",
+        "paragraphs": [
+          "At a $20 selling price and the base $13.60 acquisition cost, the difference is $6.40 per unit before other costs. Dividing $6.40 by the $20 selling price gives a 32% margin on this limited cost basis. It is not net profit: marketplace fees, payment processing, outbound fulfillment, advertising, returns, storage and overhead may still reduce it.",
+          "A 30% markup on $13.60 instead sets price at $17.68. The resulting margin is approximately 23.08%, because markup divides by cost while margin divides by selling price. Use the linked Margin and Markup tools for those distinct calculations. A target margin is only as useful as the cost boundary behind it.",
+          "Before setting a selling price, replace sample estimates with reconciled quotes, record the currency conversion and identify costs intentionally excluded. Revisit the worksheet when the invoice, shipping route, quantity or applicable charges change. A precise-looking unit cost does not make the underlying estimates certain."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Separate quote scenario",
+      "Entered invoice",
+      "Additional charges",
+      "Shipment total",
+      "Cost per unit"
+    ],
+    "chart": "landed-cost-method-guide",
+    "chartAlt": "An itemized and a reconciled bundled quote each total 6800 dollars for 500 units; separate higher-freight and higher-duty cases each total 7600 dollars.",
+    "chartCaption": "500 homogeneous units in every case, all USD. The bundled invoice already includes the same economic charges as the itemized base; no duty or tax rates are calculated.",
+    "questions": [
+      {
+        "question": "How do I calculate landed cost per unit?",
+        "answer": "Reconcile the total invoice and all applicable additional shipment acquisition charges once, then divide by the allocated quantity. For the base homogeneous shipment, $6,800 / 500 = $13.60 per unit."
+      },
+      {
+        "question": "Is landed cost the same as the product invoice price?",
+        "answer": "Usually the cost boundary is broader: additional shipping, insurance, duties or clearance charges may apply. A bundled invoice can already include some or all of them. Add only charges that are not included."
+      },
+      {
+        "question": "Are duties calculated as a percentage of the goods invoice?",
+        "answer": "The calculator does not choose a duty base or rate. It accepts a manually checked amount. Actual classification, origin, valuation and applicable trade rules need separate verification; the guide’s amounts are hypothetical."
+      },
+      {
+        "question": "Should I include VAT or other import taxes?",
+        "answer": "Include an amount here only under the stated nonrecoverable-tax assumption. Recoverability is not determined by the tool. Cash paid at clearance can exceed economic cost if some tax is later recovered."
+      },
+      {
+        "question": "Can I use this for several different products in one shipment?",
+        "answer": "The current tool evenly divides costs across homogeneous units. Mixed products may require value, weight, volume or product-specific allocation. It does not perform that allocation or choose an accounting policy."
+      },
+      {
+        "question": "Does landed cost tell me my profit margin?",
+        "answer": "No. You also need the selling price and the full set of costs relevant to the margin definition. Advertising, fulfillment, marketplace fees and overhead are outside this acquisition worksheet; a price above landed cost can still produce a net loss."
+      }
+    ],
+    "limitations": [
+      "Four hypothetical quotes use 500 identical units and manual USD amounts. They do not establish current transport prices, duty rates, tax recoverability or customs value.",
+      "This is an economic acquisition-cost worksheet, not an official inventory accounting policy, mixed-SKU allocation, legal interpretation of shipping terms or full net-profit calculation."
+    ],
+    "sources": [
+      {
+        "href": "https://www.fedex.com/en-us/small-business/articles-insights/what-is-landed-cost.html",
+        "label": "FedEx: landed-cost concepts and categories of shipment charges"
+      },
+      {
+        "href": "https://www.trade.gov/determine-total-export-price",
+        "label": "International Trade Administration: defining a total delivered price"
+      }
+    ],
+    "related": [
+      {
+        "href": "/margin-calculator",
+        "label": "Profit Margin Calculator"
+      },
+      {
+        "href": "/markup-calculator",
+        "label": "Markup Calculator"
+      },
+      {
+        "href": "/roas-calculator",
+        "label": "ROAS Calculator"
+      },
+      {
+        "href": "/guides/margin-vs-markup/",
+        "label": "Margin versus markup: formulas and matched examples"
+      },
+      {
+        "href": "/glossary/contribution-margin/",
+        "label": "Contribution margin: costs remaining after acquisition"
+      }
+    ]
   }
 }

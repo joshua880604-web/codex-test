@@ -375,5 +375,447 @@
         "$247,996.27"
       ]
     }
+  ],
+  "house": [
+    {
+      "label": "0% tenant rent loss",
+      "calculatorId": "house-hacking",
+      "mode": "living",
+      "values": {
+        "arrangement": "Rooms in a shared home",
+        "price": 400000,
+        "loan": 320000,
+        "rate": 6,
+        "years": 30,
+        "closing": 8000,
+        "repairs": 5000,
+        "initial_reserve": 5000,
+        "rentals": "[{\"name\":\"Tenant room A\",\"rent\":750},{\"name\":\"Tenant room B\",\"rent\":750}]",
+        "vacancy": 0,
+        "other_income": 0,
+        "mortgage_insurance": 0,
+        "tax": 400,
+        "insurance": 150,
+        "hoa": 0,
+        "utilities": 200,
+        "maintenance": 200,
+        "capital": 150,
+        "management": 0,
+        "other_costs": 0,
+        "current_rent": 1800
+      },
+      "metrics": {
+        "Monthly net housing cash cost": 1518.5616804888077,
+        "Monthly budget difference versus renting": 281.43831951119233,
+        "Initial cash required": 98000.0,
+        "Effective monthly tenant rent": 1500.0,
+        "Scheduled monthly mortgage P&I": 1918.5616804888077
+      },
+      "display": [
+        "$1,500.00",
+        "$1,518.56",
+        "$281.44"
+      ]
+    },
+    {
+      "label": "5% tenant rent loss",
+      "calculatorId": "house-hacking",
+      "mode": "living",
+      "values": {
+        "arrangement": "Rooms in a shared home",
+        "price": 400000,
+        "loan": 320000,
+        "rate": 6,
+        "years": 30,
+        "closing": 8000,
+        "repairs": 5000,
+        "initial_reserve": 5000,
+        "rentals": "[{\"name\":\"Tenant room A\",\"rent\":750},{\"name\":\"Tenant room B\",\"rent\":750}]",
+        "vacancy": 5,
+        "other_income": 0,
+        "mortgage_insurance": 0,
+        "tax": 400,
+        "insurance": 150,
+        "hoa": 0,
+        "utilities": 200,
+        "maintenance": 200,
+        "capital": 150,
+        "management": 0,
+        "other_costs": 0,
+        "current_rent": 1800
+      },
+      "metrics": {
+        "Monthly net housing cash cost": 1593.5616804888077,
+        "Monthly budget difference versus renting": 206.43831951119233,
+        "Initial cash required": 98000.0,
+        "Effective monthly tenant rent": 1425.0,
+        "Scheduled monthly mortgage P&I": 1918.5616804888077
+      },
+      "display": [
+        "$1,425.00",
+        "$1,593.56",
+        "$206.44"
+      ]
+    },
+    {
+      "label": "20% tenant rent loss",
+      "calculatorId": "house-hacking",
+      "mode": "living",
+      "values": {
+        "arrangement": "Rooms in a shared home",
+        "price": 400000,
+        "loan": 320000,
+        "rate": 6,
+        "years": 30,
+        "closing": 8000,
+        "repairs": 5000,
+        "initial_reserve": 5000,
+        "rentals": "[{\"name\":\"Tenant room A\",\"rent\":750},{\"name\":\"Tenant room B\",\"rent\":750}]",
+        "vacancy": 20,
+        "other_income": 0,
+        "mortgage_insurance": 0,
+        "tax": 400,
+        "insurance": 150,
+        "hoa": 0,
+        "utilities": 200,
+        "maintenance": 200,
+        "capital": 150,
+        "management": 0,
+        "other_costs": 0,
+        "current_rent": 1800
+      },
+      "metrics": {
+        "Monthly net housing cash cost": 1818.5616804888077,
+        "Monthly budget difference versus renting": -18.561680488807664,
+        "Initial cash required": 98000.0,
+        "Effective monthly tenant rent": 1200.0,
+        "Scheduled monthly mortgage P&I": 1918.5616804888077
+      },
+      "display": [
+        "$1,200.00",
+        "$1,818.56",
+        "$-18.56"
+      ]
+    },
+    {
+      "label": "100% tenant rent loss",
+      "calculatorId": "house-hacking",
+      "mode": "living",
+      "values": {
+        "arrangement": "Rooms in a shared home",
+        "price": 400000,
+        "loan": 320000,
+        "rate": 6,
+        "years": 30,
+        "closing": 8000,
+        "repairs": 5000,
+        "initial_reserve": 5000,
+        "rentals": "[{\"name\":\"Tenant room A\",\"rent\":750},{\"name\":\"Tenant room B\",\"rent\":750}]",
+        "vacancy": 100,
+        "other_income": 0,
+        "mortgage_insurance": 0,
+        "tax": 400,
+        "insurance": 150,
+        "hoa": 0,
+        "utilities": 200,
+        "maintenance": 200,
+        "capital": 150,
+        "management": 0,
+        "other_costs": 0,
+        "current_rent": 1800
+      },
+      "metrics": {
+        "Monthly net housing cash cost": 3018.5616804888077,
+        "Monthly budget difference versus renting": -1218.5616804888077,
+        "Initial cash required": 98000.0,
+        "Effective monthly tenant rent": 0.0,
+        "Scheduled monthly mortgage P&I": 1918.5616804888077
+      },
+      "display": [
+        "$0.00",
+        "$3,018.56",
+        "$-1,218.56"
+      ]
+    }
+  ],
+  "cash": [
+    {
+      "label": "Base: 6% loan",
+      "calculatorId": "cash-on-cash-return",
+      "mode": "property",
+      "values": {
+        "price": 300000,
+        "loan": 200000,
+        "closing": 5000,
+        "repairs": 10000,
+        "initial_reserve": 5000,
+        "rate": 6,
+        "years": 30,
+        "rent": 2500,
+        "vacancy": 5,
+        "other_income": 0,
+        "operating": 850,
+        "reserve": 100,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash-on-cash return": 2.258989496944952,
+        "Annual cash flow used": 2710.7873963339425,
+        "Cash invested": 120000.0,
+        "Annual NOI before reserve and financing": 18300.0,
+        "First-year principal and interest paid": 14389.212603666057
+      },
+      "display": [
+        "$120,000.00",
+        "$2,710.79",
+        "2.2590%"
+      ]
+    },
+    {
+      "label": "No purchase loan",
+      "calculatorId": "cash-on-cash-return",
+      "mode": "property",
+      "values": {
+        "price": 300000,
+        "loan": 0,
+        "closing": 5000,
+        "repairs": 10000,
+        "initial_reserve": 5000,
+        "rate": 6,
+        "years": 30,
+        "rent": 2500,
+        "vacancy": 5,
+        "other_income": 0,
+        "operating": 850,
+        "reserve": 100,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash-on-cash return": 5.34375,
+        "Annual cash flow used": 17100.0,
+        "Cash invested": 320000.0,
+        "Annual NOI before reserve and financing": 18300.0,
+        "First-year principal and interest paid": 0.0
+      },
+      "display": [
+        "$320,000.00",
+        "$17,100.00",
+        "5.3438%"
+      ]
+    },
+    {
+      "label": "8% loan",
+      "calculatorId": "cash-on-cash-return",
+      "mode": "property",
+      "values": {
+        "price": 300000,
+        "loan": 200000,
+        "closing": 5000,
+        "repairs": 10000,
+        "initial_reserve": 5000,
+        "rate": 8,
+        "years": 30,
+        "rent": 2500,
+        "vacancy": 5,
+        "other_income": 0,
+        "operating": 850,
+        "reserve": 100,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash-on-cash return": -0.4252914775875222,
+        "Annual cash flow used": -510.34977310502666,
+        "Cash invested": 120000.0,
+        "Annual NOI before reserve and financing": 18300.0,
+        "First-year principal and interest paid": 17610.349773105027
+      },
+      "display": [
+        "$120,000.00",
+        "$-510.35",
+        "-0.4253%"
+      ]
+    },
+    {
+      "label": "USD 300 monthly reserve",
+      "calculatorId": "cash-on-cash-return",
+      "mode": "property",
+      "values": {
+        "price": 300000,
+        "loan": 200000,
+        "closing": 5000,
+        "repairs": 10000,
+        "initial_reserve": 5000,
+        "rate": 6,
+        "years": 30,
+        "rent": 2500,
+        "vacancy": 5,
+        "other_income": 0,
+        "operating": 850,
+        "reserve": 300,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash-on-cash return": 0.2589894969449521,
+        "Annual cash flow used": 310.7873963339425,
+        "Cash invested": 120000.0,
+        "Annual NOI before reserve and financing": 18300.0,
+        "First-year principal and interest paid": 14389.212603666057
+      },
+      "display": [
+        "$120,000.00",
+        "$310.79",
+        "0.2590%"
+      ]
+    },
+    {
+      "label": "USD 2,250 monthly rent",
+      "calculatorId": "cash-on-cash-return",
+      "mode": "property",
+      "values": {
+        "price": 300000,
+        "loan": 200000,
+        "closing": 5000,
+        "repairs": 10000,
+        "initial_reserve": 5000,
+        "rate": 6,
+        "years": 30,
+        "rent": 2250,
+        "vacancy": 5,
+        "other_income": 0,
+        "operating": 850,
+        "reserve": 100,
+        "other_debt": 0
+      },
+      "metrics": {
+        "Cash-on-cash return": -0.1160105030550479,
+        "Annual cash flow used": -139.21260366605748,
+        "Cash invested": 120000.0,
+        "Annual NOI before reserve and financing": 15450.0,
+        "First-year principal and interest paid": 14389.212603666057
+      },
+      "display": [
+        "$120,000.00",
+        "$-139.21",
+        "-0.1160%"
+      ]
+    }
+  ],
+  "landed": [
+    {
+      "label": "Itemized quote",
+      "calculatorId": "landed-cost",
+      "mode": "shipment",
+      "values": {
+        "quantity": 500,
+        "goods": 5000,
+        "freight": 800,
+        "insurance": 50,
+        "duties": 400,
+        "taxes": 150,
+        "brokerage": 100,
+        "port": 75,
+        "inland": 200,
+        "other": 25
+      },
+      "metrics": {
+        "Total landed cost": 6800.0,
+        "Landed cost per unit": 13.6,
+        "Additional shipment costs": 1800.0,
+        "Goods cost per unit": 10.0
+      },
+      "display": [
+        "$5,000.00",
+        "$1,800.00",
+        "$6,800.00",
+        "$13.60"
+      ]
+    },
+    {
+      "label": "Higher freight",
+      "calculatorId": "landed-cost",
+      "mode": "shipment",
+      "values": {
+        "quantity": 500,
+        "goods": 5000,
+        "freight": 1600,
+        "insurance": 50,
+        "duties": 400,
+        "taxes": 150,
+        "brokerage": 100,
+        "port": 75,
+        "inland": 200,
+        "other": 25
+      },
+      "metrics": {
+        "Total landed cost": 7600.0,
+        "Landed cost per unit": 15.2,
+        "Additional shipment costs": 2600.0,
+        "Goods cost per unit": 10.0
+      },
+      "display": [
+        "$5,000.00",
+        "$2,600.00",
+        "$7,600.00",
+        "$15.20"
+      ]
+    },
+    {
+      "label": "Higher entered duties",
+      "calculatorId": "landed-cost",
+      "mode": "shipment",
+      "values": {
+        "quantity": 500,
+        "goods": 5000,
+        "freight": 800,
+        "insurance": 50,
+        "duties": 1200,
+        "taxes": 150,
+        "brokerage": 100,
+        "port": 75,
+        "inland": 200,
+        "other": 25
+      },
+      "metrics": {
+        "Total landed cost": 7600.0,
+        "Landed cost per unit": 15.2,
+        "Additional shipment costs": 2600.0,
+        "Goods cost per unit": 10.0
+      },
+      "display": [
+        "$5,000.00",
+        "$2,600.00",
+        "$7,600.00",
+        "$15.20"
+      ]
+    },
+    {
+      "label": "Same total, bundled invoice",
+      "calculatorId": "landed-cost",
+      "mode": "shipment",
+      "values": {
+        "quantity": 500,
+        "goods": 6800,
+        "freight": 0,
+        "insurance": 0,
+        "duties": 0,
+        "taxes": 0,
+        "brokerage": 0,
+        "port": 0,
+        "inland": 0,
+        "other": 0
+      },
+      "metrics": {
+        "Total landed cost": 6800.0,
+        "Landed cost per unit": 13.6,
+        "Additional shipment costs": 0.0,
+        "Goods cost per unit": 13.6
+      },
+      "display": [
+        "$6,800.00",
+        "$0.00",
+        "$6,800.00",
+        "$13.60"
+      ]
+    }
   ]
 }

@@ -100,12 +100,12 @@ export const contentUpdatedOn: Record<string, string> = {
 
 };
 contentUpdatedOn[glossaryPath]='2026-10-31';
-for(const slug of ['lean-fire','fat-fire','dividend-reinvestment-plan','roth-conversion-ladder','roth-ira-five-year-rules','covered-call','cap-rate-vs-cash-on-cash-return'])contentUpdatedOn[glossaryTermPath(slug)]='2026-10-31';
+for(const slug of ['lean-fire','fat-fire','dividend-reinvestment-plan','roth-conversion-ladder','roth-ira-five-year-rules','covered-call','cap-rate-vs-cash-on-cash-return','net-operating-income','contribution-margin'])contentUpdatedOn[glossaryTermPath(slug)]='2026-10-31';
 for(const id of motherPageIds)contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]=motherPageReviewedOn;
 // Original blogger copy and related model analyses added on this reviewed date.
 for(const id of ["coast-fire","brrrr","roas"])contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]="2026-10-30";
 
-for(const id of ['mortgage','compound-interest','roi','coast-fire'])contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]='2026-10-31';
+for(const id of ['mortgage','compound-interest','roi','coast-fire','house-hacking','cash-on-cash-return','landed-cost'])contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]='2026-10-31';
 
 export function sitemapEntries(config: SiteConfig = siteConfig()) {
   if (!config.origin || !config.indexable) return [];

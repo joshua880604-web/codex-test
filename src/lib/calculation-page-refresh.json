@@ -20,7 +20,7 @@
       },
       {
         "question": "Can I use an annual APY divided by 12?",
-        "answer": "That is an approximation, not the exact monthly equivalent. For APY use i = (1 + APY)^(1/12) \u2212 1, with APY in decimal form. Divide by 12 when the stated rate is nominal with monthly compounding."
+        "answer": "That is an approximation, not the exact monthly equivalent. For APY use i = (1 + APY)^(1/12) − 1, with APY in decimal form. Divide by 12 when the stated rate is nominal with monthly compounding."
       }
     ],
     "checkedOn": "2026-10-31"
@@ -33,7 +33,7 @@
       },
       {
         "question": "How do I convert cumulative return to annualized return?",
-        "answer": "Use (1 + cumulative_decimal)^(1 / years) \u2212 1. For 50% cumulative over three years, use 1.5^(1/3) \u2212 1, approximately 14.4714%. This assumes a compatible return definition and no omitted external cash flows."
+        "answer": "Use (1 + cumulative_decimal)^(1 / years) − 1. For 50% cumulative over three years, use 1.5^(1/3) − 1, approximately 14.4714%. This assumes a compatible return definition and no omitted external cash flows."
       }
     ],
     "checkedOn": "2026-10-31"
@@ -46,7 +46,46 @@
       },
       {
         "question": "Does a Coast FIRE plan for couples model two retirement ages?",
-        "answer": "No. Couple mode combines each partner\u2019s assets and monthly investments once and uses one shared budget and timeline. Two retirement dates, survivor needs and separate account-access dates require additional cash-flow planning."
+        "answer": "No. Couple mode combines each partner’s assets and monthly investments once and uses one shared budget and timeline. Two retirement dates, survivor needs and separate account-access dates require additional cash-flow planning."
+      }
+    ],
+    "checkedOn": "2026-10-31"
+  },
+  "house-hacking": {
+    "questions": [
+      {
+        "question": "How much money do I need to house hack?",
+        "answer": "Add the cash purchase contribution, closing and loan fees, initial repairs and initial reserve. This example needs $98,000; that amount is an assumption, not a universal requirement. Keep reserves for ongoing living costs and interruptions in the plan."
+      },
+      {
+        "question": "Does tenant rent count as profit?",
+        "answer": "Gross rent is revenue, not profit. In an owner-occupied budget it offsets costs. The displayed difference versus renting also includes your own housing consumption, so it is not a rental investment return."
+      }
+    ],
+    "checkedOn": "2026-10-31"
+  },
+  "cash-on-cash-return": {
+    "questions": [
+      {
+        "question": "Do I include closing costs and initial repairs?",
+        "answer": "They are included when you fund them from cash under this acquisition basis. Add each once, alongside the cash toward the price and the initial reserve. Different cash-basis conventions must be disclosed before comparing yields."
+      },
+      {
+        "question": "Is cash-on-cash return the same as ROI or IRR?",
+        "answer": "No. This is a period cash yield. Total ROI can include other gains and costs; IRR considers supported cash-flow timing across a holding period. A one-year yield does not capture the sale, appreciation or changing equity."
+      }
+    ],
+    "checkedOn": "2026-10-31"
+  },
+  "landed-cost": {
+    "questions": [
+      {
+        "question": "Are duties calculated as a percentage of the goods invoice?",
+        "answer": "The calculator does not choose a duty base or rate. It accepts a manually checked amount. Actual classification, origin, valuation and applicable trade rules need separate verification; the guide’s amounts are hypothetical."
+      },
+      {
+        "question": "Can I use this for several different products in one shipment?",
+        "answer": "The current tool evenly divides costs across homogeneous units. Mixed products may require value, weight, volume or product-specific allocation. It does not perform that allocation or choose an accounting policy."
       }
     ],
     "checkedOn": "2026-10-31"
