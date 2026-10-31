@@ -1,0 +1,379 @@
+{
+  "mortgage": [
+    {
+      "label": "30 years, 6%",
+      "calculatorId": "mortgage",
+      "mode": "monthly",
+      "values": {
+        "price": 375000,
+        "down": 20,
+        "down_unit": "Percent",
+        "years": 30,
+        "months": 0,
+        "rate": 6,
+        "tax": 4800,
+        "tax_unit": "Dollars",
+        "insurance": 1800,
+        "insurance_unit": "Dollars",
+        "hoa": 1200,
+        "hoa_unit": "Dollars",
+        "other": 0,
+        "pmi_method": "Manual",
+        "pmi": 0,
+        "pmi_years": 0,
+        "pmi_policy": "Fixed duration",
+        "extra_monthly": 0,
+        "extra_yearly": 0,
+        "extra_once": 0,
+        "dated": ""
+      },
+      "metrics": {
+        "Monthly principal & interest": 1798.6515754582572,
+        "Initial monthly total": 2448.651575458257,
+        "Total interest": 347514.5671649726
+      },
+      "display": [
+        "$1,798.65",
+        "$2,448.65",
+        "$347,514.57"
+      ]
+    },
+    {
+      "label": "15 years, 6%",
+      "calculatorId": "mortgage",
+      "mode": "monthly",
+      "values": {
+        "price": 375000,
+        "down": 20,
+        "down_unit": "Percent",
+        "years": 15,
+        "months": 0,
+        "rate": 6,
+        "tax": 4800,
+        "tax_unit": "Dollars",
+        "insurance": 1800,
+        "insurance_unit": "Dollars",
+        "hoa": 1200,
+        "hoa_unit": "Dollars",
+        "other": 0,
+        "pmi_method": "Manual",
+        "pmi": 0,
+        "pmi_years": 0,
+        "pmi_policy": "Fixed duration",
+        "extra_monthly": 0,
+        "extra_yearly": 0,
+        "extra_once": 0,
+        "dated": ""
+      },
+      "metrics": {
+        "Monthly principal & interest": 2531.570484145354,
+        "Initial monthly total": 3181.570484145354,
+        "Total interest": 155682.68714616372
+      },
+      "display": [
+        "$2,531.57",
+        "$3,181.57",
+        "$155,682.69"
+      ]
+    },
+    {
+      "label": "30 years, 0%",
+      "calculatorId": "mortgage",
+      "mode": "monthly",
+      "values": {
+        "price": 375000,
+        "down": 20,
+        "down_unit": "Percent",
+        "years": 30,
+        "months": 0,
+        "rate": 0,
+        "tax": 4800,
+        "tax_unit": "Dollars",
+        "insurance": 1800,
+        "insurance_unit": "Dollars",
+        "hoa": 1200,
+        "hoa_unit": "Dollars",
+        "other": 0,
+        "pmi_method": "Manual",
+        "pmi": 0,
+        "pmi_years": 0,
+        "pmi_policy": "Fixed duration",
+        "extra_monthly": 0,
+        "extra_yearly": 0,
+        "extra_once": 0,
+        "dated": ""
+      },
+      "metrics": {
+        "Monthly principal & interest": 833.3333333333334,
+        "Initial monthly total": 1483.3333333333333,
+        "Total interest": 0.0
+      },
+      "display": [
+        "$833.33",
+        "$1,483.33",
+        "$0.00"
+      ]
+    }
+  ],
+  "compound": [
+    {
+      "label": "0%, month end",
+      "calculatorId": "compound-interest",
+      "mode": "growth",
+      "values": {
+        "principal": 10000,
+        "years": 10,
+        "months": 0,
+        "rate": 0,
+        "compound": "Monthly",
+        "monthly": 200,
+        "annual": 0,
+        "tax": 0,
+        "inflation": 0,
+        "timing": "End of period"
+      },
+      "metrics": {
+        "Ending balance": 34000.0,
+        "Total contributions": 34000.0,
+        "Net investment earnings": 0.0
+      },
+      "display": [
+        "$34,000.00",
+        "$0.00",
+        "$34,000.00"
+      ]
+    },
+    {
+      "label": "5%, month end",
+      "calculatorId": "compound-interest",
+      "mode": "growth",
+      "values": {
+        "principal": 10000,
+        "years": 10,
+        "months": 0,
+        "rate": 5,
+        "compound": "Monthly",
+        "monthly": 200,
+        "annual": 0,
+        "tax": 0,
+        "inflation": 0,
+        "timing": "End of period"
+      },
+      "metrics": {
+        "Ending balance": 47526.550866036414,
+        "Total contributions": 34000.0,
+        "Net investment earnings": 13526.550866036416
+      },
+      "display": [
+        "$34,000.00",
+        "$13,526.55",
+        "$47,526.55"
+      ]
+    },
+    {
+      "label": "5%, month start",
+      "calculatorId": "compound-interest",
+      "mode": "growth",
+      "values": {
+        "principal": 10000,
+        "years": 10,
+        "months": 0,
+        "rate": 5,
+        "compound": "Monthly",
+        "monthly": 200,
+        "annual": 0,
+        "tax": 0,
+        "inflation": 0,
+        "timing": "Beginning of period"
+      },
+      "metrics": {
+        "Ending balance": 47655.952765574475,
+        "Total contributions": 34000.0,
+        "Net investment earnings": 13655.952765574473
+      },
+      "display": [
+        "$34,000.00",
+        "$13,655.95",
+        "$47,655.95"
+      ]
+    },
+    {
+      "label": "8%, month end",
+      "calculatorId": "compound-interest",
+      "mode": "growth",
+      "values": {
+        "principal": 10000,
+        "years": 10,
+        "months": 0,
+        "rate": 8,
+        "compound": "Monthly",
+        "monthly": 200,
+        "annual": 0,
+        "tax": 0,
+        "inflation": 0,
+        "timing": "End of period"
+      },
+      "metrics": {
+        "Ending balance": 58785.60938178916,
+        "Total contributions": 34000.0,
+        "Net investment earnings": 24785.60938178916
+      },
+      "display": [
+        "$34,000.00",
+        "$24,785.61",
+        "$58,785.61"
+      ]
+    }
+  ],
+  "annualized": [
+    {
+      "label": "1 year, $15,000 returned",
+      "calculatorId": "roi",
+      "mode": "length",
+      "values": {
+        "cost": 10000,
+        "returned": 15000,
+        "years": 1
+      },
+      "metrics": {
+        "Return on investment": 50.0,
+        "Annualized return": 50.0
+      },
+      "display": [
+        "50.00%",
+        "50.0000%"
+      ]
+    },
+    {
+      "label": "3 years, $15,000 returned",
+      "calculatorId": "roi",
+      "mode": "length",
+      "values": {
+        "cost": 10000,
+        "returned": 15000,
+        "years": 3
+      },
+      "metrics": {
+        "Return on investment": 50.0,
+        "Annualized return": 14.471424255333186
+      },
+      "display": [
+        "50.00%",
+        "14.4714%"
+      ]
+    },
+    {
+      "label": "5 years, $15,000 returned",
+      "calculatorId": "roi",
+      "mode": "length",
+      "values": {
+        "cost": 10000,
+        "returned": 15000,
+        "years": 5
+      },
+      "metrics": {
+        "Return on investment": 50.0,
+        "Annualized return": 8.447177119769862
+      },
+      "display": [
+        "50.00%",
+        "8.4472%"
+      ]
+    },
+    {
+      "label": "2 years, $8,000 returned",
+      "calculatorId": "roi",
+      "mode": "length",
+      "values": {
+        "cost": 10000,
+        "returned": 8000,
+        "years": 2
+      },
+      "metrics": {
+        "Return on investment": -20.0,
+        "Annualized return": -10.557280900008411
+      },
+      "display": [
+        "-20.00%",
+        "-10.5573%"
+      ]
+    }
+  ],
+  "coast": [
+    {
+      "label": "$40,000 portfolio-funded budget",
+      "calculatorId": "coast-fire",
+      "mode": "coast",
+      "values": {
+        "age": 35,
+        "retire": 65,
+        "balance": 150000,
+        "spending": 40000,
+        "return": 7,
+        "inflation": 2.5,
+        "withdrawal": 4,
+        "monthly": 0,
+        "household": "Individual",
+        "partner_balance": 0,
+        "partner_monthly": 0
+      },
+      "metrics": {
+        "Coast FIRE number today": 275551.40590090706
+      },
+      "display": [
+        "$1,000,000.00",
+        "$275,551.41"
+      ]
+    },
+    {
+      "label": "$60,000 portfolio-funded budget",
+      "calculatorId": "coast-fire",
+      "mode": "coast",
+      "values": {
+        "age": 35,
+        "retire": 65,
+        "balance": 200000,
+        "spending": 60000,
+        "return": 7,
+        "inflation": 2.5,
+        "withdrawal": 4,
+        "monthly": 0,
+        "household": "Couple",
+        "partner_balance": 100000,
+        "partner_monthly": 0
+      },
+      "metrics": {
+        "Coast FIRE number today": 413327.1088513606
+      },
+      "display": [
+        "$1,500,000.00",
+        "$413,327.11"
+      ]
+    },
+    {
+      "label": "$36,000 portfolio-funded budget",
+      "calculatorId": "coast-fire",
+      "mode": "coast",
+      "values": {
+        "age": 35,
+        "retire": 65,
+        "balance": 150000,
+        "spending": 36000,
+        "return": 7,
+        "inflation": 2.5,
+        "withdrawal": 4,
+        "monthly": 0,
+        "household": "Individual",
+        "partner_balance": 0,
+        "partner_monthly": 0
+      },
+      "metrics": {
+        "Coast FIRE number today": 247996.26531081635
+      },
+      "display": [
+        "$900,000.00",
+        "$247,996.27"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Case,Ending balance,Total contributions,Net investment earnings,Inputs (JSON)
+"0%, month end",34000.0,34000.0,0.0,"{""annual"": 0, ""compound"": ""Monthly"", ""inflation"": 0, ""monthly"": 200, ""months"": 0, ""principal"": 10000, ""rate"": 0, ""tax"": 0, ""timing"": ""End of period"", ""years"": 10}"
+"5%, month end",47526.550866036414,34000.0,13526.550866036416,"{""annual"": 0, ""compound"": ""Monthly"", ""inflation"": 0, ""monthly"": 200, ""months"": 0, ""principal"": 10000, ""rate"": 5, ""tax"": 0, ""timing"": ""End of period"", ""years"": 10}"
+"5%, month start",47655.952765574475,34000.0,13655.952765574473,"{""annual"": 0, ""compound"": ""Monthly"", ""inflation"": 0, ""monthly"": 200, ""months"": 0, ""principal"": 10000, ""rate"": 5, ""tax"": 0, ""timing"": ""Beginning of period"", ""years"": 10}"
+"8%, month end",58785.60938178916,34000.0,24785.60938178916,"{""annual"": 0, ""compound"": ""Monthly"", ""inflation"": 0, ""monthly"": 200, ""months"": 0, ""principal"": 10000, ""rate"": 8, ""tax"": 0, ""timing"": ""End of period"", ""years"": 10}"

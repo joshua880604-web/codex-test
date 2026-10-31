@@ -1,0 +1,54 @@
+{
+  "mortgage": {
+    "questions": [
+      {
+        "question": "How do I calculate a monthly mortgage payment with taxes and insurance?",
+        "answer": "Calculate principal and interest first, then add annual property tax and insurance divided by 12. Add applicable PMI, HOA and other costs once. If they already appear in an escrow-inclusive quote, do not count them twice."
+      },
+      {
+        "question": "Does the mortgage payment formula include the down payment?",
+        "answer": "The down payment reduces the principal you borrow. It is not an extra monthly term in the amortization formula. This example borrows $300,000 after a $75,000 down payment on a $375,000 home."
+      }
+    ],
+    "checkedOn": "2026-10-31"
+  },
+  "compound-interest": {
+    "questions": [
+      {
+        "question": "How do I calculate compound interest with monthly contributions?",
+        "answer": "Compound the starting amount and add the future value of the monthly deposit series. Use one consistent monthly rate, a whole-month count and the correct deposit timing. Subtract total contributions from the final balance to isolate earnings."
+      },
+      {
+        "question": "Can I use an annual APY divided by 12?",
+        "answer": "That is an approximation, not the exact monthly equivalent. For APY use i = (1 + APY)^(1/12) \u2212 1, with APY in decimal form. Divide by 12 when the stated rate is nominal with monthly compounding."
+      }
+    ],
+    "checkedOn": "2026-10-31"
+  },
+  "roi": {
+    "questions": [
+      {
+        "question": "Is annualized return the same as total return?",
+        "answer": "No. Total or cumulative return describes the whole stated period. Annualized return converts a compatible multi-year result into an equivalent compound yearly rate. They coincide for a one-year endpoint example with the same cash-flow definition."
+      },
+      {
+        "question": "How do I convert cumulative return to annualized return?",
+        "answer": "Use (1 + cumulative_decimal)^(1 / years) \u2212 1. For 50% cumulative over three years, use 1.5^(1/3) \u2212 1, approximately 14.4714%. This assumes a compatible return definition and no omitted external cash flows."
+      }
+    ],
+    "checkedOn": "2026-10-31"
+  },
+  "coast-fire": {
+    "questions": [
+      {
+        "question": "How should I handle a pension that starts after my Coast FIRE retirement date?",
+        "answer": "The calculator has no benefit-start-date or pension engine. Subtracting delayed income from every retirement year would understate the earlier portfolio-funded gap. Review the years before and after benefits begin separately, including taxes and inflation. The linked planning guide provides a limited same-start-date budget worksheet, not a benefit estimate."
+      },
+      {
+        "question": "Does a Coast FIRE plan for couples model two retirement ages?",
+        "answer": "No. Couple mode combines each partner\u2019s assets and monthly investments once and uses one shared budget and timeline. Two retirement dates, survivor needs and separate account-access dates require additional cash-flow planning."
+      }
+    ],
+    "checkedOn": "2026-10-31"
+  }
+}

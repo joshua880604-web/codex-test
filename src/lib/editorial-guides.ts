@@ -1,3 +1,4 @@
+import {calculationGuideList} from './calculation-guides';
 import {decisionGuideList} from './decision-guides';
 import {modelStudyGuides} from './model-study-meta';
 import {absoluteURL,directoryPath,siteConfig,siteName} from './site';
@@ -157,7 +158,7 @@ export const marginMarkupGuide:EditorialGuide={
  cardIntro:'See why a 30% markup does not produce a 30% margin. Compare selling prices, discounts and cost increases with the same stated unit-cost assumptions.',
 };
 export const coastFireGuide:EditorialGuide={
- updatedOn:'2026-10-30',
+ updatedOn:'2026-10-31',
  path:'/guides/how-to-calculate-coast-fire/',
  title:'How to Calculate Coast FIRE: Formula, Age & Examples',
  heading:'How to Calculate Coast FIRE: Your Number, Age, and Assumptions',
@@ -196,7 +197,7 @@ export const baristaCoastGuide:EditorialGuide={
  topic:'Retirement',breadcrumb:'Barista FIRE vs. Coast FIRE',format:'Comparison guide',
  cardIntro:'See why part-time income, its stop date and pre-retirement withdrawals change the assets you need. Compare a checked zero-growth example.',
 };
-export const editorialGuides=[...decisionGuideList,...modelStudyGuides,baristaCoastGuide,snowballMethodGuide,avalancheMethodGuide,coastFireGuide,recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide,marginMarkupGuide];
+export const editorialGuides=[...calculationGuideList,...decisionGuideList,...modelStudyGuides,baristaCoastGuide,snowballMethodGuide,avalancheMethodGuide,coastFireGuide,recastGuide,debtGuide,cdSavingsGuide,carPayoffGuide,biweeklyGuide,pointsGuide,emergencyGuide,rentBuyGuide,debtSaveGuide,aprGuide,refinanceGuide,iraGuide,marginMarkupGuide];
 export function editorialSchema(article:boolean|EditorialGuide=false,config=siteConfig()){
  const entry=article===true?recastGuide:typeof article==='object'?article:undefined;
  const url=absoluteURL(entry?entry.path:guidesPath,config);

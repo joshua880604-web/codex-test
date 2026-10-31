@@ -1,0 +1,4 @@
+Case,Coast FIRE number today,Inputs (JSON)
+"$40,000 portfolio-funded budget",275551.40590090706,"{""age"": 35, ""balance"": 150000, ""household"": ""Individual"", ""inflation"": 2.5, ""monthly"": 0, ""partner_balance"": 0, ""partner_monthly"": 0, ""retire"": 65, ""return"": 7, ""spending"": 40000, ""withdrawal"": 4}"
+"$60,000 portfolio-funded budget",413327.1088513606,"{""age"": 35, ""balance"": 200000, ""household"": ""Couple"", ""inflation"": 2.5, ""monthly"": 0, ""partner_balance"": 100000, ""partner_monthly"": 0, ""retire"": 65, ""return"": 7, ""spending"": 60000, ""withdrawal"": 4}"
+"$36,000 portfolio-funded budget",247996.26531081635,"{""age"": 35, ""balance"": 150000, ""household"": ""Individual"", ""inflation"": 2.5, ""monthly"": 0, ""partner_balance"": 0, ""partner_monthly"": 0, ""retire"": 65, ""return"": 7, ""spending"": 36000, ""withdrawal"": 4}"

@@ -1,0 +1,457 @@
+{
+  "mortgage": {
+    "meta": {
+      "path": "/guides/how-to-calculate-monthly-mortgage-payment/",
+      "title": "How to Calculate Your Monthly Mortgage Payment",
+      "heading": "How to Calculate Your Monthly Mortgage Payment",
+      "description": "Calculate mortgage principal and interest, add taxes and insurance, and compare 15- and 30-year examples. Includes the formula, Excel PMT and reproducible inputs.",
+      "publishedOn": "2026-10-31",
+      "calculatorIds": [
+        "mortgage"
+      ],
+      "topic": "Mortgages",
+      "breadcrumb": "Calculate a monthly mortgage payment",
+      "cardIntro": "Separate loan repayment from tax, insurance and HOA costs, with three checked scenarios and a spreadsheet formula.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/mortgage-calculator",
+    "calculatorLabel": "Mortgage Calculator",
+    "intro": "For a standard fixed-rate, fully amortizing mortgage, calculate the principal-and-interest installment from the loan amount, contractual interest rate and number of monthly payments. Then add property tax, homeowners insurance, applicable mortgage insurance and HOA costs to estimate a fuller housing budget. Those two answers are different: the loan formula does not automatically include the costs of owning the home.",
+    "answer": "A hypothetical $300,000 mortgage at a 6% nominal annual rate over 30 years has $1,798.65 monthly principal and interest. Entering $400 monthly property tax, $150 insurance and $100 HOA makes the initial modeled outlay $2,448.65, with no PMI in this example. These are chosen assumptions, not a current lender quote or a local tax estimate.",
+    "sections": [
+      {
+        "id": "inputs",
+        "title": "Start with the loan, not the home price",
+        "paragraphs": [
+          "A $375,000 purchase with a 20% down payment leaves $300,000 to finance before any financed fees. A 20% down payment is $75,000; it is not an interest charge. If you already know the financed amount, the calculator also supports entering a loan amount directly. Do not enter the purchase price as the principal unless that is actually the amount borrowed.",
+          "Use the note interest rate for the payment formula, not the APR. APR incorporates specified borrowing charges and is useful when comparing offers, but substituting it for the contractual rate changes the repayment calculation. Our example holds the rate constant, has no financed fees and assumes equal monthly periods."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "formula",
+        "title": "The monthly mortgage payment formula",
+        "paragraphs": [
+          "Let P be principal, i the monthly interest rate as a decimal, and N the number of monthly payments. Divide a nominal annual percentage rate by 100 and by 12. Multiply a term in years by 12. Here P = 300,000, i = 0.06 / 12 = 0.005, and N = 360.",
+          "Substituting those values gives an unrounded installment of 1,798.651575458257. Displaying $1,798.65 does not mean the model rounds every internal calculation to cents. A lender’s cent-rounded installment, first-period day count and final payment can produce small differences. At 0% interest use P / N; the ordinary fraction otherwise divides by zero."
+        ],
+        "formula": "M = P × i / [1 − (1 + i)^(−N)]; when i = 0, M = P / N"
+      },
+      {
+        "id": "first-payment",
+        "title": "What happens inside the first payment?",
+        "paragraphs": [
+          "The first month’s interest in this equal-period example is $300,000 × 0.005 = $1,500. Subtract that from $1,798.65 to get approximately $298.65 of principal reduction. Next month, interest applies to the smaller outstanding balance. The payment remains level while the principal and interest shares change.",
+          "With no extras, the 30-year example pays approximately $347,514.57 interest across the term, before tax, insurance and other ownership costs. A shorter 15-year loan at the same illustrative rate needs $2,531.57 principal and interest monthly, but the modeled total interest falls to $155,682.69. Real 15- and 30-year quotes need not have identical rates."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "full-budget",
+        "title": "Add property tax, insurance, PMI and HOA separately",
+        "paragraphs": [
+          "Convert each annual dollar cost to a monthly amount before adding it. In our worksheet, $4,800 annual tax / 12 = $400; $1,800 insurance / 12 = $150; and $1,200 HOA / 12 = $100. Their $650 sum raises the initial outlay without changing the loan’s principal-and-interest installment. HOA may be paid separately from the mortgage bill.",
+          "PMI is separate from homeowners insurance. The examples explicitly select Manual PMI and zero PMI because the illustrated down payment is 20%; they are not an estimate of every borrower’s insurance requirement. For a lower down payment, use the tool’s disclosed automatic estimate or enter an actual quote manually. Cancellation depends on the selected model and lender conditions.",
+          "Escrow is a way to collect certain bills, not an extra cost to add a second time. If a quoted total already includes escrowed tax and insurance, reconcile the components instead of adding those bills again. A fixed loan rate does not freeze taxes, insurance or escrow adjustments. Maintenance, utilities and reserves may still sit outside the payment estimate."
+        ],
+        "formula": "Initial housing outlay = principal and interest + annual tax/12 + annual insurance/12 + monthly PMI + annual HOA/12 + other entered costs/12"
+      },
+      {
+        "id": "excel",
+        "title": "Calculate the payment in Excel or Google Sheets",
+        "paragraphs": [
+          "For this example, enter =-PMT(6%/12,30*12,300000). The minus sign converts the spreadsheet’s payment-outflow sign convention to a positive displayed payment. If your spreadsheet uses semicolons as argument separators, adjust the separators without changing the rates or periods.",
+          "PMT returns loan principal and interest, not a complete escrow or ownership budget. Add =4800/12+1800/12+1200/12 separately for the $650 monthly costs. Keep the unrounded PMT value for intermediate calculations; format the cell to two decimals for display. A zero-rate check is =300000/(30*12)."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "comparison",
+        "title": "How to compare offers without mixing assumptions",
+        "paragraphs": [
+          "First hold the financed amount, term, payment frequency and cost definitions constant. Change one input, such as the rate, and compare both the payment and total interest. Then test a different down payment or term as a separate scenario. Include upfront cash and closing charges when making a broader decision; this payment example does not calculate an offer’s overall economic value.",
+          "Extra principal can shorten payoff while leaving the scheduled installment unchanged. Recasting and refinancing are different transactions. If you want to evaluate extras, open the payoff tools rather than subtracting the extra cash from interest manually. Check the loan’s prepayment terms and how the servicer applies an extra payment before acting."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Scenario",
+      "Monthly principal & interest",
+      "Initial monthly outlay",
+      "Total loan interest"
+    ],
+    "chart": "monthly-mortgage-guide",
+    "chartAlt": "Three scenarios compare initial monthly principal and interest plus 650 dollars of tax, insurance and HOA: 30 years at 6 percent, 15 years at 6 percent and 30 years at zero percent.",
+    "chartCaption": "Same $300,000 financed amount and $650 monthly entered costs. These initial outlays exclude PMI, extras, maintenance and utilities. The full table supplies exact displayed values.",
+    "questions": [
+      {
+        "question": "How do I calculate a monthly mortgage payment with taxes and insurance?",
+        "answer": "Calculate principal and interest first, then add annual property tax and insurance divided by 12. Add applicable PMI, HOA and other costs once. If they already appear in an escrow-inclusive quote, do not count them twice."
+      },
+      {
+        "question": "Does the mortgage payment formula include the down payment?",
+        "answer": "The down payment reduces the principal you borrow. It is not an extra monthly term in the amortization formula. This example borrows $300,000 after a $75,000 down payment on a $375,000 home."
+      },
+      {
+        "question": "Why can a fixed-rate mortgage payment increase?",
+        "answer": "The contractual principal-and-interest amount may remain level while tax, insurance, mortgage insurance or an escrow adjustment changes the total bill. Review your statement’s components. Adjustable-rate, interest-only and other contracts need their own repayment assumptions."
+      },
+      {
+        "question": "How much does each extra $10,000 borrowed add per month?",
+        "answer": "At the same 6% nominal rate and 30-year term, the fixed-payment formula is proportional to principal: an additional $10,000 adds about $59.96 monthly principal and interest. Costs or insurance triggered by a different LTV are separate."
+      },
+      {
+        "question": "Is APR the rate to enter into PMT?",
+        "answer": "Use the loan’s contractual interest rate for its scheduled installment. APR includes specified financing charges; replacing the note rate with APR generally does not reproduce the contract payment."
+      },
+      {
+        "question": "Why is my lender’s payment different from the calculator?",
+        "answer": "Check principal, rate, term, financed charges, PMI, taxes, insurance, escrow adjustments and rounding. Irregular first periods, lender conventions and a different loan product can also change the result. A model is not a binding Loan Estimate."
+      }
+    ],
+    "limitations": [
+      "The three cases assume monthly, fixed-rate, fully amortizing loans, no extra repayments and no financed fees. Costs are entered estimates and held constant.",
+      "No qualification, local tax determination, tax deduction, ARM reset or insurance quote is inferred. A zero-rate case is an arithmetic boundary check, not an available offer."
+    ],
+    "sources": [
+      {
+        "href": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-mortgage-interest-rate-and-an-apr-en-135/",
+        "label": "CFPB: note interest rate versus APR"
+      },
+      {
+        "href": "https://www.consumerfinance.gov/owning-a-home/mortgage-estimate/",
+        "label": "CFPB: reviewing a Loan Estimate"
+      },
+      {
+        "href": "https://www.consumerfinance.gov/ask-cfpb/on-a-mortgage-whats-the-difference-between-my-principal-and-interest-payment-and-my-total-monthly-payment-en-1941/",
+        "label": "CFPB: principal and interest versus total monthly payment"
+      },
+      {
+        "href": "https://www.consumerfinance.gov/ask-cfpb/why-did-my-monthly-mortgage-payment-go-up-or-change-en-213/",
+        "label": "CFPB: why a mortgage payment can change"
+      }
+    ],
+    "related": [
+      {
+        "href": "/mortgage-payoff-calculator",
+        "label": "Mortgage Payoff Calculator"
+      },
+      {
+        "href": "/pmi-calculator",
+        "label": "PMI Calculator"
+      },
+      {
+        "href": "/guides/biweekly-vs-monthly-mortgage-payments/",
+        "label": "Biweekly versus monthly repayment"
+      },
+      {
+        "href": "/guides/are-mortgage-points-worth-it/",
+        "label": "Mortgage points and break-even"
+      },
+      {
+        "href": "/glossary/principal-and-interest/",
+        "label": "Principal and interest"
+      }
+    ]
+  },
+  "compound": {
+    "meta": {
+      "path": "/guides/compound-interest-with-monthly-contributions/",
+      "title": "How Compound Interest Works With Monthly Contributions",
+      "heading": "How Compound Interest Works With Monthly Contributions",
+      "description": "Work through compound growth with monthly deposits, beginning versus end timing, nominal rate versus APY, Excel formulas and four checked scenarios.",
+      "publishedOn": "2026-10-31",
+      "calculatorIds": [
+        "compound-interest",
+        "investment"
+      ],
+      "topic": "Savings & investing",
+      "breadcrumb": "Compound growth with monthly deposits",
+      "cardIntro": "Four matched scenarios separate money you contribute from earnings and show the effect of deposit timing.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/compound-interest-calculator",
+    "calculatorLabel": "Compound Interest Calculator",
+    "intro": "Compound growth with monthly contributions has two sources: your starting balance grows, and each new deposit grows for the months it remains invested. Deposits made later have less time to earn a return. A useful worksheet therefore separates contributions from earnings and states whether deposits arrive at the beginning or end of each month.",
+    "answer": "With $10,000 initially, $200 at every month end, ten years and a constant 5% nominal annual rate compounded monthly, the modeled ending balance is $47,526.55. You supply $34,000; the remaining $13,526.55 is modeled earnings before tax and fees. These assumed rates are not current bank offers or forecasts.",
+    "sections": [
+      {
+        "id": "inputs",
+        "title": "State the rate, contribution schedule and time horizon",
+        "paragraphs": [
+          "Our four cases use 120 months, $10,000 starting money and $200 each month. Annual deposits, tax and inflation inputs are all zero. Selecting monthly compounding makes a 5% nominal annual rate equal to 0.05 / 12 per month. That convention is essential to reproducing the figures.",
+          "A nominal annual rate and APY are not interchangeable. If your quoted yield is a 5% effective APY, the equivalent monthly growth factor is 1.05^(1/12), not 1 + 0.05/12. The tool’s rate-conversion mode can translate an effective annual rate, entered as an annual-compounding rate, into a monthly-compounding nominal rate. Do not add a second compounding benefit to an APY."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "formula",
+        "title": "The formula for monthly deposits at month end",
+        "paragraphs": [
+          "Let P be starting principal, C the monthly deposit, i the monthly rate and N the number of months. The first term compounds the initial balance. The second is the future value of the deposit series. It assumes one deposit at the end of every month and no missed deposits or withdrawals.",
+          "For the worked example, i = 0.05/12, N = 120, P = 10,000 and C = 200. Applying the formula gives $47,526.55. If i is zero, use P + C × N: $10,000 + $200 × 120 = $34,000. This zero-rate check helps detect accidentally counting your own deposits as investment profit."
+        ],
+        "formula": "FV = P × (1 + i)^N + C × [(1 + i)^N − 1] / i; at i = 0, FV = P + C × N"
+      },
+      {
+        "id": "deposits",
+        "title": "Separate deposits from investment earnings",
+        "paragraphs": [
+          "Total contributions in every case are $10,000 + $24,000 = $34,000. At 5% with month-end deposits, the model adds $13,526.55 of net earnings before any tax input. Reporting the full $47,526.55 as profit would overstate what the investment earned.",
+          "For comparison, the starting $10,000 alone grows to about $16,470.09 at the same rate and horizon. The remaining balance comes from the monthly deposits and their earnings. Regular saving is doing substantial work here; the result is not evidence that compounding makes contributions unnecessary."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "timing",
+        "title": "Month-start deposits earn one extra monthly period",
+        "paragraphs": [
+          "A beginning-of-month contribution arrives before that month’s growth. Multiply only the deposit-series term by (1 + i). The initial principal is already invested at time zero, so do not multiply the entire ending balance by an extra month.",
+          "At 5%, switching the same 120 deposits to month start raises the ending balance to $47,655.95, a $129.40 difference after rounding. That is a timing effect, not a higher assumed return. A real payroll or brokerage schedule can have more varied dates; this worksheet uses regular monthly intervals."
+        ],
+        "formula": "Beginning-of-month deposit value = C × [(1 + i)^N − 1] / i × (1 + i)"
+      },
+      {
+        "id": "excel",
+        "title": "Use FV in a spreadsheet and verify the signs",
+        "paragraphs": [
+          "For month-end deposits, enter =FV(5%/12,10*12,-200,-10000,0). Negative contributions denote cash you put into the account; the positive answer is the future balance received. Change the final argument to 1 for deposits at the beginning of each month.",
+          "To check the no-deposit result, use =FV(5%/12,120,0,-10000,0). To check zero growth without dividing by zero, use =10000+200*120. Currency formatting is a display choice: do not round every intermediate growth step simply to make the cell show cents."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "assumptions",
+        "title": "Test uncertainty without presenting a forecast",
+        "paragraphs": [
+          "Keeping the contributions fixed but assuming 8% nominal growth produces $58,785.61 after ten years, compared with $47,526.55 at 5%. The $11,259.06 difference shows sensitivity to the chosen rate. It is not evidence that a particular portfolio will earn either return or that the higher-return case is equally attainable.",
+          "The actual calculator can also apply annual deposits, contribution increases in supported tools, tax on positive interest and inflation. Those settings are outside these four matched cases. Its monthly-equivalent growth convention does not reproduce every bank’s daily balance, deposit processing or interest-crediting method.",
+          "The tax input applies the model’s simplified charge to positive accrued interest at year end; it is not a capital-gains or retirement-account tax engine. Inflation-adjusted balances measure purchasing power rather than extra nominal earnings. Investment fees, losses and irregular withdrawals need explicit treatment instead of being hidden in an optimistic rate."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Scenario",
+      "Your total contributions",
+      "Modeled earnings",
+      "Ending balance"
+    ],
+    "chart": "monthly-contributions-guide",
+    "chartAlt": "Four 10-year scenarios have identical 34,000 dollar total contributions but different modeled earnings at zero, five and eight percent, including month-start and month-end deposits.",
+    "chartCaption": "Constant nominal rates with monthly compounding; $10,000 initially and 120 deposits of $200. No annual deposits, tax, inflation or fees. Both principal and deposits are included in contributions.",
+    "questions": [
+      {
+        "question": "How do I calculate compound interest with monthly contributions?",
+        "answer": "Compound the starting amount and add the future value of the monthly deposit series. Use one consistent monthly rate, a whole-month count and the correct deposit timing. Subtract total contributions from the final balance to isolate earnings."
+      },
+      {
+        "question": "Can I use an annual APY divided by 12?",
+        "answer": "That is an approximation, not the exact monthly equivalent. For APY use i = (1 + APY)^(1/12) − 1, with APY in decimal form. Divide by 12 when the stated rate is nominal with monthly compounding."
+      },
+      {
+        "question": "Does depositing at the beginning of the month make a difference?",
+        "answer": "Yes, at a positive rate the deposit series earns one more month of growth per deposit. In the matched 5% case it adds $129.40 to the ten-year ending balance. At zero growth the timing does not change the result."
+      },
+      {
+        "question": "Are monthly contributions included in compound interest?",
+        "answer": "They are included in the ending balance, but are your money rather than earned interest. Here $34,000 of the final balance is contributed money. Read the earnings field separately."
+      },
+      {
+        "question": "Can I compare monthly deposits with one annual deposit?",
+        "answer": "Yes, but match the total annual contribution and specify the annual deposit date. Twelve month-end deposits are not economically identical to one deposit at the beginning or end of the year. Keep the rate convention consistent."
+      },
+      {
+        "question": "Does daily compounding always produce a larger balance?",
+        "answer": "At the same positive nominal annual rate, more frequent compounding increases effective yield. At the same APY the effective annual yield is already matched. Fees, changing rates and cash-flow timing may matter more than that isolated frequency effect."
+      }
+    ],
+    "limitations": [
+      "All four examples use constant monthly rates and nominal USD, with no tax, fees, inflation, withdrawals or skipped deposits. They are model scenarios, not historical investment results.",
+      "The selector converts the stated compounding frequency to a monthly equivalent for this projection. Exact day-count and bank interest-crediting conventions are not simulated."
+    ],
+    "sources": [
+      {
+        "href": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator",
+        "label": "SEC Investor.gov: starting investment, deposits and growth assumptions"
+      },
+      {
+        "href": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance",
+        "label": "OpenStax: time value, compounding and inflation"
+      }
+    ],
+    "related": [
+      {
+        "href": "/investment-calculator",
+        "label": "Investment Calculator"
+      },
+      {
+        "href": "/savings-calculator",
+        "label": "Savings Calculator"
+      },
+      {
+        "href": "/glossary/apy/",
+        "label": "APY and effective yield"
+      },
+      {
+        "href": "/guides/how-to-calculate-coast-fire/",
+        "label": "Apply real growth to a Coast FIRE threshold"
+      }
+    ]
+  },
+  "annualized": {
+    "meta": {
+      "path": "/guides/annualized-return-vs-total-return/",
+      "title": "Annualized Return vs. Total Return: How to Calculate and Compare",
+      "heading": "Annualized Return vs. Total Return: How to Calculate and Compare",
+      "description": "Compare cumulative and annualized returns with checked holding-period and loss examples. Includes formulas, Excel and limits when deposits or withdrawals occur.",
+      "publishedOn": "2026-10-31",
+      "calculatorIds": [
+        "roi",
+        "average-return"
+      ],
+      "topic": "Savings & investing",
+      "breadcrumb": "Annualized versus total return",
+      "cardIntro": "The same 50% cumulative gain becomes a different annualized return over one, three or five years.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/roi-calculator",
+    "calculatorLabel": "ROI Calculator",
+    "intro": "Total return measures the gain or loss across the entire holding period. Annualized return expresses a compatible result as a constant compounded yearly rate. Neither figure describes the path your investment actually took, and the simple endpoint formula works only when the beginning and ending amounts represent the same invested capital without intervening external cash flows.",
+    "answer": "A single $10,000 investment ending at $15,000 has a 50% cumulative return. Held for three years, its compound annualized return is 14.4714%; held for five years, it is 8.4472%. Dividing 50% by the number of years would give a simple average of the total gain, not the compound annual rate.",
+    "sections": [
+      {
+        "id": "definitions",
+        "title": "What total return and annualized return each answer",
+        "paragraphs": [
+          "A cumulative return asks how much value changed relative to the original investment over the stated period. A compound annualized return asks what constant yearly growth rate would connect those endpoints. A 50% gain over one year and the same gain over five years are not the same rate of growth per year.",
+          "Terminology varies across statements. In these examples, cumulative return is the ROI of one initial outlay and one terminal value, with no intervening payouts or contributions. If a statement uses total return to include reinvested distributions, make sure the terminal value uses the same convention. A price-only change omits dividends; a net-of-fee return differs from gross performance."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "formula",
+        "title": "Calculate the cumulative gain and the compound yearly rate",
+        "paragraphs": [
+          "Let B be the positive beginning value, E the nonnegative ending value, and T the holding period in years. Cumulative return is E / B − 1. Compound annualized return is (E / B)^(1 / T) − 1. Multiply each decimal result by 100 to display a percentage. A meaningful annualization needs a positive holding period.",
+          "For $10,000 becoming $15,000 over three years: E / B = 1.5, so 1.5^(1/3) − 1 = approximately 0.14471424. This is 14.4714% annually. Recompounding (1.14471424)^3 approximately reproduces 1.5; ordinary 50% / 3 = 16.6667% does not.",
+          "This endpoint calculation is often called CAGR. Its constant rate is a mathematical equivalent, not a claim that each year earned the same amount. Volatility, drawdowns, liquidity and the risk taken are absent from the ratio."
+        ],
+        "formula": "Cumulative return = (E / B − 1) × 100%; annualized return = [(E / B)^(1 / T) − 1] × 100%"
+      },
+      {
+        "id": "holding-period",
+        "title": "Keep the investment unchanged while testing the holding period",
+        "paragraphs": [
+          "Our first three cases use the same $10,000 starting cost and $15,000 terminal amount. Only the holding period changes: one, three or five years. Cumulative ROI remains 50% while the annualized rate falls from 50% to 14.4714% and then 8.4472%. The chart compares the percentages; the table includes reproducible calculator inputs.",
+          "This is a controlled arithmetic comparison, not a choice between actual investments. Different holding periods can involve different risks and availability. An annualized rate alone does not say whether an asset was accessible, diversified or suitable for your cash needs."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "losses",
+        "title": "Annualization also applies to a loss",
+        "paragraphs": [
+          "If $10,000 becomes $8,000 over two years with no cash flows, cumulative return is −20% and compound annualized return is approximately −10.5573%. Two years of a constant −10% would instead leave $8,100. That is why simply dividing a cumulative loss by years gives the wrong compound equivalent.",
+          "At a zero terminal value, the mathematical compound rate is −100% for a positive holding period; it does not reveal when the loss occurred. Negative terminal equity, leverage, debt and cash-flow liabilities require a model that represents those obligations. Do not force them into a standard positive-capital CAGR example."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "cash-flows",
+        "title": "When deposits or withdrawals make the shortcut misleading",
+        "paragraphs": [
+          "Suppose an account starts with $10,000, receives a $5,000 deposit at the very end of year three and then displays $15,000. With zero market gains, the account has still grown in dollars. Calling that a 50% investment return would misclassify the new deposit as profit. Our ROI tool does not have an intermediate-cash-flow schedule; its endpoint rate is not appropriate for that account history.",
+          "For regularly spaced signed cash flows, an IRR calculation can estimate a money-weighted rate if a meaningful solution exists. Irregular dated flows need their actual dates, for example a spreadsheet XIRR calculation. A time-weighted return instead chains subperiod performance while separating external flows. These measures answer different questions; do not label them interchangeable.",
+          "Likewise, adding every dividend to the terminal amount ignores when the dividends arrived if you then annualize. Our no-distribution cases avoid that timing problem. For an income investment, state whether distributions were reinvested, retained as cash or spent and choose a method consistent with that history."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "excel",
+        "title": "Excel formulas and a useful reverse check",
+        "paragraphs": [
+          "For the three-year example, =15000/10000-1 returns 0.5, which a percentage-formatted cell displays as 50%. =(15000/10000)^(1/3)-1 returns about 14.4714% when formatted as a percentage. Do not multiply by 100 and also apply percentage formatting, or the displayed result will be 100 times too large.",
+          "Check your calculation by reversing it: =10000*(1+annualized_rate)^3 should reproduce $15,000, using the unrounded decimal annualized rate. For actual dates, the tool’s Use Dates mode uses actual elapsed days divided by 365 as its year convention. A spreadsheet YEARFRAC basis may produce a slightly different answer, so document the convention instead of calling either a universal standard."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "average",
+        "title": "Annualized return is different from an arithmetic average",
+        "paragraphs": [
+          "Consider +20% in year one and −20% in year two. The arithmetic average is 0%, but $10,000 becomes $9,600 because 1.2 × 0.8 = 0.96. The two-year geometric annual rate is sqrt(0.96) − 1, approximately −2.0204%. Equal positive and negative percentages do not cancel when they compound.",
+          "Use the Average Return Calculator to distinguish the arithmetic mean of periodic percentages from their compounded geometric mean. Use ROI for compatible beginning and terminal amounts, and IRR for supported periodic cash flows. None of these calculations forecasts next year’s performance or measures every dimension of investment risk."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Holding period and terminal value",
+      "Cumulative return",
+      "Compound annualized return"
+    ],
+    "chart": "annualized-total-guide",
+    "chartAlt": "For a 50 percent cumulative gain, annualized return is 50 percent over one year, 14.4714 percent over three years and 8.4472 percent over five years.",
+    "chartCaption": "One initial $10,000 investment and a $15,000 terminal value with no intermediate flows. The loss case appears in the table, not in this matched-gain chart.",
+    "questions": [
+      {
+        "question": "Is annualized return the same as total return?",
+        "answer": "No. Total or cumulative return describes the whole stated period. Annualized return converts a compatible multi-year result into an equivalent compound yearly rate. They coincide for a one-year endpoint example with the same cash-flow definition."
+      },
+      {
+        "question": "How do I convert cumulative return to annualized return?",
+        "answer": "Use (1 + cumulative_decimal)^(1 / years) − 1. For 50% cumulative over three years, use 1.5^(1/3) − 1, approximately 14.4714%. This assumes a compatible return definition and no omitted external cash flows."
+      },
+      {
+        "question": "Can I divide my total gain by the number of years?",
+        "answer": "That produces a simple average of the total gain rather than a compound annual equivalent. Use the power formula if you want a yearly rate that compounds back to the same terminal amount."
+      },
+      {
+        "question": "Is annualized return the same as an average annual return?",
+        "answer": "Not necessarily. Average may refer to an arithmetic mean of yearly percentages, while compound annualized return is geometric. State the definition and check whether cash flows and distributions were treated consistently."
+      },
+      {
+        "question": "Can I annualize a return earned in less than one year?",
+        "answer": "Mathematically yes, using the fraction of a year, but a short-period result extrapolated to a year can be misleading. It does not show that the return can be repeated or that the same risk and liquidity conditions will persist."
+      },
+      {
+        "question": "Where do fees, taxes and dividends belong?",
+        "answer": "Use consistent beginning and terminal values and disclose gross versus net treatment. Intermediate distributions, taxes paid outside the account and extra deposits may require a cash-flow model. The ROI calculator does not calculate your personal tax liability."
+      }
+    ],
+    "limitations": [
+      "The four displayed endpoint cases have no dividends, interim deposits, withdrawals, fees or taxes. Their percentages are before inflation. The arithmetic-average illustration is separate from those four cases.",
+      "Annualization is descriptive, not a forecast, risk score or guarantee. Dated calculations depend on the specified day-count convention."
+    ],
+    "sources": [
+      {
+        "href": "https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance",
+        "label": "OpenStax: compound growth and the time value of money"
+      },
+      {
+        "href": "/methodology",
+        "label": "CalculatorFree.io: calculation scope and review status"
+      }
+    ],
+    "related": [
+      {
+        "href": "/average-return-calculator",
+        "label": "Average Return Calculator"
+      },
+      {
+        "href": "/irr-calculator",
+        "label": "IRR Calculator"
+      },
+      {
+        "href": "/investment-calculator",
+        "label": "Investment Calculator"
+      },
+      {
+        "href": "/glossary/arithmetic-vs-geometric-return/",
+        "label": "Arithmetic versus geometric return"
+      }
+    ]
+  }
+}

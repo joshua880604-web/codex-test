@@ -1,3 +1,4 @@
+import calculationPageRefresh from './calculation-page-refresh.json';
 import stockContent from './stock-tool-content.json';
 import propertyDealContent from './property-deal-content.json';
 import priorityContent from './priority-two-content.json';
@@ -877,3 +878,11 @@ for(const id of ['mortgage','brrrr','rental-property','cash-on-cash-return'])rel
 relatedCalculatorIds['stock-profit']=['stock-average','roi','drip','covered-call','investment'];
 relatedCalculatorIds['stock-average']=['stock-profit','drip','roi','investment'];
 for(const id of ['roi','drip','covered-call','investment'])relatedCalculatorIds[id]=[...new Set(['stock-profit','stock-average',...(relatedCalculatorIds[id]??[])])].slice(0,8);
+
+// Reviewed explanatory additions only; no calculator inputs, defaults or math changes.
+for(const [id,refresh] of Object.entries(calculationPageRefresh)){
+ const guide=guides[id];if(!guide)continue;
+ const existing=new Set(guide.questions.map(q=>q.question.toLowerCase()));
+ guide.questions.push(...refresh.questions.filter(q=>!existing.has(q.question.toLowerCase())));
+ guide.checkedOn=refresh.checkedOn;
+}

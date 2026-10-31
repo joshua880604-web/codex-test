@@ -86,7 +86,7 @@ Reviewed: October 30, 2026. This is a selected navigation file, not the full sit
 - [FIRE Calculator](https://www.calculatorfree.io/fire-calculator): Full financial-independence target and first savings crossing, in today’s USD. No withdrawal simulation or probability of success.
 
 - [Coast FIRE Calculator](https://www.calculatorfree.io/coast-fire-calculator): Estimate today’s retirement savings threshold, the first modeled crossing and a stop-and-coast path. All amounts are today’s USD; no pre-retirement withdrawals or probability of success is modeled.
-- [How to calculate Coast FIRE](https://www.calculatorfree.io/guides/how-to-calculate-coast-fire/): Formula, age and return comparisons, five target-age model cases with chart and CSV, and the distinction from Barista FIRE.
+- [How to calculate Coast FIRE](https://www.calculatorfree.io/guides/how-to-calculate-coast-fire/): Formula, age and return comparisons, five target-age model cases, and checked couple and same-start-date benefit-gap worksheets. One shared timeline; pensions and Social Security are not calculated.
 - [Coast FIRE meaning](https://www.calculatorfree.io/glossary/coast-fire/): Definition, exact real-return formula and a worked savings-threshold example.
 
 - [401(k) Calculator](https://www.calculatorfree.io/401k-calculator): U.S. planning under fixed 2026 contribution and age-based catch-up rules. Limits combine traditional and Roth deferrals; applicable high-earner catch-up must be Roth. The growth projection does not split their tax treatments or project future legal limit changes.
@@ -157,6 +157,12 @@ Additional decision guides with five-case model checks, charts, CSV and reproduc
 - [Margin vs. markup](https://www.calculatorfree.io/guides/margin-vs-markup/): Five markup assumptions connect unit cost, selling price, gross profit and the different percentage denominators.
 - [How to calculate debt snowball](https://www.calculatorfree.io/guides/how-to-calculate-debt-snowball/): First-month worksheet plus five one-time-payment timing cases for smallest-balance-first repayment.
 - [How to calculate debt avalanche](https://www.calculatorfree.io/guides/how-to-calculate-debt-avalanche/): First-month worksheet plus five one-time-payment timing cases for highest-APR-first repayment.
+
+### Calculation guides
+
+- [How to Calculate Your Monthly Mortgage Payment](https://www.calculatorfree.io/guides/how-to-calculate-monthly-mortgage-payment/): Separate loan repayment from tax, insurance and HOA costs, with three checked scenarios and a spreadsheet formula.
+- [How Compound Interest Works With Monthly Contributions](https://www.calculatorfree.io/guides/compound-interest-with-monthly-contributions/): Four matched scenarios separate money you contribute from earnings and show the effect of deposit timing.
+- [Annualized Return vs. Total Return: How to Calculate and Compare](https://www.calculatorfree.io/guides/annualized-return-vs-total-return/): The same 50% cumulative gain becomes a different annualized return over one, three or five years.
 
 ## For writers and bloggers
 
