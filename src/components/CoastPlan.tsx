@@ -5,10 +5,15 @@ import type {Mode} from '@/lib/types';
 const CoastComparison=dynamic(()=>import('./CoastComparison'));
 import type {ReactNode} from 'react';
 import type {Field, Result, Values} from '@/lib/types';
+import {coastAssumptionLabel} from '@/lib/coast-assumption-ui';
 import {coastHousehold} from '@/lib/coast-household';
 const usd=(n:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
 
-export default function CoastFields({fields,values,renderField,compact=false}:{fields:Field[];values:Values;renderField:(field:Field)=>ReactNode;compact?:boolean}) {
+export function CoastAssumptionBadges({values}:{values:Values}) {
+  return <span className="coast-assumption-badges">{[['return','Return'],['inflation','Inflation'],['withdrawal','Withdrawal']].map(([key,label])=><span className="coast-assumption-badge" key={key}><span>{label}</span><strong>{String(values[key]??'').trim()?values[key]+'%':'Not set'}</strong></span>)}</span>;
+}
+
+export default function CoastFields({fields,values,renderField,compact=false,sharedAssumptions=null}:{fields:Field[];values:Values;renderField:(field:Field)=>ReactNode;compact?:boolean;sharedAssumptions?:Values|null}) {
   const couple=values.household==='Couple';
   const group=(title:string,keys:string[]) => <fieldset className="planning-fields"><legend>{title}</legend>{keys.map(key=>{
     const f=fields.find(f=>f.key===key);if(!f)return null;
@@ -22,7 +27,11 @@ export default function CoastFields({fields,values,renderField,compact=false}:{f
     {group(couple?'Shared retirement budget':'Retirement budget',['spending'])}
     {/* These prefilled assumptions may collapse without weakening required-value validation. */}
     <details className="coast-assumptions">
-      <summary><span>Return, inflation &amp; withdrawal assumptions</span><small>{[['return','Return'],['inflation','Inflation'],['withdrawal','Withdrawal']].map(([key,label])=>`${label} ${String(values[key]??'').trim() ? values[key]+'%' : 'not set'}`).join(' · ')}</small><span className="coast-assumptions-action">Edit assumptions</span></summary>
+      <summary>
+        <span className="coast-assumptions-top"><span className="coast-assumptions-heading">Review calculation assumptions<span className="coast-assumption-source">{coastAssumptionLabel(fields,values,sharedAssumptions)}</span></span><span className="coast-assumptions-action"><span className="coast-review-closed">Edit</span><span className="coast-review-open">Close</span><span className="coast-review-chevron" aria-hidden="true">▾</span></span></span>
+        <CoastAssumptionBadges values={values}/>
+        <span className="coast-assumptions-guidance">Your result depends on these assumptions.</span>
+      </summary>
       {group('Portfolio target assumption',['withdrawal'])}
       {group('Growth and purchasing power',['return','inflation'])}
     </details>
@@ -51,4 +60,4 @@ export function CoastResults({values,result,onDownload}:{values:Values;result:Re
 }
 
 export function CoastScenarioLibrary({onLoad}:{onLoad:(values:Values,title:string)=>void}){return <details className="workspace-report coast-scenario-library"><summary>Try an example scenario</summary><p>Hypothetical starting points, not recommended plans. All examples assume 7% nominal return, 2.5% inflation and a 4% target-sizing rate. Review every input, then Calculate.</p><div className="coast-scenario-cards">{coastScenarios.map(s=><section key={s.id}><h3>{s.title}</h3><p>{s.description}</p><button type="button" onClick={()=>onLoad({...s.values},s.title)}>Load example: {s.title}</button></section>)}</div></details>;}
-export function CoastComparisonTools({values,mode}:{values:Values;mode:Mode}){const [open,setOpen]=useState(false),[loaded,setLoaded]=useState(false);return <section id="coast-ab-comparison" className="workspace-report coast-comparison-tools"><h2>Compare two Coast FIRE plans</h2><p>Keep Plan A and Plan B separate and see how your budget, retirement date or assumptions change the result.</p><button type="button" aria-expanded={open} aria-controls="coast-comparison-panel" onClick={()=>{setLoaded(true);setOpen(v=>!v);}}>{open?'Hide A/B comparison':'Compare Plan A and Plan B'}</button><div id="coast-comparison-panel" hidden={!open}>{loaded&&<CoastComparison current={values} mode={mode}/>}</div></section>;}
+export function CoastComparisonTools({values,mode,sharedAssumptions=null}:{values:Values;mode:Mode;sharedAssumptions?:Values|null}){const [open,setOpen]=useState(false),[loaded,setLoaded]=useState(false);return <section id="coast-ab-comparison" className="workspace-report coast-comparison-tools"><h2>Compare two Coast FIRE plans</h2><p>Keep Plan A and Plan B separate and see how your budget, retirement date or assumptions change the result.</p><button type="button" aria-expanded={open} aria-controls="coast-comparison-panel" onClick={()=>{setLoaded(true);setOpen(v=>!v);}}>{open?'Hide A/B comparison':'Compare Plan A and Plan B'}</button><div id="coast-comparison-panel" hidden={!open}>{loaded&&<CoastComparison current={values} mode={mode} sharedAssumptions={sharedAssumptions}/>}</div></section>;}

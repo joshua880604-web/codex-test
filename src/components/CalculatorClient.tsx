@@ -8,8 +8,12 @@ import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode }
 import dynamic from "next/dynamic";
 import {progressiveInputGroups} from '@/lib/progressive-inputs';
 const ProgressiveFields=dynamic(()=>import('./ProgressiveFields'));
+import InputReviewSummary from './InputReviewSummary';
+import {inputReviewGroups,inputReviewLabel,inputReviewPreview,inputReviewValue} from '@/lib/input-review';
+import {coastAssumptionLabel} from '@/lib/coast-assumption-ui';
 import {coastFieldVisible} from '@/lib/coast-household';
 const CoastFields=dynamic(()=>import('./CoastPlan'));
+const CoastAssumptionBadges=dynamic(()=>import('./CoastPlan').then(m=>m.CoastAssumptionBadges));
 const CoastScenarioLibrary=dynamic(()=>import('./CoastPlan').then(m=>m.CoastScenarioLibrary));
 const CoastComparisonTools=dynamic(()=>import('./CoastPlan').then(m=>m.CoastComparisonTools));
 const CoastResults=dynamic(()=>import('./CoastPlan').then(m=>m.CoastResults));
@@ -93,6 +97,8 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     return()=>window.removeEventListener(shareOpenEvent,open);
   },[id,enhancedSharing]);
   const runCalculation = (_id: string, mode: string, values: Values) => runClientCalculation(calc.id, calc.category, mode, values);
+  const [sharedReviewValues,setSharedReviewValues]=useState<Values|null>(null);
+  const [coastSharedRates,setCoastSharedRates]=useState<Values|null>(null);
   const [modeId, setModeId] = useState(calc.modes[0].id);
   const mode = calc.modes.find((m) => m.id === modeId)!;
   const [values, setValues] = useState<Values>(() => defaults(mode)),
@@ -124,7 +130,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
   const compactModes = calc.modes.length >= 4 || id === "savings";
   const payoff = id === "mortgage-payoff";
   const taskModes = Boolean(taskModeGroups[id]) || id === "savings";
-  function loadCoastExample(next:Values,title:string){request.current++;clearScenarios();setCalculating(false);setValues({...next});setResult(null);setError('');setNotice('Example loaded: '+title+'. Review inputs, then Calculate.');setShowResultShare(false);setShowAll(false);setYearly(false);}
+  function loadCoastExample(next:Values,title:string){setSharedReviewValues(null);setCoastSharedRates(null);request.current++;clearScenarios();setCalculating(false);setValues({...next});setResult(null);setError('');setNotice('Example loaded: '+title+'. Review inputs, then Calculate.');setShowResultShare(false);setShowAll(false);setYearly(false);}
   function clearScenarios() { setScenarioBaseline(null); setActiveScenario(null); }
   useEffect(() => {
     if (!hasWorkspace) return;
@@ -152,7 +158,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           // guide anchors keep edits and results, including legacy query inputs.
           if(previousSource?.startsWith('#calc=') && !window.location.hash && !window.location.search){
             request.current++;clearScenarios();modeDrafts.current={};mortgageBasisDrafts.current={};
-            setCalculating(false);setModeId(calc.modes[0].id);setValues(defaults(calc.modes[0]));
+            setCalculating(false);setModeId(calc.modes[0].id);setValues(defaults(calc.modes[0]));if(id==='coast-fire')setCoastSharedRates(null);setSharedReviewValues(null);
             setResult(initialResult);setError('');setNotice('');setShowAll(false);setYearly(false);
           }
           return;
@@ -160,6 +166,8 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
         const token=++request.current;
         setCalculating(true);
         const {mode:initial,values:v}=shared;
+        setSharedReviewValues({...v});
+        if(id==='coast-fire')setCoastSharedRates({...v});
         clearScenarios();
         modeDrafts.current = {};
         mortgageBasisDrafts.current = {};
@@ -263,6 +271,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     } catch (e) {
       if (token === request.current) {
         setError(e instanceof Error ? e.message : "Unable to calculate.");
+        workspaceRef.current?.querySelectorAll<HTMLDetailsElement>('[data-input-review]').forEach(d=>{d.open=true;});
         if (progressiveInputGroups(id,mode.id)) {
           workspaceRef.current?.querySelectorAll<HTMLDetailsElement>('#calculator-panel .input-disclosure').forEach(details=>{details.open=true;});
         }
@@ -305,6 +314,8 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     requestAnimationFrame(() => resultRef.current?.focus({preventScroll:true}));
   }
   function reset() {
+    setSharedReviewValues(null);
+    if(id==='coast-fire')setCoastSharedRates(null);
     request.current++;
     mortgageBasisDrafts.current = {};
     clearScenarios();
@@ -326,6 +337,16 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     );
     setShowAll(false);
     setYearly(false);
+  }
+  function editInputReview(key:string){
+    const details=Array.from(workspaceRef.current?.querySelectorAll<HTMLDetailsElement>('[data-input-review]')??[]).find(d=>d.dataset.inputReview===key);
+    if(!details)return;details.open=true;
+    requestAnimationFrame(()=>{details.querySelector<HTMLElement>('summary')?.focus({preventScroll:true});details.scrollIntoView({block:'center',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
+  }
+  function editCoastAssumptions(){
+    const details=workspaceRef.current?.querySelector<HTMLDetailsElement>('#calculator-panel details.coast-assumptions');
+    if(!details)return;details.open=true;
+    requestAnimationFrame(()=>{details.querySelector<HTMLElement>('summary')?.focus({preventScroll:true});details.scrollIntoView({block:'center',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
   }
   function download(extra?: { rows: (number | string)[][]; columns: string[] }) {
     const rows = extra?.rows ?? tableRows, columns = extra?.columns ?? tableColumns;
@@ -544,6 +565,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
     main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),
     advanced = progressive ? [] : ['stock-profit','stock-average','seller-financing','fix-and-flip','roth-conversion-ladder','drip','covered-call','house-hacking','brrrr','barista-fire','lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
+  const reviewGroups=inputReviewGroups(id,mode.id,visible,advanced);
   return (
     <>
       <div className={"calculator-intro-row"+(motherCopy?" mother-page-intro":"")}><p className="intro">{motherCopy?.intro??calc.intro}</p>{enhancedSharing?<div className="calculator-utility-actions enhanced-sharing-actions"><FavoriteButton id={id}/><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share / Export</button></div>:<FavoriteButton id={id}/>}</div>
@@ -631,10 +653,10 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           setShowResultShare(false);
     setResult(null);
         }}>
-          {progressive ? <ProgressiveFields id={id} mode={mode.id} fields={visible} values={values} renderField={input}/> : ['stock-profit','stock-average'].includes(id) ? <StockFields id={id} fields={visible} renderField={input}/> : ['seller-financing','fix-and-flip'].includes(id) ? <PropertyDealFields id={id} fields={visible} renderField={input}/> : ['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : id==='cap-rate' && mode.id==='rental' ? <CapRateFields fields={visible} renderField={input}/> : id==='roth-conversion-ladder' ? <RothLadderFields fields={visible} renderField={input}/> : id==='drip' ? <DripFields fields={visible} renderField={input}/> : id==='covered-call' ? <CoveredCallFields fields={visible} renderField={input}/> : id==='house-hacking' ? <HouseHackFields fields={visible} renderField={input}/> : id==='mortgage-vs-invest' ? <MortgageInvestFields fields={visible} renderField={input}/> : id==='cash-on-cash-return' && mode.id==='property' ? <CashReturnFields fields={visible} renderField={input}/> : id==='brrrr' ? <BrrrrFields fields={visible} renderField={input}/> : id==='barista-fire' ? <BaristaFields fields={visible} renderField={input}/> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : ["cap-rate","credit-card-minimum-payment"].includes(id) ? <div className="focused-tool-fields">{main.map(f => input(f))}</div> : main.map(f => input(f))}
+          {progressive ? <ProgressiveFields id={id} mode={mode.id} fields={visible} values={values} renderField={input} sharedValues={sharedReviewValues}/> : ['stock-profit','stock-average'].includes(id) ? <StockFields id={id} fields={visible} renderField={input}/> : ['seller-financing','fix-and-flip'].includes(id) ? <PropertyDealFields id={id} fields={visible} renderField={input}/> : ['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : id==='cap-rate' && mode.id==='rental' ? <CapRateFields fields={visible} renderField={input}/> : id==='roth-conversion-ladder' ? <RothLadderFields fields={visible} renderField={input}/> : id==='drip' ? <DripFields fields={visible} renderField={input}/> : id==='covered-call' ? <CoveredCallFields fields={visible} renderField={input}/> : id==='house-hacking' ? <HouseHackFields fields={visible} renderField={input}/> : id==='mortgage-vs-invest' ? <MortgageInvestFields fields={visible} renderField={input}/> : id==='cash-on-cash-return' && mode.id==='property' ? <CashReturnFields fields={visible} renderField={input}/> : id==='brrrr' ? <BrrrrFields fields={visible} renderField={input}/> : id==='barista-fire' ? <BaristaFields fields={visible} renderField={input}/> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input} sharedAssumptions={coastSharedRates}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} sharedValues={sharedReviewValues} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} sharedValues={sharedReviewValues} /> : ["cap-rate","credit-card-minimum-payment"].includes(id) ? <div className="focused-tool-fields">{main.map(f => input(f))}</div> : main.map(f => input(f))}
           {id !== "mortgage" && id !== "marriage-tax" && advanced.length > 0 && (
-            <details className="advanced" key={mode.id}>
-              <summary>More options ({advanced.length})</summary>
+            <details className="advanced input-review" data-input-review="advanced" key={mode.id}>
+              <summary><InputReviewSummary title={reviewGroups[0]?.title??'Additional calculation settings'} fields={advanced} values={values} shared={sharedReviewValues}/></summary>
               {advanced.map(f => input(f))}
             </details>
           )}
@@ -701,6 +723,9 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
                 </Fragment>
               ))}
             </div>
+            {id==='coast-fire'&&<div className="coast-result-assumptions"><div className="coast-result-assumptions-heading"><p>Assumptions used for this result</p><button type="button" onClick={editCoastAssumptions}>Edit assumptions</button></div><p className="coast-assumption-source">{coastAssumptionLabel(mode.fields,values,coastSharedRates)}</p><CoastAssumptionBadges values={values}/></div>}
+            {reviewGroups.length>0&&<details className="input-review-result"><summary>Settings used for this result ({reviewGroups.length} {reviewGroups.length===1?'section':'sections'})</summary>{reviewGroups.map(group=><section key={group.key}><div className="input-review-result-heading"><strong>{group.title}</strong><button type="button" aria-label={'Edit '+group.title} onClick={()=>editInputReview(group.key)}>Edit settings</button></div><p className="input-review-source">{inputReviewLabel(group.fields,values,sharedReviewValues)}</p><p className="input-review-result-values">{inputReviewPreview(group.fields,values).map(f=>f.label+': '+inputReviewValue(f,values)).join(' · ')}{group.fields.length>3?' · Additional settings available in the input section.':''}</p></section>)}</details>}
+
             {(!hasWorkspace || id === "mutual-fund") && result.chart && result.chart.some((x) => x.value > 0) && (
               <div className="chart">
                 <div
@@ -762,7 +787,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       )}
       </div>
       {id==='coast-fire'&&<CoastScenarioLibrary onLoad={loadCoastExample}/>}
-      {id==='coast-fire'&&<CoastComparisonTools values={values} mode={mode}/>}
+      {id==='coast-fire'&&<CoastComparisonTools values={values} mode={mode} sharedAssumptions={coastSharedRates}/>}
       {wideReports && result && <>
         {id === 'coast-fire' && <CoastResults values={values} result={result} onDownload={download}/>}
         {['lean-fire','fat-fire'].includes(id) && <FireBudgetReport result={result} onDownload={download}/>}

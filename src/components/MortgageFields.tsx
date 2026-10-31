@@ -1,12 +1,15 @@
 import type { ReactNode } from "react";
+import InputReviewSummary from './InputReviewSummary';
 import { mortgageCostSummary, mortgageLoanBasis } from "@/lib/mortgage-inputs";
 import type { Field, Values } from "@/lib/types";
 
-export default function MortgageFields({ fields, values, mode, update, renderField }: {
+export default function MortgageFields({ fields, values, mode, update, renderField,sharedValues=null }: {
   fields: Field[]; values: Values; mode: string;
+  sharedValues?:Values|null;
   update: (key: string, value: string) => void;
   renderField: (field: Field) => ReactNode;
 }) {
+  const selected=(keys:string[])=>keys.map(k=>fields.find(f=>f.key===k)).filter((f):f is Field=>Boolean(f));
   const direct = mortgageLoanBasis(values);
   const field = (key: string) => {
     const f = fields.find(f => f.key === key);
@@ -32,20 +35,20 @@ export default function MortgageFields({ fields, values, mode, update, renderFie
     {field("years")}{field("rate")}
     {direct && <p className="mortgage-input-help">Existing loan? Use its current balance and remaining term.</p>}
     {mode !== "biweekly" && <>
-      <details className="advanced mortgage-options" data-mortgage-group="housing">
-        <summary><span>Taxes, insurance & fees</span><small>{mortgageCostSummary(values)}</small></summary>
+      <details className="advanced mortgage-options input-review" data-input-review="mortgage-housing" data-mortgage-group="housing">
+        <summary><InputReviewSummary title="Taxes, insurance & fees" fields={selected(housing)} values={values} shared={sharedValues} context={mortgageCostSummary(values)}/></summary>
         <p className="mortgage-input-help">Annual amounts below are included in your monthly total. Home insurance is separate from PMI.</p>
         {direct && <p className="mortgage-input-help">Percentage costs use the original home value entered under PMI & home value.</p>}
         {group(housing)}
       </details>
-      <details className="advanced mortgage-options" data-mortgage-group="pmi">
-        <summary><span>PMI & home value</span><small>{values.pmi_method === "Automatic estimate" ? `Automatic estimate · credit ${values.pmi_credit}` : `Manual · ${values.pmi || "0"}${values.pmi_unit === "Percent of loan" ? "% of loan/yr" : " USD/yr"}`}</small></summary>
+      <details className="advanced mortgage-options input-review" data-input-review="mortgage-pmi" data-mortgage-group="pmi">
+        <summary><InputReviewSummary title="PMI & home value" fields={selected(pmi)} values={values} shared={sharedValues} context={values.pmi_method==='Automatic estimate'?`Automatic estimate · credit ${values.pmi_credit}`:'Manual premium settings'}/></summary>
         {direct && <p className="mortgage-input-help">Use your actual PMI quote for an existing loan. Automatic estimates need the original home value and illustrate a new purchase.</p>}
         {group(pmi)}
       </details>
     </>}
-    <details className="advanced mortgage-options" data-mortgage-group="extras">
-      <summary><span>Extra payments & dates</span><small>{extras ? "Additional principal entered" : "No extra payments"}{Number(values.months) > 0 ? ` · ${values.months} additional months` : ""}</small></summary>
+    <details className="advanced mortgage-options input-review" data-input-review="mortgage-extras" data-mortgage-group="extras">
+      <summary><InputReviewSummary title="Extra payments & dates" fields={selected(timing)} values={values} shared={sharedValues} context={extras?'Additional principal entered':'No extra payments'}/></summary>
       {group(timing)}
     </details>
   </div>;

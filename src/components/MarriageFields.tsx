@@ -1,7 +1,8 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import type { Field, Values } from '@/lib/types';
+import InputReviewSummary from './InputReviewSummary';
 import { marriageSections, marriageFieldSection } from '@/lib/marriage-layout';
-export default function MarriageFields({fields, values, renderField}: {fields: Field[]; values: Values; renderField:(field: Field, person?: string)=>ReactNode}) {
+export default function MarriageFields({fields, values, renderField,sharedValues=null}: {fields: Field[]; values: Values;sharedValues?:Values|null; renderField:(field: Field, person?: string)=>ReactNode}) {
   const root=useRef<HTMLDivElement>(null);
   const autoOpened=useRef<string | null>(null);
   useEffect(() => {
@@ -39,8 +40,8 @@ export default function MarriageFields({fields, values, renderField}: {fields: F
     {renderField(fields.find(f=>f.key==='year')!)}
     <fieldset className="marriage-basic"><legend>Your household</legend>{rows('basic')}<p className="marriage-help">{marriageSections[0].description}</p></fieldset>
     <p className="marriage-help">Only wages and a standard deduction? You can calculate now. Open the sections below when other income, deductions or credits apply. Leave unrelated amounts at zero and check the tax treatment of income you enter.</p>
-    {marriageSections.slice(1).map(section=><details className="advanced marriage-section" key={section.id} data-section={section.id}>
-      <summary>{section.title}</summary><p className="marriage-help">{section.description}</p>{rows(section.id)}
+    {marriageSections.slice(1).map(section=><details className="advanced marriage-section input-review" data-input-review={'marriage-'+section.id} key={section.id} data-section={section.id}>
+      <summary><InputReviewSummary title={section.title} fields={fields.filter(f=>marriageFieldSection(f)===section.id)} values={values} shared={sharedValues}/></summary><p className="marriage-help">{section.description}</p>{rows(section.id)}
     </details>)}
   </div>;
 }
