@@ -6,6 +6,8 @@ import { calculatorPresetHref } from "@/lib/preset-links";
 
 import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import dynamic from "next/dynamic";
+import {progressiveInputGroups} from '@/lib/progressive-inputs';
+const ProgressiveFields=dynamic(()=>import('./ProgressiveFields'));
 import {coastFieldVisible} from '@/lib/coast-household';
 const CoastFields=dynamic(()=>import('./CoastPlan'));
 const CoastScenarioLibrary=dynamic(()=>import('./CoastPlan').then(m=>m.CoastScenarioLibrary));
@@ -261,6 +263,13 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
     } catch (e) {
       if (token === request.current) {
         setError(e instanceof Error ? e.message : "Unable to calculate.");
+        if (progressiveInputGroups(id,mode.id)) {
+          workspaceRef.current?.querySelectorAll<HTMLDetailsElement>('#calculator-panel .input-disclosure').forEach(details=>{details.open=true;});
+        }
+        if (id === "coast-fire") {
+          const assumptions = workspaceRef.current?.querySelector<HTMLDetailsElement>('#calculator-panel details.coast-assumptions');
+          if (assumptions) assumptions.open = true;
+        }
         if (id === "mortgage" && e instanceof Error && /original home value/i.test(e.message)) {
           const details = workspaceRef.current?.querySelector<HTMLDetailsElement>('[data-mortgage-group="pmi"]');
           if (details) details.open = true;
@@ -521,6 +530,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
 
           </CalculationDetails>
   );
+  const progressive = progressiveInputGroups(id,mode.id)!==null;
   const simple = mode.fields.length <= 14,
     visible = mode.fields.filter((f) => f.key !== "verified_rate" &&
       !(id==='fix-and-flip' && values.financing==='Cash' && ['loan','rate','points'].includes(f.key)) &&
@@ -533,7 +543,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
       !(id === "fha-loan" && (["pmi", "pmi_unit", "pmi_years", "pmi_policy"].includes(f.key) || (values.mip_method !== "Manual" && ["upfront", "annual_mip", "mip_years"].includes(f.key))))),
     optionalPlanning = ["interest", "savings", "investment", "compound-interest"].includes(id) && mode.id !== "conversion" ? new Set(["annual", "timing", "tax", "inflation", "annual_increase", "monthly_increase"]) : null,
     main = optionalPlanning ? visible.filter(f => !optionalPlanning.has(f.key)) : simple ? visible : visible.slice(0, 8),
-    advanced = ['stock-profit','stock-average','seller-financing','fix-and-flip','roth-conversion-ladder','drip','covered-call','house-hacking','brrrr','barista-fire','lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
+    advanced = progressive ? [] : ['stock-profit','stock-average','seller-financing','fix-and-flip','roth-conversion-ladder','drip','covered-call','house-hacking','brrrr','barista-fire','lean-fire','fat-fire'].includes(id) ? [] : optionalPlanning ? visible.filter(f => optionalPlanning.has(f.key)) : simple ? [] : visible.slice(8);
   return (
     <>
       <div className={"calculator-intro-row"+(motherCopy?" mother-page-intro":"")}><p className="intro">{motherCopy?.intro??calc.intro}</p>{enhancedSharing?<div className="calculator-utility-actions enhanced-sharing-actions"><FavoriteButton id={id}/><button type="button" className="calculator-share-launch" aria-haspopup="dialog" onClick={()=>setShareOpen(true)}>Share / Export</button></div>:<FavoriteButton id={id}/>}</div>
@@ -621,7 +631,7 @@ export default function CalculatorClient({ calc, initialResult, shortcuts = [] }
           setShowResultShare(false);
     setResult(null);
         }}>
-          {['stock-profit','stock-average'].includes(id) ? <StockFields id={id} fields={visible} renderField={input}/> : ['seller-financing','fix-and-flip'].includes(id) ? <PropertyDealFields id={id} fields={visible} renderField={input}/> : ['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : id==='cap-rate' && mode.id==='rental' ? <CapRateFields fields={visible} renderField={input}/> : id==='roth-conversion-ladder' ? <RothLadderFields fields={visible} renderField={input}/> : id==='drip' ? <DripFields fields={visible} renderField={input}/> : id==='covered-call' ? <CoveredCallFields fields={visible} renderField={input}/> : id==='house-hacking' ? <HouseHackFields fields={visible} renderField={input}/> : id==='mortgage-vs-invest' ? <MortgageInvestFields fields={visible} renderField={input}/> : id==='cash-on-cash-return' && mode.id==='property' ? <CashReturnFields fields={visible} renderField={input}/> : id==='brrrr' ? <BrrrrFields fields={visible} renderField={input}/> : id==='barista-fire' ? <BaristaFields fields={visible} renderField={input}/> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : ["cap-rate","credit-card-minimum-payment"].includes(id) ? <div className="focused-tool-fields">{main.map(f => input(f))}</div> : main.map(f => input(f))}
+          {progressive ? <ProgressiveFields id={id} mode={mode.id} fields={visible} values={values} renderField={input}/> : ['stock-profit','stock-average'].includes(id) ? <StockFields id={id} fields={visible} renderField={input}/> : ['seller-financing','fix-and-flip'].includes(id) ? <PropertyDealFields id={id} fields={visible} renderField={input}/> : ['debt-snowball','debt-avalanche'].includes(id) ? <>{visible.filter(f=>f.key==='debts').map(f=>input(f))}<fieldset className="planning-fields"><legend>Monthly budget and rollover</legend>{visible.filter(f=>['budget','rollover'].includes(f.key)).map(f=>input(f))}</fieldset><fieldset className="planning-fields"><legend>Optional one-time extra</legend>{visible.filter(f=>['once','once_month'].includes(f.key)).map(f=>input(f))}</fieldset></> : id==='cap-rate' && mode.id==='rental' ? <CapRateFields fields={visible} renderField={input}/> : id==='roth-conversion-ladder' ? <RothLadderFields fields={visible} renderField={input}/> : id==='drip' ? <DripFields fields={visible} renderField={input}/> : id==='covered-call' ? <CoveredCallFields fields={visible} renderField={input}/> : id==='house-hacking' ? <HouseHackFields fields={visible} renderField={input}/> : id==='mortgage-vs-invest' ? <MortgageInvestFields fields={visible} renderField={input}/> : id==='cash-on-cash-return' && mode.id==='property' ? <CashReturnFields fields={visible} renderField={input}/> : id==='brrrr' ? <BrrrrFields fields={visible} renderField={input}/> : id==='barista-fire' ? <BaristaFields fields={visible} renderField={input}/> : ['lean-fire','fat-fire'].includes(id) ? <FireBudgetFields id={id} fields={visible} renderField={input}/> : id === 'coast-fire' ? <CoastFields fields={visible} values={values} renderField={input}/> : id === "mortgage" ? <MortgageFields fields={visible} values={values} mode={mode.id} update={update} renderField={input} /> : id === "marriage-tax" ? <MarriageFields fields={visible} values={values} renderField={input} /> : ["cap-rate","credit-card-minimum-payment"].includes(id) ? <div className="focused-tool-fields">{main.map(f => input(f))}</div> : main.map(f => input(f))}
           {id !== "mortgage" && id !== "marriage-tax" && advanced.length > 0 && (
             <details className="advanced" key={mode.id}>
               <summary>More options ({advanced.length})</summary>

@@ -267,3 +267,22 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 
 .coast-comparison-tools>button{min-height:44px;max-width:100%;padding:9px 13px;border:1px solid var(--control,#cbd5e1);border-radius:10px;background:var(--surface,#fff);color:var(--ink,inherit);font:inherit;font-weight:600;cursor:pointer}
 .coast-result-heading .result-actions{margin:0}
+
+/* Coast: core budget stays visible; current assumptions remain readable when closed. */
+.coast-assumptions{min-width:0;margin:0 0 20px;padding:12px 14px;border:1px solid var(--border,#dbe3ef);border-radius:12px}
+.coast-assumptions summary{cursor:pointer;min-height:44px;font-weight:700;overflow-wrap:anywhere}
+.coast-assumptions summary small{display:block;margin-top:6px;font-weight:400;line-height:1.6;color:var(--muted,#536780)}
+.coast-assumptions-action{display:block;margin-top:6px;font-size:13px;color:var(--accent,#624bff)}
+.coast-assumptions[open] .coast-assumptions-action{display:none}
+.coast-assumptions .planning-fields{margin-top:16px}
+
+/* Optional financial inputs remain summarized and included while collapsed. */
+.input-disclosure{min-width:0;margin:0 0 20px;padding:12px 14px;border:1px solid var(--border,#dbe3ef);border-radius:12px}
+.input-disclosure summary{cursor:pointer;min-height:44px;font-weight:700;overflow-wrap:anywhere}
+.input-disclosure summary small{display:block;margin-top:6px;font-weight:400;line-height:1.6;color:var(--muted,#536780)}
+.input-disclosure-action{display:block;margin-top:6px;font-size:13px;color:var(--accent,#624bff)}
+.input-disclosure[open] .input-disclosure-action{display:none}
+.input-disclosure-fields{margin-top:16px}
+
+.input-group-summary{margin:6px 0 12px;color:var(--muted,#536780);font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.coast-assumptions>h3{margin:0;font-size:15px;line-height:1.5}

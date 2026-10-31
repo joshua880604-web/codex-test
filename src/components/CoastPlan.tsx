@@ -19,8 +19,12 @@ export default function CoastFields({fields,values,renderField,compact=false}:{f
     {group('Your plan',['household','age','retire'])}
     {couple&&!compact&&<p className="result-note">One shared timeline: the difference between the planning ages is the number of years until both portfolios are modeled to fund retirement. This does not model different retirement dates. Enter jointly owned assets and shared savings only once.</p>}
     {group(couple?'Household investments':'Retirement investments',['balance','partner_balance','monthly','partner_monthly'])}
-    {group(couple?'Shared retirement budget':'Retirement budget',['spending','withdrawal'])}
-    {group('Growth and purchasing power',['return','inflation'])}
+    {group(couple?'Shared retirement budget':'Retirement budget',['spending'])}
+    <section className="coast-assumptions" aria-label="Return, inflation and withdrawal assumptions">
+      <h3>Return, inflation &amp; withdrawal assumptions</h3><p className="input-group-summary">{[['return','Return'],['inflation','Inflation'],['withdrawal','Withdrawal']].map(([key,label])=>`${label} ${String(values[key]??'').trim() ? values[key]+'%' : 'not set'}`).join(' · ')}</p>
+      {group('Portfolio target assumption',['withdrawal'])}
+      {group('Growth and purchasing power',['return','inflation'])}
+    </section>
     {!compact&&<p className="result-note">All amounts are in today’s USD. The calculator adjusts returns for inflation automatically. Pensions and Social Security amounts and start dates are not calculated; benefits starting later cannot simply be deducted from every year’s budget.</p>}
   </>;
 }
