@@ -102,6 +102,8 @@ export function Footer() {
         <span> · </span>
         <SiteLink href="/methodology.html">Methodology &amp; sources</SiteLink>
         <span> · </span>
+        <SiteLink href="/methodology#editorial-policy">Authorship &amp; review</SiteLink>
+        <span> · </span>
         <SiteLink href="/glossary/">Glossary</SiteLink>
         <span> · </span>
         <SiteLink href="/guides/">Guides</SiteLink>

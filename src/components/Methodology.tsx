@@ -1,3 +1,4 @@
+import {editorialPolicyUpdatedOn} from '@/lib/content-transparency';
 import { calculatorPresetHref } from '@/lib/preset-links';
 
 import SiteLink from "@/components/SiteLink";
@@ -15,7 +16,7 @@ export default function Methodology(){
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(methodologySchema())}}/>
   <p className="method-intro">A useful result starts with a clear model. Here is how we check calculations, choose starting values and distinguish an assumption from a published data point.</p>
   <p className="content-date">Documentation checked <time dateTime={methodologyCheckedOn}>{dateLabel(methodologyCheckedOn)}</time> against the current implementation. Dataset dates are listed separately below.</p>
-  <nav className="guide-nav method-nav" aria-label="Methodology sections"><SiteLink href="#validation">Validation</SiteLink><SiteLink href="#default-assumptions">Default assumptions</SiteLink><SiteLink href="#data-sources">Data sources</SiteLink><SiteLink href="#timing-rounding">Timing &amp; rounding</SiteLink><SiteLink href="#model-scope">Scope &amp; review</SiteLink><SiteLink href="#corrections">Report an issue</SiteLink></nav>
+  <nav className="guide-nav method-nav" aria-label="Methodology sections"><SiteLink href="#validation">Validation</SiteLink><SiteLink href="#default-assumptions">Default assumptions</SiteLink><SiteLink href="#data-sources">Data sources</SiteLink><SiteLink href="#timing-rounding">Timing &amp; rounding</SiteLink><SiteLink href="#model-scope">Scope &amp; review</SiteLink><SiteLink href="#editorial-policy">Authorship &amp; review</SiteLink><SiteLink href="#corrections">Report an issue</SiteLink></nav>
   <section aria-labelledby="validation"><h2 id="validation">How calculations are checked</h2>
    <ol className="method-checks">
     <li><strong>Specify the calculation.</strong> Each mode declares its inputs, units, formula and timing. A nominal rate, effective annual return and rate per period are treated according to the selected model.</li>
@@ -48,6 +49,17 @@ export default function Methodology(){
    <p>These are independent planning tools. Assumptions such as constant returns, full vesting, selected tax rules or a single-product business model apply only where the tool states them. A successful test case does not establish complete tax eligibility, contractual payment terms or equivalence with every option on another calculator website.</p>
    <p>Source notes and automated checks are public. AI tools have assisted implementation and drafting; numerical results are produced by formula-based code in your browser, without a runtime AI service. We do not currently publish a named independent professional review for every calculator.</p>
    <p>Use each calculator’s <strong>Scope and assumptions</strong> and result notes alongside this overview. The <SiteLink href={sourceURL+'docs/financial-clone/methodology-review-2026-10-22.md'}>review record</SiteLink> separates the checks performed from remaining limitations.</p>
+  </section>
+  <section aria-labelledby="editorial-policy"><h2 id="editorial-policy">Authorship, checking and review policy</h2>
+   <p className="content-date">Publishing-policy update: <time dateTime={editorialPolicyUpdatedOn}>{dateLabel(editorialPolicyUpdatedOn)}</time>. This is not a new review date for every calculator, source or dataset.</p>
+   <h3>Who creates and publishes the content</h3>
+   <p>CalculatorFree.io publishes the calculator explanations and guides under its site identity. Authorship links lead to <SiteLink href="/about#publisher">information about the publisher</SiteLink>. AI assistance is used in drafting and implementation; the numerical calculations themselves use formula-based code, without an AI service at calculation time.</p>
+   <h3>What the checks establish</h3>
+   <p>Check types are distinguished: a formula or example cross-check tests arithmetic under stated inputs; source checking supports the cited concepts, data version or rule scope; a browser check tests selected interactions and layouts. None alone establishes that every tax exception, contract or personal circumstance is modeled. A separate implementation of an equation is an arithmetic cross-check, not an independent professional opinion.</p>
+   <h3>Professional review status</h3>
+   <p>We do not claim a named independent financial, tax or legal professional review for a page without identifying the person and the work actually reviewed. The current publisher attribution is not a credential or a professional endorsement. Any future professional review should identify the reviewer, verifiable relevant background, review date and scope on the pages covered. Reviewing one guide would not establish review of every tool.</p>
+   <h3>Dates, sources and corrections</h3>
+   <p>Publication dates, substantive content updates, example checks and source/data dates have different meanings. We retain the applicable dates rather than relabeling every calculation as newly reviewed when publishing information changes. References explain the cited concepts; linking to an agency does not mean it endorses the site. Report a reproducible issue using the correction process below.</p>
   </section>
   <section aria-labelledby="corrections"><h2 id="corrections">Corrections and reporting a calculation issue</h2>
    <p>For a useful report, include the calculator name and mode, non-sensitive sample inputs, the actual result, the expected result and its formula or source. Browser/device details help with display problems. Avoid posting account numbers or personal tax records.</p>

@@ -1,0 +1,7 @@
+.content-review{margin:16px 0;max-width:100%;font-size:14px;line-height:1.65;color:var(--muted);}
+.content-review .content-review-byline{margin:0 0 4px;font-size:13px;}
+.content-review-details{margin:0;border:1px solid var(--control);border-radius:8px;background:transparent;}
+.content-review-details>summary{min-height:44px;display:list-item;cursor:pointer;padding:10px 12px;font-size:14px;font-weight:600;line-height:1.65;overflow-wrap:anywhere;color:var(--ink);}
+.content-review-details>p{margin:12px;font-size:14px;line-height:1.7;}
+.content-review-details>summary:focus-visible{outline:3px solid #d89b20;outline-offset:2px;}
+@media print{.content-review-details>p{display:block;}}

@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import content from '@/lib/decision-guide-content.json';
 import {decisionGuideEntries,type DecisionGuideTopic} from '@/lib/decision-guides';
 import {editorialSchema} from '@/lib/editorial-guides';
@@ -7,7 +8,7 @@ import DecisionCaseTable from './DecisionCaseTable';
 export default function DecisionGuideArticle({topic}:{topic:DecisionGuideTopic}){
  const data=content[topic],guide=decisionGuideEntries[topic];return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">{guide.breadcrumb}</span></nav>
- <p className="glossary-category">{guide.topic} · {guide.format}</p><h1>{guide.heading}</h1><p className="guide-byline">By CalculatorFree.io · Sources and example arithmetic checked <time dateTime="2026-10-31">October 31, 2026</time>. Educational model scenarios, not personalized advice.</p>
+ <p className="glossary-category">{guide.topic} · {guide.format}</p><h1>{guide.heading}</h1><p className="guide-byline">By <SiteLink href="/about#publisher">CalculatorFree.io</SiteLink> · Sources and example arithmetic checked <time dateTime="2026-10-31">October 31, 2026</time>. Educational model scenarios, not personalized advice.</p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(guide))}}/>
  <p>{data.intro}</p><p><SiteLink className="glossary-cta" href={data.calculatorPath}>Open the {data.calculatorLabel} →</SiteLink></p>
  <nav className="guide-nav" aria-label="Guide sections">{[['findings','Findings'],['method','Assumptions'],['scenarios','Results & inputs'],['questions','Questions'],['sources','Sources & limits']].map(([id,label])=><a key={id} href={'#'+id}>{label}</a>)}</nav>

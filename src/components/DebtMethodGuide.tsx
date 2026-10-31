@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from './RemainingGuideReview';
 import SiteLink from './SiteLink';
 import {snowballMethodGuide,avalancheMethodGuide,editorialSchema} from '@/lib/editorial-guides';
@@ -14,7 +15,7 @@ export default function DebtMethodGuide({strategy}:{strategy:'snowball'|'avalanc
  return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
   <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">{guide.breadcrumb}</span></nav>
   <p className="glossary-category">Loans &amp; debt · Step-by-step guide</p><h1>{guide.heading}</h1>
-  <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={guide.publishedOn}>October 29, 2026</time> · Updated <time dateTime={guide.updatedOn}>October 30, 2026</time></p>
+  <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={guide.publishedOn}>October 29, 2026</time> · Updated <time dateTime={guide.updatedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(guide))}}/>
   <p>{snow?'To calculate a debt snowball, cover every minimum and apply the remaining payment budget to the smallest remaining balance. The useful output is a monthly sequence: when the first balance clears, where its payment goes next, and what the entire plan costs.':'To calculate a debt avalanche, cover every minimum and direct the remaining budget to the highest APR. Track balances and interest month by month; the highest rate, largest balance and first balance to clear are three different things.'} Use the <SiteLink href={tool}>Debt {snow?'Snowball':'Avalanche'} Calculator</SiteLink> to run the worksheet below with your own inputs.</p>
   <RemainingGuideSummary id={strategy}/>

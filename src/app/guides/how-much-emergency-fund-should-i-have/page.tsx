@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function EmergencyFundGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">How much emergency fund?</span></nav>
  <p className="glossary-category">Savings &amp; investing · Comparison guide</p><h1>{emergencyGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={emergencyGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={emergencyGuide.updatedOn??emergencyGuide.publishedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={emergencyGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={emergencyGuide.updatedOn??emergencyGuide.publishedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(emergencyGuide))}}/>
 <p>{"An emergency-fund target starts with the expenses you need to cover, the number of months you choose and money already set aside. A common range is three to six months of living expenses, but the appropriate amount depends on your situation. A calculator can translate that choice into dollars; it cannot choose the right reserve for every household."}</p>
 <p>{"For example, $3,200 of essential monthly expenses implies $9,600 for three months or $19,200 for six months. If you already have $6,000, the six-month gap is $13,200. Saving $450 at the end of each month reaches that target with the 30th deposit, with only $150 needed in that final month."}</p>

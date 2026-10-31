@@ -214,3 +214,8 @@ Calculator pages provide Share, Cite and Export controls; Embed appears only whe
 
 - [Stock Profit Calculator](https://www.calculatorfree.io/stock-profit-calculator): Manual long-position buy/sell profit after fees and unreinvested cash dividends; no live quote or tax calculation.
 - [Stock Average Calculator](https://www.calculatorfree.io/stock-average-calculator): Quantity-weighted economic acquisition cost from separate purchase cards; not a tax cost-basis election or advice to average down.
+
+## Publishing and review transparency
+
+- [Publisher identity](https://www.calculatorfree.io/about#publisher): Calculators and guides are attributed to CalculatorFree.io; the brand does not represent an individual professional qualification. AI assistance is disclosed.
+- [Authorship and review policy](https://www.calculatorfree.io/methodology#editorial-policy): Distinguishes arithmetic cross-checks, source checks and professional review. No named independent professional reviewer is claimed; dates retain their stated meaning.

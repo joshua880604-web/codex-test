@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function MarginMarkupGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
 <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">Margin vs. markup</span></nav>
 <p className="glossary-category">Business finance · Comparison guide</p><h1>{marginMarkupGuide.heading}</h1>
-<p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={marginMarkupGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={marginMarkupGuide.updatedOn}>October 30, 2026</time></p>
+<p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={marginMarkupGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={marginMarkupGuide.updatedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
 <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(marginMarkupGuide))}}/>
 <p>{"Margin measures profit as a share of selling price. Markup measures the same dollar profit as a share of cost. Because the denominators differ, the percentages are usually different: a product that costs $100 and sells for $150 has a 50% markup and a 33.3333% gross margin."}</p>
 <p>{"If you want a 30% margin, adding 30% to cost will not produce it. On a $100 cost, 30% markup gives a $130 price and about 23.08% margin. A 30% margin instead requires an unrounded price of about $142.8571. This guide works through that difference, then tests a discount and a cost increase."}</p>

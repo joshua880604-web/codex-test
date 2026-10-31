@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function RefinanceGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">Is refinancing worth it?</span></nav>
  <p className="glossary-category">Mortgages · Comparison guide</p><h1>{refinanceGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={refinanceGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={refinanceGuide.updatedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={refinanceGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={refinanceGuide.updatedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(refinanceGuide))}}/>
 <p>{"Refinancing can be worthwhile when the benefits of replacing your current loan exceed the new costs over the time you expect to keep it. Check the actual quote, upfront or financed fees, monthly payments and remaining balances at the same future date. A lower payment does not necessarily mean lower lifetime interest, especially if the new loan runs longer."}</p>
 <p>{"There is no universal rule that a one-percentage-point rate drop makes refinancing worthwhile. In our hypothetical $300,000 example, replacing 25 remaining years at 6.5% with 25 years at 5.5% saves about $183.36 a month before taxes and insurance. A $5,000 cash closing cost has a simple payment-recovery period of about 27.27 months. That is one useful measure, not the complete comparison."}</p>

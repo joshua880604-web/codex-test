@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {baristaCoastGuide as guide,editorialSchema} from '@/lib/editorial-guides';
@@ -10,7 +11,7 @@ const example={age:45,start_age:45,income_end:55,retire_age:65,balance:760000,mo
 export default function BaristaCoastComparison(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">{guide.breadcrumb}</span></nav>
  <p className="glossary-category">Retirement · Comparison guide</p><h1>{guide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime="2026-10-29">October 29, 2026</time> · Updated <time dateTime={guide.updatedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime="2026-10-29">October 29, 2026</time> · Updated <time dateTime={guide.updatedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(guide))}}/>
  <p><strong>Barista FIRE combines earned income with portfolio withdrawals before full retirement. Coast FIRE, as modeled here, leaves the retirement portfolio invested while earned income covers current living costs.</strong> The difference is who pays today’s bills and when income stops. Use the <SiteLink href="/barista-fire-calculator">Barista FIRE calculator</SiteLink> for an income-and-withdrawal bridge or the <SiteLink href="/coast-fire-calculator">Coast FIRE calculator</SiteLink> for a no-withdrawal accumulation path.</p>
  <RemainingGuideSummary id="barista"/>

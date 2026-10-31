@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import GuideScenarioReview,{GuideCheckSummary} from '@/components/GuideScenarioReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function MortgagePointsGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">Are mortgage points worth it?</span></nav>
  <p className="glossary-category">Mortgages · Comparison guide</p><h1>{pointsGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={pointsGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={pointsGuide.updatedOn??pointsGuide.publishedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={pointsGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={pointsGuide.updatedOn??pointsGuide.publishedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(pointsGuide))}}/>
 <p>{"Mortgage discount points can be worthwhile when the lower rate reduces your borrowing costs enough during the time you actually keep the loan to justify paying more at closing. The answer depends on the quoted rate reduction, all relevant fees, your holding period and the value of keeping cash available."}</p>
 <p>{"In the hypothetical example below, paying $4,000 for a lower rate saves about $98.91 per month. The simple upfront-cost divided by monthly-saving calculation is about 40.44 months. But that is not the only useful comparison: when the different remaining loan balances are included, the modeled borrowing-cost break-even occurs at month 32."}</p>

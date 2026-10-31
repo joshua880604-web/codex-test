@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -7,7 +8,7 @@ export const metadata={...pageMetadata(recastGuide.path,recastGuide.title,recast
 export default function MortgageRecastGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">Mortgage recast vs. refinance</span></nav>
  <p className="glossary-category">Mortgages · Comparison guide</p><h1>{recastGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={recastGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={recastGuide.updatedOn??recastGuide.publishedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={recastGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={recastGuide.updatedOn??recastGuide.publishedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(true))}}/>
 <p>{"A mortgage recast recalculates the principal-and-interest payment on an existing loan after a substantial principal payment. Refinancing replaces an existing mortgage with a new loan. A principal-only payment without a recast reduces the balance but generally leaves the scheduled principal-and-interest payment unchanged."}</p>
 <p>{"The useful comparison is not simply “which has the lowest monthly payment?” Compare the cash needed now, the payment obligation afterward, future interest and fees, and the date you expect to sell or repay the loan."}</p>

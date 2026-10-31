@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import GuideScenarioReview,{GuideCheckSummary} from '@/components/GuideScenarioReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function BiweeklyMortgageGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">Biweekly vs. monthly mortgage payments</span></nav>
  <p className="glossary-category">Mortgages · Comparison guide</p><h1>{biweeklyGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={biweeklyGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={biweeklyGuide.updatedOn??biweeklyGuide.publishedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={biweeklyGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={biweeklyGuide.updatedOn??biweeklyGuide.publishedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(biweeklyGuide))}}/>
 <p>{"Paying half a monthly mortgage payment every two weeks usually means paying more over a year: 26 half-payments equal 13 full monthly payments. Much of the payoff improvement can therefore come from extra principal, rather than from the payment frequency alone."}</p>
 <p>{"To evaluate the schedule, compare three plans: normal monthly payments, half-payments every two weeks, and a monthly plan with the same annual payment budget as the biweekly plan. Then check when your servicer actually applies the payments and whether the arrangement has fees."}</p>

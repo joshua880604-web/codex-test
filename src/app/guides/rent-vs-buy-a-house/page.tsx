@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function RentBuyGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">Rent vs. buy a house</span></nav>
  <p className="glossary-category">Mortgages · Comparison guide</p><h1>{rentBuyGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={rentBuyGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={rentBuyGuide.updatedOn??rentBuyGuide.publishedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={rentBuyGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={rentBuyGuide.updatedOn??rentBuyGuide.publishedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(rentBuyGuide))}}/>
 <p>{"Renting or buying is a comparison between complete housing plans, not just rent and a mortgage payment. Compare similar homes over the same period, account for the cash needed upfront and include what happens to the home and mortgage when you leave. For renting, also state what you assume happens to money not used for a down payment and ownership costs."}</p>
 <p>{"In the hypothetical example below, renting is ahead at year 3 and buying is ahead at year 5. Changing just the home-appreciation assumption from 3% to 1% makes renting ahead at year 5 instead. There is no universal five-year rule hidden in that result; it belongs to the chosen inputs."}</p>

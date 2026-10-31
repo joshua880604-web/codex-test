@@ -1,3 +1,4 @@
+import ContentReviewNotice from './ContentReviewNotice';
 import BlogSnippetLink from './BlogSnippetLink';
 import {hasBlogSnippetKit} from '@/lib/blog-snippet-access';
 import {motherPageCopy} from '@/lib/mother-page-ui';
@@ -32,6 +33,7 @@ export default function CalculatorGuide({
             <SiteLink href="#scope-assumptions">Assumptions</SiteLink><SiteLink href="#sources">Sources</SiteLink>
             {hasBlogSnippetKit(calculator.id)&&<BlogSnippetLink>For writers &amp; bloggers</BlogSnippetLink>}
           </nav>
+          <ContentReviewNotice/>
           <h2>Understanding this calculation</h2>
           <p>{insight?.answer ?? guide.summary}</p>
           <GlossaryLinks id={calculator.id}/>

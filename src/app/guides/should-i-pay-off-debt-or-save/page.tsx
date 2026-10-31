@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function DebtSaveGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">Should I pay off debt or save?</span></nav>
  <p className="glossary-category">Loans &amp; debt · Comparison guide</p><h1>{debtSaveGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={debtSaveGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={debtSaveGuide.updatedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={debtSaveGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={debtSaveGuide.updatedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(debtSaveGuide))}}/>
 <p>{"If you have expensive debt and little accessible cash, the useful question is how to balance the two. Keep essential bills and required payments covered, decide what cash buffer you need, and compare the cost of the debt with the return and access your savings provide. A high debt rate strengthens the case for extra repayments; an empty cash account can leave you borrowing again after the next surprise expense."}</p>
 <p>{"There is no single savings balance or interest-rate cutoff that fits everyone. This guide uses a $6,000 debt, $1,000 of savings and $200 of extra monthly cash to show the trade-offs. The amounts and rates are hypothetical, not a recommended household budget or current account offers."}</p>

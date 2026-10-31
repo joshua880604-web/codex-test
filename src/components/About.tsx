@@ -1,8 +1,14 @@
+import {publisherName,aboutPublisherSchema} from '@/lib/content-transparency';
+import {serializeSchema} from '@/lib/site';
 import SiteLink from './SiteLink';
 import {siteName} from '@/lib/site';
 
 export default function About() {
   return <article className="about-content">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(aboutPublisherSchema())}}/>
+    <section aria-labelledby="publisher"><h2 id="publisher">Who publishes this site</h2>
+    <p>{publisherName} is the publishing identity for this website. Calculator explanations and guides are attributed to the site. That attribution identifies the publisher; it does not represent an individual professional qualification, a financial-adviser license or an independent review.</p>
+    <p>AI tools assist drafting and implementation. We document the calculation methods, example inputs, source references and limitations so readers can inspect what a result means. Read our <SiteLink href="/methodology#editorial-policy">authorship, checking and review policy</SiteLink> for the distinction between arithmetic checks and professional review.</p></section>
     <p>{siteName} provides free, independent financial calculators in English, with a focus on everyday financial decisions in the United States. Our tools help you explore borrowing costs, savings goals, investment assumptions, retirement planning and selected tax scenarios before making a decision.</p>
     <h2>Understand the numbers behind a decision</h2>
     <p>A useful estimate explains what goes into it. Our calculators show their inputs, assumptions and results, with formulas, worked examples and schedules where applicable. You can compare scenarios, inspect how interest or repayments change over time, and export supported results as a CSV or PNG. The <SiteLink href="/glossary/">financial glossary</SiteLink> explains terms used throughout the tools.</p>

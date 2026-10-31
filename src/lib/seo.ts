@@ -1,3 +1,4 @@
+import {publisherIdentity} from './content-transparency';
 import {embedResourcesPath,embedResourcesReviewedOn} from './embed-resources';
 import {motherPageIds,motherPageReviewedOn} from './mother-page-ui';
 import {guidesPath,editorialGuides} from './editorial-guides';
@@ -85,7 +86,7 @@ export const contentUpdatedOn: Record<string, string> = {
   "/marriage-calculator.html": "2026-10-25",
   "/va-mortgage-calculator.html": "2026-10-28",
   "/mortgage-calculator.html": "2026-10-31",
-  "/methodology.html": "2026-10-25",
+  "/methodology.html": "2026-10-31",
   "/compound-interest-calculator.html": "2026-10-25",
   "/average-return-calculator.html": "2026-10-25",
   "/irr-calculator.html": "2026-10-28",
@@ -106,6 +107,8 @@ for(const id of motherPageIds)contentUpdatedOn[catalog.find(c=>c.id===id)!.local
 for(const id of ["coast-fire","brrrr","roas"])contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]="2026-10-30";
 
 for(const id of ['mortgage','compound-interest','roi','coast-fire','house-hacking','cash-on-cash-return','landed-cost'])contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]='2026-10-31';
+
+contentUpdatedOn['/about.html']='2026-10-31';
 
 export function sitemapEntries(config: SiteConfig = siteConfig()) {
   if (!config.origin || !config.indexable) return [];
@@ -136,6 +139,7 @@ export function calculatorSchema(calc: Calculator, config = siteConfig()) {
     applicationCategory: calc.category === "Everyday Tools" ? "UtilitiesApplication" : "FinanceApplication",
     operatingSystem: "Any",
     browserRequirements: "Requires JavaScript",
+    publisher: publisherIdentity(config),
     featureList: searchTasks[calc.id]?.map(task=>task.keyword) ?? calc.modes.map(mode=>mode.title),
     isAccessibleForFree: true,
     offers: {

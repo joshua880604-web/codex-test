@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function CarPayoffGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">Paying off a car loan early</span></nav>
  <p className="glossary-category">Loans &amp; debt · Comparison guide</p><h1>{carPayoffGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={carPayoffGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={carPayoffGuide.updatedOn??carPayoffGuide.publishedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={carPayoffGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={carPayoffGuide.updatedOn??carPayoffGuide.publishedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(carPayoffGuide))}}/>
 <p>{"Paying down a car loan sooner can reduce future interest when interest is calculated on the remaining balance. Whether it is worthwhile depends on the contract, how the lender applies your money, and what cash you need for other obligations. A lower balance is useful, but a payoff plan still needs to fit your budget."}</p>
 <p>{"In the example below, a $20,000 balance at a 6% annual interest rate with a $400 regular monthly payment takes 58 payments to clear. Adding $100 per month reduces that to 45 payments and saves $701.94 in modeled interest. These are hypothetical inputs, not current loan offers or a prediction of your lender’s exact payoff quote."}</p>

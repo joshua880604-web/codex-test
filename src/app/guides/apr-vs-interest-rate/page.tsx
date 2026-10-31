@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function APRGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">APR vs. interest rate</span></nav>
  <p className="glossary-category">Loans &amp; debt · Comparison guide</p><h1>{aprGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={aprGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={aprGuide.updatedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published · Calculations and sources checked <time dateTime={aprGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={aprGuide.updatedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(aprGuide))}}/>
 <p>{"The interest rate determines the interest charged on a loan balance. APR is a broader annualized measure that includes interest and certain borrowing charges. A lower interest rate can therefore come with a higher APR when the fees are large enough. Compare like-for-like loan terms, the payment you must make, upfront cash and the date you expect to repay or replace the loan."}</p>
 <p>{"In the worked example below, a $20,000 five-year loan at 7% has a lower payment than one at 8%. But adding a $1,000 upfront borrowing fee makes the 7% offer’s modeled nominal APR about 9.175%, and its full-term interest-plus-fee cost is higher."}</p>

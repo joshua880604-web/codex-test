@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -8,7 +9,7 @@ export const metadata={...page,openGraph:{...page.openGraph,type:'article' as co
 export default function CDSavingsGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">CD vs. savings account</span></nav>
  <p className="glossary-category">Savings &amp; investing · Comparison guide</p><h1>{cdSavingsGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={cdSavingsGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={cdSavingsGuide.updatedOn??cdSavingsGuide.publishedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Published <time dateTime={cdSavingsGuide.publishedOn}>October 27, 2026</time> · Updated <time dateTime={cdSavingsGuide.updatedOn??cdSavingsGuide.publishedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(cdSavingsGuide))}}/>
 <p>{"A fixed-rate certificate of deposit can make the return on a planned holding period more predictable. A savings account—including a high-yield savings account—lets you keep adding or accessing money under the account’s terms, but its rate can change. The useful comparison is how much each option could leave you with "}<strong>{"when you actually need the money"}</strong>{"."}</p>
 <p>{"For example, $10,000 earning 4.50% APY for a full year grows to $10,450. At an unchanged 4.25% APY, it grows to $10,425. The extra return is $25 before taxes and fees. That is the amount to weigh against the different access conditions in this particular example—not a reason everyone should choose a CD."}</p>

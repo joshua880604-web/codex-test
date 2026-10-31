@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import RemainingGuideReview,{RemainingGuideSummary} from '@/components/RemainingGuideReview';
 import SiteLink from '@/components/SiteLink';
 import {pageMetadata} from '@/lib/seo';
@@ -15,7 +16,7 @@ const sections=[['formula','Calculate your Coast FIRE number'],['monthly-investi
 export default function CoastFireGuide(){return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">How to calculate Coast FIRE</span></nav>
  <p className="glossary-category">Retirement · Planning guide</p><h1>{coastFireGuide.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Calculations and sources checked <time dateTime={coastFireGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={coastFireGuide.updatedOn}>October 31, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Calculations and sources checked <time dateTime={coastFireGuide.publishedOn}>October 28, 2026</time> · Updated <time dateTime={coastFireGuide.updatedOn}>October 31, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(coastFireGuide))}}/>
  <p>To calculate Coast FIRE, divide the annual spending your retirement portfolio must fund by an assumed withdrawal rate. Then discount that portfolio target over the years until retirement using an inflation-adjusted return. The result is the invested amount needed today under those assumptions, without further deposits.</p>
  <p>A hypothetical 35-year-old targeting age 65, a $40,000 annual portfolio-funded budget, a 4% withdrawal assumption, 7% nominal return and 2.5% inflation has a modeled Coast number of <strong>$275,551.41</strong> in today’s USD. This number is sensitive to the assumptions. It does not pay the person’s living expenses from age 35 to 65 or establish that the retirement withdrawal plan will work.</p>

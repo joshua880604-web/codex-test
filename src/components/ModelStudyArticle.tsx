@@ -1,3 +1,4 @@
+import ContentReviewNotice from '@/components/ContentReviewNotice';
 import SiteLink from './SiteLink';
 import StudyChart from './StudyChart';
 import type {ModelStudy} from '@/lib/model-study-articles';
@@ -9,7 +10,7 @@ export default function ModelStudyArticle({study}:{study:ModelStudy}){
  return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="glossary-article editorial-article model-study">
  <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">{meta.breadcrumb}</span></nav>
  <p className="glossary-category">{meta.topic} · Model scenario analysis</p><h1>{meta.heading}</h1>
- <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Model calculations checked <time dateTime={meta.publishedOn}>October 30, 2026</time></p>
+ <p className="guide-byline">Prepared by <SiteLink href="/about">CalculatorFree.io</SiteLink> · Model calculations checked <time dateTime={meta.publishedOn}>October 30, 2026</time></p><ContentReviewNotice kind="guide"/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(meta))}}/>
  <p className="study-scope-label"><strong>What this is:</strong> a controlled arithmetic comparison using hypothetical inputs. It is not a market backtest, user study, randomized experiment or financial recommendation.</p>
  {study.intro.map(p=><p key={p}>{p}</p>)}

@@ -1,7 +1,8 @@
+import {publisherIdentity} from './content-transparency';
 import {calculationGuideList} from './calculation-guides';
 import {decisionGuideList} from './decision-guides';
 import {modelStudyGuides} from './model-study-meta';
-import {absoluteURL,directoryPath,siteConfig,siteName} from './site';
+import {absoluteURL,directoryPath,siteConfig} from './site';
 export const guidesPath='/guides/';
 export type EditorialGuide={path:string;title:string;heading:string;description:string;publishedOn:string;updatedOn?:string;calculatorIds:string[];topic:string;breadcrumb:string;cardIntro:string;format?:string};
 export const recastGuide:EditorialGuide={
@@ -204,8 +205,8 @@ export function editorialSchema(article:boolean|EditorialGuide=false,config=site
  const graph:Record<string,unknown>[]=[entry?{
   '@type':'Article',headline:entry.heading,description:entry.description,
   datePublished:entry.publishedOn,dateModified:entry.updatedOn??entry.publishedOn,
-  author:{'@type':'Organization',name:siteName,url:absoluteURL('/about',config)},
-  publisher:{'@type':'Organization',name:siteName},inLanguage:'en-US',
+  author:publisherIdentity(config),
+  publisher:publisherIdentity(config),inLanguage:'en-US',
   ...(url?{'@id':url+'#article',url,mainEntityOfPage:url}:{}),
  }:{'@type':'CollectionPage',name:'Financial guides',description:'Worked comparisons for financial decisions, with explicit assumptions, sources and calculator examples.',...(url?{'@id':url,url,hasPart:editorialGuides.map(guide=>({'@type':'Article',headline:guide.heading,url:absoluteURL(guide.path,config)}))}:{})}];
  if(url)graph.push({'@type':'BreadcrumbList',itemListElement:[
