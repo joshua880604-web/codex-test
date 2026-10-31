@@ -346,3 +346,43 @@ footer {background:#fff;border-color:#e0e7f1;color:#64748b;}
 .input-review-result-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px}
 .input-review-result-heading button{min-height:44px;padding:6px 9px;border:1px solid var(--control,#dbe3ef);border-radius:8px;background:var(--surface,#fff);color:var(--ink,#152034);font:inherit;cursor:pointer}
 .input-review-result-values{margin:6px 0 0;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+
+/* FHA: essential inputs first, verified premium terms and itemized first payment. */
+.fha-premium-preview{margin:8px 0 16px;padding:12px;border:1px solid var(--control,#dbe3ef);border-radius:10px;background:var(--surface,#f7f9fc)}
+.fha-premium-preview dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0}
+.fha-premium-preview dl>div{min-width:0}.fha-premium-preview dt{font-size:11px;line-height:1.5;color:var(--muted,#536780);overflow-wrap:anywhere}
+.fha-premium-preview dd{margin:4px 0 0;font-size:16px;font-weight:700;overflow-wrap:anywhere}
+.fha-premium-preview p,.fha-payment-breakdown p{margin:10px 0 0;font-size:12px;line-height:1.6;color:var(--muted,#536780)}
+.fha-extra-inputs{margin-top:16px}
+.fha-payment-breakdown{margin-top:16px;min-width:0}
+.fha-payment-breakdown h3{font-size:15px;margin:0 0 10px}
+.fha-payment-breakdown table{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse;font-size:13px}
+.fha-payment-breakdown th,.fha-payment-breakdown td{padding:10px 4px;border-bottom:1px solid var(--border,#dbe3ef);vertical-align:top;overflow-wrap:anywhere}
+.fha-payment-breakdown th{font-weight:400;text-align:left}
+.fha-payment-breakdown thead th:first-child{width:64%}
+.fha-payment-breakdown td,.fha-payment-breakdown thead th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.fha-payment-breakdown tfoot th,.fha-payment-breakdown tfoot td{font-weight:700;border-top:2px solid var(--border,#dbe3ef)}
+
+.fha-cost-pair{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:8px;align-items:end;margin-bottom:16px}
+.fha-cost-pair .field-row{margin:0!important;display:block!important}
+.fha-cost-pair .field-row:last-child>label{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.fha-cost-pair select{width:100%;min-width:0}
+.fha-loan-fields .mortgage-down-pair{align-items:end}
+.fha-loan-fields .mortgage-down-pair .field-row:first-child{grid-template-columns:minmax(0,1fr);gap:6px}
+
+/* All calculator modes share one control frame, including tools without a split workspace. */
+.calculator-page .calculator-form .field-control{width:100%;min-width:0}
+.calculator-page .calculator-form .field-entry{display:flex;align-items:center;width:100%;min-width:0;max-width:100%;box-sizing:border-box;min-height:44px;border:1px solid var(--control,#dce4ef);border-radius:14px;background:var(--surface,#f7f9fc);overflow:hidden}
+.calculator-page .calculator-form .field-entry>:is(input,select,textarea){box-sizing:border-box;min-width:0;max-width:100%;border:0!important;border-radius:0!important;background:transparent;color:var(--ink,#172033);box-shadow:none;font:inherit;font-size:16px;outline:0}
+.calculator-page .calculator-form .field-entry>input{width:0;flex:1 1 0;min-height:42px;height:42px;padding:8px 10px}
+.calculator-page .calculator-form .field-entry>input[type=date]{text-align:left}
+.calculator-page .calculator-form .field-entry>select{width:100%;flex:1 1 0;min-height:42px;height:42px;padding:6px 10px}
+.calculator-page .calculator-form .field-entry>textarea{width:100%;flex:1 1 100%;padding:10px;resize:vertical}
+.calculator-page .calculator-form .field-entry>.unit{display:flex;align-items:center;justify-content:center;align-self:stretch;flex:0 0 auto;max-width:45%;margin:0;padding:6px 9px;border-left:1px solid var(--control,#dce4ef);color:var(--muted,#536780);font-size:12px;line-height:1.4;white-space:normal;overflow-wrap:anywhere}
+.calculator-page .calculator-form .field-entry.unit-long{flex-wrap:wrap}
+.calculator-page .calculator-form .field-entry.unit-long>input{flex-basis:100%;width:100%}
+.calculator-page .calculator-form .field-entry.unit-long>.unit{flex-basis:100%;max-width:100%;justify-content:flex-start;border-left:0;border-top:1px solid var(--control,#dce4ef)}
+.calculator-page .calculator-form .field-entry:focus-within{outline:2px solid var(--accent,#7565ed);outline-offset:2px}
+.calculator-page .calculator-form .field-entry:has(:user-invalid){border-color:#c43d4d}
+.calculator-page .calculator-form .field-entry>:is(input,select){height:44px;min-height:44px}
+.calculator-page .calculator-form .field-entry>.unit{padding-left:6px;padding-right:6px}

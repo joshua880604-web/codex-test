@@ -62,7 +62,7 @@ const priorities: Record<string, string[]> = {
   "fha-loan:biweekly": ["Biweekly payment", "Total interest", "Years to payoff"],
   "va-mortgage:biweekly": ["Biweekly payment", "Total interest", "Years to payoff"],
   "mortgage": ["Monthly principal & interest", "Initial monthly total", "Initial monthly PMI", "Total interest"],
-  "fha-loan": ["Monthly principal & interest", "Initial monthly total", "Total interest"],
+  "fha-loan": ["Initial monthly total", "Monthly principal & interest", "Initial monthly FHA MIP", "Total interest"],
   "va-mortgage": ["Monthly principal & interest", "Initial monthly total", "Total interest"],
   "mortgage-payoff": ["Current principal balance", "Interest saved", "Years to payoff"],
   "refinance": ["New monthly payment", "Current monthly payment", "Monthly payment reduction"],

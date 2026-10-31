@@ -299,7 +299,7 @@ const mortgageMode = (
 ): Mode => ({
   id,
   title,
-  fields: kind === "fha" ? [...houseFields().slice(0, 6), ...extraFieldsForKind, ...houseFields().slice(6)] : [...houseFields(), ...extraFieldsForKind,
+  fields: kind === "fha" ? [...houseFields().slice(0, 6), ...extraFieldsForKind, ...houseFields().slice(6)].map(f=>f.key==='down'?{...f,value:3.5}:f) : [...houseFields(), ...extraFieldsForKind,
     ...(kind === "conventional" ? [{...num("appraised_value", "Original appraised value at purchase", 0, "$", 1), value: "", optional: true, hint: "For PMI estimation and 80% original-LTV cancellation. Use the appraisal at purchase, not today's value. Blank assumes the appraisal is at least the purchase price; original value uses the lower amount."}] : []),
   ],
   description:

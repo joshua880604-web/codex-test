@@ -70,8 +70,8 @@ for(const [base,price,months,rate,duration] of [
 ])test(`US-05: FHA base${base}/price${price}/${months}months`,()=>{
  const terms=fhaMipTerms(base,price,months);close(terms.upfrontPercent,1.75);close(terms.annualPercent,rate);assert.equal(terms.durationMonths,duration);
 });
-test('US-05/06: FHA default stops at11years and exposes reconciled premium amounts',()=>{
- const result=run('fha-loan','monthly');close(metric(result,'Upfront fee'),5600);close(metric(result,'Annual FHA MIP rate'),.5);close(metric(result,'FHA MIP duration in years'),11);
+test('US-05/06: FHA 20% down example stops at11years and exposes reconciled premium amounts',()=>{
+ const result=run('fha-loan','monthly',{down:20});close(metric(result,'Upfront fee'),5600);close(metric(result,'Annual FHA MIP rate'),.5);close(metric(result,'FHA MIP duration in years'),11);
  close(metric(result,'Initial monthly FHA MIP'),132.59);close(Number(result.rows![120][8]),110.23);close(Number(result.rows![131][8]),110.23);close(Number(result.rows![132][8]),0);
  close(metric(result,'Total FHA MIP'),result.rows!.reduce((total,row)=>total+Number(row[8]),0));
  close(metric(result,'Initial monthly total'),metric(result,'Monthly principal & interest')+525+132.59);
@@ -80,8 +80,8 @@ test('US-05/06: FHA default stops at11years and exposes reconciled premium amoun
  for(const row of result.rows!)close(Number(row[7]),Number(row[2])+Number(row[6]));
 });
 test('FHA premium LTV uses the lower purchase price or entered appraised value',()=>{
- const lower=run('fha-loan','monthly',{appraised_value:350000});close(metric(lower,'FHA loan-to-value ratio'),91.42857142857);close(metric(lower,'FHA MIP duration in years'),30);close(metric(lower,'Annual FHA MIP rate'),.5);
- const higher=run('fha-loan','monthly',{appraised_value:500000});close(metric(higher,'FHA loan-to-value ratio'),80);close(metric(higher,'FHA MIP duration in years'),11);
+ const lower=run('fha-loan','monthly',{down:20,appraised_value:350000});close(metric(lower,'FHA loan-to-value ratio'),91.42857142857);close(metric(lower,'FHA MIP duration in years'),30);close(metric(lower,'Annual FHA MIP rate'),.5);
+ const higher=run('fha-loan','monthly',{down:20,appraised_value:500000});close(metric(higher,'FHA loan-to-value ratio'),80);close(metric(higher,'FHA MIP duration in years'),11);
 });
 test('US-06: HUD published worked example preserves annual averages and staged cents rounding',()=>{
  const premiums=fhaMipSchedule(106605,7.5,745.40,360,2.25,.5,360);
@@ -101,7 +101,7 @@ test('FHA manual terms and legacy links retain explicit zero/custom premiums',()
  const zero=run('fha-loan','monthly',{down:100});close(metric(zero,'Financed loan amount'),0);close(metric(zero,'Total FHA MIP'),0);
  assert.throws(()=>run('fha-loan','monthly',{mip_method:'Manual',mip_years:.11}),/whole number/);
  assert.throws(()=>run('fha-loan','monthly',{years:1,months:.5}),/whole number/);
- close(metric(run('fha-loan','monthly',{annual_mip:'',mip_years:'',pmi:'invalid'}),'Annual FHA MIP rate'),.5);
+ close(metric(run('fha-loan','monthly',{annual_mip:'',mip_years:'',pmi:'invalid'}),'Annual FHA MIP rate'),.55);
 });
 test('Public tax models use repaired rules and serialize the MFS residence choice',()=>{
  const edu=run('income-tax','federal',{year:2025,wages:20000,interest:13000,children:1,education0:4000,education_type0:'American Opportunity',aotc_refundable:'Yes',withheld:0});close(metric(edu,'Estimated federal income tax'),-2700);

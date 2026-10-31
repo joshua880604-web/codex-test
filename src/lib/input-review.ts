@@ -1,4 +1,5 @@
 import type {Field,Values} from './types';
+import {fhaReviewSections} from './fha-ui';
 import {progressiveInputGroups} from './progressive-inputs';
 import {marriageSections,marriageFieldSection} from './marriage-layout';
 export type InputReviewGroup={key:string;title:string;fields:Field[]};
@@ -10,6 +11,7 @@ const genericTitles:Record<string,string>={'interest':'Contribution timing, tax 
 export function inputReviewGroups(id:string,mode:string,fields:Field[],advanced:Field[]=[]):InputReviewGroup[]{
  const group=(key:string,title:string,keys:string[]):InputReviewGroup=>({key,title,fields:keys.map(k=>fields.find(f=>f.key===k)).filter((f):f is Field=>Boolean(f))});
  if(id==='coast-fire')return [];
+ if(id==='fha-loan')return fhaReviewSections.map(s=>group(s.key,s.title,s.keys)).filter(g=>g.fields.length);
  if(id==='mortgage')return [
  ...(mode==='biweekly'?[]:[group('mortgage-housing','Taxes, insurance & fees',['tax','tax_unit','insurance','insurance_unit','hoa','hoa_unit','other','other_unit','tax_growth','insurance_growth','hoa_growth','other_growth']),group('mortgage-pmi','PMI & home value',['property_value','pmi_method','pmi_credit','pmi','pmi_unit','pmi_policy','pmi_years','appraised_value'])]),group('mortgage-extras','Extra payments & dates',['months','start','extra_monthly','extra_start','extra_yearly','extra_yearly_start','extra_once','extra_once_month','dated'])].filter(g=>g.fields.length);
  if(id==='marriage-tax')return marriageSections.slice(1).map(s=>({key:'marriage-'+s.id,title:s.title,fields:fields.filter(f=>marriageFieldSection(f)===s.id)})).filter(g=>g.fields.length);

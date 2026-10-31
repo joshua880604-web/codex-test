@@ -68,7 +68,7 @@ test('MORT-04: early principal affects the requested cancellation threshold and 
 test('MORT-04: appraisal changes neither loan P&I nor fixed-duration PMI or FHA policy behavior',()=>{
  const normal=run('mortgage','monthly',{pmi:1200}),unused=run('mortgage','monthly',{pmi:1200,appraised_value:'not used'});
  assert.deepEqual(unused.metrics,normal.metrics);close(Number(unused.rows![0][6]),625);
- const f=run('fha-loan','monthly',{appraised_value:350000});close(metric(f,'FHA loan-to-value ratio'),91.42857142857);close(metric(f,'FHA MIP duration in years'),30);
+ const f=run('fha-loan','monthly',{down:20,appraised_value:350000});close(metric(f,'FHA loan-to-value ratio'),91.42857142857);close(metric(f,'FHA MIP duration in years'),30);
  assert.throws(()=>run('mortgage','monthly',{pmi_policy:'Cancel at 80% original LTV',appraised_value:0}),/appraised value/i);
 });
 test('Mortgage repair inputs survive sharing and lazy calculation for both modes',async()=>{

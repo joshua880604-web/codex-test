@@ -23,9 +23,9 @@ test("workspace policy covers reviewed pages, preserves broad forms, and never l
 });
 test("requested payment and comparison amounts remain visible before disclosures", () => {
   for (const id of ["mortgage", "fha-loan", "va-mortgage"]) {
-    assert.equal(run(id, "monthly").summary.primary.label, "Monthly principal & interest");
+    assert.equal(run(id, "monthly").summary.primary.label, id==='fha-loan'?"Initial monthly total":"Monthly principal & interest");
     assert.equal(run(id, "biweekly").summary.primary.label, "Biweekly payment");
-    assert.ok(run(id, "monthly").summary.highlights.some(m => m.label === "Initial monthly total"));
+    assert.ok(run(id, "monthly").summary.highlights.some(m => m.label === (id==='fha-loan'?"Monthly principal & interest":"Initial monthly total")));
   }
   for (const id of ["auto-loan", "boat-loan"]) {
     assert.equal(run(id, "payment").summary.primary.label, "Payment per period");
