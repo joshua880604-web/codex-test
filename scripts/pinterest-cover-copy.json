@@ -67,7 +67,7 @@
   "heloc": {
     "category": "MORTGAGE / HOUSING",
     "headline": "HELOC",
-    "description": "Explore payments across a home equity line of credit’s phases."
+    "description": "Explore payments across a home equity line of credit\u2019s phases."
   },
   "debt-snowball": {
     "category": "DEBT / CREDIT",
@@ -158,5 +158,35 @@
     "category": "STOCKS / INVESTING",
     "headline": "Stock Average",
     "description": "Calculate weighted stock cost from your separate purchases."
+  },
+  "compound-interest": {
+    "category": "SAVINGS / INVESTING",
+    "headline": "Compound\nInterest",
+    "description": "Explore compounding, contributions and the assumptions behind future balances."
+  },
+  "investment": {
+    "category": "SAVINGS / INVESTING",
+    "headline": "Investment",
+    "description": "Compare starting assets, monthly deposits, time and assumed investment returns."
+  },
+  "margin": {
+    "category": "BUSINESS / PRICING",
+    "headline": "Profit Margin",
+    "description": "Keep margin on revenue separate from markup on cost when setting prices."
+  },
+  "markup": {
+    "category": "BUSINESS / PRICING",
+    "headline": "Markup",
+    "description": "Turn unit costs and markup into prices, then check the resulting margin."
+  },
+  "roi": {
+    "category": "INVESTMENT RETURNS",
+    "headline": "ROI",
+    "description": "Separate total profit, total return and the annualized rate over a holding period."
+  },
+  "discount-points": {
+    "category": "MORTGAGES / LOAN COSTS",
+    "headline": "Mortgage\nPoints",
+    "description": "Compare upfront points, monthly payments and costs before selling or refinancing."
   }
 }

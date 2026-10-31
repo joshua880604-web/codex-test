@@ -1,4 +1,5 @@
 import { type Calculator, type Field, type Metric, type Result, type Values } from '../lib/types';
+import {embedReport} from '../lib/embed-reports';
 import { guardAttribution } from './attribution';
 import {stockLotDrafts,type StockLotDraft} from '../lib/stock-lots';
 import {coastFieldVisible} from '../lib/coast-household';
@@ -25,6 +26,19 @@ function renderResult(result: Result) {
   const list=document.createElement('dl');list.className='metrics';
   for(const metric of result.metrics){const row=document.createElement('div'),term=document.createElement('dt'),value=document.createElement('dd');term.textContent=metric.label;value.textContent=metricText(metric);row.append(term,value);list.append(row);}output.append(list);
   if(result.notes?.length){const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Assumptions and limitations';details.append(summary);for(const note of result.notes){const p=document.createElement('p');p.textContent=note;details.append(p);}output.append(details);}
+  const report=embedReport(config.id,result);
+  if(report){
+   const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Key comparison · '+report.title;details.className='embed-key-report';details.append(summary);let rendered=false;
+   details.addEventListener('toggle',()=>{if(!details.open||rendered)return;rendered=true;
+    const help=document.createElement('p');help.textContent='Scroll the table horizontally on smaller screens. Figures are model scenarios, not forecasts.';details.append(help);
+    const region=document.createElement('div');region.className='embed-report-scroll';region.tabIndex=0;region.setAttribute('role','region');region.setAttribute('aria-label',report.title);
+    const table=document.createElement('table'),caption=document.createElement('caption');caption.textContent=report.title;table.append(caption);
+    const head=document.createElement('thead'),header=document.createElement('tr');for(const label of report.columns){const th=document.createElement('th');th.scope='col';th.textContent=label;header.append(th);}head.append(header);table.append(head);
+    const body=document.createElement('tbody');for(const row of report.rows){const tr=document.createElement('tr');row.forEach((value,i)=>{const cell=document.createElement(i===0?'th':'td');if(i===0)(cell as HTMLTableCellElement).scope='row';cell.textContent=typeof value==='number'?new Intl.NumberFormat('en-US',/tax year/i.test(report.columns[i])?{useGrouping:false,maximumFractionDigits:0}:{maximumFractionDigits:report.columns[i].includes('%')?4:2}).format(value):value;tr.append(cell);});body.append(tr);}table.append(body);region.append(table);details.append(region);
+    const note=document.createElement('p');note.textContent=report.note+(report.totalRows>report.rows.length?' Showing the first '+report.rows.length+' of '+report.totalRows+' rows.':'');details.append(note);
+    const more=document.createElement('a');more.href=config.mainURL;more.target='_blank';more.rel='nofollow noopener';more.textContent='Open full calculator for complete reports and assumptions →';details.append(more);
+   });output.append(details);
+  }
   output.hidden=false;
 }
 function renderStockLots(field:Field){

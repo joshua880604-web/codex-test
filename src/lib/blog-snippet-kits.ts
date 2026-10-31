@@ -341,5 +341,69 @@ export const blogSnippetKits:Record<string,BlogSnippetKit>={
     "Early assignment can occur, including around dividends. The model does not price options, predict assignment or value an early close, roll or adjusted contract. Dividends, taxes, financing and unentered trading costs are excluded.",
     "The simple annualized maximum return multiplies one-trade return by 365 / days; it is not APY or repeatable income. Some fee/premium combinations have no profitable expiry price. A premium cushion does not remove the risk of a large stock loss."
   ]
+},
+ "compound-interest":{
+  "intro": "Compound interest grows a balance as earlier earnings remain invested. This calculator separates the starting amount, new contributions and net earnings, and provides a separate nominal-to-effective-rate conversion mode. It helps explain how timing and compounding assumptions affect a projected balance without treating a smooth return path as an investment forecast.",
+  "method": [
+    "Without deposits or tax, compound growth is principal × (1 + nominal annual rate / compounding periods)^(periods × years). For example, $1,000 compounded annually at 5% for ten years becomes approximately $1,628.89.",
+    "The growth mode converts the selected compounding convention to a monthly equivalent and places monthly and annual deposits at the chosen beginning or end timing. It applies the entered simplified tax to positive accrued interest at each year end, including the final partial year."
+  ],
+  "assumptions": [
+    "Rates remain constant; annual and monthly deposits use their stated units. A nominal rate with compounding is different from an effective annual yield.",
+    "The inflation-adjusted figure divides the final nominal balance by the assumed inflation growth factor. It is separate from the account’s displayed nominal dollars. Default values are illustrations."
+  ],
+  "use": "Use this tool to explain compounding and compare contribution timing under consistent rates. Use its conversion mode to compare nominal and effective annual conventions before interpreting different quoted percentages.",
+  "limitations": [
+    "The tax input is not a capital-gains realization or tax-deferral model. Negative interest creates no modeled tax credit, and investment losses can reduce principal.",
+    "No historical market sequence, risk probability, account eligibility, transaction costs or future rate changes are estimated. Irregular dated cash flows require a different model; a calculated ending value is not a promised balance."
+  ]
+},
+ "investment":{
+  "intro": "An investment projection depends on more than the return assumption: starting assets, new deposits, timing and the horizon all matter. This calculator can project an ending balance or solve for a monthly contribution, starting amount, return or duration. Those solved values are mathematical requirements under entered assumptions, not recommendations or evidence that a target is achievable in markets.",
+  "method": [
+    "Accumulation grows the balance using the selected compounding rate’s monthly equivalent, with monthly and annual contributions at the chosen timing. At zero return and no tax, $1,000 initially plus twelve $100 month-end deposits equals $2,200 after one year.",
+    "Other modes change one unknown while preserving the remaining inputs. Contribution and starting-amount modes solve that funding requirement; return mode numerically solves a constant rate; duration searches for the first whole month reaching the target within the supported horizon."
+  ],
+  "assumptions": [
+    "Use the correct units for annual versus monthly contributions and do not enter a dividend yield in addition to a total-return rate that already includes dividends.",
+    "Optional tax is charged on positive accrued interest at year end and at a final partial year. The inflation-adjusted ending figure is a purchasing-power comparison, not an additional amount of money."
+  ],
+  "use": "Use the calculator to show how a funding target changes when one assumption changes. State which mode was used, especially when quoting a required return or the first modeled target-crossing date.",
+  "limitations": [
+    "A target may be outside the supported numerical range or require negative funding; an error is not proof that a different investment can achieve it. Constant returns do not model volatility or sequence risk.",
+    "There is no automatic tax-bracket, account-limit, fee, retirement-withdrawal or suitability analysis. Timing, rate conventions and costs should match before comparing the result with another calculator or account statement."
+  ]
+},
+ "margin":{
+  "intro": "Gross profit margin expresses profit as a share of revenue, while markup expresses the same profit as a share of cost. The pricing modes in this calculator solve revenue, cost, profit and the corresponding percentages. Separate stock and currency margin modes concern trading collateral, which is a different meaning of margin and should not be mixed with business profitability.",
+  "method": [
+    "Pricing margin = (revenue − cost) / revenue × 100. Markup = (revenue − cost) / cost × 100 when cost is positive. For example, $100 cost and $150 revenue give $50 gross profit, 33.3333% margin and 50% markup.",
+    "To find revenue for a target margin, divide cost by (1 − target margin as a decimal). A $100 cost at 25% margin requires approximately $133.33 revenue, not a 25% markup price of $125."
+  ],
+  "assumptions": [
+    "Cost and revenue use the same unit, currency and reporting basis. Include any costs you want reflected before interpreting the calculated profit.",
+    "The pricing result does not automatically deduct overhead, advertising, sales tax, finance costs or owner income tax. A gross margin is not necessarily a net profit margin."
+  ],
+  "use": "Use the pricing modes to check unit economics or explain why identical-looking margin and markup percentages imply different prices. Identify the selected mode when citing a result.",
+  "limitations": [
+    "No inventory accounting, changing product mix, market-demand forecast or optimal selling price is supplied. Positive unit profit does not establish that fixed costs are covered.",
+    "The stock and currency modes are collateral arithmetic using entered requirements, not gross-margin calculations, broker approval or a forecast of margin calls. These trading modes do not model a complete account’s risks, financing costs or liquidation rules."
+  ]
+},
+ "markup":{
+  "intro": "Markup adds an amount above cost to form a selling price. This calculator connects cost, price, gross profit and margin, including reverse and comparison modes. It is useful for explaining a pricing calculation while keeping the cost denominator for markup separate from the revenue denominator for margin.",
+  "method": [
+    "Selling price = cost × (1 + markup as a decimal). With $100 cost and 50% markup, price is $150 and gross profit is $50. The resulting margin is $50 / $150, or approximately 33.3333%.",
+    "Price from a target margin is cost / (1 − margin). To convert percentages, margin = markup / (1 + markup), and markup = margin / (1 − margin), using decimal rates. A 25% margin requires approximately 33.3333% markup."
+  ],
+  "assumptions": [
+    "Use a positive unit cost and selling price. Enter the costs you want included consistently; the calculator does not infer landed cost, advertising, refunds or fixed overhead.",
+    "The comparison modes hold the entered cost constant. A below-cost selling price can produce a negative markup and margin; it does not remove the need to fund that loss."
+  ],
+  "use": "Use this tool to calculate price from cost, reverse a markup calculation or demonstrate why a desired margin needs a different markup percentage. Recheck the actual cost basis before copying a result into a price list.",
+  "limitations": [
+    "The output is gross unit pricing arithmetic, not a business profit forecast, recommended price or demand model. Sales taxes and income taxes are not automatically added or deducted.",
+    "If costs or discounts change, the old percentage may no longer describe the transaction. Review the new price and cost together; cost estimates, currency and time period must remain consistent when comparing products or scenarios."
+  ]
 }
 };
