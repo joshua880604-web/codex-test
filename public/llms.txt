@@ -219,3 +219,10 @@ Calculator pages provide Share, Cite and Export controls; Embed appears only whe
 
 - [Publisher identity](https://www.calculatorfree.io/about#publisher): Calculators and guides are attributed to CalculatorFree.io; the brand does not represent an individual professional qualification. AI assistance is disclosed.
 - [Authorship and review policy](https://www.calculatorfree.io/methodology#editorial-policy): Distinguishes arithmetic cross-checks, source checks and professional review. No named independent professional reviewer is claimed; dates retain their stated meaning.
+
+## Retirement account and withdrawal guides
+
+- [How Long Will My Retirement Savings Last?](https://www.calculatorfree.io/guides/how-long-will-retirement-savings-last/): Estimate retirement savings longevity with fixed monthly withdrawals. Compare returns, spending and final partial payments, and understand inflation and sequence risk.
+- [How Does an HSA Work? Contributions, Tax Savings and Growth](https://www.calculatorfree.io/guides/how-does-an-hsa-work/): Understand HSA contribution room, employer deposits, tax assumptions and investment growth. Includes 2026 limits, six reproducible cases and medical-spending scenarios.
+- [How to Calculate RMD: Balance, IRS Factor and Remaining Withdrawal](https://www.calculatorfree.io/guides/how-to-calculate-rmd/): Calculate an owner-account RMD from the prior December 31 balance and IRS factor. Compare ages, credited distributions and deadlines with reproducible examples.
+- [How Does 401(k) Matching Work? Formulas and Checked Examples](https://www.calculatorfree.io/guides/how-401k-matching-works/): Calculate two-tier 401(k) matching, distinguish match rate from salary band, and understand contribution limits, payroll timing, true-ups and vesting.

@@ -1,0 +1,6 @@
+Case,Model,Inputs (JSON),Unrounded reference metrics (JSON)
+"-2% return, $3,000.00/month",longevity,"{""balance"": 500000, ""return"": -2, ""withdrawal"": 3000}","{""Final monthly withdrawal"": 2386.3394368690547, ""Monthly withdrawals"": 147.0, ""Total withdrawn"": 440386.3394368691, ""Years savings last"": 12.25}"
+"0% return, $3,000.00/month",longevity,"{""balance"": 500000, ""return"": 0, ""withdrawal"": 3000}","{""Final monthly withdrawal"": 2000.0, ""Monthly withdrawals"": 167.0, ""Total withdrawn"": 500000.0, ""Years savings last"": 13.916666666666666}"
+"5% return, $3,000.00/month",longevity,"{""balance"": 500000, ""return"": 5, ""withdrawal"": 3000}","{""Final monthly withdrawal"": 1482.4784487678785, ""Monthly withdrawals"": 280.0, ""Total withdrawn"": 838482.4784487679, ""Years savings last"": 23.333333333333332}"
+"5% return, $4,000.00/month",longevity,"{""balance"": 500000, ""return"": 5, ""withdrawal"": 4000}","{""Final monthly withdrawal"": 324.0286059008762, ""Monthly withdrawals"": 176.0, ""Total withdrawn"": 700324.0286059008, ""Years savings last"": 14.666666666666666}"
+"5% return, $1,500.00/month",longevity,"{""balance"": 500000, ""return"": 5, ""withdrawal"": 1500}","{""Initial monthly interest"": 2037.0618918241507}"

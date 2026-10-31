@@ -109,6 +109,10 @@ for(const id of ["coast-fire","brrrr","roas"])contentUpdatedOn[catalog.find(c=>c
 for(const id of ['mortgage','compound-interest','roi','coast-fire','house-hacking','cash-on-cash-return','landed-cost'])contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]='2026-10-31';
 
 contentUpdatedOn['/about.html']='2026-10-31';
+// Added reviewed guide links; model inputs and rules are unchanged.
+for(const id of ['retirement','hsa','rmd','401k'])contentUpdatedOn[catalog.find(c=>c.id===id)!.local_route]='2026-11-01';
+contentUpdatedOn['/guides/']='2026-11-01';
+for(const slug of ['401k','employer-match-and-vesting','withdrawal-rate'])contentUpdatedOn[glossaryTermPath(slug)]='2026-11-01';
 
 export function sitemapEntries(config: SiteConfig = siteConfig()) {
   if (!config.origin || !config.indexable) return [];

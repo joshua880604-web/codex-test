@@ -33,15 +33,15 @@
         "title": "The monthly mortgage payment formula",
         "paragraphs": [
           "Let P be principal, i the monthly interest rate as a decimal, and N the number of monthly payments. Divide a nominal annual percentage rate by 100 and by 12. Multiply a term in years by 12. Here P = 300,000, i = 0.06 / 12 = 0.005, and N = 360.",
-          "Substituting those values gives an unrounded installment of 1,798.651575458257. Displaying $1,798.65 does not mean the model rounds every internal calculation to cents. A lender’s cent-rounded installment, first-period day count and final payment can produce small differences. At 0% interest use P / N; the ordinary fraction otherwise divides by zero."
+          "Substituting those values gives an unrounded installment of 1,798.651575458257. Displaying $1,798.65 does not mean the model rounds every internal calculation to cents. A lender\u2019s cent-rounded installment, first-period day count and final payment can produce small differences. At 0% interest use P / N; the ordinary fraction otherwise divides by zero."
         ],
-        "formula": "M = P × i / [1 − (1 + i)^(−N)]; when i = 0, M = P / N"
+        "formula": "M = P \u00d7 i / [1 \u2212 (1 + i)^(\u2212N)]; when i = 0, M = P / N"
       },
       {
         "id": "first-payment",
         "title": "What happens inside the first payment?",
         "paragraphs": [
-          "The first month’s interest in this equal-period example is $300,000 × 0.005 = $1,500. Subtract that from $1,798.65 to get approximately $298.65 of principal reduction. Next month, interest applies to the smaller outstanding balance. The payment remains level while the principal and interest shares change.",
+          "The first month\u2019s interest in this equal-period example is $300,000 \u00d7 0.005 = $1,500. Subtract that from $1,798.65 to get approximately $298.65 of principal reduction. Next month, interest applies to the smaller outstanding balance. The payment remains level while the principal and interest shares change.",
           "With no extras, the 30-year example pays approximately $347,514.57 interest across the term, before tax, insurance and other ownership costs. A shorter 15-year loan at the same illustrative rate needs $2,531.57 principal and interest monthly, but the modeled total interest falls to $155,682.69. Real 15- and 30-year quotes need not have identical rates."
         ],
         "formula": ""
@@ -50,8 +50,8 @@
         "id": "full-budget",
         "title": "Add property tax, insurance, PMI and HOA separately",
         "paragraphs": [
-          "Convert each annual dollar cost to a monthly amount before adding it. In our worksheet, $4,800 annual tax / 12 = $400; $1,800 insurance / 12 = $150; and $1,200 HOA / 12 = $100. Their $650 sum raises the initial outlay without changing the loan’s principal-and-interest installment. HOA may be paid separately from the mortgage bill.",
-          "PMI is separate from homeowners insurance. The examples explicitly select Manual PMI and zero PMI because the illustrated down payment is 20%; they are not an estimate of every borrower’s insurance requirement. For a lower down payment, use the tool’s disclosed automatic estimate or enter an actual quote manually. Cancellation depends on the selected model and lender conditions.",
+          "Convert each annual dollar cost to a monthly amount before adding it. In our worksheet, $4,800 annual tax / 12 = $400; $1,800 insurance / 12 = $150; and $1,200 HOA / 12 = $100. Their $650 sum raises the initial outlay without changing the loan\u2019s principal-and-interest installment. HOA may be paid separately from the mortgage bill.",
+          "PMI is separate from homeowners insurance. The examples explicitly select Manual PMI and zero PMI because the illustrated down payment is 20%; they are not an estimate of every borrower\u2019s insurance requirement. For a lower down payment, use the tool\u2019s disclosed automatic estimate or enter an actual quote manually. Cancellation depends on the selected model and lender conditions.",
           "Escrow is a way to collect certain bills, not an extra cost to add a second time. If a quoted total already includes escrowed tax and insurance, reconcile the components instead of adding those bills again. A fixed loan rate does not freeze taxes, insurance or escrow adjustments. Maintenance, utilities and reserves may still sit outside the payment estimate."
         ],
         "formula": "Initial housing outlay = principal and interest + annual tax/12 + annual insurance/12 + monthly PMI + annual HOA/12 + other entered costs/12"
@@ -60,7 +60,7 @@
         "id": "excel",
         "title": "Calculate the payment in Excel or Google Sheets",
         "paragraphs": [
-          "For this example, enter =-PMT(6%/12,30*12,300000). The minus sign converts the spreadsheet’s payment-outflow sign convention to a positive displayed payment. If your spreadsheet uses semicolons as argument separators, adjust the separators without changing the rates or periods.",
+          "For this example, enter =-PMT(6%/12,30*12,300000). The minus sign converts the spreadsheet\u2019s payment-outflow sign convention to a positive displayed payment. If your spreadsheet uses semicolons as argument separators, adjust the separators without changing the rates or periods.",
           "PMT returns loan principal and interest, not a complete escrow or ownership budget. Add =4800/12+1800/12+1200/12 separately for the $650 monthly costs. Keep the unrounded PMT value for intermediate calculations; format the cell to two decimals for display. A zero-rate check is =300000/(30*12)."
         ],
         "formula": ""
@@ -69,8 +69,8 @@
         "id": "comparison",
         "title": "How to compare offers without mixing assumptions",
         "paragraphs": [
-          "First hold the financed amount, term, payment frequency and cost definitions constant. Change one input, such as the rate, and compare both the payment and total interest. Then test a different down payment or term as a separate scenario. Include upfront cash and closing charges when making a broader decision; this payment example does not calculate an offer’s overall economic value.",
-          "Extra principal can shorten payoff while leaving the scheduled installment unchanged. Recasting and refinancing are different transactions. If you want to evaluate extras, open the payoff tools rather than subtracting the extra cash from interest manually. Check the loan’s prepayment terms and how the servicer applies an extra payment before acting."
+          "First hold the financed amount, term, payment frequency and cost definitions constant. Change one input, such as the rate, and compare both the payment and total interest. Then test a different down payment or term as a separate scenario. Include upfront cash and closing charges when making a broader decision; this payment example does not calculate an offer\u2019s overall economic value.",
+          "Extra principal can shorten payoff while leaving the scheduled installment unchanged. Recasting and refinancing are different transactions. If you want to evaluate extras, open the payoff tools rather than subtracting the extra cash from interest manually. Check the loan\u2019s prepayment terms and how the servicer applies an extra payment before acting."
         ],
         "formula": ""
       }
@@ -95,7 +95,7 @@
       },
       {
         "question": "Why can a fixed-rate mortgage payment increase?",
-        "answer": "The contractual principal-and-interest amount may remain level while tax, insurance, mortgage insurance or an escrow adjustment changes the total bill. Review your statement’s components. Adjustable-rate, interest-only and other contracts need their own repayment assumptions."
+        "answer": "The contractual principal-and-interest amount may remain level while tax, insurance, mortgage insurance or an escrow adjustment changes the total bill. Review your statement\u2019s components. Adjustable-rate, interest-only and other contracts need their own repayment assumptions."
       },
       {
         "question": "How much does each extra $10,000 borrowed add per month?",
@@ -103,10 +103,10 @@
       },
       {
         "question": "Is APR the rate to enter into PMT?",
-        "answer": "Use the loan’s contractual interest rate for its scheduled installment. APR includes specified financing charges; replacing the note rate with APR generally does not reproduce the contract payment."
+        "answer": "Use the loan\u2019s contractual interest rate for its scheduled installment. APR includes specified financing charges; replacing the note rate with APR generally does not reproduce the contract payment."
       },
       {
-        "question": "Why is my lender’s payment different from the calculator?",
+        "question": "Why is my lender\u2019s payment different from the calculator?",
         "answer": "Check principal, rate, term, financed charges, PMI, taxes, insurance, escrow adjustments and rounding. Irregular first periods, lender conventions and a different loan product can also change the result. A model is not a binding Loan Estimate."
       }
     ],
@@ -181,7 +181,7 @@
         "title": "State the rate, contribution schedule and time horizon",
         "paragraphs": [
           "Our four cases use 120 months, $10,000 starting money and $200 each month. Annual deposits, tax and inflation inputs are all zero. Selecting monthly compounding makes a 5% nominal annual rate equal to 0.05 / 12 per month. That convention is essential to reproducing the figures.",
-          "A nominal annual rate and APY are not interchangeable. If your quoted yield is a 5% effective APY, the equivalent monthly growth factor is 1.05^(1/12), not 1 + 0.05/12. The tool’s rate-conversion mode can translate an effective annual rate, entered as an annual-compounding rate, into a monthly-compounding nominal rate. Do not add a second compounding benefit to an APY."
+          "A nominal annual rate and APY are not interchangeable. If your quoted yield is a 5% effective APY, the equivalent monthly growth factor is 1.05^(1/12), not 1 + 0.05/12. The tool\u2019s rate-conversion mode can translate an effective annual rate, entered as an annual-compounding rate, into a monthly-compounding nominal rate. Do not add a second compounding benefit to an APY."
         ],
         "formula": ""
       },
@@ -190,9 +190,9 @@
         "title": "The formula for monthly deposits at month end",
         "paragraphs": [
           "Let P be starting principal, C the monthly deposit, i the monthly rate and N the number of months. The first term compounds the initial balance. The second is the future value of the deposit series. It assumes one deposit at the end of every month and no missed deposits or withdrawals.",
-          "For the worked example, i = 0.05/12, N = 120, P = 10,000 and C = 200. Applying the formula gives $47,526.55. If i is zero, use P + C × N: $10,000 + $200 × 120 = $34,000. This zero-rate check helps detect accidentally counting your own deposits as investment profit."
+          "For the worked example, i = 0.05/12, N = 120, P = 10,000 and C = 200. Applying the formula gives $47,526.55. If i is zero, use P + C \u00d7 N: $10,000 + $200 \u00d7 120 = $34,000. This zero-rate check helps detect accidentally counting your own deposits as investment profit."
         ],
-        "formula": "FV = P × (1 + i)^N + C × [(1 + i)^N − 1] / i; at i = 0, FV = P + C × N"
+        "formula": "FV = P \u00d7 (1 + i)^N + C \u00d7 [(1 + i)^N \u2212 1] / i; at i = 0, FV = P + C \u00d7 N"
       },
       {
         "id": "deposits",
@@ -207,10 +207,10 @@
         "id": "timing",
         "title": "Month-start deposits earn one extra monthly period",
         "paragraphs": [
-          "A beginning-of-month contribution arrives before that month’s growth. Multiply only the deposit-series term by (1 + i). The initial principal is already invested at time zero, so do not multiply the entire ending balance by an extra month.",
+          "A beginning-of-month contribution arrives before that month\u2019s growth. Multiply only the deposit-series term by (1 + i). The initial principal is already invested at time zero, so do not multiply the entire ending balance by an extra month.",
           "At 5%, switching the same 120 deposits to month start raises the ending balance to $47,655.95, a $129.40 difference after rounding. That is a timing effect, not a higher assumed return. A real payroll or brokerage schedule can have more varied dates; this worksheet uses regular monthly intervals."
         ],
-        "formula": "Beginning-of-month deposit value = C × [(1 + i)^N − 1] / i × (1 + i)"
+        "formula": "Beginning-of-month deposit value = C \u00d7 [(1 + i)^N \u2212 1] / i \u00d7 (1 + i)"
       },
       {
         "id": "excel",
@@ -226,8 +226,8 @@
         "title": "Test uncertainty without presenting a forecast",
         "paragraphs": [
           "Keeping the contributions fixed but assuming 8% nominal growth produces $58,785.61 after ten years, compared with $47,526.55 at 5%. The $11,259.06 difference shows sensitivity to the chosen rate. It is not evidence that a particular portfolio will earn either return or that the higher-return case is equally attainable.",
-          "The actual calculator can also apply annual deposits, contribution increases in supported tools, tax on positive interest and inflation. Those settings are outside these four matched cases. Its monthly-equivalent growth convention does not reproduce every bank’s daily balance, deposit processing or interest-crediting method.",
-          "The tax input applies the model’s simplified charge to positive accrued interest at year end; it is not a capital-gains or retirement-account tax engine. Inflation-adjusted balances measure purchasing power rather than extra nominal earnings. Investment fees, losses and irregular withdrawals need explicit treatment instead of being hidden in an optimistic rate."
+          "The actual calculator can also apply annual deposits, contribution increases in supported tools, tax on positive interest and inflation. Those settings are outside these four matched cases. Its monthly-equivalent growth convention does not reproduce every bank\u2019s daily balance, deposit processing or interest-crediting method.",
+          "The tax input applies the model\u2019s simplified charge to positive accrued interest at year end; it is not a capital-gains or retirement-account tax engine. Inflation-adjusted balances measure purchasing power rather than extra nominal earnings. Investment fees, losses and irregular withdrawals need explicit treatment instead of being hidden in an optimistic rate."
         ],
         "formula": ""
       }
@@ -248,7 +248,7 @@
       },
       {
         "question": "Can I use an annual APY divided by 12?",
-        "answer": "That is an approximation, not the exact monthly equivalent. For APY use i = (1 + APY)^(1/12) − 1, with APY in decimal form. Divide by 12 when the stated rate is nominal with monthly compounding."
+        "answer": "That is an approximation, not the exact monthly equivalent. For APY use i = (1 + APY)^(1/12) \u2212 1, with APY in decimal form. Divide by 12 when the stated rate is nominal with monthly compounding."
       },
       {
         "question": "Does depositing at the beginning of the month make a difference?",
@@ -334,11 +334,11 @@
         "id": "formula",
         "title": "Calculate the cumulative gain and the compound yearly rate",
         "paragraphs": [
-          "Let B be the positive beginning value, E the nonnegative ending value, and T the holding period in years. Cumulative return is E / B − 1. Compound annualized return is (E / B)^(1 / T) − 1. Multiply each decimal result by 100 to display a percentage. A meaningful annualization needs a positive holding period.",
-          "For $10,000 becoming $15,000 over three years: E / B = 1.5, so 1.5^(1/3) − 1 = approximately 0.14471424. This is 14.4714% annually. Recompounding (1.14471424)^3 approximately reproduces 1.5; ordinary 50% / 3 = 16.6667% does not.",
+          "Let B be the positive beginning value, E the nonnegative ending value, and T the holding period in years. Cumulative return is E / B \u2212 1. Compound annualized return is (E / B)^(1 / T) \u2212 1. Multiply each decimal result by 100 to display a percentage. A meaningful annualization needs a positive holding period.",
+          "For $10,000 becoming $15,000 over three years: E / B = 1.5, so 1.5^(1/3) \u2212 1 = approximately 0.14471424. This is 14.4714% annually. Recompounding (1.14471424)^3 approximately reproduces 1.5; ordinary 50% / 3 = 16.6667% does not.",
           "This endpoint calculation is often called CAGR. Its constant rate is a mathematical equivalent, not a claim that each year earned the same amount. Volatility, drawdowns, liquidity and the risk taken are absent from the ratio."
         ],
-        "formula": "Cumulative return = (E / B − 1) × 100%; annualized return = [(E / B)^(1 / T) − 1] × 100%"
+        "formula": "Cumulative return = (E / B \u2212 1) \u00d7 100%; annualized return = [(E / B)^(1 / T) \u2212 1] \u00d7 100%"
       },
       {
         "id": "holding-period",
@@ -353,8 +353,8 @@
         "id": "losses",
         "title": "Annualization also applies to a loss",
         "paragraphs": [
-          "If $10,000 becomes $8,000 over two years with no cash flows, cumulative return is −20% and compound annualized return is approximately −10.5573%. Two years of a constant −10% would instead leave $8,100. That is why simply dividing a cumulative loss by years gives the wrong compound equivalent.",
-          "At a zero terminal value, the mathematical compound rate is −100% for a positive holding period; it does not reveal when the loss occurred. Negative terminal equity, leverage, debt and cash-flow liabilities require a model that represents those obligations. Do not force them into a standard positive-capital CAGR example."
+          "If $10,000 becomes $8,000 over two years with no cash flows, cumulative return is \u221220% and compound annualized return is approximately \u221210.5573%. Two years of a constant \u221210% would instead leave $8,100. That is why simply dividing a cumulative loss by years gives the wrong compound equivalent.",
+          "At a zero terminal value, the mathematical compound rate is \u2212100% for a positive holding period; it does not reveal when the loss occurred. Negative terminal equity, leverage, debt and cash-flow liabilities require a model that represents those obligations. Do not force them into a standard positive-capital CAGR example."
         ],
         "formula": ""
       },
@@ -373,7 +373,7 @@
         "title": "Excel formulas and a useful reverse check",
         "paragraphs": [
           "For the three-year example, =15000/10000-1 returns 0.5, which a percentage-formatted cell displays as 50%. =(15000/10000)^(1/3)-1 returns about 14.4714% when formatted as a percentage. Do not multiply by 100 and also apply percentage formatting, or the displayed result will be 100 times too large.",
-          "Check your calculation by reversing it: =10000*(1+annualized_rate)^3 should reproduce $15,000, using the unrounded decimal annualized rate. For actual dates, the tool’s Use Dates mode uses actual elapsed days divided by 365 as its year convention. A spreadsheet YEARFRAC basis may produce a slightly different answer, so document the convention instead of calling either a universal standard."
+          "Check your calculation by reversing it: =10000*(1+annualized_rate)^3 should reproduce $15,000, using the unrounded decimal annualized rate. For actual dates, the tool\u2019s Use Dates mode uses actual elapsed days divided by 365 as its year convention. A spreadsheet YEARFRAC basis may produce a slightly different answer, so document the convention instead of calling either a universal standard."
         ],
         "formula": ""
       },
@@ -381,8 +381,8 @@
         "id": "average",
         "title": "Annualized return is different from an arithmetic average",
         "paragraphs": [
-          "Consider +20% in year one and −20% in year two. The arithmetic average is 0%, but $10,000 becomes $9,600 because 1.2 × 0.8 = 0.96. The two-year geometric annual rate is sqrt(0.96) − 1, approximately −2.0204%. Equal positive and negative percentages do not cancel when they compound.",
-          "Use the Average Return Calculator to distinguish the arithmetic mean of periodic percentages from their compounded geometric mean. Use ROI for compatible beginning and terminal amounts, and IRR for supported periodic cash flows. None of these calculations forecasts next year’s performance or measures every dimension of investment risk."
+          "Consider +20% in year one and \u221220% in year two. The arithmetic average is 0%, but $10,000 becomes $9,600 because 1.2 \u00d7 0.8 = 0.96. The two-year geometric annual rate is sqrt(0.96) \u2212 1, approximately \u22122.0204%. Equal positive and negative percentages do not cancel when they compound.",
+          "Use the Average Return Calculator to distinguish the arithmetic mean of periodic percentages from their compounded geometric mean. Use ROI for compatible beginning and terminal amounts, and IRR for supported periodic cash flows. None of these calculations forecasts next year\u2019s performance or measures every dimension of investment risk."
         ],
         "formula": ""
       }
@@ -402,7 +402,7 @@
       },
       {
         "question": "How do I convert cumulative return to annualized return?",
-        "answer": "Use (1 + cumulative_decimal)^(1 / years) − 1. For 50% cumulative over three years, use 1.5^(1/3) − 1, approximately 14.4714%. This assumes a compatible return definition and no omitted external cash flows."
+        "answer": "Use (1 + cumulative_decimal)^(1 / years) \u2212 1. For 50% cumulative over three years, use 1.5^(1/3) \u2212 1, approximately 14.4714%. This assumes a compatible return definition and no omitted external cash flows."
       },
       {
         "question": "Can I divide my total gain by the number of years?",
@@ -490,17 +490,17 @@
           "The example purchases a $400,000 property using a $320,000 loan. Cash toward the price is $80,000. Add $8,000 cash-paid closing costs and loan fees, $5,000 initial repairs and $5,000 initial reserve cash to reach $98,000 required at acquisition. Those are chosen inputs, not a claim about a minimum down payment or lender reserve requirement.",
           "Borrowing is not tenant income. Keep refundable tenant deposits separate as well: cash held for a tenant is not freely available recurring revenue. Count an initial repair once in acquisition cash; do not also call the same payment a new recurring monthly maintenance bill. A future maintenance allowance represents a different period and purpose."
         ],
-        "formula": "Initial cash = purchase price − purchase loan + cash-paid closing costs + initial repairs + initial reserve"
+        "formula": "Initial cash = purchase price \u2212 purchase loan + cash-paid closing costs + initial repairs + initial reserve"
       },
       {
         "id": "monthly",
         "title": "Calculate the whole-property cash cost, then offset tenant rent",
         "paragraphs": [
           "At an illustrative 6% nominal annual loan rate over 30 years, monthly principal and interest on $320,000 is $1,918.56. Our entered monthly costs add $400 property tax, $150 property insurance, $200 owner-paid utilities, $200 routine maintenance and $150 capital replacement reserve. Mortgage insurance, HOA, management and other costs are explicitly zero in these cases. Total cost before rent is $3,018.56 monthly.",
-          "Two tenant rooms at $750 produce $1,500 scheduled monthly rent. Apply a 5% vacancy and collection-loss allowance to get $1,425 effective rent. Subtract that from $3,018.56 to get $1,593.56 of net housing cash cost. The owner’s own space contributes no imaginary rent, and no other income is entered.",
+          "Two tenant rooms at $750 produce $1,500 scheduled monthly rent. Apply a 5% vacancy and collection-loss allowance to get $1,425 effective rent. Subtract that from $3,018.56 to get $1,593.56 of net housing cash cost. The owner\u2019s own space contributes no imaginary rent, and no other income is entered.",
           "Principal repayment is included in the cash you must pay even though it reduces debt and can build equity. It is not spendable income to add back to this budget. Also avoid entering an escrow-inclusive loan bill and then adding its taxes and insurance again. The model calculates principal and interest separately from those ownership costs."
         ],
-        "formula": "Net monthly housing cash cost = mortgage P&I + entered owner costs + capital reserve − rent after losses − other net housing income"
+        "formula": "Net monthly housing cash cost = mortgage P&I + entered owner costs + capital reserve \u2212 rent after losses \u2212 other net housing income"
       },
       {
         "id": "rent-loss",
@@ -526,7 +526,7 @@
         "id": "checks",
         "title": "Check financing, local permission and tax treatment separately",
         "paragraphs": [
-          "Before using a listing’s advertised rent, verify that the relevant spaces can be rented as intended and check local requirements, HOA restrictions, lease obligations and the insurance policy. These depend on the property and location; the calculator does not issue a legal or lender approval. An owner-occupied loan may also come with occupancy conditions.",
+          "Before using a listing\u2019s advertised rent, verify that the relevant spaces can be rented as intended and check local requirements, HOA restrictions, lease obligations and the insurance policy. These depend on the property and location; the calculator does not issue a legal or lender approval. An owner-occupied loan may also come with occupancy conditions.",
           "Renting part of a home can involve allocating expenses between personal and rental use. IRS Publication 527 discusses rental property and mixed-use situations, but this worksheet does not compute deductible shares, depreciation or your tax return. Its housing cost is a cash-budget figure before owner income tax.",
           "Use the result as a checklist for missing inputs and an invitation to test weaker rents or higher costs. A promising default result is not evidence that a particular property, tenant or financing arrangement will work. Review the actual costs and cash available before committing to a purchase."
         ],
@@ -628,7 +628,7 @@
           "Use cash flow for a defined period, normally a full year, and a cash-investment amount consistent with the question. A $6,000 annual cash flow on $60,000 invested is a 10% annual cash yield. If you enter a recurring monthly cash flow in simple mode, the tool multiplies it by 12; it does not convert an irregular distribution into a growth rate.",
           "The numerator in our rental worksheet is before owner income tax and after the stated capital allowance. Other sources may quote a yield before reserves or use a different cash basis. A percentage is comparable only after reconciling those definitions. The tool separately shows a before-reserve figure to make the deduction visible."
         ],
-        "formula": "Cash-on-cash return (%) = annual cash flow after stated costs and financing / positive cash invested × 100"
+        "formula": "Cash-on-cash return (%) = annual cash flow after stated costs and financing / positive cash invested \u00d7 100"
       },
       {
         "id": "cash-basis",
@@ -644,17 +644,17 @@
         "id": "cash-flow",
         "title": "Calculate NOI, then deduct financing and the capital provision",
         "paragraphs": [
-          "Scheduled rent is $2,500 per month. A 5% vacancy and collection-loss allowance reduces effective rent to $2,375. With no other net income and $850 monthly operating expenses, annual NOI is ($2,375 − $850) × 12 = $18,300. Operating costs should already include the applicable property tax, insurance, routine maintenance, management, HOA and owner-paid utilities.",
+          "Scheduled rent is $2,500 per month. A 5% vacancy and collection-loss allowance reduces effective rent to $2,375. With no other net income and $850 monthly operating expenses, annual NOI is ($2,375 \u2212 $850) \u00d7 12 = $18,300. Operating costs should already include the applicable property tax, insurance, routine maintenance, management, HOA and owner-paid utilities.",
           "The $200,000 mortgage at 6% nominal interest over 30 years requires about $1,199.10 monthly principal and interest. Its first 12 unrounded scheduled payments total $14,389.21. Deduct that and a $1,200 annual capital replacement allowance from $18,300 to get $2,710.79 cash flow. No additional financing payments are entered.",
           "NOI excludes loan payments and the separate capital provision in this worksheet. Cash-on-cash includes their cash effect. Using NOI as the numerator would overstate cash available to this owner. Initial repairs are already in acquisition cash and are not deducted again as if they occurred every year."
         ],
-        "formula": "Annual cash flow = effective operating income − operating expenses − actual first-year P&I − other financing payments − capital allowance"
+        "formula": "Annual cash flow = effective operating income \u2212 operating expenses \u2212 actual first-year P&I \u2212 other financing payments \u2212 capital allowance"
       },
       {
         "id": "principal",
         "title": "Why principal repayment is not added back to cash income",
         "paragraphs": [
-          "A mortgage installment pays both interest and principal. Principal reduces the outstanding debt and may increase equity, but the cash has still left the owner’s account. It cannot simultaneously be treated as spendable annual income. Equity growth belongs in a broader return analysis rather than this cash-yield numerator.",
+          "A mortgage installment pays both interest and principal. Principal reduces the outstanding debt and may increase equity, but the cash has still left the owner\u2019s account. It cannot simultaneously be treated as spendable annual income. Equity growth belongs in a broader return analysis rather than this cash-yield numerator.",
           "Similarly, appreciation is not rental cash received. A sale or refinance can generate cash but also involves fees, debt repayment and timing that a one-year stabilized operating yield does not describe. Use a holding-period or refinance model for those events rather than combining a one-time receipt with recurring rent."
         ],
         "formula": ""
@@ -664,7 +664,7 @@
         "title": "Five cases show how a positive yield can become a loss",
         "paragraphs": [
           "The base case returns 2.2590%. Paying cash for the same property requires $320,000 including the same acquisition extras, produces $17,100 annual cash flow after reserve and yields 5.3438%. In this selected example, debt does not increase the cash yield. That result is conditional, not a general argument for or against borrowing.",
-          "Changing only the base loan rate from 6% to 8% turns annual cash flow into a $510.35 loss and the yield into −0.4253%. Raising only the monthly reserve from $100 to $300 leaves $310.79 annual cash flow, or 0.2590%. Reducing only the scheduled rent to $2,250 leaves a $139.21 annual loss, or −0.1160%.",
+          "Changing only the base loan rate from 6% to 8% turns annual cash flow into a $510.35 loss and the yield into \u22120.4253%. Raising only the monthly reserve from $100 to $300 leaves $310.79 annual cash flow, or 0.2590%. Reducing only the scheduled rent to $2,250 leaves a $139.21 annual loss, or \u22120.1160%.",
           "Every non-base row makes one change from the base; they are separate scenarios, not a sequence of cumulative changes. The rent scenario keeps dollar operating expenses fixed. If management charges or other costs actually scale with rent, update those inputs separately. Neither the rates nor the rent figures are current market quotes."
         ],
         "formula": ""
@@ -868,7 +868,7 @@
       },
       {
         "question": "Are duties calculated as a percentage of the goods invoice?",
-        "answer": "The calculator does not choose a duty base or rate. It accepts a manually checked amount. Actual classification, origin, valuation and applicable trade rules need separate verification; the guide’s amounts are hypothetical."
+        "answer": "The calculator does not choose a duty base or rate. It accepts a manually checked amount. Actual classification, origin, valuation and applicable trade rules need separate verification; the guide\u2019s amounts are hypothetical."
       },
       {
         "question": "Should I include VAT or other import taxes?",
@@ -917,6 +917,550 @@
       {
         "href": "/glossary/contribution-margin/",
         "label": "Contribution margin: costs remaining after acquisition"
+      }
+    ]
+  },
+  "longevity": {
+    "meta": {
+      "path": "/guides/how-long-will-retirement-savings-last/",
+      "title": "How Long Will My Retirement Savings Last?",
+      "heading": "How Long Will My Retirement Savings Last?",
+      "description": "Estimate retirement savings longevity with fixed monthly withdrawals. Compare returns, spending and final partial payments, and understand inflation and sequence risk.",
+      "publishedOn": "2026-11-01",
+      "calculatorIds": [
+        "retirement"
+      ],
+      "topic": "Retirement",
+      "breadcrumb": "How Long Will My Retirement Savings Last?",
+      "cardIntro": "Estimate retirement savings longevity with fixed monthly withdrawals. Compare returns, spending and final partial payments, and understand inflation and sequence risk.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/retirement-calculator",
+    "calculatorLabel": "Retirement Calculator",
+    "intro": "How long retirement savings last depends on your starting balance, the amount withdrawn, investment returns and when withdrawals occur. First estimate the spending gap your portfolio must cover after other income. Then calculate the withdrawals that this balance can support. A deterministic calculation gives an answer for specified assumptions, not the probability that a retirement plan will succeed.",
+    "answer": "At zero return, $500,000 supports 166 full $3,000 monthly withdrawals and a final $2,000 withdrawal in month 167: about 13.92 years. A constant 5% effective annual return extends that duration in the checked cases below. Inflation, taxes, fees and changing returns are excluded from this fixed-withdrawal illustration.",
+    "sections": [
+      {
+        "id": "spending-gap",
+        "title": "Start with the amount your portfolio must actually pay",
+        "paragraphs": [
+          "Suppose an illustrative monthly spending budget is $5,000 and other net income is $2,000. The starting portfolio gap is $3,000. Use amounts on a consistent basis: a pretax retirement-account withdrawal may need to be larger than the after-tax bills it funds. The longevity mode does not calculate that tax gross-up for you.",
+          "Keep emergency reserves and money committed to a home purchase separate if those dollars cannot fund regular retirement spending. Check whether pension and Social Security benefits start immediately or later. A flat spending gap cannot represent several benefit start dates, a one-time medical bill or a mortgage that ends partway through retirement."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "formula",
+        "title": "How the savings longevity formula works",
+        "paragraphs": [
+          "Let B be the starting balance, W the fixed month-end withdrawal and i the monthly effective return. Convert an effective annual decimal return R using i = (1 + R)^(1/12) \u2212 1. Do not divide an effective annual return by 12 and describe the result as equivalent compounding.",
+          "The logarithmic formula estimates fractional periods to depletion. The calculator then counts actual monthly payment dates and limits the final payment to available funds. Its result therefore includes the last partial withdrawal; it does not imply every month receives the full planned amount. At zero return, use B / W before rounding up to a final payment date."
+        ],
+        "formula": "N = \u2212ln(1 \u2212 B \u00d7 i / W) / ln(1 + i); actual final payment month = ceil(N), with a capped final withdrawal"
+      },
+      {
+        "id": "controlled-check",
+        "title": "What our controlled comparison tests",
+        "paragraphs": [
+          "The chart holds the opening balance at $500,000 and withdrawals at $3,000 monthly, then substitutes constant \u22122%, 0% and 5% effective annual returns. This isolates return sensitivity. A separate case raises withdrawals to $4,000 at the same 5% return to isolate spending sensitivity. These rates are chosen inputs, not forecasts or historical backtests.",
+          "Another case uses $1,500 monthly withdrawals at 5%. Initial modeled monthly growth exceeds that withdrawal, so the constant-return model does not deplete the account. The website reports initial monthly interest rather than an invented number of years. Real markets can fall, and a flat nominal withdrawal can lose purchasing power; this result is not a lifetime-income guarantee."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "inflation",
+        "title": "Fixed dollar withdrawals are different from inflation-adjusted spending",
+        "paragraphs": [
+          "The Savings Longevity mode keeps the dollar withdrawal unchanged. At 2.5% annual inflation, $3,000 spent 20 years from now buys approximately what $1,831 buys today. An apparently longer duration can therefore reflect a falling standard of living rather than a better-funded retirement.",
+          "To explore a growing income stream over a chosen horizon, use the Retirement Calculator\u2019s Monthly Withdrawal mode and its disclosed inflation assumptions. Do not subtract inflation from return and also increase withdrawals for inflation without checking the units: that can count the same adjustment twice. Compare nominal cash flows with nominal returns, or consistently express both in purchasing-power terms."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "risk",
+        "title": "Why average return alone cannot establish retirement safety",
+        "paragraphs": [
+          "Selling assets after an early market loss leaves fewer assets participating in a recovery. This sequence-of-returns effect matters when withdrawals are occurring, even when a quoted long-run average looks attractive. Our constant-rate illustration has no changing return sequence and cannot estimate that risk.",
+          "Use the result as a budget sensitivity check. Revisit expenses, benefit timing, fees and the amount available for withdrawals, then test lower returns and higher spending. A planner or a separate documented stochastic model may examine return paths, longevity and taxes; a single depletion date does not provide those analyses."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Scenario",
+      "Duration",
+      "Final withdrawal",
+      "Additional check"
+    ],
+    "chart": "longevity-guide",
+    "chartAlt": "Years to the final withdrawal from $500,000 with $3,000 fixed monthly withdrawals at constant minus 2%, zero and 5% returns.",
+    "chartCaption": "Only the constant annual return changes across the three charted cases; the table also tests spending and non-depletion. All withdrawals are at month end.",
+    "questions": [
+      {
+        "question": "How long will $500,000 last in retirement?",
+        "answer": "There is no universal duration. At zero return and $3,000 monthly withdrawals, the final payment occurs in month 167 and is $2,000. Different withdrawals, taxes, fees, inflation and market paths change the answer."
+      },
+      {
+        "question": "How do I calculate retirement savings longevity in Excel?",
+        "answer": "For a depleting balance at a nonzero monthly rate, use =NPER((1+annual_return)^(1/12)-1,-monthly_withdrawal,starting_balance). Round up for actual payment dates and calculate the last payment separately. At zero return use balance divided by withdrawal; non-depleting assumptions need a separate check."
+      },
+      {
+        "question": "Does this calculation include Social Security?",
+        "answer": "Enter the portfolio withdrawal needed after the benefits and other income applicable to the modeled period. The Savings Longevity mode does not model Social Security claiming ages or future benefit changes."
+      },
+      {
+        "question": "Does the longevity mode increase withdrawals with inflation?",
+        "answer": "No. It uses fixed nominal monthly withdrawals. The calculator\u2019s separate Monthly Withdrawal mode can examine an inflation-increasing stream over an entered horizon."
+      },
+      {
+        "question": "Why is the final monthly withdrawal smaller?",
+        "answer": "The last payment is capped at the balance available after that month\u2019s return. It marks depletion, not a promise to fund the full planned payment in the final month."
+      },
+      {
+        "question": "Does \u201cnot exhausted\u201d mean I can never run out of money?",
+        "answer": "No. It means withdrawals do not deplete the balance under the entered constant-return and fixed-spending assumptions. Changing returns, costs or purchasing-power needs can invalidate that result."
+      }
+    ],
+    "limitations": [
+      "No tax gross-up, fees, benefit-start schedule, inflation escalation or random return paths in Savings Longevity mode.",
+      "The final payment may be partial. A month count is not a success rate, life expectancy or recommended withdrawal policy."
+    ],
+    "sources": [
+      {
+        "href": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator",
+        "label": "Investor.gov: compounding and assumed-return calculations"
+      },
+      {
+        "href": "https://www.schwab.com/learn/story/timing-matters-understanding-sequence-returns-risk",
+        "label": "Charles Schwab: sequence-of-returns risk in retirement"
+      }
+    ],
+    "related": [
+      {
+        "href": "/glossary/withdrawal-rate/",
+        "label": "Withdrawal rate"
+      },
+      {
+        "href": "/coast-fire-calculator",
+        "label": "Coast FIRE Calculator"
+      },
+      {
+        "href": "/rmd-calculator",
+        "label": "RMD Calculator"
+      }
+    ]
+  },
+  "hsa": {
+    "meta": {
+      "path": "/guides/how-does-an-hsa-work/",
+      "title": "How Does an HSA Work? Contributions, Tax Savings and Growth",
+      "heading": "How Does an HSA Work? Contributions, Tax Savings and Growth",
+      "description": "Understand HSA contribution room, employer deposits, tax assumptions and investment growth. Includes 2026 limits, six reproducible cases and medical-spending scenarios.",
+      "publishedOn": "2026-11-01",
+      "calculatorIds": [
+        "hsa"
+      ],
+      "topic": "Retirement",
+      "breadcrumb": "How Does an HSA Work? Contributions, Tax Savings and Growth",
+      "cardIntro": "Understand HSA contribution room, employer deposits, tax assumptions and investment growth. Includes 2026 limits, six reproducible cases and medical-spending scenarios.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/hsa-calculator",
+    "calculatorLabel": "HSA Calculator",
+    "intro": "An HSA is an individually owned health savings account used alongside qualifying health coverage. Eligibility determines whether you may contribute; medical-expense rules determine how distributions are taxed. A contribution allowance, an estimated tax saving and a projected investment balance are three different numbers. Check each separately rather than treating an account balance as proof of tax eligibility.",
+    "answer": "For 2026, the base contribution limits are $4,400 for self-only coverage and $8,750 for family coverage. In our full-year self-only example, a $500 employer deposit leaves $3,900 of personal contribution room. A planned $3,000 direct personal contribution at an assumed 22% federal marginal rate produces a $660 federal tax-saving illustration, with no state or payroll benefit assumed.",
+    "sections": [
+      {
+        "id": "eligibility",
+        "title": "Confirm eligibility before calculating contribution room",
+        "paragraphs": [
+          "Generally, contributing requires HSA-eligible coverage, no disqualifying other coverage, no Medicare enrollment and no eligibility to be claimed as someone else\u2019s dependent. Coverage and enrollment details can change eligibility. A large deductible alone does not establish that a plan qualifies; confirm the plan\u2019s HSA status and current IRS guidance.",
+          "The calculator does not decide eligibility. It prorates a constant coverage category over entered eligible months, using first-day-of-month eligibility. Changing coverage, Medicare enrollment and use of the IRS last-month rule need separate review. The last-month rule has a testing period; it is deliberately not modeled as a simple extra checkbox."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "room",
+        "title": "Calculate the combined contribution limit, then subtract other deposits",
+        "paragraphs": [
+          "For a full eligible 2026 year, self-only base room is $4,400 and family base room is $8,750. An eligible owner age 55 or older by year-end may have a $1,000 catch-up allowance. Family base room is shared between spouses; a spouse\u2019s catch-up must go into that spouse\u2019s own HSA. Do not give both spouses a separate full family base allowance.",
+          "In the six-month self-only example, the modeled combined allowance is $2,200. After $500 from an employer, personal room is $1,700. Planning a $3,000 personal deposit would exceed this simplified allowance by $1,300. That is a warning to review contributions, not an automatic excess-contribution correction or tax-return calculation."
+        ],
+        "formula": "Prorated modeled limit = (annual base + eligible owner catch-up) \u00d7 eligible months / 12; personal room = max(0, limit \u2212 employer and other shared-limit contributions)"
+      },
+      {
+        "id": "tax",
+        "title": "A tax-saving estimate is not the contribution limit",
+        "paragraphs": [
+          "Our direct-contribution examples multiply only the personal contribution within available room by the entered federal marginal rate. Employer deposits consume allowance but do not create an additional personal deduction. Payroll salary reductions are not deducted again as direct contributions. Keep these flows separate when checking records.",
+          "Eligible Section 125 payroll contributions may also have payroll-tax effects, but the calculator uses your entered saving rate rather than calculating wage bases or Additional Medicare Tax. State treatment varies. Use zero where a particular benefit does not apply; do not copy a combined federal, state and payroll percentage without checking your circumstances."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "growth",
+        "title": "How the HSA growth examples handle contributions and spending",
+        "paragraphs": [
+          "The base growth example starts with $5,000, earns a constant 5% effective annual return on each opening balance, then adds $3,000 personal plus $500 employer contributions at year-end. It next pays entered fees and $1,000 qualified medical expenses. Contributions earn no return during the year in which they arrive under this convention.",
+          "The four growth cases change one assumption at a time: stop contributions after year 10, charge $100 annually, or raise the medical budget to $5,000. If funds cannot cover the medical budget, withdrawals are capped and the unfunded amount is reported separately. A zero balance does not mean the medical bill disappeared."
+        ],
+        "formula": "Closing balance = opening balance \u00d7 (1 + return) + eligible year-end contributions \u2212 paid fees \u2212 funded medical withdrawals"
+      },
+      {
+        "id": "future-rules",
+        "title": "Separate future purchasing power from future contribution rules",
+        "paragraphs": [
+          "The projection holds the selected 2026 contribution ceiling unchanged. It does not forecast future IRS limits, increase catch-up eligibility with age or automatically stop contributions at Medicare enrollment. Set contribution years to the period for which the assumptions are applicable. Existing HSA funds can remain after contribution eligibility ends.",
+          "At 2.5% annual inflation, final purchasing power equals the nominal ending balance divided by 1.025 raised to the projection length. The entered medical budget and fees remain fixed nominal amounts. Inflation changes the displayed purchasing-power result, not the spending schedule. If you expect medical costs to rise, test a higher budget and recognize that a flat-budget model is an approximation."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Scenario",
+      "Mode",
+      "Key result",
+      "Additional check"
+    ],
+    "chart": "hsa-guide",
+    "chartAlt": "Four 20-year HSA balances comparing unchanged assumptions, stopping contributions after ten years, annual fees, and a larger medical budget.",
+    "chartCaption": "Growth cases start with $5,000, use a hypothetical 5% return and fixed 2026 contribution assumptions. The table separately checks contribution eligibility-month arithmetic.",
+    "questions": [
+      {
+        "question": "Do employer contributions count toward my HSA limit?",
+        "answer": "Yes. They use the combined contribution allowance. For family coverage, coordinate shared base-limit deposits across spouses; each spouse\u2019s eligible catch-up belongs in their own HSA."
+      },
+      {
+        "question": "Can I invest my HSA balance?",
+        "answer": "Investment options, minimum cash balances and fees depend on the provider. The growth model assumes the entered balance earns the entered return; it does not select investments or confirm that a provider permits that allocation."
+      },
+      {
+        "question": "What happens to an HSA when I stop contributing?",
+        "answer": "The existing account can remain available, subject to provider arrangements and distribution rules. In the growth example, contributions stop after the entered contribution years while remaining funds continue under the stated growth and spending assumptions."
+      },
+      {
+        "question": "Are HSA withdrawals always tax free?",
+        "answer": "No. The growth example assumes federally qualified medical distributions. Nonqualified distributions can create tax and possibly additional tax. Keep records and check current IRS rules rather than applying the illustration to every withdrawal."
+      },
+      {
+        "question": "Can I use the last-month rule in this calculator?",
+        "answer": "No. Contribution mode uses eligible-month prorating with constant coverage. The last-month rule, testing period and coverage changes require a separate eligibility calculation."
+      },
+      {
+        "question": "Does the projection increase future HSA limits?",
+        "answer": "No. It freezes the selected year\u2019s limit and catch-up status. This avoids presenting unknown future allowances as established rules."
+      }
+    ],
+    "limitations": [
+      "Contribution and tax examples assume verified eligibility, constant coverage and the entered marginal rates; no tax-return preparation or excess correction.",
+      "Growth uses fixed nominal budgets and contributions, annual opening-balance growth, year-end deposits, fees before medical spending and no random returns.",
+      "Publication 969 is the accessible 2025 edition; the 2026 allowance is separately checked against Revenue Procedure 2025-19."
+    ],
+    "sources": [
+      {
+        "href": "https://www.irs.gov/pub/irs-drop/rp-25-19.pdf",
+        "label": "IRS Revenue Procedure 2025-19: 2026 HSA limits"
+      },
+      {
+        "href": "https://www.irs.gov/publications/p969",
+        "label": "IRS Publication 969: eligibility, contributions and distributions"
+      },
+      {
+        "href": "https://www.irs.gov/forms-pubs/about-form-8889",
+        "label": "IRS Form 8889: HSA reporting"
+      }
+    ],
+    "related": [
+      {
+        "href": "/retirement-calculator",
+        "label": "Retirement Calculator"
+      },
+      {
+        "href": "/401k-calculator",
+        "label": "401(k) Calculator"
+      },
+      {
+        "href": "/guides/how-long-will-retirement-savings-last/",
+        "label": "Retirement savings longevity guide"
+      }
+    ]
+  },
+  "rmd": {
+    "meta": {
+      "path": "/guides/how-to-calculate-rmd/",
+      "title": "How to Calculate RMD: Balance, IRS Factor and Remaining Withdrawal",
+      "heading": "How to Calculate RMD: Balance, IRS Factor and Remaining Withdrawal",
+      "description": "Calculate an owner-account RMD from the prior December 31 balance and IRS factor. Compare ages, credited distributions and deadlines with reproducible examples.",
+      "publishedOn": "2026-11-01",
+      "calculatorIds": [
+        "rmd"
+      ],
+      "topic": "Retirement",
+      "breadcrumb": "How to Calculate RMD: Balance, IRS Factor and Remaining Withdrawal",
+      "cardIntro": "Calculate an owner-account RMD from the prior December 31 balance and IRS factor. Compare ages, credited distributions and deadlines with reproducible examples.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/rmd-calculator",
+    "calculatorLabel": "RMD Calculator",
+    "intro": "Calculate an owner-account required minimum distribution by dividing the prior December 31 balance by the applicable IRS distribution period for your age in the distribution year. Confirm that an RMD applies and that you selected the right table before doing the division. Inherited accounts have different rules and are outside this calculator\u2019s owner-account model.",
+    "answer": "For an owner turning 75 in 2026 using the Uniform Lifetime Table, the factor is 24.6. A $500,000 balance on December 31, 2025 produces a gross 2026 RMD of $20,325.20 rounded to cents. If $10,000 of eligible gross distributions is already credited to that 2026 RMD, the remaining modeled requirement is $10,325.20.",
+    "sections": [
+      {
+        "id": "inputs",
+        "title": "Use the correct year-end balance and birthday age",
+        "paragraphs": [
+          "A 2026 RMD uses the December 31, 2025 balance, not today\u2019s value after this year\u2019s market changes. Use the age you reach by the end of 2026, even if the birthday has not yet occurred when you calculate. The factor and the balance refer to different dates for a reason: the previous year-end establishes the calculation base.",
+          "Confirm account type and any necessary adjustments with the custodian. Do not put a Roth IRA owner balance into this model; Roth IRA owners have no lifetime RMD. Designated Roth plan accounts also have no owner lifetime RMD for 2024 onward. Inherited-account requirements and still-working employer-plan exceptions need separate review."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "factor",
+        "title": "Choose the applicable IRS distribution table",
+        "paragraphs": [
+          "The examples use Table III, the Uniform Lifetime Table in IRS Publication 590-B: 26.5 at age 73, 24.6 at age 75 and 20.2 at age 80. They are three separate owners in 2026 with identical prior year-end balances. They are not a projection claiming that one account remains at $500,000 while its owner ages.",
+          "The calculator can use Table II when the sole beneficiary is a spouse more than ten years younger, using both spouses\u2019 ages. That condition is more specific than simply being married. If the spouse is not the sole beneficiary or the age difference does not meet the rule, do not select the younger-spouse option merely to reduce a result."
+        ],
+        "formula": "Gross annual RMD = eligible previous December 31 balance / applicable IRS distribution period"
+      },
+      {
+        "id": "credited",
+        "title": "Subtract eligible gross distributions only once",
+        "paragraphs": [
+          "The annual requirement and remaining requirement are separate outputs. Enter gross distributions credited to the selected year\u2019s RMD before withholding. A net bank deposit can be smaller than the gross amount already distributed from the retirement account. Reconcile the number with custodian records rather than comparing only what arrived in checking.",
+          "Do not include a delayed prior-year first RMD as credit toward the current year\u2019s requirement. Excess distributions do not become a future-year RMD credit. In our age-75 case, the $10,000 credited amount reduces the remaining requirement but does not change the original $20,325.20 annual calculation."
+        ],
+        "formula": "Remaining selected-year RMD = max(0, annual RMD \u2212 eligible gross distributions credited to that year)"
+      },
+      {
+        "id": "deadlines",
+        "title": "A first-year deadline can create two distributions in one calendar year",
+        "paragraphs": [
+          "For an IRA owner reaching 73 in 2026 under the applicable rule, the first distribution year is 2026. The first RMD can generally be delayed until April 1, 2027; the 2027 RMD still has its own December 31, 2027 deadline. Delaying therefore can place two RMDs in 2027. Their calculation balances and distribution years remain separate.",
+          "Under the birth-year rules used here, owners born from 1951 through 1959 start at 73, while those born in 1960 or later start at 75. Earlier cohorts and employer-plan exceptions require context. The calculator\u2019s selected year does not automatically decide the tax consequence of a delay or establish that a workplace-plan exception applies. The current regulation leaves the paragraph for the 1959 cohort reserved; confirm applicable guidance with the plan or custodian rather than treating this model\u2019s birth-year setting as a legal determination."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "projection",
+        "title": "Understand the optional projection and monthly budgeting number",
+        "paragraphs": [
+          "The monthly budgeting equivalent is the annual RMD divided by twelve. It is not an IRS rule requiring twelve equal payments. The age-75 example gives roughly $1,693.77 per month as a budgeting figure while the annual requirement remains the operative amount.",
+          "For a projection, the model applies the entered constant return to the opening balance and then withdraws at year-end. First-year modeled withdrawal is the greater of the RMD and credited distributions, rather than their sum. Future rows use changing age factors and modeled closing balances. Actual withdrawal timing, extra distributions and variable returns can change future balances, so the first-year statutory arithmetic and multi-year projection should not be interpreted as equally certain."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Scenario",
+      "IRS factor",
+      "Gross annual RMD",
+      "Remaining requirement"
+    ],
+    "chart": "rmd-guide",
+    "chartAlt": "Annual owner RMDs for separate people aged 73, 75 and 80 with the same $500,000 prior December 31 balance.",
+    "chartCaption": "Table III factors are 26.5, 24.6 and 20.2. Age and factor change across the chart; all three prior year-end balances are $500,000.",
+    "questions": [
+      {
+        "question": "What balance do I use to calculate my 2026 RMD?",
+        "answer": "Generally use the eligible account balance on December 31, 2025, with any required adjustments confirmed by the custodian. A current balance after market moves is not the ordinary calculation base."
+      },
+      {
+        "question": "Which age determines the RMD factor?",
+        "answer": "Use the age you reach by the end of the distribution year. Table II requires both spouses\u2019 ages when its younger sole-beneficiary spouse conditions apply."
+      },
+      {
+        "question": "Does withholding count toward the amount withdrawn?",
+        "answer": "Use the gross eligible distribution credited by the custodian, including amounts withheld for tax. The net deposit into your bank account is not necessarily the RMD credit."
+      },
+      {
+        "question": "Can I carry an excess withdrawal forward to next year?",
+        "answer": "No. Taking more than one year\u2019s RMD does not create credit against a later year\u2019s requirement. The next calculation uses its own balance, age and rules."
+      },
+      {
+        "question": "Can I calculate an inherited IRA RMD with this tool?",
+        "answer": "No. This model is for supported owner accounts. Beneficiary status, inheritance date, owner death and other conditions affect inherited-account rules; use appropriate IRS guidance and custodian advice."
+      },
+      {
+        "question": "Does dividing the RMD by twelve create a monthly deadline?",
+        "answer": "No. It is a budgeting equivalent. Confirm the annual deadline and your custodian\u2019s processing schedule; the tool does not mandate monthly distributions."
+      }
+    ],
+    "limitations": [
+      "Owner-account illustration using verified post-2021 tables; no inherited-account, still-working exception or individualized deadline determination.",
+      "Gross RMD is not take-home income. Withholding, marginal tax brackets and Medicare-related effects are not calculated.",
+      "Future returns and year-end withdrawal timing are projection assumptions, not IRS-mandated account performance."
+    ],
+    "sources": [
+      {
+        "href": "https://www.irs.gov/publications/p590b",
+        "label": "IRS Publication 590-B, Appendix B: distribution tables"
+      },
+      {
+        "href": "https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs",
+        "label": "IRS RMD FAQs: balances, tables and timing"
+      },
+      {
+        "href": "https://www.irs.gov/retirement-plans/plan-participant-employee/required-minimum-distribution-worksheets",
+        "label": "IRS owner-account RMD worksheets"
+      },
+      {
+        "href": "https://www.ecfr.gov/current/title-26/section-1.401(a)(9)-2",
+        "label": "26 CFR 1.401(a)(9)-2: required beginning date and applicable age"
+      }
+    ],
+    "related": [
+      {
+        "href": "/retirement-calculator",
+        "label": "Retirement Calculator"
+      },
+      {
+        "href": "/roth-conversion-ladder-calculator",
+        "label": "Roth Conversion Ladder Calculator"
+      },
+      {
+        "href": "/guides/how-long-will-retirement-savings-last/",
+        "label": "How long retirement savings last"
+      }
+    ]
+  },
+  "matching": {
+    "meta": {
+      "path": "/guides/how-401k-matching-works/",
+      "title": "How Does 401(k) Matching Work? Formulas and Checked Examples",
+      "heading": "How Does 401(k) Matching Work? Formulas and Checked Examples",
+      "description": "Calculate two-tier 401(k) matching, distinguish match rate from salary band, and understand contribution limits, payroll timing, true-ups and vesting.",
+      "publishedOn": "2026-11-01",
+      "calculatorIds": [
+        "401k"
+      ],
+      "topic": "Retirement",
+      "breadcrumb": "How Does 401(k) Matching Work? Formulas and Checked Examples",
+      "cardIntro": "Calculate two-tier 401(k) matching, distinguish match rate from salary band, and understand contribution limits, payroll timing, true-ups and vesting.",
+      "format": "Calculation guide & model check"
+    },
+    "calculatorPath": "/401k-calculator",
+    "calculatorLabel": "401(k) Calculator",
+    "intro": "A 401(k) employer match adds money under your employer\u2019s plan formula when you make qualifying contributions. The match rate tells you how much the employer adds per eligible dollar. The contribution band tells you how much of your pay is eligible for that rate. Read both numbers together; a 50% match does not usually mean the employer deposits half of your annual salary.",
+    "answer": "At $80,000 annual salary, a plan matching 100% of the first 3% contributed plus 50% of the next 2% requires a $4,000 employee contribution to capture the full modeled match. The employer contributes $3,200, or 4% of salary. The combined $7,200 contribution is not the same as contributing only 4% yourself.",
+    "sections": [
+      {
+        "id": "formula",
+        "title": "Translate the match sentence into contribution bands",
+        "paragraphs": [
+          "Break the formula into separate slices. The first 3% of $80,000 is $2,400, matched dollar for dollar. The next 2% is $1,600, matched at 50% for another $800. Adding the two employer amounts gives $3,200. Employee contributions across both bands total $4,000, or 5% of salary.",
+          "In the calculator\u2019s second tier, enter the additional band, not the cumulative threshold. For \u201c100% on the first 3%, then 50% through 5%,\u201d the additional second band is 2%, not 5%. A wrong interpretation would model an 8% combined band and overstate the employee contribution needed."
+        ],
+        "formula": "Employer match = eligible first-band employee dollars \u00d7 first rate + eligible additional-band dollars \u00d7 second rate"
+      },
+      {
+        "id": "compare",
+        "title": "Same salary, three matching policies",
+        "paragraphs": [
+          "Our chart holds salary at $80,000 and assumes the employee contributes enough to earn the full modeled match. The two-tier example produces $3,200. A 50% match on the first 6% needs $4,800 employee dollars and produces $2,400 employer dollars. A 100% match on the first 6% also needs $4,800 but produces $4,800.",
+          "These controlled hypothetical policies demonstrate why headline match percentages are insufficient for comparing benefits. They are not a survey of typical employers. Compare eligibility, vesting, eligible compensation, contribution timing and other benefits before deciding which employment package is better."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "limits",
+        "title": "Employee deferrals and employer additions have different limits",
+        "paragraphs": [
+          "For 2026, the basic employee elective-deferral limit is $24,500. Eligible participants age 50 or older may have an $8,000 catch-up, with the higher $11,250 catch-up applying at ages 60 through 63 if permitted. These are limits, not automatic entitlements to employer matching. Use calendar-year-end age and check plan eligibility.",
+          "The model uses the 2026 $360,000 eligible-compensation cap and $72,000 annual-additions cap excluding employee catch-up. Employer matching does not consume the employee elective-deferral limit, but combined additions have their own constraints. Other plans, prior contributions and plan restrictions can require adjustments outside this simplified full-year model.",
+          "In the high-salary case, $400,000 salary does not make all pay match-eligible: compensation is capped at $360,000. A 100% match on the first 10% would require $36,000 employee contributions. A 35-year-old\u2019s $24,500 deferral limit prevents that under our assumptions, so the tool reports a partial match and explicitly labels full matching unattainable."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "payroll",
+        "title": "Why reaching the limit early can change the match",
+        "paragraphs": [
+          "The Maximize Employer Match mode assumes equal pay, a constant contribution percentage, per-pay-period matching and no annual true-up. The upper steady rate spreads the age-based employee limit over annual salary. If contributions stop before year-end, later pay periods may have no employee deferral to match.",
+          "Some plans reconcile matching annually through a true-up; others do not, and conditions can vary. Bonuses, pay changes, midyear enrollment and prior year-to-date contributions also change the payroll problem. Ask the administrator how your actual plan treats them. The calculator\u2019s steady-rate window is not a personalized payroll election."
+        ],
+        "formula": ""
+      },
+      {
+        "id": "vesting",
+        "title": "A credited match is different from money you are entitled to keep",
+        "paragraphs": [
+          "Employee contributions and their earnings are fully vested, while employer contributions may be subject to a vesting schedule depending on plan design. The calculator reports modeled employer deposits without applying a vesting haircut. A $3,200 match is therefore not a guarantee that a departing employee keeps all $3,200.",
+          "Read the summary plan description for match formula, eligible pay, vesting, timing and true-up provisions. For a long-term projection, use the tool\u2019s separate projection mode and review its contribution timing and fixed-year limits. A yearly matching calculation alone says nothing about future investment returns, tax treatment at withdrawal or how long savings will last."
+        ],
+        "formula": ""
+      }
+    ],
+    "columns": [
+      "Hypothetical plan",
+      "Employee contribution",
+      "Employer match",
+      "Constraint"
+    ],
+    "chart": "matching-guide",
+    "chartAlt": "Annual employer matching dollars under three hypothetical policies at the same $80,000 salary with sufficient employee contributions.",
+    "chartCaption": "Employee contributions required are $4,000, $4,800 and $4,800 respectively. The separate high-salary case tests a binding employee limit.",
+    "questions": [
+      {
+        "question": "What does a 50% 401(k) match up to 6% mean?",
+        "answer": "Under that formula, each qualifying employee dollar receives 50 cents from the employer, up to employee contributions equal to 6% of eligible pay. At $80,000, $4,800 employee contributions can earn $2,400 employer contributions before other applicable restrictions."
+      },
+      {
+        "question": "Does my employer match count toward the $24,500 employee limit?",
+        "answer": "Employer matching does not use the 2026 employee elective-deferral limit. Combined employee and employer annual additions have a separate limit, and catch-up contributions have separate treatment."
+      },
+      {
+        "question": "How do I enter a two-tier matching formula?",
+        "answer": "Enter the first band and match rate, then the additional second band and its rate. A formula running from 3% through 5% has a 2% second band, not 5%."
+      },
+      {
+        "question": "Should I contribute the annual maximum as early as possible?",
+        "answer": "That depends on the plan\u2019s matching timing and true-up provisions. With per-pay-period matching and no true-up, stopping deferrals early may lose later matching opportunities. This mode illustrates a steady full-year rate rather than optimizing every payroll."
+      },
+      {
+        "question": "Is the employer match immediately vested?",
+        "answer": "Not necessarily. The plan\u2019s vesting rules govern ownership of employer contributions. This calculator reports the modeled deposit and does not calculate a forfeiture at departure."
+      },
+      {
+        "question": "Can this mode calculate a midyear payroll change?",
+        "answer": "Not directly. It assumes full-year employment, equal pay, constant contributions and no prior year-to-date deferrals. Use your actual payroll and plan information for a midyear election."
+      }
+    ],
+    "limitations": [
+      "Matching rules are hypothetical inputs. This guide does not assert that a particular employer offers them or that every plan permits catch-up contributions.",
+      "The steady-rate model excludes bonuses, unequal pay, prior contributions, annual true-ups and vesting adjustments.",
+      "2026 contribution limits are versioned inputs, not a forecast of later years or a guarantee that payroll accepts the displayed rate."
+    ],
+    "sources": [
+      {
+        "href": "https://www.irs.gov/retirement-plans/plan-participant-employee/401k-resource-guide-plan-participants-401k-plan-overview",
+        "label": "IRS: 401(k) participation and employer contributions"
+      },
+      {
+        "href": "https://www.irs.gov/retirement-plans/cola-increases-for-dollar-limitations-on-benefits-and-contributions",
+        "label": "IRS: 2026 retirement contribution and compensation limits"
+      },
+      {
+        "href": "https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/retirement-plans-and-erisa",
+        "label": "U.S. Department of Labor: retirement plan rights and vesting"
+      }
+    ],
+    "related": [
+      {
+        "href": "/glossary/401k/",
+        "label": "401(k) glossary"
+      },
+      {
+        "href": "/glossary/employer-match-and-vesting/",
+        "label": "Employer match and vesting"
+      },
+      {
+        "href": "/guides/how-does-an-hsa-work/",
+        "label": "HSA contributions and growth"
+      },
+      {
+        "href": "/retirement-calculator",
+        "label": "Retirement Calculator"
       }
     ]
   }

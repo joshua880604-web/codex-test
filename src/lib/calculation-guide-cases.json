@@ -817,5 +817,511 @@
         "$13.60"
       ]
     }
+  ],
+  "longevity": [
+    {
+      "label": "-2% return, $3,000.00/month",
+      "calculatorId": "retirement",
+      "mode": "longevity",
+      "values": {
+        "balance": 500000,
+        "withdrawal": 3000,
+        "return": -2
+      },
+      "metrics": {
+        "Years savings last": 12.25,
+        "Monthly withdrawals": 147.0,
+        "Total withdrawn": 440386.3394368691,
+        "Final monthly withdrawal": 2386.3394368690547
+      },
+      "display": [
+        "147 months (12.25 years)",
+        "$2,386.34",
+        "$440,386.34 total withdrawn"
+      ]
+    },
+    {
+      "label": "0% return, $3,000.00/month",
+      "calculatorId": "retirement",
+      "mode": "longevity",
+      "values": {
+        "balance": 500000,
+        "withdrawal": 3000,
+        "return": 0
+      },
+      "metrics": {
+        "Years savings last": 13.916666666666666,
+        "Monthly withdrawals": 167.0,
+        "Total withdrawn": 500000.0,
+        "Final monthly withdrawal": 2000.0
+      },
+      "display": [
+        "167 months (13.92 years)",
+        "$2,000.00",
+        "$500,000.00 total withdrawn"
+      ]
+    },
+    {
+      "label": "5% return, $3,000.00/month",
+      "calculatorId": "retirement",
+      "mode": "longevity",
+      "values": {
+        "balance": 500000,
+        "withdrawal": 3000,
+        "return": 5
+      },
+      "metrics": {
+        "Years savings last": 23.333333333333332,
+        "Monthly withdrawals": 280.0,
+        "Total withdrawn": 838482.4784487679,
+        "Final monthly withdrawal": 1482.4784487678785
+      },
+      "display": [
+        "280 months (23.33 years)",
+        "$1,482.48",
+        "$838,482.48 total withdrawn"
+      ]
+    },
+    {
+      "label": "5% return, $4,000.00/month",
+      "calculatorId": "retirement",
+      "mode": "longevity",
+      "values": {
+        "balance": 500000,
+        "withdrawal": 4000,
+        "return": 5
+      },
+      "metrics": {
+        "Years savings last": 14.666666666666666,
+        "Monthly withdrawals": 176.0,
+        "Total withdrawn": 700324.0286059008,
+        "Final monthly withdrawal": 324.0286059008762
+      },
+      "display": [
+        "176 months (14.67 years)",
+        "$324.03",
+        "$700,324.03 total withdrawn"
+      ]
+    },
+    {
+      "label": "5% return, $1,500.00/month",
+      "calculatorId": "retirement",
+      "mode": "longevity",
+      "values": {
+        "balance": 500000,
+        "withdrawal": 1500,
+        "return": 5
+      },
+      "metrics": {
+        "Initial monthly interest": 2037.0618918241507
+      },
+      "display": [
+        "Not exhausted in model",
+        "Not applicable",
+        "$2,037.06 initial monthly growth"
+      ]
+    }
+  ],
+  "hsa": [
+    {
+      "label": "12 eligible months: contribution",
+      "calculatorId": "hsa",
+      "mode": "contribution",
+      "values": {
+        "year": "2026",
+        "coverage": "Self-only",
+        "catchup": "No",
+        "months": 12,
+        "employee": 3000,
+        "employer": 500,
+        "federal": 22,
+        "state": 0,
+        "method": "Direct contribution",
+        "payroll_rate": 0
+      },
+      "metrics": {
+        "Modeled annual contribution limit": 4400.0,
+        "Maximum personal contribution after employer": 3900.0,
+        "Estimated tax savings on personal contribution": 660.0,
+        "Planned contributions above modeled limit": 0.0
+      },
+      "display": [
+        "Contribution room",
+        "$3,900.00",
+        "$660.00 modeled personal tax saving"
+      ]
+    },
+    {
+      "label": "6 eligible months: contribution",
+      "calculatorId": "hsa",
+      "mode": "contribution",
+      "values": {
+        "year": "2026",
+        "coverage": "Self-only",
+        "catchup": "No",
+        "months": 6,
+        "employee": 3000,
+        "employer": 500,
+        "federal": 22,
+        "state": 0,
+        "method": "Direct contribution",
+        "payroll_rate": 0
+      },
+      "metrics": {
+        "Modeled annual contribution limit": 2200.0,
+        "Maximum personal contribution after employer": 1700.0,
+        "Estimated tax savings on personal contribution": 374.0,
+        "Planned contributions above modeled limit": 1300.0
+      },
+      "display": [
+        "Contribution room",
+        "$1,700.00",
+        "$374.00 modeled personal tax saving"
+      ]
+    },
+    {
+      "label": "Base: 20 contribution years",
+      "calculatorId": "hsa",
+      "mode": "growth",
+      "values": {
+        "year": "2026",
+        "coverage": "Self-only",
+        "catchup": "No",
+        "balance": 5000,
+        "employee": 3000,
+        "employer": 500,
+        "years": 20,
+        "contribution_years": 20,
+        "return": 5,
+        "spending": 1000,
+        "fee": 0,
+        "inflation": 2.5
+      },
+      "metrics": {
+        "Projected HSA balance": 95931.3737829431,
+        "Ending balance in today\u2019s dollars": 58544.129928259514,
+        "Total new contributions": 70000.0,
+        "Investment earnings before fees": 40931.373782943105,
+        "Total medical withdrawals": 20000.0,
+        "Total fees paid": 0.0,
+        "Medical expenses not funded by HSA": 0.0
+      },
+      "display": [
+        "20-year growth",
+        "$95,931.37",
+        "$58,544.13 in today\u2019s dollars"
+      ]
+    },
+    {
+      "label": "Contributions stop after 10 years",
+      "calculatorId": "hsa",
+      "mode": "growth",
+      "values": {
+        "year": "2026",
+        "coverage": "Self-only",
+        "catchup": "No",
+        "balance": 5000,
+        "employee": 3000,
+        "employer": 500,
+        "years": 20,
+        "contribution_years": 10,
+        "return": 5,
+        "spending": 1000,
+        "fee": 0,
+        "inflation": 2.5
+      },
+      "metrics": {
+        "Projected HSA balance": 51908.74990852221,
+        "Ending balance in today\u2019s dollars": 31678.40174929704,
+        "Total new contributions": 35000.0,
+        "Investment earnings before fees": 31908.749908522208,
+        "Total medical withdrawals": 20000.0,
+        "Total fees paid": 0.0,
+        "Medical expenses not funded by HSA": 0.0
+      },
+      "display": [
+        "20-year growth",
+        "$51,908.75",
+        "$31,678.40 in today\u2019s dollars"
+      ]
+    },
+    {
+      "label": "USD 100 annual fees",
+      "calculatorId": "hsa",
+      "mode": "growth",
+      "values": {
+        "year": "2026",
+        "coverage": "Self-only",
+        "catchup": "No",
+        "balance": 5000,
+        "employee": 3000,
+        "employer": 500,
+        "years": 20,
+        "contribution_years": 20,
+        "return": 5,
+        "spending": 1000,
+        "fee": 100,
+        "inflation": 2.5
+      },
+      "metrics": {
+        "Projected HSA balance": 92624.77837265427,
+        "Ending balance in today\u2019s dollars": 56526.21082956986,
+        "Total new contributions": 70000.0,
+        "Investment earnings before fees": 39624.77837265427,
+        "Total medical withdrawals": 20000.0,
+        "Total fees paid": 2000.0,
+        "Medical expenses not funded by HSA": 0.0
+      },
+      "display": [
+        "20-year growth",
+        "$92,624.78",
+        "$56,526.21 in today\u2019s dollars"
+      ]
+    },
+    {
+      "label": "USD 5,000 annual medical budget",
+      "calculatorId": "hsa",
+      "mode": "growth",
+      "values": {
+        "year": "2026",
+        "coverage": "Self-only",
+        "catchup": "No",
+        "balance": 5000,
+        "employee": 3000,
+        "employer": 500,
+        "years": 20,
+        "contribution_years": 20,
+        "return": 5,
+        "spending": 5000,
+        "fee": 0,
+        "inflation": 2.5
+      },
+      "metrics": {
+        "Projected HSA balance": 0.0,
+        "Ending balance in today\u2019s dollars": 0.0,
+        "Total new contributions": 70000.0,
+        "Investment earnings before fees": 612.34375,
+        "Total medical withdrawals": 75612.34375,
+        "Total fees paid": 0.0,
+        "Medical expenses not funded by HSA": 24387.65625
+      },
+      "display": [
+        "20-year growth",
+        "$0.00",
+        "$0.00 in today\u2019s dollars"
+      ]
+    }
+  ],
+  "rmd": [
+    {
+      "label": "Age 73, $0.00 credited",
+      "calculatorId": "rmd",
+      "mode": "annual",
+      "values": {
+        "birth": 1953,
+        "year": 2026,
+        "balance": 500000,
+        "taken": 0,
+        "spouse": "No",
+        "spouse_birth": 1964,
+        "return": 0,
+        "projection": 1
+      },
+      "metrics": {
+        "Age in distribution year": 73.0,
+        "Distribution period": 26.5,
+        "Annual RMD": 18867.924528301886,
+        "Remaining RMD for selected year": 18867.924528301886,
+        "Monthly budgeting equivalent of annual RMD": 1572.3270440251572
+      },
+      "display": [
+        "26.5",
+        "$18,867.92",
+        "$18,867.92"
+      ]
+    },
+    {
+      "label": "Age 75, $0.00 credited",
+      "calculatorId": "rmd",
+      "mode": "annual",
+      "values": {
+        "birth": 1951,
+        "year": 2026,
+        "balance": 500000,
+        "taken": 0,
+        "spouse": "No",
+        "spouse_birth": 1964,
+        "return": 0,
+        "projection": 1
+      },
+      "metrics": {
+        "Age in distribution year": 75.0,
+        "Distribution period": 24.6,
+        "Annual RMD": 20325.20325203252,
+        "Remaining RMD for selected year": 20325.20325203252,
+        "Monthly budgeting equivalent of annual RMD": 1693.7669376693766
+      },
+      "display": [
+        "24.6",
+        "$20,325.20",
+        "$20,325.20"
+      ]
+    },
+    {
+      "label": "Age 80, $0.00 credited",
+      "calculatorId": "rmd",
+      "mode": "annual",
+      "values": {
+        "birth": 1946,
+        "year": 2026,
+        "balance": 500000,
+        "taken": 0,
+        "spouse": "No",
+        "spouse_birth": 1964,
+        "return": 0,
+        "projection": 1
+      },
+      "metrics": {
+        "Age in distribution year": 80.0,
+        "Distribution period": 20.2,
+        "Annual RMD": 24752.47524752475,
+        "Remaining RMD for selected year": 24752.47524752475,
+        "Monthly budgeting equivalent of annual RMD": 2062.7062706270626
+      },
+      "display": [
+        "20.2",
+        "$24,752.48",
+        "$24,752.48"
+      ]
+    },
+    {
+      "label": "Age 75, $10,000.00 credited",
+      "calculatorId": "rmd",
+      "mode": "annual",
+      "values": {
+        "birth": 1951,
+        "year": 2026,
+        "balance": 500000,
+        "taken": 10000,
+        "spouse": "No",
+        "spouse_birth": 1964,
+        "return": 0,
+        "projection": 1
+      },
+      "metrics": {
+        "Age in distribution year": 75.0,
+        "Distribution period": 24.6,
+        "Annual RMD": 20325.20325203252,
+        "Remaining RMD for selected year": 10325.203252032521,
+        "Monthly budgeting equivalent of annual RMD": 1693.7669376693766
+      },
+      "display": [
+        "24.6",
+        "$20,325.20",
+        "$10,325.20"
+      ]
+    }
+  ],
+  "matching": [
+    {
+      "label": "100% of first 3% + 50% of next 2%",
+      "calculatorId": "401k",
+      "mode": "match",
+      "values": {
+        "age": 35,
+        "salary": 80000,
+        "match1": 100,
+        "limit1": 3,
+        "match2": 50,
+        "limit2": 2
+      },
+      "metrics": {
+        "Minimum contribution rate for full match": 5.0,
+        "Maximum steady contribution rate": 30.625,
+        "Annual contribution to maximize match": 4000.0,
+        "Employer annual match": 3200.0,
+        "Total annual additions": 7200.0
+      },
+      "display": [
+        "$4,000.00",
+        "$3,200.00",
+        "Full match attainable"
+      ]
+    },
+    {
+      "label": "50% of first 6%",
+      "calculatorId": "401k",
+      "mode": "match",
+      "values": {
+        "age": 35,
+        "salary": 80000,
+        "match1": 50,
+        "limit1": 6,
+        "match2": 0,
+        "limit2": 0
+      },
+      "metrics": {
+        "Minimum contribution rate for full match": 6.0,
+        "Maximum steady contribution rate": 30.625,
+        "Annual contribution to maximize match": 4800.0,
+        "Employer annual match": 2400.0,
+        "Total annual additions": 7200.0
+      },
+      "display": [
+        "$4,800.00",
+        "$2,400.00",
+        "Full match attainable"
+      ]
+    },
+    {
+      "label": "100% of first 6%",
+      "calculatorId": "401k",
+      "mode": "match",
+      "values": {
+        "age": 35,
+        "salary": 80000,
+        "match1": 100,
+        "limit1": 6,
+        "match2": 0,
+        "limit2": 0
+      },
+      "metrics": {
+        "Minimum contribution rate for full match": 6.0,
+        "Maximum steady contribution rate": 30.625,
+        "Annual contribution to maximize match": 4800.0,
+        "Employer annual match": 4800.0,
+        "Total annual additions": 9600.0
+      },
+      "display": [
+        "$4,800.00",
+        "$4,800.00",
+        "Full match attainable"
+      ]
+    },
+    {
+      "label": "High salary: 100% of first 10%",
+      "calculatorId": "401k",
+      "mode": "match",
+      "values": {
+        "age": 35,
+        "salary": 400000,
+        "match1": 100,
+        "limit1": 10,
+        "match2": 0,
+        "limit2": 0
+      },
+      "metrics": {
+        "Rate required for full match (unattainable)": 9.0,
+        "Maximum steady contribution rate": 6.125,
+        "Annual contribution at employee limit": 24500.0,
+        "Employer annual match": 24500.0,
+        "Total annual additions": 49000.0
+      },
+      "display": [
+        "$24,500.00",
+        "$24,500.00",
+        "Employee limit prevents full match"
+      ]
+    }
   ]
 }

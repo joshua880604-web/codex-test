@@ -9,10 +9,12 @@ import SiteLink from './SiteLink';
 import './decision-guide.css';
 export default function CalculationGuideArticle({topic}:{topic:CalculationGuideTopic}){
  const data=content[topic],guide=calculationGuideEntries[topic];
+ const checkedOn=guide.updatedOn??guide.publishedOn;
+ const checkedLabel=new Date(checkedOn+'T00:00:00Z').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'});
  return <div className="page-wrap glossary-page guides-page"><main id="main"><article className="editorial-article">
   <nav className="breadcrumb" aria-label="Breadcrumb"><SiteLink href={directoryPath}>Calculators</SiteLink> / <SiteLink href="/guides/">Guides</SiteLink> / <span aria-current="page">{guide.breadcrumb}</span></nav>
   <p className="glossary-category">{guide.topic} · {guide.format}</p><h1>{guide.heading}</h1>
-  <p className="guide-byline">By <SiteLink href="/about">CalculatorFree.io</SiteLink> · Arithmetic and source context checked <time dateTime="2026-10-31">October 31, 2026</time>. Educational examples, not personalized advice.</p><ContentReviewNotice kind="guide"/>
+  <p className="guide-byline">By <SiteLink href="/about">CalculatorFree.io</SiteLink> · Arithmetic and source context checked <time dateTime={checkedOn}>{checkedLabel}</time>. Educational examples, not personalized advice.</p><ContentReviewNotice kind="guide"/>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeSchema(editorialSchema(guide))}}/>
   <p>{data.intro}</p><p>{data.answer}</p><p><SiteLink className="glossary-cta" href={data.calculatorPath}>Open the {data.calculatorLabel} →</SiteLink></p>
   <nav className="guide-nav" aria-label="Guide sections">{data.sections.map(s=><a key={s.id} href={'#'+s.id}>{s.title}</a>)}<a href="#checked-cases">Checked examples</a><a href="#questions">Questions</a><a href="#sources">Sources & limits</a></nav>
